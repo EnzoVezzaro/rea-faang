@@ -37,14 +37,14 @@ npm i ace-proagents
 
 ## Minimal Setup (5 Minutes)
 
-### 1. Initialize RAE FAANG Workspace
+### 1. Initialize REA FAANG Workspace
 ```bash
 # Clone this repo (if not already)
-git clone <your-repo-url> rae-faang
-cd rae-faang
+git clone <your-repo-url> REA-faang
+cd REA-faang
 
 # Initialize ACE workspace
-node /tmp/ace-proagents/ace.mjs init --name rae-faang
+node /tmp/ace-proagents/ace.mjs init --name REA-faang
 ```
 
 ### 2. Verify Setup
@@ -53,11 +53,11 @@ node ace.mjs status
 # Should show: Status: running, Valid ace/v1 specification
 ```
 
-### 3. First Product: RAE Social
+### 3. First Product: REA Social
 ```bash
-mkdir -p products/rae-social
-cd products/rae-social
-node /tmp/ace-proagents/ace.mjs init --name rae-social
+mkdir -p products/REA-social
+cd products/REA-social
+node /tmp/ace-proagents/ace.mjs init --name REA-social
 ```
 
 ### 4. Install Dependencies
@@ -66,12 +66,12 @@ node /tmp/ace-proagents/ace.mjs init --name rae-social
 npm install
 
 # From product workspace
-cd ../rae-social
+cd ../REA-social
 npm install
 
 # Install shared packages
-cd ../rae-faang  # root
-npm install @rae-faang/auth @rae-faang/storage @rae-faang/ui --workspaces
+cd ../REA-faang  # root
+npm install @REA-faang/auth @REA-faang/storage @REA-faang/ui --workspaces
 ```
 
 ### 5. Start Development
@@ -80,7 +80,7 @@ npm install @rae-faang/auth @rae-faang/storage @rae-faang/ui --workspaces
 node ace.mjs govern
 
 # Product: start runtime
-cd rae-social
+cd REA-social
 node ace.mjs run
 
 # Or combined from root
@@ -132,11 +132,11 @@ opencode
 
 ### Per-Product Commands
 ```bash
-# From product workspace (rae-social)
-cd products/rae-social
+# From product workspace (REA-social)
+cd products/REA-social
 
 # Initialize (already done)
-node ace.mjs init --name rae-social
+node ace.mjs init --name REA-social
 
 # Run product-specific runtime
 node ace.mjs run
@@ -151,7 +151,7 @@ node ace.mjs tasks
 node ace.mjs verify
 
 # Product governance
-node ace.mjs govern --project rae-social
+node ace.mjs govern --project REA-social
 
 # Stop product
 node ace.mjs stop
@@ -165,10 +165,10 @@ npm install  # or node ace.mjs install
 
 # Develop locally with link
 npm link  # from package dir
-npm link @rae-faang/auth  # from product dir
+npm link @REA-faang/auth  # from product dir
 
 # Or use npm workspaces from root
-cd ../../rae-faang
+cd ../../REA-faang
 npm install  # installs all workspace packages
 ```
 
@@ -208,7 +208,7 @@ git push origin v0.1.0
 npm run build
 
 # Docker build (if configured)
-docker build -t rae-social:0.1.0 .
+docker build -t REA-social:0.1.0 .
 
 # Or via ACE
 node ace.mjs run  # with production config
@@ -219,7 +219,7 @@ node ace.mjs run  # with production config
 | Problem | Solution |
 |---------|----------|
 | `node: command not found` | Install Node.js v20+ from nodejs.org or nvm |
-| `ace: command not found` | Ensure you're in the rae-faang dir and ran `npm install`, or use `node ace.mjs` |
+| `ace: command not found` | Ensure you're in the REA-faang dir and ran `npm install`, or use `node ace.mjs` |
 | `INCOMPATIBLE_ADAPTER` | Run `node ace.mjs adapters audit`, use implemented providers |
 | `MISSING_CREDENTIAL` | Run `node ace.mjs secret set <name>` for required credentials |
 | `SECURITY_OVERRIDE_DENIED` | Check installation profile or environment profile settings |
@@ -234,11 +234,11 @@ node ace.mjs run  # with production config
 
 ### Launching Opencode with ACE
 ```bash
-# From rae-faang root
+# From REA-faang root
 opencode
 
 # Or specify workspace
-opencode --workspace ./rae-faang
+opencode --workspace ./REA-faang
 
 # Opencode will auto-detect ACE configuration
 # and set up agent orchestration
@@ -258,7 +258,7 @@ opencode --workspace ./rae-faang
 ### Opencode Commands in ACE Context
 ```bash
 # From within opencode, you can:
-node ace.mjs task add --title "Implement upload" --project rae-social --role frontend
+node ace.mjs task add --title "Implement upload" --project REA-social --role frontend
 node ace.mjs task claim <id> --agent frontend-1
 node ace.mjs verify  # From opencode session
 ```
@@ -266,17 +266,17 @@ node ace.mjs verify  # From opencode session
 ## Next Actions
 
 ### Immediate (Next 30 Minutes)
-1. Run `node /tmp/ace-proagents/ace.mjs init --name rae-faang` in `/Users/mac/Desktop/Github/rae-faang`
+1. Run `node /tmp/ace-proagents/ace.mjs init --name REA-faang` in `/Users/mac/Desktop/Github/REA-faang`
 2. Verify `ace.mjs status` shows running state
-3. Create `products/rae-social` directory and initialize
+3. Create `products/REA-social` directory and initialize
 4. Read `.docs/01-project-overview.md` and `.docs/02-ace-integration.md`
 5. Run `npm install` from root
 
 ### Short-term (Next 2 Hours)
 1. Run researcher agent to investigate Instagram photo upload workflow
-2. Create first specification in `products/rae-social/specs/03-feature-catalog.md`
-3. Initialize shared package `@rae-faang/auth`
-4. Set up React + Vite in RAE Social frontend
+2. Create first specification in `products/REA-social/specs/03-feature-catalog.md`
+3. Initialize shared package `@REA-faang/auth`
+4. Set up React + Vite in REA Social frontend
 5. Configure PostgreSQL database schema
 
 ### Medium-term (Next 2 Days)
@@ -287,7 +287,7 @@ node ace.mjs verify  # From opencode session
 5. Invite first contributors
 
 ### Long-term (First Sprint)
-1. Complete RAE Social MVP (4 core features)
+1. Complete REA Social MVP (4 core features)
 2. Release v0.1.0
 3. Initialize second product workspace
 4. Expand shared infrastructure

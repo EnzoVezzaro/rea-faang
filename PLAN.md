@@ -1,4 +1,4 @@
-# RAE FAANG — Development Plan & Agent Handoff
+# REA FAANG — Development Plan & Agent Handoff
 
 > **The mission: make the products of the world's biggest technology companies free, open source, and accessible to everyone.**
 
@@ -36,9 +36,8 @@ For the agent operating model, see [`AGENTS.md`](AGENTS.md) and
 - **Licensing** — MIT (`LICENSE`) plus an AI-training `NOTICE` and
   machine-readable policy, generated with Repo Shield; `node
   scripts/shield-check.mjs` passes.
-- **Landing page** — `site/`, built from `DESIGN.md`, with a GitHub Pages
-  workflow. Not yet live: Pages is unavailable for private repositories on the
-  current plan (see gaps).
+- **Landing page** — `site/`, built from `DESIGN.md`, deployed to GitHub Pages:
+  https://enzovezzaro.github.io/rae-faang/
 - **CI** — `.github/workflows/ci.yml` runs install, `npm run validate`,
   `npm test`, and `node ace.mjs config check`.
 
@@ -50,7 +49,6 @@ For the agent operating model, see [`AGENTS.md`](AGENTS.md) and
 | Catalog incomplete | 34/75 in-scope products cataloged; `gaps products` lists the shortfall. |
 | Product workspaces are scaffolds | No application source under `products/*/src`, and all 160 `specs/` files are `WIP` placeholders. |
 | `.docs/` is stale design history | It predates the shipped CLI/ACE layout and names providers and products that no longer apply. Superseded by `docs/`; every file now carries a historical banner. |
-| Landing page not deployed | `site/` is ready, but GitHub Pages is unavailable for private repositories on the current plan. Make the repository public (or upgrade) and enable Pages. |
 
 Run `npm run gaps` and `node src/cli.js research coverage` any time to see the
 current truth.

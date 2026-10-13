@@ -98,7 +98,7 @@ PeerTube and similar federated platforms implement ActivityPub and video federat
 
 Federated video distribution, decentralized recommendation, and creator monetization without central platform represent build opportunities. Scaling video transcoding and CDN infrastructure is a significant requirement.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Focus on a specific niche (e.g., decentralized video sharing via PeerTube, vertical video platform). Full YouTube clone not recommended due to infrastructure requirements.
 
@@ -130,6 +130,6 @@ PeerTube and federation-based platforms are the closest open-source alternatives
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Focus on decentralized video sharing or vertical video niche. Full platform clone requires CDN and transcoding infrastructure.

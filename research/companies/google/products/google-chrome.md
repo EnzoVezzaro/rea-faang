@@ -90,7 +90,7 @@ Chromium provides the open-source foundation of Chrome. Browsers built on Chromi
 
 A truly independent browser engine (not Chromium-based) would require significant investment in rendering engine, JavaScript engine, and ecosystem development. Building a Chromium fork is feasible but requires ongoing maintenance.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Not recommended to build a browser engine from scratch. Consider contributing to or extending existing open-source browser projects instead.
 
@@ -122,6 +122,6 @@ Chromium is the primary open-source foundation. Non-Chromium browsers (Firefox) 
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Not recommended to build a browser engine from scratch. Consider contributing to Chromium or extending existing projects.

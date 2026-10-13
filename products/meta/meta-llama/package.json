@@ -1,5 +1,5 @@
 {
-  "name": "rae-meta-llama",
+  "name": "REA-meta-llama",
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
@@ -7,7 +7,7 @@
     "node": ">=20",
     "ace": ">=1.0.0"
   },
-  "description": "RAE FAANG: Open-source alternative to Llama",
+  "description": "REA FAANG: Open-source alternative to Llama",
   "scripts": {
     "dev": "node ace.mjs run",
     "test": "node --test tests/",
@@ -23,7 +23,7 @@
   },
   "ace": {
     "spec": "ace/v1",
-    "name": "rae-meta-llama",
+    "name": "REA-meta-llama",
     "goal": {
       "statement": "Build open-source alternative to Llama",
       "milestones": [

@@ -95,7 +95,7 @@ AWS and Azure provide the most direct competition. Open-source components (Kuber
 
 Multi-region deployment patterns, cost optimization for sustained workloads, and integrated AI/ML pipelines on independent infrastructure represent opportunities. Replicating Google's global network is not feasible for most organizations.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Focus on specific Google Cloud services for replacement or extension: managed Kubernetes (K8s), object storage, or observability stack. Not recommended to rebuild the entire cloud platform.
 
@@ -127,6 +127,6 @@ AWS, Azure are the primary commercial competitors. Open-source components can re
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Select specific Google Cloud services to replace (e.g., Kubernetes, object storage). Build or integrate open-source alternatives for chosen services.

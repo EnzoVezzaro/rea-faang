@@ -7,7 +7,7 @@
 
 ---
 
-# RAE FAANG - Project Overview
+# REA FAANG - Project Overview
 
 ## Mission Statement
 **Reverse Engineer Anything. Rebuild Everything. Open Source for Everyone.**

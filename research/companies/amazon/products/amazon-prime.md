@@ -99,7 +99,7 @@ Prime's uniqueness is the cross-category bundle (shipping + video + music + read
 
 Integrated logistics network enabling free fast shipping at scale, content licensing for video/music, and the data flywheel connecting shopping behavior to content recommendations are the primary gaps. An open alternative could create a federated loyalty protocol where merchants pool benefits.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Not feasible to replicate the bundle. Strategy: Build open loyalty framework (Open Loyalty) for merchants to create their own programs. Integrate with Jellyfin/Funkwhale for self-hosted media. Use Kill Bill for subscription billing. Explore federated commerce loyalty (merchant consortium sharing benefits). Focus on merchant-owned, not platform-owned.
 
@@ -132,6 +132,6 @@ Prime is a platform-level bundle; open alternatives are component-level. The int
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Phase 1: Open Loyalty + Kill Bill for subscription/loyalty core. Phase 2: Jellyfin/Funkwhale integration for media benefits. Phase 3: Shipping API integrations (Shippo, EasyPost) for free shipping promises. Phase 4: Federated loyalty protocol design (merchants share benefits). Phase 5: Prime Day equivalent (coordinated sale events).

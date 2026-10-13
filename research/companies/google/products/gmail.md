@@ -89,7 +89,7 @@ Open-source email clients implement basic IMAP/SMTP but lack Gmail's conversatio
 
 Conversation threading algorithm, advanced ML-powered search, and Google Workspace integration represent gaps. Self-hosted email can provide basic mail functionality but not Gmail's user experience.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Build a web-based email client with IMAP/SMTP support, conversation threading, and search. Target basic email workflows rather than Gmail feature parity.
 
@@ -121,6 +121,6 @@ No open-source alternative replicates Gmail's conversation threading and integra
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Focus on basic email client functionality with search and threading. Google Workspace integration is out of scope for initial implementation.

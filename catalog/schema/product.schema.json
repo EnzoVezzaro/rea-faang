@@ -143,7 +143,7 @@
         "research_further",
         "not_recommended"
       ],
-      "description": "RAE build recommendation"
+      "description": "REA build recommendation"
     },
     "last_researched_at": {
       "type": "string",

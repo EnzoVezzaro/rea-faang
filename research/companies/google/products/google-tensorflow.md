@@ -94,7 +94,7 @@ PyTorch is the primary research alternative. JAX offers superior XLA compilation
 
 Research workflow integration, production pipeline automation (TFX), and model optimization techniques represent areas where independent implementations or significant improvements are possible. Attention to TFX pipeline components is a build opportunity.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Contribute to existing framework features, build domain-specific extensions, or focus on model conversion and optimization tools rather than a new ML framework from scratch.
 
@@ -126,6 +126,6 @@ PyTorch, JAX are the primary open-source ML framework alternatives. TFX provides
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Focus on model conversion, optimization, or domain-specific extensions to existing frameworks. Full framework development is high effort.

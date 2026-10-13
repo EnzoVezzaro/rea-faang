@@ -1,4 +1,4 @@
-# RAE FAANG — Documentation
+# REA FAANG — Documentation
 
 This is the canonical documentation set. It describes what the repository
 actually does today. Where anything here conflicts with older material, treat
@@ -29,7 +29,7 @@ The `.docs/` directory holds the **original design notes** written before the
 current CLI and ACE layout existed. They are kept for history. They are **not**
 authoritative and contain stale details — for example, provider names ACE no
 longer ships (`git-worktrees`, `markdown-files`, `json-files`), product names
-that were never created (`rae-social`, `rae-connect`), and an ACE workflow that
+that were never created (`REA-social`, `REA-connect`), and an ACE workflow that
 predates the `ace setup` installer.
 
 If you need a fact about how the project works, use `docs/` and the code.

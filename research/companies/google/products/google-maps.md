@@ -119,7 +119,7 @@ OpenStreetMap provides the underlying data for many alternatives but lacks real-
 
 Real-time traffic at global scale, Street View imagery, integrated transit feeds, and unified platform (mobile + web + API) are the primary gaps. An open alternative could focus on offline-first, privacy-respecting navigation using OSM data.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Build a privacy-first navigation app using OpenStreetMap data and MapLibre rendering. Prioritize offline maps, turn-by-turn navigation, and basic place search. Real-time traffic would require third-party data partnerships.
 
@@ -152,6 +152,6 @@ OpenStreetMap ecosystem is the foundation; consumer-facing apps build on it. No 
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Phase 1: Offline map viewer with search. Phase 2: Turn-by-turn navigation. Phase 3: Community features (reviews, photos). Real-time traffic deferred.

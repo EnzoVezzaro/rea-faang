@@ -104,7 +104,7 @@ Meta Quest 3 is the closest consumer alternative ($499 vs $3499) with hand track
 
 Custom silicon (R1), micro-OLED supply chain, eye/hand tracking at <12ms latency, visionOS spatial app model, Persona generation, and Apple ecosystem integration are the main gaps. An open alternative could focus on OpenXR-based software stack on existing hardware (Quest, PCVR) or contribute to Monado.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Not feasible to replicate hardware. Strategy: Develop visionOS-compatible apps using OpenXR/WebXR for cross-platform spatial apps. Contribute to Monado (OpenXR runtime) for Linux spatial computing. Build open spatial app frameworks (Godot XR, three.js WebXR). Focus on software, not hardware.
 
@@ -137,6 +137,6 @@ Quest 3 + OpenXR is the most practical open development target. Vision Pro hardw
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Phase 1: OpenXR app templates (Godot, three.js, React Three Fiber). Phase 2: Monado improvements for Linux desktop XR. Phase 3: Cross-platform spatial UI components. Phase 4: Open persona/avatar system (Ready Player Me, VRM). Accept hardware gap.

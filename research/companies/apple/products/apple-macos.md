@@ -103,7 +103,7 @@ Linux offers the closest functional alternative for developer and server workloa
 
 Proprietary frameworks (AppKit, SwiftUI, Metal, Core Audio), Apple Silicon optimization, iCloud/Continuity integration, notarization/App Store distribution, and pro creative apps are the primary gaps. An open alternative could focus on a polished Linux desktop with creative tooling.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Not feasible to replicate macOS. Instead, contribute to Asahi Linux for Apple Silicon support, improve Linux desktop experience (COSMIC, GNOME), and develop cross-platform creative tools (DaVinci Resolve, Blender, Ardour, Krita). Focus on workflow parity, not OS replication.
 
@@ -137,6 +137,6 @@ Linux is the only viable open alternative. Asahi Linux makes it run on Apple har
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Support and improve Asahi Linux. Build cross-platform creative apps. Develop open Continuity-like protocols (KDE Connect, GSConnect). Accept that OS-level replication is not the goal.

@@ -91,7 +91,7 @@ WebKit is the open-source rendering engine. Browsers built on WebKit (though few
 
 A completely independent browser engine is high effort. Building on WebKit with independent privacy features (beyond ITP) is feasible but requires ecosystem integration. Focus on privacy-enhanced web browsing rather than engine development.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Not recommended to build a browser engine from WebKit alternatives at initial stage. Consider contributing to WebKit or building privacy extensions for existing browsers.
 
@@ -123,6 +123,6 @@ WebKit is open source but primarily used within Apple ecosystem. Firefox/Chrome/
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Focus on privacy extensions for existing browsers rather than independent engine development.

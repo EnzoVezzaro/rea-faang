@@ -1,10 +1,10 @@
-# RAE FAANG
+# REA FAANG
 
 ### Reverse Engineer Anything. Rebuild Everything. Open Source for Everyone.
 
 > **The mission: make the products of the world's biggest technology companies free, open source, and accessible to everyone.**
 
-RAE FAANG is an open-source initiative to reverse engineer, understand, and independently rebuild the products, tools, platforms, and services created by FAANG companies — Meta, Amazon, Apple, Netflix, and Google — and make open-source alternatives available to the public.
+REA FAANG is an open-source initiative to reverse engineer, understand, and independently rebuild the products, tools, platforms, and services created by FAANG companies — Meta, Amazon, Apple, Netflix, and Google — and make open-source alternatives available to the public.
 
 Every person should have access to world-class software, regardless of their income, location, operating system, or ability to pay for subscriptions.
 
@@ -16,7 +16,7 @@ We want to build the open-source alternatives to the products billions of people
 
 ## Start here
 
-RAE FAANG is being built in the open. This repository currently contains the
+REA FAANG is being built in the open. This repository currently contains the
 **foundation**: a product-intelligence catalog, evidence-backed research
 dossiers, specification workspaces, and the agent environment that drives them.
 It does not yet contain finished product implementations — see
@@ -44,8 +44,9 @@ node ace.mjs status                 # the agent environment
 npm test                            # verify the tooling
 ```
 
-**Documentation**
+**Links**
 
+- **Live landing page:** https://enzovezzaro.github.io/rae-faang/
 - [`docs/`](docs/README.md) — the canonical documentation set (start here).
 - [`docs/getting-started.md`](docs/getting-started.md) — install and run.
 - [`docs/cli-reference.md`](docs/cli-reference.md) — every CLI command.
@@ -64,11 +65,11 @@ Imagine developers having access to the same categories of tools and capabilitie
 
 Imagine AI agents working alongside human developers to analyze existing software, understand its behavior, implement equivalent functionality, test it, and continuously improve the resulting open-source products.
 
-**That is what RAE FAANG aims to build.**
+**That is what REA FAANG aims to build.**
 
 We are not building a single application. We are building an ecosystem of open-source alternatives to the products of the world's largest technology companies.
 
-## Why RAE FAANG?
+## Why REA FAANG?
 
 Modern software is increasingly controlled by a small number of corporations. Their products can be incredibly useful, but access, functionality, interoperability, and long-term availability often depend on decisions made behind closed doors.
 
@@ -90,7 +91,7 @@ Our goal is not to prevent companies from building great products. It is to ensu
 
 ## The Five Companies
 
-RAE FAANG focuses on the five companies behind the FAANG acronym.
+REA FAANG focuses on the five companies behind the FAANG acronym.
 
 | Company | Product families to recreate |
 |---|---|
@@ -104,67 +105,67 @@ These categories are starting points, not a final inventory. Products and priori
 
 ## The Product Universe
 
-RAE FAANG aims to build an expanding catalog of independent open-source alternatives. The following examples illustrate the intended scope.
+REA FAANG aims to build an expanding catalog of independent open-source alternatives. The following examples illustrate the intended scope.
 
 ### 1. Meta
 
 Reimagine social software without closed ecosystems.
 
-- **RAE Social** — An Instagram-style photo and video sharing platform.
-- **RAE Connect** — A WhatsApp-style messaging application with end-to-end encryption.
-- **RAE Communities** — A Facebook-style social network with groups, pages, events, and feeds.
-- **RAE Messenger** — Real-time messaging, calls, and media sharing.
-- **RAE Creator** — Creator profiles, publishing, analytics, and audience management.
-- **RAE Worlds** — Open social experiences and virtual environments.
+- **REA Social** — An Instagram-style photo and video sharing platform.
+- **REA Connect** — A WhatsApp-style messaging application with end-to-end encryption.
+- **REA Communities** — A Facebook-style social network with groups, pages, events, and feeds.
+- **REA Messenger** — Real-time messaging, calls, and media sharing.
+- **REA Creator** — Creator profiles, publishing, analytics, and audience management.
+- **REA Worlds** — Open social experiences and virtual environments.
 
 ### 2. Amazon
 
 Make commerce and cloud infrastructure more accessible.
 
-- **RAE Market** — An Amazon-style marketplace with product listings, search, reviews, and checkout integrations.
-- **RAE Cloud** — An open cloud platform for deploying applications, managing compute, storage, and networking.
-- **RAE Storage** — Object storage and file management inspired by cloud storage services.
-- **RAE Stream** — A media streaming platform.
-- **RAE Dev** — Developer infrastructure, build pipelines, artifact storage, and deployment tools.
-- **RAE Assistant** — A voice-enabled assistant and automation platform.
+- **REA Market** — An Amazon-style marketplace with product listings, search, reviews, and checkout integrations.
+- **REA Cloud** — An open cloud platform for deploying applications, managing compute, storage, and networking.
+- **REA Storage** — Object storage and file management inspired by cloud storage services.
+- **REA Stream** — A media streaming platform.
+- **REA Dev** — Developer infrastructure, build pipelines, artifact storage, and deployment tools.
+- **REA Assistant** — A voice-enabled assistant and automation platform.
 
 ### 3. Apple
 
 Build open alternatives to familiar software experiences.
 
-- **RAE Desktop** — A polished desktop environment inspired by modern desktop operating systems.
-- **RAE Mobile** — An open mobile software experience.
-- **RAE Photos** — Photo organization, editing, albums, and synchronization.
-- **RAE Music** — A music library and streaming client.
-- **RAE Notes** — Notes, documents, handwriting, and cross-device synchronization.
-- **RAE Cloud Drive** — File synchronization, backup, and sharing.
+- **REA Desktop** — A polished desktop environment inspired by modern desktop operating systems.
+- **REA Mobile** — An open mobile software experience.
+- **REA Photos** — Photo organization, editing, albums, and synchronization.
+- **REA Music** — A music library and streaming client.
+- **REA Notes** — Notes, documents, handwriting, and cross-device synchronization.
+- **REA Cloud Drive** — File synchronization, backup, and sharing.
 
 ### 4. Netflix
 
 Make streaming technology accessible to independent creators and communities.
 
-- **RAE Video** — An on-demand video streaming platform.
-- **RAE Discover** — Content discovery and personalized recommendations.
-- **RAE Studio** — Media management, transcoding, and publishing workflows.
-- **RAE Delivery** — Video delivery infrastructure and adaptive streaming.
-- **RAE Watch** — Watch parties, shared viewing, and synchronized playback.
-- **RAE Analytics** — Privacy-conscious audience and streaming analytics.
+- **REA Video** — An on-demand video streaming platform.
+- **REA Discover** — Content discovery and personalized recommendations.
+- **REA Studio** — Media management, transcoding, and publishing workflows.
+- **REA Delivery** — Video delivery infrastructure and adaptive streaming.
+- **REA Watch** — Watch parties, shared viewing, and synchronized playback.
+- **REA Analytics** — Privacy-conscious audience and streaming analytics.
 
 ### 5. Google
 
 Rebuild the essential tools of the modern internet.
 
-- **RAE Search** — A search engine with crawling, indexing, ranking, and discovery.
-- **RAE Maps** — Interactive maps, geospatial search, routing, and navigation.
-- **RAE Mail** — Email, labels, filters, contacts, and calendar integration.
-- **RAE Workspace** — Documents, spreadsheets, presentations, and collaborative editing.
-- **RAE Drive** — Cloud file storage, synchronization, and sharing.
-- **RAE Meet** — Video conferencing and screen sharing.
-- **RAE Browser** — A browser experience built around privacy, extensibility, and user control.
-- **RAE Translate** — Language translation and localization tools.
-- **RAE Analytics** — Open website analytics and reporting.
-- **RAE AI** — An extensible AI platform for models, agents, and intelligent applications.
-- **RAE DevTools** — Developer utilities, observability, testing, and deployment workflows.
+- **REA Search** — A search engine with crawling, indexing, ranking, and discovery.
+- **REA Maps** — Interactive maps, geospatial search, routing, and navigation.
+- **REA Mail** — Email, labels, filters, contacts, and calendar integration.
+- **REA Workspace** — Documents, spreadsheets, presentations, and collaborative editing.
+- **REA Drive** — Cloud file storage, synchronization, and sharing.
+- **REA Meet** — Video conferencing and screen sharing.
+- **REA Browser** — A browser experience built around privacy, extensibility, and user control.
+- **REA Translate** — Language translation and localization tools.
+- **REA Analytics** — Open website analytics and reporting.
+- **REA AI** — An extensible AI platform for models, agents, and intelligent applications.
+- **REA DevTools** — Developer utilities, observability, testing, and deployment workflows.
 
 These are proposed product directions, not claims that the applications already exist or have reached feature parity.
 
@@ -174,7 +175,7 @@ These are proposed product directions, not claims that the applications already 
 
 ### Reverse engineer. Understand. Reimplement. Verify.
 
-RAE FAANG takes inspiration from agent-assisted software investigation tools such as [REA](https://github.com/morluto/rea). The objective is to turn software analysis into a repeatable engineering workflow that can produce working, independently implemented alternatives.
+REA FAANG takes inspiration from agent-assisted software investigation tools such as [REA](https://github.com/morluto/rea). The objective is to turn software analysis into a repeatable engineering workflow that can produce working, independently implemented alternatives.
 
 Our process has five stages.
 
@@ -208,7 +209,7 @@ The cycle repeats until the implementation becomes increasingly capable, reliabl
 
 ## AI Agents as Development Infrastructure
 
-RAE FAANG is designed to benefit from agentic software development.
+REA FAANG is designed to benefit from agentic software development.
 
 AI agents can help investigate features, explore public interfaces, write specifications, implement modules, generate tests, review code, and identify compatibility gaps. Human contributors remain essential for architectural decisions, security review, validation, and project direction.
 
@@ -230,7 +231,7 @@ Automation can accelerate development, but it must not replace validation.
 
 ## Architecture Principles
 
-Every product has different requirements. RAE FAANG does not mandate one technology stack for everything.
+Every product has different requirements. REA FAANG does not mandate one technology stack for everything.
 
 Instead, we follow shared engineering principles.
 
@@ -266,7 +267,7 @@ Prefer dependable dependencies, clear documentation, reproducible builds, and ar
 
 ## Development Roadmap
 
-RAE FAANG is an ambitious, long-term initiative. We should build it incrementally, prioritizing useful software that can be completed and maintained.
+REA FAANG is an ambitious, long-term initiative. We should build it incrementally, prioritizing useful software that can be completed and maintained.
 
 ### Phase 1 — Foundation
 
@@ -334,7 +335,7 @@ what has been described. See [`PLAN.md`](PLAN.md) for the plan and
 
 ## Contributing
 
-RAE FAANG is for developers, designers, researchers, security engineers, documentation writers, AI enthusiasts, and anyone who wants to help build an open software ecosystem.
+REA FAANG is for developers, designers, researchers, security engineers, documentation writers, AI enthusiasts, and anyone who wants to help build an open software ecosystem.
 
 You can contribute by:
 
@@ -360,7 +361,7 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for how to contribute as a human, and [
 
 ## Responsible Reverse Engineering
 
-RAE FAANG exists to advance open software, interoperability, education, and user freedom.
+REA FAANG exists to advance open software, interoperability, education, and user freedom.
 
 We will prioritize clean-room implementations, public documentation, lawful observation, and independently developed code.
 
@@ -392,7 +393,7 @@ An open-source alternative to the entire ecosystem.
 
 ## License
 
-RAE FAANG is released under the **MIT License** — see [`LICENSE`](LICENSE). The
+REA FAANG is released under the **MIT License** — see [`LICENSE`](LICENSE). The
 repository also carries an explicit AI-training notice ([`NOTICE`](NOTICE)) and a
 machine-readable policy ([`AI_TRAINING_POLICY.md`](AI_TRAINING_POLICY.md)),
 generated with [Repo Shield](https://github.com/EnzoVezzaro/repo-shield) and
@@ -417,6 +418,6 @@ Every contribution moves the ecosystem forward.
 
 ---
 
-**RAE FAANG — The open-source alternative to everything.**
+**REA FAANG — The open-source alternative to everything.**
 
 *Built by the community. Powered by collaboration. Open to everyone.*

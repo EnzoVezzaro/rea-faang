@@ -25,14 +25,14 @@ function runJson(...args) {
 test('--help prints usage and exits 0', () => {
   const result = run('--help');
   assert.equal(result.status, 0);
-  assert.match(result.stdout, /RAE — FAANG Product Intelligence CLI/);
+  assert.match(result.stdout, /REA — FAANG Product Intelligence CLI/);
   assert.match(result.stdout, /research validate/);
 });
 
 test('--version prints the version and exits 0', () => {
   const result = run('--version');
   assert.equal(result.status, 0);
-  assert.match(result.stdout, /RAE CLI v0\.1\.0/);
+  assert.match(result.stdout, /REA CLI v0\.1\.0/);
 });
 
 test('unknown command exits non-zero with an error', () => {

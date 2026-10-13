@@ -92,7 +92,7 @@ DaVinci Resolve (free version) covers most editing, color grading, and Fairlight
 
 Magnetic timeline architecture, color grading workflow, and integrated media management represent gaps. DaVinci Resolve covers most functionality but with different organizational paradigms.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Focus on editing and color grading use cases. DaVinci Resolve Free for feature parity. Magnetic timeline and pipeline workflow are distinctive and difficult to replicate.
 
@@ -124,6 +124,6 @@ DaVinci Resolve Free is the closest feature-complete alternative but uses track-
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Focus on editing and color grading use cases. DaVinci Resolve Free for initial exploration. Magnetic timeline is a distinctive feature.

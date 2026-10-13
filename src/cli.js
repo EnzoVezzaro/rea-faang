@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * RAE — FAANG Product Intelligence CLI
+ * REA — FAANG Product Intelligence CLI
  *
  * Deterministic commands for catalog validation, research coverage,
  * gap detection, and opportunity reporting. AI discovers and proposes;
@@ -1035,7 +1035,7 @@ function tryStat(path) {
 
 function printHelp() {
   console.log(`
-RAE — FAANG Product Intelligence CLI
+REA — FAANG Product Intelligence CLI
 =====================================
 
 Usage: node cli.js <command> [options]
@@ -1073,7 +1073,7 @@ Exit codes:
 }
 
 function printVersion() {
-  console.log('RAE CLI v0.1.0');
+  console.log('REA CLI v0.1.0');
 }
 
 // --- Main ---

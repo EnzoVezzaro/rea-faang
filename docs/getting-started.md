@@ -20,8 +20,8 @@ Node — both are zero-dependency ESM.
 ## Install
 
 ```bash
-git clone <your-repo-url> rae-faang
-cd rae-faang
+git clone <your-repo-url> REA-faang
+cd REA-faang
 npm install
 ```
 

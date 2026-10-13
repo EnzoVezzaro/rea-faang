@@ -105,7 +105,7 @@ OpenFaaS and OpenWhisk provide the closest open-source alternatives for Docker-b
 
 Managed microVM isolation, integrated AWS event source ecosystem, and pay-per-use pricing model with free tier represent significant gaps. Self-hosted FaaS can provide function execution but not the managed service experience.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Not recommended to build a managed FaaS service from scratch. Consider contributing to or extending OpenFaaS or OpenWhisk for self-hostable serverless function execution. Focus on workflow patterns rather than service replication.
 
@@ -137,6 +137,6 @@ OpenFaaS and OpenWhisk are the closest open-source FaaS platforms, but they lack
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Focus on self-hostable FaaS patterns (OpenFaaS) for function execution, not managed service replication.

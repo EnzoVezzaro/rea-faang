@@ -1,6 +1,6 @@
 # Landing page
 
-The public landing page for RAE FAANG. Static HTML and CSS, no build step, no
+The public landing page for REA FAANG. Static HTML and CSS, no build step, no
 dependencies beyond web fonts.
 
 - `index.html` — the page.
@@ -19,11 +19,10 @@ python3 -m http.server 8080 --directory site
 `.github/workflows/pages.yml` publishes `site/` to GitHub Pages on every push to
 `main` that touches `site/`.
 
-**Requirement:** GitHub Pages must be enabled for the repository
-(Settings → Pages → Source: GitHub Actions). Pages is **not available for private
-repositories on the current plan** — the repository must be public, or the
-account must be on a plan that supports Pages for private repositories. Until
-then the deploy job fails with `Get Pages site failed ... Not Found`.
+- **Live:** https://enzovezzaro.github.io/rae-faang/
+- Pages source: GitHub Actions (Settings → Pages).
 
-Once Pages is enabled, re-run the workflow (Actions → Deploy landing page →
-Run workflow) or push a change under `site/`.
+Note: GitHub Pages is not available for **private** repositories on the free
+plan. The repository is public, which is why the deploy works. If the repository
+is ever made private again, the deploy job will fail with
+`Get Pages site failed ... Not Found` until Pages is available again.

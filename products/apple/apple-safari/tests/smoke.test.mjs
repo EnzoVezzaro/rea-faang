@@ -7,12 +7,12 @@ import { dirname, join } from 'node:path';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const pkg = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'));
 
-test('rae-apple-safari declares a valid ace/v1 workspace', () => {
+test('REA-apple-safari declares a valid ace/v1 workspace', () => {
   assert.equal(pkg.ace?.spec, 'ace/v1');
-  assert.equal(pkg.ace?.name, 'rae-apple-safari');
+  assert.equal(pkg.ace?.name, 'REA-apple-safari');
   assert.ok(pkg.ace?.goal, 'workspace should declare a goal');
 });
 
-test('rae-apple-safari keeps its specification scaffold', () => {
+test('REA-apple-safari keeps its specification scaffold', () => {
   assert.ok(existsSync(join(ROOT, 'specs', '01-product-vision.md')));
 });

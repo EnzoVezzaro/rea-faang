@@ -1,5 +1,5 @@
 {
-  "name": "rae-google-search",
+  "name": "REA-google-search",
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
@@ -7,7 +7,7 @@
     "node": ">=20",
     "ace": ">=1.0.0"
   },
-  "description": "RAE FAANG: Open-source alternative to Google Search",
+  "description": "REA FAANG: Open-source alternative to Google Search",
   "scripts": {
     "dev": "node ace.mjs run",
     "test": "node --test tests/",
@@ -23,7 +23,7 @@
   },
   "ace": {
     "spec": "ace/v1",
-    "name": "rae-google-search",
+    "name": "REA-google-search",
     "goal": {
       "statement": "Build open-source alternative to Google Search",
       "milestones": [
