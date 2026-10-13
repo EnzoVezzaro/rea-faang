@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_b6ba5680b42f1fc508d44b4bd8289ea38bbf962d10f539b8c0d824d7dc667aad",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://cloud.google.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "0932c8283325e738e0de8c0e9ec00f2446c62c90bfa72874bd8863145333b38c"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://cloud.google.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 6234,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3432,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://cloud.google.com/",
+          "origin": "https://cloud.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2553,
+        "before_url": {
+          "url": "https://cloud.google.com/",
+          "origin": "https://cloud.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://cloud.google.com/",
+          "origin": "https://cloud.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "5608b2e101ef6c6c30414dce1a6c810bfac64416936f97d4ace400e318df1c91",
+              "bytes": 20876,
+              "text": "- document:\n  - img \"Google Cloud logo\"\n  - heading \"The new way to cloud\" [level=1]:\n    - paragraph: The new way to cloud\n  - paragraph: Build with AI. Deploy and scale apps fast. Analyze and secure your data. Start now with $300 in free credit.\n  - link \"Get started for free\":\n    - /url: https://console.cloud.google.com/freetrial\n  - link \"Contact sales\":\n    - /url: https://cloud.google.com/contact\n  - link \"Security Outpace adversaries in the AI era with Google AI Threat Defense Agentic Defense graphic\":\n    - /url: https://cloud.google.com/security/ai-threat-defense\n    - text: Security\n    - paragraph: Outpace adversaries in the AI era with Google AI Threat Defense\n    - img \"Agentic Defense graphic\"\n  - 'link \"Top Story Gemini 4 Argon: Now available on Google Cloud Gemini 4 Argon\"':\n    - /url: https://cloud.google.com/blog/products/ai-machine-learning/gemini-4-argon-available-on-google-cloud\n    - text: Top Story\n    - paragraph: \"Gemini 4 Argon: Now available on Google Cloud\"\n    - img \"Gemini 4 Argon\"\n  - link \"AI Announcements What Google Cloud announced in AI this month AI generated image\":\n    - /url: https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month\n    - text: AI Announcements\n    - paragraph: What Google Cloud announced in AI this month\n    - img \"AI generated image\"\n  - link \"AI Infrastructure What’s new in AI infrastructure and orchestration this month AI Hypercomputer graphic\":\n    - /url: https://cloud.google.com/blog/topics/ai-infrastructure/whats-new-in-ai-infrastructure-this-month\n    - text: AI Infrastructure\n    - paragraph: What’s new in AI infrastructure and orchestration this month\n    - img \"AI Hypercomputer graphic\"\n  - link \"Customer Stories Learn how the world's leading innovators build with Gemini Illuminated modern glass enterprise campus atrium at dusk\":\n    - /url: https://cloud.google.com/customers\n    - text: Customer Stories\n    - paragraph: Learn how the world's leading innovators build with Gemini\n    - img \"Illuminated modern glass enterprise campus atrium at dusk\"\n  - 'link \"Data Cloud What’s new in the agentic Data Cloud: Powering the system of action Data Cloud graphic\"':\n    - /url: https://cloud.google.com/blog/products/data-analytics/whats-new-in-the-agentic-data-cloud\n    - text: Data Cloud\n    - paragraph: \"What’s new in the agentic Data Cloud: Powering the system of action\"\n    - img \"Data Cloud graphic\"\n  - button \"Previous\"\n  - button \"Next\"\n  - tablist:\n    - tab \"Developers\" [selected]:\n      - heading \"Developers\" [level=4]\n    - tab \"Business leaders\":\n      - heading \"Business leaders\" [level=4]\n    - tab \"Special programs\":\n      - heading \"Special programs\" [level=4]\n  - tabpanel \"Developers\":\n    - list:\n      - listitem:\n        - 'link \"bar image Product announcement Data Agent Kit: Bring Google Data Cloud to any coding agent\"':\n          - /url: https://cloud.google.com/blog/topics/developers-practitioners/data-agent-kit-is-now-ga-bring-google-data-cloud-to-any-coding-agent\n          - img \"bar image\"\n          - paragraph: Product announcement\n          - paragraph: \"Data Agent Kit: Bring Google Data Cloud to any coding agent\"\n      - listitem:\n        - link \"Build with Gemini Events Register to get hands-on experience with Gemini in a city near you\":\n          - /url: https://cloud.google.com/events/build-with-gemini-2026\n          - img \"Build with Gemini\"\n          - paragraph: Events\n          - paragraph: Register to get hands-on experience with Gemini in a city near you\n      - listitem:\n        - link \"developer tools Developer tools Introducing the developer plugin for AI coding agents\":\n          - /url: https://cloud.google.com/blog/topics/developers-practitioners/introducing-the-google-cloud-developer-plugin-for-ai-coding-agents\n          - img \"developer tools\"\n          - paragraph: Developer tools\n          - paragraph: Introducing the developer plugin for AI coding agents\n  - heading \"Build with the cloud platform designed for developers and AI\" [level=3]:\n    - paragraph: Build with the cloud platform designed for developers and AI\n  - paragraph:\n    - paragraph: Try Google Cloud with free usage of over 20 products, plus new customers get $300 in free credits on signup.\n  - link \"Get started for free\":\n    - /url: https://console.cloud.google.com/freetrial\n  - link \"See all 150+ products\":\n    - /url: https://cloud.google.com/products\n  - button \"AI and machine learning keyboard_arrow_down\":\n    - heading \"AI and machine learning\" [level=4]\n    - text: keyboard_arrow_down\n  - button \"Compute keyboard_arrow_down\":\n    - heading \"Compute\" [level=4]\n    - text: keyboard_arrow_down\n  - button \"Storage keyboard_arrow_down\":\n    - heading \"Storage\" [level=4]\n    - text: keyboard_arrow_down\n  - button \"Databases keyboard_arrow_down\":\n    - heading \"Databases\" [level=4]\n    - text: keyboard_arrow_down\n  - button \"Data analytics keyboard_arrow_down\":\n    - heading \"Data analytics\" [level=4]\n    - text: keyboard_arrow_down\n  - button \"Networking keyboard_arrow_down\":\n    - heading \"Networking\" [level=4]\n    - text: keyboard_arrow_down\n  - button \"Developer tools keyboard_arrow_down\":\n    - heading \"Developer tools\" [level=4]\n    - text: keyboard_arrow_down\n  - button \"Security keyboard_arrow_down\":\n    - heading \"Security\" [level=4]\n    - text: keyboard_arrow_down\n  - heading \"Build and scale generative AI apps and agents with Gemini platform\" [level=3]:\n    - paragraph: Build and scale generative AI apps and agents with Gemini platform\n  - paragraph:\n    - paragraph:\n      - link \"Gemini platform\":\n        - /url: https://cloud.google.com/products/gemini-enterprise-agent-platform\n      - text: is our fully-managed AI development platform to build and manage AI applications and agents, with access to Agent Studio and 200+ foundation models.\n  - link \"Get started for free\":\n    - /url: https://console.cloud.google.com/freetrial/?redirectPath=/agent-platform/overview\n  - tablist:\n    - 'tab \"Overview How to Actually Evaluate (Any) AI Agent: Beyond the Vibe Check\" [selected]'\n    - tab \"Quick Break Down Architect multi-agent systems\"\n    - tab \"The Agent Factory Podcast The ID incident, agent protection, and model security\"\n    - 'tab \"4 minute tutorial Refine your vision: A guide to AI image editing\"'\n  - link \"View more AI products\":\n    - /url: https://cloud.google.com/products/ai\n  - 'tabpanel \"Overview How to Actually Evaluate (Any) AI Agent: Beyond the Vibe Check\"':\n    - link \"Play video\":\n      - /url: https://www.youtube.com/watch?v=e8hehBcYU7E\n      - img \"Agent evals in 4 steps\"\n  - link \"Gemini Enterprise icon Securely share AI agents with your organization Try Gemini Enterprise Plus edition\":\n    - /url: https://console.cloud.google.com/freetrial?redirectPath=/gemini-enterprise\n    - img \"Gemini Enterprise icon\"\n    - text: Securely share AI agents with your organization Try Gemini Enterprise Plus edition\n  - link \"icon Get 35 learning credits at no cost on Google Skills with GEAR Join GEAR\":\n    - /url: https://developers.google.com/program/gear/?utm_source=web&utm_medium=cgc&utm_campaign=FY26-Q2-GLOBAL-GOO38926-onlineevent-er-gear-135947-web-AgentPlatform-cgchomepage&utm_content=Next26&utm_term=-\n    - img \"icon\"\n    - text: Get 35 learning credits at no cost on Google Skills with GEAR Join GEAR\n  - link \"icon Access free offers for common AI use cases View 10 free AI tools\":\n    - /url: https://cloud.google.com/use-cases/free-ai-tools\n    - img \"icon\"\n    - text: Access free offers for common AI use cases View 10 free AI tools\n  - heading \"AI innovation happens on Google Cloud\" [level=3]:\n    - paragraph: AI innovation happens on Google Cloud\n  - group:\n    - group \"Slide controls\":\n      - button \"Previous slide\" [disabled]\n      - button \"Next slide\"\n    - group \"1 of 5\":\n      - link \"Target and Google Cloud Target modernized their data infrastructure using Google Cloud to improve advertising performance. Watch video\":\n        - /url: https://www.youtube.com/watch?v=LmL-U4HSLg0\n        - img \"Target and Google Cloud\"\n        - paragraph: Target modernized their data infrastructure using Google Cloud to improve advertising performance.\n        - text: Watch video\n    - group \"2 of 5\":\n      - link \"Home Depot The Home Depot turns fragmented customer service into seamless journeys with Google Cloud Watch video\":\n        - /url: https://www.youtube.com/watch?v=c8t_KZeqfVw\n        - img \"Home Depot\"\n        - paragraph: The Home Depot turns fragmented customer service into seamless journeys with Google Cloud\n        - text: Watch video\n    - group \"3 of 5\":\n      - link \"VW logo Volkswagen uses Gemini to power its virtual assistant in the myVW app, surfacing helpful information from the owner’s manual Watch video\":\n        - /url: https://www.youtube.com/watch?v=zIzgRazXdUk&\n        - img \"VW logo\"\n        - paragraph:\n          - text: Volkswagen uses\n          - link \"Gemini\":\n            - /url: https://cloud.google.com/generative-ai-studio\n          - text: to power its virtual assistant in the myVW app, surfacing helpful information from the owner’s manual\n        - text: Watch video\n  - heading \"Solve your business problems with our industry solutions\" [level=3]:\n    - paragraph: Solve your business problems with our industry solutions\n  - paragraph:\n    - text: From improving retail\n    - link \"product discovery\":\n      - /url: https://cloud.google.com/solutions/retail-product-discovery\n    - text: to detecting\n    - link \"bank fraud\":\n      - /url: https://cloud.google.com/solutions/financial-services\n    - text: \", our industry solutions tackle your biggest challenges.\"\n  - link \"Request a demo\":\n    - /url: https://cloud.google.com/contact?direct=true\n  - tablist:\n    - tab \"Retail\" [selected]\n    - tab \"Consumer packaged goods\"\n    - tab \"Financial services\"\n    - tab \"Healthcare and life sciences\"\n    - tab \"Media and entertainment\"\n    - tab \"Telecommunications\"\n    - tab \"Gaming\"\n    - tab \"Manufacturing\"\n    - tab \"Supply chain and logistics\"\n    - tab \"Government\"\n    - tab \"Education\"\n    - tab \"Automotive\"\n  - link \"See all industries\":\n    - /url: https://cloud.google.com/solutions#section-2\n  - tabpanel \"Retail\":\n    - link \"best buy boxes 9 / top 10 retail companies trust Google Cloud Bestbuy Best Buy uses Google Cloud generative AI to power its virtual assistants, freeing up their customer care agents to troubleshoot product issues, change order delivery and schedules, and manage subscriptions. Discover what you can do with our retail solutions. Explore retail solutions\":\n      - /url: https://cloud.google.com/solutions/retail\n      - img \"best buy boxes\"\n      - text: 9 / top 10 retail companies trust Google Cloud\n      - img \"Bestbuy\"\n      - paragraph: Best Buy uses Google Cloud generative AI to power its virtual assistants, freeing up their customer care agents to troubleshoot product issues, change order delivery and schedules, and manage subscriptions. Discover what you can do with our retail solutions.\n      - text: Explore retail solutions\n  - img \"7 Eleven\"\n  - img \"Procter and Gamble\"\n  - img \"Twitter\"\n  - img \"Target\"\n  - img \"Major League Baseball\"\n  - img \"The Home Depot\"\n  - img \"AT&T\"\n  - img \"The New York Times\"\n  - link \"See more customers\":\n    - /url: https://cloud.google.com/customers\n  - button \"Pause animation\"\n  - heading \"Let’s start building your tomorrow, today\" [level=2]:\n    - paragraph: Let’s start building your tomorrow, today\n  - link \"Get started for free\":\n    - /url: https://console.cloud.google.com/freetrial\n  - link \"Contact sales\":\n    - /url: https://cloud.google.com/contact\n  - img \"Cloud logo\"\n  - button \"Ask Google Cloud\"\n  - banner:\n    - link \"Google Cloud\":\n      - /url: https://cloud.google.com/\n      - img \"Google Cloud\"\n    - navigation:\n      - link \"Overview\":\n        - /url: https://cloud.google.com/why-google-cloud\n      - link \"Solutions\":\n        - /url: https://cloud.google.com/solutions\n      - link \"Products\":\n        - /url: https://cloud.google.com/products\n      - link \"Pricing\":\n        - /url: https://cloud.google.com/pricing\n      - link \"Resources\":\n        - /url: https://cloud.google.com/docs/get-started\n    - combobox \"Search\"\n    - button \"Search\": send\n    - link \"Docs\":\n      - /url: https://cloud.google.com/docs\n    - link \"Support\":\n      - /url: https://cloud.google.com/support-hub\n    - link \"Sign in\":\n      - /url: https://accounts.google.com/AccountChooser?continue=https://cloud.google.com/&hl=en-US&prompt=select_account&service=cloudconsole\n  - contentinfo:\n    - navigation \"Footer Links\":\n      - list:\n        - listitem:\n          - heading \"Why Google\" [level=3]\n          - list:\n            - listitem:\n              - link \"Choosing Google Cloud\":\n                - /url: https://cloud.google.com/why-google-cloud\n            - listitem:\n              - link \"Trust and security\":\n                - /url: https://cloud.google.com/trust-center\n            - listitem:\n              - link \"Modern Infrastructure Cloud\":\n                - /url: https://cloud.google.com/solutions/modern-infrastructure\n            - listitem:\n              - link \"Multicloud\":\n                - /url: https://cloud.google.com/multicloud\n            - listitem:\n              - link \"Global infrastructure\":\n                - /url: https://cloud.google.com/infrastructure\n            - listitem:\n              - link \"Locations\":\n                - /url: https://cloud.google.com/about/locations\n            - listitem:\n              - link \"Customers and case studies\":\n                - /url: https://cloud.google.com/customers\n            - listitem:\n              - link \"Analyst reports\":\n                - /url: https://cloud.google.com/analyst-reports\n            - listitem:\n              - link \"Whitepapers\":\n                - /url: https://cloud.google.com/whitepapers\n            - listitem:\n              - link \"Blog\":\n                - /url: https://cloud.google.com/blog\n        - listitem:\n          - heading \"Products and pricing\" [level=3]\n          - list:\n            - listitem:\n              - link \"Google Cloud pricing\":\n                - /url: https://cloud.google.com/pricing\n            - listitem:\n              - link \"Google Workspace pricing\":\n                - /url: https://workspace.google.com/pricing.html\n            - listitem:\n              - link \"See all products\":\n                - /url: https://cloud.google.com/products\n        - listitem:\n          - heading \"Solutions\" [level=3]\n          - list:\n            - listitem:\n              - link \"Infrastructure modernization\":\n                - /url: https://cloud.google.com/solutions/infrastructure-modernization/\n            - listitem:\n              - link \"Databases\":\n                - /url: https://cloud.google.com/solutions/databases\n            - listitem:\n              - link \"Application modernization\":\n                - /url: https://cloud.google.com/solutions/application-modernization\n            - listitem:\n              - link \"Smart analytics\":\n                - /url: https://cloud.google.com/solutions/data-analytics-and-ai\n            - listitem:\n              - link \"Artificial Intelligence\":\n                - /url: https://cloud.google.com/solutions/ai\n            - listitem:\n              - link \"Security\":\n                - /url: https://cloud.google.com/solutions/security\n            - listitem:\n              - link \"Productivity & work transformation\":\n                - /url: https://workspace.google.com/enterprise\n            - listitem:\n              - link \"Industry solutions\":\n                - /url: https://cloud.google.com/solutions/#industry-solutions\n            - listitem:\n              - link \"DevOps solutions\":\n                - /url: https://cloud.google.com/devops\n            - listitem:\n              - link \"Small business solutions\":\n                - /url: https://cloud.google.com/solutions#section-14\n            - listitem:\n              - link \"See all solutions\":\n                - /url: https://cloud.google.com/solutions\n        - listitem:\n          - heading \"Resources\" [level=3]\n          - list:\n            - listitem:\n              - link \"Google Cloud Affiliate Program\":\n                - /url: https://cloud.google.com/affiliate-program\n            - listitem:\n              - link \"Google Cloud documentation\":\n                - /url: https://docs.cloud.google.com/\n            - listitem:\n              - link \"Google Cloud quickstarts\":\n                - /url: https://docs.cloud.google.com/docs/get-started/\n            - listitem:\n              - link \"Google Cloud Marketplace\":\n                - /url: https://cloud.google.com/marketplace\n            - listitem:\n              - link \"Learn about cloud computing\":\n                - /url: https://cloud.google.com/discover\n            - listitem:\n              - link \"Support\":\n                - /url: https://cloud.google.com/support-hub\n            - listitem:\n              - link \"Code samples\":\n                - /url: https://docs.cloud.google.com/docs/samples\n            - listitem:\n              - link \"Cloud Architecture Center\":\n                - /url: https://docs.cloud.google.com/architecture\n            - listitem:\n              - link \"Training\":\n                - /url: https://cloud.google.com/learn/training\n            - listitem:\n              - link \"Certifications\":\n                - /url: https://cloud.google.com/learn/certification\n            - listitem:\n              - link \"Google for Developers\":\n                - /url: https://developers.google.com\n            - listitem:\n              - link \"Google Cloud for Startups\":\n                - /url: https://cloud.google.com/startup\n            - listitem:\n              - link \"System status\":\n                - /url: https://status.cloud.google.com\n            - listitem:\n              - link \"Release Notes\":\n                - /url: https://docs.cloud.google.com/release-notes\n        - listitem:\n          - heading \"Engage\" [level=3]\n          - list:\n            - listitem:\n              - link \"Contact sales\":\n                - /url: https://cloud.google.com/contact\n            - listitem:\n              - link \"Find a Partner\":\n                - /url: https://cloud.google.com/partners\n            - listitem:\n              - link \"Become a Partner\":\n                - /url: https://cloud.google.com/partners/become-a-partner\n            - listitem:\n              - link \"Events\":\n                - /url: https://cloud.google.com/events\n            - listitem:\n              - link \"Podcasts\":\n                - /url: https://cloud.google.com/podcasts\n            - listitem:\n              - link \"Developer Center\":\n                - /url: https://cloud.google.com/developers\n            - listitem:\n              - link \"Press Corner\":\n                - /url: https://www.googlecloudpresscorner.com\n            - listitem:\n              - link \"Google Cloud on YouTube\":\n                - /url: https://www.youtube.com/googlecloud\n            - listitem:\n              - link \"Google Cloud Tech on YouTube\":\n                - /url: https://www.youtube.com/googlecloudplatform\n            - listitem:\n              - link \"Follow on X\":\n                - /url: https://x.com/googlecloud\n            - listitem:\n              - link \"Join User Research\":\n                - /url: https://userresearch.google.com/?reserved=1&utm_source=website&Q_Language=en&utm_medium=own_srch&utm_campaign=CloudWebFooter&utm_term=0&utm_content=0&productTag=clou&campaignDate=jul19&pType=devel&referral_code=jk212693\n            - listitem:\n              - link \"We're hiring. Join Google Cloud!\":\n                - /url: https://careers.google.com/cloud\n            - listitem:\n              - link \"Community forums\":\n                - /url: https://discuss.google.dev/c/google-cloud/14\n    - navigation \"Utility links\":\n      - list:\n        - listitem:\n          - link \"About Google\":\n            - /url: https://about.google\n        - listitem:\n          - text: \"|\"\n          - link \"Privacy\":\n            - /url: https://policies.google.com/privacy\n        - listitem:\n          - text: \"|\"\n          - link \"Site terms\":\n            - /url: https://policies.google.com/terms\n        - listitem:\n          - text: \"|\"\n          - link \"Google Cloud terms\":\n            - /url: https://cloud.google.com/product-terms\n        - listitem:\n          - text: \"|\"\n          - 'link \"Our third decade of climate action: join us\"':\n            - /url: https://cloud.google.com/sustainability\n        - listitem:\n          - text: Sign up for the Google Cloud newsletter\n          - link \"Subscribe\":\n            - /url: https://cloud.google.com/newsletter\n      - combobox \"‪English‬\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://cloud.google.com/",
+              "origin": "https://cloud.google.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

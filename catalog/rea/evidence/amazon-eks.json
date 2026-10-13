@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_680d5f654f1562712de2a078dad997a21e202faac0efe9d477ad4b96d663c730",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/eks/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "f13f2ea64a6472d4e75d28920d2371c3c73c9752f98300dfbe237416adf86ca0"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4883,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 2107,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/eks/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2540,
+        "before_url": {
+          "url": "https://aws.amazon.com/eks/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/eks/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "c967851cc02fb475361ac695a5ccd7f766b5240f44bdb52817355b2b3bec7e9d",
+              "bytes": 12866,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - tooltip \"Feedback\"\n  - main:\n    - paragraph: Amazon EKS\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /eks/\n      - button \"Features submenu\": Features\n      - listitem:\n        - link \"Pricing\":\n          - /url: /eks/pricing/\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /eks/getting-started/\n      - listitem:\n        - link \"Customers\":\n          - /url: /eks/customers/\n      - listitem:\n        - link \"FAQs\":\n          - /url: /eks/faqs/\n      - listitem:\n        - link \"Partners\":\n          - /url: /eks/partners/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Containers\":\n            - /url: /containers/\n        - listitem: Amazon EKS\n    - heading \"Amazon Elastic Kubernetes Service\" [level=1]\n    - paragraph: Build, run, and scale production-ready Kubernetes applications easily across any environment\n    - button \"Get started with Amazon EKS\"\n    - button \"Register for Amazon EKS Workshop\"\n    - heading \"Benefits of Amazon EKS\" [level=2]\n    - heading \"Accelerate innovation\" [level=3]:\n      - button \"Accelerate innovation\"\n    - heading \"Optimize cost and performance\" [level=3]:\n      - button \"Optimize cost and performance\"\n    - heading \"Enhance availability, reliability, and security\" [level=3]:\n      - button \"Enhance availability, reliability, and security\"\n    - heading \"Run Kubernetes in any environment\" [level=3]:\n      - button \"Run Kubernetes in any environment\"\n    - heading \"Why Amazon EKS?\" [level=2]\n    - paragraph:\n      - text: Amazon Elastic Kubernetes Service (Amazon EKS) enables teams of any size or skill level to build, run, and scale production-ready applications easily across any environment. With\n      - link \"Amazon EKS Auto Mode\":\n        - /url: /eks/auto-mode/\n      - text: \", you can fully automate Kubernetes cluster management for compute, storage, and networking with a single click. Amazon EKS empowers you to leverage open source innovations and the breadth of AWS services while benefitting from the robust availability, reliability, and security of AWS infrastructure. Whether you are deploying AI/ML workloads, modernizing existing applications, or building new cloud-native applications, Amazon EKS enables you to optimize for performance and cost, and provides a consistent experience across cloud, on-premises, and edge environments. Join industry leaders from financial services, healthcare, media & entertainment, and software who trust Amazon EKS to run their mission-critical containerized applications while reducing operational overhead and accelerating innovation.\"\n    - button \"Play:\" [disabled]\n    - img \"Missing alt text value\"\n    - heading \"Use cases\" [level=2]\n    - heading \"Deploy generative AI applications\" [level=3]:\n      - button \"Deploy generative AI applications\"\n    - heading \"Build internal development platforms\" [level=3]:\n      - button \"Build internal development platforms\"\n    - heading \"Deploy data platforms\" [level=3]:\n      - button \"Deploy data platforms\"\n    - heading \"Deploy and run distributed hybrid applications\" [level=3]:\n      - button \"Deploy and run distributed hybrid applications\"\n    - heading \"Migrate and modernize applications\" [level=3]:\n      - button \"Migrate and modernize applications\"\n    - heading \"Customers\" [level=2]\n    - link \"Missing alt text value Sony Interactive Entertainment Unifies Platform on EKS, achieving 5x Faster Deployments & 60% Lower Operational Costs Read the case study\":\n      - /url: /solutions/case-studies/sony-eks-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Sony Interactive Entertainment Unifies Platform on EKS, achieving 5x Faster Deployments & 60% Lower Operational Costs\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Accelerating Pipeline Build Time by 95% Using Amazon EKS with Jaguar Land Rover Automotive Read the case study\":\n      - /url: /solutions/case-studies/jlr-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Accelerating Pipeline Build Time by 95% Using Amazon EKS with Jaguar Land Rover Automotive\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Riot Games Cuts $10M Annual Infrastructure Costs by Migrating to Amazon EKS Read the case study\":\n      - /url: /solutions/case-studies/riot-games-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Riot Games Cuts $10M Annual Infrastructure Costs by Migrating to Amazon EKS\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Liquid Analytics Delivers Near Real-Time Analytics Powered by Amazon EKS and DuckDB Read the case study\":\n      - /url: /solutions/case-studies/liquid-analytics-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Liquid Analytics Delivers Near Real-Time Analytics Powered by Amazon EKS and DuckDB\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Omi scales AI powered 3D rendering solution, reducing costs by 70% on Amazon EKS Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/omi-eks-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Omi scales AI powered 3D rendering solution, reducing costs by 70% on Amazon EKS\" [level=3]\n      - text: Read the case study\n    - heading \"Next Steps\" [level=2]\n    - link \"Workshop Start building with the online workshop Start the workshop\":\n      - /url: https://www.eksworkshop.com/\n      - text: Workshop\n      - heading \"Start building with the online workshop\" [level=3]\n      - text: Start the workshop\n    - link \"Contact us Connect with an expert Explore support options\":\n      - /url: /contact-us/?pg=ln&sec=hs\n      - text: Contact us\n      - heading \"Connect with an expert\" [level=3]\n      - text: Explore support options\n    - link \"Documentation Amazon EKS Best Practices Guide View the documentation\":\n      - /url: https://docs.aws.amazon.com/eks/latest/best-practices/introduction.html\n      - text: Documentation\n      - heading \"Amazon EKS Best Practices Guide\" [level=3]\n      - text: View the documentation\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /eks/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /eks/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/eks/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

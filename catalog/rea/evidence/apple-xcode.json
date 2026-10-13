@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_4d2894a8d05f2c0cc81884c157110b10aec39d04ad28a39aca469f4c6d43b1a5",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://developer.apple.com/xcode/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "62877908253b836a77f0e6cd623dfa98edea088b966a79b6d21d7d5f9566cf68"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://developer.apple.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4504,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1771,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://developer.apple.com/xcode/",
+          "origin": "https://developer.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2531,
+        "before_url": {
+          "url": "https://developer.apple.com/xcode/",
+          "origin": "https://developer.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://developer.apple.com/xcode/",
+          "origin": "https://developer.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "0e589ea518940c07c970ddc2b364ca1512fdfebd964b877f1cff84783bfdb2dd",
+              "bytes": 15558,
+              "text": "- document:\n  - navigation \"Global\":\n    - list:\n      - listitem:\n        - link \"Apple Developer\":\n          - /url: /\n      - listitem:\n        - list:\n          - listitem:\n            - link \"Get Started\":\n              - /url: /get-started/\n          - listitem:\n            - button \"Get Started menu\":\n              - img\n        - list:\n          - listitem:\n            - link \"Platforms\":\n              - /url: /platforms/\n          - listitem:\n            - button \"Platforms menu\":\n              - img\n        - list:\n          - listitem:\n            - link \"Technologies\":\n              - /url: /technologies/\n          - listitem:\n            - button \"Technologies menu\":\n              - img\n        - list:\n          - listitem:\n            - link \"Community\":\n              - /url: /community/\n          - listitem:\n            - button \"Community menu\":\n              - img\n        - list:\n          - listitem:\n            - link \"Documentation\":\n              - /url: /documentation/\n          - listitem:\n            - button \"Documentation menu\":\n              - img\n        - list:\n          - listitem:\n            - link \"Downloads\":\n              - /url: /download/\n          - listitem:\n            - button \"Downloads menu\":\n              - img\n        - list:\n          - listitem:\n            - link \"Support\":\n              - /url: /support/\n          - listitem:\n            - button \"Support menu\":\n              - img\n      - listitem:\n        - button \"Search\":\n          - img\n      - listitem:\n        - link \"Sign in\":\n          - /url: /login/?return=%2Fxcode%2F\n  - navigation:\n    - heading \"Xcode\" [level=2]:\n      - link \"Xcode\":\n        - /url: /xcode/\n    - list:\n      - listitem:\n        - link \"Overview\" [disabled]:\n          - /url: /xcode/\n      - listitem:\n        - link \"What’s New\":\n          - /url: /xcode/whats-new/\n      - listitem:\n        - link \"Resources\":\n          - /url: /xcode/resources/\n    - link \"Download \":\n      - /url: \"#\"\n    - menu:\n      - menuitem \"Xcode betas\"\n      - menuitem \"Xcode\"\n  - main:\n    - heading \"Xcode\" [level=1]\n    - paragraph: Xcode offers the tools you need to develop, test, and distribute apps for Apple platforms, including generative intelligence powered by frontier coding agents and models, advanced profiling and debugging tools, and simulators for Apple devices.\n    - figure\n    - heading \"What’s new in Xcode 27\" [level=4]\n    - paragraph: Bring your ideas to life faster using coding agents in Xcode, powered by the model of your choice. Customize Xcode to the way you work. Manage all your devices in one place with Device Hub. Refine your apps further with updates to performance and testing tools. And bring your app to even more people around the world with enhancements to localization.\n    - paragraph:\n      - link \"Learn more \":\n        - /url: /xcode/whats-new/\n    - heading \"Coding intelligence\" [level=3]\n    - heading \"Leverage coding models and agents in Xcode\" [level=2]\n    - paragraph:\n      - text: Xcode supports interacting with code using the\n      - link \"model of your choice\":\n        - /url: /documentation/Xcode/setting-up-coding-intelligence\n      - text: \", including the frontier coding models and agents from Anthropic, Google, and OpenAI. You can also add any agent compatible with the Agent Client Protocol and extend Xcode with your own skills and tools using the Model Context Protocol.\"\n    - heading \"Preview\" [level=3]\n    - heading \"Iterate quickly and preview while you work\" [level=2]\n    - paragraph: With Xcode Previews, you can quickly visualize the changes you make in your views in the preview canvas.\n    - paragraph: Add previews to your SwiftUI, UIKit, and AppKit views using the preview macro, then configure how you want your previews to display using Xcode’s preview canvas, or programmatically in code. When you select the live or interactive preview option, your view appears and interacts just like it would on a device or simulator. And in select mode, the preview displays a snapshot of your view so you can interact with your view’s UI elements in the canvas.\n    - paragraph: Selecting a control in the preview highlights the corresponding line of code in the source editor. You can also adjust device settings to control how a preview displays, including in Dark Mode, landscape orientation, or different sized text.\n    - heading \"Device Hub\" [level=3]\n    - heading \"Prototype on every device, all from your Mac\" [level=2]\n    - paragraph: Device Hub enables rapid prototyping and testing of your app on both physical devices and simulators, with dynamic resizing and adjustable appearance. Whether you’re optimizing for the latest device or maintaining legacy compatibility, Device Hub ensures your app delivers a seamless experience across every screen.\n    - heading \"Test\" [level=3]\n    - heading \"Measure, update, observe\" [level=2]\n    - paragraph:\n      - text: Xcode includes resources that can help you test your code, catch issues early, and deliver high-quality apps and games. With the\n      - link \"Swift Testing\":\n        - /url: /documentation/testing\n      - text: framework, you can write unit tests that take advantage of the powerful and expressive language capabilities of Swift. And if you already have tests written with\n      - link \"XCTest\":\n        - /url: /documentation/xctest\n      - text: \", you can run them side by side with newer tests that were written with Swift Testing to help you migrate tests incrementally, at your own pace. XCTest lets you write UI tests that control your app’s UI using\"\n      - link \"XCUIAutomation\":\n        - /url: /documentation/xcuiautomation\n      - text: . And XCTest includes built-in support for performance measurement, so you can ensure your app is running as efficiently as possible.\n    - heading \"Automate\" [level=3]\n    - heading \"Continuously build, test, and deliver your apps\" [level=2]\n    - paragraph: Xcode Cloud is a continuous integration and delivery service built into Xcode and designed expressly for Apple developers. It accelerates the development and delivery of high-quality apps by bringing together cloud-based tools that help you build apps, run automated tests in parallel, deliver apps to testers, and view and manage user feedback.\n    - heading \"Debug\" [level=3]\n    - heading \"Find and fix bugs\" [level=2]\n    - paragraph: Xcode is packed with tools that help you inspect your app, isolate bugs, find crashes, identify bottlenecks, and more.\n    - paragraph: The Xcode debugger provides a clear look into your app’s behaviors. You can pause execution at specified breakpoints, inspect memory usage to find leaks, and monitor variables to identify when their values change. And the Xcode Organizer allows you to manage your app’s development from start to finish — including testing, debugging, building, and deploying.\n    - paragraph: You can also analyze anonymized performance data from your app’s users to assess launch times, memory usage, UI responsiveness, battery impact, and more.\n    - heading \"Optimize\" [level=3]\n    - heading \"Get real-time insights\" [level=2]\n    - paragraph: Instruments takes app performance to the next level, providing real-time insights that help you deliver a smooth and responsive experience. With Instruments, you can compare CPU, disk, memory, and GPU performance as graphical tracks over time; identify performance bottlenecks, then dive deep into the code to uncover the cause; analyze your app directly, or sample the entire system with very little overhead; and create custom instruments with unique visualizations to analyze your own code and frameworks.\n  - contentinfo \"Developer Footer\":\n    - heading \"Developer Footer\" [level=2]\n    - list:\n      - listitem: Features are subject to change. Some capabilities and services may not be available in all regions or all languages; some feature availability may vary due to local laws and regulations.\n    - navigation \"Breadcrumbs\":\n      - link \"Apple\":\n        - /url: https://www.apple.com/\n      - list:\n        - listitem:\n          - link \"Developer\":\n            - /url: /\n        - listitem: Xcode\n    - navigation \"Apple Developer Directory\":\n      - heading \"Platforms\" [level=3]\n      - list:\n        - listitem:\n          - link \"iOS\":\n            - /url: /ios/\n        - listitem:\n          - link \"iPadOS\":\n            - /url: /ipados/\n        - listitem:\n          - link \"macOS\":\n            - /url: /macos/\n        - listitem:\n          - link \"tvOS\":\n            - /url: /tvos/\n        - listitem:\n          - link \"visionOS\":\n            - /url: /visionos/\n        - listitem:\n          - link \"watchOS\":\n            - /url: /watchos/\n        - listitem:\n          - link \"App Store\":\n            - /url: /app-store/\n      - heading \"Tools\" [level=3]\n      - list:\n        - listitem:\n          - link \"Swift\":\n            - /url: /swift/\n        - listitem:\n          - link \"SwiftUI\":\n            - /url: /swiftui/\n        - listitem:\n          - link \"Swift Playground\":\n            - /url: /swift-playground/\n        - listitem:\n          - link \"TestFlight\":\n            - /url: /testflight/\n        - listitem:\n          - link \"Xcode\":\n            - /url: /xcode/\n        - listitem:\n          - link \"Xcode Cloud\":\n            - /url: /xcode-cloud/\n        - listitem:\n          - link \"Icon Composer\":\n            - /url: /icon-composer/\n        - listitem:\n          - link \"SF Symbols\":\n            - /url: /sf-symbols/\n      - heading \"Technologies\" [level=3]\n      - list:\n        - listitem:\n          - link \"Accessibility\":\n            - /url: /documentation/accessibility/\n        - listitem:\n          - link \"Accessories\":\n            - /url: /accessories/\n        - listitem:\n          - link \"AI & Machine Learning\":\n            - /url: /machine-learning/\n        - listitem:\n          - link \"Apple In-App Purchase\":\n            - /url: /in-app-purchase/\n        - listitem:\n          - link \"Apple Intelligence\":\n            - /url: /apple-intelligence/\n        - listitem:\n          - link \"Audio & Video\":\n            - /url: /audio/\n        - listitem:\n          - link \"Augmented Reality\":\n            - /url: /augmented-reality/\n        - listitem:\n          - link \"Business\":\n            - /url: /business/\n        - listitem:\n          - link \"Design\":\n            - /url: /design/\n        - listitem:\n          - link \"Distribution\":\n            - /url: /distribute/\n        - listitem:\n          - link \"Education\":\n            - /url: /education/\n        - listitem:\n          - link \"Games\":\n            - /url: /games/\n        - listitem:\n          - link \"Health & Fitness\":\n            - /url: /health-fitness/\n        - listitem:\n          - link \"Localization\":\n            - /url: /localization/\n        - listitem:\n          - link \"Maps & Location\":\n            - /url: /maps/\n        - listitem:\n          - link \"Security\":\n            - /url: /security/\n        - listitem:\n          - link \"Safari & Web\":\n            - /url: /safari/\n      - heading \"Resources\" [level=3]\n      - list:\n        - listitem:\n          - link \"Documentation\":\n            - /url: /documentation/\n        - listitem:\n          - link \"Downloads\":\n            - /url: /download/\n        - listitem:\n          - link \"Sample Code\":\n            - /url: /documentation/samplecode/\n        - listitem:\n          - link \"Videos\":\n            - /url: /videos/\n        - listitem:\n          - link \"Documentation Archive\":\n            - /url: /library/archive/navigation/\n      - heading \"Support\" [level=3]\n      - list:\n        - listitem:\n          - link \"Help Guides & Articles\":\n            - /url: /help/\n        - listitem:\n          - link \"Contact Us\":\n            - /url: /contact/\n        - listitem:\n          - link \"Forums\":\n            - /url: /forums/\n        - listitem:\n          - link \"Feedback & Bug Reporting\":\n            - /url: /bug-reporting/\n        - listitem:\n          - link \"System Status\":\n            - /url: /system-status/\n      - heading \"Account\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple Developer\":\n            - /url: /account/\n        - listitem:\n          - link \"App Store Connect\":\n            - /url: https://appstoreconnect.apple.com/\n        - listitem:\n          - link \"Certificates, IDs, & Profiles\":\n            - /url: /account/ios/certificate/\n        - listitem:\n          - link \"Feedback Assistant\":\n            - /url: https://feedbackassistant.apple.com/\n      - heading \"Programs\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple Developer Program\":\n            - /url: /programs/\n        - listitem:\n          - link \"Apple Developer Enterprise Program\":\n            - /url: /programs/enterprise/\n        - listitem:\n          - link \"App Store Small Business Program\":\n            - /url: /app-store/small-business-program/\n        - listitem:\n          - link \"MFi Program\":\n            - /url: https://mfi.apple.com/\n        - listitem:\n          - link \"Mini Apps Partner Program\":\n            - /url: /programs/mini-apps-partner/\n        - listitem:\n          - link \"News Partner Program\":\n            - /url: /programs/news-partner/\n        - listitem:\n          - link \"Video Partner Program\":\n            - /url: /programs/video-partner/\n        - listitem:\n          - link \"Security Bounty Program\":\n            - /url: /security-bounty/\n        - listitem:\n          - link \"Security Research Device Program\":\n            - /url: /programs/security-research-device/\n      - heading \"Events\" [level=3]\n      - list:\n        - listitem:\n          - link \"Meet with Apple\":\n            - /url: /events/\n        - listitem:\n          - link \"Apple Developer Centers\":\n            - /url: /events/developer-centers/\n        - listitem:\n          - link \"App Store Awards\":\n            - /url: /app-store/app-store-awards/\n        - listitem:\n          - link \"Apple Design Awards\":\n            - /url: /design/awards/\n        - listitem:\n          - link \"Apple Developer Academies\":\n            - /url: /academies/\n        - listitem:\n          - link \"WWDC\":\n            - /url: /wwdc/\n    - text: Read the\n    - link \"latest news\":\n      - /url: /news/\n    - text: . Get the\n    - link \"Apple Developer app\":\n      - /url: https://apps.apple.com/us/app/apple-developer/id640199958\n    - text: . Follow us on\n    - link \"bilibili\":\n      - /url: https://space.bilibili.com/429911174\n    - text: \",\"\n    - link \"LinkedIn\":\n      - /url: https://www.linkedin.com/showcase/appledeveloper/\n    - text: \",\"\n    - link \"WeChat\":\n      - /url: https://mp.weixin.qq.com/s/slhQ1RBYUpJ71gwEUlwSTg\n    - text: \", and\"\n    - link \"YouTube\":\n      - /url: https://www.youtube.com/@AppleDeveloper\n    - text: .\n    - radiogroup \"Select a color scheme preference\":\n      - radio \"Light\"\n      - text: Light\n      - radio \"Dark\"\n      - text: Dark\n      - radio \"Auto\" [checked]\n      - text: Auto\n    - combobox \"Language Dropdown\":\n      - option \"English\" [selected]\n      - option \"简体中文\"\n      - option \"日本語\"\n      - option \"한국어\"\n    - text: Copyright © 2026\n    - link \"Apple Inc.\":\n      - /url: https://www.apple.com\n    - text: All rights reserved.\n    - link \"Terms of Use\":\n      - /url: https://www.apple.com/legal/internet-services/terms/site.html\n    - link \"Privacy Policy\":\n      - /url: https://www.apple.com/legal/privacy/\n    - link \"Agreements and Guidelines\":\n      - /url: /support/terms/"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://developer.apple.com/xcode/",
+              "origin": "https://developer.apple.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

@@ -84,6 +84,38 @@ in short, a spec states why the gap is real, the alternatives considered, the
 MVP scope and explicit non-goals, an architecture sketch, and **testable**
 acceptance criteria, all grounded in the product's dossier.
 
+## REA web-surface reports
+
+`catalog/rea/` holds an automated reverse-engineering observation of each
+product's **public web surface**, produced with [REA](https://github.com/morluto/rea)
+(`rea-agents`).
+
+```
+catalog/rea/
+├── README.md                       index (per company) + method
+├── <company_id>/<product_id>.md    one report per product
+└── evidence/<product_id>.json      the raw REA Evidence, for provenance
+```
+
+Each report records the target, the resolved URL, the page title, the observed
+headings, landmarks, links and controls, REA's own limitations, and the Evidence
+ID. It is generated, not hand-written:
+
+```bash
+npm run rea:catalog                       # every catalog product (needs Chrome)
+node tools/rea-catalog.mjs --company google
+node tools/rea-catalog.mjs --only netflix-streaming --wait 6000
+```
+
+**Scope:** REA analyses concrete targets — binaries, app bundles, websites — not
+product concepts. Without the vendors' artifacts, the only available target is
+each product's public `official_url`, captured through REA's Playwright browser
+scenario provider. Only public, unauthenticated pages are observed; no login and
+no access-control bypass. Reports therefore describe the **web surface at capture
+time**, not the product's internals, and a few targets are consent walls or app
+shells rather than the product itself. Raw evidence is kept so any claim can be
+re-checked.
+
 ## Company record (`catalog/companies.json`)
 
 An object keyed by `company_id`. Fields: `id`, `name`, `common_name`,

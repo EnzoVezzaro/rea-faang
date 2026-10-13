@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_d99e81bf8c94ed8e76f683ebc831d49b53a3a17bfe6952fe9a535c625d264f04",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://firebase.google.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "3b02d2baafc1f3700395bd83d696923f2c5d2ab37f18b54ae8ea3473bfcf6b8f"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://firebase.google.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 6593,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3790,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://firebase.google.com/",
+          "origin": "https://firebase.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2540,
+        "before_url": {
+          "url": "https://firebase.google.com/",
+          "origin": "https://firebase.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://firebase.google.com/",
+          "origin": "https://firebase.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "b22501a05eca5424e5cbaa7968509fa71c77122c2b87472f366b721351af1674",
+              "bytes": 15116,
+              "text": "- document:\n  - link \"Skip to main content\":\n    - /url: \"#main-content\"\n  - banner:\n    - link \"Firebase\":\n      - /url: /\n      - img \"Firebase\"\n    - navigation \"Upper tabs\":\n      - link \"Build\":\n        - /url: https://firebase.google.com/products-build\n      - button \"Dropdown menu for Build\": arrow_drop_down\n      - link \"Run\":\n        - /url: https://firebase.google.com/products-run\n      - button \"Dropdown menu for Run\": arrow_drop_down\n      - link \"Solutions\":\n        - /url: https://firebase.google.com/solutions\n      - button \"Dropdown menu for Extended Navigation\": arrow_drop_down More\n    - combobox \"Search\"\n    - 'button \"Appearance: Light theme\"': light_mode\n    - button \"Language\"\n    - link \"Blog\":\n      - /url: //firebase.blog\n    - link \"Go to console\":\n      - /url: //console.firebase.google.com\n    - link \"Sign in\":\n      - /url: https://firebase.google.com/_d/signin?continue=https%3A%2F%2Ffirebase.google.com%2F&prompt=select_account\n  - main:\n    - navigation \"On this page\"\n    - article:\n      - navigation\n      - main:\n        - heading \"Get $300 to unlock all Firebase features\" [level=5]\n        - paragraph: Create a Billing Account and instantly get $300 in credit to spend on services you need to build and run AI apps, including hosting, scaling storage, running event triggers, and more.\n        - link \"Get Started\":\n          - /url: https://console.cloud.google.com/freetrial?om=fb&redirectPath=https://console.firebase.google.com/project/_/overview?purchaseBillingPlan=metered&redirectWithId=true&flow=firebaseMetered&accountNameKey=firebase\n        - heading \"Make your app the best it can be with Firebase and generative AI\" [level=1]\n        - text: Firebase is a platform of services to help you and AI agents build and run intelligent apps with more speed, security, and scalability. Designed for the complete app development lifecycle, backed by Google, and trusted by millions of businesses around the world.\n        - link \"Get started in console\":\n          - /url: https://console.firebase.google.com/\n        - text: Build Get to market quickly and securely with products that can scale globally\n        - paragraph: Build AI-powered experiences into your apps and accelerate app development with managed infrastructure, powered by Google Cloud, so you can focus on what matters most.\n        - list:\n          - listitem:\n            - link \"App Hosting\":\n              - /url: /products/app-hosting\n              - text: App Hosting\n              - img\n          - listitem:\n            - link \"SQL Connect\":\n              - /url: /products/sql-connect\n              - text: SQL Connect\n              - img\n          - listitem:\n            - link \"Firebase AI Logic\":\n              - /url: /products/firebase-ai-logic\n              - text: Firebase AI Logic\n              - img\n        - link \"View all Build products\":\n          - /url: /products-build\n        - text: Run Run your app with confidence and deliver the best experience for your users\n        - paragraph: Launch, monitor, and iterate with AI-assistive tools that help you optimize your app's quality and experience.\n        - list:\n          - listitem:\n            - link \"App Distribution\":\n              - /url: /products/app-distribution\n              - text: App Distribution\n              - img\n          - listitem:\n            - link \"Crashlytics\":\n              - /url: /products/crashlytics\n              - text: Crashlytics\n              - img\n          - listitem:\n            - link \"Remote Config\":\n              - /url: /products/remote-config\n              - text: Remote Config\n              - img\n        - link \"View all Run products\":\n          - /url: /products-run\n        - link \"Agent Skills icon Agent Skills\":\n          - /url: /docs/ai-assistance/agent-skills\n          - img \"Agent Skills icon\"\n          - text: Agent Skills\n        - link \"Firebase AI Logic icon Firebase AI Logic\":\n          - /url: /products/firebase-ai-logic\n          - img \"Firebase AI Logic icon\"\n          - text: Firebase AI Logic\n        - text: Generative AI\n        - heading \"Easily integrate Firebase with Gemini and the latest AI technology from Google\" [level=3]\n        - link \"View generative AI options\":\n          - /url: /products/generative-ai\n        - text: More Google and third-party integrations\n        - heading \"Easily integrate Firebase with your team's favorite tools.\" [level=3]\n        - link \"Flutterlogo Flutter\":\n          - /url: https://flutter.dev/\n          - img \"Flutterlogo\"\n          - text: Flutter\n        - link \"Google Adslogo Google Ads\":\n          - /url: https://ads.google.com/home/campaigns/app-ads/\n          - img \"Google Adslogo\"\n          - text: Google Ads\n        - link \"AdMoblogo AdMob\":\n          - /url: /firebase-and-admob\n          - img \"AdMoblogo\"\n          - text: AdMob\n        - link \"Google Marketing Platformlogo Google Marketing Platform\":\n          - /url: https://support.google.com/firebase/answer/7392275\n          - img \"Google Marketing Platformlogo\"\n          - text: Google Marketing Platform\n        - link \"Google Playlogo Google Play\":\n          - /url: https://support.google.com/firebase/answer/6392038\n          - img \"Google Playlogo\"\n          - text: Google Play\n        - link \"Data Studiologo Data Studio\":\n          - /url: https://support.google.com/datastudio/answer/7259176\n          - img \"Data Studiologo\"\n          - text: Data Studio\n        - link \"BigQuerylogo BigQuery\":\n          - /url: https://support.google.com/firebase/answer/6318765\n          - img \"BigQuerylogo\"\n          - text: BigQuery\n        - link \"Slacklogo Slack\":\n          - /url: /docs/crashlytics/alerts-basic-integrations#slack\n          - img \"Slacklogo\"\n          - text: Slack\n        - link \"Jiralogo Jira\":\n          - /url: /docs/crashlytics/alerts-basic-integrations#jira\n          - img \"Jiralogo\"\n          - text: Jira\n        - link \"Android Studiologo Android Studio\":\n          - /url: https://developer.android.com/studio/debug/app-quality-insights\n          - img \"Android Studiologo\"\n          - text: Android Studio\n        - link \"Learn more\":\n          - /url: /integrations\n        - heading \"Easy to integrate on iOS, Android, and the Web\" [level=3]\n        - paragraph: Firebase provides cross-platform app development SDKs, to help you build and run apps for Apple platforms, Android, the Web, Flutter, Unity, and C++.\n        - link \"View developer docs\":\n          - /url: /docs\n        - iframe\n        - text: News & events\n        - heading \"Keep up to date on everything Firebase\" [level=3]\n        - link \"View all news\":\n          - /url: https://firebase.blog/\n        - link \"- Building an iOS app in 6 hours with Firebase and Antigravity\":\n          - /url: https://firebase.blog/posts/2026/09/build-ios-app-firebase-antigravity\n          - heading \"Building an iOS app in 6 hours with Firebase and Antigravity\" [level=3]\n        - paragraph: We built a production-ready iOS app with Firebase, including authentication, Firestore, Cloud Messaging, Cloud Functions and App Check, in just six hours using Google's Antigravity coding agent.\n        - link \"Read more - Building an iOS app in 6 hours with Firebase and Antigravity\":\n          - /url: https://firebase.blog/posts/2026/09/build-ios-app-firebase-antigravity\n          - text: Read more arrow_forward\n        - link \"- Google Analytics for Firebase iOS SDK outage on September 28, 2026\":\n          - /url: https://firebase.blog/posts/2026/10/firebase-analytics-outage\n          - heading \"Google Analytics for Firebase iOS SDK outage on September 28, 2026\" [level=3]\n        - paragraph: Google's response to the Firebase iOS SDK outage on September 28, 2026.\n        - link \"Read more - Google Analytics for Firebase iOS SDK outage on September 28, 2026\":\n          - /url: https://firebase.blog/posts/2026/10/firebase-analytics-outage\n          - text: Read more arrow_forward\n        - 'link \"YouTube - September 2026: Firebase Spend Caps, Replay Protection, Authentication Event Triggers, & more\"':\n          - /url: https://www.youtube.com/watch?v=uIc811A-KT0&authuser=1\n          - 'heading \"September 2026: Firebase Spend Caps, Replay Protection, Authentication Event Triggers, & more\" [level=3]'\n        - paragraph: Get the top 6 updates from Firebase for September 2026! In this edition of the Firebase Release Notes, Roger covers everything from Firebase Spend Caps and Remote Config pricing updates to Firebase AI Logic and Firebase Authentication triggers.\n        - 'link \"View video - September 2026: Firebase Spend Caps, Replay Protection, Authentication Event Triggers, & more\"':\n          - /url: https://www.youtube.com/watch?v=uIc811A-KT0&authuser=1\n          - text: View video arrow_forward\n        - heading \"Trusted by the largest apps and games\" [level=3]\n        - paragraph: Development teams around the world—including NPR, Halfbrick, Duolingo, and Venmo—use Firebase to build and ship their modern apps.\n        - img \"The New York Times\"\n        - img \"NPR One\"\n        - img \"Halfbrick\"\n        - img \"Duolingo\"\n        - img \"Alibaba\"\n        - img \"Todoist\"\n        - img \"Venmo\"\n        - img \"The Economist\"\n        - img \"Trivago\"\n        - img \"Ctrip\"\n        - img \"Wattpad\"\n        - img \"Gameloft\"\n        - text: Common use cases\n        - paragraph: Use Firebase products together to solve complex app development challenges and optimize your app experience. Learn how to personalize your onboarding flow, grow user engagement, or add new functionality with Firebase.\n        - link \"View solutions\":\n          - /url: /solutions\n        - img \"Common use cases\"\n        - img\n        - text: Try Firebase today\n        - paragraph: Integrating it into your app is easy.\n        - link \"Get started\":\n          - /url: https://console.firebase.google.com/\n        - heading \"All Firebase products\" [level=4]\n        - heading \"Build\" [level=5]\n        - list:\n          - listitem:\n            - link \"App Check\":\n              - /url: /products/app-check\n          - listitem:\n            - link \"App Hosting\":\n              - /url: /products/app-hosting\n          - listitem:\n            - link \"Authentication\":\n              - /url: /products/auth\n          - listitem:\n            - link \"Cloud Functions\":\n              - /url: /products/functions\n          - listitem:\n            - link \"Cloud Storage\":\n              - /url: /products/storage\n          - listitem:\n            - link \"SQL Connect\":\n              - /url: /products/sql-connect\n          - listitem:\n            - link \"Extensions\":\n              - /url: /products/extensions\n          - listitem:\n            - link \"Firestore\":\n              - /url: /products/firestore\n          - listitem:\n            - link \"Hosting\":\n              - /url: /products/hosting\n          - listitem:\n            - link \"Phone Number Verification\":\n              - /url: /products/phone-number-verification\n          - listitem:\n            - link \"Realtime Database\":\n              - /url: /products/realtime-database\n          - listitem:\n            - link \"Firebase AI Logic\":\n              - /url: /products/firebase-ai-logic\n        - link \"Generative AI\":\n          - /url: /products/generative-ai\n        - heading \"Run\" [level=5]\n        - list:\n          - listitem:\n            - link \"A/B Testing\":\n              - /url: /products/ab-testing\n          - listitem:\n            - link \"App Distribution\":\n              - /url: /products/app-distribution\n          - listitem:\n            - link \"Cloud Messaging\":\n              - /url: /products/cloud-messaging\n          - listitem:\n            - link \"Crashlytics\":\n              - /url: /products/crashlytics\n          - listitem:\n            - link \"Google Analytics\":\n              - /url: /products/analytics\n          - listitem:\n            - link \"In-App Messaging\":\n              - /url: /products/in-app-messaging\n          - listitem:\n            - link \"Performance Monitoring\":\n              - /url: /products/performance\n          - listitem:\n            - link \"Remote Config\":\n              - /url: /products/remote-config\n          - listitem:\n            - link \"Test Lab\":\n              - /url: /products/test-lab\n  - navigation \"Footer links\":\n    - list:\n      - listitem:\n        - heading \"Learn\" [level=3]\n        - list:\n          - listitem:\n            - link \"Developer guides\":\n              - /url: /docs/\n          - listitem:\n            - link \"SDK & API reference\":\n              - /url: /docs/reference/\n          - listitem:\n            - link \"Samples\":\n              - /url: /docs/samples/\n          - listitem:\n            - link \"Libraries\":\n              - /url: /docs/libraries/\n          - listitem:\n            - link \"GitHub\":\n              - /url: //github.com/firebase/\n      - listitem:\n        - heading \"Stay connected\" [level=3]\n        - list:\n          - listitem:\n            - link \"Check out the blog\":\n              - /url: //firebase.blog\n          - listitem:\n            - link \"Find us on Reddit\":\n              - /url: //www.reddit.com/r/Firebase\n          - listitem:\n            - link \"Follow on X\":\n              - /url: //x.com/Firebase\n          - listitem:\n            - link \"Subscribe on YouTube\":\n              - /url: //www.youtube.com/user/Firebase\n          - listitem:\n            - link \"Attend an event\":\n              - /url: /community/events\n      - listitem:\n        - heading \"Support\" [level=3]\n        - list:\n          - listitem:\n            - link \"Contact support\":\n              - /url: /support/\n          - listitem:\n            - link \"Stack Overflow\":\n              - /url: //stackoverflow.com/questions/tagged/firebase\n          - listitem:\n            - link \"Google group\":\n              - /url: //groups.google.com/forum/#!forum/firebase-talk\n          - listitem:\n            - link \"Release notes\":\n              - /url: /support/releases\n          - listitem:\n            - link \"Brand guidelines\":\n              - /url: /brand-guidelines/\n          - listitem:\n            - link \"FAQs\":\n              - /url: /support/faq/\n  - navigation \"Other Google Developers websites\":\n    - link \"Google Developers\":\n      - /url: https://developers.google.com/\n      - img \"Google Developers\"\n    - list:\n      - listitem:\n        - link \"Android\":\n          - /url: //developer.android.com\n      - listitem:\n        - link \"Chrome\":\n          - /url: //developer.chrome.com/home\n      - listitem:\n        - link \"Firebase\":\n          - /url: //firebase.google.com\n      - listitem:\n        - link \"Google Cloud Platform\":\n          - /url: //cloud.google.com\n      - listitem:\n        - link \"All products\":\n          - /url: //developers.google.com/products/\n  - navigation \"Utility links\":\n    - list:\n      - listitem:\n        - link \"Terms\":\n          - /url: /terms/\n      - listitem:\n        - text: \"|\"\n        - link \"Privacy\":\n          - /url: //policies.google.com/privacy\n    - button \"Language\"\n  - toolbar \"Side panel menu\":\n    - button \"Chat\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://firebase.google.com/",
+              "origin": "https://firebase.google.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

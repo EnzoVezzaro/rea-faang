@@ -31,6 +31,8 @@ It does not yet contain finished product implementations — see
   `catalog/manifests/faang.json`).
 - **16 specification scaffolds** under `products/<company>/<product>/specs/` — the
   ten-file structure exists, but the files are still placeholders.
+- A **REA web-surface catalog** (`catalog/rea/`) — one reverse-engineering report
+  per product, captured with [REA](https://github.com/morluto/rea).
 - A working **ACE** (`ace-proagents`) agent environment wired at the repository
   root and in every product workspace.
 

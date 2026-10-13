@@ -15,6 +15,7 @@
     "ace": "node ace.mjs",
     "validate": "node src/cli.js research validate && node src/cli.js alternatives validate && node src/cli.js opportunities validate",
     "gaps": "node src/cli.js gaps all",
+    "rea:catalog": "node tools/rea-catalog.mjs",
     "test": "node --test tests/",
     "verify": "node src/cli.js research validate && node --test tests/",
     "govern": "node ace.mjs govern",

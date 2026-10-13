@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_7a2edeb45a7f7ed84725fe2b7bd84fbf67dd4caeafaa7e68a91990220c2a008d",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.apple.com/numbers/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "eac9d4c7095b73039e902d8713cde302002766692a17f471272cf1c37f94ea88"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://www.apple.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4673,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1929,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://support.apple.com/numbers",
+          "origin": "https://support.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2531,
+        "before_url": {
+          "url": "https://support.apple.com/numbers",
+          "origin": "https://support.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://support.apple.com/numbers",
+          "origin": "https://support.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "8856f524770ada69a361d7c9a9a4641348a375abc14bfcd991af7e3a0b7ae3eb",
+              "bytes": 8802,
+              "text": "- document:\n  - navigation \"Global\":\n    - list:\n      - listitem:\n        - link \"Apple\":\n          - /url: https://www.apple.com\n      - listitem:\n        - list:\n          - listitem:\n            - link \"Store\":\n              - /url: https://www.apple.com/us/store\n          - listitem:\n            - button \"Store menu\"\n        - list:\n          - listitem:\n            - link \"Mac\":\n              - /url: https://www.apple.com/mac/\n          - listitem:\n            - button \"Mac menu\"\n        - list:\n          - listitem:\n            - link \"iPad\":\n              - /url: https://www.apple.com/ipad/\n          - listitem:\n            - button \"iPad menu\"\n        - list:\n          - listitem:\n            - link \"iPhone\":\n              - /url: https://www.apple.com/iphone/\n          - listitem:\n            - button \"iPhone menu\"\n        - list:\n          - listitem:\n            - link \"Watch\":\n              - /url: https://www.apple.com/watch/\n          - listitem:\n            - button \"Watch menu\"\n        - list:\n          - listitem:\n            - link \"Vision\":\n              - /url: https://www.apple.com/apple-vision-pro/\n          - listitem:\n            - button \"Vision menu\"\n        - list:\n          - listitem:\n            - link \"AirPods\":\n              - /url: https://www.apple.com/airpods/\n          - listitem:\n            - button \"AirPods menu\"\n        - list:\n          - listitem:\n            - link \"Home\":\n              - /url: https://www.apple.com/home/\n          - listitem:\n            - button \"Home menu\"\n        - list:\n          - listitem:\n            - link \"Entertainment\":\n              - /url: https://www.apple.com/entertainment/\n          - listitem:\n            - button \"Entertainment menu\"\n        - list:\n          - listitem:\n            - link \"Accessories\":\n              - /url: https://www.apple.com/us/shop/goto/buy_accessories\n          - listitem:\n            - button \"Accessories menu\"\n        - list:\n          - listitem:\n            - link \"Support\":\n              - /url: /\n          - listitem:\n            - button \"Support menu\"\n      - listitem:\n        - button \"Search Support\"\n      - listitem:\n        - button \"Shopping Bag\"\n  - main:\n    - heading \"Numbers Support\" [level=1]\n    - heading \"Let Numbers do the math\" [level=3]\n    - paragraph: Create formulas that perform calculations or manipulate data with hundreds of built-in functions.\n    - link \"Learn how to use formulas and functions\":\n      - /url: /en-us/guide/functions/welcome/web\n    - heading \"Create and use categories\" [level=3]\n    - paragraph: Quickly organize and summarize tables to gain new insights into your data.\n    - link \"Learn how to use categories\":\n      - /url: /en-us/guide/numbers/tan7e3e9a388/mac\n    - heading \"Use and manage templates\" [level=3]\n    - paragraph:\n      - link \"Create a custom template\":\n        - /url: /en-us/guide/numbers-iphone/tan57e4f9f9c/ios\n      - text: that you can reuse, and share files with others.\n    - heading \"Convert and share\" [level=3]\n    - paragraph:\n      - text: Share Numbers spreadsheets by converting them to compatible formats like Microsoft Excel, CSV, and PDF. Learn how to convert Numbers spreadsheets on your\n      - link \"Mac\":\n        - /url: /en-us/guide/numbers/send-a-spreadsheet-tan368d49f8b/mac#tan0eb830f5a\n      - text: \",\"\n      - link \"iPad\":\n        - /url: /en-us/guide/numbers-ipad/send-a-spreadsheet-tan368d49f8b/ipados#taneaaa3f970\n      - text: \", or\"\n      - link \"iPhone\":\n        - /url: /en-us/guide/numbers-iphone/send-a-spreadsheet-tan368d49f8b/ios#taneaaa3f970\n      - text: .\n    - paragraph\n    - heading \"Apple Creator Studio\" [level=3]\n    - paragraph:\n      - text: One subscription gets you all the creativity and productivity apps you need to do your best work. Subscribe or manage your subscription on\n      - link \"Mac\":\n        - /url: /en-us/guide/numbers/tan98fadd2e0/mac\n      - text: \",\"\n      - link \"iPad\":\n        - /url: /en-us/guide/numbers-ipad/tan98fadd2e0/ipados\n      - text: \", or\"\n      - link \"iPhone\":\n        - /url: /en-us/guide/numbers-iphone/tan98fadd2e0/ios\n      - text: .\n    - paragraph:\n      - link \"Explore Apple Creator Studio \":\n        - /url: /en-us/125029\n    - heading \"Resources\" [level=2]\n    - heading \"User Guides\" [level=3]\n    - paragraph:\n      - text: Learn about features and discover all that Numbers can do on your\n      - link \"Mac\":\n        - /url: /en-us/guide/numbers\n      - text: \",\"\n      - link \"iPad\":\n        - /url: /en-us/guide/numbers-ipad\n      - text: \", or\"\n      - link \"iPhone\":\n        - /url: /en-us/guide/numbers-iphone\n      - text: .\n    - heading \"Numbers for iCloud\" [level=3]\n    - paragraph:\n      - text: Create or edit spreadsheets on a web browser with\n      - link \"Numbers for iCloud\":\n        - /url: /en-us/guide/numbers-icloud\n      - text: .\n    - heading \"Search for more topics\" [level=2]\n    - text: Search Support\n    - textbox \"Search Support\"\n    - button \"Submit\" [disabled]\n    - heading \"Apple Communities\" [level=3]\n    - paragraph: Find answers, ask questions, and connect with other Apple users.\n    - link \"Ask or search now\":\n      - /url: https://discussions.apple.com/community/applications-services\n    - heading \"Still need help?\" [level=3]\n    - paragraph: Tell us more and we’ll guide you to a solution.\n    - link \"Get started\":\n      - /url: https://getsupport.apple.com/?caller=psp\n    - heading \"Support app\" [level=3]\n    - paragraph: Get personalized access to solutions for your Apple products.\n    - link \"Download the Apple Support app\":\n      - /url: https://apps.apple.com/us/app/apple-support/id1130498044?pt=2003&ct=support.numbers&mt=8&l=en\n  - contentinfo \"Apple Footer\":\n    - heading \"Apple Footer\" [level=2]\n    - navigation \"Breadcrumbs\":\n      - link \"Apple\":\n        - /url: https://www.apple.com\n      - list:\n        - listitem:\n          - link \"Support\":\n            - /url: /\n        - listitem: Numbers\n    - navigation \"Apple Directory\":\n      - heading \"Product Support\" [level=3]\n      - list:\n        - listitem:\n          - link \"iPhone Support\":\n            - /url: /iphone\n        - listitem:\n          - link \"Mac Support\":\n            - /url: /mac\n        - listitem:\n          - link \"iPad Support\":\n            - /url: /ipad\n        - listitem:\n          - link \"Watch Support\":\n            - /url: /watch\n        - listitem:\n          - link \"Apple Vision Pro Support\":\n            - /url: /apple-vision-pro\n        - listitem:\n          - link \"AirPods Support\":\n            - /url: /airpods\n        - listitem:\n          - link \"TV Support\":\n            - /url: /tv\n        - listitem:\n          - link \"Support Site Map\":\n            - /url: /sitemap\n      - heading \"Service and Repair\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple Repair Options\":\n            - /url: /repair\n        - listitem:\n          - link \"Service and Repair Information\":\n            - /url: /repair-products\n        - listitem:\n          - link \"AppleCare Products\":\n            - /url: http://www.apple.com/support/products/\n        - listitem:\n          - link \"Hardware Warranties\":\n            - /url: https://www.apple.com/legal/warranty/\n        - listitem:\n          - link \"Software License Agreements\":\n            - /url: https://www.apple.com/legal/sla/\n        - listitem:\n          - link \"Complimentary Support\":\n            - /url: /complimentary\n      - heading \"Resources\" [level=3]\n      - list:\n        - listitem:\n          - link \"My Support\":\n            - /url: /en-us/my-support\n        - listitem:\n          - link \"Product Documentation\":\n            - /url: /en-us/docs\n        - listitem:\n          - link \"Apple Support Videos\":\n            - /url: https://www.youtube.com/applesupport\n        - listitem:\n          - link \"Accessibility\":\n            - /url: /accessibility\n      - heading \"Connect\" [level=3]\n      - list:\n        - listitem:\n          - link \"Contact Us\":\n            - /url: /contact\n        - listitem:\n          - link \"Support app\":\n            - /url: https://apps.apple.com/us/app/apple-support/id1130498044?pt=2003&ct=support.footer&mt=8&l=en\n        - listitem:\n          - link \"Apple Communities\":\n            - /url: https://discussions.apple.com\n    - link \"United States. Choose your country or region\":\n      - /url: /choose-country-region\n      - text: United States\n    - text: Copyright © 2026 Apple Inc. All rights reserved.\n    - link \"Privacy Policy\":\n      - /url: https://www.apple.com/legal/privacy/\n    - link \"Terms of Use\":\n      - /url: https://www.apple.com/legal/\n    - link \"Sales and Refunds\":\n      - /url: https://www.apple.com/shop/goto/help/sales_refunds\n    - link \"Site Map\":\n      - /url: https://www.apple.com/sitemap/"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://support.apple.com/numbers",
+              "origin": "https://support.apple.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

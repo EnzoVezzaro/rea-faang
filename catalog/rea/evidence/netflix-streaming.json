@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_ce771cfc0eb32389548eb43ce294121604ed2ea892ef495a01ac03ef3120c6f6",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.netflix.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "455a0c136be16412cb97aa66285d4ac611be93346914f50223c9c009e7ad39c0"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://www.netflix.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 6379,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3599,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.netflix.com/",
+          "origin": "https://www.netflix.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2537,
+        "before_url": {
+          "url": "https://www.netflix.com/",
+          "origin": "https://www.netflix.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.netflix.com/",
+          "origin": "https://www.netflix.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "ad7382ddf5a5dcc456e252cfc67bbb4677cfcff293567d47f758065ddcf1b6ed",
+              "bytes": 5235,
+              "text": "- document:\n  - banner:\n    - text: Netflix Select Language\n    - combobox \"Select Language\":\n      - option \"English\" [selected]\n      - option \"Español\"\n    - link \"Sign In\":\n      - /url: /login\n  - heading \"Unlimited movies, TV shows, and more\" [level=1]\n  - paragraph: Starts at $8.99. Cancel anytime.\n  - form \"Sign up or restart your membership with Netflix.\":\n    - heading \"Ready to watch? Enter your email to create or restart your membership.\" [level=3]\n    - text: Email address\n    - textbox \"Email address\"\n    - button \"Get Started\"\n  - img\n  - heading \"The Netflix you love for just $8.99.\" [level=3]\n  - paragraph: Get our most affordable, ad-supported plan.\n  - button \"Learn More\"\n  - heading \"Trending Now\" [level=2]\n  - list:\n    - listitem:\n      - button \"Doing Life 1\"\n    - listitem:\n      - button \"A Different World 2\"\n    - listitem:\n      - button \"Why Did I Get Married Again? 3\"\n    - listitem:\n      - button \"Animals 4\"\n    - listitem:\n      - button \"Below 5\"\n    - listitem:\n      - 'button \"Monster: The Lizzie Borden Story 6\"'\n    - listitem:\n      - button \"Beauty in Black 7\"\n    - listitem:\n      - button \"East of Eden 8\"\n    - listitem:\n      - button \"Haunted Hotel 9\"\n    - listitem:\n      - button \"Tires 10\"\n  - heading \"More Reasons to Join\" [level=2]\n  - heading \"Enjoy on your TV\" [level=3]\n  - paragraph: Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.\n  - img\n  - heading \"Download your shows to watch offline\" [level=3]\n  - paragraph: Save your favorites easily and always have something to watch.\n  - img\n  - heading \"Watch everywhere\" [level=3]\n  - paragraph: Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV.\n  - img\n  - heading \"Create profiles for kids\" [level=3]\n  - paragraph: Send kids on adventures with their favorite characters in a space made just for them — free with your membership.\n  - img\n  - heading \"Frequently Asked Questions\" [level=2]\n  - list:\n    - listitem:\n      - heading \"What is Netflix?\" [level=3]:\n        - button \"What is Netflix?\"\n    - listitem:\n      - heading \"How much does Netflix cost?\" [level=3]:\n        - button \"How much does Netflix cost?\"\n    - listitem:\n      - heading \"Where can I watch?\" [level=3]:\n        - button \"Where can I watch?\"\n    - listitem:\n      - heading \"How do I cancel?\" [level=3]:\n        - button \"How do I cancel?\"\n    - listitem:\n      - heading \"What can I watch on Netflix?\" [level=3]:\n        - button \"What can I watch on Netflix?\"\n    - listitem:\n      - heading \"Is Netflix good for kids?\" [level=3]:\n        - button \"Is Netflix good for kids?\"\n  - form \"Sign up or restart your membership with Netflix.\":\n    - heading \"Ready to watch? Enter your email to create or restart your membership.\" [level=3]\n    - text: Email address\n    - textbox \"Email address\"\n    - button \"Get Started\"\n  - contentinfo:\n    - paragraph:\n      - text: Questions? Call\n      - link \"1-844-569-7700\":\n        - /url: tel:1-844-569-7700\n    - list:\n      - listitem:\n        - link \"FAQ\":\n          - /url: https://help.netflix.com/support/412\n      - listitem:\n        - link \"Help Center\":\n          - /url: https://help.netflix.com\n      - listitem:\n        - link \"Account\":\n          - /url: /youraccount\n      - listitem:\n        - link \"Netflix House\":\n          - /url: https://www.netflixhouse.com/\n      - listitem:\n        - link \"Media Center\":\n          - /url: https://media.netflix.com/\n      - listitem:\n        - link \"Investor Relations\":\n          - /url: http://ir.netflix.com/\n      - listitem:\n        - link \"Jobs\":\n          - /url: https://jobs.netflix.com/jobs\n      - listitem:\n        - link \"Netflix Shop\":\n          - /url: https://netflix.shop/\n      - listitem:\n        - link \"Redeem Gift Cards\":\n          - /url: /redeem\n      - listitem:\n        - link \"Buy Gift Cards\":\n          - /url: /gift-cards\n      - listitem:\n        - link \"Ways to Watch\":\n          - /url: /watch\n      - listitem:\n        - link \"Terms of Use\":\n          - /url: https://help.netflix.com/legal/termsofuse\n      - listitem:\n        - link \"Privacy\":\n          - /url: https://help.netflix.com/legal/privacy\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: \"#\"\n      - listitem:\n        - link \"Corporate Information\":\n          - /url: https://help.netflix.com/legal/corpinfo\n      - listitem:\n        - link \"Contact Us\":\n          - /url: https://help.netflix.com/contactus\n      - listitem:\n        - link \"Speed Test\":\n          - /url: https://fast.com\n      - listitem:\n        - link \"Legal Notices\":\n          - /url: https://help.netflix.com/legal/notices\n      - listitem:\n        - link \"Only on Netflix\":\n          - /url: https://www.netflix.com/browse/genre/839338\n      - listitem:\n        - link \"Do Not Sell or Share My Personal Information\":\n          - /url: https://www.netflix.com/dnsspi\n      - listitem:\n        - link \"Ad Choices\":\n          - /url: https://netflix.com/adchoices-us\n    - text: Select Language\n    - combobox \"Select Language\":\n      - option \"English\" [selected]\n      - option \"Español\"\n    - paragraph: This page is protected by Google reCAPTCHA to ensure you're not a bot."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.netflix.com/",
+              "origin": "https://www.netflix.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

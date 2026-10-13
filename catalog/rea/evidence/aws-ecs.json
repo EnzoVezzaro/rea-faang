@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_30ff92fcf5a954e857654d0158042913f06b69fb68f5398c883fcb736f28d9dd",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/ecs/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "896323777a0548cef3ed67b505060f15c58a942fa4d4c40eaf2f53273bf9b685"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 6008,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3241,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/ecs/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2538,
+        "before_url": {
+          "url": "https://aws.amazon.com/ecs/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/ecs/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "a6e980c36913af1bac78e476d96a73c907db0be6f401230105419b0238c6323f",
+              "bytes": 12687,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - main:\n    - paragraph: Amazon Elastic Container Service\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /ecs/\n      - button \"Features submenu\": Features\n      - listitem:\n        - link \"Pricing\":\n          - /url: /ecs/pricing/\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /ecs/getting-started/\n      - listitem:\n        - link \"Resources\":\n          - /url: /ecs/resources/\n      - listitem:\n        - link \"Customers\":\n          - /url: /ecs/customers/\n      - listitem:\n        - link \"Partners\":\n          - /url: /ecs/partners/\n      - listitem:\n        - link \"FAQs\":\n          - /url: /ecs/faqs/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Compute\":\n            - /url: /products/compute/\n        - listitem: Amazon Elastic Container Service\n    - heading \"Amazon Elastic Container Service\" [level=1]\n    - paragraph: Easily build, manage, and run containerized applications at any scale\n    - button \"Get started with Amazon ECS\"\n    - button \"Sign up for an Amazon ECS workshop\"\n    - heading \"Why Amazon ECS?\" [level=2]\n    - paragraph: Amazon ECS is a fully managed container orchestration service that enables teams to build, manage, and run even the most demanding containerized workloads without the complexity of infrastructure management, freeing up development teams to innovate faster. Amazon ECS empowers you to leverage AWS best practices to drive well-architected outcomes of availability, reliability, and performance while strengthening security through application isolation, IAM roles, automated patching, encrypted ephemeral storage, and native AWS security integrations. With pay-as-you-go pricing, efficient resource utilization and offloading operational tasks, Amazon ECS reduces total cost of ownership so development teams can focus on delivering business value.\n    - button \"Play:\"\n    - img \"Missing alt text value\"\n    - heading \"Benefits of Amazon ECS\" [level=2]\n    - paragraph\n    - heading \"Simplify container management at any scale\" [level=3]:\n      - button \"Simplify container management at any scale\"\n    - heading \"Drive high performance, availability, and reliability\" [level=3]:\n      - button \"Drive high performance, availability, and reliability\"\n    - heading \"Strengthen application security\" [level=3]:\n      - button \"Strengthen application security\"\n    - heading \"Reduce TCO\" [level=3]:\n      - button \"Reduce TCO\"\n    - heading \"Use cases\" [level=2]\n    - paragraph\n    - heading \"Application Modernization\" [level=3]:\n      - button \"Application Modernization\"\n    - heading \"Batch Processing\" [level=3]:\n      - button \"Batch Processing\"\n    - heading \"Generative AI\" [level=3]:\n      - button \"Generative AI\"\n    - heading \"Data Processing\" [level=3]:\n      - button \"Data Processing\"\n    - heading \"Hybrid Deployments\" [level=3]:\n      - button \"Hybrid Deployments\"\n    - heading \"Customers\" [level=2]\n    - link \"Missing alt text value Learn how United Airlines was able to quickly scale a new feature on its mobile application to respond to surges in customer usage using Amazon ECS with AWS Fargate\":\n      - /url: https://aws.amazon.com/solutions/case-studies/united-airlines-ecs-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Learn how United Airlines was able to quickly scale a new feature on its mobile application to respond to surges in customer usage using Amazon ECS with AWS Fargate\" [level=3]\n    - link \"Missing alt text value Learn how the PGA TOUR built a novel ML-powered analytics model delivering Win, Cut Probability analytics across multiple platforms using Amazon ECS with AWS Fargate\":\n      - /url: https://aws.amazon.com/solutions/case-studies/pga-tour-ecs-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Learn how the PGA TOUR built a novel ML-powered analytics model delivering Win, Cut Probability analytics across multiple platforms using Amazon ECS with AWS Fargate\" [level=3]\n    - link \"Missing alt text value Learn how Smartsheet boosts deployment frequency and engineering throughput using Amazon ECS and AWS Fargate Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/smartsheet-ecs-fargate-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Learn how Smartsheet boosts deployment frequency and engineering throughput using Amazon ECS and AWS Fargate\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Transforming Infrastructure Management Using AWS with Gordian Read the Gordian case study\":\n      - /url: /solutions/case-studies/gordian-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Transforming Infrastructure Management Using AWS with Gordian\" [level=3]\n      - text: Read the Gordian case study\n    - link \"Missing alt text value Learn how financial operations company BILL refactored its infrastructure and supported growth using Amazon ECS with AWS Fargate. Read the BILL case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/bill-ecs-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Learn how financial operations company BILL refactored its infrastructure and supported growth using Amazon ECS with AWS Fargate.\" [level=3]\n      - text: Read the BILL case study\n    - heading \"Get started with Amazon ECS\" [level=2]\n    - link \"Discover how Amazon ECS works Explore Amazon ECS features\":\n      - /url: /ecs/features/\n      - heading \"Discover how Amazon ECS works\" [level=2]\n      - text: Explore Amazon ECS features\n    - link \"Explore hands-on training Check out tutorials and guides\":\n      - /url: /ecs/getting-started/\n      - heading \"Explore hands-on training\" [level=2]\n      - text: Check out tutorials and guides\n    - link \"Connect with an expert Contact sales\":\n      - /url: /contact-us/sales-support/?pg=ln&sec=gs\n      - heading \"Connect with an expert\" [level=2]\n      - text: Contact sales\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /ecs/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /ecs/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/ecs/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

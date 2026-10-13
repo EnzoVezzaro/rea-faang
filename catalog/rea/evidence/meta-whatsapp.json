@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_5073e54921a52ed3d2811b82bad647e35edab7dbe6fea66ec1de8dd0161e13b5",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.whatsapp.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "dcf6702e2fa64ea137684c21650ae07671b328b49966b521f4f8110f6f45fc03"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://www.whatsapp.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4361,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1599,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.whatsapp.com/",
+          "origin": "https://www.whatsapp.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2546,
+        "before_url": {
+          "url": "https://www.whatsapp.com/",
+          "origin": "https://www.whatsapp.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.whatsapp.com/",
+          "origin": "https://www.whatsapp.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "3c02e75205b1b97c474d9e2af499d3d10ab117f36647c33f00a8eca8e321a15c",
+              "bytes": 8791,
+              "text": "- document:\n  - banner:\n    - link \"WhatsApp's homepage\":\n      - /url: https://www.whatsapp.com/\n      - img \"WhatsApp.com\":\n        - img\n    - button \"Features\":\n      - text: Features\n      - img\n    - link \"Privacy feature on WhatsApp\":\n      - /url: https://www.whatsapp.com/privacy\n      - text: Privacy\n    - link \"Blog on WhatsApp\":\n      - /url: https://blog.whatsapp.com/\n      - text: Blog\n    - link \"Available apps on WhatsApp\":\n      - /url: https://www.whatsapp.com/download\n      - text: Apps\n    - link \"WhatsApp Help Center\":\n      - /url: https://faq.whatsapp.com/\n      - text: Help Center\n      - img\n    - link \"Business feature on WhatsApp\":\n      - /url: https://whatsappbusiness.com/\n      - text: For Business\n      - img\n    - link \"Log in to the WhatsApp app\":\n      - /url: https://web.whatsapp.com/\n      - text: Log In\n      - img\n    - link \"Download the WhatsApp app\":\n      - /url: https://web.whatsapp.com/desktop/mac_native/release/?configuration=Release\n      - text: Download\n      - img\n  - img \"woman in the city stopping to look at the messages on her phone\"\n  - heading \"Message privately\" [level=1]\n  - paragraph: Simple, reliable, private messaging and calling for free*, available all over the world.\n  - img \"example of text bubble on whatsapp reading still on for studying\"\n  - img \"thumbs up, heart, glasses emoji reaction to a message on whatsapp\"\n  - img \"secure text on whatsapp platform reading ready when you are\"\n  - article:\n    - heading \"Create an account\" [level=4]\n    - paragraph:\n      - text: Enter your phone number Message and data rates may apply. Read our\n      - link \"WhatsApp Privacy Policy\":\n        - /url: https://www.whatsapp.com/legal/privacy-policy\n        - text: Privacy Policy\n      - text: and click “Get started” to accept the\n      - link \"WhatsApp Terms of Service\":\n        - /url: https://www.whatsapp.com/legal/terms-of-service\n        - text: Terms of Service\n      - text: .\n    - text: 🇺🇸 +1\n    - textbox \"Phone number input box\"\n    - button \"Get started\" [disabled]:\n      - text: Get started\n      - img\n    - paragraph:\n      - text: Already have an account?\n      - link \"Login to WhatsApp Web\":\n        - /url: https://web.whatsapp.com/\n        - text: Log in\n        - img\n  - paragraph: \"* Data charges may apply. Contact your provider for details.\"\n  - img \"screenshot of whatsapp incoming video call on web\"\n  - heading \"New! Call on WhatsApp Web\" [level=2]\n  - paragraph: Now you can make and receive video or voice calls — one-on-one or in groups — right from your browser.\n  - link \"Learn about voice and video calls\":\n    - /url: https://web.whatsapp.com/\n    - text: Try it\n    - img\n  - img \"bubbles of text saying hello in different languages with individual users icons\"\n  - heading \"With private messaging and calling, you can be yourself, speak freely and feel close to the most important people in your life no matter where they are.\" [level=2]\n  - img \"bubbles of text saying hello in different languages with individual users icons\"\n  - heading \"Never miss a moment with voice and video calls\" [level=2]\n  - paragraph: From a group call to classmates to a quick call with mom, feel like you’re in the same room with voice and video calls.\n  - link \"Learn about voice and video calls\":\n    - /url: https://www.whatsapp.com/calling\n    - text: Learn more\n    - img\n  - img \"screenshot of end to end encrypted video call of user connecting with their family through video\"\n  - img \"screenshot of end to end encrypted video call of user connecting with their family through video\"\n  - heading \"Speak freely\" [level=2]\n  - paragraph: With end-to-end encryption on WhatsApp, your personal messages and calls are secured with a lock. Only you and the person you're talking to can read or listen to them, and no one else, not even WhatsApp\n  - link \"Learn about end-to-end encryption\":\n    - /url: https://www.whatsapp.com/privacy\n    - text: Learn more\n    - img\n  - heading \"Keep in touch with your groups\" [level=2]\n  - paragraph: Whether it's planning an outing with friends or simply staying on top of your family chats, group conversations should feel effortless.\n  - link \"Learn about communities\":\n    - /url: https://www.whatsapp.com/community\n    - text: Learn more\n    - img\n  - img \"screenshot of whatsapp feature group conversation including photo and message exchange\"\n  - img \"screenshot of whatsapp group customized to be called best friend group\"\n  - img \"whatsapp feature showing users status using happy face and heart sticker with location tagged as pebble beach\"\n  - img \"whatsapp user profile image of happy lady laughing\"\n  - heading \"Say what you feel\" [level=2]\n  - paragraph: Express yourself without words. Use stickers and GIFs or share everyday moments on Status. Record a voice message for a quick hello or a longer story.\n  - link \"Learn about messaging\":\n    - /url: https://www.whatsapp.com/messaging\n    - text: Learn more\n    - img\n  - heading \"Transform your business\" [level=2]\n  - paragraph: WhatsApp Business helps you reach your customers globally to deliver compelling experiences at scale. Showcase your products and services, increase sales, and build relationships all with WhatsApp.\n  - link \"Learn about whatsapp business\":\n    - /url: https://whatsappbusiness.com/\n    - text: Learn more\n    - img\n  - img \"screenshot of whatsapp business showing an online grocery store with products for sale\"\n  - contentinfo:\n    - link \"WhatsApp's homepage\":\n      - /url: https://www.whatsapp.com/\n      - img \"WhatsApp Main Logo\"\n    - link \"Download WhatsApp directly to your device\":\n      - /url: https://web.whatsapp.com/desktop/mac_native/release/?configuration=Release\n      - text: Download\n      - img\n    - heading \"What we do\" [level=4]\n    - list:\n      - listitem:\n        - link \"Features\":\n          - /url: https://www.whatsapp.com/calling\n      - listitem:\n        - link \"WhatsApp Blogs for our latest announcements\":\n          - /url: https://blog.whatsapp.com/\n          - text: Blog\n      - listitem:\n        - link \"WhatsApp's security features\":\n          - /url: https://www.whatsapp.com/security\n          - text: Security\n      - listitem:\n        - link \"For Business\":\n          - /url: https://whatsappbusiness.com/\n    - heading \"Who we are\" [level=4]\n    - list:\n      - listitem:\n        - link \"WhatsApp's mission statement\":\n          - /url: https://www.whatsapp.com/about\n          - text: About us\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.metacareers.com/jobs?divisions[0]=WhatsApp\n      - listitem:\n        - link \"Visit WhatsApp's brand center\":\n          - /url: https://www.facebook.com/brand/resources/whatsapp/whatsapp-brand\n          - text: Brand Center\n      - listitem:\n        - link \"WhatsApp's privacy features\":\n          - /url: https://www.whatsapp.com/privacy\n          - text: Privacy\n    - heading \"Use WhatsApp\" [level=4]\n    - list:\n      - listitem:\n        - link \"Mobile\":\n          - /url: https://www.whatsapp.com/download/mobile\n      - listitem:\n        - link \"Desktop\":\n          - /url: https://www.whatsapp.com/download/desktop\n      - listitem:\n        - link \"Tablet\":\n          - /url: https://www.whatsapp.com/download/tablet\n      - listitem:\n        - link \"Login to WhatsApp Web\":\n          - /url: https://web.whatsapp.com/\n          - text: WhatsApp Web\n    - heading \"Need help?\" [level=4]\n    - list:\n      - listitem:\n        - link \"Get WhatsApp support\":\n          - /url: https://www.whatsapp.com/contact\n          - text: Contact Us\n      - listitem:\n        - link \"WhatsApp Help Center homepage\":\n          - /url: https://faq.whatsapp.com/\n          - text: Help Center\n      - listitem:\n        - link \"Download WhatsApp\":\n          - /url: https://www.whatsapp.com/download\n          - text: Apps\n      - listitem:\n        - link \"WhatsApp's latest security advisories\":\n          - /url: https://www.whatsapp.com/security/advisories\n          - text: Security Advisories\n    - paragraph: 2026 © WhatsApp LLC\n    - link \"WhatsApp legal policies\":\n      - /url: https://www.whatsapp.com/legal/\n      - text: Terms & Privacy Policy\n    - link \"Sitemap\":\n      - /url: https://www.whatsapp.com/sitemap\n    - link \"Twitter\":\n      - /url: https://x.com/whatsapp\n      - img\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/channel/UCAuerig2N-RZWJT8x75V9yw\n      - img\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/whatsapp/?hl=en\n      - img\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/profile.php?id=100064758844406\n      - img\n    - link \"Threads\":\n      - /url: https://www.threads.com/@whatsapp\n      - img\n    - button \"English\":\n      - text: English\n      - img"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.whatsapp.com/",
+              "origin": "https://www.whatsapp.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

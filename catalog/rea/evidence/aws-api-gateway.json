@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_bf18af6d11361611756a7a4f6a3dfca6bcdbdcd26ad39c62b07aac884d165ee8",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/api-gateway/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "a3590b1add9d10bc96502c58a1cf7f841b635406bf883161451069708afb0bb1"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4610,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1873,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/api-gateway/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2534,
+        "before_url": {
+          "url": "https://aws.amazon.com/api-gateway/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/api-gateway/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "8abf361f853a2faab4f115d56b8296451c1e6e72e09c19bde1715c6c5a8b8086",
+              "bytes": 14033,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - tooltip \"Feedback\"\n  - main:\n    - paragraph: Amazon API Gateway\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /api-gateway/\n      - listitem:\n        - link \"Features\":\n          - /url: /api-gateway/features/\n      - listitem:\n        - link \"Pricing\":\n          - /url: /api-gateway/pricing/\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /api-gateway/getting-started/\n      - listitem:\n        - link \"Resources\":\n          - /url: /api-gateway/resources/\n      - listitem:\n        - link \"FAQs\":\n          - /url: /api-gateway/faqs/\n      - listitem:\n        - link \"Partners\":\n          - /url: /api-gateway/partners/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Networking and Content Delivery\":\n            - /url: /products/networking/\n        - listitem: Amazon API Gateway\n    - heading \"Amazon API Gateway\" [level=1]\n    - paragraph: Create, maintain, and secure APIs at any scale\n    - button \"Get started with API Gateway\"\n    - heading \"Why API Gateway?\" [level=2]\n    - paragraph: Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale. APIs act as the \"front door\" for applications to access data, business logic, or functionality from your backend services. Using API Gateway, you can create RESTful APIs and WebSocket APIs that enable real-time two-way communication applications. API Gateway supports containerized and serverless workloads, as well as web applications. API Gateway offers Portals that enables you to create fully managed, AWS-native developer portals for your APIs. With API Gateway Portals, you can centrally discover, document, and govern your REST APIs across your AWS infrastructure.\n    - paragraph: API Gateway handles all the tasks involved in accepting and processing up to hundreds of thousands of concurrent API calls, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management. API Gateway has no minimum fees or startup costs. You pay for the API calls you receive and the amount of data transferred out and, with the API Gateway tiered pricing model, you can reduce your cost as your API usage scales.\n    - heading \"RESTful APIs\" [level=2]\n    - paragraph:\n      - text: Build RESTful APIs optimized for serverless workloads and HTTP backends using HTTP APIs.\n      - link \"HTTP APIs\":\n        - /url: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api.html\n      - text: are the best choice for building APIs that only require API proxy functionality. If your APIs require API proxy functionality and API management features in a single solution, API Gateway also offers\n      - link \"REST APIs\":\n        - /url: https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html\n      - text: .\n    - heading \"WEBSOCKET APIs\" [level=2]\n    - paragraph:\n      - text: Build real-time two-way communication applications, such as chat apps and streaming dashboards, with\n      - link \"WebSocket APIs\":\n        - /url: https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-websocket-api-overview.html\n      - text: . API Gateway maintains a persistent connection to handle message transfer between your backend service and your clients.\n    - list:\n      - listitem:\n        - link \"Benefits 6\":\n          - /url: /api-gateway/#benefits--11s368y\n    - heading \"Benefits\" [level=3]\n    - button \"Open all\"\n    - heading \"Efficient API development\" [level=4]:\n      - button \"Efficient API development\"\n    - heading \"Performance at any scale\" [level=4]:\n      - button \"Performance at any scale\"\n    - heading \"Cost savings at scale\" [level=4]:\n      - button \"Cost savings at scale\"\n    - heading \"Easy monitoring\" [level=4]:\n      - button \"Easy monitoring\"\n    - heading \"Flexible security controls\" [level=4]:\n      - button \"Flexible security controls\"\n    - heading \"RESTful API options\" [level=4]:\n      - button \"RESTful API options\"\n    - heading \"WirelessCar\" [level=2]\n    - paragraph: Learn how connected mobility provider WirelessCar enhanced startup performance using AWS Lambda SnapStart for Java.\n    - paragraph:\n      - link \"Read the Case Study\":\n        - /url: /solutions/case-studies/wirelesscar-lambda-snapstart-case-study/\n    - img \"WirelessCar logo with the text 'Beyond Connectivity' underneath.\"\n    - heading \"Odyssey Interactive\" [level=2]\n    - paragraph: Learn how game studio Odyssey Interactive launched its debut multiplayer game, Omega Strikers, worldwide using managed infrastructure on AWS.\n    - paragraph:\n      - link \"Read the Case Study\":\n        - /url: /solutions/case-studies/odyssey-case-study/\n    - img \"Missing alt text value\"\n    - heading \"Betterfly\" [level=2]\n    - paragraph: Learn how Betterfly simplifies group protection and benefits management and encourages daily positive habits using a digital solution built on AWS.\n    - paragraph:\n      - link \"Read the Case Study\":\n        - /url: /solutions/case-studies/betterfly-api-gateway-case-study/\n    - img \"Missing alt text value\"\n    - heading \"TiVo\" [level=2]\n    - paragraph: Learn how TiVo in the media and entertainment industry achieved burstable scalability and consistent uptime of streaming services using AWS Lambda and Amazon API Gateway.\n    - paragraph:\n      - link \"Read the Case Study\":\n        - /url: /solutions/case-studies/tivo-case-study/\n    - img \"Missing alt text value\"\n    - heading \"Get started with API Gateway\" [level=2]\n    - heading \"1. Sign up for an AWS account\" [level=3]\n    - paragraph:\n      - text: Instantly get access to the\n      - link \"AWS Free Tier\":\n        - /url: /free/\n      - text: .\n    - link \"AWS Free Tier\":\n      - /url: /free/\n    - heading \"2. Learn with step-by-step tutorials\" [level=3]\n    - paragraph:\n      - text: Explore and learn with\n      - link \"simple tutorials\":\n        - /url: https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started.html\n      - text: .\n    - link \"simple tutorials\":\n      - /url: https://docs.aws.amazon.com/apigateway/latest/developerguide/getting-started.html\n    - heading \"3. Start building with AWS\" [level=3]\n    - paragraph:\n      - text: Visit the\n      - link \"AWS Management Console\":\n        - /url: https://console.aws.amazon.com/apigateway/home?region=us-east-1#/welcome\n      - text: .\n    - link \"AWS Management Console\":\n      - /url: https://console.aws.amazon.com/apigateway/home?region=us-east-1#/welcome\n    - heading \"Next steps\" [level=2]\n    - link \"Features page Learn more about API Gateway Visit the features page\":\n      - /url: /api-gateway/features/\n      - text: Features page\n      - heading \"Learn more about API Gateway\" [level=2]\n      - text: Visit the features page\n    - link \"Getting started Ready to build? Get started\":\n      - /url: https://console.aws.amazon.com/apigateway/home?region=us-east-1#/welcome\n      - text: Getting started\n      - heading \"Ready to build?\" [level=2]\n      - text: Get started\n    - link \"Contact us Have more questions? Contact us\":\n      - /url: /contact-us/\n      - text: Contact us\n      - heading \"Have more questions?\" [level=2]\n      - text: Contact us\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /api-gateway/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /api-gateway/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/api-gateway/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

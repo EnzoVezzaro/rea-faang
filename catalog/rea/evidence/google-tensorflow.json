@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_89d56862ca92b9ac467b7c5235a7c4ad9fef34cfe7fc1b3c37c5ca068fb948d5",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.tensorflow.org/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "6aef1def082fbda7f828d29008dfa8695d3f7f9f6563f6c45d34426a5b3d514b"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://www.tensorflow.org",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 7099,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 4298,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.tensorflow.org/",
+          "origin": "https://www.tensorflow.org",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2542,
+        "before_url": {
+          "url": "https://www.tensorflow.org/",
+          "origin": "https://www.tensorflow.org",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.tensorflow.org/",
+          "origin": "https://www.tensorflow.org",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "c959c3ee5dbd1ca190196762892988abaf308f1cace594b4aa66d67e7adc595c",
+              "bytes": 11896,
+              "text": "- document:\n  - link \"Skip to main content\":\n    - /url: \"#main-content\"\n  - banner:\n    - link \"TensorFlow\":\n      - /url: /\n      - img \"TensorFlow\"\n    - navigation \"Upper tabs\":\n      - link \"Install\":\n        - /url: https://www.tensorflow.org/install\n      - link \"Learn\":\n        - /url: https://www.tensorflow.org/learn\n      - button \"Dropdown menu for Learn\": arrow_drop_down\n      - link \"API\":\n        - /url: https://www.tensorflow.org/api\n      - button \"Dropdown menu for API\": arrow_drop_down\n      - link \"Ecosystem\":\n        - /url: https://www.tensorflow.org/resources/models-datasets\n      - button \"Dropdown menu for Ecosystem\": arrow_drop_down\n      - button \"Dropdown menu for Extended Navigation\": arrow_drop_down More\n    - combobox \"Search\"\n    - button \"Language\"\n    - link \"GitHub\":\n      - /url: //github.com/tensorflow\n    - link \"Sign in\":\n      - /url: https://www.tensorflow.org/_d/signin?continue=https%3A%2F%2Fwww.tensorflow.org%2F&prompt=select_account\n  - main:\n    - navigation \"On this page\"\n    - article:\n      - navigation\n      - iframe\n      - text: An end-to-end platform for machine learning\n      - link \"Install TensorFlow\":\n        - /url: /install\n      - heading \"Get started with TensorFlow\" [level=2]\n      - paragraph: TensorFlow makes it easy to create ML models that can run in any environment. Learn how to use the intuitive APIs through interactive code samples.\n      - link \"View tutorials\":\n        - /url: /tutorials\n      - group \"Action buttons\":\n        - button \"Dark code theme\": brightness_medium\n        - button \"Copy code sample\": content_copy\n      - text: import tensorflow as tf mnist = tf.keras.datasets.mnist (x_train, y_train),(x_test, y_test) = mnist.load_data() x_train, x_test = x_train / 255.0, x_test / 255.0 model = tf.keras.models.Sequential([ tf.keras.layers.Flatten(input_shape=(28, 28)), tf.keras.layers.Dense(128, activation='relu'), tf.keras.layers.Dropout(0.2), tf.keras.layers.Dense(10, activation='softmax') ]) model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy']) model.fit(x_train, y_train, epochs=5) model.evaluate(x_test, y_test)\n      - link \"Run quickstart\":\n        - /url: https://colab.research.google.com/github/tensorflow/docs/blob/master/site/en/tutorials/quickstart/beginner.ipynb\n      - heading \"Solve real-world problems with ML\" [level=2]\n      - paragraph: Explore examples of how TensorFlow is used to advance research and build AI-powered applications.\n      - button \"Watch now\"\n      - text: TENSORFLOW.JS Catch up on the latest from the Web AI Summit\n      - paragraph: Explore the latest advancements in running models client-side with speakers from Chrome, MediaPipe, Intel, Hugging Face, Microsoft, LangChain, and more.\n      - link \"Watch now\":\n        - /url: https://www.youtube.com/watch?v=tF70o1Q8VkM&list=PLNYkxOF6rcIAEVKJ98bDkQRkwvO4grhnt\n      - text: TensorFlow GNN\n      - link \"Analyze relational data using graph neural networks\":\n        - /url: https://blog.tensorflow.org/2024/02/graph-neural-networks-in-tensorflow.html\n      - paragraph: GNNs can process complex relationships between objects, making them a powerful technique for traffic forecasting, medical discovery, and more.\n      - link \"Learn about TF GNN\":\n        - /url: https://blog.tensorflow.org/2024/02/graph-neural-networks-in-tensorflow.html\n      - text: TensorFlow Agents\n      - link \"Build recommendation systems with reinforcement learning\":\n        - /url: https://blog.tensorflow.org/2023/10/simulated-spotify-listening-experiences-reinforcement-learning-tensorflow-tf-agents.html\n      - paragraph: Learn how Spotify uses the TensorFlow ecosystem to design an extendable offline simulator and train RL Agents to generate playlists.\n      - link \"Read the blog\":\n        - /url: https://blog.tensorflow.org/2023/10/simulated-spotify-listening-experiences-reinforcement-learning-tensorflow-tf-agents.html\n      - heading \"What's new in TensorFlow\" [level=2]\n      - paragraph: Read the latest announcements from the TensorFlow team and community.\n      - link \"TensorFlow Blog - What's new in TensorFlow 2.20\":\n        - /url: https://blog.tensorflow.org/2025/08/whats-new-in-tensorflow-2-20.html\n        - heading \"What's new in TensorFlow 2.20\" [level=3]\n      - paragraph: Updated August 19, 2025\n      - link \"TensorFlow Blog - What's new in TensorFlow 2.19\":\n        - /url: https://blog.tensorflow.org/2025/03/whats-new-in-tensorflow-2-19.html\n        - heading \"What's new in TensorFlow 2.19\" [level=3]\n      - paragraph: Updated March 13, 2025\n      - button \"More\"\n      - heading \"Explore the ecosystem\" [level=2]\n      - paragraph: Discover production-tested tools to accelerate modeling, deployment, and other workflows.\n      - list:\n        - listitem:\n          - link \"Library TensorFlow.js Train and run models directly in the browser using JavaScript or Node.js.\":\n            - /url: /js\n            - paragraph: Library\n            - heading \"TensorFlow.js\" [level=3]\n            - paragraph: Train and run models directly in the browser using JavaScript or Node.js.\n        - listitem:\n          - link \"Library LiteRT Deploy ML on mobile and edge devices such as Android, iOS, Raspberry Pi, and Edge TPU.\":\n            - /url: https://ai.google.dev/edge/litert\n            - paragraph: Library\n            - heading \"LiteRT\" [level=3]\n            - paragraph: Deploy ML on mobile and edge devices such as Android, iOS, Raspberry Pi, and Edge TPU.\n        - listitem:\n          - link \"API tf.data Preprocess data and create input pipelines for ML models.\":\n            - /url: /guide/data\n            - paragraph: API\n            - heading \"tf.data\" [level=3]\n            - paragraph: Preprocess data and create input pipelines for ML models.\n        - listitem:\n          - link \"Library TFX Create production ML pipelines and implement MLOps best practices.\":\n            - /url: /tfx\n            - paragraph: Library\n            - heading \"TFX\" [level=3]\n            - paragraph: Create production ML pipelines and implement MLOps best practices.\n        - listitem:\n          - link \"API tf.keras Create ML models with TensorFlow's high-level API.\":\n            - /url: /guide/keras\n            - paragraph: API\n            - heading \"tf.keras\" [level=3]\n            - paragraph: Create ML models with TensorFlow's high-level API.\n        - listitem:\n          - link \"Resource Kaggle Models Find pre-trained models ready for fine-tuning and deployment.\":\n            - /url: https://www.kaggle.com/models\n            - paragraph: Resource\n            - heading \"Kaggle Models\" [level=3]\n            - paragraph: Find pre-trained models ready for fine-tuning and deployment.\n        - listitem:\n          - link \"Resource TensorFlow Datasets Browse the collection of standard datasets for initial training and validation.\":\n            - /url: /datasets\n            - paragraph: Resource\n            - heading \"TensorFlow Datasets\" [level=3]\n            - paragraph: Browse the collection of standard datasets for initial training and validation.\n        - listitem:\n          - link \"Tool TensorBoard Visualize and track development of ML models.\":\n            - /url: /tensorboard\n            - paragraph: Tool\n            - heading \"TensorBoard\" [level=3]\n            - paragraph: Visualize and track development of ML models.\n      - button \"Previous slide\": chevron_left\n      - button \"Next slide\": chevron_right\n      - list:\n        - listitem:\n          - radio \"Slide marker button 0\" [checked]\n          - text: \"Current slide: 1\"\n        - listitem:\n          - radio \"Slide marker button 1\"\n          - text: \"Current slide: 2\"\n      - link \"ML models & datasets Pretrained models and ready-to-use datasets for image, text, audio, and video use cases.\":\n        - /url: /resources/models-datasets\n        - heading \"ML models & datasets\" [level=3]\n        - paragraph: Pretrained models and ready-to-use datasets for image, text, audio, and video use cases.\n      - link \"Libraries & extensions Packages for domain-specific applications and APIs for languages other than Python.\":\n        - /url: /resources/libraries-extensions\n        - heading \"Libraries & extensions\" [level=3]\n        - paragraph: Packages for domain-specific applications and APIs for languages other than Python.\n      - link \"Developer tools Tools to evaluate models, optimize performance, and productionize ML workflows.\":\n        - /url: /resources/tools\n        - heading \"Developer tools\" [level=3]\n        - paragraph: Tools to evaluate models, optimize performance, and productionize ML workflows.\n      - img\n      - text: Join the community\n      - paragraph: Collaborate, find support, and share your projects by joining interest groups or attending developer events.\n      - link \"Get involved\":\n        - /url: /community\n      - text: Learn ML\n      - paragraph: New to machine learning? Begin with TensorFlow's curated curriculums or browse the resource library of books, online courses, and videos.\n      - link \"Explore resources\":\n        - /url: /resources/learn-ml\n      - img\n      - heading \"Stay connected\" [level=2]\n      - paragraph:\n        - text: Learn the latest in machine learning and TensorFlow by following our channels or signing up for the newsletter. View past newsletters in the\n        - link \"archive\":\n          - /url: /subscribe/latest\n        - text: .\n      - link \"forum logo Forum\":\n        - /url: https://discuss.tensorflow.org/\n        - img \"forum logo\"\n        - text: Forum\n      - link \"x logo X\":\n        - /url: https://twitter.com/tensorflow\n        - img \"x logo\"\n        - text: X\n      - link \"youtube logo YouTube\":\n        - /url: https://www.youtube.com/tensorflow\n        - img \"youtube logo\"\n        - text: YouTube\n      - link \"linkedin logo Linkedin\":\n        - /url: https://www.linkedin.com/showcase/tensorflowdev/\n        - img \"linkedin logo\"\n        - text: Linkedin\n      - iframe\n      - heading \"Start building with TensorFlow\" [level=2]\n      - link \"Install TensorFlow\":\n        - /url: /install\n      - link \"Explore tutorials\":\n        - /url: /tutorials\n  - navigation \"Footer links\":\n    - list:\n      - listitem:\n        - heading \"Stay connected\" [level=3]\n        - list:\n          - listitem:\n            - link \"Blog\":\n              - /url: //blog.tensorflow.org\n          - listitem:\n            - link \"Forum\":\n              - /url: //discuss.tensorflow.org\n          - listitem:\n            - link \"GitHub\":\n              - /url: //github.com/tensorflow/\n          - listitem:\n            - link \"Twitter\":\n              - /url: //twitter.com/tensorflow\n          - listitem:\n            - link \"YouTube\":\n              - /url: //youtube.com/tensorflow\n      - listitem:\n        - heading \"Support\" [level=3]\n        - list:\n          - listitem:\n            - link \"Issue tracker\":\n              - /url: //github.com/tensorflow/tensorflow/issues\n          - listitem:\n            - link \"Release notes\":\n              - /url: //github.com/tensorflow/tensorflow/blob/master/RELEASE.md\n          - listitem:\n            - link \"Stack Overflow\":\n              - /url: //stackoverflow.com/questions/tagged/tensorflow\n          - listitem:\n            - link \"Brand guidelines\":\n              - /url: /extras/tensorflow_brand_guidelines.pdf\n          - listitem:\n            - link \"Cite TensorFlow\":\n              - /url: /about/bib\n  - navigation \"Utility links\":\n    - list:\n      - listitem:\n        - link \"Terms\":\n          - /url: //policies.google.com/terms\n      - listitem:\n        - text: \"|\"\n        - link \"Privacy\":\n          - /url: //policies.google.com/privacy\n      - listitem:\n        - text: Sign up for the TensorFlow newsletter\n        - link \"Subscribe\":\n          - /url: //www.tensorflow.org/subscribe\n    - button \"Language\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.tensorflow.org/",
+              "origin": "https://www.tensorflow.org",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

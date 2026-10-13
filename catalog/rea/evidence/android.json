@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_98d731fefc729a57a235aad084b23bef86d59035fd25a426870a4251f8fe5cac",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.android.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "e009f2b9505c18413d4083f79334880781b5d16f63aa7de2ca2f85d1c60b8b0e"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://www.android.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 10542,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 7726,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.android.com/",
+          "origin": "https://www.android.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2559,
+        "before_url": {
+          "url": "https://www.android.com/",
+          "origin": "https://www.android.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.android.com/",
+          "origin": "https://www.android.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "8ab7e351b37b615fdc4004a2ed45ac6cb5e30976c135f6b9492334fb6df953ad",
+              "bytes": 15852,
+              "text": "- document:\n  - banner \"site header\":\n    - link \"Android\":\n      - /url: https://www.android.com/\n      - img\n    - navigation:\n      - list:\n        - listitem:\n          - button \"About\"\n        - listitem:\n          - button \"Features\"\n        - listitem:\n          - button \"Devices\"\n        - listitem:\n          - button \"Learn\"\n        - listitem:\n          - link \"Gemini Intelligence\":\n            - /url: https://www.android.com/gemini-intelligence/\n    - search:\n      - button \"Show search\"\n    - link \"Shop phones\":\n      - /url: https://www.android.com/phones/shop/\n  - banner \"Expirable banner\":\n    - paragraph:\n      - text: ✨ Introducing Googlebook.\n      - link \"Buy now\":\n        - /url: https://googlebook.google/?utm_source=android&utm_medium=owned&utm_campaign=android_website\n      - text: ✨\n    - button \"Hide the banner\"\n  - main:\n    - heading \"Experience the future first on Android.\" [level=1]\n    - paragraph: Android's innovation sets the standard. That means helpful AI, more new features, frequent upgrades, and plenty of ways to personalize your phone to fit your style.\n    - link \"Try Gemini\":\n      - /url: https://gemini.google.com/app/download/mobile?android-min-version=301356232&ios-min-version=322.0&is_sa=1&campaign_id=android_web_gemini&utm_medium=xpa&utm_source=android_web&utm_campaign=android_web_gemini&pt=9008&mt=8&ct=android_web_gemini\n    - link \"Find your perfect phone\":\n      - /url: https://www.android.com/phones/shop/\n    - button \"Video Play/pause\"\n    - heading \"Explore the latest on Android.\" [level=2]\n    - link \"See the latest features\":\n      - /url: https://www.android.com/new-features-on-android/featured/\n      - paragraph: See the latest features\n    - button \"Go to the next page\"\n    - button \"Video Play/pause\"\n    - text: Gemini Intelligence\n    - heading \"Voice-to-text just got smarter.\" [level=3]\n    - link \"Explore Rambler\":\n      - /url: https://www.android.com/gemini-intelligence/#voice-to-text\n    - img \"Two AI-powered smart eyewear frames from brands Gentle Monster and Warby Parker illustrate fashionable options for intelligent audio glasses.\"\n    - text: Intelligent Eyewear\n    - heading \"A vision for intelligence coming soon.\" [level=3]\n    - link \"Explore glasses\":\n      - /url: https://www.android.com/xr/#intelligent-eyewear\n    - img \"An Android phone screen shows an outfit being circled with a search result of each piece of the outfit at the bottom of the screen.\"\n    - text: Circle to Search\n    - heading \"Circle it. Search it. Find the look.\" [level=3]\n    - link \"See how it works\":\n      - /url: https://www.android.com/ai/circle-to-search/\n    - group \"Choose a page\":\n      - button \"Selected tab 1 of 2\"\n      - button \"Selected tab 2 of 2\"\n    - img \"Designed for Gemini Intelligence\"\n    - heading \"Introducing Googlebook.\" [level=2]\n    - link \"Buy now\":\n      - /url: https://googlebook.google/?utm_source=android&utm_medium=owned&utm_campaign=android_website\n    - link \"Explore\":\n      - /url: https://googlebook.google/shop/?utm_source=android&utm_medium=owned&utm_campaign=android_web_shop\n    - button \"Video Play/pause\"\n    - heading \"Shop the latest phones.\" [level=2]\n    - list:\n      - listitem\n      - listitem\n      - listitem\n      - listitem\n      - listitem\n      - listitem\n    - button \"Video Play/pause\"\n    - heading \"The best of Gemini on our most advanced devices.1\" [level=3]:\n      - text: The best of Gemini on our most advanced devices.\n      - superscript: \"1\"\n    - link \"Explore Gemini Intelligence\":\n      - /url: https://www.android.com/gemini-intelligence/\n    - img \"Close-up image of a Galaxy XR headset on a black background\"\n    - text: Android XR\n    - heading \"Reality, expanded.\" [level=2]\n    - text: From headsets to glasses, Android XR expands beyond your screen.\n    - link \"Experience Android XR\":\n      - /url: https://www.android.com/xr/\n    - heading \"Android has your must-haves and more.\" [level=2]\n    - button \"Go to the next page\"\n    - img \"A couple is relaxing on a couch, smiling at each other. One of them lays their head in the other’s lap and holds a phone. Overlaid on the image are chat bubbles that read, \\\"Love this pic of us,\\\" \\\"So cute!,\\\" and a heart emoji reaction.\"\n    - heading \"Google Messages\" [level=3]\n    - text: Enjoy chatting with everyone. Yes, even with your iPhone friends.\n    - link \"Start chatting\":\n      - /url: https://www.android.com/google-messages/\n    - img \"An Android phone screen displays an incoming call from (310) 555-0111. A \\\"Scam Detection\\\" warning is shown, that reads \\\"Likely scam\\\" and \\\"Suspicious activity detected for this call.\\\" There is an option to tap \\\"Not a scam\\\" or \\\"End call.\\\"\"\n    - heading \"Security\" [level=3]\n    - text: Powerful and proactive protection built right into your Android device.\n    - link \"See how it works\":\n      - /url: https://www.android.com/safety/security/\n    - img \"A map displays a notification from \\\"Find Hub.\\\" A pin with a person’s profile picture indicates their location on the map. The notification reads, \\\"Claire Reynold's location is being shared with you on Find Hub. Tap to view.\\\"\"\n    - heading \"Find Hub\" [level=3]\n    - text: Locate devices and connect with loved ones quickly and safely.\n    - link \"Go to Find Hub\":\n      - /url: https://www.android.com/learn-find-hub/\n    - group \"Choose a page\":\n      - button \"Selected tab 1 of 2\"\n      - button \"Selected tab 2 of 2\"\n    - img \"Two young people are relaxing on a couch, looking at their smartphones together. One of them is lying down and smiling as they point to something on their blue phone, while the other person looks down at their own white phone. A bowl of popcorn sits on the couch between them.\"\n    - heading \"New phone? No problem.\" [level=2]\n    - text: We take the stress out of the setup. See how easy it is to transfer your data to your new Android phone.\n    - link \"Transfer to new Android\":\n      - /url: https://www.android.com/switch-to-android/\n    - heading \"AI on Android.\" [level=2]\n    - link \"Explore the power of AI\":\n      - /url: https://android.com/ai/\n      - paragraph: Explore the power of AI\n    - img \"An ambient, glowing light outlines a phone, showing an example of a Gemini notification.\"\n    - text: Gemini\n    - heading \"Your AI assistant from Google.\" [level=3]\n    - link \"Explore Gemini\":\n      - /url: https://android.com/ai/gemini/\n    - img \"A taupe bag is used as an example to show how Circle to Search works.\"\n    - text: Circle to Search\n    - heading \"One gesture, many possibilities.\" [level=3]\n    - link \"Search smarter\":\n      - /url: https://android.com/ai/circle-to-search/\n    - img \"More AI@2x.png\"\n    - text: More AI\n    - heading \"Making AI helpful for everyone.\" [level=3]\n    - link \"Discover more AI\":\n      - /url: https://android.com/ai/more/\n    - group \"Choose a page\"\n    - heading \"Latest from Android.\" [level=2]\n    - paragraph: Sign up to receive tailored emails and texts from Android with news, offers, events, and more.\n  - contentinfo:\n    - heading \"Footer links\" [level=2]\n    - paragraph: Social Module\n    - paragraph: Follow us\n    - list:\n      - listitem:\n        - link \"Follow us on X\":\n          - /url: https://x.com/android\n      - listitem:\n        - link \"Follow us on Instagram\":\n          - /url: https://www.instagram.com/android/\n      - listitem:\n        - link \"Follow us on YouTube\":\n          - /url: https://www.youtube.com/user/GoogleMobile/\n      - listitem:\n        - link \"Follow us on Facebook\":\n          - /url: https://www.facebook.com/AndroidOfficial\n      - listitem:\n        - link \"Follow us on LinkedIn\":\n          - /url: https://www.linkedin.com/showcase/android_by_google\n    - navigation:\n      - heading \"Privacy and Safety\" [level=3]\n      - list:\n        - listitem:\n          - link \"Security link opens in same tab or window\":\n            - /url: https://www.android.com/safety/security/\n            - text: Security\n        - listitem:\n          - link \"Privacy link opens in same tab or window\":\n            - /url: https://www.android.com/safety/privacy/\n            - text: Privacy\n        - listitem:\n          - link \"Physical Safety link opens in same tab or window\":\n            - /url: https://www.android.com/safety/physical-safety/\n            - text: Physical Safety\n      - heading \"Accessibility\" [level=3]\n      - list:\n        - listitem:\n          - link \"Vision features link opens in same tab or window\":\n            - /url: https://www.android.com/accessibility/vision/\n            - text: Vision features\n        - listitem:\n          - link \"Audio features link opens in same tab or window\":\n            - /url: https://www.android.com/accessibility/audio/\n            - text: Audio features\n        - listitem:\n          - link \"Mobility features link opens in same tab or window\":\n            - /url: https://www.android.com/accessibility/mobility/\n            - text: Mobility features\n      - heading \"Connect devices\" [level=3]\n      - list:\n        - listitem:\n          - link \"Overview link opens in same tab or window\":\n            - /url: https://www.android.com/better-together/\n            - text: Overview\n        - listitem:\n          - link \"Quick Share link opens in same tab or window\":\n            - /url: https://www.android.com/quick-share/\n            - text: Quick Share\n        - listitem:\n          - link \"Google Cast link opens in same tab or window\":\n            - /url: https://www.android.com/better-together/google-cast/\n            - text: Google Cast\n        - listitem:\n          - link \"Fast Pair link opens in same tab or window\":\n            - /url: https://www.android.com/better-together/fast-pair/\n            - text: Fast Pair\n      - heading \"Our ecosystem\" [level=3]\n      - list:\n        - listitem:\n          - link \"Android TV link opens in same tab or window\":\n            - /url: https://www.android.com/tv/\n            - text: Android TV\n        - listitem:\n          - link \"Digital car key link opens in same tab or window\":\n            - /url: https://www.android.com/digital-car-key/\n            - text: Digital car key\n        - listitem:\n          - link \"Google Mobile Services (GMS) link opens in same tab or window\":\n            - /url: https://www.android.com/gms/\n            - text: Google Mobile Services (GMS)\n        - listitem:\n          - link \"Googlebook link opens in new tab or window\":\n            - /url: https://googlebook.google/?utm_source=android&utm_medium=owned&utm_campaign=android_website\n            - text: Googlebook\n      - heading \"For Enterprise\" [level=3]\n      - list:\n        - listitem:\n          - link \"Overview link opens in same tab or window\":\n            - /url: https://www.android.com/enterprise/\n            - text: Overview\n        - listitem:\n          - link \"Enterprise Devices link opens in same tab or window\":\n            - /url: https://www.android.com/enterprise/devices/\n            - text: Enterprise Devices\n        - listitem:\n          - link \"Enterprise Support link opens in same tab or window\":\n            - /url: https://www.android.com/enterprise/resources/\n            - text: Enterprise Support\n        - listitem:\n          - link \"Enterprise Blog link opens in new tab or window\":\n            - /url: https://blog.google/products-and-platforms/products/android-enterprise/\n            - text: Enterprise Blog\n      - heading \"For the Press\" [level=3]\n      - list:\n        - listitem:\n          - link \"Android Blog link opens in new tab or window\":\n            - /url: https://blog.google/products/android/\n            - text: Android Blog\n        - listitem:\n          - link \"Press Corner link opens in new tab or window\":\n            - /url: https://blog.google/press/\n            - text: Press Corner\n        - listitem:\n          - link \"Contact Press Team link opens in new tab or window\":\n            - /url: https://blog.google/press/\n            - text: Contact Press Team\n      - heading \"For Developers\" [level=3]\n      - list:\n        - listitem:\n          - link \"Developer Resources link opens in new tab or window\":\n            - /url: https://developer.android.com/\n            - text: Developer Resources\n        - listitem:\n          - link \"Android Studio and SDK link opens in new tab or window\":\n            - /url: https://developer.android.com/studio/\n            - text: Android Studio and SDK\n        - listitem:\n          - link \"Android Open Source Project link opens in new tab or window\":\n            - /url: https://source.android.com/\n            - text: Android Open Source Project\n        - listitem:\n          - link \"How Google Play Works link opens in new tab or window\":\n            - /url: https://play.google/about/howplayworks/\n            - text: How Google Play Works\n      - heading \"Support\" [level=3]\n      - list:\n        - listitem:\n          - link \"Help Center link opens in new tab or window\":\n            - /url: https://support.google.com/android/#topic=7313011/\n            - text: Help Center\n        - listitem:\n          - link \"Find My Device link opens in new tab or window\":\n            - /url: https://mydevices.google.com/\n            - text: Find My Device\n        - listitem:\n          - link \"Join user studies link opens in new tab or window\":\n            - /url: https://userresearch.google.com/\n            - text: Join user studies\n    - link \"Android\":\n      - /url: https://www.android.com/\n      - img \"Android\"\n    - list:\n      - listitem:\n        - link \"Privacy Policy link opens in new tab or window\":\n          - /url: https://policies.google.com/?hl=en\n          - text: Privacy Policy\n      - listitem\n    - combobox \"Change language or region\":\n      - option \"English\" [selected]\n      - option \"Dansk\"\n      - option \"Deutsch\"\n      - option \"English (Australia)\"\n      - option \"English (Canada)\"\n      - option \"English (Hong Kong)\"\n      - option \"English\"\n      - option \"English (Ireland)\"\n      - option \"English (India)\"\n      - option \"English (Philippines)\"\n      - option \"English (New Zealand)\"\n      - option \"English (United Kingdom)\"\n      - option \"Español (Mexico)\"\n      - option \"Español\"\n      - option \"Español (United States)\"\n      - option \"Français (Belgium)\"\n      - option \"Français (Canada)\"\n      - option \"Français\"\n      - option \"Indonesia\"\n      - option \"Italiano\"\n      - option \"日本語\"\n      - option \"한국어\"\n      - option \"Nederlands (Belgium)\"\n      - option \"Nederlands\"\n      - option \"Norsk bokmål\"\n      - option \"Polski\"\n      - option \"Português (Brazil)\"\n      - option \"Português\"\n      - option \"Русский\"\n      - option \"Svenska\"\n      - option \"ไทย\"\n      - option \"Türkçe\"\n      - option \"Tiếng việt\"\n      - option \"中文\"\n      - option \"中文 (香港)\"\n      - option \"中文 (台灣)\"\n  - paragraph:\n    - superscript: \"1\"\n    - text: \"Gemini Intelligence features are only available on Android devices with the most advanced capabilities and spec requirements: (1) Nano models on device AI (integrate AI Core + Nano v3 or greater) (2) Media performance (latest): spatial audio, low light, hdr; gaming: annual GGI + driver updates (3) 12GB+ RAM (4) Qualified SOC (flagship chip) (5) Quality in Field: Meet SLOs (e.g., crash rate) in 2026. Further enforced in 2027 (6) Quality at Launch: pass test suite on A17+ (7) OS: 5 upgrades, AVF, pKVM (8) Security: 6 yrs, quarterly\"\n  - paragraph: Product availability, features, and specifications vary by region, carrier, and device. Not all devices or features shown on this page are available in all markets. Please check with your local retailer or mobile carrier for current availability and compatibility in your area. Android is a trademark of Google LLC. All other trademarks are the property of their respective owners."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.android.com/",
+              "origin": "https://www.android.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

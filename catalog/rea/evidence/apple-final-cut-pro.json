@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_f5e8b0549968eef18eb9938e9b35880ff20fe95c2465005baf6df6d6adfcbdca",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.apple.com/final-cut-pro/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "14fb95b94d23785ba78fbca09468d766801e04257dddbee8baf919115481ba7f"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://www.apple.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4729,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1951,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/final-cut-pro/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2552,
+        "before_url": {
+          "url": "https://www.apple.com/final-cut-pro/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/final-cut-pro/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "8bf032cd87f4c2562416fac4c1bd30138c48572d05cc54d22d489d98f2823bb5",
+              "bytes": 30849,
+              "text": "- document:\n  - navigation \"Global\":\n    - list:\n      - listitem:\n        - link \"Apple\":\n          - /url: /\n      - listitem:\n        - list:\n          - listitem:\n            - link \"Store\":\n              - /url: /us/shop/goto/store\n          - listitem:\n            - button \"Store menu\"\n        - list:\n          - listitem:\n            - link \"Mac\":\n              - /url: /mac/\n          - listitem:\n            - button \"Mac menu\"\n        - list:\n          - listitem:\n            - link \"iPad\":\n              - /url: /ipad/\n          - listitem:\n            - button \"iPad menu\"\n        - list:\n          - listitem:\n            - link \"iPhone\":\n              - /url: /iphone/\n          - listitem:\n            - button \"iPhone menu\"\n        - list:\n          - listitem:\n            - link \"Watch\":\n              - /url: /watch/\n          - listitem:\n            - button \"Watch menu\"\n        - list:\n          - listitem:\n            - link \"Vision\":\n              - /url: /apple-vision-pro/\n          - listitem:\n            - button \"Vision menu\"\n        - list:\n          - listitem:\n            - link \"AirPods\":\n              - /url: /airpods/\n          - listitem:\n            - button \"AirPods menu\"\n        - list:\n          - listitem:\n            - link \"Home\":\n              - /url: /home/\n          - listitem:\n            - button \"Home menu\"\n        - list:\n          - listitem:\n            - link \"Entertainment\":\n              - /url: /entertainment/\n          - listitem:\n            - button \"Entertainment menu\"\n        - list:\n          - listitem:\n            - link \"Accessories\":\n              - /url: /us/shop/goto/buy_accessories\n          - listitem:\n            - button \"Accessories menu\"\n        - list:\n          - listitem:\n            - link \"Support\":\n              - /url: https://support.apple.com/?cid=gn-ols-home-hp-tab\n          - listitem:\n            - button \"Support menu\"\n      - listitem:\n        - button \"Search apple.com\"\n      - listitem:\n        - button \"Shopping Bag\"\n  - navigation \"Local\":\n    - link \"Final Cut Pro\":\n      - /url: /final-cut-pro/\n    - list:\n      - listitem:\n        - link \"Explore Apple Creator Studio\":\n          - /url: /apple-creator-studio/\n    - link \"Try it free, 1 footnote, Final Cut Pro\":\n      - /url: https://apps.apple.com/app/id1631624924?itsct=acs-fcp_nav-nav_try-acs-260126&pt=2003&ct=marcom-fcp-stickyNav&itscg=10000\n  - main:\n    - heading \"Final Cut Pro\" [level=1]\n    - heading \"Reel intelligence.\" [level=2]\n    - paragraph: Final Cut Pro makes it easy to create polished, pro-quality videos across Mac and iPad. It’s packed with powerful intelligence features, helping you turn every frame into something unforgettable.\n    - img \"Final Cut Pro edit in progress, man in blue suit in red room placing giant white pearl atop black pyramid\"\n    - heading \"Apple Creator Studio A suite deal for any creator.\" [level=2]\n    - paragraph: Final Cut Pro is part of Apple Creator Studio, the essential collection of creative apps that includes Logic Pro, Pixelmator Pro, and more.\n    - link \"Try it free, 1 footnote, Apple Creator Studio\":\n      - /url: https://apps.apple.com/app-bundle/id1868448255?itsct=acs-fcp_router-rout_try-acs-260126&pt=2003&ct=marcom-fcp-routerTile&itscg=10000\n    - link \"Learn more, Apple Creator Studio\":\n      - /url: /apple-creator-studio/\n      - text: Learn more\n    - img \"Apple Creator Studio apps, Final Cut Pro, Logic Pro, Pixelmator Pro, Keynote, Pages, Numbers, Freeform, Motion, Compressor, MainStage\"\n    - paragraph:\n      - link \"Final Cut Pro for Mac is also available as a one-time purchase on the App Store, opens in new window\":\n        - /url: https://apps.apple.com/us/app/final-cut-pro/id424389933?mt=12\n        - text: Final Cut Pro for Mac is also available as a one-time purchase on the App Store\n    - heading \"Get to know Final Cut Pro.\" [level=2]\n    - button \"Play Highlights Gallery\":\n      - img\n    - tablist \"Get to know Final Cut Pro\":\n      - tab \"Video Creation\" [selected]\n      - tab \"Video Editing\"\n      - tab \"AI features that build on Apple Intelligence\"\n      - tab \"Titles, Transitions, and Effects\"\n      - tab \"Audio Editing\"\n      - tab \"Workflows\"\n    - list:\n      - tabpanel \"Video Creation\":\n        - img \"MacBook Pro 16 showing color grading tools, woman in yellow sari with red fabric on a blue background, MacBook Pro 14 showing edit screen showing audio waveforms and EQ tool\"\n        - paragraph: A complete video playground for editing, audio, motion graphics, and color grading.\n    - img \"Multiple frames of male dancer in silver suit against blue and red background\"\n    - heading \"Video Editing\" [level=2]\n    - paragraph: Storytelling, simplified.\n    - paragraph:\n      - text: Whether you’re new to editing or a seasoned pro, Final Cut Pro makes it easy to move and trim clips, isolate without a green screen, and create captions. With smart, intuitive tools that smooth your workflow,\n      - strong: video editing has never been this effortless.\n    - list \"Video Editing Gallery\":\n      - listitem:\n        - heading \"Magnetic Timeline for fast, flexible editing.\" [level=3]\n        - paragraph: Experiment with different edits and story ideas by moving and trimming clips, all while keeping everything in sync.\n        - img \"iPad Pro 13 Screen, Edit of driving video, project title is Rally Car Social Edit\"\n      - listitem:\n        - heading \"Isolate with Magnetic Mask.\" [level=3]\n        - paragraph: Separate people and objects from the background without a green screen or complicated rotoscoping.\n        - img \"Car video edit showing Magnetic Mask separating car from background\"\n      - listitem:\n        - heading \"Automatic captions.\" [level=3]\n        - paragraph: By analyzing spoken audio, Final Cut Pro creates captions with lightning-fast, accurate results.\n        - img \"Close-up of drop down menu with transcribe to captions selected\"\n    - list:\n      - listitem:\n        - button \"Previous item in Video Editing Gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item in Video Editing Gallery\":\n          - img\n    - heading \"Find any shot in a snap.\" [level=3]\n    - tablist \"Find any shot gallery\":\n      - tab \"Visual Search\" [selected]\n      - tab \"Transcript Search\"\n    - tabpanel \"Visual Search\":\n      - img \"MacBook Pro 16 screen, Demo of Visual Search finding all images of a man or woman climbing stairs\"\n      - paragraph:\n        - strong: Search visual moments.\n        - text: With Visual Search, locating clips is effortless. Just type what you’re looking for and it pinpoints objects and actions in seconds.\n        - superscript:\n          - link \"Footnote 4\":\n            - /url: \"#footnote-4\"\n            - text: \"4\"\n    - img \"Different colors fading into each other, black, orange, red, pink, purple, blue\"\n    - heading \"Intelligence\" [level=2]\n    - paragraph: Scene smarts.\n    - paragraph:\n      - text: Edit with AI features that build on Apple Intelligence.\n      - superscript:\n        - link \"Footnote 2\":\n          - /url: \"#footnote-2\"\n          - text: \"2\"\n      - text: Final Cut Pro transforms video creation, from\n      - strong: streamlining complex tasks to enhancing visuals.\n      - text: It helps you move quickly from first cut to final delivery, all with pro‑quality results.\n    - list \"Intelligence Gallery\":\n      - listitem:\n        - heading \"Automatically track movement.\" [level=3]\n        - paragraph: Object Tracker maps the movement of people, objects, or faces so you can attach effects and titles or make adjustments as they move through the shot.\n        - img \"Skateboarder jumping on ramp, demo of automatic movement tracker\"\n      - listitem:\n        - heading \"One-click color grading.\" [level=3]\n        - paragraph: Automatically enhance the color balance, contrast, and brightness of video or still images with the Enhance Light and Color effect, powered by machine learning.\n        - img \"Two-part image of clouds in sky showing before and after using color grading tool\"\n      - listitem:\n        - heading \"Turn video into slow motion.\" [level=3]\n        - paragraph: Smooth Slo-Mo intelligently generates and blends video frames to provide the highest-quality movement and add more drama to a project.\n        - img \"MacBook Pro 16, Demonstration of how a shot can be converted to smooth slow motion, man in cowboy hat and sunglasses with graffiti-covered wall in background\"\n      - listitem:\n        - heading \"Automatically reframe a clip.\" [level=3]\n        - paragraph: Your videos adjust seamlessly to fit every aspect ratio, so that they’re ready to share on Mac, iPhone, iPad, and all your favorite social platforms.\n        - img \"MacBook Pro 16, Video timeline of edit, man in blue suit in red room balancing giant round pearl atop a black pyramid\"\n    - list:\n      - listitem:\n        - button \"Previous item in Intelligence Gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item in Intelligence Gallery\":\n          - img\n    - heading \"Get in the groove with Beat Detection.\" [level=3]\n    - paragraph:\n      - text: All-new Beat Detection automatically analyzes music so you can\n      - strong: map out song parts, bars, and beats in a grid.\n      - text: Then just drop in your clips and snap them to the rhythm. Your edits hit right on time, and manual syncing is a distant memory.\n    - img \"MacBook Pro 16, Screen showing car racing with demonstration of Beat-Detection feature\"\n    - img \"MacBook Pro 16, Final Cut Pro workspace, Image of brightly colored green frog on leaf\"\n    - heading \"Titles, Transitions, and Effects\" [level=2]\n    - paragraph: Show-stealing graphics.\n    - paragraph:\n      - text: Final Cut Pro gives creators a\n      - strong: powerful set of tools for titles, transitions, and effects.\n      - text: Elevate your visuals with drag-and-drop effects, pro-level color grading, and a wide range of customizable content designed for social media.\n    - link \"Learn more about the Final Cut Pro Ecosystem\":\n      - /url: https://support.apple.com/125519\n    - list \"Titles Transitions and Effect Gallery\":\n      - listitem:\n        - heading \"Graphics and transitions.\" [level=3]\n        - paragraph: Tap into an extensive library of dynamic video content options, designed for flexibility and customization for both portrait and landscape.\n        - img \"Range of graphic designs available in the Final Cut Pro library\"\n      - listitem:\n        - heading \"Dynamic titles.\" [level=3]\n        - paragraph: Customize themed titles, lower thirds, and bumpers to enhance your project.\n        - img \"iPad Pro 13, Music video edit with titles superimposed on image, tools for choosing fonts colors and layout, title reads Allie Sherlock\"\n      - listitem:\n        - heading \"Powerful effects.\" [level=3]\n        - paragraph: Create amazing visuals just by dragging and dropping. And you can expand your options with thousands of third‑party tools.\n        - img \"MacBook Pro 16, Music video edit showing range of titles and effect available, title reads Allie Sherlock\"\n      - listitem:\n        - heading \"Perfect your color grading.\" [level=3]\n        - paragraph: Professional tools like color curves, hue/saturation curves, a color inspector with color wheels, and the ability to apply LUTs help your projects look their best.\n        - img \"Screen showing woman in brightly colored yellow sari with red scarves against blue background, demo of color grading tools\"\n    - list:\n      - listitem:\n        - button \"Previous item in Titles, Transitions, and Effects Gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item in Titles, Transitions, and Effects Gallery\":\n          - img\n    - heading \"Stunning effects, set in Motion.\" [level=3]\n    - paragraph:\n      - text: Motion gives you the tools to\n      - strong: design cinematic titles, elegant transitions, and jaw-dropping effects\n      - text: in 2D, 3D, and 360°. Magnetic Mask lets you instantly isolate people and objects from the background. And because Motion is built for Apple silicon and the Apple Neural Engine, you can create and preview complex graphics and animation in real time.\n    - img \"MacBook Pro 16, screen showing Motion workspace with green car driving through a field, red mask overlay\"\n    - button \"Get moving with Motion\"\n    - img \"Person sitting at desk with mic and headphones in front of three devices, Mac Studio Display showing detailed audio editing tools, sound clips in different blocks of color, a second Mac Studio Display screen showing car with moody green lighting, MacBook Pro 16 screen long list of shots in a Final Cut Pro project\"\n    - heading \"Sound Editing\" [level=2]\n    - paragraph: Easier audio? That tracks.\n    - paragraph:\n      - text: It’s easy to\n      - strong: get your audio sounding just right.\n      - text: With sound editing tools for cleaning up dialogue, customizing soundtracks, and adding pro-level effects, Final Cut Pro lets you shape your sound directly in the timeline — or use Logic Pro for even more control. Whether it’s a quick fix or a full mix, your audio is always in good hands.\n    - list \"Sound Editing Gallery\":\n      - listitem:\n        - heading \"Audio editing tools.\" [level=3]\n        - paragraph: Choose from a library of plug-ins for audio compression, EQ, and more adventurous effects. Or export to a pro audio app like Logic Pro for advanced audio mixing.\n        - img \"Five audio editing dials that are adjusted to different setting numbers\"\n      - listitem:\n        - heading \"Use effects from Logic Pro.\" [level=3]\n        - paragraph:\n          - text: No need to switch apps. Final Cut Pro includes a range of powerful audio plug-ins from Logic Pro, along with third-party audio plug‑ins.\n          - superscript:\n            - link \"Footnote 6\":\n              - /url: \"#footnote-6\"\n              - text: \"6\"\n        - img \"Screen with yellow, pink, orange sound waves, three gray circles with red partial outline, sound editing\"\n      - listitem:\n        - heading \"Voice Isolation.\" [level=3]\n        - paragraph: Eliminate background noise and improve clarity of speech so your edit sounds pristine.\n        - img \"iPad Pro 13 screen showing sound editing workspace, voice isolation with controls and adjustments on the left, and image of students sitting in a classroom and professor pointing to a painting on the right\"\n      - listitem:\n        - heading \"Fit the music to the cut with iPad.\" [level=3]\n        - paragraph: Soundtracks dynamically adjust to fit the length of your project — expanding, shifting, and staying in sync as a scene evolves.\n        - img \"Screen showing UI of a montage of a woman sitting on the sidewalk with a classic car behind her and luggage next to her, montage slides below, sound editing bar at the bottom of screen\"\n    - list:\n      - listitem:\n        - button \"Previous item in Sound Editing Gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item in Sound Editing Gallery\":\n          - img\n    - img \"Final Cut Pro workspace on MacBook Pro\"\n    - heading \"Workflows\" [level=2]\n    - paragraph: Fast Floward.\n    - paragraph:\n      - text: Thanks to advanced workflows, your process goes faster with less effort. From high-performance editing to powerful export options,\n      - strong: projects move smoothly all the way to delivery.\n      - text: No slowdowns. No bottlenecks. Just flow.\n    - list \"Workflows Gallery\":\n      - listitem:\n        - heading \"Optimize files.\" [level=3]\n        - paragraph: Transcode video to Apple ProRes for better performance while editing, faster render times, and enhanced color quality for compositing.\n        - img \"MacBook Pro 16 screen showing image of surfer in ocean waiting for a wave, export file window open, video clip timeline at the bottom of the screen\"\n      - listitem:\n        - heading \"Share in high quality.\" [level=3]\n        - paragraph: Export your completed project as a professional-quality file that can be used for the final stages of post-production or broadcast and distribution.\n        - img \"List of MPEG IMX, MV-HEVC, H.264, MXF, AAC\"\n      - listitem:\n        - heading \"Batch export.\" [level=3]\n        - paragraph: Export multiple projects, clips, or clip ranges simultaneously for different destinations, such as mobile devices or social media.\n        - img \"MacBook Pro 16 screen showing image of a car with moody green lighting, export file window open, video clips at the bottom\"\n    - list:\n      - listitem:\n        - button \"Previous item in Workflows Gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item in Workflows Gallery\":\n          - img\n    - heading \"Compressor. Expand your encoding options.\" [level=3]\n    - paragraph:\n      - text: Create custom export settings, apply filters, and\n      - strong: take full control of your video output.\n      - text: Compressor expands on high-performance encoding options with support for multiple industry-standard formats like HDR, HEVC, 360° video, and MXF. It’s the most powerful and flexible way to deliver your Final Cut Pro projects, no matter where they’re headed.\n    - img \"MacBook Pro 16, screen showing Compressor workspace with image of woman in red dress riding a horse, demo of batch export\"\n    - button \"Unpack more about Compressor\"\n    - heading \"iPad\" [level=2]\n    - paragraph: Your studio. To go.\n    - paragraph:\n      - text: Final Cut Pro brings powerful video editing to iPad, combining pro features with the freedom of a touch-first experience. Whether you’re capturing content on the go or editing on set,\n      - strong: turning inspiration into creation is just a tap away.\n    - tablist \"iPad gallery\":\n      - tab \"Live Multicam\" [selected]\n      - tab \"Final Cut Camera\"\n      - tab \"Touch-first interface\"\n      - tab \"Apple Pencil\"\n      - tab \"Live Drawing\"\n      - tab \"Montage Maker\"\n      - tab \"Share to your Mac\"\n    - tabpanel \"Live Multicam\":\n      - img \"iPad Pro 13 screen showing Live Multicam with four different angles of a person playing guitar using iPad Pro and iPhone 17 Pro devices\"\n      - paragraph: Connect up to four iPhone or iPad devices, control their settings remotely, and automatically sync all your footage. Easily record music videos, podcasts, and interviews.\n    - heading \"Video Creation with Apple\" [level=2]\n    - paragraph: A stellar ensemble.\n    - paragraph:\n      - text: Fueled by the power of Apple silicon, Final Cut Pro\n      - strong: rockets through edits and complex tasks.\n      - text: It also works with other Apple Creator Studio apps and Apple accessories.\n    - tablist \"Video Creation gallery\":\n      - tab \"ProRes RAW\" [selected]\n      - tab \"HDR on Apple displays\"\n      - tab \"iMovie import\"\n    - tabpanel \"ProRes RAW\":\n      - img \"iPad Pro 13 screen showing image of woman with braids blowing bubble gum in front of several mirrors, project media to the right, settings panel to the left, social reel clips at the bottom of the screen\"\n      - paragraph: Final Cut Camera lets you capture in ProRes RAW for maximum flexibility in shaping your video’s look and extending detail in highlights and shadows. ProRes RAW delivers RAW quality with faster rendering and export.\n    - heading \"Questions? Answers.\" [level=2]\n    - list \"FAQ accordion\":\n      - listitem:\n        - heading \"What is Apple Creator Studio?\" [level=3]:\n          - button \"What is Apple Creator Studio?\":\n            - text: What is Apple Creator Studio?\n            - img\n      - listitem:\n        - heading \"How do I download Final Cut Pro, Motion, and Compressor?\" [level=3]:\n          - button \"How do I download Final Cut Pro, Motion, and Compressor?\":\n            - text: How do I download Final Cut Pro, Motion, and Compressor?\n            - img\n      - listitem:\n        - heading \"How much does Final Cut Pro cost?\" [level=3]:\n          - button \"How much does Final Cut Pro cost?\":\n            - text: How much does Final Cut Pro cost?\n            - img\n      - listitem:\n        - heading \"What is the difference between the subscription version and a one-time purchase of Final Cut Pro?\" [level=3]:\n          - button \"What is the difference between the subscription version and a one-time purchase of Final Cut Pro?\":\n            - text: What is the difference between the subscription version and a one-time purchase of Final Cut Pro?\n            - img\n      - listitem:\n        - heading \"Is Final Cut Pro just for professional video editors?\" [level=3]:\n          - button \"Is Final Cut Pro just for professional video editors?\":\n            - text: Is Final Cut Pro just for professional video editors?\n            - img\n      - listitem:\n        - heading \"Can I open an iMovie project in Final Cut Pro?\" [level=3]:\n          - button \"Can I open an iMovie project in Final Cut Pro?\":\n            - text: Can I open an iMovie project in Final Cut Pro?\n            - img\n      - listitem:\n        - heading \"Which hardware and software do I need to use Final Cut Pro, Motion, and Compressor?\" [level=3]:\n          - button \"Which hardware and software do I need to use Final Cut Pro, Motion, and Compressor?\":\n            - text: Which hardware and software do I need to use Final Cut Pro, Motion, and Compressor?\n            - img\n  - contentinfo \"Apple Footer\":\n    - heading \"Apple Footer\" [level=2]\n    - region \"Footnotes\":\n      - list:\n        - listitem: New subscribers only. Plan renews at $12.99/month or $129/year based on plan selected. Plan automatically renews until cancelled. Terms apply.\n        - listitem:\n          - text: Some features of Apple Creator Studio require an Apple Intelligence–capable device. For a list of Apple Intelligence availability and technical requirements, see\n          - link \"support.apple.com/121115\":\n            - /url: https://support.apple.com/121115\n          - text: .\n        - listitem: iPhone shown running Final Cut Camera, available as a separate download.\n        - listitem: Visual Search requires a Mac with Apple silicon and macOS 15.6 or later or an iPad with Apple M1 chip or later, iPad (A16), or iPad mini (A17 Pro) and iPadOS 26 or later. Available only in U.S. English.\n        - listitem: Transcript Search in Final Cut Pro requires a Mac with Apple silicon and macOS 15.6 or later or an iPad with Apple M1 chip or later, iPad (A16), or iPad mini (A17 Pro) and iPadOS 26 or later. Available only in U.S. English.\n        - listitem: Some content, including audio plug-ins, is made available by third parties and is subject to their terms and conditions.\n        - listitem: Final Cut Camera is available on the App Store. Requires iPhone XS or later running iOS 18.6 or later, with some features requiring iOS 26 or iPhone 17 Pro.\n        - listitem: Apple Pencil sold separately.\n        - listitem: Apple Pencil Pro sold separately.\n      - list:\n        - listitem: Final Cut Pro, Logic Pro, Pixelmator Pro, Motion, Compressor, and MainStage are all included in Apple Creator Studio, or each of these applications is available as a one-time purchase for Mac on the App Store.\n    - navigation \"Breadcrumbs\":\n      - link \"Apple\":\n        - /url: /\n      - list:\n        - listitem: Final Cut Pro\n    - navigation \"Apple Directory\":\n      - heading \"Shop and Learn\" [level=3]\n      - list:\n        - listitem:\n          - link \"Store\":\n            - /url: /us/shop/goto/store\n        - listitem:\n          - link \"Mac\":\n            - /url: /mac/\n        - listitem:\n          - link \"iPad\":\n            - /url: /ipad/\n        - listitem:\n          - link \"iPhone\":\n            - /url: /iphone/\n        - listitem:\n          - link \"Watch\":\n            - /url: /watch/\n        - listitem:\n          - link \"Vision\":\n            - /url: /apple-vision-pro/\n        - listitem:\n          - link \"AirPods\":\n            - /url: /airpods/\n        - listitem:\n          - link \"Home\":\n            - /url: /home/\n        - listitem:\n          - link \"AirTag\":\n            - /url: /airtag/\n        - listitem:\n          - link \"Accessories\":\n            - /url: /us/shop/goto/buy_accessories\n        - listitem:\n          - link \"Gift Cards\":\n            - /url: /us/shop/goto/giftcards\n      - heading \"Apple Wallet\" [level=3]\n      - list:\n        - listitem:\n          - link \"Wallet\":\n            - /url: /wallet/\n        - listitem:\n          - link \"Apple Card\":\n            - /url: /apple-card/\n        - listitem:\n          - link \"Apple Pay\":\n            - /url: /apple-pay/\n        - listitem:\n          - link \"Apple Cash\":\n            - /url: /apple-cash/\n      - heading \"Account\" [level=3]\n      - list:\n        - listitem:\n          - link \"Manage Your Apple Account\":\n            - /url: https://account.apple.com/\n        - listitem:\n          - link \"Apple Store Account\":\n            - /url: /us/shop/goto/account\n        - listitem:\n          - link \"iCloud.com\":\n            - /url: https://www.icloud.com\n      - heading \"Entertainment\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple One\":\n            - /url: /apple-one/\n        - listitem:\n          - link \"Apple TV\":\n            - /url: /apple-tv/\n        - listitem:\n          - link \"Apple Music\":\n            - /url: /apple-music/\n        - listitem:\n          - link \"Apple Arcade\":\n            - /url: /apple-arcade/\n        - listitem:\n          - link \"Apple Fitness+\":\n            - /url: /apple-fitness-plus/\n        - listitem:\n          - link \"Apple News+\":\n            - /url: /apple-news/\n        - listitem:\n          - link \"Apple Podcasts\":\n            - /url: /apple-podcasts/\n        - listitem:\n          - link \"Apple Books\":\n            - /url: /apple-books/\n        - listitem:\n          - link \"App Store\":\n            - /url: /app-store/\n      - heading \"Apple Store\" [level=3]\n      - list:\n        - listitem:\n          - link \"Find a Store\":\n            - /url: /retail/\n        - listitem:\n          - link \"Genius Bar\":\n            - /url: /retail/geniusbar/\n        - listitem:\n          - link \"Today at Apple\":\n            - /url: /today/\n        - listitem:\n          - link \"Group Reservations\":\n            - /url: /today/groups/\n        - listitem:\n          - link \"Apple Camp\":\n            - /url: /today/camp/\n        - listitem:\n          - link \"Apple Store App\":\n            - /url: https://apps.apple.com/us/app/apple-store/id375380948\n        - listitem:\n          - link \"Certified Refurbished\":\n            - /url: /us/shop/goto/special_deals\n        - listitem:\n          - link \"Apple Upgrade\":\n            - /url: /us/shop/goto/apple_upgrade\n        - listitem:\n          - link \"Apple Trade In\":\n            - /url: /us/shop/goto/trade_in\n        - listitem:\n          - link \"Financing\":\n            - /url: /us/shop/goto/payment_plan\n        - listitem:\n          - link \"Carrier Deals at Apple\":\n            - /url: /us/shop/goto/buy_iphone/carrier_offers\n        - listitem:\n          - link \"Order Status\":\n            - /url: /us/shop/goto/order/list\n        - listitem:\n          - link \"Shopping Help\":\n            - /url: /us/shop/goto/help\n      - heading \"For Business\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Business\":\n            - /url: /business/\n        - listitem:\n          - link \"Shop for Business\":\n            - /url: /retail/business/\n      - heading \"For Education\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Education\":\n            - /url: /education/\n        - listitem:\n          - link \"Shop for K-12\":\n            - /url: /education/k12/how-to-buy/\n        - listitem:\n          - link \"Shop for College\":\n            - /url: /us/shop/goto/educationrouting\n      - heading \"For Healthcare\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Healthcare\":\n            - /url: /healthcare/\n      - heading \"For Government\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Government\":\n            - /url: /government/\n        - listitem:\n          - link \"Shop for Veterans and Military\":\n            - /url: /us/shop/goto/eppstore/veteransandmilitary\n        - listitem:\n          - link \"Shop for State and Local Employees\":\n            - /url: /us_epp_67909/store\n        - listitem:\n          - link \"Shop for Federal Employees\":\n            - /url: /us_epp_55499/store\n      - heading \"Apple Values\" [level=3]\n      - list:\n        - listitem:\n          - link \"Accessibility\":\n            - /url: /accessibility/\n        - listitem:\n          - link \"Education\":\n            - /url: /education-initiative/\n        - listitem:\n          - link \"Environment\":\n            - /url: /environment/\n        - listitem:\n          - link \"Inclusion and Diversity\":\n            - /url: /diversity/\n        - listitem:\n          - link \"Privacy\":\n            - /url: /privacy/\n        - listitem:\n          - link \"Racial Equity and Justice\":\n            - /url: /racial-equity-justice-initiative/\n        - listitem:\n          - link \"Supply Chain Innovation\":\n            - /url: /supply-chain/\n      - heading \"About Apple\" [level=3]\n      - list:\n        - listitem:\n          - link \"Newsroom\":\n            - /url: /newsroom/\n        - listitem:\n          - link \"Apple Leadership\":\n            - /url: /leadership/\n        - listitem:\n          - link \"Career Opportunities\":\n            - /url: /careers/us/\n        - listitem:\n          - link \"Investors\":\n            - /url: https://investor.apple.com/\n        - listitem:\n          - link \"Ethics & Compliance\":\n            - /url: /compliance/\n        - listitem:\n          - link \"Events\":\n            - /url: /apple-events/\n        - listitem:\n          - link \"Contact Apple\":\n            - /url: /contact/\n    - text: \"More ways to shop:\"\n    - link \"Find an Apple Store\":\n      - /url: /retail/\n    - text: or\n    - link \"other retailer\":\n      - /url: https://locate.apple.com/\n    - text: near you. Or call\n    - link \"1-800-MY-APPLE\":\n      - /url: tel:1-800-692-7753\n    - text: (1-800-692-7753). Copyright © 2026 Apple Inc. All rights reserved.\n    - list:\n      - listitem:\n        - link \"Privacy Policy\":\n          - /url: /legal/privacy/\n      - listitem:\n        - link \"Terms of Use\":\n          - /url: /legal/internet-services/terms/site.html\n      - listitem:\n        - link \"Sales and Refunds\":\n          - /url: /us/shop/goto/help/sales_refunds\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/\n      - listitem:\n        - link \"Site Map\":\n          - /url: /sitemap/\n    - link \"United States. Choose your country or region\":\n      - /url: /choose-country-region/\n      - text: United States"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.apple.com/final-cut-pro/",
+              "origin": "https://www.apple.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

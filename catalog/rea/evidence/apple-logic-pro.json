@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_6ec0f8762d755e9034465b3c31afc4ccd820660c745e7c2eb91c9df552070ed2",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.apple.com/logic-pro/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "4f02b15253fd54be08a99d0082017b10b0931409c7e9f3d69f65beae7e9a333f"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://www.apple.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4245,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1453,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/logic-pro/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2539,
+        "before_url": {
+          "url": "https://www.apple.com/logic-pro/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/logic-pro/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "b65c792ef363e2f605708325d178991c1ff8d42bdd5f8e4104a11eb00a0672d8",
+              "bytes": 30932,
+              "text": "- document:\n  - navigation \"Global\":\n    - list:\n      - listitem:\n        - link \"Apple\":\n          - /url: /\n      - listitem:\n        - list:\n          - listitem:\n            - link \"Store\":\n              - /url: /us/shop/goto/store\n          - listitem:\n            - button \"Store menu\"\n        - list:\n          - listitem:\n            - link \"Mac\":\n              - /url: /mac/\n          - listitem:\n            - button \"Mac menu\"\n        - list:\n          - listitem:\n            - link \"iPad\":\n              - /url: /ipad/\n          - listitem:\n            - button \"iPad menu\"\n        - list:\n          - listitem:\n            - link \"iPhone\":\n              - /url: /iphone/\n          - listitem:\n            - button \"iPhone menu\"\n        - list:\n          - listitem:\n            - link \"Watch\":\n              - /url: /watch/\n          - listitem:\n            - button \"Watch menu\"\n        - list:\n          - listitem:\n            - link \"Vision\":\n              - /url: /apple-vision-pro/\n          - listitem:\n            - button \"Vision menu\"\n        - list:\n          - listitem:\n            - link \"AirPods\":\n              - /url: /airpods/\n          - listitem:\n            - button \"AirPods menu\"\n        - list:\n          - listitem:\n            - link \"Home\":\n              - /url: /home/\n          - listitem:\n            - button \"Home menu\"\n        - list:\n          - listitem:\n            - link \"Entertainment\":\n              - /url: /entertainment/\n          - listitem:\n            - button \"Entertainment menu\"\n        - list:\n          - listitem:\n            - link \"Accessories\":\n              - /url: /us/shop/goto/buy_accessories\n          - listitem:\n            - button \"Accessories menu\"\n        - list:\n          - listitem:\n            - link \"Support\":\n              - /url: https://support.apple.com/?cid=gn-ols-home-hp-tab\n          - listitem:\n            - button \"Support menu\"\n      - listitem:\n        - button \"Search apple.com\"\n      - listitem:\n        - button \"Shopping Bag\"\n  - navigation \"Local\":\n    - link \"Logic Pro\":\n      - /url: /logic-pro/\n    - list:\n      - listitem:\n        - link \"Explore Apple Creator Studio\":\n          - /url: /apple-creator-studio/\n    - link \"Try it free, 1 footnote, Logic Pro\":\n      - /url: https://apps.apple.com/app/id1615087040?itsct=acs-fcp_nav-nav_try-acs-260126&pt=2003&ct=marcom-fcp-stickyNav&itscg=10000\n  - main:\n    - heading \"Logic Pro\" [level=1]\n    - heading \"Sound thinking.\" [level=2]\n    - paragraph: Logic Pro is the ultimate music creation experience for Mac and iPad. It features an extensive collection of instruments and effects. And it helps you produce and edit audio with intelligent tools for beat-making, songwriting, and remixing.\n    - img \"MacBook Pro 16 screen showing Logic Pro interface, details of various controls for bass and drums, iPad Pro 13 screen showing controls for different drums and percussion effects\"\n    - heading \"Apple Creator Studio A suite deal for any creator.\" [level=2]\n    - paragraph: Logic Pro is part of Apple Creator Studio, the essential collection of creative apps that includes Final Cut Pro, Pixelmator Pro, and more.\n    - link \"Try it free, 1 footnote, Apple Creator Studio\":\n      - /url: https://apps.apple.com/app-bundle/id1868448255?itsct=acs-lp_router-rout_try-acs-260126&pt=2003&ct=marcom-lp-routerTile&itscg=10000\n    - link \"Learn more, Apple Creator Studio\":\n      - /url: /apple-creator-studio/\n      - text: Learn more\n    - img \"Apple Creator Studio apps, Final Cut Pro, Logic Pro, Pixelmator Pro, Keynote, Pages, Numbers, Freeform, Motion, Compressor, MainStage\"\n    - paragraph:\n      - link \"Logic Pro for Mac is also available as a one-time purchase on the App Store, opens in new window\":\n        - /url: https://apps.apple.com/us/app/logic-pro/id634148309?mt=12\n        - text: Logic Pro for Mac is also available as a one-time purchase on the App Store\n    - heading \"Get to know Logic Pro.\" [level=2]\n    - button \"Play Highlights Gallery\":\n      - img\n    - tablist \"Logic Pro highlights\":\n      - tab \"Workflows\" [selected]\n      - tab \"Intelligent Tools\"\n      - tab \"Beat-making Tools\"\n      - tab \"Sounds, instruments and effects\"\n      - tab \"Mixing\"\n      - tab \"Round-trip compatibility\"\n    - list:\n      - tabpanel \"Workflows\":\n        - img \"Side profile of a person wearing AirPods Max using Logic Pro on a MacBook Pro 16\"\n        - paragraph: A musical playground for beats, songwriting, recording, and remixing.\n    - img \"Image showing beat making tools with different color blocks representing different percussion instruments\"\n    - heading \"Beat‑Making Tools\" [level=2]\n    - paragraph: Unleash the beats.\n    - paragraph:\n      - text: Build the perfect drum kit,\n      - strong: program drums and bass lines,\n      - text: and transform samples into entirely new instruments. You can even reshape melodies and rhythms with ease. It’s everything you need to create beats, shape sounds, and bring your ideas to life.\n    - list \"Beat-Making Tools gallery\":\n      - listitem:\n        - heading \"Build custom drum kits.\" [level=3]\n        - paragraph: Drum Machine Designer lets you add samples and unique plug‑ins to each drum pad. Integrated with Step Sequencer, it makes building beats fast and intuitive.\n        - img \"Drum kit symbols, various instruments in different colors\"\n      - listitem:\n        - heading \"Quick Sampler.\" [level=3]\n        - paragraph: Record, chop, flip, and transform samples into entirely new playable instruments.\n        - img \"Quick Sampler, blue audio waves, slice and recorder buttons\"\n      - listitem:\n        - heading \"Drum Synth.\" [level=3]\n        - paragraph: Create synthesized drum sounds with this powerful but easy-to-use plug-in. Integrated into Drum Machine Designer, Drum Synth gives you a focused set of sound-shaping tools.\n        - img \"Demo of sound shaping controls on heavy kick drum\"\n      - listitem:\n        - heading \"Step Sequencer.\" [level=3]\n        - paragraph: Inspired by the programming styles of vintage drum machines, Step Sequencer makes building beats out of drums, bass, and melodies remarkably simple. You can even add variation with Note Repeat and randomized step playback.\n        - img \"MacBook Pro 16 screen showing step sequencer in use\"\n    - list:\n      - listitem:\n        - button \"Previous item in Beat-Making Tools Gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item in Beat-Making Tools Gallery\":\n          - img\n    - img \"Mac Studio Display, screen of Logic Pro controls, keyboard on the bottom left side\"\n    - heading \"Sounds, Instruments, and Effects\" [level=2]\n    - paragraph: Sounds by the trackload.\n    - paragraph:\n      - text: Logic Pro fuels your creativity with loads of sounds, instruments, and effects from a wide range of styles and genres. Tap into a huge content library, incredible synths, and a mind-blowing array of effects to\n      - strong: create the sounds you’ve only imagined.\n    - list \"Sounds, Instruments, and Effects gallery\":\n      - listitem:\n        - heading \"Sound Library.\" [level=3]\n        - paragraph: Find inspiration with an expanding collection of instruments, loops, and samples, including Producer Packs created by hitmakers like Oak Felder and Boys Noize.\n        - img \"Mac screen showing dozens of different soundpacks artist and producer packs and instrument packs\"\n      - listitem:\n        - heading \"Instruments.\" [level=3]\n        - paragraph: From history-defining basses and classic keyboards to modern synths and meticulously sampled pianos, you get studio-quality sounds built for today’s music.\n        - img \"MacBook Pro 16 screen showing wave form of different instruments\"\n      - listitem:\n        - heading \"Effects.\" [level=3]\n        - paragraph: Shape your track’s sonic character with industry-leading reverbs, delays, modulation effects, EQs, and compressors.\n        - img \"Screen showing tools to adjust reverb and effects of synth\"\n      - listitem:\n        - heading \"Third‑party plug‑ins.\" [level=3]\n        - paragraph:\n          - text: Access tens of thousands of instruments and effects made by today’s leading developers.\n          - superscript:\n            - link \"Footnote 2\":\n              - /url: \"#footnote-2\"\n              - text: \"2\"\n        - img \"Screen showing wide range of third-party plug-ins\"\n    - list:\n      - listitem:\n        - button \"Previous item in Sounds, Instruments, and Effects Gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item in Sounds, Instruments, and Effects Gallery\":\n          - img\n    - heading \"Plug‑ins and play.\" [level=3]\n    - paragraph:\n      - text: Logic Pro for Mac gives you access to a\n      - strong: massive library of plug-ins and sounds,\n      - text: along with a growing collection of royalty-free sounds, loops, and instruments. Choose from Apple-designed Sound Packs and Producer Packs from today’s leading artists. Each pack includes hundreds of loops, samples, patches, and more.\n    - img \"MacBook Pro 16, Logic Pro mixing board with module for arpeggiation controls\"\n    - button \"Hear more about plug‑ins and sounds\"\n    - img \"Different colors fading into each other, black, orange, red, pink, purple, blue\"\n    - heading \"Intelligence\" [level=2]\n    - paragraph: Brilliance on board.\n    - paragraph:\n      - text: Packed with AI features that build on Apple Intelligence and powered by Apple silicon, Logic Pro gives you intuitive ways to\n      - strong: make beats, write songs, remix tracks, and jam\n      - text: with Session Players.\n      - superscript:\n        - link \"Footnote 3\":\n          - /url: \"#footnote-3\"\n          - text: \"3\"\n      - text: It’s your creative collaborator in all things musical.\n    - list \"Intelligence gallery\":\n      - listitem:\n        - heading \"Split audio into isolated tracks.\" [level=3]\n        - paragraph: Stem Splitter separates drums, bass, vocals, guitar, piano, and other instruments, so it’s easy to apply effects, sample, or change the mix.\n        - img \"MacBook Pro 16 screen showing module for Stem Splitter, stems for vocals bass guitar drums piano and others\"\n      - listitem:\n        - heading \"Mastering Assistant.\" [level=3]\n        - paragraph: Make your mix sound great on any device. Mastering Assistant listens to your track and transforms it using analog mastering magic that you can adjust to get your project ready for release.\n        - img \"Module for Mastering Assistant, controls for dynamics and spread\"\n      - listitem:\n        - heading \"Instant chord detection.\" [level=3]\n        - paragraph: Use Chord ID to quickly identify chords from any part of your song and Session Players will follow along. Chord ID pulls the chords from MIDI and audio regions and drops them in the Chord Track.\n        - img \"Chord Track controls, tool to apply analyze chords to chord track\"\n      - listitem:\n        - heading \"Pitch Correction.\" [level=3]\n        - paragraph: Logic Pro listens to pitch using machine learning and makes adjustments in real time. The result? A perfectly in-tune, natural‑sounding vocal.\n        - img \"Pitch correction controls for vocal track\"\n      - listitem:\n        - heading \"Smart Tempo.\" [level=3]\n        - paragraph: Logic Pro automatically takes any audio and matches it to the tempo of your project. Or you can record without a metronome and Logic Pro will follow the tempo of your performance.\n        - img \"MacBook Pro 16 screen waveform showing tempo sync\"\n      - listitem:\n        - heading \"Get that analog sound.\" [level=3]\n        - paragraph: ChromaGlow adds the texture of tubes, tape, and other classic analog hardware to bring more depth and color to your tracks.\n        - img \"Screen showing Driving Kick Beat modern\"\n    - list:\n      - listitem:\n        - button \"Previous item in Intelligence Gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item in Intelligence Gallery\":\n          - img\n    - heading \"Session Players vibe with you.\" [level=3]\n    - paragraph:\n      - text: Call on a group of\n      - strong: AI-powered musicians\n      - text: at a moment’s notice. Session Players take your direction on the fly and lay down polished synth, bass, keyboard, and drum grooves that perfectly fit your song.\n    - tablist \"Session Players gallery\":\n      - tab \"Chord Track\" [selected]\n      - tab \"Synth Player\"\n      - tab \"Piano Player\"\n      - tab \"Electric Bass Player\"\n      - tab \"Upright Bass Player\"\n      - tab \"Acoustic Drummer\"\n      - tab \"Electronic Drummer\"\n    - tabpanel \"Chord Track\":\n      - img \"MacBook Pro 16 screen showing Chord Track, Piano, Platinum Cuts, Simple Foundation, Majestic Rise Pad, Chord window adjustments\"\n      - paragraph: Create and edit chord progressions in the Chord Track and your Session Players will follow along.\n    - img \"Side profile of a person wearing AirPods Max using Logic Pro on a MacBook Pro 16, screen shows Logic Pro workspace\"\n    - heading \"Workflows\" [level=2]\n    - paragraph: Move at the speed of sound.\n    - paragraph:\n      - text: From recording and editing to mixing and mastering, the workflow features in Logic Pro\n      - strong: accelerate every part of your music‑making.\n    - list \"Workflows gallery\":\n      - listitem:\n        - heading \"Flashback Capture.\" [level=3]\n        - paragraph: Now when you accidentally come up with something brilliant but weren’t recording, Flashback Capture has your back. This temporary buffer is always on, capturing audio and MIDI in the background.\n        - img \"Record button, red\"\n      - listitem:\n        - heading \"Quick Swipe Comping.\" [level=3]\n        - paragraph: Create the perfect performance from multiple takes more easily than you ever imagined. You can even save multiple comps and quickly switch between them.\n        - img \"iPad Pro 13, workspace showing different color rows of audio takes\"\n      - listitem:\n        - heading \"Time and pitch perfection.\" [level=3]\n        - paragraph: Use Flex Time to warp the timing to your taste, and Flex Pitch to fix that almost-perfect take so you don’t have to re‑record.\n        - img \"Screen showing Flex Pitch with Vibrato percentage, Lead Vocal graph\"\n      - listitem:\n        - heading \"Live Loops.\" [level=3]\n        - paragraph: Explore musical ideas using a grid of loops and phrases you can trigger and experiment with unique arrangements on the fly.\n        - img \"MacBook Pro 16 screen showing controls and effects, left panel with Toppers, Infinity, Percussion, Textures, Beats, Keyboards, Synths 1, Vocal Chops, Anthemic Lead, Synths 2, Synths 3, each row is categorized by color and shown on the right\"\n      - listitem:\n        - heading \"Get your groove.\" [level=3]\n        - paragraph: Easily record and edit MIDI performances. Transform a loose performance into one that locks into the groove while preserving the original feel.\n        - img \"MacBook Pro 16 screen showing soundwaves with different rows including Big Room, Morphing Lead, Lead Vocal, Massive Bass, at the bottom is the Piano Roll window with adjustments to the left\"\n    - list:\n      - listitem:\n        - button \"Previous item in Workflows Gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item in Workflows Gallery\":\n          - img\n    - heading \"Take it from studio to MainStage.\" [level=3]\n    - paragraph:\n      - text: MainStage\n      - strong: turns your Mac into an instrument, voice processor, or guitar rig.\n      - text: So the sound you love on your recording can be the sound your audience hears. Setup is fast, teardown is faster, and everything in between is more reliable.\n    - img \"MacBook Pro 16 screen showing MainStage workspace, a left panel with various files, at the bottom Patch Settings with Patch Library of sounds, to the right Channel Strips and controls\"\n    - button \"Raise the curtain on MainStage\"\n    - img \"MacBook Pro 16 screen showing Mixing workspace with soundwave layers and various dials and settings at the bottom\"\n    - heading \"Mixing\" [level=2]\n    - paragraph: Level up your mix.\n    - paragraph:\n      - text: Logic Pro offers a full-featured mixer that lets you\n      - strong: take control of even the most demanding mix\n      - text: to create polished, release‑ready tracks.\n    - list \"Mixing gallery\":\n      - listitem:\n        - heading \"Logic Pro Mixer.\" [level=3]\n        - paragraph: Bring the different parts of your song into focus using the powerful mixer. And shape your sound with a complete suite of professional plug‑ins.\n        - img \"MacBook Pro 16 screen showing soundwave layers, Mastering Assistant window is open, various dials and settings at the bottom\"\n      - listitem:\n        - heading \"Control signal flow.\" [level=3]\n        - paragraph: Group, route, and send signals wherever you want. Use Track Stacks to organize tracks, and make your mixes come alive with dynamic automation.\n        - img \"iPad Pro 13 screen showing Mixing workspace with soundwave layers and various dials and settings at the bottom\"\n      - listitem:\n        - heading \"Spatial Audio.\" [level=3]\n        - paragraph:\n          - text: Create fully immersive Spatial Audio mixes using integrated Dolby Atmos tools, then export them as industry-standard ADM files ready to submit for Apple Music and other streaming services.\n          - superscript:\n            - link \"Footnote 4\":\n              - /url: \"#footnote-4\"\n              - text: \"4\"\n        - img \"Back of a person’s head wearing Apple AirPods Max and graphics around their head indicating spatial audio\"\n    - list:\n      - listitem:\n        - button \"Previous item in Mixing Gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item in Mixing Gallery\":\n          - img\n    - heading \"iPad\" [level=2]\n    - paragraph: Work anywhere. Without missing a beat.\n    - paragraph:\n      - text: Logic Pro for iPad puts a professional music studio right at your fingertips. Intelligent features and an intuitive interface made specifically for iPad give you what you need to\n      - strong: make incredible music wherever you are.\n    - tablist \"iPad gallery\":\n      - tab \"Music understanding\" [selected]\n      - tab \"Touch to play\"\n      - tab \"Apple Pencil support\"\n      - tab \"Round-trip compatibility\"\n      - tab \"Quick Swipe Comping\"\n    - tabpanel \"Music understanding\":\n      - img \"iPad Pro 13 screen showing Logic Pro workspace, Loops panel to the left, rows of soundwaves in different colors\"\n      - paragraph: Intelligent awareness of the massive Logic Pro Sound Library helps you find loops and sounds fast with natural language search or discover similar ones with a simple drag and drop. No tags, guesses, or filters required.\n    - heading \"Music Creation with Apple\" [level=2]\n    - paragraph: Everything in perfect harmony.\n    - paragraph:\n      - text: Logic Pro on Apple silicon effortlessly runs demanding plug-ins and large projects at the highest fidelity with flow and finesse. It also\n      - strong: works in concert with the rest of Apple Creator Studio,\n      - text: Apple devices, and other apps.\n    - tablist \"Music Creation With Apple gallery\":\n      - tab \"Voice Memos integration\" [selected]\n      - tab \"Logic Remote\"\n      - tab \"GarageBand projects\"\n    - tabpanel \"Voice Memos integration\":\n      - img \"MacBook Pro 16 screen showing workspace with two rows for vocal and guitar, soundwaves, iPhone 17 Pro screen of Logic Pro Voice Memos, recording in red, sound waves, play button, new song idea, date, and duration\"\n      - paragraph:\n        - text: Vocalists can layer a vocal track on top of an existing instrumental recording — without the need for headphones.\n        - superscript:\n          - link \"Footnote 6\":\n            - /url: \"#footnote-6\"\n            - text: \"6\"\n        - text: Then Logic Pro can import a layered file and automatically create vocal and instrumental tracks that you can develop into a final song.\n    - heading \"Questions? Answers.\" [level=2]\n    - list \"FAQ accordion\":\n      - listitem:\n        - heading \"What is Apple Creator Studio?\" [level=3]:\n          - button \"What is Apple Creator Studio?\":\n            - text: What is Apple Creator Studio?\n            - img\n      - listitem:\n        - heading \"How do I get Logic Pro or MainStage?\" [level=3]:\n          - button \"How do I get Logic Pro or MainStage?\":\n            - text: How do I get Logic Pro or MainStage?\n            - img\n      - listitem:\n        - heading \"How much do Logic Pro and MainStage cost?\" [level=3]:\n          - button \"How much do Logic Pro and MainStage cost?\":\n            - text: How much do Logic Pro and MainStage cost?\n            - img\n      - listitem:\n        - heading \"What is the difference between the subscription version and one-time purchases of Logic Pro and MainStage?\" [level=3]:\n          - button \"What is the difference between the subscription version and one-time purchases of Logic Pro and MainStage?\":\n            - text: What is the difference between the subscription version and one-time purchases of Logic Pro and MainStage?\n            - img\n      - listitem:\n        - heading \"What are the system requirements for Logic Pro?\" [level=3]:\n          - button \"What are the system requirements for Logic Pro?\":\n            - text: What are the system requirements for Logic Pro?\n            - img\n      - listitem:\n        - heading \"Where can I access tutorials to use Logic Pro?\" [level=3]:\n          - button \"Where can I access tutorials to use Logic Pro?\":\n            - text: Where can I access tutorials to use Logic Pro?\n            - img\n      - listitem:\n        - heading \"Does Logic Pro have AI features?\" [level=3]:\n          - button \"Does Logic Pro have AI features?\":\n            - text: Does Logic Pro have AI features?\n            - img\n  - contentinfo \"Apple Footer\":\n    - heading \"Apple Footer\" [level=2]\n    - region \"Footnotes\":\n      - list:\n        - listitem: New subscribers only. Plan renews at $12.99/month or $129/year based on plan selected. Plan automatically renews until cancelled. Terms apply.\n        - listitem: Some content, including audio plug-ins, is made available by third parties and is subject to their terms and conditions.\n        - listitem:\n          - text: Some features of Apple Creator Studio require an Apple Intelligence–capable device. For a list of Apple Intelligence availability and technical requirements, see\n          - link \"support.apple.com/121115\":\n            - /url: https://support.apple.com/121115\n          - text: .\n        - listitem: Spatial Audio is not available on all iPhone models.\n        - listitem: Apple Pencil sold separately.\n        - listitem:\n          - text: \"Available only on supported iPhone models; see full list here:\"\n          - link \"support.apple.com/guide/iphone/aside/ipha92ce9733/26/ios/26\":\n            - /url: https://support.apple.com/guide/iphone/aside/ipha92ce9733/26/ios/26\n          - text: .\n      - list:\n        - listitem: Final Cut Pro, Logic Pro, Pixelmator Pro, Motion, Compressor, and MainStage are all included in Apple Creator Studio, or each of these applications is available as a one-time purchase for Mac on the App Store.\n    - navigation \"Breadcrumbs\":\n      - link \"Apple\":\n        - /url: /\n      - list:\n        - listitem: Logic Pro\n    - navigation \"Apple Directory\":\n      - heading \"Shop and Learn\" [level=3]\n      - list:\n        - listitem:\n          - link \"Store\":\n            - /url: /us/shop/goto/store\n        - listitem:\n          - link \"Mac\":\n            - /url: /mac/\n        - listitem:\n          - link \"iPad\":\n            - /url: /ipad/\n        - listitem:\n          - link \"iPhone\":\n            - /url: /iphone/\n        - listitem:\n          - link \"Watch\":\n            - /url: /watch/\n        - listitem:\n          - link \"Vision\":\n            - /url: /apple-vision-pro/\n        - listitem:\n          - link \"AirPods\":\n            - /url: /airpods/\n        - listitem:\n          - link \"Home\":\n            - /url: /home/\n        - listitem:\n          - link \"AirTag\":\n            - /url: /airtag/\n        - listitem:\n          - link \"Accessories\":\n            - /url: /us/shop/goto/buy_accessories\n        - listitem:\n          - link \"Gift Cards\":\n            - /url: /us/shop/goto/giftcards\n      - heading \"Apple Wallet\" [level=3]\n      - list:\n        - listitem:\n          - link \"Wallet\":\n            - /url: /wallet/\n        - listitem:\n          - link \"Apple Card\":\n            - /url: /apple-card/\n        - listitem:\n          - link \"Apple Pay\":\n            - /url: /apple-pay/\n        - listitem:\n          - link \"Apple Cash\":\n            - /url: /apple-cash/\n      - heading \"Account\" [level=3]\n      - list:\n        - listitem:\n          - link \"Manage Your Apple Account\":\n            - /url: https://account.apple.com/\n        - listitem:\n          - link \"Apple Store Account\":\n            - /url: /us/shop/goto/account\n        - listitem:\n          - link \"iCloud.com\":\n            - /url: https://www.icloud.com\n      - heading \"Entertainment\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple One\":\n            - /url: /apple-one/\n        - listitem:\n          - link \"Apple TV\":\n            - /url: /apple-tv/\n        - listitem:\n          - link \"Apple Music\":\n            - /url: /apple-music/\n        - listitem:\n          - link \"Apple Arcade\":\n            - /url: /apple-arcade/\n        - listitem:\n          - link \"Apple Fitness+\":\n            - /url: /apple-fitness-plus/\n        - listitem:\n          - link \"Apple News+\":\n            - /url: /apple-news/\n        - listitem:\n          - link \"Apple Podcasts\":\n            - /url: /apple-podcasts/\n        - listitem:\n          - link \"Apple Books\":\n            - /url: /apple-books/\n        - listitem:\n          - link \"App Store\":\n            - /url: /app-store/\n      - heading \"Apple Store\" [level=3]\n      - list:\n        - listitem:\n          - link \"Find a Store\":\n            - /url: /retail/\n        - listitem:\n          - link \"Genius Bar\":\n            - /url: /retail/geniusbar/\n        - listitem:\n          - link \"Today at Apple\":\n            - /url: /today/\n        - listitem:\n          - link \"Group Reservations\":\n            - /url: /today/groups/\n        - listitem:\n          - link \"Apple Camp\":\n            - /url: /today/camp/\n        - listitem:\n          - link \"Apple Store App\":\n            - /url: https://apps.apple.com/us/app/apple-store/id375380948\n        - listitem:\n          - link \"Certified Refurbished\":\n            - /url: /us/shop/goto/special_deals\n        - listitem:\n          - link \"Apple Upgrade\":\n            - /url: /us/shop/goto/apple_upgrade\n        - listitem:\n          - link \"Apple Trade In\":\n            - /url: /us/shop/goto/trade_in\n        - listitem:\n          - link \"Financing\":\n            - /url: /us/shop/goto/payment_plan\n        - listitem:\n          - link \"Carrier Deals at Apple\":\n            - /url: /us/shop/goto/buy_iphone/carrier_offers\n        - listitem:\n          - link \"Order Status\":\n            - /url: /us/shop/goto/order/list\n        - listitem:\n          - link \"Shopping Help\":\n            - /url: /us/shop/goto/help\n      - heading \"For Business\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Business\":\n            - /url: /business/\n        - listitem:\n          - link \"Shop for Business\":\n            - /url: /retail/business/\n      - heading \"For Education\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Education\":\n            - /url: /education/\n        - listitem:\n          - link \"Shop for K-12\":\n            - /url: /education/k12/how-to-buy/\n        - listitem:\n          - link \"Shop for College\":\n            - /url: /us/shop/goto/educationrouting\n      - heading \"For Healthcare\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Healthcare\":\n            - /url: /healthcare/\n      - heading \"For Government\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Government\":\n            - /url: /government/\n        - listitem:\n          - link \"Shop for Veterans and Military\":\n            - /url: /us/shop/goto/eppstore/veteransandmilitary\n        - listitem:\n          - link \"Shop for State and Local Employees\":\n            - /url: /us_epp_67909/store\n        - listitem:\n          - link \"Shop for Federal Employees\":\n            - /url: /us_epp_55499/store\n      - heading \"Apple Values\" [level=3]\n      - list:\n        - listitem:\n          - link \"Accessibility\":\n            - /url: /accessibility/\n        - listitem:\n          - link \"Education\":\n            - /url: /education-initiative/\n        - listitem:\n          - link \"Environment\":\n            - /url: /environment/\n        - listitem:\n          - link \"Inclusion and Diversity\":\n            - /url: /diversity/\n        - listitem:\n          - link \"Privacy\":\n            - /url: /privacy/\n        - listitem:\n          - link \"Racial Equity and Justice\":\n            - /url: /racial-equity-justice-initiative/\n        - listitem:\n          - link \"Supply Chain Innovation\":\n            - /url: /supply-chain/\n      - heading \"About Apple\" [level=3]\n      - list:\n        - listitem:\n          - link \"Newsroom\":\n            - /url: /newsroom/\n        - listitem:\n          - link \"Apple Leadership\":\n            - /url: /leadership/\n        - listitem:\n          - link \"Career Opportunities\":\n            - /url: /careers/us/\n        - listitem:\n          - link \"Investors\":\n            - /url: https://investor.apple.com/\n        - listitem:\n          - link \"Ethics & Compliance\":\n            - /url: /compliance/\n        - listitem:\n          - link \"Events\":\n            - /url: /apple-events/\n        - listitem:\n          - link \"Contact Apple\":\n            - /url: /contact/\n    - text: \"More ways to shop:\"\n    - link \"Find an Apple Store\":\n      - /url: /retail/\n    - text: or\n    - link \"other retailer\":\n      - /url: https://locate.apple.com/\n    - text: near you. Or call\n    - link \"1-800-MY-APPLE\":\n      - /url: tel:1-800-692-7753\n    - text: (1-800-692-7753). Copyright © 2026 Apple Inc. All rights reserved.\n    - list:\n      - listitem:\n        - link \"Privacy Policy\":\n          - /url: /legal/privacy/\n      - listitem:\n        - link \"Terms of Use\":\n          - /url: /legal/internet-services/terms/site.html\n      - listitem:\n        - link \"Sales and Refunds\":\n          - /url: /us/shop/goto/help/sales_refunds\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/\n      - listitem:\n        - link \"Site Map\":\n          - /url: /sitemap/\n    - link \"United States. Choose your country or region\":\n      - /url: /choose-country-region/\n      - text: United States"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.apple.com/logic-pro/",
+              "origin": "https://www.apple.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_d016bd1597b9773db5e86a359fed12bf717ff1534d827cbe930796c08790cc25",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.apple.com/safari/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "cb5bd96da4a4d619b00a6fc122b273b853a08472e7c003a6ade0b07c452ca53c"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://www.apple.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4430,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1683,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/safari/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2537,
+        "before_url": {
+          "url": "https://www.apple.com/safari/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/safari/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "c92d5d1d56da9fc90930bed6f20d5560576d8f6ea04217d1d180812a3cade9db",
+              "bytes": 27504,
+              "text": "- document:\n  - navigation \"Global\":\n    - list:\n      - listitem:\n        - link \"Apple\":\n          - /url: /\n      - listitem:\n        - list:\n          - listitem:\n            - link \"Store\":\n              - /url: /us/shop/goto/store\n          - listitem:\n            - button \"Store menu\"\n        - list:\n          - listitem:\n            - link \"Mac\":\n              - /url: /mac/\n          - listitem:\n            - button \"Mac menu\"\n        - list:\n          - listitem:\n            - link \"iPad\":\n              - /url: /ipad/\n          - listitem:\n            - button \"iPad menu\"\n        - list:\n          - listitem:\n            - link \"iPhone\":\n              - /url: /iphone/\n          - listitem:\n            - button \"iPhone menu\"\n        - list:\n          - listitem:\n            - link \"Watch\":\n              - /url: /watch/\n          - listitem:\n            - button \"Watch menu\"\n        - list:\n          - listitem:\n            - link \"Vision\":\n              - /url: /apple-vision-pro/\n          - listitem:\n            - button \"Vision menu\"\n        - list:\n          - listitem:\n            - link \"AirPods\":\n              - /url: /airpods/\n          - listitem:\n            - button \"AirPods menu\"\n        - list:\n          - listitem:\n            - link \"Home\":\n              - /url: /home/\n          - listitem:\n            - button \"Home menu\"\n        - list:\n          - listitem:\n            - link \"Entertainment\":\n              - /url: /entertainment/\n          - listitem:\n            - button \"Entertainment menu\"\n        - list:\n          - listitem:\n            - link \"Accessories\":\n              - /url: /us/shop/goto/buy_accessories\n          - listitem:\n            - button \"Accessories menu\"\n        - list:\n          - listitem:\n            - link \"Support\":\n              - /url: https://support.apple.com/?cid=gn-ols-home-hp-tab\n          - listitem:\n            - button \"Support menu\"\n      - listitem:\n        - button \"Search apple.com\"\n      - listitem:\n        - button \"Shopping Bag\"\n  - main:\n    - heading \"Safari\" [level=1]\n    - heading \"Blazing fast. Incredibly private.\" [level=2]\n    - paragraph:\n      - text: Safari is the best way to experience the internet on all your Apple devices. It brings robust customization options, features powerful privacy protections, and optimizes battery life — so you can browse how you like, when you like. And when it comes to speed, it’s the world’s fastest browser.\n      - superscript:\n        - link \"Footnote 1\":\n          - /url: \"#footnote-1\"\n          - text: \"1\"\n    - link \"Switch to Safari. Opens in a new window\":\n      - /url: x-safari-https://www.apple.com/safari/\n      - text: Switch to Safari\n    - article \"Privacy\":\n      - heading \"Privacy\" [level=2]\n      - heading \"Privacy is built in.\" [level=3]\n      - paragraph: Safari comes with industry-leading privacy protection technology built in, including Intelligent Tracking Prevention that identifies trackers and helps prevent them from profiling or following you across the web. And Private Browsing adds even more protections, such as locking your windows when you’re not using them. Online privacy isn’t just something you should hope for — it’s something you should expect.\n      - link \"View all privacy features\":\n        - /url: /privacy/features/\n      - heading \"Intelligent Tracking Prevention\" [level=3]\n      - paragraph: Safari stops trackers in their tracks.\n      - img\n      - button \"More about tracking prevention\"\n      - heading \"Privacy Report\" [level=3]\n      - paragraph: Safari makes it simple to see how your privacy is protected on all the websites you visit. Click Privacy Report in the Safari menu for a snapshot of cross-site trackers currently prevented from profiling you on the website you’re visiting. Or view a weekly Privacy Report to see how Safari protects you as you browse over time.\n      - heading \"Browser Privacy\" [level=3]\n      - table \"Safari. A browser that’s actually private. Chart comparing browser privacy protections for Safari versus Chrome.\":\n        - caption: Safari. A browser that’s actually private. Chart comparing browser privacy protections for Safari versus Chrome.\n        - rowgroup:\n          - row \"Feature Safari Chrome\":\n            - columnheader \"Feature\"\n            - columnheader \"Safari\"\n            - columnheader \"Chrome\"\n        - rowgroup:\n          - row \"Blocks third-party cookies from tracking you by default Yes No\":\n            - rowheader \"Blocks third-party cookies from tracking you by default\"\n            - cell \"Yes\"\n            - cell \"No\"\n          - row \"Fights tracking with machine learning Yes No\":\n            - rowheader \"Fights tracking with machine learning\"\n            - cell \"Yes\"\n            - cell \"No\"\n          - row \"Removes unique trackers from URLs in Private Browsing Yes No\":\n            - rowheader \"Removes unique trackers from URLs in Private Browsing\"\n            - cell \"Yes\"\n            - cell \"No\"\n          - row \"Hides your IP address from known trackers Yes No\":\n            - rowheader \"Hides your IP address from known trackers\"\n            - cell \"Yes\"\n            - cell \"No\"\n          - row \"Prevents web extensions from seeing your browsing by default Yes No\":\n            - rowheader \"Prevents web extensions from seeing your browsing by default\"\n            - cell \"Yes\"\n            - cell \"No\"\n          - row \"Blocks known trackers in Private Browsing Yes No\":\n            - rowheader \"Blocks known trackers in Private Browsing\"\n            - cell \"Yes\"\n            - cell \"No\"\n    - article \"Performance\":\n      - heading \"Performance\" [level=2]\n      - heading \"More with the battery. Less with the loading.\" [level=3]\n      - paragraph:\n        - text: With a blazing-fast JavaScript engine, Safari is the world’s fastest browser.\n        - superscript:\n          - link \"Footnote 1\":\n            - /url: \"#footnote-1\"\n            - text: \"1\"\n        - text: It’s developed to run specifically on Apple devices, so it’s geared to make the most out of your battery life and deliver long-lasting power.\n      - heading \"Increased performance\" [level=3]\n      - paragraph: We’re always working to make the fastest desktop browser on the planet even faster.\n      - figure:\n        - text: +35% faster on average at loading frequently visited websites than Chrome\n        - superscript:\n          - link \"Footnote 2\":\n            - /url: \"#footnote-2\"\n            - text: \"2\"\n      - heading \"Improved power efficiency\" [level=3]\n      - paragraph: Safari lets you do more online on a single charge.\n      - paragraph:\n        - text: Up to 5 hours more streaming videos compared with Chrome\n        - superscript:\n          - link \"Footnote 3\":\n            - /url: \"#footnote-3\"\n            - text: \"3\"\n      - paragraph:\n        - text: Up to 18 hours of video streaming\n        - superscript:\n          - link \"Footnote 3\":\n            - /url: \"#footnote-3\"\n            - text: \"3\"\n      - heading \"Best-in-class browsing\" [level=3]\n      - paragraph:\n        - text: Safari outperforms both Mac and PC browsers in benchmark after benchmark on the same Mac.\n        - superscript:\n          - link \"Footnote 4\":\n            - /url: \"#footnote-4\"\n            - text: \"4\"\n      - tablist:\n        - tab \"JetStream\" [selected]\n        - tab \"MotionMark\"\n        - tab \"Speedometer\"\n      - tabpanel \"JetStream\":\n        - paragraph:\n          - text: JavaScript performance on advanced web applications.\n          - superscript:\n            - link \"Footnote 4\":\n              - /url: \"#footnote-4\"\n              - text: \"4\"\n        - paragraph: Safari vs. other Mac browsers\n        - paragraph: Safari on macOS\n        - figure: 1.8x faster\n        - paragraph: Chrome on macOS\n        - paragraph: Edge on macOS\n        - paragraph: \"Baseline: Firefox on macOS\"\n        - paragraph: Safari vs. Windows 11 browsers\n        - paragraph: Safari on macOS\n        - figure: 2.3x faster\n        - paragraph: Chrome on Windows 11\n        - paragraph: Edge on Windows 11\n        - paragraph: \"Baseline: Firefox on Windows 11\"\n      - heading \"4K video streaming\" [level=3]\n      - paragraph:\n        - text: See your favorite shows and films in their best light. Safari supports in-browser 4K HDR video playback for YouTube, Netflix, and Apple TV+.\n        - superscript:\n          - link \"Footnote 5\":\n            - /url: \"#footnote-5\"\n            - text: \"5\"\n        - text: And it runs efficiently for longer-lasting battery life.\n    - article \"Customization\":\n      - heading \"Customization\" [level=2]\n      - heading \"Putting the you in URL.\" [level=3]\n      - paragraph: Safari is more customizable than ever. Organize your tabs into Tab Groups so it’s easy to go from one interest to the next. Set a custom background image and fine-tune your browser window with your favorite features — like Reading List, Favorites, iCloud Tabs, and Siri Suggestions. And third-party extensions for iPhone, iPad, and Mac let you do even more with Safari, so you can browse the way you want across all your devices.\n      - heading \"Profiles\" [level=3]\n      - paragraph: Safari Profiles allow you to separate your history, extensions, Tab Groups, favorites, cookies, and more. Quickly switch between profiles for topics you create, like Personal and Work.\n      - heading \"Web apps\" [level=3]\n      - paragraph: Web apps let you save your favorite websites to the Dock on Mac and to the Home Screen on iPhone and iPad. A simplified toolbar and separate settings give you an app-like experience.\n      - heading \"Extensions\" [level=3]\n      - paragraph: Safari Extensions add functionality to your browser to help you explore the web the way you want. Find and add your favorite extensions in the dedicated Safari category on the App Store.\n      - link \"Extensions for Mac\":\n        - /url: itms-apps://safariExtensions\n      - link \"Extensions for iPhone and iPad\":\n        - /url: itms-apps://safariExtensions\n      - heading \"Tab Groups\" [level=3]\n      - paragraph: Save and organize your tabs in the way that works best for you. Name your Tab Groups, edit them, and switch among them across devices. You can also share Tab Groups — making planning your next family trip or group project easier and more collaborative.\n    - article \"Smart Tools\":\n      - heading \"Smart Tools\" [level=2]\n      - heading \"Designed to help your work flow.\" [level=3]\n      - paragraph: Built-in tools create a browsing experience that’s far more immersive, intuitive, and immediate. Get detailed information about a subject in a photo with just a click, select text within any image, instantly translate an entire web page, and quickly take notes wherever you are on a site — without having to switch apps.\n      - heading \"Quick Note\" [level=3]\n      - paragraph: Notes is your go-to app to capture any thought. And with the Quick Note feature, you can instantly jot down ideas as you browse websites without having to leave Safari.\n      - heading \"Translation\" [level=3]\n      - paragraph: Translate entire web pages with a single click. You can also get translations for text in images and paused video without leaving Safari.\n      - link \"Explore the full list of available languages\":\n        - /url: /macos/feature-availability/#safari-web-page-translation\n      - heading \"Live Text\" [level=3]\n      - paragraph:\n        - text: Interact with text in any image or paused video on the web using functions like copy and paste, translate, and lookup.\n        - superscript:\n          - link \"Footnote 6\":\n            - /url: \"#footnote-6\"\n            - text: \"6\"\n      - heading \"Visual Look Up\" [level=3]\n      - paragraph: Quickly learn more about landmarks, works of art, breeds of dogs, and more with only a photo or an image you find online. And easily lift the subject of an image from Safari, remove its background, and paste it into Messages, Notes, or other apps.\n    - article \"Security\":\n      - heading \"Security\" [level=2]\n      - heading \"Surf safe and sound.\" [level=3]\n      - paragraph: Strong security protections in Safari help keep you safe. Passkeys introduce a safer way to sign in. iCloud Keychain securely stores and autofills passkeys and passwords across all your devices. Safari also notifies you when it encounters suspicious websites and prevents them from loading. Because it loads each web page in a separate process, any harmful code is always confined to a single browser tab so it won’t crash the entire application or access your data. And Safari automatically upgrades sites from HTTP to the more secure HTTPS when available.\n      - heading \"Passkeys\" [level=3]\n      - paragraph: Passkeys introduce a more secure and easier way to sign in. No passwords required.\n      - img\n      - button \"More about passkeys\"\n      - heading \"Shopping\" [level=3]\n      - paragraph:\n        - text: Apple Pay and Wallet make checkout as\n        - strong: easy as lifting a finger.\n      - img\n      - button \"More about shopping\"\n    - article \"Continuity\":\n      - heading \"Continuity\" [level=2]\n      - heading \"Same Safari. Different device.\" [level=3]\n      - paragraph: Safari works seamlessly and syncs your passwords, bookmarks, history, tabs, and more across Mac, iPad, iPhone, and Apple Watch. And when your Mac, iOS, or iPadOS devices are near each other, they can automatically pass what you’re doing in Safari from one device to another using Handoff. You can even copy images, video, or text from Safari on your iPhone or iPad, then paste into another app on your nearby Mac — or vice versa.\n      - link \"Learn more about continuity\":\n        - /url: /macos/continuity/\n      - tablist:\n        - tab \"Handoff\" [selected]\n        - tab \"Reading List\"\n        - tab \"iCloud Keychain\"\n      - paragraph: When you use Safari on multiple devices, your tabs carry over from one Apple device to another. So you can search, shop, work, or browse on your iPhone, then switch to your iPad or Mac and pick up right where you left off.\n    - heading \"Designed for developers.\" [level=2]\n    - paragraph: Deep WebKit integration between Mac hardware and macOS allows Safari to deliver the fastest performance and the longest battery life of any browser on the platform, while supporting modern web standards for rich experiences in the browser. WebKit in macOS Sequoia includes optimizations that enable even richer browsing experiences, and give developers more control over styling and layout — allowing for more engaging content.\n    - paragraph:\n      - link \"learn more about developer webkit\":\n        - /url: https://developer.apple.com/macos/\n        - text: Learn more\n    - heading \"Resources\" [level=2]\n    - heading \"Make Safari your default browser\" [level=3]\n    - link \"learn how to make safari your default browser\":\n      - /url: https://support.apple.com/guide/safari/make-safari-your-default-web-browser-ibrwa008/mac\n      - text: Learn more\n    - heading \"Customize your start page\" [level=3]\n    - link \"learn more about customizing start page\":\n      - /url: https://support.apple.com/HT211788\n      - text: Learn more\n    - heading \"View your browsing Privacy Report\" [level=3]\n    - link \"learn more about viewing privacy report\":\n      - /url: https://support.apple.com/guide/safari/view-a-privacy-report-ibrw35004465/mac\n      - text: Learn more\n    - heading \"Monitor your saved passwords\" [level=3]\n    - link \"learn more about monitoring saved passwords\":\n      - /url: https://support.apple.com/guide/safari/autofill-user-name-and-password-info-ibrwf71ba236/14.0/mac/11.0\n      - text: Learn more\n    - heading \"Use Apple Pay in Safari\" [level=3]\n    - link \"learn more about using apple pay in safari\":\n      - /url: https://support.apple.com/HT201239#safari\n      - text: Learn more\n    - heading \"View your tabs across all your devices\" [level=3]\n    - link \"learn more about viewing tabs across devices\":\n      - /url: https://support.apple.com/HT202530\n      - text: Learn more\n    - heading \"Read the Safari user guide\" [level=3]\n    - link \"learn more about reading the safari user guide\":\n      - /url: https://support.apple.com/guide/safari/welcome/mac\n      - text: Learn more\n    - heading \"Get Safari support\" [level=3]\n    - link \"learn more about safari support\":\n      - /url: https://support.apple.com/safari\n      - text: Learn more\n  - contentinfo \"Apple Footer\":\n    - heading \"Apple Footer\" [level=2]\n    - region \"Footnotes\":\n      - list:\n        - listitem: \"Testing conducted by Apple in August 2026 using JetStream 3.0, MotionMark 1.3.2, and Speedometer 3.1 performance benchmarks. Safari scored higher than other browsers, on average, across these benchmarks at the time of testing. Tested with prerelease Safari 27.0 and latest stable versions of Chrome, Microsoft Edge, and Firefox at the time of testing on: 15-inch MacBook Air systems with Apple M5 and prerelease macOS Golden Gate, and Intel Core Ultra X7-based PC systems with Intel Arc Graphics and Windows 11 Home; iPad Pro 13-inch (M5) units with prerelease iPadOS 27.0, and Intel Core Ultra 7-based PC systems with Intel Arc Graphics and Windows 11 Pro; and iPhone 17 Pro Max with prerelease iOS 27.0, and Qualcomm Snapdragon 8 Elite-based smartphones with Android 16. Devices tested with a WPA2 Wi-Fi network connection. Performance will vary based on usage, system configuration, network connection, and other factors.\"\n        - listitem: Testing conducted by Apple in August 2026 by measuring page load performance of snapshot versions of 12 popular websites under simulated network conditions. Tested on production 15-inch MacBook Air systems with Apple M5, 16GB of unified memory, 512GB SSD, and prerelease macOS Golden Gate. Tested with prerelease Safari 27.0 and Chrome v151.0.7922.138. Performance will vary based on usage, system configuration, network connection, and other factors.\n        - listitem:\n          - text: Testing conducted by Apple in August 2026 on production 15-inch MacBook Air systems with Apple M5, 16GB of unified memory, 512GB SSD, and prerelease macOS Golden Gate. Systems tested with WPA2 Wi-Fi network connection while running on battery power, with display brightness set to 8 clicks from bottom and keyboard backlight off. Video streaming tested with 1080p content on prerelease Safari 27.0 and Chrome v151.0.7922.76. Not all features are available on all devices. Battery life varies by use and configuration. See\n          - link \"apple.com/batteries\":\n            - /url: /batteries/\n          - text: for more information.\n        - listitem: Testing conducted by Apple in August 2026 using JetStream 3.0, MotionMark 1.3.2, and Speedometer 3.1 performance benchmarks. Performance values are rounded. Safari scored higher than other browsers, on average, across these benchmarks at the time of testing. Tested on production 15-inch MacBook Air systems with Apple M5, 16GB of unified memory, 512GB SSD, and prerelease macOS Golden Gate, and Intel Core Ultra X7-based PC systems with Intel Arc Graphics and the latest version of Windows 11 Home available at the time of testing. Tested with prerelease Safari 27.0 and Firefox v153.0.4, Chrome v151.0.7922.138, and Microsoft Edge v151.0.4129.78 on macOS and Windows, with WPA2 Wi-Fi network connection. Performance will vary based on system configuration, network connection, and other factors.\n        - listitem: HDR video playback requires a 4K monitor or above.\n        - listitem: Live Text is currently supported in English, Chinese, French, Italian, German, Portuguese, and Spanish.\n      - list:\n        - listitem: Apple Pay is a service provided by Apple Payments Services LLC, a subsidiary of Apple Inc. Neither Apple Inc. nor Apple Payments Services LLC is a bank. Any card used in Apple Pay is offered by the card issuer.\n    - navigation \"Breadcrumbs\":\n      - link \"Apple\":\n        - /url: /\n      - list:\n        - listitem: Safari\n    - navigation \"Apple Directory\":\n      - heading \"Shop and Learn\" [level=3]\n      - list:\n        - listitem:\n          - link \"Store\":\n            - /url: /us/shop/goto/store\n        - listitem:\n          - link \"Mac\":\n            - /url: /mac/\n        - listitem:\n          - link \"iPad\":\n            - /url: /ipad/\n        - listitem:\n          - link \"iPhone\":\n            - /url: /iphone/\n        - listitem:\n          - link \"Watch\":\n            - /url: /watch/\n        - listitem:\n          - link \"Vision\":\n            - /url: /apple-vision-pro/\n        - listitem:\n          - link \"AirPods\":\n            - /url: /airpods/\n        - listitem:\n          - link \"Home\":\n            - /url: /home/\n        - listitem:\n          - link \"AirTag\":\n            - /url: /airtag/\n        - listitem:\n          - link \"Accessories\":\n            - /url: /us/shop/goto/buy_accessories\n        - listitem:\n          - link \"Gift Cards\":\n            - /url: /us/shop/goto/giftcards\n      - heading \"Apple Wallet\" [level=3]\n      - list:\n        - listitem:\n          - link \"Wallet\":\n            - /url: /wallet/\n        - listitem:\n          - link \"Apple Card\":\n            - /url: /apple-card/\n        - listitem:\n          - link \"Apple Pay\":\n            - /url: /apple-pay/\n        - listitem:\n          - link \"Apple Cash\":\n            - /url: /apple-cash/\n      - heading \"Account\" [level=3]\n      - list:\n        - listitem:\n          - link \"Manage Your Apple Account\":\n            - /url: https://account.apple.com/\n        - listitem:\n          - link \"Apple Store Account\":\n            - /url: /us/shop/goto/account\n        - listitem:\n          - link \"iCloud.com\":\n            - /url: https://www.icloud.com\n      - heading \"Entertainment\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple One\":\n            - /url: /apple-one/\n        - listitem:\n          - link \"Apple TV\":\n            - /url: /apple-tv/\n        - listitem:\n          - link \"Apple Music\":\n            - /url: /apple-music/\n        - listitem:\n          - link \"Apple Arcade\":\n            - /url: /apple-arcade/\n        - listitem:\n          - link \"Apple Fitness+\":\n            - /url: /apple-fitness-plus/\n        - listitem:\n          - link \"Apple News+\":\n            - /url: /apple-news/\n        - listitem:\n          - link \"Apple Podcasts\":\n            - /url: /apple-podcasts/\n        - listitem:\n          - link \"Apple Books\":\n            - /url: /apple-books/\n        - listitem:\n          - link \"App Store\":\n            - /url: /app-store/\n      - heading \"Apple Store\" [level=3]\n      - list:\n        - listitem:\n          - link \"Find a Store\":\n            - /url: /retail/\n        - listitem:\n          - link \"Genius Bar\":\n            - /url: /retail/geniusbar/\n        - listitem:\n          - link \"Today at Apple\":\n            - /url: /today/\n        - listitem:\n          - link \"Group Reservations\":\n            - /url: /today/groups/\n        - listitem:\n          - link \"Apple Camp\":\n            - /url: /today/camp/\n        - listitem:\n          - link \"Apple Store App\":\n            - /url: https://apps.apple.com/us/app/apple-store/id375380948\n        - listitem:\n          - link \"Certified Refurbished\":\n            - /url: /us/shop/goto/special_deals\n        - listitem:\n          - link \"Apple Upgrade\":\n            - /url: /us/shop/goto/apple_upgrade\n        - listitem:\n          - link \"Apple Trade In\":\n            - /url: /us/shop/goto/trade_in\n        - listitem:\n          - link \"Financing\":\n            - /url: /us/shop/goto/payment_plan\n        - listitem:\n          - link \"Carrier Deals at Apple\":\n            - /url: /us/shop/goto/buy_iphone/carrier_offers\n        - listitem:\n          - link \"Order Status\":\n            - /url: /us/shop/goto/order/list\n        - listitem:\n          - link \"Shopping Help\":\n            - /url: /us/shop/goto/help\n      - heading \"For Business\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Business\":\n            - /url: /business/\n        - listitem:\n          - link \"Shop for Business\":\n            - /url: /retail/business/\n      - heading \"For Education\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Education\":\n            - /url: /education/\n        - listitem:\n          - link \"Shop for K-12\":\n            - /url: /education/k12/how-to-buy/\n        - listitem:\n          - link \"Shop for College\":\n            - /url: /us/shop/goto/educationrouting\n      - heading \"For Healthcare\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Healthcare\":\n            - /url: /healthcare/\n      - heading \"For Government\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Government\":\n            - /url: /government/\n        - listitem:\n          - link \"Shop for Veterans and Military\":\n            - /url: /us/shop/goto/eppstore/veteransandmilitary\n        - listitem:\n          - link \"Shop for State and Local Employees\":\n            - /url: /us_epp_67909/store\n        - listitem:\n          - link \"Shop for Federal Employees\":\n            - /url: /us_epp_55499/store\n      - heading \"Apple Values\" [level=3]\n      - list:\n        - listitem:\n          - link \"Accessibility\":\n            - /url: /accessibility/\n        - listitem:\n          - link \"Education\":\n            - /url: /education-initiative/\n        - listitem:\n          - link \"Environment\":\n            - /url: /environment/\n        - listitem:\n          - link \"Inclusion and Diversity\":\n            - /url: /diversity/\n        - listitem:\n          - link \"Privacy\":\n            - /url: /privacy/\n        - listitem:\n          - link \"Racial Equity and Justice\":\n            - /url: /racial-equity-justice-initiative/\n        - listitem:\n          - link \"Supply Chain Innovation\":\n            - /url: /supply-chain/\n      - heading \"About Apple\" [level=3]\n      - list:\n        - listitem:\n          - link \"Newsroom\":\n            - /url: /newsroom/\n        - listitem:\n          - link \"Apple Leadership\":\n            - /url: /leadership/\n        - listitem:\n          - link \"Career Opportunities\":\n            - /url: /careers/us/\n        - listitem:\n          - link \"Investors\":\n            - /url: https://investor.apple.com/\n        - listitem:\n          - link \"Ethics & Compliance\":\n            - /url: /compliance/\n        - listitem:\n          - link \"Events\":\n            - /url: /apple-events/\n        - listitem:\n          - link \"Contact Apple\":\n            - /url: /contact/\n    - text: \"More ways to shop:\"\n    - link \"Find an Apple Store\":\n      - /url: /retail/\n    - text: or\n    - link \"other retailer\":\n      - /url: https://locate.apple.com/\n    - text: near you. Or call\n    - link \"1-800-MY-APPLE\":\n      - /url: tel:1-800-692-7753\n    - text: (1-800-692-7753). Copyright © 2026 Apple Inc. All rights reserved.\n    - list:\n      - listitem:\n        - link \"Privacy Policy\":\n          - /url: /legal/privacy/\n      - listitem:\n        - link \"Terms of Use\":\n          - /url: /legal/internet-services/terms/site.html\n      - listitem:\n        - link \"Sales and Refunds\":\n          - /url: /us/shop/goto/help/sales_refunds\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/\n      - listitem:\n        - link \"Site Map\":\n          - /url: /sitemap/\n    - link \"United States. Choose your country or region\":\n      - /url: /choose-country-region/\n      - text: United States"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.apple.com/safari/",
+              "origin": "https://www.apple.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

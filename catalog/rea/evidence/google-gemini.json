@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_ee78d9ac82a82e891f108156723d8262e1131a2fd2925d323e55535c0c8f4fb8",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://gemini.google.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "a48d125745cb1b5c1c974f6862c5e0bd53859c58ea4accd3899b1f629ac761b8"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://gemini.google.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 5310,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 2503,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://gemini.google.com/app",
+          "origin": "https://gemini.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2547,
+        "before_url": {
+          "url": "https://gemini.google.com/app",
+          "origin": "https://gemini.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://gemini.google.com/app",
+          "origin": "https://gemini.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "7ca239d6e8f4c1fe2dafbffee3d4e9050de84aceaa00ae0e74cabbd8800b3dac",
+              "bytes": 1706,
+              "text": "- document:\n  - main:\n    - link \"New chat\":\n      - /url: /\n      - text: Gemini\n    - link \"About Gemini link\":\n      - /url: https://gemini.google/about/?utm_source=gemini&utm_medium=web&utm_campaign=gemini_zero_state_link_to_marketing_microsite\n      - text: About Gemini\n    - link \"Get Gemini app link\":\n      - /url: /app/download\n      - text: Get Gemini App\n    - link \"Subscriptions link\":\n      - /url: https://one.google.com/ai\n      - text: Subscriptions\n    - link \"For Business link\":\n      - /url: http://g.co/cloud/gemini-for-business\n      - text: For Business\n    - button \"Sign in\"\n    - navigation \"Side Navigation\":\n      - button \"Close sidebar\" [expanded]\n      - navigation \"Main actions menu\":\n        - link \"New chat\" [disabled]:\n          - /url: /app\n      - navigation \"Additional actions menu\":\n        - link \"Images\":\n          - /url: /images\n      - link \"Sign in\":\n        - /url: \"#\"\n      - text: to save activity\n      - group:\n        - button \"Sign in\"\n        - button \"Settings\"\n    - heading \"Conversation with Gemini\" [level=1]\n    - heading \"Meet Gemini, your personal AI assistant\" [level=1]\n    - textbox \"Enter a prompt for Gemini\":\n      - text: Type @ for connectors, skills and more\n      - paragraph\n    - button \"Upload & tools\"\n    - group:\n      - button \"Open mode picker, currently Flash-Lite\": Flash-Lite\n    - button \"Dictate (⌘⇧D)\"\n    - paragraph:\n      - link \"Google Terms Opens in a new window\":\n        - /url: https://policies.google.com/terms\n      - text: and the\n      - link \"Google Privacy Policy Opens in a new window\":\n        - /url: https://policies.google.com/privacy\n      - text: apply. Gemini is AI and can make mistakes."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://gemini.google.com/app",
+              "origin": "https://gemini.google.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

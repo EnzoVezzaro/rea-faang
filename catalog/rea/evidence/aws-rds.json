@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_b184295d338925c0f7e87f0349f73277230ba2f7adccf25bcacf7a08bf4e4a08",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/rds/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "cbc0d281b940cd965b4db4f0f98f16d41fd6fb3a3b8e35a14ed6c23080d127d9"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 6751,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3951,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/rds/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2553,
+        "before_url": {
+          "url": "https://aws.amazon.com/rds/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/rds/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "dddfbb8ea7c6a0fd100859573d25656582d465274247a8901839ddd559531ab1",
+              "bytes": 15825,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - main:\n    - paragraph: Amazon RDS\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /rds/\n      - button \"Engines submenu\": Engines\n      - listitem:\n        - link \"Features\":\n          - /url: /rds/features/\n      - listitem:\n        - link \"Pricing\":\n          - /url: /rds/pricing/\n      - listitem:\n        - link \"Resources\":\n          - /url: /rds/resources/\n      - listitem:\n        - link \"FAQs\":\n          - /url: /rds/faqs/\n      - listitem:\n        - link \"Customers\":\n          - /url: /rds/customers/\n      - listitem:\n        - link \"Migrate with AWS DMS\":\n          - /url: /dms/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Databases\":\n            - /url: /products/databases/\n        - listitem: Amazon RDS\n    - heading \"Amazon RDS\" [level=1]\n    - paragraph: Easy to manage relational databases optimized for total cost of ownership\n    - button \"Get started with RDS\"\n    - button \"Connect with an RDS specialist\"\n    - heading \"What is RDS\" [level=2]\n    - paragraph:\n      - text: Amazon Relational Database Service (Amazon RDS) is an easy-to-manage relational database service optimized for total cost of ownership. It is simple to set up, operate, and scale with demand. RDS automates undifferentiated database management tasks, such as provisioning, configuring, backing up, and patching. RDS allows customers to create a new database in minutes and offers flexibility to customize databases to meet their needs across eight engines and two deployment options. Customers can optimize performance with features like with two readable standbys, optimized writes and reads, and\n      - link \"AWS Graviton5-based instances\":\n        - /url: /rds/instance-types/\n      - text: \", and they can choose from\"\n      - link \"multiple pricing options\":\n        - /url: /rds/pricing/\n      - text: to effectively manage costs.\n    - button \"Play:\"\n    - img \"Missing alt text value\"\n    - heading \"Benefits of RDS\" [level=2]\n    - link \"Easy to manage Remove inefficient and time-consuming database administrative tasks without needing to provision infrastructure or maintain software. Learn more\":\n      - /url: /rds/features/?pg=ln&sec=be\n      - heading \"Easy to manage\" [level=3]\n      - paragraph: Remove inefficient and time-consuming database administrative tasks without needing to provision infrastructure or maintain software.\n      - text: Learn more\n    - link \"High availability Achieve high availability with Amazon RDS Multi-AZ deployments. Learn more\":\n      - /url: /rds/features/multi-az/?pg=ln&sec=be\n      - heading \"High availability\" [level=3]\n      - paragraph: Achieve high availability with Amazon RDS Multi-AZ deployments.\n      - text: Learn more\n    - link \"Operational expertise Benefit from over a decade of proven operational expertise, security best practices, and innovation in databases born in the cloud. Learn more\":\n      - /url: /about-aws/whats-new/database/?pg=ln&sec=be&whats-new-content.sort-by=item.additionalFields.postDateTime&whats-new-content.sort-order=desc&awsf.whats-new-products=*all\n      - heading \"Operational expertise\" [level=3]\n      - paragraph: Benefit from over a decade of proven operational expertise, security best practices, and innovation in databases born in the cloud.\n      - text: Learn more\n    - link \"Choice of engines Deploy and scale the relational database engines of your choice in the cloud or on premises. Learn more\":\n      - /url: https://docs.aws.amazon.com/rds/?pg=ln&sec=be\n      - heading \"Choice of engines\" [level=3]\n      - paragraph: Deploy and scale the relational database engines of your choice in the cloud or on premises.\n      - text: Learn more\n    - heading \"BYOM now available on Amazon RDS for SQL Server\" [level=2]\n    - text: Run managed SQL Server databases on Amazon RDS with Bring Your Own Media (BYOM) support to use your existing licenses through Microsoft's License Mobility program.\n    - button \"Learn more about BYOM\"\n    - heading \"Innovating with RDS\" [level=2]\n    - tablist:\n      - tab \"Aurora\" [selected]\n      - tab \"Amazon RDS\"\n      - tab \"Generative AI applications\"\n      - tab \"Zero-ETL integrations\"\n      - tab \"Deployment options\"\n    - tabpanel \"Aurora\":\n      - heading \"Aurora\" [level=3]\n      - paragraph:\n        - text: Amazon Aurora provides unparalleled high performance and availability at global scale with full MySQL and PostgreSQL compatibility at 1/10th the cost of commercial databases. You can enjoy enhanced capabilities that delight your users, such as\n        - link \"Amazon Aurora Serverless\":\n          - /url: /rds/aurora/serverless/\n        - text: for scaling up to hundreds of thousands of transactions in a fraction of a second, price predictability with\n        - link \"Amazon Aurora I/O-Optimized\":\n          - /url: /rds/aurora/pricing/\n        - text: \", and analytics on your transactional data in near real time with\"\n        - link \"zero-ETL integrations\":\n          - /url: /rds/aurora/zero-etl/\n        - text: to Amazon Redshift.\n      - 'link \"Learn more about Aurora: Aurora\"':\n        - /url: /rds/aurora/\n        - text: Learn more about Aurora\n      - img \"Missing alt text value\"\n    - heading \"Use cases\" [level=2]\n    - heading \"Build web and mobile applications\" [level=3]:\n      - button \"Build web and mobile applications\"\n    - heading \"Move to managed databases\" [level=3]:\n      - button \"Move to managed databases\"\n    - heading \"Break free from legacy databases\" [level=3]:\n      - button \"Break free from legacy databases\"\n    - text: Cloud and AI, simplified for small businesses No complexity, no long-term contracts. Just solutions that work, delivered by AWS Partners.\n    - link \"Explore Solutions\":\n      - /url: https://aws.amazon.com/smart-business/solutions/artificial-intelligence-small-medium-business/?sc_icampaign=aware_small-business-ai_2026&sc_ichannel=ha&sc_iplace=banner&trk=e5e30592-b3c2-4ad7-beb8-edf67517e50d\n    - button \"Close\"\n    - text: Cloud and AI, simplified for small businesses No complexity, no long-term contracts. Just solutions that work, delivered by AWS Partners.\n    - link \"Explore Solutions\":\n      - /url: https://aws.amazon.com/smart-business/solutions/artificial-intelligence-small-medium-business/?sc_icampaign=aware_small-business-ai_2026&sc_ichannel=ha&sc_iplace=banner&trk=e5e30592-b3c2-4ad7-beb8-edf67517e50d\n    - button \"Close\"\n    - heading \"Customers\" [level=2]\n    - link \"See more customer stories\":\n      - /url: /rds/customers/\n    - link \"Missing alt text value Intuit Mint reduced database costs by 25% and obtained strong database performance with Amazon RDS for MySQL Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/intuit-mint\n      - img \"Missing alt text value\"\n      - heading \"Intuit Mint reduced database costs by 25% and obtained strong database performance with Amazon RDS for MySQL\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Cathay Pacific airways saw a 20% performance boost by migrating from on-premises Oracle to Amazon RDS Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/cathay-pacific-rds-case-study\n      - img \"Missing alt text value\"\n      - heading \"Cathay Pacific airways saw a 20% performance boost by migrating from on-premises Oracle to Amazon RDS\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Samsung migrated 1.1 billion users from Oracle to Aurora with AWS Database Migration Service Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/samsung-migrates-off-oracle-to-amazon-aurora\n      - img \"Missing alt text value\"\n      - heading \"Samsung migrated 1.1 billion users from Oracle to Aurora with AWS Database Migration Service\" [level=3]\n      - text: Read the case study\n    - heading \"Next steps\" [level=2]\n    - link \"Resources Learn with hands-on training Get started with RDS\":\n      - /url: /rds/resources/\n      - text: Resources\n      - heading \"Learn with hands-on training\" [level=3]\n      - text: Get started with RDS\n    - link \"Documentation Dive deep on RDS Read the documentation\":\n      - /url: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome\n      - text: Documentation\n      - heading \"Dive deep on RDS\" [level=3]\n      - text: Read the documentation\n    - link \"Free tier Sign up for a free account Try for free\":\n      - /url: https://signin.aws.amazon.com/signup?request_type=register\n      - text: Free tier\n      - heading \"Sign up for a free account\" [level=3]\n      - text: Try for free\n    - link \"Console Start building in the console Sign in\":\n      - /url: https://console.aws.amazon.com/rds\n      - text: Console\n      - heading \"Start building in the console\" [level=3]\n      - text: Sign in\n    - heading \"Did you find what you were looking for today?\" [level=2]\n    - paragraph: Let us know so we can improve the quality of the content on our pages\n    - button \"Yes, give us positive feedback\": \"Yes\"\n    - button \"No, give us constructive feedback\": \"No\"\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /rds/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /rds/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/rds/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

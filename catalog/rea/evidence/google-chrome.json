@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_a9078dc8c62d00d1155d2e422cc58f3b10efc05575d87616c0796008e594f5ec",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.google.com/chrome/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "85f6fe1e5e0bb32dd9cd43d19d0c0748c3c020097f616c20364ab9f77c0b7c7c"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://www.google.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4513,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1780,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.google.com/chrome/",
+          "origin": "https://www.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2537,
+        "before_url": {
+          "url": "https://www.google.com/chrome/",
+          "origin": "https://www.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.google.com/chrome/",
+          "origin": "https://www.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "925736bbc6fc175565fcf5b264b60e5301438ba372300f53a9093f4dff29ac94",
+              "bytes": 19289,
+              "text": "- document:\n  - banner:\n    - link \"Jump to content\":\n      - /url: \"#jump-content\"\n    - link \"Google Chrome Homepage\":\n      - /url: /chrome/\n    - navigation \"navigation menu\":\n      - list \"Navigation drawer\":\n        - listitem:\n          - link \"ai innovations\":\n            - /url: /chrome/ai-innovations/\n            - text: AI Innovations\n        - listitem:\n          - link \"safety\":\n            - /url: /chrome/safety/\n            - text: Safety\n        - listitem:\n          - link \"By Google\":\n            - /url: /chrome/browser-tools/\n        - listitem:\n          - link \"Mobile\":\n            - /url: /chrome/mobile/\n        - listitem:\n          - link \"extensions\":\n            - /url: https://chromewebstore.google.com/category/extensions\n            - text: Extensions\n  - main:\n    - paragraph: Ask Gemini in Chrome to explain concepts, compare tabs, or draft replies.\n    - link \"Try now\":\n      - /url: /chrome/ai-innovations/gemini-in-chrome/\n    - img \"Google Chrome logo.\"\n    - heading \"The browser that gets more done\" [level=1]\n    - button \"Download Chrome\":\n      - text: Download Chrome\n      - img\n    - paragraph: For macOS 13 or later.\n    - link \"I want to update Chrome\":\n      - /url: /chrome/update/\n    - paragraph:\n      - text: By downloading Chrome, you agree to the\n      - link \"Google Terms of Service\":\n        - /url: https://policies.google.com/terms\n      - text: and\n      - link \"Chrome and ChromeOS Additional Terms of Service\":\n        - /url: /chrome/terms/\n    - img \"A section of an abstract UI shows that Chrome is ready to be updated.\"\n    - heading [level=2]\n    - iframe\n    - img\n    - paragraph: Gemini in Chrome\n    - heading \"Figure it out, right in your browser\" [level=3]\n    - paragraph: From big tasks to small to-do’s, Gemini in Chrome is your partner in figuring it all out. You can use Gemini in Chrome to visualize information, find the right product instantly, or even check your calendar – all from your open tab.\n    - link \"Open in the same tab\":\n      - /url: /chrome/ai-innovations/\n      - text: Explore Gemini in Chrome\n    - heading \"Browsing boosted with built-in AI\" [level=2]\n    - img \"A pop-up over a cake recipe webpage asks how Gemini in Chrome can help. The feature is on both desktop and mobile.\"\n    - 'heading \"Gemini in Chrome: Your AI browsing assistant\" [level=3]'\n    - paragraph: Gemini in Chrome helps you easily understand content on the web and get things done using the context of your open tabs and browsing history. Plus, with auto browse, Gemini in Chrome can do your tedious tasks for you* – from shopping and reservations, to research and more.\n    - paragraph: \"*Auto browse available only to Google AI Ultra and Pro subscribers in the U.S.\"\n    - link \"Open in the same tab\":\n      - /url: /chrome/ai-innovations/\n      - text: Explore Gemini in Chrome\n    - paragraph: Gemini in Chrome can do tasks for you with auto browse. Available to Google AI Pro and Ultra subscribers in the U.S.\n    - link \"Sign up now\":\n      - /url: http://one.google.com/ai\n    - list:\n      - listitem:\n        - heading \"NANO BANANA – GEMINI IN CHROME\" [level=3]\n        - heading \"Make online inspiration your own creation\" [level=4]\n        - img \"A user asks Gemini in Chrome to add light contemporary furniture to an image of a living room from a webpage\"\n        - button \"Flip card\"\n      - listitem:\n        - heading \"SKILLS – GEMINI IN CHROME\" [level=3]\n        - heading \"Your most helpful prompts in one click\" [level=4]\n        - img \"A variety of Gemini in Chrome skills related to online shopping, like summarize reviews, get sizing help, or check returns\"\n        - button \"Flip card\"\n    - heading \"GOOGLE SEARCH\" [level=2]\n    - heading \"Ask anything with AI Mode\" [level=3]\n    - paragraph: AI Mode is our most powerful AI search, built right into Chrome. Ask your toughest questions from the place where you already search, and keep exploring with follow-up questions and helpful web links.\n    - link \"Open in the same tab\":\n      - /url: /chrome/ai-innovations/#ai-mode\n      - text: Explore AI Mode\n    - heading \"Make it yours and take it with you\" [level=2]\n    - heading \"Think outside the top bar with vertical tabs\" [level=2]\n    - paragraph: Vertical tabs stack down the side of your browser window, so you can read full page titles and manage tab groups with ease – even when your tab count hits double digits. Just right-click on any Chrome window and select “Show Tabs Vertically.”\n    - link \"Get help with managing tabs\":\n      - /url: https://support.google.com/chrome/answer/2391819\n    - region:\n      - list:\n        - listitem:\n          - button \"One window, two views\" [expanded]:\n            - heading \"One window, two views\" [level=3]\n          - paragraph: Sick of juggling multiple windows or switching between tabs? Split view lets you view two tabs at the same time for a more streamlined, flexible way to work.\n          - img \"While on a Google Meet call, a user pulls a Google Doc from a separate tab into split view to take notes more efficiently\"\n        - listitem:\n          - button \"Customize your Chrome\":\n            - heading \"Customize your Chrome\" [level=3]\n          - paragraph: Personalize your web browser with themes, dark mode and other options built just for you.\n          - link \"Explore themes\":\n            - /url: https://chrome.google.com/webstore/category/themes\n          - img \"Icons display nine different themes. If the user clicks the theme the background image will change.\"\n        - listitem:\n          - button \"Browse across devices\":\n            - heading \"Browse across devices\" [level=3]\n          - paragraph: Sign in to Chrome on any device to access your bookmarks, saved passwords, and more.\n          - img \"A mobile browser loads tabs from a desktop browser, including Google Maps and NYC parking info.\"\n        - listitem:\n          - button \"Save time with autofill\":\n            - heading \"Save time with autofill\" [level=3]\n          - paragraph: Use Chrome to save addresses, passwords, and more to quickly autofill your details.\n          - img \"A user is able to instantly enter their name and address to a form using autofill.\"\n      - link \"Sign in to get started\":\n        - /url: http://accounts.google.com\n    - heading \"Extend your experience\" [level=3]\n    - paragraph: From shopping and entertainment to productivity, find extensions to improve your experience in the Chrome Web Store.\n    - link \"Explore extensions\":\n      - /url: https://chrome.google.com/webstore/category/extensions\n    - img \"An abstract Chrome UI is surrounded by icons that represent categories for browser extensions. The icons represent Shopping, Entertainment, Tools, Art & Design, and Accessibility.\"\n    - heading \"Stay safe while you browse\" [level=2]\n    - list:\n      - listitem:\n        - heading \"PASSWORD MANAGER\" [level=3]\n        - heading \"Use strong passwords on every site.\" [level=4]\n        - button \"Flip card\"\n      - listitem:\n        - heading \"ENHANCED SAFE BROWSING\" [level=3]\n        - heading \"Browse with the confidence that you’re staying safer online.\" [level=4]\n        - button \"Flip card\"\n      - listitem:\n        - heading \"SAFETY CHECK\" [level=3]\n        - heading \"Check your safety level in real time with just one click.\" [level=4]\n        - button \"Flip card\"\n      - listitem:\n        - heading \"PRIVACY GUIDE\" [level=3]\n        - heading \"Keep your privacy under your control with easy-to-use settings.\" [level=4]\n        - button \"Flip card\"\n    - heading \"The fast way to do things online\" [level=2]\n    - list:\n      - listitem:\n        - heading \"Prioritize performance\" [level=3]\n        - paragraph: Chrome is built for performance. Optimize your experience with features like Energy Saver and Memory Saver.\n        - link \"Learn more about Memory and Energy Saver\":\n          - /url: https://blog.google/products/chrome/new-chrome-features-to-save-battery-and-make-browsing-smoother/\n      - listitem:\n        - heading \"Stay on top of tabs\" [level=3]\n        - paragraph: Chrome has tools to help you manage the tabs you’re not quite ready to close. Group, label, and color code your tabs to stay organized and work faster.\n        - 'img \"A browser UI features three groups of tabs: Personal, Trip to Arches, and Work.\"'\n      - listitem:\n        - heading \"Optimized for your device\" [level=3]\n        - paragraph: Chrome is built to work with your device across platforms. That means a smooth experience on whatever you’re working with.\n        - img \"QR code to download chrome browser in mobile devices\"\n        - paragraph: Get Chrome for your phone\n        - img \"A mobile device and a desktop computer both show the Google homepage on Chrome.\"\n    - heading \"The browser built by Google\" [level=2]\n    - list:\n      - listitem:\n        - heading \"GOOGLE PAY\" [level=3]\n        - heading \"Pay for things as quick as you click.\" [level=4]\n        - button \"Flip card\"\n      - listitem:\n        - heading \"Google Lens\" [level=3]\n        - heading \"See anything, search anything.\" [level=4]\n        - button \"Flip card\"\n    - heading \"Discover the latest updates from Chrome\" [level=2]\n    - list:\n      - listitem:\n        - heading \"Updates\" [level=3]\n        - heading \"Automatic updates\" [level=4]\n        - paragraph: There’s a new Chrome release every four weeks, making it easy to have the newest features and a faster, safer web browser.\n        - link \"Learn about automatic updates\":\n          - /url: /chrome/update/\n        - img \"A section of an abstract UI shows that Chrome is ready to be updated.\"\n      - listitem:\n        - heading \"Latest\" [level=3]\n        - heading \"New from Chrome\" [level=4]\n        - paragraph: Chrome regularly updates with tools and features that make it faster and easier to use.\n        - link \"Learn what’s new on Chrome\":\n          - /url: /chrome/see-whats-new/\n    - heading \"Frequently asked questions\" [level=2]\n    - button \"How do I make Chrome my default web browser?\":\n      - heading \"How do I make Chrome my default web browser?\" [level=3]\n      - img\n    - button \"How can I customize Chrome?\":\n      - heading \"How can I customize Chrome?\" [level=3]\n      - img\n    - button \"What are Chrome’s safety settings?\":\n      - heading \"What are Chrome’s safety settings?\" [level=3]\n      - img\n    - button \"What is Chrome’s password manager?\":\n      - heading \"What is Chrome’s password manager?\" [level=3]\n      - img\n    - button \"How do I add a browser extension to Chrome?\":\n      - heading \"How do I add a browser extension to Chrome?\" [level=3]\n      - img\n    - button \"How do I update Chrome?\":\n      - heading \"How do I update Chrome?\" [level=3]\n      - img\n    - heading \"Take your browser with you\" [level=2]\n    - paragraph: Download Chrome on your mobile device or tablet and sign into your account for the same browser experience, everywhere.\n    - button \"Download Chrome\":\n      - text: Download Chrome\n      - img\n    - img \"QR code to download chrome browser in mobile devices\"\n    - paragraph: Get Chrome for your phone\n    - button \"Get Chrome for your phone Get Chrome for your phone mobile-icon chevron-right-color\":\n      - img \"Get Chrome for your phone\"\n      - paragraph: Get Chrome for your phone\n      - img \"mobile-icon\"\n      - button \"chevron-right-color\":\n        - img \"chevron-right-color\"\n  - contentinfo:\n    - heading \"Follow us\" [level=3]\n    - list:\n      - listitem:\n        - link \"Chrome's Youtube channel, opens in a new tab\":\n          - /url: https://www.youtube.com/user/googlechrome\n      - listitem:\n        - link \"Chrome's X page, opens in a new tab\":\n          - /url: https://twitter.com/googlechrome\n      - listitem:\n        - link \"Chrome's Facebook page, opens in a new tab\":\n          - /url: https://www.facebook.com/googlechrome/\n      - listitem:\n        - link \"Chrome's LinkedIn page, opens in a new tab\":\n          - /url: https://www.linkedin.com/showcase/google-chrome/\n      - listitem:\n        - link \"Chrome's TikTok page, opens in a new tab\":\n          - /url: https://www.tiktok.com/@googlechrome\n    - navigation:\n      - heading \"Chrome Family\" [level=4]\n      - list:\n        - listitem:\n          - link \"Other Platforms\":\n            - /url: /chrome/other-platforms/\n        - listitem:\n          - link \"Chromebooks, opens in a new tab\":\n            - /url: https://www.google.com/intl/en_US/chromebook/\n            - text: Chromebooks\n        - listitem:\n          - link \"Chromecast, opens in a new tab\":\n            - /url: https://www.google.com/chromecast/\n            - text: Chromecast\n        - listitem:\n          - link \"Chrome Web Store, opens in a new tab\":\n            - /url: https://chromewebstore.google.com/?hl=en\n            - text: Chrome Web Store\n      - heading \"Enterprise\" [level=4]\n      - list:\n        - listitem:\n          - link \"Download Chrome Browser, opens in a new tab\":\n            - /url: https://chromeenterprise.google/browser/download/\n            - text: Download Chrome Browser\n        - listitem:\n          - link \"Chrome Browser for Enterprise, opens in a new tab\":\n            - /url: https://chromeenterprise.google/\n            - text: Chrome Browser for Enterprise\n        - listitem:\n          - link \"Chrome Devices, opens in a new tab\":\n            - /url: https://chromeenterprise.google/devices/\n            - text: Chrome Devices\n        - listitem:\n          - link \"ChromeOS, opens in a new tab\":\n            - /url: https://chromeenterprise.google/os/\n            - text: ChromeOS\n        - listitem:\n          - link \"Google Cloud, opens in a new tab\":\n            - /url: https://cloud.google.com/?hl=en\n            - text: Google Cloud\n        - listitem:\n          - link \"Google Workspace, opens in a new tab\":\n            - /url: https://gsuite.google.com/?hl=en\n            - text: Google Workspace\n      - heading \"Education\" [level=4]\n      - list:\n        - listitem:\n          - link \"Google for Education, opens in a new tab\":\n            - /url: https://edu.google.com/intl/en_US/products/more-products/\n            - text: Google for Education\n        - listitem:\n          - link \"Devices for schools, opens in a new tab\":\n            - /url: https://edu.google.com/intl/en_US/chromebooks/find-a-chromebook/\n            - text: Devices for schools\n      - heading \"Dev and Partners\" [level=4]\n      - list:\n        - listitem:\n          - link \"Chromium, opens in a new tab\":\n            - /url: https://www.chromium.org/\n            - text: Chromium\n        - listitem:\n          - link \"ChromeOS, opens in a new tab\":\n            - /url: https://www.chromium.org/chromium-os\n            - text: ChromeOS\n        - listitem:\n          - link \"Chrome Web Store, opens in a new tab\":\n            - /url: https://developer.chrome.com/webstore/?hl=en\n            - text: Chrome Web Store\n        - listitem:\n          - link \"Chrome Experiments, opens in a new tab\":\n            - /url: https://www.chromeexperiments.com/\n            - text: Chrome Experiments\n        - listitem:\n          - link \"Chrome Beta\":\n            - /url: /chrome/beta/\n        - listitem:\n          - link \"Chrome Dev\":\n            - /url: /chrome/dev/\n        - listitem:\n          - link \"Chrome Canary\":\n            - /url: /chrome/canary/\n      - heading \"Support\" [level=4]\n      - list:\n        - listitem:\n          - link \"Chrome Help\":\n            - /url: https://support.google.com/chrome/?hl=en&rd=3#topic=7438008\n        - listitem:\n          - link \"What’s New\":\n            - /url: /chrome/see-whats-new/\n        - listitem:\n          - link \"Update Chrome\":\n            - /url: /chrome/update/\n        - listitem:\n          - link \"Chrome Tips\":\n            - /url: /chrome/tips/\n        - listitem:\n          - link \"Google Chrome Blog\":\n            - /url: https://blog.google/products/chrome/\n    - link \"Google, opens in a new tab\":\n      - /url: https://www.google.com\n    - navigation:\n      - list:\n        - listitem:\n          - link \"Privacy and Terms, opens in a new tab\":\n            - /url: https://policies.google.com/privacy?hl=en&hl=en\n            - text: Privacy and Terms\n        - listitem:\n          - link \"About Google, opens in a new tab\":\n            - /url: https://about.google/\n            - text: About Google\n        - listitem:\n          - link \"Google Products, opens in a new tab\":\n            - /url: https://about.google/products/\n            - text: Google Products\n        - listitem\n    - list \"Help and language options\":\n      - listitem:\n        - link \"Help Center, opens in a new tab\":\n          - /url: https://support.google.com/chrome/?hl=en&rd=3#topic=7438008\n          - text: Help\n      - listitem:\n        - combobox \"Change language or region\":\n          - option \"Català - Espanya\"\n          - option \"Dansk - Danmark\"\n          - option \"Deutsch - Deutschland\"\n          - option \"Eesti - Eesti\"\n          - option \"English - Australia\"\n          - option \"English - Canada\"\n          - option \"English - United Kingdom\"\n          - option \"English - Hong Kong SAR China\"\n          - option \"English - Ireland\"\n          - option \"English - India\"\n          - option \"English - Philippines\"\n          - option \"English - Pakistan\"\n          - option \"English - Singapore\"\n          - option \"English - New Zealand\"\n          - option \"English - United States\" [selected]\n          - option \"Español - Latinoamérica\"\n          - option \"Español - España\"\n          - option \"Español - Estados Unidos\"\n          - option \"Filipino - Pilipinas\"\n          - option \"Français - Canada\"\n          - option \"Français - France\"\n          - option \"Hrvatski - Hrvatska\"\n          - option \"Indonesia - Indonesia\"\n          - option \"Italiano - Italia\"\n          - option \"Latviešu - Latvija\"\n          - option \"Lietuvių - Lietuva\"\n          - option \"Magyar - Magyarország\"\n          - option \"Melayu - Malaysia\"\n          - option \"Nederlands - Nederland\"\n          - option \"Norsk Bokmål - Norge\"\n          - option \"Polski - Polska\"\n          - option \"Português - Portugal\"\n          - option \"Português - Brasil\"\n          - option \"Română - România\"\n          - option \"Slovenčina - Slovensko\"\n          - option \"Slovenščina - Slovenija\"\n          - option \"Suomi - Suomi\"\n          - option \"Svenska - Sverige\"\n          - option \"Tiếng Việt - Việt Nam\"\n          - option \"Türkçe - Türkiye\"\n          - option \"Čeština - Česko\"\n          - option \"Ελληνικά - Ελλάδα\"\n          - option \"Български - България\"\n          - option \"Русский - Россия\"\n          - option \"Српски - Србија\"\n          - option \"Українська - Україна\"\n          - option \"עברית\"\n          - option \"العربية - المملكة العربية السعودية\"\n          - option \"فارسی\"\n          - option \"हिन्दी - भारत\"\n          - option \"ไทย - ไทย\"\n          - option \"简体中文\"\n          - option \"繁體中文 (香港)\"\n          - option \"繁體中文 (台灣)\"\n          - option \"日本語 - 日本\"\n          - option \"한국어 - 대한민국\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.google.com/chrome/",
+              "origin": "https://www.google.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

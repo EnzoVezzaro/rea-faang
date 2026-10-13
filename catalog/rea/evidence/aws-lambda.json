@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_22aedf7d08e7a152deeaa8094bb9c5a6d77550205aae7a414ad1ae26c841ecbf",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/lambda/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "e9ab77fa869490c8e54390aa538375daad5edc8687ace62a7702f90b3c17be66"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.40"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4553,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1806,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/lambda/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2539,
+        "before_url": {
+          "url": "https://aws.amazon.com/lambda/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/lambda/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "0f901f7a8bd9e6454c2219dbe0c1f23eea1a0192b0215988df89c41a58660495",
+              "bytes": 23807,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - tooltip \"Feedback\"\n  - main:\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Compute\":\n            - /url: /products/compute/\n        - listitem: AWS Lambda\n    - heading \"AWS Lambda\" [level=1]\n    - paragraph: Serverless compute for every workload\n    - button \"Get started for free\"\n    - button \"See the documentation\"\n    - heading \"AWS Lambda today\" [level=2]\n    - heading \"0.0M+\" [level=2]\n    - text: Active Customers\n    - heading \"0T+\" [level=3]\n    - text: Invocations / Month\n    - heading \"0\" [level=3]\n    - text: Server to Manage\n    - heading \"One service. Multiple ways to run. Scales with your workload.\" [level=2]\n    - link \"Event Functions Run code at any scale with zero infrastructure management. 220+ native AWS integrations with pay-per-use billing. Lambda Functions\":\n      - /url: /lambda/lambda-functions/\n      - heading \"Event Functions\" [level=3]\n      - paragraph: Run code at any scale with zero infrastructure management. 220+ native AWS integrations with pay-per-use billing.\n      - text: Lambda Functions\n    - link \"Web Functions Run standard HTTP servers directly, delivering fast, consistent responses through multi-concurrent execution and automated global distribution. Lambda Web Functions\":\n      - /url: /lambda/lambda-web-functions/\n      - heading \"Web Functions\" [level=3]\n      - paragraph: Run standard HTTP servers directly, delivering fast, consistent responses through multi-concurrent execution and automated global distribution.\n      - text: Lambda Web Functions\n    - link \"MicroVMs Run user- or AI-generated code in isolated sandboxes with full state retention and lifecycle control. Launch, suspend, and resume on demand. Lambda MicroVMs\":\n      - /url: /lambda/lambda-microvms/\n      - heading \"MicroVMs\" [level=3]\n      - paragraph: Run user- or AI-generated code in isolated sandboxes with full state retention and lifecycle control. Launch, suspend, and resume on demand.\n      - text: Lambda MicroVMs\n    - heading \"What can you build with AWS Lambda?\" [level=2]\n    - heading \"Build and scale any application without managing infrastructure.\" [level=5]\n    - list:\n      - listitem:\n        - link \"Web applications and server-side rendering\":\n          - /url: \"#amsc1--3796w\"\n      - listitem:\n        - link \"Event-driven applications\":\n          - /url: \"#amsc2--3796w\"\n      - listitem:\n        - link \"API backends and microservices\":\n          - /url: \"#amsc3--3796w\"\n      - listitem:\n        - link \"Isolated code execution\":\n          - /url: \"#amsc4--3796w\"\n      - listitem:\n        - link \"AI agent orchestration and durable workflows\":\n          - /url: \"#amsc5--3796w\"\n      - listitem:\n        - link \"Real-time data processing\":\n          - /url: \"#amsc6--3796w\"\n      - listitem:\n        - link \"Data analytics, notebooks, and interactive query platforms\":\n          - /url: \"#amsc7--3796w\"\n    - heading \"Web applications and server-side rendering\" [level=2]\n    - paragraph: How do you deploy full-stack web apps globally with consistent performance and no infrastructure to manage?\n    - paragraph:\n      - text: Run your Express, Hono, or any Node.js HTTP server on\n      - link \"Lambda Web Functions\":\n        - /url: https://link/\n      - text: with no code changes. With active CPU billing, you pay for compute you actually use, not for the time your code spends waiting on I/O. Deploy to the regions you choose with a single command. A multi-region endpoint routes each request to the nearest region for fast, consistent responses, while multi-concurrency keeps requests on warm execution environments under load.\n    - paragraph:\n      - link \"Learn more\":\n        - /url: https://amazon.sharepoint.com/lambda/lambda-web-functions/\n    - heading \"Event-driven applications\" [level=2]\n    - paragraph: How do you build applications that scale automatically in response to events?\n    - paragraph: Connect to 220+ AWS services and respond to events automatically. An object lands in Amazon S3, a record hits Amazon DynamoDB, an API call comes in. Lambda Functions handle the scaling, you handle the logic. Pay only for what runs.\n    - paragraph:\n      - link \"Learn more\":\n        - /url: /lambda/lambda-functions/\n      - text: .\n    - heading \"API backends and microservices\" [level=2]\n    - paragraph: How do you run REST and GraphQL APIs on serverless without cold-start penalties or idle billing?\n    - paragraph:\n      - text: Build API backends with Express, Hono, or Fastify and deploy them to\n      - link \"Lambda Web Functions\":\n        - /url: https://amazon.sharepoint.com/lambda/lambda-web-functions/\n      - text: with one command. Multi-concurrency handles bursty traffic across warm execution environments, reducing cold starts. Active CPU billing charges only for compute time, not wall-clock duration, cutting costs for I/O-heavy workloads waiting on databases or downstream APIs.\n    - paragraph:\n      - link \"Learn more\":\n        - /url: https://amazon.sharepoint.com/lambda/lambda-web-functions/\n    - heading \"Isolated code execution\" [level=2]\n    - paragraph: How do you build dedicated isolation for every tenant, user, and session?\n    - paragraph:\n      - text: Run untrusted or third-party code with VM-level isolation. No shared kernel, no shared memory, no shared state between tenants. Three levels of isolation, to\n      - link \"per-tenant isolation\":\n        - /url: https://docs.aws.amazon.com/lambda/latest/dg/tenant-isolation.html\n      - text: to full\n      - link \"MicroVM\":\n        - /url: http://docs.aws.amazon.com/lambda/latest/dg/microvms.html\n      - text: environments, so you pick the boundary that fits your threat model.\n    - paragraph:\n      - link \"Learn more\":\n        - /url: /lambda/lambda-microvms/\n      - text: .\n    - heading \"AI agent orchestration and durable workflows\" [level=2]\n    - paragraph: How do you run multi-step applications and agentic workflows that last hours?\n    - paragraph:\n      - text: Build multi-step, long-running workflows that can pause, wait for signals, retry on failure, and run for hours.\n      - link \"Lambda durable functions\":\n        - /url: /lambda/lambda-durable-functions/\n      - text: gives you the control flow primitives (branching, parallelism, timeouts) without bolting on a separate orchestrator. Works for agentic AI loops, human approval chains, and saga patterns alike.\n    - paragraph:\n      - link \"Learn more\":\n        - /url: /blogs/compute/building-fault-tolerant-long-running-application-with-aws-lambda-durable-functions/\n      - text: .\n    - heading \"Real-time data processing\" [level=2]\n    - paragraph: How do you process streaming and batch data at any scale?\n    - paragraph:\n      - text: Process streams, transform records, and fan out to downstream systems as data arrives. Lambda Functions sits natively on Amazon Kinesis, Apache Kafka, Amazon SQS, and Amazon DynamoDB Streams, so you get sub-second processing without provisioning or tuning throughput. For sustained, high-throughput pipelines,\n      - link \"Lambda Managed Instances\":\n        - /url: /lambda/lambda-managed-instances/\n      - text: provide dedicated capacity with predictable latency.\n    - paragraph:\n      - link \"Learn more\":\n        - /url: /blogs/big-data/building-serverless-event-streaming-applications-with-amazon-msk-and-aws-lambda/\n      - text: .\n    - heading \"Data analytics, notebooks, and interactive query platforms\" [level=2]\n    - paragraph: How do you give every analyst their own isolated compute environment?\n    - paragraph: Preserve packages, computed results, and execution context across sessions, with no resets and no re-computation. Lambda MicroVMs launch and resume rapidly with per-tenant isolation, retain state across sessions, and pause automatically when idle so you only pay for active use.\n    - paragraph:\n      - link \"Learn more\":\n        - /url: /lambda/lambda-microvms/\n      - text: .\n    - heading \"Using a coding agent?\" [level=2]\n    - paragraph: Copy and paste the following instructions to give your agent the tools, knowledge, and guardrails it needs to work effectively with AWS Lambda.\n    - text: bash\n    - button \"Copy\"\n    - code: \"Set up your agent to build with AWS Lambda: https://docs.aws.amazon.com/lambda/latest/dg/samples/aws-lambda-agent-setup.md\"\n    - paragraph:\n      - paragraph\n    - text: \"Building on AWS? Connect your agent first. Agent Toolkit for AWS: live docs, tested runbooks, and best practices so your agent gets AWS right. Free, one prompt.\"\n    - link \"Get started free\":\n      - /url: https://aws.amazon.com/products/developer-tools/agent-toolkit-for-aws/?sc_icampaign=aware_agent-toolkit_2026&sc_ichannel=ha&sc_iplace=banner&trk=51d778e4-7fc0-488a-8e05-7ce791578608\n    - button \"Close\"\n    - text: \"Building on AWS? Connect your agent first. Agent Toolkit for AWS: live docs, tested runbooks, and best practices so your agent gets AWS right. Free, one prompt.\"\n    - link \"Get started free\":\n      - /url: https://aws.amazon.com/products/developer-tools/agent-toolkit-for-aws/?sc_icampaign=aware_agent-toolkit_2026&sc_ichannel=ha&sc_iplace=banner&trk=51d778e4-7fc0-488a-8e05-7ce791578608\n    - button \"Close\"\n    - heading \"Who’s running on Lambda at scale?\" [level=2]\n    - link \"Automotive Scania Scania uses AWS Lambda to scale its connected-vehicle solution with 80% lower latency, processing telemetry from trucks across a global hybrid network. Read the case study\":\n      - /url: /solutions/case-studies/scania-case-study/\n      - text: Automotive\n      - heading \"Scania\" [level=3]\n      - paragraph: Scania uses AWS Lambda to scale its connected-vehicle solution with 80% lower latency, processing telemetry from trucks across a global hybrid network.\n      - text: Read the case study\n    - link \"Financial Services Capital One Capital One improved cost efficiency, speed to market, and developer quality of life by adopting AWS Lambda and Amazon ECS across its enterprise platform. Read the case study\":\n      - /url: /solutions/case-studies/capital-one-lambda-ecs-case-study/\n      - text: Financial Services\n      - heading \"Capital One\" [level=3]\n      - paragraph: Capital One improved cost efficiency, speed to market, and developer quality of life by adopting AWS Lambda and Amazon ECS across its enterprise platform.\n      - text: Read the case study\n    - link \"Gaming ZigZa ZigZa scaled its flagship mobile games to 4 million concurrent players using AWS Lambda, achieving 70% lower infrastructure costs while handling 44% year-over-year growth. Read the case study\":\n      - /url: /solutions/case-studies/zigzagames-case-study/\n      - text: Gaming\n      - heading \"ZigZa\" [level=3]\n      - paragraph: ZigZa scaled its flagship mobile games to 4 million concurrent players using AWS Lambda, achieving 70% lower infrastructure costs while handling 44% year-over-year growth.\n      - text: Read the case study\n    - link \"Media & Entertainment KTO.com KTO.com migrated to AWS Lambda and Amazon EC2 to handle a massive influx of traffic and payment transactions during the soccer World Cup without degrading customer experience. Read the case study\":\n      - /url: /solutions/case-studies/kto-case-study/\n      - text: Media & Entertainment\n      - heading \"KTO.com\" [level=3]\n      - paragraph: KTO.com migrated to AWS Lambda and Amazon EC2 to handle a massive influx of traffic and payment transactions during the soccer World Cup without degrading customer experience.\n      - text: Read the case study\n    - link \"Software & Internet LangGenius LangGenius uses AWS Lambda to run isolated, auto-scaling plugin sandboxes for its open-source LLM application development platform, enabling secure multi-tenant agent and RAG workflows. Read the case study\":\n      - /url: /solutions/case-studies/dify-lambda-case-study/\n      - text: Software & Internet\n      - heading \"LangGenius\" [level=3]\n      - paragraph: LangGenius uses AWS Lambda to run isolated, auto-scaling plugin sandboxes for its open-source LLM application development platform, enabling secure multi-tenant agent and RAG workflows.\n      - text: Read the case study\n    - link \"Software & Internet CyberGRX CyberGRX reduced its ML-based cyber risk modeling runtime from 8 days to 1 hour using AWS Step Functions and AWS Lambda, while cutting compute costs by 90%. Read the case study\":\n      - /url: /solutions/case-studies/cybergrx-step-functions-case-study/\n      - text: Software & Internet\n      - heading \"CyberGRX\" [level=3]\n      - paragraph: CyberGRX reduced its ML-based cyber risk modeling runtime from 8 days to 1 hour using AWS Step Functions and AWS Lambda, while cutting compute costs by 90%.\n      - text: Read the case study\n    - heading \"Frequently asked questions\" [level=2]\n    - heading [level=5]\n    - list:\n      - listitem:\n        - link \"How do I choose between Lambda Event Functions, Lambda Web Functions, and Lambda MicroVMs?\":\n          - /url: /lambda/#amsc1--uizb9d\n      - listitem:\n        - link \"When should I use Lambda Managed Instances?\":\n          - /url: /lambda/#amsc2--uizb9d\n    - heading \"How do I choose between Lambda Event Functions, Lambda Web Functions, and Lambda MicroVMs?\" [level=2]\n    - paragraph:\n      - text: \"AWS Lambda offers three form factors:\"\n      - link \"Lambda Event Functions\":\n        - /url: /lambda/lambda-functions/\n      - text: \",\"\n      - link \"Lambda Web Functions\":\n        - /url: /lambda/lambda-web-functions/\n      - text: \", and\"\n      - link \"Lambda MicroVMs\":\n        - /url: /lambda/lambda-microvms/\n      - text: \". They share the same serverless foundation: you don't manage servers, you pay only for what you use, and Lambda manages networking and isolation.. Choose based on your workload's isolation, state, and lifecycle needs.\"\n    - paragraph: Use Event Functions for discrete events from sources like SQS or Kafka, and for compute-intensive processing with Lambda Managed Instances. Use Web Functions when you want to run standard HTTP frameworks natively without adapters. Active compute billing is especially beneficial when your workload spends significant time waiting on databases, APIs, or network calls. Within Functions, let the programming and billing model guide you.\n    - paragraph: Choose MicroVMs when you need control over the execution environment itself, such as lifecycle management, state retention across sessions, or VM-level isolation for untrusted code. The deciding question is whether you want to manage only the code inside a sandbox and let Lambda manage the sandbox, or manage the sandbox lifecycle yourself. The following table shows the full comparison.\n    - paragraph:\n      - img\n    - heading \"When should I use Lambda Managed Instances?\" [level=2]\n    - paragraph:\n      - text: Lambda runs your Event Functions on fully managed infrastructure by default, with automatic scaling and pay-per-use pricing.\n      - link \"Lambda Managed Instances\":\n        - /url: /lambda/lambda-managed-instances/\n      - text: give you dedicated EC2-backed capacity with built-in routing, load balancing, and multi-concurrency. Best for compute-intensive workloads like large-scale data processing, media transcoding, and scientific simulations. Up to 32 GB memory and 16 vCPUs, with no operational overhead.\n    - paragraph:\n      - text: Lambda Managed Instances also support a 90-minute function timeout for\n      - link \"asynchronous\":\n        - /url: https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html\n      - text: and\n      - link \"event source mapping (ESM)\":\n        - /url: https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html\n      - text: invocations, a 6x increase from the previous 15-minute limit. You can now run data processing, media transcoding, financial calculations, AI inference, and batch workloads on Lambda for jobs that require longer continuous execution, without re-architecting your applications.\n    - heading \"Get started with AWS Lambda\" [level=2]\n    - link \"Feature Find out how AWS Lambda works Explore AWS Lambda Features\":\n      - /url: /lambda/features/?pg=ln&sec=hs\n      - text: Feature\n      - heading \"Find out how AWS Lambda works\" [level=2]\n      - text: Explore AWS Lambda Features\n    - link \"Documentation Explore hands-on training Check out getting started tutorials\":\n      - /url: /getting-started/tutorials/run-serverless-code/?pg=ln&sec=hs\n      - text: Documentation\n      - heading \"Explore hands-on training\" [level=2]\n      - text: Check out getting started tutorials\n    - link \"Getting started Connect with an expert Explore support options\":\n      - /url: /contact-us/sales-support-lambda/?pg=ln&sec=hs\n      - text: Getting started\n      - heading \"Connect with an expert\" [level=2]\n      - text: Explore support options\n    - heading \"Did you find what you were looking for today?\" [level=2]\n    - paragraph: Let us know so we can improve the quality of the content on our pages\n    - button \"Yes, give us positive feedback\": \"Yes\"\n    - button \"No, give us constructive feedback\": \"No\"\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /lambda/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /lambda/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/lambda/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.40",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}
