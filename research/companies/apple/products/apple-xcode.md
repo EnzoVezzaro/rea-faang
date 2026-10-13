@@ -95,7 +95,7 @@ VS Code with the official Apple extensions provides the closest open-source alte
 
 Tight iOS/macOS SDK integration, Interface Builder visual design, and App Store submission workflow represent gaps. A VS Code-based workflow with open-source extensions can cover many development tasks.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Focus on VS Code-based development workflow with open-source extensions. Target cross-platform development rather than iOS/macOS-exclusive workflows.
 
@@ -127,6 +127,6 @@ VS Code Apple extensions cover code editing and debugging but lack Interface Bui
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Adopt VS Code with Swift extensions for cross-platform development. iOS-specific features require Xcode.

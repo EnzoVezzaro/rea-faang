@@ -1,6 +1,6 @@
 # Agent Workflow (ACE)
 
-REA FAANG uses **ACE** (`ace-proagents`) as its agent orchestration framework: a
+RAE FAANG uses **ACE** (`ace-proagents`) as its agent orchestration framework: a
 git-native package ecosystem for reproducible, orchestrator-driven agent
 environments (spec `ace/v1`). ACE has **zero runtime dependencies** — it is a
 single Node ESM CLI plus a `lib/` of modules.

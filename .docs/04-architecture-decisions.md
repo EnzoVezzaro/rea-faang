@@ -67,7 +67,7 @@ What is the change we're proposing/doing?
 **Decision**: 
 - Root repository contains shared infrastructure and ACE configuration
 - Each product in `products/<name>/` is a self-contained ACE workspace
-- Shared modules published as npm packages (`@REA-faang/*`)
+- Shared modules published as npm packages (`@rae-faang/*`)
 - Git worktrees for parallel task isolation
 
 **Consequences**:
@@ -84,7 +84,7 @@ What is the change we're proposing/doing?
 
 **Decision**: 
 - TypeScript strict mode for all new code
-- Shared types in `@REA-faang/types` package
+- Shared types in `@rae-faang/types` package
 - Zod schemas for runtime validation
 - tsc for type checking in CI
 
@@ -122,7 +122,7 @@ What is the change we're proposing/doing?
 - React for web (Next.js for SSR/SEO)
 - React Native for mobile (Expo for managed workflow)
 - Tauri for desktop (Rust backend, WebView frontend)
-- Shared components in `@REA-faang/ui`
+- Shared components in `@rae-faang/ui`
 
 **Consequences**:
 - Positive: Maximum code sharing, large ecosystem, AI agent familiarity
@@ -172,7 +172,7 @@ What is the change we're proposing/doing?
 **Date**: 2026-10-13
 **Deciders**: Architecture Team
 
-**Context**: REA FAANG explicitly uses AI agents as development infrastructure.
+**Context**: RAE FAANG explicitly uses AI agents as development infrastructure.
 
 **Decision**:
 - ACE (ace-proagents) for agent orchestration

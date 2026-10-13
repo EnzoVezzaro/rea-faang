@@ -109,7 +109,7 @@ MinIO provides the closest S3-compatible object storage for on-premises deployme
 
 S3's durability model, event notification architecture, and storage class lifecycle management represent gaps. MinIO provides S3-compatible storage but lacks the managed service experience, global availability, and some advanced features.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Not recommended to build a managed object storage service from scratch. Consider contributing to or extending MinIO for S3-compatible on-premises object storage. Focus on application-level patterns rather than service replication.
 
@@ -141,6 +141,6 @@ MinIO provides the closest S3-compatible object storage. Ceph and Swift are alte
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Focus on self-hostable S3-compatible storage (MinIO) for on-premises needs. Managed service replication is out of scope.

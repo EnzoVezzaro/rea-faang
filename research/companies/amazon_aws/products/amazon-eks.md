@@ -113,7 +113,7 @@ Self-managed Kubernetes (CAPI, kops, kubespray) on EC2 or other clouds provides 
 
 Managed multi-AZ control plane with automated upgrades/patching, IRSA (IAM↔K8s RBAC), VPC CNI (native pod networking), Fargate serverless pods, and Karpenter (smart node provisioning) are the key managed features. An open alternative could use Cluster API for declarative cluster management, Talos/K3s for simplified OS, and Karpenter for nodes.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Use Cluster API (CAPI) with AWS provider (CAPA) or Talos/K3s on EC2 for self-managed clusters. For managed control plane feel: EKS Distro + CAPI (what EKS Anywhere does). Add Karpenter for node provisioning, Cilium for CNI+policies, AWS Load Balancer Controller for LBs, IRSA via OIDC provider. For serverless pods: Kata Containers / Firecracker on K8s. This replicates EKS architecture with open components.
 
@@ -147,6 +147,6 @@ CAPI + EKS Distro + Karpenter + Cilium + AWS LB Controller is the open-source eq
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Phase 1: CAPI management cluster (Talos/K3s) + EKS Distro workload clusters. Phase 2: Karpenter for node provisioning, Cilium for CNI, AWS LB Controller. Phase 3: IRSA via OIDC + AWS IAM. Phase 4: Fargate-like serverless via Kata Containers + Firecracker. Phase 5: GitOps (Flux/ArgoCD) for app deployment. Phase 6: Observability stack (AMP/AMG equivalents: VictoriaMetrics + Grafana).

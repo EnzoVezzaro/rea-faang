@@ -1,5 +1,5 @@
 {
-  "name": "REA-netflix-streaming",
+  "name": "rae-netflix-streaming",
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
@@ -7,7 +7,7 @@
     "node": ">=20",
     "ace": ">=1.0.0"
   },
-  "description": "REA FAANG: Open-source alternative to Netflix Streaming",
+  "description": "RAE FAANG: Open-source alternative to Netflix Streaming",
   "scripts": {
     "dev": "node ace.mjs run",
     "test": "node --test tests/",
@@ -23,7 +23,7 @@
   },
   "ace": {
     "spec": "ace/v1",
-    "name": "REA-netflix-streaming",
+    "name": "rae-netflix-streaming",
     "goal": {
       "statement": "Build open-source alternative to Netflix Streaming",
       "milestones": [

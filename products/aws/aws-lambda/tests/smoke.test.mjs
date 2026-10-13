@@ -7,12 +7,12 @@ import { dirname, join } from 'node:path';
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const pkg = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'));
 
-test('REA-aws-lambda declares a valid ace/v1 workspace', () => {
+test('rae-aws-lambda declares a valid ace/v1 workspace', () => {
   assert.equal(pkg.ace?.spec, 'ace/v1');
-  assert.equal(pkg.ace?.name, 'REA-aws-lambda');
+  assert.equal(pkg.ace?.name, 'rae-aws-lambda');
   assert.ok(pkg.ace?.goal, 'workspace should declare a goal');
 });
 
-test('REA-aws-lambda keeps its specification scaffold', () => {
+test('rae-aws-lambda keeps its specification scaffold', () => {
   assert.ok(existsSync(join(ROOT, 'specs', '01-product-vision.md')));
 });

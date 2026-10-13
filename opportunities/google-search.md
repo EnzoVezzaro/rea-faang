@@ -6,7 +6,7 @@
 | **Company** | google |
 | **Classification** | build_missing |
 | **Status** | proposed |
-| **Proposed alternative** | REA Search |
+| **Proposed alternative** | RAE Search |
 | **License** | MIT |
 
 ## Why this is a build opportunity

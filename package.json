@@ -1,10 +1,10 @@
 {
-  "name": "REA-faang",
+  "name": "rae-faang",
   "version": "0.1.0",
-  "description": "REA — FAANG Product Intelligence & Open-Source Replication Engine",
+  "description": "RAE — FAANG Product Intelligence & Open-Source Replication Engine",
   "main": "src/cli.js",
   "bin": {
-    "REA": "src/cli.js"
+    "rae": "src/cli.js"
   },
   "type": "module",
   "engines": {
@@ -36,7 +36,7 @@
   },
   "ace": {
     "spec": "ace/v1",
-    "name": "REA-faang",
+    "name": "rae-faang",
     "description": "Coordinate agents that research FAANG products, catalogue evidence, and build open-source alternatives.",
     "orchestrator": {
       "runtime": "opencode",

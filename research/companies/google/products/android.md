@@ -95,7 +95,7 @@ AOSP provides the full open-source operating system. LineageOS and /e/OS are der
 
 De-Googled Android distributions exist but require device-specific maintenance. Building a fully independent mobile OS from scratch is extremely demanding. Focus on AOSP customization or distribution is more feasible.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Contribute to AOSP, build a de-Googled distribution, or extend LineageOS. Full OS development is out of scope.
 
@@ -127,6 +127,6 @@ AOSP, LineageOS, /e/OS, and Replicant are the primary open-source Android option
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
-Contribute to AOSP de-Googling efforts or build on LineageOS. Full OS development not recommended for initial REA projects.
+Contribute to AOSP de-Googling efforts or build on LineageOS. Full OS development not recommended for initial RAE projects.

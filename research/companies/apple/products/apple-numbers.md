@@ -97,7 +97,7 @@ LibreOffice Calc and OnlyOffice are the closest functional equivalents for tradi
 
 Canvas-based multi-table model, form-based data entry on mobile, Apple Pencil integration, iCloud real-time collaboration, and Apple ecosystem integration are unique. An open alternative could adopt the canvas model with ODF/Excel compatibility.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Build a canvas-based spreadsheet using web technologies (Canvas/WebGL or DOM) with ODF/.xlsx import-export. Prioritize: multiple tables per sheet, categories/grouping, interactive charts, form view for mobile. Consider Univer or Luckysheet as a base.
 
@@ -130,6 +130,6 @@ LibreOffice Calc remains the most complete open-source spreadsheet. The canvas m
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Phase 1: Web-based canvas spreadsheet with single-table sheets, ODF import/export. Phase 2: Multi-table canvas, categories, charts. Phase 3: Mobile form view, real-time collaboration (Yjs/Automerge). Phase 4: Native apps via Tauri/Electron.

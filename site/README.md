@@ -1,6 +1,6 @@
 # Landing page
 
-The public landing page for REA FAANG. Static HTML and CSS, no build step, no
+The public landing page for RAE FAANG. Static HTML and CSS, no build step, no
 dependencies beyond web fonts.
 
 - `index.html` — the page.

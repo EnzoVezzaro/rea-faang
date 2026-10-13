@@ -7,10 +7,10 @@
 
 ---
 
-# Infrastructure Plan for REA FAANG Product Development
+# Infrastructure Plan for RAE FAANG Product Development
 
 ## Overview
-This document prepares the plan to start building the product's infrastructure for REA FAANG using the ace-proagents framework. It covers the initial setup, shared infrastructure, and first product workspace.
+This document prepares the plan to start building the product's infrastructure for RAE FAANG using the ace-proagents framework. It covers the initial setup, shared infrastructure, and first product workspace.
 
 ## Initial Infrastructure Setup (Phase 1 — Foundation)
 
@@ -18,8 +18,8 @@ This document prepares the plan to start building the product's infrastructure f
 
 #### Initialize ACE Workspace
 ```bash
-# In /Users/mac/Desktop/Github/REA-faang/
-node /tmp/ace-proagents/ace.mjs init --name REA-faang
+# In /Users/mac/Desktop/Github/rae-faang/
+node /tmp/ace-proagents/ace.mjs init --name rae-faang
 ```
 
 This creates:
@@ -29,11 +29,11 @@ This creates:
 - `ace.mjs` + `lib/` copy
 
 #### Configure Root package.json (ace key)
-Update with REA FAANG-specific configuration:
+Update with RAE FAANG-specific configuration:
 
 ```json
 {
-  "name": "REA-faang",
+  "name": "rae-faang",
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
@@ -41,15 +41,15 @@ Update with REA FAANG-specific configuration:
   "scripts": {
     "dev": "node ace.mjs run",
     "govern": "node ace.mjs govern",
-    "supervise": "node ace.mjs supervise --project REA-social",
+    "supervise": "node ace.mjs supervise --project rae-social",
     "test": "vitest run",
     "lint": "eslint .",
     "build": "tsc --build"
   },
   "dependencies": {
-    "@REA-faang/auth": "workspace:^0.1.0",
-    "@REA-faang/storage": "workspace:^0.1.0",
-    "@REA-faang/ui": "workspace:^0.1.0"
+    "@rae-faang/auth": "workspace:^0.1.0",
+    "@rae-faang/storage": "workspace:^0.1.0",
+    "@rae-faang/ui": "workspace:^0.1.0"
   },
   "devDependencies": {
     "vitest": "^2.0.0",
@@ -68,28 +68,28 @@ Already created in previous steps. Files:
 - `04-architecture-decisions.md`
 - `05-development-workflow.md`
 
-### 3. Initialize First Product Workspace: REA Social
+### 3. Initialize First Product Workspace: RAE Social
 
 #### Create Product Directory
 ```bash
-mkdir -p products/REA-social
+mkdir -p products/rae-social
 ```
 
 #### Initialize Product ACE Workspace
 ```bash
-cd products/REA-social
-node /tmp/ace-proagents/ace.mjs init --name REA-social
+cd products/rae-social
+node /tmp/ace-proagents/ace.mjs init --name rae-social
 ```
 
 #### Configure Product package.json
 ```json
 {
-  "name": "REA-social",
+  "name": "rae-social",
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
   "engines": { "node": ">=20", "ace": ">=1.0.0" },
-  "description": "REA FAANG: Open-source Instagram alternative",
+  "description": "RAE FAANG: Open-source Instagram alternative",
   "scripts": {
     "dev": "node ace.mjs run",
     "test": "vitest run",
@@ -97,9 +97,9 @@ node /tmp/ace-proagents/ace.mjs init --name REA-social
     "build": "tsc --build"
   },
   "dependencies": {
-    "@REA-faang/auth": "^0.1.0",
-    "@REA-faang/storage": "^0.1.0",
-    "@REA-faang/ui": "^0.1.0"
+    "@rae-faang/auth": "^0.1.0",
+    "@rae-faang/storage": "^0.1.0",
+    "@rae-faang/ui": "^0.1.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.0",
@@ -115,17 +115,17 @@ node /tmp/ace-proagents/ace.mjs init --name REA-social
 
 ### 4. Create Shared Infrastructure Packages
 
-#### Initialize Shared Package: `@REA-faang/auth`
+#### Initialize Shared Package: `@rae-faang/auth`
 ```bash
 mkdir -p packages/auth
 cd packages/auth
-node /tmp/ace-proagents/ace.mjs init --name @REA-faang/auth
+node /tmp/ace-proagents/ace.mjs init --name @rae-faang/auth
 ```
 
 Configure with auth-specific settings:
 ```json
 {
-  "name": "@REA-faang/auth",
+  "name": "@rae-faang/auth",
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
@@ -141,17 +141,17 @@ Configure with auth-specific settings:
 }
 ```
 
-#### Initialize Shared Package: `@REA-faang/storage`
+#### Initialize Shared Package: `@rae-faang/storage`
 ```bash
 mkdir -p packages/storage
 cd packages/storage
-node /tmp/ace-proagents/ace.mjs init --name @REA-faang/storage
+node /tmp/ace-proagents/ace.mjs init --name @rae-faang/storage
 ```
 
 Configure with storage-specific settings:
 ```json
 {
-  "name": "@REA-faang/storage",
+  "name": "@rae-faang/storage",
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
@@ -166,17 +166,17 @@ Configure with storage-specific settings:
 }
 ```
 
-#### Initialize Shared Package: `@REA-faang/ui`
+#### Initialize Shared Package: `@rae-faang/ui`
 ```bash
 mkdir -p packages/ui
 cd packages/ui
-node /tmp/ace-proagents/ace.mjs init --name @REA-faang/ui
+node /tmp/ace-proagents/ace.mjs init --name @rae-faang/ui
 ```
 
 Configure with UI-specific settings:
 ```json
 {
-  "name": "@REA-faang/ui",
+  "name": "@rae-faang/ui",
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
@@ -196,7 +196,7 @@ Configure with UI-specific settings:
 
 ### Directory Layout After Initial Setup
 ```
-/REA-faang (root ACE workspace)
+/rae-faang (root ACE workspace)
 ├── package.json                # Root manifest + ace spec
 ├── ace-lock.json               # Resolved lockfile
 ├── ace.mjs                     # CLI entry point
@@ -214,7 +214,7 @@ Configure with UI-specific settings:
 │       ├── package.json
 │       └── src/
 ├── products/
-│   └── REA-social/
+│   └── rae-social/
 │       ├── package.json        # Product manifest + ace spec
 │       ├── ace-lock.json
 │       ├── ace.mjs             # Copied from root
@@ -246,7 +246,7 @@ Configure with UI-specific settings:
     "packages/*",
     "products/*"
   ],
-  "nohoist": ["**/@REA-faang/*"]
+  "nohoist": ["**/@rae-faang/*"]
 }
 ```
 
@@ -256,7 +256,7 @@ Or use npm link for local development:
 npm link
 
 # From product workspace
-npm link @REA-faang/auth @REA-faang/storage @REA-faang/ui
+npm link @rae-faang/auth @rae-faang/storage @rae-faang/ui
 ```
 
 ### Agent Orchestration Setup
@@ -268,22 +268,22 @@ Each product supervisor reports to the root governor:
 # Start root governor
 node ace.mjs govern
 
-# In separate terminal, monitor REA-social supervisor
-node ace.mjs supervise --project REA-social
+# In separate terminal, monitor rae-social supervisor
+node ace.mjs supervise --project rae-social
 ```
 
-#### Initialize Agents for REA Social
+#### Initialize Agents for RAE Social
 ```bash
 # Create agent roles
-node ace.mjs task add --title "Set up REA Social project structure" --project REA-social --role architect
+node ace.mjs task add --title "Set up RAE Social project structure" --project rae-social --role architect
 node ace.mjs task claim <task-id> --agent architect-1
 
 # Research agent investigates Instagram
-node ace.mjs task add --title "Investigate Instagram feed and story workflows" --project REA-social --role researcher
+node ace.mjs task add --title "Investigate Instagram feed and story workflows" --project rae-social --role researcher
 node ace.mjs task claim <task-id> --agent researcher-1
 
 # Frontend agent sets up React project
-node ace.mjs task add --title "Set up React + Vite project scaffolding" --project REA-social --role frontend
+node ace.mjs task add --title "Set up React + Vite project scaffolding" --project rae-social --role frontend
 node ace.mjs task claim <task-id> --agent frontend-1
 ```
 
@@ -306,7 +306,7 @@ Configure opencode as the agent runtime in ACE:
 }
 ```
 
-## First Product: REA Social MVP Plan
+## First Product: RAE Social MVP Plan
 
 ### MVP Scope (Phase 2)
 Based on the feature catalog and architecture decisions:
@@ -327,7 +327,7 @@ Based on the feature catalog and architecture decisions:
 
 #### Technical MVP Stack
 - **Frontend**: React 18 + React Router + Vite
-- **Styling**: Tailwind CSS + @REA-faang/ui components
+- **Styling**: Tailwind CSS + @rae-faang/ui components
 - **Backend**: Node.js + Express (or Hono)
 - **Database**: PostgreSQL with Prisma ORM
 - **Storage**: Local filesystem + S3-compatible fallback
@@ -335,12 +335,12 @@ Based on the feature catalog and architecture decisions:
 - **Testing**: Vitest + Playwright
 - **Deployment**: Docker + Vercel (frontend) / Railway (backend)
 
-#### ACE Runtime Configuration for REA Social
+#### ACE Runtime Configuration for RAE Social
 ```json
-// products/REA-social/ace config (subset)
+// products/rae-social/ace config (subset)
 {
   "goal": {
-    "statement": "Build MVP of REA Social - Instagram alternative with photo upload, feed, profiles, and following",
+    "statement": "Build MVP of RAE Social - Instagram alternative with photo upload, feed, profiles, and following",
     "milestones": [
       "Setup project infrastructure",
       "Implement photo upload flow",
@@ -404,9 +404,9 @@ Based on the feature catalog and architecture decisions:
 - [x] Configure root package.json with ace spec
 - [x] Create .docs/ documentation structure
 - [x] Create packages/shared-infrastructure
-- [x] Initialize first product: REA Social
-- [x] Configure REA Social ACE workspace
-- [x] Set up shared packages: @REA-faang/auth, @REA-faang/storage, @REA-faang/ui
+- [x] Initialize first product: RAE Social
+- [x] Configure RAE Social ACE workspace
+- [x] Set up shared packages: @rae-faang/auth, @rae-faang/storage, @rae-faang/ui
 
 ### ⏳ Next Steps
 - [ ] Install dependencies: `npm install` from root
@@ -446,20 +446,20 @@ Agents: 6 active (researcher: 1, architect: 1, frontend: 1, backend: 1, tester: 
 Tasks: 6 active, 0 completed
 Context: Valid ace/v1 specification
 Adapters: All healthy
-Governor: Monitoring 1 supervisor (REA-social)
+Governor: Monitoring 1 supervisor (rae-social)
 ```
 
 ## Scaling to Full Infrastructure
 
-### Phase 3: Expand Catalog (After REA Social MVP)
+### Phase 3: Expand Catalog (After RAE Social MVP)
 - Initialize additional product workspaces:
-  - `products/REA-connect` (WhatsApp alternative)
-  - `products/REA-market` (Marketplace alternative)
-  - `products/REA-search` (Search engine alternative)
+  - `products/rae-connect` (WhatsApp alternative)
+  - `products/rae-market` (Marketplace alternative)
+  - `products/rae-search` (Search engine alternative)
 - Add shared modules:
-  - `@REA-faang/sync` (CRDT synchronization)
-  - `@REA-faang/api` (API client generation)
-  - `@REA-faang/testing` (Test utilities)
+  - `@rae-faang/sync` (CRDT synchronization)
+  - `@rae-faang/api` (API client generation)
+  - `@rae-faang/testing` (Test utilities)
 - Configure cross-product governance
 - Enable autopilot for continuous development
 

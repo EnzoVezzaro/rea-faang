@@ -107,7 +107,7 @@ Magento, WooCommerce, and Shopify dominate merchant-facing e-commerce. For marke
 
 Integrated fulfillment network (FBA), Prime logistics (1-2 day at scale), trusted marketplace with A-to-Z Guarantee, proprietary recommendation engine, and massive product catalog are the main gaps. An open alternative could focus on a federated marketplace protocol (ActivityPub for commerce) with standardized fulfillment APIs.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Not feasible to replicate Amazon's scale. Strategy: Build on Saleor or Medusa for headless commerce core. Add marketplace extensions (multi-vendor, commission handling). Integrate with open fulfillment APIs (Shippo, EasyPost) for shipping. Explore federated commerce protocols (OASIS, ActivityPub extensions). Focus on merchant-owned, interoperable commerce.
 
@@ -141,6 +141,6 @@ Saleor + Medusa are the best modern open-source bases for merchant stores. For m
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Phase 1: Saleor/Medusa core with multi-vendor extension. Phase 2: Fulfillment API integrations (Shippo, carrier APIs). Phase 3: Search/recommendation (Meilisearch + custom models). Phase 4: Federated identity/payments (OIDC, Interledger). Phase 5: Seller tools (analytics, advertising).

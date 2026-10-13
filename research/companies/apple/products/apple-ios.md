@@ -98,7 +98,7 @@ AOSP-based systems provide the closest open-source mobile OS experience, but the
 
 No viable open-source alternative to iOS exists. AOSP-based systems are the closest but are architecturally and ecologically different. Building a new mobile OS from scratch is extremely high effort.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Not recommended to build a new mobile OS. Focus on de-Googled Android distributions (AOSP) or cross-platform development targeting both iOS and Android.
 
@@ -130,6 +130,6 @@ AOSP-based distributions are the closest open-source alternative, but they are a
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Focus on AOSP customization or cross-platform development. Full iOS replication is not feasible.

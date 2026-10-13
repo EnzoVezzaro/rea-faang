@@ -14,7 +14,7 @@
 
 
 ## Overview
-REA FAANG uses a structured, agent-assisted development workflow based on the ACE framework. This document describes the end-to-end process from feature identification to production release.
+RAE FAANG uses a structured, agent-assisted development workflow based on the ACE framework. This document describes the end-to-end process from feature identification to production release.
 
 ## Workflow Stages
 
@@ -36,7 +36,7 @@ REA FAANG uses a structured, agent-assisted development workflow based on the AC
 
 **ACE Commands**:
 ```bash
-node ace.mjs task add --title "Investigate Instagram feed algorithm" --project REA-social --role researcher
+node ace.mjs task add --title "Investigate Instagram feed algorithm" --project rae-social --role researcher
 node ace.mjs task claim <id> --agent researcher-1
 node ace.mjs task start <id>
 # ... research work ...
@@ -60,7 +60,7 @@ node ace.mjs handoff verify <task>
 
 **ACE Commands**:
 ```bash
-node ace.mjs task add --title "Design REA Social data models" --project REA-social --role architect
+node ace.mjs task add --title "Design RAE Social data models" --project rae-social --role architect
 node ace.mjs task claim <id> --agent architect-1
 # ... design work ...
 node ace.mjs handoff submit <task> --file design-spec.json
@@ -95,8 +95,8 @@ Feature: Photo Upload (F-001)
 **ACE Commands**:
 ```bash
 # Create multiple tasks
-node ace.mjs task add --title "Backend: Upload API" --project REA-social --role backend --depends-on <design-task-id>
-node ace.mjs task add --title "Frontend: Upload Component" --project REA-social --role frontend --depends-on <design-task-id>
+node ace.mjs task add --title "Backend: Upload API" --project rae-social --role backend --depends-on <design-task-id>
+node ace.mjs task add --title "Frontend: Upload Component" --project rae-social --role frontend --depends-on <design-task-id>
 
 # Claim and execute
 node ace.mjs task claim <backend-task-id> --agent backend-1
@@ -127,7 +127,7 @@ node ace.mjs task start <frontend-task-id>
 node ace.mjs verify
 
 # Or specific checks
-node ace.mjs task add --title "E2E: Photo upload flow" --project REA-social --role tester
+node ace.mjs task add --title "E2E: Photo upload flow" --project rae-social --role tester
 node ace.mjs verify lint
 node ace.mjs verify typecheck
 node ace.mjs verify test
@@ -244,15 +244,15 @@ npx lint-staged
 ```
 feature/<product>-<short-description>
 # Examples:
-feature/REA-social-photo-upload
-feature/REA-search-indexing-pipeline
+feature/rae-social-photo-upload
+feature/rae-search-indexing-pipeline
 feature/shared-auth-oauth2-provider
 ```
 
 ### Release Branches
 ```
 release/<product>-v<major>.<minor>
-# Example: release/REA-social-v1.0
+# Example: release/rae-social-v1.0
 ```
 
 ## Release Process

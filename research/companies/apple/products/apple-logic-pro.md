@@ -106,7 +106,7 @@ Ardour is the most professional open-source DAW, excelling at recording, editing
 
 Built-in professional instrument library (7000+ loops, Alchemy, Sampler, Drum Machine Designer), Dolby Atmos/7.1.4 mixing, Core Audio integration, AUv3 sandboxing, Logic Remote, Smart Tempo, Flex Pitch/Time, and Final Cut Pro round-trip are major gaps. An open alternative could build on Ardour with a curated instrument/effect collection.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Not feasible to replicate Logic Pro entirely. Strategy: Contribute to Ardour for core DAW improvements. Curate a "Logic-like" open instrument/effect bundle (Surge, Vital, Helm, Dexed for synths; Dragonfly Reverb, TDR Nova for effects). Develop Apple Loops-compatible sample library (CC0/royalty-free). Explore LV2/CLAP plugin ecosystem for cross-platform instruments.
 
@@ -139,6 +139,6 @@ Ardour + curated plugins is the closest open path. REAPER (paid) is closer in wo
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Phase 1: Ardour contribution (workflow, macOS support). Phase 2: Curated open plugin bundle (Surge, Vital, Dragonfly, etc.). Phase 3: CC0 sample library (Apple Loops compatible). Phase 4: Logic Remote equivalent (web/OSC). Phase 5: Dolby Atmos rendering via open libraries (if feasible).

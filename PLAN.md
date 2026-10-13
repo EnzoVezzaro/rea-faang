@@ -1,4 +1,4 @@
-# REA FAANG — Development Plan & Agent Handoff
+# RAE FAANG — Development Plan & Agent Handoff
 
 > **The mission: make the products of the world's biggest technology companies free, open source, and accessible to everyone.**
 

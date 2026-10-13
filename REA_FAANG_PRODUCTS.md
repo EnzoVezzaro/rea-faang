@@ -692,9 +692,9 @@ About Google
 
 
 
-### How I'd structure the directory for REA
+### How I'd structure the directory for RAE
 
-If the goal is to use these companies' products and branding in the REA website or design system, maintain a structured inventory with one entry per product:
+If the goal is to use these companies' products and branding in the RAE website or design system, maintain a structured inventory with one entry per product:
 
 - `company`: Google, Apple, Amazon, Netflix, or Meta.
 - `product`: exact official product name.

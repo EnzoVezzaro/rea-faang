@@ -96,7 +96,7 @@ Llama 2 and Llama 3 are the same project (open weights). Falcon, MPT, Pythia, Qw
 
 Model hosting and inference serving, fine-tuning infrastructure, and training code represent gaps. Weights-only release requires significant independent build for practical deployment.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Focus on model hosting, fine-tuning infrastructure, or application development using Llama weights. Not recommended to train a new model from scratch; leverage existing open-weight releases.
 
@@ -128,6 +128,6 @@ Falcon, MPT, Qwen2 are alternative open-weight models. Hosted models offer diffe
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Focus on model hosting, fine-tuning, or application development using Llama weights. Training from scratch is high effort.

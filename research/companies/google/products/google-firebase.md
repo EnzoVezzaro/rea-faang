@@ -112,7 +112,7 @@ Supabase and Appwrite are the closest feature-complete open-source BaaS alternat
 
 Google Cloud integration, managed ML (ML Kit, Vertex AI), Test Lab device farm, and Crashlytics are hard to replicate. Open alternatives excel at self-hosting, data ownership, and SQL flexibility. The "managed service" experience with global infrastructure is a key gap.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Contribute to or extend Supabase/Appwrite for self-hosted BaaS needs. Focus on PostgreSQL-based real-time sync, auth, and serverless functions. For ML features, integrate with local inference (llama.cpp, ONNX Runtime) or self-hosted model serving.
 
@@ -146,6 +146,6 @@ Supabase leads on PostgreSQL ecosystem and managed offering. Appwrite leads on s
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Prioritize: Auth, Database (PostgreSQL + realtime), Functions, Storage. Build on Supabase or Appwrite core. Add Firebase-compatible SDK interfaces for migration path.

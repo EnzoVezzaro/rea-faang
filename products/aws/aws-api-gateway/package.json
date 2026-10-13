@@ -1,5 +1,5 @@
 {
-  "name": "REA-aws-api-gateway",
+  "name": "rae-aws-api-gateway",
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
@@ -7,7 +7,7 @@
     "node": ">=20",
     "ace": ">=1.0.0"
   },
-  "description": "REA FAANG: Open-source alternative to API Gateway",
+  "description": "RAE FAANG: Open-source alternative to API Gateway",
   "scripts": {
     "dev": "node ace.mjs run",
     "test": "node --test tests/",
@@ -23,7 +23,7 @@
   },
   "ace": {
     "spec": "ace/v1",
-    "name": "REA-aws-api-gateway",
+    "name": "rae-aws-api-gateway",
     "goal": {
       "statement": "Build open-source alternative to API Gateway",
       "milestones": [

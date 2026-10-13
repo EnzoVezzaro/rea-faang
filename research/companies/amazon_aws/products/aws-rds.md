@@ -109,7 +109,7 @@ Cloud-managed alternatives (Neon, PlanetScale, Timescale, Supabase) offer better
 
 Aurora's distributed storage layer (6 copies, 3 AZs, auto-healing), zero-downtime patching (blue/green), RDS Proxy for serverless connection management, and deep AWS integration (IAM auth, Secrets Manager, DMS) are hard to replicate. An open alternative could focus on a Kubernetes operator for PostgreSQL/MySQL with cloud-agnostic HA and serverless scaling.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Build on CloudNativePG or Percona Operator for Kubernetes-based managed PostgreSQL/MySQL. Add: auto-scaling storage, connection pooling (PgBouncer), backup orchestration (WAL-G, Barman), point-in-time recovery UI, cross-cloud replication. For serverless, explore Neon's architecture (separation of compute/storage) or contribute to CloudNativePG's scaling features.
 
@@ -142,6 +142,6 @@ For PostgreSQL/MySQL: CloudNativePG (K8s) or Neon (managed) are the closest open
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Phase 1: CloudNativePG deployment with HA, backups, PITR. Phase 2: Auto-scaling storage, read replica management, connection pooling. Phase 3: Multi-cloud deployment (Cluster API), cross-region replication. Phase 4: Serverless compute separation (Neon-inspired). Phase 5: Oracle/SQL Server via RDS Custom equivalent (BYOL on K8s).

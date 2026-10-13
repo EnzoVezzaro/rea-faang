@@ -102,7 +102,7 @@ RabbitMQ and Kafka are the most common open-source alternatives. They require se
 
 Fully managed, zero-queue-administration messaging with automatic scaling and no infrastructure overhead represents a significant gap. Self-hosted RabbitMQ/Kafka require operational overhead.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Not recommended to build a managed message queue service from scratch. Consider contributing to or extending RabbitMQ or NATS for self-hostable messaging. Focus on messaging patterns rather than service replication.
 
@@ -134,6 +134,6 @@ RabbitMQ and Kafka are the most common open-source alternatives, but require sel
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Focus on self-hostable messaging (RabbitMQ, NATS) for application needs. Managed service replication is out of scope.

@@ -104,7 +104,7 @@ LibreOffice Impress and OnlyOffice are closest for traditional slide editing. Re
 
 Cinematic GPU-accelerated transitions, Magic Move, presenter display with notes/timer, multi-presenter sync, Apple Pencil annotation during presentation, and iCloud real-time collaboration are the main gaps. An open alternative could focus on web-based animated presentations with Reveal.js/Slidev as a base.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Build on Reveal.js or Slidev for web-based animated presentations. Add a visual editor for non-developers. Implement Magic Move equivalent using FLIP animation technique. Prioritize: themes, transitions, builds, presenter mode, PDF/PowerPoint export.
 
@@ -137,6 +137,6 @@ Reveal.js/Slidev are the strongest bases for an open Keynote alternative. They o
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Phase 1: Visual editor for Reveal.js/Slidev with theme system. Phase 2: Build animations, slide transitions (CSS/Web Animations API). Phase 3: Magic Move equivalent (FLIP). Phase 4: Presenter mode, multi-presenter, iCloud-like collaboration (Yjs). Phase 5: Native apps via Tauri.

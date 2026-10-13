@@ -14,7 +14,7 @@
 
 
 ## Standard Specification Format
-Every REA FAANG product follows this specification structure in `products/<name>/specs/`:
+Every RAE FAANG product follows this specification structure in `products/<name>/specs/`:
 
 ```
 specs/
@@ -27,7 +27,7 @@ specs/
 ├── 07-acceptance-criteria.md  # Testable completion criteria
 ├── 08-security-model.md       # Threat model, mitigations
 ├── 09-integration-points.md   # External dependencies, APIs
-└── 10-migration-guide.md      # From proprietary to REA alternative
+└── 10-migration-guide.md      # From proprietary to RAE alternative
 ```
 
 ## Specification Quality Gates
@@ -50,10 +50,10 @@ specs/
 
 ## Product Specification Examples
 
-### REA Social (Instagram Alternative) - specs/03-feature-catalog.md excerpt
+### RAE Social (Instagram Alternative) - specs/03-feature-catalog.md excerpt
 
 ```markdown
-# Feature Catalog: REA Social
+# Feature Catalog: RAE Social
 
 ## Core Features (MVP - Phase 2)
 
@@ -107,10 +107,10 @@ specs/
 ### F-010: AR Filters/Effects
 ```
 
-### REA Search (Google Search Alternative) - specs/04-data-models.md excerpt
+### RAE Search (Google Search Alternative) - specs/04-data-models.md excerpt
 
 ```markdown
-# Data Models: REA Search
+# Data Models: RAE Search
 
 ## Core Entities
 

@@ -95,7 +95,7 @@ Nextcloud + OnlyOffice provides the closest feature overlap for self-hosted prod
 
 Real-time collaborative editing infrastructure, integrated email+calendar+meeting workflow, and admin console with audit/logging represent gaps. Self-hosted stacks can approximate individual tools but not the integrated experience.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Focus on specific Workspace components (e.g., self-hosted Nextcloud + OnlyOffice for document collaboration, or Rocket.Chat for messaging). Full suite replacement is extremely high effort.
 
@@ -127,6 +127,6 @@ Nextcloud + OnlyOffice provides closest self-hosted overlap but lacks integrated
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Focus on individual Workspace components rather than full suite replacement. Nextcloud + OnlyOffice for document collaboration is the most feasible starting point.

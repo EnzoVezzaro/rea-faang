@@ -93,7 +93,7 @@ No qualifying open-source alternatives found at Google's scale and capability le
 
 Core search infrastructure (crawling, indexing, ranking at Google scale) represents a significant build opportunity. Interoperability with open indexing formats (W3C Web Search API) is limited.
 
-# 11. REA implementation strategy
+# 11. RAE implementation strategy
 
 Build a research-scale search engine using open-source indexing components. Focus on a niche or specialized search domain rather than general-web competition.
 
@@ -125,6 +125,6 @@ No qualifying alternatives found within research scope.
 
 ---
 
-# 17. REA implementation strategy (continued)
+# 17. RAE implementation strategy (continued)
 
 Focus on domain-specific search rather than general-web competition. Consider W3C Web Search API compliance.
