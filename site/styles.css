@@ -584,6 +584,143 @@ code {
   margin: 12px 0 24px;
 }
 
+/* ---------- Proof table / outcome ---------- */
+
+.outcome {
+  font-size: 13.5px;
+  color: var(--tertiary);
+  margin: 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  margin-bottom: 40px;
+}
+
+.ptable {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.ptable caption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.ptable th,
+.ptable td {
+  text-align: left;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.ptable thead th {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.ptable tbody th {
+  font-weight: 600;
+  color: var(--text);
+}
+.ptable td {
+  color: var(--text-muted);
+}
+.ptable tbody tr:last-child th,
+.ptable tbody tr:last-child td {
+  border-bottom: 0;
+}
+.ptable tbody tr:hover th,
+.ptable tbody tr:hover td {
+  background: var(--surface);
+}
+.mono-cell {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-subtle);
+}
+
+.proof-split {
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+}
+.mini-h {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.callout-plain {
+  margin: 0 0 12px;
+  border-left-color: var(--border-strong);
+}
+.callout-plain p {
+  font-size: 14.5px;
+}
+
+/* ---------- FAQ ---------- */
+
+.faq {
+  border-top: 1px solid var(--border);
+}
+.faq details {
+  border-bottom: 1px solid var(--border);
+}
+.faq summary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  list-style: none;
+  padding: 18px 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq summary::before {
+  content: "+";
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--primary);
+}
+.faq details[open] summary::before {
+  content: "−";
+}
+.faq details[open] summary {
+  color: var(--primary);
+}
+.faq p {
+  margin: 0 0 20px;
+  padding-left: 26px;
+  max-width: 78ch;
+  color: var(--text-muted);
+}
+
+.section-last {
+  border-bottom: 0;
+}
+.links-after {
+  margin-top: 40px;
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer {

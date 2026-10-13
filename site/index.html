@@ -3,12 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RAE FAANG — the open-source alternative to everything</title>
+    <title>RAE FAANG — every FAANG product, mapped to its open-source alternative</title>
     <meta
       name="description"
-      content="RAE FAANG reverse engineers and rebuilds the products of the world's biggest technology companies as free, open-source software anyone can run."
+      content="RAE FAANG catalogs the products of Meta, Amazon, Apple, Netflix and Google, names the open-source project that already replaces each one, and builds the ones that don't exist yet. 34 products mapped: 24 have an open-source alternative, 3 have none."
     />
     <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="RAE FAANG — every FAANG product, mapped to its open-source alternative"
+    />
+    <meta
+      property="og:description"
+      content="34 FAANG products catalogued, 24 with an existing open-source replacement, 3 with none. Cited evidence, MIT-licensed, built in the open."
+    />
+    <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,35 +37,30 @@
           <span>RAE&nbsp;FAANG</span>
         </a>
         <nav class="nav" aria-label="Primary">
-          <a href="#mission">Mission</a>
-          <a href="#companies">Products</a>
-          <a href="#how">How we build</a>
-          <a href="#status">Status</a>
-          <a href="#docs">Docs</a>
+          <a href="#problem">Problem</a>
+          <a href="#solution">The map</a>
+          <a href="#proof">Proof</a>
+          <a href="#faq">FAQ</a>
         </nav>
-        <a
-          class="btn btn-ghost"
-          href="https://github.com/EnzoVezzaro/rea-faang"
+        <a class="btn btn-ghost" href="https://github.com/EnzoVezzaro/rea-faang"
           >GitHub ↗</a
         >
       </div>
     </header>
 
     <main id="main">
-      <!-- HERO -->
+      <!-- 1. HERO -->
       <section class="hero" id="top">
         <div class="wrap hero-inner">
-          <p class="eyebrow">Reverse engineer · Rebuild · Open source</p>
+          <p class="eyebrow">34 products mapped · 24 replacements · 3 still missing</p>
           <h1>
-            Reverse engineer anything.<br />
-            Rebuild everything.<br />
-            <span class="accent">Open source for everyone.</span>
+            Every FAANG product, mapped to its
+            <span class="accent">open-source alternative.</span>
           </h1>
           <p class="lede">
-            RAE&nbsp;FAANG is an open-source initiative to reverse engineer,
-            understand, and independently rebuild the products of Meta, Amazon,
-            Apple, Netflix, and Google — and make the alternatives free for
-            anyone to use, inspect, and run.
+            RAE&nbsp;FAANG catalogs the products of Meta, Amazon, Apple, Netflix
+            and Google, names the open-source project that already replaces each
+            one — with a cited source — and builds the ones that don't exist yet.
           </p>
           <div class="hero-actions">
             <a
@@ -63,24 +68,27 @@
               href="https://github.com/EnzoVezzaro/rea-faang"
               >Explore the catalog ↗</a
             >
-            <a class="btn btn-secondary" href="#how">See how we build</a>
+            <a class="btn btn-secondary" href="#proof">See the proof</a>
           </div>
           <p class="hero-note">
             <span class="dot" aria-hidden="true"></span>
-            Foundation stage — catalogued, researched, and specified in the open.
+            34 products mapped · 24 already have an open-source alternative · 3
+            have none · MIT, no signup
           </p>
         </div>
       </section>
 
-      <!-- STATUS (real data) -->
+      <!-- 2. SOCIAL PROOF (early) -->
       <section class="section" id="status" aria-labelledby="status-h">
         <div class="wrap">
           <div class="section-head">
-            <p class="eyebrow">Where it is today</p>
-            <h2 id="status-h">Honest by default</h2>
+            <p class="eyebrow">Project status — not customer proof</p>
+            <h2 id="status-h">No users yet. So here is what you can check.</h2>
             <p class="section-lede">
-              We value working software over ambitious claims. These are the real
-              numbers from the repository — no promises, no imagined features.
+              There are no customers, logos or testimonials to show — telling you
+              otherwise would be a lie. What exists instead is a repository whose
+              every number you can reproduce in a terminal. These come from it,
+              not from a pitch deck.
             </p>
           </div>
 
@@ -88,231 +96,345 @@
             <div class="stat">
               <dt>Products catalogued</dt>
               <dd><span class="num">34</span><span class="of">/ 75</span></dd>
-              <p class="stat-note">in-scope inventory across six company entries</p>
+              <p class="stat-note">in-scope inventory, six company entries</p>
             </div>
             <div class="stat">
-              <dt>Research dossiers</dt>
-              <dd><span class="num">34</span></dd>
-              <p class="stat-note">evidence-backed, schema-validated frontmatter</p>
+              <dt>Already open source</dt>
+              <dd><span class="num">24</span></dd>
+              <p class="stat-note">products with a mature open alternative</p>
             </div>
             <div class="stat">
-              <dt>Company entries</dt>
-              <dd><span class="num">6</span></dd>
-              <p class="stat-note">Google, Apple, Amazon, AWS, Netflix, Meta</p>
+              <dt>Still missing</dt>
+              <dd><span class="num">3</span></dd>
+              <p class="stat-note">no open-source alternative exists at all</p>
             </div>
             <div class="stat">
               <dt>Tooling tests</dt>
-              <dd><span class="num">10</span><span class="of">/ 10</span></dd>
-              <p class="stat-note">deterministic catalog CLI, on every push</p>
+              <dd><span class="num">24</span></dd>
+              <p class="stat-note">passing, and run in CI on every push</p>
             </div>
           </dl>
-
-          <ul class="reality">
-            <li>
-              <span class="tag done">Working</span> catalog CLI, research
-              validation, and the ACE agent environment
-            </li>
-            <li>
-              <span class="tag wip">In progress</span> research coverage (all
-              dossiers are still <code>pending</code>)
-            </li>
-            <li>
-              <span class="tag todo">Not started</span> product implementations —
-              the specifications come first
-            </li>
-          </ul>
         </div>
       </section>
 
-      <!-- MISSION -->
-      <section class="section" id="mission" aria-labelledby="mission-h">
+      <!-- 3. PROBLEM / PROMISE -->
+      <section class="section" id="problem" aria-labelledby="problem-h">
         <div class="wrap split">
           <div>
-            <p class="eyebrow">The mission</p>
-            <h2 id="mission-h">
-              World-class software, whatever you earn or where you live.
-            </h2>
+            <p class="eyebrow">The problem</p>
+            <h2 id="problem-h">The alternative exists. Nobody has mapped it.</h2>
             <p>
-              Modern software is concentrated in a few companies. Subscriptions
-              rise, features vanish, services shut down, data gets hard to move.
-              Open source is another path — one where the code, the data, and the
-              roadmap are yours to see and change.
+              Rented software is not owned software. Prices rise, features
+              disappear, services shut down, and moving your data becomes
+              somebody else's product decision. You cannot read the code, fix the
+              bug, or keep the thing running after the company stops caring.
             </p>
             <p>
-              We are not building one application. We are building an ecosystem
-              of independent alternatives, one company at a time, one product at
-              a time, one feature at a time.
+              The usual advice — “just use an alternative” — arrives as a blog
+              listicle. It names five tools, compares none, cites nothing, and
+              goes stale within a year. What nobody publishes is the boring,
+              useful thing: for <em>this</em> specific product, does an
+              open-source replacement already exist, and if not, what exactly is
+              missing?
+            </p>
+            <p>
+              Answering that question is step one. Building the missing pieces is
+              step two.
             </p>
           </div>
           <ul class="principles">
-            <li><strong>Free access</strong> — no mandatory subscriptions</li>
-            <li><strong>Open source</strong> — inspect, modify, improve</li>
-            <li><strong>User ownership</strong> — local-first and portable</li>
-            <li><strong>Interoperability</strong> — open standards first</li>
-            <li><strong>Community-driven</strong> — contributors set priorities</li>
-            <li><strong>Agent-assisted</strong> — AI accelerates, humans verify</li>
+            <li><strong>Cited</strong> — every claim links a public source</li>
+            <li><strong>Reproducible</strong> — every number has a command</li>
+            <li><strong>Honest</strong> — “not built yet” is a valid answer</li>
+            <li>
+              <strong>Clean room</strong> — public behavior and docs only
+            </li>
+            <li><strong>Reuse first</strong> — don't rebuild what exists</li>
           </ul>
         </div>
       </section>
 
-      <!-- COMPANIES -->
-      <section class="section" id="companies" aria-labelledby="companies-h">
+      <!-- 4. SOLUTION / MECHANISM -->
+      <section class="section" id="solution" aria-labelledby="solution-h">
         <div class="wrap">
           <div class="section-head">
-            <p class="eyebrow">The product universe</p>
-            <h2 id="companies-h">Five companies. Hundreds of products.</h2>
+            <p class="eyebrow">What we actually ship</p>
+            <h2 id="solution-h">
+              A map of what exists, and a plan for what doesn't.
+            </h2>
             <p class="section-lede">
-              Proposed directions, not shipped products. Each becomes real only
-              when it has been researched, specified, tested, and released.
+              Five artifacts, each one already in the repository.
             </p>
           </div>
 
           <div class="grid companies">
             <article class="card">
-              <h3><span class="k">Meta</span></h3>
-              <p>Social software without closed ecosystems.</p>
-              <ul class="chips">
-                <li>RAE Social</li>
-                <li>RAE Connect</li>
-                <li>RAE Messenger</li>
-                <li>RAE Creator</li>
-              </ul>
+              <h3><span class="k">01 · The catalog</span></h3>
+              <p>
+                34 products, one record each: company, product type, official
+                URL, lifecycle status.
+              </p>
+              <p class="outcome">
+                Outcome: stop rebuilding the same list from blog posts.
+              </p>
             </article>
             <article class="card">
-              <h3><span class="k">Amazon</span></h3>
-              <p>Commerce and cloud made accessible.</p>
-              <ul class="chips">
-                <li>RAE Market</li>
-                <li>RAE Cloud</li>
-                <li>RAE Storage</li>
-                <li>RAE Dev</li>
-              </ul>
+              <h3><span class="k">02 · The verdict</span></h3>
+              <p>
+                For every product: does open source already replace it? 24 of 34
+                say yes — SearXNG, Jellyfin, Ceph, Mailcow, Nextcloud.
+              </p>
+              <p class="outcome">
+                Outcome: don't spend a year rebuilding what already exists.
+              </p>
             </article>
             <article class="card">
-              <h3><span class="k">Apple</span></h3>
-              <p>Open versions of familiar experiences.</p>
-              <ul class="chips">
-                <li>RAE Desktop</li>
-                <li>RAE Photos</li>
-                <li>RAE Music</li>
-                <li>RAE Notes</li>
-              </ul>
+              <h3><span class="k">03 · The pending list</span></h3>
+              <p>
+                3 products have no open-source alternative at all — iOS, macOS,
+                Amazon Prime — and 7 have only partial coverage. Named, not
+                implied.
+              </p>
+              <p class="outcome">Outcome: know exactly where the new work is.</p>
             </article>
             <article class="card">
-              <h3><span class="k">Netflix</span></h3>
-              <p>Streaming tech for independent creators.</p>
-              <ul class="chips">
-                <li>RAE Video</li>
-                <li>RAE Discover</li>
-                <li>RAE Studio</li>
-                <li>RAE Delivery</li>
-              </ul>
+              <h3><span class="k">04 · The evidence</span></h3>
+              <p>
+                Every claim cites a public source, and 34 REA web-surface reports
+                keep the raw evidence on disk.
+              </p>
+              <p class="outcome">
+                Outcome: re-check the claim instead of trusting it.
+              </p>
             </article>
             <article class="card">
-              <h3><span class="k">Google</span></h3>
-              <p>Rebuild the tools of the modern internet.</p>
-              <ul class="chips">
-                <li>RAE Search</li>
-                <li>RAE Maps</li>
-                <li>RAE Mail</li>
-                <li>RAE Workspace</li>
-              </ul>
+              <h3><span class="k">05 · The pipeline</span></h3>
+              <p>
+                catalog → research → specify → build → verify, with agent roles
+                and a definition of done that needs a passing command.
+              </p>
+              <p class="outcome">
+                Outcome: contributing is a workflow, not a blank page.
+              </p>
             </article>
             <article class="card card-more">
-              <h3><span class="k">And more</span></h3>
+              <h3><span class="k">Read them yourself</span></h3>
               <p>
-                The catalog keeps growing. Browse what is tracked, researched,
-                and specified — and propose the next target.
+                The catalog, the research dossiers, the open-source map and the
+                REA evidence are all committed and readable.
               </p>
               <a
                 class="text-link"
-                href="https://github.com/EnzoVezzaro/rea-faang/blob/main/catalog/products.jsonl"
-                >View the catalog ↗</a
+                href="https://github.com/EnzoVezzaro/rea-faang/tree/main/catalog/skills"
+                >Open the open-source map ↗</a
               >
             </article>
           </div>
         </div>
       </section>
 
-      <!-- HOW -->
-      <section class="section" id="how" aria-labelledby="how-h">
+      <!-- 5. PROOF AND DETAIL -->
+      <section class="section" id="proof" aria-labelledby="proof-h">
         <div class="wrap">
           <div class="section-head">
-            <p class="eyebrow">How we build</p>
-            <h2 id="how-h">Investigate. Understand. Reimplement. Verify.</h2>
+            <p class="eyebrow">Proof</p>
+            <h2 id="proof-h">Receipts, not vibes.</h2>
             <p class="section-lede">
-              A repeatable engineering workflow, run by people and agents
-              together, grounded in public evidence.
+              Real entries from the catalog. Nothing here is an estimate.
             </p>
           </div>
 
-          <ol class="steps">
-            <li>
-              <span class="step-n">01</span>
-              <h3>Investigate</h3>
-              <p>
-                Study publicly observable behavior, official docs, and published
-                protocols.
-              </p>
-            </li>
-            <li>
-              <span class="step-n">02</span>
-              <h3>Understand</h3>
-              <p>
-                Document behavior as specifications, data models, and testable
-                acceptance criteria.
-              </p>
-            </li>
-            <li>
-              <span class="step-n">03</span>
-              <h3>Reimplement</h3>
-              <p>
-                Build an independent implementation — clean room, no proprietary
-                code or assets.
-              </p>
-            </li>
-            <li>
-              <span class="step-n">04</span>
-              <h3>Verify</h3>
-              <p>
-                Test correctness, usability, security, and interoperability
-                against the spec.
-              </p>
-            </li>
-            <li>
-              <span class="step-n">05</span>
-              <h3>Release</h3>
-              <p>
-                Publish source, docs, and reproducible builds — then improve in
-                the open.
-              </p>
-            </li>
-          </ol>
+          <div class="table-wrap">
+            <table class="ptable">
+              <caption>
+                Target product → the open-source alternative that already replaces it
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Target product</th>
+                  <th scope="col">Open-source alternative that exists</th>
+                  <th scope="col">License</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Amazon S3</th>
+                  <td>Ceph (RADOS Gateway)</td>
+                  <td class="mono-cell">LGPL-2.1</td>
+                </tr>
+                <tr>
+                  <th scope="row">AWS Lambda</th>
+                  <td>OpenFaaS</td>
+                  <td class="mono-cell">MIT</td>
+                </tr>
+                <tr>
+                  <th scope="row">Netflix Streaming</th>
+                  <td>Jellyfin</td>
+                  <td class="mono-cell">GPL-2.0</td>
+                </tr>
+                <tr>
+                  <th scope="row">Gmail</th>
+                  <td>Mailcow</td>
+                  <td class="mono-cell">GPL-3.0</td>
+                </tr>
+                <tr>
+                  <th scope="row">WhatsApp</th>
+                  <td>Matrix / Element</td>
+                  <td class="mono-cell">Apache-2.0</td>
+                </tr>
+                <tr>
+                  <th scope="row">Google Maps</th>
+                  <td>OpenStreetMap + Organic Maps</td>
+                  <td class="mono-cell">ODbL-1.0</td>
+                </tr>
+                <tr>
+                  <th scope="row">Google Workspace</th>
+                  <td>Nextcloud</td>
+                  <td class="mono-cell">AGPL-3.0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-          <div class="callout">
-            <p>
-              <strong>Agents do the heavy lifting; verification does not.</strong>
-              An environment built on <span class="mono">ace/v1</span> coordinates
-              researcher, architect, frontend, backend, tester, reviewer, and
-              documenter roles. A change is only done when a command proves it.
-            </p>
+          <div class="split proof-split">
+            <div>
+              <h3 class="mini-h">Data points, each with its command</h3>
+              <ul class="principles">
+                <li>
+                  <strong>34</strong> products catalogued across 6 company
+                  entries — <span class="mono">node src/cli.js products</span>
+                </li>
+                <li>
+                  <strong>34</strong> research dossiers, schema-validated — <span
+                    class="mono">npm run validate</span
+                  >
+                </li>
+                <li>
+                  <strong>34</strong> REA web-surface reports with raw evidence —
+                  <span class="mono">npm run rea:catalog</span>
+                </li>
+                <li>
+                  <strong>24 / 7 / 3</strong> available / partial / pending
+                  open-source verdicts — <span class="mono">npm run skills:catalog</span>
+                </li>
+                <li>
+                  <strong>24</strong> tooling tests, green in CI every push —
+                  <span class="mono">npm test</span>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="mini-h">What we are not claiming</h3>
+              <div class="callout callout-plain">
+                <p>
+                  <strong>No case studies.</strong> No product has been
+                  implemented yet, so there is no customer outcome to report.
+                  When the first one ships, its real, measured numbers go here —
+                  not before.
+                </p>
+              </div>
+              <div class="callout callout-plain">
+                <p>
+                  <strong>No testimonials.</strong> We have no users to quote.
+                  The repository is the evidence until someone else says
+                  otherwise.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- DOCS -->
-      <section class="section" id="docs" aria-labelledby="docs-h">
+      <!-- 6. OBJECTION HANDLING -->
+      <section class="section" id="faq" aria-labelledby="faq-h">
         <div class="wrap">
           <div class="section-head">
-            <p class="eyebrow">Get involved</p>
-            <h2 id="docs-h">Read, run, contribute</h2>
-            <p class="section-lede">
-              Everything is in the open: the catalog, the research, the specs,
-              the tooling, and the plan.
-            </p>
+            <p class="eyebrow">Objections, answered plainly</p>
+            <h2 id="faq-h">The reasons you're about to say no</h2>
           </div>
 
-          <div class="grid links">
+          <div class="faq">
+            <details>
+              <summary>Is any of this actually built yet?</summary>
+              <p>
+                No product implementations yet, and this page says so rather than
+                hinting otherwise. What is built: the catalog, the research
+                dossiers, the open-source map, the REA evidence, the tooling and a
+                passing test suite — all reproducible from the repository today.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Isn't this just a list of other people's projects?
+              </summary>
+              <p>
+                For 24 of 34 products, deliberately yes. Reusing Ceph instead of
+                rewriting object storage is the whole point. The new work is the
+                map, the specifications, and the products where no alternative
+                exists at all.
+              </p>
+            </details>
+            <details>
+              <summary>How do you avoid copying proprietary code?</summary>
+              <p>
+                Clean room. Publicly observable behavior, official documentation
+                and published protocols only. No decompilation, no proprietary
+                source, no protected assets, no bypassing access controls.
+              </p>
+            </details>
+            <details>
+              <summary>Is this legal?</summary>
+              <p>
+                Product names are functional references; no affiliation or
+                endorsement is implied. Implementations must respect applicable
+                licenses and third-party rights. Rights holders can raise an issue
+                on the repository.
+              </p>
+            </details>
+            <details>
+              <summary>Do I need to be an expert to contribute?</summary>
+              <p>
+                No. Pick a product, read its dossier and its skill file, then
+                follow the pipeline. The entry points are in
+                <span class="mono">CONTRIBUTING.md</span>.
+              </p>
+            </details>
+            <details>
+              <summary>Why should I trust the catalog?</summary>
+              <p>
+                Every claim cites a public source, the raw REA evidence is
+                committed, and <span class="mono">npm run validate</span> plus the
+                test suite run in CI on every push. If a number on this page goes
+                stale, the command next to it will say so.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FINAL CTA -->
+      <section class="section section-last" id="start" aria-labelledby="start-h">
+        <div class="wrap">
+          <div class="cta">
+            <h3 id="start-h">Pick a product. Read the map. Build what's missing.</h3>
+            <p>
+              MIT-licensed. No signup. 3 products still have no open-source
+              alternative.
+            </p>
+            <a
+              class="btn btn-primary"
+              href="https://github.com/EnzoVezzaro/rea-faang"
+              >Explore the catalog ↗</a
+            >
+          </div>
+
+          <div class="grid links links-after">
+            <a
+              class="linkcard"
+              href="https://github.com/EnzoVezzaro/rea-faang/tree/main/catalog/skills"
+              ><h3>Open-source map</h3>
+              <p>34 products, each with its replacement and its gap.</p></a
+            >
             <a
               class="linkcard"
               href="https://github.com/EnzoVezzaro/rea-faang/blob/main/docs/getting-started.md"
@@ -321,31 +443,15 @@
             >
             <a
               class="linkcard"
-              href="https://github.com/EnzoVezzaro/rea-faang/blob/main/docs/cli-reference.md"
-              ><h3>CLI reference</h3>
-              <p>Every command for validating research and finding gaps.</p></a
-            >
-            <a
-              class="linkcard"
               href="https://github.com/EnzoVezzaro/rea-faang/blob/main/PLAN.md"
               ><h3>The plan</h3>
-              <p>Workstreams, definitions of done, and what to pick up next.</p></a
+              <p>Workstreams, definitions of done, what to pick up next.</p></a
             >
             <a
               class="linkcard"
               href="https://github.com/EnzoVezzaro/rea-faang/blob/main/CONTRIBUTING.md"
               ><h3>Contribute</h3>
-              <p>Research, specify, build, test, or document — start here.</p></a
-            >
-          </div>
-
-          <div class="cta">
-            <h3>One company at a time. One product at a time.</h3>
-            <p>Until there is an open alternative for everything we can build.</p>
-            <a
-              class="btn btn-primary"
-              href="https://github.com/EnzoVezzaro/rea-faang"
-              >Star on GitHub ↗</a
+              <p>Research, specify, build, test or document — start here.</p></a
             >
           </div>
         </div>
@@ -362,12 +468,10 @@
         </div>
         <div class="footer-links">
           <a href="https://github.com/EnzoVezzaro/rea-faang">GitHub</a>
-          <a
-            href="https://github.com/EnzoVezzaro/rea-faang/blob/main/docs/README.md"
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/docs/README.md"
             >Documentation</a
           >
-          <a
-            href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE"
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE"
             >MIT License</a
           >
           <a href="https://github.com/EnzoVezzaro/repo-shield">Repo Shield</a>
@@ -377,7 +481,12 @@
         <p>
           Product names are used as functional references only and imply no
           affiliation or endorsement. Implementations must comply with applicable
-          laws, licenses, and third-party rights. No AI training: see
+          laws, licenses, and third-party rights. Copy follows the
+          <a
+            href="https://github.com/rampstackco/claude-skills/blob/main/skills/landing-page-copy/SKILL.md"
+            >landing-page-copy</a
+          >
+          skill. No AI training: see
           <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/NOTICE"
             >NOTICE</a
           >.

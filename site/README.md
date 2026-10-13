@@ -5,6 +5,14 @@ dependencies beyond web fonts.
 
 - `index.html` — the page.
 - `styles.css` — styles, using the tokens from [`../DESIGN.md`](../DESIGN.md).
+- `COPY.md` — the landing-page copy itself, written with the
+  [`landing-page-copy`](https://github.com/rampstackco/claude-skills/blob/main/skills/landing-page-copy/SKILL.md)
+  skill (hero → social proof → problem → solution → proof → objections → CTA).
+  `index.html` is the built page; edit the copy here first, then mirror it.
+
+> **No fabricated proof.** The skill forbids inventing metrics. RAE FAANG has no customers,
+> logos or testimonials, so the social-proof slot carries verifiable repository status and the
+> page says so out loud. Case studies are marked unavailable until the first product ships.
 
 Preview locally:
 
