@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-01-13",
+  "description": "Research coverage tracking for FAANG products",
+  "coverage": {
+    "google": 0,
+    "apple": 0,
+    "amazon_aws": 0,
+    "amazon": 0,
+    "netflix": 0,
+    "meta": 0
+  },
+  "researched": 0,
+  "pending": 0,
+  "stale": 0,
+  "invalid": 0,
+  "notes": "Tracked against research file presence and schema validity."
+}

@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# ACE runtime state (specification is not state — see docs/agent-workflow.md)
+.ace/
+.ace/**/heartbeats/
+*.ace-snapshot
+.ace-snapshots/
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+.ace/secrets/
+
+# Build output
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Editor / OS
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# Logs
+*.log
+npm-debug.log*

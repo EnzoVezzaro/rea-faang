@@ -1,0 +1,84 @@
+{
+  "name": "rae-google-cloud",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=20",
+    "ace": ">=1.0.0"
+  },
+  "description": "RAE FAANG: Open-source alternative to Google Cloud",
+  "scripts": {
+    "dev": "node ace.mjs run",
+    "test": "node --test tests/",
+    "lint": "eslint .",
+    "build": "tsc --build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vitest": "^2.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "@types/node": "^20.11.0"
+  },
+  "ace": {
+    "spec": "ace/v1",
+    "name": "rae-google-cloud",
+    "goal": {
+      "statement": "Build open-source alternative to Google Cloud",
+      "milestones": [
+        "Set up project infrastructure",
+        "Implement core features",
+        "Verify against research",
+        "Publish first release"
+      ]
+    },
+    "agents": {
+      "strategy": "dynamic",
+      "defaults": {
+        "runtime": "opencode"
+      },
+      "workers": [
+        {
+          "role": "researcher",
+          "capabilities": [
+            "web-search",
+            "code-analysis"
+          ]
+        },
+        {
+          "role": "architect",
+          "capabilities": [
+            "system-design"
+          ]
+        },
+        {
+          "role": "frontend",
+          "capabilities": [
+            "react",
+            "typescript"
+          ]
+        },
+        {
+          "role": "backend",
+          "capabilities": [
+            "node",
+            "api"
+          ]
+        },
+        {
+          "role": "tester",
+          "capabilities": [
+            "unit-testing"
+          ]
+        },
+        {
+          "role": "reviewer",
+          "capabilities": [
+            "code-review"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Evidence Schema",
+  "type": "object",
+  "required": ["id", "url", "source_type", "claim", "claim_type"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable evidence identifier",
+      "pattern": "^ev-[a-z0-9-]+$"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Source URL"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "official_website",
+        "developer_documentation",
+        "engineering_blog",
+        "press_release",
+        "repository",
+        "api_specification",
+        "academic_paper",
+        "secondary_source"
+      ],
+      "description": "Type of source"
+    },
+    "publisher": {
+      "type": "string",
+      "description": "Publisher or author"
+    },
+    "title": {
+      "type": "string",
+      "description": "Source title"
+    },
+    "published_at": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Publication date"
+    },
+    "accessed_at": {
+      "type": ["string", "null"],
+      "format": "date-time",
+      "description": "Date accessed"
+    },
+    "claim": {
+      "type": "string",
+      "description": "Claim this evidence supports"
+    },
+    "claim_type": {
+      "type": "string",
+      "enum": [
+        "product_identity",
+        "capability",
+        "pricing",
+        "licensing",
+        "ownership",
+        "status",
+        "api_surface"
+      ],
+      "description": "Type of claim"
+    },
+    "supporting_excerpt_or_summary": {
+      "type": "string",
+      "description": "Summary or excerpt supporting the claim"
+    },
+    "reliability": {
+      "type": "string",
+      "enum": ["primary", "secondary", "tertiary"],
+      "description": "Reliability ranking"
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": ["verified", "unverified", "conflicting", "unavailable"],
+      "description": "Verification status"
+    },
+    "related_product_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Related product IDs"
+    },
+    "related_alternative_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Related alternative IDs"
+    }
+  },
+  "additionalProperties": false
+}

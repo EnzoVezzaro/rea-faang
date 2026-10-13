@@ -1,0 +1,45 @@
+{
+  "version": "1.0",
+  "source_date": "2026-01-13",
+  "description": "Seed inventory discovered from official product catalogs and documentation",
+  "discovery_scope": "Official company product directories, developer portals, and documentation pages for FAANG companies",
+  "companies": {
+    "google": {
+      "source": "Google About page, Google Developers, Cloud docs, AI blog",
+      "products_discovered": 25,
+      "products_cataloged": 0,
+      "verification_status": "initial"
+    },
+    "apple": {
+      "source": "Apple Support, Apple Developer, Product pages",
+      "products_discovered": 25,
+      "products_cataloged": 0,
+      "verification_status": "initial"
+    },
+    "amazon_aws": {
+      "source": "AWS official documentation, aws.amazon.com",
+      "products_discovered": 15,
+      "products_cataloged": 0,
+      "verification_status": "initial"
+    },
+    "amazon": {
+      "source": "Amazon.com, retail product pages",
+      "products_discovered": 5,
+      "products_cataloged": 0,
+      "verification_status": "initial"
+    },
+    "netflix": {
+      "source": "Netflix.com, Netflix Tech Blog",
+      "products_discovered": 5,
+      "products_cataloged": 0,
+      "verification_status": "initial"
+    },
+    "meta": {
+      "source": "Meta about page, developer portal, engineering blog",
+      "products_discovered": 10,
+      "products_cataloged": 0,
+      "verification_status": "initial"
+    }
+  },
+  "notes": "Seed inventory identifies discovery scope and source date. Catalog is not labeled exhaustive."
+}

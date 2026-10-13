@@ -1,0 +1,121 @@
+{
+  "name": "rae-faang",
+  "version": "0.1.0",
+  "description": "RAE — FAANG Product Intelligence & Open-Source Replication Engine",
+  "main": "src/cli.js",
+  "bin": {
+    "rae": "src/cli.js"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "cli": "node src/cli.js",
+    "ace": "node ace.mjs",
+    "validate": "node src/cli.js research validate && node src/cli.js alternatives validate && node src/cli.js opportunities validate",
+    "gaps": "node src/cli.js gaps all",
+    "test": "node --test tests/",
+    "verify": "node src/cli.js research validate && node --test tests/",
+    "govern": "node ace.mjs govern",
+    "status": "node ace.mjs status"
+  },
+  "keywords": [
+    "reverse-engineering",
+    "open-source",
+    "faang",
+    "agents"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "minimist": "^1.2.8"
+  },
+  "devDependencies": {
+    "ace-proagents": "^0.1.4"
+  },
+  "ace": {
+    "spec": "ace/v1",
+    "name": "rae-faang",
+    "description": "Coordinate agents that research FAANG products, catalogue evidence, and build open-source alternatives.",
+    "orchestrator": {
+      "runtime": "opencode",
+      "role": "orchestrator"
+    },
+    "goal": {
+      "statement": "Build open-source alternatives to FAANG products through agent-assisted reverse engineering, evidence-backed research, and implementation.",
+      "milestones": [
+        "Catalogue the FAANG product inventory with evidence",
+        "Complete research coverage for all in-scope products",
+        "Classify alternatives and identify build opportunities",
+        "Build the first working alternative end to end",
+        "Scale to multiple products with shared infrastructure"
+      ]
+    },
+    "agents": {
+      "strategy": "dynamic",
+      "defaults": {
+        "runtime": "opencode"
+      },
+      "workers": [
+        { "role": "researcher", "capabilities": ["web-search", "code-analysis", "spec-extraction"] },
+        { "role": "architect", "capabilities": ["system-design", "api-design", "data-modeling"] },
+        { "role": "frontend", "capabilities": ["react", "typescript", "css", "accessibility"] },
+        { "role": "backend", "capabilities": ["node", "database", "api", "auth"] },
+        { "role": "tester", "capabilities": ["unit-testing", "integration-testing", "e2e-testing"] },
+        { "role": "reviewer", "capabilities": ["code-review", "security-audit", "performance"] },
+        { "role": "documenter", "capabilities": ["technical-writing", "api-docs"] }
+      ]
+    },
+    "tools": ["git", "github", "filesystem", "terminal", "web-search"],
+    "models": {
+      "default": {
+        "provider": "opencode",
+        "model": "fledge-alpha-free"
+      }
+    },
+    "runtime": {
+      "provider": "local"
+    },
+    "adapters": {
+      "workspace": { "provider": "git-worktree" },
+      "agent-runtime": { "provider": "opencode" },
+      "context": { "provider": "acc" },
+      "handoff": { "provider": "proagents" },
+      "verification": { "provider": "package-scripts" },
+      "persistence": { "provider": "filesystem" }
+    },
+    "network": {
+      "mode": "restricted"
+    },
+    "filesystem": {
+      "mode": "workspace"
+    },
+    "memory": {
+      "persistent": true
+    },
+    "git": {
+      "worktrees": true,
+      "push": false
+    },
+    "policies": {
+      "require_review_before_merge": true,
+      "production_access": false
+    },
+    "concurrency": {
+      "max_active_agents": 6,
+      "count_governor": false,
+      "count_supervisors": false
+    },
+    "lifecycle": {
+      "autonomous": true,
+      "restart_on_failure": true
+    },
+    "entry": {
+      "manifest": "package.json",
+      "readme": "README.md",
+      "main": "ace.mjs",
+      "lockfile": "ace-lock.json"
+    }
+  }
+}

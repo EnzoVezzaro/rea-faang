@@ -1,0 +1,39 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-01-13",
+  "description": "FAANG target product inventory manifest",
+  "companies": {
+    "google": {
+      "in_scope": 25,
+      "excluded": [],
+      "grouped_under_parent": []
+    },
+    "apple": {
+      "in_scope": 25,
+      "excluded": [],
+      "grouped_under_parent": []
+    },
+    "amazon_aws": {
+      "in_scope": 15,
+      "excluded": [],
+      "grouped_under_parent": []
+    },
+    "amazon": {
+      "in_scope": 5,
+      "excluded": [],
+      "grouped_under_parent": []
+    },
+    "netflix": {
+      "in_scope": 5,
+      "excluded": [],
+      "grouped_under_parent": []
+    },
+    "meta": {
+      "in_scope": 10,
+      "excluded": [],
+      "grouped_under_parent": []
+    }
+  },
+  "total_in_scope": 75,
+  "notes": "Initial FAANG inventory. Companies aws and amazon are distinguished; google subsidiaries (deepmind, waymo) are tracked under google."
+}

@@ -1,0 +1,176 @@
+{
+  "google": {
+    "id": "google",
+    "name": "Google",
+    "common_name": "Google",
+    "former_names": [],
+    "parent_organization": null,
+    "official_website": "https://www.google.com/",
+    "product_directory": "https://about.google/products",
+    "developer_portal": "https://developers.google.com",
+    "open_source_organization": "https://opensource.google/",
+    "engineering_blog": "https://blog.google",
+    "research_portal": "https://deepmind.google/",
+    "brand_resource_page": "https://marketing.google.com",
+    "subsidiaries": ["deepmind", "waymo", "calico", "GV"],
+    "date_last_verified": "2026-01-13",
+    "evidence": [
+      {
+        "id": "ev-google-identity",
+        "url": "https://about.google",
+        "source_type": "official_website",
+        "publisher": "Google",
+        "title": "About Google",
+        "claim": "Google is a subsidiary of Alphabet Inc.",
+        "claim_type": "ownership",
+        "reliability": "primary",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  "apple": {
+    "id": "apple",
+    "name": "Apple",
+    "common_name": "Apple",
+    "former_names": [],
+    "parent_organization": null,
+    "official_website": "https://www.apple.com/",
+    "product_directory": "https://www.apple.com/",
+    "developer_portal": "https://developer.apple.com",
+    "open_source_organization": "https://opensource.apple.com",
+    "engineering_blog": "https://www.apple.com/newsroom/",
+    "research_portal": null,
+    "brand_resource_page": "https://www.apple.com/brand-resources/",
+    "subsidiaries": ["authentic", "filemaker", "primordial", "claris"],
+    "date_last_verified": "2026-01-13",
+    "evidence": [
+      {
+        "id": "ev-apple-identity",
+        "url": "https://apple.com",
+        "source_type": "official_website",
+        "publisher": "Apple",
+        "title": "Apple",
+        "claim": "Apple Inc. is the parent organization.",
+        "claim_type": "ownership",
+        "reliability": "primary",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  "amazon": {
+    "id": "amazon",
+    "name": "Amazon",
+    "common_name": "Amazon",
+    "former_names": [],
+    "parent_organization": null,
+    "official_website": "https://www.amazon.com/",
+    "product_directory": "https://www.amazon.com/",
+    "developer_portal": "https://aws.amazon.com",
+    "open_source_organization": "https://aws.amazon.com/open-source/",
+    "engineering_blog": "https://aws.amazon.com/blog/",
+    "research_portal": null,
+    "brand_resource_page": null,
+    "subsidiaries": ["aws", "whole_foods", "zoox", "krisp"],
+    "date_last_verified": "2026-01-13",
+    "evidence": [
+      {
+        "id": "ev-amazon-identity",
+        "url": "https://amazon.com",
+        "source_type": "official_website",
+        "publisher": "Amazon",
+        "title": "Amazon.com",
+        "claim": "Amazon is the parent organization; AWS is a subsidiary.",
+        "claim_type": "ownership",
+        "reliability": "primary",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  "amazon_aws": {
+    "id": "amazon_aws",
+    "name": "Amazon Web Services",
+    "common_name": "AWS",
+    "former_names": [],
+    "parent_organization": "amazon",
+    "official_website": "https://aws.amazon.com/",
+    "product_directory": "https://aws.amazon.com",
+    "developer_portal": "https://console.aws.amazon.com",
+    "open_source_organization": "https://aws.amazon.com/open-source/",
+    "engineering_blog": "https://aws.amazon.com/blog/",
+    "research_portal": null,
+    "brand_resource_page": null,
+    "subsidiaries": [],
+    "date_last_verified": "2026-01-13",
+    "evidence": [
+      {
+        "id": "ev-aws-identity",
+        "url": "https://aws.amazon.com",
+        "source_type": "official_website",
+        "publisher": "Amazon",
+        "title": "Amazon Web Services",
+        "claim": "AWS is a subsidiary of Amazon.com Inc.",
+        "claim_type": "ownership",
+        "reliability": "primary",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  "netflix": {
+    "id": "netflix",
+    "name": "Netflix",
+    "common_name": "Netflix",
+    "former_names": [],
+    "parent_organization": null,
+    "official_website": "https://www.netflix.com/",
+    "product_directory": "https://www.netflix.com/",
+    "developer_portal": null,
+    "open_source_organization": null,
+    "engineering_blog": "https://netflixtechblog.com",
+    "research_portal": null,
+    "brand_resource_page": null,
+    "subsidiaries": [],
+    "date_last_verified": "2026-01-13",
+    "evidence": [
+      {
+        "id": "ev-netflix-identity",
+        "url": "https://netflix.com",
+        "source_type": "official_website",
+        "publisher": "Netflix",
+        "title": "Netflix",
+        "claim": "Netflix Inc. is a standalone public company.",
+        "claim_type": "ownership",
+        "reliability": "primary",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  "meta": {
+    "id": "meta",
+    "name": "Meta",
+    "common_name": "Meta",
+    "former_names": ["facebook"],
+    "parent_organization": null,
+    "official_website": "https://www.meta.com/",
+    "product_directory": "https://about.meta.com",
+    "developer_portal": "https://developers.facebook.com",
+    "open_source_organization": "https://opensource.facebook.com",
+    "engineering_blog": "https://engineering.fb.com",
+    "research_portal": null,
+    "brand_resource_page": "https://about.meta.com/brand-resources",
+    "subsidiaries": ["instagram", "whatsapp", "reality_labs", "oculus"],
+    "date_last_verified": "2026-01-13",
+    "evidence": [
+      {
+        "id": "ev-meta-identity",
+        "url": "https://meta.com",
+        "source_type": "official_website",
+        "publisher": "Meta",
+        "title": "Meta",
+        "claim": "Meta Platforms Inc. (formerly Facebook Inc.).",
+        "claim_type": "ownership",
+        "reliability": "primary",
+        "verification_status": "verified"
+      }
+    ]
+  }
+}

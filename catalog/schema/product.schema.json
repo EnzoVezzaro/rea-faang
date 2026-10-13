@@ -1,0 +1,252 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Product Schema",
+  "type": "object",
+  "required": ["id", "company_id", "name", "product_type", "lifecycle_status", "official_url", "research_status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable product identifier",
+      "pattern": "^[a-z][a-z0-9-]*$"
+    },
+    "company_id": {
+      "type": "string",
+      "description": "Owning company ID"
+    },
+    "name": {
+      "type": "string",
+      "description": "Official product name"
+    },
+    "product_type": {
+      "type": "string",
+      "enum": [
+        "consumer_application",
+        "consumer_subscription",
+        "search",
+        "browser",
+        "social_network",
+        "messaging",
+        "productivity_application",
+        "developer_tool",
+        "api",
+        "sdk",
+        "cloud_infrastructure",
+        "compute",
+        "serverless",
+        "container_orchestration",
+        "storage",
+        "database",
+        "networking",
+        "security",
+        "ai_application",
+        "ai_model",
+        "ai_agent_platform",
+        "machine_learning_framework",
+        "data_platform",
+        "media_streaming",
+        "media",
+        "games",
+        "hardware",
+        "operating_system",
+        "creative_software",
+        "advertising_technology",
+        "business_software",
+        "robotics",
+        "autonomous_system",
+        "research_platform",
+        "open_source_project",
+        "discontinued"
+      ],
+      "description": "Product taxonomy category"
+    },
+    "categories": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Product categories"
+    },
+    "aliases": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Product aliases and former names"
+    },
+    "official_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official product URL"
+    },
+    "official_docs_url": {
+      "type": ["string", "null"],
+      "format": "uri",
+      "description": "Official documentation URL",
+      "default": null
+    },
+    "official_source_urls": {
+      "type": "array",
+      "items": { "format": "uri" },
+      "description": "Additional official source URLs"
+    },
+    "lifecycle_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "preview",
+        "beta",
+        "deprecated",
+        "discontinued",
+        "acquired",
+        "renamed",
+        "unknown"
+      ],
+      "description": "Product lifecycle status"
+    },
+    "research_status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "in_progress",
+        "researched",
+        "stale",
+        "insufficient_evidence"
+      ],
+      "description": "Research completion status"
+    },
+    "research_confidence": {
+      "type": "string",
+      "enum": ["verified", "unverified", "low"],
+      "description": "Research confidence level"
+    },
+    "alternative_status": {
+      "type": "string",
+      "enum": [
+        "unassessed",
+        "none_verified",
+        "unknown",
+        "partial",
+        "adequate",
+        "mature"
+      ],
+      "description": "Open-source alternative coverage status"
+    },
+    "alternative_coverage": {
+      "type": "string",
+      "enum": ["unknown"],
+      "description": "Alternative coverage classification"
+    },
+    "opportunity_status": {
+      "type": "string",
+      "enum": [
+        "unassessed",
+        "reuse_existing",
+        "integrate_existing",
+        "extend_existing",
+        "build_missing",
+        "research_further",
+        "not_recommended"
+      ],
+      "description": "RAE build recommendation"
+    },
+    "last_researched_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When last researched"
+    },
+    "last_verified_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When last verified"
+    },
+    "next_review_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When next review is due"
+    },
+    "research_version": {
+      "type": "integer",
+      "description": "Research version number"
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/evidence" },
+      "description": "Evidence supporting material claims"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["capability_id", "support"],
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "description": "Capability identifier"
+          },
+          "support": {
+            "type": "string",
+            "enum": ["supported", "partial", "unsupported", "unknown", "not_applicable"],
+            "description": "Support level"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Evidence IDs supporting this capability"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Notes on capability"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Product capabilities"
+    }
+  },
+  "definitions": {
+    "evidence": {
+      "type": "object",
+      "required": ["id", "url", "source_type", "claim", "claim_type"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^ev-[a-z0-9-]+$" },
+        "url": { "type": "string", "format": "uri" },
+        "source_type": {
+          "type": "string",
+          "enum": [
+            "official_website",
+            "developer_documentation",
+            "engineering_blog",
+            "press_release",
+            "repository",
+            "api_specification",
+            "academic_paper",
+            "secondary_source"
+          ]
+        },
+        "publisher": { "type": "string" },
+        "title": { "type": "string" },
+        "published_at": { "type": ["string", "null"], "format": "date-time" },
+        "accessed_at": { "type": ["string", "null"], "format": "date-time" },
+        "claim": { "type": "string" },
+        "claim_type": {
+          "type": "string",
+          "enum": [
+            "product_identity",
+            "capability",
+            "pricing",
+            "licensing",
+            "ownership",
+            "status",
+            "api_surface"
+          ]
+        },
+        "supporting_excerpt_or_summary": { "type": "string" },
+        "reliability": { "type": "string", "enum": ["primary", "secondary", "tertiary"] },
+        "verification_status": {
+          "type": "string",
+          "enum": ["verified", "unverified", "conflicting", "unavailable"]
+        },
+        "related_product_ids": { "type": "array", "items": { "type": "string" } },
+        "related_alternative_ids": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

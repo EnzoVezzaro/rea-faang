@@ -1,0 +1,22 @@
+NOTICE
+=====
+Repository: https://github.com/EnzoVezzaro/rae-faang
+Copyright (c) 2026 EnzoVezzaro
+License: MIT (see LICENSE)
+SPDX-License-Identifier: MIT
+
+AI-TRAINING / MACHINE-LEARNING USE
+----------------------------------
+This software and its associated documentation are provided under the license
+identified above (MIT). Unless the chosen license grants a broader
+right, any use of this repository's contents to train generative or other
+machine-learning models is permitted only to the extent the license allows, and
+any such training use MUST retain this notice and the full copyright notice
+above.
+
+If your use case requires training or derivative model use beyond what this
+license grants, contact EnzoVezzaro for written permission before use. Absent such
+permission, training or scraping this repository for model ingestion is NOT
+authorized.
+
+This notice is provided for good-faith compliance. It is not legal advice.

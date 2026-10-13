@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Alternative Schema",
+  "type": "object",
+  "required": ["id", "name", "official_url", "repository_url", "license_spdx", "license_category", "development_status"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable alternative identifier"
+    },
+    "name": {
+      "type": "string",
+      "description": "Alternative name"
+    },
+    "official_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Official product URL"
+    },
+    "repository_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Repository URL"
+    },
+    "license_spdx": {
+      "type": "string",
+      "description": "SPDX license identifier"
+    },
+    "license_verified": {
+      "type": "boolean",
+      "description": "Whether license was verified against SPDX list"
+    },
+    "license_category": {
+      "type": "string",
+      "enum": [
+        "osi_approved",
+        "source_available",
+        "open_core",
+        "open_model_restricted",
+        "free_commercial",
+        "unclear_licensing",
+        "proprietary"
+      ],
+      "description": "License category"
+    },
+    "development_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "maintenance",
+        "inactive",
+        "archived",
+        "abandoned",
+        "relocated"
+      ],
+      "description": "Development status"
+    },
+    "last_release_at": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of last release"
+    },
+    "last_commit_at": {
+      "type": "string",
+      "format": "date",
+      "description": "Date of last commit"
+    },
+    "maintainer_activity": {
+      "type": "string",
+      "enum": ["active", "inactive", "unknown"],
+      "description": "Maintainer activity level"
+    },
+    "security_posture": {
+      "type": "string",
+      "enum": ["good", "fair", "poor", "unknown"],
+      "description": "Security posture assessment"
+    },
+    "self_hosting_support": {
+      "type": "boolean",
+      "description": "Whether self-hosting is supported"
+    },
+    "supported_platforms": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Supported platforms"
+    },
+    "deployment_options": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Deployment options"
+    },
+    "api_compatibility": {
+      "type": "string",
+      "enum": ["supported", "partial", "unsupported", "unknown", "not_applicable"],
+      "description": "API compatibility"
+    },
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["capability_id", "support"],
+        "properties": {
+          "capability_id": {
+            "type": "string",
+            "description": "Capability identifier"
+          },
+          "support": {
+            "type": "string",
+            "enum": ["supported", "partial", "unsupported", "unknown", "not_applicable"],
+            "description": "Support level"
+          },
+          "evidence_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Evidence IDs"
+          },
+          "notes": {
+            "type": "string",
+            "description": "Notes on capability"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Alternative capabilities"
+    },
+    "commercial_use": {
+      "type": "boolean",
+      "description": "Whether commercial use is permitted"
+    },
+    "evidence": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/evidence" },
+      "description": "Evidence supporting material claims"
+    },
+    "last_verified_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When last verified"
+    }
+  },
+  "additionalProperties": false
+}
