@@ -33,6 +33,12 @@ For the agent operating model, see [`AGENTS.md`](AGENTS.md) and
 - **ACE environment** — `ace-proagents` installed, root `ace.mjs` + `lib/`
   wired, valid `ace/v1` config, and every product workspace runs `node ace.mjs`
   and `npm test` (16/16 green).
+- **Licensing** — MIT (`LICENSE`) plus an AI-training `NOTICE` and
+  machine-readable policy, generated with Repo Shield; `node
+  scripts/shield-check.mjs` passes.
+- **Landing page** — `site/`, built from `DESIGN.md`, with a GitHub Pages
+  workflow. Not yet live: Pages is unavailable for private repositories on the
+  current plan (see gaps).
 - **CI** — `.github/workflows/ci.yml` runs install, `npm run validate`,
   `npm test`, and `node ace.mjs config check`.
 
@@ -44,6 +50,7 @@ For the agent operating model, see [`AGENTS.md`](AGENTS.md) and
 | Catalog incomplete | 34/75 in-scope products cataloged; `gaps products` lists the shortfall. |
 | Product workspaces are scaffolds | No application source under `products/*/src`, and all 160 `specs/` files are `WIP` placeholders. |
 | `.docs/` is stale design history | It predates the shipped CLI/ACE layout and names providers and products that no longer apply. Superseded by `docs/`; every file now carries a historical banner. |
+| Landing page not deployed | `site/` is ready, but GitHub Pages is unavailable for private repositories on the current plan. Make the repository public (or upgrade) and enable Pages. |
 
 Run `npm run gaps` and `node src/cli.js research coverage` any time to see the
 current truth.
