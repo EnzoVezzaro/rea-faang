@@ -13,9 +13,10 @@
   "scripts": {
     "cli": "node src/cli.js",
     "ace": "node ace.mjs",
-    "validate": "node src/cli.js research validate && node src/cli.js alternatives validate && node src/cli.js opportunities validate",
+    "validate": "node src/cli.js research validate && node src/cli.js alternatives validate && node src/cli.js opportunities validate && node tools/skills-catalog.mjs --check",
     "gaps": "node src/cli.js gaps all",
     "rea:catalog": "node tools/rea-catalog.mjs",
+    "skills:catalog": "node tools/skills-catalog.mjs",
     "test": "node --test tests/",
     "verify": "node src/cli.js research validate && node --test tests/",
     "govern": "node ace.mjs govern",

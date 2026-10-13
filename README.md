@@ -33,6 +33,9 @@ It does not yet contain finished product implementations — see
   ten-file structure exists, but the files are still placeholders.
 - A **REA web-surface catalog** (`catalog/rea/`) — one reverse-engineering report
   per product, captured with [REA](https://github.com/morluto/rea).
+- An **open-source skills catalog** (`catalog/skills/`) — one skill-structured
+  file per product answering *is there an open-source alternative already, or is
+  it pending?* (34/34: 24 available, 7 partial, 3 pending).
 - A working **ACE** (`ace-proagents`) agent environment wired at the repository
   root and in every product workspace.
 

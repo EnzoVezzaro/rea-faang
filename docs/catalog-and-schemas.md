@@ -116,6 +116,44 @@ time**, not the product's internals, and a few targets are consent walls or app
 shells rather than the product itself. Raw evidence is kept so any claim can be
 re-checked.
 
+## Open-source skills catalog
+
+`catalog/skills/` holds one **skill-structured** markdown file per catalogued
+product: YAML frontmatter with `name` and `description` (the skill contract),
+then what the product is, its capabilities, the open-source landscape, the gap,
+and a verdict.
+
+```
+catalog/skills/
+├── README.md                      index (per company) + status counts
+└── <company_id>/<product_id>.md   one skill-structured file per product
+```
+
+Every file answers one question: *is there an open-source alternative already,
+and if not, what is pending?* Status is one of:
+
+| Status | Meaning |
+|---|---|
+| `available` | A mature open-source project covers the core function and can be self-hosted or run locally. |
+| `partial` | Open-source coverage exists but leaves a material gap — scale, a proprietary service plane, licensed content/IP, or hardware. |
+| `pending` | No open-source alternative was verified — the product is **pending to open-source**. |
+
+Product facts come from `catalog/products.jsonl`; the open-source landscape is
+curated in `tools/skills/catalog-data.mjs`, with the pages consulted listed under
+**Sources** in each file. The files are generated, not hand-written:
+
+```bash
+npm run skills:catalog                          # write every file + index
+node tools/skills-catalog.mjs --check           # verify, no writes
+node tools/skills-catalog.mjs --company google
+node tools/skills-catalog.mjs --index-only
+```
+
+`npm run validate` includes `--check`, so CI fails if a generated file drifts
+from the data. Licence identifiers are as reported by each project and should be
+re-verified before relying on them — this is a map of the landscape, not legal
+advice.
+
 ## Company record (`catalog/companies.json`)
 
 An object keyed by `company_id`. Fields: `id`, `name`, `common_name`,
@@ -174,7 +212,10 @@ checks that `id` and `company_id` match the catalog record.
    frontmatter (same `id` and `company_id`).
 3. If it is `build_missing`, create `opportunities/<id>.md` (see
    [`opportunities/README.md`](../opportunities/README.md)).
-4. Run:
+4. Add an entry for it to `tools/skills/catalog-data.mjs` (summary, capabilities,
+   open-source status, alternatives, sources) and run `npm run skills:catalog`.
+   `--check` fails while a catalogued product has no skills entry.
+5. Run:
    ```bash
    node src/cli.js research validate
    npm test
