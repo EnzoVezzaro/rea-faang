@@ -37,7 +37,7 @@ For the agent operating model, see [`AGENTS.md`](AGENTS.md) and
   machine-readable policy, generated with Repo Shield; `node
   scripts/shield-check.mjs` passes.
 - **Landing page** — `site/`, built from `DESIGN.md`, deployed to GitHub Pages:
-  https://enzovezzaro.github.io/rae-faang/
+  https://enzovezzaro.github.io/rea-faang/
 - **CI** — `.github/workflows/ci.yml` runs install, `npm run validate`,
   `npm test`, and `node ace.mjs config check`.
 

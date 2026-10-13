@@ -19,7 +19,7 @@ python3 -m http.server 8080 --directory site
 `.github/workflows/pages.yml` publishes `site/` to GitHub Pages on every push to
 `main` that touches `site/`.
 
-- **Live:** https://enzovezzaro.github.io/rae-faang/
+- **Live:** https://enzovezzaro.github.io/rea-faang/
 - Pages source: GitHub Actions (Settings → Pages).
 
 Note: GitHub Pages is not available for **private** repositories on the free

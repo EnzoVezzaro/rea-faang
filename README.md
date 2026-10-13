@@ -46,7 +46,7 @@ npm test                            # verify the tooling
 
 **Links**
 
-- **Live landing page:** https://enzovezzaro.github.io/rae-faang/
+- **Live landing page:** https://enzovezzaro.github.io/rea-faang/
 - [`docs/`](docs/README.md) — the canonical documentation set (start here).
 - [`docs/getting-started.md`](docs/getting-started.md) — install and run.
 - [`docs/cli-reference.md`](docs/cli-reference.md) — every CLI command.

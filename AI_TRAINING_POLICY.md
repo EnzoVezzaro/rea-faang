@@ -1,6 +1,6 @@
 # AI Training Policy
 
-- Repository: https://github.com/EnzoVezzaro/rae-faang
+- Repository: https://github.com/EnzoVezzaro/rea-faang
 - Copyright holder: EnzoVezzaro
 - License: MIT (SPDX-License-Identifier)
 - AI-training consent: only as granted by the MIT license; otherwise
@@ -11,7 +11,7 @@
 Machine-readable key (used by Repo Shield monitoring):
 ```json
 {
-  "repo": "EnzoVezzaro/rae-faang",
+  "repo": "EnzoVezzaro/rea-faang",
   "holder": "EnzoVezzaro",
   "license": "MIT",
   "ai-training-consent": "license-only"
