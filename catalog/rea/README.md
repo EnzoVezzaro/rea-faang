@@ -5,7 +5,7 @@ captured with [REA](https://github.com/morluto/rea) (`rea-agents`). One report p
 product, plus the raw REA Evidence for provenance.
 
 - Products captured: **34/34**
-- Generated: 2026-10-13T19:00:38.178Z
+- Generated: 2026-10-13T19:04:55.002Z
 - Regenerate: `npm run rea:catalog`
 
 ## Method and scope
@@ -16,7 +16,7 @@ product's public `official_url`, observed through REA's Playwright browser
 scenario provider: a headless browser loads the public page and REA returns the
 final URL and accessibility outline as Evidence. **Public, unauthenticated pages
 only** — no login, no access-control bypass. See the repository's
-[Responsible Reverse Engineering](../README.md) policy.
+[Responsible Reverse Engineering](../../README.md) policy.
 
 ## Products
 

@@ -38,7 +38,7 @@ const COMPANIES = JSON.parse(readFileSync(join(ROOT, 'catalog', 'companies.json'
 const args = minimist(process.argv.slice(2), {
   string: ['only', 'company', 'from'],
   number: ['limit', 'timeout', 'wait'],
-  boolean: ['force'],
+  boolean: ['force', 'index-only'],
   default: { timeout: 120, wait: 2500 },
 });
 
@@ -323,7 +323,7 @@ function writeIndex(entries) {
     'scenario provider: a headless browser loads the public page and REA returns the',
     'final URL and accessibility outline as Evidence. **Public, unauthenticated pages',
     'only** — no login, no access-control bypass. See the repository\'s',
-    '[Responsible Reverse Engineering](../README.md) policy.',
+    '[Responsible Reverse Engineering](../../README.md) policy.',
     '',
   );
   lines.push('## Products', '');
@@ -360,6 +360,14 @@ function main() {
   }
 
   mkdirSync(EVIDENCE_DIR, { recursive: true });
+
+  // Rebuild only the index from the existing reports: no capture.
+  if (args['index-only']) {
+    writeIndex([...loadExistingIndex().values()]);
+    console.log('Rebuilt catalog/rea/README.md from existing reports.');
+    return;
+  }
+
   const chrome = findChrome();
 
   // Re-render from an existing evidence file: no capture.
