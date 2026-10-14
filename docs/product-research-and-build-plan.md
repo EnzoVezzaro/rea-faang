@@ -1,4 +1,4 @@
-![RAE FAANG](assets/logo.svg)
+![RAE FAANG](assets/brand-logo-icon.png)
 
 # Product research and coding-agent skills
 

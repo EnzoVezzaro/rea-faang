@@ -17,8 +17,11 @@ The project follows [semver](https://semver.org/); npm releases match the tags i
 
 ### Added
 
-- `docs/assets/logo.svg` and PNG icons (`icon-192.png`, `icon-512.png`), the two-slash signal
-  mark used across the README and docs headers; every docs page now carries the logo.
+- `docs/assets/brand-logo-icon.png` and `brand-logo.png`, the official brand lockup from
+  `design-system/` (transparent-background conversions from
+  `RAE FAANG Logo + Icon.png` / `RAE FAANG Logo.png`), used in the README header and footer
+  and on every docs page; plus PNG icons (`icon-192.png`, `icon-512.png`) derived from the
+  brand icon.
 - `CHANGELOG.md` (this file) as the release record.
 - Catalog page improvements: pagination (20 rows per page), a total-products stat, stat labels
   that match the filter chips, and click-to-copy `rae alternatives clone` commands under every

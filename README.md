@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/assets/logo.svg" width="120" alt="RAE FAANG logo — two signal-yellow slashes on a dark tile" />
+  <img src="docs/assets/brand-logo-icon.png" width="420" alt="RAE FAANG — robot-box icon and wordmark with Meta, Amazon, Apple, Netflix and Google marks" />
 
 # RAE FAANG
 
@@ -271,6 +271,6 @@ referenced projects keep their own licenses.
 
 Give a coding agent a product's Markdown skill — and build the product in your own project.
 
-<img src="docs/assets/logo.svg" width="40" alt="" />
+<img src="docs/assets/brand-logo.png" width="320" alt="" />
 
 </div>
