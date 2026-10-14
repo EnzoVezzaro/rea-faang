@@ -7,15 +7,22 @@
  * this CLI validates, reconciles, and reports.
  */
 
-import { readFileSync, readdirSync, statSync, writeFileSync } from 'node:fs';
-import { join, dirname, extname, basename } from 'node:path';
+import { readFileSync, readdirSync, statSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { join, dirname, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import minimist from 'minimist';
+import { spawnSync } from 'node:child_process';
 import yaml from 'js-yaml';
 import { fileURLToPath as toPath } from 'node:url';
 
 const __filename = toPath(import.meta.url);
 const __dirname = dirname(__filename);
+const ROOT = join(__dirname, '..');
+
+// The CLI is data-bound: it reads the same catalog, research and skills files
+// whether it runs from a git clone or from the published npm package, which
+// bundles those directories. See `files` in package.json.
+const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'));
 
 // --- Constants ---
 const CATALOG_DIR = join(__dirname, '..', 'catalog');
@@ -178,33 +185,6 @@ function loadCatalog() {
   return loadJsonl(productsFile);
 }
 
-function loadProductsFromDir() {
-  // Load products from the products/ directory (ACE workspaces)
-  const results = [];
-  if (!statSync(PRODUCTS_DIR).isDirectory()) return results;
-  
-  const companyDirs = readdirSync(PRODUCTS_DIR, { withFileTypes: true });
-  for (const company of companyDirs) {
-    if (!company.isDirectory()) continue;
-    const productDir = join(PRODUCTS_DIR, company.name);
-    try {
-      const productFiles = readdirSync(productDir, { withFileTypes: true });
-      for (const file of productFiles) {
-        if (!file.endsWith('.json')) continue;
-        const filePath = join(productDir, file.name);
-        try {
-          const data = JSON.parse(readFileSync(filePath, 'utf8'));
-          if (data.ace && data.ace.spec) {
-            data._source = 'products_dir';
-            results.push(data);
-          }
-        } catch {}
-      }
-    } catch {}
-  }
-  return results;
-}
-
 function loadCompanies() {
   const companiesFile = join(CATALOG_DIR, 'companies.json');
   try {
@@ -235,8 +215,9 @@ function cmdProductsList(args) {
   if (args.format === 'json') {
     console.log(JSON.stringify(filtered, null, 2));
   } else {
+    const companies = loadCompanies();
     for (const p of filtered) {
-      const company = loadCompanies()[p.company_id]?.name || p.company_id;
+      const company = companies[p.company_id]?.name || p.company_id;
       console.log(`${p.id} | ${company} | ${p.name} | ${p.research_status} | ${p.product_type}`);
     }
   }
@@ -1021,6 +1002,269 @@ function cmdOpportunitiesExport(args) {
   console.log(JSON.stringify({ exportedAt: new Date().toISOString(), count: exports.length, opportunities: exports }, null, 2));
 }
 
+// --- Build & reverse-engineering commands ---
+
+const SKILL_DATA_PATH = join(__dirname, '..', 'tools', 'skills', 'catalog-data.mjs');
+
+async function loadSkillProduct(productId) {
+  const mod = await import('file://' + SKILL_DATA_PATH);
+  const list = mod.PRODUCTS || [];
+  return list.find((p) => p.id === productId) || null;
+}
+
+function skillDir(product) {
+  return join(PRODUCTS_DIR, product.company_id, product.id);
+}
+
+async function cmdBuildAgentKit(args) {
+  const productId = args._[2];
+  const product = loadCatalog().find((p) => p.id === productId);
+  if (!product) {
+    console.error(`Error: product "${productId}" not found`);
+    process.exit(1);
+  }
+
+  const data = await loadSkillProduct(productId);
+  const outDefault = join(skillDir(product), 'agent');
+  const outDir = args.out || outDefault;
+  mkdirSync(outDir, { recursive: true });
+
+  const alternatives = data?.alternatives || [];
+  const altLines = alternatives.map((a) => `- ${a.name} (${a.license}) — ${a.url}${a.repo ? ' · repo: ' + a.repo : ''}`).join('\n');
+
+  const skillMd = `---
+name: build-${product.id}
+description: Agent skill kit to reverse-engineer and rebuild ${product.name} in the open.
+---
+
+# Build ${product.name} (agent kit)
+
+Target product: **${product.name}** (${product.id})
+Company: ${product.company_id}
+Official URL: ${product.official_url}
+Product type: ${product.product_type}
+
+## Open-source landscape
+
+${altLines || 'No verified alternative yet.'}
+
+## Gap
+
+${data?.gap || 'See the research dossier.'}
+
+## Verdict
+
+${data?.verdict || 'Unassessed.'}
+
+## Agent roles
+
+- researcher: read the public product and its documentation; write the dossier.
+- architect: produce the specification set under products/${product.company_id}/${product.id}/specs/.
+- backend / frontend: implement the product.
+- tester: verify acceptance criteria.
+- reviewer: security and performance.
+
+## Commands
+
+- Reverse-engineer the public surface: \`node tools/rea-catalog.mjs --only ${product.id}\`
+- Regenerate this kit: \`node src/cli.js ${product.id}\`
+- Start the product workspace: \`cd products/${product.company_id}/${product.id} && node ace.mjs status\`
+`;
+  writeFileSync(join(outDir, 'skill.md'), skillMd, 'utf8');
+
+  const mcpConfig = {
+    product: { id: product.id, name: product.name, company_id: product.company_id, official_url: product.official_url },
+    mcpServers: {
+      'rae-cli': { command: 'node', args: [join(__dirname, '..', 'src', 'cli.js')], description: 'Product intelligence CLI' },
+      filesystem: { command: 'npx', args: ['-y', '@modelcontextprotocol/server-filesystem', skillDir(product)] },
+      git: { command: 'npx', args: ['-y', '@modelcontextprotocol/server-git', skillDir(product)] },
+    },
+    agents: {
+      roles: ['researcher', 'architect', 'frontend', 'backend', 'tester', 'reviewer', 'documenter'],
+    },
+  };
+  writeFileSync(join(outDir, 'mcp.json'), JSON.stringify(mcpConfig, null, 2) + '\n', 'utf8');
+
+  console.log(`Wrote agent kit to ${outDir}`);
+  console.log(`  skill.md  ${join(outDir, 'skill.md')}`);
+  console.log(`  mcp.json  ${join(outDir, 'mcp.json')}`);
+}
+
+function cmdReaCapture(args) {
+  const productId = args._[2];
+  const product = loadCatalog().find((p) => p.id === productId);
+  if (!product) {
+    console.error(`Error: product "${productId}" not found`);
+    process.exit(1);
+  }
+  const tool = join(__dirname, '..', 'tools', 'rea-catalog.mjs');
+  const r = spawnSync(process.execPath, [tool, '--only', productId], { stdio: 'inherit', cwd: join(__dirname, '..') });
+  process.exit(r.status === null ? 1 : r.status);
+}
+
+function aceShim(rootAceRel) {
+  return `#!/usr/bin/env node
+/**
+ * Product ACE entry point.
+ *
+ * ACE keeps one CLI in the repository root so there is a single source of truth
+ * for the spec (see docs/agent-workflow.md). This shim runs the root CLI from
+ * the product directory, so \`node ace.mjs <command>\` works here exactly as it
+ * does at the repository root.
+ */
+import { spawnSync } from 'node:child_process';
+import { fileURLToPath } from 'node:url';
+import { dirname, resolve } from 'node:path';
+
+const here = dirname(fileURLToPath(import.meta.url));
+const rootAce = resolve(here, ${JSON.stringify(rootAceRel)});
+const { status } = spawnSync(process.execPath, [rootAce, ...process.argv.slice(2)], {
+  stdio: 'inherit',
+  cwd: process.cwd(),
+});
+
+process.exit(status ?? 1);
+`;
+}
+
+const SPEC_FILES = [
+  '01-product-vision.md',
+  '02-user-workflows.md',
+  '03-feature-catalog.md',
+  '04-data-models.md',
+  '05-api-contracts.md',
+  '06-architecture.md',
+  '07-acceptance-criteria.md',
+  '08-security-model.md',
+  '09-integration-points.md',
+  '10-migration-guide.md',
+];
+
+function cmdBuildProduct(args) {
+  const productId = args._[2];
+  const product = loadCatalog().find((p) => p.id === productId);
+  if (!product) {
+    console.error(`Error: product "${productId}" not found`);
+    process.exit(1);
+  }
+
+  const workspace = args.out
+    ? resolve(args.out)
+    : join(PRODUCTS_DIR, product.company_id, product.id);
+  if (existsSync(workspace) && !args.force) {
+    console.error(`Error: workspace already exists at ${workspace}`);
+    console.error('Use --force to overwrite the scaffolding files.');
+    process.exit(1);
+  }
+
+  const rootAceRel = relative(workspace, join(ROOT, 'ace.mjs')).split(sep).join('/') || 'ace.mjs';
+
+  mkdirSync(join(workspace, 'specs'), { recursive: true });
+  writeFileSync(join(workspace, 'ace.mjs'), aceShim(rootAceRel), 'utf8');
+
+  const pkgName = `rae-${product.company_id}-${product.id}`.replace(/_/g, '-');
+  const pkg = {
+    name: pkgName,
+    version: '0.1.0',
+    license: 'MIT',
+    type: 'module',
+    engines: { node: '>=20', ace: '>=1.0.0' },
+    description: `RAE FAANG: Open-source alternative to ${product.name}`,
+    scripts: {
+      dev: 'node ace.mjs run',
+      test: 'node --test tests/',
+      lint: 'eslint .',
+      build: 'tsc --build',
+    },
+    dependencies: {},
+    devDependencies: {},
+    ace: {
+      spec: 'ace/v1',
+      name: pkgName,
+      goal: {
+        statement: `Build open-source alternative to ${product.name}`,
+        milestones: [
+          'Set up project infrastructure',
+          'Implement core features',
+          'Verify against research',
+          'Publish first release',
+        ],
+      },
+      agents: {
+        strategy: 'dynamic',
+        defaults: { runtime: 'opencode' },
+        workers: [
+          { role: 'researcher', capabilities: ['web-search', 'code-analysis'] },
+          { role: 'architect', capabilities: ['system-design'] },
+          { role: 'frontend', capabilities: ['react', 'typescript'] },
+          { role: 'backend', capabilities: ['node', 'api'] },
+          { role: 'tester', capabilities: ['unit-testing'] },
+          { role: 'reviewer', capabilities: ['code-review'] },
+        ],
+      },
+    },
+  };
+  writeFileSync(join(workspace, 'package.json'), JSON.stringify(pkg, null, 2) + '\n', 'utf8');
+
+  for (const spec of SPEC_FILES) {
+    writeFileSync(
+      join(workspace, 'specs', spec),
+      `# ${spec}\n# ${product.name} Specification\n\nWIP\n`,
+      'utf8',
+    );
+  }
+
+  console.log(`Scaffolded product workspace: ${workspace}`);
+  console.log('  ace.mjs            ACE shim (runs the repo-level CLI)');
+  console.log('  package.json       ace/v1 workspace config');
+  console.log(`  specs/             ${SPEC_FILES.length} specification stubs`);
+  console.log('');
+  console.log('Next steps:');
+  console.log(`  1. cd ${relative(process.cwd(), workspace) || '.'}`);
+  console.log('  2. node ace.mjs config check');
+  console.log(`  3. Fill in specs/07-acceptance-criteria.md, then build.`);
+}
+
+async function cmdAlternativesClone(args) {
+  const productId = args._[2] ?? args._[0];
+  const product = loadCatalog().find((p) => p.id === productId);
+  if (!product) {
+    console.error(`Error: product "${productId}" not found`);
+    process.exit(1);
+  }
+  const data = await loadSkillProduct(productId);
+  const alternatives = data?.alternatives || [];
+  if (!alternatives.length) {
+    console.error(`No alternative recorded for "${productId}"`);
+    process.exit(1);
+  }
+
+  let alt;
+  if (args.alt) {
+    alt = alternatives.find((a) => a.name.toLowerCase() === String(args.alt).toLowerCase());
+    if (!alt) {
+      console.error(`No alternative named "${args.alt}" for "${productId}".`);
+      console.error(`Available: ${alternatives.map((a) => a.name).join(', ')}`);
+      process.exit(1);
+    }
+  } else {
+    alt = alternatives.find((a) => !/proprietary/i.test(a.license || '')) || null;
+    if (!alt) {
+      console.error(`Only proprietary alternatives are recorded for "${productId}".`);
+      console.error('Pass --repo <url> to clone a specific repository.');
+      process.exit(1);
+    }
+  }
+
+  const repo = args.repo || alt.repo || alt.url;
+  const target = args.into ? join(args.into, alt.name.replace(/[^a-z0-9-]/gi, '-')) : join(process.cwd(), alt.name.replace(/[^a-z0-9-]/gi, '-'));
+  console.log(`Cloning ${repo} into ${target}`);
+  const r = spawnSync('git', ['clone', repo, target], { stdio: 'inherit' });
+  if (r.status !== 0) process.exit(r.status === null ? 1 : r.status);
+  console.log(`Cloned ${alt.name}.`);
+}
+
+
 // --- Helpers ---
 
 function tryStat(path) {
@@ -1038,7 +1282,7 @@ function printHelp() {
 RAE — FAANG Product Intelligence CLI
 =====================================
 
-Usage: node cli.js <command> [options]
+Usage: rae <command> [options]        (installed)  ·  node src/cli.js <command>  (from a clone)
 
 Commands:
   products list     List products from catalog [--company ID] [--status STATUS] [--format json]
@@ -1060,6 +1304,12 @@ Commands:
   opportunities show Show opportunity details <product-id> [--format json]
   opportunities validate Validate opportunity consistency [--format json]
   opportunities export Export opportunities for downstream use [--format json]
+  build agent-kit   Generate skill.md + mcp.json agent kit for <product-id>
+  build product     Scaffold a workspace to build the open-source replacement <product-id> [--out DIR] [--force]
+  rea capture      Reverse-engineer a product's public surface <product-id>
+  alternatives clone Clone the open-source alternative for <product-id> [--alt NAME] [--repo URL] [--into DIR]
+  <product-id>      Shorthand: build the agent kit for <product-id>.
+                    With --alt NAME, clone that product's alternative instead.
 
 Options:
   --format json     Output in JSON format
@@ -1073,7 +1323,7 @@ Exit codes:
 }
 
 function printVersion() {
-  console.log('RAE CLI v0.1.0');
+  console.log(`RAE CLI v${PKG.version}`);
 }
 
 // --- Main ---
@@ -1081,7 +1331,7 @@ function printVersion() {
 const argv = minimist(process.argv.slice(2), {
   alias: { h: 'help', v: 'version', f: 'format', c: 'company', s: 'status', m: 'manifest' },
   boolean: ['help', 'version'],
-  string: ['format', 'company', 'status', 'manifest'],
+  string: ['format', 'company', 'status', 'manifest', 'out', 'alt', 'repo', 'into'],
 });
 
 // --- CLI Dispatcher ---
@@ -1111,6 +1361,7 @@ const commands = {
     list: () => cmdAlternativesList(argv),
     validate: () => cmdAlternativesValidate(argv),
     coverage: () => cmdAlternativesCoverage(argv),
+    clone: () => cmdAlternativesClone(argv),
   },
   'opportunities': {
     list: () => cmdOpportunitiesList(argv),
@@ -1118,9 +1369,16 @@ const commands = {
     validate: () => cmdOpportunitiesValidate(argv),
     export: () => cmdOpportunitiesExport(argv),
   },
+  'build': {
+    'agent-kit': () => cmdBuildAgentKit(argv),
+    'product': () => cmdBuildProduct(argv),
+  },
+  'rea': {
+    capture: () => cmdReaCapture(argv),
+  },
 };
 
-function dispatch(argv) {
+async function dispatch(argv) {
   const command = argv._[0];
   if (argv.version) {
     printVersion();
@@ -1135,14 +1393,36 @@ function dispatch(argv) {
   const group = commands[command];
   const action = group?.[subcmd];
 
-  if (!group || !action) {
+  if (!group) {
+    // Shorthand: `rae <product-id>` builds that product's agent kit;
+    // `rae <product-id> --alt NAME` clones the alternative instead.
+    if (loadCatalog().some((p) => p.id === command)) {
+      argv._[2] = command;
+      try {
+        if (argv.alt) {
+          await cmdAlternativesClone(argv);
+        } else {
+          await cmdBuildAgentKit(argv);
+        }
+      } catch (err) {
+        console.error(`Error: ${err.message}`);
+        process.exit(1);
+      }
+      return;
+    }
+    console.error(`Error: unknown command "${command}"`);
+    console.error('Run with --help for usage information.');
+    process.exit(1);
+  }
+
+  if (!action) {
     console.error(`Error: unknown command "${command}${subcmd ? ' ' + subcmd : ''}"`);
     console.error('Run with --help for usage information.');
     process.exit(1);
   }
 
   try {
-    action();
+    await action();
   } catch (err) {
     console.error(`Error: ${err.message}`);
     process.exit(1);
@@ -1150,4 +1430,4 @@ function dispatch(argv) {
 }
 
 // dispatch
-dispatch(argv);
+dispatch(argv).catch((err) => { console.error(err); process.exit(1); });
