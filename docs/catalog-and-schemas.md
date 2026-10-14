@@ -1,7 +1,8 @@
-# Catalog & Schemas
+![RAE FAANG](assets/logo.svg)
 
-The catalog is the project's memory of what exists and how well it has been
-researched. Everything here is validated by `node src/cli.js research validate`.
+# Catalog and schemas
+
+The catalog lists the products this project tracks, the companies behind them, and the research completed so far. Use `rae research validate` to check record structure and consistency. That check does not judge whether the research is complete or correct.
 
 ## Layout
 
@@ -24,8 +25,7 @@ research/
 └── companies/<company_id>/products/<product_id>.md   # the research dossier
 ```
 
-`research/companies/` directory names must match the `company_id` used in the
-catalog: `google`, `apple`, `amazon`, `amazon_aws`, `netflix`, `meta`.
+The directory under `research/companies/` must match the product's `company_id`: `google`, `apple`, `amazon`, `amazon_aws`, `netflix`, or `meta`.
 
 ## Product record (`catalog/products.jsonl`)
 
@@ -59,14 +59,13 @@ Common optional fields: `categories[]`, `aliases[]`, `official_docs_url`,
 `business_software`, `robotics`, `autonomous_system`, `research_platform`,
 `open_source_project`, `discontinued`.
 
-The canonical list is `catalog/schema/product.schema.json`; a test asserts every
-catalog record uses a value from it.
+See `catalog/schema/product.schema.json` for the allowed values. A test checks that every product record uses one of them.
 
 ### `alternative_status`
 
 `unassessed`, `none_verified`, `unknown`, `partial`, `adequate`, `mature`.
-`alternative_coverage` is currently restricted to `unknown` (to be widened as
-coverage is assessed).
+`alternative_coverage` is restricted to `unknown` (to be widened as coverage is
+assessed).
 
 ### `opportunity_status`
 
@@ -78,17 +77,12 @@ coverage is assessed).
 
 ## Opportunity specs
 
-`opportunities/<product_id>.md` connects research to implementation. The full
-format and rules are in [`opportunities/README.md`](../opportunities/README.md);
-in short, a spec states why the gap is real, the alternatives considered, the
-MVP scope and explicit non-goals, an architecture sketch, and **testable**
-acceptance criteria, all grounded in the product's dossier.
+An opportunity spec at `opportunities/<product_id>.md` turns research into a proposed build. Follow [`opportunities/README.md`](../opportunities/README.md): explain the unmet need, compare alternatives, define the MVP and non-goals, sketch the architecture, and write testable acceptance criteria. Base those choices on the product dossier.
 
 ## REA web-surface reports
 
-`catalog/rea/` holds an automated reverse-engineering observation of each
-product's **public web surface**, produced with [REA](https://github.com/morluto/rea)
-(`rea-agents`).
+`catalog/rea/` holds [REA](https://github.com/morluto/rea) (`rea-agents`)
+reverse-engineering observations of each product's **public web surface**.
 
 ```
 catalog/rea/
@@ -97,9 +91,7 @@ catalog/rea/
 └── evidence/<product_id>.json      the raw REA Evidence, for provenance
 ```
 
-Each report records the target, the resolved URL, the page title, the observed
-headings, landmarks, links and controls, REA's own limitations, and the Evidence
-ID. It is generated, not hand-written:
+Each report records the page REA visited, its title, visible headings, links and controls, the tool's limitations, and an Evidence ID. Generate reports with:
 
 ```bash
 npm run rea:catalog                       # every catalog product (needs Chrome)
@@ -107,21 +99,11 @@ node tools/rea-catalog.mjs --company google
 node tools/rea-catalog.mjs --only netflix-streaming --wait 6000
 ```
 
-**Scope:** REA analyses concrete targets — binaries, app bundles, websites — not
-product concepts. Without the vendors' artifacts, the only available target is
-each product's public `official_url`, captured through REA's Playwright browser
-scenario provider. Only public, unauthenticated pages are observed; no login and
-no access-control bypass. Reports therefore describe the **web surface at capture
-time**, not the product's internals, and a few targets are consent walls or app
-shells rather than the product itself. Raw evidence is kept so any claim can be
-re-checked.
+**What these reports show:** REA observes public, unauthenticated web pages at each product's `official_url`. It does not sign in or bypass access controls. A report describes the page as it appeared when captured; it does not reveal how the product works internally. Some pages may show a consent screen or app shell. The raw evidence lets readers check what REA recorded.
 
 ## Open-source skills catalog
 
-`catalog/skills/` holds one **skill-structured** markdown file per catalogued
-product: YAML frontmatter with `name` and `description` (the skill contract),
-then what the product is, its capabilities, the open-source landscape, the gap,
-and a verdict.
+`catalog/skills/` contains one coding-agent build skill per product. Each file starts with the required `name` and `description` fields, then gives the agent product context, candidate open-source projects, build guidance and verification steps. Give the product's Markdown file to your agent in the project where you want to build.
 
 ```
 catalog/skills/
@@ -129,18 +111,15 @@ catalog/skills/
 └── <company_id>/<product_id>.md   one skill-structured file per product
 ```
 
-Every file answers one question: *is there an open-source alternative already,
-and if not, what is pending?* Status is one of:
+Each Markdown file is the skill for building that product with a coding agent. It directs the agent to assess existing projects, choose what to reuse, implement the product in the user's project, and verify the result. The coverage status below describes only the catalog's research into open-source alternatives—it is not a product-build status.
 
 | Status | Meaning |
 |---|---|
-| `available` | A mature open-source project covers the core function and can be self-hosted or run locally. |
-| `partial` | Open-source coverage exists but leaves a material gap — scale, a proprietary service plane, licensed content/IP, or hardware. |
-| `pending` | No open-source alternative was verified — the product is **pending to open-source**. |
+| `available` | The catalog lists a mature open-source project for the product's core job that can run locally or be self-hosted. Evaluate its coverage before adopting it; the listing is a reuse lead, not a complete build. |
+| `partial` | Listed open-source projects cover some of the product's core jobs, but a specific gap remains. The gap may involve scale, a proprietary service, licensed content, or hardware. |
+| `pending` | This catalog has not verified a suitable open-source alternative. The product skill remains available; ask your agent to review evidence and current projects, then build the product in your project. |
 
-Product facts come from `catalog/products.jsonl`; the open-source landscape is
-curated in `tools/skills/catalog-data.mjs`, with the pages consulted listed under
-**Sources** in each file. The files are generated, not hand-written:
+Product facts come from `catalog/products.jsonl`. Alternative projects and their coverage notes are maintained in `tools/skills/catalog-data.mjs`; the generated per-product Markdown files are the agent skills and list their sources. Regenerate them with:
 
 ```bash
 npm run skills:catalog                          # write every file + index
@@ -150,8 +129,8 @@ node tools/skills-catalog.mjs --index-only
 ```
 
 `npm run validate` includes `--check`, so CI fails if a generated file drifts
-from the data. Licence identifiers are as reported by each project and should be
-re-verified before relying on them — this is a map of the landscape, not legal
+from the data. Licence identifiers are as reported by each project; re-verify
+them before you rely on one. This catalog maps the landscape and gives no legal
 advice.
 
 ## Company record (`catalog/companies.json`)
@@ -188,8 +167,7 @@ research_status: "pending"
 ...
 ```
 
-The CLI parses the frontmatter, validates it against `product.schema.json`, and
-checks that `id` and `company_id` match the catalog record.
+The CLI reads the YAML frontmatter, checks it against `product.schema.json`, and confirms that its `id` and `company_id` match the catalog.
 
 > Note: the CLI's validator checks required fields, enums, patterns, and
 > `uri`/`date`/`date-time` formats. It does **not** yet enforce
@@ -198,29 +176,29 @@ checks that `id` and `company_id` match the catalog record.
 
 ## Manifests
 
-- **`manifests/faang.json`** — the target inventory. `companies.<id>.in_scope`
+- **`manifests/faang.json`**: the target inventory. `companies.<id>.in_scope`
   is the number of products expected for that company; `gaps products` compares
   it to the catalog. `total_in_scope` is the overall target.
-- **`manifests/research-coverage.json`** — a tracked snapshot of coverage. Refresh
-  it from `node src/cli.js research coverage --format json`.
+- **`manifests/research-coverage.json`**: a tracked snapshot of coverage. Refresh
+  it from `rae research coverage --format json`.
 
-## How to add a product
+## Add a product to the catalog
 
-1. Add a line to `catalog/products.jsonl` with a valid `product_type` and a
-   unique `id`.
-2. Create `research/companies/<company_id>/products/<id>.md` with valid
-   frontmatter (same `id` and `company_id`).
+1. Add a record to `catalog/products.jsonl`. Give it a unique `id` and a valid `product_type`.
+2. Create `research/companies/<company_id>/products/<id>.md`. Its frontmatter must use the same `id` and `company_id`.
 3. If it is `build_missing`, create `opportunities/<id>.md` (see
    [`opportunities/README.md`](../opportunities/README.md)).
-4. Add an entry for it to `tools/skills/catalog-data.mjs` (summary, capabilities,
-   open-source status, alternatives, sources) and run `npm run skills:catalog`.
-   `--check` fails while a catalogued product has no skills entry.
-5. Run:
+4. Add its summary, capabilities, alternative status, candidate projects and sources to `tools/skills/catalog-data.mjs`. Run `npm run skills:catalog` and `npm run site:build` to regenerate the product page and site. The check fails if a product has no catalog entry or generated page.
+5. Run the catalog checks and tests:
    ```bash
-   node src/cli.js research validate
+   rae research validate
    npm test
    ```
-   Both must pass.
+   Both commands must pass.
+
+## Research and build a product
+
+Use the [research, documentation and build plan](product-research-and-build-plan.md) for per-product evidence standards, alternative assessments and guidance for making each Markdown skill actionable for a coding agent. A generated skill is the starting instruction set; your agent should review the cited sources and validate its assumptions in your project before building.
 
 ## How to add a company
 

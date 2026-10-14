@@ -1,33 +1,28 @@
-# Agent Workflow (ACE)
+![RAE FAANG](assets/logo.svg)
 
-RAE FAANG uses **ACE** (`ace-proagents`) as its agent orchestration framework: a
-git-native package ecosystem for reproducible, orchestrator-driven agent
-environments (spec `ace/v1`). ACE has **zero runtime dependencies** — it is a
-single Node ESM CLI plus a `lib/` of modules.
+# Agent workflow
 
-The companion document [`AGENTS.md`](../AGENTS.md) is the day-to-day operating
-manual (roles, commands, handoff artifact). This document explains the model
-behind it.
+Each product's Markdown file is the build skill for that product. Download it from the product page or generate it with the `rae` CLI, then give it to your coding agent in your project. The skill guides your agent through research, reuse decisions, implementation and verification; your agent builds the independent product in your project. Alternative-coverage labels describe research into existing projects; they do not determine whether the product can be built. ACE (`ace-proagents`) is optional for coordinating a team of agents.
 
-## Why ACE
+Use [`AGENTS.md`](../AGENTS.md) for the command list and handoff template. This guide explains how the parts fit together.
 
-- **Zero runtime dependencies** — Node ESM only (`ace.mjs`), Node 20+.
-- **Git stays the source of truth** — the environment is described by
-  `package.json` (the `ace` key) + `ace-lock.json`, not by hidden state.
-- **Specification is not state** — what should exist is committed; what actually
-  exists (missions, heartbeats, leases, routes, handoffs) lives in `.ace/` and
-  `orchestration/state/` and is not published.
-- **Self-contained workspaces** — the repository and each product can each run
-  the CLI.
-- **Governance built in** — Governor → Supervisor → Worker.
-- **Swappable adapters** — every capability has providers (see `adapters list`).
+## What ACE manages (source repository)
+
+The installed RAE package includes the product CLI, catalog data and generators. You do not need the RAE source checkout to get a product skill: install the CLI, generate the skill, and use it from your own project. Clone this repository only when you need its source files, ACE configuration, generators or full project checks.
+
+## What ACE manages
+
+- **Configuration:** `package.json` and `ace-lock.json` describe the workspace and its tools.
+- **Task state:** the repository stores active missions, assignments and handoffs in runtime directories.
+- **Your product build:** give the product's Markdown skill to your coding agent in your project. Optionally scaffold a starter workspace with `rae build product <id> --out ./<id>` and use ACE there; the scaffold is optional, not where the skill has to be used.
+- **Review:** governors and supervisors coordinate work; workers take one task at a time.
+- **Adapters:** providers connect ACE to the workspace, agent runtime and verification tools. Run `ace adapters list` in the source repository to see what's available.
 
 ## Where things live
 
 ```
 /                         root ACE workspace (the whole repository)
-├── ace.mjs               ACE CLI (copied from ace-proagents)
-├── lib/                  ACE modules (copied from ace-proagents)
+├── node_modules/.bin/ace  ACE CLI installed from ace-proagents
 ├── ace-lock.json         resolved dependencies
 ├── package.json          the `ace` key: spec, agents, adapters, policies…
 ├── .ace/                 runtime state (gitignored)
@@ -39,45 +34,34 @@ behind it.
     └── specs/            the specification set
 ```
 
-Both `ace.mjs` and `lib/` at the root are **copies** from the installed
-`ace-proagents` package. To upgrade:
-
-```bash
-npm update ace-proagents
-cp node_modules/ace-proagents/ace.mjs ./ace.mjs
-cp -R node_modules/ace-proagents/lib ./lib
-```
-
-Product `ace.mjs` files are three-line shims that run the root CLI with the
-product as the working directory, so there is only one real CLI to keep current.
+ACE is installed from the `ace-proagents` package and invoked through its `ace` CLI. Run `npm update ace-proagents` to upgrade it. Product workspaces use their installed `ace` CLI from their own directory. Invoke ACE commands as `ace <command>`.
 
 ## Configuration and layers
 
-The effective configuration is the merge of several layers. Inspect it:
+ACE combines its configuration layers before it runs. View the result and check it with:
 
 ```bash
-node ace.mjs config --resolve   # show the merged config and its layers
-node ace.mjs config check       # validate it (actionable errors)
+ace config --resolve   # show the merged config and its layers
+ace config check       # validate it (actionable errors)
 ```
 
-The root `package.json` `ace` key declares:
+The `ace` section in the root `package.json` sets:
 
 - `spec: "ace/v1"` and the workspace name/goal/milestones;
 - `orchestrator` and `agents.workers` with roles and capabilities;
 - `tools` the crew may use (`git`, `github`, `filesystem`, `terminal`,
   `web-search`);
-- `adapters` binding each capability to a provider — `workspace: git-worktree`,
+- `adapters` binding each capability to a provider: `workspace: git-worktree`,
   `agent-runtime: opencode`, `context: acc`, `handoff: proagents`,
   `verification: package-scripts`, `persistence: filesystem`;
 - `policies` (`require_review_before_merge: true`), `concurrency`
   (`max_active_agents`), and `lifecycle` behaviour.
 
-If `config check` reports `INCOMPATIBLE_ADAPTER`, you used a provider ACE does
-not ship. Cross-check with `node ace.mjs adapters list`.
+If `config check` reports `INCOMPATIBLE_ADAPTER`, compare the configured provider with the list from `ace adapters list`.
 
 ## Roles
 
-Specialised workers, one owner per task:
+Each task has one owner. The roles describe the work each agent handles:
 
 | Role | Produces |
 |---|---|
@@ -99,59 +83,45 @@ add → claim → start → review → integrate → done
 - `task review` opens the handoff for acceptance.
 - `task integrate` merges verified work.
 
-Inspect state with `node ace.mjs tasks`, `node ace.mjs agents`,
-`node ace.mjs events --limit 20`, and `node ace.mjs logs`.
+Inspect state with `ace tasks`, `ace agents`, `ace events --limit 20`, and `ace logs`.
 
 ## Handoff and verification
 
-An agent submits a structured artifact (`ace handoff submit <task> --file …`);
-a supervisor accepts or rejects it (`ace handoff verify <task>`). At least one
-command must show exit code `0`, changed files must match the task scope, and
-anything unverified must be named. The full artifact shape and checklist are in
-[`AGENTS.md`](../AGENTS.md) §3–4.
+When a task is done, the agent submits a handoff with `ace handoff submit <task> --file <path>`. A supervisor checks it with `ace handoff verify <task>`. The handoff records changed files, commands and exit codes, checks that remain, decisions and risks. At least one verification command must pass. See [`AGENTS.md`](../AGENTS.md) for the template and checklist.
 
-Verification runs through the `package-scripts` adapter. Configure the commands
-ACE should run, then:
+Configure the verification commands for the workspace, then run them through ACE:
 
 ```bash
-node ace.mjs verify            # configured verification (lint/typecheck/test/build)
+ace verify            # configured verification (lint/typecheck/test/build)
 npm run verify                 # this repo: validate + test
 ```
 
-## The development loop
+## Build a product with its skill
 
-```
-investigate → understand → reimplement → verify → release and improve
-```
+1. Choose the FAANG product you want to build and download or generate its Markdown skill.
+2. Give that product skill to your coding agent in your project.
+3. Ask your agent to review product evidence and current projects, then decide what to reuse.
+4. Have the agent build and test an independent version of the product in your project.
+5. Review the result and the actual verification output.
 
-Specialised agents move work through that loop per product. The deterministic
-CLI is the arbiter at the boundaries: a dossier is only "researched" when
-`research validate` is clean and the coverage report agrees, and a build task is
-only done when its tests pass.
+ACE can coordinate this work when you want multiple agents, shared task state and reviewed handoffs. The catalog CLI checks research structure and alternative coverage; your coding agent builds the product in your project, where your project's tests check implementation behavior.
 
 ## Governance
 
-- **Governor** — watches liveness, progress, and budget; fails over and escalates
-  (`node ace.mjs govern`).
-- **Supervisor** — assigns, monitors, verifies, integrates (`node ace.mjs supervise`).
-- **Watchdog** — an independent control plane for governor failures
-  (`node ace.mjs watchdog status`).
+- **Governor:** monitors progress and budget, then handles escalation. Run `ace govern`.
+- **Supervisor:** assigns tasks, checks handoffs and integrates accepted work. Run `ace supervise`.
+- **Watchdog:** monitors the governor. Check it with `ace watchdog status`.
 
-Budgets and the roster: `node ace.mjs crew`. The money line per task is part of
-the ACE model; `ace setup` writes the arrangement that enforces it.
+Use `ace crew` to inspect the roster and budget. `ace setup` configures the crew and per-task budget for a project.
 
 ## Skills
 
 ACE ships an agent skill, `.agents/skills/ace/SKILL.md`, which is the manual for
 the interrogation, the six parts, and the rules for driving an installed crew.
-Load it before running the installer, and run `node ace.mjs parts --questions`
-for the full intake question list.
+Read it before running setup. To see the intake questions first, run `ace parts --questions`.
 
 ## Scaling
 
-- **Phase 1 (now):** one root workspace; catalog and research led by CLI-verified
-  agents; product workspaces in specs.
-- **Phase 2:** one product end-to-end (research → specs → build → verified
-  release).
-- **Phase 3+:** multiple products, shared infrastructure, cross-product tasks,
-  and the governor/supervisor hierarchy above a growing worker pool.
+- **Use a skill now:** give any product's Markdown skill to your coding agent and build in your project.
+- **Improve the catalog:** contribute product research, clearer agent instructions, better alternative assessments, tests and documentation.
+- **Phase 3 and later:** work on more products, share useful infrastructure, and coordinate cross-product tasks across agent teams.

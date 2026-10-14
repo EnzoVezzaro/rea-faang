@@ -17,11 +17,19 @@ The project follows [semver](https://semver.org/); npm releases match the tags i
 
 ### Added
 
-- `docs/assets/logo.svg`, the two-slash signal mark used across the README and docs headers.
+- `docs/assets/logo.svg` and PNG icons (`icon-192.png`, `icon-512.png`), the two-slash signal
+  mark used across the README and docs headers; every docs page now carries the logo.
 - `CHANGELOG.md` (this file) as the release record.
 - Catalog page improvements: pagination (20 rows per page), a total-products stat, stat labels
   that match the filter chips, and click-to-copy `rae alternatives clone` commands under every
   alternative card on product pages.
+- CLI: `products list` now reports each product's `alternative_status` in the table (`alt:`
+  column) and accepts `--alt-status <status>` filtering; `opportunities export --out <file>`
+  writes the export instead of silently ignoring the flag.
+- CLI: `alternatives clone` clones an alternative's verified source repository when one is
+  recorded (`repo` field; 16 prominent alternatives verified on the GitHub API so far) and
+  otherwise explains that only the project page is catalogued and suggests `--repo <git-url>`
+  instead of failing inside git.
 
 ### Fixed
 

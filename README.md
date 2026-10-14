@@ -70,8 +70,8 @@ the same way.
 **Use the skill pipeline on a product**
 
 ```bash
-npx rae-faang alternatives clone aws-s3 --alt "MinIO"   # clone a candidate project
-npx rae-faang google-search                             # generate the product's agent kit
+npx rae-faang alternatives clone google-firebase --alt "Supabase"  # clone a verified candidate repo
+npx rae-faang google-search                            # generate the product's agent kit
 ```
 
 Prefer a global install: `npm install -g rae-faang`, then run the same commands as

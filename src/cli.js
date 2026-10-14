@@ -8,6 +8,7 @@
  */
 
 import { readFileSync, readdirSync, statSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
+import { agentInstructions, productDescription } from '../tools/agent-kit-content.mjs';
 import { join, dirname, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import minimist from 'minimist';
@@ -19,9 +20,8 @@ const __filename = toPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
 
-// The CLI is data-bound: it reads the same catalog, research and skills files
-// whether it runs from a git clone or from the published npm package, which
-// bundles those directories. See `files` in package.json.
+// The CLI is data-bound and ships the catalog, research and skills data in the
+// published npm package. CLI workflows do not require a source checkout.
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'));
 
 // --- Constants ---
@@ -200,6 +200,7 @@ function cmdProductsList(args) {
   const products = loadCatalog();
   const companyFilter = args.company;
   const statusFilter = args.status;
+  const altFilter = args['alt-status'];
 
   let filtered = products;
   if (companyFilter) {
@@ -207,6 +208,9 @@ function cmdProductsList(args) {
   }
   if (statusFilter) {
     filtered = filtered.filter(p => p.research_status === statusFilter);
+  }
+  if (altFilter) {
+    filtered = filtered.filter(p => p.alternative_status === altFilter);
   }
 
   // Stable sort by ID
@@ -218,7 +222,7 @@ function cmdProductsList(args) {
     const companies = loadCompanies();
     for (const p of filtered) {
       const company = companies[p.company_id]?.name || p.company_id;
-      console.log(`${p.id} | ${company} | ${p.name} | ${p.research_status} | ${p.product_type}`);
+      console.log(`${p.id} | ${company} | ${p.name} | alt:${p.alternative_status} | research:${p.research_status} | ${p.product_type}`);
     }
   }
 }
@@ -478,6 +482,26 @@ function cmdResearchCoverage(args) {
         console.log(`  ${d.productId}: ${d.files.join(' AND ')}`);
       }
     }
+  }
+}
+
+function cmdResearchDossier(args) {
+  const productId = args._[2];
+  const product = loadCatalog().find((p) => p.id === productId);
+  if (!product) {
+    console.error(`Error: product "${productId}" not found`);
+    process.exit(1);
+  }
+  const filePath = resolveProductResearchFile(productId);
+  if (!filePath) {
+    console.error(`Error: no research dossier found for "${productId}"`);
+    process.exit(1);
+  }
+  const markdown = readFileSync(filePath, 'utf8');
+  if (args.format === 'json') {
+    console.log(JSON.stringify({ id: productId, name: product.name, markdown }, null, 2));
+  } else {
+    process.stdout.write(markdown);
   }
 }
 
@@ -999,7 +1023,13 @@ function cmdOpportunitiesExport(args) {
     };
   });
 
-  console.log(JSON.stringify({ exportedAt: new Date().toISOString(), count: exports.length, opportunities: exports }, null, 2));
+  const payload = JSON.stringify({ exportedAt: new Date().toISOString(), count: exports.length, opportunities: exports }, null, 2);
+  if (args.out) {
+    writeFileSync(resolve(args.out), payload + '\n', 'utf8');
+    console.log(`Exported ${exports.length} opportunities to ${resolve(args.out)}`);
+    return;
+  }
+  console.log(payload);
 }
 
 // --- Build & reverse-engineering commands ---
@@ -1025,12 +1055,32 @@ async function cmdBuildAgentKit(args) {
   }
 
   const data = await loadSkillProduct(productId);
-  const outDefault = join(skillDir(product), 'agent');
-  const outDir = args.out || outDefault;
+  const outDefault = resolve(`${product.id}-agent`);
+  const outDir = resolve(args.out || outDefault);
   mkdirSync(outDir, { recursive: true });
 
   const alternatives = data?.alternatives || [];
-  const altLines = alternatives.map((a) => `- ${a.name} (${a.license}) — ${a.url}${a.repo ? ' · repo: ' + a.repo : ''}`).join('\n');
+  const altLines = alternatives.map((a) => `- ${a.name} (${a.license}) — ${a.url}${a.repo ? ' · repo: ' + a.repo : ''}\n  ${a.covers || ''}${a.note ? ` Note: ${a.note}` : ''}`).join('\n');
+
+  const company = loadCompanies()[product.company_id]?.name || product.company_id;
+  const enriched = {
+    ...data,
+    id: product.id,
+    name: product.name,
+    company_id: product.company_id,
+    companyName: company,
+    product_type: product.product_type,
+    categories: product.categories || [],
+    official_url: product.official_url,
+    research_status: product.research_status,
+  };
+  const workspacePath = args.out ? resolve(args.out) : null;
+  const buildBrief = workspacePath
+    ? `CLI output path selected: ${workspacePath}. Keep the generated agent kit separate from source repositories and existing workspaces.`
+    : 'Generate the agent kit into a new output directory; do not require or assume a repository checkout.';
+  const instructions = `${buildBrief}
+
+${agentInstructions(enriched, { workspacePath: workspacePath || `./${product.id}`, researchUrl: `https://github.com/EnzoVezzaro/rea-faang/blob/main/research/companies/${product.company_id}/products/${product.id}.md` })}`;
 
   const skillMd = `---
 name: build-${product.id}
@@ -1040,9 +1090,17 @@ description: Agent skill kit to reverse-engineer and rebuild ${product.name} in 
 # Build ${product.name} (agent kit)
 
 Target product: **${product.name}** (${product.id})
-Company: ${product.company_id}
+Company: ${company}
 Official URL: ${product.official_url}
 Product type: ${product.product_type}
+
+## Product description
+
+${productDescription(enriched)}
+
+## Core capabilities
+
+${(data?.capabilities || []).map((capability) => `- ${capability}`).join('\n')}
 
 ## Open-source landscape
 
@@ -1056,28 +1114,24 @@ ${data?.gap || 'See the research dossier.'}
 
 ${data?.verdict || 'Unassessed.'}
 
-## Agent roles
-
-- researcher: read the public product and its documentation; write the dossier.
-- architect: produce the specification set under products/${product.company_id}/${product.id}/specs/.
-- backend / frontend: implement the product.
-- tester: verify acceptance criteria.
-- reviewer: security and performance.
+${instructions}
 
 ## Commands
 
-- Reverse-engineer the public surface: \`node tools/rea-catalog.mjs --only ${product.id}\`
-- Regenerate this kit: \`node src/cli.js ${product.id}\`
-- Start the product workspace: \`cd products/${product.company_id}/${product.id} && node ace.mjs status\`
+- Inspect product metadata: \`rae products show ${product.id} --format json\`
+- Read the evidence dossier: \`rae research dossier ${product.id}\`
+- Check research before implementation: \`rae research coverage\` and \`rae research validate\`
+- Regenerate the kit into a separate directory: \`rae ${product.id} --out ./${product.id}-agent\`
+- Scaffold a separate local implementation workspace when appropriate: \`rae build product ${product.id} --out ./${product.id}\`
 `;
   writeFileSync(join(outDir, 'skill.md'), skillMd, 'utf8');
 
   const mcpConfig = {
     product: { id: product.id, name: product.name, company_id: product.company_id, official_url: product.official_url },
     mcpServers: {
-      'rae-cli': { command: 'node', args: [join(__dirname, '..', 'src', 'cli.js')], description: 'Product intelligence CLI' },
-      filesystem: { command: 'npx', args: ['-y', '@modelcontextprotocol/server-filesystem', skillDir(product)] },
-      git: { command: 'npx', args: ['-y', '@modelcontextprotocol/server-git', skillDir(product)] },
+      'rae-cli': { command: 'rae', args: [], description: 'Installed RAE product intelligence CLI' },
+      filesystem: { command: 'npx', args: ['-y', '@modelcontextprotocol/server-filesystem', resolve(outDir)] },
+      git: { command: 'npx', args: ['-y', '@modelcontextprotocol/server-git', resolve(outDir)] },
     },
     agents: {
       roles: ['researcher', 'architect', 'frontend', 'backend', 'tester', 'reviewer', 'documenter'],
@@ -1102,27 +1156,28 @@ function cmdReaCapture(args) {
   process.exit(r.status === null ? 1 : r.status);
 }
 
-function aceShim(rootAceRel) {
+function aceShim() {
   return `#!/usr/bin/env node
-/**
- * Product ACE entry point.
- *
- * ACE keeps one CLI in the repository root so there is a single source of truth
- * for the spec (see docs/agent-workflow.md). This shim runs the root CLI from
- * the product directory, so \`node ace.mjs <command>\` works here exactly as it
- * does at the repository root.
- */
+/** Product ACE entry point, resolved through the installed ace-proagents CLI package. */
 import { spawnSync } from 'node:child_process';
-import { fileURLToPath } from 'node:url';
-import { dirname, resolve } from 'node:path';
+import { createRequire } from 'node:module';
 
-const here = dirname(fileURLToPath(import.meta.url));
-const rootAce = resolve(here, ${JSON.stringify(rootAceRel)});
-const { status } = spawnSync(process.execPath, [rootAce, ...process.argv.slice(2)], {
+const require = createRequire(import.meta.url);
+let aceCli;
+try {
+  aceCli = require.resolve('ace-proagents/ace.mjs');
+} catch {
+  console.error('ACE CLI is unavailable. Run npm install in this workspace first.');
+  process.exit(1);
+}
+const { status, error } = spawnSync(process.execPath, [aceCli, ...process.argv.slice(2)], {
   stdio: 'inherit',
   cwd: process.cwd(),
 });
-
+if (error) {
+  console.error(error.message);
+  process.exit(1);
+}
 process.exit(status ?? 1);
 `;
 }
@@ -1148,19 +1203,15 @@ function cmdBuildProduct(args) {
     process.exit(1);
   }
 
-  const workspace = args.out
-    ? resolve(args.out)
-    : join(PRODUCTS_DIR, product.company_id, product.id);
+  const workspace = resolve(args.out || product.id);
   if (existsSync(workspace) && !args.force) {
     console.error(`Error: workspace already exists at ${workspace}`);
     console.error('Use --force to overwrite the scaffolding files.');
     process.exit(1);
   }
 
-  const rootAceRel = relative(workspace, join(ROOT, 'ace.mjs')).split(sep).join('/') || 'ace.mjs';
-
   mkdirSync(join(workspace, 'specs'), { recursive: true });
-  writeFileSync(join(workspace, 'ace.mjs'), aceShim(rootAceRel), 'utf8');
+  writeFileSync(join(workspace, 'ace.mjs'), aceShim(), 'utf8');
 
   const pkgName = `rae-${product.company_id}-${product.id}`.replace(/_/g, '-');
   const pkg = {
@@ -1168,16 +1219,16 @@ function cmdBuildProduct(args) {
     version: '0.1.0',
     license: 'MIT',
     type: 'module',
-    engines: { node: '>=20', ace: '>=1.0.0' },
+    engines: { node: '>=20' },
     description: `RAE FAANG: Open-source alternative to ${product.name}`,
     scripts: {
-      dev: 'node ace.mjs run',
+      dev: 'ace run',
       test: 'node --test tests/',
       lint: 'eslint .',
       build: 'tsc --build',
     },
     dependencies: {},
-    devDependencies: {},
+    devDependencies: { 'ace-proagents': PKG.devDependencies['ace-proagents'] },
     ace: {
       spec: 'ace/v1',
       name: pkgName,
@@ -1221,7 +1272,7 @@ function cmdBuildProduct(args) {
   console.log('');
   console.log('Next steps:');
   console.log(`  1. cd ${relative(process.cwd(), workspace) || '.'}`);
-  console.log('  2. node ace.mjs config check');
+  console.log('  2. ace config check');
   console.log(`  3. Fill in specs/07-acceptance-criteria.md, then build.`);
 }
 
@@ -1256,8 +1307,16 @@ async function cmdAlternativesClone(args) {
     }
   }
 
-  const repo = args.repo || alt.repo || alt.url;
+  const repo = args.repo || alt.repo || null;
   const target = args.into ? join(args.into, alt.name.replace(/[^a-z0-9-]/gi, '-')) : join(process.cwd(), alt.name.replace(/[^a-z0-9-]/gi, '-'));
+  if (!repo) {
+    // Most catalog entries record the project website, which is not a git
+    // endpoint. Say so plainly instead of failing somewhere inside git.
+    console.error(`The catalog records ${alt.name}'s project page (${alt.url}), not its source repository.`);
+    console.error(`Clone the repository you verified yourself:`);
+    console.error(`  rae alternatives clone ${productId} --alt "${alt.name}" --repo <git-url>`);
+    process.exit(1);
+  }
   console.log(`Cloning ${repo} into ${target}`);
   const r = spawnSync('git', ['clone', repo, target], { stdio: 'inherit' });
   if (r.status !== 0) process.exit(r.status === null ? 1 : r.status);
@@ -1282,14 +1341,15 @@ function printHelp() {
 RAE — FAANG Product Intelligence CLI
 =====================================
 
-Usage: rae <command> [options]        (installed)  ·  node src/cli.js <command>  (from a clone)
+Usage: rae <command> [options]        (install with npm or run via npx)
 
 Commands:
-  products list     List products from catalog [--company ID] [--status STATUS] [--format json]
+  products list     List products from catalog [--company ID] [--status RESEARCH-STATUS] [--alt-status ALT-STATUS] [--format json]
   products show     Show product details <product-id> [--format json]
   companies list    List registered companies [--format json]
   companies show    Show company details <company-id> [--format json]
   research coverage Show research coverage report [--company ID] [--format json]
+  research dossier  Print a product's research dossier <product-id> [--format json]
   research pending  List products with pending research [--format json]
   research stale    List stale research products [--format json]
   research validate Validate catalog and research file integrity [--format json]
@@ -1303,12 +1363,12 @@ Commands:
   opportunities list List opportunity classifications [--format json]
   opportunities show Show opportunity details <product-id> [--format json]
   opportunities validate Validate opportunity consistency [--format json]
-  opportunities export Export opportunities for downstream use [--format json]
+  opportunities export Export opportunities for downstream use [--format json] [--out FILE]
   build agent-kit   Generate skill.md + mcp.json agent kit for <product-id>
   build product     Scaffold a workspace to build the open-source replacement <product-id> [--out DIR] [--force]
   rea capture      Reverse-engineer a product's public surface <product-id>
   alternatives clone Clone the open-source alternative for <product-id> [--alt NAME] [--repo URL] [--into DIR]
-  <product-id>      Shorthand: build the agent kit for <product-id>.
+  <product-id>      Shorthand: build the agent kit for <product-id> [--out DIR].
                     With --alt NAME, clone that product's alternative instead.
 
 Options:
@@ -1331,7 +1391,7 @@ function printVersion() {
 const argv = minimist(process.argv.slice(2), {
   alias: { h: 'help', v: 'version', f: 'format', c: 'company', s: 'status', m: 'manifest' },
   boolean: ['help', 'version'],
-  string: ['format', 'company', 'status', 'manifest', 'out', 'alt', 'repo', 'into'],
+  string: ['format', 'company', 'status', 'manifest', 'out', 'alt', 'repo', 'into', 'alt-status'],
 });
 
 // --- CLI Dispatcher ---
@@ -1347,6 +1407,7 @@ const commands = {
   },
   'research': {
     coverage: () => cmdResearchCoverage(argv),
+    dossier: () => cmdResearchDossier(argv),
     pending: () => cmdResearchPending(argv),
     stale: () => cmdResearchStale(argv),
     validate: () => cmdResearchValidate(argv),

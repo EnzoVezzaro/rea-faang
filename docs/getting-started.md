@@ -1,6 +1,8 @@
-# Getting Started
+![RAE FAANG](assets/logo.svg)
 
-Set up the environment and prove it works.
+# Get started
+
+Install RAE, choose a product, and give its Markdown skill to your coding agent. The agent uses the product-specific directions to build and verify an independent implementation in your project. The published CLI works without cloning the RAE source repository.
 
 ## Prerequisites
 
@@ -8,16 +10,26 @@ Set up the environment and prove it works.
 - **npm 10+** (ships with Node)
 - **git**
 
-Optional, depending on what you build:
+Optional, depending on your project:
 
 - **Docker** for containerized products
 - **PostgreSQL 16+** for products with a database
 - An agent runtime (for example **opencode**) if you intend to run ACE agents
 
-The core CLI and the ACE governance CLI have no runtime dependencies beyond
-Node — both are zero-dependency ESM.
+The CLI and ACE run on Node.js. `npm install` also installs the packages listed in this repository's `package.json`. You do not need a database or a running service to browse and validate the catalog.
 
-## Install
+## Install the CLI
+
+```bash
+npm install -g rae-faang
+rae --help
+```
+
+The published package provides `rae` and `rae-faang` commands and bundles the product catalog, dossiers, alternative landscape, and validation schemas. No source checkout is needed to browse products, read a dossier, check catalog data, or generate a product's agent skill.
+
+## Work from the source repository
+
+Clone the repository only when you need to edit catalog/source files, run the full project test suite and generators, or use repository-only tools such as REA capture:
 
 ```bash
 git clone <your-repo-url> rae-faang
@@ -25,103 +37,107 @@ cd rae-faang
 npm install
 ```
 
-`npm install` pulls the two CLI dependencies (`js-yaml`, `minimist`) and
-`ace-proagents` (dev). Nothing is built.
+## Check your setup
 
-## Verify the setup
+Run the tests and catalog checks, then make sure ACE can read its configuration:
 
 ```bash
-npm test                              # deterministic CLI suite (should pass)
-npm run validate                      # catalog + research integrity
-node src/cli.js research coverage     # product research status
-node ace.mjs status                   # ACE environment overview
-node ace.mjs config check             # ace/v1 config validates
+rae research coverage                 # product research status
+rae research validate                 # bundled catalog integrity
+
+# In a source checkout only:
+npm test                              # deterministic project suite
+npm run validate                      # catalog + research + generated-artifact integrity
+ace status                             # ACE environment overview
+ace config check                       # ace/v1 config validates
 ```
 
-Expected: tests pass, `validate` reports no errors, `config check` prints
-`config: OK`.
+The tests should pass, validation should report no errors, and `ace config check` should print `config: OK`.
 
-## Run the Product Intelligence CLI
+## Browse products and get an agent skill
 
-The CLI is the source of truth for the catalog. Start at the help:
+Use the CLI to browse products, check alternative research, and generate the Markdown build skill for the product you want your coding agent to build in your project. Start with its help:
 
 ```bash
-npm run cli -- --help          # or: node src/cli.js --help
+rae --help
 ```
 
 Common commands:
 
 ```bash
 # What products do we track?
-node src/cli.js products list
-node src/cli.js products list --company google --format json
+rae products list
+rae products list --company google --format json
 
-# One product in detail
-node src/cli.js products show google-search
+# One product and its evidence dossier
+rae products show google-search
+rae research dossier google-search
 
 # How complete is the research?
-node src/cli.js research coverage
-node src/cli.js research pending
+rae research coverage
+rae research pending
 
 # What is missing?
-node src/cli.js gaps all
-node src/cli.js opportunities validate
+rae gaps all
+rae opportunities validate
+
+# Generate the Google Search skill for your coding agent
+rae google-search --out ./google-search-agent
 ```
 
 Full reference: [cli-reference.md](cli-reference.md).
 
-## Run ACE (the agent environment)
+Give the generated product skill to your coding agent in the project where you want the product built. The skill tells the agent what to research, which existing projects to evaluate, and how to plan, build and verify the product. Alternative-coverage status describes only the catalog's reuse research; it does not limit what your agent can build.
 
-ACE (`ace-proagents`) is configured through the `ace` key in the root
-`package.json` and runs from a zero-dependency CLI:
+## Use ACE to coordinate agents
+
+ACE (`ace-proagents`) reads its configuration from the `ace` key in the root
+`package.json`. Check its status and available tools with:
 
 ```bash
-node ace.mjs --help
-node ace.mjs status
-node ace.mjs context --json
-node ace.mjs crew              # roster and budget
-node ace.mjs adapters list     # available providers
-node ace.mjs doctor --json     # diagnostics
+ace --help
+ace status
+ace context --json
+ace crew              # roster and budget
+ace adapters list     # available providers
+ace doctor --json     # diagnostics
 ```
 
 ### Product workspaces
 
-Each product under `products/<company>/<product>/` is its own ACE workspace. Run
-commands from inside it; the product `ace.mjs` shim invokes the repository-level
-CLI with the product as the working directory:
+In a source checkout, existing product workspaces under `products/<company>/<product>/` can run ACE. To build a product, give its Markdown skill to your coding agent in your project. A starter workspace is optional: scaffold one with `rae build product <id> --out ./<id>` and install its dependencies before running its ACE shim:
 
 ```bash
 cd products/netflix/netflix-streaming
-node ace.mjs status
-node ace.mjs config check
+ace status
+ace config check
 ```
 
 ### Installing the full crew
 
-`ace setup` installs the complete crew stack (terminal spaces, browser spaces, a
-governor, supervisors, workers, and a money line per task). It is interactive and
-needs to know the goal, the money, and the project trees:
+Use `ace setup` when you are ready to configure a full agent crew. It asks about the goal, budget, and project directories, then sets up the governor, supervisors, workers, and their workspaces. Preview the changes first:
 
 ```bash
-node ace.mjs setup --dry-run    # see the plan without writing
-node ace.mjs setup --goal "…" --money "…" --projects products/google/google-search
+ace setup --dry-run    # see the plan without writing
+ace setup --goal "…" --money "…" --projects products/google/google-search
 ```
 
 Read the ACE skill at `.agents/skills/ace/SKILL.md` inside a workspace (if
-present) for the interrogation and the six parts, or run `node ace.mjs parts
+present) for the interrogation and the six parts, or run `ace parts
 --questions`.
 
-See [agent-workflow.md](agent-workflow.md) for how agents actually use this.
+See [agent-workflow.md](agent-workflow.md) for how agents use this.
 
-## Development commands
+## Common development commands
 
 ```bash
-npm test                 # node:test suite for the CLI and schemas
-npm run validate         # research + alternatives validation
+npm test                 # node:test suite for the CLI, schemas and the site
+npm run validate         # research + alternatives + skills + site integrity
 npm run verify           # validate + test
 npm run gaps             # inventory shortfall report
-node src/cli.js <cmd>    # any CLI command directly
-node ace.mjs <cmd>       # any ACE command
+npm run site:build       # regenerate the public website into site/
+rae <cmd>               # installed CLI (use npx rae in a source checkout)
+ace <cmd>              # any ACE command
 ```
 
 ## Troubleshooting
@@ -130,16 +146,16 @@ node ace.mjs <cmd>       # any ACE command
 |---|---|
 | `node: command not found` | Install Node.js 20+ (nodejs.org or nvm). |
 | `Cannot find module 'js-yaml'` | Run `npm install`. |
-| `node ace.mjs status` prints `runtime not available yet` | The root `lib/` is missing. Re-copy it: `cp -R node_modules/ace-proagents/lib ./lib`. |
-| `INCOMPATIBLE_ADAPTER` from `ace config check` | You used a provider that isn't installed. Compare against `node ace.mjs adapters list`. |
-| `MISSING_CREDENTIAL` | Run `node ace.mjs secret set <name>` for the required credential. |
+| `ace status` prints `runtime not available yet` | The root `lib/` is missing. Re-copy it: `cp -R node_modules/ace-proagents/lib ./lib`. |
+| `INCOMPATIBLE_ADAPTER` from `ace config check` | You used a provider that isn't installed. Compare against `ace adapters list`. |
+| `MISSING_CREDENTIAL` | Run `ace secret set <name>` for the required credential. |
 | `research validate` reports errors | Fix the catalog line or research frontmatter the report names, then re-run. |
-| A product's `node ace.mjs` fails | The shim expects to sit three levels below the repo root (`products/<company>/<product>/`). |
-| Tests fail after `npm update ace-proagents` | Re-copy the CLI at the root: `cp node_modules/ace-proagents/ace.mjs ./ace.mjs && cp -R node_modules/ace-proagents/lib ./lib`. |
+| A product's `ace` command fails | The workspace shim expects to sit under `products/<company>/<product>/`. |
+| `ace` command is unavailable in a product workspace | Install the workspace dependencies with `npm install`; run ACE commands as `ace <command>`. |
 
-## Next steps
+## Choose a next step
 
-- Read [`PLAN.md`](../PLAN.md) and pick a task.
+- Open [`PLAN.md`](../PLAN.md) and choose one focused task.
 - Read [`docs/catalog-and-schemas.md`](catalog-and-schemas.md) before editing the
   catalog or a research dossier.
 - Read [`docs/agent-workflow.md`](agent-workflow.md) before running agents.

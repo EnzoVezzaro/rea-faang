@@ -1,6 +1,4 @@
-<div align="center">
-<img src="assets/logo.svg" width="88" alt="RAE FAANG logo" />
-</div>
+![RAE FAANG](assets/logo.svg)
 
 # RAE FAANG documentation
 

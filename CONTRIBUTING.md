@@ -1,3 +1,5 @@
+![RAE FAANG](assets/logo.svg)
+
 # Contributing to RAE FAANG
 
 Thanks for helping build open-source alternatives to the products of the world's
@@ -29,7 +31,7 @@ cd rae-faang
 npm install
 npm test            # runs the deterministic CLI test suite
 npm run validate    # catalog + research structural validation
-node ace.mjs status # ACE environment overview
+ace status # ACE environment overview
 ```
 
 See [`docs/getting-started.md`](docs/getting-started.md) for the full guide and

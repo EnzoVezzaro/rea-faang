@@ -10,8 +10,8 @@
 //                 function and can be self-hosted or run locally.
 //   "partial"   — open-source coverage exists but leaves a material gap
 //                 (scale, a proprietary service plane, content/IP, or hardware).
-//   "pending"   — no open-source alternative was verified; the product is
-//                 marked **pending to open-source**.
+//   "pending"   — this catalog has not verified a suitable open-source
+//                 alternative; this describes coverage research only.
 
 /** @typedef {'available'|'partial'|'pending'} OsStatus */
 
@@ -93,6 +93,7 @@ export const PRODUCTS = [
         name: 'Ollama',
         license: 'MIT',
         url: 'https://ollama.com/',
+        repo: 'https://github.com/ollama/ollama',
         covers: 'Local model runner and OpenAI-compatible API.',
         note: 'Runs the weights; does not provide a frontier model.',
       },
@@ -127,6 +128,7 @@ export const PRODUCTS = [
         name: 'Mailcow',
         license: 'GPL-3.0',
         url: 'https://mailcow.email/',
+        repo: 'https://github.com/mailcow/mailcow-dockerized',
         covers: 'Dockerised full mail server (Postfix, Dovecot, Rspamd, SOGo).',
         note: 'Self-hosted; you own deliverability and DNS.',
       },
@@ -134,6 +136,7 @@ export const PRODUCTS = [
         name: 'Mail-in-a-Box',
         license: 'CC0-1.0',
         url: 'https://mailinabox.email/',
+        repo: 'https://github.com/mail-in-a-box/mailinabox',
         covers: 'One-command personal mail server bundle.',
         note: 'Opinionated, single-box.',
       },
@@ -148,6 +151,7 @@ export const PRODUCTS = [
         name: 'Roundcube',
         license: 'GPL-3.0',
         url: 'https://roundcube.net/',
+        repo: 'https://github.com/roundcube/roundcubemail',
         covers: 'Mature webmail client.',
         note: 'Client only; pair with a server.',
       },
@@ -343,6 +347,7 @@ export const PRODUCTS = [
         name: 'PeerTube',
         license: 'AGPL-3.0',
         url: 'https://joinpeertube.org/',
+        repo: 'https://github.com/framasoft/peertube',
         covers: 'Federated video hosting and streaming platform.',
         note: 'The real platform-level alternative.',
       },
@@ -350,6 +355,7 @@ export const PRODUCTS = [
         name: 'Invidious',
         license: 'AGPL-3.0',
         url: 'https://invidious.io/',
+        repo: 'https://github.com/iv-org/invidious',
         covers: 'Private alternative front end to YouTube.',
         note: 'Front end only; depends on YouTube.',
       },
@@ -364,6 +370,7 @@ export const PRODUCTS = [
         name: 'FreeTube / NewPipe',
         license: 'AGPL-3.0 / GPL-3.0',
         url: 'https://freetubeapp.io/',
+        repo: 'https://github.com/FreeTubeApp/FreeTube',
         covers: 'Desktop and Android YouTube clients.',
         note: 'Clients, not platforms.',
       },
@@ -418,6 +425,7 @@ export const PRODUCTS = [
         name: 'Kubernetes',
         license: 'Apache-2.0',
         url: 'https://kubernetes.io/',
+        repo: 'https://github.com/kubernetes/kubernetes',
         covers: 'Container platform layer of a modern private cloud.',
         note: 'Layer, not a full cloud.',
       },
@@ -451,6 +459,7 @@ export const PRODUCTS = [
         name: 'Supabase',
         license: 'Apache-2.0',
         url: 'https://supabase.com/',
+        repo: 'https://github.com/supabase/supabase',
         covers: 'Postgres-based backend with auth, storage, realtime, functions.',
         note: 'Closest drop-in in scope.',
       },
@@ -465,6 +474,7 @@ export const PRODUCTS = [
         name: 'PocketBase',
         license: 'MIT',
         url: 'https://pocketbase.io/',
+        repo: 'https://github.com/pocketbase/pocketbase',
         covers: 'Single-binary backend with realtime and auth.',
         note: 'Small and embeddable.',
       },
@@ -511,6 +521,7 @@ export const PRODUCTS = [
         name: 'PyTorch',
         license: 'BSD-3-Clause',
         url: 'https://pytorch.org/',
+        repo: 'https://github.com/pytorch/pytorch',
         covers: 'Open framework and the dominant research ecosystem.',
         note: 'Independent open alternative.',
       },
@@ -550,6 +561,7 @@ export const PRODUCTS = [
         name: 'Nextcloud',
         license: 'AGPL-3.0',
         url: 'https://nextcloud.com/',
+        repo: 'https://github.com/nextcloud/server',
         covers: 'File sync/share plus an office suite, calendar, talk, chat.',
         note: 'The broadest self-hosted suite.',
       },
@@ -578,6 +590,7 @@ export const PRODUCTS = [
         name: 'Seafile',
         license: 'AGPL-3.0',
         url: 'https://www.seafile.com/',
+        repo: 'https://github.com/haiwen/seafile',
         covers: 'File sync with reliable clients.',
         note: 'Sync-focused.',
       },
@@ -632,7 +645,7 @@ export const PRODUCTS = [
     ],
     gap: 'Interface Builder, the GUI debugger and Instruments have no open equivalent; C, C++ and Xcode-only tooling remain macOS/Apple-bound.',
     verdict:
-      'Partial. The compiler and a build toolchain are open source; the full IDE is pending to open-source.',
+      'Partial. The Swift compiler and build toolchain are open source; no complete open-source equivalent to the full IDE is verified.',
     sources: [
       'https://github.com/xtool-org/xtool',
       'https://forums.swift.org/t/xtool-cross-platform-xcode-replacement-build-ios-apps-on-linux-and-more/79803',
@@ -671,7 +684,7 @@ export const PRODUCTS = [
       },
     ],
     gap: 'No open-source project reimplements iOS; mobile Linux is an adjacent platform and does not run iOS software or hardware.',
-    verdict: 'Pending to open-source. No verified open-source alternative to iOS itself.',
+    verdict: 'No open-source alternative to iOS itself has been verified in this catalog.',
     sources: [
       'https://itsfoss.com/open-source-alternatives-android/',
       'https://postmarketos.org/',
@@ -717,7 +730,7 @@ export const PRODUCTS = [
       },
     ],
     gap: 'The open Darwin core is not a usable desktop; no project reimplements macOS’s proprietary layers.',
-    verdict: 'Pending to open-source. Linux/BSD are alternatives by displacement, not open-source macOS builds.',
+    verdict: 'No like-for-like open-source macOS project is verified; Linux and BSD are alternative operating systems, not macOS builds.',
     sources: [
       'https://european-alternatives.eu/alternative-to/macos',
       'https://www.pcmag.com/picks/windows-vs-macos-vs-chrome-os-vs-linux-ultimate-operating-system-showdown',
@@ -764,7 +777,7 @@ export const PRODUCTS = [
     ],
     gap: 'Safari’s UI, Apple-platform integrations and some DRM/media modules are proprietary; only the engine is open.',
     verdict:
-      'Partial. The engine is open source and open WebKit browsers exist; the Safari product itself is pending to open-source.',
+      'Partial. The WebKit engine and open WebKit browsers exist, but no verified open-source project covers all of Safari’s product features and Apple-platform integrations.',
     sources: [
       'https://webkit.org/licensing-webkit/',
       'https://en.wikipedia.org/wiki/WebKit',
@@ -1057,7 +1070,7 @@ export const PRODUCTS = [
     ],
     gap: 'The hardware has no open equivalent, and the visionOS platform is closed; open stacks sit at the runtime/standard layer.',
     verdict:
-      'Partial. The software stack has open components (Monado, OpenXR); the hardware and visionOS are pending to open-source.',
+      'Partial. Open components such as Monado and OpenXR cover parts of the software stack; no equivalent hardware and operating-system combination is verified.',
     sources: [
       'https://monado.dev/',
       'https://news.ycombinator.com/item?id=43768421',
@@ -1418,6 +1431,7 @@ export const PRODUCTS = [
         name: 'Kubernetes',
         license: 'Apache-2.0',
         url: 'https://kubernetes.io/',
+        repo: 'https://github.com/kubernetes/kubernetes',
         covers: 'The dominant open container orchestrator.',
         note: 'Broader and more complex than ECS.',
       },
@@ -1602,7 +1616,7 @@ export const PRODUCTS = [
     ],
     gap: 'Prime is a commercial membership over Amazon’s logistics; there is no open-source software equivalent, and the value is the network, not code.',
     verdict:
-      'Pending to open-source. No open-source alternative exists or is meaningful — the product is a commercial subscription and its moat is logistics.',
+      'No open-source software equivalent to the Prime membership and logistics network is verified; assess the individual user jobs, such as shipping or media, separately.',
     sources: [
       'https://www.kiplinger.com/personal-finance/shopping/online-shopping/604366/alternatives-to-amazon-prime-for-free-shipping-and',
       'https://www.wired.com/story/amazon-prime-alternatives/',
@@ -1639,6 +1653,7 @@ export const PRODUCTS = [
         name: 'PeerTube',
         license: 'AGPL-3.0',
         url: 'https://joinpeertube.org/',
+        repo: 'https://github.com/framasoft/peertube',
         covers: 'Federated video hosting/streaming.',
         note: 'Platform-level alternative.',
       },
@@ -1769,6 +1784,7 @@ export const PRODUCTS = [
         name: 'Ollama',
         license: 'MIT',
         url: 'https://ollama.com/',
+        repo: 'https://github.com/ollama/ollama',
         covers: 'Local runner for open weights.',
         note: 'Runtime, not a model.',
       },
@@ -1782,4 +1798,1541 @@ export const PRODUCTS = [
       'https://onyx.app/insights/best-open-source-llms-2026',
     ],
   },
+  {
+    "id": "google-drive",
+    "company_id": "google",
+    "name": "Google Drive",
+    "product_type": "storage",
+    "categories": [
+      "cloud-storage",
+      "file-sync"
+    ],
+    "official_url": "https://drive.google.com/",
+    "status": "partial",
+    "summary": "Google Drive is Google's cloud storage and file-sync platform, bundled with Google Workspace and tied to its online editors.",
+    "capabilities": [
+      "Cloud file storage and sync",
+      "Sharing and permissions",
+      "Integration with Google Workspace editors"
+    ],
+    "alternatives": [
+      {
+        "name": "Nextcloud",
+        "license": "AGPL-3.0",
+        "url": "https://nextcloud.com/",
+        "covers": "Self-hosted files, sync and sharing server.",
+        "note": "Files only; not the collaborative editors."
+      }
+    ],
+    "gap": "Nextcloud covers storage, sync and sharing; the real-time collaborative editors and Workspace integration remain the gap.",
+    "verdict": "Partial. A mature self-hosted alternative exists for storage and sync (Nextcloud); collaborative editing is covered only in part.",
+    "sources": [
+      "https://nextcloud.com/",
+      "https://en.wikipedia.org/wiki/Google_Drive"
+    ]
+  },
+  {
+    "id": "google-docs",
+    "company_id": "google",
+    "name": "Google Docs",
+    "product_type": "productivity_application",
+    "categories": [
+      "documents",
+      "collaboration"
+    ],
+    "official_url": "https://docs.google.com/",
+    "status": "partial",
+    "summary": "Google Docs is Google's browser-based collaborative word processor, part of Google Workspace.",
+    "capabilities": [
+      "Browser-based document editing",
+      "Real-time co-authoring and comments",
+      "Cloud storage and sharing"
+    ],
+    "alternatives": [
+      {
+        "name": "ONLYOFFICE Docs",
+        "license": "AGPL-3.0",
+        "url": "https://www.onlyoffice.com/",
+        "covers": "Self-hosted collaborative document editor.",
+        "note": "Community edition is self-hostable."
+      },
+      {
+        "name": "Collabora Online",
+        "license": "MPL-2.0",
+        "url": "https://www.collaboraonline.com/",
+        "covers": "LibreOffice-based collaborative suite in the browser.",
+        "note": ""
+      }
+    ],
+    "gap": "Self-hosted collaborative editors exist (ONLYOFFICE, Collabora) but lack Google's ecosystem integration and mainstream adoption.",
+    "verdict": "Partial. Self-hosted collaborative editors exist and are usable today; ecosystem polish and integrations lag Google.",
+    "sources": [
+      "https://www.onlyoffice.com/",
+      "https://www.collaboraonline.com/"
+    ]
+  },
+  {
+    "id": "google-sheets",
+    "company_id": "google",
+    "name": "Google Sheets",
+    "product_type": "productivity_application",
+    "categories": [
+      "spreadsheets",
+      "collaboration"
+    ],
+    "official_url": "https://sheets.google.com/",
+    "status": "partial",
+    "summary": "Google Sheets is Google's browser-based collaborative spreadsheet application.",
+    "capabilities": [
+      "Browser-based spreadsheet editing",
+      "Real-time co-authoring",
+      "Formulas, charts and pivot tables"
+    ],
+    "alternatives": [
+      {
+        "name": "Grist",
+        "license": "Apache-2.0",
+        "url": "https://www.getgrist.com/",
+        "covers": "Relational spreadsheet, self-hostable.",
+        "note": ""
+      },
+      {
+        "name": "ONLYOFFICE Docs",
+        "license": "AGPL-3.0",
+        "url": "https://www.onlyoffice.com/",
+        "covers": "Collaborative spreadsheet editor.",
+        "note": ""
+      }
+    ],
+    "gap": "Self-hosted spreadsheet editors exist; performance at scale and the add-on ecosystem differ from Google Sheets.",
+    "verdict": "Partial. Self-hosted collaborative spreadsheets exist (Grist, ONLYOFFICE); parity with Sheets at scale is partial.",
+    "sources": [
+      "https://www.getgrist.com/",
+      "https://www.onlyoffice.com/"
+    ]
+  },
+  {
+    "id": "google-meet",
+    "company_id": "google",
+    "name": "Google Meet",
+    "product_type": "consumer_application",
+    "categories": [
+      "video-conferencing"
+    ],
+    "official_url": "https://meet.google.com/",
+    "status": "available",
+    "summary": "Google Meet is Google's browser-based video conferencing service.",
+    "capabilities": [
+      "Browser-based video meetings",
+      "Screen sharing and recording (paid tiers)",
+      "Calendar integration"
+    ],
+    "alternatives": [
+      {
+        "name": "Jitsi Meet",
+        "license": "Apache-2.0",
+        "url": "https://jitsi.org/",
+        "covers": "Self-hosted video conferencing with no account required.",
+        "note": "Mature; deployed at scale."
+      }
+    ],
+    "gap": "Core video conferencing is fully covered by Jitsi Meet; the remaining gaps are polish, scale guarantees and Workspace integration.",
+    "verdict": "Available. Jitsi Meet covers the core function, is mature and self-hostable.",
+    "sources": [
+      "https://jitsi.org/",
+      "https://en.wikipedia.org/wiki/Google_Meet"
+    ]
+  },
+  {
+    "id": "google-calendar",
+    "company_id": "google",
+    "name": "Google Calendar",
+    "product_type": "productivity_application",
+    "categories": [
+      "calendar",
+      "scheduling"
+    ],
+    "official_url": "https://calendar.google.com/",
+    "status": "available",
+    "summary": "Google Calendar is Google's calendar and scheduling service.",
+    "capabilities": [
+      "Web calendar with sharing",
+      "Invitations and scheduling",
+      "CalDAV sync"
+    ],
+    "alternatives": [
+      {
+        "name": "Nextcloud Calendar",
+        "license": "AGPL-3.0",
+        "url": "https://nextcloud.com/calendar/",
+        "covers": "Calendar server and web UI on CalDAV.",
+        "note": ""
+      },
+      {
+        "name": "Radicale",
+        "license": "GPL-3.0",
+        "url": "https://radicale.org/",
+        "covers": "Lightweight CalDAV/CardDAV server.",
+        "note": ""
+      }
+    ],
+    "gap": "Open calendaring is a solved problem via CalDAV; the missing pieces are Google's appointment-booking UX and integrations.",
+    "verdict": "Available. Open calendaring is mature (Nextcloud Calendar, Radicale) via the CalDAV standard.",
+    "sources": [
+      "https://radicale.org/",
+      "https://nextcloud.com/calendar/"
+    ]
+  },
+  {
+    "id": "google-photos",
+    "company_id": "google",
+    "name": "Google Photos",
+    "product_type": "consumer_application",
+    "categories": [
+      "photo-management",
+      "backup"
+    ],
+    "official_url": "https://photos.google.com/",
+    "status": "partial",
+    "summary": "Google Photos is Google's photo and video backup, organization and sharing service.",
+    "capabilities": [
+      "Automatic backup from devices",
+      "Search and organization",
+      "Sharing and albums"
+    ],
+    "alternatives": [
+      {
+        "name": "Immich",
+        "license": "AGPL-3.0",
+        "url": "https://immich.app/",
+        "covers": "Self-hosted photo and video backup with mobile apps.",
+        "note": "Fast-moving; verify parity per release."
+      }
+    ],
+    "gap": "Immich covers backup, albums and search well; ML-powered search quality and unlimited-scale economics remain Google's edge.",
+    "verdict": "Partial. A strong self-hosted alternative exists (Immich); search quality and mobile polish approach but do not match Google Photos.",
+    "sources": [
+      "https://immich.app/",
+      "https://en.wikipedia.org/wiki/Google_Photos"
+    ]
+  },
+  {
+    "id": "google-news",
+    "company_id": "google",
+    "name": "Google News",
+    "product_type": "media",
+    "categories": [
+      "news-aggregation"
+    ],
+    "official_url": "https://news.google.com/",
+    "status": "available",
+    "summary": "Google News is Google's news aggregation and personalization service.",
+    "capabilities": [
+      "Aggregation across publishers",
+      "Personalized feed",
+      "Alerts and follow topics"
+    ],
+    "alternatives": [
+      {
+        "name": "FreshRSS",
+        "license": "AGPL-3.0",
+        "url": "https://freshrss.org/",
+        "covers": "Self-hosted RSS aggregator with a Google Reader-like UI.",
+        "note": ""
+      },
+      {
+        "name": "Miniflux",
+        "license": "AGPL-3.0",
+        "url": "https://miniflux.net/",
+        "covers": "Minimalist RSS server.",
+        "note": ""
+      }
+    ],
+    "gap": "RSS covers following sources; Google's editorial ranking and personalization have no equivalent.",
+    "verdict": "Available for the core job (following sources): FreshRSS is a mature self-hosted news aggregator. The personalized ranking layer is not replicated.",
+    "sources": [
+      "https://freshrss.org/",
+      "https://miniflux.net/"
+    ]
+  },
+  {
+    "id": "google-play",
+    "company_id": "google",
+    "name": "Google Play",
+    "product_type": "consumer_application",
+    "categories": [
+      "app-store"
+    ],
+    "official_url": "https://play.google.com/",
+    "status": "partial",
+    "summary": "Google Play is Google's app store and digital distribution service for Android.",
+    "capabilities": [
+      "App discovery and distribution",
+      "Automatic updates",
+      "Billing"
+    ],
+    "alternatives": [
+      {
+        "name": "F-Droid",
+        "license": "GPL-3.0",
+        "url": "https://f-droid.org/",
+        "covers": "Catalogue of free and open-source Android apps.",
+        "note": "Covers FOSS apps only."
+      }
+    ],
+    "gap": "F-Droid covers open-source app distribution; the commercial catalogue, billing and DRM are structurally not replicated.",
+    "verdict": "Partial. Open-source distribution exists (F-Droid) but covers only FOSS apps, with no paid catalogue.",
+    "sources": [
+      "https://f-droid.org/",
+      "https://en.wikipedia.org/wiki/Google_Play"
+    ]
+  },
+  {
+    "id": "google-analytics",
+    "company_id": "google",
+    "name": "Google Analytics",
+    "product_type": "business_software",
+    "categories": [
+      "web-analytics"
+    ],
+    "official_url": "https://analytics.google.com/",
+    "status": "available",
+    "summary": "Google Analytics is Google's web and product analytics platform.",
+    "capabilities": [
+      "Traffic and audience analytics",
+      "Conversion tracking",
+      "Reporting"
+    ],
+    "alternatives": [
+      {
+        "name": "Matomo",
+        "license": "GPL-3.0",
+        "url": "https://matomo.org/",
+        "covers": "Self-hosted web analytics with full data ownership.",
+        "note": "Mature; 15+ years."
+      },
+      {
+        "name": "Plausible",
+        "license": "AGPL-3.0",
+        "url": "https://plausible.io/",
+        "covers": "Lightweight, privacy-first analytics.",
+        "note": "Self-hostable community edition."
+      }
+    ],
+    "gap": "Web analytics is one of the strongest open-source categories; the core need is fully covered.",
+    "verdict": "Available. Self-hosted analytics is mature (Matomo, Plausible, Umami).",
+    "sources": [
+      "https://matomo.org/",
+      "https://plausible.io/"
+    ]
+  },
+  {
+    "id": "google-classroom",
+    "company_id": "google",
+    "name": "Google Classroom",
+    "product_type": "business_software",
+    "categories": [
+      "education",
+      "learning-management"
+    ],
+    "official_url": "https://classroom.google.com/",
+    "status": "available",
+    "summary": "Google Classroom is Google's education and assignment-management platform for schools.",
+    "capabilities": [
+      "Assignment distribution and grading",
+      "Class streams and announcements",
+      "Workspace integration"
+    ],
+    "alternatives": [
+      {
+        "name": "Moodle",
+        "license": "GPL-3.0",
+        "url": "https://moodle.org/",
+        "covers": "Mature open-source learning management system.",
+        "note": "Self-hosted; large community."
+      },
+      {
+        "name": "Canvas LMS",
+        "license": "AGPL-3.0",
+        "url": "https://www.instructure.com/canvas",
+        "covers": "Open-source LMS used by institutions.",
+        "note": ""
+      }
+    ],
+    "gap": "Mature LMS platforms go far beyond Classroom; the gap is Google's Workspace integration, not features.",
+    "verdict": "Available. Moodle and Canvas are established open-source LMS platforms with large deployments.",
+    "sources": [
+      "https://moodle.org/",
+      "https://en.wikipedia.org/wiki/Google_Classroom"
+    ]
+  },
+  {
+    "id": "google-ads",
+    "company_id": "google",
+    "name": "Google Ads",
+    "product_type": "advertising_technology",
+    "categories": [
+      "advertising"
+    ],
+    "official_url": "https://ads.google.com/",
+    "status": "pending",
+    "summary": "Google Ads is Google's online advertising platform for search, display and video campaigns.",
+    "capabilities": [
+      "Search and display ad buying",
+      "Targeting and bidding",
+      "Campaign analytics"
+    ],
+    "alternatives": [],
+    "gap": "The core product is a marketplace, not just software: advertiser demand, publisher inventory and the ad auction have no open-source equivalent. Self-hosted ad servers cover only serving.",
+    "verdict": "No verified alternative. No open-source project replicates the ads marketplace; only ad serving is open (Revive Adserver).",
+    "sources": [
+      "https://www.revive-adserver.com/",
+      "https://en.wikipedia.org/wiki/Google_Ads"
+    ]
+  },
+  {
+    "id": "youtube-music",
+    "company_id": "google",
+    "name": "YouTube Music",
+    "product_type": "media_streaming",
+    "categories": [
+      "music-streaming"
+    ],
+    "official_url": "https://music.youtube.com/",
+    "status": "partial",
+    "summary": "YouTube Music is Google's music streaming service, successor to Google Play Music.",
+    "capabilities": [
+      "On-demand streaming of a licensed catalogue",
+      "Personalized recommendations",
+      "Library uploads"
+    ],
+    "alternatives": [
+      {
+        "name": "Navidrome",
+        "license": "GPL-3.0",
+        "url": "https://www.navidrome.org/",
+        "covers": "Self-hosted music streaming server for your own library.",
+        "note": ""
+      },
+      {
+        "name": "Funkwhale",
+        "license": "AGPL-3.0",
+        "url": "https://funkwhale.audio/",
+        "covers": "Self-hosted music sharing and streaming.",
+        "note": ""
+      }
+    ],
+    "gap": "Self-hosted servers stream a library you own; the licensed catalogue and recommendation engine are not replicable in open source.",
+    "verdict": "Partial. Streaming your own library is solved (Navidrome, Funkwhale); the licensed catalogue is not.",
+    "sources": [
+      "https://www.navidrome.org/",
+      "https://funkwhale.audio/"
+    ]
+  },
+  {
+    "id": "google-cloud-storage",
+    "company_id": "google",
+    "name": "Google Cloud Storage",
+    "product_type": "storage",
+    "categories": [
+      "object-storage"
+    ],
+    "official_url": "https://cloud.google.com/storage",
+    "status": "available",
+    "summary": "Google Cloud Storage is Google Cloud's object storage service.",
+    "capabilities": [
+      "Managed object storage",
+      "S3-compatible API",
+      "Lifecycle and retention"
+    ],
+    "alternatives": [
+      {
+        "name": "MinIO",
+        "license": "AGPL-3.0",
+        "url": "https://min.io/",
+        "covers": "S3-compatible object storage, self-hostable.",
+        "note": ""
+      },
+      {
+        "name": "Ceph RADOS Gateway",
+        "license": "LGPL-2.1",
+        "url": "https://ceph.io/",
+        "covers": "Distributed object store with an S3 API.",
+        "note": ""
+      }
+    ],
+    "gap": "S3-compatible object storage is fully covered by self-hosted options; the gap is operations, not software.",
+    "verdict": "Available. MinIO and Ceph provide production-grade S3-compatible object storage.",
+    "sources": [
+      "https://min.io/",
+      "https://ceph.io/"
+    ]
+  },
+  {
+    "id": "google-pubsub",
+    "company_id": "google",
+    "name": "Pub/Sub",
+    "product_type": "messaging",
+    "categories": [
+      "messaging",
+      "event-streaming"
+    ],
+    "official_url": "https://cloud.google.com/pubsub",
+    "status": "available",
+    "summary": "Pub/Sub is Google Cloud's managed messaging and event-streaming service.",
+    "capabilities": [
+      "Pub/sub messaging at scale",
+      "Delivery guarantees",
+      "Schema support"
+    ],
+    "alternatives": [
+      {
+        "name": "NATS",
+        "license": "Apache-2.0",
+        "url": "https://nats.io/",
+        "covers": "High-performance messaging with JetStream persistence.",
+        "note": ""
+      },
+      {
+        "name": "Apache Kafka",
+        "license": "Apache-2.0",
+        "url": "https://kafka.apache.org/",
+        "covers": "Distributed event streaming platform.",
+        "note": ""
+      }
+    ],
+    "gap": "Messaging is a mature open-source category; the gap is Google's managed operations, not the technology.",
+    "verdict": "Available. NATS and Kafka cover pub/sub and event streaming fully.",
+    "sources": [
+      "https://nats.io/",
+      "https://kafka.apache.org/"
+    ]
+  },
+  {
+    "id": "apple-iphone",
+    "company_id": "apple",
+    "name": "iPhone",
+    "product_type": "hardware",
+    "categories": [
+      "smartphone"
+    ],
+    "official_url": "https://www.apple.com/iphone/",
+    "status": "partial",
+    "summary": "The iPhone is Apple's smartphone line, running iOS.",
+    "capabilities": [
+      "Smartphone hardware with Apple Silicon",
+      "iOS operating system",
+      "App distribution via the App Store"
+    ],
+    "alternatives": [
+      {
+        "name": "Android Open Source Project",
+        "license": "Apache-2.0",
+        "url": "https://source.android.com/",
+        "covers": "The open-source Android operating system.",
+        "note": "The OS is open; devices are not."
+      }
+    ],
+    "gap": "The software stack (AOSP, LineageOS, GrapheneOS) is open and mature; open hardware at comparable quality does not exist.",
+    "verdict": "Partial. Open phone operating systems exist; open smartphone hardware remains a research gap.",
+    "sources": [
+      "https://source.android.com/",
+      "https://grapheneos.org/"
+    ]
+  },
+  {
+    "id": "apple-ipad",
+    "company_id": "apple",
+    "name": "iPad",
+    "product_type": "hardware",
+    "categories": [
+      "tablet"
+    ],
+    "official_url": "https://www.apple.com/ipad/",
+    "status": "partial",
+    "summary": "The iPad is Apple's tablet line, running iPadOS.",
+    "capabilities": [
+      "Tablet hardware with Pencil support",
+      "iPadOS",
+      "App ecosystem"
+    ],
+    "alternatives": [
+      {
+        "name": "Android Open Source Project",
+        "license": "Apache-2.0",
+        "url": "https://source.android.com/",
+        "covers": "Open-source Android, also built for tablets.",
+        "note": "OS layer only."
+      }
+    ],
+    "gap": "Open tablet software exists (Android/AOSP on supported devices); open tablet hardware does not.",
+    "verdict": "Partial. The OS layer is replaceable (AOSP); the hardware is not.",
+    "sources": [
+      "https://source.android.com/",
+      "https://en.wikipedia.org/wiki/IPad"
+    ]
+  },
+  {
+    "id": "apple-watch",
+    "company_id": "apple",
+    "name": "Apple Watch",
+    "product_type": "hardware",
+    "categories": [
+      "wearable"
+    ],
+    "official_url": "https://www.apple.com/watch/",
+    "status": "partial",
+    "summary": "Apple Watch is Apple's smartwatch line, running watchOS.",
+    "capabilities": [
+      "Health and fitness tracking",
+      "Notifications and apps",
+      "Deep iPhone integration"
+    ],
+    "alternatives": [
+      {
+        "name": "AsteroidOS",
+        "license": "LGPL-2.1",
+        "url": "https://asteroidos.org/",
+        "covers": "Open-source watch OS for selected smartwatches.",
+        "note": "Runs on a small hardware list."
+      },
+      {
+        "name": "InfiniTime",
+        "license": "AGPL-3.0",
+        "url": "https://github.com/InfiniTimeOrg/InfiniTime",
+        "covers": "Open firmware for PineTime-class watches.",
+        "note": ""
+      }
+    ],
+    "gap": "Watch firmware is open for a few devices (AsteroidOS, InfiniTime); comparable open hardware with health sensors does not exist.",
+    "verdict": "Partial. Open watch firmware exists for selected hardware only.",
+    "sources": [
+      "https://asteroidos.org/",
+      "https://github.com/InfiniTimeOrg/InfiniTime"
+    ]
+  },
+  {
+    "id": "apple-icloud",
+    "company_id": "apple",
+    "name": "iCloud",
+    "product_type": "storage",
+    "categories": [
+      "cloud-storage",
+      "sync",
+      "backup"
+    ],
+    "official_url": "https://www.icloud.com/",
+    "status": "partial",
+    "summary": "iCloud is Apple's cloud service for storage, sync and backup across Apple devices.",
+    "capabilities": [
+      "Device backup and restore",
+      "Cross-device sync",
+      "Photos, calendar, contacts and notes"
+    ],
+    "alternatives": [
+      {
+        "name": "Nextcloud",
+        "license": "AGPL-3.0",
+        "url": "https://nextcloud.com/",
+        "covers": "Self-hosted files, calendar, contacts and sync.",
+        "note": ""
+      }
+    ],
+    "gap": "Nextcloud covers files, sync and PIM; full iOS device backup and Apple's device-level integration have no self-hosted equivalent.",
+    "verdict": "Partial. Sync and files are self-hostable (Nextcloud); device-level backup remains proprietary.",
+    "sources": [
+      "https://nextcloud.com/",
+      "https://en.wikipedia.org/wiki/ICloud"
+    ]
+  },
+  {
+    "id": "apple-messages",
+    "company_id": "apple",
+    "name": "Messages (iMessage)",
+    "product_type": "messaging",
+    "categories": [
+      "messaging"
+    ],
+    "official_url": "https://www.apple.com/messages/",
+    "status": "pending",
+    "summary": "Messages is Apple's messaging app; iMessage is its proprietary messaging network.",
+    "capabilities": [
+      "Rich messaging over Apple's network",
+      "End-to-end encryption",
+      "Sync across Apple devices"
+    ],
+    "alternatives": [
+      {
+        "name": "Matrix (Synapse)",
+        "license": "Apache-2.0",
+        "url": "https://matrix.org/",
+        "covers": "Open federated messaging network.",
+        "note": "Does not interoperate with iMessage."
+      }
+    ],
+    "gap": "No open network interoperates with iMessage; open alternatives replace the need, not the network.",
+    "verdict": "No verified alternative. Open messaging networks exist (Matrix, XMPP) but none interoperate with iMessage.",
+    "sources": [
+      "https://matrix.org/",
+      "https://en.wikipedia.org/wiki/IMessage"
+    ]
+  },
+  {
+    "id": "apple-facetime",
+    "company_id": "apple",
+    "name": "FaceTime",
+    "product_type": "messaging",
+    "categories": [
+      "video-calling"
+    ],
+    "official_url": "https://www.apple.com/facetime/",
+    "status": "partial",
+    "summary": "FaceTime is Apple's video and audio calling service.",
+    "capabilities": [
+      "One-tap video calls",
+      "Group calls",
+      "Integration with Contacts and Siri"
+    ],
+    "alternatives": [
+      {
+        "name": "Jitsi Meet",
+        "license": "Apache-2.0",
+        "url": "https://jitsi.org/",
+        "covers": "Self-hosted video calls in the browser.",
+        "note": ""
+      }
+    ],
+    "gap": "Video calling is fully covered by open-source (Jitsi, Matrix); the gap is Apple's network and one-tap integration.",
+    "verdict": "Partial. The function is covered (Jitsi Meet); Apple's network effects are not.",
+    "sources": [
+      "https://jitsi.org/",
+      "https://en.wikipedia.org/wiki/FaceTime"
+    ]
+  },
+  {
+    "id": "apple-siri",
+    "company_id": "apple",
+    "name": "Siri",
+    "product_type": "ai_application",
+    "categories": [
+      "voice-assistant"
+    ],
+    "official_url": "https://www.apple.com/siri/",
+    "status": "partial",
+    "summary": "Siri is Apple's voice assistant, built into iOS, macOS, HomePod and other devices.",
+    "capabilities": [
+      "Voice requests on device",
+      "Home automation control",
+      "App intents"
+    ],
+    "alternatives": [
+      {
+        "name": "OpenVoiceOS",
+        "license": "Apache-2.0",
+        "url": "https://openvoiceos.org/",
+        "covers": "Open-source voice assistant platform (Mycroft successor).",
+        "note": "Community-run."
+      },
+      {
+        "name": "Home Assistant Voice",
+        "license": "Apache-2.0",
+        "url": "https://www.home-assistant.io/voice/",
+        "covers": "Local voice assistant for the smart home.",
+        "note": ""
+      }
+    ],
+    "gap": "Open voice stacks exist (OpenVoiceOS, Home Assistant voice); capability, on-device models and device reach lag Apple.",
+    "verdict": "Partial. Open assistants exist; capability and integration depth lag.",
+    "sources": [
+      "https://openvoiceos.org/",
+      "https://www.home-assistant.io/voice/"
+    ]
+  },
+  {
+    "id": "apple-music",
+    "company_id": "apple",
+    "name": "Apple Music",
+    "product_type": "media_streaming",
+    "categories": [
+      "music-streaming"
+    ],
+    "official_url": "https://www.apple.com/apple-music/",
+    "status": "partial",
+    "summary": "Apple Music is Apple's music streaming service.",
+    "capabilities": [
+      "Licensed catalogue streaming",
+      "Personalized radio",
+      "Library matching and uploads"
+    ],
+    "alternatives": [
+      {
+        "name": "Navidrome",
+        "license": "GPL-3.0",
+        "url": "https://www.navidrome.org/",
+        "covers": "Self-hosted streaming for your own library.",
+        "note": ""
+      },
+      {
+        "name": "Funkwhale",
+        "license": "AGPL-3.0",
+        "url": "https://funkwhale.audio/",
+        "covers": "Self-hosted music sharing.",
+        "note": ""
+      }
+    ],
+    "gap": "Streaming your own library is self-hostable; the licensed catalogue is not replicable in open source.",
+    "verdict": "Partial. Self-hosted library streaming is mature (Navidrome, Funkwhale); the catalogue is not.",
+    "sources": [
+      "https://www.navidrome.org/",
+      "https://funkwhale.audio/"
+    ]
+  },
+  {
+    "id": "apple-pay",
+    "company_id": "apple",
+    "name": "Apple Pay",
+    "product_type": "consumer_application",
+    "categories": [
+      "payments"
+    ],
+    "official_url": "https://www.apple.com/apple-pay/",
+    "status": "pending",
+    "summary": "Apple Pay is Apple's contactless payment and wallet service.",
+    "capabilities": [
+      "NFC contactless payments",
+      "In-app and web checkout",
+      "Cards stored in Wallet"
+    ],
+    "alternatives": [],
+    "gap": "Payments sit on proprietary bank and card-network rails; no open-source project can replicate acceptance or tokenization.",
+    "verdict": "No verified alternative. The payment rails are closed; no open-source equivalent exists.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Apple_Pay"
+    ]
+  },
+  {
+    "id": "apple-passwords",
+    "company_id": "apple",
+    "name": "Passwords",
+    "product_type": "consumer_application",
+    "categories": [
+      "password-manager"
+    ],
+    "official_url": "https://support.apple.com/guide/iphone/passwords-iphf9219d8c9/ios",
+    "status": "available",
+    "summary": "Passwords is Apple's password manager, synced through iCloud Keychain.",
+    "capabilities": [
+      "Password storage and sync",
+      "Passkeys",
+      "Autofill across Apple devices"
+    ],
+    "alternatives": [
+      {
+        "name": "Bitwarden",
+        "license": "GPL-3.0",
+        "url": "https://bitwarden.com/",
+        "covers": "Open-source password manager with a self-hostable server.",
+        "note": "Clients GPL-3.0; server AGPL-3.0."
+      },
+      {
+        "name": "Vaultwarden",
+        "license": "AGPL-3.0",
+        "url": "https://github.com/dani-garcia/vaultwarden",
+        "covers": "Lightweight Bitwarden-compatible server.",
+        "note": ""
+      }
+    ],
+    "gap": "Password management is fully covered; cross-platform reach and self-hosted control are the open advantage.",
+    "verdict": "Available. Bitwarden (and self-hosted Vaultwarden) is a mature, cross-platform equivalent.",
+    "sources": [
+      "https://bitwarden.com/",
+      "https://github.com/dani-garcia/vaultwarden"
+    ]
+  },
+  {
+    "id": "aws-dynamodb",
+    "company_id": "amazon_aws",
+    "name": "DynamoDB",
+    "product_type": "database",
+    "categories": [
+      "nosql",
+      "key-value"
+    ],
+    "official_url": "https://aws.amazon.com/dynamodb/",
+    "status": "available",
+    "summary": "DynamoDB is AWS's managed key-value and document database.",
+    "capabilities": [
+      "Serverless NoSQL at any scale",
+      "Predictable single-digit-millisecond latency",
+      "On-demand backups and streams"
+    ],
+    "alternatives": [
+      {
+        "name": "Apache Cassandra",
+        "license": "Apache-2.0",
+        "url": "https://cassandra.apache.org/",
+        "covers": "Distributed wide-column store used at huge scale.",
+        "note": ""
+      },
+      {
+        "name": "ScyllaDB",
+        "license": "AGPL-3.0",
+        "url": "https://www.scylladb.com/",
+        "covers": "Cassandra-compatible NoSQL database in C++.",
+        "note": ""
+      }
+    ],
+    "gap": "Covered by mature distributed databases; the gap is the serverless operations model, not the data layer.",
+    "verdict": "Available. Cassandra and ScyllaDB cover the technology; the operations model differs.",
+    "sources": [
+      "https://cassandra.apache.org/",
+      "https://www.scylladb.com/"
+    ]
+  },
+  {
+    "id": "aws-cloudfront",
+    "company_id": "amazon_aws",
+    "name": "CloudFront",
+    "product_type": "networking",
+    "categories": [
+      "cdn"
+    ],
+    "official_url": "https://aws.amazon.com/cloudfront/",
+    "status": "available",
+    "summary": "CloudFront is AWS's content delivery network.",
+    "capabilities": [
+      "Global edge caching",
+      "TLS termination",
+      "Origin shielding"
+    ],
+    "alternatives": [
+      {
+        "name": "Apache Traffic Server",
+        "license": "Apache-2.0",
+        "url": "https://trafficserver.apache.org/",
+        "covers": "Battle-tested CDN-grade caching proxy.",
+        "note": ""
+      },
+      {
+        "name": "Nginx",
+        "license": "BSD-2-Clause",
+        "url": "https://nginx.org/",
+        "covers": "Reverse proxy and cache.",
+        "note": ""
+      }
+    ],
+    "gap": "The caching software is open and mature; the globally distributed edge footprint is infrastructure, not software.",
+    "verdict": "Available. Apache Traffic Server and Nginx power real CDNs; the PoP footprint is separate infrastructure.",
+    "sources": [
+      "https://trafficserver.apache.org/",
+      "https://nginx.org/"
+    ]
+  },
+  {
+    "id": "aws-elasticache",
+    "company_id": "amazon_aws",
+    "name": "ElastiCache",
+    "product_type": "database",
+    "categories": [
+      "cache"
+    ],
+    "official_url": "https://aws.amazon.com/elasticache/",
+    "status": "available",
+    "summary": "ElastiCache is AWS's managed Redis- and Memcached-compatible caching service.",
+    "capabilities": [
+      "Managed in-memory caching",
+      "Redis-compatible API",
+      "Cluster mode"
+    ],
+    "alternatives": [
+      {
+        "name": "Valkey",
+        "license": "BSD-3-Clause",
+        "url": "https://valkey.io/",
+        "covers": "Linux Foundation fork of Redis; in-memory data store.",
+        "note": "OSS alternative since the Redis licence change."
+      },
+      {
+        "name": "Memcached",
+        "license": "BSD-3-Clause",
+        "url": "https://memcached.org/",
+        "covers": "The classic in-memory cache.",
+        "note": ""
+      }
+    ],
+    "gap": "Fully covered by Valkey (Redis fork) and Memcached; the gap is operations, not software.",
+    "verdict": "Available. Valkey is the open successor to Redis OSS; Memcached is the other classic.",
+    "sources": [
+      "https://valkey.io/",
+      "https://memcached.org/"
+    ]
+  },
+  {
+    "id": "aws-sns",
+    "company_id": "amazon_aws",
+    "name": "Simple Notification Service (SNS)",
+    "product_type": "messaging",
+    "categories": [
+      "pubsub"
+    ],
+    "official_url": "https://aws.amazon.com/sns/",
+    "status": "available",
+    "summary": "SNS is AWS's managed pub/sub notification service.",
+    "capabilities": [
+      "Topic-based fan-out",
+      "Multiple delivery protocols",
+      "Serverless integration"
+    ],
+    "alternatives": [
+      {
+        "name": "NATS",
+        "license": "Apache-2.0",
+        "url": "https://nats.io/",
+        "covers": "Pub/sub with JetStream persistence.",
+        "note": ""
+      },
+      {
+        "name": "Apache Kafka",
+        "license": "Apache-2.0",
+        "url": "https://kafka.apache.org/",
+        "covers": "Distributed event streaming platform.",
+        "note": ""
+      }
+    ],
+    "gap": "Pub/sub is fully covered; AWS-specific integrations are the only gap.",
+    "verdict": "Available. NATS and Kafka cover pub/sub messaging.",
+    "sources": [
+      "https://nats.io/",
+      "https://kafka.apache.org/"
+    ]
+  },
+  {
+    "id": "aws-redshift",
+    "company_id": "amazon_aws",
+    "name": "Redshift",
+    "product_type": "database",
+    "categories": [
+      "data-warehouse"
+    ],
+    "official_url": "https://aws.amazon.com/redshift/",
+    "status": "available",
+    "summary": "Redshift is AWS's managed petabyte-scale data warehouse.",
+    "capabilities": [
+      "Columnar SQL analytics",
+      "Massively parallel processing",
+      "Lakehouse integration"
+    ],
+    "alternatives": [
+      {
+        "name": "ClickHouse",
+        "license": "Apache-2.0",
+        "url": "https://clickhouse.com/",
+        "covers": "Columnar OLAP database.",
+        "note": ""
+      },
+      {
+        "name": "Apache Druid",
+        "license": "Apache-2.0",
+        "url": "https://druid.apache.org/",
+        "covers": "Columnar real-time analytics database.",
+        "note": ""
+      }
+    ],
+    "gap": "Columnar analytics is mature in open source; the gap is managed operations and ecosystem, not capability.",
+    "verdict": "Available. ClickHouse and Druid are production columnar warehouses.",
+    "sources": [
+      "https://clickhouse.com/",
+      "https://druid.apache.org/"
+    ]
+  },
+  {
+    "id": "aws-bedrock",
+    "company_id": "amazon_aws",
+    "name": "Bedrock",
+    "product_type": "ai_application",
+    "categories": [
+      "llm-platform"
+    ],
+    "official_url": "https://aws.amazon.com/bedrock/",
+    "status": "partial",
+    "summary": "Bedrock is AWS's managed service for foundation models, hosted and via API.",
+    "capabilities": [
+      "Model API access",
+      "Managed fine-tuning",
+      "Guardrails and agents"
+    ],
+    "alternatives": [
+      {
+        "name": "Ollama",
+        "license": "MIT",
+        "url": "https://ollama.com/",
+        "covers": "Run open models locally.",
+        "note": ""
+      },
+      {
+        "name": "vLLM",
+        "license": "Apache-2.0",
+        "url": "https://docs.vllm.ai/",
+        "covers": "High-throughput LLM serving.",
+        "note": ""
+      }
+    ],
+    "gap": "Serving open models is solved (vLLM, Ollama); the proprietary model catalogue and managed guardrails are not.",
+    "verdict": "Partial. Open-model serving is mature; the proprietary catalogue is not replicable.",
+    "sources": [
+      "https://ollama.com/",
+      "https://docs.vllm.ai/"
+    ]
+  },
+  {
+    "id": "aws-ecr",
+    "company_id": "amazon_aws",
+    "name": "Elastic Container Registry (ECR)",
+    "product_type": "container_orchestration",
+    "categories": [
+      "container-registry"
+    ],
+    "official_url": "https://aws.amazon.com/ecr/",
+    "status": "available",
+    "summary": "ECR is AWS's managed container image registry.",
+    "capabilities": [
+      "OCI image storage",
+      "Vulnerability scanning",
+      "Cross-region replication"
+    ],
+    "alternatives": [
+      {
+        "name": "Harbor",
+        "license": "Apache-2.0",
+        "url": "https://goharbor.io/",
+        "covers": "Cloud-native registry with scanning and replication.",
+        "note": ""
+      },
+      {
+        "name": "Docker Distribution",
+        "license": "Apache-2.0",
+        "url": "https://distribution.github.io/distribution/",
+        "covers": "The reference OCI registry server.",
+        "note": ""
+      }
+    ],
+    "gap": "Registries are fully covered by open source (Harbor, Distribution); the gap is operations.",
+    "verdict": "Available. Harbor is a production-grade registry; Distribution is the reference server.",
+    "sources": [
+      "https://goharbor.io/",
+      "https://distribution.github.io/distribution/"
+    ]
+  },
+  {
+    "id": "aws-eventbridge",
+    "company_id": "amazon_aws",
+    "name": "EventBridge",
+    "product_type": "messaging",
+    "categories": [
+      "event-bus"
+    ],
+    "official_url": "https://aws.amazon.com/eventbridge/",
+    "status": "available",
+    "summary": "EventBridge is AWS's serverless event bus.",
+    "capabilities": [
+      "Event routing and filtering",
+      "Schema registry",
+      "SaaS event ingestion"
+    ],
+    "alternatives": [
+      {
+        "name": "NATS",
+        "license": "Apache-2.0",
+        "url": "https://nats.io/",
+        "covers": "Event routing with JetStream persistence.",
+        "note": ""
+      },
+      {
+        "name": "Apache Kafka",
+        "license": "Apache-2.0",
+        "url": "https://kafka.apache.org/",
+        "covers": "Event streaming backbone.",
+        "note": ""
+      }
+    ],
+    "gap": "Event routing is covered; the SaaS-partner event sources are AWS-specific.",
+    "verdict": "Available. NATS JetStream and Kafka cover event routing.",
+    "sources": [
+      "https://nats.io/",
+      "https://kafka.apache.org/"
+    ]
+  },
+  {
+    "id": "aws-sagemaker",
+    "company_id": "amazon_aws",
+    "name": "SageMaker",
+    "product_type": "data_platform",
+    "categories": [
+      "ml-platform"
+    ],
+    "official_url": "https://aws.amazon.com/sagemaker/",
+    "status": "partial",
+    "summary": "SageMaker is AWS's platform for building, training and deploying machine-learning models.",
+    "capabilities": [
+      "Managed notebooks",
+      "Training at scale",
+      "Model deployment endpoints"
+    ],
+    "alternatives": [
+      {
+        "name": "Kubeflow",
+        "license": "Apache-2.0",
+        "url": "https://www.kubeflow.org/",
+        "covers": "ML toolkit on Kubernetes.",
+        "note": ""
+      },
+      {
+        "name": "MLflow",
+        "license": "Apache-2.0",
+        "url": "https://mlflow.org/",
+        "covers": "Experiment tracking and model registry.",
+        "note": ""
+      }
+    ],
+    "gap": "Open ML platforms exist (Kubeflow, MLflow); the turnkey managed experience is the gap.",
+    "verdict": "Partial. Kubeflow and MLflow cover the workflow; integration polish differs.",
+    "sources": [
+      "https://www.kubeflow.org/",
+      "https://mlflow.org/"
+    ]
+  },
+  {
+    "id": "amazon-alexa",
+    "company_id": "amazon",
+    "name": "Alexa",
+    "product_type": "ai_application",
+    "categories": [
+      "voice-assistant",
+      "smart-home"
+    ],
+    "official_url": "https://developer.amazon.com/alexa",
+    "status": "partial",
+    "summary": "Alexa is Amazon's voice assistant and smart-home platform.",
+    "capabilities": [
+      "Wake word and voice requests",
+      "Smart-home control",
+      "Skills"
+    ],
+    "alternatives": [
+      {
+        "name": "OpenVoiceOS",
+        "license": "Apache-2.0",
+        "url": "https://openvoiceos.org/",
+        "covers": "Open voice assistant platform (Mycroft successor).",
+        "note": ""
+      },
+      {
+        "name": "Home Assistant Voice",
+        "license": "Apache-2.0",
+        "url": "https://www.home-assistant.io/voice/",
+        "covers": "Local voice assistant for the smart home.",
+        "note": ""
+      }
+    ],
+    "gap": "Open voice stacks exist; the device fleet, far-field hardware and skills ecosystem are Amazon's moat.",
+    "verdict": "Partial. OpenVoiceOS and Home Assistant cover local voice; ecosystem scale lags.",
+    "sources": [
+      "https://openvoiceos.org/",
+      "https://www.home-assistant.io/voice/"
+    ]
+  },
+  {
+    "id": "netflix-games",
+    "company_id": "netflix",
+    "name": "Netflix Games",
+    "product_type": "games",
+    "categories": [
+      "game-subscription"
+    ],
+    "official_url": "https://www.netflix.com/tudum/games",
+    "status": "pending",
+    "summary": "Netflix Games is Netflix's mobile-game offering bundled with the subscription.",
+    "capabilities": [
+      "Mobile games included with membership",
+      "Cloud streaming of titles",
+      "No ads or in-app purchases"
+    ],
+    "alternatives": [],
+    "gap": "Thousands of open-source games exist, but no project replicates a curated game subscription; the gap is curation, not technology.",
+    "verdict": "No verified alternative. No open-source equivalent of a game subscription exists; individual open games are abundant.",
+    "sources": [
+      "https://libregamewiki.org/",
+      "https://en.wikipedia.org/wiki/Netflix"
+    ]
+  },
+  {
+    "id": "netflix-kids",
+    "company_id": "netflix",
+    "name": "Netflix Kids",
+    "product_type": "media_streaming",
+    "categories": [
+      "kids-profiles"
+    ],
+    "official_url": "https://www.netflix.com/kids",
+    "status": "partial",
+    "summary": "Netflix Kids is Netflix's children's experience: a filtered catalogue and profiles for kids.",
+    "capabilities": [
+      "Kid-filtered catalogue",
+      "Age-appropriate profiles",
+      "Parental controls"
+    ],
+    "alternatives": [
+      {
+        "name": "Jellyfin",
+        "license": "GPL-2.0",
+        "url": "https://jellyfin.org/",
+        "covers": "Kids profiles and parental controls in a self-hosted media server.",
+        "note": ""
+      }
+    ],
+    "gap": "Jellyfin covers profiles and parental controls; the licensed children's catalogue is not replicable.",
+    "verdict": "Partial. The experience is self-hostable (Jellyfin) for content you own; the catalogue is licensed content.",
+    "sources": [
+      "https://jellyfin.org/",
+      "https://en.wikipedia.org/wiki/Netflix"
+    ]
+  },
+  {
+    "id": "netflix-profiles",
+    "company_id": "netflix",
+    "name": "Netflix Profiles",
+    "product_type": "consumer_application",
+    "categories": [
+      "profiles"
+    ],
+    "official_url": "https://www.netflix.com/",
+    "status": "partial",
+    "summary": "Netflix Profiles are per-viewer identities with separate watch history, lists and recommendations.",
+    "capabilities": [
+      "Per-viewer history and recommendations",
+      "Kids and standard profiles",
+      "Watch anywhere"
+    ],
+    "alternatives": [
+      {
+        "name": "Jellyfin",
+        "license": "GPL-2.0",
+        "url": "https://jellyfin.org/",
+        "covers": "Multi-user profiles in a self-hosted media server.",
+        "note": ""
+      }
+    ],
+    "gap": "Multi-user profiles are standard in self-hosted media servers; recommendation quality differs.",
+    "verdict": "Partial. Jellyfin provides per-user profiles; the recommender is not equivalent.",
+    "sources": [
+      "https://jellyfin.org/",
+      "https://en.wikipedia.org/wiki/Netflix"
+    ]
+  },
+  {
+    "id": "netflix-tudum",
+    "company_id": "netflix",
+    "name": "Tudum",
+    "product_type": "media",
+    "categories": [
+      "editorial"
+    ],
+    "official_url": "https://www.netflix.com/tudum",
+    "status": "pending",
+    "summary": "Tudum is Netflix's editorial publication covering shows, films and fandom.",
+    "capabilities": [
+      "Editorial articles and interviews",
+      "Companion content",
+      "Newsroom-style updates"
+    ],
+    "alternatives": [],
+    "gap": "Editorial content is journalism, not software; open CMSs can serve a publication, but the content itself is Netflix's.",
+    "verdict": "No verified alternative. Not a software-replication problem; open CMSs cover publishing, not content.",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Netflix"
+    ]
+  },
+  {
+    "id": "meta-instagram",
+    "company_id": "meta",
+    "name": "Instagram",
+    "product_type": "social_network",
+    "categories": [
+      "photo-sharing",
+      "social"
+    ],
+    "official_url": "https://www.instagram.com/",
+    "status": "partial",
+    "summary": "Instagram is Meta's photo- and video-sharing social network with Stories and Reels.",
+    "capabilities": [
+      "Photo and video sharing",
+      "Stories and Reels",
+      "Following and discovery feeds"
+    ],
+    "alternatives": [
+      {
+        "name": "Pixelfed",
+        "license": "AGPL-3.0",
+        "url": "https://pixelfed.org/",
+        "covers": "Federated image sharing on ActivityPub.",
+        "note": ""
+      }
+    ],
+    "gap": "Pixelfed covers image sharing on the fediverse; short-video feeds and network scale are not replicated.",
+    "verdict": "Partial. Pixelfed covers the core (photo sharing); Reels-scale video is not.",
+    "sources": [
+      "https://pixelfed.org/",
+      "https://en.wikipedia.org/wiki/Instagram"
+    ]
+  },
+  {
+    "id": "meta-facebook",
+    "company_id": "meta",
+    "name": "Facebook",
+    "product_type": "social_network",
+    "categories": [
+      "social-network"
+    ],
+    "official_url": "https://www.facebook.com/",
+    "status": "partial",
+    "summary": "Facebook is Meta's social network: profiles, groups, events, marketplace and pages.",
+    "capabilities": [
+      "Profiles and social graph",
+      "Groups and events",
+      "Marketplace and pages"
+    ],
+    "alternatives": [
+      {
+        "name": "Mastodon",
+        "license": "AGPL-3.0",
+        "url": "https://joinmastodon.org/",
+        "covers": "Federated social networking on ActivityPub.",
+        "note": "Covers microblogging, not the full surface."
+      },
+      {
+        "name": "Diaspora",
+        "license": "AGPL-3.0",
+        "url": "https://diasporafoundation.org/",
+        "covers": "Decentralized social network.",
+        "note": ""
+      }
+    ],
+    "gap": "Open federated networks cover social posting well; the breadth of groups, marketplace and events at global scale is not matched by any single project.",
+    "verdict": "Partial. Open networks (Mastodon, Diaspora) cover core social networking; no single project matches Facebook's breadth.",
+    "sources": [
+      "https://joinmastodon.org/",
+      "https://diasporafoundation.org/"
+    ]
+  },
+  {
+    "id": "meta-threads",
+    "company_id": "meta",
+    "name": "Threads",
+    "product_type": "social_network",
+    "categories": [
+      "microblogging"
+    ],
+    "official_url": "https://www.threads.net/",
+    "status": "available",
+    "summary": "Threads is Meta's text microblogging network.",
+    "capabilities": [
+      "Short-text posts and replies",
+      "Fediverse interconnection",
+      "Following feeds"
+    ],
+    "alternatives": [
+      {
+        "name": "Mastodon",
+        "license": "AGPL-3.0",
+        "url": "https://joinmastodon.org/",
+        "covers": "Mature ActivityPub microblogging platform.",
+        "note": "Threads and Mastodon can interoperate via ActivityPub."
+      }
+    ],
+    "gap": "Microblogging is fully covered by ActivityPub (Mastodon and others), which Threads itself can federate with.",
+    "verdict": "Available. Mastodon is a mature, self-hostable microblogging platform covering the core function.",
+    "sources": [
+      "https://joinmastodon.org/",
+      "https://en.wikipedia.org/wiki/Threads_(app)"
+    ]
+  },
+  {
+    "id": "amazon-kindle",
+    "company_id": "amazon",
+    "name": "Kindle",
+    "product_type": "hardware",
+    "categories": [
+      "e-reader",
+      "ebook-platform"
+    ],
+    "official_url": "https://www.amazon.com/kindle/",
+    "status": "partial",
+    "summary": "Kindle is Amazon's e-reader line and ebook platform.",
+    "capabilities": [
+      "E-ink reading hardware",
+      "Ebook store and sync",
+      "Reading apps across devices"
+    ],
+    "alternatives": [
+      {
+        "name": "KOReader",
+        "license": "AGPL-3.0",
+        "url": "https://github.com/koreader/koreader",
+        "covers": "Open e-reader application for e-ink devices.",
+        "note": "Runs on Kindle and Kobo hardware."
+      },
+      {
+        "name": "Calibre",
+        "license": "GPL-3.0",
+        "url": "https://calibre-ebook.com/",
+        "covers": "Ebook management, conversion and server.",
+        "note": ""
+      }
+    ],
+    "gap": "The reading software is open (KOReader, Calibre); the ebook store and the e-ink hardware are not.",
+    "verdict": "Partial. Open reading software exists and even runs on Kindle hardware; the store and devices are closed.",
+    "sources": [
+      "https://github.com/koreader/koreader",
+      "https://calibre-ebook.com/"
+    ]
+  },
+  {
+    "id": "amazon-luna",
+    "company_id": "amazon",
+    "name": "Luna",
+    "product_type": "games",
+    "categories": [
+      "cloud-gaming"
+    ],
+    "official_url": "https://luna.amazon.com/",
+    "status": "partial",
+    "summary": "Luna is Amazon's cloud gaming subscription service.",
+    "capabilities": [
+      "Cloud game streaming",
+      "Channel subscriptions",
+      "Controller and cross-device play"
+    ],
+    "alternatives": [
+      {
+        "name": "Sunshine",
+        "license": "GPL-3.0",
+        "url": "https://github.com/LizardByte/Sunshine",
+        "covers": "Self-hosted game streaming server.",
+        "note": "Streams your own hardware."
+      },
+      {
+        "name": "Moonlight",
+        "license": "GPL-3.0",
+        "url": "https://moonlight-stream.org/",
+        "covers": "Open game streaming client.",
+        "note": ""
+      }
+    ],
+    "gap": "Self-hosted game streaming works (Sunshine + Moonlight) but streams your own machine; no open project offers a cloud catalogue.",
+    "verdict": "Partial. The streaming technology is open and self-hostable; the cloud game catalogue is not replicable.",
+    "sources": [
+      "https://github.com/LizardByte/Sunshine",
+      "https://moonlight-stream.org/"
+    ]
+  }
 ];

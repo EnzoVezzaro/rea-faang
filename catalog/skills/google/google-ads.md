@@ -1,0 +1,142 @@
+---
+name: google-ads
+description: Coding-agent build skill for Google Ads (Google). Research the product, assess open-source projects, then build and verify it in the user's project. Alternative coverage is no verified alternative.
+---
+
+# Google Ads (`google-ads`)
+
+| | |
+|---|---|
+| **Company** | Google (`google`) |
+| **Product type** | `advertising_technology` |
+| **Categories** | `advertising` |
+| **Official URL** | https://ads.google.com/ |
+| **Alternative coverage** | **no verified alternative** |
+
+## Product description
+
+Google Ads is Google's online advertising platform for search, display and video campaigns.
+
+Catalog categories: advertising.
+
+Catalogued capability areas:
+- Search and display ad buying
+- Targeting and bidding
+- Campaign analytics
+
+This summary reflects the catalog record, not a complete product specification. Verify intended users, end-to-end workflows, supported platforms, edge cases, data handling, and constraints against cited sources. Treat capability labels as research leads until that verification is complete.
+
+## Core capabilities
+
+- Search and display ad buying
+- Targeting and bidding
+- Campaign analytics
+
+## Existing open source
+
+| Project | License | What it covers | Notes |
+|---|---|---|---|
+| — | — | _No open-source alternative verified._ | — |
+
+## Gap
+
+The core product is a marketplace, not just software: advertiser demand, publisher inventory and the ad auction have no open-source equivalent. Self-hosted ad servers cover only serving.
+
+## Verdict
+
+No verified alternative. No open-source project replicates the ads marketplace; only ad serving is open (Revive Adserver).
+
+## Product description and scope
+
+Google Ads is Google's online advertising platform for search, display and video campaigns.
+
+Catalog categories: advertising.
+
+Catalogued capability areas:
+- Search and display ad buying
+- Targeting and bidding
+- Campaign analytics
+
+This summary reflects the catalog record, not a complete product specification. Verify intended users, end-to-end workflows, supported platforms, edge cases, data handling, and constraints against cited sources. Treat capability labels as research leads until that verification is complete.
+
+## Coding-agent mission
+
+This is the product-specific coding-agent skill for **Google Ads**. Give this file to your coding agent in the project where you want the product built. The agent uses it to research the product, choose what to reuse, build an independent implementation and verify the result. Do not reproduce proprietary internals or claim blanket feature parity; turn product context and catalog capability labels into evidence-backed requirements.
+
+### Evidence to inspect first
+
+1. Read the product dossier with `rae research dossier google-ads` and review its research status (**pending**). When using the source repository, read `research/companies/google/products/google-ads.md`. A generated kit or successful metadata lookup does not prove that claims have been researched. Resolve placeholders and contradictions before implementation.
+2. Review the public web-surface observation if available. It records only an unauthenticated page, not internal architecture or authenticated behavior. Compare observations with cited official sources; do not infer private workflows from page appearance.
+3. Verify each material product and alternative claim against official documentation, public standards, or the referenced project itself. Record URLs, access dates, supported claims, assumptions, conflicts and unknowns. Do not sign in, bypass controls, reverse-engineer proprietary binaries, or copy source, protected assets or branding.
+4. Check the actual repository conventions and existing workspace before adding dependencies or selecting a stack. Keep license obligations and third-party rights visible in the plan. If a dossier is pending, stale or too thin to support requirements, make the next task evidence gathering—not speculative implementation.
+
+### Reuse/build decision
+
+This catalog has not verified a suitable candidate. Search current projects by user job, record search terms/date and license/activity evidence, then guide the user through building the requested product in their project.
+
+Current alternative coverage: **no verified alternative**. This describes the catalog's research into existing projects only; it does not determine whether your agent can build the product. Build it in your project using this skill. Catalog coverage notes: No verified alternative. No open-source project replicates the ads marketplace; only ad serving is open (Revive Adserver). The core product is a marketplace, not just software: advertiser demand, publisher inventory and the ad auction have no open-source equivalent. Self-hosted ad servers cover only serving.
+
+Candidate projects to verify:
+
+- No suitable candidate is verified in this catalog. Give this skill to your coding agent to assess current projects and build the requested product in your project.
+
+### Build the product with this skill in the user's project
+
+Give this product skill to the coding agent in the project where the user wants the product built. First review that project and assess current reuse options; then define a useful scope, build the requested product in the user's project, and verify the result. The coverage label below reports only research into open-source alternatives.
+
+### Product behaviors to research and turn into requirements
+
+- **GOOGLE-ADS-CAP-001 — Search and display ad buying:** verify the user/actor, workflow, preconditions, expected result, failure path, platform and data implications from cited sources; then define an observable acceptance check.
+- **GOOGLE-ADS-CAP-002 — Targeting and bidding:** verify the user/actor, workflow, preconditions, expected result, failure path, platform and data implications from cited sources; then define an observable acceptance check.
+- **GOOGLE-ADS-CAP-003 — Campaign analytics:** verify the user/actor, workflow, preconditions, expected result, failure path, platform and data implications from cited sources; then define an observable acceptance check.
+
+For each behavior selected for the MVP, record the user/actor, preconditions, input, expected observable result, alternate/error path, data and permission implications, source evidence, and a stable requirement ID (for example `GOOGLE-ADS-REQ-001`). Map that ID from evidence to workflow/specification to an automated test or a named manual check.
+
+### Build the product in the user's project
+
+Use the product skill from the project where the user wants **Google Ads** built. Review that project's conventions and existing code, then plan a useful first slice with clear requirements, explicit non-goals, assumptions, external dependencies and measurable acceptance checks. Continue from that working slice toward the user's requested product. The catalog and optional scaffold provide guidance; your implementation belongs in the user's project. If research is insufficient for a behavior, gather evidence before coding that behavior.
+
+### Multi-agent task plan and outputs
+
+1. **Researcher (single owner of evidence packet):** verify identity, lifecycle, intended users, user jobs, workflows, capability claims, alternatives and licenses; record claim-level citations and unknowns. If the source catalog is available, update `research/companies/google/products/google-ads.md`. Do not use a public-page capture as evidence for hidden internals.
+2. **Architect (single owner of interfaces):** decide reuse/integrate/extend/build/research further; choose one verified capability as the candidate first journey; define its scope, non-goals, requirement IDs, system boundaries and contracts. Inspect `./google-ads (optional local workspace; choose a writable output directory)/specs/` and replace only missing or placeholder sections with evidence-backed specifications before assigning implementation tasks.
+3. **Implementer agents (frontend/backend or domain-specific):** each claims one non-overlapping task against the approved contracts. Reuse suitable projects and dependencies. Deliver a working end-to-end slice for the selected journey, not disconnected scaffolding; document deviations from the target behavior.
+4. **Tester:** derive tests from the requirement IDs. Cover the selected journey, validation, errors, permissions, accessibility and privacy-sensitive behavior; measure performance only against an explicit representative workload and target.
+5. **Security reviewer:** review trust boundaries, authentication/authorization, sensitive data, abuse cases, dependency/license compliance and clean-room constraints before integration.
+6. **Supervisor/documenter:** review handoffs, integrate only accepted tasks, and keep setup, data import/export, operations and known limitations current.
+
+Each handoff must state owner, changed files, requirement IDs, commands with actual exit codes, checks not run, decisions, risks and one specific next action. Parallelize only after shared interfaces are approved.
+
+### Verification and definition of done
+
+- Every MVP requirement maps to evidence and a passing automated test or named manual check.
+- Product-specific tests pass. Run the generated workspace's own checks and ACE configuration check when available. If working from the RAE source checkout, also run `npm run validate` and `npm test`; otherwise use the installed CLI's `rae research validate` for catalog integrity.
+- Setup and configuration work from a clean start; security and license review is recorded; limitations and unimplemented capabilities are explicit.
+- A reviewer accepts the implementation and its handoff. Passing tests prove only the tested behavior—not parity with Google Ads.
+
+### Repository entry points
+
+- Product description and known capability areas: see the product section above. This catalog summary is a research lead, not a verified complete specification.
+- Product metadata: `rae products show google-ads --format json`.
+- Research dossier: retrieve it from the installed CLI with `rae research dossier google-ads`; source file when working in the repository: `research/companies/google/products/google-ads.md`.
+- Alternative candidates and coverage: `rae alternatives list --product google-ads`; source landscape file when available: `catalog/skills/google/google-ads.md`.
+- Optional local product workspace/specifications: `./google-ads (optional local workspace; choose a writable output directory)`.
+- Opportunity decision, when present in the source repository: `opportunities/google-ads.md`.
+- Official product page: https://ads.google.com/.
+- Research status: **pending**; alternative coverage: **no verified alternative**. This coverage label describes existing-project research only, not the ability to build this product.
+
+### Installed-CLI workflow
+
+Use the installed RAE CLI; no source checkout is required. Inspect product metadata with `rae products show google-ads --format json` and retrieve the dossier contents with `rae research dossier google-ads` (or add `--format json` for machine-readable output). Check catalog readiness with `rae research coverage` and `rae research validate`. Generate a portable agent kit with `rae google-ads --out ./google-ads-agent`. Give the generated skill to your coding agent in the project where you want this product built. A starter workspace is optional: scaffold one with `rae build product google-ads --out ./google-ads` only if useful. Keep generated outputs separate; do not overwrite existing work.
+
+
+## Sources
+
+- https://www.revive-adserver.com/
+- https://en.wikipedia.org/wiki/Google_Ads
+
+## Provenance
+
+- Catalog record: [`catalog/products.jsonl`](../../products.jsonl) (`google-ads`)
+- Research dossier: [`research/companies/google/products/google-ads.md`](../../../research/companies/google/products/google-ads.md)
+- REA web-surface report: [`catalog/rea/google/google-ads.md`](../../rea/google/google-ads.md)
