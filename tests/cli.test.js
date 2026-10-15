@@ -172,8 +172,11 @@ test('build agent-kit --out writes skill.md and mcp.json', () => {
     assert.ok(existsSync(join(dir, 'mcp.json')), 'mcp.json must be written');
     const skill = readFileSync(join(dir, 'skill.md'), 'utf8');
     assert.match(skill, /## Product description/);
-    assert.match(skill, /## Multi-agent task plan and outputs/);
-    assert.match(skill, /## Verification and definition of done/);
+    assert.match(skill, /### Multi-agent task plan and outputs/);
+    assert.match(skill, /### Acceptance criteria and definition of done/);
+    assert.match(skill, /### Product quality and verification plan/);
+    assert.match(skill, /### End-to-end implementation milestones/);
+    assert.match(skill, /Research lens: \*\*consumer_application\*\*/);
     assert.match(skill, /rae research dossier gmail/);
     assert.doesNotMatch(skill, /node src\/cli\.js|From a repository clone/);
     const mcp = JSON.parse(readFileSync(join(dir, 'mcp.json'), 'utf8'));
@@ -199,7 +202,7 @@ test('product-id shorthand builds the agent kit', () => {
     assert.match(result.stdout, /Wrote agent kit/);
     assert.ok(existsSync(join(out, 'skill.md')));
     assert.ok(existsSync(join(out, 'mcp.json')));
-    assert.match(readFileSync(join(out, 'skill.md'), 'utf8'), /## Multi-agent task plan and outputs/);
+    assert.match(readFileSync(join(out, 'skill.md'), 'utf8'), /### Multi-agent task plan and outputs/);
   } finally {
     rmSync(out, { recursive: true, force: true });
   }

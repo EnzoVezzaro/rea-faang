@@ -74,13 +74,28 @@ export function layout({
     <script>document.documentElement.classList.replace("no-js", "js");</script>
     <title>${esc(title)}</title>
     <meta name="description" content="${attr(description)}" />
+    <meta name="robots" content="${path === '404.html' ? 'noindex,follow' : 'index,follow'}" />
     <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0B0C0A" />
     <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="RAE FAANG" />
     <meta property="og:title" content="${attr(title)}" />
     <meta property="og:description" content="${attr(description)}" />
     <meta property="og:url" content="${attr(ogUrl)}" />
+    <meta property="og:image" content="${BASE_URL}/assets/rae-banner.png" />
+    <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
+    <meta property="og:image:width" content="1774" />
+    <meta property="og:image:height" content="887" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${attr(title)}" />
+    <meta name="twitter:description" content="${attr(description)}" />
+    <meta name="twitter:image" content="${BASE_URL}/assets/rae-banner.png" />
     <link rel="canonical" href="${attr(ogUrl)}" />
     <link rel="icon" href="${p}favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" type="application/xml" href="${BASE_URL}/sitemap.xml" />
+    <link rel="apple-touch-icon" href="${p}docs/assets/icon-192.png" />
+    <link rel="icon" href="${p}docs/assets/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="${p}docs/assets/icon-512.png" type="image/png" sizes="512x512" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="${FONTS}" rel="stylesheet" />
@@ -117,9 +132,9 @@ ${content}
       <div class="wrap footer-inner">
         <div>            <p class="footer-mark">RAE FAANG</p>
           <p class="footer-mission">
-
-            Product research, open-source alternatives, and agent skills to build beyond Meta, Amazon,
-            Apple, Netflix and Google. Your agent builds in your project. MIT licensed.
+            We don't need FAANG anymore. Choose a product from Meta, Amazon, Apple, Netflix or Google
+            and use your agent to build it in your project. RAE FAANG brings together the catalog,
+            product research and candidate open-source projects. MIT licensed.
           </p>
         </div>
         <div class="footer-links">
@@ -216,12 +231,6 @@ export function homePage({ counts, preview, testsCount, diagram = [], products =
   const total = counts.available + counts.partial + counts.pending;
   const statusUrl = (status) => `catalog/#s-${status}`;
   const coverageLabels = { available: 'mature alternative listed', partial: 'partial alternative coverage', pending: 'no verified alternative' };
-  const glyphSpotlights = preview.map((product) => `            <li class="glyph-spotlight" data-coverage="${attr(product.status)}">
-              <a href="catalog/${attr(product.id)}/">
-                <span class="glyph-spotlight-name">${esc(product.name)}</span>
-                <span class="glyph-spotlight-meta">${esc(product.companyName)} <span>${coverageLabels[product.status]}</span></span>
-              </a>
-            </li>`).join('\n');
   const companyOrder = ['google', 'apple', 'amazon_aws', 'amazon', 'netflix', 'meta'];
   const productsByCompany = new Map(companyOrder.map((id) => [id, []]));
   products.forEach((product) => {
@@ -231,6 +240,9 @@ export function homePage({ counts, preview, testsCount, diagram = [], products =
   for (const companyProducts of productsByCompany.values()) companyProducts.sort((a, b) => a.name.localeCompare(b.name));
   const groupedCompanyIds = [...companyOrder, ...[...productsByCompany.keys()].filter((id) => !companyOrder.includes(id))];
   const companyNames = { google: 'Google', apple: 'Apple', amazon_aws: 'Amazon Web Services', amazon: 'Amazon', netflix: 'Netflix', meta: 'Meta' };
+  const companyLogos = ['meta', 'amazon', 'amazon_aws', 'apple', 'netflix', 'google'];
+  const companyDisplayNames = { meta: 'Meta', amazon: 'Amazon', amazon_aws: 'AWS', apple: 'Apple', netflix: 'Netflix', google: 'Google' };
+  const companyStrip = companyLogos.map((id) => `${companyLogoSvg(id, 'brand-logo', 'mono')}<span>${companyDisplayNames[id]}</span>`).join(' ');
   const catalogGroups = groupedCompanyIds.map((companyId) => {
     const companyProducts = productsByCompany.get(companyId);
     const companyName = companyNames[companyId] || companyProducts[0]?.companyName || companyId;
@@ -247,41 +259,41 @@ ${rows}
   const featuredProduct = featured && (products.find((product) => product.id === featured.product_id) || {
     id: featured.product_id, name: featured.product, status: featured.status, companyName: 'RAE FAANG', alternatives: [],
   });
+  const heroProducts = preview.map((product) => `              <li class="glyph-spotlight" data-coverage="${attr(product.status)}"><button class="hero-product-pick" type="button" data-pass-pick="${attr(product.id)}" aria-pressed="${product.id === featuredProduct?.id}"><span class="glyph-spotlight-name">${esc(product.name)}</span><span class="glyph-spotlight-meta">${esc(product.companyName)} <span>${coverageLabels[product.status]}</span></span></button></li>`).join('\n');
   const content = `      <!-- Landing thesis and catalog-derived product index -->
       <section class="hero" id="top">
         <div class="wrap hero-inner">
           <div class="hero-copy">
-            <h1>Build the software<br />you need.</h1>
-            <p class="hero-proposition">Start with product research, not a blank page.</p>
+            <h1>We don't need<br />FAANG anymore.</h1>
+            <p class="hero-proposition">Use your agent to build any of their products.</p>
             <p class="lede">
-              Each catalog entry includes research, open-source projects to consider, and a Markdown
-              skill for your coding agent. Use it to plan and build an independent implementation in
-              your project.
+              RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Choose what
+              you want to build; product research and candidate open-source projects give your coding
+              agent a concrete place to start in your project. A product build skill is there when you
+              want a direct handoff.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="catalog/">Pick a product <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-secondary" href="#solution">See how it works</a>
+              <a class="btn btn-primary" href="catalog/">Explore products <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-secondary" href="#solution">How it works</a>
             </div>
-            <p class="hero-note"><span class="dot" aria-hidden="true"></span>${total} products · ${counts.available} mature alternatives · ${counts.partial} partial · ${counts.pending} without a verified alternative</p>
-            <div class="brand-row" aria-label="Companies covered">
-              ${['meta','amazon','amazon_aws','apple','netflix','google'].map((id) => `${companyLogoSvg(id, 'brand-logo', 'mono')}<span>${({ meta:'Meta', amazon:'Amazon', amazon_aws:'AWS', apple:'Apple', netflix:'Netflix', google:'Google' }[id])}</span>`).join(' ')}
-            </div>
+            <p class="hero-note"><span class="dot" aria-hidden="true"></span>${total} products · Meta, Amazon, Apple, Netflix and Google</p>
+            <div class="brand-row" aria-label="Companies covered">${companyStrip}</div>
           </div>
-          <div class="hero-inventory">
+          ${featuredProduct ? `<aside class="hero-inventory" aria-label="Choose a product to build with your agent">
             <section class="glyph-spotlight-section" aria-labelledby="glyph-spotlight-title">
               <div class="glyph-spotlight-heading">
-                <h2 id="glyph-spotlight-title">Real products. Open skills.</h2>
+                <h2 id="glyph-spotlight-title">What do you want to build?</h2>
                 <a href="catalog/">Browse all ${total} <span aria-hidden="true">↗</span></a>
               </div>
               <ul class="glyph-spotlight-list" aria-label="Featured products from the catalog">
-${glyphSpotlights}
+${heroProducts}
               </ul>
             </section>
-            ${featuredProduct ? `<aside class="hero-graph build-pass-panel" aria-label="Personalize a product build pass">
-              <p class="pass-panel-note"><span aria-hidden="true">+</span> Your selection, from the catalog</p>
+            <div class="build-pass-panel">
+              <p class="pass-panel-note"><span aria-hidden="true">+</span> Your selected product, research and build skill</p>
               ${buildPassMarkup({ featured: featuredProduct, products, interactive: true })}
-            </aside>` : ''}
-          </div>
+            </div>
+          </aside>` : ''}
         </div>
       </section>
 
@@ -289,16 +301,16 @@ ${glyphSpotlights}
       <section class="section" id="story" aria-labelledby="story-h">
         <div class="wrap split">
           <div>
-            <p class="eyebrow">The engineering premise</p>
-            <h2 id="story-h">One product. One skill. A clearer place to start.</h2>
+            <p class="eyebrow">From catalog to your project</p>
+            <h2 id="story-h">Choose what you want your agent to build.</h2>
             <p>
-              Each product's Markdown file is the build skill for that product. Give it to your coding
-              agent in the project where you want to build. It provides product context, research sources,
-              open-source projects to evaluate, and directions for implementing and verifying the product.
+              RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google so you can
+              choose what to build with your coding agent. Each product page brings together behavior,
+              research and candidate open-source projects worth evaluating.
             </p>
             <p>
-              Your agent does the building in your project. The skill helps it reuse what fits, define
-              a clear scope from the evidence, then build and verify an independent version of the product.
+              Give your agent the product's build skill as a starting point. It can assess what to reuse,
+              plan the scope and build an independent implementation in your project.
             </p>
           </div>
           <ul class="principles">
@@ -314,8 +326,8 @@ ${glyphSpotlights}
       <section class="section catalog-field-section" id="map" aria-labelledby="map-h">
         <div class="wrap">
           <div class="section-head reveal-target" data-reveal>
-            <h2 id="map-h">A field of ${total} products.</h2>
-            <p class="section-lede">Each name opens its research record and downloadable skill. Coverage describes research into reuse options, not whether your agent can build the product.</p>
+            <h2 id="map-h">${total} products your agent can build.</h2>
+            <p class="section-lede">Explore products from Meta, Amazon, Apple, Netflix and Google. Each record links to product research, candidate projects and build instructions for your coding agent.</p>
           </div>
           <div class="catalog-glyph-field">
 ${catalogGroups}
@@ -328,12 +340,13 @@ ${catalogGroups}
       <section class="section" id="status" aria-labelledby="status-h">
         <div class="wrap">
           <div class="section-head reveal-target" data-reveal>
-            <p class="eyebrow">Alternative coverage</p>
-            <h2 id="status-h">What your agent can reuse—and what needs a closer look.</h2>
+            <p class="eyebrow">Research to help you build</p>
+            <h2 id="status-h">See what you can build on.</h2>
             <p class="section-lede">
-              These counts summarize the catalog's research into open-source alternatives. They do not say
-              whether you can build a product. ${counts.available} products have a mature candidate listed;
-              ${counts.pending} have no suitable alternative verified here. Each product has a skill for your agent.
+              These counts summarize the catalog's research into open-source alternatives, not the limits of
+              what your agent can build. ${counts.available} products have a mature candidate listed,
+              ${counts.partial} have partial coverage and ${counts.pending} have no verified candidate.
+              Use them to evaluate possible foundations; your agent can build what you need in your project.
             </p>
           </div>
 
@@ -366,24 +379,24 @@ ${catalogGroups}
       <section class="section" id="problem" aria-labelledby="problem-h">
         <div class="wrap split">
           <div>
-            <p class="eyebrow">Choose what to reuse</p>
-            <h2 id="problem-h">Give your agent a better place to start.</h2>
+            <p class="eyebrow">Make it yours</p>
+            <h2 id="problem-h">Your agent builds in your project.</h2>
             <p>
-              Every product has a Markdown skill for your coding agent. It links to product context,
-              research, candidate projects and directions for planning a scoped implementation in your
-              project.
+              Pick any catalogued product and use your coding agent to build an independent version
+              for your needs. RAE gives your agent a head start with product behavior, sources,
+              specifications and open-source foundations to assess.
             </p>
             <p>
-              Review the sources and candidate licenses, then use the skill to plan and test the work.
-              Coverage labels describe the catalog's research into reuse options, not build feasibility.
+              The research helps your agent make informed choices; it doesn't limit what you can build.
+              Coverage labels describe candidate-project research, not whether a product is buildable.
             </p>
           </div>
           <ul class="principles">
-            <li><strong>Sources</strong>: follow links to public references</li>
-            <li><strong>Checkable</strong>: run the listed commands to reproduce counts</li>
-            <li><strong>Actionable</strong>: each product has a skill for your coding agent</li>
-            <li><strong>Bounded</strong>: public information only; no access-control bypass</li>
-            <li><strong>Reuse first</strong>: assess existing projects before building</li>
+            <li><strong>Product range</strong>: choose from Meta, Amazon, Apple, Netflix and Google</li>
+            <li><strong>Research</strong>: follow links to behavior, specifications and public sources</li>
+            <li><strong>Foundations</strong>: assess open-source projects that may save time</li>
+            <li><strong>Build instructions</strong>: give your agent product-specific context</li>
+            <li><strong>Your project</strong>: let your coding agent implement and test there</li>
           </ul>
         </div>
       </section>
@@ -392,16 +405,16 @@ ${catalogGroups}
       <section class="section" id="solution" aria-labelledby="solution-h">
         <div class="wrap">
           <div class="section-head reveal-target" data-reveal>
-            <p class="eyebrow">The product skill, in practice</p>
-            <h2 id="solution-h">Choose a product. Give its skill to your agent.</h2>
-            <p class="section-lede">Each product's Markdown skill points your coding agent to research and candidate projects, with directions for planning and testing work in your project.</p>
+            <p class="eyebrow">From idea to implementation</p>
+            <h2 id="solution-h">Choose a product. Build it with your agent.</h2>
+            <p class="section-lede">Explore the research and candidate foundations, then put your coding agent to work in the project where you want to build.</p>
           </div>
 
           <ol class="workflow-line">
-            <li><h3>Choose</h3><p>${total} product records, each with a product-specific skill and research links.</p></li>
-            <li><h3>Review</h3><p>Compare candidate projects with the product research; ${counts.available} products have a mature candidate listed.</p></li>
-            <li><h3>Plan</h3><p>Give the Markdown skill to your coding agent and agree on a scope for your project.</p></li>
-            <li><h3>Build and test</h3><p>Implement the agreed scope in your project and run its checks; ${reaCount} REA reports record public-page observations.</p></li>
+            <li><h3>Explore</h3><p>Choose what you want to build from ${total} products across Meta, Amazon, Apple, Netflix and Google.</p></li>
+            <li><h3>Research</h3><p>Review product behavior, sources and candidate open-source foundations.</p></li>
+            <li><h3>Equip your agent</h3><p>Give it the product build skill and decide on a useful scope together.</p></li>
+            <li><h3>Build</h3><p>Your coding agent implements and tests the product in your project.</p></li>
           </ol>
           <p class="workflow-coverage">${counts.pending} products have no verified alternative and ${counts.partial} have partial coverage. These labels describe reuse research, not build capability.</p>
           <a class="text-link workflow-source" href="${REPO_URL}/tree/main/catalog/skills">Read the product skills ↗</a>
@@ -413,8 +426,8 @@ ${catalogGroups}
       <section class="section" id="proof" aria-labelledby="proof-h">
         <div class="wrap">
           <div class="section-head reveal-target" data-reveal>
-            <p class="eyebrow">Research and candidate projects</p>
-            <h2 id="proof-h">Browse the research behind the suggestions.</h2>
+            <p class="eyebrow">Research you can inspect</p>
+            <h2 id="proof-h">A stronger starting point for the build.</h2>
             <p class="section-lede">These are candidate projects, not guaranteed replacements. Product pages show what the research supports, where coverage is uncertain, and which sources were used.</p>
           </div>
 
@@ -506,22 +519,24 @@ ${catalogGroups}
         <div class="wrap">
           <div class="section-head reveal-target" data-reveal>
             <p class="eyebrow">Common questions</p>
-            <h2 id="faq-h">How do I use a product skill?</h2>
+            <h2 id="faq-h">What can I build with my agent?</h2>
           </div>
 
           <div class="faq">
             <details>
-              <summary>How do I build a product with my agent?</summary>
+              <summary>Can my agent build any of these products?</summary>
               <p>
-                Choose a product and download its Markdown skill, or generate the kit with the RAE CLI.
-                Give the skill to your coding agent in your project. Its instructions cover product
-                research, reuse decisions, building and verification.
+                That's the premise: choose a product from Meta, Amazon, Apple, Netflix or Google and
+                use your coding agent to build an independent implementation in your project. Product
+                research and candidate projects are a starting point, not a limit on what you can build.
               </p>
             </details>
             <details>
-              <summary>What does the catalog add beyond candidate projects?</summary>
+              <summary>How does RAE help me get started?</summary>
               <p>
-                Each entry also includes product context and a skill with build directions. Use those to review the research, decide what to reuse and scope the work for your project. Coverage labels describe the catalog's research, not the feasibility of your implementation.
+                The catalog brings together product behavior, research and open-source projects that
+                may be useful foundations. Review what fits your needs, then ask your coding agent to
+                build and test an independent version in your project. A product skill is available as a direct handoff.
               </p>
             </details>
             <details>
@@ -564,11 +579,13 @@ ${catalogGroups}
       <section class="section section-last" id="start" aria-labelledby="start-h">
         <div class="wrap">
           <div class="cta">
-            <h3 id="start-h">Pick a product. Start with the research.</h3>
+            <h3 id="start-h">What do you want to build?</h3>
             <p>
-              Download its Markdown skill, review the sources and candidate projects, then give the skill to your coding agent. RAE FAANG is MIT-licensed; candidate projects and your implementation have their own licenses.
+              Choose a product from Meta, Amazon, Apple, Netflix or Google. Explore the research, then
+              use your coding agent to build an independent version in your project. RAE FAANG is
+              MIT-licensed; candidate projects and your implementation have their own licenses.
             </p>
-            <a class="btn btn-primary" href="catalog/">Pick a product</a>
+            <a class="btn btn-primary" href="catalog/">Choose a product</a>
           </div>
 
           <div class="grid links links-after">
@@ -585,8 +602,8 @@ ${catalogGroups}
       </section>`;
 
   return layout({
-    title: `Product research and build skills for coding agents | RAE FAANG`,
-    description: `Browse product research, candidate open-source projects, and a Markdown build skill for each catalogued product. Give a skill to your coding agent and build in your project.`,
+    title: 'Build products with your agent | RAE FAANG',
+    description: 'Choose a product from Meta, Amazon, Apple, Netflix or Google. Explore product research and open-source foundations, then build with your coding agent.',
     path: '',
     depth: 0,
     active: 'home',
@@ -1174,5 +1191,5 @@ export function notFoundPage() {
 }
 
 export function faviconSvg() {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#101114"/><path d="M18 16 L34 48" stroke="#E8FF6B" stroke-width="7" stroke-linecap="round"/><path d="M30 16 L46 48" stroke="#E8FF6B" stroke-width="7" stroke-linecap="round"/></svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0B0C0A"/><path d="M18 16 L34 48" stroke="#C8FF55" stroke-width="7" stroke-linecap="round"/><path d="M30 16 L46 48" stroke="#C8FF55" stroke-width="7" stroke-linecap="round"/></svg>`;
 }

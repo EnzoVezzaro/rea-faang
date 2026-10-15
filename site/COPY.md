@@ -1,5 +1,11 @@
 # RAE FAANG: Landing page copy
 
+## Product premise
+
+**We don't need FAANG anymore. Use your agent to build any of their products.**
+
+**RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google.** This is the offer and hero message. Product research, candidate projects and product skills support that promise; they must not replace it or make the catalog sound like the whole product.
+
 Built with the [`copywriting`](https://github.com/coreyhaines31/marketingskills/blob/main/skills/copywriting/SKILL.md) skill for conversion structure and [`humanizer`](https://github.com/blader/humanizer) to keep the prose direct and natural.
 
 The landing page is generated. Edit the copy here and mirror changes in `homePage()` in [`tools/site/templates.mjs`](../tools/site/templates.mjs), then run `npm run site:build`. Counts come from catalog data at build time.
@@ -8,13 +14,13 @@ The landing page is generated. Edit the copy here and mirror changes in `homePag
 
 | Input | Value |
 |---|---|
-| **Offer** | Product research, candidate open-source projects and a Markdown skill for each catalogued product. Give the skill to a coding agent to help plan and test an independent implementation in your project. |
+| **Offer** | A catalog of products from Meta, Amazon, Apple, Netflix and Google; use your coding agent to build any of them in your project, with product research and candidate open-source foundations as a starting point. |
 | **Audience** | Developers, sysadmins and open-source contributors interested in building independent software with coding agents. |
-| **Primary question** | “What can I learn from this catalog, and what do I do next?” |
+| **Primary question** | “What do I want to build, and how can my agent help me build it?” |
 | **Conversion goal** | Browse the catalog. |
 | **Brand voice** | Plain, precise and specific. Use concrete details. State limits and uncertainty directly. |
 
-The catalog informs your work; it does not build or verify software for you. Candidate projects are research leads, not guaranteed replacements. Coverage labels describe how much alternative research is recorded, not whether an implementation is feasible.
+The product is the freedom to build any of these products with your own coding agent. The catalog supplies product context, research and candidate open-source foundations as starting points; your agent builds in your project. Candidates are leads, not guaranteed replacements, and coverage labels describe research rather than build feasibility.
 
 ### Data
 
@@ -24,12 +30,12 @@ Counts are generated from repository data. The commands in the Proof section sho
 
 ## SECTION: Hero
 
-- **Headline:** Build the software you need.
-- **Subheadline:** Start with product research, not a blank page.
-- **Supporting copy:** Each catalog entry includes product research, open-source projects to consider and a Markdown skill for your coding agent. Use the skill to plan and test an independent implementation in your project.
-- **Primary CTA:** Pick a product
-- **Secondary CTA:** See how it works
-- **Hero visual:** Show real catalog products, company names and alternative-coverage labels. Each name links to its product page. The Product Build Pass uses catalog data; changing the selected product updates its details and skill download. On mobile, show the headline and actions before the product list and pass.
+- **Headline:** We don't need FAANG anymore.
+- **Subheadline:** Use your agent to build any of their products.
+- **Supporting copy:** RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Choose any product to build with your coding agent. Product research and candidate open-source projects give your agent a useful starting point in your project; build skills are optional handoffs.
+- **Primary CTA:** Explore products
+- **Secondary CTA:** How it works
+- **Hero visual:** Show real catalog products and company names beside the premise. Product choices update the interactive Product Build Pass, its research and its downloadable skill. The companies covered row confirms Meta, Amazon, Apple, Netflix and Google. On mobile, show the premise and actions before the product chooser and pass.
 
 The full catalog follows as a typographic index grouped by company. Every product appears once, links to its dossier and carries its current alternative-research state. Do not invent activity or status.
 
@@ -37,10 +43,10 @@ External links open in a new tab with `rel="noopener noreferrer"`. Internal link
 
 ---
 
-## SECTION: The product skill
+## SECTION: How it works
 
-- **Heading:** One product. One skill. A clearer place to start.
-- **Copy:** Each product has a Markdown skill for a coding agent. It links to product context, research, candidate open-source projects and directions for planning, building and testing a scoped implementation.
+- **Heading:** Choose what you want your agent to build.
+- **Copy:** RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google so you can choose what to build with your coding agent. Product pages bring together behavior, research and candidate open-source projects. Give your agent the product build skill as a starting point; it can assess what to reuse, plan the scope and build an independent implementation in your project.
 - **Presentation:** Four ordered steps: Choose, Review, Build, Test.
 
 ---
@@ -59,7 +65,7 @@ Product pages link to research, candidate projects and a Markdown skill for a co
 
 ## SECTION: Solution
 
-- **Headline:** Choose a product. Give its skill to your agent.
+- **Headline:** Choose a product. Build it with your agent.
 
 1. **The catalog:** 77 products, each with a company, type, official URL and lifecycle status. Browse or filter the inventory.
 2. **Candidate projects:** Product pages list projects that may cover similar user needs. 40 products have a mature candidate listed, including SearXNG, Jellyfin, Ceph and Mailcow. Review each project's coverage before choosing it.
@@ -71,7 +77,7 @@ Product pages link to research, candidate projects and a Markdown skill for a co
 
 ## SECTION: Proof
 
-- **Headline:** Browse the research behind the suggestions.
+- **Headline:** A stronger starting point for the build.
 - **Intro:** These are candidate projects, not guaranteed replacements. Product pages show what the research supports, where coverage is uncertain and which sources were used.
 
 ### Candidate projects listed in the catalog
@@ -99,8 +105,8 @@ Product pages link to research, candidate projects and a Markdown skill for a co
 
 ## SECTION: Questions
 
-**How do I use a product skill?**
-Choose a product and download its Markdown skill, or generate one with the RAE CLI. Give it to your coding agent from the project where you want to work. It links to product research and candidates, and helps the agent plan, build and test a scoped implementation.
+**What can I build with my agent?**
+Choose any product in the catalog from Meta, Amazon, Apple, Netflix or Google. Review the product research and candidate projects, then use your agent to build an independent implementation in your project. A product skill is there when you want a concise handoff for your agent.
 
 **What does the catalog add beyond candidate projects?**
 Each entry also includes product context and a skill with build directions. Use those to review the research, decide what to reuse and scope the work for your project.
@@ -121,9 +127,10 @@ Open its research dossier and follow the citations. Where available, the product
 
 ## SECTION: Final CTA
 
-- **Headline:** Pick a product. Start with the research.
-- **Button:** Pick a product
-- **Supporting copy:** Download the product skill, review the sources and candidate projects, then give it to your coding agent. RAE FAANG is MIT-licensed; candidate projects and your implementation have their own licenses.
+- **Headline:** We don't need FAANG anymore.
+- **Subheadline:** Use your agent to build any of their products.
+- **Button:** Choose a product to build
+- **Supporting copy:** RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Research and candidate open-source projects help your agent get started in your project. RAE FAANG is MIT-licensed; candidate projects and your implementation have their own licenses.
 
 ---
 

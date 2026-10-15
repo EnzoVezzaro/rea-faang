@@ -412,6 +412,7 @@ function buildPages(data, docs) {
   push('404.html', T.notFoundPage());
   push('catalog.json', catalogJson(data));
   push('sitemap.xml', sitemapXml(data, docs));
+  push('robots.txt', `User-agent: *\nAllow: /\nSitemap: ${T.BASE_URL}/sitemap.xml\n`);
   return pages;
 }
 

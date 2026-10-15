@@ -1,6 +1,6 @@
 {
   "name": "rae-faang",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "RAE — FAANG Product Intelligence & Open-Source Replication Engine",
   "main": "src/cli.js",
   "bin": {

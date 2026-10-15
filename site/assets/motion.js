@@ -35,16 +35,18 @@
     var skill = pass.querySelector("[data-pass-skill]");
     var dossier = pass.querySelector("[data-pass-dossier]");
     var announcement = pass.querySelector("[data-pass-announcement]");
+    var picks = document.querySelectorAll("[data-pass-pick]");
     var labels = {
       available: "Mature alternative listed",
       partial: "Partial coverage",
       pending: "No verified alternative"
     };
 
-    function update() {
+    function update(productId) {
+      if (productId) select.value = productId;
       var option = select.options[select.selectedIndex];
       if (!option) return;
-      var productId = option.value;
+      productId = option.value;
       var productName = option.textContent;
       var state = option.getAttribute("data-coverage") || "pending";
       if (name) name.textContent = productName;
@@ -58,9 +60,16 @@
       if (announcement) announcement.textContent = productName + " selected. " + (labels[state] || "Research status not verified") + ". Downloadable product skill ready.";
       var card = pass.querySelector(".build-pass");
       if (card) card.setAttribute("aria-label", "Product Build Pass for " + productName);
+      each(picks, function (pick) {
+        pick.setAttribute("aria-pressed", String(pick.getAttribute("data-pass-pick") === productId));
+      });
     }
 
-    select.addEventListener("change", update);
+    each(picks, function (pick) {
+      pick.addEventListener("click", function () { update(pick.getAttribute("data-pass-pick")); });
+    });
+    select.addEventListener("change", function () { update(); });
+    update();
   }
 
   function initGraphFilters() {

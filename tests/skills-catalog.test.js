@@ -86,7 +86,7 @@ test('every skill makes clear that alternative coverage is not product build sta
       assert.match(text, /no suitable candidate is verified|has not verified a suitable candidate|no suitable open-source project|Alternative coverage: .+no verified alternative/i, `${product.id}: state no verified alternative precisely`);
     }
     assert.match(text, /does not determine whether your agent can build the product/, `${product.id}: distinguish coverage from build capability`);
-    assert.match(text, /build the requested product in their project|build the requested product in the user's project|build the product in your project|build this product in their project|build it in their project/i, `${product.id}: direct the agent to build in the user's project`);
+    assert.match(text, /build the requested product in their project|build the requested product in the user's project|build the product in your project|build this product in their project|build it in their project|build .* in the user's project/i, `${product.id}: direct the agent to build in the user's project`);
     assert.doesNotMatch(text, /pending to open-source/, `${product.id}: avoid copy that implies the product itself is pending`);
   }
 });
@@ -105,14 +105,19 @@ test('every skill kit has product description and actionable multi-agent build i
   for (const product of products) {
     const text = readSkill(product);
     assert.match(text, /## Product description/, `${product.id}: expanded product description`);
-    assert.match(text, /## Multi-agent task plan and outputs/, `${product.id}: agent task plan`);
-    assert.match(text, /## Verification and definition of done/, `${product.id}: verification gate`);
-    assert.match(text, /Do not reproduce proprietary internals or claim blanket feature parity/, `${product.id}: bounded independent implementation guidance`);
-    assert.match(text, /Give this product skill to the coding agent in the project where the user wants the product built/, `${product.id}: explains the skill hand-off and build location`);
+    assert.match(text, /### Multi-agent task plan and outputs/, `${product.id}: agent task plan`);
+    assert.match(text, /### Acceptance criteria and definition of done/, `${product.id}: verification gate`);
+    assert.match(text, /### Product quality and verification plan/, `${product.id}: quality gates`);
+    assert.match(text, /### End-to-end implementation milestones/, `${product.id}: complete implementation lifecycle`);
+    assert.match(text, /### Required deliverables/, `${product.id}: auditable outputs`);
+    assert.match(text, /Do not reproduce proprietary internals.*do not claim blanket feature parity/s, `${product.id}: bounded independent implementation guidance`);
+    assert.match(text, /Give this file to your coding agent in the project where you want the product built/, `${product.id}: explains the skill hand-off and build location`);
     assert.match(text, /coding-agent skill for \*\*.+\*\*/, `${product.id}: direct product-building mission`);
-    assert.match(text, /build in their project|build in the user's project|build in your project|project where the user wants the product built/, `${product.id}: user project is the implementation target`);
+    assert.match(text, /build the requested product in the user's project|build .* in the user's project|build it in your project|project where the user wants the product built/i, `${product.id}: user project is the implementation target`);
     assert.match(text, /Research status:/, `${product.id}: honest research status`);
     assert.match(text, /## Sources/, `${product.id}: visible sources`);
+    assert.match(text, new RegExp(`Research lens: \\*\\*${product.product_type}\\*\\* — .+`), `${product.id}: product-type-specific research lens`);
+    assert.match(text, /trace each ID from evidence → workflow → specification\/contract → implementation → automated test/, `${product.id}: end-to-end requirement traceability`);
   }
 });
 

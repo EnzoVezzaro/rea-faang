@@ -3,9 +3,9 @@
 **Version:** 1.0  
 **Purpose:** A practical design contract for coding agents building or improving the RAE FAANG website and related interfaces.
 
-> **Core premise:** Product research and build instructions for coding agents.
+> **Core premise:** We don't need FAANG anymore. Use your agent to build any of their products.
 
-RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Product pages link to research, candidate open-source projects and a Markdown skill for a coding agent. The UI should make the next steps clear: choose a product, review the research, assess what can be reused, then plan and test a scoped implementation in your project.
+RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. A visitor chooses a product to build with their own coding agent in their own project. Product pages supply product context, research and candidate open-source foundations; build skills are useful handoffs, not the product itself. The UI should make the build invitation primary, then help visitors find research and reuse options.
 
 The reference-board image is an art-direction aid, not a source of literal copy or implementation code. Treat this document and the live catalog data as authoritative.
 
@@ -15,9 +15,9 @@ The reference-board image is an art-direction aid, not a source of literal copy 
 
 ### Design thesis
 
-**Independent software research, ready to use.**
+**We don't need FAANG anymore. Use your agent to build any of their products.**
 
-The site should help developers inspect product research and decide what to build next. Keep it editorial, precise and technical. Show the work—product records, source links, specifications, agent skills and test output—instead of decorating the page with generic AI imagery.
+The site invites developers to choose a product from Meta, Amazon, Apple, Netflix or Google and build an independent implementation with their own coding agent. Keep it editorial, precise and technical. Show the product range first, then research and candidate foundations as helpful starting points—not a substitute for the build ambition.
 
 ### Three visual modes
 
@@ -52,11 +52,11 @@ Move between these modes deliberately. Do not make every section a dashboard pan
 ### Primary message hierarchy
 
 **Brand:** RAE FAANG  
-**Hero headline:** Build the software you need.  
-**Hero subheadline:** Start with product research, not a blank page.  
-**Supporting statement:** Review product research and candidate open-source projects, then give the product skill to your coding agent to help plan, build and test an independent implementation.
+**Hero headline:** We don't need FAANG anymore.
+**Hero subheadline:** Use your agent to build any of their products.
+**Supporting statement:** RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Choose a product, use research and candidate projects as starting points, and build it with your coding agent in your project.
 
-This is an ambition and invitation, not a claim that every alternative has already been implemented. The interface must distinguish an existing upstream project, partial coverage, a research kit, and a completed implementation.
+This is the product premise, not a claim that RAE itself has implemented every alternative. The interface must keep the ambition visible while honestly distinguishing mature candidates, partial coverage and gaps in the research.
 
 ### Voice rules
 
@@ -278,22 +278,21 @@ These are page recipes, not rigid templates. Use them to keep the experience coh
 
 ### A. Landing page — introduction to action
 
-**Goal:** Explain what the catalog offers, then lead visitors into product research.
+**Goal:** State the agent-led build-any-product premise, then help visitors choose a product and inspect useful research and foundations.
 
 1. Compact navbar.
-2. Hero eyebrow: `INDEPENDENT SOFTWARE RESEARCH / AI-ASSISTED BUILDING`.
-3. Headline on two or three lines: `Build the software you need.`
-4. Concise supporting paragraph: explain that each product has research, candidate open-source projects and a Markdown skill to help a coding agent plan and test an independent implementation.
-5. Primary CTA `Pick a product`; secondary CTA `See how it works`.
-6. On the right, use a real-data relationship diagram or a restrained terminal/build brief. It should show a commercial product branching to an existing foundation or an identified gap. Use current catalog data.
-7. A company/product strip as metadata, not a giant sponsor-logo wall.
-8. Story section explaining how open source and agents change the starting point.
-9. Compact catalog preview with 4–6 actual entries.
-10. Agent-kit explanation showing real files/artifacts.
-11. Evidence and verification section.
-12. FAQ and final CTA.
+2. Hero headline: `We don't need FAANG anymore.`
+3. Hero subheadline: `Use your agent to build any of their products.`
+4. Supporting statement: `RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google.` Explain that research and candidate open-source projects help an agent get started in the user's project; skills are optional handoffs.
+5. Primary CTA `Explore products`; secondary CTA `How it works`.
+6. On the right, show real catalog products and a functional product build pass that updates its product details and skill download.
+7. A company/product strip confirms the catalog scope.
+8. Story section explains how to choose a product and build it with an agent.
+9. Full catalog index links to actual product records.
+10. Research, reuse options and verification explain useful starting points without limiting the build ambition.
+11. FAQ and final CTA.
 
-**Hero behavior:** Desktop uses a 7/5 or 6/6 editorial split. On mobile, stack headline, copy, CTAs, then the visualization. The headline and primary CTA must appear before a large graphic.
+**Hero behavior:** Desktop uses an editorial split. On mobile, stack premise and actions before the product chooser and pass. Keep the premise as the first message and the product controls functional.
 
 ### B. Catalog — fast discovery
 

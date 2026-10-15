@@ -3,13 +3,15 @@
 
 # RAE FAANG
 
-### Product research and build instructions for coding agents
+### We don't need FAANG anymore.
 
-RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Each entry links to
-research, candidate open-source projects and a Markdown skill for building an independent
-implementation. Give the skill to your coding agent to help it assess what to reuse, plan the work,
-and test the result in your project. RAE FAANG is MIT-licensed; your implementation and its
-dependencies have their own licenses.
+**Use your agent to build any of their products.**
+
+RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Choose a product and
+use your coding agent to build it in your project. Each entry links product context, research,
+candidate open-source projects and product-specific build instructions to help you get started.
+These are starting points, not limits on what you can build. RAE FAANG is MIT-licensed; your
+implementation and its dependencies have their own licenses.
 
 [![npm version](https://img.shields.io/npm/v/rae-faang?style=flat-square&labelColor=101114&color=E8FF6B)](https://www.npmjs.com/package/rae-faang)
 [![CI](https://github.com/EnzoVezzaro/rea-faang/actions/workflows/ci.yml/badge.svg)](https://github.com/EnzoVezzaro/rea-faang/actions/workflows/ci.yml)
@@ -21,7 +23,7 @@ dependencies have their own licenses.
 <code>npx rae-faang products list</code>
 
 **[Live site](https://enzovezzaro.github.io/rae-faang/) ·
-[Get a product skill](#pick-a-product) ·
+[Choose a product to build](#build-a-product-with-your-agent) ·
 [Contributing](CONTRIBUTING.md) ·
 [Issues](https://github.com/EnzoVezzaro/rea-faang/issues)**
 
@@ -33,14 +35,15 @@ dependencies have their own licenses.
 </div>
 
 > [!IMPORTANT]
-> RAE FAANG is a **research catalog**, not a source-code scraper. It records public product
-> information and candidate open-source projects to help developers plan independent
-> implementations. See
+> RAE FAANG is a **product catalog for agent-led building**, not a source-code scraper. It
+> brings together public product information, research and candidate open-source projects so your
+> coding agent has useful starting points for building in your project. The research does not limit
+> what you can build. See
 > [Responsible reverse engineering](#responsible-reverse-engineering).
 
-## Pick a product
+## Build a product with your agent
 
-1. Choose a product in the [live catalog](https://enzovezzaro.github.io/rae-faang/) or the
+1. Choose any product in the [live catalog](https://enzovezzaro.github.io/rae-faang/) or the
    [`catalog/skills/`](catalog/skills/README.md) index.
 2. Give its Markdown skill to your coding agent from the project where you want to work.
 3. Ask the agent to check the research, assess candidate projects, then plan, build and test a

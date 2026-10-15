@@ -3,6 +3,24 @@
 All notable changes to RAE FAANG are recorded here.
 The project follows [semver](https://semver.org/); npm releases match the tags in this repository.
 
+## [0.3.0] - 2026-10-15
+
+### Changed
+
+- Reframed the product and landing page around the build-any-product premise: choose a product
+  from Meta, Amazon, Apple, Netflix or Google and use your own coding agent to build it in your
+  project. The interactive product chooser and full catalog remain driven by real catalog data.
+- Expanded all 77 product skills into detailed implementation handoffs with product-type research
+  lenses, capability coverage ledgers, acceptance criteria, security/accessibility considerations,
+  implementation milestones and honest verification guidance.
+- Improved search and social previews with concise page titles, page-specific descriptions,
+  canonical URLs, Open Graph and Twitter card metadata, crawler directives, sitemap discovery and
+  brand-aligned SVG/PNG icons. Added `robots.txt` and excluded the not-found page from indexing.
+
+### Fixed
+
+- Synchronized package and lockfile version metadata for the release.
+
 ## [0.2.0] - 2026-10-14
 
 ### Changed
@@ -61,6 +79,7 @@ The project follows [semver](https://semver.org/); npm releases match the tags i
   alternative coverage labels, the deterministic `rae` CLI, the ACE agent environment, and
   the GitHub Pages landing site.
 
+[0.3.0]: https://github.com/EnzoVezzaro/rea-faang/releases/tag/v0.3.0
 [0.2.0]: https://github.com/EnzoVezzaro/rea-faang/releases/tag/v0.2.0
 [0.1.1]: https://github.com/EnzoVezzaro/rea-faang/releases/tag/v0.1.1
 [0.1.0]: https://github.com/EnzoVezzaro/rea-faang/releases/tag/v0.1.0

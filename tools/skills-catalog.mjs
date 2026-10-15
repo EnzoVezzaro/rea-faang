@@ -14,7 +14,7 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PRODUCTS } from './skills/catalog-data.mjs';
-import { agentInstructions, productDescription } from './agent-kit-content.mjs';
+import { agentInstructions, productDescription, publicSources } from './agent-kit-content.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_DIR = join(ROOT, 'catalog', 'skills');
@@ -64,7 +64,7 @@ function skillFile(product, data, companyName) {
   const skillDescription =
     `Coding-agent build skill for ${data.name} (${companyName}). Research the product, assess open-source projects, then build and verify it in the user's project. Alternative coverage is ${status}` +
     (altNames.length ? `; candidates include ${altNames.slice(0, 3).join(', ')}${altNames.length > 3 ? ', and more' : ''}.` : '.');
-  const sources = data.sources.map((s) => `- ${s}`).join('\n');
+  const sources = publicSources(data, data.alternatives).join('\n');
   const caps = data.capabilities.map((c) => `- ${c}`).join('\n');
   const expandedDescription = productDescription(data);
   const instructions = agentInstructions({ ...data, research_status: product.research_status });

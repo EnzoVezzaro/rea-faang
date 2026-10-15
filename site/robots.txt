@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://rae-faang-landing.vercel.app/sitemap.xml
