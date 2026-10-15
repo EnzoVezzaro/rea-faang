@@ -80,7 +80,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -123,7 +123,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -295,7 +295,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -409,7 +409,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -466,7 +466,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -687,7 +687,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -730,7 +730,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -830,7 +830,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -1044,7 +1044,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -1258,7 +1258,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -1315,7 +1315,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -1436,7 +1436,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -1500,7 +1500,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -1778,7 +1778,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -1842,7 +1842,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },
@@ -1899,7 +1899,7 @@
       "build": {
         "scaffolded": true,
         "specs": true,
-        "src": true,
+        "src": false,
         "tests": true
       }
     },

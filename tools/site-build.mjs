@@ -198,6 +198,10 @@ function loadCatalog() {
  * example aws-s3 lives at products/aws/aws-s3 while its company_id is
  * amazon_aws), so scan every group and key by the product id, which is unique.
  */
+function hasFiles(dir) {
+  return existsSync(dir) && statSync(dir).isDirectory() && readdirSync(dir).length > 0;
+}
+
 function workspaceIndex() {
   const dir = join(ROOT, 'products');
   const map = new Map();
@@ -208,10 +212,9 @@ function workspaceIndex() {
     for (const product of readdirSync(groupDir)) {
       const ws = join(groupDir, product);
       if (!statSync(ws).isDirectory()) continue;
-      const hasTrackedFile = ['package.json', 'ace.mjs', 'specs', 'src', 'tests'].some((entry) =>
-        existsSync(join(ws, entry)),
-      );
-      if (hasTrackedFile) map.set(product, ws);
+      const hasWorkspaceContent = ['package.json', 'ace.mjs'].some((file) => existsSync(join(ws, file))) ||
+        ['specs', 'src', 'tests'].some((subdir) => hasFiles(join(ws, subdir)));
+      if (hasWorkspaceContent) map.set(product, ws);
     }
   }
   return map;
@@ -327,9 +330,9 @@ function buildData() {
       hasRea: existsSync(join(ROOT, 'catalog', 'rea', p.company_id, `${p.id}.md`)),
       build: {
         scaffolded: Boolean(ws),
-        specs: Boolean(ws && existsSync(join(ws, 'specs'))),
-        src: Boolean(ws && existsSync(join(ws, 'src'))),
-        tests: Boolean(ws && existsSync(join(ws, 'tests'))),
+        specs: Boolean(ws && hasFiles(join(ws, 'specs'))),
+        src: Boolean(ws && hasFiles(join(ws, 'src'))),
+        tests: Boolean(ws && hasFiles(join(ws, 'tests'))),
       },
     };
   });
