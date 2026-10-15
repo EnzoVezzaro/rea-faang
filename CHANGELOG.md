@@ -3,6 +3,13 @@
 All notable changes to RAE FAANG are recorded here.
 The project follows [semver](https://semver.org/); npm releases match the tags in this repository.
 
+## [0.3.1] - 2026-10-15
+
+### Fixed
+
+- Made generated workspace inventory deterministic across local and clean Git checkouts by
+  ignoring empty scaffold directories when reporting build artifacts.
+
 ## [0.3.0] - 2026-10-15
 
 ### Changed
@@ -79,6 +86,7 @@ The project follows [semver](https://semver.org/); npm releases match the tags i
   alternative coverage labels, the deterministic `rae` CLI, the ACE agent environment, and
   the GitHub Pages landing site.
 
+[0.3.1]: https://github.com/EnzoVezzaro/rea-faang/releases/tag/v0.3.1
 [0.3.0]: https://github.com/EnzoVezzaro/rea-faang/releases/tag/v0.3.0
 [0.2.0]: https://github.com/EnzoVezzaro/rea-faang/releases/tag/v0.2.0
 [0.1.1]: https://github.com/EnzoVezzaro/rea-faang/releases/tag/v0.1.1
