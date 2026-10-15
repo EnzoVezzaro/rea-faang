@@ -1,4 +1,4 @@
-> **Historical document — not authoritative.**
+> **Historical document - not authoritative.**
 >
 > This file predates the current CLI and ACE layout. It is kept for design
 > history only and contains stale details (provider names, product names, and a
@@ -12,14 +12,14 @@
 ## Overview
 This document prepares the plan to start building the product's infrastructure for RAE FAANG using the ace-proagents framework. It covers the initial setup, shared infrastructure, and first product workspace.
 
-## Initial Infrastructure Setup (Phase 1 — Foundation)
+## Initial Infrastructure Setup (Phase 1 - Foundation)
 
 ### 1. Root Repository Configuration
 
 #### Initialize ACE Workspace
 ```bash
 # In /Users/mac/Desktop/Github/rae-faang/
-node /tmp/ace-proagents/ace.mjs init --name rae-faang
+ace init --name rae-faang
 ```
 
 This creates:
@@ -39,9 +39,9 @@ Update with RAE FAANG-specific configuration:
   "type": "module",
   "engines": { "node": ">=20", "ace": ">=1.0.0" },
   "scripts": {
-    "dev": "node ace.mjs run",
-    "govern": "node ace.mjs govern",
-    "supervise": "node ace.mjs supervise --project rae-social",
+    "dev": "ace run",
+    "govern": "ace govern",
+    "supervise": "ace supervise --project rae-social",
     "test": "vitest run",
     "lint": "eslint .",
     "build": "tsc --build"
@@ -78,7 +78,7 @@ mkdir -p products/rae-social
 #### Initialize Product ACE Workspace
 ```bash
 cd products/rae-social
-node /tmp/ace-proagents/ace.mjs init --name rae-social
+ace init --name rae-social
 ```
 
 #### Configure Product package.json
@@ -91,7 +91,7 @@ node /tmp/ace-proagents/ace.mjs init --name rae-social
   "engines": { "node": ">=20", "ace": ">=1.0.0" },
   "description": "RAE FAANG: Open-source Instagram alternative",
   "scripts": {
-    "dev": "node ace.mjs run",
+    "dev": "ace run",
     "test": "vitest run",
     "lint": "eslint .",
     "build": "tsc --build"
@@ -119,7 +119,7 @@ node /tmp/ace-proagents/ace.mjs init --name rae-social
 ```bash
 mkdir -p packages/auth
 cd packages/auth
-node /tmp/ace-proagents/ace.mjs init --name @rae-faang/auth
+ace init --name @rae-faang/auth
 ```
 
 Configure with auth-specific settings:
@@ -145,7 +145,7 @@ Configure with auth-specific settings:
 ```bash
 mkdir -p packages/storage
 cd packages/storage
-node /tmp/ace-proagents/ace.mjs init --name @rae-faang/storage
+ace init --name @rae-faang/storage
 ```
 
 Configure with storage-specific settings:
@@ -170,7 +170,7 @@ Configure with storage-specific settings:
 ```bash
 mkdir -p packages/ui
 cd packages/ui
-node /tmp/ace-proagents/ace.mjs init --name @rae-faang/ui
+ace init --name @rae-faang/ui
 ```
 
 Configure with UI-specific settings:
@@ -266,25 +266,25 @@ Each product supervisor reports to the root governor:
 
 ```bash
 # Start root governor
-node ace.mjs govern
+ace govern
 
 # In separate terminal, monitor rae-social supervisor
-node ace.mjs supervise --project rae-social
+ace supervise --project rae-social
 ```
 
 #### Initialize Agents for RAE Social
 ```bash
 # Create agent roles
-node ace.mjs task add --title "Set up RAE Social project structure" --project rae-social --role architect
-node ace.mjs task claim <task-id> --agent architect-1
+ace task add --title "Set up RAE Social project structure" --project rae-social --role architect
+ace task claim <task-id> --agent architect-1
 
 # Research agent investigates Instagram
-node ace.mjs task add --title "Investigate Instagram feed and story workflows" --project rae-social --role researcher
-node ace.mjs task claim <task-id> --agent researcher-1
+ace task add --title "Investigate Instagram feed and story workflows" --project rae-social --role researcher
+ace task claim <task-id> --agent researcher-1
 
 # Frontend agent sets up React project
-node ace.mjs task add --title "Set up React + Vite project scaffolding" --project rae-social --role frontend
-node ace.mjs task claim <task-id> --agent frontend-1
+ace task add --title "Set up React + Vite project scaffolding" --project rae-social --role frontend
+ace task claim <task-id> --agent frontend-1
 ```
 
 #### Opencode Integration
@@ -425,18 +425,18 @@ Based on the feature catalog and architecture decisions:
 ### Infrastructure Health Check
 ```bash
 # From root workspace
-node ace.mjs status
-node ace.mjs context --json
+ace status
+ace context --json
 
 # Verify all workspaces
-node ace.mjs agents
-node ace.mjs tasks
+ace agents
+ace tasks
 
 # Check adapter health
-node ace.mjs adapters health
+ace adapters health
 
 # Verify configuration
-node ace.mjs config --resolve
+ace config --resolve
 ```
 
 ### Expected Output Summary

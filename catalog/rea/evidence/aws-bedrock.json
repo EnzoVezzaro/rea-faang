@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_5aacc993231e3f21733b1c72825b7b8335a1640ae28a302b9083b8bdba54c5b8",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/bedrock/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "0c92ce9e730191c4da7bf0b35acfba8d8eb6c3276f3cdc355455740b7224a658"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4741,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1978,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/bedrock/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2545,
+        "before_url": {
+          "url": "https://aws.amazon.com/bedrock/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/bedrock/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "eaf43cd685498a8be6ade478917f5af128eae31877aa8832f045356df2cd9565",
+              "bytes": 15583,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - tooltip \"Feedback\"\n  - main:\n    - paragraph: Amazon Bedrock\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /bedrock/\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /bedrock/getting-started/\n      - button \"Capabilities submenu\": Capabilities\n      - button \"Agents submenu\": Agents\n      - listitem:\n        - link \"Pricing\":\n          - /url: /bedrock/pricing/\n      - listitem:\n        - link \"Resources\":\n          - /url: /bedrock/resources/\n      - button \"More submenu\": More\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Artificial Intelligence\":\n            - /url: /ai/\n        - listitem:\n          - link \"Generative AI\":\n            - /url: /ai/generative-ai/\n        - listitem: Amazon Bedrock\n    - heading \"Amazon Bedrock\" [level=1]\n    - paragraph: The platform for building generative AI applications and agents at production scale\n    - button \"Get started with Amazon Bedrock\"\n    - button \"Latest Foundation Models\"\n    - heading \"Drive real business impact\" [level=2]\n    - paragraph: Amazon Bedrock powers generative AI for more than 100,000 organizations worldwide—from startups to global enterprises across every industry. It provides the proven infrastructure and comprehensive capabilities to confidently build applications and agents that work in production with the flexibility, enterprise security, and proven scalability you need to innovate boldly and deliver AI that drives real business impact.\n    - 'link \"Explore interactive demo: Drive real business impact\"':\n      - /url: https://bedrock.ai.demo.aws\n      - text: Explore interactive demo\n    - button \"Play:\"\n    - img \"Missing alt text value\"\n    - heading \"Meet Amazon Bedrock\" [level=2]\n    - paragraph: The core capabilities you need for building production AI in one platform.\n    - img \"Missing alt text value\"\n    - button \"Zoom out\" [disabled]\n    - status: 100%\n    - button \"Zoom in\"\n    - button \"Full screen\"\n    - heading \"Capabilities\" [level=2]\n    - paragraph: Organizations choose Amazon Bedrock to deliver personalized experiences, automate complex workflows, and uncover actionable insights—all in a comprehensive platform that lets teams innovate fast without compromising on security.\n    - tablist:\n      - tab \"Model choice\" [selected]\n      - tab \"Agent development\"\n      - tab \"Customization\"\n      - tab \"Safety and guardrails\"\n      - tab \"Cost optimization\"\n    - tabpanel \"Model choice\":\n      - heading \"Choose the best model for your use case\" [level=3]\n      - paragraph: Amazon Bedrock gives you access to hundreds of FMs from leading AI companies along with evaluation tools to pick the best model based on your unique performance and cost needs. Future-proof your AI strategy as your needs evolve and new models emerge.\n      - paragraph:\n        - link \"Learn more about model choice\":\n          - /url: /bedrock/model-choice/\n      - img \"Global AI\"\n    - text: From napkin to MVP; real founder stories Every startup begins with a messy idea. Watch how founders built their AI product on AWS, from first sketch to first customer. No enterprise playbook required.\n    - link \"Explore AI for startups\":\n      - /url: https://aws.amazon.com/startups/ai-for-startups/?sc_icampaign=aware_startups-napkin_2026&sc_ichannel=ha&sc_iplace=banner&trk=22ab15bf-01fe-4c50-a3e6-74eaa3399151\n    - button \"Close\"\n    - text: From napkin to MVP; real founder stories Every startup begins with a messy idea. Watch how founders built their AI product on AWS, from first sketch to first customer. No enterprise playbook required.\n    - link \"Explore AI for startups\":\n      - /url: https://aws.amazon.com/startups/ai-for-startups/?sc_icampaign=aware_startups-napkin_2026&sc_ichannel=ha&sc_iplace=banner&trk=22ab15bf-01fe-4c50-a3e6-74eaa3399151\n    - button \"Close\"\n    - heading \"Accelerate agents to production with full control\" [level=2]\n    - paragraph: Amazon Bedrock AgentCore is the platform to build, connect, and optimize AI agents. With AgentCore, you can deploy agents using any framework and model with production-grade security from day one, connect agents to enterprise systems, tools, and data with automatic authentication and access controls, and continuously optimize agent performance with tracing, debugging, and evaluation capabilities built in. AgentCore capabilities are designed to work together or independently, giving you the flexibility to adopt what you need, when you need it — no infrastructure management required.\n    - 'link \"Learn more about AgentCore: Accelerate agents to production with full control\"':\n      - /url: /bedrock/agentcore/\n      - text: Learn more about AgentCore\n    - heading \"Do more with Amazon Bedrock\" [level=2]\n    - paragraph: Get from idea to production fast\n    - heading \"Write new copy\" [level=3]\n    - paragraph: Jump-start your writing project with new pieces of original copy, such as blog posts, social media posts, and webpage copy.\n    - heading \"Create a virtual assistant\" [level=3]\n    - paragraph: Build assistive agents that understand user requests, automatically breakdown tasks, ingest and analyze multi-modal data, and then take actions and create new content to fulfill the request.\n    - heading \"Skip the reading\" [level=3]\n    - paragraph: Summarize long documents such as articles, reports, research papers, technical documentation, and even books to quickly and effectively extract important information.\n    - heading \"Be the designer\" [level=3]\n    - paragraph: Create stunningly realistic and visually appealing images for ad campaigns, websites, presentations, and more in an instant.\n    - heading \"Streamline workflows\" [level=3]\n    - paragraph: Automate routine tasks and streamline operations across functions like financial reporting and demand forecasting with agents.\n    - heading \"Get deep insights\" [level=3]\n    - paragraph: Use agents to automate complex data analysis and simulations—allowing researchers and creators to focus on strategic ideation rather than technical execution.\n    - button \"Show more\"\n    - heading \"Real results, real customers\" [level=2]\n    - heading [level=5]\n    - heading \"Robinhood\" [level=2]\n    - paragraph: Robinhood transformed into an AI-first financial innovator using Amazon Bedrock, scaling from 500 million to 5 billion tokens daily in just six months—while slashing AI costs by 80% and cutting development time in half. According to Dev Tagare, Robinhood's Head of AI, Amazon Bedrock's model diversity, security, and compliance features are purpose-built for regulated industries. Robinhood's success demonstrates how fintech leaders can use Amazon Bedrock to democratize finance with cutting-edge AI while maintaining enterprise-grade security and compliance.\n    - button \"Play:\" [disabled]\n    - img \"Missing alt text value\"\n    - heading \"Epsilon\" [level=2]\n    - paragraph: Epsilon used Amazon Bedrock AgentCore to transform their marketing operations, enabling intelligent agents to automate complex campaign workflows while maintaining enterprise-grade security and compliance. Epsilon accelerated their agent development from months to weeks, delivering personalized marketing experiences at scale while reducing operational overhead.\n    - 'link \"Explore more customer success stories: Epsilon\"':\n      - /url: /bedrock/customers/\n      - text: Explore more customer success stories\n    - button \"Play:\" [disabled]\n    - img \"Missing alt text value\"\n    - heading \"Try AWS AI for Free\" [level=2]\n    - text: New AWS customers receive up to $200 in AWS credits to try AWS AI for free\n    - button \"Get started for free\"\n    - heading \"Next steps\" [level=2]\n    - link \"Video Amazon Bedrock customer success stories Watch the videos\":\n      - /url: https://www.youtube.com/playlist?list=PLhr1KZpdzukdxGUL7B_Gv45OG4-NECKcS\n      - text: Video\n      - heading \"Amazon Bedrock customer success stories\" [level=3]\n      - text: Watch the videos\n    - link \"Documentation Amazon Bedrock documentation Read the documentation\":\n      - /url: https://docs.aws.amazon.com/bedrock/latest/userguide/getting-started.html\n      - text: Documentation\n      - heading \"Amazon Bedrock documentation\" [level=3]\n      - text: Read the documentation\n    - link \"Workshop Explore common Amazon Bedrock use cases with a guided workshop View workshop\":\n      - /url: https://catalog.us-east-1.prod.workshops.aws/workshops/a4bdb007-5600-4368-81c5-ff5b4154f518/en-US\n      - text: Workshop\n      - heading \"Explore common Amazon Bedrock use cases with a guided workshop\" [level=3]\n      - text: View workshop\n    - link \"Demo View demos of Amazon Bedrock capabilities Explore the demo library\":\n      - /url: https://www.youtube.com/playlist?list=PLhr1KZpdzukfmv7jxvB0rL8SWoycA9TIM\n      - text: Demo\n      - heading \"View demos of Amazon Bedrock capabilities\" [level=3]\n      - text: Explore the demo library\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /bedrock/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /bedrock/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/bedrock/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

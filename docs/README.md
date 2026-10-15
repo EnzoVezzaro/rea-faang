@@ -2,17 +2,11 @@
 
 # RAE FAANG documentation
 
-Start here to use the product catalog and give a product-specific Markdown skill to your coding agent.
-The catalog covers products from Meta, Amazon, Apple, Netflix and Google, with research and open-source
-projects for your agent to evaluate before building in your project.
-
-These guides describe the repository as it works today. Use them and the code when older notes
-disagree.
+Use this guide to browse the catalog, generate a product skill and work on the repository. Each product entry links to research and candidate open-source projects for a coding agent to assess. The docs below describe the current CLI and workflow; `.docs/` contains older design notes.
 
 ## Contributor entry points
 
-This is an open-source research catalog — most useful contributions touch catalog data,
-research evidence, product skills, or the deterministic tooling.
+Useful contributions improve catalog data, research, product skills or the tools that check and publish them.
 
 - **First build or install?** [`getting-started.md`](getting-started.md).
 - **Change the catalog?** [`catalog-and-schemas.md`](catalog-and-schemas.md), then run

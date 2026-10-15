@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_d1f6ebad860cc18df5129b3b4454b109ab6a62fd39f5f7c9a34365a2dceab9d8",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.netflix.com/tudum",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "c71606cf2497f5964ac2775531c3873311de9b1695217307a518a47ec3634c06"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://www.netflix.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 5492,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 2493,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.netflix.com/tudum",
+          "origin": "https://www.netflix.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2558,
+        "before_url": {
+          "url": "https://www.netflix.com/tudum",
+          "origin": "https://www.netflix.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.netflix.com/tudum",
+          "origin": "https://www.netflix.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "b646e6347eb24bca7730601ed95f4fc098eae847d17bd12807f1bfe3ecf20579",
+              "bytes": 35207,
+              "text": "- document:\n  - link \"Skip to main content\":\n    - /url: \"#maincontent\"\n  - banner:\n    - link \"Sign In\":\n      - /url: https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Ftudum\n      - img\n      - text: Sign In\n    - link \"Tudum by Netflix - Home\":\n      - /url: /tudum\n    - combobox \"Select option\": English\n    - listbox \"Select option\":\n      - option \"English\" [selected]\n      - option \"Português\"\n    - navigation \"Main Menu\":\n      - link \"Home\":\n        - /url: /tudum\n      - link \"Top 10\":\n        - /url: /tudum/top10\n      - link \"Trending\":\n        - /url: /tudum/topics/trending\n      - link \"What to Watch\":\n        - /url: /tudum/topics/what-to-watch\n      - link \"Shows\":\n        - /url: /tudum/topics/tv-shows\n      - link \"Movies\":\n        - /url: /tudum/topics/movies\n      - link \"Puzzled\":\n        - /url: /tudum/puzzled\n      - link \"Podcasts\":\n        - /url: /tudum/podcasts\n      - link \"Shop opens in a new tab\":\n        - /url: https://netflix.shop\n        - text: Shop\n        - img \"opens in a new tab\"\n  - main:\n    - heading \"Netflix Tudum - Go behind the streams\" [level=1]\n    - navigation \"Featured Links\":\n      - list:\n        - listitem: Popular\n        - listitem:\n          - link \"East of Eden\":\n            - /url: /tudum/east-of-eden\n        - listitem:\n          - link \"Animals\":\n            - /url: /tudum/animals\n        - listitem:\n          - link \"UNABOMBER\":\n            - /url: /tudum/unabomber\n        - listitem:\n          - 'link \"Monster: The Lizzie Borden Story\"':\n            - /url: /tudum/monster-the-lizzie-borden-story\n        - listitem:\n          - link \"Below\":\n            - /url: /tudum/below\n        - listitem:\n          - link \"The Perfect Lie\":\n            - /url: /tudum/the-perfect-lie\n        - listitem:\n          - link \"The Gentlemen\":\n            - /url: /tudum/the-gentlemen\n        - listitem:\n          - link \"The Whisper Man\":\n            - /url: /tudum/the-whisper-man\n        - listitem:\n          - link \"Wonka's The Golden Ticket\":\n            - /url: /tudum/wonkas-the-golden-ticket\n        - listitem:\n          - link \"Crew Girl\":\n            - /url: /tudum/crew-girl\n    - list:\n      - listitem:\n        - article:\n          - img \"Narnia Title Treatment\":\n            - img \"Narnia Title Treatment\"\n          - 'link \"Narnia: The Magician’s Nephew, Directed by Greta Gerwig, Roars to Life in 2027\"':\n            - /url: /tudum/articles/narnia-release-date\n          - text: Watch the new trailer for the epic adventure film.\n    - heading \"Spotlight\" [level=2]\n    - list:\n      - listitem:\n        - article:\n          - img \"Smiling man with brown hair wearing a sweater and overalls stands on a boat under a cloudy sky, with fishing equipment and parts of the boat visible in the background.\":\n            - img \"Smiling man with brown hair wearing a sweater and overalls stands on a boat under a cloudy sky, with fishing equipment and parts of the boat visible in the background.\"\n          - link \"Below Surfaces to the No. 1 Spot in This Week’s Top 10\":\n            - /url: /tudum/articles/top-10-october-5-2026\n          - text: Animals tops the English film list, and East of Eden doubles its viewership.\n      - listitem:\n        - article:\n          - img \"Pregnant woman in a long dress stands in a grassy field with wildflowers, set against a backdrop of rolling hills and mountains during golden hour, creating a serene and natural outdoor scene.\":\n            - img \"Pregnant woman in a long dress stands in a grassy field with wildflowers, set against a backdrop of rolling hills and mountains during golden hour, creating a serene and natural outdoor scene.\"\n          - link \"East of Eden Composer Laura Karpman on the Power of Scoring the Unsung\":\n            - /url: /tudum/articles/east-of-eden-score-laura-karpman\n          - text: “What’s always fascinating is how music can shade and shape a character.”\n      - listitem:\n        - article:\n          - img \"Soccer team in red and blue uniforms celebrates on a stadium stage, holding a gold trophy and wearing medals, with confetti falling and crowd in the background.\":\n            - img \"Soccer team in red and blue uniforms celebrates on a stadium stage, holding a gold trophy and wearing medals, with confetti falling and crowd in the background.\"\n          - 'link \"FIFA World Cup 2030: Netflix Scores Exclusive Rights in Spain and Andorra\"':\n            - /url: /tudum/articles/fifa-world-cup-2030-watch-live-netflix\n          - text: Every match of the 100th anniversary tournament will stream live to local fans.\n    - link \"See More\":\n      - /url: /tudum/topics/trending\n    - text: More from the stories you’ve watched Sign in for behind-the-scenes stories and explainers\n    - link \"Sign In\":\n      - /url: https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Ftudum\n    - heading \"Fan Favorites\" [level=2]\n    - list:\n      - listitem:\n        - article:\n          - link \"East of Eden\":\n            - /url: /tudum/east-of-eden\n            - img \"East of Eden\":\n              - img \"East of Eden\"\n      - listitem:\n        - article:\n          - link \"Animals\":\n            - /url: /tudum/animals\n            - img \"Animals\":\n              - img \"Animals\"\n      - listitem:\n        - article:\n          - link \"UNABOMBER\":\n            - /url: /tudum/unabomber\n            - img \"UNABOMBER\":\n              - img \"UNABOMBER\"\n      - listitem:\n        - article:\n          - 'link \"Monster: The Lizzie Borden Story\"':\n            - /url: /tudum/monster-the-lizzie-borden-story\n            - 'img \"Monster: The Lizzie Borden Story\"':\n              - 'img \"Monster: The Lizzie Borden Story\"'\n      - listitem:\n        - article:\n          - link \"Below\":\n            - /url: /tudum/below\n            - img \"Below\":\n              - img \"Below\"\n      - listitem:\n        - article:\n          - link \"The Perfect Lie\":\n            - /url: /tudum/the-perfect-lie\n            - img \"The Perfect Lie\":\n              - img \"The Perfect Lie (De Eetclub)\"\n      - listitem:\n        - article:\n          - link \"The Gentlemen\":\n            - /url: /tudum/the-gentlemen\n            - img \"The Gentlemen\":\n              - img \"The Gentlemen\"\n      - listitem:\n        - article:\n          - link \"The Whisper Man\":\n            - /url: /tudum/the-whisper-man\n            - img \"The Whisper Man\":\n              - img \"The Whisper Man\"\n      - listitem:\n        - article:\n          - link \"Wonka's The Golden Ticket\":\n            - /url: /tudum/wonkas-the-golden-ticket\n            - img \"Wonka's The Golden Ticket\":\n              - img \"Wonka's The Golden Ticket\"\n      - listitem:\n        - article:\n          - link \"Crew Girl\":\n            - /url: /tudum/crew-girl\n            - img \"Crew Girl\":\n              - img \"Crew Girl\"\n      - listitem:\n        - article:\n          - link \"KPop Demon Hunters\":\n            - /url: /tudum/kpop-demon-hunters\n            - img \"KPop Demon Hunters\":\n              - img \"KPop Demon Hunters\"\n      - listitem:\n        - article:\n          - link \"Our Sticky Love\":\n            - /url: /tudum/our-sticky-love\n            - img \"Our Sticky Love\":\n              - img \"Our Sticky Love (이런 엿같은 사랑)\"\n      - listitem:\n        - article:\n          - link \"Beauty in Black\":\n            - /url: /tudum/beauty-in-black\n            - img \"Beauty in Black\":\n              - img \"Beauty in Black\"\n      - listitem:\n        - article:\n          - link \"A Different World\":\n            - /url: /tudum/a-different-world\n            - img \"A Different World\":\n              - img \"A Different World\"\n      - listitem:\n        - article:\n          - link \"My Life With the Walter Boys\":\n            - /url: /tudum/my-life-with-the-walter-boys\n            - img \"My Life With the Walter Boys\":\n              - img \"My Life With the Walter Boys\"\n    - button \"Next items\"\n    - heading \"Latest News\" [level=2]\n    - article:\n      - img \"A ballerina figurine on a vintage music box in a dusty, dimly lit room with rays of light, an eerie figure in the background, and a mysterious atmosphere suggesting suspense or horror.\":\n        - img \"A ballerina figurine on a vintage music box in a dusty, dimly lit room with rays of light, an eerie figure in the background, and a mysterious atmosphere suggesting suspense or horror.\"\n      - 'link \"Everything You Need to Know About The Conjuring: Unspoken\"':\n        - /url: /tudum/articles/the-conjuring-unspoken-game-news\n      - text: The new game based on The Conjuring universe is has arrived.\n    - list:\n      - listitem:\n        - article:\n          - link \"Florence Pugh Is Cathy Ames in East of Eden\":\n            - /url: /tudum/articles/east-of-eden-series\n          - img \"Woman in vintage blue clothing and hat looks over her shoulder outdoors, with a blurred background featuring sacks and bricks, suggesting a historical or period setting.\"\n      - listitem:\n        - article:\n          - link \"Nellie Oleson Is Bringing the Side-Eye to Little House on the Prairie Season 2\":\n            - /url: /tudum/articles/willa-dunn-nellie-oleson-little-house-on-the-prairie-season-2\n          - img \"Young girl with long wavy blonde hair wearing a white blouse, sitting indoors against a neutral beige background, looking directly at the camera with a calm expression.\"\n      - listitem:\n        - article:\n          - link \"Little House on the Prairie Season 2 Wraps Production\":\n            - /url: /tudum/articles/little-house-on-the-prairie-season-2-cast-release-date-news\n          - img \"Two girls in vintage dresses and hats, one carrying the other while laughing, outdoors in what appears to be a historical or rural village setting with blurred buildings and people in the background.\"\n    - link \"See More\":\n      - /url: /tudum/topics/news\n    - list:\n      - listitem:\n        - img\n        - img \"The Diplomat\"\n        - timer \"Countdown\":\n          - paragraph: 1 Days, 3 Hours, 3 Minutes, 19 Seconds\n        - button \"My List\":\n          - img\n          - text: My List\n        - link \"Watch\":\n          - /url: https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Fwatch%252F81288983%253FtrackId%253D263218445%2526trkId%253D263218445%2526src%253Dtudum\n          - img\n          - text: Watch\n        - link \"Explore\":\n          - /url: /tudum/the-diplomat\n          - img\n          - text: Explore\n      - listitem:\n        - img\n        - img \"The One About Matthew Perry\"\n        - timer \"Countdown\":\n          - paragraph: 13 Days, 3 Hours, 3 Minutes, 19 Seconds\n        - button \"Remind Me\":\n          - img\n          - text: Remind Me\n        - link \"Explore\":\n          - /url: /tudum/the-one-about-matthew-perry\n          - img\n          - text: Explore\n      - listitem:\n        - img\n        - img \"Love Is Blind\"\n        - timer \"Countdown\":\n          - paragraph: 0 Days, 3 Hours, 3 Minutes, 19 Seconds\n        - button \"My List\":\n          - img\n          - text: My List\n        - link \"Watch\":\n          - /url: https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Fwatch%252F80996601%253FtrackId%253D263218445%2526trkId%253D263218445%2526src%253Dtudum\n          - img\n          - text: Watch\n        - link \"Explore\":\n          - /url: /tudum/love-is-blind\n          - img\n          - text: Explore\n      - listitem:\n        - img\n        - img \"Lupin\"\n        - timer \"Countdown\":\n          - paragraph: 9 Days, 3 Hours, 3 Minutes, 19 Seconds\n        - button \"My List\":\n          - img\n          - text: My List\n        - link \"Watch\":\n          - /url: https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Fwatch%252F80994082%253FtrackId%253D263218445%2526trkId%253D263218445%2526src%253Dtudum\n          - img\n          - text: Watch\n        - link \"Explore\":\n          - /url: /tudum/lupin\n          - img\n          - text: Explore\n      - listitem:\n        - img\n        - img \"Nobody Wants This\"\n        - timer \"Countdown\":\n          - paragraph: 8 Days, 3 Hours, 3 Minutes, 19 Seconds\n        - button \"My List\":\n          - img\n          - text: My List\n        - link \"Watch\":\n          - /url: https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Fwatch%252F81591296%253FtrackId%253D263218445%2526trkId%253D263218445%2526src%253Dtudum\n          - img\n          - text: Watch\n        - link \"Explore\":\n          - /url: /tudum/nobody-wants-this\n          - img\n          - text: Explore\n      - listitem:\n        - img\n        - img \"Black Doves\"\n        - timer \"Countdown\":\n          - paragraph: 22 Days, 4 Hours, 3 Minutes, 19 Seconds\n        - button \"My List\":\n          - img\n          - text: My List\n        - link \"Watch\":\n          - /url: https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Fwatch%252F81682935%253FtrackId%253D263218445%2526trkId%253D263218445%2526src%253Dtudum\n          - img\n          - text: Watch\n        - link \"Explore\":\n          - /url: /tudum/black-doves\n          - img\n          - text: Explore\n      - listitem:\n        - img\n        - img \"North of North\"\n        - timer \"Countdown\":\n          - paragraph: 22 Days, 4 Hours, 3 Minutes, 19 Seconds\n        - button \"My List\":\n          - img\n          - text: My List\n        - link \"Watch\":\n          - /url: https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Fwatch%252F81616012%253FtrackId%253D263218445%2526trkId%253D263218445%2526src%253Dtudum\n          - img\n          - text: Watch\n        - link \"Explore\":\n          - /url: /tudum/north-of-north\n          - img\n          - text: Explore\n      - listitem:\n        - img\n        - img \"The Devil's Plan\"\n        - timer \"Countdown\":\n          - paragraph: 27 Days, 4 Hours, 3 Minutes, 19 Seconds\n        - button \"My List\":\n          - img\n          - text: My List\n        - link \"Watch\":\n          - /url: https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Fwatch%252F81653386%253FtrackId%253D263218445%2526trkId%253D263218445%2526src%253Dtudum\n          - img\n          - text: Watch\n        - link \"Explore\":\n          - /url: /tudum/the-devils-plan\n          - img\n          - text: Explore\n    - button \"Next items\"\n    - heading \"Trending Videos\" [level=2]\n    - list:\n      - listitem:\n        - article:\n          - img \"A cosmic scene featuring the silhouette of a lion’s head in space with a glowing pegasus flying past a burst of colorful light, set against a background of swirling stars and nebulae.\":\n            - img \"A cosmic scene featuring the silhouette of a lion’s head in space with a glowing pegasus flying past a burst of colorful light, set against a background of swirling stars and nebulae.\"\n          - img \"Video\"\n          - 'link \"Watch the Narnia: The Magician’s Nephew Trailer\"':\n            - /url: /tudum/videos/narnia-the-magicians-nephew-trailer\n          - text: A universe begins in Greta Gerwig’s new movie.\n    - list:\n      - listitem:\n        - article:\n          - img \"Two men sitting indoors at a table, one making a peace sign and the other with hands pressed together, both wearing glasses in a dimly-lit setting with wooden paneling in the background.\":\n            - img \"Two men sitting indoors at a table, one making a peace sign and the other with hands pressed together, both wearing glasses in a dimly-lit setting with wooden paneling in the background.\"\n          - img \"Video\"\n          - link \"Watch The Disciple Trailer\":\n            - /url: /tudum/videos/the-disciple-trailer\n          - text: The documentary chronicles the making of a one-of-a-kind Wu-Tang Clan album.\n      - listitem:\n        - article:\n          - img \"Young man with short dark hair in a serious expression, shown in close-up against a cloudy sky, outdoors in natural light.\":\n            - img \"Young man with short dark hair in a serious expression, shown in close-up against a cloudy sky, outdoors in natural light.\"\n          - img \"Video\"\n          - link \"Watch the trailer for The Mosquito Bowl\":\n            - /url: /tudum/videos/the-mosquito-bowl-trailer\n          - text: Directed by Peter Berg, the movie follows four football stars who enlist in a World War II.\n    - link \"See More\":\n      - /url: /tudum/topics/video\n    - 'img \"Graveyard at night with fog, glowing red light from a tomb, spooky trees, full moon in the background. Text overlay: “31 Days of Horror. Watch one scary movie a day ranked from a little spooky to nightmare inducing.”\"'\n    - link \"Dare to Enter\":\n      - /url: /tudum/features/halloween-movies-on-netflix-2026\n    - heading \"Shows\" [level=2]\n    - list:\n      - listitem:\n        - article:\n          - img \"A woman and man standing close together on a beach, looking into each other's eyes with a clear sky in the background.\":\n            - img \"A woman and man standing close together on a beach, looking into each other's eyes with a clear sky in the background.\"\n          - link \"8 Spicy Romance Movies and Series That Crank Up the Heat\":\n            - /url: /tudum/articles/sexy-movies-series\n          - text: Is it getting hot in here?\n      - listitem:\n        - article:\n          - img \"Woman in a dark robe sits at a vintage vanity with candles and flowers in a dim, elegant room, looking toward a standing figure partially visible in the foreground.\":\n            - img \"Woman in a dark robe sits at a vintage vanity with candles and flowers in a dim, elegant room, looking toward a standing figure partially visible in the foreground.\"\n          - link \"Inside the Ending of East of Eden\":\n            - /url: /tudum/articles/east-of-eden-ending-explained\n          - text: Zoe Kazan’s adaptation of John Steinbeck’s novel preserves its final moments.\n      - listitem:\n        - article:\n          - img \"Woman in yellow raincoat stands near lobster traps, outdoors by a crowd and a helicopter, with a wooden building and forested rocky hill in the background, suggesting a coastal rural setting.\":\n            - img \"Woman in yellow raincoat stands near lobster traps, outdoors by a crowd and a helicopter, with a wooden building and forested rocky hill in the background, suggesting a coastal rural setting.\"\n          - 'link \"Dive Into the Below Ending: Can Snook’s Arm Survive the Mysterious Sea Creature?\"':\n            - /url: /tudum/articles/below-ending-explained\n          - text: Josh Hartnett, Charlie Heaton, Mackenzie Davis, and creator Jesse McKeown break down that final-act twist.\n    - link \"See More\":\n      - /url: /tudum/topics/tv-shows\n    - heading \"Explore More\" [level=2]\n    - list:\n      - listitem:\n        - article:\n          - 'img \"Three individuals: a soldier in a rugged outdoor setting, a woman in a white suit and sunglasses in a modern building, and a man in dark clothing in a dimly lit room, each from different film genres.\"':\n            - 'img \"Three individuals: a soldier in a rugged outdoor setting, a woman in a white suit and sunglasses in a modern building, and a man in dark clothing in a dimly lit room, each from different film genres.\"'\n          - link \"Here Are the 10 Most-Watched Movies of 2026 — So Far\":\n            - /url: /tudum/articles/most-watched-movies-h1-2026\n      - listitem:\n        - article:\n          - img \"A serious man in a dress shirt and tie leans in close to a concerned woman indoors, their faces inches apart, suggesting tension or intense conversation in a dimly lit room.\":\n            - img \"A serious man in a dress shirt and tie leans in close to a concerned woman indoors, their faces inches apart, suggesting tension or intense conversation in a dimly lit room.\"\n          - link \"24 Thrillers Too Suspenseful to Pause for Even a Second\":\n            - /url: /tudum/articles/best-thrillers-on-netflix\n      - listitem:\n        - article:\n          - img \"Two professional wrestlers perform a dramatic move in a wrestling ring, surrounded by cheering fans in a packed indoor arena, with several people capturing the action on their phones.\":\n            - img \"Two professional wrestlers perform a dramatic move in a wrestling ring, surrounded by cheering fans in a packed indoor arena, with several people capturing the action on their phones.\"\n          - 'link \"WWE Money in the Bank 2026: Full Match Card, Start Time, and Live Results\"':\n            - /url: /tudum/articles/money-in-the-bank-mitb-2026-date-news-card-matches-results\n      - listitem:\n        - article:\n          - img \"A serious man stands with arms crossed behind a seated woman in an elegant office lined with bookshelves, awards, and dark wood decor. Both appear deep in thought, suggesting a tense or important conversation.\":\n            - img \"A serious man stands with arms crossed behind a seated woman in an elegant office lined with bookshelves, awards, and dark wood decor. Both appear deep in thought, suggesting a tense or important conversation.\"\n          - link \"New on Netflix in October 2026\":\n            - /url: /tudum/articles/new-on-netflix\n      - listitem:\n        - article:\n          - img \"Five people stand together on a porch, one speaking at a podium with microphones, others looking serious; they face a crowd during what appears to be a press conference or public statement outdoors.\":\n            - img \"Five people stand together on a porch, one speaking at a podium with microphones, others looking serious; they face a crowd during what appears to be a press conference or public statement outdoors.\"\n          - link \"Meet the Political Animals of Ben Affleck’s New Thriller\":\n            - /url: /tudum/articles/animals-cast-guide\n      - listitem:\n        - article:\n          - img \"A woman and man in period clothing stand by a horse-drawn wagon with luggage, outdoors in a historical setting, suggesting a travel or arrival scene.\":\n            - img \"A woman and man in period clothing stand by a horse-drawn wagon with luggage, outdoors in a historical setting, suggesting a travel or arrival scene.\"\n          - 'link \"East of Eden Cast Guide: Who Plays Cathy, Adam, Cal, and Aron in the New Series?\"':\n            - /url: /tudum/articles/east-of-eden-cast-guide\n      - listitem:\n        - article:\n          - img \"Two women in vintage clothing stand closely together, peering out from behind ornate curtains in an elegant, softly lit room with classic decor and floral arrangements, suggesting a historical or period drama setting.\":\n            - img \"Two women in vintage clothing stand closely together, peering out from behind ornate curtains in an elegant, softly lit room with classic decor and floral arrangements, suggesting a historical or period drama setting.\"\n          - 'link \"Meet the Murderous Cast of Monster: The Lizzie Borden Story\"':\n            - /url: /tudum/articles/monster-the-lizzie-borden-story-cast-guide\n      - listitem:\n        - article:\n          - img \"Two people wearing yellow glowing goggles and denim jackets with patches stand in a colorful, neon-lit cave environment, surrounded by plants and glowing decorations, looking upward as if intrigued or cautious.\":\n            - img \"Two people wearing yellow glowing goggles and denim jackets with patches stand in a colorful, neon-lit cave environment, surrounded by plants and glowing decorations, looking upward as if intrigued or cautious.\"\n          - link \"18 Family-Friendly Movies and Shows That Put the ‘Happy’ in ‘Happy Halloween!’\":\n            - /url: /tudum/articles/family-friendly-kids-halloween-shows-movies-on-netflix\n      - listitem:\n        - article:\n          - img \"A group of people sit closely together indoors, appearing attentive and serious, likely at a community meeting in a rustic room with blue walls and casual clothing, with the central man in focus.\":\n            - img \"A group of people sit closely together indoors, appearing attentive and serious, likely at a community meeting in a rustic room with blue walls and casual clothing, with the central man in focus.\"\n          - link \"Meet the Small-Town Community Taking on a Mysterious Sea Creature in Below\":\n            - /url: /tudum/articles/below-cast-guide\n      - listitem:\n        - article:\n          - img \"Six young adults sit on a brick wall outdoors, smiling and relaxed. Trees and blue sky in background. One holds a football; they wear casual, varied outfits, indicating a friendly, laid-back group setting.\":\n            - img \"Six young adults sit on a brick wall outdoors, smiling and relaxed. Trees and blue sky in background. One holds a football; they wear casual, varied outfits, indicating a friendly, laid-back group setting.\"\n          - 'link \"A Different World Cast Guide: Meet Hillman’s Finest, from Freshmen to Family\"':\n            - /url: /tudum/articles/a-different-world-cast-guide\n      - listitem:\n        - article:\n          - img \"A woman sits on a couch in a living room while a man, holding a phone, leans toward her, both appearing serious. A bottle of liquor is on the table. Warm indoor lighting, modern home setting.\":\n            - img \"A woman sits on a couch in a living room while a man, holding a phone, leans toward her, both appearing serious. A bottle of liquor is on the table. Warm indoor lighting, modern home setting.\"\n          - link \"In Animals, Ben Affleck and Kerry Washington Face a Mysterious Threat\":\n            - /url: /tudum/articles/animals-ben-affleck-release-date-photos-news\n      - listitem:\n        - article:\n          - img \"Woman with curly hair peering through a partially open door, illuminated by candlelight in a dark, dimly lit setting, creating a tense and mysterious atmosphere.\":\n            - img \"Woman with curly hair peering through a partially open door, illuminated by candlelight in a dark, dimly lit setting, creating a tense and mysterious atmosphere.\"\n          - link \"Chilling Supernatural Horror Movies to Get You Into the Fall Spirit\":\n            - /url: /tudum/articles/supernatural-horror-movies\n      - listitem:\n        - article:\n          - img \"A man wearing a black beanie and green vest stands on a fishing boat, with water and cloudy sky in the background, conveying a rugged, maritime setting.\":\n            - img \"A man wearing a black beanie and green vest stands on a fishing boat, with water and cloudy sky in the background, conveying a rugged, maritime setting.\"\n          - 'link \"Below: Watch as Josh Hartnett Unravels an Underwater Mystery\"':\n            - /url: /tudum/articles/below-release-date-photos-news\n      - listitem:\n        - article:\n          - img \"A woman in a light blue period dress sits in a wooden chair in an ornate library or study, with wood paneling, bookshelves, and a decorative fireplace in the background, looking thoughtful.\":\n            - img \"A woman in a light blue period dress sits in a wooden chair in an ornate library or study, with wood paneling, bookshelves, and a decorative fireplace in the background, looking thoughtful.\"\n          - link \"Bridgerton’s Spin-Off About Young Violet Is Officially on the Way\":\n            - /url: /tudum/articles/young-violet-bridgerton-spin-off-plot-news\n      - listitem:\n        - article:\n          - img \"A woman and man stand side by side in vintage-style clothing, both wearing patterned sweater vests and shirts, in a dim, old-fashioned setting with stone and wooden details, evoking a historical or academic atmosphere.\":\n            - img \"A woman and man stand side by side in vintage-style clothing, both wearing patterned sweater vests and shirts, in a dim, old-fashioned setting with stone and wooden details, evoking a historical or academic atmosphere.\"\n          - link \"The Gentlemen Scores a Season 3 Ahead of Season 2\":\n            - /url: /tudum/articles/the-gentlemen-season-3-release-date-cast-news\n      - listitem:\n        - article:\n          - img \"A distressed woman grips a wooden lattice fence at night, illuminated by dramatic lighting, expressing fear or desperation in an outdoor setting.\":\n            - img \"A distressed woman grips a wooden lattice fence at night, illuminated by dramatic lighting, expressing fear or desperation in an outdoor setting.\"\n          - link \"The 20 Scariest Things to Watch Right Now\":\n            - /url: /tudum/articles/best-scary-movies-tv-shows-on-netflix\n      - listitem:\n        - article:\n          - img \"A concerned person in a blue jacket stands in a vintage room with patterned wallpaper, ornate wooden furniture, and a black-and-white cutout of a woman in period clothing in the background.\":\n            - img \"A concerned person in a blue jacket stands in a vintage room with patterned wallpaper, ornate wooden furniture, and a black-and-white cutout of a woman in period clothing in the background.\"\n          - 'link \"Why Is Sarah Paulson Playing Aileen Wuornos in Monster: The Lizzie Borden Story?\"':\n            - /url: /tudum/articles/monster-the-lizzie-borden-story-sarah-paulson\n      - listitem:\n        - article:\n          - img \"8 Love Is Blind contestants in Pods\":\n            - img \"8 Love Is Blind contestants in Pods\"\n          - 'link \"Love Is Blind Season 11: Meet the Bostonians Getting Wicked Serious About Love\"':\n            - /url: /tudum/features/love-is-blind-season-11-boston-cast-instagrams\n      - listitem:\n        - article:\n          - img \"A man wearing a beanie stands on the deck of a fishing boat surrounded by nets and wooden railings, with the sea and distant land visible under a clear sky.\":\n            - img \"A man wearing a beanie stands on the deck of a fishing boat surrounded by nets and wooden railings, with the sea and distant land visible under a clear sky.\"\n          - link \"Does Below’s Sea Creature Really Exist?\":\n            - /url: /tudum/articles/below-sea-creature-mudder-true-story\n      - listitem:\n        - article:\n          - img \"Spooky graveyard at night under a full moon, with mist and bats in the sky, dead trees, old tombstones, and a glowing red light emanating from an ominous crypt or grave.\":\n            - img \"Spooky graveyard at night under a full moon, with mist and bats in the sky, dead trees, old tombstones, and a glowing red light emanating from an ominous crypt or grave.\"\n          - link \"31 Days of Horror\":\n            - /url: /tudum/features/halloween-movies-on-netflix-2026\n      - listitem:\n        - article:\n          - img \"Young man with short dark hair in a serious expression, shown in close-up against a cloudy sky, outdoors in natural light.\":\n            - img \"Young man with short dark hair in a serious expression, shown in close-up against a cloudy sky, outdoors in natural light.\"\n          - link \"The Mosquito Bowl Trailer Puts Four College Football Heroes on the Front Lines\":\n            - /url: /tudum/articles/the-mosquito-bowl-trailer\n      - listitem:\n        - article:\n          - img \"Group of people posing together in front of a large decorative \\\"Wonka\\\" gate backdrop, standing and sitting on a purple carpet, dressed in colorful outfits, smiling in a studio or event setting.\":\n            - img \"Group of people posing together in front of a large decorative \\\"Wonka\\\" gate backdrop, standing and sitting on a purple carpet, dressed in colorful outfits, smiling in a studio or event setting.\"\n          - 'link \"Wonka’s The Golden Ticket: Meet the Contestants Entering the Chocolate Factory\"':\n            - /url: /tudum/features/wonkas-the-golden-ticket-season-1-cast-instagrams\n      - listitem:\n        - article:\n          - img \"A woman in historical clothing is escorted by a uniformed officer through a crowd of protesters holding signs, squeegees, and newspapers in an outdoor setting during daylight.\":\n            - img \"A woman in historical clothing is escorted by a uniformed officer through a crowd of protesters holding signs, squeegees, and newspapers in an outdoor setting during daylight.\"\n          - 'link \"What’s the True Story Behind Monster: The Lizzie Borden Story?\"':\n            - /url: /tudum/articles/monster-the-lizzie-borden-story-true-story\n      - listitem:\n        - article:\n          - img \"Five men in colorful summer shirts and sunglasses talking and laughing on a yacht, bright daylight, casual vacation atmosphere.\":\n            - img \"Five men in colorful summer shirts and sunglasses talking and laughing on a yacht, bright daylight, casual vacation atmosphere.\"\n          - link \"41 Comedies to Watch Whenever You Need a Laugh\":\n            - /url: /tudum/articles/comedies-on-netflix\n      - listitem:\n        - article:\n          - img \"Old, abandoned mansion at night surrounded by overgrown vegetation, eerie mist, and dramatic lighting creating a spooky, haunted atmosphere. Broken windows and ruined walls add to the mysterious, unsettling mood of the scene.\":\n            - img \"Old, abandoned mansion at night surrounded by overgrown vegetation, eerie mist, and dramatic lighting creating a spooky, haunted atmosphere. Broken windows and ruined walls add to the mysterious, unsettling mood of the scene.\"\n          - link \"10 Haunted Houses of All Kinds That Will Have You Screaming ‘Get Me Outta Here’\":\n            - /url: /tudum/articles/haunted-house-movies-series\n  - contentinfo:\n    - button \"Back To Top\"\n    - link \"Tudum By Netflix - Home\":\n      - /url: /tudum\n    - list:\n      - listitem:\n        - link \"About Tudum\":\n          - /url: /tudum/articles/about-tudum\n      - listitem:\n        - link \"Netflix House\":\n          - /url: https://www.netflixhouse.com/\n      - listitem:\n        - link \"Netflix Shop\":\n          - /url: https://www.netflix.shop\n      - listitem:\n        - link \"Podcasts\":\n          - /url: /tudum/podcasts\n    - link \"Sign In\":\n      - /url: https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Ftudum\n      - img\n      - text: Sign In\n    - link \"Sign Up\":\n      - /url: /signup\n    - list:\n      - listitem:\n        - link \"Home\":\n          - /url: /tudum\n      - listitem:\n        - link \"Privacy\":\n          - /url: https://www.netflix.com/privacy\n      - listitem:\n        - link \"Terms of Use\":\n          - /url: https://www.netflix.com/terms\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: \"#cookies\"\n      - listitem:\n        - link \"Do Not Sell or Share My Personal Information\":\n          - /url: https://netflix.com/dnsspi\n      - listitem:\n        - link \"Ad Choices\":\n          - /url: https://help.netflix.com/legal/dnsspi#DAA\n      - listitem: © 2026 netflix"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.netflix.com/tudum",
+              "origin": "https://www.netflix.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

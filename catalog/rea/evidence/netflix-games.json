@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_35395302435935f8f8728ea1ed3181a6d65803db9875378bea12336f19fbc77c",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.netflix.com/tudum/games",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "e76e7b311946084e71c2f69b319c08bf1d12d914ac761871e2248b2e0eeffe5c"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://www.netflix.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 6160,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3348,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.netflix.com/tudum/games",
+          "origin": "https://www.netflix.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2571,
+        "before_url": {
+          "url": "https://www.netflix.com/tudum/games",
+          "origin": "https://www.netflix.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.netflix.com/tudum/games",
+          "origin": "https://www.netflix.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "f192f31eb5da46f6cf14cdd754c2ba21f1c75352ab8dd7f8518444fd0220924c",
+              "bytes": 23411,
+              "text": "- document:\n  - link \"Skip to main content\":\n    - /url: \"#maincontent\"\n  - banner:\n    - link \"Sign In\":\n      - /url: https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Ftudum%252Fgames\n      - img\n      - text: Sign In\n    - link \"Tudum by Netflix - Home\":\n      - /url: /tudum\n    - combobox \"Select option\": English\n    - listbox \"Select option\":\n      - option \"English\" [selected]\n      - option \"Português\"\n    - navigation \"Main Menu\":\n      - link \"Home\":\n        - /url: /tudum\n      - link \"Top 10\":\n        - /url: /tudum/top10\n      - link \"Trending\":\n        - /url: /tudum/topics/trending\n      - link \"What to Watch\":\n        - /url: /tudum/topics/what-to-watch\n      - link \"Shows\":\n        - /url: /tudum/topics/tv-shows\n      - link \"Movies\":\n        - /url: /tudum/topics/movies\n      - link \"Puzzled\":\n        - /url: /tudum/puzzled\n      - link \"Podcasts\":\n        - /url: /tudum/podcasts\n      - link \"Shop opens in a new tab\":\n        - /url: https://netflix.shop\n        - text: Shop\n        - img \"opens in a new tab\"\n  - main:\n    - heading \"All of The Games on Netflix Right Now - Netflix Tudum\" [level=1]\n    - img \"Netflix games - Red N over the word games on a red and black background.\"\n    - heading [level=1]:\n      - img\n    - paragraph: ‎\n    - separator\n    - text: By Tudum Staff Sept. 9, 2026\n    - button \"Link copied to clipboard Share\":\n      - img\n      - text: Link copied to clipboard Share\n    - paragraph: Netflix members have access to more than 120 exclusive mobile games with no ads, no extra fees, and no in-app purchases. The games are free and easily downloaded from your favorite app store to your Android phones and tablets as well as iPhone, iPad, and iPod touch.\n    - paragraph: \"So, clear your schedule and check out the full list of available games below:\"\n    - navigation \"Page level navigation\":\n      - list:\n        - listitem:\n          - link \"Featured\":\n            - /url: \"#featured\"\n        - listitem:\n          - link \"Available Games\":\n            - /url: \"#games\"\n        - listitem:\n          - link \"About\":\n            - /url: \"#about\"\n    - paragraph\n    - heading \"Featured\" [level=3]\n    - text: \"[intense music playing]\"\n    - img \"Puzzled Thumbnail\"\n    - button \"play Puzzled Thumbnail\"\n    - heading \"Puzzled\" [level=3]\n    - text: Daily puzzles to stay sharp\n    - paragraph: Build a brain-boosting daily habit. Solve new word, logic and visual puzzles every day and explore collections inspired by favorite Netflix worlds.\n    - img \"Puzzled logo\"\n    - heading \"Solve new word, logic, and visual puzzles daily\" [level=2]\n    - button \"Previous items\"\n    - link \"Starstruck Work out where the stars shine. Play\":\n      - /url: /tudum/puzzled/starstruck/daily\n      - heading \"Starstruck\" [level=2]\n      - paragraph: Work out where the stars shine.\n      - text: Play\n    - link \"Sudoku Solve the classic numbers game. Play\":\n      - /url: /tudum/puzzled/sudoku/daily\n      - heading \"Sudoku\" [level=2]\n      - paragraph: Solve the classic numbers game.\n      - text: Play\n    - link \"Jigsaw Piece together the big picture. Play\":\n      - /url: /tudum/puzzled/jigsaw/daily\n      - heading \"Jigsaw\" [level=2]\n      - paragraph: Piece together the big picture.\n      - text: Play\n    - link \"Shapes Turn shapes into something bigger. Play\":\n      - /url: /tudum/puzzled/shapes/daily\n      - heading \"Shapes\" [level=2]\n      - paragraph: Turn shapes into something bigger.\n      - text: Play\n    - link \"Crossover Swap letters and emojis into words. Play\":\n      - /url: /tudum/puzzled/crossover/daily\n      - heading \"Crossover\" [level=2]\n      - paragraph: Swap letters and emojis into words.\n      - text: Play\n    - link \"Waywords Find the path hidden in words. Play\":\n      - /url: /tudum/puzzled/waywords/daily\n      - heading \"Waywords\" [level=2]\n      - paragraph: Find the path hidden in words.\n      - text: Play\n    - link \"Keysmash Just add vowels. Play\":\n      - /url: /tudum/puzzled/keysmash/daily\n      - heading \"Keysmash\" [level=2]\n      - paragraph: Just add vowels.\n      - text: Play\n    - link \"Bonza Put the words back together. Play\":\n      - /url: /tudum/puzzled/bonza/daily\n      - heading \"Bonza\" [level=2]\n      - paragraph: Put the words back together.\n      - text: Play\n    - button \"Next items\"\n    - link \"Explore More Puzzles\":\n      - /url: /tudum/puzzled\n    - button \"Go to page 1\"\n    - button \"Go to page 2\"\n    - button \"Go to page 3\"\n    - paragraph\n    - heading \"Available Games\" [level=3]\n    - heading \"Action\" [level=3]:\n      - button \"Action\"\n    - heading \"Adventure\" [level=3]:\n      - button \"Adventure\"\n    - heading \"Arcade\" [level=3]:\n      - button \"Arcade\"\n    - heading \"Educational\" [level=3]:\n      - button \"Educational\"\n    - heading \"Idler\" [level=3]:\n      - button \"Idler\"\n    - heading \"Party\" [level=3]:\n      - button \"Party\"\n    - heading \"Puzzle\" [level=3]:\n      - button \"Puzzle\"\n    - heading \"Racing\" [level=3]:\n      - button \"Racing\"\n    - heading \"Role Playing\" [level=3]:\n      - button \"Role Playing\"\n    - heading \"Simulation\" [level=3]:\n      - button \"Simulation\"\n    - heading \"Sports\" [level=3]:\n      - button \"Sports\"\n    - heading \"Strategy\" [level=3]:\n      - button \"Strategy\"\n    - heading \"Table Top\" [level=3]:\n      - button \"Table Top\"\n    - paragraph\n    - heading \"About\" [level=3]\n    - paragraph: First time downloading a game? No worries. We’ve got all the information you’ll need to get started playing.\n    - paragraph: \"Here’s the important stuff: Netflix games can be downloaded and played on mobile devices, including Android phones and tablets and iPhone, iPad, and iPod touch. Games are accessed through your Netflix account and profile.\"\n    - text: \"IMPORTANT NOTE: Netflix games aren’t available for Kids profiles.\"\n    - paragraph:\n      - text: Don’t worry about losing your leveled-up characters. Progress made in Netflix Games is saved to the profile associated with your gameplay, and is retained either through\n      - link \"cloud saves\":\n        - /url: https://help.netflix.com/en/node/123943\n      - text: or locally on your device.\n    - text: \"ANOTHER IMPORTANT NOTE: Progress or saved data from games previously released can’t be transferred to the Netflix version of a game.\"\n    - paragraph:\n      - text: Want to know the kind of game you’re playing and whether it might be appropriate? Netflix games have a\n      - link \"maturity rating\":\n        - /url: https://help.netflix.com/en/node/121877\n      - text: \", so you can make informed gameplay choices for you and your family.\"\n    - paragraph: As with downloaded TV shows and movies, games can be played on multiple devices on the same account. If you hit your device limit, we’ll let you know. To free up a slot, sign out of devices not in use.\n    - heading \"Device Requirements\" [level=3]\n    - paragraph: \"You’ll need a compatible device that is one of the following:\"\n    - list:\n      - listitem: Android phone or tablet running Android 8.0 or later\n      - listitem: iPhone, iPad, or iPod touch running iOS/iPadOS 15 or later\n      - listitem: An active Netflix subscription\n      - listitem: An internet connection to download and install the game\n      - listitem: Enough storage space on your device\n      - listitem: A childlike wonder of games and good times (not actually necessary).\n    - text: \"ONE LAST IMPORTANT NOTE: Some Netflix Games might have additional requirements that aren’t outlined above. If there are, we’ll let you know in the game’s app page.\"\n    - img \"Netflix N over the word Games\"\n    - text: How-to play games on Netflix Related Tags\n    - list:\n      - listitem:\n        - link \"Action\":\n          - /url: /tudum/topics/action\n      - listitem:\n        - link \"Adventure\":\n          - /url: /tudum/topics/adventure\n      - listitem:\n        - link \"Fantasy\":\n          - /url: /tudum/topics/fantasy\n      - listitem:\n        - link \"Horror\":\n          - /url: /tudum/topics/horror\n      - listitem:\n        - link \"Kids and Family\":\n          - /url: /tudum/topics/kids-and-family\n      - listitem:\n        - link \"Reality\":\n          - /url: /tudum/topics/reality\n      - listitem:\n        - link \"Sci-Fi\":\n          - /url: /tudum/topics/sci-fi\n      - listitem:\n        - link \"What to Watch\":\n          - /url: /tudum/topics/what-to-watch\n      - listitem:\n        - link \"Article\":\n          - /url: /tudum/topics/article\n    - heading \"‎\" [level=2]\n    - list:\n      - listitem:\n        - article:\n          - img \"Miyako Cech as Toph on a film set, focused intently on a professional movie camera during a scene, with soft lighting and a blurred studio background.\":\n            - img \"Miyako Cech as Toph on a film set, focused intently on a professional movie camera during a scene, with soft lighting and a blurred studio background.\"\n          - 'link \"Avatar: The Last Airbender Season 2 Rocks the Earth Kingdom in June\"':\n            - /url: /tudum/articles/avatar-the-last-airbender-season-2-release-date\n      - listitem:\n        - article:\n          - img \"Tudum Magazine logo in white on a black background.\":\n            - img \"Tudum Magazine logo in white on a black background.\"\n          - link \"Tudum Magazine Privacy Statement and Terms of Use\":\n            - /url: /tudum/articles/tudum-magazine-terms-and-conditions\n      - listitem:\n        - article:\n          - img \"Netflix Tudum 2025 logo\":\n            - img \"Netflix Tudum 2025 logo\"\n          - 'link \"Relive Every Single Moment From Netflix Tudum 2025: The Live Event\"':\n            - /url: /tudum/features/tudum-2025-the-live-event\n    - heading \"Action\" [level=2]\n    - list:\n      - listitem:\n        - article:\n          - img \"Smiling man with brown hair wearing a sweater and overalls stands on a boat under a cloudy sky, with fishing equipment and parts of the boat visible in the background.\":\n            - img \"Smiling man with brown hair wearing a sweater and overalls stands on a boat under a cloudy sky, with fishing equipment and parts of the boat visible in the background.\"\n          - link \"Below Surfaces to the No. 1 Spot in This Week’s Top 10\":\n            - /url: /tudum/articles/top-10-october-5-2026\n      - listitem:\n        - article:\n          - img \"Two professional wrestlers perform a dramatic move in a wrestling ring, surrounded by cheering fans in a packed indoor arena, with several people capturing the action on their phones.\":\n            - img \"Two professional wrestlers perform a dramatic move in a wrestling ring, surrounded by cheering fans in a packed indoor arena, with several people capturing the action on their phones.\"\n          - 'link \"WWE Money in the Bank 2026: Full Match Card, Start Time, and Live Results\"':\n            - /url: /tudum/articles/money-in-the-bank-mitb-2026-date-news-card-matches-results\n      - listitem:\n        - article:\n          - img \"Young man with short dark hair in a serious expression, shown in close-up against a cloudy sky, outdoors in natural light.\":\n            - img \"Young man with short dark hair in a serious expression, shown in close-up against a cloudy sky, outdoors in natural light.\"\n          - link \"The Mosquito Bowl Trailer Puts Four College Football Heroes on the Front Lines\":\n            - /url: /tudum/articles/the-mosquito-bowl-trailer\n      - listitem:\n        - article:\n          - img \"A serious man in a dress shirt and tie leans in close to a concerned woman indoors, their faces inches apart, suggesting tension or intense conversation in a dimly lit room.\":\n            - img \"A serious man in a dress shirt and tie leans in close to a concerned woman indoors, their faces inches apart, suggesting tension or intense conversation in a dimly lit room.\"\n          - link \"24 Thrillers Too Suspenseful to Pause for Even a Second\":\n            - /url: /tudum/articles/best-thrillers-on-netflix\n      - listitem:\n        - article:\n          - img \"Two animated characters with long blond hair, distinctive hats, and outfits stand outdoors in a desert landscape, engaged in conversation under a clear sky with mountains in the background.\":\n            - img \"Two animated characters with long blond hair, distinctive hats, and outfits stand outdoors in a desert landscape, engaged in conversation under a clear sky with mountains in the background.\"\n          - link \"The 2nd and 3rd STAGE of STEEL BALL RUN JoJo’s Bizarre Adventure Have Started\":\n            - /url: /tudum/articles/steel-ball-run-jojos-bizarre-adventure-release-date-news\n      - listitem:\n        - article:\n          - img \"Two people in a small boat approach a partially submerged house tilted in the middle of a misty lake under a cloudy sky, with forested hills in the background.\":\n            - img \"Two people in a small boat approach a partially submerged house tilted in the middle of a misty lake under a cloudy sky, with forested hills in the background.\"\n          - link \"10 Creature Features for When You’ve Had Enough of Humanity\":\n            - /url: /tudum/articles/best-creature-features-movies-shows\n      - listitem:\n        - article:\n          - img \"A young woman in period clothing dancing with a man at a festive indoor New Year's celebration, with musicians playing brass instruments in the warmly lit background.\":\n            - img \"A young woman in period clothing dancing with a man at a festive indoor New Year's celebration, with musicians playing brass instruments in the warmly lit background.\"\n          - link \"East of Eden Triumphs to the No. 1 Spot in This Week's Top 10\":\n            - /url: /tudum/articles/top-10-september-28-2026\n      - listitem:\n        - article:\n          - img \"Man wearing work clothes stands on a wet dock next to a fishing boat, looking toward the camera. Other people walk by in the background. The scene is outdoors with hills and a cloudy sky, giving a coastal, working harbor atmosphere.\":\n            - img \"Man wearing work clothes stands on a wet dock next to a fishing boat, looking toward the camera. Other people walk by in the background. The scene is outdoors with hills and a cloudy sky, giving a coastal, working harbor atmosphere.\"\n          - 'link \"From Below to Tyler Perry’s Doing Life: What to Watch on Netflix\"':\n            - /url: /tudum/articles/what-to-watch-on-netflix-october-2-2026\n    - button \"Next items\"\n    - heading \"Latest News\" [level=2]\n    - list:\n      - listitem:\n        - article:\n          - link \"TYSON Director Floyd Russ on Mike Tyson, Access, Archives, and the Toad\":\n            - /url: /tudum/articles/tyson-documentary-director-floyd-russ\n          - img \"Promotional image for a Netflix documentary series titled \\\"Tyson,\\\" featuring bold white text on a black background with release date October 13.\"\n      - listitem:\n        - article:\n          - 'link \"Narnia: The Magician’s Nephew, Directed by Greta Gerwig, Roars to Life in 2027\"':\n            - /url: /tudum/articles/narnia-release-date\n          - img \"Narnia Title Treatment\"\n      - listitem:\n        - article:\n          - 'link \"Watch the Narnia: The Magician’s Nephew Trailer\"':\n            - /url: /tudum/videos/narnia-the-magicians-nephew-trailer\n          - img \"Silhouette of a lion’s head in a cosmic, star-filled environment with a glowing pegasus flying through the center, emitting beams of light. Mystical and ethereal atmosphere with vibrant space colors and light effects.\"\n          - img \"Video\"\n      - listitem:\n        - article:\n          - link \"What Are the Rules of the STEEL BALL RUN Race in JoJo’s Bizarre Adventure?\":\n            - /url: /tudum/articles/steel-ball-run-jojos-bizarre-adventure-race-rules\n          - img \"Johnny rides his horse in STEEL BALL RUN JoJo’s Bizarre Adventure 1st STAGE\"\n      - listitem:\n        - article:\n          - 'link \"Everything You Need to Know About The Conjuring: Unspoken\"':\n            - /url: /tudum/articles/the-conjuring-unspoken-game-news\n          - img \"A ballerina figurine on a vintage music box in a dusty, dimly lit room with rays of light, an eerie figure in the background, and a mysterious atmosphere suggesting suspense or horror.\"\n    - link \"See More\":\n      - /url: /tudum/topics/news\n    - heading \"Popular Now\" [level=2]\n    - list:\n      - listitem:\n        - article:\n          - img \"A woman and man standing close together on a beach, looking into each other's eyes with a clear sky in the background.\":\n            - img \"A woman and man standing close together on a beach, looking into each other's eyes with a clear sky in the background.\"\n          - link \"8 Spicy Romance Movies and Series That Crank Up the Heat\":\n            - /url: /tudum/articles/sexy-movies-series\n      - listitem:\n        - article:\n          - img \"A man in a shirt and tie sits at a desk in a sunlit office, reading a document with his feet up. The office has large windows, books, and various desk items visible in the background.\":\n            - img \"A man in a shirt and tie sits at a desk in a sunlit office, reading a document with his feet up. The office has large windows, books, and various desk items visible in the background.\"\n          - 'link \"Animals Ending Explained: How Does Ben Affleck Take On a Vindictive Kidnapper?\"':\n            - /url: /tudum/articles/animals-ending-explained\n      - listitem:\n        - article:\n          - img \"Woman in a dark robe sits at a vintage vanity with candles and flowers in a dim, elegant room, looking toward a standing figure partially visible in the foreground.\":\n            - img \"Woman in a dark robe sits at a vintage vanity with candles and flowers in a dim, elegant room, looking toward a standing figure partially visible in the foreground.\"\n          - link \"Inside the Ending of East of Eden\":\n            - /url: /tudum/articles/east-of-eden-ending-explained\n      - listitem:\n        - article:\n          - img \"Woman in yellow raincoat stands near lobster traps, outdoors by a crowd and a helicopter, with a wooden building and forested rocky hill in the background, suggesting a coastal rural setting.\":\n            - img \"Woman in yellow raincoat stands near lobster traps, outdoors by a crowd and a helicopter, with a wooden building and forested rocky hill in the background, suggesting a coastal rural setting.\"\n          - 'link \"Dive Into the Below Ending: Can Snook’s Arm Survive the Mysterious Sea Creature?\"':\n            - /url: /tudum/articles/below-ending-explained\n    - heading \"Popular Releases\" [level=2]\n    - list:\n      - listitem:\n        - article:\n          - link \"East of Eden\":\n            - /url: /tudum/east-of-eden\n            - img \"East of Eden\":\n              - img \"East of Eden\"\n      - listitem:\n        - article:\n          - link \"Animals\":\n            - /url: /tudum/animals\n            - img \"Animals\":\n              - img \"Animals\"\n      - listitem:\n        - article:\n          - link \"UNABOMBER\":\n            - /url: /tudum/unabomber\n            - img \"UNABOMBER\":\n              - img \"UNABOMBER\"\n      - listitem:\n        - article:\n          - 'link \"Monster: The Lizzie Borden Story\"':\n            - /url: /tudum/monster-the-lizzie-borden-story\n            - 'img \"Monster: The Lizzie Borden Story\"':\n              - 'img \"Monster: The Lizzie Borden Story\"'\n      - listitem:\n        - article:\n          - link \"Below\":\n            - /url: /tudum/below\n            - img \"Below\":\n              - img \"Below\"\n      - listitem:\n        - article:\n          - link \"The Perfect Lie\":\n            - /url: /tudum/the-perfect-lie\n            - img \"The Perfect Lie\":\n              - img \"The Perfect Lie (De Eetclub)\"\n      - listitem:\n        - article:\n          - link \"The Gentlemen\":\n            - /url: /tudum/the-gentlemen\n            - img \"The Gentlemen\":\n              - img \"The Gentlemen\"\n      - listitem:\n        - article:\n          - link \"The Whisper Man\":\n            - /url: /tudum/the-whisper-man\n            - img \"The Whisper Man\":\n              - img \"The Whisper Man\"\n      - listitem:\n        - article:\n          - link \"Wonka's The Golden Ticket\":\n            - /url: /tudum/wonkas-the-golden-ticket\n            - img \"Wonka's The Golden Ticket\":\n              - img \"Wonka's The Golden Ticket\"\n      - listitem:\n        - article:\n          - link \"Crew Girl\":\n            - /url: /tudum/crew-girl\n            - img \"Crew Girl\":\n              - img \"Crew Girl\"\n      - listitem:\n        - article:\n          - link \"KPop Demon Hunters\":\n            - /url: /tudum/kpop-demon-hunters\n            - img \"KPop Demon Hunters\":\n              - img \"KPop Demon Hunters\"\n      - listitem:\n        - article:\n          - link \"Our Sticky Love\":\n            - /url: /tudum/our-sticky-love\n            - img \"Our Sticky Love\":\n              - img \"Our Sticky Love (이런 엿같은 사랑)\"\n      - listitem:\n        - article:\n          - link \"Beauty in Black\":\n            - /url: /tudum/beauty-in-black\n            - img \"Beauty in Black\":\n              - img \"Beauty in Black\"\n      - listitem:\n        - article:\n          - link \"A Different World\":\n            - /url: /tudum/a-different-world\n            - img \"A Different World\":\n              - img \"A Different World\"\n      - listitem:\n        - article:\n          - link \"My Life With the Walter Boys\":\n            - /url: /tudum/my-life-with-the-walter-boys\n            - img \"My Life With the Walter Boys\":\n              - img \"My Life With the Walter Boys\"\n    - button \"Next items\"\n  - contentinfo:\n    - button \"Back To Top\"\n    - link \"Tudum By Netflix - Home\":\n      - /url: /tudum\n    - list:\n      - listitem:\n        - link \"About Tudum\":\n          - /url: /tudum/articles/about-tudum\n      - listitem:\n        - link \"Netflix House\":\n          - /url: https://www.netflixhouse.com/\n      - listitem:\n        - link \"Netflix Shop\":\n          - /url: https://www.netflix.shop\n      - listitem:\n        - link \"Podcasts\":\n          - /url: /tudum/podcasts\n    - link \"Sign In\":\n      - /url: https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Ftudum%252Fgames\n      - img\n      - text: Sign In\n    - link \"Sign Up\":\n      - /url: /signup\n    - list:\n      - listitem:\n        - link \"Home\":\n          - /url: /tudum\n      - listitem:\n        - link \"Privacy\":\n          - /url: https://www.netflix.com/privacy\n      - listitem:\n        - link \"Terms of Use\":\n          - /url: https://www.netflix.com/terms\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: \"#cookies\"\n      - listitem:\n        - link \"Do Not Sell or Share My Personal Information\":\n          - /url: https://netflix.com/dnsspi\n      - listitem:\n        - link \"Ad Choices\":\n          - /url: https://help.netflix.com/legal/dnsspi#DAA\n      - listitem: © 2026 netflix\n  - list:\n    - listitem:\n      - article:\n        - text: Up Next\n        - link \"24 Thrillers Too Suspenseful to Pause for Even a Second\":\n          - /url: /tudum/articles/best-thrillers-on-netflix\n        - img \"A serious man with a beard leans in closely toward a concerned woman in an indoor setting, both gazing intensely at each other, suggesting a tense or dramatic conversation.\"\n  - button \"Close\":\n    - img"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.netflix.com/tudum/games",
+              "origin": "https://www.netflix.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

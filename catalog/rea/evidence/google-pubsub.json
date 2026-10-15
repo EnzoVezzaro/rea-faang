@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_58973d20756f48b27d3538f7868fe619b601dcd5be33abeea5b00a1040de1aea",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://cloud.google.com/pubsub",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "0772fac681e7f077d39103919d9869d55c29ef86d99f7a5e7e9c3fc3f9a5a34f"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://cloud.google.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 5574,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 2819,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://cloud.google.com/pubsub",
+          "origin": "https://cloud.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2548,
+        "before_url": {
+          "url": "https://cloud.google.com/pubsub",
+          "origin": "https://cloud.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://cloud.google.com/pubsub",
+          "origin": "https://cloud.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "59f9962c3b8c21e221aa74fa00bad8745635b0c23baa1b8de52175485673d76f",
+              "bytes": 28901,
+              "text": "- document:\n  - link \"Join us Nov 4 to discover innovations in databases, analytics, BI and storage for trusted agents. Register now.\":\n    - /url: https://cloudonair.withgoogle.com/events/trusted-agents-real-outcomes-agentic-data-cloud\n    - paragraph: Join us Nov 4 to discover innovations in databases, analytics, BI and storage for trusted agents. Register now.\n  - text: . . Pub/Sub\n  - link \"Benefits\":\n    - /url: /pubsub#benefits\n  - link \"Key features\":\n    - /url: /pubsub#key-features\n  - link \"Customers\":\n    - /url: /pubsub#customers\n  - link \"What's new\":\n    - /url: /pubsub#whats-new\n  - link \"Documentation\":\n    - /url: /pubsub#documentation\n  - link \"Use cases\":\n    - /url: /pubsub#use-cases\n  - link \"Stream analytics\":\n    - /url: /pubsub#stream-analytics\n  - link \"Asynchronous microservices integration\":\n    - /url: /pubsub#asynchronous-microservices-integration\n  - link \"Generate a solution\":\n    - /url: /pubsub#what-problem-are-you-trying-to-solve\n  - link \"All features\":\n    - /url: /pubsub#all-features\n  - link \"Pricing\":\n    - /url: /pubsub#pricing\n  - link \"Take the next step\":\n    - /url: /pubsub#take-the-next-step\n  - heading \"Pub/Sub\" [level=1]\n  - paragraph: Ingest events for streaming into BigQuery, data lakes or operational databases.\n  - paragraph: New customers get $300 in free credits to spend on Pub/Sub. All customers get up to 10 GB for ingestion or delivery of messages free per month, not charged against your credits.\n  - link \"Try Pub/Sub free\":\n    - /url: https://console.cloud.google.com/freetrial\n  - link \"Contact sales\":\n    - /url: https://cloud.google.com/contact\n  - list:\n    - listitem:\n      - paragraph:\n        - text: Deploy an example\n        - link \"data warehouse solution\":\n          - /url: https://console.cloud.google.com/freetrial?redirectPath=/products/solutions/details/data-warehouse\n        - text: to explore, analyze, and visualize data using BigQuery and Data Studio (formerly Looker Studio). Plus, apply generative AI to summarize the results of the analysis.\n    - listitem:\n      - paragraph:\n        - text: Ingest analytic events and stream them to\n        - link \"BigQuery\":\n          - /url: https://cloud.google.com/bigquery\n        - text: with\n        - link \"Dataflow\":\n          - /url: https://cloud.google.com/dataflow\n    - listitem:\n      - paragraph: No-ops, secure, scalable messaging or queue system\n    - listitem:\n      - paragraph: In-order and any-order at-least-once message delivery with pull and push modes\n    - listitem:\n      - paragraph:\n        - text: Secure data with fine-grained access\n        - link \"controls\":\n          - /url: https://cloud.google.com/pubsub/docs/how-to#operations-and-administration\n        - text: and always-on encryption\n  - link \"Pub/Sub logo connecting to different devices VIDEO Learn Pub/Sub in a minute, including how it works and common use cases 1:45\":\n    - /url: https://www.youtube.com/watch?v=jLI-84UjZLE\n    - img \"Pub/Sub logo connecting to different devices\"\n    - paragraph: VIDEO\n    - text: Learn Pub/Sub in a minute, including how it works and common use cases\n    - paragraph: 1:45\n  - paragraph: Benefits\n  - heading \"High availability made simple\" [level=3]:\n    - paragraph: High availability made simple\n  - paragraph: Synchronous, cross-zone message replication and per-message receipt tracking ensures reliable delivery at any scale.\n  - heading \"No-planning, auto-everything\" [level=3]:\n    - paragraph: No-planning, auto-everything\n  - paragraph: Auto-scaling and auto-provisioning with no partitions eliminates planning and ensures workloads are production ready from day one.\n  - heading \"Easy, open foundation for real-time data systems\" [level=3]:\n    - paragraph: Easy, open foundation for real-time data systems\n  - paragraph: A fast, reliable way to land small records at any volume, an entry point for real-time and batch pipelines feeding BigQuery, data lakes and operational databases. Use it with ETL/ELT pipelines in Dataflow.\n  - paragraph: Key features\n  - heading \"Key features\" [level=2]\n  - heading \"Stream analytics and connectors\" [level=3]\n  - paragraph:\n    - text: Native\n    - link \"Dataflow\":\n      - /url: /dataflow/\n    - text: integration enables reliable, expressive, exactly-once processing and integration of event streams in Java, Python, and SQL.\n  - heading \"In-order delivery at scale\" [level=3]\n  - paragraph: Optional per-key ordering simplifies stateful application logic without sacrificing horizontal scale—no partitions required.\n  - heading \"Simplified streaming ingestion with native integrations\" [level=3]\n  - paragraph:\n    - text: Ingest streaming data from Pub/Sub directly in\n    - link \"BigQuery\":\n      - /url: https://cloud.google.com/pubsub/docs/bigquery\n    - text: or\n    - link \"Cloud Storage\":\n      - /url: https://cloud.google.com/pubsub/docs/cloudstorage\n    - text: with our native subscriptions.\n  - paragraph\n  - paragraph\n  - link \"View all features\":\n    - /url: /pubsub#all-features\n  - paragraph: Customers\n  - heading \"Learn from customers using Pub/Sub\" [level=3]\n  - group:\n    - group \"1 of 2\":\n      - link \"CME group logo Case study CME Group uses Pub/Sub to offer real-time market data, helping firms mitigate risk and drive revenue. 5-min read\":\n        - /url: https://cloud.google.com/customers/cme-group\n        - img \"CME group logo\"\n        - paragraph: Case study\n        - text: CME Group uses Pub/Sub to offer real-time market data, helping firms mitigate risk and drive revenue.\n        - paragraph: 5-min read\n    - group \"2 of 2\":\n      - link \"Sky Case study Sky scales event publishing with Pub/Sub to build its next generation Sky Q box. 5-min read\":\n        - /url: https://cloud.google.com/customers/sky-uk\n        - img \"Sky\"\n        - paragraph: Case study\n        - text: Sky scales event publishing with Pub/Sub to build its next generation Sky Q box.\n        - paragraph: 5-min read\n  - link \"See all customers\":\n    - /url: https://cloud.google.com/customers\n  - paragraph: What's new\n  - heading \"What's new\" [level=2]\n  - paragraph:\n    - link \"Sign up\":\n      - /url: https://cloud.google.com/newsletter\n    - text: for Google Cloud newsletters to receive product updates, event information, special offers, and more.\n  - group:\n    - group \"Slide controls\":\n      - button \"Previous slide\" [disabled]\n      - button \"Next slide\"\n    - group \"1 of 3\":\n      - link \"real time AI at Next Video Use real-time data for AI/ML workloads in BigQuery Watch video\":\n        - /url: https://www.youtube.com/watch?v=SKv6bbwSL5I\n        - img \"real time AI at Next\"\n        - paragraph: Video\n        - paragraph: Use real-time data for AI/ML workloads in BigQuery Watch video\n    - group \"2 of 3\":\n      - link \"Pub/Sub Blog post Pub/Sub highlights from the last year Read the blog\":\n        - /url: https://cloud.google.com/blog/products/data-analytics/pubsub-highlights-of-2024\n        - img \"Pub/Sub\"\n        - paragraph: Blog post\n        - paragraph: Pub/Sub highlights from the last year Read the blog\n  - paragraph: Documentation\n  - heading \"Documentation\" [level=2]\n  - text: Google Cloud Basics\n  - heading \"What is Pub/Sub?\" [level=3]\n  - paragraph: Get a comprehensive overview of Pub/Sub, from core concepts and message flow to common use cases and integrations.\n  - link \"Learn more\":\n    - /url: /pubsub/docs/overview\n  - text: Tutorial\n  - heading \"Introduction to Pub/Sub\" [level=3]\n  - paragraph: Learn how to enable Pub/Sub in a Google Cloud project, create a Pub/Sub topic and subscription, and publish messages and pull them to the subscription.\n  - link \"Learn more\":\n    - /url: https://console.cloud.google.com/?tutorial=pubsub_quickstart\n  - text: Quickstart\n  - 'heading \"Quickstart: Using client libraries\" [level=3]'\n  - paragraph: See how the Pub/Sub service allows applications to exchange messages reliably, quickly, and asynchronously.\n  - link \"Learn more\":\n    - /url: /pubsub/docs/create-topic-client-libraries\n  - text: Tutorial\n  - heading \"In-order message delivery\" [level=3]\n  - paragraph: Learn how scalable message ordering works and when to use it.\n  - link \"Learn more\":\n    - /url: /pubsub/docs/ordering\n  - text: Quickstart\n  - 'heading \"Quickstart: Stream processing with Dataflow\" [level=3]'\n  - paragraph: Learn how to use Dataflow to read messages published to a Pub/Sub topic, window the messages by timestamp, and write the messages to Cloud Storage.\n  - link \"Learn more\":\n    - /url: /pubsub/docs/stream-messages-dataflow\n  - text: Tutorial\n  - 'heading \"Guide: Publishing messages to topics\" [level=3]'\n  - paragraph: Learn how to create a message containing your data and send a request to the Pub/Sub Server to publish the message to the desired topic.\n  - link \"Learn more\":\n    - /url: https://cloud.google.com/pubsub/docs/publisher\n  - heading \"Not seeing what you’re looking for?\" [level=3]\n  - link \"View all product documentation\":\n    - /url: /pubsub/docs\n  - complementary \"Explore more docs 1\":\n    - heading \"Explore more docs\" [level=3]\n    - list:\n      - listitem:\n        - link \"Get a quick intro to using this product.\":\n          - /url: /pubsub/docs/quickstarts\n          - paragraph: Get a quick intro to using this product.\n      - listitem:\n        - link \"Learn to complete specific tasks with this product.\":\n          - /url: /pubsub/docs/how-to\n          - paragraph: Learn to complete specific tasks with this product.\n      - listitem:\n        - link \"Browse guides and tutorials for this product.\":\n          - /url: /pubsub/docs/tutorials\n          - paragraph: Browse guides and tutorials for this product.\n      - listitem:\n        - link \"View APIs, references, and other resources for this product.\":\n          - /url: /pubsub/docs/apis\n          - paragraph: View APIs, references, and other resources for this product.\n  - link \"Release notes Read about the latest releases for Pub/Sub\":\n    - /url: /pubsub/docs/release-notes\n  - paragraph: Use cases\n  - heading \"Use cases\" [level=4]\n  - text: Use case\n  - heading \"Stream analytics\" [level=6]\n  - paragraph:\n    - text: Google’s\n    - link \"stream analytics\":\n      - /url: /solutions/stream-analytics\n    - text: makes data more organized, useful, and accessible from the instant it’s generated. Built on Pub/Sub along with Dataflow and BigQuery, our streaming solution provisions the resources you need to ingest, process, and analyze fluctuating volumes of real-time data for real-time business insights. This abstracted provisioning reduces complexity and makes stream analytics accessible to both data analysts and data engineers.\n  - img\n  - text: Use case\n  - heading \"Asynchronous microservices integration\" [level=6]\n  - paragraph:\n    - text: Pub/Sub works as a messaging middleware for traditional service integration or a simple communication medium for modern microservices. Push subscriptions deliver events to serverless webhooks on\n    - link \"Cloud Functions\":\n      - /url: https://cloud.google.com/functions/\n    - text: \",\"\n    - link \"App Engine\":\n      - /url: https://cloud.google.com/appengine/\n    - text: \",\"\n    - link \"Cloud Run,\":\n      - /url: https://cloud.google.com/run/\n    - text: or custom environments on\n    - link \"Google Kubernetes Engine\":\n      - /url: https://cloud.google.com/kubernetes-engine/\n    - text: or\n    - link \"Compute Engine\":\n      - /url: https://cloud.google.com/compute\n    - text: . Low-latency pull delivery is available when exposing webhooks is not an option or for efficient handling of higher throughput streams.\n  - link \"View all technical guides\":\n    - /url: https://cloud.google.com/tutorials#pubsub\n  - text: Generate a solution What problem are you trying to solve?\n  - textbox \"Solution Prompt Search Text\":\n    - /placeholder: Describe your problem, e.g., \"I want to build a web app\"\n  - button \"Solution Prompt Search Button\"\n  - text: \"What you'll get: Step-by-step guide Reference architecture Available pre-built solutions This service was built with\"\n  - link \"Gemini\":\n    - /url: /products/gemini-enterprise-agent-platform\n  - text: . You must be 18 or older to use it. Do not enter sensitive, confidential, or personal info.\n  - paragraph: All features\n  - heading \"All features\" [level=3]\n  - table:\n    - row \"At-least-once delivery Synchronous, cross-zone message replication and per-message receipt tracking ensures at-least-once delivery at any scale.\":\n      - cell \"At-least-once delivery\"\n      - cell \"Synchronous, cross-zone message replication and per-message receipt tracking ensures at-least-once delivery at any scale.\":\n        - paragraph: Synchronous, cross-zone message replication and per-message receipt tracking ensures at-least-once delivery at any scale.\n    - row \"Open Open APIs and client libraries in seven languages support cross-cloud and hybrid deployments.\":\n      - cell \"Open\"\n      - cell \"Open APIs and client libraries in seven languages support cross-cloud and hybrid deployments.\":\n        - paragraph: Open APIs and client libraries in seven languages support cross-cloud and hybrid deployments.\n    - row \"Exactly-once processing Dataflow supports reliable, expressive, exactly-once processing of Pub/Sub streams.\":\n      - cell \"Exactly-once processing\"\n      - cell \"Dataflow supports reliable, expressive, exactly-once processing of Pub/Sub streams.\":\n        - paragraph: Dataflow supports reliable, expressive, exactly-once processing of Pub/Sub streams.\n    - row \"No provisioning, auto-everything Pub/Sub does not have shards or partitions. Just set your quota, publish, and consume.\":\n      - cell \"No provisioning, auto-everything\"\n      - cell \"Pub/Sub does not have shards or partitions. Just set your quota, publish, and consume.\":\n        - paragraph: Pub/Sub does not have shards or partitions. Just set your quota, publish, and consume.\n    - row \"Compliance and security Pub/Sub is a HIPAA-compliant service, offering fine-grained access controls and end-to-end encryption.\":\n      - cell \"Compliance and security\"\n      - cell \"Pub/Sub is a HIPAA-compliant service, offering fine-grained access controls and end-to-end encryption.\":\n        - paragraph: Pub/Sub is a HIPAA-compliant service, offering fine-grained access controls and end-to-end encryption.\n    - row \"Google Cloud–native integrations Take advantage of integrations with multiple services, such as Cloud Storage and Gmail update events and Cloud Functions for serverless event-driven computing.\":\n      - cell \"Google Cloud–native integrations\"\n      - cell \"Take advantage of integrations with multiple services, such as Cloud Storage and Gmail update events and Cloud Functions for serverless event-driven computing.\":\n        - paragraph: Take advantage of integrations with multiple services, such as Cloud Storage and Gmail update events and Cloud Functions for serverless event-driven computing.\n    - row \"Third-party and OSS integrations Pub/Sub provides third-party integrations with Splunk and Datadog for logs along with Striim and Informatica for data integration. Additionally, OSS integrations are available through Confluent Cloud for Apache Kafka and Knative Eventing for Kubernetes-based serverless workloads.\":\n      - cell \"Third-party and OSS integrations\"\n      - cell \"Pub/Sub provides third-party integrations with Splunk and Datadog for logs along with Striim and Informatica for data integration. Additionally, OSS integrations are available through Confluent Cloud for Apache Kafka and Knative Eventing for Kubernetes-based serverless workloads.\":\n        - paragraph: Pub/Sub provides third-party integrations with Splunk and Datadog for logs along with Striim and Informatica for data integration. Additionally, OSS integrations are available through Confluent Cloud for Apache Kafka and Knative Eventing for Kubernetes-based serverless workloads.\n    - row \"Seek and replay Rewind your backlog to any point in time or a snapshot, giving the ability to reprocess the messages. Fast forward to discard outdated data.\":\n      - cell \"Seek and replay\"\n      - cell \"Rewind your backlog to any point in time or a snapshot, giving the ability to reprocess the messages. Fast forward to discard outdated data.\":\n        - paragraph: Rewind your backlog to any point in time or a snapshot, giving the ability to reprocess the messages. Fast forward to discard outdated data.\n    - row \"Dead letter topics Dead letter topics allow for messages unable to be processed by subscriber applications to be put aside for offline examination and debugging so that other messages can be processed without delay.\":\n      - cell \"Dead letter topics\"\n      - cell \"Dead letter topics allow for messages unable to be processed by subscriber applications to be put aside for offline examination and debugging so that other messages can be processed without delay.\":\n        - paragraph: Dead letter topics allow for messages unable to be processed by subscriber applications to be put aside for offline examination and debugging so that other messages can be processed without delay.\n    - row \"Filtering Pub/Sub can filter messages based upon attributes in order to reduce delivery volumes to subscribers.\":\n      - cell \"Filtering\"\n      - cell \"Pub/Sub can filter messages based upon attributes in order to reduce delivery volumes to subscribers.\":\n        - paragraph: Pub/Sub can filter messages based upon attributes in order to reduce delivery volumes to subscribers.\n  - paragraph: Pricing\n  - heading \"Pricing\" [level=3]\n  - paragraph: Pub/Sub pricing is calculated based upon monthly data volumes. The first 10 GB of data per month is offered at no charge.\n  - table:\n    - rowgroup:\n      - row \"Monthly data volume1 Price per TB2\":\n        - columnheader \"Monthly data volume1\":\n          - paragraph:\n            - text: Monthly data volume\n            - superscript: \"1\"\n        - columnheader \"Price per TB2\":\n          - paragraph:\n            - text: Price per TB\n            - superscript: \"2\"\n    - rowgroup:\n      - row \"First 10 GB $0.00\":\n        - cell \"First 10 GB\":\n          - paragraph: First 10 GB\n        - cell \"$0.00\":\n          - paragraph: $0.00\n      - row \"Beyond 10 GB $40.00\":\n        - cell \"Beyond 10 GB\":\n          - paragraph: Beyond 10 GB\n        - cell \"$40.00\":\n          - paragraph: $40.00\n  - paragraph:\n    - superscript: \"1\"\n    - text: For detailed pricing information, please consult the\n    - link \"pricing guide\":\n      - /url: /pubsub/pricing\n    - text: .\n  - paragraph:\n    - superscript: \"2\"\n    - text: TB refers to a tebibyte, or 2\n    - superscript: \"40\"\n    - text: bytes.\n  - paragraph:\n    - text: If you pay in a currency other than USD, the prices listed in your currency on\n    - link \"Cloud Platform SKUs\":\n      - /url: /skus/\n    - text: apply.\n  - heading \"Take the next step\" [level=4]\n  - paragraph: Start building on Google Cloud with $300 in free credits and 20+ always free products.\n  - link \"Try Pub/Sub free\":\n    - /url: https://console.cloud.google.com/freetrial\n  - list:\n    - listitem:\n      - heading \"Need help getting started?\" [level=5]\n      - link \"Contact sales\":\n        - /url: https://cloud.google.com/contact/\n    - listitem:\n      - heading \"Work with a trusted partner\" [level=5]\n      - link \"Find a partner\":\n        - /url: https://cloud.withgoogle.com/partners/\n    - listitem:\n      - heading \"Continue browsing\" [level=5]\n      - link \"See all products\":\n        - /url: https://cloud.google.com/products/\n  - text: . .\n  - banner:\n    - link \"Google Cloud\":\n      - /url: https://cloud.google.com/\n      - img \"Google Cloud\"\n    - navigation:\n      - link \"Overview\":\n        - /url: https://cloud.google.com/why-google-cloud\n      - link \"Solutions\":\n        - /url: https://cloud.google.com/solutions\n      - link \"Products\":\n        - /url: https://cloud.google.com/products\n      - link \"Pricing\":\n        - /url: https://cloud.google.com/pricing\n      - link \"Resources\":\n        - /url: https://cloud.google.com/docs/get-started\n    - combobox \"Search\"\n    - button \"Search\": send\n    - link \"Docs\":\n      - /url: https://cloud.google.com/docs\n    - link \"Support\":\n      - /url: https://cloud.google.com/support-hub\n    - link \"Sign in\":\n      - /url: https://accounts.google.com/AccountChooser?continue=https://cloud.google.com/pubsub&hl=en-US&prompt=select_account&service=cloudconsole\n    - link \"Cloud Pub/Sub\":\n      - /url: https://cloud.google.com/pubsub\n    - link \"Start free\":\n      - /url: https://console.cloud.google.com/freetrial\n    - link \"Contact us\":\n      - /url: https://cloud.google.com/contact\n  - contentinfo:\n    - navigation \"Footer Links\":\n      - list:\n        - listitem:\n          - heading \"Why Google\" [level=3]\n          - list:\n            - listitem:\n              - link \"Choosing Google Cloud\":\n                - /url: https://cloud.google.com/why-google-cloud\n            - listitem:\n              - link \"Trust and security\":\n                - /url: https://cloud.google.com/trust-center\n            - listitem:\n              - link \"Modern Infrastructure Cloud\":\n                - /url: https://cloud.google.com/solutions/modern-infrastructure\n            - listitem:\n              - link \"Multicloud\":\n                - /url: https://cloud.google.com/multicloud\n            - listitem:\n              - link \"Global infrastructure\":\n                - /url: https://cloud.google.com/infrastructure\n            - listitem:\n              - link \"Locations\":\n                - /url: https://cloud.google.com/about/locations\n            - listitem:\n              - link \"Customers and case studies\":\n                - /url: https://cloud.google.com/customers\n            - listitem:\n              - link \"Analyst reports\":\n                - /url: https://cloud.google.com/analyst-reports\n            - listitem:\n              - link \"Whitepapers\":\n                - /url: https://cloud.google.com/whitepapers\n            - listitem:\n              - link \"Blog\":\n                - /url: https://cloud.google.com/blog\n        - listitem:\n          - heading \"Products and pricing\" [level=3]\n          - list:\n            - listitem:\n              - link \"Google Cloud pricing\":\n                - /url: https://cloud.google.com/pricing\n            - listitem:\n              - link \"Google Workspace pricing\":\n                - /url: https://workspace.google.com/pricing.html\n            - listitem:\n              - link \"See all products\":\n                - /url: https://cloud.google.com/products\n        - listitem:\n          - heading \"Solutions\" [level=3]\n          - list:\n            - listitem:\n              - link \"Infrastructure modernization\":\n                - /url: https://cloud.google.com/solutions/infrastructure-modernization/\n            - listitem:\n              - link \"Databases\":\n                - /url: https://cloud.google.com/solutions/databases\n            - listitem:\n              - link \"Application modernization\":\n                - /url: https://cloud.google.com/solutions/application-modernization\n            - listitem:\n              - link \"Smart analytics\":\n                - /url: https://cloud.google.com/solutions/data-analytics-and-ai\n            - listitem:\n              - link \"Artificial Intelligence\":\n                - /url: https://cloud.google.com/solutions/ai\n            - listitem:\n              - link \"Security\":\n                - /url: https://cloud.google.com/solutions/security\n            - listitem:\n              - link \"Productivity & work transformation\":\n                - /url: https://workspace.google.com/enterprise\n            - listitem:\n              - link \"Industry solutions\":\n                - /url: https://cloud.google.com/solutions/#industry-solutions\n            - listitem:\n              - link \"DevOps solutions\":\n                - /url: https://cloud.google.com/devops\n            - listitem:\n              - link \"Small business solutions\":\n                - /url: https://cloud.google.com/solutions#section-14\n            - listitem:\n              - link \"See all solutions\":\n                - /url: https://cloud.google.com/solutions\n        - listitem:\n          - heading \"Resources\" [level=3]\n          - list:\n            - listitem:\n              - link \"Google Cloud Affiliate Program\":\n                - /url: https://cloud.google.com/affiliate-program\n            - listitem:\n              - link \"Google Cloud documentation\":\n                - /url: https://docs.cloud.google.com/\n            - listitem:\n              - link \"Google Cloud quickstarts\":\n                - /url: https://docs.cloud.google.com/docs/get-started/\n            - listitem:\n              - link \"Google Cloud Marketplace\":\n                - /url: https://cloud.google.com/marketplace\n            - listitem:\n              - link \"Learn about cloud computing\":\n                - /url: https://cloud.google.com/discover\n            - listitem:\n              - link \"Support\":\n                - /url: https://cloud.google.com/support-hub\n            - listitem:\n              - link \"Code samples\":\n                - /url: https://docs.cloud.google.com/docs/samples\n            - listitem:\n              - link \"Cloud Architecture Center\":\n                - /url: https://docs.cloud.google.com/architecture\n            - listitem:\n              - link \"Training\":\n                - /url: https://cloud.google.com/learn/training\n            - listitem:\n              - link \"Certifications\":\n                - /url: https://cloud.google.com/learn/certification\n            - listitem:\n              - link \"Google for Developers\":\n                - /url: https://developers.google.com\n            - listitem:\n              - link \"Google Cloud for Startups\":\n                - /url: https://cloud.google.com/startup\n            - listitem:\n              - link \"System status\":\n                - /url: https://status.cloud.google.com\n            - listitem:\n              - link \"Release Notes\":\n                - /url: https://docs.cloud.google.com/release-notes\n        - listitem:\n          - heading \"Engage\" [level=3]\n          - list:\n            - listitem:\n              - link \"Contact sales\":\n                - /url: https://cloud.google.com/contact\n            - listitem:\n              - link \"Find a Partner\":\n                - /url: https://cloud.google.com/partners\n            - listitem:\n              - link \"Become a Partner\":\n                - /url: https://cloud.google.com/partners/become-a-partner\n            - listitem:\n              - link \"Events\":\n                - /url: https://cloud.google.com/events\n            - listitem:\n              - link \"Podcasts\":\n                - /url: https://cloud.google.com/podcasts\n            - listitem:\n              - link \"Developer Center\":\n                - /url: https://cloud.google.com/developers\n            - listitem:\n              - link \"Press Corner\":\n                - /url: https://www.googlecloudpresscorner.com\n            - listitem:\n              - link \"Google Cloud on YouTube\":\n                - /url: https://www.youtube.com/googlecloud\n            - listitem:\n              - link \"Google Cloud Tech on YouTube\":\n                - /url: https://www.youtube.com/googlecloudplatform\n            - listitem:\n              - link \"Follow on X\":\n                - /url: https://x.com/googlecloud\n            - listitem:\n              - link \"Join User Research\":\n                - /url: https://userresearch.google.com/?reserved=1&utm_source=website&Q_Language=en&utm_medium=own_srch&utm_campaign=CloudWebFooter&utm_term=0&utm_content=0&productTag=clou&campaignDate=jul19&pType=devel&referral_code=jk212693\n            - listitem:\n              - link \"We're hiring. Join Google Cloud!\":\n                - /url: https://careers.google.com/cloud\n            - listitem:\n              - link \"Community forums\":\n                - /url: https://discuss.google.dev/c/google-cloud/14\n    - navigation \"Utility links\":\n      - list:\n        - listitem:\n          - link \"About Google\":\n            - /url: https://about.google\n        - listitem:\n          - text: \"|\"\n          - link \"Privacy\":\n            - /url: https://policies.google.com/privacy\n        - listitem:\n          - text: \"|\"\n          - link \"Site terms\":\n            - /url: https://policies.google.com/terms\n        - listitem:\n          - text: \"|\"\n          - link \"Google Cloud terms\":\n            - /url: https://cloud.google.com/product-terms\n        - listitem:\n          - text: \"|\"\n          - 'link \"Our third decade of climate action: join us\"':\n            - /url: https://cloud.google.com/sustainability\n        - listitem:\n          - text: Sign up for the Google Cloud newsletter\n          - link \"Subscribe\":\n            - /url: https://cloud.google.com/newsletter\n      - combobox \"‪English‬\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://cloud.google.com/pubsub",
+              "origin": "https://cloud.google.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

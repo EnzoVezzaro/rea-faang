@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_a90e9ee26f54c9ce626b5429d9bb60968593f5abaf49eb86380245bf79006e02",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.apple.com/facetime/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "8f55afe553897648b579745d2ba5bc3640aeb0a17a3cdaf015d96d753f692f98"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://www.apple.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4573,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1829,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://support.apple.com/en-us/105088",
+          "origin": "https://support.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2539,
+        "before_url": {
+          "url": "https://support.apple.com/en-us/105088",
+          "origin": "https://support.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://support.apple.com/en-us/105088",
+          "origin": "https://support.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "48f937d3a88ad27a78b68d6f4d7683ec952757a2a3f9efd447576e2f4662f0d1",
+              "bytes": 9573,
+              "text": "- document:\n  - navigation \"Global\":\n    - list:\n      - listitem:\n        - link \"Apple\":\n          - /url: https://www.apple.com/\n      - listitem:\n        - list:\n          - listitem:\n            - link \"Store\":\n              - /url: https://www.apple.com/us/shop/goto/store\n          - listitem:\n            - button \"Store menu\"\n        - list:\n          - listitem:\n            - link \"Mac\":\n              - /url: https://www.apple.com/mac/\n          - listitem:\n            - button \"Mac menu\"\n        - list:\n          - listitem:\n            - link \"iPad\":\n              - /url: https://www.apple.com/ipad/\n          - listitem:\n            - button \"iPad menu\"\n        - list:\n          - listitem:\n            - link \"iPhone\":\n              - /url: https://www.apple.com/iphone/\n          - listitem:\n            - button \"iPhone menu\"\n        - list:\n          - listitem:\n            - link \"Watch\":\n              - /url: https://www.apple.com/watch/\n          - listitem:\n            - button \"Watch menu\"\n        - list:\n          - listitem:\n            - link \"Vision\":\n              - /url: https://www.apple.com/apple-vision-pro/\n          - listitem:\n            - button \"Vision menu\"\n        - list:\n          - listitem:\n            - link \"AirPods\":\n              - /url: https://www.apple.com/airpods/\n          - listitem:\n            - button \"AirPods menu\"\n        - list:\n          - listitem:\n            - link \"Home\":\n              - /url: https://www.apple.com/home/\n          - listitem:\n            - button \"Home menu\"\n        - list:\n          - listitem:\n            - link \"Entertainment\":\n              - /url: https://www.apple.com/entertainment/\n          - listitem:\n            - button \"Entertainment menu\"\n        - list:\n          - listitem:\n            - link \"Accessories\":\n              - /url: https://www.apple.com/us/shop/goto/buy_accessories\n          - listitem:\n            - button \"Accessories menu\"\n        - list:\n          - listitem:\n            - link \"Support\":\n              - /url: https://support.apple.com/?cid=gn-ols-home-hp-tab\n          - listitem:\n            - button \"Support menu\"\n      - listitem:\n        - button \"Search Support\"\n      - listitem:\n        - button \"Shopping Bag\"\n  - main:\n    - heading \"Use FaceTime on your iPhone or iPad\" [level=1]\n    - paragraph: With FaceTime, you can make and answer calls, translate different languages, share your screen, watch movies together, and more—all in real time.\n    - paragraph:\n      - link \"Make a FaceTime call \":\n        - /url: \"#make-call\"\n    - paragraph:\n      - link \"Answer a FaceTime call \":\n        - /url: \"#audio\"\n    - paragraph:\n      - link \"Discover more ways to interact on a FaceTime call \":\n        - /url: \"#options\"\n    - paragraph:\n      - link \"Find your missed calls, voicemails, and more in FaceTime \":\n        - /url: \"#Find\"\n    - heading \"Make a FaceTime call\" [level=2]\n    - list:\n      - listitem:\n        - paragraph: In Settings, scroll to Apps, then tap FaceTime.\n      - listitem:\n        - paragraph:\n          - text: Tap to\n          - link \"This links to the iPhone user guide section about setting up FaceTime.\":\n            - /url: https://support.apple.com/guide/iphone/get-started-with-facetime-iphc4774d8d8/ios\n            - text: turn on FaceTime\n          - text: .\n      - listitem:\n        - paragraph:\n          - text: Then, in the FaceTime app (not Settings), tap the New Call button. If you have the person's phone number or email address saved in your Contacts,\n          - superscript: \"1\"\n          - text: start typing their name and tap the name when it appears.\n      - listitem:\n        - paragraph: Tap the Audio button or the FaceTime button to start the call.\n        - img \"In FaceTime on iPhone, a name is entered in the To field for a new FaceTime call.\"\n    - paragraph:\n      - text: You can use FaceTime over Wi-Fi\n      - superscript: \"2\"\n      - text: or over cellular on supported iOS or iPadOS devices.\n      - superscript: \"3\"\n      - text: Data rates may apply. FaceTime, Group FaceTime, or FaceTime audio may not be available in all countries or regions.\n    - heading \"Answer a FaceTime call\" [level=2]\n    - list:\n      - listitem:\n        - paragraph: If you see an incoming FaceTime call, tap the Accept button to answer.\n        - img \"iPhone home screen showing a FaceTime Video call with the option to accept or decline.\"\n      - listitem:\n        - paragraph: \"If you're already on FaceTime, and you get another incoming call, tap one of these options:\"\n        - list:\n          - listitem:\n            - paragraph: End & Accept (ends your current call and accepts the incoming call)\n          - listitem:\n            - paragraph: Hold & Accept (holds your current call and accepts the new call)\n          - listitem:\n            - paragraph: Decline (declines the new call)\n    - heading \"Discover more ways to interact on a FaceTime call\" [level=2]\n    - list:\n      - listitem:\n        - paragraph: During a FaceTime call, tap the More button.\n      - listitem:\n        - paragraph: \"Tap any of these options:\"\n        - list:\n          - listitem:\n            - paragraph: Add People (adds more people to the current call)\n          - listitem:\n            - paragraph: Contact Card (opens the other caller's Contact card)\n          - listitem:\n            - paragraph: Live Captions (shows real-time captions on the current call)\n          - listitem:\n            - paragraph: Live Translation (translates between languages in real-time)\n          - listitem:\n            - paragraph: Hold Assist (get notified to pick up when you're no longer on hold)\n          - listitem:\n            - paragraph: Screen Sharing (shares your screen with the other caller)\n          - listitem:\n            - paragraph: SharePlay (lets you share movies, workouts, and more on the current call)\n    - heading \"Find your missed calls, voicemails, and more in FaceTime\" [level=2]\n    - list:\n      - listitem:\n        - paragraph: In FaceTime, tap the Filter button in the upper right corner.\n        - img \"In FaceTime on iPhone, the Filter button is magnified, which can be tapped for in-call options.\"\n      - listitem:\n        - paragraph: \"Tap any of the options from the list:\"\n        - list:\n          - listitem:\n            - paragraph: Calls (your recent FaceTime video and audio calls)\n          - listitem:\n            - paragraph: Missed (FaceTime video and audio calls that were not answered)\n          - listitem:\n            - paragraph:\n              - text: Video (video messages from other callers)\n              - superscript: \"4\"\n          - listitem:\n            - paragraph: Voicemail (voicemails from other callers)\n          - listitem:\n            - paragraph: Unknown Callers (calls from unsaved Contacts)\n          - listitem:\n            - paragraph: Spam (calls identified as spam or fraud)\n          - listitem:\n            - paragraph: Manage Filtering (your settings to screen, silence, and filter calls)\n    - heading \"Get more help\" [level=2]\n    - list:\n      - listitem:\n        - paragraph:\n          - link \"Screen unknown callers on iPhone\":\n            - /url: https://support.apple.com/en-us/111106\n      - listitem:\n        - paragraph:\n          - link \"Use FaceTime on Mac\":\n            - /url: https://support.apple.com/guide/facetime/welcome/mac\n    - list:\n      - listitem:\n        - paragraph:\n          - text: When you tap a person's contact information, FaceTime tries to connect using any FaceTime-enabled numbers or addresses stored for that person. To avoid calling unintended recipients,\n          - link \"make sure that your contacts are accurate\":\n            - /url: https://support.apple.com/guide/iphone/edit-contacts-iph89a9c71d8/ios\n          - text: .\n      - listitem:\n        - paragraph: \"You can use FaceTime on these devices on Wi-Fi: iPhone 4 or later, iPad Pro (all models), iPad 2 or later, and iPad mini (all models).\"\n      - listitem:\n        - paragraph: \"With a cellular data plan, you can use FaceTime without Wi-Fi on: iPhone 4s or later, iPad Pro (all models), and iPad (3rd generation or later).\"\n      - listitem:\n        - paragraph:\n          - text: If FaceTime detects that certain sensitive content has been sent to a child,\n          - link \"Communication Safety\":\n            - /url: https://support.apple.com/en-us/105069\n          - text: can warn your child, blur the content, and provide helpful resources.\n    - text: \"Published Date:\"\n    - time: September 14, 2026\n  - group \"Helpful?\":\n    - text: Helpful?\n    - button \"Yes\"\n    - button \"No\"\n  - contentinfo \"Apple Footer\":\n    - heading \"Apple Footer\" [level=2]\n    - navigation \"Breadcrumbs\":\n      - link \"Apple\":\n        - /url: https://www.apple.com\n      - list:\n        - listitem:\n          - link \"Support\":\n            - /url: https://support.apple.com\n        - listitem: Use FaceTime with your iPhone or iPad\n    - link \"United States. Choose your country or region\":\n      - /url: https://support.apple.com/en-us/105088/localeselector\n      - text: United States\n    - text: Copyright © 2026 Apple Inc. All rights reserved.\n    - link \"Privacy Policy\":\n      - /url: https://www.apple.com/legal/privacy/en-ww/\n    - link \"Terms of Use\":\n      - /url: https://www.apple.com/legal/internet-services/terms/site.html\n    - link \"Sales and Refunds\":\n      - /url: https://www.apple.com/shop/goto/help/sales_refunds\n    - link \"Site Map\":\n      - /url: https://www.apple.com/sitemap/\n  - status"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://support.apple.com/en-us/105088",
+              "origin": "https://support.apple.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

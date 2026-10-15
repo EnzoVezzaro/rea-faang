@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_d762082f18695e9591442ef7eb1ba0a5489a0220968af9c6928e733dd9d72fa3",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/dynamodb/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "21d76db2a3af174add9b557266d7224604c2a244de7b48ebe420f90f2de39340"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 5842,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3029,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/dynamodb/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2589,
+        "before_url": {
+          "url": "https://aws.amazon.com/dynamodb/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/dynamodb/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "86ce1e8bcffc6337d5faf1f92ae135dfbb000ae510feaed657dc4bb334c88037",
+              "bytes": 17109,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - main:\n    - paragraph: Amazon DynamoDB\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /dynamodb/\n      - button \"Features submenu\": Features\n      - listitem:\n        - link \"Pricing\":\n          - /url: /dynamodb/pricing/\n      - listitem:\n        - link \"Resources\":\n          - /url: /dynamodb/resources/\n      - listitem:\n        - link \"FAQs\":\n          - /url: /dynamodb/faqs/\n      - listitem:\n        - link \"Customers\":\n          - /url: /dynamodb/customers/\n      - listitem:\n        - link \"DAX\":\n          - /url: /dynamodbaccelerator/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Databases\":\n            - /url: /products/databases/\n        - listitem: Amazon DynamoDB\n    - heading \"Amazon DynamoDB\" [level=1]\n    - paragraph: Serverless, fully managed, distributed NoSQL database with single-digit millisecond performance at any scale\n    - button \"Get started with DynamoDB\"\n    - button \"Try DynamoDB with AWS Free Tier\"\n    - heading \"What is DynamoDB\" [level=2]\n    - paragraph: DynamoDB offers zero infrastructure management, instant scaling, pay-per-request billing, and no cold starts, upgrades, or maintenance windows. These capabilities, along with native vector search, make DynamoDB ideal for agentic applications that need semantic retrieval. For globally distributed applications, DynamoDB global tables is a multi-Region, multi-active database with up to 99.999% availability. It supports multi-Region strong consistency enabling your applications to always stay available and read the same data from any Region, so you can build zero recovery point objective applications. A broad set of DynamoDB security controls and compliance standards satisfy the requirements for governments, global banks, and other high-sensitivity organizations.\n    - button \"Play:\"\n    - img \"Missing alt text value\"\n    - heading \"Benefits of DynamoDB\" [level=2]\n    - link \"Serverless Optimize costs with a serverless, fully managed database that instantly scales to fit your applications' needs with zero infrastructure management, zero downtime maintenance, and zero maintenance windows. Learn more\":\n      - /url: /dynamodb/features/\n      - heading \"Serverless\" [level=3]\n      - paragraph: Optimize costs with a serverless, fully managed database that instantly scales to fit your applications' needs with zero infrastructure management, zero downtime maintenance, and zero maintenance windows.\n      - text: Learn more\n    - link \"Performance at scale Deliver applications with the same single-digit millisecond performance for your end users, whether it's across tens of thousands or hundreds of millions of simultaneous users. Learn more\":\n      - /url: /dynamodb/features/\n      - heading \"Performance at scale\" [level=3]\n      - paragraph: Deliver applications with the same single-digit millisecond performance for your end users, whether it's across tens of thousands or hundreds of millions of simultaneous users.\n      - text: Learn more\n    - link \"Highest application resilience Enable apps to achieve zero RPO with global tables - multi-Region, active-active database - designed for 99.999% availability and ability to always read the latest data from any Region. Learn more\":\n      - /url: /dynamodb/global-tables/\n      - heading \"Highest application resilience\" [level=3]\n      - paragraph: Enable apps to achieve zero RPO with global tables - multi-Region, active-active database - designed for 99.999% availability and ability to always read the latest data from any Region.\n      - text: Learn more\n    - link \"Optimize costs Pay only for what you use even for workloads with variable demands - and warm throughput prevents cold starts as all resources are instantaneously available. Learn more\":\n      - /url: /dynamodb/features/#topic-2\n      - heading \"Optimize costs\" [level=3]\n      - paragraph: Pay only for what you use even for workloads with variable demands - and warm throughput prevents cold starts as all resources are instantaneously available.\n      - text: Learn more\n    - link \"Interoperability across AWS Do more with your data using built-in tools to perform analytics and AI/ML, and native integrations to manage granular permissions, perform monitoring and observability, and more. Learn more\":\n      - /url: /dynamodb/integrations/\n      - heading \"Interoperability across AWS\" [level=3]\n      - paragraph: Do more with your data using built-in tools to perform analytics and AI/ML, and native integrations to manage granular permissions, perform monitoring and observability, and more.\n      - text: Learn more\n    - text: Stop setting up. Start building. AWS Builder Center gives you access to free sandbox environments inside a real account. No credit card, no setup. Launch an eligible Workshop and build for up to 8 hours.\n    - link \"Explore Workshops\":\n      - /url: https://builder.aws.com/build/workshops?accessType=free-sandbox&tab=discover&sc_icampaign=launch_builder-center-sandbox_2026&sc_ichannel=ha&sc_iplace=banner&trk=c243de2e-eafc-4962-8ffc-4915bb208b5b\n    - button \"Close\"\n    - text: Stop setting up. Start building. AWS Builder Center gives you access to free sandbox environments inside a real account. No credit card, no setup. Launch an eligible Workshop and build for up to 8 hours.\n    - link \"Explore Workshops\":\n      - /url: https://builder.aws.com/build/workshops?accessType=free-sandbox&tab=discover&sc_icampaign=launch_builder-center-sandbox_2026&sc_ichannel=ha&sc_iplace=banner&trk=c243de2e-eafc-4962-8ffc-4915bb208b5b\n    - button \"Close\"\n    - heading \"Scale and value of DynamoDB\" [level=2]\n    - term: customers\n    - definition: 1 million+\n    - term: requests per second delivered for 100s of customers\n    - definition: ½ million+\n    - term: table size used by 100s of customers\n    - definition: 200TB+\n    - term: of equivalent database environments\n    - definition: 25% lower cost\n    - link \"Learn more »\":\n      - /url: https://d1.awsstatic.com/whitepapers/IDC_BV_Amazon_DynamoDB_Snapshot.pdf\n    - heading \"Use cases\" [level=2]\n    - heading \"Mission-critical applications\" [level=3]:\n      - button \"Mission-critical applications\"\n    - heading \"Internet-scale applications\" [level=3]:\n      - button \"Internet-scale applications\"\n    - heading \"Agentic applications\" [level=3]:\n      - button \"Agentic applications\"\n    - heading \"Application modernization\" [level=3]:\n      - button \"Application modernization\"\n    - heading \"Internet of Things\" [level=3]:\n      - button \"Internet of Things\"\n    - heading \"Industries\" [level=2]\n    - tablist:\n      - tab \"Financial services\" [selected]\n      - tab \"Software & internet\"\n      - tab \"Gaming\"\n      - tab \"Retail & e-commerce\"\n      - tab \"AdTech & MarTech\"\n    - tabpanel \"Financial services\":\n      - heading \"Financial services\" [level=3]\n      - paragraph: DynamoDB gives financial services teams the multi-Region resilience, up to 99.999% availability, strong consistency, and ACID transactions that payments and core banking workloads depend on, backed by compliance certifications such as SOC 1/2/3, PCI, FINMA, and ISO. Common use cases include core banking ledger, fraud detection, messaging workflows, digital user onboarding, and more.\n      - 'link \"Read our blog about use cases in financial services: Financial services\"':\n        - /url: /blogs/database/common-financial-services-use-cases-for-amazon-dynamodb/\n        - text: Read our blog about use cases in financial services\n      - img \"Missing alt text value\"\n    - heading \"Customers\" [level=2]\n    - link \"Disney+ ingests billions of daily customer actions to improve the viewer experience Watch the video\":\n      - /url: https://www.youtube.com/watch?v=TCnmtSY2dFM\n      - heading \"Disney+ ingests billions of daily customer actions to improve the viewer experience\" [level=3]\n      - text: Watch the video\n    - link \"Missing alt text value Genesys built an AI-powered experience-orchestration platform achieving 99.999% availability with Amazon DynamoDB Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/genesys-dynamodb-case-study\n      - img \"Missing alt text value\"\n      - heading \"Genesys built an AI-powered experience-orchestration platform achieving 99.999% availability with Amazon DynamoDB\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Snap Inc. reduced median latency by 20% with DynamoDB Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/snap-dynamodb\n      - img \"Missing alt text value\"\n      - heading \"Snap Inc. reduced median latency by 20% with DynamoDB\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Zoom Video Communications, Inc. managed the surge of 10M to 300M daily meeting participants Read the case study\":\n      - /url: https://aws.amazon.com/dynamodb/customers/?pg=dynamodb&sec=cs#Zoom\n      - img \"Missing alt text value\"\n      - heading \"Zoom Video Communications, Inc. managed the surge of 10M to 300M daily meeting participants\" [level=3]\n      - text: Read the case study\n    - heading \"Next steps\" [level=2]\n    - link \"Free tier Sign up for a free account Try for free\":\n      - /url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html\n      - text: Free tier\n      - heading \"Sign up for a free account\" [level=3]\n      - text: Try for free\n    - link \"Resources Learn with hands-on training Get started with DynamoDB\":\n      - /url: /dynamodb/resources/\n      - text: Resources\n      - heading \"Learn with hands-on training\" [level=3]\n      - text: Get started with DynamoDB\n    - link \"Documentation Dive deep on DynamoDB Read the documentation\":\n      - /url: https://docs.aws.amazon.com/dynamodb/\n      - text: Documentation\n      - heading \"Dive deep on DynamoDB\" [level=3]\n      - text: Read the documentation\n    - link \"Console Start building in the console Sign in\":\n      - /url: https://console.aws.amazon.com/dynamodb\n      - text: Console\n      - heading \"Start building in the console\" [level=3]\n      - text: Sign in\n    - heading \"Did you find what you were looking for today?\" [level=2]\n    - paragraph: Let us know so we can improve the quality of the content on our pages\n    - button \"Yes, give us positive feedback\": \"Yes\"\n    - button \"No, give us constructive feedback\": \"No\"\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /dynamodb/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /dynamodb/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/dynamodb/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

@@ -1,101 +1,82 @@
-# RAE FAANG — Landing page copy
+# RAE FAANG: Landing page copy
 
-Produced with the [`landing-page-copy`](https://github.com/rampstackco/claude-skills/blob/main/skills/landing-page-copy/SKILL.md)
-skill (7-section conversion structure). The built page is [`index.html`](index.html).
+Built with the [`copywriting`](https://github.com/coreyhaines31/marketingskills/blob/main/skills/copywriting/SKILL.md) skill for conversion structure and [`humanizer`](https://github.com/blader/humanizer) to keep the prose direct and natural.
+
+The landing page is generated. Edit the copy here and mirror changes in `homePage()` in [`tools/site/templates.mjs`](../tools/site/templates.mjs), then run `npm run site:build`. Counts come from catalog data at build time.
 
 ## Inputs
 
 | Input | Value |
 |---|---|
-| **Offer** | An open catalog that maps every FAANG product to the open-source project that replaces it — and a pipeline to build the ones that don't exist. Free, MIT-licensed source. |
-| **Audience** | Developers, sysadmins and open-source contributors who already want off proprietary FAANG products, and are sceptical of "just use an alternative" listicles. |
-| **Primary objection** | "This sounds like vapourware — is anything actually built?" |
-| **Conversion goal** | One action: open the catalog on GitHub. |
-| **Brand voice** | Precise, evidence-first, allergic to hype. Short sentences. Numbers over adjectives. |
+| **Offer** | Product research, candidate open-source projects and a Markdown skill for each catalogued product. Give the skill to a coding agent to help plan and test an independent implementation in your project. |
+| **Audience** | Developers, sysadmins and open-source contributors interested in building independent software with coding agents. |
+| **Primary question** | “What can I learn from this catalog, and what do I do next?” |
+| **Conversion goal** | Browse the catalog. |
+| **Brand voice** | Plain, precise and specific. Use concrete details. State limits and uncertainty directly. |
 
-### Stated data gaps (skill data-availability rule)
+The catalog informs your work; it does not build or verify software for you. Candidate projects are research leads, not guaranteed replacements. Coverage labels describe how much alternative research is recorded, not whether an implementation is feasible.
 
-The skill requires customer language, testimonials and logos. **None exist** — RAE FAANG has no
-users, customers, or press coverage to quote. Per the skill's rule, fabricating them is not
-sanctioned, so the social-proof slot is filled with **verifiable project status instead** and the
-gap is labelled on the page itself. Case studies are likewise marked unavailable.
+### Data
 
-Nothing below is an estimated or invented number. Every figure is reproducible from the
-repository (commands given in the Proof section).
+Counts are generated from repository data. The commands in the Proof section show how to inspect or regenerate them.
 
 ---
 
 ## SECTION: Hero
 
-- **Headline:** Every FAANG product, mapped to its open-source alternative.
-- **Subheadline:** RAE FAANG catalogs the products of Meta, Amazon, Apple, Netflix and Google,
-  names the open-source project that already replaces each one — with a cited source — and builds
-  the ones that don't exist yet.
-- **Primary CTA:** Explore the catalog
-- **Supporting cue:** 34 products mapped · 24 already have an open-source alternative · 3 have none · MIT, no signup
-- **Hero visual notes:** none required. The numbers *are* the visual. Keep the eyebrow as a mono
-  label so the page reads like a technical artifact, not a sales page.
+- **Headline:** Build the software you need.
+- **Subheadline:** Start with product research, not a blank page.
+- **Supporting copy:** Each catalog entry includes product research, open-source projects to consider and a Markdown skill for your coding agent. Use the skill to plan and test an independent implementation in your project.
+- **Primary CTA:** Pick a product
+- **Secondary CTA:** See how it works
+- **Hero visual:** Show real catalog products, company names and alternative-coverage labels. Each name links to its product page. The Product Build Pass uses catalog data; changing the selected product updates its details and skill download. On mobile, show the headline and actions before the product list and pass.
 
-Rationale: the hero is **outcome + audience + mechanism** and its specificity ("34", "24", "3") is
-the differentiator. A generic "reverse engineer everything" headline describes the ambition; this
-one states a result the visitor can check in one click.
+The full catalog follows as a typographic index grouped by company. Every product appears once, links to its dossier and carries its current alternative-research state. Do not invent activity or status.
+
+External links open in a new tab with `rel="noopener noreferrer"`. Internal links stay in the same tab.
 
 ---
 
-## SECTION: Social proof (early)
+## SECTION: The product skill
 
-**Not available — stated on the page.** There are no customers, logos or testimonials to show.
-
-Replacements used on the page (all verifiable):
-
-- **Band label:** "Project status — not customer proof."
-- **Trust statistic (real):** 34 products catalogued · 24 with an open-source alternative · 3 with none.
-- **Footnote:** no users yet; the repository is the only evidence, and the commands to reproduce it are published.
+- **Heading:** One product. One skill. A clearer place to start.
+- **Copy:** Each product has a Markdown skill for a coding agent. It links to product context, research, candidate open-source projects and directions for planning, building and testing a scoped implementation.
+- **Presentation:** Four ordered steps: Choose, Review, Build, Test.
 
 ---
 
-## SECTION: Problem / promise
+## SECTION: The gap, in numbers
 
-Rented software is not owned software. Prices rise, features disappear, services shut down, and
-moving your data becomes somebody else's product decision. You cannot read the code, fix the bug,
-or keep the thing running after the company stops caring.
+Counts come from committed catalog data at build time. Describe the test total as test cases in the repository, not as passing tests; direct visitors to `npm test` for the current result.
 
-The usual advice — "just use an alternative" — arrives as a blog listicle. It names five tools,
-compares none, cites nothing, and goes stale within a year. What nobody publishes is the boring,
-useful thing: for **this specific product**, does an open-source replacement already exist, and if
-not, what exactly is missing?
+---
 
-Answering that question is step one. Building the missing pieces is step two.
+## SECTION: What the catalog answers
+
+Product pages link to research, candidate projects and a Markdown skill for a coding agent. Candidates are starting points to assess, not guarantees of feature parity. The skill helps the agent decide what to reuse, what to build and how to test the result in the user's project.
 
 ---
 
 ## SECTION: Solution
 
-- **Headline:** A map of what exists, and a plan for what doesn't.
+- **Headline:** Choose a product. Give its skill to your agent.
 
-1. **The catalog** — 34 products so far, one record each: company, product type, official URL,
-   lifecycle status. *Outcome: stop rebuilding the same list from blog posts.*
-2. **The open-source verdict** — for every product, does open-source already replace it?
-   24 of 34 say yes — SearXNG for search, Jellyfin for streaming, Ceph for object storage,
-   Mailcow for mail. *Outcome: don't rebuild what already exists.*
-3. **The pending list** — 3 products have no open-source alternative at all (iOS, macOS, Amazon
-   Prime) and 7 more have only partial coverage. Named, not implied. *Outcome: know exactly where
-   the new work is.*
-4. **The evidence** — every claim cites a public source, and 34 REA web-surface reports keep the
-   raw evidence on disk. *Outcome: re-check the claim instead of trusting it.*
-5. **The pipeline** — catalog → research → specify → build → verify, with agent roles and a
-   definition of done that requires a passing command. *Outcome: contributing is a workflow, not a
-   blank page.*
+1. **The catalog:** 77 products, each with a company, type, official URL and lifecycle status. Browse or filter the inventory.
+2. **Candidate projects:** Product pages list projects that may cover similar user needs. 40 products have a mature candidate listed, including SearXNG, Jellyfin, Ceph and Mailcow. Review each project's coverage before choosing it.
+3. **The product skill:** Every product has a downloadable Markdown skill with product context, research, candidates and build-and-test directions. Give the skill to your coding agent in your project.
+4. **The research:** Product dossiers cite sources. REA reports record observations from public web pages; they do not show private workflows or internal implementation.
+5. **Your build:** Use the skill to review evidence, choose what to reuse, plan a scope and test the result in your project.
 
 ---
 
 ## SECTION: Proof
 
-- **Headline:** Receipts, not vibes.
+- **Headline:** Browse the research behind the suggestions.
+- **Intro:** These are candidate projects, not guaranteed replacements. Product pages show what the research supports, where coverage is uncertain and which sources were used.
 
-### The replacement map (real entries from `catalog/skills/`)
+### Candidate projects listed in the catalog
 
-| Target product | Open-source alternative that already exists | License |
+| Target product | Candidate project | License |
 |---|---|---|
 | Amazon S3 | Ceph (RADOS Gateway) | LGPL-2.1 |
 | AWS Lambda | OpenFaaS | MIT |
@@ -105,88 +86,75 @@ Answering that question is step one. Building the missing pieces is step two.
 | Google Maps | OpenStreetMap + Organic Maps | ODbL-1.0 / Apache-2.0 |
 | Google Workspace | Nextcloud | AGPL-3.0 |
 
-### Data points (all reproducible)
+### Data points
 
-- **34** products catalogued across **6** company entries — `node src/cli.js products | wc -l`
-- **34** research dossiers with schema-validated frontmatter — `npm run validate`
-- **34** REA web-surface reports with raw evidence committed — `npm run rea:catalog`
-- **34** open-source skill files: **24 available / 7 partial / 3 pending** — `npm run skills:catalog`
-- **24** tooling tests passing, green in CI on every push — `npm test`
-
-### Case studies
-
-**Not available.** No product has been implemented yet, so there is no customer outcome to report.
-Stated on the page rather than implied.
+- **77** products across **6** company entries: `rae products list`
+- **77** research dossiers with frontmatter checks: `npm run validate`
+- **77** REA reports of public web pages with captured evidence: `npm run rea:catalog`
+- **77** product skills: **40 mature candidate / 29 partial coverage / 8 no verified alternative**: `npm run skills:catalog`
+- Run `npm test` to see the current test results.
+- Regenerate the site with `npm run site:build`.
 
 ---
 
-## SECTION: Objection handling
+## SECTION: Questions
 
-**No — is anything actually built?**
-No product implementations yet, and the page says so. What is built: the catalog, the research
-dossiers, the open-source map, the REA evidence, the tooling, and a passing test suite — all
-reproducible from the repository today.
+**How do I use a product skill?**
+Choose a product and download its Markdown skill, or generate one with the RAE CLI. Give it to your coding agent from the project where you want to work. It links to product research and candidates, and helps the agent plan, build and test a scoped implementation.
 
-**Isn't this just a list of other people's projects?**
-For 24 of 34 products, deliberately yes — reusing Ceph instead of rewriting object storage is the
-point. The new work is the map, the specs, and the products where **no** alternative exists.
+**What does the catalog add beyond candidate projects?**
+Each entry also includes product context and a skill with build directions. Use those to review the research, decide what to reuse and scope the work for your project.
 
 **How do you avoid copying proprietary code?**
-Clean room. Publicly observable behavior, official documentation and published protocols only. No
-decompilation, no proprietary source, no protected assets, no bypassing access controls.
+The research uses publicly observable behavior, official documentation and published protocols. It does not use proprietary source, decompile software, copy protected assets or bypass access controls.
 
-**Is this legal?**
-Product names are functional references with no affiliation or endorsement implied. Implementations
-must respect applicable licenses and third-party rights. Rights holders can raise issues on the
-repository.
+**What should I check before building?**
+Review cited sources, candidate project licenses and any third-party rights that apply to your implementation. Product names are functional references; no affiliation or endorsement is implied. Rights holders can raise an issue on the repository.
 
-**Do I need to be an expert to contribute?**
-No. Pick a product, read its dossier and skill file, follow the pipeline. Entry points are in
-`CONTRIBUTING.md`.
+**How can I contribute?**
+Choose one product, read its dossier and skill, then pick a focused task from `PLAN.md`. `CONTRIBUTING.md` explains setup and how to submit a change.
 
-**Why should I trust the catalog?**
-Every claim cites a public source; the raw REA evidence is committed; and `npm run validate` plus
-the test suite run in CI on every push.
+**How can I check a product entry?**
+Open its research dossier and follow the citations. Where available, the product page links to a REA report with observations from a public web page. `npm run validate` checks record structure and generated files; it does not confirm that every research claim is correct or current.
 
 ---
 
 ## SECTION: Final CTA
 
-- **Headline:** Pick a product. Read the map. Build what's missing.
-- **Final CTA button:** Explore the catalog
-- **Supporting cue:** MIT-licensed. No signup. 3 products still have no open-source alternative.
+- **Headline:** Pick a product. Start with the research.
+- **Button:** Pick a product
+- **Supporting copy:** Download the product skill, review the sources and candidate projects, then give it to your coding agent. RAE FAANG is MIT-licensed; candidate projects and your implementation have their own licenses.
 
 ---
 
-## Variants for testing
+## SECTION: Catalog page — rows
 
-**Alternate headlines**
-
-- Stop renting the software you depend on.
-- 34 FAANG products. 24 open-source replacements. 3 nobody has built.
-- The map from FAANG product to open-source alternative.
-
-**Alternate CTAs**
-
-- Open the open-source map
-- Show me what's missing
-- Browse the 34 products
-
-**Alternate proof framings**
-
-- Lead with the 3 pending products as scarcity ("only 3 left with no alternative").
-- Lead with the 24 available as reassurance ("your replacement probably already exists").
-- Lead with the REA evidence ("every claim has a receipt").
+- **Page title:** The catalog, live.
+- **Intro:** Each product has a Markdown skill for a coding agent, alongside research into candidate open-source projects.
+- Derive inventory and coverage counts from the data.
+- Put search before Company and Coverage filters.
+- Use compact, scannable rows. Show the product, candidate, license where recorded, coverage label and a clear details link. Stack these details on mobile.
+- If nothing matches, explain that and provide a Reset filters control.
 
 ---
 
-## Post-import checklist
+## SECTION: Product page — dossier
 
-Run against the built page (this was a revision in place, so the checklist is executed, not handed
-over).
+Link to one Markdown skill for the coding agent, alongside the dossier, candidate projects and coverage notes. Explain that the skill helps the agent review sources, plan work and test an independent implementation in the user's project. Coverage labels describe research into existing projects; they are not implementation status.
 
-- [x] Copy spell-checked.
-- [x] Every destination URL resolves.
-- [x] Mobile preview at 375px.
-- [x] SEO basics: descriptive `<title>`, meta description, `lang`, viewport, Open Graph tags.
-- [x] Accessibility basics: skip link, landmarks, labelled sections, keyboard-focusable FAQ.
+Use a two-column body on desktop and stack it on mobile. Include:
+
+1. **At a glance** — what the product does and its core capabilities.
+2. **Candidate projects** — include project links, license and the CLI command; explain that a candidate may cover all, part or none of the target's user needs.
+3. **Coverage and gaps** — summarize the research and the remaining gap.
+4. **Product skill** — identify `agent-kit.md` as the product-specific Markdown skill; show `npx rae-faang <id>` and the download. Explain that the user gives the skill to their coding agent in the project where the implementation will live. Keep optional MCP configuration and workspace scaffolding secondary.
+5. **Evidence** — link the catalog record, research dossier, REA report when available and skill file.
+6. **Next step** — review the skill and candidate projects, then plan work in the user's project.
+
+Use the CLI shorthand `npx rae-faang <id> --alt <name>` for a candidate. Quote names only when the shell requires it, such as `--alt "Ceph (RADOS Gateway)"`. The `rae ...` spelling can be a note for contributors already in the repository.
+
+---
+
+## Alternate copy to avoid
+
+Do not use claims that imply a complete replacement, guaranteed parity, automatic verification or that no alternative exists merely because the catalog has not verified one. Avoid slogans that ask people to trust the catalog; tell them what they can inspect and what the checks do instead.

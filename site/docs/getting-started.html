@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Runs before the stylesheet so reveal styles only apply where the
+         motion layer can actually drive them. -->
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <title>Get started — RAE FAANG docs</title>
+    <meta name="description" content="Set up the repository, check the catalog, and start coordinating product work." />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Get started — RAE FAANG docs" />
+    <meta property="og:description" content="Set up the repository, check the catalog, and start coordinating product work." />
+    <meta property="og:url" content="https://rae-faang-landing.vercel.app/docs/getting-started.html" />
+    <link rel="canonical" href="https://rae-faang-landing.vercel.app/docs/getting-started.html" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-doc">
+    <div class="scroll-rail" data-scroll-rail aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/" aria-current="page">Docs</a>
+          
+        </nav>
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile primary">
+            <a href="../catalog/">Catalog</a>
+            <a href="../docs/">Docs</a>
+            
+          </nav>
+        </details>
+        <a class="btn btn-ghost header-github" href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero page-hero-doc" id="top">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Docs</a><span aria-hidden="true">/</span><span>Get started</span>
+          </nav>
+          <h1>Get started</h1>
+          <p class="lede">Set up the repository, check the catalog, and start coordinating product work.</p>
+        </div>
+      </section>
+
+      <section class="section section-tight section-last">
+        <div class="wrap">
+          <details class="toc">
+            <summary>On this page</summary>
+            <ul>
+              <li><a href="#prerequisites">Prerequisites</a></li>
+              <li><a href="#install-the-cli">Install the CLI</a></li>
+              <li><a href="#work-from-the-source-repository">Work from the source repository</a></li>
+              <li><a href="#check-your-setup">Check your setup</a></li>
+              <li><a href="#browse-products-and-get-an-agent-skill">Browse products and get an agent skill</a></li>
+              <li><a href="#use-ace-to-coordinate-agents">Use ACE to coordinate agents</a></li>
+              <li><a href="#common-development-commands">Common development commands</a></li>
+              <li><a href="#troubleshooting">Troubleshooting</a></li>
+              <li><a href="#choose-a-next-step">Choose a next step</a></li>
+            </ul>
+          </details>
+          <article class="doc">
+<p><img src="assets/brand-logo-icon.png" alt="RAE FAANG" /></p>
+<h1>Get started</h1>
+<p>Install RAE, choose a product, then give its Markdown skill to your coding agent. It provides research and directions for assessing candidate projects, planning the work and testing an independent implementation in your project. You can use the published CLI without cloning this repository.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><strong>Node.js 20+</strong> (LTS recommended)</li>
+<li><strong>npm 10+</strong> (ships with Node)</li>
+<li><strong>git</strong></li>
+</ul>
+<p>Optional, depending on your project:</p>
+<ul>
+<li><strong>Docker</strong> for containerized products</li>
+<li><strong>PostgreSQL 16+</strong> for products with a database</li>
+<li>An agent runtime (for example <strong>opencode</strong>) if you intend to run ACE agents</li>
+</ul>
+<p>The CLI and ACE run on Node.js. <code>npm install</code> also installs the packages listed in this repository's <code>package.json</code>. You do not need a database or a running service to browse and validate the catalog.</p>
+<h2 id="install-the-cli">Install the CLI</h2>
+<pre><code class="language-bash">npm install -g rae-faang
+rae --help</code></pre>
+<p>The published package provides <code>rae</code> and <code>rae-faang</code> commands. It includes the catalog, dossiers, candidate projects and schemas, so you can browse products, check catalog data and generate a skill without a source checkout.</p>
+<h2 id="work-from-the-source-repository">Work from the source repository</h2>
+<p>Clone the repository only when you need to edit catalog/source files, run the full project test suite and generators, or use repository-only tools such as REA capture:</p>
+<pre><code class="language-bash">git clone &lt;your-repo-url&gt; rae-faang
+cd rae-faang
+npm install</code></pre>
+<h2 id="check-your-setup">Check your setup</h2>
+<p>Run the tests and catalog checks, then make sure ACE can read its configuration:</p>
+<pre><code class="language-bash">rae research coverage                 # product research status
+rae research validate                 # bundled catalog integrity
+
+# In a source checkout only:
+npm test                              # deterministic project suite
+npm run validate                      # catalog + research + generated-artifact integrity
+ace status                             # ACE environment overview
+ace config check                       # ace/v1 config validates</code></pre>
+<p>The tests should pass, validation should report no errors, and <code>ace config check</code> should print <code>config: OK</code>.</p>
+<h2 id="browse-products-and-get-an-agent-skill">Browse products and get an agent skill</h2>
+<p>Use the CLI to browse products, review alternative research and generate a Markdown skill for your coding agent. Start with its help:</p>
+<pre><code class="language-bash">rae --help</code></pre>
+<p>Common commands:</p>
+<pre><code class="language-bash"># What products do we track?
+rae products list
+rae products list --company google --format json
+
+# One product and its evidence dossier
+rae products show google-search
+rae research dossier google-search
+
+# How complete is the research?
+rae research coverage
+rae research pending
+
+# What is missing?
+rae gaps all
+rae opportunities validate
+
+# Generate the Google Search skill for your coding agent
+rae google-search --out ./google-search-agent</code></pre>
+<p>Full reference: <a href="cli-reference.html">cli-reference.md</a>.</p>
+<p>Give the generated skill to your coding agent from the project where you want to work. It points the agent to product research and candidate projects, and helps it plan, build and test a scoped implementation. Alternative-coverage status describes the catalog's reuse research; it does not measure build feasibility.</p>
+<h2 id="use-ace-to-coordinate-agents">Use ACE to coordinate agents</h2>
+<p>ACE (<code>ace-proagents</code>) reads its configuration from the <code>ace</code> key in the root <code>package.json</code>. Check its status and available tools with:</p>
+<pre><code class="language-bash">ace --help
+ace status
+ace context --json
+ace crew              # roster and budget
+ace adapters list     # available providers
+ace doctor --json     # diagnostics</code></pre>
+<h3>Product workspaces</h3>
+<p>In a source checkout, existing product workspaces under <code>products/&lt;company&gt;/&lt;product&gt;/</code> can run ACE. To build a product, give its Markdown skill to your coding agent in your project. A starter workspace is optional: scaffold one with <code>rae build product &lt;id&gt; --out ./&lt;id&gt;</code> and install its dependencies before running its ACE shim:</p>
+<pre><code class="language-bash">cd products/netflix/netflix-streaming
+ace status
+ace config check</code></pre>
+<h3>Installing the full crew</h3>
+<p>Use <code>ace setup</code> when you are ready to configure a full agent crew. It asks about the goal, budget, and project directories, then sets up the governor, supervisors, workers, and their workspaces. Preview the changes first:</p>
+<pre><code class="language-bash">ace setup --dry-run    # see the plan without writing
+ace setup --goal &quot;…&quot; --money &quot;…&quot; --projects products/google/google-search</code></pre>
+<p>Read the ACE skill at <code>.agents/skills/ace/SKILL.md</code> inside a workspace (if present) for the interrogation and the six parts, or run <code>ace parts --questions</code>.</p>
+<p>See <a href="agent-workflow.html">agent-workflow.md</a> for how agents use this.</p>
+<h2 id="common-development-commands">Common development commands</h2>
+<pre><code class="language-bash">npm test                 # node:test suite for the CLI, schemas and the site
+npm run validate         # research + alternatives + skills + site integrity
+npm run verify           # validate + test
+npm run gaps             # inventory shortfall report
+npm run site:build       # regenerate the public website into site/
+rae &lt;cmd&gt;               # installed CLI (use npx rae in a source checkout)
+ace &lt;cmd&gt;              # any ACE command</code></pre>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Problem</th><th scope="col">Solution</th></tr>
+</thead>
+<tbody>
+<tr><td><code>node: command not found</code></td><td>Install Node.js 20+ (nodejs.org or nvm).</td></tr>
+<tr><td><code>Cannot find module 'js-yaml'</code></td><td>Run <code>npm install</code>.</td></tr>
+<tr><td><code>ace status</code> prints <code>runtime not available yet</code></td><td>The root <code>lib/</code> is missing. Re-copy it: <code>cp -R node_modules/ace-proagents/lib ./lib</code>.</td></tr>
+<tr><td><code>INCOMPATIBLE_ADAPTER</code> from <code>ace config check</code></td><td>You used a provider that isn't installed. Compare against <code>ace adapters list</code>.</td></tr>
+<tr><td><code>MISSING_CREDENTIAL</code></td><td>Run <code>ace secret set &lt;name&gt;</code> for the required credential.</td></tr>
+<tr><td><code>research validate</code> reports errors</td><td>Fix the catalog line or research frontmatter the report names, then re-run.</td></tr>
+<tr><td>A product's <code>ace</code> command fails</td><td>The workspace shim expects to sit under <code>products/&lt;company&gt;/&lt;product&gt;/</code>.</td></tr>
+<tr><td><code>ace</code> command is unavailable in a product workspace</td><td>Install the workspace dependencies with <code>npm install</code>; run ACE commands as <code>ace &lt;command&gt;</code>.</td></tr>
+</tbody>
+</table></div>
+<h2 id="choose-a-next-step">Choose a next step</h2>
+<ul>
+<li>Open <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/PLAN.md" rel="noopener noreferrer" target="_blank"><code>PLAN.md</code></a> and choose one focused task.</li>
+<li>Read <a href="catalog-and-schemas.html"><code>docs/catalog-and-schemas.md</code></a> before editing the catalog or a research dossier.</li>
+<li>Read <a href="agent-workflow.html"><code>docs/agent-workflow.md</code></a> before running agents.</li>
+</ul>
+
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>            <p class="footer-mark">RAE FAANG</p>
+          <p class="footer-mission">
+
+            Product research, open-source alternatives, and agent skills to build beyond Meta, Amazon,
+            Apple, Netflix and Google. Your agent builds in your project. MIT licensed.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/">Docs</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE" rel="noopener noreferrer" target="_blank">MIT License</a>
+          <a href="https://github.com/EnzoVezzaro/repo-shield" rel="noopener noreferrer" target="_blank">Repo Shield</a>
+        </div>
+      </div>
+      <div class="wrap footer-fine">
+        <p>
+          Product names are used as functional references only and imply no
+          affiliation or endorsement. Implementations must comply with applicable
+          laws, licenses, and third-party rights. No AI training: see
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/NOTICE" rel="noopener noreferrer" target="_blank">NOTICE</a>.
+        </p>
+      </div>
+    </footer>
+    
+  </body>
+</html>

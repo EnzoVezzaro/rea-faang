@@ -45,49 +45,48 @@ A task is owned by exactly one agent at a time. ACE enforces the lease.
 
 ## 3. Command reference
 
-Run these from the repository root unless noted. `node ace.mjs <cmd>` and
-`npx ace <cmd>` are equivalent.
+Run these from the repository root unless noted. Use the `ace` CLI for all ACE commands: `ace <cmd>`.
 
 **Environment**
 ```bash
-node ace.mjs status            # runtime overview + governance snapshot
-node ace.mjs context --json    # host, runtime, git, tools
-node ace.mjs config check      # validate the effective ace/v1 config
-node ace.mjs config --resolve  # show the merged config layers
-node ace.mjs adapters list     # available providers; adapters health|audit
-node ace.mjs doctor --json     # environment diagnostics
+ace status            # runtime overview + governance snapshot
+ace context --json    # host, runtime, git, tools
+ace config check      # validate the effective ace/v1 config
+ace config --resolve  # show the merged config layers
+ace adapters list     # available providers; adapters health|audit
+ace doctor --json     # environment diagnostics
 ```
 
 **Deterministic catalogue work (the source of truth)**
 ```bash
-node src/cli.js products list [--company ID] [--status STATUS] [--format json]
-node src/cli.js research coverage [--company ID] [--format json]
-node src/cli.js research validate [--format json]     # structural integrity
-node src/cli.js gaps all                              # inventory shortfalls
-node src/cli.js opportunities validate                # build_missing w/ specs
+rae products list [--company ID] [--status STATUS] [--format json]
+rae research coverage [--company ID] [--format json]
+rae research validate [--format json]     # structural integrity
+rae gaps all                              # inventory shortfalls
+rae opportunities validate                # build_missing w/ specs
 npm run validate   # research + alternatives validation
 npm test           # node:test suite over the CLI + schemas
 ```
 
 **Task lifecycle**
 ```bash
-node ace.mjs task add --title "<t>" --project <p> --role <r>
-node ace.mjs task list
-node ace.mjs task claim <id> --agent <agent>
-node ace.mjs task start <id>
-node ace.mjs task review <id>      # -> integrate | done
-node ace.mjs task integrate <id>
-node ace.mjs handoff submit <task> --file handoff.json
-node ace.mjs handoff verify <task>
+ace task add --title "<t>" --project <p> --role <r>
+ace task list
+ace task claim <id> --agent <agent>
+ace task start <id>
+ace task review <id>      # -> integrate | done
+ace task integrate <id>
+ace handoff submit <task> --file handoff.json
+ace handoff verify <task>
 ```
 
 **Governance**
 ```bash
-node ace.mjs crew            # roster, live budget
-node ace.mjs govern          # one governor cycle
-node ace.mjs supervise       # one supervisor cycle: assign, verify, integrate
-node ace.mjs watchdog status
-node ace.mjs verify          # run configured verification
+ace crew            # roster, live budget
+ace govern          # one governor cycle
+ace supervise       # one supervisor cycle: assign, verify, integrate
+ace watchdog status
+ace verify          # run configured verification
 ```
 
 ---
@@ -141,12 +140,20 @@ handoff artifact is verified.
 1. Add one line to `catalog/products.jsonl` (valid `product_type` — check
    `catalog/schema/product.schema.json`).
 2. Create `research/companies/<company>/products/<id>.md` with valid frontmatter.
-3. Run `node src/cli.js research validate` until clean, then `npm test`.
+3. Run `rae research validate` until clean, then `npm test`.
+
+**Add or change the open-source landscape or the website**
+1. Edit `tools/skills/catalog-data.mjs` (alternatives, links, licences, verdicts)
+   or `docs/*.md`.
+2. Run `npm run skills:catalog && npm run site:build` — the site is generated;
+   `npm run validate` fails with drift until both are rebuilt.
+3. Everything under `site/` except `styles.css` is generated output; edit the
+   templates in `tools/site/`, not the built pages.
 
 **Research a product**
 Fill sections 1–15 of its dossier from public, authorized sources; cite each
 material claim in `evidence[]`; set `research_status`, `last_researched_at`, and
-`research_confidence`. Then `node src/cli.js research coverage --company <id>`.
+`research_confidence`. Then `rae research coverage --company <id>`.
 
 **Specify a product**
 Work inside `products/<company>/<product>/specs/` — follow the standard set
@@ -156,17 +163,13 @@ testable.
 **Add a product workspace**
 ```
 products/<company>/<product>/
-├── ace.mjs        # copy of the root shim (runs the repo-level ACE CLI here)
+├── ace.mjs        # product workspace CLI shim; invoke as `ace`
 ├── package.json   # needs an "ace" key; copy the shape from a sibling
 └── specs/
 ```
-Then from that directory: `node ace.mjs config check` must pass.
+Then from that directory: `ace config check` must pass.
 
-**Note:** product `ace.mjs` is a thin shim that runs the repository-level CLI
-with the product as the working directory, so there is one real ACE copy to keep
-current (`npm update ace-proagents`, then re-copy `ace.mjs` and `lib/` at the
-root). This is the one intentional deviation from the older `.docs/` layout,
-which copied a full `ace.mjs` + `lib/` into every product.
+**Note:** use the `ace` CLI for ACE commands in the root or a product workspace. The workspace package resolves the installed ACE CLI; invoke it with `ace <command>`.
 
 ---
 

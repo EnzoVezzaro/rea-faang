@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "generated_at": "2026-01-13",
+  "generated_at": "2026-10-13",
   "description": "FAANG target product inventory manifest",
   "companies": {
     "google": {
@@ -9,12 +9,12 @@
       "grouped_under_parent": []
     },
     "apple": {
-      "in_scope": 25,
+      "in_scope": 20,
       "excluded": [],
       "grouped_under_parent": []
     },
     "amazon_aws": {
-      "in_scope": 15,
+      "in_scope": 17,
       "excluded": [],
       "grouped_under_parent": []
     },
@@ -29,11 +29,11 @@
       "grouped_under_parent": []
     },
     "meta": {
-      "in_scope": 10,
+      "in_scope": 5,
       "excluded": [],
       "grouped_under_parent": []
     }
   },
-  "total_in_scope": 75,
-  "notes": "Initial FAANG inventory. Companies aws and amazon are distinguished; google subsidiaries (deepmind, waymo) are tracked under google."
+  "total_in_scope": 77,
+  "notes": "FAANG inventory. Companies amazon_aws and amazon are distinguished; google subsidiaries (deepmind, waymo) are tracked under google."
 }

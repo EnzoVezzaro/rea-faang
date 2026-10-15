@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_8273e3e1bdbb1730f42f33ba019dbb07ea7ae32ef211b56cf9128fea688fcaf0",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.apple.com/messages/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "7e59a7bfb38ef2a06eed375d41b664ec56f4b79c051f7812dad5fe2e79d74f98"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://www.apple.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4488,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1752,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/messages/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2538,
+        "before_url": {
+          "url": "https://www.apple.com/messages/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/messages/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "4cba43e7fa756a713110b91f6b11f95fd9eeebe2d610b358197a92ed877090d9",
+              "bytes": 9894,
+              "text": "- document:\n  - navigation \"Global\":\n    - list:\n      - listitem:\n        - link \"Apple\":\n          - /url: /\n      - listitem:\n        - list:\n          - listitem:\n            - link \"Store\":\n              - /url: /us/shop/goto/store\n          - listitem:\n            - button \"Store menu\"\n        - list:\n          - listitem:\n            - link \"Mac\":\n              - /url: /mac/\n          - listitem:\n            - button \"Mac menu\"\n        - list:\n          - listitem:\n            - link \"iPad\":\n              - /url: /ipad/\n          - listitem:\n            - button \"iPad menu\"\n        - list:\n          - listitem:\n            - link \"iPhone\":\n              - /url: /iphone/\n          - listitem:\n            - button \"iPhone menu\"\n        - list:\n          - listitem:\n            - link \"Watch\":\n              - /url: /watch/\n          - listitem:\n            - button \"Watch menu\"\n        - list:\n          - listitem:\n            - link \"Vision\":\n              - /url: /apple-vision-pro/\n          - listitem:\n            - button \"Vision menu\"\n        - list:\n          - listitem:\n            - link \"AirPods\":\n              - /url: /airpods/\n          - listitem:\n            - button \"AirPods menu\"\n        - list:\n          - listitem:\n            - link \"Home\":\n              - /url: /home/\n          - listitem:\n            - button \"Home menu\"\n        - list:\n          - listitem:\n            - link \"Entertainment\":\n              - /url: /entertainment/\n          - listitem:\n            - button \"Entertainment menu\"\n        - list:\n          - listitem:\n            - link \"Accessories\":\n              - /url: /us/shop/goto/buy_accessories\n          - listitem:\n            - button \"Accessories menu\"\n        - list:\n          - listitem:\n            - link \"Support\":\n              - /url: https://support.apple.com/?cid=gn-ols-home-hp-tab\n          - listitem:\n            - button \"Support menu\"\n      - listitem:\n        - button \"Search apple.com\"\n      - listitem:\n        - button \"Shopping Bag\"\n  - main:\n    - heading \"The page you’re looking for can’t be found.\" [level=1]\n    - search:\n      - textbox \"Search apple.com\"\n      - button\n    - link \"Or see our site map \":\n      - /url: /sitemap/\n  - contentinfo \"Apple Footer\":\n    - heading \"Apple Footer\" [level=2]\n    - navigation \"Breadcrumbs\":\n      - link \"Apple\":\n        - /url: /\n      - list:\n        - listitem: Page Not Found\n    - navigation \"Apple Directory\":\n      - heading \"Shop and Learn\" [level=3]\n      - list:\n        - listitem:\n          - link \"Store\":\n            - /url: /us/shop/goto/store\n        - listitem:\n          - link \"Mac\":\n            - /url: /mac/\n        - listitem:\n          - link \"iPad\":\n            - /url: /ipad/\n        - listitem:\n          - link \"iPhone\":\n            - /url: /iphone/\n        - listitem:\n          - link \"Watch\":\n            - /url: /watch/\n        - listitem:\n          - link \"Vision\":\n            - /url: /apple-vision-pro/\n        - listitem:\n          - link \"AirPods\":\n            - /url: /airpods/\n        - listitem:\n          - link \"Home\":\n            - /url: /home/\n        - listitem:\n          - link \"AirTag\":\n            - /url: /airtag/\n        - listitem:\n          - link \"Accessories\":\n            - /url: /us/shop/goto/buy_accessories\n        - listitem:\n          - link \"Gift Cards\":\n            - /url: /us/shop/goto/giftcards\n      - heading \"Apple Wallet\" [level=3]\n      - list:\n        - listitem:\n          - link \"Wallet\":\n            - /url: /wallet/\n        - listitem:\n          - link \"Apple Card\":\n            - /url: /apple-card/\n        - listitem:\n          - link \"Apple Pay\":\n            - /url: /apple-pay/\n        - listitem:\n          - link \"Apple Cash\":\n            - /url: /apple-cash/\n      - heading \"Account\" [level=3]\n      - list:\n        - listitem:\n          - link \"Manage Your Apple Account\":\n            - /url: https://account.apple.com/\n        - listitem:\n          - link \"Apple Store Account\":\n            - /url: /us/shop/goto/account\n        - listitem:\n          - link \"iCloud.com\":\n            - /url: https://www.icloud.com\n      - heading \"Entertainment\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple One\":\n            - /url: /apple-one/\n        - listitem:\n          - link \"Apple TV\":\n            - /url: /apple-tv/\n        - listitem:\n          - link \"Apple Music\":\n            - /url: /apple-music/\n        - listitem:\n          - link \"Apple Arcade\":\n            - /url: /apple-arcade/\n        - listitem:\n          - link \"Apple Fitness+\":\n            - /url: /apple-fitness-plus/\n        - listitem:\n          - link \"Apple News+\":\n            - /url: /apple-news/\n        - listitem:\n          - link \"Apple Podcasts\":\n            - /url: /apple-podcasts/\n        - listitem:\n          - link \"Apple Books\":\n            - /url: /apple-books/\n        - listitem:\n          - link \"App Store\":\n            - /url: /app-store/\n      - heading \"Apple Store\" [level=3]\n      - list:\n        - listitem:\n          - link \"Find a Store\":\n            - /url: /retail/\n        - listitem:\n          - link \"Genius Bar\":\n            - /url: /retail/geniusbar/\n        - listitem:\n          - link \"Today at Apple\":\n            - /url: /today/\n        - listitem:\n          - link \"Group Reservations\":\n            - /url: /today/groups/\n        - listitem:\n          - link \"Apple Camp\":\n            - /url: /today/camp/\n        - listitem:\n          - link \"Apple Store App\":\n            - /url: https://apps.apple.com/us/app/apple-store/id375380948\n        - listitem:\n          - link \"Certified Refurbished\":\n            - /url: /us/shop/goto/special_deals\n        - listitem:\n          - link \"Apple Upgrade\":\n            - /url: /us/shop/goto/apple_upgrade\n        - listitem:\n          - link \"Apple Trade In\":\n            - /url: /us/shop/goto/trade_in\n        - listitem:\n          - link \"Financing\":\n            - /url: /us/shop/goto/payment_plan\n        - listitem:\n          - link \"Carrier Deals at Apple\":\n            - /url: /us/shop/goto/buy_iphone/carrier_offers\n        - listitem:\n          - link \"Order Status\":\n            - /url: /us/shop/goto/order/list\n        - listitem:\n          - link \"Shopping Help\":\n            - /url: /us/shop/goto/help\n      - heading \"For Business\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Business\":\n            - /url: /business/\n        - listitem:\n          - link \"Shop for Business\":\n            - /url: /retail/business/\n      - heading \"For Education\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Education\":\n            - /url: /education/\n        - listitem:\n          - link \"Shop for K-12\":\n            - /url: /education/k12/how-to-buy/\n        - listitem:\n          - link \"Shop for College\":\n            - /url: /us/shop/goto/educationrouting\n      - heading \"For Healthcare\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Healthcare\":\n            - /url: /healthcare/\n      - heading \"For Government\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Government\":\n            - /url: /government/\n        - listitem:\n          - link \"Shop for Veterans and Military\":\n            - /url: /us/shop/goto/eppstore/veteransandmilitary\n        - listitem:\n          - link \"Shop for State and Local Employees\":\n            - /url: /us_epp_67909/store\n        - listitem:\n          - link \"Shop for Federal Employees\":\n            - /url: /us_epp_55499/store\n      - heading \"Apple Values\" [level=3]\n      - list:\n        - listitem:\n          - link \"Accessibility\":\n            - /url: /accessibility/\n        - listitem:\n          - link \"Education\":\n            - /url: /education-initiative/\n        - listitem:\n          - link \"Environment\":\n            - /url: /environment/\n        - listitem:\n          - link \"Inclusion and Diversity\":\n            - /url: /diversity/\n        - listitem:\n          - link \"Privacy\":\n            - /url: /privacy/\n        - listitem:\n          - link \"Racial Equity and Justice\":\n            - /url: /racial-equity-justice-initiative/\n        - listitem:\n          - link \"Supply Chain Innovation\":\n            - /url: /supply-chain/\n      - heading \"About Apple\" [level=3]\n      - list:\n        - listitem:\n          - link \"Newsroom\":\n            - /url: /newsroom/\n        - listitem:\n          - link \"Apple Leadership\":\n            - /url: /leadership/\n        - listitem:\n          - link \"Career Opportunities\":\n            - /url: /careers/us/\n        - listitem:\n          - link \"Investors\":\n            - /url: https://investor.apple.com/\n        - listitem:\n          - link \"Ethics & Compliance\":\n            - /url: /compliance/\n        - listitem:\n          - link \"Events\":\n            - /url: /apple-events/\n        - listitem:\n          - link \"Contact Apple\":\n            - /url: /contact/\n    - text: \"More ways to shop:\"\n    - link \"Find an Apple Store\":\n      - /url: /retail/\n    - text: or\n    - link \"other retailer\":\n      - /url: https://locate.apple.com/\n    - text: near you. Or call\n    - link \"1-800-MY-APPLE\":\n      - /url: tel:1-800-692-7753\n    - text: (1-800-692-7753). Copyright © 2026 Apple Inc. All rights reserved.\n    - list:\n      - listitem:\n        - link \"Privacy Policy\":\n          - /url: /legal/privacy/\n      - listitem:\n        - link \"Terms of Use\":\n          - /url: /legal/internet-services/terms/site.html\n      - listitem:\n        - link \"Sales and Refunds\":\n          - /url: /us/shop/goto/help/sales_refunds\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/\n      - listitem:\n        - link \"Site Map\":\n          - /url: /sitemap/\n    - link \"United States. Choose your country or region\":\n      - /url: /choose-country-region/\n      - text: United States"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.apple.com/messages/",
+              "origin": "https://www.apple.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

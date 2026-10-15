@@ -2,7 +2,7 @@
 
 # Catalog and schemas
 
-The catalog lists the products this project tracks, the companies behind them, and the research completed so far. Use `rae research validate` to check record structure and consistency. That check does not judge whether the research is complete or correct.
+The catalog records the products in scope, their companies and the research status for each one. Run `rae research validate` to check record structure and consistency. It does not assess whether research is complete or claims are correct.
 
 ## Layout
 
@@ -99,7 +99,7 @@ node tools/rea-catalog.mjs --company google
 node tools/rea-catalog.mjs --only netflix-streaming --wait 6000
 ```
 
-**What these reports show:** REA observes public, unauthenticated web pages at each product's `official_url`. It does not sign in or bypass access controls. A report describes the page as it appeared when captured; it does not reveal how the product works internally. Some pages may show a consent screen or app shell. The raw evidence lets readers check what REA recorded.
+**What these reports show:** REA observes public, unauthenticated pages at each product's `official_url`; it does not sign in or bypass access controls. A report records what the page showed at capture time, not how the product works internally. Some pages may show a consent screen or app shell. The raw evidence documents what REA recorded.
 
 ## Open-source skills catalog
 

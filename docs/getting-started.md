@@ -2,7 +2,7 @@
 
 # Get started
 
-Install RAE, choose a product, and give its Markdown skill to your coding agent. The agent uses the product-specific directions to build and verify an independent implementation in your project. The published CLI works without cloning the RAE source repository.
+Install RAE, choose a product, then give its Markdown skill to your coding agent. It provides research and directions for assessing candidate projects, planning the work and testing an independent implementation in your project. You can use the published CLI without cloning this repository.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ npm install -g rae-faang
 rae --help
 ```
 
-The published package provides `rae` and `rae-faang` commands and bundles the product catalog, dossiers, alternative landscape, and validation schemas. No source checkout is needed to browse products, read a dossier, check catalog data, or generate a product's agent skill.
+The published package provides `rae` and `rae-faang` commands. It includes the catalog, dossiers, candidate projects and schemas, so you can browse products, check catalog data and generate a skill without a source checkout.
 
 ## Work from the source repository
 
@@ -56,7 +56,7 @@ The tests should pass, validation should report no errors, and `ace config check
 
 ## Browse products and get an agent skill
 
-Use the CLI to browse products, check alternative research, and generate the Markdown build skill for the product you want your coding agent to build in your project. Start with its help:
+Use the CLI to browse products, review alternative research and generate a Markdown skill for your coding agent. Start with its help:
 
 ```bash
 rae --help
@@ -87,7 +87,7 @@ rae google-search --out ./google-search-agent
 
 Full reference: [cli-reference.md](cli-reference.md).
 
-Give the generated product skill to your coding agent in the project where you want the product built. The skill tells the agent what to research, which existing projects to evaluate, and how to plan, build and verify the product. Alternative-coverage status describes only the catalog's reuse research; it does not limit what your agent can build.
+Give the generated skill to your coding agent from the project where you want to work. It points the agent to product research and candidate projects, and helps it plan, build and test a scoped implementation. Alternative-coverage status describes the catalog's reuse research; it does not measure build feasibility.
 
 ## Use ACE to coordinate agents
 

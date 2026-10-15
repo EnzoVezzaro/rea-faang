@@ -238,6 +238,7 @@ function addHeadingIds(html) {
  * same. Existing rel values are normalized to `noopener noreferrer`.
  */
 function externalLinksNewTab(html) {
+  if (Buffer.isBuffer(html)) return html;
   return html.replace(/<a\b([^>]*)>/g, (match, attrs) => {
     if (!/href="https?:\/\//.test(attrs) || /\btarget=/.test(attrs)) return match;
     const next = /rel="[^"]*"/.test(attrs)
@@ -403,7 +404,10 @@ function buildPages(data, docs) {
 
   push('assets/catalog.js', CATALOG_JS);
   push('assets/motion.js', MOTION_JS);
-  push('assets/rae-mark.svg', readFileSync(join(ROOT, 'site', 'assets', 'rae-mark.svg'), 'utf8'));
+  push('assets/rae-mark.svg', readFileSync(join(ROOT, 'docs', 'assets', 'logo.svg'), 'utf8'));
+  push('docs/assets/brand-logo.png', readFileSync(join(DOCS, 'assets', 'brand-logo.png')));
+  push('docs/assets/brand-symbol.png', readFileSync(join(DOCS, 'assets', 'brand-symbol.png')));
+  push('assets/rae-banner.png', readFileSync(join(ROOT, 'site', 'assets', 'rae-banner.png')));
   push('favicon.svg', T.faviconSvg());
   push('404.html', T.notFoundPage());
   push('catalog.json', catalogJson(data));
@@ -471,8 +475,9 @@ function main() {
     const out = externalLinksNewTab(content);
     const file = join(SITE, rel);
     if (check) {
-      const current = existsSync(file) ? readFileSync(file, 'utf8') : null;
-      if (current !== out) {
+      const current = existsSync(file) ? readFileSync(file) : null;
+      const expected = typeof out === 'string' ? Buffer.from(out) : out;
+      if (!current || !current.equals(expected)) {
         console.error(`site-build: drift: ${rel}`);
         drift++;
       }

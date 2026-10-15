@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_c0c102ec0c0057519d902fbf7e2f9f608e802919fd7c1172615776e56011833b",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://ads.google.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "bc5dafd6728d37ad70d015fb864b2040319c8dff1d7d4f6cf733b61be4e4dfb3"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://ads.google.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 6385,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3585,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://business.google.com/us/google-ads/",
+          "origin": "https://business.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2530,
+        "before_url": {
+          "url": "https://business.google.com/us/google-ads/",
+          "origin": "https://business.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://business.google.com/us/google-ads/",
+          "origin": "https://business.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "2bc21c0afb81972db63b444c6978290736016730a9e9f5b259243e56633ff5a4",
+              "bytes": 17089,
+              "text": "- document:\n  - banner:\n    - link \"Skip to content\":\n      - /url: \"#page-content\"\n    - link \"Google Business\":\n      - /url: https://business.google.com/us/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n      - img \"Google Logo\"\n    - navigation \"Global navigation\":\n      - menubar:\n        - menuitem \"Where to start?\"\n        - menuitem \"Solutions\"\n        - menuitem \"Learning & insights\"\n        - menuitem \"Get support\"\n    - button \"Sign in\"\n    - link \"Google Ads\":\n      - /url: https://business.google.com/us/google-ads/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n    - navigation \"Google Ads navigation\":\n      - list:\n        - listitem:\n          - link \"Goals\":\n            - /url: https://business.google.com/us/google-ads/campaign-goals/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n        - listitem:\n          - link \"How it works\":\n            - /url: https://business.google.com/us/google-ads/how-ads-work/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n        - listitem:\n          - link \"Cost\":\n            - /url: https://business.google.com/us/google-ads/campaign-budget/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n        - listitem:\n          - link \"Articles & case studies\":\n            - /url: https://business.google.com/us/resources/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n        - listitem:\n          - link \"Expert support\":\n            - /url: https://business.google.com/us/support/ads-expert/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n    - link \"Schedule a meeting\":\n      - /url: https://business.google.com/us/support/schedule-appointment/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n    - link \"Sign in\":\n      - /url: https://ads.google.com/nav/login?subid=us-en-awhp-g-aw-c-home-signin-bgc!o2-s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001&authuser=0\n    - link \"Start now\":\n      - /url: https://ads.google.com/signup?subid=us-en-awhp-g-aw-c-home-top-bgc!o2-s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001&authuser=0\n  - main:\n    - button \"Choose your offer now\": New to Google Ads? Choose an offer to earn up to $1500 in ad credit and jumpstart your first campaign. Choose now\n    - heading \"Win customers from discovery to decision\" [level=1]\n    - text: Your next customers are already exploring on YouTube and searching on Google. Make sure your business is the one they find.\n    - link \"Sign up for Google Ads - (opens in new tab)\":\n      - /url: https://ads.google.com/signup?subid=us-en-awhp-g-aw-c-home-hero-bgc!o2-s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001&authuser=0\n      - text: Start now\n    - button \"Chat with Google Ads\"\n    - button \"Pause animation\"\n    - heading \"Results for every goal, with Google Ads\" [level=2]\n    - tablist:\n      - tab \"Lead Generation\" [selected]\n      - tab \"Sales\"\n      - tab \"Brand Awareness\"\n      - tab \"App Promotion\"\n    - tabpanel \"Lead Generation\":\n      - heading \"Get the quality leads your business needs\" [level=2]\n      - text: Whether they’re watching a “how-to” on YouTube or searching for a local expert, Google Ads finds the people who need your products or services. Turn their interest into phone calls, site visits, or form fills from customers who are ready to talk, capturing high-quality leads that drive measurable growth.\n      - link \"Sign up for Google Ads - (opens in new tab)\":\n        - /url: https://ads.google.com/signup?subid=us-en-awhp-g-aw-c-home-mid-bgc!o2-s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001&authuser=0\n        - text: Generate more leads\n      - button \"Play animation\"\n    - heading \"Choose a sign-up offer to jumpstart your first campaign\" [level=2]\n    - text: Select an offer that fits your monthly budget and sign up when ready. New advertisers will receive an ad credit after meeting the minimum spend requirement for the selected offer.\n    - link \"Terms and conditions apply\":\n      - /url: https://ads.google.com/intl/en_us/home/terms-and-conditions/incentives/?bc=US&bid=s500g500%7Cib%3A6653296821%7Cib%3A9279461727%7Cib%3A7966379274%7C\n    - text: .\n    - radiogroup:\n      - radio \"OFFER A $500 in ad credit Spend $500 with Google Ads in the first 60 days to unlock the credit.\" [checked]:\n        - text: OFFER A\n        - heading \"$500\" [level=3]\n        - text: in ad credit\n        - paragraph: Spend $500 with Google Ads in the first 60 days to unlock the credit.\n      - radio \"OFFER B $1000 in ad credit Spend $1500 with Google Ads in the first 60 days to unlock the credit.\":\n        - text: OFFER B\n        - heading \"$1000\" [level=3]\n        - text: in ad credit\n        - paragraph: Spend $1500 with Google Ads in the first 60 days to unlock the credit.\n      - radio \"OFFER C $1500 in ad credit Spend $3000 with Google Ads in the first 60 days to unlock the credit.\":\n        - text: OFFER C\n        - heading \"$1500\" [level=3]\n        - text: in ad credit\n        - paragraph: Spend $3000 with Google Ads in the first 60 days to unlock the credit.\n    - heading \"How to claim your offer\" [level=4]\n    - paragraph: Sign up and complete payment setup to apply the offer to your account.\n    - link \"Sign up for Google Ads\":\n      - /url: https://ads.google.com/signup?subid=us-en-awhp-g-aw-c-home-cyo-mid-bgc!o2-s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001&authuser=0\n      - text: Start now to claim\n    - img \"Example of reach with a sponsored Google Search ad for a cycle shop.\"\n    - img \"Example of reach with a Google Shopping ad for a helmet.\"\n    - img \"Example of reach with a Google Shopping ad for cycling glasses.\"\n    - img \"Example of reach with a Google Maps search result for a cycle shop.\"\n    - heading \"Unparalleled reach – only on Google and YouTube\" [level=2]\n    - link \"Sign up for Google Ads\":\n      - /url: https://ads.google.com/signup?subid=us-en-awhp-g-aw-c-home-cin-bgc!o2-s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001&authuser=0\n      - text: Get started\n    - heading \"Maximize your ROI by connecting your data\" [level=2]\n    - text: Get better results from the start. When you set up Google Ads, connect your data sources, like Google Analytics and Google Tag Manager, so AI can learn from your signals and improve campaign performance.\n    - link \"Sign up for Google Ads - (opens in new tab)\":\n      - /url: https://ads.google.com/signup?subid=us-en-awhp-g-aw-c-home-end-bgc!o2-s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001&authuser=0\n      - text: Get started\n    - link \"Go to the Google Ads Help article on Data Strength Best Practices - (opens in new tab)\":\n      - /url: https://support.google.com/google-ads/answer/16517525?hl=en\n      - text: Learn more\n    - img \"A Google Shopping Ad displaying headphones and a review of four and a half stars. A badge in the corner reads “+37% ROAS’ (Return on Ad Spend). A node-based diagram with icons representing web and performance data flow in from the left and connect to the ad unit.\"\n    - heading \"Real results from real businesses\" [level=2]\n    - text: Google Ads can help every business grow and succeed, from local shops to global brands.\n    - img \"Branch Basics family poses in a kitchen with their products displayed.\"\n    - paragraph: “We tripled our sales revenue from Google Ads using Performance Max.”\n    - paragraph: Branch Basics\n    - button \"Watch the video about how Branch Basics tripled incremental sales\" [disabled]: Watch their story\n    - button \"Go to the previous slide\"\n    - button \"Go to the next slide\"\n    - paragraph: Performance statistics are specific to this advertiser and individual results may vary.\n    - heading \"Need help with your first steps? Chat with\" [level=2]: Need help with your first steps? Chat with Google Ads\n    - paragraph: Connect with our AI-powered chat and learn how Google Ads can help your business. Try asking a question or selecting a conversation starter below.\n    - button \"How do Google Ads work?\"\n    - button \"How can Google Ads help my business?\"\n    - button \"Ask something else\"\n    - heading \"We’re here to help\" [level=2]\n    - paragraph: Our support team is here to help with any Google Ads questions you may have.\n    - button \"Chat with us\":\n      - paragraph: Chat with us\n    - link \"Schedule a meeting\":\n      - /url: https://business.google.com/us/support/schedule-appointment/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n    - heading \"Frequently asked questions\" [level=2]\n    - button \"Toggle all panels\": Expand all\n    - heading \"Where do Google Ads show up?\" [level=3]:\n      - button \"Where do Google Ads show up?\"\n    - heading \"How does Google Ads help you to reach potential customers?\" [level=3]:\n      - button \"How does Google Ads help you to reach potential customers?\"\n    - heading \"Which type of Google Ads campaign is right for my business?\" [level=3]:\n      - button \"Which type of Google Ads campaign is right for my business?\"\n    - heading \"How does Google AI help find high-value customers for my business?\" [level=3]:\n      - button \"How does Google AI help find high-value customers for my business?\"\n    - heading \"What Google Ads credits or promotional offers are available to businesses?\" [level=3]:\n      - button \"What Google Ads credits or promotional offers are available to businesses?\"\n    - paragraph:\n      - superscript: \"1\"\n      - text: Google commissioned Ipsos Global Consumer Journeys, Dec 2025, Online survey, Global average of select countries (AR, AU, BR, CA, CL, CO, DE, ES, FR, ID, IN, IT, JP, KR, MX, NL, PE, PH, PO, SG, SW, TW, TH, US, UK) not weighted to reflect population size, Adults 18+, n=12,594 online shoppers who made a consumer good purchase requiring consideration in the past week (range of categories) and have discovered brands and/or products on social media\n  - contentinfo:\n    - heading \"Footer links\" [level=2]\n    - paragraph: Follow us\n    - list:\n      - listitem:\n        - link \"Follow Google Ads on X\":\n          - /url: https://x.com/googleads\n      - listitem:\n        - link \"Follow Google Ads on YouTube\":\n          - /url: https://www.youtube.com/googleads\n      - listitem:\n        - link \"Follow Google Ads on Facebook\":\n          - /url: https://www.facebook.com/GoogleAds/\n    - navigation \"Footer links\":\n      - heading \"Products\" [level=3]\n      - list \"Products\":\n        - listitem:\n          - link \"Google Ads\":\n            - /url: https://business.google.com/us/google-ads/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n        - listitem:\n          - link \"YouTube Ads\":\n            - /url: https://business.google.com/us/ad-solutions/youtube-ads/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n        - listitem:\n          - link \"Merchant Center\":\n            - /url: https://business.google.com/us/merchant-center/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n        - listitem:\n          - link \"Business Profile\":\n            - /url: https://business.google.com/us/business-profile/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n        - listitem:\n          - link \"Google Analytics\":\n            - /url: https://business.google.com/us/google-analytics/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n        - listitem:\n          - link \"Manufacturer Center\":\n            - /url: https://business.google.com/us/merchant-center/manufacturer-center/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n      - heading \"Learning and support\" [level=3]\n      - list \"Learning and support\":\n        - listitem:\n          - link \"Accelerate with Google\":\n            - /url: https://business.google.com/us/accelerate/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n        - listitem:\n          - link \"Think with Google\":\n            - /url: https://business.google.com/us/think/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n        - listitem:\n          - link \"Google Ads Help Center\":\n            - /url: https://support.google.com/google-ads/#topic=10286612&utm_source=smb_marketing&utm_medium=referral&utm_campaign=us-en-et-awhp-footer&utm_content=\n        - listitem:\n          - link \"Your guide to Merchant Center\":\n            - /url: https://support.google.com/merchants/answer/12159157\n        - listitem:\n          - link \"Your guide to Google Ads\":\n            - /url: https://support.google.com/google-ads/answer/6146252?utm_medium=et&utm_campaign=en&utm_source=ww-ww-et-b2bfooter_adwords\n        - listitem:\n          - link \"Google Advertiser Community\":\n            - /url: https://support.google.com/google-ads/community?ctx=lithium\n      - heading \"Partners and developers\" [level=3]\n      - list \"Partners and developers\":\n        - listitem:\n          - link \"Google Partners\":\n            - /url: https://partnersdirectory.withgoogle.com/?premier=true\n        - listitem:\n          - link \"Google Developers site\":\n            - /url: https://developers.google.com/\n        - listitem:\n          - link \"Google Ads Scripts\":\n            - /url: https://developers.google.com/google-ads/scripts/docs/start\n        - listitem:\n          - link \"Google Ads Remarketing Tags\":\n            - /url: https://support.google.com/google-ads/answer/2476688\n        - listitem:\n          - link \"Google Ads API\":\n            - /url: https://business.google.com/us/ad-tools/google-ads-api/?suffix=s500g500|ib%3A6653296821|ib%3A9279461727|ib%3A7966379274|-ahpm-0000000179-0000000001\n      - heading \"More solutions\" [level=3]\n      - list \"More solutions\":\n        - listitem:\n          - link \"Workspace\":\n            - /url: https://workspace.google.com/\n        - listitem:\n          - link \"Chrome\":\n            - /url: https://www.google.com/chrome/\n        - listitem:\n          - link \"Google Cloud\":\n            - /url: https://cloud.google.com/\n        - listitem:\n          - link \"AdSense\":\n            - /url: https://adsense.google.com/start/\n        - listitem:\n          - link \"AdMob\":\n            - /url: https://admob.google.com/home/get-started/\n    - paragraph: Actual results will vary by advertiser.\n    - link \"Google\":\n      - /url: https://www.google.com\n    - list:\n      - listitem:\n        - link \"About Google\":\n          - /url: https://www.google.com/intl/en/about\n      - listitem:\n        - link \"Google products\":\n          - /url: https://www.google.com/intl/en/about/products\n      - listitem:\n        - link \"Privacy\":\n          - /url: https://policies.google.com/privacy\n      - listitem:\n        - link \"Terms\":\n          - /url: https://policies.google.com/terms\n    - list:\n      - listitem:\n        - link \"Help\":\n          - /url: https://support.google.com/google-ads/\n      - listitem:\n        - combobox \"Change language or region\":\n          - option \"Australia and New Zealand - English\"\n          - option \"Brasil - Português (Brasil)\"\n          - option \"Canada - English\"\n          - option \"Canada - Français\"\n          - option \"Česká Republika - Čeština\"\n          - option \"Deutschland - Deutsch\"\n          - option \"English (Global)\"\n          - option \"España - Español\"\n          - option \"Español (Latinoamérica)\"\n          - option \"France - Français\"\n          - option \"India - English\"\n          - option \"Indonesia - Bahasa Indonesia\"\n          - option \"Italia - Italiano\"\n          - option \"Nederland - Nederlands\"\n          - option \"Polska - Polski\"\n          - option \"Русский\"\n          - option \"România - Română\"\n          - option \"Sverige - Svenska\"\n          - option \"Türkiye - Türkçe\"\n          - option \"United Kingdom - English\"\n          - option \"United States - English\" [selected]\n          - option \"Việt Nam - Tiếng Việt\"\n          - option \"ישראל - עברית\"\n          - option \"العربية\"\n          - option \"简体中文\"\n          - option \"繁體中文\"\n          - option \"日本 - 日本語\"\n          - option \"대한민국 - 한국어\"\n          - option \"ไทย - ไทย\"\n          - option \"Україна - Українська\"\n      - listitem\n  - button \"Chat with Google's AI assistant about Google Ads!\":\n    - img\n  - button \"I’m powered by Google AI. Together, we can use Google Ads to grow your business.\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://business.google.com/us/google-ads/",
+              "origin": "https://business.google.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

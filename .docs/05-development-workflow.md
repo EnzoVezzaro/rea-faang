@@ -1,4 +1,4 @@
-> **Historical document — not authoritative.**
+> **Historical document - not authoritative.**
 >
 > This file predates the current CLI and ACE layout. It is kept for design
 > history only and contains stale details (provider names, product names, and a
@@ -36,12 +36,12 @@ RAE FAANG uses a structured, agent-assisted development workflow based on the AC
 
 **ACE Commands**:
 ```bash
-node ace.mjs task add --title "Investigate Instagram feed algorithm" --project rae-social --role researcher
-node ace.mjs task claim <id> --agent researcher-1
-node ace.mjs task start <id>
+ace task add --title "Investigate Instagram feed algorithm" --project rae-social --role researcher
+ace task claim <id> --agent researcher-1
+ace task start <id>
 # ... research work ...
-node ace.mjs handoff submit <task> --file investigation-results.json
-node ace.mjs handoff verify <task>
+ace handoff submit <task> --file investigation-results.json
+ace handoff verify <task>
 ```
 
 ### Stage 2: Specification & Design
@@ -60,10 +60,10 @@ node ace.mjs handoff verify <task>
 
 **ACE Commands**:
 ```bash
-node ace.mjs task add --title "Design RAE Social data models" --project rae-social --role architect
-node ace.mjs task claim <id> --agent architect-1
+ace task add --title "Design RAE Social data models" --project rae-social --role architect
+ace task claim <id> --agent architect-1
 # ... design work ...
-node ace.mjs handoff submit <task> --file design-spec.json
+ace handoff submit <task> --file design-spec.json
 ```
 
 ### Stage 3: Implementation
@@ -95,14 +95,14 @@ Feature: Photo Upload (F-001)
 **ACE Commands**:
 ```bash
 # Create multiple tasks
-node ace.mjs task add --title "Backend: Upload API" --project rae-social --role backend --depends-on <design-task-id>
-node ace.mjs task add --title "Frontend: Upload Component" --project rae-social --role frontend --depends-on <design-task-id>
+ace task add --title "Backend: Upload API" --project rae-social --role backend --depends-on <design-task-id>
+ace task add --title "Frontend: Upload Component" --project rae-social --role frontend --depends-on <design-task-id>
 
 # Claim and execute
-node ace.mjs task claim <backend-task-id> --agent backend-1
-node ace.mjs task claim <frontend-task-id> --agent frontend-1
-node ace.mjs task start <backend-task-id>
-node ace.mjs task start <frontend-task-id>
+ace task claim <backend-task-id> --agent backend-1
+ace task claim <frontend-task-id> --agent frontend-1
+ace task start <backend-task-id>
+ace task start <frontend-task-id>
 ```
 
 ### Stage 4: Verification
@@ -124,14 +124,14 @@ node ace.mjs task start <frontend-task-id>
 **ACE Commands**:
 ```bash
 # Run verification
-node ace.mjs verify
+ace verify
 
 # Or specific checks
-node ace.mjs task add --title "E2E: Photo upload flow" --project rae-social --role tester
-node ace.mjs verify lint
-node ace.mjs verify typecheck
-node ace.mjs verify test
-node ace.mjs verify build
+ace task add --title "E2E: Photo upload flow" --project rae-social --role tester
+ace verify lint
+ace verify typecheck
+ace verify test
+ace verify build
 ```
 
 ### Stage 5: Release
@@ -166,11 +166,11 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: '20', cache: 'npm' }
       - run: npm ci
-      - run: node ace.mjs install
-      - run: node ace.mjs verify lint
-      - run: node ace.mjs verify typecheck
-      - run: node ace.mjs verify test
-      - run: node ace.mjs verify build
+      - run: ace install
+      - run: ace verify lint
+      - run: ace verify typecheck
+      - run: ace verify test
+      - run: ace verify build
 ```
 
 ### Pre-commit Hooks (`.husky/pre-commit`)

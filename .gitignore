@@ -19,6 +19,9 @@ build/
 coverage/
 *.tsbuildinfo
 
+# Vercel CLI local state
+.vercel/
+
 # Editor / OS
 .DS_Store
 .idea/

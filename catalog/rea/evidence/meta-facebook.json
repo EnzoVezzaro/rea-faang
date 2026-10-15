@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_b659c329254f90da106474ee25a50d855c69aa24757ea4f7c666e7f71d3bf2a9",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.facebook.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "a0b52e444538754f3713aeef785b9834ffc4b029d21f360366574d1c970ffa74"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://www.facebook.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 5543,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 2737,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.facebook.com/",
+          "origin": "https://www.facebook.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2540,
+        "before_url": {
+          "url": "https://www.facebook.com/",
+          "origin": "https://www.facebook.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.facebook.com/",
+          "origin": "https://www.facebook.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "c8f48eb15e024c52b80686ac368338ca2acb86e4e03c81ea308d6789ab04e2f0",
+              "bytes": 4764,
+              "text": "- document:\n  - img\n  - text: Explore the things you love. Log into Facebook\n  - textbox \"Email or mobile number\"\n  - text: Email or mobile number\n  - textbox \"Password\"\n  - text: Password\n  - button \"Log In\": Log in\n  - link \"Forgot password?\":\n    - /url: /recover/initiate/?privacy_mutation_token=eyJ0eXBlIjo1LCJjcmVhdGlvbl90aW1lIjoxNzkxOTUwMjEwfQ%3D%3D&ars=facebook_login\n  - link \"Create new account\":\n    - /url: /reg/?entry_point=login\n  - img \"Meta logo\"\n  - separator\n  - main:\n    - separator\n    - text: English (US)\n    - link \"Español\":\n      - /url: \"#\"\n    - link \"Français (France)\":\n      - /url: \"#\"\n    - link \"中文(简体)\":\n      - /url: \"#\"\n    - link \"العربية\":\n      - /url: \"#\"\n    - link \"Português (Brasil)\":\n      - /url: \"#\"\n    - link \"Italiano\":\n      - /url: \"#\"\n    - link \"More languages…\":\n      - /url: \"#\"\n    - link \"Sign Up\":\n      - /url: https://www.facebook.com/reg/\n    - link \"Log In\":\n      - /url: https://www.facebook.com/login/\n    - link \"Messenger\":\n      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmessenger.com%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4\n    - link \"Facebook Lite\":\n      - /url: https://www.facebook.com/lite/\n    - link \"Video\":\n      - /url: https://www.facebook.com/watch/\n    - link \"Meta Pay\":\n      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.meta.com%2Ftechnologies%2Fmeta-pay&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4\n    - link \"Meta Store\":\n      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.com%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4\n    - link \"Meta Quest\":\n      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.com%2Fquest%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4\n    - link \"Ray-Ban Meta\":\n      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.com%2Fai-glasses%2Fray-ban-meta%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4\n    - link \"Meta AI\":\n      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.ai%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4\n    - link \"Muse\":\n      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fmuse.ai%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4\n    - link \"Instagram\":\n      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4\n    - link \"Threads\":\n      - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.threads.com%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4\n    - link \"Privacy Policy\":\n      - /url: https://www.facebook.com/privacy/policy/?entry_point=facebook_page_footer\n    - link \"Consumer Health Privacy\":\n      - /url: https://www.facebook.com/privacy/policies/health/?entry_point=facebook_page_footer\n    - link \"Privacy Center\":\n      - /url: https://www.facebook.com/privacy/center/?entry_point=facebook_page_footer\n    - link \"About\":\n      - /url: https://www.facebook.com/about/\n    - link \"Create ad\":\n      - /url: https://www.facebook.com/ad_campaign/landing.php?placement=pflo&campaign_id=402047449186&nav_source=unknown&extra_1=auto\n    - link \"Create Page\":\n      - /url: https://www.facebook.com/pages/create/?ref_type=site_footer\n    - link \"Developers\":\n      - /url: https://developers.facebook.com/?ref=pf\n    - link \"Careers\":\n      - /url: https://www.facebook.com/careers/?ref=pf\n    - link \"Cookies\":\n      - /url: https://www.facebook.com/policies/cookies/\n    - link \"Ad choices\":\n      - /url: https://www.facebook.com/help/568137493302217\n    - link \"Terms\":\n      - /url: https://www.facebook.com/policies?ref=pf\n    - link \"Help\":\n      - /url: https://www.facebook.com/help/?ref=pf\n    - link \"Contact Uploading & Non-Users\":\n      - /url: https://www.facebook.com/help/637205020878504"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.facebook.com/",
+              "origin": "https://www.facebook.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

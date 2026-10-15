@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Runs before the stylesheet so reveal styles only apply where the
+         motion layer can actually drive them. -->
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <title>Research and build every product — RAE FAANG docs</title>
+    <meta name="description" content="Document products with cited evidence, then guide coding agents from research to tested alternatives." />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Research and build every product — RAE FAANG docs" />
+    <meta property="og:description" content="Document products with cited evidence, then guide coding agents from research to tested alternatives." />
+    <meta property="og:url" content="https://rae-faang-landing.vercel.app/docs/product-research-and-build-plan.html" />
+    <link rel="canonical" href="https://rae-faang-landing.vercel.app/docs/product-research-and-build-plan.html" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-doc">
+    <div class="scroll-rail" data-scroll-rail aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/" aria-current="page">Docs</a>
+          
+        </nav>
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile primary">
+            <a href="../catalog/">Catalog</a>
+            <a href="../docs/">Docs</a>
+            
+          </nav>
+        </details>
+        <a class="btn btn-ghost header-github" href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero page-hero-doc" id="top">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Docs</a><span aria-hidden="true">/</span><span>Research and build every product</span>
+          </nav>
+          <h1>Research and build every product</h1>
+          <p class="lede">Document products with cited evidence, then guide coding agents from research to tested alternatives.</p>
+        </div>
+      </section>
+
+      <section class="section section-tight section-last">
+        <div class="wrap">
+          <details class="toc">
+            <summary>On this page</summary>
+            <ul>
+              <li><a href="#purpose">Purpose</a></li>
+              <li><a href="#product-skills-research-and-evidence">Product skills, research and evidence</a></li>
+              <li><a href="#one-product-one-traceable-evidence-to-build-packet">One product, one traceable evidence-to-build packet</a></li>
+              <li><a href="#product-description-standard">Product-description standard</a></li>
+              <li><a href="#research-protocol-find-assess-and-record-evidence">Research protocol: find, assess and record evidence</a></li>
+              <li><a href="#alternative-decision-and-build-recommendation">Alternative decision and build recommendation</a></li>
+              <li><a href="#agent-instructions-make-every-product-kit-actionable">Agent instructions: make every product kit actionable</a></li>
+              <li><a href="#research-dossier-required-content">Research dossier: required content</a></li>
+              <li><a href="#specification-set-ten-files-that-guide-implementation">Specification set: ten files that guide implementation</a></li>
+              <li><a href="#build-and-verification-loop">Build and verification loop</a></li>
+              <li><a href="#quality-gates-and-definition-of-done">Quality gates and definition of done</a></li>
+              <li><a href="#phased-execution-across-all-77-products">Phased execution across all 77 products</a></li>
+              <li><a href="#product-skill-quality-checks">Product-skill quality checks</a></li>
+              <li><a href="#start-here">Start here</a></li>
+            </ul>
+          </details>
+          <article class="doc">
+<p><img src="assets/brand-logo-icon.png" alt="RAE FAANG" /></p>
+<h1>Product research and coding-agent skills</h1>
+<h2 id="purpose">Purpose</h2>
+<p>Every catalogued product has a Markdown skill intended for a coding agent. The skill gives your agent product context, research references, candidate open-source projects, and directions for deciding what to reuse, what to build and how to verify the result in your project. RAE FAANG provides the product instructions; your coding agent builds the software.</p>
+<p>The goal is useful, independently implemented software, not a promise to reproduce proprietary internals or achieve feature parity with a global service. Agents should use public, authorized evidence and respect open-source licenses, user privacy and third-party rights.</p>
+<h2 id="product-skills-research-and-evidence">Product skills, research and evidence</h2>
+<p>The manifest tracks 77 products across Google (25), Apple (20), Amazon Web Services (17), Amazon (5), Netflix (5) and Meta (5). Every product has a Markdown build skill: give that file to your coding agent in your project, and the agent uses it to research, scope, implement and verify an independent version of the product. Alternative coverage describes research into reuse options; it is not a build-readiness status. Dossiers, citations and REA reports help the agent distinguish verified behavior from unknowns. REA reports observe public web surfaces only and do not reveal authenticated workflows or internal architecture.</p>
+<p>Check the current catalog data with:</p>
+<pre><code class="language-bash">rae products list
+rae research coverage
+rae research validate
+rae gaps all</code></pre>
+<p>A generated page or passing schema check does not verify product behavior. Keep research evidence and alternative coverage accurate; neither determines whether a user can give the skill to an agent and build in their own project.</p>
+<h2 id="one-product-one-traceable-evidence-to-build-packet">One product, one traceable evidence-to-build packet</h2>
+<p>For each product <code>&lt;id&gt;</code>, keep related work connected by its stable catalog ID:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Artifact</th><th scope="col">Path</th><th scope="col">Purpose</th></tr>
+</thead>
+<tbody>
+<tr><td>Product record</td><td><code>catalog/products.jsonl</code></td><td>Identity, lifecycle, type, links and machine-readable status.</td></tr>
+<tr><td>Research dossier</td><td><code>research/companies/&lt;company_id&gt;/products/&lt;id&gt;.md</code></td><td>Evidence-backed account of the product and its observable behavior.</td></tr>
+<tr><td>Product build skill</td><td><code>catalog/skills/&lt;company_id&gt;/&lt;id&gt;.md</code>, generated from <code>tools/skills/catalog-data.mjs</code></td><td>The single coding-agent skill for building this product: product context, projects to evaluate, build directions and verification. Give it to your agent in your project.</td></tr>
+<tr><td>Optional product specifications</td><td><code>products/&lt;company_id&gt;/&lt;id&gt;/specs/01-*.md</code> through <code>10-*.md</code></td><td>Deeper implementation guidance and testable requirements for an agent build.</td></tr>
+<tr><td>Opportunity decision</td><td><code>opportunities/&lt;id&gt;.md</code> when the classification requires a build proposal</td><td>Why build, reuse or extension is justified, with a bounded MVP and verification criteria.</td></tr>
+<tr><td>Public-surface observation</td><td><code>catalog/rea/&lt;company_id&gt;/&lt;id&gt;.md</code> and <code>catalog/rea/evidence/</code></td><td>Dated observations of the publicly accessible page and the method's limitations.</td></tr>
+<tr><td>Generated product page and skill</td><td><code>site/catalog/&lt;id&gt;/</code></td><td>Human-readable product page and downloadable Markdown skill for your coding agent.</td></tr>
+</tbody>
+</table></div>
+<p>The dossier is the research record; the single product Markdown file is the coding-agent skill for building that product in the user's project; optional specifications add implementation detail; generated site pages are views, never independent sources of truth. Avoid copying manually maintained facts into several stores. When a needed fact has no appropriate field or its source is unclear, improve the schema and generator deliberately, then migrate the affected records.</p>
+<h2 id="product-description-standard">Product-description standard</h2>
+<p>Expand every product beyond a one-line summary. The reader should understand what the product does without already knowing its brand. Cover, when evidence is available:</p>
+<ul>
+<li>Product boundaries, lifecycle and relationship to the owning company or related services.</li>
+<li>Intended users, their important jobs and the problem the product solves.</li>
+<li>Main experience, supported platforms and the end-to-end user outcomes.</li>
+<li>Core capabilities, supporting capabilities and important exclusions.</li>
+<li>How the service is accessed or operated, including public APIs, protocols, formats and integrations.</li>
+<li>Data handled and user controls such as export, retention and deletion, where documented.</li>
+<li>Material differentiators and constraints: for example licensed content, network effects, proprietary infrastructure, hardware, regulatory obligations or scale.</li>
+<li>Evidence confidence, last-checked date, known unknowns and meaningful changes since the prior review.</li>
+</ul>
+<p>Use plain, specific language. Distinguish observed behavior, official statements, third-party claims and engineering inference. Do not describe undocumented internals as facts. A short summary in the product record should accurately condense the dossier, not stand in for it.</p>
+<h2 id="research-protocol-find-assess-and-record-evidence">Research protocol: find, assess and record evidence</h2>
+<p>Assign one researcher per product. Search in this order, recording useful URLs and access dates as work proceeds:</p>
+<ol>
+<li><strong>Primary identity and lifecycle:</strong> official product pages, help centers, release notes, status pages, public policy pages and dated announcements.</li>
+<li><strong>Behavior and workflows:</strong> official user guides, developer documentation, API references, public protocols, supported-format documentation and direct observation of an unauthenticated public interface. For non-public behavior, record the access limitation; do not sign in or bypass controls to fill the gap.</li>
+<li><strong>Architecture and operations:</strong> official engineering posts, architecture papers, standards and talks by the product's engineers. Mark what is documented and what is inferred.</li>
+<li><strong>Privacy, security and accessibility:</strong> official security/privacy documentation, published accessibility guidance, data export/deletion controls, public incident reports and relevant standards.</li>
+<li><strong>Existing software:</strong> project documentation and repositories, SPDX/license files, release and maintenance activity, governance, supported deployment modes, interoperability and known operational requirements. Verify the project itself; a search result or listicle is discovery evidence, not a final assessment.</li>
+<li><strong>Independent corroboration:</strong> reputable technical sources and independent evaluations for context or disputed claims. Prefer primary sources for material product facts.</li>
+</ol>
+<p>For each material claim, preserve a citation and a short note explaining what it supports. Use the repository's evidence fields when possible (<code>id</code>, <code>url</code>, <code>source_type</code>, <code>title</code>, <code>accessed_at</code>, <code>claim</code>, <code>claim_type</code>, reliability and verification status). Record conflicting or unavailable evidence instead of silently choosing the convenient account. Search for alternatives by the user job and product category, not only by the target's name. Record search terms/scope, date, and why candidates were included or excluded so another researcher can repeat the search.</p>
+<p>A research handoff includes: claims added or changed; sources checked; inaccessible areas; conflicts and assumptions; alternative candidates; confidence recommendation; and the exact validation commands and exit codes.</p>
+<h2 id="alternative-decision-and-build-recommendation">Alternative decision and build recommendation</h2>
+<p>Assess candidate projects against the product's user jobs and capabilities, not brand resemblance. For each meaningful candidate record its repository/documentation, license (verify against the project's license file), activity date, deployment model, capabilities covered, capabilities not covered, integration/operations cost and evidence. Avoid calling anything a drop-in replacement without compatibility testing.</p>
+<p>Choose one honest coverage verdict:</p>
+<ul>
+<li><strong>Available:</strong> a maintained, suitably licensed project covers the core user job for the stated deployment and use case. Explain what it does not cover; recommend adopting it before duplicating it.</li>
+<li><strong>Partial:</strong> useful projects exist but an evidenced user need remains. Name the exact missing workflow or capability and recommend reuse, integration, extension or a bounded new component.</li>
+<li><strong>Pending:</strong> the search did not verify a suitable candidate. State the search date/scope and unresolved areas; this is uncertainty, not proof no project exists.</li>
+</ul>
+<p>Separately decide the engineering path: <code>reuse_existing</code>, <code>integrate_existing</code>, <code>extend_existing</code>, <code>build_missing</code>, <code>research_further</code> or <code>not_recommended</code>. A coverage label is not a build decision. Consider legal rights, maintenance, security, cost to operate, migration, accessibility and the user's actual need. For regulated, payment, identity, messaging-security, medical, safety-critical or hardware-dependent work, require an explicit risk review and human approval before agents implement sensitive behavior.</p>
+<h2 id="agent-instructions-make-every-product-kit-actionable">Agent instructions: make every product kit actionable</h2>
+<p>Every generated product skill must tell a coding agent what to do next, not merely explain what the target is. It should contain or link to:</p>
+<ol>
+<li>Product identity, expanded description, intended users and top user jobs.</li>
+<li>Evidence-backed behavior and confidence/unknowns; links to the dossier, REA report and official references, with a warning that a public page is not an internal design specification.</li>
+<li>The reuse/build decision, alternative comparison, license checks, exact gap and clean-room boundaries.</li>
+<li>The recommended first vertical slice: one complete, useful user journey, explicit non-goals, assumptions, and dependencies.</li>
+<li>The ten product specs and their status; stable requirement IDs linking each behavior to evidence and an acceptance check.</li>
+<li>Repository/workspace setup and existing commands. Instruct the agent to inspect local conventions and existing code before adding dependencies or choosing a stack.</li>
+<li><p>A multi-agent task breakdown with ownership and handoff boundaries:</p>
+<ul>
+<li><strong>Researcher:</strong> verify evidence, workflows, alternatives and unknowns.</li>
+<li><strong>Architect:</strong> decide boundaries, data contracts, dependencies and ADRs before parallel implementation.</li>
+<li><strong>Frontend/backend implementers:</strong> take small, non-overlapping tasks against approved interfaces; reuse suitable open infrastructure.</li>
+<li><strong>Tester:</strong> derive contract, unit, integration, accessibility and security checks from requirement IDs.</li>
+<li><strong>Security/reviewer:</strong> examine trust boundaries, data handling, abuse cases, license and clean-room compliance.</li>
+<li><strong>Supervisor/documenter:</strong> integrate only reviewed handoffs, record commands/results and keep setup/limitations current.</li>
+</ul>
+</li>
+<li>Exact acceptance criteria, expected verification commands, definition of done, unresolved risks and the next actionable task.</li>
+</ol>
+<p>Agents must not invent target behavior, claim parity from visual similarity, copy proprietary code/assets, or represent open weights as open-source software without checking their terms. If evidence is insufficient, the instruction is to research or narrow the MVP—not to guess. If a mature alternative already solves the user's job, the default instruction is to evaluate and integrate it, not create a redundant clone.</p>
+<h2 id="research-dossier-required-content">Research dossier: required content</h2>
+<p>Update <code>research/companies/&lt;company_id&gt;/products/&lt;product_id&gt;.md</code>, preserving IDs and valid frontmatter. Fill the existing numbered sections with product-specific findings, including:</p>
+<ul>
+<li>Executive summary, identity/ownership and lifecycle.</li>
+<li>Audience, user jobs, supported platforms and workflows, with failure and recovery paths.</li>
+<li>Capability inventory organized by core/supporting/advanced and known limitations.</li>
+<li>Public architecture, data entities/lifecycle, interfaces, integrations and formats.</li>
+<li>Pricing/access model where it matters to the user job.</li>
+<li>Candidate alternatives and a capability-level comparison, not just names.</li>
+<li>A reasoned build/reuse opportunity, dependencies, privacy/security/accessibility considerations, migration concerns, risks and open questions.</li>
+<li>Evidence and research history with dates, confidence, conflicts and next review.</li>
+</ul>
+<p>Every important statement should trace to evidence. Where a section cannot be verified, explain what was searched and why the information remains unknown. Mark <code>research_status: researched</code> only after the dossier passes the content review below; use <code>in_progress</code> or <code>insufficient_evidence</code> honestly otherwise.</p>
+<h2 id="specification-set-ten-files-that-guide-implementation">Specification set: ten files that guide implementation</h2>
+<p>For each product chosen for an implementation or integration, use <code>products/&lt;company&gt;/&lt;product&gt;/specs/</code> and replace every placeholder with instructions tied to evidence. For other products, provide an explicit reuse/no-build decision and a brief that explains the safe next action; do not create empty specs to inflate completion counts.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">File</th><th scope="col">Required implementation guidance</th></tr>
+</thead>
+<tbody>
+<tr><td><code>01-product-vision.md</code></td><td>Users, jobs, outcomes, scope, principles, constraints and non-goals.</td></tr>
+<tr><td><code>02-user-workflows.md</code></td><td>Numbered happy paths, alternate paths, permissions, empty/error states and recovery.</td></tr>
+<tr><td><code>03-feature-catalog.md</code></td><td>Requirement IDs, priorities, MVP boundary, dependencies, deferrals and evidence links.</td></tr>
+<tr><td><code>04-data-models.md</code></td><td>Entities, fields, relations, validation, ownership, retention, export and deletion.</td></tr>
+<tr><td><code>05-api-contracts.md</code></td><td>Protocols/routes, examples, schemas, errors, auth, versioning and compatibility.</td></tr>
+<tr><td><code>06-architecture.md</code></td><td>Components, responsibilities, data/control flow, deployment shape, scaling assumptions and decisions.</td></tr>
+<tr><td><code>07-acceptance-criteria.md</code></td><td>Observable requirements mapped to workflow/feature IDs and automated tests or named manual checks.</td></tr>
+<tr><td><code>08-security-model.md</code></td><td>Assets, trust boundaries, threat/abuse cases, mitigations, privacy and review requirements.</td></tr>
+<tr><td><code>09-integration-points.md</code></td><td>Open-source components, standards, external services, credentials, failure modes and license notes.</td></tr>
+<tr><td><code>10-migration-guide.md</code></td><td>Import/export formats, mapping, migration/rollback steps and known incompatibilities.</td></tr>
+</tbody>
+</table></div>
+<p>Every feature requirement states the actor, preconditions, input, expected result, edge cases and proof. Separate the achievable MVP from long-term parity. Choose technology only after documenting constraints and reviewing existing project conventions. Record architecture decisions rather than letting parallel agents choose incompatible designs.</p>
+<h2 id="build-and-verification-loop">Build and verification loop</h2>
+<ol>
+<li><strong>Intake:</strong> confirm the catalog identity and task scope; inspect the workspace, existing alternatives and all prior handoffs.</li>
+<li><strong>Research:</strong> researcher gathers evidence and drafts the dossier and alternative assessment; an independent reviewer checks the material claims and licenses.</li>
+<li><strong>Plan:</strong> architect selects reuse/integrate/extend/build/research/no-build, writes the MVP, interfaces, requirement IDs, risks and task boundaries.</li>
+<li><strong>Gate:</strong> reviewer checks evidence, feasibility, rights, security/privacy constraints and testability before implementation.</li>
+<li><strong>Implement:</strong> agents claim one bounded task each. Parallelize only after shared interfaces are agreed. Integrate one complete user journey at a time.</li>
+<li><strong>Verify:</strong> tester maps every MVP requirement to passing automated checks or explicitly named manual checks. Run product-specific tests and repository validation; measure performance when the requirements make a performance claim.</li>
+<li><strong>Review and hand off:</strong> reviewer inspects code, tests, dependencies, licenses, accessibility, security and scope. ACE supervisor accepts the handoff only with actual commands/exit codes and remaining checks recorded.</li>
+<li><strong>Maintain:</strong> update the dossier, alternative status, documentation, generated kit and review date when product behavior, dependencies or project activity changes.</li>
+</ol>
+<p>A handoff names its owner, changed files, requirement IDs, commands and actual exit codes, checks not run, decisions, risks, and one specific next action. Follow <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/AGENTS.md" rel="noopener noreferrer" target="_blank"><code>AGENTS.md</code></a> and <a href="agent-workflow.html"><code>docs/agent-workflow.md</code></a>.</p>
+<h2 id="quality-gates-and-definition-of-done">Quality gates and definition of done</h2>
+<p>A product's <strong>research packet</strong> is ready only when:</p>
+<ul>
+<li>Its identity and lifecycle match the catalog and current official sources.</li>
+<li>The expanded description, user jobs, workflows and capability inventory are product-specific.</li>
+<li>Material claims have citations; primary evidence is used where available; uncertainty and inaccessible surfaces are explicit.</li>
+<li>Alternative coverage, licenses, candidate limitations and search scope are reviewable and dated.</li>
+<li>The opportunity decision follows from the evidence and does not confuse coverage with a reason to build.</li>
+<li>A reviewer accepts the packet and the validator passes.</li>
+</ul>
+<p>A <strong>build-ready packet</strong> is ready only when, in addition:</p>
+<ul>
+<li>A new agent can identify the next task, read the approved interfaces and understand the MVP without inventing core behavior.</li>
+<li>Requirement IDs trace evidence → workflow/feature → acceptance check.</li>
+<li>The relevant specs (or the explicit reuse/no-build brief) define scope, non-goals, data, APIs, architecture, integrations, migration, security and verification.</li>
+<li>Agent roles, ownership boundaries, clean-room rules, license checks, risks and handoff expectations are explicit.</li>
+</ul>
+<p>An <strong>implementation</strong> is verified only when required MVP journeys work, acceptance checks pass, setup and limitations are documented, security-sensitive behavior is reviewed, and a reviewer accepts the handoff. Passing tests do not establish parity. Report implemented coverage and remaining gaps explicitly.</p>
+<h2 id="phased-execution-across-all-77-products">Phased execution across all 77 products</h2>
+<h3>Phase 0 — Establish a trustworthy baseline</h3>
+<ul>
+<li>Reconcile the manifest, catalog IDs, company ownership, official URLs, dossiers, skill entries, REA reports and product workspaces.</li>
+<li>Identify duplicate/overlapping product concepts and decide whether to merge, distinguish or group them with a written reason.</li>
+<li>Add a per-product progress view that separates inventory, research quality, alternative review, spec readiness, build decision, implementation and verification. A generated artifact's existence must not count as completion.</li>
+<li>Baseline with <code>rae products list</code>, <code>research coverage</code>, <code>research validate</code>, <code>gaps all</code>, <code>npm run validate</code> and <code>npm test</code>.</li>
+</ul>
+<h3>Phase 1 — Improve the data model and quality checks</h3>
+<ul>
+<li>Decide which richer product facts belong in <code>catalog/products.jsonl</code>, which belong in research, and which belong in alternative/build instructions. Extend schemas and CLI validation only where a durable field is needed; retain a single source of truth for generated summaries and kits.</li>
+<li>Define a review checklist for evidence quality, expanded descriptions, coverage verdicts, requirements traceability and actionable agent instructions. Add automated checks for objective failures such as missing artifacts, stale generated output, placeholder specs, unlinked requirement IDs and absent evidence metadata. Keep qualitative review human-reviewed; do not pretend a schema can prove research truth.</li>
+<li>Update generators, catalog docs and product pages so expanded descriptions, citations, alternative caveats and the build/reuse recommendation are visible and consistent.</li>
+<li>Pilot the new format on Google Search, then review the workflow on products from different categories (for example a productivity product, infrastructure service and consumer product) before bulk migration.</li>
+</ul>
+<h3>Phase 2 — Research and document all products</h3>
+<ul>
+<li>Work in reviewable company batches: Google (25), Apple (20), AWS (17), Amazon (5), Netflix (5), Meta (5). Assign one researcher and a separate reviewer per packet; agents may parallelize distinct products, not conflicting edits to the same dossier.</li>
+<li>Prioritize a representative product from each materially different domain, then continue by evidence readiness, user value, risk and dependency. Do not label whole-company batches complete while product-level gates fail.</li>
+<li>For each product, complete the identity/description, evidence, workflows/capabilities, alternatives, build decision and review date before generating its coding-agent skill.</li>
+<li>Recheck volatile facts (licenses, project activity, pricing, lifecycle, API behavior) at review time. Keep citations and dates with the claims they support.</li>
+</ul>
+<h3>Phase 3 — Make every product skill actionable</h3>
+<ul>
+<li>For every product, include an explicit reuse/integrate/extend/build/research/no-build recommendation and useful coding-agent instructions.</li>
+<li>For products where deeper specifications are useful, complete the ten-file set with evidence-linked requirements; for mature alternatives, direct the agent to assess adoption, integration or extension before building a duplicate.</li>
+<li>Validate the product skill with a coding agent on a scoped journey. Check that the agent can follow its references, choose a reuse/build path, work in the user's project and report actual verification results.</li>
+<li>Generate and inspect the product page and downloadable skill from the same reviewed sources; check links, attribution, mobile readability and factual precision.</li>
+</ul>
+<h3>Phase 4 — Build in user projects</h3>
+<ul>
+<li>Help users scope a valuable journey using evidence confidence, unmet need, feasibility, reuse potential and operational/legal/security risk.</li>
+<li>Direct agents to start with the smallest useful journey, reuse proven components and state explicit non-goals. Do not promise that one team can reproduce global data, licensed content, proprietary models, payment networks or hardware ecosystems.</li>
+<li>Use ACE when users want multiple agents, task budgets, bounded parallel work, review gates and machine-readable handoffs. Verify actual project artifacts and passing acceptance criteria, not generated LOC or agent count.</li>
+<li>Reassess the build/reuse decision as alternatives and user needs change.</li>
+</ul>
+<h2 id="product-skill-quality-checks">Product-skill quality checks</h2>
+<p>A product skill is useful when it gives the agent a clear next action, links to inspectable sources, explains alternative coverage and gaps, identifies assumptions, and supplies practical build-and-verify directions. Generated pages and downloadable files must match their sources. Report research and alternative coverage per product; do not imply that a catalog entry is a finished implementation.</p>
+<p>Your coding agent's implementation is built and verified in your project. Use that project's source files and test results to track progress; the catalog records product context and directions, not a status dashboard for user implementations.</p>
+<h2 id="start-here">Start here</h2>
+<ol>
+<li>Choose a product and read its skill and linked dossier.</li>
+<li>Ask your coding agent to verify the product claims and candidate projects against their sources.</li>
+<li>Have the agent choose a bounded user journey and state what it will reuse, build and test.</li>
+<li>Let the agent build in your project, then inspect the changes and run the project's checks.</li>
+<li>Improve product research or the skill instructions when you find missing context.</li>
+</ol>
+<p>Use <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/PLAN.md" rel="noopener noreferrer" target="_blank"><code>PLAN.md</code></a> for current repository tasks, <a href="catalog-and-schemas.html"><code>docs/catalog-and-schemas.md</code></a> for data structures, <a href="agent-workflow.html"><code>docs/agent-workflow.md</code></a> for ACE coordination, and <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank"><code>CONTRIBUTING.md</code></a> for contributor expectations.</p>
+
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>            <p class="footer-mark">RAE FAANG</p>
+          <p class="footer-mission">
+
+            Product research, open-source alternatives, and agent skills to build beyond Meta, Amazon,
+            Apple, Netflix and Google. Your agent builds in your project. MIT licensed.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/">Docs</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE" rel="noopener noreferrer" target="_blank">MIT License</a>
+          <a href="https://github.com/EnzoVezzaro/repo-shield" rel="noopener noreferrer" target="_blank">Repo Shield</a>
+        </div>
+      </div>
+      <div class="wrap footer-fine">
+        <p>
+          Product names are used as functional references only and imply no
+          affiliation or endorsement. Implementations must comply with applicable
+          laws, licenses, and third-party rights. No AI training: see
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/NOTICE" rel="noopener noreferrer" target="_blank">NOTICE</a>.
+        </p>
+      </div>
+    </footer>
+    
+  </body>
+</html>

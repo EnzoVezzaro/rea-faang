@@ -26,4 +26,4 @@ jobs:
         run: npm test
 
       - name: Check ACE configuration
-        run: node ace.mjs config check
+        run: npm run ace -- config check

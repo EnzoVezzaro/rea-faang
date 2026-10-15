@@ -14,11 +14,12 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PRODUCTS } from './skills/catalog-data.mjs';
+import { agentInstructions, productDescription } from './agent-kit-content.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_DIR = join(ROOT, 'catalog', 'skills');
 const STATUSES = ['available', 'partial', 'pending'];
-const STATUS_LABEL = { available: 'available', partial: 'partial', pending: 'pending to open-source' };
+const STATUS_LABEL = { available: 'mature alternative listed', partial: 'partial alternative coverage', pending: 'no verified alternative' };
 
 function parseArgs(argv) {
   const args = { company: null, check: false, indexOnly: false };
@@ -60,17 +61,17 @@ function skillFile(product, data, companyName) {
 
   // NB: a plain YAML scalar may not contain ": " — keep the description free of
   // colon-space so the frontmatter always parses (verified by a test).
-  const description =
-    `Use when researching, comparing, or building a free and open-source replacement for ` +
-    `${data.name} (${companyName}). Open-source status is ${status}` +
-    (altNames.length ? ` — see ${altNames.slice(0, 3).join(', ')}${altNames.length > 3 ? ', and more' : ''}.` : '.');
-
+  const skillDescription =
+    `Coding-agent build skill for ${data.name} (${companyName}). Research the product, assess open-source projects, then build and verify it in the user's project. Alternative coverage is ${status}` +
+    (altNames.length ? `; candidates include ${altNames.slice(0, 3).join(', ')}${altNames.length > 3 ? ', and more' : ''}.` : '.');
   const sources = data.sources.map((s) => `- ${s}`).join('\n');
   const caps = data.capabilities.map((c) => `- ${c}`).join('\n');
+  const expandedDescription = productDescription(data);
+  const instructions = agentInstructions({ ...data, research_status: product.research_status });
 
   return `---
 name: ${data.id}
-description: ${description}
+description: ${skillDescription}
 ---
 
 # ${data.name} (\`${data.id}\`)
@@ -81,11 +82,11 @@ description: ${description}
 | **Product type** | \`${data.product_type}\` |
 | **Categories** | ${data.categories.map((c) => `\`${c}\``).join(', ')} |
 | **Official URL** | ${data.official_url} |
-| **Open-source status** | **${status}** |
+| **Alternative coverage** | **${status}** |
 
-## What it is
+## Product description
 
-${data.summary}
+${expandedDescription}
 
 ## Core capabilities
 
@@ -104,6 +105,8 @@ ${data.gap}
 ## Verdict
 
 ${data.verdict}
+
+${instructions}
 
 ## Sources
 
@@ -140,20 +143,20 @@ function indexFile(products, dataById, companies) {
       .join('\n');
     sections.push(
       `### ${companyName} (\`${companyId}\`)\n\n` +
-        `| Product | ID | Open-source status | Lead alternative |\n|---|---|---|---|\n${rows}`,
+        `| Product | ID | Alternative coverage | Lead alternative |\n|---|---|---|---|\n${rows}`,
     );
   }
 
   return `# Open-source skills catalog
 
-One **skill-structured** markdown file per catalogued FAANG product. Each file
-follows the skill contract — YAML frontmatter with \`name\` and \`description\`,
-then the instructions — and answers one question for that product: *is there an
-open-source alternative already, and if not, what is pending?*
+One coding-agent build skill per catalogued FAANG product. Give the product's
+Markdown file to your agent in your project; it provides product context,
+research, reuse/build guidance and verification steps. The coverage counts below
+describe alternative research only, not whether a product can be built.
 
-- **${counts.available} available** — a mature open-source project covers the product's core.
-- **${counts.partial} partial** — open-source coverage exists but leaves a material gap.
-- **${counts.pending} pending to open-source** — no open-source alternative verified.
+- **${counts.available} mature alternatives listed** — a suitable open-source project is a candidate to evaluate.
+- **${counts.partial} partial alternative coverage** — projects cover some needs; review the documented gaps.
+- **${counts.pending} with no verified alternative** — ask your agent to assess current projects and build in your project.
 
 Regenerate with \`npm run skills:catalog\` (or \`node tools/skills-catalog.mjs\`),
 and verify without writing with \`node tools/skills-catalog.mjs --check\`.
@@ -177,7 +180,7 @@ ${sections.join('\n\n')}
 |---|---|
 | \`available\` | A mature open-source project covers the product's core function and can be self-hosted or run locally. |
 | \`partial\` | Open-source coverage exists but leaves a material gap: scale, a proprietary service plane, licensed content/IP, or hardware. |
-| \`pending\` | No open-source alternative was verified. The product is **pending to open-source**. |
+| \`pending\` | This catalog has not verified a suitable open-source project. The product skill still guides your agent to assess projects and build in your project. |
 
 ## Layout
 

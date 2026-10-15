@@ -3,12 +3,13 @@
 
 # RAE FAANG
 
-### We don't need FAANG anymore. Use your agent to build any of their products.
+### Product research and build instructions for coding agents
 
-Every product has a Markdown skill written for a coding agent, with product context, research,
-and open-source candidates. Give a skill to your agent; the agent researches the product from
-public sources, evaluates open-source projects, and builds an independent implementation in
-**your** project — verified and MIT-licensed.
+RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Each entry links to
+research, candidate open-source projects and a Markdown skill for building an independent
+implementation. Give the skill to your coding agent to help it assess what to reuse, plan the work,
+and test the result in your project. RAE FAANG is MIT-licensed; your implementation and its
+dependencies have their own licenses.
 
 [![npm version](https://img.shields.io/npm/v/rae-faang?style=flat-square&labelColor=101114&color=E8FF6B)](https://www.npmjs.com/package/rae-faang)
 [![CI](https://github.com/EnzoVezzaro/rea-faang/actions/workflows/ci.yml/badge.svg)](https://github.com/EnzoVezzaro/rea-faang/actions/workflows/ci.yml)
@@ -32,18 +33,18 @@ public sources, evaluates open-source projects, and builds an independent implem
 </div>
 
 > [!IMPORTANT]
-> RAE FAANG is a **research catalog**, not a scraper of proprietary code. We catalog publicly
-> observable behavior and open-source candidates so independent implementations can be built
-> and verified in the user's own project. See
+> RAE FAANG is a **research catalog**, not a source-code scraper. It records public product
+> information and candidate open-source projects to help developers plan independent
+> implementations. See
 > [Responsible reverse engineering](#responsible-reverse-engineering).
 
 ## Pick a product
 
-1. Choose a product from the [live catalog](https://enzovezzaro.github.io/rae-faang/) or the
-   skills index in [`catalog/skills/`](catalog/skills/README.md).
-2. Give its Markdown skill to your coding agent, in the project where you want the product built.
-3. The agent investigates, decides what to reuse, builds, and verifies — you keep the code and
-   the architecture decisions. The point is to build the product in your own project.
+1. Choose a product in the [live catalog](https://enzovezzaro.github.io/rae-faang/) or the
+   [`catalog/skills/`](catalog/skills/README.md) index.
+2. Give its Markdown skill to your coding agent from the project where you want to work.
+3. Ask the agent to check the research, assess candidate projects, then plan, build and test a
+   scoped implementation. Review its choices and the test results.
 
 ```text
 Build a search product for my project. Start from the google-search skill
@@ -96,19 +97,19 @@ ace status                # the agent environment
 
 ## How an agent build works
 
-Each product is built in five stages, and the skill keeps every claim tied to evidence.
+A product build can follow these five steps. The skill provides a starting point; you choose the scope and review the work.
 
 | Stage | What happens | Your control |
 |---|---|---|
-| **1. Investigate** | The agent studies publicly observable behavior, official documentation, and published protocols | You confirm the workflow list |
-| **2. Understand** | Findings become feature specifications, architecture sketches, and testable acceptance criteria | You approve the scope |
-| **3. Build** | The agent builds an independent implementation on suitable open-source technology — never proprietary source | You own the stack choice |
-| **4. Verify** | The result is tested against the documented behavior: correctness, security, edge cases | You run or review the tests |
-| **5. Release** | Source, docs, tests, and build instructions ship openly; contributors improve them | You decide how to publish |
+| **1. Investigate** | Review public product information, official documentation and published protocols | Confirm which user workflows matter |
+| **2. Plan** | Turn findings into features, an architecture and checks for the chosen scope | Approve or adjust the plan |
+| **3. Build** | Implement the agreed features using suitable technology and independently written code | Choose the stack and review changes |
+| **4. Test** | Check the implementation against its requirements, including error cases and security | Run or review the tests |
+| **5. Ship or continue** | Update the documentation and decide whether to release, keep working or stop | Decide what happens next |
 
-The catalog's alternative-coverage label (`available`, `partial`, `no verified alternative`)
-describes the **research into existing open-source projects**, not whether a build can happen.
-Agents are told exactly that, in every skill.
+Alternative-coverage labels (`available`, `partial`, `no verified alternative`) describe the
+catalog's research into existing open-source projects. They do not tell you whether your own
+implementation is feasible.
 
 ---
 
@@ -122,9 +123,9 @@ Agents are told exactly that, in every skill.
 | **Netflix** | Video streaming, content discovery, recommendation systems, media delivery, creator tooling |
 | **Google** | Search, maps, email, video, office productivity, cloud infrastructure, developer tools, AI services |
 
-**77 products** · **40** with a verified alternative · **29** partial · **8** awaiting verification.
-Counts update as research lands; the numbers below are current in
-`catalog/products.jsonl` and on the [live catalog](https://enzovezzaro.github.io/rae-faang/).
+**77 products** · **40** with a mature candidate listed · **29** with partial coverage · **8** with
+no verified alternative. These labels summarize catalog research, not product parity. See
+`catalog/products.jsonl` and the [live catalog](https://enzovezzaro.github.io/rae-faang/) for current counts.
 
 ---
 
@@ -156,7 +157,7 @@ The repository is designed to be forked, extended, and shipped in increments.
 
 **Project conventions that make contributions land**
 
-- Evidence first: every material claim is cited to a public source in `evidence[]`.
+- Cite public sources for material research claims in `evidence[]`; record uncertainty where a source is missing or unclear.
 - Clean room: no decompilation, proprietary source, protected assets, or access-control bypass.
 - The CLI is the arbiter: `npm run validate` and `npm test` must pass to merge.
 - Verification is never weakened to pass a check — fix the cause instead.
@@ -267,9 +268,9 @@ referenced projects keep their own licenses.
 
 <div align="center">
 
-**We don't need FAANG anymore. Use your agent to build any of their products.**
+**Choose a product. Start with the research. Build what your users need.**
 
-Give a coding agent a product's Markdown skill — and build the product in your own project.
+Give your coding agent the product's Markdown skill, review its plan, and test the result in your project.
 
 <img src="docs/assets/brand-logo.png" width="320" alt="" />
 

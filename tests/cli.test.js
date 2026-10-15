@@ -1,9 +1,10 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, mkdtempSync, rmSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { tmpdir } from 'node:os';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const CLI = join(ROOT, 'src', 'cli.js');
@@ -27,12 +28,14 @@ test('--help prints usage and exits 0', () => {
   assert.equal(result.status, 0);
   assert.match(result.stdout, /RAE — FAANG Product Intelligence CLI/);
   assert.match(result.stdout, /research validate/);
+  assert.match(result.stdout, /research dossier/);
 });
 
-test('--version prints the version and exits 0', () => {
+test('--version prints the version from package.json and exits 0', () => {
+  const { version } = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'));
   const result = run('--version');
   assert.equal(result.status, 0);
-  assert.match(result.stdout, /RAE CLI v0\.1\.0/);
+  assert.match(result.stdout, new RegExp(`RAE CLI v${version.replace(/\./g, '\\.')}`));
 });
 
 test('unknown command exits non-zero with an error', () => {
@@ -88,6 +91,22 @@ test('research validate passes with zero errors', () => {
   assert.deepEqual(json.errors, []);
 });
 
+test('research dossier prints the product dossier in text and JSON formats', () => {
+  const text = run('research', 'dossier', 'google-search');
+  assert.equal(text.status, 0);
+  assert.match(text.stdout, /Google Search/);
+
+  const json = runJson('research', 'dossier', 'google-search', '--format', 'json');
+  assert.equal(json.status, 0);
+  assert.equal(json.json.id, 'google-search');
+  assert.equal(json.json.name, 'Google Search');
+  assert.match(json.json.markdown, /Google Search/);
+
+  const missing = run('research', 'dossier', 'no-such-product');
+  assert.equal(missing.status, 1);
+  assert.match(missing.stderr, /not found/);
+});
+
 test('alternatives validate passes with zero errors', () => {
   const { status, json } = runJson('alternatives', 'validate', '--format', 'json');
   assert.equal(status, 0);
@@ -121,4 +140,86 @@ test('products show returns a known product and fails for an unknown one', () =>
   const missing = run('products', 'show', 'no-such-product');
   assert.equal(missing.status, 1);
   assert.match(missing.stderr, /not found/);
+});
+
+test('build product --out scaffolds a workspace and refuses to overwrite', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'rae-build-'));
+  const out = join(dir, 'gmail');
+  try {
+    const first = run('build', 'product', 'gmail', '--out', out);
+    assert.equal(first.status, 0);
+    assert.ok(existsSync(join(out, 'ace.mjs')), 'ace.mjs shim must be written');
+    assert.ok(existsSync(join(out, 'package.json')), 'package.json must be written');
+    assert.equal(readdirSync(join(out, 'specs')).length, 10, 'ten spec stubs');
+
+    const again = run('build', 'product', 'gmail', '--out', out);
+    assert.equal(again.status, 1);
+    assert.match(again.stderr, /already exists/);
+
+    const forced = run('build', 'product', 'gmail', '--out', out, '--force');
+    assert.equal(forced.status, 0);
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('build agent-kit --out writes skill.md and mcp.json', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'rae-kit-'));
+  try {
+    const result = run('build', 'agent-kit', 'gmail', '--out', dir);
+    assert.equal(result.status, 0);
+    assert.ok(existsSync(join(dir, 'skill.md')), 'skill.md must be written');
+    assert.ok(existsSync(join(dir, 'mcp.json')), 'mcp.json must be written');
+    const skill = readFileSync(join(dir, 'skill.md'), 'utf8');
+    assert.match(skill, /## Product description/);
+    assert.match(skill, /## Multi-agent task plan and outputs/);
+    assert.match(skill, /## Verification and definition of done/);
+    assert.match(skill, /rae research dossier gmail/);
+    assert.doesNotMatch(skill, /node src\/cli\.js|From a repository clone/);
+    const mcp = JSON.parse(readFileSync(join(dir, 'mcp.json'), 'utf8'));
+    assert.deepEqual(mcp.mcpServers['rae-cli'], {
+      command: 'rae', args: [], description: 'Installed RAE product intelligence CLI',
+    });
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
+});
+
+test('alternatives clone errors clearly for an unknown product', () => {
+  const result = run('alternatives', 'clone', 'no-such-product');
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /not found/);
+});
+
+test('product-id shorthand builds the agent kit', () => {
+  const out = mkdtempSync(join(tmpdir(), 'rae-kit-'));
+  try {
+    const result = run('gmail', '--out', out);
+    assert.equal(result.status, 0);
+    assert.match(result.stdout, /Wrote agent kit/);
+    assert.ok(existsSync(join(out, 'skill.md')));
+    assert.ok(existsSync(join(out, 'mcp.json')));
+    assert.match(readFileSync(join(out, 'skill.md'), 'utf8'), /## Multi-agent task plan and outputs/);
+  } finally {
+    rmSync(out, { recursive: true, force: true });
+  }
+});
+
+test('product-id shorthand with --alt still clones the alternative', () => {
+  const result = run('gmail', '--alt', 'NoSuchAlt');
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /No alternative named "NoSuchAlt" for "gmail"/);
+});
+
+test('unknown top-level command is still rejected', () => {
+  const result = run('no-such-command');
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /unknown command/);
+});
+
+test('--help documents the product-id shorthand', () => {
+  const result = run('--help');
+  assert.match(result.stdout, /Shorthand: build the agent kit/);
+  assert.match(result.stdout, /--alt NAME, clone/);
+  assert.match(result.stdout, /--out DIR/);
 });

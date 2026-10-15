@@ -9,7 +9,7 @@
   },
   "description": "RAE FAANG: Open-source alternative to Llama",
   "scripts": {
-    "dev": "node ace.mjs run",
+    "dev": "ace run",
     "test": "node --test tests/",
     "lint": "eslint .",
     "build": "tsc --build"

@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_5580e369c15707f4261157c4764aba488117dfb83c8d61b1ce54cf872ed2e516",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.apple.com/apple-music/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "e7ea71c4d12520fb31f77feff7e24f21bfd29c6a7ee6cefcb2e5104ab53860b8"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://www.apple.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4123,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1341,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/apple-music/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2548,
+        "before_url": {
+          "url": "https://www.apple.com/apple-music/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/apple-music/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "9d5bd490ab7bc64fa805fdc98df384ac2cdb56402b017d42bf6d1784e0f87447",
+              "bytes": 30604,
+              "text": "- document:\n  - navigation \"Global\":\n    - list:\n      - listitem:\n        - link \"Apple\":\n          - /url: /\n      - listitem:\n        - list:\n          - listitem:\n            - link \"Store\":\n              - /url: /us/shop/goto/store\n          - listitem:\n            - button \"Store menu\"\n        - list:\n          - listitem:\n            - link \"Mac\":\n              - /url: /mac/\n          - listitem:\n            - button \"Mac menu\"\n        - list:\n          - listitem:\n            - link \"iPad\":\n              - /url: /ipad/\n          - listitem:\n            - button \"iPad menu\"\n        - list:\n          - listitem:\n            - link \"iPhone\":\n              - /url: /iphone/\n          - listitem:\n            - button \"iPhone menu\"\n        - list:\n          - listitem:\n            - link \"Watch\":\n              - /url: /watch/\n          - listitem:\n            - button \"Watch menu\"\n        - list:\n          - listitem:\n            - link \"Vision\":\n              - /url: /apple-vision-pro/\n          - listitem:\n            - button \"Vision menu\"\n        - list:\n          - listitem:\n            - link \"AirPods\":\n              - /url: /airpods/\n          - listitem:\n            - button \"AirPods menu\"\n        - list:\n          - listitem:\n            - link \"Home\":\n              - /url: /home/\n          - listitem:\n            - button \"Home menu\"\n        - list:\n          - listitem:\n            - link \"Entertainment\":\n              - /url: /entertainment/\n          - listitem:\n            - button \"Entertainment menu\"\n        - list:\n          - listitem:\n            - link \"Accessories\":\n              - /url: /us/shop/goto/buy_accessories\n          - listitem:\n            - button \"Accessories menu\"\n        - list:\n          - listitem:\n            - link \"Support\":\n              - /url: https://support.apple.com/?cid=gn-ols-home-hp-tab\n          - listitem:\n            - button \"Support menu\"\n      - listitem:\n        - button \"Search apple.com\"\n      - listitem:\n        - button \"Shopping Bag\"\n  - navigation \"Local\":\n    - link \"Apple Music\":\n      - /url: /apple-music/\n    - link \"Try Apple Music free, * footnote\":\n      - /url: https://music.apple.com/home?itscg=10000&itsct=music_overview_nav\n      - text: Try it free*\n  - main:\n    - text: Get 3 months of Apple One free with any new iPhone, iPad, or Mac.\n    - link \"Footnote ** symbol\":\n      - /url: \"#footnote-2\"\n      - text: \"**\"\n    - link \"Learn more, Apple One\":\n      - /url: https://offers.appleone.apple/new-device-offer\n      - text: Learn more\n    - heading \"Apple Music\" [level=1]\n    - heading \"For the love of music.\" [level=2]\n    - paragraph:\n      - text: The highest audio quality\n      - superscript:\n        - link \"Footnote 1\":\n          - /url: \"#footnote-4\"\n          - text: \"1\"\n      - text: plus immersive Spatial Audio.\n      - superscript:\n        - link \"Footnote 2\":\n          - /url: \"#footnote-5\"\n          - text: \"2\"\n      - text: Turn ideas into playlists in seconds.\n      - superscript:\n        - link \"Footnote 3\":\n          - /url: \"#footnote-6\"\n          - text: \"3\"\n      - text: And get access to artist interviews, exclusive performances, and tour dates near you. Always ad-free. It’s everything music is meant to be.\n    - link \"Try Apple Music free, * footnote\":\n      - /url: https://music.apple.com/home?itscg=10000&itsct=music_overview_hero\n    - heading \"Start listening for free.\" [level=2]\n    - link \"Compare plans\":\n      - /url: \"#plans\"\n    - list:\n      - listitem:\n        - heading \"New Subscriber\" [level=3]\n        - paragraph: 1 month free\n        - paragraph: Sign up today and start listening for free.\n        - link \"Try Apple Music individual plan 1 month free, * footnote\":\n          - /url: https://music.apple.com/home?itscg=10000&itsct=music_overview_plan_individual\n      - listitem:\n        - heading \"Family Plan\" [level=3]\n        - paragraph: 1 month free\n        - paragraph: Share Apple Music with up to five people with a Family Plan.\n        - link \"Try Apple Music family plan 1 month free, 4 footnote\":\n          - /url: https://music.apple.com/subscribe?itscg=10000&itsct=music_overview_plan_family\n      - listitem:\n        - heading \"New Devices\" [level=3]\n        - paragraph: 3 months free\n        - paragraph: Get started if you’ve purchased an eligible device.\n        - link \"Try Apple Music new device plan 3 months free, 5 footnote\":\n          - /url: https://offers.applemusic.apple/new-device-offer?itscg=10000&itsct=music_overview_plan_hwb\n      - listitem:\n        - heading \"Student Plan\" [level=3]\n        - paragraph: Apple Music and Apple TV\n        - paragraph: Students get 1 month of Apple Music free, plus access to Apple TV.\n        - link \"Try Apple Music student plan 1 month free, 6 footnote\":\n          - /url: https://music.apple.com/student?itscg=10000&itsct=music_overview_plan_student\n      - listitem:\n        - img \"Apple One\":\n          - img\n        - paragraph: 1 month free\n        - paragraph: Bundle up to six great services for one low monthly price.\n        - link \"Try Apple One 1 month free, 7 footnote\":\n          - /url: https://one.apple.com/us/music?itscg=10000&itsct=music_overview_plan_appleone\n    - list:\n      - listitem:\n        - button \"Previous in get started gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next in get started gallery\":\n          - img\n    - heading \"Listening Experience\" [level=3]\n    - heading \"Music at its most immersive.\" [level=4]\n    - paragraph: Olivia Rodrigo\n    - img \"Olivia Rodrigo album \\\"you seem pretty sad for a girl so in love\\\" cover art features Olivia Rodrigo swinging from a swing set upside down against a cloudy sky. The album cover is repeated and layered on top of each other.\"\n    - button \"Learn more about listening experience\":\n      - img\n    - heading \"Music Discovery\" [level=3]\n    - heading \"Where your new favorites find you.\" [level=4]\n    - img \"An array of personalized playlist covers in a constellation. The playlists include Today's Country, Afrobeats Hits, Sound Therapy Relax, Made for Spatial Audio among others\":\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n      - figure\n    - button \"Learn more about music discovery\":\n      - img\n    - heading \"Exclusive Content\" [level=3]\n    - heading \"Get closer to your favorite artists.\" [level=4]\n    - paragraph: Live at Apple Music Radio Die On This Hill by SIENNA SPIRO\n    - img \"Sienna Spiro singing into a microphone\"\n    - button \"Learn more about exclusive content\":\n      - img\n    - heading \"Apple Music Sing\" [level=3]\n    - heading \"It’s not karaoke. It’s way better.\" [level=4]\n    - img \"Lyrics from the song “All of Me” by Nao illuminate in sync with the song on a TV screen\"\n    - button \"Learn more about apple music sing\":\n      - img\n    - heading \"Shared Listening\" [level=3]\n    - heading \"Get your friends in the mix.\" [level=4]\n    - img \"Cover art from a collaborative playlist called \\\"Road Trip Playlist\\\" featuring profile photos of different listeners\"\n    - button \"Learn more about shared listening\":\n      - img\n    - heading \"Apple Music Classical\" [level=3]\n    - heading \"The definitive classical music app.\" [level=4]\n    - button \"Learn more about apple music classical\":\n      - img\n    - heading \"Shazam Music Discovery\" [level=3]\n    - heading \"Never miss a beat.\" [level=4]\n    - img \"Blue and white circular Shazam logo with concentric circles radiating outward from logo\"\n    - button \"Learn more about shazam\":\n      - img\n    - heading \"Listen to Apple Music on all your devices.\" [level=2]\n    - list:\n      - listitem:\n        - paragraph: iPhone\n      - listitem:\n        - paragraph: iPad\n      - listitem:\n        - paragraph: Apple Watch\n      - listitem:\n        - paragraph: Mac\n      - listitem:\n        - paragraph: Apple Vision Pro\n      - listitem:\n        - paragraph: HomePod\n      - listitem:\n        - paragraph: Apple TV 4K\n      - listitem:\n        - paragraph: CarPlay\n        - paragraph:\n          - link \"Find compatible vehicles\":\n            - /url: /ios/carplay/available-models/\n      - listitem:\n        - paragraph: Android\n        - paragraph:\n          - link \"Download on Google Play\":\n            - /url: https://play.google.com/store/apps/details?id=com.apple.android.music&referrer=utm_source=http%3A%2F%2Fmusic.apple.com%2Fsubscribe%3Fapp%3Dmusic%26at%3D1000lpya%26ct%3D\n      - listitem:\n        - paragraph: PC\n        - paragraph:\n          - link \"Download on Microsoft Store\":\n            - /url: https://apps.microsoft.com/detail/9pfhdd62mxs1?hl=en-US&gl=US\n    - heading \"Even more places to get Apple Music.\" [level=3]\n    - paragraph:\n      - link \"Set up your device\":\n        - /url: https://support.apple.com/HT211087?cid=general-applemusic-marcom-08152025\n    - list:\n      - listitem:\n        - img \"Playstation\"\n      - listitem:\n        - img \"Xbox\"\n      - listitem:\n        - img \"Roku\"\n      - listitem:\n        - img \"Samsung\"\n      - listitem:\n        - img \"LG Smart TV\"\n      - listitem:\n        - img \"Alexa\"\n      - listitem:\n        - img \"Sonos\"\n      - listitem:\n        - img \"Google Nest\"\n      - listitem:\n        - img \"Microsoft\"\n    - heading \"Choose the plan that’s right for you.\" [level=2]\n    - paragraph: No commitment. Cancel anytime.\n    - list:\n      - listitem:\n        - heading \"Individual\" [level=3]\n        - paragraph: $11.99/month, first month free for new subscribers.\n        - list:\n          - listitem: Over 100 million songs, ad‑free and available to download for offline listening\n          - listitem: Spatial Audio and lossless audio quality\n          - listitem: Exclusive artist access and curated playlists\n          - listitem: Free access to the Apple Music Classical app\n          - listitem: Works on iOS, Android, Windows, Sonos, smart TVs, and more\n        - link \"Try Apple Music individual plan free, * footnote\":\n          - /url: https://music.apple.com/subscribe?itscg=10000&itsct=music_overview_compare_individual\n      - listitem:\n        - heading \"Family\" [level=3]\n        - paragraph: $19.99/month, one month free for new subscribers.\n        - list:\n          - listitem: Access to everything in the Individual Plan\n          - listitem: Share with up to five people via Family Sharing\n          - listitem: Each person gets their own library, recommendations, and playlists\n        - link \"Try Apple Music family plan free, 4 footnote\":\n          - /url: https://music.apple.com/subscribe?itscg=10000&itsct=music_overview_compare_family\n      - listitem:\n        - heading \"Student\" [level=3]\n        - paragraph: Extra savings at just $6.99/month, first month free for new subscribers.\n        - list:\n          - listitem: Special pricing for verified students\n          - listitem: Access to everything in the Individual Plan\n          - listitem: Comes with access to Apple TV at no extra cost\n        - link \"Try Apple Music student plan free, 6 footnote\":\n          - /url: https://music.apple.com/student?itscg=10000&itsct=music_overview_compare_student\n      - listitem:\n        - heading \"Apple One\" [level=3]\n        - paragraph: Apple Music with up to five other services for one low monthly price.\n        - list:\n          - listitem: Bundle your Apple Music plan with Apple TV, Apple Arcade, Apple Fitness+, Apple News+, and iCloud+\n          - listitem: One simple subscription, one monthly bill\n          - listitem: Great value if you’re already using multiple Apple services\n        - link \"try Apple One free, 7 footnote\":\n          - /url: https://one.apple.com/us/music?itscg=10000&itsct=music_overview_compare_appleone\n        - link \"Learn more, Apple One\":\n          - /url: /apple-one/\n          - text: Learn more\n    - list:\n      - listitem:\n        - button \"Previous in plans gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next in plans gallery\":\n          - img\n    - heading \"Questions? Answers.\" [level=2]\n    - list:\n      - listitem:\n        - heading \"What is Apple Music? Is it the same as iTunes?\" [level=3]:\n          - button \"What is Apple Music? Is it the same as iTunes?\":\n            - text: What is Apple Music? Is it the same as iTunes?\n            - img\n      - listitem:\n        - heading \"How can I listen to Apple Music?\" [level=3]:\n          - button \"How can I listen to Apple Music?\":\n            - text: How can I listen to Apple Music?\n            - img\n      - listitem:\n        - heading \"What does Apple Music cost?\" [level=3]:\n          - button \"What does Apple Music cost?\":\n            - text: What does Apple Music cost?\n            - img\n      - listitem:\n        - heading \"Is there an Apple Music student subscription?\" [level=3]:\n          - button \"Is there an Apple Music student subscription?\":\n            - text: Is there an Apple Music student subscription?\n            - img\n      - listitem:\n        - heading \"Does Siri work with all plans?\" [level=3]:\n          - button \"Does Siri work with all plans?\":\n            - text: Does Siri work with all plans?\n            - img\n      - listitem:\n        - heading \"What is Dolby Atmos music and how can I listen to it?\" [level=3]:\n          - button \"What is Dolby Atmos music and how can I listen to it?\":\n            - text: What is Dolby Atmos music and how can I listen to it?\n            - img\n      - listitem:\n        - heading \"What is lossless audio and how can I listen to it?\" [level=3]:\n          - button \"What is lossless audio and how can I listen to it?\":\n            - text: What is lossless audio and how can I listen to it?\n            - img\n      - listitem:\n        - heading \"Can I share with my family?\" [level=3]:\n          - button \"Can I share with my family?\":\n            - text: Can I share with my family?\n            - img\n      - listitem:\n        - heading \"Are there commercials?\" [level=3]:\n          - button \"Are there commercials?\":\n            - text: Are there commercials?\n            - img\n      - listitem:\n        - heading \"Am I eligible for a three-month Apple Music free offer? How do I redeem it?\" [level=3]:\n          - button \"Am I eligible for a three-month Apple Music free offer? How do I redeem it?\":\n            - text: Am I eligible for a three-month Apple Music free offer? How do I redeem it?\n            - img\n      - listitem:\n        - heading \"What is Apple Music Classical?\" [level=3]:\n          - button \"What is Apple Music Classical?\":\n            - text: What is Apple Music Classical?\n            - img\n      - listitem:\n        - heading \"Why a separate app for classical music?\" [level=3]:\n          - button \"Why a separate app for classical music?\":\n            - text: Why a separate app for classical music?\n            - img\n      - listitem:\n        - heading \"How do I get Apple Music Classical and where can I listen to it?\" [level=3]:\n          - button \"How do I get Apple Music Classical and where can I listen to it?\":\n            - text: How do I get Apple Music Classical and where can I listen to it?\n            - img\n      - listitem:\n        - heading \"Is classical music still available in Apple Music?\" [level=3]:\n          - button \"Is classical music still available in Apple Music?\":\n            - text: Is classical music still available in Apple Music?\n            - img\n      - listitem:\n        - heading \"Does Apple Music Classical also offer other genres?\" [level=3]:\n          - button \"Does Apple Music Classical also offer other genres?\":\n            - text: Does Apple Music Classical also offer other genres?\n            - img\n    - heading \"Working with Apple Music.\" [level=2]\n    - paragraph: Apple Music supports artists with tools to create, release, promote, and measure music across a global stage. Celebrate big moments with your fans with unique Shareable Milestones for plays, Shazam count, and playlist adds. Discover all the ways to showcase content on Apple Music — including MusicKit, RSS feeds, widgets, brand guidelines, badge art, and more.\n    - list:\n      - listitem:\n        - link \"Apple Music for Artists, learn more\":\n          - /url: https://artists.apple.com/\n          - text: Apple Music for Artists\n      - listitem:\n        - link \"Apple Performance Partners Program, learn more\":\n          - /url: /music/workingwithus/\n          - text: Apple Performance Partners Program\n  - contentinfo \"Apple Footer\":\n    - heading \"Apple Footer\" [level=2]\n    - region \"Footnotes\":\n      - list:\n        - listitem: \"* New subscribers only. $11.99 per month after free trial. Plan automatically renews until cancelled. Terms apply.\"\n        - listitem:\n          - text: \"** New and qualified returning subscribers only. $21.95 or $27.95 or $39.95 per month after trial based on plan selected. The Apple One free trial includes only subscriptions that you are not currently using through a free trial or a subscription. Only one offer per Apple Account and only one offer per family if you’re part of a Family Sharing group, regardless of the number of devices you or your family purchase. This offer is not available if you or your family have previously accepted an Apple One three-months-free offer. Offer good for three months after eligible device activation. Plan automatically renews until cancelled. Restrictions and other\"\n          - link \"terms\":\n            - /url: /promo/\n          - text: apply.\n      - list:\n        - listitem: Lossless audio available up to 24-bit/192 kHz. Hi-Res Lossless requires external equipment such as a USB digital to analog converter.\n        - listitem: Compatible hardware and software required. Not all content available in Spatial Audio with Dolby Atmos.\n        - listitem: Playlist Playground is available in beta in the U.S. in English only. Requires a compatible Apple device running iOS, iPadOS, or visionOS, or the latest version of Apple Music for Android.\n        - listitem:\n          - text: New subscribers only. $19.99/month after free trial. Plan automatically renews until cancelled. Terms apply. Requires Family Sharing. See\n          - link \"apple.com/family-sharing\":\n            - /url: /family-sharing/\n          - text: for more information.\n        - listitem:\n          - text: New subscribers only. $11.99 per month after trial. Offer is available for new Apple Music subscribers with a new eligible device for a limited time only. Offer redemption for eligible audio devices requires connecting or pairing to an Apple device running the latest iOS or iPadOS. Offer redemption for Apple Watch requires connecting or pairing to an iPhone running the latest iOS. Offer good for three months after eligible device activation. Only one offer per Apple Account, regardless of the number of eligible devices you purchase. Plan automatically renews until cancelled. Restrictions and other\n          - link \"terms\":\n            - /url: /promo/\n          - text: apply.\n        - listitem: New subscribers only. Plan automatically renews at $6.99 per month until cancelled. College students only. Verification required. Terms apply. Limited-time offer; offer may end at any time. Free Apple TV access for students ends when you no longer qualify or do not renew your Apple Music Student subscription. Offer good for verified college students only and does not extend to a Family Sharing group.\n        - listitem: The Apple One free trial includes only services that you are not currently using through a free trial or a subscription. Plan automatically renews after trial until cancelled. Restrictions and other terms apply.\n        - listitem: AutoMix requires a compatible Apple device running iOS 26, iPadOS 26, visionOS 26, or macOS 26 or later, or CarPlay running the latest software.\n        - listitem: Music Haptics is supported on iPhone 12 and later, excluding iPhone SE (3rd generation), using iOS 18 or later.\n        - listitem: Apple Music 1, Apple Music Hits, Apple Music Country, Apple Música Uno, Apple Music Club, and Apple Music Chill are available without an Apple Music subscription.\n        - listitem: Apple Music Sing is supported on iPhone 11 and later and iPhone SE (2nd generation and later) using iOS 16.2 or later; iPad models using iPadOS 16.2 or later; and Apple TV 4K (3rd generation).\n        - listitem: \"Lyrics Translation is available for select songs in the following languages: English to Chinese (Simplified), English to Japanese, Korean to Chinese (Simplified), Korean to English, Korean to Japanese, and Spanish to English. Lyrics Pronunciation is available for select songs in the following scripts: Cantonese to Jyutping, Chinese (Simplified) to Pinyin, Chinese (Traditional) to Pinyin, Hindi to Romanized Hindi, Japanese to Romanized Japanese, Korean to Katakana, Korean to Romanized Korean, and Punjabi to Romanized Punjabi. Requires a compatible Apple device running iOS 26, iPadOS 26, tvOS 26, or visionOS 26 or later, or the latest version of Apple Music for Android or the web.\"\n        - listitem: Microphone, reactions, and visual effects features are supported on iPhone SE (2nd generation and later) and iPhone 11 and later when using Apple Music Sing on Apple TV 4K (3rd generation), running the latest operating system software. Additional participants can join without a subscription.\n        - listitem: Users under the age of 13 cannot collaborate on playlists because they are not allowed to have identities within Music. Users in Cameroon, China mainland, Malawi, Mali, Russia, Türkiye, United Arab Emirates, and Uruguay cannot collaborate.\n      - list:\n        - listitem: To listen to music on Apple Music Classical, you must have an internet connection.\n        - listitem: “All Of Me” written by Abby Keen, Dyo, Neo Jessica Joshua, PRGRSHN.\n        - listitem: “ILY” written by Daniel Rondon, Davide Grigolo, Juan David Loaiza “Kapo”, Juan Diego Medina Vélez, Julian Turizo, Julio “Bati” Emmanuel Batista Ramos, Julián Turizo Zapata, Michele Zocca, Miguel Angel Diaz “Miguelangel”, Miguel Angel Diaz Velez, Myke Towers, Orlando J. Cepeda Matos, TORRES MICHAEL.\n    - navigation \"Breadcrumbs\":\n      - link \"Apple\":\n        - /url: /\n      - list:\n        - listitem:\n          - link \"Entertainment\":\n            - /url: /services/\n        - listitem: Apple Music\n    - navigation \"Apple Directory\":\n      - heading \"Shop and Learn\" [level=3]\n      - list:\n        - listitem:\n          - link \"Store\":\n            - /url: /us/shop/goto/store\n        - listitem:\n          - link \"Mac\":\n            - /url: /mac/\n        - listitem:\n          - link \"iPad\":\n            - /url: /ipad/\n        - listitem:\n          - link \"iPhone\":\n            - /url: /iphone/\n        - listitem:\n          - link \"Watch\":\n            - /url: /watch/\n        - listitem:\n          - link \"Vision\":\n            - /url: /apple-vision-pro/\n        - listitem:\n          - link \"AirPods\":\n            - /url: /airpods/\n        - listitem:\n          - link \"Home\":\n            - /url: /home/\n        - listitem:\n          - link \"AirTag\":\n            - /url: /airtag/\n        - listitem:\n          - link \"Accessories\":\n            - /url: /us/shop/goto/buy_accessories\n        - listitem:\n          - link \"Gift Cards\":\n            - /url: /us/shop/goto/giftcards\n      - heading \"Apple Wallet\" [level=3]\n      - list:\n        - listitem:\n          - link \"Wallet\":\n            - /url: /wallet/\n        - listitem:\n          - link \"Apple Card\":\n            - /url: /apple-card/\n        - listitem:\n          - link \"Apple Pay\":\n            - /url: /apple-pay/\n        - listitem:\n          - link \"Apple Cash\":\n            - /url: /apple-cash/\n      - heading \"Account\" [level=3]\n      - list:\n        - listitem:\n          - link \"Manage Your Apple Account\":\n            - /url: https://account.apple.com/\n        - listitem:\n          - link \"Apple Store Account\":\n            - /url: /us/shop/goto/account\n        - listitem:\n          - link \"iCloud.com\":\n            - /url: https://www.icloud.com\n      - heading \"Entertainment\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple One\":\n            - /url: /apple-one/\n        - listitem:\n          - link \"Apple TV\":\n            - /url: /apple-tv/\n        - listitem:\n          - link \"Apple Music\":\n            - /url: /apple-music/\n        - listitem:\n          - link \"Apple Arcade\":\n            - /url: /apple-arcade/\n        - listitem:\n          - link \"Apple Fitness+\":\n            - /url: /apple-fitness-plus/\n        - listitem:\n          - link \"Apple News+\":\n            - /url: /apple-news/\n        - listitem:\n          - link \"Apple Podcasts\":\n            - /url: /apple-podcasts/\n        - listitem:\n          - link \"Apple Books\":\n            - /url: /apple-books/\n        - listitem:\n          - link \"App Store\":\n            - /url: /app-store/\n      - heading \"Apple Store\" [level=3]\n      - list:\n        - listitem:\n          - link \"Find a Store\":\n            - /url: /retail/\n        - listitem:\n          - link \"Genius Bar\":\n            - /url: /retail/geniusbar/\n        - listitem:\n          - link \"Today at Apple\":\n            - /url: /today/\n        - listitem:\n          - link \"Group Reservations\":\n            - /url: /today/groups/\n        - listitem:\n          - link \"Apple Camp\":\n            - /url: /today/camp/\n        - listitem:\n          - link \"Apple Store App\":\n            - /url: https://apps.apple.com/us/app/apple-store/id375380948\n        - listitem:\n          - link \"Certified Refurbished\":\n            - /url: /us/shop/goto/special_deals\n        - listitem:\n          - link \"Apple Upgrade\":\n            - /url: /us/shop/goto/apple_upgrade\n        - listitem:\n          - link \"Apple Trade In\":\n            - /url: /us/shop/goto/trade_in\n        - listitem:\n          - link \"Financing\":\n            - /url: /us/shop/goto/payment_plan\n        - listitem:\n          - link \"Carrier Deals at Apple\":\n            - /url: /us/shop/goto/buy_iphone/carrier_offers\n        - listitem:\n          - link \"Order Status\":\n            - /url: /us/shop/goto/order/list\n        - listitem:\n          - link \"Shopping Help\":\n            - /url: /us/shop/goto/help\n      - heading \"For Business\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Business\":\n            - /url: /business/\n        - listitem:\n          - link \"Shop for Business\":\n            - /url: /retail/business/\n      - heading \"For Education\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Education\":\n            - /url: /education/\n        - listitem:\n          - link \"Shop for K-12\":\n            - /url: /education/k12/how-to-buy/\n        - listitem:\n          - link \"Shop for College\":\n            - /url: /us/shop/goto/educationrouting\n      - heading \"For Healthcare\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Healthcare\":\n            - /url: /healthcare/\n      - heading \"For Government\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Government\":\n            - /url: /government/\n        - listitem:\n          - link \"Shop for Veterans and Military\":\n            - /url: /us/shop/goto/eppstore/veteransandmilitary\n        - listitem:\n          - link \"Shop for State and Local Employees\":\n            - /url: /us_epp_67909/store\n        - listitem:\n          - link \"Shop for Federal Employees\":\n            - /url: /us_epp_55499/store\n      - heading \"Apple Values\" [level=3]\n      - list:\n        - listitem:\n          - link \"Accessibility\":\n            - /url: /accessibility/\n        - listitem:\n          - link \"Education\":\n            - /url: /education-initiative/\n        - listitem:\n          - link \"Environment\":\n            - /url: /environment/\n        - listitem:\n          - link \"Inclusion and Diversity\":\n            - /url: /diversity/\n        - listitem:\n          - link \"Privacy\":\n            - /url: /privacy/\n        - listitem:\n          - link \"Racial Equity and Justice\":\n            - /url: /racial-equity-justice-initiative/\n        - listitem:\n          - link \"Supply Chain Innovation\":\n            - /url: /supply-chain/\n      - heading \"About Apple\" [level=3]\n      - list:\n        - listitem:\n          - link \"Newsroom\":\n            - /url: /newsroom/\n        - listitem:\n          - link \"Apple Leadership\":\n            - /url: /leadership/\n        - listitem:\n          - link \"Career Opportunities\":\n            - /url: /careers/us/\n        - listitem:\n          - link \"Investors\":\n            - /url: https://investor.apple.com/\n        - listitem:\n          - link \"Ethics & Compliance\":\n            - /url: /compliance/\n        - listitem:\n          - link \"Events\":\n            - /url: /apple-events/\n        - listitem:\n          - link \"Contact Apple\":\n            - /url: /contact/\n    - text: \"More ways to shop:\"\n    - link \"Find an Apple Store\":\n      - /url: /retail/\n    - text: or\n    - link \"other retailer\":\n      - /url: https://locate.apple.com/\n    - text: near you. Or call\n    - link \"1-800-MY-APPLE\":\n      - /url: tel:1-800-692-7753\n    - text: (1-800-692-7753). Copyright © 2026 Apple Inc. All rights reserved.\n    - list:\n      - listitem:\n        - link \"Privacy Policy\":\n          - /url: /legal/privacy/\n      - listitem:\n        - link \"Terms of Use\":\n          - /url: /legal/internet-services/terms/site.html\n      - listitem:\n        - link \"Sales and Refunds\":\n          - /url: /us/shop/goto/help/sales_refunds\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/\n      - listitem:\n        - link \"Site Map\":\n          - /url: /sitemap/\n    - link \"United States. Choose your country or region\":\n      - /url: /choose-country-region/\n      - text: United States"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.apple.com/apple-music/",
+              "origin": "https://www.apple.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

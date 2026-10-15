@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_922364d49ab497db2c4f2b923751153eee4e47281f3e3f25330c3c2bbbcc19d6",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://developer.amazon.com/alexa",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "a5483ae3a4e4a744dd7ca9ff18964a080d8e4b36fbe922bd77e1f3a13320e1b6"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://developer.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 5144,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 2369,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://developer.amazon.com/en-US/alexa",
+          "origin": "https://developer.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2551,
+        "before_url": {
+          "url": "https://developer.amazon.com/en-US/alexa",
+          "origin": "https://developer.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://developer.amazon.com/en-US/alexa",
+          "origin": "https://developer.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "60bba2695ada98e4df8285bc6e33158058557fc0996d94057077daf0650a291a",
+              "bytes": 16959,
+              "text": "- document:\n  - banner:\n    - navigation:\n      - link \"Alexa Developer Console\":\n        - /url: /alexa\n        - img \"Alexa Developer Console\"\n      - button \"All Search\" [expanded]:\n        - text: All\n        - img \"Search\"\n      - textbox \"Search\"\n      - button \"AI Mode\" [disabled]\n      - img \"Search Logo\"\n      - list:\n        - listitem:\n          - link \"Sign In\":\n            - /url: https://developer.amazon.com/alexa/console/signin\n        - listitem\n        - listitem:\n          - link \"\":\n            - /url: \"#\"\n  - banner:\n    - navigation:\n      - list:\n        - listitem:\n          - link \"Skill Builders\":\n            - /url: /en-US/alexa/alexa-skills-kit\n          - list:\n            - listitem:\n              - link \"Alexa Skills Kit\":\n                - /url: /en-US/alexa/alexa-skills-kit\n            - listitem:\n              - link \"Documentation\":\n                - /url: https://developer.amazon.com/en-US/docs/alexa/ask-overviews/what-is-the-alexa-skills-kit.html\n            - listitem:\n              - link \"Developer Console\":\n                - /url: https://developer.amazon.com/alexa/console/ask\n            - listitem:\n              - link \"Skill Agencies\":\n                - /url: https://developer.amazon.com/en-US/alexa/skill-building-agencies\n        - listitem:\n          - link \"Device Makers\":\n            - /url: /en-US/alexa/devices\n          - list:\n            - listitem:\n              - text: Alexa Built-in Devices Develop Alexa built-in devices with Alexa Voice Service\n              - list:\n                - listitem:\n                  - link \"Overview\":\n                    - /url: https://developer.amazon.com/alexa/devices/alexa-built-in\n            - listitem:\n              - text: Connected Devices Connect your smart devices to Alexa\n              - list:\n                - listitem:\n                  - link \"Overview\":\n                    - /url: https://developer.amazon.com/alexa/devices/connected-devices\n                - listitem:\n                  - link \"Development Resources\":\n                    - /url: https://developer.amazon.com/alexa/devices/connected-devices/development-resources\n                - listitem:\n                  - link \"Business Resources\":\n                    - /url: https://developer.amazon.com/alexa/devices/connected-devices/business-resources\n                - listitem:\n                  - link \"What's New\":\n                    - /url: https://developer.amazon.com/alexa/devices/connected-devices/whats-new\n                - listitem:\n                  - link \"Consoles\":\n                    - /url: https://developer.amazon.com/alexa/devices/connected-devices/consoles\n            - listitem:\n              - link \"Alexa Connect Kit\":\n                - /url: /en-US/alexa/solution-providers/alexa-connect-kit\n        - listitem:\n          - text: Products\n          - list:\n            - listitem:\n              - link \"Alexa Skills Kit\":\n                - /url: /en-US/alexa/alexa-skills-kit\n              - list:\n                - listitem:\n                  - link \"Alexa Routines Kit\":\n                    - /url: https://developer.amazon.com/en-US/alexa/alexa-routines-kit/\n                - listitem:\n                  - link \"Radio Skills Kit\":\n                    - /url: https://developer.amazon.com/en-US/alexa/alexa-skills-kit/radio-skills-kit\n            - listitem:\n              - link \"Alexa Built-In\":\n                - /url: https://developer.amazon.com/alexa/devices/alexa-built-in\n            - listitem:\n              - link \"Alexa Smart Home\":\n                - /url: https://developer.amazon.com/en-US/alexa/smarthomeinsider\n              - list:\n                - listitem:\n                  - link \"Dash Services\":\n                    - /url: https://developer.amazon.com/en-US/alexa/dash-services\n            - listitem:\n              - text: Alexa Smart Properties\n              - list:\n                - listitem:\n                  - link \"Hospitality\":\n                    - /url: https://alexa.design/hospitality\n                - listitem:\n                  - link \"Senior Living\":\n                    - /url: https://developer.amazon.com/en-US/alexa/seniorliving\n            - listitem:\n              - link \"Echo Branding\":\n                - /url: https://developer.amazon.com/en-US/alexa/branding/echo-guidelines\n            - listitem:\n              - link \"Alexa Branding\":\n                - /url: https://developer.amazon.com/en-US/alexa/branding/alexa-guidelines\n        - listitem:\n          - text: Programs\n          - list:\n            - listitem:\n              - link \"Alexa Fund\":\n                - /url: https://developer.amazon.com/alexa/alexa-startups/alexa-fund\n            - listitem:\n              - link \"Alexa Champions\":\n                - /url: https://developer.amazon.com/alexa/champions\n            - listitem:\n              - link \"Voice Interoperability Initiative\":\n                - /url: https://developer.amazon.com/en-US/alexa/voice-interoperability\n        - listitem:\n          - link \"Docs\":\n            - /url: https://developer.amazon.com/en-US/docs/alexa/documentation-home.html\n          - list:\n            - listitem:\n              - text: Build Skills for Alexa\n              - list:\n                - listitem:\n                  - link \"Alexa Skills Kit\":\n                    - /url: https://developer.amazon.com/en-US/docs/alexa/ask-overviews/what-is-the-alexa-skills-kit.html\n                - listitem:\n                  - link \"Smart Home Skills\":\n                    - /url: https://developer.amazon.com/docs/smarthome/understand-the-smart-home-skill-api.html\n                - listitem:\n                  - link \"ASK CLI and SMAPI\":\n                    - /url: https://developer.amazon.com/docs/smapi/ask-cli-intro.html\n            - listitem:\n              - text: Connect Your Device to Alexa\n              - list:\n                - listitem:\n                  - link \"Alexa Connect Kit\":\n                    - /url: https://developer.amazon.com/docs/alexa/ack/overview.html\n                - listitem:\n                  - link \"Smart Home Skills\":\n                    - /url: https://developer.amazon.com/docs/smarthome/understand-the-smart-home-skill-api.html\n            - listitem:\n              - text: Alexa Smart Properties\n              - list:\n                - listitem:\n                  - link \"Hospitality\":\n                    - /url: https://developer.amazon.com/en-US/docs/alexa/alexa-smart-properties/about-alexa-for-hospitality.html\n                - listitem:\n                  - link \"Senior Living\":\n                    - /url: https://developer.amazon.com/en-US/docs/alexa/alexa-smart-properties/about-asp-in-senior-living.html\n            - listitem:\n              - link \"Alexa Trainings and Workshops\":\n                - /url: https://developer.amazon.com/en-US/alexa/trainings_and_workshops\n            - listitem:\n              - text: Alexa Smart Home\n              - list:\n                - listitem:\n                  - link \"Matter\":\n                    - /url: https://developer.amazon.com/en-US/docs/alexa/smarthome/matter-support.html\n        - listitem:\n          - link \"Blog\":\n            - /url: https://developer.amazon.com/en-US/blogs/alexa\n          - list:\n            - listitem:\n              - link \"Alexa Skills Kit\":\n                - /url: https://developer.amazon.com/en-US/blogs/alexa/alexa-skills-kit\n            - listitem:\n              - link \"Device Makers\":\n                - /url: https://developer.amazon.com/en-US/blogs/alexa/device-makers\n            - listitem:\n              - link \"Alexa Auto\":\n                - /url: https://developer.amazon.com/en-US/blogs/alexa/alexa-auto\n            - listitem:\n              - link \"Alexa Science\":\n                - /url: https://www.amazon.science/tag/alexa\n  - img\n  - heading \"AI-native SDKs for Alexa+\" [level=1]\n  - heading \"Helps your customers get things done.\" [level=4]\n  - paragraph\n  - paragraph\n  - link \"Learn more\":\n    - /url: https://developer.amazon.com/alexaplus\n  - img\n  - link \"Create Alexa Skills\":\n    - /url: /en-US/alexa/alexa-skills-kit\n    - img \"Create Alexa Skills\"\n  - button \"Create Alexa Skills\"\n  - link \"Build Alexa Devices\":\n    - /url: /en-US/alexa/devices\n    - img \"Build Alexa Devices\"\n  - button \"Build Alexa Devices\"\n  - link \"Engage Solution Providers\":\n    - /url: /en-US/alexa/solution-providers\n    - img \"Engage Solution Providers\"\n  - button \"Engage Solution Providers\"\n  - link \"Explore Business Solutions\":\n    - /url: /en-US/alexa/enterprise-and-business\n    - img \"Explore Business Solutions\"\n  - button \"Develop Enterprise Solutions\"\n  - heading \"What Is Alexa?\" [level=1]\n  - paragraph: Alexa is Amazon’s cloud-based voice service available on hundreds of millions of devices from Amazon and third-party device manufacturers. With Alexa, you can build natural voice experiences that offer customers a more intuitive way to interact with the technology they use every day. We offer a collection of tools, APIs, reference solutions, and documentation to make it easier to build for Alexa. Start building for voice today by creating Alexa skills, connecting Alexa to devices, or integrating Alexa directly into your products. You can engage our Alexa Solution Provider network for a range of services including strategy, pre-tested reference architectures and hardware, hardware and software development, manufacturing, and go-to-market support.\n  - iframe\n  - heading \"What Can You Build with Alexa?\" [level=2]\n  - link \"Create Alexa Skills\":\n    - /url: /en-US/alexa/alexa-skills-kit\n    - img \"Create Alexa Skills\"\n  - heading \"Create Alexa Skills\" [level=5]\n  - paragraph: Reach customers through hundreds of millions of Alexa devices across the globe by building Alexa skills. Skills are like apps for Alexa, enabling customers to engage with your content or services naturally with voice. Use the Alexa Skills Kit to start building Alexa skills today.\n  - link \"Explore Alexa for Skill Builders\":\n    - /url: /en-US/alexa/alexa-skills-kit\n  - link \"Create Alexa Skills\":\n    - /url: /en-US/alexa/devices\n    - img \"Create Alexa Skills\"\n  - heading \"Build Alexa Devices\" [level=5]\n  - paragraph: Build voice-forward products by integrating Alexa into your devices or controlling your devices with Alexa. Use the Alexa Voice Service to create devices with Alexa built-in, add Alexa control to your smart devices, or both. And build fun, Bluetooth-connected accessories called Alexa Gadgets.\n  - link \"Explore Alexa for Device Makers\":\n    - /url: /en-US/alexa/devices\n  - link \"Create Alexa Skills\":\n    - /url: /en-US/alexa/enterprise-and-business\n    - img \"Create Alexa Skills\"\n  - heading \"Develop Enterprise Solutions\" [level=5]\n  - paragraph: Use Alexa to power your enterprise. With Alexa for Business, you can voice-enable your workplace and applications. With Alexa for Hospitality, you can delight guests by making it easy to access your services by voice.\n  - link \"Explore Enterprise Solutions\":\n    - /url: /en-US/alexa/enterprise-and-business\n  - contentinfo:\n    - link \"Back To Top\":\n      - /url: \"#\"\n    - navigation:\n      - heading \"Alexa Skills Kit\" [level=3]\n      - list:\n        - listitem:\n          - link \"Alexa Skills Kit\":\n            - /url: https://developer.amazon.com/alexa-skills-kit\n        - listitem:\n          - link \"Get Started\":\n            - /url: https://developer.amazon.com/alexa-skills-kit/start\n        - listitem:\n          - link \"Get Deeper\":\n            - /url: https://developer.amazon.com/alexa-skills-kit/get-deeper\n        - listitem:\n          - link \"Grow Your Business\":\n            - /url: https://developer.amazon.com/alexa-skills-kit/grow-your-business\n        - listitem:\n          - link \"What's New\":\n            - /url: https://developer.amazon.com/alexa-skills-kit/new\n      - heading \"ASK Resources\" [level=3]\n      - list:\n        - listitem:\n          - link \"Tutorials & Code Samples\":\n            - /url: https://developer.amazon.com/en-US/alexa/trainings_and_workshops\n        - listitem:\n          - link \"Documentation\":\n            - /url: https://developer.amazon.com/en-US/docs/alexa/documentation-home.html\n        - listitem:\n          - link \"Skill-Building Agencies\":\n            - /url: https://developer.amazon.com/alexa/skill-building-agencies\n      - heading \"Device Makers\" [level=3]\n      - list:\n        - listitem:\n          - link \"Overview\":\n            - /url: https://developer.amazon.com/alexa/devices\n      - heading \"Alexa Built-in Devices\" [level=3]\n      - list:\n        - listitem:\n          - link \"Overview\":\n            - /url: https://developer.amazon.com/alexa/devices/alexa-built-in\n        - listitem:\n          - link \"Business Resources\":\n            - /url: https://developer.amazon.com/alexa/devices/alexa-built-in/business-resources\n      - heading \"Alexa Connected Devices\" [level=3]\n      - list:\n        - listitem:\n          - link \"Overview\":\n            - /url: https://developer.amazon.com/alexa/devices/connected-devices\n        - listitem:\n          - link \"Development Resources\":\n            - /url: https://developer.amazon.com/alexa/devices/connected-devices/development-resources\n        - listitem:\n          - link \"Business Resources\":\n            - /url: https://developer.amazon.com/alexa/devices/connected-devices/business-resources\n        - listitem:\n          - link \"What's New\":\n            - /url: https://developer.amazon.com/alexa/devices/connected-devices/whats-new\n      - heading \"Solution Providers\" [level=3]\n      - list:\n        - listitem:\n          - link \"Overview\":\n            - /url: https://developer.amazon.com/alexa/solution-providers\n      - heading \"Agreements\" [level=3]\n      - list:\n        - listitem:\n          - link \"Agreements and Terms\":\n            - /url: https://developer.amazon.com/support/legal/da\n        - listitem:\n          - link \"Program Materials License Agreement\":\n            - /url: https://developer.amazon.com/support/legal/pml\n        - listitem:\n          - link \"Amazon Developers Services Portal Terms of Use\":\n            - /url: https://developer.amazon.com/support/legal/tou\n      - heading \"Community\" [level=3]\n      - list:\n        - listitem:\n          - link \"Alexa on Slack\":\n            - /url: https://join.slack.com/t/alexacommunity/shared_invite/zt-30ug7rmkz-7ZK1ZkgTGjjWD_Cd6Y37Fg\n      - heading \"Blogs\" [level=3]\n      - list:\n        - listitem:\n          - link \"Alexa Skills Kit Blog\":\n            - /url: https://developer.amazon.com/en-US/blogs/alexa/alexa-skills-kit\n        - listitem:\n          - link \"Device Makers Blog\":\n            - /url: https://developer.amazon.com/en-US/blogs/alexa/device-makers\n        - listitem:\n          - link \"Alexa Auto\":\n            - /url: https://developer.amazon.com/en-US/blogs/alexa/alexa-auto\n        - listitem:\n          - link \"Alexa Science\":\n            - /url: https://www.amazon.science/tag/alexa\n        - listitem:\n          - link \"AWS Blog\":\n            - /url: https://aws.amazon.com/blogs/aws/\n      - heading \"Support\" [level=3]\n      - list:\n        - listitem:\n          - link \"Amazon Developer Support\":\n            - /url: https://developer.amazon.com/support/\n        - listitem:\n          - link \"Contact Us\":\n            - /url: https://developer.amazon.com/support/contact-us?subjectCategory=ALEXA\n        - listitem:\n          - link \"Stack Overflow\":\n            - /url: https://stackoverflow.com/tags/alexa-skills-kit\n    - text: \"Follow Us:\"\n    - link:\n      - /url: https://www.facebook.com/AlexaDevs/\n      - img\n    - link:\n      - /url: https://twitter.com/alexadevs\n      - img\n    - link:\n      - /url: https://developer.amazon.com/blogs/alexa/\n      - img\n    - link:\n      - /url: https://www.linkedin.com/showcase/amazon-alexa-developers/\n      - img\n  - link \"Amazon Alexa\":\n    - /url: https://developer.amazon.com/alexa\n    - img \"Amazon Alexa\"\n  - link \"Amazon business\":\n    - /url: https://business.amazon.com/en/work-with-us/enterprise\n    - img \"Amazon business\"\n  - link \"Amazon Web Services\":\n    - /url: https://aws.amazon.com/\n    - img \"Amazon Web Services\"\n  - link \"Amazon Dash Replenishment\":\n    - /url: https://developer.amazon.com/dash-services\n    - img \"Amazon Dash Replenishment\"\n  - contentinfo:\n    - button \"English (US)\"\n    - text: © 2010 - 2026, Amazon.com, Inc. or its affiliates. All Rights Reserved.\n    - link \"Terms\":\n      - /url: https://developer.amazon.com/terms-and-agreements\n    - link \"Docs\":\n      - /url: /alexa/alexa-developer-documentation-welcome\n    - link \"Stack Overflow\":\n      - /url: https://stackoverflow.com/tags/alexa-skills-kit\n    - link \"Blog\":\n      - /url: https://developer.amazon.com/blogs/alexa\n    - link \"Alexa Developer Home\":\n      - /url: https://developer.amazon.com/alexa\n  - text: Welcome! Ask the DevAssistant\n  - img \"Amazon Developer Assistant\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://developer.amazon.com/en-US/alexa",
+              "origin": "https://developer.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

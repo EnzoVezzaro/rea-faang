@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_e18abe08b6186a3d379c577501d296b25aab1ac31537e2230948a0d3f32764db",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.amazon.com/kindle/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "dea3998f1af27cb28ac9ea6a589a4954d59b3ab679497a689bc498bdc1cad6b3"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://www.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 5915,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3072,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.amazon.com/kindle/",
+          "origin": "https://www.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2562,
+        "before_url": {
+          "url": "https://www.amazon.com/kindle/",
+          "origin": "https://www.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.amazon.com/kindle/",
+          "origin": "https://www.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "81c45594932e9c74edfe669be327332b70cc5f54ce69bec9a1d87fc578f4f3e8",
+              "bytes": 28486,
+              "text": "- document:\n  - navigation \"Shortcuts menu\":\n    - heading \"Skip to\" [level=2]\n    - list \"Skip to\":\n      - listitem:\n        - link \"main content\":\n          - /url: \"#skippedLink\"\n          - text: Main content\n    - heading \"Keyboard shortcuts\" [level=2]\n    - list \"Keyboard shortcuts\":\n      - listitem:\n        - link \"Search, option, forward slash\":\n          - /url: javascript:void(0)\n      - listitem:\n        - link \"Cart, shift, option, c\":\n          - /url: javascript:void(0)\n      - listitem:\n        - link \"Home, shift, option, h\":\n          - /url: javascript:void(0)\n      - listitem:\n        - link \"Your orders, shift, option, o\":\n          - /url: javascript:void(0)\n      - listitem:\n        - button \"Show/hide shortcuts, shift, option, z\"\n    - text: To move between items, use your keyboard's up or down arrows.\n  - banner:\n    - navigation \"Primary\":\n      - link \"Amazon\":\n        - /url: /ref=nav_logo\n      - button \"Delivering to New York 10002 Update location\"\n      - search:\n        - text: Kindle Homepage\n        - combobox \"Select the department you want to search in\":\n          - option \"Kindle Homepage\" [selected]\n          - option \"All Departments\"\n          - option \"Alexa Skills\"\n          - option \"Amazon Autos\"\n          - option \"Amazon Devices\"\n          - option \"Amazon Fresh\"\n          - option \"Amazon Global Store\"\n          - option \"Amazon Haul\"\n          - option \"Amazon One Medical\"\n          - option \"Amazon Pharmacy\"\n          - option \"Amazon Resale\"\n          - option \"Appliances\"\n          - option \"Apps & Games\"\n          - option \"Arts, Crafts & Sewing\"\n          - option \"Audible Books & Originals\"\n          - option \"Automotive Parts & Accessories\"\n          - option \"Baby\"\n          - option \"Beauty & Personal Care\"\n          - option \"Books\"\n          - option \"CDs & Vinyl\"\n          - option \"Cell Phones & Accessories\"\n          - option \"Clothing, Shoes & Jewelry\"\n          - option \"Women's Clothing, Shoes & Jewelry\"\n          - option \"Men's Clothing, Shoes & Jewelry\"\n          - option \"Girl's Clothing, Shoes & Jewelry\"\n          - option \"Boy's Clothing, Shoes & Jewelry\"\n          - option \"Baby Clothing, Shoes & Jewelry\"\n          - option \"Collectibles & Fine Art\"\n          - option \"Computers\"\n          - option \"Credit and Payment Cards\"\n          - option \"Digital Music\"\n          - option \"Electronics\"\n          - option \"Garden & Outdoor\"\n          - option \"Gift Cards\"\n          - option \"Grocery & Gourmet Food\"\n          - option \"Handmade\"\n          - option \"Health, Household & Baby Care\"\n          - option \"Home & Business Services\"\n          - option \"Home & Kitchen\"\n          - option \"Industrial & Scientific\"\n          - option \"Just for Prime\"\n          - option \"Kindle Store\"\n          - option \"Luggage & Travel Gear\"\n          - option \"Luxury Stores\"\n          - option \"Magazine Subscriptions\"\n          - option \"Movies & TV\"\n          - option \"Musical Instruments\"\n          - option \"Office Products\"\n          - option \"Pet Supplies\"\n          - option \"Premium Beauty\"\n          - option \"Prime Video\"\n          - option \"Same-Day Store\"\n          - option \"Smart Home\"\n          - option \"Software\"\n          - option \"Sports & Outdoors\"\n          - option \"Subscribe & Save\"\n          - option \"Subscription Boxes\"\n          - option \"Tools & Home Improvement\"\n          - option \"Toys & Games\"\n          - option \"Under $10\"\n          - option \"Video Games\"\n          - option \"Whole Foods Market\"\n        - searchbox \"Search Amazon\"\n        - button \"Go\"\n      - link \"Choose a language for shopping in Amazon United States. The current selection is English (EN).\":\n        - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=topnav_lang\n        - img \"United States\"\n        - text: EN\n      - button \"Expand to Change Language or Country\"\n      - link \"Hello, sign in Account & Lists\":\n        - /url: https://www.amazon.com/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fkindle%2F%3Fref_%3Dnav_ya_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\n      - button \"Expand Account and Lists\"\n      - link \"Returns & Orders\":\n        - /url: /gp/css/order-history?ref_=nav_orders_first\n      - link \"0 items in cart\":\n        - /url: /gp/cart/view.html?ref_=nav_cart\n      - button \"Open All Categories Menu\": All\n      - list:\n        - listitem:\n          - link \"Prime\":\n            - /url: /prime?ref_=nav_cs_primelink_nonmember\n          - button \"Prime Details\"\n        - listitem:\n          - link \"Groceries\":\n            - /url: /fmc/grocery-gateway?gsc=fe16aGPfFs46S&ref_=nav_cs_groceries\n        - listitem:\n          - link \"Today's Deals\":\n            - /url: /deals?ref_=nav_cs_gb\n        - listitem:\n          - link \"Coupons\":\n            - /url: /coupons?ref_=nav_cs_coupons\n        - listitem:\n          - link \"Pharmacy\":\n            - /url: https://pharmacy.amazon.com/?nodl=0&ref_=nav_cs_pharmacy\n        - listitem:\n          - link \"Audible\":\n            - /url: /Audible-Books-and-Originals/b/?ie=UTF8&node=18145289011&ref_=nav_cs_audible\n        - listitem:\n          - link \"Whole Foods\":\n            - /url: /alm/storefront?almBrandId=VUZHIFdob2xlIEZvb2Rz&ref_=nav_cs_whole_foods\n        - listitem:\n          - link \"Music\":\n            - /url: /music/player?ref_=nav_cs_music\n        - listitem:\n          - link \"Amazon Home\":\n            - /url: /home-garden-kitchen-furniture-bedding/b/?ie=UTF8&node=1055398&ref_=nav_cs_home\n          - button \"Amazon Home Details\"\n        - listitem:\n          - link \"Registry\":\n            - /url: /gp/browse.html?node=16115931011&ref_=nav_cs_registry\n        - listitem:\n          - link \"Automotive\":\n            - /url: /automotive-auto-truck-replacements-parts/b/?ie=UTF8&node=15684181&ref_=nav_cs_automotive\n        - listitem:\n          - link \"Pet Supplies\":\n            - /url: /pet-shops-dogs-cats-hamsters-kittens/b/?ie=UTF8&node=2619533011&ref_=nav_cs_pets\n        - listitem:\n          - link \"New Releases\":\n            - /url: /gp/new-releases/?ref_=nav_cs_newreleases\n        - listitem:\n          - link \"Video Games\":\n            - /url: /computer-video-games-hardware-accessories/b/?ie=UTF8&node=468642&ref_=nav_cs_video_games\n        - listitem:\n          - link \"Fashion\":\n            - /url: /amazon-fashion/b/?ie=UTF8&node=7141123011&ref_=nav_cs_fashion\n        - listitem:\n          - link \"Handmade\":\n            - /url: /gp/browse.html?node=120955898011&ref_=nav_cs_handmade\n        - listitem:\n          - link \"Beauty & Personal Care\":\n            - /url: /Beauty-Makeup-Skin-Hair-Products/b/?ie=UTF8&node=3760911&ref_=nav_cs_beauty\n        - listitem:\n          - link \"Baby\":\n            - /url: /baby-car-seats-strollers-bedding/b/?ie=UTF8&node=165796011&ref_=nav_cs_baby\n        - listitem:\n          - link \"Toys & Games\":\n            - /url: /toys/b/?ie=UTF8&node=165793011&ref_=nav_cs_toys\n          - button \"Toys & Games Details\"\n        - listitem:\n          - link \"Sports & Outdoors\":\n            - /url: /gp/browse.html?node=220556511011&ref_=nav_cs_sports\n        - listitem:\n          - link \"Smart Home\":\n            - /url: /Smart-Home/b/?ie=UTF8&node=6563140011&ref_=nav_cs_smart_home\n        - listitem:\n          - link \"Subscribe & Save\":\n            - /url: /auto-deliveries/landing?ref_=nav_cs_sns\n        - listitem:\n          - link \"Works with Alexa\":\n            - /url: /gp/browse.html?node=73846268011&ref_=nav_cs_wwa\n        - listitem:\n          - link \"Gift Shop\":\n            - /url: /gcx/Gifts-for-Everyone/gfhz/?ref_=nav_cs_giftfinder\n        - listitem:\n          - link \"Best Sellers\":\n            - /url: /gp/bestsellers/?ref_=nav_cs_bestsellers\n        - listitem:\n          - link \"Amazon Haul\":\n            - /url: /haul/store?ref_=nav_cs_hul_disb\n        - listitem:\n          - link \"Custom Products\":\n            - /url: /Amazon-Custom/b/?ie=UTF8&node=11032013011&ref_=nav_cs_custom\n          - button \"Custom Products Details\"\n        - listitem:\n          - link \"Luxury\":\n            - /url: /luxurystores?ref_=nav_cs_luxury_disc\n        - listitem:\n          - link \"Kindle Books\":\n            - /url: /Kindle-eBooks/b/?ie=UTF8&node=154606011&ref_=nav_cs_kindle_books\n        - listitem:\n          - link \"Books\":\n            - /url: /books-used-books-textbooks/b/?ie=UTF8&node=283155&ref_=nav_cs_books\n      - link \"Sign in\":\n        - /url: https://www.amazon.com/ap/signin?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fkindle%2F%3Fref_%3Dnav_custrec_signin&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\n      - text: New customer?\n      - link \"New to Amazon? Start here to create an account\":\n        - /url: https://www.amazon.com/ap/register?openid.return_to=https%3A%2F%2Fwww.amazon.com%2Fkindle%2F%3F_encoding%3DUTF8%26ref_%3Dnav_custrec_newcust&openid.identity=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.assoc_handle=usflex&openid.mode=checkid_setup&openid.claimed_id=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0%2Fidentifier_select&openid.ns=http%3A%2F%2Fspecs.openid.net%2Fauth%2F2.0\n        - text: Start here.\n      - dialog\n  - navigation \"Kindle\":\n    - link \"Kindle\":\n      - /url: /kindle?ref_=MARS_NAVSTRIPE_desktop_bar_kindle_logo\n      - img \"Kindle\"\n    - link \"Shop\":\n      - /url: /kindle/shop?ref_=MARS_NAVSTRIPE_desktop_bar_kindle_shop\n    - link \"Discover\":\n      - /url: /kindle/reading-on-kindle?ref_=MARS_NAVSTRIPE_desktop_bar_kindle_discover\n    - link \"Help and Resources\":\n      - /url: https://www.amazon.com/gp/help/customer/display.html?nodeId=TYvNAwn0R6lyPrBalG&view-type=stand-alone&ref_=MARS_NAVSTRIPE_desktop_bar_kindle_help\n  - button \"Play\"\n  - heading \"For everything worth reading and writing\" [level=2]\n  - heading \"Kindle is built for following your curiosity, with nothing to pull you away. Stay as long as you like.\" [level=3]\n  - img \"Person sitting by window reading on Kindle devices.\"\n  - heading \"Skip the scroll\" [level=2]\n  - text: Settle into one page and stay there. No notifications, no feeds, nothing asking for your attention.\n  - link \"Discover Reading on Kindle\":\n    - /url: https://amazon.com/b?node=210710937011\n  - img \"Person sitting on wooden floor reading on Kindle devices.\"\n  - heading \"Dive into color\" [level=2]\n  - text: Kindle Colorsoft brings covers, comics, and graphic novels to life in paper-like color.\n  - link \"Discover Color on Kindle\":\n    - /url: https://amazon.com/b?node=210710945011\n  - img \"Person writing on Kindle devices with stylus at wooden desk.\"\n  - heading \"Think it. Ink it.\" [level=2]\n  - text: Turn a passing thought into a note, with all the feel of pen on real paper.\n  - link \"Discover Work & Productivity on Kindle Scribe\":\n    - /url: https://amazon.com/b?node=210710953011\n  - heading \"Hot off the presses\" [level=2]\n  - paragraph: Explore the latest from Kindle. It changes, so check back.\n  - img \"Kindle devices in purple, blue, green, and rose colors with power buttons on the bottom edge.\"\n  - heading \"Thinner. Lighter. More colorful.\" [level=3]\n  - paragraph:\n    - link \"Shop Kindle\":\n      - /url: https://www.amazon.com/b?ie=UTF8&node=222407412011\n  - img \"Kindle e-reader in purple fabric cover with rounded corners and charging port on bottom edge.\"\n  - heading \"Sharper accessories\" [level=3]\n  - paragraph:\n    - link \"Shop Kindle accessories\":\n      - /url: https://www.amazon.com/b?ie=UTF8&node=23888083011\n  - button \"Next slide\"\n  - heading \"Which Kindle is for you?\" [level=2]\n  - text: Every Kindle reads like paper. Choose yours based on size, color, and whether you want to write on it—then add an accessory to make it your own.\n  - img \"Person holding coffee and Kindle devices while walking outdoors.\"\n  - img \"Four Kindle devices in different colors displaying book pages, arranged side by side.\"\n  - button \"Open card for more information\"\n  - heading \"Kindle\" [level=3]\n  - paragraph: For reading and nothing else. Paper-like display, weeks of battery, zero pings.\n  - 'img \"Three Kindle devices displaying different content: a nature scene with text, a circular chart, and a city illustration with text.\"'\n  - button \"Open card for more information\"\n  - heading \"Kindle Scribe\" [level=3]\n  - paragraph: For note-taking, journaling, and thinking on paper. For reading too.\n  - img \"Close-up of Kindle devices fabric cover corner in purple.\"\n  - button \"Open card for more information\"\n  - heading \"Kindle accessories\" [level=3]\n  - paragraph: \"New ways to charge and turn the page: covers with buttons and Kindle Click.\"\n  - heading \"Millions of titles. One tap away.\" [level=2]\n  - text: The Kindle Store offers instant access to millions of titles worldwide, including bestsellers and Kindle Exclusives you won’t find anywhere else. Subscribe to Kindle Unlimited to read many of them anytime, and use the Kindle app to keep everything in sync.\n  - link \"Learn more about content and subscriptions available with Kindle.\":\n    - /url: https://www.amazon.com/kindle/explore-more-content\n  - button \"Play\"\n  - img \"Kindle devices displaying the Kindle Store with book covers recently included with membership.\"\n  - heading \"Kindle Unlimited\" [level=3]\n  - text: With a\n  - link \"Kindle Unlimited\":\n    - /url: https://www.amazon.com/kindle-dbs/hz/subscribe/ku\n  - text: subscription, you can explore a wide selection of ebooks and audiobooks across your favorite genres, from familiar favorites to your next unexpected find.\n  - img \"Hand holding phone displaying Kindle devices app with library of book covers including titles by Dan Brown, Stephen King, and Jojo Moyes.\"\n  - heading \"The Kindle app\" [level=2]\n  - text: Read your books on any smartphone or tablet with the Kindle app, picking up right where you left off. You can also view your Kindle Scribe notebooks so they’re always at hand.\n  - heading \"Read and write your way\" [level=2]\n  - text: Kindle is built with accessibility features, so you can enjoy a reading experience that works for you.\n  - img \"Person sitting outdoors holding Kindle devices while writing.\"\n  - heading \"Accessibility on Kindle\" [level=2]\n  - heading \"See it your way\" [level=2]\n  - text: Set the font, size, spacing, and margins. Choose bold text or OpenDyslexic, and adjust the warm light or switch to dark mode.\n  - heading \"Hear it read aloud\" [level=2]\n  - text: VoiceView reads the screen out loud, so you can navigate your library and your books without looking at them.\n  - heading \"Write it by hand\" [level=2]\n  - text: On Kindle Scribe, write and mark up right on the page, then convert your handwriting to text when you need it.\n  - heading \"For more information\" [level=2]\n  - text: \"*Some features are only available on certain Kindle devices. For more information about Kindle accessibility features, go to\"\n  - link \"amazon.com/kindleaccessibility\":\n    - /url: https://www.amazon.com/b?node=21346183011\n  - button \"Back to top\"\n  - heading \"Get to Know Us\" [level=6]\n  - list:\n    - listitem:\n      - link \"Careers\":\n        - /url: https://www.amazon.jobs\n    - listitem:\n      - link \"Amazon Newsletter\":\n        - /url: https://www.aboutamazon.com/subscribe?utm_source=amazon_com&utm_medium=amazonfooter&utm_campaign=newslettersubscribers&utm_term=amazonnewssignup\n    - listitem:\n      - link \"About Amazon\":\n        - /url: https://www.aboutamazon.com/?utm_source=gateway&utm_medium=footer&token=about\n    - listitem:\n      - link \"Accessibility\":\n        - /url: https://www.amazon.com/b?node=15701038011&ie=UTF8\n    - listitem:\n      - link \"Sustainability\":\n        - /url: https://sustainability.aboutamazon.com/?utm_source=gateway&utm_medium=footer&ref_=susty_footer\n    - listitem:\n      - link \"Press Center\":\n        - /url: https://www.amazon.com/pr\n    - listitem:\n      - link \"Investor Relations\":\n        - /url: https://www.amazon.com/ir\n    - listitem:\n      - link \"Amazon Devices\":\n        - /url: /gp/browse.html?node=2102313011&ref_=footer_devices\n    - listitem:\n      - link \"Amazon Science\":\n        - /url: https://www.amazon.science\n  - heading \"Make Money with Us\" [level=6]\n  - list:\n    - listitem:\n      - link \"Sell on Amazon\":\n        - /url: https://sell.amazon.com/?ld=AZFSSOA_FTSELL-C&ref_=footer_soa\n    - listitem:\n      - link \"Sell apps on Amazon\":\n        - /url: https://developer.amazon.com\n    - listitem:\n      - link \"Supply to Amazon\":\n        - /url: https://supply.amazon.com\n    - listitem:\n      - link \"Protect & Build Your Brand\":\n        - /url: https://sell.amazon.com/brand-registry?ld=AZUSSOA_ABR-FT\n    - listitem:\n      - link \"Become an Affiliate\":\n        - /url: https://affiliate-program.amazon.com/\n    - listitem:\n      - link \"Become a Delivery Driver\":\n        - /url: https://dspjobhub.com/\n    - listitem:\n      - link \"Start a Package Delivery Business\":\n        - /url: https://logistics.amazon.com/marketing?utm_source=amzn&utm_medium=footer&utm_campaign=home\n    - listitem:\n      - link \"Advertise Your Products\":\n        - /url: https://advertising.amazon.com/?ref=ext_amzn_ftr\n    - listitem:\n      - link \"Self-Publish with Us\":\n        - /url: /gp/seller-account/mm-summary-page.html?ld=AZFooterSelfPublish&topic=200260520&ref_=footer_publishing\n    - listitem:\n      - link \"Become an Amazon Hub Partner\":\n        - /url: https://www.amazon.com/b?node=216188543011\n    - listitem:\n      - link \"See More Ways to Make Money\":\n        - /url: /b/?node=18190131011&ld=AZUSSOA-seemore&ref_=footer_seemore\n  - heading \"Amazon Payment Products\" [level=6]\n  - list:\n    - listitem:\n      - link \"Amazon Visa\":\n        - /url: /iss/credit/rewardscardmember?plattr=CBFOOT&ref_=footer_cbcc\n    - listitem:\n      - link \"Amazon Store Card\":\n        - /url: /credit/storecard/member?plattr=PLCCFOOT&ref_=footer_plcc\n    - listitem:\n      - link \"Amazon Secured Card\":\n        - /url: /dp/product/B084KP3NG6?plattr=SCFOOT&ref_=footer_ACB\n    - listitem:\n      - link \"Amazon Business Card\":\n        - /url: /dp/B0DVBL912R?plattr=ACOMFO&ie=UTF-8\n    - listitem:\n      - link \"Shop with Points\":\n        - /url: https://www.amazon.com/hp/shopwithpoints/servicing\n    - listitem:\n      - link \"Credit Card Marketplace\":\n        - /url: /gp/browse.html?node=3561432011&ref_=footer_ccmp\n    - listitem:\n      - link \"Reload Your Balance\":\n        - /url: /gp/browse.html?node=10232440011&ref_=footer_reload_us\n    - listitem:\n      - link \"Gift Cards\":\n        - /url: https://www.amazon.com/b/?node=2238192011&ref=shop_footer_payments_gc_desktop\n    - listitem:\n      - link \"Amazon Currency Converter\":\n        - /url: /gp/browse.html?node=388305011&ref_=footer_tfx\n  - heading \"Let Us Help You\" [level=6]\n  - list:\n    - listitem:\n      - link \"Your Account\":\n        - /url: https://www.amazon.com/gp/css/homepage.html?ref_=footer_ya\n    - listitem:\n      - link \"Your Orders\":\n        - /url: https://www.amazon.com/gp/css/order-history?ref_=footer_yo\n    - listitem:\n      - link \"Shipping Rates & Policies\":\n        - /url: /gp/help/customer/display.html?nodeId=468520&ref_=footer_shiprates\n    - listitem:\n      - link \"Amazon Prime\":\n        - /url: /gp/prime?ref_=footer_prime\n    - listitem:\n      - link \"Returns & Replacements\":\n        - /url: /gp/css/returns/homepage.html?ref_=footer_hy_f_4\n    - listitem:\n      - link \"Manage Your Content and Devices\":\n        - /url: /hz/mycd/myx?ref_=footer_myk\n    - listitem:\n      - link \"Recalls and Product Safety Alerts\":\n        - /url: https://www.amazon.com/product-safety-alerts?ref_=footer_bsx_ypsa\n    - listitem:\n      - link \"Registry & Gift List\":\n        - /url: /registries?ref_=nav_footer_registry_giftlist_desktop\n    - listitem:\n      - link \"Help\":\n        - /url: /gp/help/customer/display.html?nodeId=508510&ref_=footer_gw_m_b_he\n  - link \"Amazon US Home\":\n    - /url: /?ref_=footer_logo\n  - link \"Choose a language for shopping. Current selection is English.\":\n    - /url: /customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2F&ref_=footer_lang\n    - text: English\n  - button \"Expand to Change Language or Country\"\n  - button \"Choose a country/region for shopping. The current selection is United States.\": United States\n  - navigation \"More on Amazon\":\n    - list:\n      - listitem:\n        - link \"Amazon Music Stream millions of songs\":\n          - /url: https://music.amazon.com?ref=dm_aff_amz_com\n          - heading \"Amazon Music\" [level=5]\n          - text: Stream millions of songs\n      - listitem:\n        - link \"Amazon Ads Reach customers wherever they spend their time\":\n          - /url: https://advertising.amazon.com/?ref=footer_advtsing_amzn_com\n          - heading \"Amazon Ads\" [level=5]\n          - text: Reach customers wherever they spend their time\n      - listitem:\n        - link \"6pm Score deals on fashion brands\":\n          - /url: https://www.6pm.com\n          - heading \"6pm\" [level=5]\n          - text: Score deals on fashion brands\n      - listitem:\n        - link \"AbeBooks Books, art & collectibles\":\n          - /url: https://www.abebooks.com\n          - heading \"AbeBooks\" [level=5]\n          - text: Books, art & collectibles\n      - listitem:\n        - link \"ACX Audiobook Publishing Made Easy\":\n          - /url: https://www.acx.com/\n          - heading \"ACX\" [level=5]\n          - text: Audiobook Publishing Made Easy\n      - listitem:\n        - link \"Sell on Amazon Start a Selling Account\":\n          - /url: https://sell.amazon.com/?ld=AZUSSOA-footer-aff&ref_=footer_sell\n          - heading \"Sell on Amazon\" [level=5]\n          - text: Start a Selling Account\n      - listitem:\n        - link \"Veeqo Shipping Software Inventory Management\":\n          - /url: https://www.veeqo.com/?utm_source=amazon&utm_medium=website&utm_campaign=footer\n          - heading \"Veeqo\" [level=5]\n          - text: Shipping Software Inventory Management\n    - list:\n      - listitem:\n        - link \"Amazon Business Everything For Your Business\":\n          - /url: /business?ref_=footer_retail_b2b\n          - heading \"Amazon Business\" [level=5]\n          - text: Everything For Your Business\n      - listitem:\n        - link \"Amazon Fresh Groceries & More Right To Your Door\":\n          - /url: /alm/storefront?almBrandId=QW1hem9uIEZyZXNo&ref_=footer_aff_fresh\n          - heading \"Amazon Fresh\" [level=5]\n          - text: Groceries & More Right To Your Door\n      - listitem:\n        - link \"AmazonGlobal Ship Orders Internationally\":\n          - /url: /gp/browse.html?node=20338496011&ref_=footer_amazonglobal\n          - heading \"AmazonGlobal\" [level=5]\n          - text: Ship Orders Internationally\n      - listitem:\n        - link \"Home Services Experienced Pros Happiness Guarantee\":\n          - /url: /services?ref_=footer_services\n          - heading \"Home Services\" [level=5]\n          - text: Experienced Pros Happiness Guarantee\n      - listitem:\n        - link \"Amazon Web Services Scalable Cloud Computing Services\":\n          - /url: https://aws.amazon.com/what-is-cloud-computing/?sc_channel=EL&sc_campaign=amazonfooter\n          - heading \"Amazon Web Services\" [level=5]\n          - text: Scalable Cloud Computing Services\n      - listitem:\n        - link \"Audible Listen to Books & Original Audio Performances\":\n          - /url: https://www.audible.com\n          - heading \"Audible\" [level=5]\n          - text: Listen to Books & Original Audio Performances\n      - listitem:\n        - link \"Box Office Mojo Find Movie Box Office Data\":\n          - /url: https://www.boxofficemojo.com/?ref_=amzn_nav_ftr\n          - heading \"Box Office Mojo\" [level=5]\n          - text: Find Movie Box Office Data\n    - list:\n      - listitem:\n        - link \"Goodreads Book reviews & recommendations\":\n          - /url: https://www.goodreads.com\n          - heading \"Goodreads\" [level=5]\n          - text: Book reviews & recommendations\n      - listitem:\n        - link \"IMDb Movies, TV & Celebrities\":\n          - /url: https://www.imdb.com\n          - heading \"IMDb\" [level=5]\n          - text: Movies, TV & Celebrities\n      - listitem:\n        - link \"IMDbPro Get Info Entertainment Professionals Need\":\n          - /url: https://pro.imdb.com?ref_=amzn_nav_ftr\n          - heading \"IMDbPro\" [level=5]\n          - text: Get Info Entertainment Professionals Need\n      - listitem:\n        - link \"Kindle Direct Publishing Indie Digital & Print Publishing Made Easy\":\n          - /url: https://kdp.amazon.com\n          - heading \"Kindle Direct Publishing\" [level=5]\n          - text: Indie Digital & Print Publishing Made Easy\n      - listitem:\n        - link \"Amazon Photos Unlimited Photo Storage Free With Prime\":\n          - /url: /gp/browse.html?node=13234696011&ref_=_gno_p_foot\n          - heading \"Amazon Photos\" [level=5]\n          - text: Unlimited Photo Storage Free With Prime\n      - listitem:\n        - link \"Prime Video Direct Video Distribution Made Easy\":\n          - /url: https://videodirect.amazon.com/home/landing\n          - heading \"Prime Video Direct\" [level=5]\n          - text: Video Distribution Made Easy\n      - listitem:\n        - link \"Shopbop Designer Fashion Brands\":\n          - /url: https://www.shopbop.com\n          - heading \"Shopbop\" [level=5]\n          - text: Designer Fashion Brands\n    - list:\n      - listitem:\n        - link \"Amazon Resale Great Deals on Quality Used Products\":\n          - /url: /gp/browse.html?node=10158976011&ref_=footer_wrhsdls\n          - heading \"Amazon Resale\" [level=5]\n          - text: Great Deals on Quality Used Products\n      - listitem:\n        - link \"Whole Foods Market America’s Healthiest Grocery Store\":\n          - /url: https://www.wholefoodsmarket.com\n          - heading \"Whole Foods Market\" [level=5]\n          - text: America’s Healthiest Grocery Store\n      - listitem:\n        - link \"Woot! Deals and Shenanigans\":\n          - /url: https://www.woot.com/\n          - heading \"Woot!\" [level=5]\n          - text: Deals and Shenanigans\n      - listitem:\n        - link \"Zappos Shoes & Clothing\":\n          - /url: https://www.zappos.com\n          - heading \"Zappos\" [level=5]\n          - text: Shoes & Clothing\n      - listitem:\n        - link \"Ring Smart Home Security Systems\":\n          - /url: https://ring.com\n          - heading \"Ring\" [level=5]\n          - text: Smart Home Security Systems\n      - listitem:\n        - link \"eero WiFi Stream 4K Video in Every Room\":\n          - /url: https://eero.com/\n          - heading \"eero WiFi\" [level=5]\n          - text: Stream 4K Video in Every Room\n      - listitem:\n        - link \"Blink Smart Security for Every Home\":\n          - /url: https://blinkforhome.com/?ref=nav_footer\n          - heading \"Blink\" [level=5]\n          - text: Smart Security for Every Home\n    - list:\n      - listitem:\n        - link \"Neighbors App Real-Time Crime & Safety Alerts\":\n          - /url: https://shop.ring.com/pages/neighbors-app\n          - heading \"Neighbors App\" [level=5]\n          - text: Real-Time Crime & Safety Alerts\n      - listitem:\n        - link \"PillPack Pharmacy Simplified\":\n          - /url: https://www.pillpack.com\n          - heading \"PillPack\" [level=5]\n          - text: Pharmacy Simplified\n      - listitem:\n        - link \"Amazon Renewed Refurbished tech you can trust\":\n          - /url: /gp/browse.html?node=12653393011&ref_=footer_usrenew\n          - heading \"Amazon Renewed\" [level=5]\n          - text: Refurbished tech you can trust\n  - list:\n    - listitem:\n      - link \"Conditions of Use\":\n        - /url: /gp/help/customer/display.html?nodeId=508088&ref_=footer_cou\n    - listitem:\n      - link \"Privacy Notice\":\n        - /url: /gp/help/customer/display.html?nodeId=GX7NJQ4ZB8MHFRNJ&ref_=footer_privacy\n    - listitem:\n      - link \"Consumer Health Data Privacy Disclosure\":\n        - /url: /gp/help/customer/display.html?ie=UTF8&nodeId=TnACMrGVghHocjL8KB&ref_=footer_consumer_health_data_privacy\n    - listitem:\n      - link \"Your Ads Privacy Choices\":\n        - /url: /privacyprefs?ref_=footer_iba\n    - listitem\n  - text: © 1996-2026, Amazon.com, Inc. or its affiliates"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.amazon.com/kindle/",
+              "origin": "https://www.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

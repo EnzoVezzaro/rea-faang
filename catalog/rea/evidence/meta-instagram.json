@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_ae37a64dea8ae6b77dbc88886c9e026c8de828efa906f7a5c6b875038f000395",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.instagram.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "faa959f31b0cb8a2604dbd2c3d138c1ce8976a3cc5050da77cec7e694aaadcaa"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://www.instagram.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 5028,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 2172,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.instagram.com/",
+          "origin": "https://www.instagram.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2539,
+        "before_url": {
+          "url": "https://www.instagram.com/",
+          "origin": "https://www.instagram.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.instagram.com/",
+          "origin": "https://www.instagram.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "21f739bb5e29e4487882721b3bb29d316da4b19da6b5e9a8aa31239b2ab312d6",
+              "bytes": 3450,
+              "text": "- document:\n  - img \"Instagram\"\n  - text: See everyday moments from your close friends. Log into Instagram\n  - textbox \"Mobile number, username or email\"\n  - text: Mobile number, username or email\n  - textbox \"Password\"\n  - text: Password\n  - button \"Log In\" [disabled]: Log in\n  - link \"Forgot password?\":\n    - /url: /accounts/password/reset/\n  - button \"Log in with Facebook\":\n    - img\n    - text: Log in with Facebook\n  - link \"Create new account\":\n    - /url: /accounts/emailsignup/\n  - img \"Meta logo\"\n  - separator\n  - contentinfo:\n    - link \"Meta\":\n      - /url: https://about.meta.com/\n    - link \"About\":\n      - /url: https://about.instagram.com/\n    - link \"Blog\":\n      - /url: https://about.instagram.com/blog/\n    - link \"Jobs\":\n      - /url: https://about.instagram.com/about-us/careers\n    - link \"Help\":\n      - /url: https://help.instagram.com/\n    - link \"API\":\n      - /url: https://developers.facebook.com/docs/instagram\n    - link \"Privacy\":\n      - /url: /legal/privacy/\n    - link \"Consumer Health Privacy\":\n      - /url: /legal/privacy/health_privacy_policy/\n    - link \"Terms\":\n      - /url: /legal/terms/\n    - link \"Locations\":\n      - /url: /explore/locations/\n    - link \"Popular\":\n      - /url: /popular/\n    - link \"Instagram Lite\":\n      - /url: /web/lite/\n    - link \"Meta AI\":\n      - /url: https://www.meta.ai/?utm_source=foa_web_footer\n    - link \"Muse\":\n      - /url: https://muse.ai/\n    - link \"Threads\":\n      - /url: https://www.threads.com/\n    - link \"Contact Uploading & Non-Users\":\n      - /url: https://www.facebook.com/help/instagram/261704639352628\n    - link \"Meta Verified\":\n      - /url: /accounts/meta_verified/?entrypoint=web_footer\n    - text: English\n    - img \"Down chevron icon\"\n    - combobox \"Switch Display Language\":\n      - option \"Afrikaans\"\n      - option \"العربية\"\n      - option \"Čeština\"\n      - option \"Dansk\"\n      - option \"Deutsch\"\n      - option \"Ελληνικά\"\n      - option \"English\" [selected]\n      - option \"English (UK)\"\n      - option \"Español (España)\"\n      - option \"Español\"\n      - option \"فارسی\"\n      - option \"Suomi\"\n      - option \"Français\"\n      - option \"עברית\"\n      - option \"Bahasa Indonesia\"\n      - option \"Italiano\"\n      - option \"日本語\"\n      - option \"한국어\"\n      - option \"Bahasa Melayu\"\n      - option \"Norsk\"\n      - option \"Nederlands\"\n      - option \"Polski\"\n      - option \"Português (Brasil)\"\n      - option \"Português (Portugal)\"\n      - option \"Русский\"\n      - option \"Svenska\"\n      - option \"ภาษาไทย\"\n      - option \"Filipino\"\n      - option \"Türkçe\"\n      - option \"中文(简体)\"\n      - option \"中文(台灣)\"\n      - option \"বাংলা\"\n      - option \"ગુજરાતી\"\n      - option \"हिन्दी\"\n      - option \"Hrvatski\"\n      - option \"Magyar\"\n      - option \"ಕನ್ನಡ\"\n      - option \"മലയാളം\"\n      - option \"मराठी\"\n      - option \"नेपाली\"\n      - option \"ਪੰਜਾਬੀ\"\n      - option \"සිංහල\"\n      - option \"Slovenčina\"\n      - option \"தமிழ்\"\n      - option \"తెలుగు\"\n      - option \"اردو\"\n      - option \"Tiếng Việt\"\n      - option \"中文(香港)\"\n      - option \"Български\"\n      - option \"Français (Canada)\"\n      - option \"Română\"\n      - option \"Српски\"\n      - option \"Українська\"\n    - text: © 2026 Instagram from Meta"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.instagram.com/",
+              "origin": "https://www.instagram.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

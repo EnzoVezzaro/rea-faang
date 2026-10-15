@@ -44,12 +44,12 @@ git clone <your-repo-url> rae-faang
 cd rae-faang
 
 # Initialize ACE workspace
-node /tmp/ace-proagents/ace.mjs init --name rae-faang
+ace init --name rae-faang
 ```
 
 ### 2. Verify Setup
 ```bash
-node ace.mjs status
+ace status
 # Should show: Status: running, Valid ace/v1 specification
 ```
 
@@ -57,7 +57,7 @@ node ace.mjs status
 ```bash
 mkdir -p products/rae-social
 cd products/rae-social
-node /tmp/ace-proagents/ace.mjs init --name rae-social
+ace init --name rae-social
 ```
 
 ### 4. Install Dependencies
@@ -77,14 +77,14 @@ npm install @rae-faang/auth @rae-faang/storage @rae-faang/ui --workspaces
 ### 5. Start Development
 ```bash
 # Root: start governor
-node ace.mjs govern
+ace govern
 
 # Product: start runtime
 cd rae-social
-node ace.mjs run
+ace run
 
 # Or combined from root
-node ace.mjs run
+ace run
 
 # Open opencode for agent collaboration
 opencode
@@ -136,32 +136,32 @@ opencode
 cd products/rae-social
 
 # Initialize (already done)
-node ace.mjs init --name rae-social
+ace init --name rae-social
 
 # Run product-specific runtime
-node ace.mjs run
+ace run
 
 # Supervise this product from root
 # (already monitored by root governor)
 
 # View product tasks
-node ace.mjs tasks
+ace tasks
 
 # Product verification
-node ace.mjs verify
+ace verify
 
 # Product governance
-node ace.mjs govern --project rae-social
+ace govern --project rae-social
 
 # Stop product
-node ace.mjs stop
+ace stop
 ```
 
 ### Shared Package Development
 ```bash
 # From auth package
 cd packages/auth
-npm install  # or node ace.mjs install
+npm install  # or ace install
 
 # Develop locally with link
 npm link  # from package dir
@@ -211,7 +211,7 @@ npm run build
 docker build -t rae-social:0.1.0 .
 
 # Or via ACE
-node ace.mjs run  # with production config
+ace run  # with production config
 ```
 
 ## Troubleshooting Common Issues
@@ -219,9 +219,9 @@ node ace.mjs run  # with production config
 | Problem | Solution |
 |---------|----------|
 | `node: command not found` | Install Node.js v20+ from nodejs.org or nvm |
-| `ace: command not found` | Ensure you're in the rae-faang dir and ran `npm install`, or use `node ace.mjs` |
-| `INCOMPATIBLE_ADAPTER` | Run `node ace.mjs adapters audit`, use implemented providers |
-| `MISSING_CREDENTIAL` | Run `node ace.mjs secret set <name>` for required credentials |
+| `ace: command not found` | Ensure you're in the rae-faang dir and ran `npm install`, or use `ace` |
+| `INCOMPATIBLE_ADAPTER` | Run `ace adapters audit`, use implemented providers |
+| `MISSING_CREDENTIAL` | Run `ace secret set <name>` for required credentials |
 | `SECURITY_OVERRIDE_DENIED` | Check installation profile or environment profile settings |
 | `CHAIN_EXHAUSTED` | Add fallback providers, verify all credentials are set |
 | `NO_PROGRESS` | Check task has acceptance criteria, verify worker heartbeat |
@@ -258,16 +258,16 @@ opencode --workspace ./rae-faang
 ### Opencode Commands in ACE Context
 ```bash
 # From within opencode, you can:
-node ace.mjs task add --title "Implement upload" --project rae-social --role frontend
-node ace.mjs task claim <id> --agent frontend-1
-node ace.mjs verify  # From opencode session
+ace task add --title "Implement upload" --project rae-social --role frontend
+ace task claim <id> --agent frontend-1
+ace verify  # From opencode session
 ```
 
 ## Next Actions
 
 ### Immediate (Next 30 Minutes)
-1. Run `node /tmp/ace-proagents/ace.mjs init --name rae-faang` in `/Users/mac/Desktop/Github/rae-faang`
-2. Verify `ace.mjs status` shows running state
+1. Run `ace init --name rae-faang` in `/Users/mac/Desktop/Github/rae-faang`
+2. Verify `ace status` shows running state
 3. Create `products/rae-social` directory and initialize
 4. Read `.docs/01-project-overview.md` and `.docs/02-ace-integration.md`
 5. Run `npm install` from root

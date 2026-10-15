@@ -1,294 +1,425 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RAE FAANG — every FAANG product, mapped to its open-source alternative</title>
-    <meta
-      name="description"
-      content="RAE FAANG catalogs the products of Meta, Amazon, Apple, Netflix and Google, names the open-source project that already replaces each one, and builds the ones that don't exist yet. 34 products mapped: 24 have an open-source alternative, 3 have none."
-    />
+    <!-- Runs before the stylesheet so reveal styles only apply where the
+         motion layer can actually drive them. -->
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <title>Product research and build skills for coding agents | RAE FAANG</title>
+    <meta name="description" content="Browse product research, candidate open-source projects, and a Markdown build skill for each catalogued product. Give a skill to your coding agent and build in your project." />
     <meta name="color-scheme" content="dark" />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="RAE FAANG — every FAANG product, mapped to its open-source alternative"
-    />
-    <meta
-      property="og:description"
-      content="34 FAANG products catalogued, 24 with an existing open-source replacement, 3 with none. Cited evidence, MIT-licensed, built in the open."
-    />
-    <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/" />
+    <meta property="og:title" content="Product research and build skills for coding agents | RAE FAANG" />
+    <meta property="og:description" content="Browse product research, candidate open-source projects, and a Markdown build skill for each catalogued product. Give a skill to your coding agent and build in your project." />
+    <meta property="og:url" content="https://rae-faang-landing.vercel.app/" />
+    <link rel="canonical" href="https://rae-faang-landing.vercel.app/" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
+  <body class="page-home">
+    <div class="scroll-rail" data-scroll-rail aria-hidden="true"></div>
     <a class="skip-link" href="#main">Skip to content</a>
-
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="wordmark" href="#top" aria-label="RAE FAANG home">
-          <span class="mark" aria-hidden="true">//</span>
-          <span>RAE&nbsp;FAANG</span>
+        <a class="wordmark" href="index.html" aria-label="RAE FAANG home">
+          <img class="wordmark-image" src="docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
         </a>
         <nav class="nav" aria-label="Primary">
-          <a href="#problem">Problem</a>
-          <a href="#solution">The map</a>
-          <a href="#proof">Proof</a>
-          <a href="#faq">FAQ</a>
+          <a href="catalog/">Catalog</a>
+          <a href="docs/">Docs</a>
+          <a href="#solution">How it works</a>
+            <a href="#proof">Proof</a>
+            <a href="#faq">FAQ</a>
         </nav>
-        <a class="btn btn-ghost" href="https://github.com/EnzoVezzaro/rea-faang"
-          >GitHub ↗</a
-        >
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile primary">
+            <a href="catalog/">Catalog</a>
+            <a href="docs/">Docs</a>
+            <a href="#solution">How it works</a><a href="#proof">Proof</a><a href="#faq">FAQ</a>
+          </nav>
+        </details>
+        <a class="btn btn-ghost header-github" href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
       </div>
     </header>
-
     <main id="main">
-      <!-- 1. HERO -->
+      <!-- Landing thesis and catalog-derived product index -->
       <section class="hero" id="top">
         <div class="wrap hero-inner">
-          <p class="eyebrow">34 products mapped · 24 replacements · 3 still missing</p>
-          <h1>
-            Every FAANG product, mapped to its
-            <span class="accent">open-source alternative.</span>
-          </h1>
-          <p class="lede">
-            RAE&nbsp;FAANG catalogs the products of Meta, Amazon, Apple, Netflix
-            and Google, names the open-source project that already replaces each
-            one — with a cited source — and builds the ones that don't exist yet.
-          </p>
-          <div class="hero-actions">
-            <a
-              class="btn btn-primary"
-              href="https://github.com/EnzoVezzaro/rea-faang"
-              >Explore the catalog ↗</a
-            >
-            <a class="btn btn-secondary" href="#proof">See the proof</a>
+          <div class="hero-copy">
+            <h1>Build the software<br />you need.</h1>
+            <p class="hero-proposition">Start with product research, not a blank page.</p>
+            <p class="lede">
+              Each catalog entry includes research, open-source projects to consider, and a Markdown
+              skill for your coding agent. Use it to plan and build an independent implementation in
+              your project.
+            </p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="catalog/">Pick a product <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-secondary" href="#solution">See how it works</a>
+            </div>
+            <p class="hero-note"><span class="dot" aria-hidden="true"></span>77 products · 40 mature alternatives · 29 partial · 8 without a verified alternative</p>
+            <div class="brand-row" aria-label="Companies covered">
+              <svg class="brand-logo" viewBox="0 0 24 24" role="img" aria-label="Meta" focusable="false"><path fill="#0467DF" d="M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a6.624 6.624 0 0 0 .265.86 5.297 5.297 0 0 0 .371.761c.696 1.159 1.818 1.927 3.593 1.927 1.497 0 2.633-.671 3.965-2.444.76-1.012 1.144-1.626 2.663-4.32l.756-1.339.186-.325c.061.1.121.196.183.3l2.152 3.595c.724 1.21 1.665 2.556 2.47 3.314 1.046.987 1.992 1.22 3.06 1.22 1.075 0 1.876-.355 2.455-.843a3.743 3.743 0 0 0 .81-.973c.542-.939.861-2.127.861-3.745 0-2.72-.681-5.357-2.084-7.45-1.282-1.912-2.957-2.93-4.716-2.93-1.047 0-2.088.467-3.053 1.308-.652.57-1.257 1.29-1.82 2.05-.69-.875-1.335-1.547-1.958-2.056-1.182-.966-2.315-1.303-3.454-1.303zm10.16 2.053c1.147 0 2.188.758 2.992 1.999 1.132 1.748 1.647 4.195 1.647 6.4 0 1.548-.368 2.9-1.839 2.9-.58 0-1.027-.23-1.664-1.004-.496-.601-1.343-1.878-2.832-4.358l-.617-1.028a44.908 44.908 0 0 0-1.255-1.98c.07-.109.141-.224.211-.327 1.12-1.667 2.118-2.602 3.358-2.602zm-10.201.553c1.265 0 2.058.791 2.675 1.446.307.327.737.871 1.234 1.579l-1.02 1.566c-.757 1.163-1.882 3.017-2.837 4.338-1.191 1.649-1.81 1.817-2.486 1.817-.524 0-1.038-.237-1.383-.794-.263-.426-.464-1.13-.464-2.046 0-2.221.63-4.535 1.66-6.088.454-.687.964-1.226 1.533-1.533a2.264 2.264 0 0 1 1.088-.285z"/></svg><span>Meta</span> <svg class="brand-logo" viewBox="0 0 24 24" role="img" aria-label="Amazon" focusable="false"><path fill="#FF9900" d="M.045 18.02c.072-.116.187-.124.348-.022 3.636 2.11 7.594 3.166 11.87 3.166 2.852 0 5.668-.533 8.447-1.595l.315-.14c.138-.06.234-.1.293-.13.226-.088.39-.046.525.13.12.174.09.336-.12.48-.256.19-.6.41-1.006.654-1.244.743-2.64 1.316-4.185 1.726a17.617 17.617 0 01-10.951-.577 17.88 17.88 0 01-5.43-3.35c-.1-.074-.151-.15-.151-.22 0-.047.021-.09.051-.13zm6.565-6.218c0-1.005.247-1.863.743-2.577.495-.71 1.17-1.25 2.04-1.615.796-.335 1.756-.575 2.912-.72.39-.046 1.033-.103 1.92-.174v-.37c0-.93-.105-1.558-.3-1.875-.302-.43-.78-.65-1.44-.65h-.182c-.48.046-.896.196-1.246.46-.35.27-.575.63-.675 1.096-.06.3-.206.465-.435.51l-2.52-.315c-.248-.06-.372-.18-.372-.39 0-.046.007-.09.022-.15.247-1.29.855-2.25 1.82-2.88.976-.616 2.1-.975 3.39-1.05h.54c1.65 0 2.957.434 3.888 1.29.135.15.27.3.405.48.12.165.224.314.283.45.075.134.15.33.195.57.06.254.105.42.135.51.03.104.062.3.076.615.01.313.02.493.02.553v5.28c0 .376.06.72.165 1.036.105.313.21.54.315.674l.51.674c.09.136.136.256.136.36 0 .12-.06.226-.18.314-1.2 1.05-1.86 1.62-1.963 1.71-.165.135-.375.15-.63.045a6.062 6.062 0 01-.526-.496l-.31-.347a9.391 9.391 0 01-.317-.42l-.3-.435c-.81.886-1.603 1.44-2.4 1.665-.494.15-1.093.227-1.83.227-1.11 0-2.04-.343-2.76-1.034-.72-.69-1.08-1.665-1.08-2.94l-.05-.076zm3.753-.438c0 .566.14 1.02.425 1.364.285.34.675.512 1.155.512.045 0 .106-.007.195-.02.09-.016.134-.023.166-.023.614-.16 1.08-.553 1.424-1.178.165-.28.285-.58.36-.91.09-.32.12-.59.135-.8.015-.195.015-.54.015-1.005v-.54c-.84 0-1.484.06-1.92.18-1.275.36-1.92 1.17-1.92 2.43l-.035-.02zm9.162 7.027c.03-.06.075-.11.132-.17.362-.243.714-.41 1.05-.5a8.094 8.094 0 011.612-.24c.14-.012.28 0 .41.03.65.06 1.05.168 1.172.33.063.09.099.228.099.39v.15c0 .51-.149 1.11-.424 1.8-.278.69-.664 1.248-1.156 1.68-.073.06-.14.09-.197.09-.03 0-.06 0-.09-.012-.09-.044-.107-.12-.064-.24.54-1.26.806-2.143.806-2.64 0-.15-.03-.27-.087-.344-.145-.166-.55-.257-1.224-.257-.243 0-.533.016-.87.046-.363.045-.7.09-1 .135-.09 0-.148-.014-.18-.044-.03-.03-.036-.047-.02-.077 0-.017.006-.03.02-.063v-.06z"/></svg><span>Amazon</span> <svg class="brand-logo" viewBox="0 0 24 24" role="img" aria-label="Amazon Web Services" focusable="false"><path fill="#FF9900" d="M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.063.056.127.056.183 0 .08-.048.16-.152.24l-.503.335a.383.383 0 0 1-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 0 1-.287-.375 6.18 6.18 0 0 1-.248-.471c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.031-.863.103-.295.072-.583.16-.862.272a2.287 2.287 0 0 1-.28.104.488.488 0 0 1-.127.023c-.112 0-.168-.08-.168-.247v-.391c0-.128.016-.224.056-.28a.597.597 0 0 1 .224-.167c.279-.144.614-.264 1.005-.36a4.84 4.84 0 0 1 1.246-.151c.95 0 1.644.216 2.091.647.439.43.662 1.085.662 1.963v2.586zm-3.24 1.214c.263 0 .534-.048.822-.144.287-.096.543-.271.758-.51.128-.152.224-.32.272-.512.047-.191.08-.423.08-.694v-.335a6.66 6.66 0 0 0-.735-.136 6.02 6.02 0 0 0-.75-.048c-.535 0-.926.104-1.19.32-.263.215-.39.518-.39.917 0 .375.095.655.295.846.191.2.47.296.838.296zm6.41.862c-.144 0-.24-.024-.304-.08-.064-.048-.12-.16-.168-.311L7.586 5.55a1.398 1.398 0 0 1-.072-.32c0-.128.064-.2.191-.2h.783c.151 0 .255.025.31.08.065.048.113.16.16.312l1.342 5.284 1.245-5.284c.04-.16.088-.264.151-.312a.549.549 0 0 1 .32-.08h.638c.152 0 .256.025.32.08.063.048.12.16.151.312l1.261 5.348 1.381-5.348c.048-.16.104-.264.16-.312a.52.52 0 0 1 .311-.08h.743c.127 0 .2.065.2.2 0 .04-.009.08-.017.128a1.137 1.137 0 0 1-.056.2l-1.923 6.17c-.048.16-.104.263-.168.311a.51.51 0 0 1-.303.08h-.687c-.151 0-.255-.024-.32-.08-.063-.056-.119-.16-.15-.32l-1.238-5.148-1.23 5.14c-.04.16-.087.264-.15.32-.065.056-.177.08-.32.08zm10.256.215c-.415 0-.83-.048-1.229-.143-.399-.096-.71-.2-.918-.32-.128-.071-.215-.151-.247-.223a.563.563 0 0 1-.048-.224v-.407c0-.167.064-.247.183-.247.048 0 .096.008.144.024.048.016.12.048.2.08.271.12.566.215.878.279.319.064.63.096.95.096.502 0 .894-.088 1.165-.264a.86.86 0 0 0 .415-.758.777.777 0 0 0-.215-.559c-.144-.151-.416-.287-.807-.415l-1.157-.36c-.583-.183-1.014-.454-1.277-.813a1.902 1.902 0 0 1-.4-1.158c0-.335.073-.63.216-.886.144-.255.335-.479.575-.654.24-.184.51-.32.83-.415.32-.096.655-.136 1.006-.136.175 0 .359.008.535.032.183.024.35.056.518.088.16.04.312.08.455.127.144.048.256.096.336.144a.69.69 0 0 1 .24.2.43.43 0 0 1 .071.263v.375c0 .168-.064.256-.184.256a.83.83 0 0 1-.303-.096 3.652 3.652 0 0 0-1.532-.311c-.455 0-.815.071-1.062.223-.248.152-.375.383-.375.71 0 .224.08.416.24.567.159.152.454.304.877.44l1.134.358c.574.184.99.44 1.237.767.247.327.367.702.367 1.117 0 .343-.072.655-.207.926-.144.272-.336.511-.583.703-.248.2-.543.343-.886.447-.36.111-.734.167-1.142.167zM21.698 16.207c-2.626 1.94-6.442 2.969-9.722 2.969-4.598 0-8.74-1.7-11.87-4.526-.247-.223-.024-.527.272-.351 3.384 1.963 7.559 3.153 11.877 3.153 2.914 0 6.114-.607 9.06-1.852.439-.2.814.287.383.607zM22.792 14.961c-.336-.43-2.22-.207-3.074-.103-.255.032-.295-.192-.063-.36 1.5-1.053 3.967-.75 4.254-.399.287.36-.08 2.826-1.485 4.007-.215.184-.423.088-.327-.151.32-.79 1.03-2.57.695-2.994z"/></svg><span>AWS</span> <svg class="brand-logo" viewBox="0 0 24 24" role="img" aria-label="Apple" focusable="false"><path fill="#FFFFFF" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></svg><span>Apple</span> <svg class="brand-logo" viewBox="0 0 24 24" role="img" aria-label="Netflix" focusable="false"><path fill="#E50914" d="M5.398 0v.006c3.028 8.556 5.37 15.175 8.348 23.596 2.344.058 4.85.398 4.854.398-2.8-7.924-5.923-16.747-8.487-24zm8.489 0v9.63L18.6 22.951c-.043-7.86-.004-15.913.002-22.95zM5.398 1.05V24c1.873-.225 2.81-.312 4.715-.398v-9.22z"/></svg><span>Netflix</span> <svg class="brand-logo" viewBox="0 0 24 24" role="img" aria-label="Google" focusable="false"><path fill="#4285F4" d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg><span>Google</span>
+            </div>
           </div>
-          <p class="hero-note">
-            <span class="dot" aria-hidden="true"></span>
-            34 products mapped · 24 already have an open-source alternative · 3
-            have none · MIT, no signup
-          </p>
+          <div class="hero-inventory">
+            <section class="glyph-spotlight-section" aria-labelledby="glyph-spotlight-title">
+              <div class="glyph-spotlight-heading">
+                <h2 id="glyph-spotlight-title">Real products. Open skills.</h2>
+                <a href="catalog/">Browse all 77 <span aria-hidden="true">↗</span></a>
+              </div>
+              <ul class="glyph-spotlight-list" aria-label="Featured products from the catalog">
+            <li class="glyph-spotlight" data-coverage="available">
+              <a href="catalog/gmail/">
+                <span class="glyph-spotlight-name">Gmail</span>
+                <span class="glyph-spotlight-meta">Google <span>mature alternative listed</span></span>
+              </a>
+            </li>
+            <li class="glyph-spotlight" data-coverage="available">
+              <a href="catalog/youtube/">
+                <span class="glyph-spotlight-name">YouTube</span>
+                <span class="glyph-spotlight-meta">Google <span>mature alternative listed</span></span>
+              </a>
+            </li>
+            <li class="glyph-spotlight" data-coverage="available">
+              <a href="catalog/aws-s3/">
+                <span class="glyph-spotlight-name">Amazon S3</span>
+                <span class="glyph-spotlight-meta">Amazon Web Services <span>mature alternative listed</span></span>
+              </a>
+            </li>
+            <li class="glyph-spotlight" data-coverage="available">
+              <a href="catalog/meta-whatsapp/">
+                <span class="glyph-spotlight-name">WhatsApp</span>
+                <span class="glyph-spotlight-meta">Meta <span>mature alternative listed</span></span>
+              </a>
+            </li>
+            <li class="glyph-spotlight" data-coverage="available">
+              <a href="catalog/google-workspace/">
+                <span class="glyph-spotlight-name">Google Workspace</span>
+                <span class="glyph-spotlight-meta">Google <span>mature alternative listed</span></span>
+              </a>
+            </li>
+            <li class="glyph-spotlight" data-coverage="partial">
+              <a href="catalog/netflix-streaming/">
+                <span class="glyph-spotlight-name">Netflix Streaming</span>
+                <span class="glyph-spotlight-meta">Netflix <span>partial alternative coverage</span></span>
+              </a>
+            </li>
+              </ul>
+            </section>
+            <aside class="hero-graph build-pass-panel" aria-label="Personalize a product build pass">
+              <p class="pass-panel-note"><span aria-hidden="true">+</span> Your selection, from the catalog</p>
+              <div class="pass-stage" data-build-pass>
+    <article class="build-pass" data-pass-status="available" aria-label="Product Build Pass for YouTube">
+      <div class="build-pass-brand"><span class="pass-mark" aria-hidden="true"><img src="docs/assets/brand-symbol.png" alt="" width="22" height="22" /></span><span>RAE FAANG</span><span>PRODUCT BUILD PASS</span></div>
+      <div class="build-pass-core">
+        <p class="pass-kicker">CHOOSE A PRODUCT · BUILD WITH YOUR AGENT</p>
+        <h2 class="pass-title" data-pass-name>YouTube</h2>
+        <div class="pass-detail"><span>COMPANY</span><strong data-pass-company>Google</strong></div>
+        <div class="pass-detail"><span>REUSE RESEARCH</span><strong data-pass-foundation>PeerTube</strong></div>
+        <div class="pass-status" data-pass-coverage-state="available"><span class="pass-status-dot" aria-hidden="true"></span><span data-pass-coverage>Mature alternative listed</span></div>
+      </div>
+      <div class="pass-selector-group"><label class="pass-select-label" for="build-pass-product">Personalize this pass</label><select class="pass-select" id="build-pass-product" aria-label="Choose a product for the build pass"><option value="google-search" data-company="Google" data-foundation="SearXNG" data-coverage="partial">Google Search</option><option value="google-gemini" data-company="Google" data-foundation="Llama / Mistral / Qwen / Gemma" data-coverage="partial">Google Gemini</option><option value="gmail" data-company="Google" data-foundation="Mailcow" data-coverage="available">Gmail</option><option value="google-maps" data-company="Google" data-foundation="OpenStreetMap" data-coverage="available">Google Maps</option><option value="google-chrome" data-company="Google" data-foundation="Chromium" data-coverage="available">Google Chrome</option><option value="android" data-company="Google" data-foundation="AOSP" data-coverage="available">Android</option><option value="youtube" data-company="Google" data-foundation="PeerTube" data-coverage="available" selected>YouTube</option><option value="google-cloud" data-company="Google" data-foundation="OpenStack" data-coverage="available">Google Cloud</option><option value="google-firebase" data-company="Google" data-foundation="Supabase" data-coverage="available">Firebase</option><option value="google-tensorflow" data-company="Google" data-foundation="TensorFlow itself" data-coverage="available">TensorFlow</option><option value="google-workspace" data-company="Google" data-foundation="Nextcloud" data-coverage="available">Google Workspace</option><option value="apple-xcode" data-company="Apple" data-foundation="xtool" data-coverage="partial">Xcode</option><option value="apple-ios" data-company="Apple" data-foundation="No verified alternative" data-coverage="pending">iOS</option><option value="apple-macos" data-company="Apple" data-foundation="No verified alternative" data-coverage="pending">macOS</option><option value="apple-safari" data-company="Apple" data-foundation="WebKit" data-coverage="partial">Safari</option><option value="apple-pages" data-company="Apple" data-foundation="LibreOffice Writer" data-coverage="available">Pages</option><option value="apple-numbers" data-company="Apple" data-foundation="LibreOffice Calc" data-coverage="available">Numbers</option><option value="apple-keynote" data-company="Apple" data-foundation="LibreOffice Impress" data-coverage="available">Keynote</option><option value="apple-final-cut-pro" data-company="Apple" data-foundation="Kdenlive" data-coverage="available">Final Cut Pro</option><option value="apple-logic-pro" data-company="Apple" data-foundation="Ardour" data-coverage="available">Logic Pro</option><option value="apple-vision-pro" data-company="Apple" data-foundation="Monado" data-coverage="partial">Vision Pro</option><option value="amazon-ec2" data-company="Amazon Web Services" data-foundation="OpenStack" data-coverage="available">Amazon EC2</option><option value="aws-lambda" data-company="Amazon Web Services" data-foundation="OpenFaaS" data-coverage="available">AWS Lambda</option><option value="aws-s3" data-company="Amazon Web Services" data-foundation="Ceph (RADOS Gateway)" data-coverage="available">Amazon S3</option><option value="aws-rds" data-company="Amazon Web Services" data-foundation="CloudNativePG" data-coverage="available">Amazon RDS</option><option value="aws-api-gateway" data-company="Amazon Web Services" data-foundation="Apache APISIX" data-coverage="available">API Gateway</option><option value="aws-sqs" data-company="Amazon Web Services" data-foundation="RabbitMQ" data-coverage="available">SQS</option><option value="aws-ecs" data-company="Amazon Web Services" data-foundation="Kubernetes" data-coverage="available">ECS</option><option value="amazon-eks" data-company="Amazon Web Services" data-foundation="k3s" data-coverage="available">Amazon EKS</option><option value="amazon-online-retail" data-company="Amazon" data-foundation="Medusa" data-coverage="available">Amazon Online Retail</option><option value="amazon-prime" data-company="Amazon" data-foundation="No verified alternative" data-coverage="pending">Amazon Prime</option><option value="netflix-streaming" data-company="Netflix" data-foundation="Jellyfin" data-coverage="partial">Netflix Streaming</option><option value="meta-whatsapp" data-company="Meta" data-foundation="Matrix / Element" data-coverage="available">WhatsApp</option><option value="meta-llama" data-company="Meta" data-foundation="Mistral (Apache-2.0 models)" data-coverage="partial">Llama</option><option value="google-drive" data-company="Google" data-foundation="Nextcloud" data-coverage="partial">Google Drive</option><option value="google-docs" data-company="Google" data-foundation="ONLYOFFICE Docs" data-coverage="partial">Google Docs</option><option value="google-sheets" data-company="Google" data-foundation="Grist" data-coverage="partial">Google Sheets</option><option value="google-meet" data-company="Google" data-foundation="Jitsi Meet" data-coverage="available">Google Meet</option><option value="google-calendar" data-company="Google" data-foundation="Nextcloud Calendar" data-coverage="available">Google Calendar</option><option value="google-photos" data-company="Google" data-foundation="Immich" data-coverage="partial">Google Photos</option><option value="google-news" data-company="Google" data-foundation="FreshRSS" data-coverage="available">Google News</option><option value="google-play" data-company="Google" data-foundation="F-Droid" data-coverage="partial">Google Play</option><option value="google-analytics" data-company="Google" data-foundation="Matomo" data-coverage="available">Google Analytics</option><option value="google-classroom" data-company="Google" data-foundation="Moodle" data-coverage="available">Google Classroom</option><option value="google-ads" data-company="Google" data-foundation="No verified alternative" data-coverage="pending">Google Ads</option><option value="youtube-music" data-company="Google" data-foundation="Navidrome" data-coverage="partial">YouTube Music</option><option value="google-cloud-storage" data-company="Google" data-foundation="MinIO" data-coverage="available">Google Cloud Storage</option><option value="google-pubsub" data-company="Google" data-foundation="NATS" data-coverage="available">Pub/Sub</option><option value="apple-iphone" data-company="Apple" data-foundation="Android Open Source Project" data-coverage="partial">iPhone</option><option value="apple-ipad" data-company="Apple" data-foundation="Android Open Source Project" data-coverage="partial">iPad</option><option value="apple-watch" data-company="Apple" data-foundation="AsteroidOS" data-coverage="partial">Apple Watch</option><option value="apple-icloud" data-company="Apple" data-foundation="Nextcloud" data-coverage="partial">iCloud</option><option value="apple-messages" data-company="Apple" data-foundation="No verified alternative" data-coverage="pending">Messages (iMessage)</option><option value="apple-facetime" data-company="Apple" data-foundation="Jitsi Meet" data-coverage="partial">FaceTime</option><option value="apple-siri" data-company="Apple" data-foundation="OpenVoiceOS" data-coverage="partial">Siri</option><option value="apple-music" data-company="Apple" data-foundation="Navidrome" data-coverage="partial">Apple Music</option><option value="apple-pay" data-company="Apple" data-foundation="No verified alternative" data-coverage="pending">Apple Pay</option><option value="apple-passwords" data-company="Apple" data-foundation="Bitwarden" data-coverage="available">Passwords</option><option value="aws-dynamodb" data-company="Amazon Web Services" data-foundation="Apache Cassandra" data-coverage="available">DynamoDB</option><option value="aws-cloudfront" data-company="Amazon Web Services" data-foundation="Apache Traffic Server" data-coverage="available">CloudFront</option><option value="aws-elasticache" data-company="Amazon Web Services" data-foundation="Valkey" data-coverage="available">ElastiCache</option><option value="aws-sns" data-company="Amazon Web Services" data-foundation="NATS" data-coverage="available">Simple Notification Service (SNS)</option><option value="aws-redshift" data-company="Amazon Web Services" data-foundation="ClickHouse" data-coverage="available">Redshift</option><option value="aws-bedrock" data-company="Amazon Web Services" data-foundation="Ollama" data-coverage="partial">Bedrock</option><option value="aws-ecr" data-company="Amazon Web Services" data-foundation="Harbor" data-coverage="available">Elastic Container Registry (ECR)</option><option value="aws-eventbridge" data-company="Amazon Web Services" data-foundation="NATS" data-coverage="available">EventBridge</option><option value="aws-sagemaker" data-company="Amazon Web Services" data-foundation="Kubeflow" data-coverage="partial">SageMaker</option><option value="amazon-alexa" data-company="Amazon" data-foundation="OpenVoiceOS" data-coverage="partial">Alexa</option><option value="netflix-games" data-company="Netflix" data-foundation="No verified alternative" data-coverage="pending">Netflix Games</option><option value="netflix-kids" data-company="Netflix" data-foundation="Jellyfin" data-coverage="partial">Netflix Kids</option><option value="netflix-profiles" data-company="Netflix" data-foundation="Jellyfin" data-coverage="partial">Netflix Profiles</option><option value="netflix-tudum" data-company="Netflix" data-foundation="No verified alternative" data-coverage="pending">Tudum</option><option value="meta-instagram" data-company="Meta" data-foundation="Pixelfed" data-coverage="partial">Instagram</option><option value="meta-facebook" data-company="Meta" data-foundation="Mastodon" data-coverage="partial">Facebook</option><option value="meta-threads" data-company="Meta" data-foundation="Mastodon" data-coverage="available">Threads</option><option value="amazon-kindle" data-company="Amazon" data-foundation="KOReader" data-coverage="partial">Kindle</option><option value="amazon-luna" data-company="Amazon" data-foundation="Sunshine" data-coverage="partial">Luna</option></select></div>
+      <div class="pass-actions"><a class="pass-skill-link" data-pass-skill href="catalog/youtube/agent-kit.md" download>Get this product skill <span aria-hidden="true">↓</span></a><a class="pass-dossier-link" data-pass-dossier href="catalog/youtube/">View dossier</a></div>
+      <div class="pass-serial"><span>RAE / FIELD NOTE · Product skill included.</span><span data-pass-id>youtube</span></div>
+    </article>
+    <p class="sr-only" data-pass-announcement aria-live="polite"></p>
+    <p class="pass-instruction">Choose a product. Its real catalog details and downloadable skill update together.</p>
+  </div>
+            </aside>
+          </div>
         </div>
       </section>
 
-      <!-- 2. SOCIAL PROOF (early) -->
+      <!-- 2. THE STORY -->
+      <section class="section" id="story" aria-labelledby="story-h">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow">The engineering premise</p>
+            <h2 id="story-h">One product. One skill. A clearer place to start.</h2>
+            <p>
+              Each product's Markdown file is the build skill for that product. Give it to your coding
+              agent in the project where you want to build. It provides product context, research sources,
+              open-source projects to evaluate, and directions for implementing and verifying the product.
+            </p>
+            <p>
+              Your agent does the building in your project. The skill helps it reuse what fits, define
+              a clear scope from the evidence, then build and verify an independent version of the product.
+            </p>
+          </div>
+          <ul class="principles">
+            <li><strong>Product context</strong> — behavior and sources for your agent to inspect</li>
+            <li><strong>What to reuse</strong> — candidate open-source foundations to evaluate</li>
+            <li><strong>What to build</strong> — product-specific direction for your agent</li>
+            <li><strong>How to verify</strong> — scoped tasks and checks for the result</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Full product index: every name links to its real catalog record -->
+      <section class="section catalog-field-section" id="map" aria-labelledby="map-h">
+        <div class="wrap">
+          <div class="section-head reveal-target" data-reveal>
+            <h2 id="map-h">A field of 77 products.</h2>
+            <p class="section-lede">Each name opens its research record and downloadable skill. Coverage describes research into reuse options, not whether your agent can build the product.</p>
+          </div>
+          <div class="catalog-glyph-field">
+          <section class="catalog-glyph-group" aria-labelledby="glyph-company-google">
+            <h3 id="glyph-company-google">Google<span>25</span></h3>
+            <ul aria-label="Google products">
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/android/"><span class="catalog-glyph-name">Android</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-firebase/"><span class="catalog-glyph-name">Firebase</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/gmail/"><span class="catalog-glyph-name">Gmail</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="pending"><a href="catalog/google-ads/"><span class="catalog-glyph-name">Google Ads</span><span class="catalog-glyph-status">no verified alternative</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-analytics/"><span class="catalog-glyph-name">Google Analytics</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-calendar/"><span class="catalog-glyph-name">Google Calendar</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-chrome/"><span class="catalog-glyph-name">Google Chrome</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-classroom/"><span class="catalog-glyph-name">Google Classroom</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-cloud/"><span class="catalog-glyph-name">Google Cloud</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-cloud-storage/"><span class="catalog-glyph-name">Google Cloud Storage</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/google-docs/"><span class="catalog-glyph-name">Google Docs</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/google-drive/"><span class="catalog-glyph-name">Google Drive</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/google-gemini/"><span class="catalog-glyph-name">Google Gemini</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-maps/"><span class="catalog-glyph-name">Google Maps</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-meet/"><span class="catalog-glyph-name">Google Meet</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-news/"><span class="catalog-glyph-name">Google News</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/google-photos/"><span class="catalog-glyph-name">Google Photos</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/google-play/"><span class="catalog-glyph-name">Google Play</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/google-search/"><span class="catalog-glyph-name">Google Search</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/google-sheets/"><span class="catalog-glyph-name">Google Sheets</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-workspace/"><span class="catalog-glyph-name">Google Workspace</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-pubsub/"><span class="catalog-glyph-name">Pub/Sub</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/google-tensorflow/"><span class="catalog-glyph-name">TensorFlow</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/youtube/"><span class="catalog-glyph-name">YouTube</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/youtube-music/"><span class="catalog-glyph-name">YouTube Music</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+            </ul>
+          </section>
+          <section class="catalog-glyph-group" aria-labelledby="glyph-company-apple">
+            <h3 id="glyph-company-apple">Apple<span>20</span></h3>
+            <ul aria-label="Apple products">
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/apple-music/"><span class="catalog-glyph-name">Apple Music</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="pending"><a href="catalog/apple-pay/"><span class="catalog-glyph-name">Apple Pay</span><span class="catalog-glyph-status">no verified alternative</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/apple-watch/"><span class="catalog-glyph-name">Apple Watch</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/apple-facetime/"><span class="catalog-glyph-name">FaceTime</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/apple-final-cut-pro/"><span class="catalog-glyph-name">Final Cut Pro</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/apple-icloud/"><span class="catalog-glyph-name">iCloud</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="pending"><a href="catalog/apple-ios/"><span class="catalog-glyph-name">iOS</span><span class="catalog-glyph-status">no verified alternative</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/apple-ipad/"><span class="catalog-glyph-name">iPad</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/apple-iphone/"><span class="catalog-glyph-name">iPhone</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/apple-keynote/"><span class="catalog-glyph-name">Keynote</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/apple-logic-pro/"><span class="catalog-glyph-name">Logic Pro</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="pending"><a href="catalog/apple-macos/"><span class="catalog-glyph-name">macOS</span><span class="catalog-glyph-status">no verified alternative</span></a></li>
+              <li class="catalog-glyph" data-coverage="pending"><a href="catalog/apple-messages/"><span class="catalog-glyph-name">Messages (iMessage)</span><span class="catalog-glyph-status">no verified alternative</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/apple-numbers/"><span class="catalog-glyph-name">Numbers</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/apple-pages/"><span class="catalog-glyph-name">Pages</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/apple-passwords/"><span class="catalog-glyph-name">Passwords</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/apple-safari/"><span class="catalog-glyph-name">Safari</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/apple-siri/"><span class="catalog-glyph-name">Siri</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/apple-vision-pro/"><span class="catalog-glyph-name">Vision Pro</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/apple-xcode/"><span class="catalog-glyph-name">Xcode</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+            </ul>
+          </section>
+          <section class="catalog-glyph-group" aria-labelledby="glyph-company-amazon_aws">
+            <h3 id="glyph-company-amazon_aws">Amazon Web Services<span>17</span></h3>
+            <ul aria-label="Amazon Web Services products">
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/amazon-ec2/"><span class="catalog-glyph-name">Amazon EC2</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/amazon-eks/"><span class="catalog-glyph-name">Amazon EKS</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-rds/"><span class="catalog-glyph-name">Amazon RDS</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-s3/"><span class="catalog-glyph-name">Amazon S3</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-api-gateway/"><span class="catalog-glyph-name">API Gateway</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-lambda/"><span class="catalog-glyph-name">AWS Lambda</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/aws-bedrock/"><span class="catalog-glyph-name">Bedrock</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-cloudfront/"><span class="catalog-glyph-name">CloudFront</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-dynamodb/"><span class="catalog-glyph-name">DynamoDB</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-ecs/"><span class="catalog-glyph-name">ECS</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-ecr/"><span class="catalog-glyph-name">Elastic Container Registry (ECR)</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-elasticache/"><span class="catalog-glyph-name">ElastiCache</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-eventbridge/"><span class="catalog-glyph-name">EventBridge</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-redshift/"><span class="catalog-glyph-name">Redshift</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/aws-sagemaker/"><span class="catalog-glyph-name">SageMaker</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-sns/"><span class="catalog-glyph-name">Simple Notification Service (SNS)</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/aws-sqs/"><span class="catalog-glyph-name">SQS</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+            </ul>
+          </section>
+          <section class="catalog-glyph-group" aria-labelledby="glyph-company-amazon">
+            <h3 id="glyph-company-amazon">Amazon<span>5</span></h3>
+            <ul aria-label="Amazon products">
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/amazon-alexa/"><span class="catalog-glyph-name">Alexa</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/amazon-online-retail/"><span class="catalog-glyph-name">Amazon Online Retail</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="pending"><a href="catalog/amazon-prime/"><span class="catalog-glyph-name">Amazon Prime</span><span class="catalog-glyph-status">no verified alternative</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/amazon-kindle/"><span class="catalog-glyph-name">Kindle</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/amazon-luna/"><span class="catalog-glyph-name">Luna</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+            </ul>
+          </section>
+          <section class="catalog-glyph-group" aria-labelledby="glyph-company-netflix">
+            <h3 id="glyph-company-netflix">Netflix<span>5</span></h3>
+            <ul aria-label="Netflix products">
+              <li class="catalog-glyph" data-coverage="pending"><a href="catalog/netflix-games/"><span class="catalog-glyph-name">Netflix Games</span><span class="catalog-glyph-status">no verified alternative</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/netflix-kids/"><span class="catalog-glyph-name">Netflix Kids</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/netflix-profiles/"><span class="catalog-glyph-name">Netflix Profiles</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/netflix-streaming/"><span class="catalog-glyph-name">Netflix Streaming</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="pending"><a href="catalog/netflix-tudum/"><span class="catalog-glyph-name">Tudum</span><span class="catalog-glyph-status">no verified alternative</span></a></li>
+            </ul>
+          </section>
+          <section class="catalog-glyph-group" aria-labelledby="glyph-company-meta">
+            <h3 id="glyph-company-meta">Meta<span>5</span></h3>
+            <ul aria-label="Meta products">
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/meta-facebook/"><span class="catalog-glyph-name">Facebook</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/meta-instagram/"><span class="catalog-glyph-name">Instagram</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="partial"><a href="catalog/meta-llama/"><span class="catalog-glyph-name">Llama</span><span class="catalog-glyph-status">partial alternative coverage</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/meta-threads/"><span class="catalog-glyph-name">Threads</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+              <li class="catalog-glyph" data-coverage="available"><a href="catalog/meta-whatsapp/"><span class="catalog-glyph-name">WhatsApp</span><span class="catalog-glyph-status">mature alternative listed</span></a></li>
+            </ul>
+          </section>
+          </div>
+          <div class="map-more"><a class="btn btn-secondary" href="catalog/">Search and filter the full catalog <span aria-hidden="true">↗</span></a></div>
+        </div>
+      </section>
+
+      <!-- 4. THE NUMBERS -->
       <section class="section" id="status" aria-labelledby="status-h">
         <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">Project status — not customer proof</p>
-            <h2 id="status-h">No users yet. So here is what you can check.</h2>
+          <div class="section-head reveal-target" data-reveal>
+            <p class="eyebrow">Alternative coverage</p>
+            <h2 id="status-h">What your agent can reuse—and what needs a closer look.</h2>
             <p class="section-lede">
-              There are no customers, logos or testimonials to show — telling you
-              otherwise would be a lie. What exists instead is a repository whose
-              every number you can reproduce in a terminal. These come from it,
-              not from a pitch deck.
+              These counts summarize the catalog's research into open-source alternatives. They do not say
+              whether you can build a product. 40 products have a mature candidate listed;
+              8 have no suitable alternative verified here. Each product has a skill for your agent.
             </p>
           </div>
 
           <dl class="stats">
-            <div class="stat">
+            <div class="stat" data-reveal>
               <dt>Products catalogued</dt>
-              <dd><span class="num">34</span><span class="of">/ 75</span></dd>
+              <dd><span class="num">77</span><span class="of">products</span></dd>
               <p class="stat-note">in-scope inventory, six company entries</p>
             </div>
-            <div class="stat">
-              <dt>Already open source</dt>
-              <dd><span class="num">24</span></dd>
-              <p class="stat-note">products with a mature open alternative</p>
+            <div class="stat" data-reveal>
+              <dt>Mature alternatives listed</dt>
+              <dd><span class="num">40</span></dd>
+              <p class="stat-note">catalogued with a mature open-source project for your agent to assess</p>
             </div>
-            <div class="stat">
-              <dt>Still missing</dt>
-              <dd><span class="num">3</span></dd>
-              <p class="stat-note">no open-source alternative exists at all</p>
+            <div class="stat" data-reveal>
+              <dt>No verified alternative</dt>
+              <dd><span class="num">8</span></dd>
+              <p class="stat-note">research status for reuse options; the product build skill is available either way</p>
             </div>
-            <div class="stat">
-              <dt>Tooling tests</dt>
-              <dd><span class="num">24</span></dd>
-              <p class="stat-note">passing, and run in CI on every push</p>
+            <div class="stat" data-reveal>
+              <dt>Tooling test cases</dt>
+              <dd><span class="num">44</span></dd>
+              <p class="stat-note">in the repository; run <span class="mono">npm test</span> for the current test results</p>
             </div>
           </dl>
         </div>
       </section>
 
-      <!-- 3. PROBLEM / PROMISE -->
+      <!-- 5. WHAT THE CATALOG ANSWERS -->
       <section class="section" id="problem" aria-labelledby="problem-h">
         <div class="wrap split">
           <div>
-            <p class="eyebrow">The problem</p>
-            <h2 id="problem-h">The alternative exists. Nobody has mapped it.</h2>
+            <p class="eyebrow">Choose what to reuse</p>
+            <h2 id="problem-h">Give your agent a better place to start.</h2>
             <p>
-              Rented software is not owned software. Prices rise, features
-              disappear, services shut down, and moving your data becomes
-              somebody else's product decision. You cannot read the code, fix the
-              bug, or keep the thing running after the company stops caring.
+              Every product has a Markdown skill for your coding agent. It links to product context,
+              research, candidate projects and directions for planning a scoped implementation in your
+              project.
             </p>
             <p>
-              The usual advice — “just use an alternative” — arrives as a blog
-              listicle. It names five tools, compares none, cites nothing, and
-              goes stale within a year. What nobody publishes is the boring,
-              useful thing: for <em>this</em> specific product, does an
-              open-source replacement already exist, and if not, what exactly is
-              missing?
-            </p>
-            <p>
-              Answering that question is step one. Building the missing pieces is
-              step two.
+              Review the sources and candidate licenses, then use the skill to plan and test the work.
+              Coverage labels describe the catalog's research into reuse options, not build feasibility.
             </p>
           </div>
           <ul class="principles">
-            <li><strong>Cited</strong> — every claim links a public source</li>
-            <li><strong>Reproducible</strong> — every number has a command</li>
-            <li><strong>Honest</strong> — “not built yet” is a valid answer</li>
-            <li>
-              <strong>Clean room</strong> — public behavior and docs only
-            </li>
-            <li><strong>Reuse first</strong> — don't rebuild what exists</li>
+            <li><strong>Sources</strong>: follow links to public references</li>
+            <li><strong>Checkable</strong>: run the listed commands to reproduce counts</li>
+            <li><strong>Actionable</strong>: each product has a skill for your coding agent</li>
+            <li><strong>Bounded</strong>: public information only; no access-control bypass</li>
+            <li><strong>Reuse first</strong>: assess existing projects before building</li>
           </ul>
         </div>
       </section>
 
-      <!-- 4. SOLUTION / MECHANISM -->
+      <!-- 6. SOLUTION / MECHANISM -->
       <section class="section" id="solution" aria-labelledby="solution-h">
         <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">What we actually ship</p>
-            <h2 id="solution-h">
-              A map of what exists, and a plan for what doesn't.
-            </h2>
-            <p class="section-lede">
-              Five artifacts, each one already in the repository.
-            </p>
+          <div class="section-head reveal-target" data-reveal>
+            <p class="eyebrow">The product skill, in practice</p>
+            <h2 id="solution-h">Choose a product. Give its skill to your agent.</h2>
+            <p class="section-lede">Each product's Markdown skill points your coding agent to research and candidate projects, with directions for planning and testing work in your project.</p>
           </div>
 
-          <div class="grid companies">
-            <article class="card">
-              <h3><span class="k">01 · The catalog</span></h3>
-              <p>
-                34 products, one record each: company, product type, official
-                URL, lifecycle status.
-              </p>
-              <p class="outcome">
-                Outcome: stop rebuilding the same list from blog posts.
-              </p>
-            </article>
-            <article class="card">
-              <h3><span class="k">02 · The verdict</span></h3>
-              <p>
-                For every product: does open source already replace it? 24 of 34
-                say yes — SearXNG, Jellyfin, Ceph, Mailcow, Nextcloud.
-              </p>
-              <p class="outcome">
-                Outcome: don't spend a year rebuilding what already exists.
-              </p>
-            </article>
-            <article class="card">
-              <h3><span class="k">03 · The pending list</span></h3>
-              <p>
-                3 products have no open-source alternative at all — iOS, macOS,
-                Amazon Prime — and 7 have only partial coverage. Named, not
-                implied.
-              </p>
-              <p class="outcome">Outcome: know exactly where the new work is.</p>
-            </article>
-            <article class="card">
-              <h3><span class="k">04 · The evidence</span></h3>
-              <p>
-                Every claim cites a public source, and 34 REA web-surface reports
-                keep the raw evidence on disk.
-              </p>
-              <p class="outcome">
-                Outcome: re-check the claim instead of trusting it.
-              </p>
-            </article>
-            <article class="card">
-              <h3><span class="k">05 · The pipeline</span></h3>
-              <p>
-                catalog → research → specify → build → verify, with agent roles
-                and a definition of done that needs a passing command.
-              </p>
-              <p class="outcome">
-                Outcome: contributing is a workflow, not a blank page.
-              </p>
-            </article>
-            <article class="card card-more">
-              <h3><span class="k">Read them yourself</span></h3>
-              <p>
-                The catalog, the research dossiers, the open-source map and the
-                REA evidence are all committed and readable.
-              </p>
-              <a
-                class="text-link"
-                href="https://github.com/EnzoVezzaro/rea-faang/tree/main/catalog/skills"
-                >Open the open-source map ↗</a
-              >
-            </article>
-          </div>
+          <ol class="workflow-line">
+            <li><h3>Choose</h3><p>77 product records, each with a product-specific skill and research links.</p></li>
+            <li><h3>Review</h3><p>Compare candidate projects with the product research; 40 products have a mature candidate listed.</p></li>
+            <li><h3>Plan</h3><p>Give the Markdown skill to your coding agent and agree on a scope for your project.</p></li>
+            <li><h3>Build and test</h3><p>Implement the agreed scope in your project and run its checks; 77 REA reports record public-page observations.</p></li>
+          </ol>
+          <p class="workflow-coverage">8 products have no verified alternative and 29 have partial coverage. These labels describe reuse research, not build capability.</p>
+          <a class="text-link workflow-source" href="https://github.com/EnzoVezzaro/rea-faang/tree/main/catalog/skills" rel="noopener noreferrer" target="_blank">Read the product skills ↗</a>
+          <p class="workflow-source">The agent workflow is documented in <a class="text-link" href="docs/agent-workflow.html">the repository guide</a>.</p>
         </div>
       </section>
 
-      <!-- 5. PROOF AND DETAIL -->
+      <!-- 7. PROOF AND DETAIL -->
       <section class="section" id="proof" aria-labelledby="proof-h">
         <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">Proof</p>
-            <h2 id="proof-h">Receipts, not vibes.</h2>
-            <p class="section-lede">
-              Real entries from the catalog. Nothing here is an estimate.
-            </p>
+          <div class="section-head reveal-target" data-reveal>
+            <p class="eyebrow">Research and candidate projects</p>
+            <h2 id="proof-h">Browse the research behind the suggestions.</h2>
+            <p class="section-lede">These are candidate projects, not guaranteed replacements. Product pages show what the research supports, where coverage is uncertain, and which sources were used.</p>
           </div>
 
           <div class="table-wrap">
             <table class="ptable">
               <caption>
-                Target product → the open-source alternative that already replaces it
+                Examples of open-source projects listed for these products
               </caption>
               <thead>
                 <tr>
                   <th scope="col">Target product</th>
-                  <th scope="col">Open-source alternative that exists</th>
+                  <th scope="col">Candidate project to assess</th>
                   <th scope="col">License</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">Amazon S3</th>
+                  <th scope="row"><a class="table-product" href="catalog/aws-s3/">Amazon S3</a></th>
                   <td>Ceph (RADOS Gateway)</td>
                   <td class="mono-cell">LGPL-2.1</td>
                 </tr>
                 <tr>
-                  <th scope="row">AWS Lambda</th>
+                  <th scope="row"><a class="table-product" href="catalog/aws-lambda/">AWS Lambda</a></th>
                   <td>OpenFaaS</td>
                   <td class="mono-cell">MIT</td>
                 </tr>
                 <tr>
-                  <th scope="row">Netflix Streaming</th>
+                  <th scope="row"><a class="table-product" href="catalog/netflix-streaming/">Netflix Streaming</a></th>
                   <td>Jellyfin</td>
                   <td class="mono-cell">GPL-2.0</td>
                 </tr>
                 <tr>
-                  <th scope="row">Gmail</th>
+                  <th scope="row"><a class="table-product" href="catalog/gmail/">Gmail</a></th>
                   <td>Mailcow</td>
                   <td class="mono-cell">GPL-3.0</td>
                 </tr>
                 <tr>
-                  <th scope="row">WhatsApp</th>
+                  <th scope="row"><a class="table-product" href="catalog/meta-whatsapp/">WhatsApp</a></th>
                   <td>Matrix / Element</td>
                   <td class="mono-cell">Apache-2.0</td>
                 </tr>
                 <tr>
-                  <th scope="row">Google Maps</th>
+                  <th scope="row"><a class="table-product" href="catalog/google-maps/">Google Maps</a></th>
                   <td>OpenStreetMap + Organic Maps</td>
                   <td class="mono-cell">ODbL-1.0</td>
                 </tr>
                 <tr>
-                  <th scope="row">Google Workspace</th>
+                  <th scope="row"><a class="table-product" href="catalog/google-workspace/">Google Workspace</a></th>
                   <td>Nextcloud</td>
                   <td class="mono-cell">AGPL-3.0</td>
                 </tr>
@@ -296,202 +427,146 @@
             </table>
           </div>
 
-          <div class="split proof-split">
-            <div>
-              <h3 class="mini-h">Data points, each with its command</h3>
-              <ul class="principles">
-                <li>
-                  <strong>34</strong> products catalogued across 6 company
-                  entries — <span class="mono">node src/cli.js products</span>
-                </li>
-                <li>
-                  <strong>34</strong> research dossiers, schema-validated — <span
-                    class="mono">npm run validate</span
-                  >
-                </li>
-                <li>
-                  <strong>34</strong> REA web-surface reports with raw evidence —
-                  <span class="mono">npm run rea:catalog</span>
-                </li>
-                <li>
-                  <strong>24 / 7 / 3</strong> available / partial / pending
-                  open-source verdicts — <span class="mono">npm run skills:catalog</span>
-                </li>
-                <li>
-                  <strong>24</strong> tooling tests, green in CI every push —
-                  <span class="mono">npm test</span>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h3 class="mini-h">What we are not claiming</h3>
-              <div class="callout callout-plain">
-                <p>
-                  <strong>No case studies.</strong> No product has been
-                  implemented yet, so there is no customer outcome to report.
-                  When the first one ships, its real, measured numbers go here —
-                  not before.
-                </p>
-              </div>
-              <div class="callout callout-plain">
-                <p>
-                  <strong>No testimonials.</strong> We have no users to quote.
-                  The repository is the evidence until someone else says
-                  otherwise.
-                </p>
-              </div>
-            </div>
+          <div class="prov">
+            <h3 class="mini-h">Catalog data, with verification commands</h3>
+            <ul class="principles">
+              <li>
+                <strong>77</strong> products catalogued across 6 company
+                entries: <span class="mono">rae products list</span>
+              </li>
+              <li>
+                <strong>77</strong> research dossiers; schema checks run with <span class="mono">npm run validate</span>
+              </li>
+              <li>
+                <strong>77</strong> REA reports of public web pages, with captured evidence committed;
+                run <span class="mono">npm run rea:catalog</span> to add reports
+              </li>
+              <li>
+                <strong>40 / 29 / 8</strong> mature alternative / partial coverage / no verified alternative
+                research states: <span class="mono">npm run skills:catalog</span>
+              </li>
+              <li>
+                <strong>44</strong> tooling test cases in the repository.
+                Run <span class="mono">npm test</span> for the current results.
+              </li>
+              <li>
+                <strong>This page</strong> is generated from the same data:
+                <span class="mono">npm run site:build</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <!-- 6. OBJECTION HANDLING -->
+      <!-- 8. OBJECTION HANDLING -->
       <section class="section" id="faq" aria-labelledby="faq-h">
         <div class="wrap">
-          <div class="section-head">
-            <p class="eyebrow">Objections, answered plainly</p>
-            <h2 id="faq-h">The reasons you're about to say no</h2>
+          <div class="section-head reveal-target" data-reveal>
+            <p class="eyebrow">Common questions</p>
+            <h2 id="faq-h">How do I use a product skill?</h2>
           </div>
 
           <div class="faq">
             <details>
-              <summary>Is any of this actually built yet?</summary>
+              <summary>How do I build a product with my agent?</summary>
               <p>
-                No product implementations yet, and this page says so rather than
-                hinting otherwise. What is built: the catalog, the research
-                dossiers, the open-source map, the REA evidence, the tooling and a
-                passing test suite — all reproducible from the repository today.
+                Choose a product and download its Markdown skill, or generate the kit with the RAE CLI.
+                Give the skill to your coding agent in your project. Its instructions cover product
+                research, reuse decisions, building and verification.
               </p>
             </details>
             <details>
-              <summary>
-                Isn't this just a list of other people's projects?
-              </summary>
+              <summary>What does the catalog add beyond candidate projects?</summary>
               <p>
-                For 24 of 34 products, deliberately yes. Reusing Ceph instead of
-                rewriting object storage is the whole point. The new work is the
-                map, the specifications, and the products where no alternative
-                exists at all.
+                Each entry also includes product context and a skill with build directions. Use those to review the research, decide what to reuse and scope the work for your project. Coverage labels describe the catalog's research, not the feasibility of your implementation.
               </p>
             </details>
             <details>
-              <summary>How do you avoid copying proprietary code?</summary>
+              <summary>What sources can the research use?</summary>
               <p>
-                Clean room. Publicly observable behavior, official documentation
-                and published protocols only. No decompilation, no proprietary
-                source, no protected assets, no bypassing access controls.
+                The research uses public product information, official documentation, published protocols and observations of unauthenticated web pages. It does not use proprietary source, decompile software, copy protected assets or bypass access controls.
               </p>
             </details>
             <details>
-              <summary>Is this legal?</summary>
+              <summary>What should I check before building?</summary>
               <p>
-                Product names are functional references; no affiliation or
-                endorsement is implied. Implementations must respect applicable
-                licenses and third-party rights. Rights holders can raise an issue
-                on the repository.
+                Review the cited sources, candidate project licenses and any third-party rights that apply to your implementation. Product names are functional references; no affiliation or endorsement is implied. Rights holders can raise an issue on the repository.
               </p>
             </details>
             <details>
-              <summary>Do I need to be an expert to contribute?</summary>
+              <summary>Do I need to be an expert to use a product skill?</summary>
               <p>
-                No. Pick a product, read its dossier and its skill file, then
-                follow the pipeline. The entry points are in
-                <span class="mono">CONTRIBUTING.md</span>.
+                No. Choose a product, give its skill file to your coding agent, and ask it to follow
+                the research, reuse and verification instructions in your project. The CLI and
+                <span class="mono">docs/getting-started.md</span> show how to get the skill.
               </p>
             </details>
             <details>
-              <summary>Why should I trust the catalog?</summary>
+              <summary>What does “no verified alternative” mean?</summary>
               <p>
-                Every claim cites a public source, the raw REA evidence is
-                committed, and <span class="mono">npm run validate</span> plus the
-                test suite run in CI on every push. If a number on this page goes
-                stale, the command next to it will say so.
+                The catalog has not verified a suitable open-source project for the same user needs. It does not mean you cannot build the product. Give its Markdown skill to your coding agent; the agent can assess current projects and build in your project.
+              </p>
+            </details>
+            <details>
+              <summary>How can I check a product entry?</summary>
+              <p>
+                Open its research dossier and follow the cited sources. Where available, the product page also links to a REA report with observations from a public web page. <span class="mono">npm run validate</span> checks record structure and generated files; it does not confirm that every research claim is correct or current.
               </p>
             </details>
           </div>
         </div>
       </section>
 
-      <!-- 7. FINAL CTA -->
+      <!-- 9. FINAL CTA -->
       <section class="section section-last" id="start" aria-labelledby="start-h">
         <div class="wrap">
           <div class="cta">
-            <h3 id="start-h">Pick a product. Read the map. Build what's missing.</h3>
+            <h3 id="start-h">Pick a product. Start with the research.</h3>
             <p>
-              MIT-licensed. No signup. 3 products still have no open-source
-              alternative.
+              Download its Markdown skill, review the sources and candidate projects, then give the skill to your coding agent. RAE FAANG is MIT-licensed; candidate projects and your implementation have their own licenses.
             </p>
-            <a
-              class="btn btn-primary"
-              href="https://github.com/EnzoVezzaro/rea-faang"
-              >Explore the catalog ↗</a
-            >
+            <a class="btn btn-primary" href="catalog/">Pick a product</a>
           </div>
 
           <div class="grid links links-after">
-            <a
-              class="linkcard"
-              href="https://github.com/EnzoVezzaro/rea-faang/tree/main/catalog/skills"
-              ><h3>Open-source map</h3>
-              <p>34 products, each with its replacement and its gap.</p></a
-            >
-            <a
-              class="linkcard"
-              href="https://github.com/EnzoVezzaro/rea-faang/blob/main/docs/getting-started.md"
-              ><h3>Getting started</h3>
-              <p>Install, run the catalog CLI, start the agent environment.</p></a
-            >
-            <a
-              class="linkcard"
-              href="https://github.com/EnzoVezzaro/rea-faang/blob/main/PLAN.md"
-              ><h3>The plan</h3>
-              <p>Workstreams, definitions of done, what to pick up next.</p></a
-            >
-            <a
-              class="linkcard"
-              href="https://github.com/EnzoVezzaro/rea-faang/blob/main/CONTRIBUTING.md"
-              ><h3>Contribute</h3>
-              <p>Research, specify, build, test or document — start here.</p></a
-            >
+            <a class="linkcard" href="catalog/"><h3>The catalog</h3>
+              <p>77 products, with candidate projects, research and known gaps.</p></a>
+            <a class="linkcard" href="docs/"><h3>Documentation</h3>
+              <p>Getting started, CLI reference, schemas, the agent workflow.</p></a>
+            <a class="linkcard" href="https://github.com/EnzoVezzaro/rea-faang/blob/main/PLAN.md" rel="noopener noreferrer" target="_blank"><h3>The plan</h3>
+              <p>Workstreams, definitions of done, what to pick up next.</p></a>
+            <a class="linkcard" href="https://github.com/EnzoVezzaro/rea-faang/blob/main/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank"><h3>Contribute</h3>
+              <p>Research, specify, build, test or document: start here.</p></a>
           </div>
         </div>
       </section>
     </main>
-
     <footer class="site-footer">
       <div class="wrap footer-inner">
-        <div>
-          <p class="footer-mark">RAE FAANG</p>
+        <div>            <p class="footer-mark">RAE FAANG</p>
           <p class="footer-mission">
-            Built by the community. Powered by collaboration. Open to everyone.
+
+            Product research, open-source alternatives, and agent skills to build beyond Meta, Amazon,
+            Apple, Netflix and Google. Your agent builds in your project. MIT licensed.
           </p>
         </div>
         <div class="footer-links">
-          <a href="https://github.com/EnzoVezzaro/rea-faang">GitHub</a>
-          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/docs/README.md"
-            >Documentation</a
-          >
-          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE"
-            >MIT License</a
-          >
-          <a href="https://github.com/EnzoVezzaro/repo-shield">Repo Shield</a>
+          <a href="catalog/">Catalog</a>
+          <a href="docs/">Docs</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE" rel="noopener noreferrer" target="_blank">MIT License</a>
+          <a href="https://github.com/EnzoVezzaro/repo-shield" rel="noopener noreferrer" target="_blank">Repo Shield</a>
         </div>
       </div>
       <div class="wrap footer-fine">
         <p>
           Product names are used as functional references only and imply no
           affiliation or endorsement. Implementations must comply with applicable
-          laws, licenses, and third-party rights. Copy follows the
-          <a
-            href="https://github.com/rampstackco/claude-skills/blob/main/skills/landing-page-copy/SKILL.md"
-            >landing-page-copy</a
-          >
-          skill. No AI training: see
-          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/NOTICE"
-            >NOTICE</a
-          >.
+          laws, licenses, and third-party rights. No AI training: see
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/NOTICE" rel="noopener noreferrer" target="_blank">NOTICE</a>.
         </p>
       </div>
     </footer>
+    <script src="assets/motion.js" defer></script>
   </body>
 </html>

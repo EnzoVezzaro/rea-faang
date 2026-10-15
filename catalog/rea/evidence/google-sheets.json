@@ -1,0 +1,271 @@
+{
+  "evidence_id": "ev_12e32b341b5532768cd349e89a2ee79309faa9ac9c62345ff4bcef7084048d6c",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://sheets.google.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "1ac0f494b41228773e6f1a35e16656f331ea1ca3cb1cfbe19cb22c5188fc3f57"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://sheets.google.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4200,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1467,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://accounts.google.com/v3/signin/identifier?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&passive=1209600&service=wise&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-550254256:1791949984732040",
+          "origin": "https://accounts.google.com",
+          "query_parameter_names": [
+            "continue",
+            "followup",
+            "ltmpl",
+            "osid",
+            "passive",
+            "service",
+            "flowName",
+            "flowEntry",
+            "dsh"
+          ],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2539,
+        "before_url": {
+          "url": "https://accounts.google.com/v3/signin/identifier?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&passive=1209600&service=wise&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-550254256:1791949984732040",
+          "origin": "https://accounts.google.com",
+          "query_parameter_names": [
+            "continue",
+            "followup",
+            "ltmpl",
+            "osid",
+            "passive",
+            "service",
+            "flowName",
+            "flowEntry",
+            "dsh"
+          ],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://accounts.google.com/v3/signin/identifier?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&passive=1209600&service=wise&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-550254256:1791949984732040",
+          "origin": "https://accounts.google.com",
+          "query_parameter_names": [
+            "continue",
+            "followup",
+            "ltmpl",
+            "osid",
+            "passive",
+            "service",
+            "flowName",
+            "flowEntry",
+            "dsh"
+          ],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "bef499dea5f8b773b79aafcb2bf04147c64849f90777735d06f22748878a7ffd",
+              "bytes": 4420,
+              "text": "- document:\n  - img \"Google\"\n  - heading \"Sign in\" [level=1]\n  - paragraph: with your Google Account to continue to Google Sheets. This account will be available to other Google apps in the browser.\n  - textbox \"Email or phone\"\n  - text: Email or phone\n  - paragraph:\n    - link \"Forgot email?\":\n      - /url: /signin/usernamerecovery?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&dsh=S-550254256:1791949984732040&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&service=wise\n  - paragraph:\n    - text: Not your computer? Use a private browsing window to sign in.\n    - link \"Learn more about using Guest mode (external, opens in a new window)\":\n      - /url: https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US\n      - text: Learn more about using Guest mode\n  - button \"Next\"\n  - link \"Create account\":\n    - /url: /lifecycle/flows/signup?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&dsh=S-550254256:1791949984732040&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&service=wise\n  - contentinfo:\n    - combobox:\n      - option \"Afrikaans\"\n      - option \"azərbaycan\"\n      - option \"bosanski\"\n      - option \"català\"\n      - option \"Čeština\"\n      - option \"Cymraeg\"\n      - option \"Dansk\"\n      - option \"Deutsch\"\n      - option \"eesti\"\n      - option \"English (United Kingdom)\"\n      - option \"English (United States)\" [selected]\n      - option \"Español (España)\"\n      - option \"Español (Latinoamérica)\"\n      - option \"euskara\"\n      - option \"Filipino\"\n      - option \"Français (Canada)\"\n      - option \"Français (France)\"\n      - option \"Gaeilge\"\n      - option \"galego\"\n      - option \"Hrvatski\"\n      - option \"Indonesia\"\n      - option \"isiZulu\"\n      - option \"íslenska\"\n      - option \"Italiano\"\n      - option \"Kiswahili\"\n      - option \"latviešu\"\n      - option \"lietuvių\"\n      - option \"magyar\"\n      - option \"Melayu\"\n      - option \"Nederlands\"\n      - option \"norsk\"\n      - option \"o‘zbek\"\n      - option \"polski\"\n      - option \"Português (Brasil)\"\n      - option \"Português (Portugal)\"\n      - option \"română\"\n      - option \"shqip\"\n      - option \"Slovenčina\"\n      - option \"slovenščina\"\n      - option \"srpski (latinica)\"\n      - option \"Suomi\"\n      - option \"Svenska\"\n      - option \"Tiếng Việt\"\n      - option \"Türkçe\"\n      - option \"Ελληνικά\"\n      - option \"беларуская\"\n      - option \"български\"\n      - option \"кыргызча\"\n      - option \"қазақ тілі\"\n      - option \"македонски\"\n      - option \"монгол\"\n      - option \"Русский\"\n      - option \"српски (ћирилица)\"\n      - option \"Українська\"\n      - option \"ქართული\"\n      - option \"հայերեն\"\n      - option \"‫עברית‬‎\"\n      - option \"‫اردو‬‎\"\n      - option \"‫العربية‬‎\"\n      - option \"‫فارسی‬‎\"\n      - option \"አማርኛ\"\n      - option \"नेपाली\"\n      - option \"मराठी\"\n      - option \"हिन्दी\"\n      - option \"অসমীয়া\"\n      - option \"বাংলা\"\n      - option \"ਪੰਜਾਬੀ\"\n      - option \"ગુજરાતી\"\n      - option \"ଓଡ଼ିଆ\"\n      - option \"தமிழ்\"\n      - option \"తెలుగు\"\n      - option \"ಕನ್ನಡ\"\n      - option \"മലയാളം\"\n      - option \"සිංහල\"\n      - option \"ไทย\"\n      - option \"ລາວ\"\n      - option \"မြန်မာ\"\n      - option \"ខ្មែរ\"\n      - option \"한국어\"\n      - option \"中文（香港）\"\n      - option \"日本語\"\n      - option \"简体中文\"\n      - option \"繁體中文\"\n    - list:\n      - listitem:\n        - link \"Open Google Account Help Center (external, opens in a new window)\":\n          - /url: https://support.google.com/accounts?hl=en-US&p=account_iph\n          - text: Help\n      - listitem:\n        - link \"Privacy Policy (external, opens in a new window)\":\n          - /url: https://accounts.google.com/TOS?loc=US&hl=en-US&privacy=true\n          - text: Privacy\n      - listitem:\n        - link \"Google Terms of Service (external, opens in a new window)\":\n          - /url: https://accounts.google.com/TOS?loc=US&hl=en-US\n          - text: Terms"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://accounts.google.com/v3/signin/identifier?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&passive=1209600&service=wise&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-550254256:1791949984732040",
+              "origin": "https://accounts.google.com",
+              "query_parameter_names": [
+                "continue",
+                "followup",
+                "ltmpl",
+                "osid",
+                "passive",
+                "service",
+                "flowName",
+                "flowEntry",
+                "dsh"
+              ],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

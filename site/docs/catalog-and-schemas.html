@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Runs before the stylesheet so reveal styles only apply where the
+         motion layer can actually drive them. -->
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <title>Catalog and schemas — RAE FAANG docs</title>
+    <meta name="description" content="Understand product records, research dossiers, alternatives, and validation." />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Catalog and schemas — RAE FAANG docs" />
+    <meta property="og:description" content="Understand product records, research dossiers, alternatives, and validation." />
+    <meta property="og:url" content="https://rae-faang-landing.vercel.app/docs/catalog-and-schemas.html" />
+    <link rel="canonical" href="https://rae-faang-landing.vercel.app/docs/catalog-and-schemas.html" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-doc">
+    <div class="scroll-rail" data-scroll-rail aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/" aria-current="page">Docs</a>
+          
+        </nav>
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile primary">
+            <a href="../catalog/">Catalog</a>
+            <a href="../docs/">Docs</a>
+            
+          </nav>
+        </details>
+        <a class="btn btn-ghost header-github" href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero page-hero-doc" id="top">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Docs</a><span aria-hidden="true">/</span><span>Catalog and schemas</span>
+          </nav>
+          <h1>Catalog and schemas</h1>
+          <p class="lede">Understand product records, research dossiers, alternatives, and validation.</p>
+        </div>
+      </section>
+
+      <section class="section section-tight section-last">
+        <div class="wrap">
+          <details class="toc">
+            <summary>On this page</summary>
+            <ul>
+              <li><a href="#layout">Layout</a></li>
+              <li><a href="#product-record-catalogproductsjsonl">Product record (catalog/products.jsonl)</a></li>
+              <li><a href="#opportunity-specs">Opportunity specs</a></li>
+              <li><a href="#rea-web-surface-reports">REA web-surface reports</a></li>
+              <li><a href="#open-source-skills-catalog">Open-source skills catalog</a></li>
+              <li><a href="#company-record-catalogcompaniesjson">Company record (catalog/companies.json)</a></li>
+              <li><a href="#research-dossier">Research dossier</a></li>
+              <li><a href="#manifests">Manifests</a></li>
+              <li><a href="#add-a-product-to-the-catalog">Add a product to the catalog</a></li>
+              <li><a href="#research-and-build-a-product">Research and build a product</a></li>
+              <li><a href="#how-to-add-a-company">How to add a company</a></li>
+            </ul>
+          </details>
+          <article class="doc">
+<p><img src="assets/brand-logo-icon.png" alt="RAE FAANG" /></p>
+<h1>Catalog and schemas</h1>
+<p>The catalog records the products in scope, their companies and the research status for each one. Run <code>rae research validate</code> to check record structure and consistency. It does not assess whether research is complete or claims are correct.</p>
+<h2 id="layout">Layout</h2>
+<pre><code>catalog/
+├── companies.json               # registered company entries
+├── products.jsonl               # one JSON product record per line
+├── manifests/
+│   ├── faang.json               # target inventory (in-scope counts per company)
+│   └── research-coverage.json   # tracked coverage snapshot
+├── sources/
+│   └── seed-inventory.json      # raw seed source data
+└── schema/
+    ├── product.schema.json
+    ├── company.schema.json
+    ├── alternative.schema.json
+    └── evidence.schema.json
+
+research/
+└── companies/&lt;company_id&gt;/products/&lt;product_id&gt;.md   # the research dossier</code></pre>
+<p>The directory under <code>research/companies/</code> must match the product's <code>company_id</code>: <code>google</code>, <code>apple</code>, <code>amazon</code>, <code>amazon_aws</code>, <code>netflix</code>, or <code>meta</code>.</p>
+<h2 id="product-record-catalogproductsjsonl">Product record (<code>catalog/products.jsonl</code>)</h2>
+<p>One JSON object per line. Required fields:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Field</th><th scope="col">Type</th><th scope="col">Notes</th></tr>
+</thead>
+<tbody>
+<tr><td><code>id</code></td><td>string</td><td><code>^[a-z][a-z0-9-]*$</code>, stable, unique</td></tr>
+<tr><td><code>company_id</code></td><td>string</td><td>Must resolve to a company in <code>companies.json</code></td></tr>
+<tr><td><code>name</code></td><td>string</td><td>Official product name</td></tr>
+<tr><td><code>product_type</code></td><td>enum</td><td>See below</td></tr>
+<tr><td><code>lifecycle_status</code></td><td>enum</td><td><code>active</code>, <code>preview</code>, <code>beta</code>, <code>deprecated</code>, <code>discontinued</code>, <code>acquired</code>, <code>renamed</code>, <code>unknown</code></td></tr>
+<tr><td><code>official_url</code></td><td>uri</td><td><code>http(s)</code></td></tr>
+<tr><td><code>research_status</code></td><td>enum</td><td><code>pending</code>, <code>in_progress</code>, <code>researched</code>, <code>stale</code>, <code>insufficient_evidence</code></td></tr>
+</tbody>
+</table></div>
+<p>Common optional fields: <code>categories[]</code>, <code>aliases[]</code>, <code>official_docs_url</code>, <code>official_source_urls[]</code>, <code>research_confidence</code> (<code>verified</code>/<code>unverified</code>/<code>low</code>), <code>alternative_status</code>, <code>alternative_coverage</code>, <code>opportunity_status</code>, <code>last_researched_at</code>, <code>last_verified_at</code>, <code>next_review_at</code>, <code>research_version</code>, <code>evidence[]</code>, <code>capabilities[]</code>.</p>
+<h3><code>product_type</code> values</h3>
+<p><code>consumer_application</code>, <code>consumer_subscription</code>, <code>search</code>, <code>browser</code>, <code>social_network</code>, <code>messaging</code>, <code>productivity_application</code>, <code>developer_tool</code>, <code>api</code>, <code>sdk</code>, <code>cloud_infrastructure</code>, <code>compute</code>, <code>serverless</code>, <code>container_orchestration</code>, <code>storage</code>, <code>database</code>, <code>networking</code>, <code>security</code>, <code>ai_application</code>, <code>ai_model</code>, <code>ai_agent_platform</code>, <code>machine_learning_framework</code>, <code>data_platform</code>, <code>media_streaming</code>, <code>media</code>, <code>games</code>, <code>hardware</code>, <code>operating_system</code>, <code>creative_software</code>, <code>advertising_technology</code>, <code>business_software</code>, <code>robotics</code>, <code>autonomous_system</code>, <code>research_platform</code>, <code>open_source_project</code>, <code>discontinued</code>.</p>
+<p>See <code>catalog/schema/product.schema.json</code> for the allowed values. A test checks that every product record uses one of them.</p>
+<h3><code>alternative_status</code></h3>
+<p><code>unassessed</code>, <code>none_verified</code>, <code>unknown</code>, <code>partial</code>, <code>adequate</code>, <code>mature</code>. <code>alternative_coverage</code> is restricted to <code>unknown</code> (to be widened as coverage is assessed).</p>
+<h3><code>opportunity_status</code></h3>
+<p><code>unassessed</code>, <code>reuse_existing</code>, <code>integrate_existing</code>, <code>extend_existing</code>, <code>build_missing</code>, <code>research_further</code>, <code>not_recommended</code>.</p>
+<p><code>build_missing</code> <strong>must</strong> have a spec at <code>opportunities/&lt;product_id&gt;.md</code> (enforced by <code>opportunities validate</code>).</p>
+<h2 id="opportunity-specs">Opportunity specs</h2>
+<p>An opportunity spec at <code>opportunities/&lt;product_id&gt;.md</code> turns research into a proposed build. Follow <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/opportunities/README.md" rel="noopener noreferrer" target="_blank"><code>opportunities/README.md</code></a>: explain the unmet need, compare alternatives, define the MVP and non-goals, sketch the architecture, and write testable acceptance criteria. Base those choices on the product dossier.</p>
+<h2 id="rea-web-surface-reports">REA web-surface reports</h2>
+<p><code>catalog/rea/</code> holds <a href="https://github.com/morluto/rea" rel="noopener noreferrer" target="_blank">REA</a> (<code>rea-agents</code>) reverse-engineering observations of each product's <strong>public web surface</strong>.</p>
+<pre><code>catalog/rea/
+├── README.md                       index (per company) + method
+├── &lt;company_id&gt;/&lt;product_id&gt;.md    one report per product
+└── evidence/&lt;product_id&gt;.json      the raw REA Evidence, for provenance</code></pre>
+<p>Each report records the page REA visited, its title, visible headings, links and controls, the tool's limitations, and an Evidence ID. Generate reports with:</p>
+<pre><code class="language-bash">npm run rea:catalog                       # every catalog product (needs Chrome)
+node tools/rea-catalog.mjs --company google
+node tools/rea-catalog.mjs --only netflix-streaming --wait 6000</code></pre>
+<p><strong>What these reports show:</strong> REA observes public, unauthenticated pages at each product's <code>official_url</code>; it does not sign in or bypass access controls. A report records what the page showed at capture time, not how the product works internally. Some pages may show a consent screen or app shell. The raw evidence documents what REA recorded.</p>
+<h2 id="open-source-skills-catalog">Open-source skills catalog</h2>
+<p><code>catalog/skills/</code> contains one coding-agent build skill per product. Each file starts with the required <code>name</code> and <code>description</code> fields, then gives the agent product context, candidate open-source projects, build guidance and verification steps. Give the product's Markdown file to your agent in the project where you want to build.</p>
+<pre><code>catalog/skills/
+├── README.md                      index (per company) + status counts
+└── &lt;company_id&gt;/&lt;product_id&gt;.md   one skill-structured file per product</code></pre>
+<p>Each Markdown file is the skill for building that product with a coding agent. It directs the agent to assess existing projects, choose what to reuse, implement the product in the user's project, and verify the result. The coverage status below describes only the catalog's research into open-source alternatives—it is not a product-build status.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Status</th><th scope="col">Meaning</th></tr>
+</thead>
+<tbody>
+<tr><td><code>available</code></td><td>The catalog lists a mature open-source project for the product's core job that can run locally or be self-hosted. Evaluate its coverage before adopting it; the listing is a reuse lead, not a complete build.</td></tr>
+<tr><td><code>partial</code></td><td>Listed open-source projects cover some of the product's core jobs, but a specific gap remains. The gap may involve scale, a proprietary service, licensed content, or hardware.</td></tr>
+<tr><td><code>pending</code></td><td>This catalog has not verified a suitable open-source alternative. The product skill remains available; ask your agent to review evidence and current projects, then build the product in your project.</td></tr>
+</tbody>
+</table></div>
+<p>Product facts come from <code>catalog/products.jsonl</code>. Alternative projects and their coverage notes are maintained in <code>tools/skills/catalog-data.mjs</code>; the generated per-product Markdown files are the agent skills and list their sources. Regenerate them with:</p>
+<pre><code class="language-bash">npm run skills:catalog                          # write every file + index
+node tools/skills-catalog.mjs --check           # verify, no writes
+node tools/skills-catalog.mjs --company google
+node tools/skills-catalog.mjs --index-only</code></pre>
+<p><code>npm run validate</code> includes <code>--check</code>, so CI fails if a generated file drifts from the data. Licence identifiers are as reported by each project; re-verify them before you rely on one. This catalog maps the landscape and gives no legal advice.</p>
+<h2 id="company-record-catalogcompaniesjson">Company record (<code>catalog/companies.json</code>)</h2>
+<p>An object keyed by <code>company_id</code>. Fields: <code>id</code>, <code>name</code>, <code>common_name</code>, <code>former_names[]</code>, <code>parent_organization</code>, <code>official_website</code>, <code>product_directory</code>, <code>developer_portal</code>, <code>open_source_organization</code>, <code>engineering_blog</code>, <code>research_portal</code>, <code>brand_resource_page</code>, <code>subsidiaries[]</code>, <code>date_last_verified</code>, <code>evidence[]</code>.</p>
+<p><code>amazon_aws</code> is a separate entry with <code>parent_organization: &quot;amazon&quot;</code> so AWS services are tracked distinctly.</p>
+<h2 id="research-dossier">Research dossier</h2>
+<p>Path: <code>research/companies/&lt;company_id&gt;/products/&lt;product_id&gt;.md</code>.</p>
+<p>A YAML frontmatter block followed by a body of numbered sections 1–15 (plus the migration guide where used):</p>
+<pre><code>---
+id: &quot;netflix-streaming&quot;
+company_id: &quot;netflix&quot;
+name: &quot;Netflix Streaming&quot;
+product_type: &quot;media_streaming&quot;
+official_url: &quot;https://www.netflix.com/&quot;
+lifecycle_status: &quot;active&quot;
+research_status: &quot;pending&quot;
+...
+---
+
+# 1. Executive summary
+...</code></pre>
+<p>The CLI reads the YAML frontmatter, checks it against <code>product.schema.json</code>, and confirms that its <code>id</code> and <code>company_id</code> match the catalog.</p>
+<blockquote>
+<p>Note: the CLI's validator checks required fields, enums, patterns, and <code>uri</code>/<code>date</code>/<code>date-time</code> formats. It does <strong>not</strong> yet enforce <code>additionalProperties: false</code>, so extra frontmatter keys such as <code>schema_version</code> are tolerated. Keep frontmatter to documented fields anyway.</p>
+</blockquote>
+<h2 id="manifests">Manifests</h2>
+<ul>
+<li><strong><code>manifests/faang.json</code></strong>: the target inventory. <code>companies.&lt;id&gt;.in_scope</code> is the number of products expected for that company; <code>gaps products</code> compares it to the catalog. <code>total_in_scope</code> is the overall target.</li>
+<li><strong><code>manifests/research-coverage.json</code></strong>: a tracked snapshot of coverage. Refresh it from <code>rae research coverage --format json</code>.</li>
+</ul>
+<h2 id="add-a-product-to-the-catalog">Add a product to the catalog</h2>
+<ol>
+<li>Add a record to <code>catalog/products.jsonl</code>. Give it a unique <code>id</code> and a valid <code>product_type</code>.</li>
+<li>Create <code>research/companies/&lt;company_id&gt;/products/&lt;id&gt;.md</code>. Its frontmatter must use the same <code>id</code> and <code>company_id</code>.</li>
+<li>If it is <code>build_missing</code>, create <code>opportunities/&lt;id&gt;.md</code> (see <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/opportunities/README.md" rel="noopener noreferrer" target="_blank"><code>opportunities/README.md</code></a>).</li>
+<li>Add its summary, capabilities, alternative status, candidate projects and sources to <code>tools/skills/catalog-data.mjs</code>. Run <code>npm run skills:catalog</code> and <code>npm run site:build</code> to regenerate the product page and site. The check fails if a product has no catalog entry or generated page.</li>
+<li><p>Run the catalog checks and tests:</p>
+<pre><code class="language-bash">rae research validate
+npm test</code></pre>
+<p>Both commands must pass.</p>
+</li>
+</ol>
+<h2 id="research-and-build-a-product">Research and build a product</h2>
+<p>Use the <a href="product-research-and-build-plan.html">research, documentation and build plan</a> for per-product evidence standards, alternative assessments and guidance for making each Markdown skill actionable for a coding agent. A generated skill is the starting instruction set; your agent should review the cited sources and validate its assumptions in your project before building.</p>
+<h2 id="how-to-add-a-company">How to add a company</h2>
+<ol>
+<li>Add an entry to <code>catalog/companies.json</code>.</li>
+<li>Add its <code>in_scope</code> count to <code>catalog/manifests/faang.json</code>.</li>
+<li>Add <code>research/companies/&lt;id&gt;/products/</code> and start adding dossiers.</li>
+</ol>
+
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>            <p class="footer-mark">RAE FAANG</p>
+          <p class="footer-mission">
+
+            Product research, open-source alternatives, and agent skills to build beyond Meta, Amazon,
+            Apple, Netflix and Google. Your agent builds in your project. MIT licensed.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/">Docs</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE" rel="noopener noreferrer" target="_blank">MIT License</a>
+          <a href="https://github.com/EnzoVezzaro/repo-shield" rel="noopener noreferrer" target="_blank">Repo Shield</a>
+        </div>
+      </div>
+      <div class="wrap footer-fine">
+        <p>
+          Product names are used as functional references only and imply no
+          affiliation or endorsement. Implementations must comply with applicable
+          laws, licenses, and third-party rights. No AI training: see
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/NOTICE" rel="noopener noreferrer" target="_blank">NOTICE</a>.
+        </p>
+      </div>
+    </footer>
+    
+  </body>
+</html>

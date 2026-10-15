@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_5e21572966259e9ca7d9205812a476d7783bce90cafcd4fee4d113c852e0ef3d",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://luna.amazon.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "e8faab2a495782ab2e512a44075b055c8be8cb25afdad8b14eaade2047efb1e4"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://luna.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4411,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1634,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://luna.amazon.com/",
+          "origin": "https://luna.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2546,
+        "before_url": {
+          "url": "https://luna.amazon.com/",
+          "origin": "https://luna.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://luna.amazon.com/",
+          "origin": "https://luna.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "0425e94041d861684f4dec3b95f2316f296cd61083d9ca421a110dd33d3e7cbe",
+              "bytes": 8717,
+              "text": "- document:\n  - banner:\n    - button \"CLOUD GAMING\":\n      - heading \"Luna\" [level=1]:\n        - img \"Luna\"\n    - link \"Navigate to home\":\n      - /url: /\n      - button \"Home\"\n    - link \"Navigate to gamenight\":\n      - /url: /gamenight\n      - button \"GameNight\"\n    - button \"My Stuff\"\n    - link \"Navigate to remote-play\":\n      - /url: /remote-play\n      - button \"Remote Play NEW\"\n    - button \"Sign In\"\n    - button \"Navigate to search\":\n      - button \"Navigate to search\":\n        - img\n    - button \"Click to login\":\n      - img\n  - main:\n    - group \"6 / 6\":\n      - button \"Letter Trek Your word adventure starts now!\":\n        - heading \"Use Phones As Controllers Use Phones As Controllers\" [level=2]:\n          - img \"Use Phones As Controllers\"\n          - text: Use Phones As Controllers\n        - text: Your word adventure starts now!\n        - button \"More Info\"\n    - group \"1 / 6\":\n      - 'button \"STAR WARS: Galactic Racer™ Available now\"':\n        - 'heading \"STAR WARS: Galactic Racer™: Available now\" [level=2]':\n          - 'img \"STAR WARS: Galactic Racer™: Available now\"'\n        - text: Available now\n        - button \"More Info\"\n    - group \"2 / 6\":\n      - button \"SONIC X SHADOW GENERATIONS Available now\":\n        - 'heading \"SONIC X SHADOW GENERATIONS: Available now\" [level=2]':\n          - 'img \"SONIC X SHADOW GENERATIONS: Available now\"'\n        - text: Available now\n        - button \"More Info\"\n    - group \"3 / 6\":\n      - button \"Sonic Mania Plus Race through all-new original Zones and updated Classics\":\n        - heading [level=2]\n        - text: Race through all-new original Zones and updated Classics\n        - button \"More Info\"\n    - group \"4 / 6\":\n      - button \"Garfield Kart 2 - All You Can Drift Ready to race against a real heavyweight?\":\n        - heading \"Use Phones As Controllers Use Phones As Controllers\" [level=2]:\n          - img \"Use Phones As Controllers\"\n          - text: Use Phones As Controllers\n        - text: Ready to race against a real heavyweight?\n        - button \"More Info\"\n    - group \"5 / 6\":\n      - button \"Centipede Swarm One centipede becomes many. Your nightmare begins now.\":\n        - heading \"Use Phones As Controllers Use Phones As Controllers\" [level=2]:\n          - img \"Use Phones As Controllers\"\n          - text: Use Phones As Controllers\n        - text: One centipede becomes many. Your nightmare begins now.\n        - button \"More Info\"\n    - group \"6 / 6\":\n      - button \"Letter Trek Your word adventure starts now!\":\n        - heading \"Use Phones As Controllers Use Phones As Controllers\" [level=2]:\n          - img \"Use Phones As Controllers\"\n          - text: Use Phones As Controllers\n        - text: Your word adventure starts now!\n        - button \"More Info\"\n    - group \"1 / 6\":\n      - 'button \"STAR WARS: Galactic Racer™ Available now\"':\n        - 'heading \"STAR WARS: Galactic Racer™: Available now\" [level=2]':\n          - 'img \"STAR WARS: Galactic Racer™: Available now\"'\n        - text: Available now\n        - button \"More Info\"\n    - button \"Go to slide 1\"\n    - button \"Go to slide 2\"\n    - button \"Go to slide 3\"\n    - button \"Go to slide 4\"\n    - button \"Go to slide 5\"\n    - button \"Go to slide 6\"\n    - text: Top New Games\n    - group:\n      - text: \"1\"\n      - 'button \"STAR WARS: Galactic Racer™, 1 / 10, Top New Games\"':\n        - 'button \"STAR WARS: Galactic Racer™, 1 / 10, Top New Games\"':\n          - 'img \"STAR WARS: Galactic Racer™\"'\n    - group:\n      - text: \"2\"\n      - button \"SONIC X SHADOW GENERATIONS, 2 / 10, Top New Games\":\n        - button \"SONIC X SHADOW GENERATIONS, 2 / 10, Top New Games\":\n          - img \"SONIC X SHADOW GENERATIONS\"\n    - group:\n      - text: \"3\"\n      - 'button \"Bluey: The Videogame, 3 / 10, Top New Games\"':\n        - 'button \"Bluey: The Videogame, 3 / 10, Top New Games\"':\n          - 'img \"Bluey: The Videogame\"'\n    - group:\n      - text: \"4\"\n      - button \"Star Wars Outlaws, 4 / 10, Top New Games\":\n        - button \"Star Wars Outlaws, 4 / 10, Top New Games\":\n          - img \"Star Wars Outlaws\"\n    - group:\n      - text: \"5\"\n      - button \"Wobbly Life, 5 / 10, Top New Games\":\n        - button \"Wobbly Life, 5 / 10, Top New Games\":\n          - img \"Wobbly Life\"\n    - group:\n      - text: \"6\"\n      - 'button \"Avatar: Frontiers of Pandora, 6 / 10, Top New Games\"':\n        - 'button \"Avatar: Frontiers of Pandora, 6 / 10, Top New Games\"':\n          - 'img \"Avatar: Frontiers of Pandora\"'\n    - group:\n      - text: \"7\"\n      - button \"Goat Simulator 3, 7 / 10, Top New Games\":\n        - button \"Goat Simulator 3, 7 / 10, Top New Games\":\n          - img \"Goat Simulator 3\"\n    - group:\n      - text: \"8\"\n      - button \"The Game of Life 2, 8 / 10, Top New Games\":\n        - button \"The Game of Life 2, 8 / 10, Top New Games\":\n          - img \"The Game of Life 2\"\n    - group:\n      - text: \"9\"\n      - button \"Hogwarts Legacy, 9 / 10, Top New Games\":\n        - button \"Hogwarts Legacy, 9 / 10, Top New Games\":\n          - img \"Hogwarts Legacy\"\n    - group:\n      - text: \"10\"\n      - button \"Bowling Mayhem, 10 / 10, Top New Games\":\n        - button \"Bowling Mayhem, 10 / 10, Top New Games\":\n          - img \"Bowling Mayhem\"\n    - button \"Right Caret\":\n      - img \"Right Caret\"\n    - text: Recently Added\n    - group:\n      - button \"SONIC X SHADOW GENERATIONS, 1 / 5, Recently Added\":\n        - button \"SONIC X SHADOW GENERATIONS, 1 / 5, Recently Added\":\n          - img \"SONIC X SHADOW GENERATIONS\"\n    - group:\n      - 'button \"STAR WARS: Galactic Racer™, 2 / 5, Recently Added\"':\n        - 'button \"STAR WARS: Galactic Racer™, 2 / 5, Recently Added\"':\n          - 'img \"STAR WARS: Galactic Racer™\"'\n    - group:\n      - button \"Space Metal Mania, 3 / 5, Recently Added\":\n        - button \"Space Metal Mania, 3 / 5, Recently Added\":\n          - img \"Space Metal Mania\"\n    - group:\n      - button \"Cranium Planet, 4 / 5, Recently Added\":\n        - button \"Cranium Planet, 4 / 5, Recently Added\":\n          - img \"Cranium Planet\"\n    - group:\n      - button \"Bowling Mayhem, 5 / 5, Recently Added\":\n        - button \"Bowling Mayhem, 5 / 5, Recently Added\":\n          - img \"Bowling Mayhem\"\n    - gridcell\n    - gridcell\n    - gridcell\n    - gridcell\n    - gridcell\n    - text: Questions or concerns?\n    - link \"Leave feedback\":\n      - /url: https://luna.amazon.com/settings?subNav=help_and_feedback\n    - text: About Luna\n    - link \"Discover\":\n      - /url: https://www.amazon.com/luna/landing-page\n    - link \"Download Luna\":\n      - /url: https://luna.amazon.com/settings?subNav=download\n    - link \"Luna Controller\":\n      - /url: https://www.amazon.com/dp/B07P989QTJ\n    - link \"Compatible Controllers\":\n      - /url: https://www.amazon.com/gp/help/customer/display.html?nodeId=GYNLANRYMK4WTXSS\n    - link \"Compatible Devices\":\n      - /url: https://www.amazon.com/gp/help/customer/display.html?nodeId=GP729A5ZM48TLPAJ\n    - link \"Claim Games\":\n      - /url: https://luna.amazon.com/claims\n    - text: Support\n    - link \"Getting Started\":\n      - /url: https://www.amazon.com/luna/getting-started\n    - link \"Device Troubleshooting\":\n      - /url: https://www.amazon.com/gp/help/customer/display.html?nodeId=GHXY8X4SH5M9JYBD\n    - link \"Network Issues\":\n      - /url: https://www.amazon.com/help/luna/networkissues\n    - link \"Help and Customer Service\":\n      - /url: https://www.amazon.com/help/luna\n    - text: Settings\n    - link \"Parental Controls\":\n      - /url: https://luna.amazon.com/settings?subNav=parental_controls\n    - link \"Language Settings\":\n      - /url: https://luna.amazon.com/settings?subNav=language_selection\n    - link \"Payment Settings\":\n      - /url: https://www.amazon.com/cpe/yourpayments/settings/manageoneclick\n    - link \"Manage Subscriptions\":\n      - /url: https://www.amazon.com/yourmembershipsandsubscriptions\n    - text: Follow Luna\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonluna\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/AmazonLuna\n    - link \"X (formerly Twitter)\":\n      - /url: https://twitter.com/amazonluna\n    - link \"TikTok\":\n      - /url: https://www.tiktok.com/@amazonluna\n    - link \"Reddit\":\n      - /url: https://www.reddit.com/r/amazonluna\n    - link \"Amazon Luna Terms of Use\":\n      - /url: https://www.amazon.com/help/luna/tou\n    - link \"Amazon Luna Legal Notices\":\n      - /url: https://www.amazon.com/help/luna/legalnotices\n    - link \"Amazon Conditions of Use\":\n      - /url: https://www.amazon.com/conditionsofuse\n    - link \"Amazon Privacy Notice\":\n      - /url: https://www.amazon.com/privacy\n    - link \"Visit Luna home page\":\n      - /url: /\n    - text: © 1996-2026, Amazon.com, Inc or its affiliates"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://luna.amazon.com/",
+              "origin": "https://luna.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

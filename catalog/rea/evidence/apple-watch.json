@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_844f9cbc1a65c5f0020402014d5b95957bb3dbf1bd4d85eb5fe342f96b40f150",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.apple.com/watch/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "5bb7081d2c0767f2cc0e4b1159e31abcf68790991b699660466190f34b3d3cb4"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://www.apple.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4169,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1381,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/watch/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2554,
+        "before_url": {
+          "url": "https://www.apple.com/watch/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/watch/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "dabfd9222afc9afc7e0109cc2fa20b78c2e3951d1561914af13c2280dbae5595",
+              "bytes": 36531,
+              "text": "- document:\n  - navigation \"Global\":\n    - list:\n      - listitem:\n        - link \"Apple\":\n          - /url: /\n      - listitem:\n        - list:\n          - listitem:\n            - link \"Store\":\n              - /url: /us/shop/goto/store\n          - listitem:\n            - button \"Store menu\"\n        - list:\n          - listitem:\n            - link \"Mac\":\n              - /url: /mac/\n          - listitem:\n            - button \"Mac menu\"\n        - list:\n          - listitem:\n            - link \"iPad\":\n              - /url: /ipad/\n          - listitem:\n            - button \"iPad menu\"\n        - list:\n          - listitem:\n            - link \"iPhone\":\n              - /url: /iphone/\n          - listitem:\n            - button \"iPhone menu\"\n        - list:\n          - listitem:\n            - link \"Watch\":\n              - /url: /watch/\n          - listitem:\n            - button \"Watch menu\"\n        - list:\n          - listitem:\n            - link \"Vision\":\n              - /url: /apple-vision-pro/\n          - listitem:\n            - button \"Vision menu\"\n        - list:\n          - listitem:\n            - link \"AirPods\":\n              - /url: /airpods/\n          - listitem:\n            - button \"AirPods menu\"\n        - list:\n          - listitem:\n            - link \"Home\":\n              - /url: /home/\n          - listitem:\n            - button \"Home menu\"\n        - list:\n          - listitem:\n            - link \"Entertainment\":\n              - /url: /entertainment/\n          - listitem:\n            - button \"Entertainment menu\"\n        - list:\n          - listitem:\n            - link \"Accessories\":\n              - /url: /us/shop/goto/buy_accessories\n          - listitem:\n            - button \"Accessories menu\"\n        - list:\n          - listitem:\n            - link \"Support\":\n              - /url: https://support.apple.com/?cid=gn-ols-home-hp-tab\n          - listitem:\n            - button \"Support menu\"\n      - listitem:\n        - button \"Search apple.com\"\n      - listitem:\n        - button \"Shopping Bag\"\n  - main:\n    - paragraph:\n      - text: Lease a new Apple Watch with low monthly payments for 12 or 24 months and upgrade at the end of your term with Apple Upgrade.\n      - superscript:\n        - link \"Footnote ◊ symbol\":\n          - /url: \"#footnote-external-1\"\n          - text: ◊\n      - link \"Learn more, Apple Upgrade\":\n        - /url: /us/shop/goto/apple_upgrade\n        - text: Learn more\n    - heading \"Apple Watch\" [level=1]\n    - navigation \"Apple Watch Family of products\":\n      - list:\n        - listitem:\n          - link \"Apple Watch Series 12 New\":\n            - /url: /apple-watch-series-12/\n            - paragraph: Apple Watch Series 12\n            - paragraph: New\n        - listitem:\n          - link \"Apple Watch Ultra 4 New\":\n            - /url: /apple-watch-ultra-4/\n            - paragraph: Apple Watch Ultra 4\n            - paragraph: New\n        - listitem:\n          - link \"Apple Watch SE 3\":\n            - /url: /apple-watch-se-3/\n            - paragraph: Apple Watch SE 3\n        - listitem:\n          - link \"Apple Watch Nike New Colors\":\n            - /url: /apple-watch-nike/\n            - paragraph: Apple Watch Nike\n            - paragraph: New Colors\n        - listitem:\n          - link \"Apple Watch Hermès New\":\n            - /url: /apple-watch-hermes/\n            - paragraph: Apple Watch Hermès\n            - paragraph: New\n        - listitem:\n          - link \"Compare Apple Watch models\":\n            - /url: /watch/compare/\n            - paragraph: Compare\n        - listitem:\n          - link \"Shop Apple Watch bands new colors\":\n            - /url: /us/shop/goto/watch/bands\n            - paragraph: Bands\n            - paragraph: New Colors\n        - listitem:\n          - link \"Accessories for Apple Watch\":\n            - /url: /us/shop/goto/watch/accessories\n            - paragraph: Accessories\n        - listitem:\n          - link \"Apple Fitness+\":\n            - /url: /apple-fitness-plus/\n            - paragraph: Apple Fitness+\n        - listitem:\n          - link \"Shop Apple Watch models\":\n            - /url: /us/shop/goto/buy_watch\n            - paragraph: Shop Watch\n        - listitem:\n          - link \"watchOS 27\":\n            - /url: /os/watchos/\n            - paragraph: watchOS 27\n      - button \"Next Apple Watch family of products\":\n        - img\n    - heading \"Explore the lineup.\" [level=2]\n    - list:\n      - listitem:\n        - link \"Compare all models\":\n          - /url: /watch/compare/\n    - list \"Explore the lineup.\":\n      - listitem:\n        - text: New\n        - heading \"Apple Watch Series 12\" [level=3]\n        - link \"Learn more, Apple Watch Series 12\":\n          - /url: /apple-watch-series-12/\n          - figure\n        - list \"Available in Aluminum in four colors — Dark Bronze, Light Gold, Black, and Space Gray. And in Titanium in two colors — Radiant Gold and Natural. And in Ceramic in two colors — Pearl White and Night Blue.\":\n          - listitem: Dark bronze\n          - listitem: Light gold\n          - listitem: Black\n          - listitem: Space Gray\n          - listitem: Radiant gold\n          - listitem: Natural\n          - listitem: Pearl white\n          - listitem: Night blue\n        - paragraph: The ultimate way to watch your health.\n        - paragraph:\n          - text: From $399 or $33.25/mo. for 12 mo.\n          - link \"Footnote * symbol\":\n            - /url: \"#footnote-promoted-1\"\n            - text: \"*\"\n          - text: Lease from $11.99/mo. for 24 mo. with Apple Upgrade\n          - superscript:\n            - link \"Footnote ◊◊ symbol\":\n              - /url: \"#footnote-external-2\"\n              - text: ◊◊\n        - link \"Learn more, Apple Watch Series 12\":\n          - /url: /apple-watch-series-12/\n          - text: Learn more\n        - link \"Buy, Apple Watch Series 12\":\n          - /url: /us/shop/goto/buy_watch/apple_watch_series_12\n          - text: Buy\n      - listitem:\n        - text: New\n        - heading \"Apple Watch Ultra 4\" [level=3]\n        - link \"Learn more, Apple Watch Ultra 4\":\n          - /url: /apple-watch-ultra-4/\n          - figure\n        - list \"Available in Titanium in two colors — Natural and Black.\":\n          - listitem: Natural\n          - listitem: Black\n        - paragraph: The ultimate sports and adventure watch.\n        - paragraph:\n          - text: From $799 or $66.58/mo. for 12 mo.\n          - link \"Footnote * symbol\":\n            - /url: \"#footnote-promoted-1\"\n            - text: \"*\"\n          - text: Lease from $24.99/mo. for 24 mo. with Apple Upgrade\n          - superscript:\n            - link \"Footnote ◊◊ symbol\":\n              - /url: \"#footnote-external-2\"\n              - text: ◊◊\n        - link \"Learn more, Apple Watch Ultra 4\":\n          - /url: /apple-watch-ultra-4/\n          - text: Learn more\n        - link \"Buy, Apple Watch Ultra 4\":\n          - /url: /us/shop/goto/buy_watch/apple_watch_ultra_4\n          - text: Buy\n      - listitem:\n        - heading \"Apple Watch SE 3\" [level=3]\n        - link \"Learn more, Apple Watch SE 3\":\n          - /url: /apple-watch-se-3/\n          - figure\n        - list \"Available in Aluminum in two colors — Midnight and Starlight\":\n          - listitem: Midnight\n          - listitem: Starlight\n        - paragraph: Essential health features at a great value.\n        - paragraph:\n          - text: From $249 or $20.75/mo. for 12 mo.\n          - link \"Footnote * symbol\":\n            - /url: \"#footnote-promoted-1\"\n            - text: \"*\"\n        - link \"Learn more, Apple Watch SE 3\":\n          - /url: /apple-watch-se-3/\n          - text: Learn more\n        - link \"Buy, Apple Watch SE 3\":\n          - /url: /us/shop/goto/buy_watch/apple_watch_se\n          - text: Buy\n    - list:\n      - listitem:\n        - button \"Previous item in Apple Watch compare gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item in Apple Watch compare gallery\":\n          - img\n    - heading \"Why Apple is the best place to shop Apple Watch.\" [level=2]\n    - list:\n      - listitem:\n        - link \"Shop Apple Watch\":\n          - /url: /us/shop/goto/buy_watch\n    - list \"Why Apple is the best place to shop Apple Watch.\":\n      - listitem:\n        - heading \"Apple Upgrade\" [level=3]\n        - paragraph: Love it. Lease it. Upgrade it.\n        - paragraph:\n          - text: Lease a new Apple Watch with low monthly payments for 12 or 24 months and upgrade at the end of your term.\n          - superscript:\n            - link \"Footnote ◊ symbol\":\n              - /url: \"#footnote-external-1\"\n              - text: ◊\n        - figure\n        - link \"Learn more, Apple Upgrade\":\n          - /url: /us/shop/goto/apple_upgrade\n      - listitem:\n        - heading \"Apple Trade In\" [level=3]\n        - paragraph: Save on a new Apple Watch with a trade‑in.\n        - paragraph:\n          - text: Get up to $200 in credit toward your next Apple Watch when you trade in an eligible device.\n          - superscript:\n            - link \"Footnote 1\":\n              - /url: \"#footnote-numbered-1\"\n              - text: \"1\"\n        - figure\n        - button \"Learn more, Apple Trade In\"\n      - listitem:\n        - heading \"Ways to Buy\" [level=3]\n        - paragraph: Pay over time, interest‑free.\n        - paragraph:\n          - text: When you choose to check out at Apple with Apple Card Monthly Installments.\n          - superscript:\n            - link \"Footnote ◊◊◊ symbol\":\n              - /url: \"#footnote-external-3\"\n              - text: ◊◊◊\n        - figure\n        - button \"Learn more, Apple Card Monthly Installments\"\n      - listitem:\n        - heading \"Education\" [level=3]\n        - paragraph:\n          - text: Save on Apple Watch\n          - superscript:\n            - link \"Footnote 2\":\n              - /url: \"#footnote-numbered-2\"\n              - text: \"2\"\n          - text: with e⁠d⁠u⁠c⁠a⁠t⁠i⁠o⁠n⁠ ⁠p⁠r⁠i⁠c⁠i⁠n⁠g⁠.\n          - link \"Footnote ** symbol\":\n            - /url: \"#footnote-promoted-2\"\n            - text: \"**\"\n        - paragraph:\n          - text: College students and educators can save through the Apple Store.\n          - link \"Footnote ** symbol\":\n            - /url: \"#footnote-promoted-2\"\n            - text: \"**\"\n        - figure\n        - button \"Learn more, about education pricing\"\n      - listitem:\n        - heading \"Delivery and Pickup\" [level=3]\n        - paragraph: Get your order quickly and easily.\n        - paragraph: Choose two‑hour delivery from an Apple Store, free delivery, or easy pickup options.\n        - figure\n        - button \"Learn more, delivery and pickup options.\"\n      - listitem:\n        - heading \"Personal Setup\" [level=3]\n        - paragraph: Make the most of your Apple Watch with an online session.\n        - paragraph: Talk one on one with a Specialist to set up your device and discover new features.\n        - figure\n        - button \"Learn more, Personal Setup\"\n      - listitem:\n        - heading \"Guided Video Shopping\" [level=3]\n        - paragraph: Shop live with a Specialist.\n        - paragraph: Let us help you find what you need and answer all of your questions, one on one over video.\n        - figure\n        - button \"Learn more, shopping with a live assistant\"\n      - listitem:\n        - heading \"Apple Store App\" [level=3]\n        - paragraph: Explore a shopping experience designed around you.\n        - paragraph: Use the app to get a more personal way to shop.\n        - figure\n        - button \"Learn more, Apple Store App\"\n    - list:\n      - listitem:\n        - button \"Previous item in Why Apple gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item in Why Apple gallery\":\n          - img\n    - heading \"Apple Watch essentials.\" [level=2]\n    - list:\n      - listitem:\n        - link \"All Apple Watch accessories\":\n          - /url: /us/shop/goto/watch/accessories\n    - heading \"Make it personal. Make it pop.\" [level=3]\n    - paragraph: Discover new bands in a fresh mix of materials, colors, and patterns.\n    - link \"Shop Apple Watch bands\":\n      - /url: /us/shop/goto/watch/bands\n    - figure\n    - heading \"Made for each other.\" [level=2]\n    - list \"Made for each other.\":\n      - listitem:\n        - heading \"Apple Watch and iPhone\" [level=3]:\n          - button \"Apple Watch and iPhone\" [expanded]:\n            - text: Apple Watch and iPhone\n            - img\n        - paragraph:\n          - text: Combining Apple Watch and iPhone opens up a world of features that make each device better. With a redesigned Health app coming in late 2026, you can turn your health and fitness data into actionable insights on your overall health.\n          - superscript:\n            - link \"Footnote 3\":\n              - /url: \"#footnote-numbered-3\"\n              - text: \"3\"\n          - text: You can also do things like create a custom route with Maps on your iPhone, then download it to your watch to use anytime. Or start a cycling workout on your watch and see your metrics automatically appear as a Live Activity on your iPhone.\n        - figure\n      - listitem:\n        - heading \"Apple Watch and AirPods\" [level=3]:\n          - button \"Apple Watch and AirPods\":\n            - text: Apple Watch and AirPods\n            - img\n      - listitem:\n        - heading \"Apple Watch and Apple Fitness+\" [level=3]:\n          - button \"Apple Watch and Apple Fitness+\":\n            - text: Apple Watch and Apple Fitness+\n            - img\n    - heading \"Apple Watch\" [level=2]\n    - navigation \"Apple Watch\":\n      - heading \"Explore Watch\" [level=3]\n      - list \"Explore Watch\":\n        - listitem:\n          - link \"Explore All Apple Watch\":\n            - /url: /watch/\n        - listitem:\n          - link \"Apple Watch Series 12\":\n            - /url: /apple-watch-series-12/\n        - listitem:\n          - link \"Apple Watch Ultra 4\":\n            - /url: /apple-watch-ultra-4/\n        - listitem:\n          - link \"Apple Watch SE 3\":\n            - /url: /apple-watch-se-3/\n        - listitem:\n          - link \"Apple Watch Nike\":\n            - /url: /apple-watch-nike/\n        - listitem:\n          - link \"Apple Watch Hermès\":\n            - /url: /apple-watch-hermes/\n        - listitem:\n          - link \"Compare Watch\":\n            - /url: /watch/compare/\n        - listitem:\n          - link \"Why Apple Watch\":\n            - /url: /watch/why-apple-watch/\n      - heading \"Shop Watch\" [level=3]\n      - list \"Shop Watch\":\n        - listitem:\n          - link \"Shop Apple Watch\":\n            - /url: /us/shop/goto/buy_watch\n        - listitem:\n          - link \"Apple Watch Bands\":\n            - /url: /us/shop/goto/watch/bands\n        - listitem:\n          - link \"Apple Watch Accessories\":\n            - /url: /us/shop/goto/watch/accessories\n        - listitem:\n          - link \"Apple Upgrade\":\n            - /url: /us/shop/goto/apple_upgrade\n        - listitem:\n          - link \"Apple Trade In\":\n            - /url: /us/shop/goto/trade_in#watch\n        - listitem:\n          - link \"Financing\":\n            - /url: /us/shop/goto/payment_plan\n        - listitem:\n          - link \"Personal Setup\":\n            - /url: /us/shop/goto/personal_setup\n      - heading \"More from Watch\" [level=3]\n      - list \"More from Watch\":\n        - listitem:\n          - link \"Apple Watch Support\":\n            - /url: https://support.apple.com/watch?cid=gn-ols-watch-psp-prodfly\n        - listitem:\n          - link \"AppleCare\":\n            - /url: /applecare/?filter=watch\n        - listitem:\n          - link \"watchOS 27\":\n            - /url: /os/watchos/\n        - listitem:\n          - link \"Apple Watch For Your Kids\":\n            - /url: /apple-watch-for-your-kids/\n        - listitem:\n          - link \"Apps by Apple\":\n            - /url: /apps/\n        - listitem:\n          - link \"Apple Fitness+\":\n            - /url: /apple-fitness-plus/\n        - listitem:\n          - link \"Education\":\n            - /url: /education/\n  - contentinfo \"Apple Footer\":\n    - heading \"Apple Footer\" [level=2]\n    - region \"Footnotes\":\n      - list:\n        - listitem:\n          - text: \"* Financing available to qualified customers, subject to credit approval and credit limit, and requires you to select Apple Card Monthly Installments (ACMI) as your payment type at checkout at Apple. Financing terms vary by product. Taxes and shipping on items purchased using ACMI are subject to your card’s variable APR, not the ACMI 0% APR. ACMI is not available for purchases made at special storefronts or when using such special discounts in-store at Apple, except ACMI is available at the Education storefront and with the Education discount. The last month’s payment for each product will be the product’s purchase price, less all other payments at the monthly payment amount. ACMI is subject to change at any time for any reason, including but not limited to installment term lengths and eligible products. See the\"\n          - link \"Apple Card Customer Agreement\":\n            - /url: https://www.goldmansachs.com/terms-and-conditions/Apple-Card-Customer-Agreement.pdf\n          - text: for more information about ACMI.\n        - listitem:\n          - text: \"** Available to current and newly accepted college students and their parents, as well as faculty, staff, and homeschool teachers of all grade levels. See\"\n          - link \"Terms\":\n            - /url: /us-edu/shop/goto/salespolicies/edu\n          - text: for more information.\n      - list:\n        - listitem: \"◊ Apple Upgrade is a device leasing program available in the U.S. (excluding U.S. territories). Leases are provided by Klarna: subject to eligibility and credit approval, including final approval at checkout. To be eligible, you must be a U.S. resident, at least 18 years old (or the legal age in your state), have an accepted credit or debit card, and have an Apple Account. Additional eligibility criteria apply. Device must be in good condition upon return; damage fees may apply. For iPhone only: In order to lease an iPhone, you must select an eligible carrier (but you cannot use a prepaid carrier plan). Upgrades require entering into a new lease and are subject to eligibility and credit approval. Apple Upgrade is not available on refurbished devices or online at the following special stores: Apple Employee Purchase Plan; participating corporate Employee Purchase Programs; Apple at Work for small businesses or enterprises; Government, Education, or Veterans and Military Purchase Programs.\"\n        - listitem: \"◊◊ Apple Upgrade Lease: This offer is for a consumer lease, not a purchase or loan. Lease provided by Klarna Inc. for 12-, 24-, or 36-month terms. 12- and 36-month terms not available for all device models. Your first monthly payment is due approximately 30 days after device is shipped or available for pickup. Lease approval is subject to eligibility and is based on creditworthiness. Monthly payments are based on the selected device and lease term. For example: For an iPhone 18 Pro 256GB with a purchase price of $1,199 (excluding taxes and any trade-in credit), the typical monthly payment is $34.99 (excluding taxes and any trade-in credit) for a 24-month lease term and $49.99 (excluding taxes and any trade-in credit) for a 12-month lease term. For an Apple Watch Series 12 42mm with a purchase price of $399 (excluding taxes and any trade-in credit), the typical monthly payment is $11.99 (excluding taxes and any trade-in credit) for a 24-month lease term and $21.99 (excluding taxes and any trade-in credit) for a 12-month lease term. For an 11-inch iPad Pro 256GB with a purchase price of $1,199 (excluding taxes and any trade-in credit), the typical monthly payment is $24.99 (excluding taxes and any trade-in credit) for a 36-month lease term and $31.99 (excluding taxes and any trade-in credit) for a 24-month lease term. For a 14-inch MacBook Pro 16GB with a purchase price of $1,999 (excluding taxes and any trade-in credit), the typical monthly payment is $38.99 (excluding taxes and any trade-in credit) for a 36-month lease term and $53.99 (excluding taxes and any trade-in credit) for a 24-month lease term. No security deposit required. A trade-in device may reduce monthly payments. Advertised monthly payment amount may not include a trade-in device’s estimated value. Upgrades are not guaranteed and are subject to eligibility and approval. For iPhone only: In order to lease an iPhone, you must select an eligible carrier (but you cannot use a prepaid carrier plan). A leased iPhone is always unlocked, so you can switch carriers at any time, subject to your carrier’s terms. Terminating your Apple Upgrade Lease: Closing your lease and returning your device terminates your lease. You may incur a substantial charge up to the amount of your remaining lease payments if you terminate your lease before the end of your initial lease term. You may have the option to upgrade to a new device by entering into a new lease agreement and returning your prior device. If you upgrade, your new monthly payments may be greater than your prior monthly payments. If you do not upgrade, terminate your lease, or purchase your device by the end of the initial lease term, the lease will convert to a month-to-month lease for up to six months. Your monthly payments may increase during the month-to-month period. If you take no action at the end of your extension period, you will be charged for the amount due to exercise the purchase option under your lease. You will not own your device at the end of your lease unless you pay the amount due to exercise the purchase option. Insurance is not included in your lease, and you may incur damage fees if the device is lost, stolen, or not returned in the condition required by the lease. Apple Upgrade Lease Eligibility: Leases are only available to U.S. residents (excluding residents of U.S. territories). Leased devices are only available for shipping to U.S. addresses (excluding U.S. territories) or pickup at Apple retail stores in the U.S. (excluding U.S. territories). To be eligible for a lease, you must be at least 18 years old (or the legal age in your state of residence), have a valid Social Security number or individual taxpayer identification number (ITIN), have an accepted credit or debit card, have an Apple Account in good standing, have a Klarna Account, and be able to receive security verification codes via text message. Leases are not available on refurbished accessories or online at the following special stores: Apple Employee Purchase Plan; participating corporate Employee Purchase Programs; Apple at Work for small businesses or enterprises; Government, Education, or Veterans and Military Purchase Programs.\"\n        - listitem:\n          - text: ◊◊◊ Apple Card Monthly Installments (ACMI) is a 0% APR payment option that is only available if you select it at checkout in the U.S. for eligible products purchased at Apple Store locations,\n          - link \"apple.com\":\n            - /url: /\n          - text: \", the Apple Store app, or by calling\"\n          - link \"1⁠‑⁠8⁠0⁠0⁠‑⁠M⁠Y⁠‑⁠A⁠P⁠P⁠L⁠E\":\n            - /url: tel:1-800-692-7753\n          - text: \", and is subject to credit approval and credit limit. See\"\n          - link \"here\":\n            - /url: https://support.apple.com/102730\n          - text: \"for more information about eligible products. Existing customers: See your Customer Agreement for your variable APR. As of July 1, 2026, the variable APR on new Apple Card accounts ranges from 17.49% to 27.74%. You must elect to use ACMI at checkout. If you buy an ACMI‑eligible product with a one-time payment on Apple Card at checkout, that purchase is subject to your Apple Card’s variable APR, not the ACMI 0% APR. Taxes and shipping on items purchased using ACMI are subject to your Apple Card’s variable APR, not the ACMI 0% APR. In order to buy an iPhone with ACMI, you must select one of the following carriers (prepaid carrier plans are not supported): AT&T, T‑Mobile, or Verizon. An iPhone purchased with ACMI is always unlocked, so you can switch carriers at any time, subject to your carrier’s terms. ACMI is not available for purchases made at the following special storefronts or when using these discounts in-store at Apple: Apple Employee Purchase Plan; participating corporate Employee Purchase Programs; Apple at Work for small businesses; Government and Veterans and Military Purchase Programs; or on refurbished devices. The last month’s payment for each product will be the product’s purchase price, less all other payments at the monthly payment amount. ACMI is subject to change at any time for any reason, including but not limited to installment term lengths and eligible products. See the\"\n          - link \"Apple Card Customer Agreement\":\n            - /url: https://www.goldmansachs.com/terms-and-conditions/Apple-Card-Customer-Agreement.pdf\n          - text: for more information about ACMI. To access and use all Apple Card features and products available only to Apple Card users, you must add Apple Card to Wallet on an iPhone or iPad that supports and has the latest version of iOS or iPadOS. Apple Card is subject to credit approval, available only for qualifying applicants in the United States, and issued by Goldman Sachs Bank USA, Salt Lake City Branch. Apple Payments Services LLC, a subsidiary of Apple Inc., is a service provider of Goldman Sachs Bank USA for Apple Card and Savings accounts. Neither Apple Inc. nor Apple Payments Services LLC is a bank. All communications from Apple and Goldman Sachs Bank USA about Apple Card (including transactional and marketing communications) and customer service support are available in English. Certain communications about Apple Card can be viewed in another language depending on your device language settings. If you reside in the U.S. Virgin Islands, American Samoa, Guam, Northern Mariana Islands, or U.S. Minor Outlying Islands, please call Goldman Sachs at\n          - link \"8⁠7⁠7⁠-⁠2⁠5⁠5⁠-⁠5⁠9⁠2⁠3\":\n            - /url: tel:1-877-255-5923\n          - text: with questions about Apple Card.\n      - list:\n        - listitem: Trade-in values will vary based on the condition, year, and configuration of your eligible trade-in device. Not all devices are eligible for credit. You must be at least the age of majority to be eligible to trade in for credit or for an Apple Gift Card. Trade-in value may be applied toward qualifying new device purchase, or added to an Apple Gift Card. Actual value awarded is based on receipt of a qualifying device matching the description provided when estimate was made. Sales tax may be assessed on full value of a new device purchase. In-store trade-in requires presentation of a valid photo ID (local law may require saving this information). Offer may not be available in all stores, and may vary between in-store and online trade-in. Some stores may have additional requirements. Apple or its trade-in partners reserve the right to refuse, cancel, or limit quantity of any trade-in transaction for any reason. More details are available from Apple’s trade-in partner for trade-in and recycling of eligible devices. Restrictions and limitations may apply.\n        - listitem: Apple Watch Hermès is not eligible for education savings.\n        - listitem:\n          - text: The redesigned Health app is available on Apple Intelligence–enabled iPhone and iPad models with the latest software, with select features available only on iPhone. Some features may not be available in all regions or languages. Health Age requires Apple Watch. The test to estimate VO2 max requires Apple Watch, AirPods Pro 3, or a third-party heart rate sensing device. Some features require users to be 18 or older. For information on Apple Intelligence availability, visit\n          - link \"support.apple.com/en-us/121115\":\n            - /url: https://support.apple.com/121115?cid=general-watch-b3d8fc66-62020270\n          - text: .\n        - listitem:\n          - text: Apple Fitness+ requires a subscription and compatible hardware and software. See\n          - link \"here\":\n            - /url: https://support.apple.com/118210?cid=general-watch-b3d8fc66-62020270\n          - text: for compatibility details.\n      - list:\n        - listitem: Apple Watch Series 12, Apple Watch Ultra 4, and Apple Watch SE 3 require iPhone 11 or later with iOS 27 or later.\n        - listitem:\n          - text: Features are subject to change. Some features, applications, and services may not be available in all regions or all languages and may require specific hardware and software. For more information, see watchOS\n          - link \"Feature Availability\":\n            - /url: /watchos/feature-availability/\n          - text: .\n        - listitem: Bands are subject to availability.\n    - navigation \"Breadcrumbs\":\n      - link \"Apple\":\n        - /url: /\n      - list:\n        - listitem: Watch\n    - navigation \"Apple Directory\":\n      - heading \"Shop and Learn\" [level=3]\n      - list:\n        - listitem:\n          - link \"Store\":\n            - /url: /us/shop/goto/store\n        - listitem:\n          - link \"Mac\":\n            - /url: /mac/\n        - listitem:\n          - link \"iPad\":\n            - /url: /ipad/\n        - listitem:\n          - link \"iPhone\":\n            - /url: /iphone/\n        - listitem:\n          - link \"Watch\":\n            - /url: /watch/\n        - listitem:\n          - link \"Vision\":\n            - /url: /apple-vision-pro/\n        - listitem:\n          - link \"AirPods\":\n            - /url: /airpods/\n        - listitem:\n          - link \"TV & Home\":\n            - /url: /tv-home/\n        - listitem:\n          - link \"AirTag\":\n            - /url: /airtag/\n        - listitem:\n          - link \"Accessories\":\n            - /url: /us/shop/goto/buy_accessories\n        - listitem:\n          - link \"Gift Cards\":\n            - /url: /us/shop/goto/giftcards\n      - heading \"Apple Wallet\" [level=3]\n      - list:\n        - listitem:\n          - link \"Wallet\":\n            - /url: /wallet/\n        - listitem:\n          - link \"Apple Card\":\n            - /url: /apple-card/\n        - listitem:\n          - link \"Apple Pay\":\n            - /url: /apple-pay/\n        - listitem:\n          - link \"Apple Cash\":\n            - /url: /apple-cash/\n      - heading \"Account\" [level=3]\n      - list:\n        - listitem:\n          - link \"Manage Your Apple Account\":\n            - /url: https://account.apple.com/\n        - listitem:\n          - link \"Apple Store Account\":\n            - /url: /us/shop/goto/account\n        - listitem:\n          - link \"iCloud.com\":\n            - /url: https://www.icloud.com\n      - heading \"Entertainment\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple One\":\n            - /url: /apple-one/\n        - listitem:\n          - link \"Apple TV\":\n            - /url: /apple-tv/\n        - listitem:\n          - link \"Apple Music\":\n            - /url: /apple-music/\n        - listitem:\n          - link \"Apple Arcade\":\n            - /url: /apple-arcade/\n        - listitem:\n          - link \"Apple Fitness+\":\n            - /url: /apple-fitness-plus/\n        - listitem:\n          - link \"Apple News+\":\n            - /url: /apple-news/\n        - listitem:\n          - link \"Apple Podcasts\":\n            - /url: /apple-podcasts/\n        - listitem:\n          - link \"Apple Books\":\n            - /url: /apple-books/\n        - listitem:\n          - link \"App Store\":\n            - /url: /app-store/\n      - heading \"Apple Store\" [level=3]\n      - list:\n        - listitem:\n          - link \"Find a Store\":\n            - /url: /retail/\n        - listitem:\n          - link \"Genius Bar\":\n            - /url: /retail/geniusbar/\n        - listitem:\n          - link \"Today at Apple\":\n            - /url: /today/\n        - listitem:\n          - link \"Group Reservations\":\n            - /url: /today/groups/\n        - listitem:\n          - link \"Apple Camp\":\n            - /url: /today/camp/\n        - listitem:\n          - link \"Apple Store App\":\n            - /url: https://apps.apple.com/us/app/apple-store/id375380948\n        - listitem:\n          - link \"Certified Refurbished\":\n            - /url: /us/shop/goto/special_deals\n        - listitem:\n          - link \"Apple Upgrade\":\n            - /url: /us/shop/goto/apple_upgrade\n        - listitem:\n          - link \"Apple Trade In\":\n            - /url: /us/shop/goto/trade_in\n        - listitem:\n          - link \"Financing\":\n            - /url: /us/shop/goto/payment_plan\n        - listitem:\n          - link \"Carrier Deals at Apple\":\n            - /url: /us/shop/goto/buy_iphone/carrier_offers\n        - listitem:\n          - link \"Order Status\":\n            - /url: /us/shop/goto/order/list\n        - listitem:\n          - link \"Shopping Help\":\n            - /url: /us/shop/goto/help\n      - heading \"For Business\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Business\":\n            - /url: /business/\n        - listitem:\n          - link \"Shop for Business\":\n            - /url: /retail/business/\n      - heading \"For Education\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Education\":\n            - /url: /education/\n        - listitem:\n          - link \"Shop for K-12\":\n            - /url: /education/k12/how-to-buy/\n        - listitem:\n          - link \"Shop for College\":\n            - /url: /us/shop/goto/educationrouting\n      - heading \"For Healthcare\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Healthcare\":\n            - /url: /healthcare/\n      - heading \"For Government\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Government\":\n            - /url: /government/\n        - listitem:\n          - link \"Shop for Veterans and Military\":\n            - /url: /us/shop/goto/eppstore/veteransandmilitary\n        - listitem:\n          - link \"Shop for State and Local Employees\":\n            - /url: /us_epp_67909/store\n        - listitem:\n          - link \"Shop for Federal Employees\":\n            - /url: /us_epp_55499/store\n      - heading \"Apple Values\" [level=3]\n      - list:\n        - listitem:\n          - link \"Accessibility\":\n            - /url: /accessibility/\n        - listitem:\n          - link \"Education\":\n            - /url: /education-initiative/\n        - listitem:\n          - link \"Environment\":\n            - /url: /environment/\n        - listitem:\n          - link \"Inclusion and Diversity\":\n            - /url: /diversity/\n        - listitem:\n          - link \"Privacy\":\n            - /url: /privacy/\n        - listitem:\n          - link \"Racial Equity and Justice\":\n            - /url: /racial-equity-justice-initiative/\n        - listitem:\n          - link \"Supply Chain Innovation\":\n            - /url: /supply-chain/\n      - heading \"About Apple\" [level=3]\n      - list:\n        - listitem:\n          - link \"Newsroom\":\n            - /url: /newsroom/\n        - listitem:\n          - link \"Apple Leadership\":\n            - /url: /leadership/\n        - listitem:\n          - link \"Career Opportunities\":\n            - /url: /careers/us/\n        - listitem:\n          - link \"Investors\":\n            - /url: https://investor.apple.com/\n        - listitem:\n          - link \"Ethics & Compliance\":\n            - /url: /compliance/\n        - listitem:\n          - link \"Events\":\n            - /url: /apple-events/\n        - listitem:\n          - link \"Contact Apple\":\n            - /url: /contact/\n    - text: \"More ways to shop:\"\n    - link \"Find an Apple Store\":\n      - /url: /retail/\n    - text: or\n    - link \"other retailer\":\n      - /url: https://locate.apple.com/\n    - text: near you. Or call\n    - link \"1-800-MY-APPLE\":\n      - /url: tel:1-800-692-7753\n    - text: (1-800-692-7753). Copyright © 2026 Apple Inc. All rights reserved.\n    - list:\n      - listitem:\n        - link \"Privacy Policy\":\n          - /url: /legal/privacy/\n      - listitem:\n        - link \"Terms of Use\":\n          - /url: /legal/internet-services/terms/site.html\n      - listitem:\n        - link \"Sales and Refunds\":\n          - /url: /us/shop/goto/help/sales_refunds\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/\n      - listitem:\n        - link \"Site Map\":\n          - /url: /sitemap/\n    - link \"United States. Choose your country or region\":\n      - /url: /choose-country-region/\n      - text: United States\n  - alert"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.apple.com/watch/",
+              "origin": "https://www.apple.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

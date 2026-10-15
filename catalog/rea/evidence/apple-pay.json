@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_a09c046e003701a6aea8ce8a60418c99848abdecb71f9fbd61a1b907fdf02cd2",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.apple.com/apple-pay/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "b39d8c4fbc20d30a4eb84eb41e775ad6e44cd3d6710d17ed9f4c9f6c182e36a8"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://www.apple.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 4330,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 1559,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/apple-pay/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2572,
+        "before_url": {
+          "url": "https://www.apple.com/apple-pay/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.apple.com/apple-pay/",
+          "origin": "https://www.apple.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "21a607bb6e8dee834ba4b024977ce67aa1f70231d476f2377d4b1b7e1dbef9f3",
+              "bytes": 36146,
+              "text": "- document:\n  - navigation \"Global\":\n    - list:\n      - listitem:\n        - link \"Apple\":\n          - /url: /\n      - listitem:\n        - list:\n          - listitem:\n            - link \"Store\":\n              - /url: /us/shop/goto/store\n          - listitem:\n            - button \"Store menu\"\n        - list:\n          - listitem:\n            - link \"Mac\":\n              - /url: /mac/\n          - listitem:\n            - button \"Mac menu\"\n        - list:\n          - listitem:\n            - link \"iPad\":\n              - /url: /ipad/\n          - listitem:\n            - button \"iPad menu\"\n        - list:\n          - listitem:\n            - link \"iPhone\":\n              - /url: /iphone/\n          - listitem:\n            - button \"iPhone menu\"\n        - list:\n          - listitem:\n            - link \"Watch\":\n              - /url: /watch/\n          - listitem:\n            - button \"Watch menu\"\n        - list:\n          - listitem:\n            - link \"Vision\":\n              - /url: /apple-vision-pro/\n          - listitem:\n            - button \"Vision menu\"\n        - list:\n          - listitem:\n            - link \"AirPods\":\n              - /url: /airpods/\n          - listitem:\n            - button \"AirPods menu\"\n        - list:\n          - listitem:\n            - link \"Home\":\n              - /url: /home/\n          - listitem:\n            - button \"Home menu\"\n        - list:\n          - listitem:\n            - link \"Entertainment\":\n              - /url: /entertainment/\n          - listitem:\n            - button \"Entertainment menu\"\n        - list:\n          - listitem:\n            - link \"Accessories\":\n              - /url: /us/shop/goto/buy_accessories\n          - listitem:\n            - button \"Accessories menu\"\n        - list:\n          - listitem:\n            - link \"Support\":\n              - /url: https://support.apple.com/?cid=gn-ols-home-hp-tab\n          - listitem:\n            - button \"Support menu\"\n      - listitem:\n        - button \"Search apple.com\"\n      - listitem:\n        - button \"Shopping Bag\"\n  - navigation \"Local\":\n    - link \"Apple Pay\":\n      - /url: /apple-pay/\n    - button \"Add a card to Apple Wallet\"\n  - main:\n    - img \"Apple Wallet app chiclet\"\n    - paragraph: Add a card to Apple Wallet.\n    - heading \"Apple Pay\" [level=1]\n    - heading \"Your cards. Secured on iPhone.\" [level=2]\n    - button \"Add a card to Apple Wallet\"\n    - img \"A hand holding an iPhone, front, displays a Chase Sapphire Reserve credit card, a blue checkmark indicates \\\"Done\\\"\"\n    - text: Apple Pay is your debit or credit card, just on your iPhone. Earn the same benefits and rewards, with the reliable security of your Apple device — and your purchases are protected by Face ID, Touch ID, or your passcode. Simply double-click and tap to pay anywhere there’s a Contactless payment symbol in a store or Apple Pay symbol online. For everything from groceries to vacations, Apple Pay is designed so only you can pay.\n    - heading \"Get started with Apple Pay.\" [level=2]\n    - list \"get started gallery\":\n      - listitem:\n        - heading \"Setup\" [level=3]\n        - paragraph: How do I add my card to my iPhone?\n        - paragraph\n        - figure:\n          - img \"Payment card icon, blue\"\n        - paragraph: Watch video 27 seconds\n        - button \"How do I add my card to my iPhone, watch video\":\n          - img\n      - listitem:\n        - heading \"Acceptance\" [level=3]\n        - paragraph: Where can I use Apple Pay?\n        - paragraph\n        - figure:\n          - img \"Contactless payment symbol, blue\"\n        - paragraph: Watch video 18 seconds\n        - button \"Where can I use Apple Pay, watch video\":\n          - img\n      - listitem:\n        - heading \"In Store\" [level=3]\n        - paragraph: How do I pay with just my iPhone?\n        - paragraph\n        - figure:\n          - img \"iPhone icon, blue\"\n        - paragraph: Watch video 18 seconds\n        - button \"How do I pay with just my iPhone, watch video\":\n          - img\n      - listitem:\n        - heading \"Privacy and Security\" [level=3]\n        - paragraph: What if I lose my iPhone?\n        - paragraph: Use Find My to suspend Apple Pay with Lost Mode, or remove your payment cards from Apple Wallet remotely.\n        - figure:\n          - img \"Lock icon, blue\"\n        - paragraph\n      - listitem:\n        - heading \"In Store\" [level=3]\n        - paragraph: Can I pay with my Apple Watch?\n        - paragraph\n        - figure:\n          - img \"Apple Watch icon, blue\"\n        - paragraph: Watch video 18 seconds\n        - button \"Can I pay with my Apple Watch, watch video\":\n          - img\n      - listitem:\n        - heading \"Online\" [level=3]\n        - paragraph: How do I use Apple Pay in apps?\n        - paragraph\n        - figure:\n          - img \"Shopping cart icon, blue\"\n        - paragraph: Watch video 19 seconds\n        - button \"How do I use Apple Pay in apps, watch video\":\n          - img\n      - listitem:\n        - heading \"Online\" [level=3]\n        - paragraph: Can I use Apple Pay on my Mac?\n        - paragraph\n        - figure:\n          - img \"MacBook icon, blue\"\n        - paragraph: Watch video 21 seconds\n        - button \"Can I use Apple Pay on my Mac, watch video\":\n          - img\n      - listitem:\n        - heading \"Transit\" [level=3]\n        - paragraph: Does Apple Pay work for the subway, bus, or ferry?\n        - paragraph\n        - figure:\n          - img \"Subway train icon, blue\"\n        - paragraph: Watch video 18 seconds\n        - button \"Does Apple Pay work for the subway, bus, or ferry, watch video\":\n          - img\n      - listitem:\n        - heading \"Online\" [level=3]\n        - paragraph: Does Apple Pay work in other browsers?\n        - paragraph\n        - figure:\n          - img \"Browser icon, blue\"\n        - paragraph: Watch video 29 seconds\n        - button \"Does Apple Pay work in other browsers, watch video\":\n          - img\n      - listitem:\n        - heading \"Rewards\" [level=3]\n        - paragraph: Can I still earn my card’s rewards?\n        - paragraph: Yep. Apple Pay doesn’t change how you earn your credit card points and rewards.\n        - figure:\n          - img \"Star icon with a hexagon border indicates rewards, blue\"\n        - paragraph\n    - list:\n      - listitem:\n        - button \"Previous item, Get Started gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item, Get Started gallery\":\n          - img\n    - heading \"Privacy and Security\" [level=2]\n    - paragraph: Protection you can bank on.\n    - paragraph: Apple Pay combines the payment protections you expect with the Apple security features you love. Your transactions are protected by Face ID, Touch ID, or your passcode, and they use a device‑specific number instead of your actual card number, so Apple Pay is more secure than tapping your physical card.\n    - list \"privacy and security gallery\":\n      - listitem:\n        - heading \"Authorize payments securely.\" [level=3]\n        - paragraph: Apple Pay is designed so only you can pay — your transactions are protected by Face ID, Touch ID, or your passcode. And you get the same fraud protections as with your physical card.\n        - img \"Face ID symbol\"\n      - listitem:\n        - heading \"Your actual card number is never shared.\" [level=3]\n        - paragraph: With device‑specific tokenization, Apple Pay uses a unique code for every purchase. This keeps your actual card number hidden from merchants in stores, online, and in apps to help reduce card fraud.\n        - img \"A stack of cards in Apple Wallet, showing only the last four digits of the front card\"\n      - listitem:\n        - heading \"Lost your device? Lock it down.\" [level=3]\n        - paragraph: Use Find My to activate Lost Mode, which instantly suspends Apple Pay and displays a message with your contact information on your device. If it’s truly lost, you can remotely erase your payment cards.\n        - img \"Find My app chiclet\"\n      - listitem:\n        - heading \"Your transactions are not for sale.\" [level=3]\n        - paragraph: Apple doesn’t sell your transaction data for third‑party marketing or advertising.\n        - img \"A raised hand icon over a blurred list of transactions\"\n      - listitem:\n        - heading \"Keep your actual card number on lock.\" [level=3]\n        - paragraph: Only you and your bank or card issuer know your actual card number. It’s encrypted on your Apple devices and iCloud Keychain, where Apple can’t see it.\n        - img \"A payment card icon with a padlock icon overlay\"\n    - list:\n      - listitem:\n        - button \"Previous item, Privacy and Security gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item, Privacy and Security gallery\":\n          - img\n    - heading \"Acceptance\" [level=2]\n    - paragraph: Pay practically anywhere.\n    - paragraph: Use Apple Pay anywhere there’s a Contactless payment symbol in stores and Apple Pay symbol online or in apps — and even for transit. So whether you pay at checkout with your iPhone in person or at home with your Mac, you’ll never have to reach for your wallet.\n    - img \"iPhone, front, displaying an Apple Pay payment sheet, with a Chase debit card selected, shipping and delivery details, and a \\\"Confirm with Side Button\\\" prompt\"\n    - img \"iPhone tapping a contactless reader, front, displaying a Face ID symbol, and a Bank of America debit card\"\n    - img \"iPhone, front, displaying a Tap transit card, with a $60.75 stored value, an \\\"Add Money\\\" button, and a list of recent transit transactions\"\n    - list \"acceptance gallery\":\n      - listitem:\n        - heading \"Check out across your Apple devices.\" [level=3]\n        - paragraph: You can use Apple Pay on your iPhone, Apple Watch, Mac, iPad, and Apple Vision Pro. So when you’re out for a run — or just ordering food from the couch — you have an easy way to pay.\n        - 'img \"Apple devices compatible with Apple Pay, each with a blue checkmark: iPhone, Apple Watch, Mac, iPad, Apple Vision Pro\"'\n      - listitem:\n        - heading \"The symbol seals the deal.\" [level=3]\n        - paragraph: You can use Apple Pay anywhere that accepts contactless payments at the register in stores. Double‑click. Tap. Done.\n        - img \"Apple Watch, front, displaying a Chase Sapphire credit card, with a \\\"Double Click to Pay\\\" prompt, held near a contactless payment reader\"\n      - listitem:\n        - heading \"Pay confidently online and in apps.\" [level=3]\n        - paragraph:\n          - text: For anything from clothes to electronics, you can shop across millions of websites and apps. Select the Apple Pay button at checkout, review and edit payment and shipping details, confirm your purchase with Face ID, and track your order with Apple Intelligence.\n          - superscript:\n            - link \"Footnote 1\":\n              - /url: \"#footnote-1\"\n              - text: \"1\"\n        - img \"iPhone, front, displaying an online order summary, coupon and gift card options, and a \\\"Check out with Apple Pay\\\" button\"\n      - listitem:\n        - heading \"Fly through checkout in Safari.\" [level=3]\n        - paragraph: Shopping online in Safari on your Mac makes checking out a breeze. Select the Apple Pay button at checkout, and your default card, shipping, billing, and contact details appear in one view for you to review or change. To confirm and pay, authenticate your purchase with Touch ID or your password. It’s that simple.\n        - img \"MacBook, front, displaying an Apple Pay payment sheet, in Safari, with a Bank of America debit card, shipping and delivery details, and a \\\"Pay with Touch ID\\\" prompt\"\n      - listitem:\n        - heading \"Apple Pay works in other browsers, too.\" [level=3]\n        - paragraph:\n          - text: You can also use Apple Pay in third‑party browsers with participating merchants. Just select Apple Pay at checkout, scan the QR code with your iPhone, review your payment and order details, and confirm your purchase.\n          - superscript:\n            - link \"Footnote 2\":\n              - /url: \"#footnote-2\"\n              - text: \"2\"\n        - img \"MacBook, front, a webpage in Safari, with an Apple Pay message showing a QR code and the prompt \\\"Scan Code with iPhone\\\"\"\n      - listitem:\n        - heading \"Pay the fare with a tap.\" [level=3]\n        - paragraph:\n          - text: In eligible cities worldwide, you can use Apple Pay for public transportation.\n          - superscript:\n            - link \"Footnote 3\":\n              - /url: \"#footnote-3\"\n              - text: \"3\"\n          - text: With Express Mode, just hold your iPhone or Apple Watch to the Contactless Symbol on the reader without even unlocking your device, and you’re ready to ride.\n          - superscript:\n            - link \"Footnote 4\":\n              - /url: \"#footnote-4\"\n              - text: \"4\"\n        - img \"A bus icon, a subway train icon, and a ferry boat icon.\"\n        - link \"Learn more about Apple Pay for Transit\":\n          - /url: https://learn.wallet.apple/transit\n      - listitem:\n        - heading \"Works locally, worldwide.\" [level=3]\n        - paragraph: Apple Pay works around the world, anywhere contactless payments are accepted. So you can pay with just your phone, even when you’re far from home.\n        - img \"Globe icon, white, blue background\"\n    - list:\n      - listitem:\n        - button \"Previous item, Acceptance gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item, Acceptance gallery\":\n          - img\n    - heading \"Ways to Pay\" [level=2]\n    - paragraph: Big purchase? You’ve got shoptions.\n    - paragraph:\n      - text: Pay in full or over time with an eligible card or pay‑later provider at checkout — both online and in stores.\n      - superscript:\n        - link \"Footnote 5\":\n          - /url: \"#footnote-5\"\n          - text: \"5\"\n      - text: You can also use your card’s rewards online.\n      - superscript:\n        - link \"Footnote 6\":\n          - /url: \"#footnote-6\"\n          - text: \"6\"\n      - text: And you can check your card balance and transaction history right in Apple Wallet.\n      - superscript:\n        - link \"Footnote 7\":\n          - /url: \"#footnote-7\"\n          - text: \"7\"\n      - text: So whether you’re booking a trip with points or splurging on your dream bag, you have the option to pay exactly how you want.\n    - tablist \"ways to pay gallery\":\n      - tab \"Pay in Full\" [selected]:\n        - img\n        - text: Pay in Full\n      - tab \"Pay Later\":\n        - img\n        - text: Pay Later\n      - tab \"Pay with Rewards\":\n        - img\n        - text: Pay with Rewards\n      - tab \"Pay with Apple Cash\":\n        - img\n        - text: Pay with Apple Cash\n    - tabpanel \"Pay in Full\":\n      - img \"iPhone, front, displaying an Apple Pay payment sheet, with a Citi Double Cash credit card selected, a purchase total with the Pay in Full option selected, and shipping details\"\n      - heading [level=3]\n      - paragraph: Cover your entire purchase with any payment card you’ve added to Apple Wallet. Use your default card or choose a different one, the same way you would with your physical wallet.\n    - heading \"Questions? Answers.\" [level=2]\n    - button \"Expand all accordion items\"\n    - list:\n      - listitem:\n        - heading \"How does Apple Pay work?\" [level=3]:\n          - button \"How does Apple Pay work?\":\n            - text: How does Apple Pay work?\n            - img\n      - listitem:\n        - heading \"How do I set up Apple Pay?\" [level=3]:\n          - button \"How do I set up Apple Pay?\":\n            - text: How do I set up Apple Pay?\n            - img\n      - listitem:\n        - heading \"What’s the difference between Apple Pay and Apple Wallet?\" [level=3]:\n          - button \"What’s the difference between Apple Pay and Apple Wallet?\":\n            - text: What’s the difference between Apple Pay and Apple Wallet?\n            - img\n      - listitem:\n        - heading \"Which banks support Apple Pay?\" [level=3]:\n          - button \"Which banks support Apple Pay?\":\n            - text: Which banks support Apple Pay?\n            - img\n      - listitem:\n        - heading \"What’s the difference between Apple Pay and Apple Cash?\" [level=3]:\n          - button \"What’s the difference between Apple Pay and Apple Cash?\":\n            - text: What’s the difference between Apple Pay and Apple Cash?\n            - img\n      - listitem:\n        - heading \"Is there a fee for using Apple Pay?\" [level=3]:\n          - button \"Is there a fee for using Apple Pay?\":\n            - text: Is there a fee for using Apple Pay?\n            - img\n      - listitem:\n        - heading \"Can I use Apple Pay on any device?\" [level=3]:\n          - button \"Can I use Apple Pay on any device?\":\n            - text: Can I use Apple Pay on any device?\n            - img\n      - listitem:\n        - heading \"Is Apple Pay safe and secure?\" [level=3]:\n          - button \"Is Apple Pay safe and secure?\":\n            - text: Is Apple Pay safe and secure?\n            - img\n      - listitem:\n        - heading \"Does Apple Pay work internationally?\" [level=3]:\n          - button \"Does Apple Pay work internationally?\":\n            - text: Does Apple Pay work internationally?\n            - img\n      - listitem:\n        - heading \"How do I use Apple Pay for express transit?\" [level=3]:\n          - button \"How do I use Apple Pay for express transit?\":\n            - text: How do I use Apple Pay for express transit?\n            - img\n      - listitem:\n        - heading \"Does Apple Pay work without Wi‑Fi or cellular service?\" [level=3]:\n          - button \"Does Apple Pay work without Wi‑Fi or cellular service?\":\n            - text: Does Apple Pay work without Wi‑Fi or cellular service?\n            - img\n      - listitem:\n        - heading \"Is there a limit on transactions?\" [level=3]:\n          - button \"Is there a limit on transactions?\":\n            - text: Is there a limit on transactions?\n            - img\n      - listitem:\n        - heading \"How can my business accept Apple Pay?\" [level=3]:\n          - button \"How can my business accept Apple Pay?\":\n            - text: How can my business accept Apple Pay?\n            - img\n      - listitem:\n        - heading \"Does my business need any special equipment to accept Apple Pay?\" [level=3]:\n          - button \"Does my business need any special equipment to accept Apple Pay?\":\n            - text: Does my business need any special equipment to accept Apple Pay?\n            - img\n    - heading \"More for your finances.\" [level=2]\n    - list \"more for your finances gallery\":\n      - listitem:\n        - heading \"Apple Wallet\" [level=3]\n        - paragraph: Carry one thing. Everything.\n        - figure:\n          - img \"Apple Wallet app chiclet\"\n        - link \"Learn more, Apple Wallet\":\n          - /url: /wallet/\n          - img\n      - listitem:\n        - heading \"Apple Card\" [level=3]\n        - paragraph: The simplicity of Apple. In a credit card.\n        - figure:\n          - img \"Apple Card\"\n        - link \"Learn more, Apple Card\":\n          - /url: /apple-card/\n          - img\n      - listitem:\n        - heading \"Apple Cash\" [level=3]\n        - paragraph: Send it. Spend it. Stash it.\n        - figure:\n          - img \"Apple Cash card\"\n        - link \"Learn more, Apple Cash\":\n          - /url: /apple-cash/\n          - img\n    - list:\n      - listitem:\n        - button \"Previous item, More for your finances gallery\" [disabled]:\n          - img\n      - listitem:\n        - button \"Next item, More for your finances gallery\":\n          - img\n  - contentinfo \"Apple Footer\":\n    - heading \"Apple Footer\" [level=2]\n    - region \"Footnotes\":\n      - list:\n        - listitem:\n          - text: Must have an Apple Intelligence-enabled device. Users can only use order tracking within the Mail app. See\n          - link \"here\":\n            - /url: https://support.apple.com/guide/business/abcbb713dd73/web\n          - text: for more information.\n        - listitem: Available with participating merchants on compatible browsers. This feature is not available in all markets. Software requirements apply. To ensure that you have all features of this product, update your iPhone or iPad to the latest software version.\n        - listitem:\n          - text: Requires eligible device and OS version. Credit and debit cards in Apple Wallet can only be used to pay for full-fare trips at most transit operator readers. Check with your transit operator to confirm if your preferred payment method is accepted. Users may have the option to pay for a transit trip with a card issued by their transit agency. For more information, check Apple Wallet or your transit agency website. For instructions on how to search for transit cards in Apple Wallet, see\n          - link \"support.apple.com/118625\":\n            - /url: https://support.apple.com/118625?cid=general-applepay-marcom-08152025\n          - text: .\n        - listitem:\n          - text: Express Mode for transit is only available in select cities and transit systems. Requires eligible device and OS version. See\n          - link \"here\":\n            - /url: https://support.apple.com/105123\n          - text: for more details.\n        - listitem:\n          - text: \"Paying over time on Apple Pay: Loans not offered by Apple. All loans are offered by your lending provider and are subject to the lending provider’s eligibility requirements and approval, as well as other lending provider terms. Your loan activity may be reported to credit bureaus by your lending provider, which may affect your credit score. Not available in all markets, and may not be available for all types of purchases, such as subscriptions and recurring transactions. May need an eligible card. Available in stores on iPhone, and online and in apps on iPhone or iPad. Software requirements apply. Additional eligibility requirements may apply. For more eligibility and feature details, see\"\n          - link \"support.apple.com/120477\":\n            - /url: https://support.apple.com/120477?cid=general-applepay-marcom-08152025\n          - text: .\n        - listitem:\n          - text: \"Paying with Rewards on Apple Pay: Must have an eligible card. This feature is offered by your card’s issuer and is subject to issuer eligibility requirements and other issuer terms. This feature is not available in all markets and may not be available for all types of purchases, such as subscriptions and recurring transactions. The full amount of the transaction will be charged to your card at the time of your purchase, and a statement credit for the redeemed reward amount will be applied to your account. Your available rewards balance and other data shown in Apple Wallet may be delayed due to a variety of factors, including internet service. Available in stores on iPhone, and online and in apps on iPhone or iPad. Software requirements apply. Some card issuers may require you to opt in to this feature before it is available to you. Contact your card issuer for more information. Additional eligibility requirements may apply. For more eligibility and other feature details, see\"\n          - link \"support.apple.com/120479\":\n            - /url: https://support.apple.com/120479?cid=general-applepay-marcom-08152025\n          - text: .\n        - listitem:\n          - text: To use this feature, connect your eligible card account to its associated card you use with Apple Pay. Card eligibility differs by your location. Please call your card issuer with questions about card eligibility. Data available in Apple Wallet for your connected card(s) may be delayed due to a variety of factors, including internet service. Software requirements apply. For more eligibility details, see\n          - link \"support.apple.com/en-us/111117\":\n            - /url: https://support.apple.com/en-us/111117?cid=general-applepay-marcom-08152025\n          - text: .\n        - listitem:\n          - text: Apple Cash services are provided by Green Dot Bank, Member FDIC. Apple Payments Services LLC, a subsidiary of Apple Inc., is a service provider of Green Dot Bank for Apple Cash accounts. Neither Apple Inc. nor Apple Payments Services LLC is a bank. Learn more about Apple Cash\n          - link \"Terms and Conditions\":\n            - /url: https://applecash.greendot.com/termsconditions/\n          - text: from Green Dot Bank. Only available in the 50 United States, the District of Columbia, and Puerto Rico (collectively the “U.S.”). To send and receive money with an Apple Cash account, you must be 18 and a U.S. resident. If you’re under 18, your family organizer can set up Apple Cash for you as part of their Apple Cash Family account, but you may not be able to access features that require a supported payment card. Security checks may require more time to make funds available. Apple Cash Family accounts can only send or receive up to $2000 within a rolling seven-day period. Tap to Cash transactions can only be used to send or receive up to $2000 within a rolling seven-day period. Other limits apply, see Apple Cash Terms and Conditions from Green Dot for details. To access and use all Apple Cash features, you must register your Apple Cash Account and have an eligible Apple device with Apple Wallet that has the latest version of iOS. All communications from Apple and Green Dot Bank about Apple Cash (including transactional and marketing communications) and customer service support are available in English. Certain communications about Apple Cash can be viewed in another language depending on your device language settings.\n        - listitem: Must have an eligible and supported card. Not available in all markets. To use this feature, your card’s NFC technology must be activated and you may need to enter your card’s security code during set-up. Software requirements apply. To ensure you have all features of this product, update your iPhone to the latest software version.\n        - listitem: Requires eligible device and OS version.\n      - list:\n        - listitem: Apple Pay is a service provided by Apple Payments Services LLC, a subsidiary of Apple Inc. Neither Apple Inc. nor Apple Payments Services LLC is a bank. Any card used in Apple Pay is offered by the card issuer.\n        - listitem: To use Apple Pay you need a supported card from a participating card issuer. To check if your card is compatible with Apple Pay, contact your card issuer.\n        - listitem:\n          - text: Apple Pay is not available in all markets.\n          - link \"View Apple Pay countries and regions\":\n            - /url: /ios/feature-availability/#apple-wallet-apple-pay\n          - text: .\n        - listitem:\n          - text: Features are subject to change. Some features, applications, and services may not be available in all regions or all languages and may require specific hardware and software. For more information, see\n          - link \"Feature Availability\":\n            - /url: /ios/feature-availability/#apple-wallet-apple-pay\n          - text: .\n        - listitem: All communications from Apple about Apple Pay — including marketing communications and customer service support — will be in English. Depending on your device settings, certain communications about Apple Pay may be provided in your device language.\n        - listitem: To access and use all Apple Card features and products available only to Apple Card users, you must add Apple Card to Apple Wallet on an iPhone or iPad that supports and has the latest version of iOS or iPadOS. Apple Card is subject to credit approval, available only for qualifying applicants in the United States, and issued by Goldman Sachs Bank USA, Salt Lake City Branch.\n        - listitem: Apple Payments Services LLC, a subsidiary of Apple Inc., is a service provider of Goldman Sachs Bank USA for Apple Card and Savings accounts. Neither Apple Inc. nor Apple Payments Services LLC is a bank.\n        - listitem: All communications from Apple and Goldman Sachs Bank USA about Apple Card (including transactional and marketing communications) and customer service support are available in English. Certain communications about Apple Card can be viewed in another language depending on your device language settings. If you reside in the U.S. Virgin Islands, American Samoa, Guam, Northern Mariana Islands, or U.S. Minor Outlying Islands, please call Goldman Sachs at 877-255-5923 with questions about Apple Card.\n        - listitem: The Contactless Symbol is a trademark owned by and used with permission of EMVCo, LLC.\n    - navigation \"Breadcrumbs\":\n      - link \"Apple\":\n        - /url: /\n      - list:\n        - listitem: Apple Pay\n    - navigation \"Apple Directory\":\n      - heading \"Shop and Learn\" [level=3]\n      - list:\n        - listitem:\n          - link \"Store\":\n            - /url: /us/shop/goto/store\n        - listitem:\n          - link \"Mac\":\n            - /url: /mac/\n        - listitem:\n          - link \"iPad\":\n            - /url: /ipad/\n        - listitem:\n          - link \"iPhone\":\n            - /url: /iphone/\n        - listitem:\n          - link \"Watch\":\n            - /url: /watch/\n        - listitem:\n          - link \"Vision\":\n            - /url: /apple-vision-pro/\n        - listitem:\n          - link \"AirPods\":\n            - /url: /airpods/\n        - listitem:\n          - link \"Home\":\n            - /url: /home/\n        - listitem:\n          - link \"AirTag\":\n            - /url: /airtag/\n        - listitem:\n          - link \"Accessories\":\n            - /url: /us/shop/goto/buy_accessories\n        - listitem:\n          - link \"Gift Cards\":\n            - /url: /us/shop/goto/giftcards\n      - heading \"Apple Wallet\" [level=3]\n      - list:\n        - listitem:\n          - link \"Wallet\":\n            - /url: /wallet/\n        - listitem:\n          - link \"Apple Card\":\n            - /url: /apple-card/\n        - listitem:\n          - link \"Apple Pay\":\n            - /url: /apple-pay/\n        - listitem:\n          - link \"Apple Cash\":\n            - /url: /apple-cash/\n      - heading \"Account\" [level=3]\n      - list:\n        - listitem:\n          - link \"Manage Your Apple Account\":\n            - /url: https://account.apple.com/\n        - listitem:\n          - link \"Apple Store Account\":\n            - /url: /us/shop/goto/account\n        - listitem:\n          - link \"iCloud.com\":\n            - /url: https://www.icloud.com\n      - heading \"Entertainment\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple One\":\n            - /url: /apple-one/\n        - listitem:\n          - link \"Apple TV\":\n            - /url: /apple-tv/\n        - listitem:\n          - link \"Apple Music\":\n            - /url: /apple-music/\n        - listitem:\n          - link \"Apple Arcade\":\n            - /url: /apple-arcade/\n        - listitem:\n          - link \"Apple Fitness+\":\n            - /url: /apple-fitness-plus/\n        - listitem:\n          - link \"Apple News+\":\n            - /url: /apple-news/\n        - listitem:\n          - link \"Apple Podcasts\":\n            - /url: /apple-podcasts/\n        - listitem:\n          - link \"Apple Books\":\n            - /url: /apple-books/\n        - listitem:\n          - link \"App Store\":\n            - /url: /app-store/\n      - heading \"Apple Store\" [level=3]\n      - list:\n        - listitem:\n          - link \"Find a Store\":\n            - /url: /retail/\n        - listitem:\n          - link \"Genius Bar\":\n            - /url: /retail/geniusbar/\n        - listitem:\n          - link \"Today at Apple\":\n            - /url: /today/\n        - listitem:\n          - link \"Group Reservations\":\n            - /url: /today/groups/\n        - listitem:\n          - link \"Apple Camp\":\n            - /url: /today/camp/\n        - listitem:\n          - link \"Apple Store App\":\n            - /url: https://apps.apple.com/us/app/apple-store/id375380948\n        - listitem:\n          - link \"Certified Refurbished\":\n            - /url: /us/shop/goto/special_deals\n        - listitem:\n          - link \"Apple Upgrade\":\n            - /url: /us/shop/goto/apple_upgrade\n        - listitem:\n          - link \"Apple Trade In\":\n            - /url: /us/shop/goto/trade_in\n        - listitem:\n          - link \"Financing\":\n            - /url: /us/shop/goto/payment_plan\n        - listitem:\n          - link \"Carrier Deals at Apple\":\n            - /url: /us/shop/goto/buy_iphone/carrier_offers\n        - listitem:\n          - link \"Order Status\":\n            - /url: /us/shop/goto/order/list\n        - listitem:\n          - link \"Shopping Help\":\n            - /url: /us/shop/goto/help\n      - heading \"For Business\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Business\":\n            - /url: /business/\n        - listitem:\n          - link \"Shop for Business\":\n            - /url: /retail/business/\n      - heading \"For Education\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Education\":\n            - /url: /education/\n        - listitem:\n          - link \"Shop for K-12\":\n            - /url: /education/k12/how-to-buy/\n        - listitem:\n          - link \"Shop for College\":\n            - /url: /us/shop/goto/educationrouting\n      - heading \"For Healthcare\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Healthcare\":\n            - /url: /healthcare/\n      - heading \"For Government\" [level=3]\n      - list:\n        - listitem:\n          - link \"Apple and Government\":\n            - /url: /government/\n        - listitem:\n          - link \"Shop for Veterans and Military\":\n            - /url: /us/shop/goto/eppstore/veteransandmilitary\n        - listitem:\n          - link \"Shop for State and Local Employees\":\n            - /url: /us_epp_67909/store\n        - listitem:\n          - link \"Shop for Federal Employees\":\n            - /url: /us_epp_55499/store\n      - heading \"Apple Values\" [level=3]\n      - list:\n        - listitem:\n          - link \"Accessibility\":\n            - /url: /accessibility/\n        - listitem:\n          - link \"Education\":\n            - /url: /education-initiative/\n        - listitem:\n          - link \"Environment\":\n            - /url: /environment/\n        - listitem:\n          - link \"Inclusion and Diversity\":\n            - /url: /diversity/\n        - listitem:\n          - link \"Privacy\":\n            - /url: /privacy/\n        - listitem:\n          - link \"Racial Equity and Justice\":\n            - /url: /racial-equity-justice-initiative/\n        - listitem:\n          - link \"Supply Chain Innovation\":\n            - /url: /supply-chain/\n      - heading \"About Apple\" [level=3]\n      - list:\n        - listitem:\n          - link \"Newsroom\":\n            - /url: /newsroom/\n        - listitem:\n          - link \"Apple Leadership\":\n            - /url: /leadership/\n        - listitem:\n          - link \"Career Opportunities\":\n            - /url: /careers/us/\n        - listitem:\n          - link \"Investors\":\n            - /url: https://investor.apple.com/\n        - listitem:\n          - link \"Ethics & Compliance\":\n            - /url: /compliance/\n        - listitem:\n          - link \"Events\":\n            - /url: /apple-events/\n        - listitem:\n          - link \"Contact Apple\":\n            - /url: /contact/\n    - text: \"More ways to shop:\"\n    - link \"Find an Apple Store\":\n      - /url: /retail/\n    - text: or\n    - link \"other retailer\":\n      - /url: https://locate.apple.com/\n    - text: near you. Or call\n    - link \"1-800-MY-APPLE\":\n      - /url: tel:1-800-692-7753\n    - text: (1-800-692-7753). Copyright © 2026 Apple Inc. All rights reserved.\n    - list:\n      - listitem:\n        - link \"Privacy Policy\":\n          - /url: /legal/privacy/\n      - listitem:\n        - link \"Terms of Use\":\n          - /url: /legal/internet-services/terms/site.html\n      - listitem:\n        - link \"Sales and Refunds\":\n          - /url: /us/shop/goto/help/sales_refunds\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/\n      - listitem:\n        - link \"Site Map\":\n          - /url: /sitemap/\n    - link \"United States. Choose your country or region\":\n      - /url: /choose-country-region/\n      - text: United States"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.apple.com/apple-pay/",
+              "origin": "https://www.apple.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

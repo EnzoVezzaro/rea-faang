@@ -2,13 +2,13 @@
 
 # Agent workflow
 
-Each product's Markdown file is the build skill for that product. Download it from the product page or generate it with the `rae` CLI, then give it to your coding agent in your project. The skill guides your agent through research, reuse decisions, implementation and verification; your agent builds the independent product in your project. Alternative-coverage labels describe research into existing projects; they do not determine whether the product can be built. ACE (`ace-proagents`) is optional for coordinating a team of agents.
+Each product has a Markdown skill you can download from its page or generate with `rae`. Give it to your coding agent from the project where you want to work. It links to research and candidate projects, and offers directions for planning, building and testing an independent implementation. Coverage labels describe research into existing projects, not build feasibility. ACE (`ace-proagents`) is optional; use it when you want to coordinate a team of agents.
 
 Use [`AGENTS.md`](../AGENTS.md) for the command list and handoff template. This guide explains how the parts fit together.
 
 ## What ACE manages (source repository)
 
-The installed RAE package includes the product CLI, catalog data and generators. You do not need the RAE source checkout to get a product skill: install the CLI, generate the skill, and use it from your own project. Clone this repository only when you need its source files, ACE configuration, generators or full project checks.
+The published RAE package includes the CLI, catalog and skill generator. Install it to get a product skill; you do not need this source checkout for a product build. Clone the repository to edit its data or code, use the source-only tools, or run the full project checks.
 
 ## What ACE manages
 

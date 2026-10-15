@@ -1,0 +1,243 @@
+{
+  "evidence_id": "ev_309080a3e6fd1bfc656070598d01884c06794bd4d0affac23bf8086ca1083721",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.netflix.com/kids",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "d134e016120d06f322999aa071dcfe385b0ab979b35706ae7270964866346410"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://www.netflix.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 5372,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 2522,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fkids&serverState=Bgj1wOvcAxKnAlJ37hGd5MiEpWbLmHnHRuRvtuLF6MiLWQ5Q3ScVL1oeqlb4K1hbZhEZciUHaHQ9jlLIR%2ByniKYpMWiKpXSYWCLTpR%2F5jxlQyByw3w5Xi5LZT2ugucB4t%2FlGp4um6aUoDi9f%2BPofmsdnldttwcmFFQP8ffO2BbUNJn8Tcfqpp3nJVAdSTbV2NNsmxek2avnFUKWh1QGq%2B%2Bx%2B%2F2hok9NQEgKMUPSh0cMzY2YBmmn4LNl1r8yxdG%2FH6Fm5ssqzZD6r5%2Fjlc7euWokwdx6pYNJ4okBhp0MWcCgMoVjTJN9ArMJMnJZyTrJmff9e8u16JT1wKCgN3%2BMZE%2BOJBg8Gdj9xACn%2Fbf%2BygDUBsCfkaQC3pIvUbHwCGAbHOqYGk1qgVnOyMGjoHH9Ys5MYBiIOCgw7SIFOnWgx1XGu%2BQw%3D",
+          "origin": "https://www.netflix.com",
+          "query_parameter_names": [
+            "nextpage",
+            "serverState"
+          ],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2553,
+        "before_url": {
+          "url": "https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fkids&serverState=Bgj1wOvcAxKnAlJ37hGd5MiEpWbLmHnHRuRvtuLF6MiLWQ5Q3ScVL1oeqlb4K1hbZhEZciUHaHQ9jlLIR%2ByniKYpMWiKpXSYWCLTpR%2F5jxlQyByw3w5Xi5LZT2ugucB4t%2FlGp4um6aUoDi9f%2BPofmsdnldttwcmFFQP8ffO2BbUNJn8Tcfqpp3nJVAdSTbV2NNsmxek2avnFUKWh1QGq%2B%2Bx%2B%2F2hok9NQEgKMUPSh0cMzY2YBmmn4LNl1r8yxdG%2FH6Fm5ssqzZD6r5%2Fjlc7euWokwdx6pYNJ4okBhp0MWcCgMoVjTJN9ArMJMnJZyTrJmff9e8u16JT1wKCgN3%2BMZE%2BOJBg8Gdj9xACn%2Fbf%2BygDUBsCfkaQC3pIvUbHwCGAbHOqYGk1qgVnOyMGjoHH9Ys5MYBiIOCgw7SIFOnWgx1XGu%2BQw%3D",
+          "origin": "https://www.netflix.com",
+          "query_parameter_names": [
+            "nextpage",
+            "serverState"
+          ],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fkids&serverState=Bgj1wOvcAxKnAlJ37hGd5MiEpWbLmHnHRuRvtuLF6MiLWQ5Q3ScVL1oeqlb4K1hbZhEZciUHaHQ9jlLIR%2ByniKYpMWiKpXSYWCLTpR%2F5jxlQyByw3w5Xi5LZT2ugucB4t%2FlGp4um6aUoDi9f%2BPofmsdnldttwcmFFQP8ffO2BbUNJn8Tcfqpp3nJVAdSTbV2NNsmxek2avnFUKWh1QGq%2B%2Bx%2B%2F2hok9NQEgKMUPSh0cMzY2YBmmn4LNl1r8yxdG%2FH6Fm5ssqzZD6r5%2Fjlc7euWokwdx6pYNJ4okBhp0MWcCgMoVjTJN9ArMJMnJZyTrJmff9e8u16JT1wKCgN3%2BMZE%2BOJBg8Gdj9xACn%2Fbf%2BygDUBsCfkaQC3pIvUbHwCGAbHOqYGk1qgVnOyMGjoHH9Ys5MYBiIOCgw7SIFOnWgx1XGu%2BQw%3D",
+          "origin": "https://www.netflix.com",
+          "query_parameter_names": [
+            "nextpage",
+            "serverState"
+          ],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "b7887ffdfdd38424476fe1a57d6e2a8d917d35cbdfa650eef78769e57a47e9c1",
+              "bytes": 1695,
+              "text": "- document:\n  - banner:\n    - link \"Netflix\":\n      - /url: /\n  - heading \"Enter your info to sign in\" [level=1]\n  - heading \"Or get started with a new account.\" [level=2]\n  - text: Email or mobile number\n  - textbox \"Email or mobile number\"\n  - text: Password\n  - textbox \"Password\"\n  - button \"Continue\"\n  - button \"Get Help\":\n    - paragraph: Get Help\n  - paragraph: This page is protected by Google reCAPTCHA to ensure you're not a bot.\n  - contentinfo:\n    - text: Questions? Call\n    - link \"1-844-569-7700 (Toll-Free)\":\n      - /url: tel:1-844-569-7700\n    - list:\n      - listitem:\n        - link \"FAQ\":\n          - /url: https://help.netflix.com/support/412\n      - listitem:\n        - link \"Help Center\":\n          - /url: https://help.netflix.com\n      - listitem:\n        - link \"Netflix House\":\n          - /url: https://www.netflixhouse.com/\n      - listitem:\n        - link \"Netflix Shop\":\n          - /url: https://netflix.shop/\n      - listitem:\n        - link \"Terms of Use\":\n          - /url: https://help.netflix.com/legal/termsofuse\n      - listitem:\n        - link \"Privacy\":\n          - /url: https://help.netflix.com/legal/privacy\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: \"#\"\n      - listitem:\n        - link \"Corporate Information\":\n          - /url: https://help.netflix.com/legal/corpinfo\n      - listitem:\n        - link \"Do Not Sell or Share My Personal Information\":\n          - /url: https://netflix.com/dnsspi\n      - listitem:\n        - link \"Ad Choices\":\n          - /url: https://netflix.com/adchoices-us\n    - text: Select language\n    - combobox \"Select language\":\n      - option \"English\" [selected]\n      - option \"Español\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fkids&serverState=Bgj1wOvcAxKnAlJ37hGd5MiEpWbLmHnHRuRvtuLF6MiLWQ5Q3ScVL1oeqlb4K1hbZhEZciUHaHQ9jlLIR%2ByniKYpMWiKpXSYWCLTpR%2F5jxlQyByw3w5Xi5LZT2ugucB4t%2FlGp4um6aUoDi9f%2BPofmsdnldttwcmFFQP8ffO2BbUNJn8Tcfqpp3nJVAdSTbV2NNsmxek2avnFUKWh1QGq%2B%2Bx%2B%2F2hok9NQEgKMUPSh0cMzY2YBmmn4LNl1r8yxdG%2FH6Fm5ssqzZD6r5%2Fjlc7euWokwdx6pYNJ4okBhp0MWcCgMoVjTJN9ArMJMnJZyTrJmff9e8u16JT1wKCgN3%2BMZE%2BOJBg8Gdj9xACn%2Fbf%2BygDUBsCfkaQC3pIvUbHwCGAbHOqYGk1qgVnOyMGjoHH9Ys5MYBiIOCgw7SIFOnWgx1XGu%2BQw%3D",
+              "origin": "https://www.netflix.com",
+              "query_parameter_names": [
+                "nextpage",
+                "serverState"
+              ],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

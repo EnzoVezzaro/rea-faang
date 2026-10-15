@@ -4,7 +4,7 @@
  *
  * ACE keeps one CLI in the repository root so there is a single source of truth
  * for the spec (see docs/agent-workflow.md). This shim runs the root CLI from
- * the product directory, so `node ace.mjs <command>` works here exactly as it
+ * the product directory, so `ace <command>` works here exactly as it
  * does at the repository root, and `npm update ace-proagents` only has to be
  * re-applied once.
  */

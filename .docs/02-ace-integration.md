@@ -1,4 +1,4 @@
-> **Historical document — not authoritative.**
+> **Historical document - not authoritative.**
 >
 > This file predates the current CLI and ACE layout. It is kept for design
 > history only and contains stale details (provider names, product names, and a
@@ -213,80 +213,80 @@ Each product in `products/` is a self-contained ACE workspace:
 ### Workspace Management
 ```bash
 # Initialize root workspace
-node ace.mjs init --name rae-faang
+ace init --name rae-faang
 
 # Initialize product workspace
 cd products/rae-social
-node ace.mjs init --name rae-social
+ace init --name rae-social
 
 # Install dependencies (from lockfile or git)
-node ace.mjs install
+ace install
 
 # Start runtime
-node ace.mjs run
+ace run
 
 # Check status
-node ace.mjs status
-node ace.mjs context --json
+ace status
+ace context --json
 ```
 
 ### Governance
 ```bash
 # Run governor cycle
-node ace.mjs govern --dry-run
-node ace.mjs govern
+ace govern --dry-run
+ace govern
 
 # Supervise specific project
-node ace.mjs supervise --project rae-social
+ace supervise --project rae-social
 
 # Task management
-node ace.mjs task add --title "Implement feed algorithm" --project rae-social
-node ace.mjs task list --project rae-social
-node ace.mjs task claim <id> --agent frontend-1
-node ace.mjs task start <id>
-node ace.mjs task review <id>
-node ace.mjs task integrate <id>
+ace task add --title "Implement feed algorithm" --project rae-social
+ace task list --project rae-social
+ace task claim <id> --agent frontend-1
+ace task start <id>
+ace task review <id>
+ace task integrate <id>
 ```
 
 ### Handoffs
 ```bash
-node ace.mjs handoff submit <task> --file handoff.json
-node ace.mjs handoff verify <task>
+ace handoff submit <task> --file handoff.json
+ace handoff verify <task>
 ```
 
 ### Monitoring & Recovery
 ```bash
 # View agents, tasks, events
-node ace.mjs agents
-node ace.mjs tasks
-node ace.mjs events --limit 50
-node ace.mjs logs --limit 100
+ace agents
+ace tasks
+ace events --limit 50
+ace logs --limit 100
 
 # Snapshots for checkpoint/rollback
-node ace.mjs snapshot
-node ace.mjs restore <id>
+ace snapshot
+ace restore <id>
 
 # Autopilot for continuous operation
-node ace.mjs autopilot on --interval 300 --mission "Complete RAE Social MVP"
-node ace.mjs autopilot run --max-cycles 10
-node ace.mjs autopilot off
+ace autopilot on --interval 300 --mission "Complete RAE Social MVP"
+ace autopilot run --max-cycles 10
+ace autopilot off
 
 # Watchdog (governor self-recovery)
-node ace.mjs watchdog on
-node ace.mjs watchdog status
-node ace.mjs watchdog cycle
+ace watchdog on
+ace watchdog status
+ace watchdog cycle
 ```
 
 ### Verification
 ```bash
 # Run verification scripts (lint, typecheck, test, build)
-node ace.mjs verify
+ace verify
 
 # Check configuration
-node ace.mjs config --resolve
-node ace.mjs config check
+ace config --resolve
+ace config check
 
 # Adapter health
-node ace.mjs adapters health
-node ace.mjs adapters audit
+ace adapters health
+ace adapters audit
 ```

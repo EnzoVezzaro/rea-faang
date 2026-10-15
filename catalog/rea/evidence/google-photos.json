@@ -1,0 +1,231 @@
+{
+  "evidence_id": "ev_2e517002618151c4d97edae82717f10ec62c28048a5ba68226397fbd0fbb4b74",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://photos.google.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "scenario_sha256": "6d6d072cedbf47d31f7cf7469ae787c83dd1a0283d0994a1d879c78aa5d38fdc"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "155.0.8059.79"
+    },
+    "scenario": {
+      "start_origin": "https://photos.google.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      }
+    },
+    "duration_ms": 5288,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 2486,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.google.com/photos/about/",
+          "origin": "https://www.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2566,
+        "before_url": {
+          "url": "https://www.google.com/photos/about/",
+          "origin": "https://www.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.google.com/photos/about/",
+          "origin": "https://www.google.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "c0a77db31cadaf4d6fe9de63b4306dbf6b139130ce413e13d507fe68af025d4c",
+              "bytes": 21330,
+              "text": "- document:\n  - banner:\n    - link \"Skip to main content\":\n      - /url: \"#main\"\n    - link \"Visit the Google Photos overview page\":\n      - /url: /photos/about/\n      - img\n    - navigation:\n      - list:\n        - listitem:\n          - link \"Visit the Google Photos overview page\":\n            - /url: /photos/about/\n            - text: Overview\n        - listitem:\n          - link \"Visit the photo editing page\":\n            - /url: /photos/editing/\n            - text: Photo editing\n    - link \"Visit Google Photos\":\n      - /url: https://photos.google.com/login\n    - link \"Download the Google Photos app\":\n      - /url: /photos/download/\n      - text: Get the app\n  - main:\n    - 'region \"Google Photos makes {editing, organization, search, and photos} feel like magic.\"':\n      - img \"Google Photos logo\"\n      - heading \"Makes editing organization search photos feel like magic\" [level=1]:\n        - text: Makes\n        - list:\n          - listitem:\n            - strong: editing\n          - listitem:\n            - strong: organization\n          - listitem:\n            - strong: search\n          - listitem:\n            - strong: photos\n        - text: feel like magic\n      - 'button \"Pause video: An animation showcasing various features of the Google Photos app.\"':\n        - img\n        - img\n        - img\n    - navigation \"Jump to section\":\n      - list:\n        - listitem:\n          - 'link \"Go to section: Create\"':\n            - /url: \"#create\"\n            - text: Create\n        - listitem:\n          - 'link \"Go to section: Search\"':\n            - /url: \"#search\"\n            - text: Search\n        - listitem:\n          - 'link \"Go to section: Edit\"':\n            - /url: \"#edit\"\n            - text: Edit\n        - listitem:\n          - 'link \"Go to section: Organize\"':\n            - /url: \"#organize\"\n            - text: Organize\n        - listitem:\n          - 'link \"Go to section: Share\"':\n            - /url: \"#share\"\n            - text: Share\n        - listitem:\n          - 'link \"Go to section: Safety\"':\n            - /url: \"#safety\"\n            - text: Safety\n    - heading \"Discover new ways to create\" [level=2]\n    - paragraph:\n      - text: Got the perfect selfie? Remix it into different styles. Took an action pic? Bring it to life as a video. Had an epic trip? Make it a collage. Explore all these tools and more in the new Create tab.\n      - superscript:\n        - link \"Show footnote 1\":\n          - /url: \"#footnote:create\"\n          - text: \"1\"\n    - link \"Create now\":\n      - /url: /photos/download/\n    - 'button \"Play video: Video\"':\n      - img\n      - img\n      - img\n    - heading \"Get more from every memory\" [level=2]\n    - heading \"15 GB of storageShow footnote 2\" [level=3]:\n      - text: 15 GB of storage\n      - superscript:\n        - link \"Show footnote 2\":\n          - /url: \"#footnote:google_account_storage\"\n          - text: \"2\"\n    - paragraph: That’s 3x more than many other cloud storage services.\n    - link \"Explore Google One storage plans (opens in new window)\":\n      - /url: https://one.google.com/about/plans\n      - text: Unlock even more\n      - img \"(opens in new window)\"\n    - button \"Show back of card\":\n      - img\n    - img \"Cloud icon with a checkbox\"\n    - heading \"You get 15 GB of storage, so you can backup and keep your memories safe automatically — at no cost.Show footnote 2\" [level=3]:\n      - text: You get 15 GB of storage, so you can backup and keep your memories safe automatically — at no cost.\n      - superscript:\n        - link \"Show footnote 2\":\n          - /url: \"#footnote:google_account_storage\"\n          - text: \"2\"\n    - list:\n      - listitem:\n        - link \"Explore Google One plans (opens in new window)\":\n          - /url: https://one.google.com/about/plans\n          - text: Get even more with Google One\n          - img \"(opens in new window)\"\n    - button \"Show front of card\":\n      - img\n    - heading \"AI-powered tools\" [level=3]\n    - paragraph: Edit, organize, search, and more.\n    - button \"Show back of card\":\n      - img\n    - img \"Wand icon with sparkles\"\n    - heading \"Enhance your photos, easily find the pics you’re looking for, and automatically organize them — all with the power of Google AI.\" [level=3]\n    - button \"Show front of card\":\n      - img\n    - heading \"Got an iPhone®?Show footnote 3 We’ve got you covered.\" [level=2]:\n      - text: Got an iPhone\n      - superscript: ®\n      - text: \"?\"\n      - superscript:\n        - link \"Show footnote 3\":\n          - /url: \"#footnote:iphone_trademark\"\n          - text: \"3\"\n      - text: We’ve got you covered.\n    - paragraph: Google Photos works for you. You can sync your library and favorites during setup and your photos will automatically upload to the app.\n    - link \"Download on the App Store\":\n      - /url: /photos/download/\n      - img \"Download on the App Store\"\n    - region \"Search made simple\":\n      - heading \"Search made simple\" [level=2]\n      - heading \"Easily search your memories for\" [level=3]\n      - paragraph\n      - paragraph: \"*Available to eligible US users 18 or older. Must have your Google Account language set to English (United States), Face Groups turned on and location estimates enabled.\"\n      - heading \"Easily search your memories for\" [level=3]\n      - paragraph\n      - paragraph: \"*Available to eligible US users 18 or older. Must have your Google Account language set to English (United States), Face Groups turned on and location estimates enabled.\"\n      - heading \"Easily search your memories for\" [level=3]\n      - paragraph\n      - heading \"Easily search your memories for\" [level=3]\n      - paragraph\n      - heading \"Easily search your memories for\" [level=3]\n      - paragraph\n      - button \"Play\":\n        - img\n      - button \"Pause\":\n        - img\n      - button \"Go to slide 1\"\n      - button \"Go to slide 2\"\n      - button \"Go to slide 3\"\n      - button \"Go to slide 4\"\n      - button \"Go to slide 5\"\n      - button \"Go to Previous Slide\":\n        - img\n      - button \"Go to Next Slide\":\n        - img\n    - region \"Photos enhanced with Google AI\":\n      - img \"Wand with sparkles\"\n      - heading \"Photos enhanced with Google AI\" [level=2]\n      - 'button \"Play video: An animation of editing your photo by asking to remove Riley''s sunglasses, open my eyes, and make Engel smile.\"':\n        - img\n        - img\n        - img\n      - text: New\n      - heading \"Edit your photos just by asking.Show footnote 7\" [level=2]:\n        - text: Edit your photos just by asking.\n        - superscript:\n          - link \"Show footnote 7\":\n            - /url: \"#footnote:conversational_editing\"\n            - text: \"7\"\n      - heading \"Describe edits and watch them appear.\" [level=3]\n      - list:\n        - listitem:\n          - link \"See how you can edit your photos just by asking in Google Photos\":\n            - /url: /photos/editing/#reimagine\n            - text: Learn more\n            - img\n      - 'button \"Play video: Video\"':\n        - img\n        - img\n        - img\n      - heading \"Magic Eraser.\" [level=2]\n      - heading \"Distractions are a distant memory.\" [level=3]\n      - list:\n        - listitem:\n          - link \"Explore the Magic Eraser feature in Google Photos\":\n            - /url: /photos/editing#magic-eraser\n            - text: Learn more\n            - img\n      - figure\n      - slider \"Drag the slider to compare the two images.\": \"58\"\n      - heading \"Photo Unblur.\" [level=2]\n      - heading \"Go from blurry to breathtaking.\" [level=3]\n      - list:\n        - listitem:\n          - link \"Explore the Photo Unblur feature in Google Photos\":\n            - /url: /photos/editing#photo-unblur\n            - text: Learn more\n            - img\n      - link \"Explore all Google Photos editing features\":\n        - /url: /photos/editing/\n        - text: See all editing features\n    - heading \"Stroll down memory lane\" [level=2]\n    - paragraph: Easily revisit your favorite memories. With machine learning, your top shots are curated for you so you can share them with the people who made those moments special.\n    - 'button \"Play video: The Memories View feature showcasing a trip to Trinity Alps.\"':\n      - img\n      - img\n      - img\n    - heading \"Organized with the help of AI\" [level=2]\n    - paragraph: Your photos and documents are automatically organized, so you can spend more time enjoying your memories and less time arranging them.\n    - img \"Photo Stacks feature indicating 3 photos are stacked.\"\n    - paragraph: Automatically group similar photos together with Photo Stacks.\n    - img \"Documents tab showing the number of each type of document within the app.\"\n    - paragraph: Documents are sorted into albums, like screenshots, receipts, notes, and more.\n    - img \"A couple smiling and hugging for a selfie.\"\n    - heading \"Share every smile\" [level=2]\n    - paragraph: Easily share photos, videos, and albums with any of your contacts — even if they don't use Google Photos.\n    - img \"Message, photo and copy link icons.\"\n    - heading \"Share to everyday apps\" [level=3]\n    - paragraph: Share an album or photos with friends on your favorite daily apps like WhatsApp, Snapchat, and more.\n    - img \"Icons indicating trusted users within the Google Photos app.\"\n    - heading \"Share with a trusted contact\" [level=3]\n    - paragraph: Automatically share photos of selected people and pets with a partner or person you trust most.\n    - heading \"A safe home for your life’s memories\" [level=2]\n    - 'button \"Play video: Video\"':\n      - img\n      - img\n      - img\n    - heading \"Your data is yours\" [level=2]\n    - paragraph: Everything you add to Google Photos belongs to you, and you can always delete or export your content.\n    - img \"Padlock icon indicating security.\"\n    - heading \"Your memories are safe\" [level=3]\n    - paragraph: We operate one of the most advanced security infrastructures to help keep your photos and videos safe.\n    - img \"A checkmark icon.\"\n    - heading \"Your data isn’t used in ads\" [level=3]\n    - paragraph: Google Photos never sells your photos, videos, or personal information to anyone, and we don't use your photos and videos for advertising.\n    - link \"Learn more about Google Photos security (opens in new window)\":\n      - /url: \"https://safety.google/intl/en_us/photos/ \"\n      - text: Learn more\n      - img \"(opens in new window)\"\n    - img \"Fujifilm for Google Photos logo icon\"\n    - heading \"Print your favorite pics\" [level=2]\n    - paragraph: We're now partnering with Fujifilm to turn your memories into keepsakes.\n    - list:\n      - listitem:\n        - img \"Two photo prints hanging on a white wall, featuring a skating sign and a girl roller skating. A hat rack to the side of the photos has a helmet and shirt hanging from it.\"\n        - paragraph: Prints\n        - heading \"Turn your best memories into photo prints\" [level=3]\n      - listitem:\n        - img \"Hands holding a square custom photo book titled \\\"FAMILY TRAVELS\\\" with a picture of a yellow streetcar.\"\n        - paragraph: Photo books\n        - heading \"Relive life’s greatest stories – page by page\" [level=3]\n      - listitem:\n        - img \"A man hanging a large canvas print of a colorful red and yellow castle onto a wall.\"\n        - paragraph: Wall art\n        - heading \"Decorate your home with joyful moments\" [level=3]\n    - tablist \"Slide navigation\":\n      - tab \"1\" [selected]\n      - tab \"2\"\n      - tab \"3\"\n    - link \"Visit the Google Photos Printing page\":\n      - /url: \"https://photos.google.com/printstore?utm_source=website_photos&utm_campaign=photos_print \"\n      - text: Shop now\n    - heading \"The latest from Photos\" [level=2]\n    - list:\n      - listitem:\n        - link \"5 Google Photos updates to make the most of summer memories. (opens in new window)\":\n          - /url: https://blog.google/products-and-platforms/products/photos/google-photos-updates/\n          - text: Photos\n          - heading \"5 Google Photos updates to make the most of summer memories.\" [level=3]\n          - text: By Simon Li September 24, 2026\n          - img \"5 Google Photos updates to make the most of summer memories.\"\n          - img\n      - listitem:\n        - link \"Create shareable video clips in seconds with Video Remix in Google Photos. (opens in new window)\":\n          - /url: https://blog.google/products-and-platforms/products/photos/video-remix/\n          - text: Photos\n          - heading \"Create shareable video clips in seconds with Video Remix in Google Photos.\" [level=3]\n          - text: By Tyler McNierney July 8, 2026\n          - img \"Create shareable video clips in seconds with Video Remix in Google Photos.\"\n          - img\n      - listitem:\n        - 'link \"June Android Drop: New personalization and safety features are here (opens in new window)\"':\n          - /url: https://blog.google/products-and-platforms/platforms/android/android-drop-june-2026/\n          - text: Photos\n          - 'heading \"June Android Drop: New personalization and safety features are here\" [level=3]'\n          - text: By Seang Chau June 2, 2026\n          - 'img \"June Android Drop: New personalization and safety features are here\"'\n          - img\n      - listitem:\n        - link \"A new way to create a digital wardrobe from your Google Photos (opens in new window)\":\n          - /url: https://blog.google/products-and-platforms/products/photos/google-photos-wardrobe-feature/\n          - text: Photos\n          - heading \"A new way to create a digital wardrobe from your Google Photos\" [level=3]\n          - text: By Tommy Meaney April 29, 2026\n          - img \"A new way to create a digital wardrobe from your Google Photos\"\n          - img\n      - listitem:\n        - link \"Enjoy new ways to create, search and stream on Google TV (opens in new window)\":\n          - /url: https://blog.google/products-and-platforms/platforms/google-tv/enjoy-new-ways-to-create-search-and-stream-on-google-tv/\n          - text: Photos\n          - heading \"Enjoy new ways to create, search and stream on Google TV\" [level=3]\n          - text: By Michael DelGaudio April 29, 2026\n          - img \"Enjoy new ways to create, search and stream on Google TV\"\n          - img\n      - listitem:\n        - link \"New touch-up tools in Google Photos’ image editor let you make quick, subtle fixes. (opens in new window)\":\n          - /url: https://blog.google/products-and-platforms/products/photos/new-touch-up-tools-google-photos/\n          - text: Photos\n          - heading \"New touch-up tools in Google Photos’ image editor let you make quick, subtle fixes.\" [level=3]\n          - text: By April 20, 2026\n          - img \"New touch-up tools in Google Photos’ image editor let you make quick, subtle fixes.\"\n          - img\n    - button \"Previous\":\n      - text: Previous\n      - img\n    - button \"Next\":\n      - text: Next\n      - img\n    - link \"Visit the blog (opens in new window)\":\n      - /url: https://blog.google/products/photos/\n      - text: Visit the blog\n      - img \"(opens in new window)\"\n    - region \"Frequently asked questions\":\n      - heading \"Frequently asked questions\" [level=2]\n      - button \"How much storage do I get for my photos and videos?\"\n      - button \"Can I use Google Photos on an iOS device?\"\n      - button \"How do I back up my photos and videos?\"\n      - button \"How do I edit my photos?\"\n      - button \"How can I share my photos?\"\n      - button \"How do I search for my photos?\"\n      - button \"What are my Google Photos cloud storage options?\"\n      - button \"Can I use cloud storage for 4K video and full-resolution RAW photos?\"\n      - button \"How do I find and delete photos to clean up storage space?\"\n      - button \"How secure is my online photo storage?\"\n      - button \"What is the best way to share photos privately with friends and family?\"\n      - button \"Can I allow others to add photos to a shared album?\"\n      - button \"How does automatic partner photo sharing work?\"\n      - list:\n        - listitem:\n          - link \"Learn more (opens in new window)\":\n            - /url: https://support.google.com/photos/\n            - text: Learn more\n            - img \"(opens in new window)\"\n    - img \"Newsletter icon\"\n    - heading \"Stay in the loop\" [level=2]\n    - paragraph:\n      - text: Sign up for emails to receive tips, updates, announcements, and promotions from Google Photos.\n      - superscript:\n        - link \"Show footnote 8\":\n          - /url: \"#footnote:newsletter_unsubscribe\"\n          - text: \"8\"\n    - link \"Sign up (opens in new window)\":\n      - /url: https://photos.google.com/settings#:~:text=you%20have%20created-,Promotional%20emails,-Receive%20emails%20with\n      - text: Sign up\n      - img \"(opens in new window)\"\n    - heading \"Download Google Photos\" [level=2]\n    - paragraph: Back up your life’s memories on all your devices.\n    - link \"Get it on Google Play\":\n      - /url: https://play.google.com/store/apps/details?id=com.google.android.apps.photos&referrer=utm_source%3Dmarketingsite%26utm_medium%3Dmarketingsite%26utm_campaign%3Dmarketingsite_new\n      - img \"Get it on Google Play\"\n    - link \"Download on the App Store\":\n      - /url: https://apps.apple.com/app/apple-store/id962194608?pt=9008&ct=marketingsite_new&mt=8\n      - img \"Download on the App Store\"\n    - figure \"Scan for the Photos app\":\n      - img\n      - text: Scan for the Photos app\n    - complementary \"Download the Google Photos app\":\n      - button \"Toggle app download panel\" [expanded]\n      - img\n      - paragraph: Download the Google Photos app\n  - contentinfo:\n    - heading \"Follow us\" [level=3]\n    - list:\n      - listitem:\n        - link \"Instagram\":\n          - /url: https://www.instagram.com/googlephotos/\n          - img\n      - listitem:\n        - link \"X / Twitter\":\n          - /url: https://x.com/googlephotos\n          - img\n      - listitem:\n        - link \"YouTube\":\n          - /url: https://www.youtube.com/googlephotos\n          - img\n    - heading \"About Google Photos\" [level=3]\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /photos/about/\n      - listitem:\n        - link \"Photo editing\":\n          - /url: /photos/editing/\n      - listitem:\n        - link \"Download Google Photos\":\n          - /url: /photos/download/\n    - heading \"Additional Resources\" [level=3]\n    - list:\n      - listitem:\n        - link \"Printing\":\n          - /url: https://photos.google.com/printstore?utm_source=website_photos&utm_campaign=photos_print\n      - listitem:\n        - link \"Works with Google Photos\":\n          - /url: /photos/works-with/\n    - list \"Footnotes\":\n      - listitem:\n        - text: \"1\"\n        - paragraph: Available globally to users on Android and iOS. For users 18+. Latest Photos app version required for proper function.\n      - listitem:\n        - text: \"2\"\n        - paragraph: Google Account storage is shared across Google Photos, Gmail, and Google Drive.\n      - listitem:\n        - text: \"3\"\n        - paragraph: iPhone is a trademark of Apple Inc.\n      - listitem:\n        - text: \"4\"\n        - paragraph: May not work on all searches. Available in English only for backed up photos and videos.\n      - listitem:\n        - text: \"5\"\n        - paragraph: Printing is only available in the US, Canada, EU, and UK.\n      - listitem:\n        - text: \"6\"\n        - paragraph: Available on Android 8+. Feature availability may vary by device, region, and account type.\n      - listitem:\n        - text: \"7\"\n        - paragraph: Available to eligible 18+ users in the U.S.\n      - listitem:\n        - text: \"8\"\n        - paragraph: You can unsubscribe at any time by clicking the unsubscribe link in Google Photos emails.\n    - img\n    - list:\n      - listitem:\n        - link \"About Google\":\n          - /url: https://about.google/\n      - listitem:\n        - link \"Google products\":\n          - /url: https://about.google/products/?tip=conversions\n      - listitem:\n        - link \"Privacy\":\n          - /url: https://policies.google.com/privacy\n      - listitem:\n        - link \"Terms\":\n          - /url: https://policies.google.com/terms\n    - link \"Help\":\n      - /url: https://support.google.com/photos/\n      - text: Help\n      - img \"(opens in new window)\"\n    - combobox \"Select language\":\n      - option \"English (India)\"\n      - option \"አማርኛ\"\n      - option \"العربية\"\n      - option \"বাংলা\"\n      - option \"dansk\"\n      - option \"Deutsch\"\n      - option \"Ελληνικά\"\n      - option \"English\" [selected]\n      - option \"English (United Kingdom)\"\n      - option \"español\"\n      - option \"suomi\"\n      - option \"français\"\n      - option \"हिन्दी\"\n      - option \"hrvatski\"\n      - option \"magyar\"\n      - option \"Indonesia\"\n      - option \"italiano\"\n      - option \"עברית\"\n      - option \"日本語\"\n      - option \"한국어\"\n      - option \"Melayu\"\n      - option \"Nederlands\"\n      - option \"norsk\"\n      - option \"português (Brasil)\"\n      - option \"português (Portugal)\"\n      - option \"සිංහල\"\n      - option \"slovenščina\"\n      - option \"svenska\"\n      - option \"Kiswahili\"\n      - option \"ไทย\"\n      - option \"Türkçe\"\n      - option \"Tiếng Việt\"\n      - option \"中文（中国）\"\n      - option \"中文（中國香港特別行政區）\"\n      - option \"中文（台灣）\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.google.com/photos/about/",
+              "origin": "https://www.google.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": []
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@155.0.8059.79",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "locations": [],
+  "evidence_links": []
+}

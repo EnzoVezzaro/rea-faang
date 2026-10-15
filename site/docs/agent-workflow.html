@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Runs before the stylesheet so reveal styles only apply where the
+         motion layer can actually drive them. -->
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <title>Agent workflow (ACE) — RAE FAANG docs</title>
+    <meta name="description" content="How the ACE environment and the multi-agent loop fit together." />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Agent workflow (ACE) — RAE FAANG docs" />
+    <meta property="og:description" content="How the ACE environment and the multi-agent loop fit together." />
+    <meta property="og:url" content="https://rae-faang-landing.vercel.app/docs/agent-workflow.html" />
+    <link rel="canonical" href="https://rae-faang-landing.vercel.app/docs/agent-workflow.html" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-doc">
+    <div class="scroll-rail" data-scroll-rail aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/" aria-current="page">Docs</a>
+          
+        </nav>
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile primary">
+            <a href="../catalog/">Catalog</a>
+            <a href="../docs/">Docs</a>
+            
+          </nav>
+        </details>
+        <a class="btn btn-ghost header-github" href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero page-hero-doc" id="top">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Docs</a><span aria-hidden="true">/</span><span>Agent workflow (ACE)</span>
+          </nav>
+          <h1>Agent workflow (ACE)</h1>
+          <p class="lede">How the ACE environment and the multi-agent loop fit together.</p>
+        </div>
+      </section>
+
+      <section class="section section-tight section-last">
+        <div class="wrap">
+          <details class="toc">
+            <summary>On this page</summary>
+            <ul>
+              <li><a href="#what-ace-manages-source-repository">What ACE manages (source repository)</a></li>
+              <li><a href="#what-ace-manages">What ACE manages</a></li>
+              <li><a href="#where-things-live">Where things live</a></li>
+              <li><a href="#configuration-and-layers">Configuration and layers</a></li>
+              <li><a href="#roles">Roles</a></li>
+              <li><a href="#task-lifecycle">Task lifecycle</a></li>
+              <li><a href="#handoff-and-verification">Handoff and verification</a></li>
+              <li><a href="#build-a-product-with-its-skill">Build a product with its skill</a></li>
+              <li><a href="#governance">Governance</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#scaling">Scaling</a></li>
+            </ul>
+          </details>
+          <article class="doc">
+<p><img src="assets/brand-logo-icon.png" alt="RAE FAANG" /></p>
+<h1>Agent workflow</h1>
+<p>Each product has a Markdown skill you can download from its page or generate with <code>rae</code>. Give it to your coding agent from the project where you want to work. It links to research and candidate projects, and offers directions for planning, building and testing an independent implementation. Coverage labels describe research into existing projects, not build feasibility. ACE (<code>ace-proagents</code>) is optional; use it when you want to coordinate a team of agents.</p>
+<p>Use <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/AGENTS.md" rel="noopener noreferrer" target="_blank"><code>AGENTS.md</code></a> for the command list and handoff template. This guide explains how the parts fit together.</p>
+<h2 id="what-ace-manages-source-repository">What ACE manages (source repository)</h2>
+<p>The published RAE package includes the CLI, catalog and skill generator. Install it to get a product skill; you do not need this source checkout for a product build. Clone the repository to edit its data or code, use the source-only tools, or run the full project checks.</p>
+<h2 id="what-ace-manages">What ACE manages</h2>
+<ul>
+<li><strong>Configuration:</strong> <code>package.json</code> and <code>ace-lock.json</code> describe the workspace and its tools.</li>
+<li><strong>Task state:</strong> the repository stores active missions, assignments and handoffs in runtime directories.</li>
+<li><strong>Your product build:</strong> give the product's Markdown skill to your coding agent in your project. Optionally scaffold a starter workspace with <code>rae build product &lt;id&gt; --out ./&lt;id&gt;</code> and use ACE there; the scaffold is optional, not where the skill has to be used.</li>
+<li><strong>Review:</strong> governors and supervisors coordinate work; workers take one task at a time.</li>
+<li><strong>Adapters:</strong> providers connect ACE to the workspace, agent runtime and verification tools. Run <code>ace adapters list</code> in the source repository to see what's available.</li>
+</ul>
+<h2 id="where-things-live">Where things live</h2>
+<pre><code>/                         root ACE workspace (the whole repository)
+├── node_modules/.bin/ace  ACE CLI installed from ace-proagents
+├── ace-lock.json         resolved dependencies
+├── package.json          the `ace` key: spec, agents, adapters, policies…
+├── .ace/                 runtime state (gitignored)
+├── ace-context.md        (optional) operator notes
+├── catalog/ research/    the product-intelligence layer (see catalog doc)
+└── products/&lt;company&gt;/&lt;product&gt;/
+    ├── ace.mjs           shim → repository-level CLI, run with this dir as cwd
+    ├── package.json      product `ace` key + scripts
+    └── specs/            the specification set</code></pre>
+<p>ACE is installed from the <code>ace-proagents</code> package and invoked through its <code>ace</code> CLI. Run <code>npm update ace-proagents</code> to upgrade it. Product workspaces use their installed <code>ace</code> CLI from their own directory. Invoke ACE commands as <code>ace &lt;command&gt;</code>.</p>
+<h2 id="configuration-and-layers">Configuration and layers</h2>
+<p>ACE combines its configuration layers before it runs. View the result and check it with:</p>
+<pre><code class="language-bash">ace config --resolve   # show the merged config and its layers
+ace config check       # validate it (actionable errors)</code></pre>
+<p>The <code>ace</code> section in the root <code>package.json</code> sets:</p>
+<ul>
+<li><code>spec: &quot;ace/v1&quot;</code> and the workspace name/goal/milestones;</li>
+<li><code>orchestrator</code> and <code>agents.workers</code> with roles and capabilities;</li>
+<li><code>tools</code> the crew may use (<code>git</code>, <code>github</code>, <code>filesystem</code>, <code>terminal</code>, <code>web-search</code>);</li>
+<li><code>adapters</code> binding each capability to a provider: <code>workspace: git-worktree</code>, <code>agent-runtime: opencode</code>, <code>context: acc</code>, <code>handoff: proagents</code>, <code>verification: package-scripts</code>, <code>persistence: filesystem</code>;</li>
+<li><code>policies</code> (<code>require_review_before_merge: true</code>), <code>concurrency</code> (<code>max_active_agents</code>), and <code>lifecycle</code> behaviour.</li>
+</ul>
+<p>If <code>config check</code> reports <code>INCOMPATIBLE_ADAPTER</code>, compare the configured provider with the list from <code>ace adapters list</code>.</p>
+<h2 id="roles">Roles</h2>
+<p>Each task has one owner. The roles describe the work each agent handles:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Role</th><th scope="col">Produces</th></tr>
+</thead>
+<tbody>
+<tr><td>researcher</td><td>Evidence-backed product dossiers</td></tr>
+<tr><td>architect</td><td>Specification sets, data models, API contracts, opportunity specs</td></tr>
+<tr><td>frontend / backend</td><td>Product implementation</td></tr>
+<tr><td>tester</td><td>Tests and acceptance-criteria verification</td></tr>
+<tr><td>reviewer</td><td>Review, security, performance</td></tr>
+<tr><td>documenter</td><td><code>docs/</code>, READMEs, migration guides</td></tr>
+</tbody>
+</table></div>
+<h2 id="task-lifecycle">Task lifecycle</h2>
+<pre><code>add → claim → start → review → integrate → done</code></pre>
+<ul>
+<li><code>task claim</code> pins a single owner (lease enforced).</li>
+<li><code>task start</code> records the agent heartbeat.</li>
+<li><code>task review</code> opens the handoff for acceptance.</li>
+<li><code>task integrate</code> merges verified work.</li>
+</ul>
+<p>Inspect state with <code>ace tasks</code>, <code>ace agents</code>, <code>ace events --limit 20</code>, and <code>ace logs</code>.</p>
+<h2 id="handoff-and-verification">Handoff and verification</h2>
+<p>When a task is done, the agent submits a handoff with <code>ace handoff submit &lt;task&gt; --file &lt;path&gt;</code>. A supervisor checks it with <code>ace handoff verify &lt;task&gt;</code>. The handoff records changed files, commands and exit codes, checks that remain, decisions and risks. At least one verification command must pass. See <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/AGENTS.md" rel="noopener noreferrer" target="_blank"><code>AGENTS.md</code></a> for the template and checklist.</p>
+<p>Configure the verification commands for the workspace, then run them through ACE:</p>
+<pre><code class="language-bash">ace verify            # configured verification (lint/typecheck/test/build)
+npm run verify                 # this repo: validate + test</code></pre>
+<h2 id="build-a-product-with-its-skill">Build a product with its skill</h2>
+<ol>
+<li>Choose the FAANG product you want to build and download or generate its Markdown skill.</li>
+<li>Give that product skill to your coding agent in your project.</li>
+<li>Ask your agent to review product evidence and current projects, then decide what to reuse.</li>
+<li>Have the agent build and test an independent version of the product in your project.</li>
+<li>Review the result and the actual verification output.</li>
+</ol>
+<p>ACE can coordinate this work when you want multiple agents, shared task state and reviewed handoffs. The catalog CLI checks research structure and alternative coverage; your coding agent builds the product in your project, where your project's tests check implementation behavior.</p>
+<h2 id="governance">Governance</h2>
+<ul>
+<li><strong>Governor:</strong> monitors progress and budget, then handles escalation. Run <code>ace govern</code>.</li>
+<li><strong>Supervisor:</strong> assigns tasks, checks handoffs and integrates accepted work. Run <code>ace supervise</code>.</li>
+<li><strong>Watchdog:</strong> monitors the governor. Check it with <code>ace watchdog status</code>.</li>
+</ul>
+<p>Use <code>ace crew</code> to inspect the roster and budget. <code>ace setup</code> configures the crew and per-task budget for a project.</p>
+<h2 id="skills">Skills</h2>
+<p>ACE ships an agent skill, <code>.agents/skills/ace/SKILL.md</code>, which is the manual for the interrogation, the six parts, and the rules for driving an installed crew. Read it before running setup. To see the intake questions first, run <code>ace parts --questions</code>.</p>
+<h2 id="scaling">Scaling</h2>
+<ul>
+<li><strong>Use a skill now:</strong> give any product's Markdown skill to your coding agent and build in your project.</li>
+<li><strong>Improve the catalog:</strong> contribute product research, clearer agent instructions, better alternative assessments, tests and documentation.</li>
+<li><strong>Phase 3 and later:</strong> work on more products, share useful infrastructure, and coordinate cross-product tasks across agent teams.</li>
+</ul>
+
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>            <p class="footer-mark">RAE FAANG</p>
+          <p class="footer-mission">
+
+            Product research, open-source alternatives, and agent skills to build beyond Meta, Amazon,
+            Apple, Netflix and Google. Your agent builds in your project. MIT licensed.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/">Docs</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE" rel="noopener noreferrer" target="_blank">MIT License</a>
+          <a href="https://github.com/EnzoVezzaro/repo-shield" rel="noopener noreferrer" target="_blank">Repo Shield</a>
+        </div>
+      </div>
+      <div class="wrap footer-fine">
+        <p>
+          Product names are used as functional references only and imply no
+          affiliation or endorsement. Implementations must comply with applicable
+          laws, licenses, and third-party rights. No AI training: see
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/NOTICE" rel="noopener noreferrer" target="_blank">NOTICE</a>.
+        </p>
+      </div>
+    </footer>
+    
+  </body>
+</html>

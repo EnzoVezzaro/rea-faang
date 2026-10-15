@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Runs before the stylesheet so reveal styles only apply where the
+         motion layer can actually drive them. -->
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <title>CLI reference — RAE FAANG docs</title>
+    <meta name="description" content="Browse products, check research, compare alternatives, and find missing work." />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CLI reference — RAE FAANG docs" />
+    <meta property="og:description" content="Browse products, check research, compare alternatives, and find missing work." />
+    <meta property="og:url" content="https://rae-faang-landing.vercel.app/docs/cli-reference.html" />
+    <link rel="canonical" href="https://rae-faang-landing.vercel.app/docs/cli-reference.html" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-doc">
+    <div class="scroll-rail" data-scroll-rail aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/" aria-current="page">Docs</a>
+          
+        </nav>
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile primary">
+            <a href="../catalog/">Catalog</a>
+            <a href="../docs/">Docs</a>
+            
+          </nav>
+        </details>
+        <a class="btn btn-ghost header-github" href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero page-hero-doc" id="top">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Docs</a><span aria-hidden="true">/</span><span>CLI reference</span>
+          </nav>
+          <h1>CLI reference</h1>
+          <p class="lede">Browse products, check research, compare alternatives, and find missing work.</p>
+        </div>
+      </section>
+
+      <section class="section section-tight section-last">
+        <div class="wrap">
+          <details class="toc">
+            <summary>On this page</summary>
+            <ul>
+              <li><a href="#run-the-cli">Run the CLI</a></li>
+              <li><a href="#options-available-on-every-command">Options available on every command</a></li>
+              <li><a href="#exit-codes">Exit codes</a></li>
+              <li><a href="#products">products</a></li>
+              <li><a href="#companies">companies</a></li>
+              <li><a href="#research">research</a></li>
+              <li><a href="#gaps">gaps</a></li>
+              <li><a href="#alternatives">alternatives</a></li>
+              <li><a href="#opportunities">opportunities</a></li>
+              <li><a href="#generate-product-skills-and-optional-workspaces">Generate product skills and optional workspaces</a></li>
+              <li><a href="#use-the-cli-from-another-tool">Use the CLI from another tool</a></li>
+            </ul>
+          </details>
+          <article class="doc">
+<p><img src="assets/brand-logo-icon.png" alt="RAE FAANG" /></p>
+<h1>CLI reference</h1>
+<p>Use <code>rae</code> to browse products, read research, compare candidate open-source projects and generate a Markdown skill for your coding agent. The skill helps your agent plan work in your project. The CLI can check catalog data; it does not build or test your implementation.</p>
+<h2 id="run-the-cli">Run the CLI</h2>
+<pre><code class="language-bash">npm install -g rae-faang
+rae products list</code></pre>
+<p>The published <code>rae-faang</code> package includes the catalog, research dossiers, candidate projects and skill generator. It installs both <code>rae</code> and <code>rae-faang</code> commands. You can browse products, read dossiers, validate catalog data and generate a skill without cloning the source repository.</p>
+<p>In a source checkout, the same commands run through the local package:</p>
+<pre><code class="language-bash">npx rae &lt;group&gt; &lt;command&gt; [product-id] [options]
+npm run cli -- &lt;group&gt; &lt;command&gt; [options]   # equivalent</code></pre>
+<h2 id="options-available-on-every-command">Options available on every command</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Option</th><th scope="col">Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>--format json</code></td><td>Machine-readable output. Stable; covered by tests.</td></tr>
+<tr><td><code>--help</code>, <code>-h</code></td><td>Show usage.</td></tr>
+<tr><td><code>--version</code>, <code>-v</code></td><td>Show the CLI version.</td></tr>
+</tbody>
+</table></div>
+<h2 id="exit-codes">Exit codes</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Code</th><th scope="col">Meaning</th></tr>
+</thead>
+<tbody>
+<tr><td><code>0</code></td><td>Success (or a report with nothing wrong).</td></tr>
+<tr><td><code>1</code></td><td>Validation failure, unknown command, or a missing record.</td></tr>
+</tbody>
+</table></div>
+<p>Validation commands return exit code <code>1</code> when they find errors, so CI can stop a build when records need attention.</p>
+<hr>
+<h2 id="products"><code>products</code></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Command</th><th scope="col">Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>products list</code></td><td>List catalogued products.</td></tr>
+<tr><td><code>products show &lt;product-id&gt;</code></td><td>Show one product's full record.</td></tr>
+</tbody>
+</table></div>
+<p><strong>Options:</strong> <code>--company &lt;id&gt;</code> filter by company, <code>--status &lt;status&gt;</code> filter by <code>research_status</code>, <code>--alt-status &lt;status&gt;</code> filter by <code>alternative_status</code>, <code>--format json</code>. The table column <code>alt:</code> reports <code>alternative_status</code> (<code>unassessed</code>, <code>none_verified</code>, <code>unknown</code>, <code>partial</code>, <code>adequate</code>, <code>mature</code>) — the research label the catalog page and product skills use.</p>
+<pre><code class="language-bash">rae products list --company amazon_aws
+rae products show google-search --format json</code></pre>
+<hr>
+<h2 id="companies"><code>companies</code></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Command</th><th scope="col">Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>companies list</code></td><td>List registered company entries.</td></tr>
+<tr><td><code>companies show &lt;company-id&gt;</code></td><td>Show one company record.</td></tr>
+</tbody>
+</table></div>
+<p><strong>Options:</strong> <code>--format json</code>.</p>
+<pre><code class="language-bash">rae companies list
+rae companies show netflix --format json</code></pre>
+<hr>
+<h2 id="research"><code>research</code></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Command</th><th scope="col">Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>research coverage</code></td><td>Show each company's catalog and research counts, plus missing, stale, invalid, orphaned, or duplicate records.</td></tr>
+<tr><td><code>research dossier &lt;product-id&gt;</code></td><td>Print the dossier Markdown for a product; use <code>--format json</code> to return <code>{ id, name, markdown }</code>.</td></tr>
+<tr><td><code>research pending</code></td><td>List products with <code>research_status: pending</code>.</td></tr>
+<tr><td><code>research stale</code></td><td>List products with <code>research_status: stale</code>.</td></tr>
+<tr><td><code>research validate</code></td><td>Check catalog records and research frontmatter against the schemas, then report mismatched IDs, unknown companies, duplicates, and orphaned files.</td></tr>
+</tbody>
+</table></div>
+<p><strong>Options:</strong> <code>--company &lt;id&gt;</code> (coverage), <code>--format json</code>.</p>
+<pre><code class="language-bash">rae research coverage --format json
+rae research dossier google-search
+rae research dossier google-search --format json
+rae research validate
+rae research pending</code></pre>
+<p><code>research validate</code> exits <code>1</code> when any error is found (missing files are warnings, not errors). <code>research dossier &lt;product-id&gt;</code> returns the dossier contents bundled with the package, so an agent can read evidence without a clone.</p>
+<hr>
+<h2 id="gaps"><code>gaps</code></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Command</th><th scope="col">Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>gaps products</code></td><td>Compare catalog entries with the target inventory and list products missing from each company.</td></tr>
+<tr><td><code>gaps alternatives</code></td><td>List products by <code>alternative_status</code> / <code>alternative_coverage</code>.</td></tr>
+<tr><td><code>gaps opportunities</code></td><td>Find <code>build_missing</code> products without an <code>opportunities/&lt;id&gt;.md</code> spec.</td></tr>
+<tr><td><code>gaps all</code></td><td>Run all three.</td></tr>
+</tbody>
+</table></div>
+<p><strong>Options:</strong> <code>--company &lt;id&gt;</code>, <code>--manifest &lt;path&gt;</code> (defaults to <code>catalog/manifests/faang.json</code>), <code>--status &lt;status&gt;</code> (alternatives), <code>--format json</code>.</p>
+<pre><code class="language-bash">rae gaps products
+rae gaps alternatives --status none_verified
+rae gaps all --format json</code></pre>
+<hr>
+<h2 id="alternatives"><code>alternatives</code></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Command</th><th scope="col">Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>alternatives list</code></td><td>Show the alternatives and comparisons recorded in product research dossiers, with each product's status and coverage.</td></tr>
+<tr><td><code>alternatives validate</code></td><td>Check that alternative status and coverage agree. For example, a <code>mature</code> alternative cannot have <code>unknown</code> coverage.</td></tr>
+<tr><td><code>alternatives coverage</code></td><td>Summarise counts by coverage classification and by status.</td></tr>
+</tbody>
+</table></div>
+<p><strong>Options:</strong> <code>--product &lt;id&gt;</code> (list), <code>--format json</code>.</p>
+<pre><code class="language-bash">rae alternatives coverage
+rae alternatives validate</code></pre>
+<hr>
+<h2 id="opportunities"><code>opportunities</code></h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Command</th><th scope="col">Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>opportunities list</code></td><td>Group products by opportunity status and show which ones have a build specification.</td></tr>
+<tr><td><code>opportunities show &lt;product-id&gt;</code></td><td>Show a product's opportunity classification and its spec, if present.</td></tr>
+<tr><td><code>opportunities validate</code></td><td>Ensure every <code>build_missing</code> product has an <code>opportunities/&lt;id&gt;.md</code> spec.</td></tr>
+<tr><td><code>opportunities export</code></td><td>Emit all classified opportunities as one JSON document for downstream use. <code>--out &lt;file&gt;</code> also writes it to a file.</td></tr>
+</tbody>
+</table></div>
+<p><strong>Options:</strong> <code>--format json</code>.</p>
+<pre><code class="language-bash">rae opportunities validate
+rae opportunities export &gt; opportunities.json
+# or write directly:
+rae opportunities export --out opportunities.json</code></pre>
+<hr>
+<h2 id="generate-product-skills-and-optional-workspaces">Generate product skills and optional workspaces</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Command</th><th scope="col">Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>build agent-kit &lt;product-id&gt;</code></td><td>Generate a copy of the product-specific Markdown build skill (<code>skill.md</code>) and optional MCP configuration in a separate directory (default: <code>./&lt;product-id&gt;-agent</code>; override with <code>--out DIR</code>). Give the skill to your coding agent in the project where you want the product built.</td></tr>
+<tr><td><code>build product &lt;product-id&gt;</code></td><td>Optionally scaffold a starter workspace with an ACE shim, <code>package.json</code>, and specification files (default: <code>./&lt;product-id&gt;</code>; override with <code>--out DIR</code>). Give the product's Markdown skill to your coding agent in the project where you want to build; the scaffold is optional. Existing workspaces are left alone unless you pass <code>--force</code>.</td></tr>
+<tr><td><code>rea capture &lt;product-id&gt;</code></td><td>Capture observations from the product's public web pages with REA; requires the repository research tools, not just the installed CLI package.</td></tr>
+<tr><td><code>alternatives clone &lt;product-id&gt;</code></td><td>Clone a listed open-source project. By default, the CLI chooses the first non-proprietary entry. Use <code>--alt NAME</code> to choose a project, <code>--repo URL</code> to set its repository, or <code>--into DIR</code> to choose where it goes.</td></tr>
+<tr><td><code>&lt;product-id&gt;</code></td><td>Shorthand: generate the product's agent skill. Use <code>--out DIR</code> to choose where to save it. Give the skill to your coding agent; the agent builds in your project. With <code>--alt NAME</code>, clone a listed alternative instead.</td></tr>
+</tbody>
+</table></div>
+<pre><code class="language-bash">rae build agent-kit gmail --out ./gmail-agent
+rae gmail --out ./gmail-agent
+rae build product gmail --out ./gmail-workspace
+rae research dossier gmail
+rae alternatives clone aws-s3 --into ./alternatives
+rae aws-s3 --alt &quot;Ceph (RADOS Gateway)&quot;</code></pre>
+<h2 id="use-the-cli-from-another-tool">Use the CLI from another tool</h2>
+<p>Pass <code>--format json</code> when another script or program needs to read command output. For example:</p>
+<pre><code class="language-bash">rae research coverage --format json \
+  | node -e &quot;let s='';process.stdin.on('data',d=&gt;s+=d).on('end',()=&gt;{const j=JSON.parse(s);console.log(j.total)})&quot;</code></pre>
+
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>            <p class="footer-mark">RAE FAANG</p>
+          <p class="footer-mission">
+
+            Product research, open-source alternatives, and agent skills to build beyond Meta, Amazon,
+            Apple, Netflix and Google. Your agent builds in your project. MIT licensed.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/">Docs</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE" rel="noopener noreferrer" target="_blank">MIT License</a>
+          <a href="https://github.com/EnzoVezzaro/repo-shield" rel="noopener noreferrer" target="_blank">Repo Shield</a>
+        </div>
+      </div>
+      <div class="wrap footer-fine">
+        <p>
+          Product names are used as functional references only and imply no
+          affiliation or endorsement. Implementations must comply with applicable
+          laws, licenses, and third-party rights. No AI training: see
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/NOTICE" rel="noopener noreferrer" target="_blank">NOTICE</a>.
+        </p>
+      </div>
+    </footer>
+    
+  </body>
+</html>

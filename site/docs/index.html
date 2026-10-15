@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Runs before the stylesheet so reveal styles only apply where the
+         motion layer can actually drive them. -->
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <title>Documentation | RAE FAANG</title>
+    <meta name="description" content="Guides to the RAE FAANG catalog, CLI, product research and agent workflow." />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Documentation | RAE FAANG" />
+    <meta property="og:description" content="Guides to the RAE FAANG catalog, CLI, product research and agent workflow." />
+    <meta property="og:url" content="https://rae-faang-landing.vercel.app/docs/" />
+    <link rel="canonical" href="https://rae-faang-landing.vercel.app/docs/" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-docs">
+    <div class="scroll-rail" data-scroll-rail aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/" aria-current="page">Docs</a>
+          
+        </nav>
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile primary">
+            <a href="../catalog/">Catalog</a>
+            <a href="../docs/">Docs</a>
+            
+          </nav>
+        </details>
+        <a class="btn btn-ghost header-github" href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero" id="top">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span aria-hidden="true">/</span><span>Docs</span>
+          </nav>
+          <h1>Documentation</h1>
+          <p class="lede">
+            Start here to use the catalog, run the CLI and plan product work with coding agents.
+            These guides describe the current repository; older design notes may be out of date.
+          </p>
+        </div>
+      </section>
+
+      <section class="section section-tight section-last" aria-label="Documentation">
+        <div class="wrap">
+          <div class="grid doc-grid">
+            <a class="linkcard doc-card" href="getting-started.html">
+              <h3>Get started</h3>
+              <p>Set up the repository, check the catalog, and start coordinating product work.</p>
+            </a>
+            <a class="linkcard doc-card" href="cli-reference.html">
+              <h3>CLI reference</h3>
+              <p>Browse products, check research, compare alternatives, and find missing work.</p>
+            </a>
+            <a class="linkcard doc-card" href="catalog-and-schemas.html">
+              <h3>Catalog and schemas</h3>
+              <p>Understand product records, research dossiers, alternatives, and validation.</p>
+            </a>
+            <a class="linkcard doc-card" href="agent-workflow.html">
+              <h3>Agent workflow (ACE)</h3>
+              <p>How the ACE environment and the multi-agent loop fit together.</p>
+            </a>
+            <a class="linkcard doc-card" href="product-research-and-build-plan.html">
+              <h3>Research and build every product</h3>
+              <p>Document products with cited evidence, then guide coding agents from research to tested alternatives.</p>
+            </a>
+          </div>
+          <div class="rootdocs">
+            <p class="mini-h">Repository-root documents</p>
+            <ul class="source-list">
+            <li><a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/README.md" rel="noopener noreferrer" target="_blank">README.md</a><span class="rootdoc-desc"> — Mission and project overview</span></li>
+            <li><a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/AGENTS.md" rel="noopener noreferrer" target="_blank">AGENTS.md</a><span class="rootdoc-desc"> — The agent operating model and handoff protocol</span></li>
+            <li><a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank">CONTRIBUTING.md</a><span class="rootdoc-desc"> — Contributing as a human</span></li>
+            <li><a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/PLAN.md" rel="noopener noreferrer" target="_blank">PLAN.md</a><span class="rootdoc-desc"> — What to build next</span></li>
+            <li><a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/DESIGN.md" rel="noopener noreferrer" target="_blank">DESIGN.md</a><span class="rootdoc-desc"> — The visual design system</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>            <p class="footer-mark">RAE FAANG</p>
+          <p class="footer-mission">
+
+            Product research, open-source alternatives, and agent skills to build beyond Meta, Amazon,
+            Apple, Netflix and Google. Your agent builds in your project. MIT licensed.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/">Docs</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE" rel="noopener noreferrer" target="_blank">MIT License</a>
+          <a href="https://github.com/EnzoVezzaro/repo-shield" rel="noopener noreferrer" target="_blank">Repo Shield</a>
+        </div>
+      </div>
+      <div class="wrap footer-fine">
+        <p>
+          Product names are used as functional references only and imply no
+          affiliation or endorsement. Implementations must comply with applicable
+          laws, licenses, and third-party rights. No AI training: see
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/NOTICE" rel="noopener noreferrer" target="_blank">NOTICE</a>.
+        </p>
+      </div>
+    </footer>
+    
+  </body>
+</html>

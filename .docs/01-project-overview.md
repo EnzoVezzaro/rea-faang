@@ -1,4 +1,4 @@
-> **Historical document — not authoritative.**
+> **Historical document - not authoritative.**
 >
 > This file predates the current CLI and ACE layout. It is kept for design
 > history only and contains stale details (provider names, product names, and a

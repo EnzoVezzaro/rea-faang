@@ -69,32 +69,50 @@ test('each skill file has valid frontmatter whose name matches the product id', 
 test('each skill file declares a valid open-source status', () => {
   for (const product of products) {
     const text = readSkill(product);
-    const status = text.match(/Open-source status is (available|partial|pending)/);
-    assert.ok(status, `${product.id}: description states an open-source status`);
+    const status = text.match(/Alternative coverage is (mature alternative listed|partial alternative coverage|no verified alternative)/);
+    assert.ok(status, `${product.id}: description states alternative coverage clearly`);
     assert.match(
       text,
-      /\*\*Open-source status\*\* \| \*\*(available|partial|pending(?: to open-source)?)\*\*/,
-      `${product.id}: status row`,
+      /\*\*Alternative coverage\*\* \| \*\*(mature alternative listed|partial alternative coverage|no verified alternative)\*\*/,
+      `${product.id}: coverage row must not imply product build status`,
     );
   }
 });
 
-test('pending products are labelled pending to open-source', () => {
+test('every skill makes clear that alternative coverage is not product build status', () => {
   for (const product of products) {
     const text = readSkill(product);
-    if (/Open-source status is pending/.test(text)) {
-      assert.match(text, /pending to open-source/, `${product.id}: must say pending to open-source`);
+    if (/Alternative coverage is no verified alternative/.test(text)) {
+      assert.match(text, /no suitable candidate is verified|has not verified a suitable candidate|no suitable open-source project|Alternative coverage: .+no verified alternative/i, `${product.id}: state no verified alternative precisely`);
     }
+    assert.match(text, /does not determine whether your agent can build the product/, `${product.id}: distinguish coverage from build capability`);
+    assert.match(text, /build the requested product in their project|build the requested product in the user's project|build the product in your project|build this product in their project|build it in their project/i, `${product.id}: direct the agent to build in the user's project`);
+    assert.doesNotMatch(text, /pending to open-source/, `${product.id}: avoid copy that implies the product itself is pending`);
   }
 });
 
 test('available and partial products list at least one alternative', () => {
   for (const product of products) {
     const text = readSkill(product);
-    const m = text.match(/Open-source status is (available|partial)/);
+    const m = text.match(/Alternative coverage is (mature alternative listed|partial alternative coverage)/);
     if (!m) continue;
     const table = text.split('## Existing open source')[1]?.split('## Gap')[0] ?? '';
     assert.match(table, /\| \[.+\]\(https?:\/\/.+\) \|/, `${product.id}: has an alternative row`);
+  }
+});
+
+test('every skill kit has product description and actionable multi-agent build instructions', () => {
+  for (const product of products) {
+    const text = readSkill(product);
+    assert.match(text, /## Product description/, `${product.id}: expanded product description`);
+    assert.match(text, /## Multi-agent task plan and outputs/, `${product.id}: agent task plan`);
+    assert.match(text, /## Verification and definition of done/, `${product.id}: verification gate`);
+    assert.match(text, /Do not reproduce proprietary internals or claim blanket feature parity/, `${product.id}: bounded independent implementation guidance`);
+    assert.match(text, /Give this product skill to the coding agent in the project where the user wants the product built/, `${product.id}: explains the skill hand-off and build location`);
+    assert.match(text, /coding-agent skill for \*\*.+\*\*/, `${product.id}: direct product-building mission`);
+    assert.match(text, /build in their project|build in the user's project|build in your project|project where the user wants the product built/, `${product.id}: user project is the implementation target`);
+    assert.match(text, /Research status:/, `${product.id}: honest research status`);
+    assert.match(text, /## Sources/, `${product.id}: visible sources`);
   }
 });
 
@@ -119,19 +137,20 @@ test('every relative link in the skills catalog resolves', () => {
   }
 });
 
-test('the index status counts match the skill files', () => {
+test('the index alternative-coverage counts match the skill files', () => {
   const index = readFileSync(join(SKILLS_DIR, 'README.md'), 'utf8');
   const counts = { available: 0, partial: 0, pending: 0 };
   for (const product of products) {
-    const m = readSkill(product).match(/Open-source status is (available|partial|pending)/);
-    assert.ok(m, `${product.id}: status parseable`);
-    counts[m[1]]++;
+    const m = readSkill(product).match(/Alternative coverage is (mature alternative listed|partial alternative coverage|no verified alternative)/);
+    assert.ok(m, `${product.id}: coverage parseable`);
+    const category = { 'mature alternative listed': 'available', 'partial alternative coverage': 'partial', 'no verified alternative': 'pending' }[m[1]];
+    counts[category]++;
   }
   for (const [status, n] of Object.entries(counts)) {
     assert.match(
       index,
-      new RegExp(`\\*\\*${n} ${status === 'pending' ? 'pending' : status}`),
-      `index should report ${n} ${status}`,
+      new RegExp(`\\*\\*${n} ${{ available: 'mature alternatives listed', partial: 'partial alternative coverage', pending: 'with no verified alternative' }[status]}`),
+      `index should report ${n} ${status} coverage entries`,
     );
   }
 });

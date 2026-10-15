@@ -2,7 +2,7 @@
 
 # CLI reference
 
-Use the installed `rae` command to browse products, read their research, compare open-source alternatives, and generate a product-specific Markdown skill for your coding agent. Give that skill to your agent in your project so it can build and verify an independent implementation. The CLI validates and reports catalog data; it does not build the product for you.
+Use `rae` to browse products, read research, compare candidate open-source projects and generate a Markdown skill for your coding agent. The skill helps your agent plan work in your project. The CLI can check catalog data; it does not build or test your implementation.
 
 ## Run the CLI
 
@@ -11,7 +11,7 @@ npm install -g rae-faang
 rae products list
 ```
 
-The published `rae-faang` package includes the catalog, research dossiers, open-source landscape, and product-skill generator. It installs both `rae` and `rae-faang` commands. You do not need to clone the source repository to inspect products, retrieve dossier text, validate research, or generate a product's Markdown agent skill.
+The published `rae-faang` package includes the catalog, research dossiers, candidate projects and skill generator. It installs both `rae` and `rae-faang` commands. You can browse products, read dossiers, validate catalog data and generate a skill without cloning the source repository.
 
 In a source checkout, the same commands run through the local package:
 

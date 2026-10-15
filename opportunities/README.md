@@ -4,9 +4,9 @@ An opportunity spec is the bridge from research to implementation. One is
 **required** for every product whose `opportunity_status` is `build_missing`:
 
 ```bash
-node src/cli.js opportunities validate   # fails if a build_missing spec is missing
-node src/cli.js opportunities list       # which products have a spec
-node src/cli.js opportunities export     # all classified opportunities as JSON
+rae opportunities validate   # fails if a build_missing spec is missing
+rae opportunities list       # which products have a spec
+rae opportunities export     # all classified opportunities as JSON
 ```
 
 - File name: `opportunities/<product_id>.md` (the id from `catalog/products.jsonl`).
