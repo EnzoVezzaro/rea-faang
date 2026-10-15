@@ -207,7 +207,11 @@ function workspaceIndex() {
     if (!statSync(groupDir).isDirectory()) continue;
     for (const product of readdirSync(groupDir)) {
       const ws = join(groupDir, product);
-      if (statSync(ws).isDirectory()) map.set(product, ws);
+      if (!statSync(ws).isDirectory()) continue;
+      const hasTrackedFile = ['package.json', 'ace.mjs', 'specs', 'src', 'tests'].some((entry) =>
+        existsSync(join(ws, entry)),
+      );
+      if (hasTrackedFile) map.set(product, ws);
     }
   }
   return map;
