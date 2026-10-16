@@ -113,7 +113,7 @@
             </div>
             <div class="rail-block">
               <p class="rail-key">Product skill</p>
-              <input class="rail-input" type="text" value="rae aws-rds --out ./aws-rds-agent" title="Click to copy" aria-label="Command to generate the Amazon RDS skill" readonly>
+              <input class="rail-input" type="text" value="npx rae-faang aws-rds --out ./aws-rds.md" title="Click to copy" aria-label="Command to generate the Amazon RDS skill" readonly>
               <a class="rail-dl" href="agent-kit.md" download>Download Markdown skill</a>
             </div>
             <div class="rail-block">
@@ -150,7 +150,7 @@
             </div>
             <p class="alt-covers">Kubernetes operator for HA PostgreSQL.</p>
             <p class="alt-note">Provider-agnostic RDS analogue.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-rds --alt &quot;CloudNativePG&quot;" title="Click to copy" aria-label="Command to clone CloudNativePG" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-rds --alt &quot;CloudNativePG&quot;" title="Click to copy" aria-label="Command to clone CloudNativePG" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -159,7 +159,7 @@
             </div>
             <p class="alt-covers">Alternative Postgres operator.</p>
             <p class="alt-note">Comparison to CNPG is well documented.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-rds --alt &quot;Crunchy Postgres Operator (PGO)&quot;" title="Click to copy" aria-label="Command to clone Crunchy Postgres Operator (PGO)" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-rds --alt &quot;Crunchy Postgres Operator (PGO)&quot;" title="Click to copy" aria-label="Command to clone Crunchy Postgres Operator (PGO)" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -168,7 +168,7 @@
             </div>
             <p class="alt-covers">HA templating for PostgreSQL.</p>
             <p class="alt-note">Used under many operators.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-rds --alt &quot;Patroni&quot;" title="Click to copy" aria-label="Command to clone Patroni" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-rds --alt &quot;Patroni&quot;" title="Click to copy" aria-label="Command to clone Patroni" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -177,7 +177,7 @@
             </div>
             <p class="alt-covers">Sharded MySQL management.</p>
             <p class="alt-note">MySQL-side alternative.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-rds --alt &quot;Vitess / MySQL Operator&quot;" title="Click to copy" aria-label="Command to clone Vitess / MySQL Operator" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-rds --alt &quot;Vitess / MySQL Operator&quot;" title="Click to copy" aria-label="Command to clone Vitess / MySQL Operator" readonly>
           </article>
               </div>
             </section>
@@ -201,14 +201,14 @@
               <p>This Markdown file is the coding-agent skill for Amazon RDS. Give it to your agent in your project; it guides research, reuse decisions, implementation and verification.</p>
               <div class="cmd-banner">
                 <p class="cmd-banner-label">Get the Amazon RDS build skill</p>
-                <pre class="cmd-block"><code>rae aws-rds --out ./aws-rds-agent</code></pre>
+                <pre class="cmd-block"><code>npx rae-faang aws-rds --out ./aws-rds.md</code></pre>
                 <p class="cmd-banner-note">Generate the skill with the RAE CLI, or <a href="agent-kit.md" download>download the Markdown skill</a>. The <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/catalog/skills/amazon_aws/aws-rds.md" rel="noopener noreferrer" target="_blank">source skill</a> is also available in the catalog.</p>
               </div>
               <ul class="artifact-list">
               <li class="artifact"><a class="artifact-name" href="agent-kit.md" download>agent-kit.md</a><span class="artifact-note">Downloadable Markdown skill with product-specific instructions for your coding agent.</span><span class="pill pill-available"><span class="pill-dot" aria-hidden="true"></span>available</span></li>
-              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — <span class="mono">rae aws-rds --out ./aws-rds-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — <span class="mono">rae aws-rds --out ./aws-rds-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">rae build product aws-rds --out ./aws-rds</span>.</span></li>
+              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — use <span class="mono">npx rae-faang build agent-kit aws-rds --out ./aws-rds-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — use <span class="mono">npx rae-faang build agent-kit aws-rds --out ./aws-rds-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">npx rae-faang build product aws-rds --out ./aws-rds</span>.</span></li>
               </ul>
               <ol class="stepper" aria-label="How to build this product with your agent">
               <li class="step step-todo">
@@ -251,7 +251,7 @@
               <h2 id="next-h">Next step</h2>
               <div class="callout callout-plain">
                 <p>Give the Amazon RDS skill to your coding agent in your project. Ask it to evaluate <a href="https://cloudnative-pg.io/" rel="noopener noreferrer" target="_blank">CloudNativePG ↗</a> against your needs, reuse what fits, then follow the skill's build and verification instructions.</p>
-                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">rae build product aws-rds --out ./aws-rds</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
+                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">npx rae-faang build product aws-rds --out ./aws-rds</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
               </div>
             </section>
           </div>

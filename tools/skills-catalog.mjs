@@ -14,7 +14,7 @@ import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PRODUCTS } from './skills/catalog-data.mjs';
-import { agentInstructions, productDescription, publicSources } from './agent-kit-content.mjs';
+import { validateRepositorySkill, writeProductSkill } from './product-skill-generator.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_DIR = join(ROOT, 'catalog', 'skills');
@@ -231,23 +231,26 @@ function main() {
   }
 
   const selected = args.company ? products.filter((p) => p.company_id === args.company) : products;
+  if (args.company && !selected.length) {
+    console.error(`skills-catalog: unknown company ID "${args.company}"`);
+    process.exit(1);
+  }
 
   if (!args.indexOnly) {
     for (const p of selected) {
-      const d = dataById.get(p.id);
-      const companyName = companies[p.company_id]?.name ?? p.company_id;
-      const content = skillFile(p, d, companyName);
-      const dir = join(OUT_DIR, p.company_id);
-      const file = join(dir, `${p.id}.md`);
+      const file = join(OUT_DIR, p.company_id, `${p.id}.md`);
       if (args.check) {
-        const current = existsSync(file) ? readFileSync(file, 'utf8') : null;
-        if (current !== content) {
-          console.error(`skills-catalog: drift: ${file}`);
+        const result = validateRepositorySkill(p.id);
+        if (result.status !== 'valid') {
+          console.error(`skills-catalog: ${p.id}: ${result.errors.join('; ')}`);
           process.exitCode = 1;
         }
       } else {
-        mkdirSync(dir, { recursive: true });
-        writeFileSync(file, content);
+        const result = writeProductSkill(p.id);
+        if (!result.markdown || result.report.errors.length) {
+          console.error(`skills-catalog: ${p.id}: ${result.report.errors.join('; ') || 'generation failed'}`);
+          process.exitCode = 1;
+        }
       }
     }
   }

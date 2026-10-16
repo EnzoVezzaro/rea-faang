@@ -8,7 +8,7 @@
  */
 
 import { readFileSync, readdirSync, statSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { agentInstructions, productDescription } from '../tools/agent-kit-content.mjs';
+import { writeProductSkill, compileFromRepository, validateRepositorySkill, coverageReport, productIds, companyProductIds } from '../tools/product-skill-generator.mjs';
 import { join, dirname, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import minimist from 'minimist';
@@ -19,16 +19,17 @@ import { fileURLToPath as toPath } from 'node:url';
 const __filename = toPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = join(__dirname, '..');
+const PACKAGE_ROOT = existsSync(join(ROOT, 'catalog', 'products.jsonl')) ? ROOT : dirname(ROOT);
 
 // The CLI is data-bound and ships the catalog, research and skills data in the
 // published npm package. CLI workflows do not require a source checkout.
 const PKG = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'));
 
 // --- Constants ---
-const CATALOG_DIR = join(__dirname, '..', 'catalog');
-const RESEARCH_DIR = join(__dirname, '..', 'research');
-const OPPORTUNITIES_DIR = join(__dirname, '..', 'opportunities');
-const PRODUCTS_DIR = join(__dirname, '..', 'products');
+const CATALOG_DIR = join(PACKAGE_ROOT, 'catalog');
+const RESEARCH_DIR = join(PACKAGE_ROOT, 'research');
+const OPPORTUNITIES_DIR = join(PACKAGE_ROOT, 'opportunities');
+const PRODUCTS_DIR = join(PACKAGE_ROOT, 'products');
 const SCHEMA_DIR = join(CATALOG_DIR, 'schema');
 
 const PRODUCT_SCHEMA = jsonSchema(SCHEMA_DIR, 'product.schema.json');
@@ -1034,7 +1035,7 @@ function cmdOpportunitiesExport(args) {
 
 // --- Build & reverse-engineering commands ---
 
-const SKILL_DATA_PATH = join(__dirname, '..', 'tools', 'skills', 'catalog-data.mjs');
+const SKILL_DATA_PATH = join(PACKAGE_ROOT, 'tools', 'skills', 'catalog-data.mjs');
 
 async function loadSkillProduct(productId) {
   const mod = await import('file://' + SKILL_DATA_PATH);
@@ -1054,77 +1055,13 @@ async function cmdBuildAgentKit(args) {
     process.exit(1);
   }
 
-  const data = await loadSkillProduct(productId);
   const outDefault = resolve(`${product.id}-agent`);
   const outDir = resolve(args.out || outDefault);
   mkdirSync(outDir, { recursive: true });
 
-  const alternatives = data?.alternatives || [];
-  const altLines = alternatives.map((a) => `- ${a.name} (${a.license}) — ${a.url}${a.repo ? ' · repo: ' + a.repo : ''}\n  ${a.covers || ''}${a.note ? ` Note: ${a.note}` : ''}`).join('\n');
-
-  const company = loadCompanies()[product.company_id]?.name || product.company_id;
-  const enriched = {
-    ...data,
-    id: product.id,
-    name: product.name,
-    company_id: product.company_id,
-    companyName: company,
-    product_type: product.product_type,
-    categories: product.categories || [],
-    official_url: product.official_url,
-    research_status: product.research_status,
-  };
-  const workspacePath = args.out ? resolve(args.out) : null;
-  const buildBrief = workspacePath
-    ? `CLI output path selected: ${workspacePath}. Keep the generated agent kit separate from source repositories and existing workspaces.`
-    : 'Generate the agent kit into a new output directory; do not require or assume a repository checkout.';
-  const instructions = `${buildBrief}
-
-${agentInstructions(enriched, { workspacePath: workspacePath || `./${product.id}`, researchUrl: `https://github.com/EnzoVezzaro/rea-faang/blob/main/research/companies/${product.company_id}/products/${product.id}.md` })}`;
-
-  const skillMd = `---
-name: build-${product.id}
-description: Agent skill kit to reverse-engineer and rebuild ${product.name} in the open.
----
-
-# Build ${product.name} (agent kit)
-
-Target product: **${product.name}** (${product.id})
-Company: ${company}
-Official URL: ${product.official_url}
-Product type: ${product.product_type}
-
-## Product description
-
-${productDescription(enriched)}
-
-## Core capabilities
-
-${(data?.capabilities || []).map((capability) => `- ${capability}`).join('\n')}
-
-## Open-source landscape
-
-${altLines || 'No verified alternative yet.'}
-
-## Gap
-
-${data?.gap || 'See the research dossier.'}
-
-## Verdict
-
-${data?.verdict || 'Unassessed.'}
-
-${instructions}
-
-## Commands
-
-- Inspect product metadata: \`rae products show ${product.id} --format json\`
-- Read the evidence dossier: \`rae research dossier ${product.id}\`
-- Check research before implementation: \`rae research coverage\` and \`rae research validate\`
-- Regenerate the kit into a separate directory: \`rae ${product.id} --out ./${product.id}-agent\`
-- Scaffold a separate local implementation workspace when appropriate: \`rae build product ${product.id} --out ./${product.id}\`
-`;
-  writeFileSync(join(outDir, 'skill.md'), skillMd, 'utf8');
+  const skill = compileFromRepository(product.id, { repositoryRoot: PACKAGE_ROOT });
+  if (!skill.markdown || skill.report.errors.length) throw new Error(`cannot generate ${product.id} skill: ${skill.report.errors.join('; ') || 'generation failed'}`);
+  writeFileSync(join(outDir, 'skill.md'), skill.markdown, 'utf8');
 
   const mcpConfig = {
     product: { id: product.id, name: product.name, company_id: product.company_id, official_url: product.official_url },
@@ -1144,6 +1081,93 @@ ${instructions}
   console.log(`  mcp.json  ${join(outDir, 'mcp.json')}`);
 }
 
+function printSkillReport(report, format) {
+  if (format === 'json') {
+    console.log(JSON.stringify(report, null, 2));
+    return;
+  }
+  const rows = report.products || [report];
+  for (const item of rows) {
+    console.log(`${item.productId}: ${item.status}`);
+    if (item.outputPath) console.log(`  output: ${item.outputPath}`);
+    for (const gap of item.missingResearch || []) console.log(`  research gap: ${gap}`);
+    for (const error of item.errors || []) console.error(`  error: ${error}`);
+  }
+}
+
+function cmdSkillsGenerate(args) {
+  const productId = args._[2];
+  const ids = args.all ? productIds() : args.company ? companyProductIds(args.company) : productId ? [productId] : [];
+  if (args.company && !companyProductIds(args.company).length) {
+    console.error(`Error: unknown company ID "${args.company}"`);
+    process.exitCode = 1;
+    return;
+  }
+  if (!ids.length) {
+    console.error('Error: specify a product ID, --company ID, or --all');
+    process.exitCode = 1;
+    return;
+  }
+  if (args.out && ids.length !== 1) {
+    console.error('Error: --out can only be used when generating one product skill');
+    process.exitCode = 1;
+    return;
+  }
+
+  const sourceCheckout = existsSync(join(ROOT, '.git'));
+  const catalog = loadCatalog();
+  const products = [];
+  for (const id of ids) {
+    try {
+      const productOutput = !sourceCheckout && !args.out
+        ? resolve(ids.length === 1 ? `${id}.md` : join('rae-skills', catalog.find((item) => item.id === id)?.company_id || 'unknown', `${id}.md`))
+        : args.out || null;
+      const result = writeProductSkill(id, productOutput, {
+        repositoryRoot: PACKAGE_ROOT,
+        defaultOutputPath: sourceCheckout ? join(PACKAGE_ROOT, 'catalog', 'skills', '{company_id}', '{product_id}.md') : join(process.cwd(), 'rae-skills', '{company_id}', '{product_id}.md'),
+      });
+      products.push(result.report);
+    } catch (error) {
+      products.push({ productId: id, status: 'failed', errors: [error.message], missingResearch: [] });
+    }
+  }
+  const failed = products.filter((item) => item.status === 'failed').length;
+  printSkillReport({ products, summary: { selected: ids.length, generated: products.length - failed, failed } }, args.format);
+  if (failed) process.exitCode = 1;
+}
+
+function cmdSkillsValidate(args) {
+  const productId = args._[2];
+  const ids = args.all ? productIds() : args.company ? companyProductIds(args.company) : productId ? [productId] : [];
+  if (args.company && !ids.length) {
+    console.error(`Error: unknown company ID "${args.company}"`);
+    process.exitCode = 1;
+    return;
+  }
+  if (!ids.length) {
+    console.error('Error: specify a product ID, --company ID, or --all');
+    process.exitCode = 1;
+    return;
+  }
+  const products = ids.map((id) => {
+    try { return validateRepositorySkill(id); }
+    catch (error) { return { productId: id, status: 'failed', errors: [error.message], warnings: [] }; }
+  });
+  const failed = products.filter((item) => item.status !== 'valid').length;
+  printSkillReport({ products, summary: { selected: ids.length, valid: products.length - failed, failed } }, args.format);
+  if (failed) process.exitCode = 1;
+}
+
+function cmdSkillsCoverage(args) {
+  const report = coverageReport();
+  if (args.format === 'json') console.log(JSON.stringify(report, null, 2));
+  else {
+    console.log(`SKILL COVERAGE: ${report.total} products`);
+    for (const [status, count] of Object.entries(report.byStatus).sort()) console.log(`  ${status}: ${count}`);
+    for (const item of report.gaps) console.log(`  ${item.productId}: ${item.missingResearch.join('; ') || item.errors.join('; ')}`);
+  }
+}
+
 function cmdReaCapture(args) {
   const productId = args._[2];
   const product = loadCatalog().find((p) => p.id === productId);
@@ -1151,7 +1175,7 @@ function cmdReaCapture(args) {
     console.error(`Error: product "${productId}" not found`);
     process.exit(1);
   }
-  const tool = join(__dirname, '..', 'tools', 'rea-catalog.mjs');
+  const tool = join(PACKAGE_ROOT, 'tools', 'rea-catalog.mjs');
   const r = spawnSync(process.execPath, [tool, '--only', productId], { stdio: 'inherit', cwd: join(__dirname, '..') });
   process.exit(r.status === null ? 1 : r.status);
 }
@@ -1342,6 +1366,7 @@ RAE — FAANG Product Intelligence CLI
 =====================================
 
 Usage: rae <command> [options]        (install with npm or run via npx)
+       rae <product-id> --out <file>  Generate a portable product skill
 
 Commands:
   products list     List products from catalog [--company ID] [--status RESEARCH-STATUS] [--alt-status ALT-STATUS] [--format json]
@@ -1364,11 +1389,15 @@ Commands:
   opportunities show Show opportunity details <product-id> [--format json]
   opportunities validate Validate opportunity consistency [--format json]
   opportunities export Export opportunities for downstream use [--format json] [--out FILE]
+  skills generate    Generate one product skill <product-id> [--out FILE], or --company ID / --all
+  --out FILE         Write a product skill to a specific Markdown file
+  skills validate    Validate bundled skill <product-id>, --company ID, or --all
+  skills coverage    Report per-product research gaps [--format json]
   build agent-kit   Generate skill.md + mcp.json agent kit for <product-id>
   build product     Scaffold a workspace to build the open-source replacement <product-id> [--out DIR] [--force]
   rea capture      Reverse-engineer a product's public surface <product-id>
   alternatives clone Clone the open-source alternative for <product-id> [--alt NAME] [--repo URL] [--into DIR]
-  <product-id>      Shorthand: build the agent kit for <product-id> [--out DIR].
+  <product-id>      Generate a product Markdown skill [--out FILE].
                     With --alt NAME, clone that product's alternative instead.
 
 Options:
@@ -1390,7 +1419,7 @@ function printVersion() {
 
 const argv = minimist(process.argv.slice(2), {
   alias: { h: 'help', v: 'version', f: 'format', c: 'company', s: 'status', m: 'manifest' },
-  boolean: ['help', 'version'],
+  boolean: ['help', 'version', 'all'],
   string: ['format', 'company', 'status', 'manifest', 'out', 'alt', 'repo', 'into', 'alt-status'],
 });
 
@@ -1434,6 +1463,11 @@ const commands = {
     'agent-kit': () => cmdBuildAgentKit(argv),
     'product': () => cmdBuildProduct(argv),
   },
+  'skills': {
+    'generate': () => cmdSkillsGenerate(argv),
+    'validate': () => cmdSkillsValidate(argv),
+    'coverage': () => cmdSkillsCoverage(argv),
+  },
   'rea': {
     capture: () => cmdReaCapture(argv),
   },
@@ -1455,15 +1489,16 @@ async function dispatch(argv) {
   const action = group?.[subcmd];
 
   if (!group) {
-    // Shorthand: `rae <product-id>` builds that product's agent kit;
-    // `rae <product-id> --alt NAME` clones the alternative instead.
+    // Shorthand: `rae <product-id> --out ./<product-id>.md` writes a
+    // portable Markdown skill; `--alt NAME` clones the alternative instead.
     if (loadCatalog().some((p) => p.id === command)) {
       argv._[2] = command;
       try {
         if (argv.alt) {
           await cmdAlternativesClone(argv);
         } else {
-          await cmdBuildAgentKit(argv);
+          argv.out ||= resolve(`${command}.md`);
+          cmdSkillsGenerate(argv);
         }
       } catch (err) {
         console.error(`Error: ${err.message}`);

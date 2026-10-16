@@ -1,249 +1,455 @@
 ---
-name: build-netflix-streaming
-description: Coding-agent build skill for Netflix Streaming. Research the product, assess reusable projects, and build and verify it in your project.
+name: netflix-streaming
+description: "Evidence-aware build skill for Netflix Streaming (netflix-streaming); investigate, assess reuse, implement scoped behavior and verify."
 ---
 
-# Build Netflix Streaming with your coding agent
+# Netflix Streaming — implementation skill (`netflix-streaming`)
 
-| | |
-|---|---|
-| **Target product** | Netflix Streaming (`netflix-streaming`) |
-| **Company** | Netflix (`netflix`) |
-| **Product type** | `media_streaming` |
-| **Official URL** | https://www.netflix.com/ |
-| **Alternative coverage** | **partial alternative coverage** |
-| **Research status** | **pending** |
+> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+
+> This is the coding-agent build skill for **Netflix Streaming**. Give this file to your coding agent in the project where you want the product built.
 
 ## Product description
 
-Netflix Streaming is a subscription video-on-demand service: a licensed and original content library delivered through adaptive streaming, recommendations and DRM.
+This is the coding-agent skill for **Netflix Streaming** (`netflix-streaming`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-Catalog categories: media_streaming.
+## 1. Product identity and scope
 
-Catalogued capability areas:
-- Adaptive-bitrate streaming at scale
-- Personalised recommendations
-- Profiles, parental controls, offline downloads
-- DRM (Widevine/FairPlay/PlayReady)
+| Field | Canonical record / result | Evidence status and limits |
+|---|---|---|
+| Name / stable ID | **Netflix Streaming** / `netflix-streaming` | Product catalog |
+| Company / category | Netflix / `media_streaming` / `media_streaming` | Product catalog |
+| Official website / docs | [https://www.netflix.com/](https://www.netflix.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
+| Intended users, roles, jobs, value | Unknown | No structured evidence |
+| Boundaries / original architecture | Unknown | Do not infer from category or marketing |
+| Independent implementation scope | User-selected; start with evidenced vertical slice | Proposed decision |
+| Exclusions | Proprietary source, protected assets, unauthorized access, unsupported parity claims | Clean-room boundary; further product-specific limits unknown |
 
-This summary reflects the catalog record, not a complete product specification. Verify intended users, end-to-end workflows, supported platforms, edge cases, data handling, and constraints against cited sources. Treat capability labels as research leads until that verification is complete.
+Research lens: **media_streaming** — verify real users/jobs, complete lifecycles, platform/version support, permissions, persistence, failure and recovery behavior. Product type is a question prompt, not evidence of features.
 
-## Research references
+## 2. Product capability map
 
-- Dossier: `rae research dossier netflix-streaming` or [view the repository dossier](https://github.com/EnzoVezzaro/rea-faang/blob/main/research/companies/netflix/products/netflix-streaming.md)
-- Public web-surface observation: [catalog/rea/netflix/netflix-streaming.md](https://github.com/EnzoVezzaro/rea-faang/blob/main/catalog/rea/netflix/netflix-streaming.md)
+Capability labels are leads, not complete verified behavior.
 
-## Open-source landscape
+| Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
+|---|---|---|---|---|
+| `NETFLIX-STREAMING-CAP-63BF8DDF` | Adaptive-bitrate streaming at scale | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-STREAMING-CAP-7C2B7041` | Personalised recommendations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-STREAMING-CAP-9582CBDD` | Profiles, parental controls, offline downloads | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-STREAMING-CAP-87E2AC4C` | DRM (Widevine/FairPlay/PlayReady) | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
-- **Jellyfin** (GPL-2.0) — https://jellyfin.org/
-  Fully open, self-hosted media server and streaming. Note: The clearest open replacement for the software.
-- **PeerTube** (AGPL-3.0) — https://joinpeertube.org/
-  Federated video hosting/streaming. Note: Platform-level alternative.
-- **Kodi** (GPL-2.0) — https://kodi.tv/
-  Open media centre. Note: Client-side playback.
-- **Plex / Emby** (proprietary) — https://www.plex.tv/
-  Popular media servers. Note: Not open source.
+## 3. Complete user workflows
 
-## Gap and verdict
+**Observed start page, not a completed workflow:** dated capture exposes `button: Get Started`, `button: Learn More`, `button: Doing Life 1`, `button: A Different World 2`, `button: Why Did I Get Married Again? 3`, `button: Animals 4`, `button: Below 5`, `button: Beauty in Black 7`, `button: East of Eden 8`, `button: Haunted Hotel 9`, `button: Tires 10`, `button: What is Netflix?`, `button: How much does Netflix cost?`, `button: Where can I watch?`, `button: How do I cancel?`, `button: What can I watch on Netflix?`, `button: Is Netflix good for kids?`, `combobox: Select Language`, `link: Sign In`, `textbox: Email address`, `link: 1-844-569-7700`, `link: FAQ`, `link: Help Center`, `link: Account`, `link: Netflix House`, `link: Media Center`, `link: Investor Relations`, `link: Jobs`, `link: Netflix Shop`, `link: Redeem Gift Cards`, `link: Buy Gift Cards`, `link: Ways to Watch`, `link: Terms of Use`, `link: Privacy`, `link: Cookie Preferences`, `link: Corporate Information`, `link: Contact Us`, `link: Speed Test`, `link: Legal Notices`, `link: Only on Netflix`, `link: Do Not Sell or Share My Personal Information`, `link: Ad Choices`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-The licensed content library, the recommendation model and the DRM/content-licensing arrangements cannot be open-sourced.
+- **Adaptive-bitrate streaming at scale:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Personalised recommendations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Profiles, parental controls, offline downloads:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **DRM (Widevine/FairPlay/PlayReady):** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
-Partial. The streaming software is open source (Jellyfin); the catalogue, recommendations and rights are pending and will remain so.
+## 4. Interaction and interface specification
 
-## Product description and scope
+| Observable interface | Evidence-backed snapshot | Unknown / untested |
+|---|---|---|
+| Navigation/landmarks | `banner`, `form: Sign up or restart your membership with Netflix.`, `form: Sign up or restart your membership with Netflix.`, `contentinfo` | Full IA/routes/authenticated navigation |
+| Views/headings | `Unlimited movies, TV shows, and more`, `Ready to watch? Enter your email to create or restart your membership.`, `The Netflix you love for just $8.99.`, `Trending Now`, `More Reasons to Join`, `Enjoy on your TV`, `Download your shows to watch offline`, `Watch everywhere`, `Create profiles for kids`, `Frequently Asked Questions`, `What is Netflix?`, `How much does Netflix cost?`, `Where can I watch?`, `How do I cancel?`, `What can I watch on Netflix?`, `Is Netflix good for kids?` | Results and subsequent views |
+| Controls | `button: Get Started`, `button: Learn More`, `button: Doing Life 1`, `button: A Different World 2`, `button: Why Did I Get Married Again? 3`, `button: Animals 4`, `button: Below 5`, `button: Beauty in Black 7`, `button: East of Eden 8`, `button: Haunted Hotel 9`, `button: Tires 10`, `button: What is Netflix?`, `button: How much does Netflix cost?`, `button: Where can I watch?`, `button: How do I cancel?`, `button: What can I watch on Netflix?`, `button: Is Netflix good for kids?`, `combobox: Select Language`, `link: Sign In`, `textbox: Email address`, `link: 1-844-569-7700`, `link: FAQ`, `link: Help Center`, `link: Account`, `link: Netflix House`, `link: Media Center`, `link: Investor Relations`, `link: Jobs`, `link: Netflix Shop`, `link: Redeem Gift Cards`, `link: Buy Gift Cards`, `link: Ways to Watch`, `link: Terms of Use`, `link: Privacy`, `link: Cookie Preferences`, `link: Corporate Information`, `link: Contact Us`, `link: Speed Test`, `link: Legal Notices`, `link: Only on Netflix`, `link: Do Not Sell or Share My Personal Information`, `link: Ad Choices` | Activation, forms, validation, loading/empty/success/error, keyboard behavior |
+| Links | `[Sign In](/login)`, `[1-844-569-7700](tel:1-844-569-7700)`, `[FAQ](https://help.netflix.com/support/412)`, `[Help Center](https://help.netflix.com)`, `[Account](/youraccount)`, `[Netflix House](https://www.netflixhouse.com/)`, `[Media Center](https://media.netflix.com/)`, `[Investor Relations](http://ir.netflix.com/)`, `[Jobs](https://jobs.netflix.com/jobs)`, `[Netflix Shop](https://netflix.shop/)`, `[Redeem Gift Cards](/redeem)`, `[Buy Gift Cards](/gift-cards)`, `[Ways to Watch](/watch)`, `[Terms of Use](https://help.netflix.com/legal/termsofuse)`, `[Privacy](https://help.netflix.com/legal/privacy)`, `[Cookie Preferences](#)`, `[Corporate Information](https://help.netflix.com/legal/corpinfo)`, `[Contact Us](https://help.netflix.com/contactus)`, `[Speed Test](https://fast.com)`, `[Legal Notices](https://help.netflix.com/legal/notices)`, `[Only on Netflix](https://www.netflix.com/browse/genre/839338)`, `[Do Not Sell or Share My Personal Information](https://www.netflix.com/dnsspi)`, `[Ad Choices](https://netflix.com/adchoices-us)` | Deep-link and route semantics |
+| Responsive/platform behavior | Unknown | No comparison captured |
+| Search/filter/sort/settings/import/export | Unknown unless explicitly observed | Complete interactions not captured |
 
-Netflix Streaming is a subscription video-on-demand service: a licensed and original content library delivered through adaptive streaming, recommendations and DRM.
+A REA page capture is not product-wide interface evidence. Use original interface design and assets; do not reproduce protected branding.
 
-Catalog categories: media_streaming.
+## 5. Functional requirements and traceability
 
-Catalogued capability areas:
-- Adaptive-bitrate streaming at scale
-- Personalised recommendations
-- Profiles, parental controls, offline downloads
-- DRM (Widevine/FairPlay/PlayReady)
+### REQ-FUNC-63BF8DDF — Adaptive-bitrate streaming at scale
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-63BF8DDF`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-STREAMING-CAP-63BF8DDF` → `REQ-FUNC-63BF8DDF` → `TEST-FUNC-63BF8DDF`.
 
-This summary reflects the catalog record, not a complete product specification. Verify intended users, end-to-end workflows, supported platforms, edge cases, data handling, and constraints against cited sources. Treat capability labels as research leads until that verification is complete.
+### REQ-FUNC-7C2B7041 — Personalised recommendations
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-7C2B7041`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-STREAMING-CAP-7C2B7041` → `REQ-FUNC-7C2B7041` → `TEST-FUNC-7C2B7041`.
 
-## Coding-agent mission
+### REQ-FUNC-9582CBDD — Profiles, parental controls, offline downloads
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-9582CBDD`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-STREAMING-CAP-9582CBDD` → `REQ-FUNC-9582CBDD` → `TEST-FUNC-9582CBDD`.
 
-This is the product-specific coding-agent skill for **Netflix Streaming**. Give this file to your coding agent in the project where you want the product built. RAE’s goal is “We don't need FAANG anymore. Use your agent to build any of their products. RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google.” Use that ambition to work toward the user’s requested product, not to overstate current evidence or completion. Research the product, choose what to reuse, build an independent implementation in the user’s project and verify it. Do not reproduce proprietary internals, protected assets or branding, and do not claim blanket feature parity; turn verified public behavior into an evidence-backed, traceable build plan.
+### REQ-FUNC-87E2AC4C — DRM (Widevine/FairPlay/PlayReady)
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-87E2AC4C`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-STREAMING-CAP-87E2AC4C` → `REQ-FUNC-87E2AC4C` → `TEST-FUNC-87E2AC4C`.
 
-**Important evidence limit:** the product dossier has research status **pending**. The catalog summary is a starting brief, not a complete verified specification; its capability list may be incomplete. Research public behavior first, fill the coverage ledger, and report unknowns honestly while making progress on verified scope.
+Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
-### Evidence to inspect first
+## 6. Data model and state
 
-1. Read the product dossier with `rae research dossier netflix-streaming` and review its research status (**pending**). When using the source repository, the dossier is also linked here: [`research/companies/netflix/products/netflix-streaming.md`](https://github.com/EnzoVezzaro/rea-faang/blob/main/research/companies/netflix/products/netflix-streaming.md). A generated kit or successful metadata lookup does not prove that claims have been researched. Resolve placeholders and contradictions before implementation.
-2. Review the public web-surface observation if available. It records only an unauthenticated page, not internal architecture or authenticated behavior. Compare observations with cited official sources; do not infer private workflows from page appearance.
-3. Verify each material product and alternative claim against official documentation, public standards, or the referenced project itself. Record URLs, access dates, supported claims, assumptions, conflicts and unknowns. Do not sign in, bypass controls, reverse-engineer proprietary binaries, or copy source, protected assets or branding.
-4. Check the actual repository conventions and existing workspace before adding dependencies or selecting a stack. Keep license obligations and third-party rights visible in the plan. If a dossier is pending, stale or too thin to support requirements, make the next task evidence gathering—not speculative implementation.
+**Original product structures:** UNKNOWN. No structured evidence establishes fields/types, IDs, ownership/permissions, lifecycle, persistence, constraints, deletion/retention, import/export, migration, concurrency or indexes.
 
-### Evidence standard and source ledger
+**Independent model (PROPOSED):** define only state needed for the researched first slice; specify IDs, validation, owners, state transitions, concurrency, deletion/export/retention and migration. Do not describe it as the target’s model.
 
-- Start with the official product page and official documentation when recorded. The **Sources** list labels official documentation separately from candidate-project research leads.
-- The dossier research status is **pending**. Catalog summaries, capabilities, alternative status, verdicts and gaps are leads—not a verified specification. Never silently promote a claim to verified.
-- For each material requirement, attach a public URL, access date, the specific claim supported, confidence, and any conflict/unknown. A source link by itself is not claim-level evidence.
-- Separate directly observed behavior, official documentation, third-party reporting, inference, design choice, and unknowns. Do not infer behavior or internals from branding, marketing language, a screenshot or an unauthenticated page.
-- If sources conflict or evidence is inaccessible, record the uncertainty and ask for a decision only when it blocks safe, useful progress. Never fabricate defaults, APIs, compatibility, scale, guarantees or parity.
+## 7. APIs, integrations and protocols
 
-| Claim / requirement | Source URL + access date | Supported behavior | Source type | Confidence | Conflict / unknown | Decision |
-|---|---|---|---|---|---|---|
-| Add one row per material behavior before implementation | Public, authorized source required | Quote or paraphrase only what it supports | Official / observed / third-party / inference | Verified / partial / unknown | Record explicitly | Include / exclude / defer |
+**Original contracts:** none verified in structured evidence. Dossier prose does not establish supported APIs. Do not invent target endpoints, schemas, auth, events or limits. If the independent implementation needs an interface, define a versioned contract labelled PROPOSED, including request/response, authorization, errors, limits, timeouts, retries and idempotency.
 
-Research lens: **media_streaming** — Catalog/rights, ingest and encoding, manifests/codecs, adaptive playback, seeking/resume, subtitles/audio, profiles/parental controls, concurrency, offline behavior, CDN/cache, DRM only through authorized standards/licenses, and lawful content acquisition.
+## 8. Architecture and technical design
 
-Unknowns are first-class outputs. Do not guess product behavior to fill a blank. When no reliable evidence exists, mark the requirement unverified, propose a bounded assumption only if safe and reversible, and ask the user to approve scope decisions that materially change the product.
+**PROPOSED independent design; target internals unknown.** Use only components required by verified scope.
 
-### Reuse/build decision
+```mermaid
+flowchart LR
+  UI[Interface] --> APP[Application and domain boundary]
+  APP --> DB[(Persistence if needed)]
+  APP --> EXT[Authorized integrations if needed]
+```
 
-Candidates cover part of the product. Map them to verified behaviors, recommend what to reuse, and identify any user needs they do not cover. Build the requested product in the user's project, scoped to their needs.
+Separate interface/domain/persistence/integration boundaries. Enforce access at trusted boundaries, isolate tenants where relevant, and define timeout/partial failure behavior. Add queues/caches/scaling/deployment components only when requirements justify them. Record configuration, secrets, data flow, recovery, observability and deployment assumptions in the implementation project.
 
-Current alternative coverage: **partial alternative coverage**. This describes the catalog's research into existing projects only; it does not determine whether your agent can build the product. Build it in your project using this skill. Catalog coverage notes: Partial. The streaming software is open source (Jellyfin); the catalogue, recommendations and rights are pending and will remain so. The licensed content library, the recommendation model and the DRM/content-licensing arrangements cannot be open-sourced.
+## 9. Open-source foundation and dependency strategy
 
-Candidate projects to verify:
+**Decision: candidates are PROPOSED for evaluation, not approved foundations.** Verify repository/version, license and dependency terms, actual code/modules, extension points, tests/CI, maintenance, security, deployment and integration cost. Map each requirement to actual code and test evidence; README claims and popularity are not proof.
 
-- **Jellyfin** (GPL-2.0) — Fully open, self-hosted media server and streaming. Note: The clearest open replacement for the software. Source: https://jellyfin.org/
-- **PeerTube** (AGPL-3.0) — Federated video hosting/streaming. Note: Platform-level alternative. Source: https://joinpeertube.org/
-- **Kodi** (GPL-2.0) — Open media centre. Note: Client-side playback. Source: https://kodi.tv/
-- **Plex / Emby** (proprietary) — Popular media servers. Note: Not open source. Source: https://www.plex.tv/
-
-### Product behaviors and workflow coverage ledger
-
-Treat catalog capability bullets as a seed list, not a complete backlog. Decompose compound bullets into separate user-observable workflows. Find missing primary journeys, administration, onboarding, settings, accessibility, data portability, safety, abuse, failures, recovery and cross-platform differences from public evidence. Keep direct equivalents and intentionally different design decisions distinct.
-
-- **NETFLIX-STREAMING-CAP-001 — Adaptive-bitrate streaming at scale:** identify the user/actor, goal, entry point, prerequisite, happy path, alternate/error/permission-denied path, resulting state, platform, data effects, evidence and acceptance check. Decompose compound capability bullets into distinct independently testable workflows where needed.
-- **NETFLIX-STREAMING-CAP-002 — Personalised recommendations:** identify the user/actor, goal, entry point, prerequisite, happy path, alternate/error/permission-denied path, resulting state, platform, data effects, evidence and acceptance check. Decompose compound capability bullets into distinct independently testable workflows where needed.
-- **NETFLIX-STREAMING-CAP-003 — Profiles, parental controls, offline downloads:** identify the user/actor, goal, entry point, prerequisite, happy path, alternate/error/permission-denied path, resulting state, platform, data effects, evidence and acceptance check. Decompose compound capability bullets into distinct independently testable workflows where needed.
-- **NETFLIX-STREAMING-CAP-004 — DRM (Widevine/FairPlay/PlayReady):** identify the user/actor, goal, entry point, prerequisite, happy path, alternate/error/permission-denied path, resulting state, platform, data effects, evidence and acceptance check. Decompose compound capability bullets into distinct independently testable workflows where needed.
-
-| Requirement ID | Behavior / user job (catalog lead) | Evidence + date | Confidence | Scope | Acceptance test / manual check |
+| Candidate | Repository | Catalog license (unverified) | Claimed coverage (unverified) | Limitation | Decision |
 |---|---|---|---|---|---|
-| NETFLIX-STREAMING-CAP-001 | Adaptive-bitrate streaming at scale | **Missing: verify against public sources** | Unknown until verified | Untriaged: include, exclude with reason, or defer | Define observable success and negative/error cases |
-| NETFLIX-STREAMING-CAP-002 | Personalised recommendations | **Missing: verify against public sources** | Unknown until verified | Untriaged: include, exclude with reason, or defer | Define observable success and negative/error cases |
-| NETFLIX-STREAMING-CAP-003 | Profiles, parental controls, offline downloads | **Missing: verify against public sources** | Unknown until verified | Untriaged: include, exclude with reason, or defer | Define observable success and negative/error cases |
-| NETFLIX-STREAMING-CAP-004 | DRM (Widevine/FairPlay/PlayReady) | **Missing: verify against public sources** | Unknown until verified | Untriaged: include, exclude with reason, or defer | Define observable success and negative/error cases |
+| [Jellyfin](https://jellyfin.org/) | Not recorded | GPL-2.0 (unverified) | Fully open, self-hosted media server and streaming. | The clearest open replacement for the software. | Proposed evaluation lead; no verified foundation |
+| [PeerTube](https://joinpeertube.org/) | [Repository](https://github.com/framasoft/peertube) | AGPL-3.0 (unverified) | Federated video hosting/streaming. | Platform-level alternative. | Proposed evaluation lead; no verified foundation |
+| [Kodi](https://kodi.tv/) | Not recorded | GPL-2.0 (unverified) | Open media centre. | Client-side playback. | Proposed evaluation lead; no verified foundation |
+| [Plex / Emby](https://www.plex.tv/) | Not recorded | proprietary (unverified) | Popular media servers. | Not open source. | Proposed evaluation lead; no verified foundation |
 
-Catalog/rights, ingest and encoding, manifests/codecs, adaptive playback, seeking/resume, subtitles/audio, profiles/parental controls, concurrency, offline behavior, CDN/cache, DRM only through authorized standards/licenses, and lawful content acquisition.
+No candidate has been independently cloned, executed, license-reviewed or security-reviewed by this generator.
+## 10. Security and privacy
 
-For every in-scope behavior, record the actor, user goal, trigger, preconditions, inputs, expected visible/system result, state transition, permissions, main path, alternate/invalid/denied/timeout/retry/recovery paths, data/privacy effects, platform constraints, public evidence and confidence. Use stable requirement IDs (for example `NETFLIX-STREAMING-REQ-001`), and trace each ID from evidence → workflow → specification/contract → implementation → automated test or named manual check. Maintain a **coverage ledger** showing implemented, tested, partial, not started, excluded-with-reason, or unknown; never call the product “complete” while required rows are unimplemented or unverified.
+No product-specific security/privacy controls are verified by current evidence. Proposed independent controls: authenticate/authorize state changes server-side; validate inputs; protect secrets; apply least privilege and suitable abuse/rate controls; minimize data; define consent, retention, export/delete, backup/restore; keep sensitive payloads out of logs; handle external trust boundaries/timeouts/retries; test cross-user access, malformed inputs, leaks, abuse and recovery.
 
-### Questions that expose missing workflows and product edges
+Product-specific review: Verify rights, privacy, child safety and lawful DRM/content-delivery boundaries. Do not claim compliance, privacy or security parity without scoped assessment.
 
-- Who is the intended user, and which first-party jobs matter most? Which jobs vary by role, account state, locale, platform or subscription/entitlement?
-- What are the complete lifecycle and state transitions (create, read, update, share, revoke, archive, delete, restore)? What persists and what is ephemeral?
-- What identity, access-control, ownership, consent and delegation rules govern each action? How are unauthorized and revoked actions handled?
-- What are the import/export, interoperability, migration and data portability needs? Which data/content must the user supply or license?
-- What are expected scale, latency, availability, offline and recovery behaviors? Which are documented facts versus targets chosen for this implementation?
-- What legal, privacy, safety, abuse, retention, regional and accessibility considerations change the design?
-- Who owns/licenses the content and delivery rights? Which codecs, subtitles, devices, offline states and lawful DRM integrations are required?
+## 11. Error handling and edge cases
 
-A comprehensive implementation targets the user’s requested scope and all verified in-scope workflows, not every imagined feature. Ask the user to choose only where evidence leaves materially different valid product decisions; otherwise continue with a documented, reversible choice.
+These are test prompts, not target behavior assertions. Keep only relevant cases and derive expected behavior from evidence or label an independent decision PROPOSED.
 
-### Build the product in the user's project
+- **EDGE-001:** Missing/malformed/oversized input. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-002:** Unauthorized or revoked action and tenant isolation where applicable. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-003:** Empty data/results and duplicate operations. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-004:** Concurrent updates or stale writes to mutable state. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-005:** Network timeout, throttling, external outage, retry and partial failure. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-006:** Cancellation/interruption during state change and restart recovery. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-007:** Corrupt/incompatible imported or persisted data; migration failure. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-008:** Expired credentials/session where applicable. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-009:** Bandwidth/codec/device change, manifest failure, content unavailable. Target behavior is UNKNOWN until researched; specify recovery before release.
 
-Use the product skill from the project where the user wants **Netflix Streaming** built. Review that project's conventions and existing code, then create a traceable plan for the complete user-requested scope. Deliver it in working vertical slices: each slice should connect the real interface, domain behavior, data/contracts and tests. Do not stop after a static mock, empty scaffold, isolated API or happy-path-only demo unless that is the approved scope. The catalog and optional scaffold provide guidance; implementation belongs in the user's project. If evidence is insufficient for a behavior, research it before coding or mark the behavior blocked with a precise question.
+## 12. Testing and behavioral verification
 
-### End-to-end implementation milestones
+- **TEST-FUNC-63BF8DDF** → `REQ-FUNC-63BF8DDF`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-7C2B7041** → `REQ-FUNC-7C2B7041`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-9582CBDD** → `REQ-FUNC-9582CBDD`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-87E2AC4C** → `REQ-FUNC-87E2AC4C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
-1. **Orient:** identify the real user project, its existing architecture, conventions, tests, deployment target and constraints. Do not overwrite it or scaffold a parallel app without approval.
-2. **Research:** create an evidence ledger and unknowns list; verify intended users, user jobs, full observable workflows, platform matrix, data, permissions, errors, integrations and constraints. Use authorized public sources only.
-3. **Inventory:** enumerate every requested/known capability, related workflows and cross-cutting concerns. Assign stable IDs; classify each as verified, inferred, unknown, in-scope, explicitly excluded, or deferred. Resolve contradictions before treating them as facts.
-4. **Specify:** write a product brief, user journeys, requirements/acceptance scenarios, non-goals, data model, API/events, permissions, threat model, compatibility matrix, quality targets and migration/operations notes appropriate to the project. Keep specifications next to the project implementation when possible.
-5. **Decide reuse:** inspect candidate projects and existing code for actual fit, maintenance, license, security, integration cost and gaps. Reuse is optional and must serve the user’s goal; do not replace the requested product with a competitor. Do not add dependencies before confirming they are needed and acceptable.
-6. **Plan the complete scope:** order work into end-to-end vertical slices. Implement all verified in-scope requirements through successive slices; if time or evidence prevents completion, leave a transparent coverage ledger and a prioritized continuation plan rather than claiming completeness.
-7. **Build:** follow the host project’s stack and patterns. Implement original code and assets, accessible interfaces, safe data handling, explicit states, useful errors and operational observability. Keep interfaces/contracts stable before parallel agent work.
-8. **Verify:** tests trace to requirement IDs; run focused checks, full project tests, static/security checks and compatibility checks that the project supports. Inspect the running artifact through the interface the user will use; capture unrun checks and actual limits.
-9. **Review and deliver:** review functionality, security, accessibility, license/attribution, performance against stated targets, docs, setup, migration and rollback. Report what works, what is partial, what is not implemented, evidence gaps, commands and next steps.
+These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
-### Product implementation prompt
+## 13. Implementation roadmap
 
-“We don't need FAANG anymore. Use your agent to build **Netflix Streaming** in this project. Start from this skill, but treat every catalog claim as provisional until you verify it. Research authorized public behavior, define a traceable coverage plan for the full scope I request, reuse suitable open components where they fit, and implement an original, independently written product—not a branded clone. Test the real user journeys, explain what is complete versus partial or unknown, and leave a clear next-step plan for any unimplemented requirements.”
+### Phase 1 — Foundation and dependencies
 
-### Required deliverables
+- **Tasks:** Inspect user project, stack, constraints, tests, candidate implementations and licenses.
+- **Prerequisites:** Repository inspection and user scope.
+- **Deliverables:** Project map, evidence ledger, reuse decision, bounded plan
+- **Requirements:** Select after evidence review
+- **Tests:** Clean setup/validation smoke test
+- **Completion:** Clean setup and documented dependency/reuse decision.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-- **Evidence ledger:** claim, source URL, source type, access date, exact supported behavior, confidence, contradiction and open question.
-- **Behavior inventory:** capability ID, actor/job, trigger, preconditions, main and alternate paths, state transitions, permissions, platforms, data effects and status.
-- **Product brief:** target users, problem, outcomes, full requested scope, explicit non-goals and measurable quality goals.
-- **Specification set:** user journeys, requirements, acceptance scenarios, architecture/contracts, data model, threat/privacy model, UI states, compatibility, test plan and operational/migration notes as relevant.
-- **Build plan:** reusable components and licenses, vertical slices, ownership/interfaces, dependency decisions, risks and ordered tasks.
-- **Implementation:** integrated working software inside the user’s project, not a mockup or disconnected scaffold, unless that is the scope the user approved.
-- **Verification packet:** requirement-to-test traceability, commands and actual exit codes, manual/browser checks, representative performance data when required, checks not run, limitations and known gaps.
-- **Handoff:** changed files, decisions, risks, setup/run instructions, next actionable work and honest completion status.
+### Phase 2 — Core domain behavior
 
-### Product quality and verification plan
+- **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
+- **Prerequisites:** Phase 1 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** REQ-FUNC-63BF8DDF, REQ-FUNC-7C2B7041, REQ-FUNC-9582CBDD, REQ-FUNC-87E2AC4C
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Integrated domain behavior with deterministic unit/integration tests.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-- Correctness: test the primary user journey end to end, then alternate paths, invalid input, permission denial and recovery.
-- Security/privacy: map assets and trust boundaries; validate identity/authorization server-side; minimize collected data; protect secrets; prevent injection/SSRF/CSRF and abuse where relevant; document encryption, retention, export/delete, and threat assumptions.
-- Accessibility/UX: keyboard and screen-reader operation, semantic labels, focus order, contrast, reduced motion, localization-ready text, useful empty/loading/error states and responsive layouts where applicable.
-- Reliability: retries/idempotency, timeouts, cancellation, partial failure, backups/restore, migrations, monitoring and operational runbooks appropriate to the product.
-- Compatibility: test every claimed platform, protocol, file format, SDK/API version or client; otherwise label it unsupported or unverified.
-- Performance: establish a representative workload and a user-visible target before optimizing; record baseline, measurement method and environment. Do not claim equivalent scale without evidence.
-- Maintainability: dependency/license inventory, reproducible setup, configuration validation, migrations, API contracts, logs/metrics, documentation and clean-checkout verification.
-- Media-specific checks: test ingest validation, transcoding profiles, manifests, adaptive playback, seeking/resume, subtitle/audio selection, device compatibility, bandwidth changes and lawful rights/DRM boundaries.
+### Phase 3 — Primary user workflows
 
-### Multi-agent task plan and outputs
+- **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
+- **Prerequisites:** Phase 2 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** REQ-FUNC-63BF8DDF, REQ-FUNC-7C2B7041, REQ-FUNC-9582CBDD, REQ-FUNC-87E2AC4C
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** E2E acceptance checks via user-facing interface.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-1. **Researcher (single owner of evidence packet):** verify identity, lifecycle, intended users, user jobs, workflows, capability claims, alternatives and licenses; record claim-level citations and unknowns. If the source catalog is available, update `research/companies/netflix/products/netflix-streaming.md`. Do not use a public-page capture as evidence for hidden internals.
-2. **Architect (single owner of interfaces):** decide reuse/integrate/extend/build/research further; choose one verified capability as the candidate first journey; define its scope, non-goals, requirement IDs, system boundaries and contracts. Inspect `./netflix-streaming (a separately generated workspace; choose a writable output directory)/specs/` and replace only missing or placeholder sections with evidence-backed specifications before assigning implementation tasks.
-3. **Implementer agents (frontend/backend or domain-specific):** each claims one non-overlapping task against the approved contracts. Reuse suitable projects and dependencies. Deliver a working end-to-end slice for the selected journey, not disconnected scaffolding; document deviations from the target behavior.
-4. **Tester:** derive tests from the requirement IDs. Cover the selected journey, validation, errors, permissions, accessibility and privacy-sensitive behavior; measure performance only against an explicit representative workload and target.
-5. **Security reviewer:** review trust boundaries, authentication/authorization, sensitive data, abuse cases, dependency/license compliance and clean-room constraints before integration.
-6. **Supervisor/documenter:** review handoffs, integrate only accepted tasks, and keep setup, data import/export, operations and known limitations current.
+### Phase 4 — Integrations
 
-Each handoff must state owner, changed files, requirement IDs, commands with actual exit codes, checks not run, decisions, risks and one specific next action. Parallelize only after shared interfaces are approved.
+- **Tasks:** Add only documented/authorized integrations; mock boundaries for offline routine tests.
+- **Prerequisites:** Phase 3 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** Select after evidence review
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Contract and failure-injection tests.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-### Acceptance criteria and definition of done
+### Phase 5 — Secondary capabilities
 
-- The user’s target and implementation scope are explicit. Every material workflow is represented in the capability inventory; exclusions, assumptions and known gaps have reasons.
-- Each in-scope requirement has an evidence/confidence record and observable acceptance criteria. Requirements trace to implementation and to a passing automated test or repeatable manual check; unverified requirements stay labeled.
-- Primary and alternate user journeys work end to end through the interface the user will use, with real data/state behavior—not a visual-only mock—unless the user requested a prototype.
-- Tests cover success, empty/new state, invalid input, permissions, errors, retries/timeouts, interruption/recovery, persistence and boundary cases relevant to the behavior.
-- Accessibility, privacy/security, licensing, compatibility and operational readiness are reviewed for the chosen scope. Setup works from a clean checkout; migrations, backup/restore or deployment steps are documented where applicable.
-- Product-specific test/build/lint/security checks are run and actual exit codes recorded. Run the generated workspace's own checks and ACE configuration check when available. If working from the RAE source checkout, also run `npm run validate` and `npm test`; otherwise use the installed CLI's `rae research validate` for catalog integrity.
-- Report implemented/partial/not-started/unknown requirement counts, unrun checks, known limitations and the next task. A reviewer accepts the implementation and handoff. Passing tests prove only the tested behavior—not parity with Netflix Streaming or undocumented internals.
+- **Tasks:** Implement remaining in-scope behavior by user priority and evidence.
+- **Prerequisites:** Phase 4 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** Select after evidence review
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Trace: REQ-FUNC-63BF8DDF, REQ-FUNC-7C2B7041, REQ-FUNC-9582CBDD, REQ-FUNC-87E2AC4C; document exclusions and unknowns.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-### Repository entry points
+### Phase 6 — Security and reliability
 
-- Product description and known capability areas: see the product section above. This catalog summary is a research lead, not a verified complete specification.
-- Product-type research checklist: Catalog/rights, ingest and encoding, manifests/codecs, adaptive playback, seeking/resume, subtitles/audio, profiles/parental controls, concurrency, offline behavior, CDN/cache, DRM only through authorized standards/licenses, and lawful content acquisition.
-- Product metadata: `rae products show netflix-streaming --format json`.
-- Research dossier: retrieve it from the installed CLI with `rae research dossier netflix-streaming`; source copy: [`research/companies/netflix/products/netflix-streaming.md`](https://github.com/EnzoVezzaro/rea-faang/blob/main/research/companies/netflix/products/netflix-streaming.md).
-- Alternative candidates and coverage: `rae alternatives list --product netflix-streaming`; source landscape file when available: `catalog/skills/netflix/netflix-streaming.md`.
-- Optional local product workspace/specifications: `./netflix-streaming (a separately generated workspace; choose a writable output directory)`.
-- Opportunity decision, when present in the source repository: `opportunities/netflix-streaming.md`.
-- Official product page: https://www.netflix.com/.
-- Research status: **pending**; alternative coverage: **partial alternative coverage**. This coverage label describes existing-project research only, not the ability to build this product.
+- **Tasks:** Review access, privacy, abuse, migration, backup, observability and recovery as applicable.
+- **Prerequisites:** Phase 5 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** Select after evidence review
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Applicable security/recovery checks and risks recorded.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-### Capability coverage ledger
+### Phase 7 — Verification and release
 
-Use the table as a live planning artifact in the user’s project. Split a catalog bullet when it contains multiple independently testable workflows; add evidence-discovered behaviors not listed here; never mark “complete” without a source and a verified acceptance check. Keep out-of-scope decisions visible.
+- **Tasks:** Run project checks; inspect behavior, accessibility, compatibility, license and docs.
+- **Prerequisites:** Phase 6 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** Select after evidence review
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Reproducible result and transparent completion/gap report.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-| Requirement | User/actor + goal | Evidence/confidence | Acceptance scenario | Implementation/test link | Status/exception |
+
+## 14. Evidence, uncertainty and exclusions
+
+### Evidence index
+
+| Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| NETFLIX-STREAMING-CAP-001: Adaptive-bitrate streaming at scale | Discover and verify | Missing until claim-level source is recorded | Main, alternate, invalid and denied path | Add source → spec → code → test links | Untriaged: include, exclude with reason, or defer |
-| NETFLIX-STREAMING-CAP-002: Personalised recommendations | Discover and verify | Missing until claim-level source is recorded | Main, alternate, invalid and denied path | Add source → spec → code → test links | Untriaged: include, exclude with reason, or defer |
-| NETFLIX-STREAMING-CAP-003: Profiles, parental controls, offline downloads | Discover and verify | Missing until claim-level source is recorded | Main, alternate, invalid and denied path | Add source → spec → code → test links | Untriaged: include, exclude with reason, or defer |
-| NETFLIX-STREAMING-CAP-004: DRM (Widevine/FairPlay/PlayReady) | Discover and verify | Missing until claim-level source is recorded | Main, alternate, invalid and denied path | Add source → spec → code → test links | Untriaged: include, exclude with reason, or defer |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.netflix.com/) | Not recorded | Netflix Streaming is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev_ce771cfc0eb32389548eb43ce294121604ed2ea892ef495a01ac03ef3120c6f6` | Netflix Streaming Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.netflix.com/) | 2026-10-13T19:00:31.351Z | A dated unauthenticated snapshot exposed controls button: Get Started, button: Learn More, button: Doing Life 1, button: A Different World 2, button: Why Did I Get Married Again? 3, button: Animals 4, button: Below 5, button: Beauty in Black 7, button: East of Eden 8, button: Haunted Hotel 9, button: Tires 10, button: What is Netflix?, button: How much does Netflix cost?, button: Where can I watch?, button: How do I cancel?, button: What can I watch on Netflix?, button: Is Netflix good for kids?, combobox: Select Language, link: Sign In, textbox: Email address, link: 1-844-569-7700, link: FAQ, link: Help Center, link: Account, link: Netflix House, link: Media Center, link: Investor Relations, link: Jobs, link: Netflix Shop, link: Redeem Gift Cards, link: Buy Gift Cards, link: Ways to Watch, link: Terms of Use, link: Privacy, link: Cookie Preferences, link: Corporate Information, link: Contact Us, link: Speed Test, link: Legal Notices, link: Only on Netflix, link: Do Not Sell or Share My Personal Information, link: Ad Choices and landmarks banner, form: Sign up or restart your membership with Netflix., form: Sign up or restart your membership with Netflix., contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
+### Confidence classifications
 
-### Installed-CLI workflow
+VERIFIED: observed/documented within exact scope. CORROBORATED: supported by multiple compatible sources. INFERRED: reasoned, not directly established. PROPOSED: independent design or candidate. UNKNOWN: not established. CONFLICTED: sources disagree. A source URL alone is not verification; confidence cannot exceed the source. Every important claim in a future completed research record must cite its source location and access date.
 
-Use the installed RAE CLI; no source checkout is required. Inspect product metadata with `rae products show netflix-streaming --format json` and retrieve dossier contents with `rae research dossier netflix-streaming` (or add `--format json` for machine-readable output). Check catalog readiness with `rae research coverage` and `rae research validate`. These checks validate catalog structure, not whether all product claims are researched or current. Generate a portable agent kit with `rae netflix-streaming --out ./netflix-streaming-agent`. Give the generated skill to your coding agent in the project where you want this product built. A starter workspace is optional: scaffold one with `rae build product netflix-streaming --out ./netflix-streaming` only if useful. Keep generated outputs separate; inspect existing paths before writing and do not overwrite existing work. For current product behavior, verify public sources and maintain the coverage ledger below.
+### Prioritized unknowns
 
+| Priority | Unknown / blocker | Next evidence action |
+|---|---|---|
+| P0 | Claim-level evidence linked to each capability. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Investigate official documentation and authorized public behavior; update evidence IDs. |
+| P0 | Intended user, roles, user jobs, and requested implementation boundary. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Research product/user scope; ask user when scope choice materially changes deliverable. |
+| P0 | Full successful, denied, failed, cancelled, retry and recovery workflows. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Observe authorized workflows; record checkpoint and observable oracle. |
+| P1 | Supported versions, platforms, responsive and accessibility behavior. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Verify product version and platform documentation; run authorized observation. |
+| P1 | Data model, state, ownership, retention, import/export and concurrency. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Use primary docs or record as unknown; propose only the independent slice model. |
+| P1 | API/protocol contracts, integrations, authorization, limits and errors. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Use official API spec or label independent contract PROPOSED. |
+| P1 | Candidate repository state, implementation, tests, license and operations. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Inspect exact repository/version and distribution dependencies before recommendation. |
+| P2 | Representative performance targets and operational scale. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Define workload and target before measurement; avoid scale equivalence claims. |
 
-## CLI commands
+### Resumable investigation checkpoint
 
-- Inspect product metadata: `rae products show netflix-streaming --format json`.
-- Read the dossier: `rae research dossier netflix-streaming`.
-- Check research readiness: `rae research coverage` and `rae research validate`.
-- Generate a copy of this skill and optional MCP config: `rae netflix-streaming --out ./netflix-streaming-agent`. Give `skill.md` to your coding agent in the project where you want to build.
-- Optionally scaffold a starter workspace: `rae build product netflix-streaming --out ./netflix-streaming`.
+Resume token: `netflix-streaming`. Read dossier, REA report and raw Evidence before repeating. Record question/reason, authorized source/tool, target/version/scope, actions, Evidence IDs and locations, observation vs inference, conflicts/unknowns, affected feature/requirement IDs, checks/date and next question. Reuse evidence when sufficient/current. Select specialized REA/native inspection only when ordinary public/repository inspection cannot answer a user-visible question and the target/tool are authorized; do not assume tools are installed. Current capture covers a public unauthenticated page only.
 
-## Sources
+### Dossier notes (not independently verified)
 
-- https://jellyfin.org/
-- https://selfhostedworld.com/alternative/netflix
-- https://www.howtogeek.com/we-ditched-popular-paid-subscriptions-for-these-open-source-self-hosted-alternatives/
+# 1. Executive summary
+
+Netflix Streaming is the core on-demand video streaming service offered by Netflix, providing a vast library of movies, TV shows, and original content to subscribers worldwide. It is a pioneer in streaming technology, adaptive bitrate, and recommendation systems.
+
+# 2. Product identity and ownership
+
+- **Official name:** Netflix Streaming
+- **Company and business unit:** Netflix
+- **Parent organization:** Netflix Inc. (standalone public company)
+- **Original launch date:** 2007 ( DVD rental transition to streaming)
+- **Current lifecycle status:** active
+- **Previous names:** None (streaming service launched 2007; DVD service rebranded to DVD.com)
+- **Acquisitions or ownership changes:** None; Netflix is a standalone public company
+- **Related products:** Netflix DVD, Netflix App, Netflix Games, Shuffle, Max (formerly HBO Max - separate), Amazon Prime Video
+- **Official website:** https://www.netflix.com/
+- **Official documentation:** https://help.netflix.com/
+
+# 3. Product capabilities
+
+- On-demand video streaming with adaptive bitrate streaming
+- Multiple concurrent streams per subscription tier
+- Offline download for mobile apps
+- User profiles and parental controls
+- Recommendation algorithm (personalized content suggestions)
+- Search and content discovery
+- Audio language and subtitle selection
+- 4K and HDR support (Dolby Vision, HDR10)
+- Spatial audio support
+- Smart download (auto-download next episodes)
+- Skip intro and episode auto-advance
+- Binge-watch detection and recommendations
+- Account management and device management
+- Netflix House (physical events and retail - limited)
+
+# 4. Technical architecture
+
+Netflix's streaming infrastructure is highly scaled:
+
+- Adaptive bitrate streaming (Dynamic Optimizer)
+- Global content delivery network (Open Connect)
+- Video encoding pipeline (multiple codecs: AVC, HEVC, VP9, AV1)
+- Recommendation engine (personalization algorithms)
+- Content metadata and classification system
+- Client applications (smart TVs, mobile, web, game consoles)
+- DRM and content protection (Widevine, FairPlay, PlayReady)
+- Analytics and A/B testing framework
+- ABR ladders and renditions per title
+
+Full architecture is proprietary; client API and ABR behavior are partially documented.
+
+# 5. User workflows
+
+Primary workflows: content discovery, playback control, profile management, and download. Essential: searching, playing, pausing, resuming. Advanced: parental controls, profile switching, audio/subtitle selection, binge-watch features.
+
+# 6. Pricing and access
+
+- Tiered pricing: Basic, Standard, Premium (varies by region)
+- Basic: 1 stream, SD
+- Standard: 2 streams, Full HD
+- Premium: 4 streams, 4K UHD + HDR
+- Free trial (varies by region, increasingly rare)
+- No ad-supported tier (ad-tier launched 2022 in select regions)
+- Ads tier: Lower price with commercials
+
+# 7. API and integration surface
+
+- Netflix API (limited; primarily for partners)
+- RESTful API for content metadata (requires partner integration)
+- Oauth 2.0 for authentication (partner-facing)
+- No public API for consumer account management or video playback
+
+# 8. Existing open-source alternatives
+
+- Plex (media server and streaming)
+- Jellyfin (media server and streaming)
+- Peertube (Fediverse video)
+- No open-source alternative replicates Netflix's recommendation algorithm, content library, or DRM ecosystem.
+
+# 9. Alternative comparison
+
+Plex and Jellyfin provide media server functionality with streaming. They differ in content licensing, recommendation algorithm, and DRM. PeerTube offers federated video but different scale and discovery models.
+
+# 10. Missing capabilities and opportunity analysis
+
+Recommendation algorithm, content licensing framework, and DRM ecosystem represent significant gaps. Plex/Jellyfin can self-host media libraries but not Netflix's streaming service.
+
+# 11. RAE implementation strategy
+
+Focus on media server self-hosting (Plex, Jellyfin) for personal/local content. Full streaming service replication is out of scope due to content licensing and DRM requirements.
+
+# 12. Security, privacy, and compliance
+
+DRM (Widevine, FairPlay, PlayReady), account security, parental controls. Netflix privacy policy governs data handling. Compliance with COPPA for children's content.
+
+# 13. Sources and evidence
+
+- https://www.netflix.com/ (product page)
+- https://help.netflix.com/ (support documentation)
+- https://github.com/jellyfin/jellyfin (open-source media server reference)
+
+# 14. Open questions
+
+- What is the recommendation algorithm comparison between Plex/Jellyfin and Netflix?
+- How do DRM ecosystems (Widevine, FairPlay, PlayReady) compare in compatibility?
+- What bandwidth and storage requirements limit independent video platforms?
+
+# 15. Research history
+
+Initial research record created 2026-01-13. No prior research events.
 
 ---
 
-Generated from the RAE FAANG catalog — https://github.com/EnzoVezzaro/rea-faang
+# 16. Alternative comparison (continued)
+
+Plex and Jellyfin provide media server functionality. Netflix's recommendation algorithm, content library, and DRM are not replicable without licensing.
+
+---
+
+# 17. RAE implementation strategy (continued)
+
+Focus on media server self-hosting for local content. Netflix streaming service replication is out of scope.
+
+Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+
+## 15. Downstream execution instructions
+
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier netflix-streaming` and inspect canonical identity with `npx rae-faang products show netflix-streaming --format json`.
+2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
+3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
+4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
+5. Make a minimal dependency-aware plan for a functioning vertical slice.
+6. Implement the slice with original code/assets and the host project’s conventions.
+7. Add deterministic tests for every implemented requirement, including relevant failure and permission paths.
+8. Implement remaining scoped capabilities incrementally; explicitly mark partial, excluded and unknown items.
+9. Review security, privacy, dependencies, licensing, accessibility and compatibility.
+10. Run actual project checks and inspect behavior through the interface the user will use.
+11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
+12. Document deviations, unimplemented requirements, limitations and checks not run.
+13. Report requirement → code → test evidence and actual command results.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang netflix-streaming --out ./netflix-streaming.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit netflix-streaming --out ./netflix-streaming-agent`.
+
+### Multi-agent task plan and outputs
+
+Researcher: own the evidence ledger and unknowns. Architect: approve scope, boundaries and contracts before parallel work. Implementers: deliver non-overlapping, integrated vertical slices. Tester: map acceptance checks to requirement IDs. Reviewer: inspect privacy, security, accessibility and license risk. Documenter: preserve setup and limitations. Handoffs record changed files, requirement IDs, commands/exit codes, checks not run and one specific next action.
+
+### Acceptance criteria and definition of done
+
+- Every in-scope behavior has a unique requirement ID, evidence/confidence, bounded scope, measurable acceptance oracle and associated test/manual check.
+- Each implemented requirement maps to code and a deterministic passing test or repeatable manual observation; unknown requirements remain blocked/unknown.
+- Primary and relevant alternate/failure workflows run through the user-facing interface; partial/excluded scope and recovery behavior are documented.
+- Security, privacy, dependency/license, accessibility, compatibility, setup, project checks, and unrun checks are reported honestly.
+- Requirement trace is evidence → workflow → specification/contract → implementation → automated test; passing specification checks do not claim target parity.
+
+### Product quality and verification plan
+
+- Correctness: tested success, empty, malformed, denied, duplicate, timeout/retry, cancellation, partial failure and recovery cases as relevant.
+- Security/privacy: trust boundaries, least privilege, secret handling, data minimization, retention/export/deletion and abuse controls.
+- UX/accessibility: keyboard/screen reader, labels/focus, loading/empty/error/success states, responsive behavior and reduced motion where relevant.
+- Reliability/performance: reproducible setup, migrations, backup/restore, observability, representative workloads and measured targets before claims.
+- Compatibility/licensing: test claimed versions/platforms; check direct/transitive license obligations and dependencies.
+
+### End-to-end implementation milestones
+
+Follow the seven dependency-aware phases in the roadmap above. Prefer a complete, tested vertical slice over disconnected scaffolding; continue remaining verified in-scope requirements and record blockers.
+
+### Required deliverables
+
+- Evidence ledger, behavior/capability map, prioritized unknowns and source limitations.
+- User scope, architecture/data/API decisions with original-vs-proposed labels, and a candidate reuse/license evaluation.
+- Working implementation, requirement-to-test traceability, actual project check results and interface-level verification.
+- Documented deviations, partial/not-started/excluded requirements, unrun checks, setup and next actionable step.
+
+### Provenance
+
+- Product: [catalog/products.jsonl](../../products.jsonl) (`netflix-streaming`).
+- Dossier: [research/companies/netflix/products/netflix-streaming.md](../../../research/companies/netflix/products/netflix-streaming.md).
+- REA capture: [catalog/rea/netflix/netflix-streaming.md](../../rea/netflix/netflix-streaming.md) (2026-10-13T19:00:31.351Z); raw record: [catalog/rea/evidence/netflix-streaming.json](../../rea/evidence/netflix-streaming.json).
+- Curated alternative source: tools/skills/catalog-data.mjs; see candidate qualifications above.
+
+## Sources
+
+- [Official product page](https://www.netflix.com/) — Netflix Streaming is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [Netflix Streaming Public web-surface observation (REA)](https://www.netflix.com/) — A dated unauthenticated snapshot exposed controls button: Get Started, button: Learn More, button: Doing Life 1, button: A Different World 2, button: Why Did I Get Married Again? 3, button: Animals 4, button: Below 5, button: Beauty in Black 7, button: East of Eden 8, button: Haunted Hotel 9, button: Tires 10, button: What is Netflix?, button: How much does Netflix cost?, button: Where can I watch?, button: How do I cancel?, button: What can I watch on Netflix?, button: Is Netflix good for kids?, combobox: Select Language, link: Sign In, textbox: Email address, link: 1-844-569-7700, link: FAQ, link: Help Center, link: Account, link: Netflix House, link: Media Center, link: Investor Relations, link: Jobs, link: Netflix Shop, link: Redeem Gift Cards, link: Buy Gift Cards, link: Ways to Watch, link: Terms of Use, link: Privacy, link: Cookie Preferences, link: Corporate Information, link: Contact Us, link: Speed Test, link: Legal Notices, link: Only on Netflix, link: Do Not Sell or Share My Personal Information, link: Ad Choices and landmarks banner, form: Sign up or restart your membership with Netflix., form: Sign up or restart your membership with Netflix., contentinfo. (VERIFIED; accessed 2026-10-13T19:00:31.351Z).

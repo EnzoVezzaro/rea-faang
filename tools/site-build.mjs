@@ -25,6 +25,7 @@ import {
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { PRODUCTS } from './skills/catalog-data.mjs';
+import { compileFromRepository } from './product-skill-generator.mjs';
 import { renderMarkdown, slugify, escapeHtml } from './site/markdown.mjs';
 import * as T from './site/templates.mjs';
 
@@ -401,7 +402,9 @@ function buildPages(data, docs) {
     const prev = i > 0 ? sorted[i - 1] : null;
     const next = i < sorted.length - 1 ? sorted[i + 1] : null;
     push(`catalog/${p.id}/index.html`, T.productPage({ p, prev, next }));
-    push(`catalog/${p.id}/agent-kit.md`, T.agentKitMd(p));
+    const skill = compileFromRepository(p.id);
+    if (!skill.markdown || skill.report.errors.length) throw new Error(`cannot render ${p.id} skill: ${skill.report.errors.join('; ') || 'generation failed'}`);
+    push(`catalog/${p.id}/agent-kit.md`, skill.markdown);
   });
 
   push('docs/index.html', T.docsIndexPage({ docs }));

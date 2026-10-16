@@ -2,7 +2,7 @@
 
 # Catalog and schemas
 
-The catalog records the products in scope, their companies and the research status for each one. Run `rae research validate` to check record structure and consistency. It does not assess whether research is complete or claims are correct.
+The catalog records the products in scope, their companies and the research status for each one. Use `npx rae-faang research validate` to check bundled record structure and consistency from npm; source contributors can run `npm run cli -- research validate`. This does not assess whether research is complete or claims are correct.
 
 ## Layout
 
@@ -180,7 +180,7 @@ The CLI reads the YAML frontmatter, checks it against `product.schema.json`, and
   is the number of products expected for that company; `gaps products` compares
   it to the catalog. `total_in_scope` is the overall target.
 - **`manifests/research-coverage.json`**: a tracked snapshot of coverage. Refresh
-  it from `rae research coverage --format json`.
+  it from `npx rae-faang research coverage --format json`.
 
 ## Add a product to the catalog
 
@@ -191,7 +191,7 @@ The CLI reads the YAML frontmatter, checks it against `product.schema.json`, and
 4. Add its summary, capabilities, alternative status, candidate projects and sources to `tools/skills/catalog-data.mjs`. Run `npm run skills:catalog` and `npm run site:build` to regenerate the product page and site. The check fails if a product has no catalog entry or generated page.
 5. Run the catalog checks and tests:
    ```bash
-   rae research validate
+   npx rae-faang research validate
    npm test
    ```
    Both commands must pass.

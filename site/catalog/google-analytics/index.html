@@ -113,7 +113,7 @@
             </div>
             <div class="rail-block">
               <p class="rail-key">Product skill</p>
-              <input class="rail-input" type="text" value="rae google-analytics --out ./google-analytics-agent" title="Click to copy" aria-label="Command to generate the Google Analytics skill" readonly>
+              <input class="rail-input" type="text" value="npx rae-faang google-analytics --out ./google-analytics.md" title="Click to copy" aria-label="Command to generate the Google Analytics skill" readonly>
               <a class="rail-dl" href="agent-kit.md" download>Download Markdown skill</a>
             </div>
             <div class="rail-block">
@@ -150,7 +150,7 @@
             </div>
             <p class="alt-covers">Self-hosted web analytics with full data ownership.</p>
             <p class="alt-note">Mature; 15+ years.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone google-analytics --alt &quot;Matomo&quot;" title="Click to copy" aria-label="Command to clone Matomo" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone google-analytics --alt &quot;Matomo&quot;" title="Click to copy" aria-label="Command to clone Matomo" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -159,7 +159,7 @@
             </div>
             <p class="alt-covers">Lightweight, privacy-first analytics.</p>
             <p class="alt-note">Self-hostable community edition.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone google-analytics --alt &quot;Plausible&quot;" title="Click to copy" aria-label="Command to clone Plausible" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone google-analytics --alt &quot;Plausible&quot;" title="Click to copy" aria-label="Command to clone Plausible" readonly>
           </article>
               </div>
             </section>
@@ -183,14 +183,14 @@
               <p>This Markdown file is the coding-agent skill for Google Analytics. Give it to your agent in your project; it guides research, reuse decisions, implementation and verification.</p>
               <div class="cmd-banner">
                 <p class="cmd-banner-label">Get the Google Analytics build skill</p>
-                <pre class="cmd-block"><code>rae google-analytics --out ./google-analytics-agent</code></pre>
+                <pre class="cmd-block"><code>npx rae-faang google-analytics --out ./google-analytics.md</code></pre>
                 <p class="cmd-banner-note">Generate the skill with the RAE CLI, or <a href="agent-kit.md" download>download the Markdown skill</a>. The <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/catalog/skills/google/google-analytics.md" rel="noopener noreferrer" target="_blank">source skill</a> is also available in the catalog.</p>
               </div>
               <ul class="artifact-list">
               <li class="artifact"><a class="artifact-name" href="agent-kit.md" download>agent-kit.md</a><span class="artifact-note">Downloadable Markdown skill with product-specific instructions for your coding agent.</span><span class="pill pill-available"><span class="pill-dot" aria-hidden="true"></span>available</span></li>
-              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — <span class="mono">rae google-analytics --out ./google-analytics-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — <span class="mono">rae google-analytics --out ./google-analytics-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">rae build product google-analytics --out ./google-analytics</span>.</span></li>
+              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — use <span class="mono">npx rae-faang build agent-kit google-analytics --out ./google-analytics-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — use <span class="mono">npx rae-faang build agent-kit google-analytics --out ./google-analytics-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">npx rae-faang build product google-analytics --out ./google-analytics</span>.</span></li>
               </ul>
               <ol class="stepper" aria-label="How to build this product with your agent">
               <li class="step step-todo">
@@ -232,7 +232,7 @@
               <h2 id="next-h">Next step</h2>
               <div class="callout callout-plain">
                 <p>Give the Google Analytics skill to your coding agent in your project. Ask it to evaluate <a href="https://matomo.org/" rel="noopener noreferrer" target="_blank">Matomo ↗</a> against your needs, reuse what fits, then follow the skill's build and verification instructions.</p>
-                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">rae build product google-analytics --out ./google-analytics</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
+                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">npx rae-faang build product google-analytics --out ./google-analytics</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
               </div>
             </section>
           </div>

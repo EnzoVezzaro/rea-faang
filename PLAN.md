@@ -55,7 +55,7 @@ For the agent operating model, see [`AGENTS.md`](AGENTS.md) and
 | REA covers web surface only | `catalog/rea/` observes public `official_url` pages. Binary/app analysis needs the vendors' artifacts and a native engine (Hopper/Ghidra/IDA), which are not installed or authorized here. |
 | `.docs/` is stale design history | It predates the shipped CLI/ACE layout and names providers and products that no longer apply. Superseded by `docs/`; every file now carries a historical banner. |
 
-Run `npm run gaps` and `rae research coverage` any time to see the
+Run `npm run gaps` and `npx rae-faang research coverage` any time to see the
 current truth.
 
 ---
@@ -88,11 +88,11 @@ enforced by ACE — see `docs/agent-workflow.md`).
   - DoD: each new product is one line in `catalog/products.jsonl` with a valid
     `product_type`, official URL, and lifecycle/alternative/opportunity status;
     a matching research dossier exists under `research/companies/…`.
-  - Verify: `rae gaps products` shows no *missing* for any company;
-    `rae research validate` is clean.
+  - Verify: `npx rae-faang gaps products` shows no *missing* for any company;
+    `npx rae-faang research validate` is clean.
 - **T1.2 Refresh `research-coverage.json`** from the CLI output so the manifest
   matches reality.
-  - Verify: `rae research coverage --format json` totals equal the
+  - Verify: `npx rae-faang research coverage --format json` totals equal the
     manifest's tracked counts.
 
 ### W2 — Research coverage (researcher)
@@ -104,10 +104,10 @@ enforced by ACE — see `docs/agent-workflow.md`).
     `research_confidence` justified, `evidence[]` populated with at least one
     verified primary source per material claim, and sections 1–15 filled with
     real findings rather than placeholders.
-  - Verify: `rae research coverage` shows `Researched: N` and
-    `Pending: 34 − N`; `rae research validate` is clean.
+  - Verify: `npx rae-faang research coverage` shows `Researched: N` and
+    `Pending: 34 − N`; `npx rae-faang research validate` is clean.
 - **T2.2 Add capabilities + evidence** so comparisons are data, not prose.
-  - Verify: `rae products show <id> --format json` includes the
+  - Verify: `npx rae-faang products show <id> --format json` includes the
     `capabilities` and `evidence` arrays.
 
 ### W3 — Alternative & opportunity analysis (architect)
@@ -115,12 +115,12 @@ enforced by ACE — see `docs/agent-workflow.md`).
 - **T3.1 Fill the alternative sections** in each dossier (existing open-source
   alternatives + comparison) and set `alternative_status` /
   `alternative_coverage` to match what the evidence supports.
-  - Verify: `rae alternatives coverage` reports no `unknown`.
+  - Verify: `npx rae-faang alternatives coverage` reports no `unknown`.
 - **T3.2 (done) `opportunities/google-search.md`** authored with the format in
   `opportunities/README.md`.
-  - Verify: `rae opportunities validate` exits 0.
+  - Verify: `npx rae-faang opportunities validate` exits 0.
 - **T3.3 Export the opportunity set** for downstream build work.
-  - Verify: `rae opportunities export > opportunities.json` and the
+  - Verify: `npx rae-faang opportunities export > opportunities.json` and the
     JSON parses.
 - **T3.4 Author real specification sets.** Replace the `WIP` placeholders in a
   product's `specs/` with finished, testable specifications, starting with
@@ -210,5 +210,5 @@ A product is *done* when it has:
 - [ ] Acceptance criteria met and recorded in a verified handoff.
 - [ ] Release artifacts and reproducible build instructions.
 
-The catalog is *done* when `rae gaps products` reports no missing
+The catalog is *done* when `npx rae-faang gaps products` reports no missing
 in-scope products and every dossier is researched and validated.

@@ -100,10 +100,10 @@
 <h2 id="product-skills-research-and-evidence">Product skills, research and evidence</h2>
 <p>The manifest tracks 77 products across Google (25), Apple (20), Amazon Web Services (17), Amazon (5), Netflix (5) and Meta (5). Every product has a Markdown build skill: give that file to your coding agent in your project, and the agent uses it to research, scope, implement and verify an independent version of the product. Alternative coverage describes research into reuse options; it is not a build-readiness status. Dossiers, citations and REA reports help the agent distinguish verified behavior from unknowns. REA reports observe public web surfaces only and do not reveal authenticated workflows or internal architecture.</p>
 <p>Check the current catalog data with:</p>
-<pre><code class="language-bash">rae products list
-rae research coverage
-rae research validate
-rae gaps all</code></pre>
+<pre><code class="language-bash">npx rae-faang products list
+npx rae-faang research coverage
+npx rae-faang research validate
+npx rae-faang gaps all</code></pre>
 <p>A generated page or passing schema check does not verify product behavior. Keep research evidence and alternative coverage accurate; neither determines whether a user can give the skill to an agent and build in their own project.</p>
 <h2 id="one-product-one-traceable-evidence-to-build-packet">One product, one traceable evidence-to-build packet</h2>
 <p>For each product <code>&lt;id&gt;</code>, keep related work connected by its stable catalog ID:</p>
@@ -114,14 +114,14 @@ rae gaps all</code></pre>
 <tbody>
 <tr><td>Product record</td><td><code>catalog/products.jsonl</code></td><td>Identity, lifecycle, type, links and machine-readable status.</td></tr>
 <tr><td>Research dossier</td><td><code>research/companies/&lt;company_id&gt;/products/&lt;id&gt;.md</code></td><td>Evidence-backed account of the product and its observable behavior.</td></tr>
-<tr><td>Product build skill</td><td><code>catalog/skills/&lt;company_id&gt;/&lt;id&gt;.md</code>, generated from <code>tools/skills/catalog-data.mjs</code></td><td>The single coding-agent skill for building this product: product context, projects to evaluate, build directions and verification. Give it to your agent in your project.</td></tr>
+<tr><td>Product build skill</td><td><code>catalog/skills/&lt;company_id&gt;/&lt;id&gt;.md</code>, deterministically compiled by the bundled generator from canonical product, dossier, REA observation and curated alternative records</td><td>The coding-agent skill: evidence-backed behavior or explicit unknowns, candidate projects to evaluate, requirements/tests, implementation directions and verification. From npm, generate one portable file with <code>npx rae-faang &lt;id&gt; --out ./&lt;id&gt;.md</code>; <code>tools/skills/catalog-data.mjs</code> remains the source-repository alternative-landscape input.</td></tr>
 <tr><td>Optional product specifications</td><td><code>products/&lt;company_id&gt;/&lt;id&gt;/specs/01-*.md</code> through <code>10-*.md</code></td><td>Deeper implementation guidance and testable requirements for an agent build.</td></tr>
 <tr><td>Opportunity decision</td><td><code>opportunities/&lt;id&gt;.md</code> when the classification requires a build proposal</td><td>Why build, reuse or extension is justified, with a bounded MVP and verification criteria.</td></tr>
 <tr><td>Public-surface observation</td><td><code>catalog/rea/&lt;company_id&gt;/&lt;id&gt;.md</code> and <code>catalog/rea/evidence/</code></td><td>Dated observations of the publicly accessible page and the method's limitations.</td></tr>
 <tr><td>Generated product page and skill</td><td><code>site/catalog/&lt;id&gt;/</code></td><td>Human-readable product page and downloadable Markdown skill for your coding agent.</td></tr>
 </tbody>
 </table></div>
-<p>The dossier is the research record; the single product Markdown file is the coding-agent skill for building that product in the user's project; optional specifications add implementation detail; generated site pages are views, never independent sources of truth. Avoid copying manually maintained facts into several stores. When a needed fact has no appropriate field or its source is unclear, improve the schema and generator deliberately, then migrate the affected records.</p>
+<p>The dossier is the research record; the single product Markdown file is the coding-agent skill for building that product in the user's project; optional specifications add implementation detail; generated site pages are views, never independent sources of truth. From npm, generate one portable skill with <code>npx rae-faang &lt;id&gt; --out ./&lt;id&gt;.md</code>, generate all bundled skills with <code>npx rae-faang skills generate --all</code> (writes under <code>./rae-skills/</code>), validate bundled skills with <code>npx rae-faang skills validate --all</code>, and inspect research gaps with <code>npx rae-faang skills coverage --format json</code>. Source contributors may instead use the <code>rae</code> binary locally, review generator/catalog inputs, and run the repository checks. Avoid copying manually maintained facts into several stores.</p>
 <h2 id="product-description-standard">Product-description standard</h2>
 <p>Expand every product beyond a one-line summary. The reader should understand what the product does without already knowing its brand. Cover, when evidence is available:</p>
 <ul>
@@ -247,7 +247,7 @@ rae gaps all</code></pre>
 <li>Reconcile the manifest, catalog IDs, company ownership, official URLs, dossiers, skill entries, REA reports and product workspaces.</li>
 <li>Identify duplicate/overlapping product concepts and decide whether to merge, distinguish or group them with a written reason.</li>
 <li>Add a per-product progress view that separates inventory, research quality, alternative review, spec readiness, build decision, implementation and verification. A generated artifact's existence must not count as completion.</li>
-<li>Baseline with <code>rae products list</code>, <code>research coverage</code>, <code>research validate</code>, <code>gaps all</code>, <code>npm run validate</code> and <code>npm test</code>.</li>
+<li>Baseline bundled npm behavior with <code>npx rae-faang products list</code>, <code>npx rae-faang research coverage</code>, <code>npx rae-faang research validate</code>, and <code>npx rae-faang gaps all</code>; source contributors additionally run <code>npm run validate</code> and <code>npm test</code>.</li>
 </ul>
 <h3>Phase 1 — Improve the data model and quality checks</h3>
 <ul>

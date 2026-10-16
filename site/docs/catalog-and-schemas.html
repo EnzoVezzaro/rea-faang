@@ -91,7 +91,7 @@
           <article class="doc">
 <p><img src="assets/brand-logo-icon.png" alt="RAE FAANG" /></p>
 <h1>Catalog and schemas</h1>
-<p>The catalog records the products in scope, their companies and the research status for each one. Run <code>rae research validate</code> to check record structure and consistency. It does not assess whether research is complete or claims are correct.</p>
+<p>The catalog records the products in scope, their companies and the research status for each one. Use <code>npx rae-faang research validate</code> to check bundled record structure and consistency from npm; source contributors can run <code>npm run cli -- research validate</code>. This does not assess whether research is complete or claims are correct.</p>
 <h2 id="layout">Layout</h2>
 <pre><code>catalog/
 ├── companies.json               # registered company entries
@@ -196,7 +196,7 @@ research_status: &quot;pending&quot;
 <h2 id="manifests">Manifests</h2>
 <ul>
 <li><strong><code>manifests/faang.json</code></strong>: the target inventory. <code>companies.&lt;id&gt;.in_scope</code> is the number of products expected for that company; <code>gaps products</code> compares it to the catalog. <code>total_in_scope</code> is the overall target.</li>
-<li><strong><code>manifests/research-coverage.json</code></strong>: a tracked snapshot of coverage. Refresh it from <code>rae research coverage --format json</code>.</li>
+<li><strong><code>manifests/research-coverage.json</code></strong>: a tracked snapshot of coverage. Refresh it from <code>npx rae-faang research coverage --format json</code>.</li>
 </ul>
 <h2 id="add-a-product-to-the-catalog">Add a product to the catalog</h2>
 <ol>
@@ -205,7 +205,7 @@ research_status: &quot;pending&quot;
 <li>If it is <code>build_missing</code>, create <code>opportunities/&lt;id&gt;.md</code> (see <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/opportunities/README.md" rel="noopener noreferrer" target="_blank"><code>opportunities/README.md</code></a>).</li>
 <li>Add its summary, capabilities, alternative status, candidate projects and sources to <code>tools/skills/catalog-data.mjs</code>. Run <code>npm run skills:catalog</code> and <code>npm run site:build</code> to regenerate the product page and site. The check fails if a product has no catalog entry or generated page.</li>
 <li><p>Run the catalog checks and tests:</p>
-<pre><code class="language-bash">rae research validate
+<pre><code class="language-bash">npx rae-faang research validate
 npm test</code></pre>
 <p>Both commands must pass.</p>
 </li>

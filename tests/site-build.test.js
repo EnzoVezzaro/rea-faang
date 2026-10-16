@@ -37,6 +37,9 @@ test('the home landing presents the complete catalog glyph field and interactive
   assert.match(home, /class="hero-copy"[\s\S]*?<aside class="hero-inventory"/, 'hero reading order should put the premise before the product chooser and pass');
   assert.match(home, /id="build-pass-product"[\s\S]*?data-pass-skill/, 'the selected catalog product should retain its selector and skill download');
   assert.match(home, /class="catalog-glyph-field"/, 'homepage should display the full catalog as linked typography');
+  assert.match(home, /npx rae-faang &lt;product-id&gt; --out \.\/&lt;product-id&gt;\.md/, 'homepage links to the published npm CLI product-skill command');
+  assert.doesNotMatch(home, /npx --yes/);
+  assert.doesNotMatch(home, /npx rae-faang skills generate &lt;product-id&gt;/);
   assert.equal([...home.matchAll(/class="catalog-glyph" data-coverage=/g)].length, products.length, 'each catalog product should appear exactly once in the full glyph field');
   for (const product of products) {
     const catalogProduct = catalogData.products.find((entry) => entry.id === product.id);
@@ -58,13 +61,14 @@ test('the home landing presents the complete catalog glyph field and interactive
   assert.match(home, /Use your agent to build any of their products\./, 'hero should say what the product enables');
   assert.match(home, /RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google\./, 'hero should describe the actual catalog');
   assert.match(home, /Explore products/, 'primary action should take the visitor to product discovery');
+  assert.match(home, /npx rae-faang &lt;product-id&gt; --out \.\/&lt;product-id&gt;\.md/, 'landing should show the bundled npm CLI product-skill form');
   assert.match(home, /A product build skill is there when you\s+want a direct handoff/i, 'supporting copy should keep skills secondary to the product premise');
   assert.match(home, /build in your project/i, 'hero should identify the user project as the place the agent builds');
   assert.match(home, /Choose what you want your agent to build\./, 'main narrative should support the build-any-product premise');
   assert.match(home, /Your agent builds in your project\./, 'main narrative should describe where the product implementation happens');
   assert.match(home, /\d+ products your agent can build\./, 'product index should frame the catalog as things visitors can build');
   assert.match(home, /What do you want to build\?/, 'catalog visual should invite product selection');
-  assert.match(home, /Each record links to product research, candidate projects and build instructions/, 'catalog should show the useful build context');
+  assert.match(home, /Each record links to research, candidate projects and build instructions/, 'catalog should show the useful build context');
   assert.match(home, /Give your agent the product's build skill as a starting point/, 'product skill should remain a supporting handoff');
   assert.match(home, /A stronger starting point for the build\./, 'landing should connect research to building');
   assert.doesNotMatch(home, /Don't take our word for it|Why should I trust the catalog/);
@@ -135,18 +139,19 @@ test('every downloadable product skill gives expanded, status-aware multi-agent 
     const kitPath = join(SITE, 'catalog', product.id, 'agent-kit.md');
     assert.ok(existsSync(kitPath), `missing downloadable agent kit for ${product.id}`);
     const kit = readFileSync(kitPath, 'utf8');
+    assert.equal(kit, readFileSync(join(ROOT, 'catalog', 'skills', product.company_id, `${product.id}.md`), 'utf8'), `${product.id}: downloadable skill matches canonical generated skill`);
     assert.match(kit, /## Product description/, `${product.id}: product description`);
     assert.match(kit, /### Multi-agent task plan and outputs/, `${product.id}: multi-agent plan`);
     assert.match(kit, /### Acceptance criteria and definition of done/, `${product.id}: verification gate`);
     assert.match(kit, /### Product quality and verification plan/, `${product.id}: quality gates`);
     assert.match(kit, /### End-to-end implementation milestones/, `${product.id}: implementation lifecycle`);
-    assert.ok(kit.includes(`Research status: **${product.research_status || 'pending'}**`), `${product.id}: honest research status`);
+    assert.ok(kit.includes(`Research status:** ${product.research_status || 'pending'}`) || kit.includes(`Research status is **${product.research_status || 'pending'}**`), `${product.id}: honest research status`);
     assert.doesNotMatch(kit, /Agent roles — covered above|inlineCode\(/, `${product.id}: no leaked template artifacts`);
-    assert.match(kit, new RegExp(`rae research dossier ${product.id}`), `${product.id}: installed CLI exposes dossier text`);
+    assert.match(kit, new RegExp(`npx rae-faang research dossier ${product.id}`), `${product.id}: npm CLI exposes dossier text`);
     assert.doesNotMatch(kit, /node src\/cli\.js|From a repository clone/, `${product.id}: skill works without a source checkout`);
     assert.match(kit, /coding-agent build skill for/i, `${product.id}: identify the markdown as this product's build skill`);
     assert.match(kit, /Give this file to your coding agent in the project where you want the product built/i, `${product.id}: clear skill handoff to the user's project`);
-    assert.match(kit, /Give `skill\.md` to your coding agent in the project where you want to build/, `${product.id}: direct the user to pass it into their project`);
+    assert.match(kit, /Give `skill\.md` to your coding agent in the project where you want to build|Give this file to your coding agent in the project where you want the product built/, `${product.id}: direct the user to pass it into their project`);
   }
 });
 
@@ -180,14 +185,17 @@ test('every product page exists and carries its alternatives with links', () => 
       html.includes(`catalog/${product.id}/`),
       `${product.id}: page should carry its canonical URL`,
     );
-    assert.match(html, new RegExp(`rae ${product.id} --out \.\/${product.id}-agent`), `${product.id}: skill generator command`);
+    assert.match(html, new RegExp(`npx rae-faang ${product.id} --out \.\/${product.id}\\.md`), `${product.id}: npm Markdown skill generator command`);
+    assert.match(html, new RegExp(`npx rae-faang build agent-kit ${product.id} --out \.\/${product.id}-agent`), `${product.id}: separate agent-kit command`);
+    assert.doesNotMatch(html, /npx --yes/);
+    assert.doesNotMatch(html, new RegExp(`npx rae-faang ${product.id} --out \.\/${product.id}-agent`));
     assert.match(html, new RegExp(`catalog/skills/${product.company_id}/${product.id}\\.md`), `${product.id}: link to the source skill file`);
     assert.match(html, /Build this product with your agent/, `${product.id}: explain that the Markdown file is an agent build skill`);
     assert.match(html, /build in your own project|build in your project/, `${product.id}: make the user's project the place for implementation`);
     assert.doesNotMatch(html, /Product implementations have not started|Build work remains a separate goal|Research is not implementation|pending to open-source|>Build<\/span><span class="pill[^>]*>not started/i, `${product.id}: no obsolete project implementation status`);
     assert.doesNotMatch(html, /\bPending\./, `${product.id}: avoid presenting unknown coverage as build status`);
     assert.match(html, /coding agent in your project|agent in your project/, `${product.id}: user-agent-project workflow is explicit`);
-    assert.doesNotMatch(html, /npx rae-faang|node src\/cli\.js/, `${product.id}: no clone-based product instructions`);
+    assert.doesNotMatch(html, /node src\/cli\.js/, `${product.id}: no clone-based product instructions`);
   }
 });
 
@@ -230,7 +238,8 @@ test('the home and product pages consistently describe agent skills and user-led
 
   assert.match(home, /RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google\./);
   assert.match(readme, /Each entry links product context, research,\s+candidate open-source projects and product-specific build instructions/);
-  assert.match(readme, /test the result in your project/i);
+  assert.match(readme, /npx rae-faang google-search --out \.\/google-search\.md/);
+  assert.match(readme, /(?:test (?:the result|it) in your project|review its choices and the test results)/i);
   assert.match(home, /A stronger starting point for the build\./);
   assert.doesNotMatch(home, /Don't take our word for it|Why should I trust the catalog/);
   for (const slug of ['getting-started', 'cli-reference', 'catalog-and-schemas', 'agent-workflow']) {

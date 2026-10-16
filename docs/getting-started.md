@@ -16,16 +16,23 @@ Optional, depending on your project:
 - **PostgreSQL 16+** for products with a database
 - An agent runtime (for example **opencode**) if you intend to run ACE agents
 
-The CLI and ACE run on Node.js. `npm install` also installs the packages listed in this repository's `package.json`. You do not need a database or a running service to browse and validate the catalog.
+The CLI and ACE run on Node.js. Installing the source checkout with `npm install` installs packages listed in its `package.json`. A global or one-off npm CLI install does not require a database or a running service to browse and validate the bundled catalog.
 
 ## Install the CLI
+
+```bash
+npx rae-faang --help
+npx rae-faang products list
+```
+
+For repeated use, install the published package globally; it provides both `rae` and `rae-faang` commands:
 
 ```bash
 npm install -g rae-faang
 rae --help
 ```
 
-The published package provides `rae` and `rae-faang` commands. It includes the catalog, dossiers, candidate projects and schemas, so you can browse products, check catalog data and generate a skill without a source checkout.
+The package includes the catalog, dossiers, candidate projects and schemas, so you can browse products, check catalog data and generate a skill without a source checkout.
 
 ## Work from the source repository
 
@@ -42,12 +49,12 @@ npm install
 Run the tests and catalog checks, then make sure ACE can read its configuration:
 
 ```bash
-rae research coverage                 # product research status
-rae research validate                 # bundled catalog integrity
+npx rae-faang research coverage  # product research status
+npx rae-faang research validate  # bundled catalog integrity
 
 # In a source checkout only:
-npm test                              # deterministic project suite
-npm run validate                      # catalog + research + generated-artifact integrity
+npm test                               # deterministic project suite
+npm run validate                       # catalog + research + generated-artifact integrity
 ace status                             # ACE environment overview
 ace config check                       # ace/v1 config validates
 ```
@@ -59,35 +66,38 @@ The tests should pass, validation should report no errors, and `ace config check
 Use the CLI to browse products, review alternative research and generate a Markdown skill for your coding agent. Start with its help:
 
 ```bash
-rae --help
+npx rae-faang --help
 ```
 
-Common commands:
+Common one-off commands from npm:
 
 ```bash
 # What products do we track?
-rae products list
-rae products list --company google --format json
+npx rae-faang products list
+npx rae-faang products list --company google --format json
 
 # One product and its evidence dossier
-rae products show google-search
-rae research dossier google-search
+npx rae-faang products show google-search
+npx rae-faang research dossier google-search
 
 # How complete is the research?
-rae research coverage
-rae research pending
+npx rae-faang research coverage
+npx rae-faang research pending
 
 # What is missing?
-rae gaps all
-rae opportunities validate
+npx rae-faang gaps all
+npx rae-faang opportunities validate
 
-# Generate the Google Search skill for your coding agent
-rae google-search --out ./google-search-agent
+# Generate one portable Google Search skill for your coding agent
+npx rae-faang google-search --out ./google-search.md
+
+# Use `rae` after a global npm install
+rae google-search --out ./google-search.md
 ```
 
 Full reference: [cli-reference.md](cli-reference.md).
 
-Give the generated skill to your coding agent from the project where you want to work. It points the agent to product research and candidate projects, and helps it plan, build and test a scoped implementation. Alternative-coverage status describes the catalog's reuse research; it does not measure build feasibility.
+The product-ID command writes one Markdown file at `--out` (default `./<product-id>.md`). Give that file to your coding agent from the project where you want to work. It points the agent to product research and candidate projects, and helps it plan, build and test a scoped implementation. Alternative-coverage status describes the catalog's reuse research; it does not measure build feasibility. For batch skill generation, JSON reports or bundled-skill validation, use the explicit `skills generate`, `skills coverage` and `skills validate` commands in the CLI reference.
 
 ## Use ACE to coordinate agents
 
@@ -105,7 +115,7 @@ ace doctor --json     # diagnostics
 
 ### Product workspaces
 
-In a source checkout, existing product workspaces under `products/<company>/<product>/` can run ACE. To build a product, give its Markdown skill to your coding agent in your project. A starter workspace is optional: scaffold one with `rae build product <id> --out ./<id>` and install its dependencies before running its ACE shim:
+In a source checkout, existing product workspaces under `products/<company>/<product>/` can run ACE. To build a product, give its Markdown skill to your coding agent in your project. A starter workspace is optional: scaffold one with `npx rae-faang build product <id> --out ./<id>` and install its dependencies before running its ACE shim:
 
 ```bash
 cd products/netflix/netflix-streaming
@@ -136,8 +146,9 @@ npm run validate         # research + alternatives + skills + site integrity
 npm run verify           # validate + test
 npm run gaps             # inventory shortfall report
 npm run site:build       # regenerate the public website into site/
-rae <cmd>               # installed CLI (use npx rae in a source checkout)
-ace <cmd>              # any ACE command
+npx rae-faang <command> # one-off published CLI; `rae <command>` after global install
+npm run cli -- <cmd>     # source checkout only
+ace <cmd>               # ACE command (source checkout/workspace dependencies)
 ```
 
 ## Troubleshooting

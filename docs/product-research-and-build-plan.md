@@ -15,10 +15,10 @@ The manifest tracks 77 products across Google (25), Apple (20), Amazon Web Servi
 Check the current catalog data with:
 
 ```bash
-rae products list
-rae research coverage
-rae research validate
-rae gaps all
+npx rae-faang products list
+npx rae-faang research coverage
+npx rae-faang research validate
+npx rae-faang gaps all
 ```
 
 A generated page or passing schema check does not verify product behavior. Keep research evidence and alternative coverage accurate; neither determines whether a user can give the skill to an agent and build in their own project.
@@ -31,13 +31,13 @@ For each product `<id>`, keep related work connected by its stable catalog ID:
 |---|---|---|
 | Product record | `catalog/products.jsonl` | Identity, lifecycle, type, links and machine-readable status. |
 | Research dossier | `research/companies/<company_id>/products/<id>.md` | Evidence-backed account of the product and its observable behavior. |
-| Product build skill | `catalog/skills/<company_id>/<id>.md`, generated from `tools/skills/catalog-data.mjs` | The single coding-agent skill for building this product: product context, projects to evaluate, build directions and verification. Give it to your agent in your project. |
+| Product build skill | `catalog/skills/<company_id>/<id>.md`, deterministically compiled by the bundled generator from canonical product, dossier, REA observation and curated alternative records | The coding-agent skill: evidence-backed behavior or explicit unknowns, candidate projects to evaluate, requirements/tests, implementation directions and verification. From npm, generate one portable file with `npx rae-faang <id> --out ./<id>.md`; `tools/skills/catalog-data.mjs` remains the source-repository alternative-landscape input. |
 | Optional product specifications | `products/<company_id>/<id>/specs/01-*.md` through `10-*.md` | Deeper implementation guidance and testable requirements for an agent build. |
 | Opportunity decision | `opportunities/<id>.md` when the classification requires a build proposal | Why build, reuse or extension is justified, with a bounded MVP and verification criteria. |
 | Public-surface observation | `catalog/rea/<company_id>/<id>.md` and `catalog/rea/evidence/` | Dated observations of the publicly accessible page and the method's limitations. |
 | Generated product page and skill | `site/catalog/<id>/` | Human-readable product page and downloadable Markdown skill for your coding agent. |
 
-The dossier is the research record; the single product Markdown file is the coding-agent skill for building that product in the user's project; optional specifications add implementation detail; generated site pages are views, never independent sources of truth. Avoid copying manually maintained facts into several stores. When a needed fact has no appropriate field or its source is unclear, improve the schema and generator deliberately, then migrate the affected records.
+The dossier is the research record; the single product Markdown file is the coding-agent skill for building that product in the user's project; optional specifications add implementation detail; generated site pages are views, never independent sources of truth. From npm, generate one portable skill with `npx rae-faang <id> --out ./<id>.md`, generate all bundled skills with `npx rae-faang skills generate --all` (writes under `./rae-skills/`), validate bundled skills with `npx rae-faang skills validate --all`, and inspect research gaps with `npx rae-faang skills coverage --format json`. Source contributors may instead use the `rae` binary locally, review generator/catalog inputs, and run the repository checks. Avoid copying manually maintained facts into several stores.
 
 ## Product-description standard
 
@@ -176,7 +176,7 @@ An **implementation** is verified only when required MVP journeys work, acceptan
 - Reconcile the manifest, catalog IDs, company ownership, official URLs, dossiers, skill entries, REA reports and product workspaces.
 - Identify duplicate/overlapping product concepts and decide whether to merge, distinguish or group them with a written reason.
 - Add a per-product progress view that separates inventory, research quality, alternative review, spec readiness, build decision, implementation and verification. A generated artifact's existence must not count as completion.
-- Baseline with `rae products list`, `research coverage`, `research validate`, `gaps all`, `npm run validate` and `npm test`.
+- Baseline bundled npm behavior with `npx rae-faang products list`, `npx rae-faang research coverage`, `npx rae-faang research validate`, and `npx rae-faang gaps all`; source contributors additionally run `npm run validate` and `npm test`.
 
 ### Phase 1 — Improve the data model and quality checks
 

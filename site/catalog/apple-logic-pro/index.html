@@ -113,7 +113,7 @@
             </div>
             <div class="rail-block">
               <p class="rail-key">Product skill</p>
-              <input class="rail-input" type="text" value="rae apple-logic-pro --out ./apple-logic-pro-agent" title="Click to copy" aria-label="Command to generate the Logic Pro skill" readonly>
+              <input class="rail-input" type="text" value="npx rae-faang apple-logic-pro --out ./apple-logic-pro.md" title="Click to copy" aria-label="Command to generate the Logic Pro skill" readonly>
               <a class="rail-dl" href="agent-kit.md" download>Download Markdown skill</a>
             </div>
             <div class="rail-block">
@@ -152,7 +152,7 @@
             </div>
             <p class="alt-covers">Mature open DAW for recording and mixing.</p>
             <p class="alt-note">The most complete open DAW.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone apple-logic-pro --alt &quot;Ardour&quot;" title="Click to copy" aria-label="Command to clone Ardour" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone apple-logic-pro --alt &quot;Ardour&quot;" title="Click to copy" aria-label="Command to clone Ardour" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -161,7 +161,7 @@
             </div>
             <p class="alt-covers">MIDI-focused music production.</p>
             <p class="alt-note">Strong for electronic music.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone apple-logic-pro --alt &quot;LMMS&quot;" title="Click to copy" aria-label="Command to clone LMMS" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone apple-logic-pro --alt &quot;LMMS&quot;" title="Click to copy" aria-label="Command to clone LMMS" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -170,7 +170,7 @@
             </div>
             <p class="alt-covers">Audio recording and editing.</p>
             <p class="alt-note">Editor rather than a full DAW.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone apple-logic-pro --alt &quot;Audacity&quot;" title="Click to copy" aria-label="Command to clone Audacity" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone apple-logic-pro --alt &quot;Audacity&quot;" title="Click to copy" aria-label="Command to clone Audacity" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -179,7 +179,7 @@
             </div>
             <p class="alt-covers">Modern DAW with automation and MIDI.</p>
             <p class="alt-note">Newer entrant.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone apple-logic-pro --alt &quot;Zrythm&quot;" title="Click to copy" aria-label="Command to clone Zrythm" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone apple-logic-pro --alt &quot;Zrythm&quot;" title="Click to copy" aria-label="Command to clone Zrythm" readonly>
           </article>
               </div>
             </section>
@@ -203,14 +203,14 @@
               <p>This Markdown file is the coding-agent skill for Logic Pro. Give it to your agent in your project; it guides research, reuse decisions, implementation and verification.</p>
               <div class="cmd-banner">
                 <p class="cmd-banner-label">Get the Logic Pro build skill</p>
-                <pre class="cmd-block"><code>rae apple-logic-pro --out ./apple-logic-pro-agent</code></pre>
+                <pre class="cmd-block"><code>npx rae-faang apple-logic-pro --out ./apple-logic-pro.md</code></pre>
                 <p class="cmd-banner-note">Generate the skill with the RAE CLI, or <a href="agent-kit.md" download>download the Markdown skill</a>. The <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/catalog/skills/apple/apple-logic-pro.md" rel="noopener noreferrer" target="_blank">source skill</a> is also available in the catalog.</p>
               </div>
               <ul class="artifact-list">
               <li class="artifact"><a class="artifact-name" href="agent-kit.md" download>agent-kit.md</a><span class="artifact-note">Downloadable Markdown skill with product-specific instructions for your coding agent.</span><span class="pill pill-available"><span class="pill-dot" aria-hidden="true"></span>available</span></li>
-              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — <span class="mono">rae apple-logic-pro --out ./apple-logic-pro-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — <span class="mono">rae apple-logic-pro --out ./apple-logic-pro-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">rae build product apple-logic-pro --out ./apple-logic-pro</span>.</span></li>
+              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — use <span class="mono">npx rae-faang build agent-kit apple-logic-pro --out ./apple-logic-pro-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — use <span class="mono">npx rae-faang build agent-kit apple-logic-pro --out ./apple-logic-pro-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">npx rae-faang build product apple-logic-pro --out ./apple-logic-pro</span>.</span></li>
               </ul>
               <ol class="stepper" aria-label="How to build this product with your agent">
               <li class="step step-todo">
@@ -253,7 +253,7 @@
               <h2 id="next-h">Next step</h2>
               <div class="callout callout-plain">
                 <p>Give the Logic Pro skill to your coding agent in your project. Ask it to evaluate <a href="https://ardour.org/" rel="noopener noreferrer" target="_blank">Ardour ↗</a> against your needs, reuse what fits, then follow the skill's build and verification instructions.</p>
-                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">rae build product apple-logic-pro --out ./apple-logic-pro</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
+                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">npx rae-faang build product apple-logic-pro --out ./apple-logic-pro</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
               </div>
             </section>
           </div>

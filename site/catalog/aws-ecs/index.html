@@ -113,7 +113,7 @@
             </div>
             <div class="rail-block">
               <p class="rail-key">Product skill</p>
-              <input class="rail-input" type="text" value="rae aws-ecs --out ./aws-ecs-agent" title="Click to copy" aria-label="Command to generate the ECS skill" readonly>
+              <input class="rail-input" type="text" value="npx rae-faang aws-ecs --out ./aws-ecs.md" title="Click to copy" aria-label="Command to generate the ECS skill" readonly>
               <a class="rail-dl" href="agent-kit.md" download>Download Markdown skill</a>
             </div>
             <div class="rail-block">
@@ -150,7 +150,7 @@
             </div>
             <p class="alt-covers">The dominant open container orchestrator.</p>
             <p class="alt-note">Broader and more complex than ECS.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-ecs --alt &quot;Kubernetes&quot;" title="Click to copy" aria-label="Command to clone Kubernetes" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-ecs --alt &quot;Kubernetes&quot;" title="Click to copy" aria-label="Command to clone Kubernetes" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -159,7 +159,7 @@
             </div>
             <p class="alt-covers">Simpler scheduler for containers and VMs.</p>
             <p class="alt-note">Relicensed to BUSL — not OSI open source.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-ecs --alt &quot;HashiCorp Nomad&quot;" title="Click to copy" aria-label="Command to clone HashiCorp Nomad" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-ecs --alt &quot;HashiCorp Nomad&quot;" title="Click to copy" aria-label="Command to clone HashiCorp Nomad" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -168,7 +168,7 @@
             </div>
             <p class="alt-covers">Simple built-in container orchestration.</p>
             <p class="alt-note">Lightweight.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-ecs --alt &quot;Docker Swarm&quot;" title="Click to copy" aria-label="Command to clone Docker Swarm" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-ecs --alt &quot;Docker Swarm&quot;" title="Click to copy" aria-label="Command to clone Docker Swarm" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -177,7 +177,7 @@
             </div>
             <p class="alt-covers">Cluster resource scheduler.</p>
             <p class="alt-note">Largely superseded by Kubernetes.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-ecs --alt &quot;Apache Mesos&quot;" title="Click to copy" aria-label="Command to clone Apache Mesos" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-ecs --alt &quot;Apache Mesos&quot;" title="Click to copy" aria-label="Command to clone Apache Mesos" readonly>
           </article>
               </div>
             </section>
@@ -201,14 +201,14 @@
               <p>This Markdown file is the coding-agent skill for ECS. Give it to your agent in your project; it guides research, reuse decisions, implementation and verification.</p>
               <div class="cmd-banner">
                 <p class="cmd-banner-label">Get the ECS build skill</p>
-                <pre class="cmd-block"><code>rae aws-ecs --out ./aws-ecs-agent</code></pre>
+                <pre class="cmd-block"><code>npx rae-faang aws-ecs --out ./aws-ecs.md</code></pre>
                 <p class="cmd-banner-note">Generate the skill with the RAE CLI, or <a href="agent-kit.md" download>download the Markdown skill</a>. The <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/catalog/skills/amazon_aws/aws-ecs.md" rel="noopener noreferrer" target="_blank">source skill</a> is also available in the catalog.</p>
               </div>
               <ul class="artifact-list">
               <li class="artifact"><a class="artifact-name" href="agent-kit.md" download>agent-kit.md</a><span class="artifact-note">Downloadable Markdown skill with product-specific instructions for your coding agent.</span><span class="pill pill-available"><span class="pill-dot" aria-hidden="true"></span>available</span></li>
-              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — <span class="mono">rae aws-ecs --out ./aws-ecs-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — <span class="mono">rae aws-ecs --out ./aws-ecs-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">rae build product aws-ecs --out ./aws-ecs</span>.</span></li>
+              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — use <span class="mono">npx rae-faang build agent-kit aws-ecs --out ./aws-ecs-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — use <span class="mono">npx rae-faang build agent-kit aws-ecs --out ./aws-ecs-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">npx rae-faang build product aws-ecs --out ./aws-ecs</span>.</span></li>
               </ul>
               <ol class="stepper" aria-label="How to build this product with your agent">
               <li class="step step-todo">
@@ -251,7 +251,7 @@
               <h2 id="next-h">Next step</h2>
               <div class="callout callout-plain">
                 <p>Give the ECS skill to your coding agent in your project. Ask it to evaluate <a href="https://kubernetes.io/" rel="noopener noreferrer" target="_blank">Kubernetes ↗</a> against your needs, reuse what fits, then follow the skill's build and verification instructions.</p>
-                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">rae build product aws-ecs --out ./aws-ecs</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
+                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">npx rae-faang build product aws-ecs --out ./aws-ecs</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
               </div>
             </section>
           </div>

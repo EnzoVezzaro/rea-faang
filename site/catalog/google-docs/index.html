@@ -113,7 +113,7 @@
             </div>
             <div class="rail-block">
               <p class="rail-key">Product skill</p>
-              <input class="rail-input" type="text" value="rae google-docs --out ./google-docs-agent" title="Click to copy" aria-label="Command to generate the Google Docs skill" readonly>
+              <input class="rail-input" type="text" value="npx rae-faang google-docs --out ./google-docs.md" title="Click to copy" aria-label="Command to generate the Google Docs skill" readonly>
               <a class="rail-dl" href="agent-kit.md" download>Download Markdown skill</a>
             </div>
             <div class="rail-block">
@@ -150,7 +150,7 @@
             </div>
             <p class="alt-covers">Self-hosted collaborative document editor.</p>
             <p class="alt-note">Community edition is self-hostable.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone google-docs --alt &quot;ONLYOFFICE Docs&quot;" title="Click to copy" aria-label="Command to clone ONLYOFFICE Docs" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone google-docs --alt &quot;ONLYOFFICE Docs&quot;" title="Click to copy" aria-label="Command to clone ONLYOFFICE Docs" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -159,7 +159,7 @@
             </div>
             <p class="alt-covers">LibreOffice-based collaborative suite in the browser.</p>
             <p class="alt-note"></p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone google-docs --alt &quot;Collabora Online&quot;" title="Click to copy" aria-label="Command to clone Collabora Online" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone google-docs --alt &quot;Collabora Online&quot;" title="Click to copy" aria-label="Command to clone Collabora Online" readonly>
           </article>
               </div>
             </section>
@@ -183,14 +183,14 @@
               <p>This Markdown file is the coding-agent skill for Google Docs. Give it to your agent in your project; it guides research, reuse decisions, implementation and verification.</p>
               <div class="cmd-banner">
                 <p class="cmd-banner-label">Get the Google Docs build skill</p>
-                <pre class="cmd-block"><code>rae google-docs --out ./google-docs-agent</code></pre>
+                <pre class="cmd-block"><code>npx rae-faang google-docs --out ./google-docs.md</code></pre>
                 <p class="cmd-banner-note">Generate the skill with the RAE CLI, or <a href="agent-kit.md" download>download the Markdown skill</a>. The <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/catalog/skills/google/google-docs.md" rel="noopener noreferrer" target="_blank">source skill</a> is also available in the catalog.</p>
               </div>
               <ul class="artifact-list">
               <li class="artifact"><a class="artifact-name" href="agent-kit.md" download>agent-kit.md</a><span class="artifact-note">Downloadable Markdown skill with product-specific instructions for your coding agent.</span><span class="pill pill-available"><span class="pill-dot" aria-hidden="true"></span>available</span></li>
-              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — <span class="mono">rae google-docs --out ./google-docs-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — <span class="mono">rae google-docs --out ./google-docs-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">rae build product google-docs --out ./google-docs</span>.</span></li>
+              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — use <span class="mono">npx rae-faang build agent-kit google-docs --out ./google-docs-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — use <span class="mono">npx rae-faang build agent-kit google-docs --out ./google-docs-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">npx rae-faang build product google-docs --out ./google-docs</span>.</span></li>
               </ul>
               <ol class="stepper" aria-label="How to build this product with your agent">
               <li class="step step-todo">
@@ -232,7 +232,7 @@
               <h2 id="next-h">Next step</h2>
               <div class="callout callout-plain">
                 <p>Give the Google Docs skill to your coding agent in your project. Ask it to evaluate <a href="https://www.onlyoffice.com/" rel="noopener noreferrer" target="_blank">ONLYOFFICE Docs ↗</a> against your needs, reuse what fits, then follow the skill's build and verification instructions.</p>
-                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">rae build product google-docs --out ./google-docs</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
+                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">npx rae-faang build product google-docs --out ./google-docs</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
               </div>
             </section>
           </div>

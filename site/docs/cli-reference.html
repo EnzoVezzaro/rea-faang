@@ -91,14 +91,17 @@
           <article class="doc">
 <p><img src="assets/brand-logo-icon.png" alt="RAE FAANG" /></p>
 <h1>CLI reference</h1>
-<p>Use <code>rae</code> to browse products, read research, compare candidate open-source projects and generate a Markdown skill for your coding agent. The skill helps your agent plan work in your project. The CLI can check catalog data; it does not build or test your implementation.</p>
+<p>Use the published npm CLI to browse products, read research, compare candidate open-source projects and generate a Markdown skill for your coding agent. The skill helps your agent plan work in your project. The CLI can check catalog data; it does not build or test your implementation.</p>
 <h2 id="run-the-cli">Run the CLI</h2>
+<p>One-off use from npm:</p>
+<pre><code class="language-bash">npx rae-faang products list
+npx rae-faang research dossier google-search
+npx rae-faang google-search --out ./google-search.md</code></pre>
+<p>Or install globally for the <code>rae</code> and <code>rae-faang</code> commands:</p>
 <pre><code class="language-bash">npm install -g rae-faang
-rae products list</code></pre>
-<p>The published <code>rae-faang</code> package includes the catalog, research dossiers, candidate projects and skill generator. It installs both <code>rae</code> and <code>rae-faang</code> commands. You can browse products, read dossiers, validate catalog data and generate a skill without cloning the source repository.</p>
-<p>In a source checkout, the same commands run through the local package:</p>
-<pre><code class="language-bash">npx rae &lt;group&gt; &lt;command&gt; [product-id] [options]
-npm run cli -- &lt;group&gt; &lt;command&gt; [options]   # equivalent</code></pre>
+rae products list
+rae google-search --out ./google-search.md</code></pre>
+<p>The published package includes the catalog, research dossiers, candidate projects, schemas and skill generator. From npm, <code>npx rae-faang &lt;id&gt; --out ./&lt;id&gt;.md</code> writes one portable product skill; omitting <code>--out</code> writes <code>./&lt;id&gt;.md</code>. This shorthand does not create a kit directory. The explicit <code>skills generate &lt;id&gt;</code> form is also available; batch generation writes under <code>./rae-skills/</code>. To create a kit directory with <code>skill.md</code> and <code>mcp.json</code>, use <code>npx rae-faang build agent-kit &lt;id&gt; --out ./&lt;id&gt;-agent</code>. No source checkout is needed for bundled catalog, research and skill commands. In a source checkout use <code>npm run cli -- &lt;group&gt; &lt;command&gt; [options]</code>. <code>npx</code> may prompt to confirm a one-off package install; <code>--yes</code> is optional and omitted here so users see that prompt.</p>
 <h2 id="options-available-on-every-command">Options available on every command</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -133,8 +136,8 @@ npm run cli -- &lt;group&gt; &lt;command&gt; [options]   # equivalent</code></pr
 </tbody>
 </table></div>
 <p><strong>Options:</strong> <code>--company &lt;id&gt;</code> filter by company, <code>--status &lt;status&gt;</code> filter by <code>research_status</code>, <code>--alt-status &lt;status&gt;</code> filter by <code>alternative_status</code>, <code>--format json</code>. The table column <code>alt:</code> reports <code>alternative_status</code> (<code>unassessed</code>, <code>none_verified</code>, <code>unknown</code>, <code>partial</code>, <code>adequate</code>, <code>mature</code>) — the research label the catalog page and product skills use.</p>
-<pre><code class="language-bash">rae products list --company amazon_aws
-rae products show google-search --format json</code></pre>
+<pre><code class="language-bash">npx rae-faang products list --company amazon_aws
+npx rae-faang products show google-search --format json</code></pre>
 <hr>
 <h2 id="companies"><code>companies</code></h2>
 <div class="table-wrap"><table>
@@ -147,8 +150,8 @@ rae products show google-search --format json</code></pre>
 </tbody>
 </table></div>
 <p><strong>Options:</strong> <code>--format json</code>.</p>
-<pre><code class="language-bash">rae companies list
-rae companies show netflix --format json</code></pre>
+<pre><code class="language-bash">npx rae-faang companies list
+npx rae-faang companies show netflix --format json</code></pre>
 <hr>
 <h2 id="research"><code>research</code></h2>
 <div class="table-wrap"><table>
@@ -164,11 +167,11 @@ rae companies show netflix --format json</code></pre>
 </tbody>
 </table></div>
 <p><strong>Options:</strong> <code>--company &lt;id&gt;</code> (coverage), <code>--format json</code>.</p>
-<pre><code class="language-bash">rae research coverage --format json
-rae research dossier google-search
-rae research dossier google-search --format json
-rae research validate
-rae research pending</code></pre>
+<pre><code class="language-bash">npx rae-faang research coverage --format json
+npx rae-faang research dossier google-search
+npx rae-faang research dossier google-search --format json
+npx rae-faang research validate
+npx rae-faang research pending</code></pre>
 <p><code>research validate</code> exits <code>1</code> when any error is found (missing files are warnings, not errors). <code>research dossier &lt;product-id&gt;</code> returns the dossier contents bundled with the package, so an agent can read evidence without a clone.</p>
 <hr>
 <h2 id="gaps"><code>gaps</code></h2>
@@ -184,9 +187,9 @@ rae research pending</code></pre>
 </tbody>
 </table></div>
 <p><strong>Options:</strong> <code>--company &lt;id&gt;</code>, <code>--manifest &lt;path&gt;</code> (defaults to <code>catalog/manifests/faang.json</code>), <code>--status &lt;status&gt;</code> (alternatives), <code>--format json</code>.</p>
-<pre><code class="language-bash">rae gaps products
-rae gaps alternatives --status none_verified
-rae gaps all --format json</code></pre>
+<pre><code class="language-bash">npx rae-faang gaps products
+npx rae-faang gaps alternatives --status none_verified
+npx rae-faang gaps all --format json</code></pre>
 <hr>
 <h2 id="alternatives"><code>alternatives</code></h2>
 <div class="table-wrap"><table>
@@ -200,8 +203,8 @@ rae gaps all --format json</code></pre>
 </tbody>
 </table></div>
 <p><strong>Options:</strong> <code>--product &lt;id&gt;</code> (list), <code>--format json</code>.</p>
-<pre><code class="language-bash">rae alternatives coverage
-rae alternatives validate</code></pre>
+<pre><code class="language-bash">npx rae-faang alternatives coverage
+npx rae-faang alternatives validate</code></pre>
 <hr>
 <h2 id="opportunities"><code>opportunities</code></h2>
 <div class="table-wrap"><table>
@@ -216,10 +219,10 @@ rae alternatives validate</code></pre>
 </tbody>
 </table></div>
 <p><strong>Options:</strong> <code>--format json</code>.</p>
-<pre><code class="language-bash">rae opportunities validate
-rae opportunities export &gt; opportunities.json
+<pre><code class="language-bash">npx rae-faang opportunities validate
+npx rae-faang opportunities export &gt; opportunities.json
 # or write directly:
-rae opportunities export --out opportunities.json</code></pre>
+npx rae-faang opportunities export --out opportunities.json</code></pre>
 <hr>
 <h2 id="generate-product-skills-and-optional-workspaces">Generate product skills and optional workspaces</h2>
 <div class="table-wrap"><table>
@@ -227,23 +230,30 @@ rae opportunities export --out opportunities.json</code></pre>
 <tr><th scope="col">Command</th><th scope="col">Description</th></tr>
 </thead>
 <tbody>
+<tr><td><code>skills generate &lt;product-id&gt;</code></td><td>Compile and write one skill. From an npm-installed package, default output is <code>./&lt;product-id&gt;.md</code>; <code>--out FILE</code> selects an explicit file. Batch options process products under <code>./rae-skills/&lt;company&gt;/&lt;product-id&gt;.md</code>. In a source checkout, default output is the canonical <code>catalog/skills/&lt;company&gt;/&lt;product-id&gt;.md</code>.</td></tr>
+<tr><td><code>skills validate [&lt;product-id&gt;]</code></td><td>Check required sections, IDs and traceability against the bundled canonical skill; supports <code>--company ID</code> and <code>--all</code>.</td></tr>
+<tr><td><code>skills coverage</code></td><td>Report per-product missing research and catalog-wide skill-generation coverage; does not write files.</td></tr>
 <tr><td><code>build agent-kit &lt;product-id&gt;</code></td><td>Generate a copy of the product-specific Markdown build skill (<code>skill.md</code>) and optional MCP configuration in a separate directory (default: <code>./&lt;product-id&gt;-agent</code>; override with <code>--out DIR</code>). Give the skill to your coding agent in the project where you want the product built.</td></tr>
 <tr><td><code>build product &lt;product-id&gt;</code></td><td>Optionally scaffold a starter workspace with an ACE shim, <code>package.json</code>, and specification files (default: <code>./&lt;product-id&gt;</code>; override with <code>--out DIR</code>). Give the product's Markdown skill to your coding agent in the project where you want to build; the scaffold is optional. Existing workspaces are left alone unless you pass <code>--force</code>.</td></tr>
 <tr><td><code>rea capture &lt;product-id&gt;</code></td><td>Capture observations from the product's public web pages with REA; requires the repository research tools, not just the installed CLI package.</td></tr>
 <tr><td><code>alternatives clone &lt;product-id&gt;</code></td><td>Clone a listed open-source project. By default, the CLI chooses the first non-proprietary entry. Use <code>--alt NAME</code> to choose a project, <code>--repo URL</code> to set its repository, or <code>--into DIR</code> to choose where it goes.</td></tr>
-<tr><td><code>&lt;product-id&gt;</code></td><td>Shorthand: generate the product's agent skill. Use <code>--out DIR</code> to choose where to save it. Give the skill to your coding agent; the agent builds in your project. With <code>--alt NAME</code>, clone a listed alternative instead.</td></tr>
+<tr><td><code>&lt;product-id&gt;</code></td><td>Shorthand: generate one portable Markdown skill. Use <code>--out FILE</code> to choose the output path (default: <code>./&lt;product-id&gt;.md</code>). Give the file to your coding agent; the agent builds in your project. With <code>--alt NAME</code>, clone a listed alternative instead.</td></tr>
 </tbody>
 </table></div>
-<pre><code class="language-bash">rae build agent-kit gmail --out ./gmail-agent
-rae gmail --out ./gmail-agent
-rae build product gmail --out ./gmail-workspace
-rae research dossier gmail
-rae alternatives clone aws-s3 --into ./alternatives
-rae aws-s3 --alt &quot;Ceph (RADOS Gateway)&quot;</code></pre>
+<pre><code class="language-bash">npx rae-faang google-search --out ./google-search.md
+npx rae-faang skills generate --all --format json
+npx rae-faang skills validate --all
+npx rae-faang skills coverage --format json
+npx rae-faang build agent-kit gmail --out ./gmail-agent
+npx rae-faang gmail --out ./gmail.md
+npx rae-faang build product gmail --out ./gmail-workspace
+npx rae-faang research dossier gmail
+npx rae-faang alternatives clone aws-s3 --into ./alternatives
+npx rae-faang aws-s3 --alt &quot;Ceph (RADOS Gateway)&quot;</code></pre>
 <h2 id="use-the-cli-from-another-tool">Use the CLI from another tool</h2>
 <p>Pass <code>--format json</code> when another script or program needs to read command output. For example:</p>
-<pre><code class="language-bash">rae research coverage --format json \
-  | node -e &quot;let s='';process.stdin.on('data',d=&gt;s+=d).on('end',()=&gt;{const j=JSON.parse(s);console.log(j.total)})&quot;</code></pre>
+<pre><code class="language-bash">npx rae-faang research coverage --format json \
+  | node -e &quot;let s='';process.stdin.on('data',d=&gt;s+=d).on('end',()=&gt;{const j=JSON.parse(s);console.log(j.total.cataloged)})&quot;</code></pre>
 
           </article>
         </div>

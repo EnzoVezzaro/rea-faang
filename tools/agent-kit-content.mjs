@@ -224,7 +224,7 @@ ${skillMission(name, product.research_status)}
 
 ### Evidence to inspect first
 
-1. Read the product dossier with ${inlineCode(`rae research dossier ${id}`)} and review its research status (**${research}**). ${researchUrl ? `When using the source repository, the dossier is also linked here: ${dossierReference}.` : `When using the source repository, read ${inlineCode(dossierPath)}.`} A generated kit or successful metadata lookup does not prove that claims have been researched. Resolve placeholders and contradictions before implementation.
+1. Read the product dossier with ${inlineCode(`npx rae-faang research dossier ${id}`)} and review its research status (**${research}**). ${researchUrl ? `When using the source repository, the dossier is also linked here: ${dossierReference}.` : `When using the source repository, read ${inlineCode(dossierPath)}.`} A generated kit or successful metadata lookup does not prove that claims have been researched. Resolve placeholders and contradictions before implementation.
 2. Review the public web-surface observation if available. It records only an unauthenticated page, not internal architecture or authenticated behavior. Compare observations with cited official sources; do not infer private workflows from page appearance.
 3. Verify each material product and alternative claim against official documentation, public standards, or the referenced project itself. Record URLs, access dates, supported claims, assumptions, conflicts and unknowns. Do not sign in, bypass controls, reverse-engineer proprietary binaries, or copy source, protected assets or branding.
 4. Check the actual repository conventions and existing workspace before adding dependencies or selecting a stack. Keep license obligations and third-party rights visible in the plan. If a dossier is pending, stale or too thin to support requirements, make the next task evidence gathering—not speculative implementation.
@@ -307,16 +307,16 @@ Each handoff must state owner, changed files, requirement IDs, commands with act
 - Primary and alternate user journeys work end to end through the interface the user will use, with real data/state behavior—not a visual-only mock—unless the user requested a prototype.
 - Tests cover success, empty/new state, invalid input, permissions, errors, retries/timeouts, interruption/recovery, persistence and boundary cases relevant to the behavior.
 - Accessibility, privacy/security, licensing, compatibility and operational readiness are reviewed for the chosen scope. Setup works from a clean checkout; migrations, backup/restore or deployment steps are documented where applicable.
-- Product-specific test/build/lint/security checks are run and actual exit codes recorded. Run the generated workspace's own checks and ACE configuration check when available. If working from the RAE source checkout, also run ${inlineCode('npm run validate')} and ${inlineCode('npm test')}; otherwise use the installed CLI's ${inlineCode('rae research validate')} for catalog integrity.
+- Product-specific test/build/lint/security checks are run and actual exit codes recorded. Run the generated workspace's own checks and ACE configuration check when available. If working from the RAE source checkout, also run ${inlineCode('npm run validate')} and ${inlineCode('npm test')}; otherwise use ${inlineCode('npx rae-faang research validate')} for bundled catalog integrity.
 - Report implemented/partial/not-started/unknown requirement counts, unrun checks, known limitations and the next task. A reviewer accepts the implementation and handoff. Passing tests prove only the tested behavior—not parity with ${name} or undocumented internals.
 
 ### Repository entry points
 
 - Product description and known capability areas: see the product section above. This catalog summary is a research lead, not a verified complete specification.
 - Product-type research checklist: ${researchLens(product)}
-- Product metadata: ${inlineCode(`rae products show ${id} --format json`)}.
-- Research dossier: retrieve it from the installed CLI with ${inlineCode(`rae research dossier ${id}`)}; ${researchUrl ? `source copy: ${dossierReference}.` : `source file when working in the repository: ${inlineCode(dossierPath)}.`}
-- Alternative candidates and coverage: ${inlineCode(`rae alternatives list --product ${id}`)}; source landscape file when available: ${inlineCode(skillPath)}.
+- Product metadata: ${inlineCode(`npx rae-faang products show ${id} --format json`)}.
+- Research dossier: retrieve it from the installed CLI with ${inlineCode(`npx rae-faang research dossier ${id}`)}; ${researchUrl ? `source copy: ${dossierReference}.` : `source file when working in the repository: ${inlineCode(dossierPath)}.`}
+- Alternative candidates and coverage: ${inlineCode(`npx rae-faang alternatives list --product ${id}`)}; source landscape file when available: ${inlineCode(skillPath)}.
 - Optional local product workspace/specifications: ${inlineCode(defaultWorkspace)}.
 - Opportunity decision, when present in the source repository: ${inlineCode(`opportunities/${id}.md`)}.
 - Official product page: ${product.official_url || 'not recorded'}.
@@ -331,6 +331,6 @@ ${standardsTable(product)}
 
 ### Installed-CLI workflow
 
-Use the installed RAE CLI; no source checkout is required. Inspect product metadata with ${inlineCode(`rae products show ${id} --format json`)} and retrieve dossier contents with ${inlineCode(`rae research dossier ${id}`)} (or add ${inlineCode('--format json')} for machine-readable output). Check catalog readiness with ${inlineCode('rae research coverage')} and ${inlineCode('rae research validate')}. These checks validate catalog structure, not whether all product claims are researched or current. Generate a portable agent kit with ${inlineCode(`rae ${id} --out ./${id}-agent`)}. Give the generated skill to your coding agent in the project where you want this product built. A starter workspace is optional: scaffold one with ${inlineCode(`rae build product ${id} --out ./${id}`)} only if useful. Keep generated outputs separate; inspect existing paths before writing and do not overwrite existing work. For current product behavior, verify public sources and maintain the coverage ledger below.
+Use the installed RAE CLI; no source checkout is required. Inspect product metadata with ${inlineCode(`npx rae-faang products show ${id} --format json`)} and retrieve dossier contents with ${inlineCode(`npx rae-faang research dossier ${id}`)} (or add ${inlineCode('--format json')} for machine-readable output). Check catalog readiness with ${inlineCode('npx rae-faang research coverage')} and ${inlineCode('npx rae-faang research validate')}. These checks validate catalog structure, not whether all product claims are researched or current. Generate a portable Markdown skill with ${inlineCode(`npx rae-faang ${id} --out ./${id}.md`)}. For a directory containing ${inlineCode('skill.md')} and ${inlineCode('mcp.json')}, use ${inlineCode(`npx rae-faang build agent-kit ${id} --out ./${id}-agent`)}. Give the generated skill to your coding agent in the project where you want this product built. A starter workspace is optional: scaffold one with ${inlineCode(`npx rae-faang build product ${id} --out ./${id}`)} only if useful. Keep generated outputs separate; inspect existing paths before writing and do not overwrite existing work. For current product behavior, verify public sources and maintain the coverage ledger below.
 `;
 }

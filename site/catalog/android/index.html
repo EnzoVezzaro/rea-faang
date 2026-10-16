@@ -113,7 +113,7 @@
             </div>
             <div class="rail-block">
               <p class="rail-key">Product skill</p>
-              <input class="rail-input" type="text" value="rae android --out ./android-agent" title="Click to copy" aria-label="Command to generate the Android skill" readonly>
+              <input class="rail-input" type="text" value="npx rae-faang android --out ./android.md" title="Click to copy" aria-label="Command to generate the Android skill" readonly>
               <a class="rail-dl" href="agent-kit.md" download>Download Markdown skill</a>
             </div>
             <div class="rail-block">
@@ -150,7 +150,7 @@
             </div>
             <p class="alt-covers">The open-source core of Android itself.</p>
             <p class="alt-note">The upstream project — no Play services.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone android --alt &quot;AOSP&quot;" title="Click to copy" aria-label="Command to clone AOSP" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone android --alt &quot;AOSP&quot;" title="Click to copy" aria-label="Command to clone AOSP" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -159,7 +159,7 @@
             </div>
             <p class="alt-covers">Community Android distribution for many devices.</p>
             <p class="alt-note">Widest device support.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone android --alt &quot;LineageOS&quot;" title="Click to copy" aria-label="Command to clone LineageOS" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone android --alt &quot;LineageOS&quot;" title="Click to copy" aria-label="Command to clone LineageOS" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -168,7 +168,7 @@
             </div>
             <p class="alt-covers">Security-hardened Android, no Google services.</p>
             <p class="alt-note">Pixel-focused.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone android --alt &quot;GrapheneOS&quot;" title="Click to copy" aria-label="Command to clone GrapheneOS" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone android --alt &quot;GrapheneOS&quot;" title="Click to copy" aria-label="Command to clone GrapheneOS" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -177,7 +177,7 @@
             </div>
             <p class="alt-covers">De-Googled Android with a privacy app suite.</p>
             <p class="alt-note">Consumer-oriented fork.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone android --alt &quot;/e/OS&quot;" title="Click to copy" aria-label="Command to clone /e/OS" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone android --alt &quot;/e/OS&quot;" title="Click to copy" aria-label="Command to clone /e/OS" readonly>
           </article>
               </div>
             </section>
@@ -201,14 +201,14 @@
               <p>This Markdown file is the coding-agent skill for Android. Give it to your agent in your project; it guides research, reuse decisions, implementation and verification.</p>
               <div class="cmd-banner">
                 <p class="cmd-banner-label">Get the Android build skill</p>
-                <pre class="cmd-block"><code>rae android --out ./android-agent</code></pre>
+                <pre class="cmd-block"><code>npx rae-faang android --out ./android.md</code></pre>
                 <p class="cmd-banner-note">Generate the skill with the RAE CLI, or <a href="agent-kit.md" download>download the Markdown skill</a>. The <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/catalog/skills/google/android.md" rel="noopener noreferrer" target="_blank">source skill</a> is also available in the catalog.</p>
               </div>
               <ul class="artifact-list">
               <li class="artifact"><a class="artifact-name" href="agent-kit.md" download>agent-kit.md</a><span class="artifact-note">Downloadable Markdown skill with product-specific instructions for your coding agent.</span><span class="pill pill-available"><span class="pill-dot" aria-hidden="true"></span>available</span></li>
-              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — <span class="mono">rae android --out ./android-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — <span class="mono">rae android --out ./android-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">rae build product android --out ./android</span>.</span></li>
+              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — use <span class="mono">npx rae-faang build agent-kit android --out ./android-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — use <span class="mono">npx rae-faang build agent-kit android --out ./android-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">npx rae-faang build product android --out ./android</span>.</span></li>
               </ul>
               <ol class="stepper" aria-label="How to build this product with your agent">
               <li class="step step-todo">
@@ -251,7 +251,7 @@
               <h2 id="next-h">Next step</h2>
               <div class="callout callout-plain">
                 <p>Give the Android skill to your coding agent in your project. Ask it to evaluate <a href="https://source.android.com/" rel="noopener noreferrer" target="_blank">AOSP ↗</a> against your needs, reuse what fits, then follow the skill's build and verification instructions.</p>
-                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">rae build product android --out ./android</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
+                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">npx rae-faang build product android --out ./android</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
               </div>
             </section>
           </div>

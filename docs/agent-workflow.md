@@ -14,7 +14,7 @@ The published RAE package includes the CLI, catalog and skill generator. Install
 
 - **Configuration:** `package.json` and `ace-lock.json` describe the workspace and its tools.
 - **Task state:** the repository stores active missions, assignments and handoffs in runtime directories.
-- **Your product build:** give the product's Markdown skill to your coding agent in your project. Optionally scaffold a starter workspace with `rae build product <id> --out ./<id>` and use ACE there; the scaffold is optional, not where the skill has to be used.
+- **Your product build:** give the product's Markdown skill to your coding agent in your project. From npm, optionally scaffold a starter workspace with `npx rae-faang build product <id> --out ./<id>` and use ACE there; the scaffold is optional, not where the skill has to be used.
 - **Review:** governors and supervisors coordinate work; workers take one task at a time.
 - **Adapters:** providers connect ACE to the workspace, agent runtime and verification tools. Run `ace adapters list` in the source repository to see what's available.
 

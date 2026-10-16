@@ -1,234 +1,424 @@
 ---
 name: google-news
-description: Coding-agent build skill for Google News (Google). Research the product, assess open-source projects, then build and verify it in the user's project. Alternative coverage is mature alternative listed; candidates include FreshRSS, Miniflux.
+description: "Evidence-aware build skill for Google News (google-news); investigate, assess reuse, implement scoped behavior and verify."
 ---
 
-# Google News (`google-news`)
+# Google News — implementation skill (`google-news`)
 
-| | |
-|---|---|
-| **Company** | Google (`google`) |
-| **Product type** | `media` |
-| **Categories** | `news-aggregation` |
-| **Official URL** | https://news.google.com/ |
-| **Alternative coverage** | **mature alternative listed** |
+> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+
+> This is the coding-agent build skill for **Google News**. Give this file to your coding agent in the project where you want the product built.
 
 ## Product description
 
+This is the coding-agent skill for **Google News** (`google-news`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
+
+## 1. Product identity and scope
+
+| Field | Canonical record / result | Evidence status and limits |
+|---|---|---|
+| Name / stable ID | **Google News** / `google-news` | Product catalog |
+| Company / category | Google / `media` / `news-aggregation` | Product catalog |
+| Official website / docs | [https://news.google.com/](https://news.google.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
+| Intended users, roles, jobs, value | Unknown | No structured evidence |
+| Boundaries / original architecture | Unknown | Do not infer from category or marketing |
+| Independent implementation scope | User-selected; start with evidenced vertical slice | Proposed decision |
+| Exclusions | Proprietary source, protected assets, unauthorized access, unsupported parity claims | Clean-room boundary; further product-specific limits unknown |
+
+Research lens: **media** — verify real users/jobs, complete lifecycles, platform/version support, permissions, persistence, failure and recovery behavior. Product type is a question prompt, not evidence of features.
+
+## 2. Product capability map
+
+Capability labels are leads, not complete verified behavior.
+
+| Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
+|---|---|---|---|---|
+| `GOOGLE-NEWS-CAP-1B1CA7A4` | Aggregation across publishers | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-NEWS-CAP-8585F665` | Personalized feed | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-NEWS-CAP-2D129591` | Alerts and follow topics | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+
+## 3. Complete user workflows
+
+**Observed start page, not a completed workflow:** dated capture exposes `button: Advanced search`, `button: Search`, `button: Help`, `button: Settings`, `button: Google apps`, `button: Expand to view forecast`, `button: Use precise location`, `button: More - Kimberly Guilfoyle is out as U.S. ambassador to Greece`, `button: More - Trump fires ambassador to Greece Guilfoyle after reports of misconduct`, `button: More - White House ousts Kimberly Guilfoyle as US ambassador to Greece`, `button: More - Pope Leo Found to Have Lung Cancer During Surgery, Vatican Says`, `button: More - Pope Leo Diagnosed With Lung Cancer After Surgery`, `button: More - Leo XIV’s Cancer Diagnosis Tests the Assumption of a Long Papacy`, `button: More - Pope Leo has lung cancer, the Vatican announces after surgery`, `button: More - New Trump press secretary says she passed bar exam in China, raising eyebrows`, `button: More - Democrats fear \"more October surprises\" after \"bullshit\" raid on Ilhan Omar's home`, `button: Manage local news`, `button: More - NYPD detective stabbed in the Bronx during vacation shares story of survival`, `button: More - Bronx community holds vigil for young mother pushed off balcony last week`, `button: More - AS VERIZON PROPOSES TRANSITION AWAY FROM...`, `link: Google News`, `combobox: Search for topics, locations & sources`, `link: Sign in`, `link: Google Weather`, `link: Top stories`, `link: Kimberly Guilfoyle resigns as US ambassador to Greece`, `link: Kimberly Guilfoyle is out as U.S. ambassador to Greece - The Washington Post - 4 hours ago - By Michael Birnbaum`, `link: Trump fires ambassador to Greece Guilfoyle after reports of misconduct - Reuters - 13 hours ago - By Simon Lewis, Edward McAllister & Jacob Bogage`, `link: White House ousts Kimberly Guilfoyle as US ambassador to Greece - CNN - 13 hours ago - By Jennifer Hansler, Kevin Liptak & Kristen Holmes`, `link: See more headlines & perspectives - Kimberly Guilfoyle resigns as US ambassador to Greece`, `link: Pope Leo XIV undergoes lung surgery at Rome hospital`, `link: Pope Leo Found to Have Lung Cancer During Surgery, Vatican Says - The New York Times - 5 hours ago - By Elisabetta Povoledo`, `link: Pope Leo Diagnosed With Lung Cancer After Surgery - WSJ - 5 hours ago - By Margherita Stancati & Victoria Albert`, `link: Leo XIV’s Cancer Diagnosis Tests the Assumption of a Long Papacy - The New York Times - 1 hour ago - By Motoko Rich`, `link: Pope Leo has lung cancer, the Vatican announces after surgery - NPR - 5 hours ago - By Daniel Burke`, `link: See more headlines & perspectives - Pope Leo XIV undergoes lung surgery at Rome hospital`, `link: New Trump press secretary says she passed bar exam in China, raising eyebrows - South China Morning Post - 7 hours ago - By Teresa Frontado`, `link: See more headlines & perspectives - New Trump press secretary says she passed bar exam in China, raising eyebrows`, `button: More - Democrats fear \`, `link: Democrats fear \`, `link: See more headlines & perspectives - Democrats fear \`, `link: Local news`, `link: NYPD detective stabbed in the Bronx during vacation shares story of survival - ABC7 New York - 6 hours ago - By Darla Miles`, `link: See more headlines & perspectives - NYPD detective stabbed in the Bronx during vacation shares story of survival`, `link: Bronx community holds vigil for young mother pushed off balcony last week - Spectrum News NY1 - 1 hour ago - By Olivia Leach`, `link: See more headlines & perspectives - Bronx community holds vigil for young mother pushed off balcony last week`, `link: AS VERIZON PROPOSES TRANSITION AWAY FROM... - Senator Chuck Schumer (.gov) - 2 hours ago`, `link: See more headlines & perspectives - AS VERIZON PROPOSES TRANSITION AWAY FROM...`, `link: See more headlines & perspectives - Pope Leo has lung cancer, the Vatican announces after surgery`, `button: More - The 8-mile hole in a Hawaii national park that no one can explain`, `link: The 8-mile hole in a Hawaii national park that no one can explain - SFGATE - 9 hours ago - By Ashley Harrell`, `button: More - Larry David Saw O.J. Simpson at a Country Club the Day Nicole Brown Simpson Was Killed`, `link: Larry David Saw O.J. Simpson at a Country Club the Day Nicole Brown Simpson Was Killed - Rolling Stone - 13 hours ago - By Jon Blistein`, `button: More - Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive`, `link: Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive - USA Today - 6 hours ago - By Taijuan Nichole Moorman & Christopher Cann`, `link: See more headlines & perspectives - Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive`, `button: More - Bumble agrees to a $1.3B acquisition deal as online dating faces a reset`, `link: Bumble agrees to a $1.3B acquisition deal as online dating faces a reset - TechCrunch - 13 hours ago - By Lauren Forristal`, `link: See more headlines & perspectives - Bumble agrees to a $1.3B acquisition deal as online dating faces a reset`, `button: Customize`, `link: U.S.`, `button: More - Kimberly Guilfoyle Resigns as Ambassador to Greece`, `link: Kimberly Guilfoyle Resigns as Ambassador to Greece - The New York Times - 1 hour ago - By Tyler Pager`, `link: See more headlines & perspectives - Kimberly Guilfoyle Resigns as Ambassador to Greece`, `button: More - Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed`, `link: Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed - CNN - 6 hours ago - By Alayna Treene`, `link: See more headlines & perspectives - Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed`, `button: More - Cornell suspends fraternity parties amid backlash over alleged sexual assault`, `link: Cornell suspends fraternity parties amid backlash over alleged sexual assault - The Guardian - 34 minutes ago`, `link: See more headlines & perspectives - Cornell suspends fraternity parties amid backlash over alleged sexual assault`, `link: World`, `button: More - Pope Leo diagnosed with lung cancer after 'successful' surgery`, `link: Pope Leo diagnosed with lung cancer after 'successful' surgery - DW.com - 4 hours ago - By Wesley Rahn & Elizabeth Schumacher`, `link: See more headlines & perspectives - Pope Leo diagnosed with lung cancer after 'successful' surgery`, `button: More - 13 dead, 7 hospitalised after boat capsizes in Bihar's Vaishali; 3-4 still missing`, `link: 13 dead, 7 hospitalised after boat capsizes in Bihar's Vaishali; 3-4 still missing - The Times of India - 10 hours ago - By Faryal Rumi`, `link: See more headlines & perspectives - 13 dead, 7 hospitalised after boat capsizes in Bihar's Vaishali; 3-4 still missing`, `button: More - Saudi Energy Giant Struck as War Spikes Between Houthis and Saudi Arabia`, `link: Saudi Energy Giant Struck as War Spikes Between Houthis and Saudi Arabia - The New York Times - 2 hours ago - By Ismaeel Naar & Pranav Baskar`, `link: See more headlines & perspectives - Saudi Energy Giant Struck as War Spikes Between Houthis and Saudi Arabia`, `link: Business`, `button: More - Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight`, `link: Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight - The New York Times - 1 hour ago - By Rob Copeland`, `link: See more headlines & perspectives - Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight`, `button: More - FBI arrests Saudi OpenAI engineer over covert recording device, DOJ says`, `link: FBI arrests Saudi OpenAI engineer over covert recording device, DOJ says - Reuters - 4 hours ago - By Jaspreet Singh`, `link: See more headlines & perspectives - FBI arrests Saudi OpenAI engineer over covert recording device, DOJ says`, `link: Dow Jones -0.35% 51,670.10`, `link: S&P 500 -0.02% 7,805.45`, `link: Nasdaq -0.15% 27,204.38`, `link: Disclaimer`, `link: More from Google Finance`, `link: Technology`, `button: More - Apple’s new smart home lineup includes a smart lock, thermostat, and video doorbells`, `link: Apple’s new smart home lineup includes a smart lock, thermostat, and video doorbells - TechCrunch - 14 hours ago - By Lauren Forristal`, `link: See more headlines & perspectives - Apple’s new smart home lineup includes a smart lock, thermostat, and video doorbells`, `link: Entertainment`, `link: Sports`, `button: More - Shohei Ohtani will be in Dodgers' Game 3 NLCS lineup, Dave Roberts says`, `link: Shohei Ohtani will be in Dodgers' Game 3 NLCS lineup, Dave Roberts says - ESPN - 3 hours ago - By Alden Gonzalez`, `link: See more headlines & perspectives - Shohei Ohtani will be in Dodgers' Game 3 NLCS lineup, Dave Roberts says`, `button: More - Five key takeaways from F1's big African Grand Prix reveal in Rwanda`, `link: Five key takeaways from F1's big African Grand Prix reveal in Rwanda - Motorsport.com - 9 hours ago - By Filip Cleeren`, `link: See more headlines & perspectives - Five key takeaways from F1's big African Grand Prix reveal in Rwanda`, `link: Investor's Business Daily`, `button: Follow this source - Investor's Business Daily`, `link: Nasdaq-100, Small Caps Lead Dip; Applied Materials Whacked`, `link: UnitedHealth Climbs As Earnings, Medical Costs Beat Forecasts`, `link: JPMorgan, Goldman Sachs, Citigroup, Wells Fargo Report`, `button: More - Investor's Business Daily`, `link: The Bend Bulletin`, `button: Follow this source - The Bend Bulletin`, `link: Vote for The Bulletin’s Athletes of the Week for Oct. 5-10`, `link: What are people doing to help with Medicaid coverage`, `link: Downtown Bend pool hall, bar to close`, `button: More - The Bend Bulletin`, `link: Whidbey News-Times`, `button: Follow this source - Whidbey News-Times`, `link: Whidbey gets into the Halloween spirit`, `link: Deleted Facebook comment raises public records concerns`, `button: More - Whidbey News-Times`, `link: See more sources`, `button: See more sources`, `button: More - Amazon has over 1 million robot workers. What’s next for human employees?`, `link: Amazon has over 1 million robot workers. What’s next for human employees? - Ars Technica - 2 days ago - By Jeremy Hsu`, `button: More - The Pentagon Gave $350 Million in Contracts to a Firm Closely Tied to a Senior Defense Department Official`, `link: The Pentagon Gave $350 Million in Contracts to a Firm Closely Tied to a Senior Defense Department Official - ProPublica - 5 days ago - By Robert Faturechi & Aaron Davis`, `button: More - Shape-sensing sheet digitally tracks its movement as it bends and twists`, `link: Shape-sensing sheet digitally tracks its movement as it bends and twists - MIT News - 6 days ago - By Jennifer Chu`, `button: More - One with the world? A new look at brains transformed by psychedelics.`, `link: One with the world? A new look at brains transformed by psychedelics. - Ars Technica - 4 days ago - By Jacek Krywko`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
+
+- **Aggregation across publishers:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Personalized feed:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Alerts and follow topics:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+
+## 4. Interaction and interface specification
+
+| Observable interface | Evidence-backed snapshot | Unknown / untested |
+|---|---|---|
+| Navigation/landmarks | `banner`, `search`, `main`, `navigation` | Full IA/routes/authenticated navigation |
+| Views/headings | `Your briefing`, `Top stories`, `Local news`, `Picks for you`, `More news`, `Your topics`, `U.S.`, `World`, `Business`, `Technology`, `Entertainment`, `Sports`, `Sources`, `Investor's Business Daily`, `STOCK MARKET TODAY`, `The Bend Bulletin`, `Top News`, `Whidbey News-Times`, `Beyond the front page` | Results and subsequent views |
+| Controls | `button: Advanced search`, `button: Search`, `button: Help`, `button: Settings`, `button: Google apps`, `button: Expand to view forecast`, `button: Use precise location`, `button: More - Kimberly Guilfoyle is out as U.S. ambassador to Greece`, `button: More - Trump fires ambassador to Greece Guilfoyle after reports of misconduct`, `button: More - White House ousts Kimberly Guilfoyle as US ambassador to Greece`, `button: More - Pope Leo Found to Have Lung Cancer During Surgery, Vatican Says`, `button: More - Pope Leo Diagnosed With Lung Cancer After Surgery`, `button: More - Leo XIV’s Cancer Diagnosis Tests the Assumption of a Long Papacy`, `button: More - Pope Leo has lung cancer, the Vatican announces after surgery`, `button: More - New Trump press secretary says she passed bar exam in China, raising eyebrows`, `button: More - Democrats fear \"more October surprises\" after \"bullshit\" raid on Ilhan Omar's home`, `button: Manage local news`, `button: More - NYPD detective stabbed in the Bronx during vacation shares story of survival`, `button: More - Bronx community holds vigil for young mother pushed off balcony last week`, `button: More - AS VERIZON PROPOSES TRANSITION AWAY FROM...`, `link: Google News`, `combobox: Search for topics, locations & sources`, `link: Sign in`, `link: Google Weather`, `link: Top stories`, `link: Kimberly Guilfoyle resigns as US ambassador to Greece`, `link: Kimberly Guilfoyle is out as U.S. ambassador to Greece - The Washington Post - 4 hours ago - By Michael Birnbaum`, `link: Trump fires ambassador to Greece Guilfoyle after reports of misconduct - Reuters - 13 hours ago - By Simon Lewis, Edward McAllister & Jacob Bogage`, `link: White House ousts Kimberly Guilfoyle as US ambassador to Greece - CNN - 13 hours ago - By Jennifer Hansler, Kevin Liptak & Kristen Holmes`, `link: See more headlines & perspectives - Kimberly Guilfoyle resigns as US ambassador to Greece`, `link: Pope Leo XIV undergoes lung surgery at Rome hospital`, `link: Pope Leo Found to Have Lung Cancer During Surgery, Vatican Says - The New York Times - 5 hours ago - By Elisabetta Povoledo`, `link: Pope Leo Diagnosed With Lung Cancer After Surgery - WSJ - 5 hours ago - By Margherita Stancati & Victoria Albert`, `link: Leo XIV’s Cancer Diagnosis Tests the Assumption of a Long Papacy - The New York Times - 1 hour ago - By Motoko Rich`, `link: Pope Leo has lung cancer, the Vatican announces after surgery - NPR - 5 hours ago - By Daniel Burke`, `link: See more headlines & perspectives - Pope Leo XIV undergoes lung surgery at Rome hospital`, `link: New Trump press secretary says she passed bar exam in China, raising eyebrows - South China Morning Post - 7 hours ago - By Teresa Frontado`, `link: See more headlines & perspectives - New Trump press secretary says she passed bar exam in China, raising eyebrows`, `button: More - Democrats fear \`, `link: Democrats fear \`, `link: See more headlines & perspectives - Democrats fear \`, `link: Local news`, `link: NYPD detective stabbed in the Bronx during vacation shares story of survival - ABC7 New York - 6 hours ago - By Darla Miles`, `link: See more headlines & perspectives - NYPD detective stabbed in the Bronx during vacation shares story of survival`, `link: Bronx community holds vigil for young mother pushed off balcony last week - Spectrum News NY1 - 1 hour ago - By Olivia Leach`, `link: See more headlines & perspectives - Bronx community holds vigil for young mother pushed off balcony last week`, `link: AS VERIZON PROPOSES TRANSITION AWAY FROM... - Senator Chuck Schumer (.gov) - 2 hours ago`, `link: See more headlines & perspectives - AS VERIZON PROPOSES TRANSITION AWAY FROM...`, `link: See more headlines & perspectives - Pope Leo has lung cancer, the Vatican announces after surgery`, `button: More - The 8-mile hole in a Hawaii national park that no one can explain`, `link: The 8-mile hole in a Hawaii national park that no one can explain - SFGATE - 9 hours ago - By Ashley Harrell`, `button: More - Larry David Saw O.J. Simpson at a Country Club the Day Nicole Brown Simpson Was Killed`, `link: Larry David Saw O.J. Simpson at a Country Club the Day Nicole Brown Simpson Was Killed - Rolling Stone - 13 hours ago - By Jon Blistein`, `button: More - Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive`, `link: Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive - USA Today - 6 hours ago - By Taijuan Nichole Moorman & Christopher Cann`, `link: See more headlines & perspectives - Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive`, `button: More - Bumble agrees to a $1.3B acquisition deal as online dating faces a reset`, `link: Bumble agrees to a $1.3B acquisition deal as online dating faces a reset - TechCrunch - 13 hours ago - By Lauren Forristal`, `link: See more headlines & perspectives - Bumble agrees to a $1.3B acquisition deal as online dating faces a reset`, `button: Customize`, `link: U.S.`, `button: More - Kimberly Guilfoyle Resigns as Ambassador to Greece`, `link: Kimberly Guilfoyle Resigns as Ambassador to Greece - The New York Times - 1 hour ago - By Tyler Pager`, `link: See more headlines & perspectives - Kimberly Guilfoyle Resigns as Ambassador to Greece`, `button: More - Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed`, `link: Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed - CNN - 6 hours ago - By Alayna Treene`, `link: See more headlines & perspectives - Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed`, `button: More - Cornell suspends fraternity parties amid backlash over alleged sexual assault`, `link: Cornell suspends fraternity parties amid backlash over alleged sexual assault - The Guardian - 34 minutes ago`, `link: See more headlines & perspectives - Cornell suspends fraternity parties amid backlash over alleged sexual assault`, `link: World`, `button: More - Pope Leo diagnosed with lung cancer after 'successful' surgery`, `link: Pope Leo diagnosed with lung cancer after 'successful' surgery - DW.com - 4 hours ago - By Wesley Rahn & Elizabeth Schumacher`, `link: See more headlines & perspectives - Pope Leo diagnosed with lung cancer after 'successful' surgery`, `button: More - 13 dead, 7 hospitalised after boat capsizes in Bihar's Vaishali; 3-4 still missing`, `link: 13 dead, 7 hospitalised after boat capsizes in Bihar's Vaishali; 3-4 still missing - The Times of India - 10 hours ago - By Faryal Rumi`, `link: See more headlines & perspectives - 13 dead, 7 hospitalised after boat capsizes in Bihar's Vaishali; 3-4 still missing`, `button: More - Saudi Energy Giant Struck as War Spikes Between Houthis and Saudi Arabia`, `link: Saudi Energy Giant Struck as War Spikes Between Houthis and Saudi Arabia - The New York Times - 2 hours ago - By Ismaeel Naar & Pranav Baskar`, `link: See more headlines & perspectives - Saudi Energy Giant Struck as War Spikes Between Houthis and Saudi Arabia`, `link: Business`, `button: More - Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight`, `link: Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight - The New York Times - 1 hour ago - By Rob Copeland`, `link: See more headlines & perspectives - Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight`, `button: More - FBI arrests Saudi OpenAI engineer over covert recording device, DOJ says`, `link: FBI arrests Saudi OpenAI engineer over covert recording device, DOJ says - Reuters - 4 hours ago - By Jaspreet Singh`, `link: See more headlines & perspectives - FBI arrests Saudi OpenAI engineer over covert recording device, DOJ says`, `link: Dow Jones -0.35% 51,670.10`, `link: S&P 500 -0.02% 7,805.45`, `link: Nasdaq -0.15% 27,204.38`, `link: Disclaimer`, `link: More from Google Finance`, `link: Technology`, `button: More - Apple’s new smart home lineup includes a smart lock, thermostat, and video doorbells`, `link: Apple’s new smart home lineup includes a smart lock, thermostat, and video doorbells - TechCrunch - 14 hours ago - By Lauren Forristal`, `link: See more headlines & perspectives - Apple’s new smart home lineup includes a smart lock, thermostat, and video doorbells`, `link: Entertainment`, `link: Sports`, `button: More - Shohei Ohtani will be in Dodgers' Game 3 NLCS lineup, Dave Roberts says`, `link: Shohei Ohtani will be in Dodgers' Game 3 NLCS lineup, Dave Roberts says - ESPN - 3 hours ago - By Alden Gonzalez`, `link: See more headlines & perspectives - Shohei Ohtani will be in Dodgers' Game 3 NLCS lineup, Dave Roberts says`, `button: More - Five key takeaways from F1's big African Grand Prix reveal in Rwanda`, `link: Five key takeaways from F1's big African Grand Prix reveal in Rwanda - Motorsport.com - 9 hours ago - By Filip Cleeren`, `link: See more headlines & perspectives - Five key takeaways from F1's big African Grand Prix reveal in Rwanda`, `link: Investor's Business Daily`, `button: Follow this source - Investor's Business Daily`, `link: Nasdaq-100, Small Caps Lead Dip; Applied Materials Whacked`, `link: UnitedHealth Climbs As Earnings, Medical Costs Beat Forecasts`, `link: JPMorgan, Goldman Sachs, Citigroup, Wells Fargo Report`, `button: More - Investor's Business Daily`, `link: The Bend Bulletin`, `button: Follow this source - The Bend Bulletin`, `link: Vote for The Bulletin’s Athletes of the Week for Oct. 5-10`, `link: What are people doing to help with Medicaid coverage`, `link: Downtown Bend pool hall, bar to close`, `button: More - The Bend Bulletin`, `link: Whidbey News-Times`, `button: Follow this source - Whidbey News-Times`, `link: Whidbey gets into the Halloween spirit`, `link: Deleted Facebook comment raises public records concerns`, `button: More - Whidbey News-Times`, `link: See more sources`, `button: See more sources`, `button: More - Amazon has over 1 million robot workers. What’s next for human employees?`, `link: Amazon has over 1 million robot workers. What’s next for human employees? - Ars Technica - 2 days ago - By Jeremy Hsu`, `button: More - The Pentagon Gave $350 Million in Contracts to a Firm Closely Tied to a Senior Defense Department Official`, `link: The Pentagon Gave $350 Million in Contracts to a Firm Closely Tied to a Senior Defense Department Official - ProPublica - 5 days ago - By Robert Faturechi & Aaron Davis`, `button: More - Shape-sensing sheet digitally tracks its movement as it bends and twists`, `link: Shape-sensing sheet digitally tracks its movement as it bends and twists - MIT News - 6 days ago - By Jennifer Chu`, `button: More - One with the world? A new look at brains transformed by psychedelics.`, `link: One with the world? A new look at brains transformed by psychedelics. - Ars Technica - 4 days ago - By Jacek Krywko` | Activation, forms, validation, loading/empty/success/error, keyboard behavior |
+| Links | `[Google News](./?hl=en-US&gl=US&ceid=US%3Aen)`, `[Sign in](https://accounts.google.com/ServiceLogin?passive=1209600&continue=https://news.google.com/home?hl%3Den-US%26gl%3DUS%26ceid%3DUS:en&followup=https://news.google.com/home?hl%3Den-US%26gl%3DUS%26ceid%3DUS:en&hl=en-US&ec=GAZAqgM)`, `[Google Weather](https://support.google.com/websearch/answer/13687874)`, `[Top stories](./topics/CAAqJggKIiBDQkFTRWdvSUwyMHZNRFZxYUdjU0FtVnVHZ0pWVXlnQVAB?hl=en-US&gl=US&ceid=US%3Aen)`, `[Kimberly Guilfoyle resigns as US ambassador to Greece](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0bmVTUEVoSF9kS1pIZjZUdk1DZ0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[Kimberly Guilfoyle is out as U.S. ambassador to Greece - The Washington Post - 4 hours ago - By Michael Birnbaum](./read/CBMiwAFBVV95cUxQS0Y0S2dGZWJaTWJvWFFjSGZPOExnVFR3ZVlvVUZ0dFZ4MGdHd0VQalI1Y0o5QkM3MkxUTUJRYnNtekZMZlVmZDlsQ1M5TkV4WHE4NXJzX0Y4bUNXM1RmekdYVzZ5YjFnWG1XT0JLNHJSc3pIVFJSYk9OYXdycV9WbUlBcVlKd1RSNEFJeGd4Vy1Pd2g1WnJJbmhCU1pGLTJDc1R4ZEpFUS10Z21pV3ZkQnlkQUNZdlZiMnNGZENndHg?hl=en-US&gl=US&ceid=US%3Aen)`, `[Trump fires ambassador to Greece Guilfoyle after reports of misconduct - Reuters - 13 hours ago - By Simon Lewis, Edward McAllister & Jacob Bogage](./read/CBMisgFBVV95cUxPeHIwM3RrTXplaUsyc3ZvbUhRaEVvbGNlbzFaeDdiY0tCRkpvRTQ1SlNiRU1fTXFFanljSU91NWZYVldNc19pOHNUMmR6dXZFSmRlLTBkdTctbUxZaVgyR21BT0syQVhsUjhpVTNDaUZWaUxxNHlRdkZCMHdNM2w3SUlFQ2VYVUVSdm5mZDU3QW9xSy1OMU9kTVJlSm9kS2d2R0k5blY4Ym9wTkZacTZEN1VB?hl=en-US&gl=US&ceid=US%3Aen)`, `[White House ousts Kimberly Guilfoyle as US ambassador to Greece - CNN - 13 hours ago - By Jennifer Hansler, Kevin Liptak & Kristen Holmes](./read/CBMic0FVX3lxTE0yZkZVN1pNakJDSEM3bGw5aDVXbV9rXzhJZXJHUmduRDRwOXhIZ2lZUEhSdy1GSlhLLUxYeG1XS24yNlNaaUV3TngzcE0zTUFkRlZ5ODFkNzVNMTlsdGU4TFp6bGtXYTZGWUdsV2IySUVFaFU?hl=en-US&gl=US&ceid=US%3Aen)`, `[See more headlines & perspectives - Kimberly Guilfoyle resigns as US ambassador to Greece](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0bmVTUEVoSF9kS1pIZjZUdk1DZ0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[Pope Leo XIV undergoes lung surgery at Rome hospital](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2paX1l1VUVoRTNJMFdvQzdNeDd5Z0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[Pope Leo Found to Have Lung Cancer During Surgery, Vatican Says - The New York Times - 5 hours ago - By Elisabetta Povoledo](./read/CBMif0FVX3lxTE0zalk3S3VDUElUcFNEdUpIem4tTmtXbTRVM19GX2ZEV3BFWE15YWhGa19zZFd1cEozS0toNHd6SWdOazhZR2NPYkFkRFU4ZG9BLVFGTi0tVndYR3h1Wl9vMGs3NDl0X2lLZ2Z1Rjd4ZmlldjgzaWt4bU9DNlN0ZUU?hl=en-US&gl=US&ceid=US%3Aen)`, `[Pope Leo Diagnosed With Lung Cancer After Surgery - WSJ - 5 hours ago - By Margherita Stancati & Victoria Albert](./read/CBMia0FVX3lxTE9SQTV0N0hVZ1lmbDdZOVNEU1FfVl9iM1BJTU1uck4zWHJHMnlSTUdNV1h6OThLcEw1V2t6d0tWbXhSYWl3amk5aEdkdDJZejFsamFaQ1BLVWRzR2ZJSU9UNUtxdHdkSEdVZmNB?hl=en-US&gl=US&ceid=US%3Aen)`, `[Leo XIV’s Cancer Diagnosis Tests the Assumption of a Long Papacy - The New York Times - 1 hour ago - By Motoko Rich](./read/CBMigAFBVV95cUxQVzZiSGVhQWYzeTdleXNkb3IxXzhZcDJnWm5WU3ExQ0VldXhnWmxFX0M2ekVzY3dNOGFjVVh1d1JuWENLVDV4RHBGT3BtbHNBdVF5YXA4VFhmano3ck1VR3h2MVpFa2xKY1JSaXd4VVFCSUZQSS1xZG5TMmpjLXZndA?hl=en-US&gl=US&ceid=US%3Aen)`, `[Pope Leo has lung cancer, the Vatican announces after surgery - NPR - 5 hours ago - By Daniel Burke](./read/CBMijgFBVV95cUxNdW9FYzVTSU8zQUpvcVIzeERHbkVSZjZjV0N3VUFjRlduVmluUE1VdVVQd1lhbWRrSmg2T0c3UmtCVkViUm5DZ1BaOTYwQmlPanlveXNnUkxlT2c3aDJrRUdEOS0xV2pabnpXaXlSRFRTUmFBVlI0T0RZY1JvdlluNktMQ3Q1ZGRWV0U3cC1n?hl=en-US&gl=US&ceid=US%3Aen)`, `[See more headlines & perspectives - Pope Leo XIV undergoes lung surgery at Rome hospital](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2paX1l1VUVoRTNJMFdvQzdNeDd5Z0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[New Trump press secretary says she passed bar exam in China, raising eyebrows - South China Morning Post - 7 hours ago - By Teresa Frontado](./read/CBMi1AFBVV95cUxQUDBCTnZQdDM3cGhwbEJFTE1EV1lTSVhzZUYzbV85UVdNcnBxbWFjbGZGMllqTGxLMFFkRkVnVWFObnByNy10WlVTemFsRkdReEtOa3ZuQVFIQzBIWjJTWjJ0OE5OWFJnUlJ0Zm9kOTl6aFRXeDNkd2dYSlR2QjN6UDFHTWJPR2p4OFpsOXhCYWdLMV9DZ0VJU20yeWNWMndnNGVtVVRZOEloWlhmU2VrMzV3SzNtR3BkSmNBbTBjbDlDYjN1ejZjTjJad1NTMjY3Zmg3Z9IB1AFBVV95cUxNNVotMW9oeTJLMXhiM0dYYWF1dGVWSTczVkdrazdXTXVyUmYxNUN1VWJqcmMwR3l0VG0zWnozNEk3RzdkREZuQ0ljSFVDb29RS1o2YXZqcExqQW9xdEJoeFBuTkZRUnlXeFRsaHJ1ZU0zRHh1MHdEM1ZOQnRNU2VZcUhCU3RYTEFnTVFsZFpCa0l0bUQ4cUxVWndWLW82Xy1BWnAwVEhJc3lUNkxyQzE3NjZyTjN3cEFlT3FRQ1BHLTRpYTU4TTV3SHA4LWNYRjBkVFIxZw?hl=en-US&gl=US&ceid=US%3Aen)`, `[See more headlines & perspectives - New Trump press secretary says she passed bar exam in China, raising eyebrows](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2l4bzRlVEVoRXQ4bnUzeF9YRDZ5Z0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[Democrats fear \"more October surprises\" after \"bullshit\" raid on Ilhan Omar's home - Axios - 3 hours ago - By Andrew Solender](./read/CBMiiAFBVV95cUxOQWFWei1mTzVMZ2JWTklHaWZVQ3Iyb2tnREpvU2pwLU1XVUh4T05QTmV2WHYtNllQUDZyLXZBa2dNUzJrV0xEMjJtVEtvcUx1R3FMUnFzUi0yUlBiZTV1SXhvcTM4YnhPb19QZlpBTFItWFYxaFl2LXlIUE9rckxLNmFPS245Qllm?hl=en-US&gl=US&ceid=US%3Aen)`, `[See more headlines & perspectives - Democrats fear \"more October surprises\" after \"bullshit\" raid on Ilhan Omar's home](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k3dXZ1TkVoRWp0cjV3RHF4MjNDZ0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[Local news](./topics/CAAqHAgKIhZDQklTQ2pvSWJHOWpZV3hmZGpJb0FBUAE?hl=en-US&gl=US&ceid=US%3Aen)`, `[NYPD detective stabbed in the Bronx during vacation shares story of survival - ABC7 New York - 6 hours ago - By Darla Miles](./read/CBMipgFBVV95cUxPekE0Qm5yVVhMRU5idzlDcmJoa1dNOW4yd3lPLTAwMldvbVVtWDcxVmRoYTV1bUE2U3Atai1qTUdOWjdNaFU2MlE5ZTFtTFZGOTdkaFViT2VHcm9nbS1nYmlhLVVORG9JWWw4WW1sektLaUlsSjJJZE1xRDlsOHdxajFkTWJXamtWN0l6NnVqX0Y1YWZIQWxUcTUtZ1ZxWjdodFBGZHln?hl=en-US&gl=US&ceid=US%3Aen)`, `[See more headlines & perspectives - NYPD detective stabbed in the Bronx during vacation shares story of survival](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lOd08tTkVoRkVqMVphd1Q4T1FpZ0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[Bronx community holds vigil for young mother pushed off balcony last week - Spectrum News NY1 - 1 hour ago - By Olivia Leach](./read/CBMivwFBVV95cUxNUEV0V0J3eFJ3UXlZNXlKNjhTNkpobTBCQlQ2cVFfdFNYcFNiSldYY3V4OFBZMTNkc2FrU0hzUGI5eVNpSFpKajZFQVFhd3RQTTZaOFZtaXJnSENLRXFZWTZJc3JIWVlDUlFPSVdKTUNZZ2gtZjBKT1p5Y1RSSGxZejNpUmFDSDE2ejZpb20yeUk4cXBCeEpWOXcwZDNBdEVtZ1JZVXI4azUtNlJ4NHVFdmQ2R3d2WUFxRmlCbWhMdw?hl=en-US&gl=US&ceid=US%3Aen)`, `[See more headlines & perspectives - Bronx community holds vigil for young mother pushed off balcony last week](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lkczVlUUVoSGN1Vm5ESk5KZE9TZ0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[AS VERIZON PROPOSES TRANSITION AWAY FROM... - Senator Chuck Schumer (.gov) - 2 hours ago](./read/CBMipAJBVV95cUxNY0FlSjVTSXFvRVJLMFZuckFLcHFMQjAza051VU9DbW1fUGVEMDFKRFF0M0k2eENpMnhmXzBVUFpRU0d6aEo4d2s3eGg1b29rVzVwU29EQkFRNGtEN3RhYWROUnVUV3c1V0U1UFFnWTV3SDhkdi1Vb056eklCeTNrUzBLRFlNUFFob3AzR0xyRGxSSXc4V2NVYmxHZEUtWWtvYmtVc284cS1RUXlwR3Q1VnZXbGJpRTJKeGxOZXBXX2llX29VWkZreXRvTGZqeEZqbUc3Nl9aeDdmdENVRlAzODBXRVpXRG92eG5GMEQ3dnN2Q0R0ZTk3VHBENjRrckd4N010V3ZMY0hVZ19KWFA4eEo0azAwenJDVVF6NHpiWk56S1Yy?hl=en-US&gl=US&ceid=US%3Aen)`, `[See more headlines & perspectives - AS VERIZON PROPOSES TRANSITION AWAY FROM...](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2p2bzVLUkVoRmQ3eXctRVpDQjhpZ0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[Sign in](https://accounts.google.com/ServiceLogin?hl=en-US&continue=https://news.google.com/home?hl%3Den-US%26gl%3DUS%26ceid%3DUS:en&hl=en-US&gl=US&ceid=US%3Aen)`, `[Sign in](https://accounts.google.com/ServiceLogin?hl=en-US&continue=https://news.google.com/home?hl%3Den-US%26gl%3DUS%26ceid%3DUS:en)`, `[See more headlines & perspectives - Pope Leo has lung cancer, the Vatican announces after surgery](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2paX1l1VUVoR205X09oamNZcHlDZ0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[The 8-mile hole in a Hawaii national park that no one can explain - SFGATE - 9 hours ago - By Ashley Harrell](./read/CBMilwFBVV95cUxObzEzRm1ubm9Wendtb1dsMjVlRXMwVGZST1pRb2VUUG0yN3RhT2RueXpVMEFIRFNPd1RTVHJ3NF9IZDB6MzJOdEtoZzF0VHliZHdOTWJveWZPaGlHOC1JWFBFX21penJ1eTU4MU9mUmJzdWlvTmF2RGxpNWFkRG1jUHM3c3E4NWNzTWlHRVc4Qk80ZVUyMEE4?hl=en-US&gl=US&ceid=US%3Aen)`, `[Larry David Saw O.J. Simpson at a Country Club the Day Nicole Brown Simpson Was Killed - Rolling Stone - 13 hours ago - By Jon Blistein](./read/CBMirAFBVV95cUxOYm0zc1RQdG1KYjV0Vm80TlFNSVFud1pTdkhBMTFPclRRWHpXcHRXX3gybVRxZF9PQ0RndWNnd0dTbUNpek9ycFhMS1hRbnRMU2NNRkpYVGpvU2FjR2czczZTcVVKRlRYZHgzMzY3bTd0VEZGUUpSUXFnSk9OY0M4NTdId0JqbEl6b1lNUDRrMFJ0Nm5RM3dEODZSX0p2QUNjYTQ5R2h2OVhzbkVK?hl=en-US&gl=US&ceid=US%3Aen)`, `[Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive - USA Today - 6 hours ago - By Taijuan Nichole Moorman & Christopher Cann](./read/CBMi1gFBVV95cUxNNWJVU3BaOGtFbVMyS0ltUjhZc19DXzE4WUIxVXpITGZhbkd0MHRRRHNLRDZGd2lzSWhUektRVjBGZjNSYlk5dDlZRGZ0NzZ6TzA0NVcyUUg2a0VzaTlrRFRncXBGTTBYYTFBTUdKa21zcnh6dXZmdFRmcUxWNjluTENEZ3FJWnFUY0NKblhiUHdWNGY1aG8tZHZzUHVQc0N5bzZOZ3piOW9TZnVranlnT3lrQV8yWW1iTmt1OXlIR1NJRE1aTTF1UGdhNF9lR2JMVjZqakFB?hl=en-US&gl=US&ceid=US%3Aen)`, `[See more headlines & perspectives - Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lzdC1LVEVoRmNwLWg0alU2YkF5Z0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[Bumble agrees to a $1.3B acquisition deal as online dating faces a reset - TechCrunch - 13 hours ago - By Lauren Forristal](./read/CBMiqgFBVV95cUxQdDZiWmRTVHluang0UmdETEN4MkF6NDBHV3VZUVZzc051RG9QRk9YQ1BWdmYzM3k5cGtsZzgtR000aUNld1VIeUpCRWFJTEpOTlVKb2hFdmpfRmlyNW9FdHlQWlJUa2cxZTJlUzdLa3g0bHJ3WW1keHROcU9sMmFkdlZ1Z3ExYW9GeTluLWdaemVGcUFidWNqNWVHVHEzblRCeTFHcHM3a2x4UQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[See more headlines & perspectives - Bumble agrees to a $1.3B acquisition deal as online dating faces a reset](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2lfaVllVkVoSHJlNURpY2hUcnRDZ0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[U.S.](./topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNRGxqTjNjd0VnSmxiaWdBUAE?hl=en-US&gl=US&ceid=US%3Aen)`, `[Kimberly Guilfoyle Resigns as Ambassador to Greece - The New York Times - 1 hour ago - By Tyler Pager](./read/CBMigwFBVV95cUxPdlVvUGdLc3Z0NUVzWlpJMWRIcTFtbzZveW5vLTE5a01WbnJ0YVdOdkpIZ01VNU91c0ZqX2oxM214d0xHWFBYdHZ1N3dtc0djVkNSUloyZ0RLZ0l3VFZZamZlSnQ0WFJoWGpkYmhCbUFoczRiTTRsaDM3ZTNtZklzUHQxdw?hl=en-US&gl=US&ceid=US%3Aen)`, `[See more headlines & perspectives - Kimberly Guilfoyle Resigns as Ambassador to Greece](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2k0bmVTUEVoSGJIX3VvQll2X0ZTZ0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)`, `[Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed - CNN - 6 hours ago - By Alayna Treene](./read/CBMijAFBVV95cUxOVWQzWUFBVFdmU1BaazhTdkY0aGtWdnZkOU4tUWFacmVqX25ScW1HUG93UzBOME90YUNreEtoUzdmdU9sTF9Bb0VqZFhwT2ZwMkd6T0tmdjEzRGhfWHlKdjMxQ0JJV0JrLXBCeVI0cC1zVjNkbHNRR0RUYTdFTVlNUnpYLWZXTlJBZUFGcA?hl=en-US&gl=US&ceid=US%3Aen)`, `[See more headlines & perspectives - Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed](./stories/CAAqNggKIjBDQklTSGpvSmMzUnZjbmt0TXpZd1NoRUtEd2pYdlAyTEVoRzVKemx5TWsycjlpZ0FQAQ?hl=en-US&gl=US&ceid=US%3Aen)` | Deep-link and route semantics |
+| Responsive/platform behavior | Unknown | No comparison captured |
+| Search/filter/sort/settings/import/export | Unknown unless explicitly observed | Complete interactions not captured |
+
+A REA page capture is not product-wide interface evidence. Use original interface design and assets; do not reproduce protected branding.
+
+## 5. Functional requirements and traceability
+
+### REQ-FUNC-1B1CA7A4 — Aggregation across publishers
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-1B1CA7A4`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-NEWS-CAP-1B1CA7A4` → `REQ-FUNC-1B1CA7A4` → `TEST-FUNC-1B1CA7A4`.
+
+### REQ-FUNC-8585F665 — Personalized feed
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-8585F665`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-NEWS-CAP-8585F665` → `REQ-FUNC-8585F665` → `TEST-FUNC-8585F665`.
+
+### REQ-FUNC-2D129591 — Alerts and follow topics
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-2D129591`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-NEWS-CAP-2D129591` → `REQ-FUNC-2D129591` → `TEST-FUNC-2D129591`.
+
+Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
+
+## 6. Data model and state
+
+**Original product structures:** UNKNOWN. No structured evidence establishes fields/types, IDs, ownership/permissions, lifecycle, persistence, constraints, deletion/retention, import/export, migration, concurrency or indexes.
+
+**Independent model (PROPOSED):** define only state needed for the researched first slice; specify IDs, validation, owners, state transitions, concurrency, deletion/export/retention and migration. Do not describe it as the target’s model.
+
+## 7. APIs, integrations and protocols
+
+**Original contracts:** none verified in structured evidence. Dossier prose does not establish supported APIs. Do not invent target endpoints, schemas, auth, events or limits. If the independent implementation needs an interface, define a versioned contract labelled PROPOSED, including request/response, authorization, errors, limits, timeouts, retries and idempotency.
+
+## 8. Architecture and technical design
+
+**PROPOSED independent design; target internals unknown.** Use only components required by verified scope.
+
+```mermaid
+flowchart LR
+  UI[Interface] --> APP[Application and domain boundary]
+  APP --> DB[(Persistence if needed)]
+  APP --> EXT[Authorized integrations if needed]
+```
+
+Separate interface/domain/persistence/integration boundaries. Enforce access at trusted boundaries, isolate tenants where relevant, and define timeout/partial failure behavior. Add queues/caches/scaling/deployment components only when requirements justify them. Record configuration, secrets, data flow, recovery, observability and deployment assumptions in the implementation project.
+
+## 9. Open-source foundation and dependency strategy
+
+**Decision: candidates are PROPOSED for evaluation, not approved foundations.** Verify repository/version, license and dependency terms, actual code/modules, extension points, tests/CI, maintenance, security, deployment and integration cost. Map each requirement to actual code and test evidence; README claims and popularity are not proof.
+
+| Candidate | Repository | Catalog license (unverified) | Claimed coverage (unverified) | Limitation | Decision |
+|---|---|---|---|---|---|
+| [FreshRSS](https://freshrss.org/) | Not recorded | AGPL-3.0 (unverified) | Self-hosted RSS aggregator with a Google Reader-like UI. | No limitation recorded | Proposed evaluation lead; no verified foundation |
+| [Miniflux](https://miniflux.net/) | Not recorded | AGPL-3.0 (unverified) | Minimalist RSS server. | No limitation recorded | Proposed evaluation lead; no verified foundation |
+
+No candidate has been independently cloned, executed, license-reviewed or security-reviewed by this generator.
+## 10. Security and privacy
+
+No product-specific security/privacy controls are verified by current evidence. Proposed independent controls: authenticate/authorize state changes server-side; validate inputs; protect secrets; apply least privilege and suitable abuse/rate controls; minimize data; define consent, retention, export/delete, backup/restore; keep sensitive payloads out of logs; handle external trust boundaries/timeouts/retries; test cross-user access, malformed inputs, leaks, abuse and recovery.
+
+Product-specific review: Review product-specific identity, authorization, privacy, abuse and dependency threats. Do not claim compliance, privacy or security parity without scoped assessment.
+
+## 11. Error handling and edge cases
+
+These are test prompts, not target behavior assertions. Keep only relevant cases and derive expected behavior from evidence or label an independent decision PROPOSED.
+
+- **EDGE-001:** Missing/malformed/oversized input. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-002:** Unauthorized or revoked action and tenant isolation where applicable. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-003:** Empty data/results and duplicate operations. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-004:** Concurrent updates or stale writes to mutable state. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-005:** Network timeout, throttling, external outage, retry and partial failure. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-006:** Cancellation/interruption during state change and restart recovery. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-007:** Corrupt/incompatible imported or persisted data; migration failure. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-008:** Expired credentials/session where applicable. Target behavior is UNKNOWN until researched; specify recovery before release.
+
+## 12. Testing and behavioral verification
+
+- **TEST-FUNC-1B1CA7A4** → `REQ-FUNC-1B1CA7A4`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-8585F665** → `REQ-FUNC-8585F665`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-2D129591** → `REQ-FUNC-2D129591`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+
+These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
+
+## 13. Implementation roadmap
+
+### Phase 1 — Foundation and dependencies
+
+- **Tasks:** Inspect user project, stack, constraints, tests, candidate implementations and licenses.
+- **Prerequisites:** Repository inspection and user scope.
+- **Deliverables:** Project map, evidence ledger, reuse decision, bounded plan
+- **Requirements:** Select after evidence review
+- **Tests:** Clean setup/validation smoke test
+- **Completion:** Clean setup and documented dependency/reuse decision.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
+
+### Phase 2 — Core domain behavior
+
+- **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
+- **Prerequisites:** Phase 1 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** REQ-FUNC-1B1CA7A4, REQ-FUNC-8585F665, REQ-FUNC-2D129591
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Integrated domain behavior with deterministic unit/integration tests.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
+
+### Phase 3 — Primary user workflows
+
+- **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
+- **Prerequisites:** Phase 2 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** REQ-FUNC-1B1CA7A4, REQ-FUNC-8585F665, REQ-FUNC-2D129591
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** E2E acceptance checks via user-facing interface.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
+
+### Phase 4 — Integrations
+
+- **Tasks:** Add only documented/authorized integrations; mock boundaries for offline routine tests.
+- **Prerequisites:** Phase 3 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** Select after evidence review
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Contract and failure-injection tests.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
+
+### Phase 5 — Secondary capabilities
+
+- **Tasks:** Implement remaining in-scope behavior by user priority and evidence.
+- **Prerequisites:** Phase 4 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** Select after evidence review
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Trace: REQ-FUNC-1B1CA7A4, REQ-FUNC-8585F665, REQ-FUNC-2D129591; document exclusions and unknowns.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
+
+### Phase 6 — Security and reliability
+
+- **Tasks:** Review access, privacy, abuse, migration, backup, observability and recovery as applicable.
+- **Prerequisites:** Phase 5 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** Select after evidence review
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Applicable security/recovery checks and risks recorded.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
+
+### Phase 7 — Verification and release
+
+- **Tasks:** Run project checks; inspect behavior, accessibility, compatibility, license and docs.
+- **Prerequisites:** Phase 6 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** Select after evidence review
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Reproducible result and transparent completion/gap report.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
+
+
+## 14. Evidence, uncertainty and exclusions
+
+### Evidence index
+
+| Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
+|---|---|---|---|---|---|
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://news.google.com/) | Not recorded | Google News is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev_f04699c32b5e22d6bd839b7b2e16f8fc6e288a334d16ede53f3328216e38c527` | Google News Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://news.google.com/home?hl=en-US&gl=US&ceid=US:en) | 2026-10-14T03:53:32.601Z | A dated unauthenticated snapshot exposed controls button: Advanced search, button: Search, button: Help, button: Settings, button: Google apps, button: Expand to view forecast, button: Use precise location, button: More - Kimberly Guilfoyle is out as U.S. ambassador to Greece, button: More - Trump fires ambassador to Greece Guilfoyle after reports of misconduct, button: More - White House ousts Kimberly Guilfoyle as US ambassador to Greece, button: More - Pope Leo Found to Have Lung Cancer During Surgery, Vatican Says, button: More - Pope Leo Diagnosed With Lung Cancer After Surgery, button: More - Leo XIV’s Cancer Diagnosis Tests the Assumption of a Long Papacy, button: More - Pope Leo has lung cancer, the Vatican announces after surgery, button: More - New Trump press secretary says she passed bar exam in China, raising eyebrows, button: More - Democrats fear \"more October surprises\" after \"bullshit\" raid on Ilhan Omar's home, button: Manage local news, button: More - NYPD detective stabbed in the Bronx during vacation shares story of survival, button: More - Bronx community holds vigil for young mother pushed off balcony last week, button: More - AS VERIZON PROPOSES TRANSITION AWAY FROM..., link: Google News, combobox: Search for topics, locations & sources, link: Sign in, link: Google Weather, link: Top stories, link: Kimberly Guilfoyle resigns as US ambassador to Greece, link: Kimberly Guilfoyle is out as U.S. ambassador to Greece - The Washington Post - 4 hours ago - By Michael Birnbaum, link: Trump fires ambassador to Greece Guilfoyle after reports of misconduct - Reuters - 13 hours ago - By Simon Lewis, Edward McAllister & Jacob Bogage, link: White House ousts Kimberly Guilfoyle as US ambassador to Greece - CNN - 13 hours ago - By Jennifer Hansler, Kevin Liptak & Kristen Holmes, link: See more headlines & perspectives - Kimberly Guilfoyle resigns as US ambassador to Greece, link: Pope Leo XIV undergoes lung surgery at Rome hospital, link: Pope Leo Found to Have Lung Cancer During Surgery, Vatican Says - The New York Times - 5 hours ago - By Elisabetta Povoledo, link: Pope Leo Diagnosed With Lung Cancer After Surgery - WSJ - 5 hours ago - By Margherita Stancati & Victoria Albert, link: Leo XIV’s Cancer Diagnosis Tests the Assumption of a Long Papacy - The New York Times - 1 hour ago - By Motoko Rich, link: Pope Leo has lung cancer, the Vatican announces after surgery - NPR - 5 hours ago - By Daniel Burke, link: See more headlines & perspectives - Pope Leo XIV undergoes lung surgery at Rome hospital, link: New Trump press secretary says she passed bar exam in China, raising eyebrows - South China Morning Post - 7 hours ago - By Teresa Frontado, link: See more headlines & perspectives - New Trump press secretary says she passed bar exam in China, raising eyebrows, button: More - Democrats fear \, link: Democrats fear \, link: See more headlines & perspectives - Democrats fear \, link: Local news, link: NYPD detective stabbed in the Bronx during vacation shares story of survival - ABC7 New York - 6 hours ago - By Darla Miles, link: See more headlines & perspectives - NYPD detective stabbed in the Bronx during vacation shares story of survival, link: Bronx community holds vigil for young mother pushed off balcony last week - Spectrum News NY1 - 1 hour ago - By Olivia Leach, link: See more headlines & perspectives - Bronx community holds vigil for young mother pushed off balcony last week, link: AS VERIZON PROPOSES TRANSITION AWAY FROM... - Senator Chuck Schumer (.gov) - 2 hours ago, link: See more headlines & perspectives - AS VERIZON PROPOSES TRANSITION AWAY FROM..., link: See more headlines & perspectives - Pope Leo has lung cancer, the Vatican announces after surgery, button: More - The 8-mile hole in a Hawaii national park that no one can explain, link: The 8-mile hole in a Hawaii national park that no one can explain - SFGATE - 9 hours ago - By Ashley Harrell, button: More - Larry David Saw O.J. Simpson at a Country Club the Day Nicole Brown Simpson Was Killed, link: Larry David Saw O.J. Simpson at a Country Club the Day Nicole Brown Simpson Was Killed - Rolling Stone - 13 hours ago - By Jon Blistein, button: More - Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive, link: Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive - USA Today - 6 hours ago - By Taijuan Nichole Moorman & Christopher Cann, link: See more headlines & perspectives - Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive, button: More - Bumble agrees to a $1.3B acquisition deal as online dating faces a reset, link: Bumble agrees to a $1.3B acquisition deal as online dating faces a reset - TechCrunch - 13 hours ago - By Lauren Forristal, link: See more headlines & perspectives - Bumble agrees to a $1.3B acquisition deal as online dating faces a reset, button: Customize, link: U.S., button: More - Kimberly Guilfoyle Resigns as Ambassador to Greece, link: Kimberly Guilfoyle Resigns as Ambassador to Greece - The New York Times - 1 hour ago - By Tyler Pager, link: See more headlines & perspectives - Kimberly Guilfoyle Resigns as Ambassador to Greece, button: More - Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed, link: Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed - CNN - 6 hours ago - By Alayna Treene, link: See more headlines & perspectives - Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed, button: More - Cornell suspends fraternity parties amid backlash over alleged sexual assault, link: Cornell suspends fraternity parties amid backlash over alleged sexual assault - The Guardian - 34 minutes ago, link: See more headlines & perspectives - Cornell suspends fraternity parties amid backlash over alleged sexual assault, link: World, button: More - Pope Leo diagnosed with lung cancer after 'successful' surgery, link: Pope Leo diagnosed with lung cancer after 'successful' surgery - DW.com - 4 hours ago - By Wesley Rahn & Elizabeth Schumacher, link: See more headlines & perspectives - Pope Leo diagnosed with lung cancer after 'successful' surgery, button: More - 13 dead, 7 hospitalised after boat capsizes in Bihar's Vaishali; 3-4 still missing, link: 13 dead, 7 hospitalised after boat capsizes in Bihar's Vaishali; 3-4 still missing - The Times of India - 10 hours ago - By Faryal Rumi, link: See more headlines & perspectives - 13 dead, 7 hospitalised after boat capsizes in Bihar's Vaishali; 3-4 still missing, button: More - Saudi Energy Giant Struck as War Spikes Between Houthis and Saudi Arabia, link: Saudi Energy Giant Struck as War Spikes Between Houthis and Saudi Arabia - The New York Times - 2 hours ago - By Ismaeel Naar & Pranav Baskar, link: See more headlines & perspectives - Saudi Energy Giant Struck as War Spikes Between Houthis and Saudi Arabia, link: Business, button: More - Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight, link: Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight - The New York Times - 1 hour ago - By Rob Copeland, link: See more headlines & perspectives - Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight, button: More - FBI arrests Saudi OpenAI engineer over covert recording device, DOJ says, link: FBI arrests Saudi OpenAI engineer over covert recording device, DOJ says - Reuters - 4 hours ago - By Jaspreet Singh, link: See more headlines & perspectives - FBI arrests Saudi OpenAI engineer over covert recording device, DOJ says, link: Dow Jones -0.35% 51,670.10, link: S&P 500 -0.02% 7,805.45, link: Nasdaq -0.15% 27,204.38, link: Disclaimer, link: More from Google Finance, link: Technology, button: More - Apple’s new smart home lineup includes a smart lock, thermostat, and video doorbells, link: Apple’s new smart home lineup includes a smart lock, thermostat, and video doorbells - TechCrunch - 14 hours ago - By Lauren Forristal, link: See more headlines & perspectives - Apple’s new smart home lineup includes a smart lock, thermostat, and video doorbells, link: Entertainment, link: Sports, button: More - Shohei Ohtani will be in Dodgers' Game 3 NLCS lineup, Dave Roberts says, link: Shohei Ohtani will be in Dodgers' Game 3 NLCS lineup, Dave Roberts says - ESPN - 3 hours ago - By Alden Gonzalez, link: See more headlines & perspectives - Shohei Ohtani will be in Dodgers' Game 3 NLCS lineup, Dave Roberts says, button: More - Five key takeaways from F1's big African Grand Prix reveal in Rwanda, link: Five key takeaways from F1's big African Grand Prix reveal in Rwanda - Motorsport.com - 9 hours ago - By Filip Cleeren, link: See more headlines & perspectives - Five key takeaways from F1's big African Grand Prix reveal in Rwanda, link: Investor's Business Daily, button: Follow this source - Investor's Business Daily, link: Nasdaq-100, Small Caps Lead Dip; Applied Materials Whacked, link: UnitedHealth Climbs As Earnings, Medical Costs Beat Forecasts, link: JPMorgan, Goldman Sachs, Citigroup, Wells Fargo Report, button: More - Investor's Business Daily, link: The Bend Bulletin, button: Follow this source - The Bend Bulletin, link: Vote for The Bulletin’s Athletes of the Week for Oct. 5-10, link: What are people doing to help with Medicaid coverage, link: Downtown Bend pool hall, bar to close, button: More - The Bend Bulletin, link: Whidbey News-Times, button: Follow this source - Whidbey News-Times, link: Whidbey gets into the Halloween spirit, link: Deleted Facebook comment raises public records concerns, button: More - Whidbey News-Times, link: See more sources, button: See more sources, button: More - Amazon has over 1 million robot workers. What’s next for human employees?, link: Amazon has over 1 million robot workers. What’s next for human employees? - Ars Technica - 2 days ago - By Jeremy Hsu, button: More - The Pentagon Gave $350 Million in Contracts to a Firm Closely Tied to a Senior Defense Department Official, link: The Pentagon Gave $350 Million in Contracts to a Firm Closely Tied to a Senior Defense Department Official - ProPublica - 5 days ago - By Robert Faturechi & Aaron Davis, button: More - Shape-sensing sheet digitally tracks its movement as it bends and twists, link: Shape-sensing sheet digitally tracks its movement as it bends and twists - MIT News - 6 days ago - By Jennifer Chu, button: More - One with the world? A new look at brains transformed by psychedelics., link: One with the world? A new look at brains transformed by psychedelics. - Ars Technica - 4 days ago - By Jacek Krywko and landmarks banner, search, main, navigation. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
+
+### Confidence classifications
+
+VERIFIED: observed/documented within exact scope. CORROBORATED: supported by multiple compatible sources. INFERRED: reasoned, not directly established. PROPOSED: independent design or candidate. UNKNOWN: not established. CONFLICTED: sources disagree. A source URL alone is not verification; confidence cannot exceed the source. Every important claim in a future completed research record must cite its source location and access date.
+
+### Prioritized unknowns
+
+| Priority | Unknown / blocker | Next evidence action |
+|---|---|---|
+| P0 | Claim-level evidence linked to each capability. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Investigate official documentation and authorized public behavior; update evidence IDs. |
+| P0 | Intended user, roles, user jobs, and requested implementation boundary. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Research product/user scope; ask user when scope choice materially changes deliverable. |
+| P0 | Full successful, denied, failed, cancelled, retry and recovery workflows. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Observe authorized workflows; record checkpoint and observable oracle. |
+| P1 | Supported versions, platforms, responsive and accessibility behavior. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Verify product version and platform documentation; run authorized observation. |
+| P1 | Data model, state, ownership, retention, import/export and concurrency. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Use primary docs or record as unknown; propose only the independent slice model. |
+| P1 | API/protocol contracts, integrations, authorization, limits and errors. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Use official API spec or label independent contract PROPOSED. |
+| P1 | Candidate repository state, implementation, tests, license and operations. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Inspect exact repository/version and distribution dependencies before recommendation. |
+| P2 | Representative performance targets and operational scale. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Define workload and target before measurement; avoid scale equivalence claims. |
+
+### Resumable investigation checkpoint
+
+Resume token: `google-news`. Read dossier, REA report and raw Evidence before repeating. Record question/reason, authorized source/tool, target/version/scope, actions, Evidence IDs and locations, observation vs inference, conflicts/unknowns, affected feature/requirement IDs, checks/date and next question. Reuse evidence when sufficient/current. Select specialized REA/native inspection only when ordinary public/repository inspection cannot answer a user-visible question and the target/tool are authorized; do not assume tools are installed. Current capture covers a public unauthenticated page only.
+
+### Dossier notes (not independently verified)
+
+# 1. Executive summary
+
 Google News is Google's news aggregation and personalization service.
 
-Catalog categories: news-aggregation.
+---
 
-Catalogued capability areas:
+# 2. Product identity and ownership
+
+- **Official name:** Google News
+- **Company and business unit:** google
+- **Current lifecycle status:** active
+- **Official website:** https://news.google.com/
+
+---
+
+# 3. Product capabilities
+
 - Aggregation across publishers
 - Personalized feed
 - Alerts and follow topics
 
-This summary reflects the catalog record, not a complete product specification. Verify intended users, end-to-end workflows, supported platforms, edge cases, data handling, and constraints against cited sources. Treat capability labels as research leads until that verification is complete.
+---
 
-## Core capabilities
+# 4. Technical architecture
 
-- Aggregation across publishers
-- Personalized feed
-- Alerts and follow topics
+Not yet researched.
 
-## Existing open source
+---
 
-| Project | License | What it covers | Notes |
-|---|---|---|---|
-| [FreshRSS](https://freshrss.org/) | AGPL-3.0 | Self-hosted RSS aggregator with a Google Reader-like UI. |  |
-| [Miniflux](https://miniflux.net/) | AGPL-3.0 | Minimalist RSS server. |  |
+# 5. User workflows
 
-## Gap
+Not yet researched.
+
+---
+
+# 6. Pricing and access
+
+Not yet researched.
+
+---
+
+# 7. API and integration surface
+
+Not yet researched.
+
+---
+
+# 8. Existing open-source alternatives
+
+Open-source candidates exist: FreshRSS (AGPL-3.0) — Self-hosted RSS aggregator with a Google Reader-like UI.; Miniflux (AGPL-3.0) — Minimalist RSS server.. Coverage is unverified until the dossier is researched.
+
+---
+
+# 9. Alternative comparison
 
 RSS covers following sources; Google's editorial ranking and personalization have no equivalent.
 
-## Verdict
+---
+
+# 10. Missing capabilities and opportunity analysis
+
+RSS covers following sources; Google's editorial ranking and personalization have no equivalent.
+
+---
+
+# 11. RAE implementation strategy
 
 Available for the core job (following sources): FreshRSS is a mature self-hosted news aggregator. The personalized ranking layer is not replicated.
 
-## Product description and scope
+---
 
-Google News is Google's news aggregation and personalization service.
+# 12. Security, privacy, and compliance
 
-Catalog categories: news-aggregation.
+Not yet researched.
 
-Catalogued capability areas:
-- Aggregation across publishers
-- Personalized feed
-- Alerts and follow topics
+---
 
-This summary reflects the catalog record, not a complete product specification. Verify intended users, end-to-end workflows, supported platforms, edge cases, data handling, and constraints against cited sources. Treat capability labels as research leads until that verification is complete.
+# 13. Sources and evidence
 
-## Coding-agent mission
+- https://freshrss.org/
+- https://miniflux.net/
 
-This is the product-specific coding-agent skill for **Google News**. Give this file to your coding agent in the project where you want the product built. RAE’s goal is “We don't need FAANG anymore. Use your agent to build any of their products. RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google.” Use that ambition to work toward the user’s requested product, not to overstate current evidence or completion. Research the product, choose what to reuse, build an independent implementation in the user’s project and verify it. Do not reproduce proprietary internals, protected assets or branding, and do not claim blanket feature parity; turn verified public behavior into an evidence-backed, traceable build plan.
+---
 
-**Important evidence limit:** the product dossier has research status **pending**. The catalog summary is a starting brief, not a complete verified specification; its capability list may be incomplete. Research public behavior first, fill the coverage ledger, and report unknowns honestly while making progress on verified scope.
+# 14. Open questions
 
-### Evidence to inspect first
+- Full feature inventory and technical architecture are not yet researched.
 
-1. Read the product dossier with `rae research dossier google-news` and review its research status (**pending**). When using the source repository, read `research/companies/google/products/google-news.md`. A generated kit or successful metadata lookup does not prove that claims have been researched. Resolve placeholders and contradictions before implementation.
-2. Review the public web-surface observation if available. It records only an unauthenticated page, not internal architecture or authenticated behavior. Compare observations with cited official sources; do not infer private workflows from page appearance.
-3. Verify each material product and alternative claim against official documentation, public standards, or the referenced project itself. Record URLs, access dates, supported claims, assumptions, conflicts and unknowns. Do not sign in, bypass controls, reverse-engineer proprietary binaries, or copy source, protected assets or branding.
-4. Check the actual repository conventions and existing workspace before adding dependencies or selecting a stack. Keep license obligations and third-party rights visible in the plan. If a dossier is pending, stale or too thin to support requirements, make the next task evidence gathering—not speculative implementation.
+---
 
-### Evidence standard and source ledger
+# 15. Research history
 
-- Start with the official product page and official documentation when recorded. The **Sources** list labels official documentation separately from candidate-project research leads.
-- The dossier research status is **pending**. Catalog summaries, capabilities, alternative status, verdicts and gaps are leads—not a verified specification. Never silently promote a claim to verified.
-- For each material requirement, attach a public URL, access date, the specific claim supported, confidence, and any conflict/unknown. A source link by itself is not claim-level evidence.
-- Separate directly observed behavior, official documentation, third-party reporting, inference, design choice, and unknowns. Do not infer behavior or internals from branding, marketing language, a screenshot or an unauthenticated page.
-- If sources conflict or evidence is inaccessible, record the uncertainty and ask for a decision only when it blocks safe, useful progress. Never fabricate defaults, APIs, compatibility, scale, guarantees or parity.
+- v1: dossier created; research pending.
 
-| Claim / requirement | Source URL + access date | Supported behavior | Source type | Confidence | Conflict / unknown | Decision |
-|---|---|---|---|---|---|---|
-| Add one row per material behavior before implementation | Public, authorized source required | Quote or paraphrase only what it supports | Official / observed / third-party / inference | Verified / partial / unknown | Record explicitly | Include / exclude / defer |
+---
 
-Research lens: **media** — Ingest/upload, metadata, processing/transcoding, storage, playback/rendering, discovery, sharing, rights/consent, moderation, accessibility, device formats and content that must be supplied or licensed separately.
+# 16. Alternative comparison (continued)
 
-Unknowns are first-class outputs. Do not guess product behavior to fill a blank. When no reliable evidence exists, mark the requirement unverified, propose a bounded assumption only if safe and reversible, and ask the user to approve scope decisions that materially change the product.
+RSS covers following sources; Google's editorial ranking and personalization have no equivalent.
 
-### Reuse/build decision
+---
 
-A mature candidate is listed. Evaluate it as a possible foundation, but do not treat the candidate listing as the product build or substitute it for the user's request. Build the requested product in the user's project; reuse, integrate or extend candidate components where they fit.
+# 17. RAE implementation strategy (continued)
 
-Current alternative coverage: **mature alternative listed**. This describes the catalog's research into existing projects only; it does not determine whether your agent can build the product. Build it in your project using this skill. Catalog coverage notes: Available for the core job (following sources): FreshRSS is a mature self-hosted news aggregator. The personalized ranking layer is not replicated. RSS covers following sources; Google's editorial ranking and personalization have no equivalent.
+Available for the core job (following sources): FreshRSS is a mature self-hosted news aggregator. The personalized ranking layer is not replicated.
 
-Candidate projects to verify:
+Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
-- **FreshRSS** (AGPL-3.0) — Self-hosted RSS aggregator with a Google Reader-like UI. Source: https://freshrss.org/
-- **Miniflux** (AGPL-3.0) — Minimalist RSS server. Source: https://miniflux.net/
+## 15. Downstream execution instructions
 
-### Product behaviors and workflow coverage ledger
-
-Treat catalog capability bullets as a seed list, not a complete backlog. Decompose compound bullets into separate user-observable workflows. Find missing primary journeys, administration, onboarding, settings, accessibility, data portability, safety, abuse, failures, recovery and cross-platform differences from public evidence. Keep direct equivalents and intentionally different design decisions distinct.
-
-- **GOOGLE-NEWS-CAP-001 — Aggregation across publishers:** identify the user/actor, goal, entry point, prerequisite, happy path, alternate/error/permission-denied path, resulting state, platform, data effects, evidence and acceptance check. Decompose compound capability bullets into distinct independently testable workflows where needed.
-- **GOOGLE-NEWS-CAP-002 — Personalized feed:** identify the user/actor, goal, entry point, prerequisite, happy path, alternate/error/permission-denied path, resulting state, platform, data effects, evidence and acceptance check. Decompose compound capability bullets into distinct independently testable workflows where needed.
-- **GOOGLE-NEWS-CAP-003 — Alerts and follow topics:** identify the user/actor, goal, entry point, prerequisite, happy path, alternate/error/permission-denied path, resulting state, platform, data effects, evidence and acceptance check. Decompose compound capability bullets into distinct independently testable workflows where needed.
-
-| Requirement ID | Behavior / user job (catalog lead) | Evidence + date | Confidence | Scope | Acceptance test / manual check |
-|---|---|---|---|---|---|
-| GOOGLE-NEWS-CAP-001 | Aggregation across publishers | **Missing: verify against public sources** | Unknown until verified | Untriaged: include, exclude with reason, or defer | Define observable success and negative/error cases |
-| GOOGLE-NEWS-CAP-002 | Personalized feed | **Missing: verify against public sources** | Unknown until verified | Untriaged: include, exclude with reason, or defer | Define observable success and negative/error cases |
-| GOOGLE-NEWS-CAP-003 | Alerts and follow topics | **Missing: verify against public sources** | Unknown until verified | Untriaged: include, exclude with reason, or defer | Define observable success and negative/error cases |
-
-Ingest/upload, metadata, processing/transcoding, storage, playback/rendering, discovery, sharing, rights/consent, moderation, accessibility, device formats and content that must be supplied or licensed separately.
-
-For every in-scope behavior, record the actor, user goal, trigger, preconditions, inputs, expected visible/system result, state transition, permissions, main path, alternate/invalid/denied/timeout/retry/recovery paths, data/privacy effects, platform constraints, public evidence and confidence. Use stable requirement IDs (for example `GOOGLE-NEWS-REQ-001`), and trace each ID from evidence → workflow → specification/contract → implementation → automated test or named manual check. Maintain a **coverage ledger** showing implemented, tested, partial, not started, excluded-with-reason, or unknown; never call the product “complete” while required rows are unimplemented or unverified.
-
-### Questions that expose missing workflows and product edges
-
-- Who is the intended user, and which first-party jobs matter most? Which jobs vary by role, account state, locale, platform or subscription/entitlement?
-- What are the complete lifecycle and state transitions (create, read, update, share, revoke, archive, delete, restore)? What persists and what is ephemeral?
-- What identity, access-control, ownership, consent and delegation rules govern each action? How are unauthorized and revoked actions handled?
-- What are the import/export, interoperability, migration and data portability needs? Which data/content must the user supply or license?
-- What are expected scale, latency, availability, offline and recovery behaviors? Which are documented facts versus targets chosen for this implementation?
-- What legal, privacy, safety, abuse, retention, regional and accessibility considerations change the design?
-
-A comprehensive implementation targets the user’s requested scope and all verified in-scope workflows, not every imagined feature. Ask the user to choose only where evidence leaves materially different valid product decisions; otherwise continue with a documented, reversible choice.
-
-### Build the product in the user's project
-
-Use the product skill from the project where the user wants **Google News** built. Review that project's conventions and existing code, then create a traceable plan for the complete user-requested scope. Deliver it in working vertical slices: each slice should connect the real interface, domain behavior, data/contracts and tests. Do not stop after a static mock, empty scaffold, isolated API or happy-path-only demo unless that is the approved scope. The catalog and optional scaffold provide guidance; implementation belongs in the user's project. If evidence is insufficient for a behavior, research it before coding or mark the behavior blocked with a precise question.
-
-### End-to-end implementation milestones
-
-1. **Orient:** identify the real user project, its existing architecture, conventions, tests, deployment target and constraints. Do not overwrite it or scaffold a parallel app without approval.
-2. **Research:** create an evidence ledger and unknowns list; verify intended users, user jobs, full observable workflows, platform matrix, data, permissions, errors, integrations and constraints. Use authorized public sources only.
-3. **Inventory:** enumerate every requested/known capability, related workflows and cross-cutting concerns. Assign stable IDs; classify each as verified, inferred, unknown, in-scope, explicitly excluded, or deferred. Resolve contradictions before treating them as facts.
-4. **Specify:** write a product brief, user journeys, requirements/acceptance scenarios, non-goals, data model, API/events, permissions, threat model, compatibility matrix, quality targets and migration/operations notes appropriate to the project. Keep specifications next to the project implementation when possible.
-5. **Decide reuse:** inspect candidate projects and existing code for actual fit, maintenance, license, security, integration cost and gaps. Reuse is optional and must serve the user’s goal; do not replace the requested product with a competitor. Do not add dependencies before confirming they are needed and acceptable.
-6. **Plan the complete scope:** order work into end-to-end vertical slices. Implement all verified in-scope requirements through successive slices; if time or evidence prevents completion, leave a transparent coverage ledger and a prioritized continuation plan rather than claiming completeness.
-7. **Build:** follow the host project’s stack and patterns. Implement original code and assets, accessible interfaces, safe data handling, explicit states, useful errors and operational observability. Keep interfaces/contracts stable before parallel agent work.
-8. **Verify:** tests trace to requirement IDs; run focused checks, full project tests, static/security checks and compatibility checks that the project supports. Inspect the running artifact through the interface the user will use; capture unrun checks and actual limits.
-9. **Review and deliver:** review functionality, security, accessibility, license/attribution, performance against stated targets, docs, setup, migration and rollback. Report what works, what is partial, what is not implemented, evidence gaps, commands and next steps.
-
-### Product implementation prompt
-
-“We don't need FAANG anymore. Use your agent to build **Google News** in this project. Start from this skill, but treat every catalog claim as provisional until you verify it. Research authorized public behavior, define a traceable coverage plan for the full scope I request, reuse suitable open components where they fit, and implement an original, independently written product—not a branded clone. Test the real user journeys, explain what is complete versus partial or unknown, and leave a clear next-step plan for any unimplemented requirements.”
-
-### Required deliverables
-
-- **Evidence ledger:** claim, source URL, source type, access date, exact supported behavior, confidence, contradiction and open question.
-- **Behavior inventory:** capability ID, actor/job, trigger, preconditions, main and alternate paths, state transitions, permissions, platforms, data effects and status.
-- **Product brief:** target users, problem, outcomes, full requested scope, explicit non-goals and measurable quality goals.
-- **Specification set:** user journeys, requirements, acceptance scenarios, architecture/contracts, data model, threat/privacy model, UI states, compatibility, test plan and operational/migration notes as relevant.
-- **Build plan:** reusable components and licenses, vertical slices, ownership/interfaces, dependency decisions, risks and ordered tasks.
-- **Implementation:** integrated working software inside the user’s project, not a mockup or disconnected scaffold, unless that is the scope the user approved.
-- **Verification packet:** requirement-to-test traceability, commands and actual exit codes, manual/browser checks, representative performance data when required, checks not run, limitations and known gaps.
-- **Handoff:** changed files, decisions, risks, setup/run instructions, next actionable work and honest completion status.
-
-### Product quality and verification plan
-
-- Correctness: test the primary user journey end to end, then alternate paths, invalid input, permission denial and recovery.
-- Security/privacy: map assets and trust boundaries; validate identity/authorization server-side; minimize collected data; protect secrets; prevent injection/SSRF/CSRF and abuse where relevant; document encryption, retention, export/delete, and threat assumptions.
-- Accessibility/UX: keyboard and screen-reader operation, semantic labels, focus order, contrast, reduced motion, localization-ready text, useful empty/loading/error states and responsive layouts where applicable.
-- Reliability: retries/idempotency, timeouts, cancellation, partial failure, backups/restore, migrations, monitoring and operational runbooks appropriate to the product.
-- Compatibility: test every claimed platform, protocol, file format, SDK/API version or client; otherwise label it unsupported or unverified.
-- Performance: establish a representative workload and a user-visible target before optimizing; record baseline, measurement method and environment. Do not claim equivalent scale without evidence.
-- Maintainability: dependency/license inventory, reproducible setup, configuration validation, migrations, API contracts, logs/metrics, documentation and clean-checkout verification.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-news` and inspect canonical identity with `npx rae-faang products show google-news --format json`.
+2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
+3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
+4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
+5. Make a minimal dependency-aware plan for a functioning vertical slice.
+6. Implement the slice with original code/assets and the host project’s conventions.
+7. Add deterministic tests for every implemented requirement, including relevant failure and permission paths.
+8. Implement remaining scoped capabilities incrementally; explicitly mark partial, excluded and unknown items.
+9. Review security, privacy, dependencies, licensing, accessibility and compatibility.
+10. Run actual project checks and inspect behavior through the interface the user will use.
+11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
+12. Document deviations, unimplemented requirements, limitations and checks not run.
+13. Report requirement → code → test evidence and actual command results.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-news --out ./google-news.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-news --out ./google-news-agent`.
 
 ### Multi-agent task plan and outputs
 
-1. **Researcher (single owner of evidence packet):** verify identity, lifecycle, intended users, user jobs, workflows, capability claims, alternatives and licenses; record claim-level citations and unknowns. If the source catalog is available, update `research/companies/google/products/google-news.md`. Do not use a public-page capture as evidence for hidden internals.
-2. **Architect (single owner of interfaces):** decide reuse/integrate/extend/build/research further; choose one verified capability as the candidate first journey; define its scope, non-goals, requirement IDs, system boundaries and contracts. Inspect `./google-news (optional local workspace; choose a writable output directory)/specs/` and replace only missing or placeholder sections with evidence-backed specifications before assigning implementation tasks.
-3. **Implementer agents (frontend/backend or domain-specific):** each claims one non-overlapping task against the approved contracts. Reuse suitable projects and dependencies. Deliver a working end-to-end slice for the selected journey, not disconnected scaffolding; document deviations from the target behavior.
-4. **Tester:** derive tests from the requirement IDs. Cover the selected journey, validation, errors, permissions, accessibility and privacy-sensitive behavior; measure performance only against an explicit representative workload and target.
-5. **Security reviewer:** review trust boundaries, authentication/authorization, sensitive data, abuse cases, dependency/license compliance and clean-room constraints before integration.
-6. **Supervisor/documenter:** review handoffs, integrate only accepted tasks, and keep setup, data import/export, operations and known limitations current.
-
-Each handoff must state owner, changed files, requirement IDs, commands with actual exit codes, checks not run, decisions, risks and one specific next action. Parallelize only after shared interfaces are approved.
+Researcher: own the evidence ledger and unknowns. Architect: approve scope, boundaries and contracts before parallel work. Implementers: deliver non-overlapping, integrated vertical slices. Tester: map acceptance checks to requirement IDs. Reviewer: inspect privacy, security, accessibility and license risk. Documenter: preserve setup and limitations. Handoffs record changed files, requirement IDs, commands/exit codes, checks not run and one specific next action.
 
 ### Acceptance criteria and definition of done
 
-- The user’s target and implementation scope are explicit. Every material workflow is represented in the capability inventory; exclusions, assumptions and known gaps have reasons.
-- Each in-scope requirement has an evidence/confidence record and observable acceptance criteria. Requirements trace to implementation and to a passing automated test or repeatable manual check; unverified requirements stay labeled.
-- Primary and alternate user journeys work end to end through the interface the user will use, with real data/state behavior—not a visual-only mock—unless the user requested a prototype.
-- Tests cover success, empty/new state, invalid input, permissions, errors, retries/timeouts, interruption/recovery, persistence and boundary cases relevant to the behavior.
-- Accessibility, privacy/security, licensing, compatibility and operational readiness are reviewed for the chosen scope. Setup works from a clean checkout; migrations, backup/restore or deployment steps are documented where applicable.
-- Product-specific test/build/lint/security checks are run and actual exit codes recorded. Run the generated workspace's own checks and ACE configuration check when available. If working from the RAE source checkout, also run `npm run validate` and `npm test`; otherwise use the installed CLI's `rae research validate` for catalog integrity.
-- Report implemented/partial/not-started/unknown requirement counts, unrun checks, known limitations and the next task. A reviewer accepts the implementation and handoff. Passing tests prove only the tested behavior—not parity with Google News or undocumented internals.
+- Every in-scope behavior has a unique requirement ID, evidence/confidence, bounded scope, measurable acceptance oracle and associated test/manual check.
+- Each implemented requirement maps to code and a deterministic passing test or repeatable manual observation; unknown requirements remain blocked/unknown.
+- Primary and relevant alternate/failure workflows run through the user-facing interface; partial/excluded scope and recovery behavior are documented.
+- Security, privacy, dependency/license, accessibility, compatibility, setup, project checks, and unrun checks are reported honestly.
+- Requirement trace is evidence → workflow → specification/contract → implementation → automated test; passing specification checks do not claim target parity.
 
-### Repository entry points
+### Product quality and verification plan
 
-- Product description and known capability areas: see the product section above. This catalog summary is a research lead, not a verified complete specification.
-- Product-type research checklist: Ingest/upload, metadata, processing/transcoding, storage, playback/rendering, discovery, sharing, rights/consent, moderation, accessibility, device formats and content that must be supplied or licensed separately.
-- Product metadata: `rae products show google-news --format json`.
-- Research dossier: retrieve it from the installed CLI with `rae research dossier google-news`; source file when working in the repository: `research/companies/google/products/google-news.md`.
-- Alternative candidates and coverage: `rae alternatives list --product google-news`; source landscape file when available: `catalog/skills/google/google-news.md`.
-- Optional local product workspace/specifications: `./google-news (optional local workspace; choose a writable output directory)`.
-- Opportunity decision, when present in the source repository: `opportunities/google-news.md`.
-- Official product page: https://news.google.com/.
-- Research status: **pending**; alternative coverage: **mature alternative listed**. This coverage label describes existing-project research only, not the ability to build this product.
+- Correctness: tested success, empty, malformed, denied, duplicate, timeout/retry, cancellation, partial failure and recovery cases as relevant.
+- Security/privacy: trust boundaries, least privilege, secret handling, data minimization, retention/export/deletion and abuse controls.
+- UX/accessibility: keyboard/screen reader, labels/focus, loading/empty/error/success states, responsive behavior and reduced motion where relevant.
+- Reliability/performance: reproducible setup, migrations, backup/restore, observability, representative workloads and measured targets before claims.
+- Compatibility/licensing: test claimed versions/platforms; check direct/transitive license obligations and dependencies.
 
-### Capability coverage ledger
+### End-to-end implementation milestones
 
-Use the table as a live planning artifact in the user’s project. Split a catalog bullet when it contains multiple independently testable workflows; add evidence-discovered behaviors not listed here; never mark “complete” without a source and a verified acceptance check. Keep out-of-scope decisions visible.
+Follow the seven dependency-aware phases in the roadmap above. Prefer a complete, tested vertical slice over disconnected scaffolding; continue remaining verified in-scope requirements and record blockers.
 
-| Requirement | User/actor + goal | Evidence/confidence | Acceptance scenario | Implementation/test link | Status/exception |
-|---|---|---|---|---|---|
-| GOOGLE-NEWS-CAP-001: Aggregation across publishers | Discover and verify | Missing until claim-level source is recorded | Main, alternate, invalid and denied path | Add source → spec → code → test links | Untriaged: include, exclude with reason, or defer |
-| GOOGLE-NEWS-CAP-002: Personalized feed | Discover and verify | Missing until claim-level source is recorded | Main, alternate, invalid and denied path | Add source → spec → code → test links | Untriaged: include, exclude with reason, or defer |
-| GOOGLE-NEWS-CAP-003: Alerts and follow topics | Discover and verify | Missing until claim-level source is recorded | Main, alternate, invalid and denied path | Add source → spec → code → test links | Untriaged: include, exclude with reason, or defer |
+### Required deliverables
 
+- Evidence ledger, behavior/capability map, prioritized unknowns and source limitations.
+- User scope, architecture/data/API decisions with original-vs-proposed labels, and a candidate reuse/license evaluation.
+- Working implementation, requirement-to-test traceability, actual project check results and interface-level verification.
+- Documented deviations, partial/not-started/excluded requirements, unrun checks, setup and next actionable step.
 
-### Installed-CLI workflow
+### Provenance
 
-Use the installed RAE CLI; no source checkout is required. Inspect product metadata with `rae products show google-news --format json` and retrieve dossier contents with `rae research dossier google-news` (or add `--format json` for machine-readable output). Check catalog readiness with `rae research coverage` and `rae research validate`. These checks validate catalog structure, not whether all product claims are researched or current. Generate a portable agent kit with `rae google-news --out ./google-news-agent`. Give the generated skill to your coding agent in the project where you want this product built. A starter workspace is optional: scaffold one with `rae build product google-news --out ./google-news` only if useful. Keep generated outputs separate; inspect existing paths before writing and do not overwrite existing work. For current product behavior, verify public sources and maintain the coverage ledger below.
-
+- Product: [catalog/products.jsonl](../../products.jsonl) (`google-news`).
+- Dossier: [research/companies/google/products/google-news.md](../../../research/companies/google/products/google-news.md).
+- REA capture: [catalog/rea/google/google-news.md](../../rea/google/google-news.md) (2026-10-14T03:53:32.601Z); raw record: [catalog/rea/evidence/google-news.json](../../rea/evidence/google-news.json).
+- Curated alternative source: tools/skills/catalog-data.mjs; see candidate qualifications above.
 
 ## Sources
 
-- **Official product surface (identity/observable public behavior):** https://news.google.com/
-- **Catalog research lead (re-check before relying on it):** https://freshrss.org/
-- **Catalog research lead (re-check before relying on it):** https://miniflux.net/
-- **Candidate project — FreshRSS (verify project, license and current status):** https://freshrss.org/
-- **Candidate project — Miniflux (verify project, license and current status):** https://miniflux.net/
-
-## Provenance
-
-- Catalog record: [`catalog/products.jsonl`](../../products.jsonl) (`google-news`)
-- Research dossier: [`research/companies/google/products/google-news.md`](../../../research/companies/google/products/google-news.md)
-- REA web-surface report: [`catalog/rea/google/google-news.md`](../../rea/google/google-news.md)
+- [Official product page](https://news.google.com/) — Google News is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [Google News Public web-surface observation (REA)](https://news.google.com/home?hl=en-US&gl=US&ceid=US:en) — A dated unauthenticated snapshot exposed controls button: Advanced search, button: Search, button: Help, button: Settings, button: Google apps, button: Expand to view forecast, button: Use precise location, button: More - Kimberly Guilfoyle is out as U.S. ambassador to Greece, button: More - Trump fires ambassador to Greece Guilfoyle after reports of misconduct, button: More - White House ousts Kimberly Guilfoyle as US ambassador to Greece, button: More - Pope Leo Found to Have Lung Cancer During Surgery, Vatican Says, button: More - Pope Leo Diagnosed With Lung Cancer After Surgery, button: More - Leo XIV’s Cancer Diagnosis Tests the Assumption of a Long Papacy, button: More - Pope Leo has lung cancer, the Vatican announces after surgery, button: More - New Trump press secretary says she passed bar exam in China, raising eyebrows, button: More - Democrats fear \"more October surprises\" after \"bullshit\" raid on Ilhan Omar's home, button: Manage local news, button: More - NYPD detective stabbed in the Bronx during vacation shares story of survival, button: More - Bronx community holds vigil for young mother pushed off balcony last week, button: More - AS VERIZON PROPOSES TRANSITION AWAY FROM..., link: Google News, combobox: Search for topics, locations & sources, link: Sign in, link: Google Weather, link: Top stories, link: Kimberly Guilfoyle resigns as US ambassador to Greece, link: Kimberly Guilfoyle is out as U.S. ambassador to Greece - The Washington Post - 4 hours ago - By Michael Birnbaum, link: Trump fires ambassador to Greece Guilfoyle after reports of misconduct - Reuters - 13 hours ago - By Simon Lewis, Edward McAllister & Jacob Bogage, link: White House ousts Kimberly Guilfoyle as US ambassador to Greece - CNN - 13 hours ago - By Jennifer Hansler, Kevin Liptak & Kristen Holmes, link: See more headlines & perspectives - Kimberly Guilfoyle resigns as US ambassador to Greece, link: Pope Leo XIV undergoes lung surgery at Rome hospital, link: Pope Leo Found to Have Lung Cancer During Surgery, Vatican Says - The New York Times - 5 hours ago - By Elisabetta Povoledo, link: Pope Leo Diagnosed With Lung Cancer After Surgery - WSJ - 5 hours ago - By Margherita Stancati & Victoria Albert, link: Leo XIV’s Cancer Diagnosis Tests the Assumption of a Long Papacy - The New York Times - 1 hour ago - By Motoko Rich, link: Pope Leo has lung cancer, the Vatican announces after surgery - NPR - 5 hours ago - By Daniel Burke, link: See more headlines & perspectives - Pope Leo XIV undergoes lung surgery at Rome hospital, link: New Trump press secretary says she passed bar exam in China, raising eyebrows - South China Morning Post - 7 hours ago - By Teresa Frontado, link: See more headlines & perspectives - New Trump press secretary says she passed bar exam in China, raising eyebrows, button: More - Democrats fear \, link: Democrats fear \, link: See more headlines & perspectives - Democrats fear \, link: Local news, link: NYPD detective stabbed in the Bronx during vacation shares story of survival - ABC7 New York - 6 hours ago - By Darla Miles, link: See more headlines & perspectives - NYPD detective stabbed in the Bronx during vacation shares story of survival, link: Bronx community holds vigil for young mother pushed off balcony last week - Spectrum News NY1 - 1 hour ago - By Olivia Leach, link: See more headlines & perspectives - Bronx community holds vigil for young mother pushed off balcony last week, link: AS VERIZON PROPOSES TRANSITION AWAY FROM... - Senator Chuck Schumer (.gov) - 2 hours ago, link: See more headlines & perspectives - AS VERIZON PROPOSES TRANSITION AWAY FROM..., link: See more headlines & perspectives - Pope Leo has lung cancer, the Vatican announces after surgery, button: More - The 8-mile hole in a Hawaii national park that no one can explain, link: The 8-mile hole in a Hawaii national park that no one can explain - SFGATE - 9 hours ago - By Ashley Harrell, button: More - Larry David Saw O.J. Simpson at a Country Club the Day Nicole Brown Simpson Was Killed, link: Larry David Saw O.J. Simpson at a Country Club the Day Nicole Brown Simpson Was Killed - Rolling Stone - 13 hours ago - By Jon Blistein, button: More - Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive, link: Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive - USA Today - 6 hours ago - By Taijuan Nichole Moorman & Christopher Cann, link: See more headlines & perspectives - Art of Play lists bird at center of Kelly Clarkson feud for $15M \| Exclusive, button: More - Bumble agrees to a $1.3B acquisition deal as online dating faces a reset, link: Bumble agrees to a $1.3B acquisition deal as online dating faces a reset - TechCrunch - 13 hours ago - By Lauren Forristal, link: See more headlines & perspectives - Bumble agrees to a $1.3B acquisition deal as online dating faces a reset, button: Customize, link: U.S., button: More - Kimberly Guilfoyle Resigns as Ambassador to Greece, link: Kimberly Guilfoyle Resigns as Ambassador to Greece - The New York Times - 1 hour ago - By Tyler Pager, link: See more headlines & perspectives - Kimberly Guilfoyle Resigns as Ambassador to Greece, button: More - Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed, link: Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed - CNN - 6 hours ago - By Alayna Treene, link: See more headlines & perspectives - Trump debates calling off livestream of firing squad execution after learning Fort Hood shooter was paralyzed, button: More - Cornell suspends fraternity parties amid backlash over alleged sexual assault, link: Cornell suspends fraternity parties amid backlash over alleged sexual assault - The Guardian - 34 minutes ago, link: See more headlines & perspectives - Cornell suspends fraternity parties amid backlash over alleged sexual assault, link: World, button: More - Pope Leo diagnosed with lung cancer after 'successful' surgery, link: Pope Leo diagnosed with lung cancer after 'successful' surgery - DW.com - 4 hours ago - By Wesley Rahn & Elizabeth Schumacher, link: See more headlines & perspectives - Pope Leo diagnosed with lung cancer after 'successful' surgery, button: More - 13 dead, 7 hospitalised after boat capsizes in Bihar's Vaishali; 3-4 still missing, link: 13 dead, 7 hospitalised after boat capsizes in Bihar's Vaishali; 3-4 still missing - The Times of India - 10 hours ago - By Faryal Rumi, link: See more headlines & perspectives - 13 dead, 7 hospitalised after boat capsizes in Bihar's Vaishali; 3-4 still missing, button: More - Saudi Energy Giant Struck as War Spikes Between Houthis and Saudi Arabia, link: Saudi Energy Giant Struck as War Spikes Between Houthis and Saudi Arabia - The New York Times - 2 hours ago - By Ismaeel Naar & Pranav Baskar, link: See more headlines & perspectives - Saudi Energy Giant Struck as War Spikes Between Houthis and Saudi Arabia, link: Business, button: More - Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight, link: Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight - The New York Times - 1 hour ago - By Rob Copeland, link: See more headlines & perspectives - Bank of America Fined $1.2 Billion for Lax Money-Laundering Oversight, button: More - FBI arrests Saudi OpenAI engineer over covert recording device, DOJ says, link: FBI arrests Saudi OpenAI engineer over covert recording device, DOJ says - Reuters - 4 hours ago - By Jaspreet Singh, link: See more headlines & perspectives - FBI arrests Saudi OpenAI engineer over covert recording device, DOJ says, link: Dow Jones -0.35% 51,670.10, link: S&P 500 -0.02% 7,805.45, link: Nasdaq -0.15% 27,204.38, link: Disclaimer, link: More from Google Finance, link: Technology, button: More - Apple’s new smart home lineup includes a smart lock, thermostat, and video doorbells, link: Apple’s new smart home lineup includes a smart lock, thermostat, and video doorbells - TechCrunch - 14 hours ago - By Lauren Forristal, link: See more headlines & perspectives - Apple’s new smart home lineup includes a smart lock, thermostat, and video doorbells, link: Entertainment, link: Sports, button: More - Shohei Ohtani will be in Dodgers' Game 3 NLCS lineup, Dave Roberts says, link: Shohei Ohtani will be in Dodgers' Game 3 NLCS lineup, Dave Roberts says - ESPN - 3 hours ago - By Alden Gonzalez, link: See more headlines & perspectives - Shohei Ohtani will be in Dodgers' Game 3 NLCS lineup, Dave Roberts says, button: More - Five key takeaways from F1's big African Grand Prix reveal in Rwanda, link: Five key takeaways from F1's big African Grand Prix reveal in Rwanda - Motorsport.com - 9 hours ago - By Filip Cleeren, link: See more headlines & perspectives - Five key takeaways from F1's big African Grand Prix reveal in Rwanda, link: Investor's Business Daily, button: Follow this source - Investor's Business Daily, link: Nasdaq-100, Small Caps Lead Dip; Applied Materials Whacked, link: UnitedHealth Climbs As Earnings, Medical Costs Beat Forecasts, link: JPMorgan, Goldman Sachs, Citigroup, Wells Fargo Report, button: More - Investor's Business Daily, link: The Bend Bulletin, button: Follow this source - The Bend Bulletin, link: Vote for The Bulletin’s Athletes of the Week for Oct. 5-10, link: What are people doing to help with Medicaid coverage, link: Downtown Bend pool hall, bar to close, button: More - The Bend Bulletin, link: Whidbey News-Times, button: Follow this source - Whidbey News-Times, link: Whidbey gets into the Halloween spirit, link: Deleted Facebook comment raises public records concerns, button: More - Whidbey News-Times, link: See more sources, button: See more sources, button: More - Amazon has over 1 million robot workers. What’s next for human employees?, link: Amazon has over 1 million robot workers. What’s next for human employees? - Ars Technica - 2 days ago - By Jeremy Hsu, button: More - The Pentagon Gave $350 Million in Contracts to a Firm Closely Tied to a Senior Defense Department Official, link: The Pentagon Gave $350 Million in Contracts to a Firm Closely Tied to a Senior Defense Department Official - ProPublica - 5 days ago - By Robert Faturechi & Aaron Davis, button: More - Shape-sensing sheet digitally tracks its movement as it bends and twists, link: Shape-sensing sheet digitally tracks its movement as it bends and twists - MIT News - 6 days ago - By Jennifer Chu, button: More - One with the world? A new look at brains transformed by psychedelics., link: One with the world? A new look at brains transformed by psychedelics. - Ars Technica - 4 days ago - By Jacek Krywko and landmarks banner, search, main, navigation. (VERIFIED; accessed 2026-10-14T03:53:32.601Z).

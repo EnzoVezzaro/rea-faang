@@ -102,11 +102,14 @@
 <li><strong>PostgreSQL 16+</strong> for products with a database</li>
 <li>An agent runtime (for example <strong>opencode</strong>) if you intend to run ACE agents</li>
 </ul>
-<p>The CLI and ACE run on Node.js. <code>npm install</code> also installs the packages listed in this repository's <code>package.json</code>. You do not need a database or a running service to browse and validate the catalog.</p>
+<p>The CLI and ACE run on Node.js. Installing the source checkout with <code>npm install</code> installs packages listed in its <code>package.json</code>. A global or one-off npm CLI install does not require a database or a running service to browse and validate the bundled catalog.</p>
 <h2 id="install-the-cli">Install the CLI</h2>
+<pre><code class="language-bash">npx rae-faang --help
+npx rae-faang products list</code></pre>
+<p>For repeated use, install the published package globally; it provides both <code>rae</code> and <code>rae-faang</code> commands:</p>
 <pre><code class="language-bash">npm install -g rae-faang
 rae --help</code></pre>
-<p>The published package provides <code>rae</code> and <code>rae-faang</code> commands. It includes the catalog, dossiers, candidate projects and schemas, so you can browse products, check catalog data and generate a skill without a source checkout.</p>
+<p>The package includes the catalog, dossiers, candidate projects and schemas, so you can browse products, check catalog data and generate a skill without a source checkout.</p>
 <h2 id="work-from-the-source-repository">Work from the source repository</h2>
 <p>Clone the repository only when you need to edit catalog/source files, run the full project test suite and generators, or use repository-only tools such as REA capture:</p>
 <pre><code class="language-bash">git clone &lt;your-repo-url&gt; rae-faang
@@ -114,39 +117,42 @@ cd rae-faang
 npm install</code></pre>
 <h2 id="check-your-setup">Check your setup</h2>
 <p>Run the tests and catalog checks, then make sure ACE can read its configuration:</p>
-<pre><code class="language-bash">rae research coverage                 # product research status
-rae research validate                 # bundled catalog integrity
+<pre><code class="language-bash">npx rae-faang research coverage  # product research status
+npx rae-faang research validate  # bundled catalog integrity
 
 # In a source checkout only:
-npm test                              # deterministic project suite
-npm run validate                      # catalog + research + generated-artifact integrity
+npm test                               # deterministic project suite
+npm run validate                       # catalog + research + generated-artifact integrity
 ace status                             # ACE environment overview
 ace config check                       # ace/v1 config validates</code></pre>
 <p>The tests should pass, validation should report no errors, and <code>ace config check</code> should print <code>config: OK</code>.</p>
 <h2 id="browse-products-and-get-an-agent-skill">Browse products and get an agent skill</h2>
 <p>Use the CLI to browse products, review alternative research and generate a Markdown skill for your coding agent. Start with its help:</p>
-<pre><code class="language-bash">rae --help</code></pre>
-<p>Common commands:</p>
+<pre><code class="language-bash">npx rae-faang --help</code></pre>
+<p>Common one-off commands from npm:</p>
 <pre><code class="language-bash"># What products do we track?
-rae products list
-rae products list --company google --format json
+npx rae-faang products list
+npx rae-faang products list --company google --format json
 
 # One product and its evidence dossier
-rae products show google-search
-rae research dossier google-search
+npx rae-faang products show google-search
+npx rae-faang research dossier google-search
 
 # How complete is the research?
-rae research coverage
-rae research pending
+npx rae-faang research coverage
+npx rae-faang research pending
 
 # What is missing?
-rae gaps all
-rae opportunities validate
+npx rae-faang gaps all
+npx rae-faang opportunities validate
 
-# Generate the Google Search skill for your coding agent
-rae google-search --out ./google-search-agent</code></pre>
+# Generate one portable Google Search skill for your coding agent
+npx rae-faang google-search --out ./google-search.md
+
+# Use `rae` after a global npm install
+rae google-search --out ./google-search.md</code></pre>
 <p>Full reference: <a href="cli-reference.html">cli-reference.md</a>.</p>
-<p>Give the generated skill to your coding agent from the project where you want to work. It points the agent to product research and candidate projects, and helps it plan, build and test a scoped implementation. Alternative-coverage status describes the catalog's reuse research; it does not measure build feasibility.</p>
+<p>The product-ID command writes one Markdown file at <code>--out</code> (default <code>./&lt;product-id&gt;.md</code>). Give that file to your coding agent from the project where you want to work. It points the agent to product research and candidate projects, and helps it plan, build and test a scoped implementation. Alternative-coverage status describes the catalog's reuse research; it does not measure build feasibility. For batch skill generation, JSON reports or bundled-skill validation, use the explicit <code>skills generate</code>, <code>skills coverage</code> and <code>skills validate</code> commands in the CLI reference.</p>
 <h2 id="use-ace-to-coordinate-agents">Use ACE to coordinate agents</h2>
 <p>ACE (<code>ace-proagents</code>) reads its configuration from the <code>ace</code> key in the root <code>package.json</code>. Check its status and available tools with:</p>
 <pre><code class="language-bash">ace --help
@@ -156,7 +162,7 @@ ace crew              # roster and budget
 ace adapters list     # available providers
 ace doctor --json     # diagnostics</code></pre>
 <h3>Product workspaces</h3>
-<p>In a source checkout, existing product workspaces under <code>products/&lt;company&gt;/&lt;product&gt;/</code> can run ACE. To build a product, give its Markdown skill to your coding agent in your project. A starter workspace is optional: scaffold one with <code>rae build product &lt;id&gt; --out ./&lt;id&gt;</code> and install its dependencies before running its ACE shim:</p>
+<p>In a source checkout, existing product workspaces under <code>products/&lt;company&gt;/&lt;product&gt;/</code> can run ACE. To build a product, give its Markdown skill to your coding agent in your project. A starter workspace is optional: scaffold one with <code>npx rae-faang build product &lt;id&gt; --out ./&lt;id&gt;</code> and install its dependencies before running its ACE shim:</p>
 <pre><code class="language-bash">cd products/netflix/netflix-streaming
 ace status
 ace config check</code></pre>
@@ -172,8 +178,9 @@ npm run validate         # research + alternatives + skills + site integrity
 npm run verify           # validate + test
 npm run gaps             # inventory shortfall report
 npm run site:build       # regenerate the public website into site/
-rae &lt;cmd&gt;               # installed CLI (use npx rae in a source checkout)
-ace &lt;cmd&gt;              # any ACE command</code></pre>
+npx rae-faang &lt;command&gt; # one-off published CLI; `rae &lt;command&gt;` after global install
+npm run cli -- &lt;cmd&gt;     # source checkout only
+ace &lt;cmd&gt;               # ACE command (source checkout/workspace dependencies)</code></pre>
 <h2 id="troubleshooting">Troubleshooting</h2>
 <div class="table-wrap"><table>
 <thead>

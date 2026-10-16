@@ -63,23 +63,31 @@ research dossiers, and open-source landscape.
 **Use a skill without installing anything**
 
 ```bash
-npx rae-faang products list         # every catalogued product
-npx rae-faang research coverage     # how researched is the catalog?
-npx rae-faang gaps all              # what is missing?
+npx rae-faang products list       # every catalogued product
+npx rae-faang research coverage   # how researched is the catalog?
+npx rae-faang gaps all            # what is missing?
 ```
 
-`rae-faang` also installs a `rae` alias, so `npx rae products list` works
-the same way.
+The npm package exposes both `rae` and `rae-faang` executable names. For a
+one-off command, invoke the published package as `npx rae-faang ...`;
+after `npm install -g rae-faang`, use `rae ...`.
 
-**Use the skill pipeline on a product**
+**Generate a product skill from npm**
 
 ```bash
-npx rae-faang alternatives clone google-firebase --alt "Supabase"  # clone a verified candidate repo
-npx rae-faang google-search                            # generate the product's agent kit
+npx rae-faang google-search --out ./google-search.md
 ```
 
-Prefer a global install: `npm install -g rae-faang`, then run the same commands as
-`rae products list`.
+This product-ID shorthand writes one portable Markdown skill to the path you
+choose (or `./<product-id>.md` by default). Give that file to your coding agent
+in the project where you want to build. For repeated use, install globally with
+`npm install -g rae-faang`, then run `rae google-search --out ./google-search.md`.
+
+The longer `skills generate <product-id>` form is also available for batch
+runs and JSON reports. `skills validate` checks the bundled canonical skills;
+run `npm run validate` from a source checkout to check repository output drift.
+If you specifically want a directory containing both `skill.md` and `mcp.json`,
+use `npx rae-faang build agent-kit gmail --out ./gmail-agent`.
 
 **Work on the catalog itself (contributors)**
 

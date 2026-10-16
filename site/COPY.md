@@ -8,7 +8,7 @@
 
 Built with the [`copywriting`](https://github.com/coreyhaines31/marketingskills/blob/main/skills/copywriting/SKILL.md) skill for conversion structure and [`humanizer`](https://github.com/blader/humanizer) to keep the prose direct and natural.
 
-The landing page is generated. Edit the copy here and mirror changes in `homePage()` in [`tools/site/templates.mjs`](../tools/site/templates.mjs), then run `npm run site:build`. Counts come from catalog data at build time.
+The landing page is generated. Edit the copy here and mirror changes in `homePage()` in [`tools/site/templates.mjs`](../tools/site/templates.mjs), then run `npm run site:build`. Public npm examples should use `npx rae-faang <product-id> --out ./<product-id>.md` for one Markdown skill; reserve `build agent-kit` for the optional `skill.md` + `mcp.json` directory. Counts come from catalog data at build time.
 
 ## Inputs
 
@@ -67,7 +67,7 @@ Product pages link to research, candidate projects and a Markdown skill for a co
 
 - **Headline:** Choose a product. Build it with your agent.
 
-1. **The catalog:** 77 products, each with a company, type, official URL and lifecycle status. Browse or filter the inventory.
+1. **The catalog:** 77 products, each with a company, type, official URL and lifecycle status. Browse or filter with `npx rae-faang products list`.
 2. **Candidate projects:** Product pages list projects that may cover similar user needs. 40 products have a mature candidate listed, including SearXNG, Jellyfin, Ceph and Mailcow. Review each project's coverage before choosing it.
 3. **The product skill:** Every product has a downloadable Markdown skill with product context, research, candidates and build-and-test directions. Give the skill to your coding agent in your project.
 4. **The research:** Product dossiers cite sources. REA reports record observations from public web pages; they do not show private workflows or internal implementation.
@@ -94,7 +94,7 @@ Product pages link to research, candidate projects and a Markdown skill for a co
 
 ### Data points
 
-- **77** products across **6** company entries: `rae products list`
+- **77** products across **6** company entries: `npx rae-faang products list`
 - **77** research dossiers with frontmatter checks: `npm run validate`
 - **77** REA reports of public web pages with captured evidence: `npm run rea:catalog`
 - **77** product skills: **40 mature candidate / 29 partial coverage / 8 no verified alternative**: `npm run skills:catalog`
@@ -154,7 +154,7 @@ Use a two-column body on desktop and stack it on mobile. Include:
 1. **At a glance** — what the product does and its core capabilities.
 2. **Candidate projects** — include project links, license and the CLI command; explain that a candidate may cover all, part or none of the target's user needs.
 3. **Coverage and gaps** — summarize the research and the remaining gap.
-4. **Product skill** — identify `agent-kit.md` as the product-specific Markdown skill; show `npx rae-faang <id>` and the download. Explain that the user gives the skill to their coding agent in the project where the implementation will live. Keep optional MCP configuration and workspace scaffolding secondary.
+4. **Product skill** — identify `agent-kit.md` as the product-specific Markdown skill; show `npx rae-faang <id> --out ./<id>.md` and the download. Explain that the user gives the skill to their coding agent in the project where the implementation will live. Keep optional MCP configuration and workspace scaffolding secondary.
 5. **Evidence** — link the catalog record, research dossier, REA report when available and skill file.
 6. **Next step** — review the skill and candidate projects, then plan work in the user's project.
 

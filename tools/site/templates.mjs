@@ -327,7 +327,7 @@ ${heroProducts}
         <div class="wrap">
           <div class="section-head reveal-target" data-reveal>
             <h2 id="map-h">${total} products your agent can build.</h2>
-            <p class="section-lede">Explore products from Meta, Amazon, Apple, Netflix and Google. Each record links to product research, candidate projects and build instructions for your coding agent.</p>
+            <p class="section-lede">Explore products from Meta, Amazon, Apple, Netflix and Google. Each record links to research, candidate projects and build instructions. Use the published npm CLI with <span class="mono">npx rae-faang &lt;product-id&gt; --out ./&lt;product-id&gt;.md</span>, or download a ready-to-use skill below.</p>
           </div>
           <div class="catalog-glyph-field">
 ${catalogGroups}
@@ -488,26 +488,26 @@ ${catalogGroups}
             <ul class="principles">
               <li>
                 <strong>${total}</strong> products catalogued across 6 company
-                entries: <span class="mono">rae products list</span>
+                entries: <span class="mono">npx rae-faang products list</span>
               </li>
               <li>
-                <strong>${total}</strong> research dossiers; schema checks run with <span class="mono">npm run validate</span>
+                <strong>${total}</strong> research dossiers; check bundled catalog integrity with <span class="mono">npx rae-faang research validate</span>
               </li>
               <li>
                 <strong>${reaCount}</strong> REA reports of public web pages, with captured evidence committed;
-                run <span class="mono">npm run rea:catalog</span> to add reports
+                source contributors can refresh them with <span class="mono">npm run rea:catalog</span>
               </li>
               <li>
                 <strong>${counts.available} / ${counts.partial} / ${counts.pending}</strong> mature alternative / partial coverage / no verified alternative
-                research states: <span class="mono">npm run skills:catalog</span>
+                research states: <span class="mono">npx rae-faang alternatives coverage</span>
               </li>
               <li>
                 <strong>${testsCount}</strong> tooling test cases in the repository.
                 Run <span class="mono">npm test</span> for the current results.
               </li>
               <li>
-                <strong>This page</strong> is generated from the same data:
-                <span class="mono">npm run site:build</span>
+                <strong>This page</strong> is generated from catalog data; get portable product instructions with:
+                <span class="mono">npx rae-faang &lt;product-id&gt; --out ./&lt;product-id&gt;.md</span>
               </li>
             </ul>
           </div>
@@ -536,7 +536,8 @@ ${catalogGroups}
               <p>
                 The catalog brings together product behavior, research and open-source projects that
                 may be useful foundations. Review what fits your needs, then ask your coding agent to
-                build and test an independent version in your project. A product skill is available as a direct handoff.
+                build and test an independent version in your project. Download a skill here, or get
+                one with <span class="mono">npx rae-faang &lt;product-id&gt; --out ./&lt;product-id&gt;.md</span>.
               </p>
             </details>
             <details>
@@ -794,7 +795,7 @@ ${description}
 
 ## Research references
 
-- Dossier: ${code(`rae research dossier ${p.id}`)} or [view the repository dossier](${REPO_URL}/blob/main/${researchPath})
+- Dossier: ${code(`npx rae-faang research dossier ${p.id}`)} or [view the repository dossier](${REPO_URL}/blob/main/${researchPath})
 - ${hasRea ? `Public web-surface observation: [${reaPath}](${REPO_URL}/blob/main/${reaPath})` : `No REA capture recorded yet; this does not block research from public official sources.`}
 
 ## Open-source landscape
@@ -811,11 +812,11 @@ ${instructions}
 
 ## CLI commands
 
-- Inspect product metadata: ${code(`rae products show ${p.id} --format json`)}.
-- Read the dossier: ${code(`rae research dossier ${p.id}`)}.
-- Check research readiness: ${code('rae research coverage')} and ${code('rae research validate')}.
-- Generate a copy of this skill and optional MCP config: ${code(`rae ${p.id} --out ./${p.id}-agent`)}. Give ${code('skill.md')} to your coding agent in the project where you want to build.
-- Optionally scaffold a starter workspace: ${code(`rae build product ${p.id} --out ./${p.id}`)}.
+- Inspect product metadata: ${code(`npx rae-faang products show ${p.id} --format json`)}.
+- Read the dossier: ${code(`npx rae-faang research dossier ${p.id}`)}.
+- Check research readiness: ${code('npx rae-faang research coverage')} and ${code('npx rae-faang research validate')}.
+- Generate a copy of this skill and optional MCP config: ${code(`npx rae-faang ${p.id} --out ./${p.id}.md`)}. Give ${code('skill.md')} to your coding agent in the project where you want to build.
+- Optionally scaffold a starter workspace: ${code(`npx rae-faang build product ${p.id} --out ./${p.id}`)}.
 
 ## Sources
 
@@ -838,7 +839,7 @@ export function productPage({ p, prev, next }) {
             </div>
             <p class="alt-covers">${esc(a.covers)}</p>
             <p class="alt-note">${esc(a.note)}</p>
-            <input class="rail-input alt-cmd" type="text" value="${attr(`rae alternatives clone ${p.id} --alt "${a.name}"`)}" title="Click to copy" aria-label="Command to clone ${attr(a.name)}" readonly>
+            <input class="rail-input alt-cmd" type="text" value="${attr(`npx rae-faang alternatives clone ${p.id} --alt "${a.name}"`)}" title="Click to copy" aria-label="Command to clone ${attr(a.name)}" readonly>
           </article>`;
   });
 
@@ -881,9 +882,9 @@ export function productPage({ p, prev, next }) {
 
   const artifactRows = [
     `<li class="artifact"><a class="artifact-name" href="agent-kit.md" download>agent-kit.md</a><span class="artifact-note">Downloadable Markdown skill with product-specific instructions for your coding agent.</span>${statusPill('available', 'available')}</li>`,
-    `<li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — <span class="mono">rae ${attr(p.id)} --out ./${attr(p.id)}-agent</span>.</span>${statusPill('neutral', 'in kit')}</li>`,
-    `<li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — <span class="mono">rae ${attr(p.id)} --out ./${attr(p.id)}-agent</span>.</span>${statusPill('neutral', 'in kit')}</li>`,
-    `<li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">rae build product ${attr(p.id)} --out ./${attr(p.id)}</span>.</span></li>`,
+    `<li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — use <span class="mono">npx rae-faang build agent-kit ${attr(p.id)} --out ./${attr(p.id)}-agent</span>.</span>${statusPill('neutral', 'in kit')}</li>`,
+    `<li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — use <span class="mono">npx rae-faang build agent-kit ${attr(p.id)} --out ./${attr(p.id)}-agent</span>.</span>${statusPill('neutral', 'in kit')}</li>`,
+    `<li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">npx rae-faang build product ${attr(p.id)} --out ./${attr(p.id)}</span>.</span></li>`,
   ].join('\n              ');
 
   const nextStep = openAlt
@@ -927,7 +928,7 @@ export function productPage({ p, prev, next }) {
             </div>
             <div class="rail-block">
               <p class="rail-key">Product skill</p>
-              <input class="rail-input" type="text" value="rae ${attr(p.id)} --out ./${attr(p.id)}-agent" title="Click to copy" aria-label="Command to generate the ${esc(p.name)} skill" readonly>
+              <input class="rail-input" type="text" value="npx rae-faang ${attr(p.id)} --out ./${attr(p.id)}.md" title="Click to copy" aria-label="Command to generate the ${esc(p.name)} skill" readonly>
               <a class="rail-dl" href="agent-kit.md" download>Download Markdown skill</a>
             </div>
             ${openAlt
@@ -974,7 +975,7 @@ ${alts.join('\n')}
               <p>This Markdown file is the coding-agent skill for ${esc(p.name)}. Give it to your agent in your project; it guides research, reuse decisions, implementation and verification.</p>
               <div class="cmd-banner">
                 <p class="cmd-banner-label">Get the ${esc(p.name)} build skill</p>
-                <pre class="cmd-block"><code>rae ${attr(p.id)} --out ./${attr(p.id)}-agent</code></pre>
+                <pre class="cmd-block"><code>npx rae-faang ${attr(p.id)} --out ./${attr(p.id)}.md</code></pre>
                 <p class="cmd-banner-note">Generate the skill with the RAE CLI, or <a href="agent-kit.md" download>download the Markdown skill</a>. The <a href="${skillUrl}">source skill</a> is also available in the catalog.</p>
               </div>
               <ul class="artifact-list">
@@ -1006,7 +1007,7 @@ ${stepper}
               <h2 id="next-h">Next step</h2>
               <div class="callout callout-plain">
                 <p>${nextStep}</p>
-                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">rae build product ${attr(p.id)} --out ./${attr(p.id)}</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
+                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">npx rae-faang build product ${attr(p.id)} --out ./${attr(p.id)}</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
               </div>
             </section>
           </div>

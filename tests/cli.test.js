@@ -171,13 +171,15 @@ test('build agent-kit --out writes skill.md and mcp.json', () => {
     assert.ok(existsSync(join(dir, 'skill.md')), 'skill.md must be written');
     assert.ok(existsSync(join(dir, 'mcp.json')), 'mcp.json must be written');
     const skill = readFileSync(join(dir, 'skill.md'), 'utf8');
+    assert.equal(skill, readFileSync(join(ROOT, 'catalog', 'skills', 'google', 'gmail.md'), 'utf8'), 'portable kit uses the canonical skill compiler');
     assert.match(skill, /## Product description/);
     assert.match(skill, /### Multi-agent task plan and outputs/);
     assert.match(skill, /### Acceptance criteria and definition of done/);
     assert.match(skill, /### Product quality and verification plan/);
     assert.match(skill, /### End-to-end implementation milestones/);
     assert.match(skill, /Research lens: \*\*consumer_application\*\*/);
-    assert.match(skill, /rae research dossier gmail/);
+    assert.match(skill, /npx rae-faang research dossier gmail/);
+    assert.doesNotMatch(skill, /npx --yes/);
     assert.doesNotMatch(skill, /node src\/cli\.js|From a repository clone/);
     const mcp = JSON.parse(readFileSync(join(dir, 'mcp.json'), 'utf8'));
     assert.deepEqual(mcp.mcpServers['rae-cli'], {
@@ -194,18 +196,30 @@ test('alternatives clone errors clearly for an unknown product', () => {
   assert.match(result.stderr, /not found/);
 });
 
-test('product-id shorthand builds the agent kit', () => {
-  const out = mkdtempSync(join(tmpdir(), 'rae-kit-'));
+test('product-id shorthand writes one Markdown skill to --out', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'rae-skill-'));
+  const out = join(dir, 'gmail.md');
   try {
-    const result = run('gmail', '--out', out);
-    assert.equal(result.status, 0);
-    assert.match(result.stdout, /Wrote agent kit/);
-    assert.ok(existsSync(join(out, 'skill.md')));
-    assert.ok(existsSync(join(out, 'mcp.json')));
-    assert.match(readFileSync(join(out, 'skill.md'), 'utf8'), /### Multi-agent task plan and outputs/);
+    const result = spawnSync(process.execPath, [CLI, 'gmail', '--out', out], { cwd: dir, encoding: 'utf8' });
+    assert.equal(result.status, 0, result.stderr);
+    assert.match(result.stdout, /gmail: generated_with_gaps/);
+    assert.ok(existsSync(out));
+    assert.equal(readFileSync(out, 'utf8'), readFileSync(join(ROOT, 'catalog', 'skills', 'google', 'gmail.md'), 'utf8'), 'product shorthand uses the canonical skill compiler');
+    assert.match(readFileSync(out, 'utf8'), /### Multi-agent task plan and outputs/);
+    assert.equal(existsSync(join(dir, 'gmail-agent')), false, 'product skill shorthand must not create an agent-kit directory');
   } finally {
-    rmSync(out, { recursive: true, force: true });
+    rmSync(dir, { recursive: true, force: true });
   }
+});
+
+test('product-id shorthand without --out defaults to ./<product-id>.md', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'rae-skill-'));
+  try {
+    const result = spawnSync(process.execPath, [CLI, 'gmail'], { cwd: dir, encoding: 'utf8' });
+    assert.equal(result.status, 0, result.stderr);
+    assert.ok(existsSync(join(dir, 'gmail.md')));
+    assert.equal(readFileSync(join(dir, 'gmail.md'), 'utf8'), readFileSync(join(ROOT, 'catalog', 'skills', 'google', 'gmail.md'), 'utf8'));
+  } finally { rmSync(dir, { recursive: true, force: true }); }
 });
 
 test('product-id shorthand with --alt still clones the alternative', () => {
@@ -214,15 +228,25 @@ test('product-id shorthand with --alt still clones the alternative', () => {
   assert.match(result.stderr, /No alternative named "NoSuchAlt" for "gmail"/);
 });
 
+test('explicit build agent-kit still writes skill.md and mcp.json', () => {
+  const dir = mkdtempSync(join(tmpdir(), 'rae-kit-'));
+  try {
+    const result = run('build', 'agent-kit', 'gmail', '--out', dir);
+    assert.equal(result.status, 0, result.stderr);
+    assert.ok(existsSync(join(dir, 'skill.md')));
+    assert.ok(existsSync(join(dir, 'mcp.json')));
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});
+
 test('unknown top-level command is still rejected', () => {
   const result = run('no-such-command');
   assert.equal(result.status, 1);
   assert.match(result.stderr, /unknown command/);
 });
 
-test('--help documents the product-id shorthand', () => {
+test('--help documents the product-id Markdown skill shorthand', () => {
   const result = run('--help');
-  assert.match(result.stdout, /Shorthand: build the agent kit/);
+  assert.match(result.stdout, /Generate a product Markdown skill \[--out FILE\]/);
   assert.match(result.stdout, /--alt NAME, clone/);
-  assert.match(result.stdout, /--out DIR/);
+  assert.match(result.stdout, /--out FILE/);
 });

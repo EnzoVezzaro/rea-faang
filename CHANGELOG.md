@@ -3,6 +3,20 @@
 All notable changes to RAE FAANG are recorded here.
 The project follows [semver](https://semver.org/); npm releases match the tags in this repository.
 
+## [Unreleased]
+
+## [0.3.2] - 2026-10-16
+
+### Changed
+
+- Make `npx rae-faang <product-id> --out ./<product-id>.md` the product-skill quick start. The shorthand writes one Markdown file (default `./<product-id>.md`); use `build agent-kit` when a `skill.md` + `mcp.json` directory is wanted. Omit `--yes` so npx retains its normal install-confirmation prompt.
+- Align README, canonical docs, generated skills, product pages and landing copy with the npm CLI behavior; keep source-only workflows clearly identified.
+
+### Added
+
+- Add a deterministic, evidence-aware product skill compiler with single-product and batch CLI generation, output validation, research-gap coverage reports, stable requirement/test IDs and resumable investigation checkpoints.
+- Unify canonical catalog skills and downloadable site skills on the same compiler output; generated skills retain explicit unknowns and candidate limitations rather than inventing unsupported product behavior.
+
 ## [0.3.1] - 2026-10-15
 
 ### Fixed

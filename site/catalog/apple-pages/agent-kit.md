@@ -1,239 +1,421 @@
 ---
-name: build-apple-pages
-description: Coding-agent build skill for Pages. Research the product, assess reusable projects, and build and verify it in your project.
+name: apple-pages
+description: "Evidence-aware build skill for Pages (apple-pages); investigate, assess reuse, implement scoped behavior and verify."
 ---
 
-# Build Pages with your coding agent
+# Pages — implementation skill (`apple-pages`)
 
-| | |
-|---|---|
-| **Target product** | Pages (`apple-pages`) |
-| **Company** | Apple (`apple`) |
-| **Product type** | `productivity_application` |
-| **Official URL** | https://www.apple.com/pages/ |
-| **Alternative coverage** | **mature alternative listed** |
-| **Research status** | **pending** |
+> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+
+> This is the coding-agent build skill for **Pages**. Give this file to your coding agent in the project where you want the product built.
 
 ## Product description
 
-Pages is Apple’s word processor and page-layout app for macOS and iOS, with Apple-native and Word-compatible documents.
+This is the coding-agent skill for **Pages** (`apple-pages`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-Catalog categories: productivity.
+## 1. Product identity and scope
 
-Catalogued capability areas:
-- Word processing and page layout
-- Word/docx import and export
-- Templates, shapes, media placement
+| Field | Canonical record / result | Evidence status and limits |
+|---|---|---|
+| Name / stable ID | **Pages** / `apple-pages` | Product catalog |
+| Company / category | Apple / `productivity_application` / `productivity` | Product catalog |
+| Official website / docs | [https://www.apple.com/pages/](https://www.apple.com/pages/) / Not recorded | URL lead; compiler does not fetch source |
+| Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
+| Intended users, roles, jobs, value | Unknown | No structured evidence |
+| Boundaries / original architecture | Unknown | Do not infer from category or marketing |
+| Independent implementation scope | User-selected; start with evidenced vertical slice | Proposed decision |
+| Exclusions | Proprietary source, protected assets, unauthorized access, unsupported parity claims | Clean-room boundary; further product-specific limits unknown |
 
-This summary reflects the catalog record, not a complete product specification. Verify intended users, end-to-end workflows, supported platforms, edge cases, data handling, and constraints against cited sources. Treat capability labels as research leads until that verification is complete.
+Research lens: **productivity_application** — verify real users/jobs, complete lifecycles, platform/version support, permissions, persistence, failure and recovery behavior. Product type is a question prompt, not evidence of features.
 
-## Research references
+## 2. Product capability map
 
-- Dossier: `rae research dossier apple-pages` or [view the repository dossier](https://github.com/EnzoVezzaro/rea-faang/blob/main/research/companies/apple/products/apple-pages.md)
-- Public web-surface observation: [catalog/rea/apple/apple-pages.md](https://github.com/EnzoVezzaro/rea-faang/blob/main/catalog/rea/apple/apple-pages.md)
+Capability labels are leads, not complete verified behavior.
 
-## Open-source landscape
+| Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
+|---|---|---|---|---|
+| `APPLE-PAGES-CAP-2E9FF279` | Word processing and page layout | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `APPLE-PAGES-CAP-D94820E4` | Word/docx import and export | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `APPLE-PAGES-CAP-DA98103E` | Templates, shapes, media placement | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
-- **LibreOffice Writer** (MPL-2.0) — https://www.libreoffice.org/
-  Full word processor with strong format support. Note: The main open replacement.
-- **OnlyOffice Docs** (AGPL-3.0) — https://www.onlyoffice.com/
-  Collaborative word processing. Note: Strong MS-format fidelity.
-- **Calligra Words** (GPL-2.0) — https://calligra.org/
-  KDE word processor with layout features. Note: Alternative in the KDE stack.
+## 3. Complete user workflows
 
-## Gap and verdict
+**Observed start page, not a completed workflow:** dated capture exposes `button: Store menu`, `button: Mac menu`, `button: iPad menu`, `button: iPhone menu`, `button: Watch menu`, `button: Vision menu`, `button: AirPods menu`, `button: Home menu`, `button: Entertainment menu`, `button: Accessories menu`, `button: Support menu`, `button: Search Support`, `button: Shopping Bag`, `button: Submit`, `link: Apple`, `link: Store`, `link: Mac`, `link: iPad`, `link: iPhone`, `link: Watch`, `link: Vision`, `link: AirPods`, `link: Home`, `link: Entertainment`, `link: Accessories`, `link: Support`, `link: Get started`, `link: Draw, annotate, and use Scribble`, `link: Create a table of contents`, `link: Start the process`, `link: Explore Apple Creator Studio `, `link: Pages for iCloud`, `textbox: Search Support`, `link: Ask or search now`, `link: Download the Apple Support app`, `link: iPhone Support`, `link: Mac Support`, `link: iPad Support`, `link: Watch Support`, `link: Apple Vision Pro Support`, `link: AirPods Support`, `link: TV Support`, `link: Support Site Map`, `link: Apple Repair Options`, `link: Service and Repair Information`, `link: AppleCare Products`, `link: Hardware Warranties`, `link: Software License Agreements`, `link: Complimentary Support`, `link: My Support`, `link: Product Documentation`, `link: Apple Support Videos`, `link: Accessibility`, `link: Contact Us`, `link: Support app`, `link: Apple Communities`, `link: United States. Choose your country or region`, `link: Privacy Policy`, `link: Terms of Use`, `link: Sales and Refunds`, `link: Site Map`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-Pages’ own .pages format is undocumented; round-tripping Apple documents is lossy.
+- **Word processing and page layout:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Word/docx import and export:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Templates, shapes, media placement:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
-Available. Mature open word processors cover the function.
+## 4. Interaction and interface specification
 
-## Product description and scope
+| Observable interface | Evidence-backed snapshot | Unknown / untested |
+|---|---|---|
+| Navigation/landmarks | `navigation: Global`, `main`, `contentinfo: Apple Footer`, `navigation: Breadcrumbs`, `navigation: Apple Directory` | Full IA/routes/authenticated navigation |
+| Views/headings | `Pages Support`, `Set up your document`, `Mark up your document`, `Navigate your document`, `Publish your book`, `Apple Creator Studio`, `Resources`, `User Guides`, `Pages for iCloud`, `Search for more topics`, `Apple Communities`, `Still need help?`, `Support app`, `Apple Footer`, `Product Support`, `Service and Repair`, `Connect` | Results and subsequent views |
+| Controls | `button: Store menu`, `button: Mac menu`, `button: iPad menu`, `button: iPhone menu`, `button: Watch menu`, `button: Vision menu`, `button: AirPods menu`, `button: Home menu`, `button: Entertainment menu`, `button: Accessories menu`, `button: Support menu`, `button: Search Support`, `button: Shopping Bag`, `button: Submit`, `link: Apple`, `link: Store`, `link: Mac`, `link: iPad`, `link: iPhone`, `link: Watch`, `link: Vision`, `link: AirPods`, `link: Home`, `link: Entertainment`, `link: Accessories`, `link: Support`, `link: Get started`, `link: Draw, annotate, and use Scribble`, `link: Create a table of contents`, `link: Start the process`, `link: Explore Apple Creator Studio `, `link: Pages for iCloud`, `textbox: Search Support`, `link: Ask or search now`, `link: Download the Apple Support app`, `link: iPhone Support`, `link: Mac Support`, `link: iPad Support`, `link: Watch Support`, `link: Apple Vision Pro Support`, `link: AirPods Support`, `link: TV Support`, `link: Support Site Map`, `link: Apple Repair Options`, `link: Service and Repair Information`, `link: AppleCare Products`, `link: Hardware Warranties`, `link: Software License Agreements`, `link: Complimentary Support`, `link: My Support`, `link: Product Documentation`, `link: Apple Support Videos`, `link: Accessibility`, `link: Contact Us`, `link: Support app`, `link: Apple Communities`, `link: United States. Choose your country or region`, `link: Privacy Policy`, `link: Terms of Use`, `link: Sales and Refunds`, `link: Site Map` | Activation, forms, validation, loading/empty/success/error, keyboard behavior |
+| Links | `[Apple](https://www.apple.com)`, `[Store](https://www.apple.com/us/store)`, `[Mac](https://www.apple.com/mac/)`, `[iPad](https://www.apple.com/ipad/)`, `[iPhone](https://www.apple.com/iphone/)`, `[Watch](https://www.apple.com/watch/)`, `[Vision](https://www.apple.com/apple-vision-pro/)`, `[AirPods](https://www.apple.com/airpods/)`, `[Home](https://www.apple.com/home/)`, `[Entertainment](https://www.apple.com/entertainment/)`, `[Accessories](https://www.apple.com/us/shop/goto/buy_accessories)`, `[Support](/)`, `[Get started](/en-us/HT206184)`, `[Draw, annotate, and use Scribble](/en-us/HT208459)`, `[Create a table of contents](/en-us/guide/pages/table-of-contents-tan5b8c588d6/mac)`, `[Start the process](/en-us/108365)`, `[Mac](/en-us/guide/pages/tan4b3ad0ce2/mac)`, `[iPad](/en-us/guide/pages-ipad/tan4b3ad0ce2/ipados)`, `[iPhone](/en-us/guide/pages-iphone/tan4b3ad0ce2/ios)`, `[Explore Apple Creator Studio ](/en-us/125029)`, `[Mac](/en-us/guide/pages)`, `[iPad](/en-us/guide/pages-ipad)`, `[iPhone](/en-us/guide/pages-iphone)`, `[Pages for iCloud](/en-us/guide/pages-icloud)`, `[Ask or search now](https://discussions.apple.com/community/applications-services)`, `[Get started](https://getsupport.apple.com/?caller=psp)`, `[Download the Apple Support app](https://apps.apple.com/us/app/apple-support/id1130498044?pt=2003&ct=support.pages&mt=8&l=en)`, `[iPhone Support](/iphone)`, `[Mac Support](/mac)`, `[iPad Support](/ipad)`, `[Watch Support](/watch)`, `[Apple Vision Pro Support](/apple-vision-pro)`, `[AirPods Support](/airpods)`, `[TV Support](/tv)`, `[Support Site Map](/sitemap)`, `[Apple Repair Options](/repair)`, `[Service and Repair Information](/repair-products)`, `[AppleCare Products](http://www.apple.com/support/products/)`, `[Hardware Warranties](https://www.apple.com/legal/warranty/)`, `[Software License Agreements](https://www.apple.com/legal/sla/)` | Deep-link and route semantics |
+| Responsive/platform behavior | Unknown | No comparison captured |
+| Search/filter/sort/settings/import/export | Unknown unless explicitly observed | Complete interactions not captured |
 
-Pages is Apple’s word processor and page-layout app for macOS and iOS, with Apple-native and Word-compatible documents.
+A REA page capture is not product-wide interface evidence. Use original interface design and assets; do not reproduce protected branding.
 
-Catalog categories: productivity.
+## 5. Functional requirements and traceability
 
-Catalogued capability areas:
-- Word processing and page layout
-- Word/docx import and export
-- Templates, shapes, media placement
+### REQ-FUNC-2E9FF279 — Word processing and page layout
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-2E9FF279`; fixture and expected output must be specified from evidence.
+- **Trace:** `APPLE-PAGES-CAP-2E9FF279` → `REQ-FUNC-2E9FF279` → `TEST-FUNC-2E9FF279`.
 
-This summary reflects the catalog record, not a complete product specification. Verify intended users, end-to-end workflows, supported platforms, edge cases, data handling, and constraints against cited sources. Treat capability labels as research leads until that verification is complete.
+### REQ-FUNC-D94820E4 — Word/docx import and export
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-D94820E4`; fixture and expected output must be specified from evidence.
+- **Trace:** `APPLE-PAGES-CAP-D94820E4` → `REQ-FUNC-D94820E4` → `TEST-FUNC-D94820E4`.
 
-## Coding-agent mission
+### REQ-FUNC-DA98103E — Templates, shapes, media placement
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-DA98103E`; fixture and expected output must be specified from evidence.
+- **Trace:** `APPLE-PAGES-CAP-DA98103E` → `REQ-FUNC-DA98103E` → `TEST-FUNC-DA98103E`.
 
-This is the product-specific coding-agent skill for **Pages**. Give this file to your coding agent in the project where you want the product built. RAE’s goal is “We don't need FAANG anymore. Use your agent to build any of their products. RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google.” Use that ambition to work toward the user’s requested product, not to overstate current evidence or completion. Research the product, choose what to reuse, build an independent implementation in the user’s project and verify it. Do not reproduce proprietary internals, protected assets or branding, and do not claim blanket feature parity; turn verified public behavior into an evidence-backed, traceable build plan.
+Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
-**Important evidence limit:** the product dossier has research status **pending**. The catalog summary is a starting brief, not a complete verified specification; its capability list may be incomplete. Research public behavior first, fill the coverage ledger, and report unknowns honestly while making progress on verified scope.
+## 6. Data model and state
 
-### Evidence to inspect first
+**Original product structures:** UNKNOWN. No structured evidence establishes fields/types, IDs, ownership/permissions, lifecycle, persistence, constraints, deletion/retention, import/export, migration, concurrency or indexes.
 
-1. Read the product dossier with `rae research dossier apple-pages` and review its research status (**pending**). When using the source repository, the dossier is also linked here: [`research/companies/apple/products/apple-pages.md`](https://github.com/EnzoVezzaro/rea-faang/blob/main/research/companies/apple/products/apple-pages.md). A generated kit or successful metadata lookup does not prove that claims have been researched. Resolve placeholders and contradictions before implementation.
-2. Review the public web-surface observation if available. It records only an unauthenticated page, not internal architecture or authenticated behavior. Compare observations with cited official sources; do not infer private workflows from page appearance.
-3. Verify each material product and alternative claim against official documentation, public standards, or the referenced project itself. Record URLs, access dates, supported claims, assumptions, conflicts and unknowns. Do not sign in, bypass controls, reverse-engineer proprietary binaries, or copy source, protected assets or branding.
-4. Check the actual repository conventions and existing workspace before adding dependencies or selecting a stack. Keep license obligations and third-party rights visible in the plan. If a dossier is pending, stale or too thin to support requirements, make the next task evidence gathering—not speculative implementation.
+**Independent model (PROPOSED):** define only state needed for the researched first slice; specify IDs, validation, owners, state transitions, concurrency, deletion/export/retention and migration. Do not describe it as the target’s model.
 
-### Evidence standard and source ledger
+## 7. APIs, integrations and protocols
 
-- Start with the official product page and official documentation when recorded. The **Sources** list labels official documentation separately from candidate-project research leads.
-- The dossier research status is **pending**. Catalog summaries, capabilities, alternative status, verdicts and gaps are leads—not a verified specification. Never silently promote a claim to verified.
-- For each material requirement, attach a public URL, access date, the specific claim supported, confidence, and any conflict/unknown. A source link by itself is not claim-level evidence.
-- Separate directly observed behavior, official documentation, third-party reporting, inference, design choice, and unknowns. Do not infer behavior or internals from branding, marketing language, a screenshot or an unauthenticated page.
-- If sources conflict or evidence is inaccessible, record the uncertainty and ask for a decision only when it blocks safe, useful progress. Never fabricate defaults, APIs, compatibility, scale, guarantees or parity.
+**Original contracts:** none verified in structured evidence. Dossier prose does not establish supported APIs. Do not invent target endpoints, schemas, auth, events or limits. If the independent implementation needs an interface, define a versioned contract labelled PROPOSED, including request/response, authorization, errors, limits, timeouts, retries and idempotency.
 
-| Claim / requirement | Source URL + access date | Supported behavior | Source type | Confidence | Conflict / unknown | Decision |
-|---|---|---|---|---|---|---|
-| Add one row per material behavior before implementation | Public, authorized source required | Quote or paraphrase only what it supports | Official / observed / third-party / inference | Verified / partial / unknown | Record explicitly | Include / exclude / defer |
+## 8. Architecture and technical design
 
-Research lens: **productivity_application** — Document/workspace lifecycle, editing and formatting semantics, search, collaboration/presence, comments/revisions, sharing/permissions, import/export fidelity, offline/conflict behavior, accessibility and interoperability.
+**PROPOSED independent design; target internals unknown.** Use only components required by verified scope.
 
-Unknowns are first-class outputs. Do not guess product behavior to fill a blank. When no reliable evidence exists, mark the requirement unverified, propose a bounded assumption only if safe and reversible, and ask the user to approve scope decisions that materially change the product.
+```mermaid
+flowchart LR
+  UI[Interface] --> APP[Application and domain boundary]
+  APP --> DB[(Persistence if needed)]
+  APP --> EXT[Authorized integrations if needed]
+```
 
-### Reuse/build decision
+Separate interface/domain/persistence/integration boundaries. Enforce access at trusted boundaries, isolate tenants where relevant, and define timeout/partial failure behavior. Add queues/caches/scaling/deployment components only when requirements justify them. Record configuration, secrets, data flow, recovery, observability and deployment assumptions in the implementation project.
 
-A mature candidate is listed. Evaluate it as a possible foundation, but do not treat the candidate listing as the product build or substitute it for the user's request. Build the requested product in the user's project; reuse, integrate or extend candidate components where they fit.
+## 9. Open-source foundation and dependency strategy
 
-Current alternative coverage: **mature alternative listed**. This describes the catalog's research into existing projects only; it does not determine whether your agent can build the product. Build it in your project using this skill. Catalog coverage notes: Available. Mature open word processors cover the function. Pages’ own .pages format is undocumented; round-tripping Apple documents is lossy.
+**Decision: candidates are PROPOSED for evaluation, not approved foundations.** Verify repository/version, license and dependency terms, actual code/modules, extension points, tests/CI, maintenance, security, deployment and integration cost. Map each requirement to actual code and test evidence; README claims and popularity are not proof.
 
-Candidate projects to verify:
-
-- **LibreOffice Writer** (MPL-2.0) — Full word processor with strong format support. Note: The main open replacement. Source: https://www.libreoffice.org/
-- **OnlyOffice Docs** (AGPL-3.0) — Collaborative word processing. Note: Strong MS-format fidelity. Source: https://www.onlyoffice.com/
-- **Calligra Words** (GPL-2.0) — KDE word processor with layout features. Note: Alternative in the KDE stack. Source: https://calligra.org/
-
-### Product behaviors and workflow coverage ledger
-
-Treat catalog capability bullets as a seed list, not a complete backlog. Decompose compound bullets into separate user-observable workflows. Find missing primary journeys, administration, onboarding, settings, accessibility, data portability, safety, abuse, failures, recovery and cross-platform differences from public evidence. Keep direct equivalents and intentionally different design decisions distinct.
-
-- **APPLE-PAGES-CAP-001 — Word processing and page layout:** identify the user/actor, goal, entry point, prerequisite, happy path, alternate/error/permission-denied path, resulting state, platform, data effects, evidence and acceptance check. Decompose compound capability bullets into distinct independently testable workflows where needed.
-- **APPLE-PAGES-CAP-002 — Word/docx import and export:** identify the user/actor, goal, entry point, prerequisite, happy path, alternate/error/permission-denied path, resulting state, platform, data effects, evidence and acceptance check. Decompose compound capability bullets into distinct independently testable workflows where needed.
-- **APPLE-PAGES-CAP-003 — Templates, shapes, media placement:** identify the user/actor, goal, entry point, prerequisite, happy path, alternate/error/permission-denied path, resulting state, platform, data effects, evidence and acceptance check. Decompose compound capability bullets into distinct independently testable workflows where needed.
-
-| Requirement ID | Behavior / user job (catalog lead) | Evidence + date | Confidence | Scope | Acceptance test / manual check |
+| Candidate | Repository | Catalog license (unverified) | Claimed coverage (unverified) | Limitation | Decision |
 |---|---|---|---|---|---|
-| APPLE-PAGES-CAP-001 | Word processing and page layout | **Missing: verify against public sources** | Unknown until verified | Untriaged: include, exclude with reason, or defer | Define observable success and negative/error cases |
-| APPLE-PAGES-CAP-002 | Word/docx import and export | **Missing: verify against public sources** | Unknown until verified | Untriaged: include, exclude with reason, or defer | Define observable success and negative/error cases |
-| APPLE-PAGES-CAP-003 | Templates, shapes, media placement | **Missing: verify against public sources** | Unknown until verified | Untriaged: include, exclude with reason, or defer | Define observable success and negative/error cases |
+| [LibreOffice Writer](https://www.libreoffice.org/) | Not recorded | MPL-2.0 (unverified) | Full word processor with strong format support. | The main open replacement. | Proposed evaluation lead; no verified foundation |
+| [OnlyOffice Docs](https://www.onlyoffice.com/) | Not recorded | AGPL-3.0 (unverified) | Collaborative word processing. | Strong MS-format fidelity. | Proposed evaluation lead; no verified foundation |
+| [Calligra Words](https://calligra.org/) | Not recorded | GPL-2.0 (unverified) | KDE word processor with layout features. | Alternative in the KDE stack. | Proposed evaluation lead; no verified foundation |
 
-Document/workspace lifecycle, editing and formatting semantics, search, collaboration/presence, comments/revisions, sharing/permissions, import/export fidelity, offline/conflict behavior, accessibility and interoperability.
+No candidate has been independently cloned, executed, license-reviewed or security-reviewed by this generator.
+## 10. Security and privacy
 
-For every in-scope behavior, record the actor, user goal, trigger, preconditions, inputs, expected visible/system result, state transition, permissions, main path, alternate/invalid/denied/timeout/retry/recovery paths, data/privacy effects, platform constraints, public evidence and confidence. Use stable requirement IDs (for example `APPLE-PAGES-REQ-001`), and trace each ID from evidence → workflow → specification/contract → implementation → automated test or named manual check. Maintain a **coverage ledger** showing implemented, tested, partial, not started, excluded-with-reason, or unknown; never call the product “complete” while required rows are unimplemented or unverified.
+No product-specific security/privacy controls are verified by current evidence. Proposed independent controls: authenticate/authorize state changes server-side; validate inputs; protect secrets; apply least privilege and suitable abuse/rate controls; minimize data; define consent, retention, export/delete, backup/restore; keep sensitive payloads out of logs; handle external trust boundaries/timeouts/retries; test cross-user access, malformed inputs, leaks, abuse and recovery.
 
-### Questions that expose missing workflows and product edges
+Product-specific review: Review product-specific identity, authorization, privacy, abuse and dependency threats. Do not claim compliance, privacy or security parity without scoped assessment.
 
-- Who is the intended user, and which first-party jobs matter most? Which jobs vary by role, account state, locale, platform or subscription/entitlement?
-- What are the complete lifecycle and state transitions (create, read, update, share, revoke, archive, delete, restore)? What persists and what is ephemeral?
-- What identity, access-control, ownership, consent and delegation rules govern each action? How are unauthorized and revoked actions handled?
-- What are the import/export, interoperability, migration and data portability needs? Which data/content must the user supply or license?
-- What are expected scale, latency, availability, offline and recovery behaviors? Which are documented facts versus targets chosen for this implementation?
-- What legal, privacy, safety, abuse, retention, regional and accessibility considerations change the design?
+## 11. Error handling and edge cases
 
-A comprehensive implementation targets the user’s requested scope and all verified in-scope workflows, not every imagined feature. Ask the user to choose only where evidence leaves materially different valid product decisions; otherwise continue with a documented, reversible choice.
+These are test prompts, not target behavior assertions. Keep only relevant cases and derive expected behavior from evidence or label an independent decision PROPOSED.
 
-### Build the product in the user's project
+- **EDGE-001:** Missing/malformed/oversized input. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-002:** Unauthorized or revoked action and tenant isolation where applicable. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-003:** Empty data/results and duplicate operations. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-004:** Concurrent updates or stale writes to mutable state. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-005:** Network timeout, throttling, external outage, retry and partial failure. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-006:** Cancellation/interruption during state change and restart recovery. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-007:** Corrupt/incompatible imported or persisted data; migration failure. Target behavior is UNKNOWN until researched; specify recovery before release.
+- **EDGE-008:** Expired credentials/session where applicable. Target behavior is UNKNOWN until researched; specify recovery before release.
 
-Use the product skill from the project where the user wants **Pages** built. Review that project's conventions and existing code, then create a traceable plan for the complete user-requested scope. Deliver it in working vertical slices: each slice should connect the real interface, domain behavior, data/contracts and tests. Do not stop after a static mock, empty scaffold, isolated API or happy-path-only demo unless that is the approved scope. The catalog and optional scaffold provide guidance; implementation belongs in the user's project. If evidence is insufficient for a behavior, research it before coding or mark the behavior blocked with a precise question.
+## 12. Testing and behavioral verification
 
-### End-to-end implementation milestones
+- **TEST-FUNC-2E9FF279** → `REQ-FUNC-2E9FF279`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-D94820E4** → `REQ-FUNC-D94820E4`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-DA98103E** → `REQ-FUNC-DA98103E`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
-1. **Orient:** identify the real user project, its existing architecture, conventions, tests, deployment target and constraints. Do not overwrite it or scaffold a parallel app without approval.
-2. **Research:** create an evidence ledger and unknowns list; verify intended users, user jobs, full observable workflows, platform matrix, data, permissions, errors, integrations and constraints. Use authorized public sources only.
-3. **Inventory:** enumerate every requested/known capability, related workflows and cross-cutting concerns. Assign stable IDs; classify each as verified, inferred, unknown, in-scope, explicitly excluded, or deferred. Resolve contradictions before treating them as facts.
-4. **Specify:** write a product brief, user journeys, requirements/acceptance scenarios, non-goals, data model, API/events, permissions, threat model, compatibility matrix, quality targets and migration/operations notes appropriate to the project. Keep specifications next to the project implementation when possible.
-5. **Decide reuse:** inspect candidate projects and existing code for actual fit, maintenance, license, security, integration cost and gaps. Reuse is optional and must serve the user’s goal; do not replace the requested product with a competitor. Do not add dependencies before confirming they are needed and acceptable.
-6. **Plan the complete scope:** order work into end-to-end vertical slices. Implement all verified in-scope requirements through successive slices; if time or evidence prevents completion, leave a transparent coverage ledger and a prioritized continuation plan rather than claiming completeness.
-7. **Build:** follow the host project’s stack and patterns. Implement original code and assets, accessible interfaces, safe data handling, explicit states, useful errors and operational observability. Keep interfaces/contracts stable before parallel agent work.
-8. **Verify:** tests trace to requirement IDs; run focused checks, full project tests, static/security checks and compatibility checks that the project supports. Inspect the running artifact through the interface the user will use; capture unrun checks and actual limits.
-9. **Review and deliver:** review functionality, security, accessibility, license/attribution, performance against stated targets, docs, setup, migration and rollback. Report what works, what is partial, what is not implemented, evidence gaps, commands and next steps.
+These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
-### Product implementation prompt
+## 13. Implementation roadmap
 
-“We don't need FAANG anymore. Use your agent to build **Pages** in this project. Start from this skill, but treat every catalog claim as provisional until you verify it. Research authorized public behavior, define a traceable coverage plan for the full scope I request, reuse suitable open components where they fit, and implement an original, independently written product—not a branded clone. Test the real user journeys, explain what is complete versus partial or unknown, and leave a clear next-step plan for any unimplemented requirements.”
+### Phase 1 — Foundation and dependencies
 
-### Required deliverables
+- **Tasks:** Inspect user project, stack, constraints, tests, candidate implementations and licenses.
+- **Prerequisites:** Repository inspection and user scope.
+- **Deliverables:** Project map, evidence ledger, reuse decision, bounded plan
+- **Requirements:** Select after evidence review
+- **Tests:** Clean setup/validation smoke test
+- **Completion:** Clean setup and documented dependency/reuse decision.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-- **Evidence ledger:** claim, source URL, source type, access date, exact supported behavior, confidence, contradiction and open question.
-- **Behavior inventory:** capability ID, actor/job, trigger, preconditions, main and alternate paths, state transitions, permissions, platforms, data effects and status.
-- **Product brief:** target users, problem, outcomes, full requested scope, explicit non-goals and measurable quality goals.
-- **Specification set:** user journeys, requirements, acceptance scenarios, architecture/contracts, data model, threat/privacy model, UI states, compatibility, test plan and operational/migration notes as relevant.
-- **Build plan:** reusable components and licenses, vertical slices, ownership/interfaces, dependency decisions, risks and ordered tasks.
-- **Implementation:** integrated working software inside the user’s project, not a mockup or disconnected scaffold, unless that is the scope the user approved.
-- **Verification packet:** requirement-to-test traceability, commands and actual exit codes, manual/browser checks, representative performance data when required, checks not run, limitations and known gaps.
-- **Handoff:** changed files, decisions, risks, setup/run instructions, next actionable work and honest completion status.
+### Phase 2 — Core domain behavior
 
-### Product quality and verification plan
+- **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
+- **Prerequisites:** Phase 1 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** REQ-FUNC-2E9FF279, REQ-FUNC-D94820E4, REQ-FUNC-DA98103E
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Integrated domain behavior with deterministic unit/integration tests.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-- Correctness: test the primary user journey end to end, then alternate paths, invalid input, permission denial and recovery.
-- Security/privacy: map assets and trust boundaries; validate identity/authorization server-side; minimize collected data; protect secrets; prevent injection/SSRF/CSRF and abuse where relevant; document encryption, retention, export/delete, and threat assumptions.
-- Accessibility/UX: keyboard and screen-reader operation, semantic labels, focus order, contrast, reduced motion, localization-ready text, useful empty/loading/error states and responsive layouts where applicable.
-- Reliability: retries/idempotency, timeouts, cancellation, partial failure, backups/restore, migrations, monitoring and operational runbooks appropriate to the product.
-- Compatibility: test every claimed platform, protocol, file format, SDK/API version or client; otherwise label it unsupported or unverified.
-- Performance: establish a representative workload and a user-visible target before optimizing; record baseline, measurement method and environment. Do not claim equivalent scale without evidence.
-- Maintainability: dependency/license inventory, reproducible setup, configuration validation, migrations, API contracts, logs/metrics, documentation and clean-checkout verification.
+### Phase 3 — Primary user workflows
 
-### Multi-agent task plan and outputs
+- **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
+- **Prerequisites:** Phase 2 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** REQ-FUNC-2E9FF279, REQ-FUNC-D94820E4, REQ-FUNC-DA98103E
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** E2E acceptance checks via user-facing interface.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-1. **Researcher (single owner of evidence packet):** verify identity, lifecycle, intended users, user jobs, workflows, capability claims, alternatives and licenses; record claim-level citations and unknowns. If the source catalog is available, update `research/companies/apple/products/apple-pages.md`. Do not use a public-page capture as evidence for hidden internals.
-2. **Architect (single owner of interfaces):** decide reuse/integrate/extend/build/research further; choose one verified capability as the candidate first journey; define its scope, non-goals, requirement IDs, system boundaries and contracts. Inspect `./apple-pages (a separately generated workspace; choose a writable output directory)/specs/` and replace only missing or placeholder sections with evidence-backed specifications before assigning implementation tasks.
-3. **Implementer agents (frontend/backend or domain-specific):** each claims one non-overlapping task against the approved contracts. Reuse suitable projects and dependencies. Deliver a working end-to-end slice for the selected journey, not disconnected scaffolding; document deviations from the target behavior.
-4. **Tester:** derive tests from the requirement IDs. Cover the selected journey, validation, errors, permissions, accessibility and privacy-sensitive behavior; measure performance only against an explicit representative workload and target.
-5. **Security reviewer:** review trust boundaries, authentication/authorization, sensitive data, abuse cases, dependency/license compliance and clean-room constraints before integration.
-6. **Supervisor/documenter:** review handoffs, integrate only accepted tasks, and keep setup, data import/export, operations and known limitations current.
+### Phase 4 — Integrations
 
-Each handoff must state owner, changed files, requirement IDs, commands with actual exit codes, checks not run, decisions, risks and one specific next action. Parallelize only after shared interfaces are approved.
+- **Tasks:** Add only documented/authorized integrations; mock boundaries for offline routine tests.
+- **Prerequisites:** Phase 3 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** Select after evidence review
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Contract and failure-injection tests.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-### Acceptance criteria and definition of done
+### Phase 5 — Secondary capabilities
 
-- The user’s target and implementation scope are explicit. Every material workflow is represented in the capability inventory; exclusions, assumptions and known gaps have reasons.
-- Each in-scope requirement has an evidence/confidence record and observable acceptance criteria. Requirements trace to implementation and to a passing automated test or repeatable manual check; unverified requirements stay labeled.
-- Primary and alternate user journeys work end to end through the interface the user will use, with real data/state behavior—not a visual-only mock—unless the user requested a prototype.
-- Tests cover success, empty/new state, invalid input, permissions, errors, retries/timeouts, interruption/recovery, persistence and boundary cases relevant to the behavior.
-- Accessibility, privacy/security, licensing, compatibility and operational readiness are reviewed for the chosen scope. Setup works from a clean checkout; migrations, backup/restore or deployment steps are documented where applicable.
-- Product-specific test/build/lint/security checks are run and actual exit codes recorded. Run the generated workspace's own checks and ACE configuration check when available. If working from the RAE source checkout, also run `npm run validate` and `npm test`; otherwise use the installed CLI's `rae research validate` for catalog integrity.
-- Report implemented/partial/not-started/unknown requirement counts, unrun checks, known limitations and the next task. A reviewer accepts the implementation and handoff. Passing tests prove only the tested behavior—not parity with Pages or undocumented internals.
+- **Tasks:** Implement remaining in-scope behavior by user priority and evidence.
+- **Prerequisites:** Phase 4 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** Select after evidence review
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Trace: REQ-FUNC-2E9FF279, REQ-FUNC-D94820E4, REQ-FUNC-DA98103E; document exclusions and unknowns.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-### Repository entry points
+### Phase 6 — Security and reliability
 
-- Product description and known capability areas: see the product section above. This catalog summary is a research lead, not a verified complete specification.
-- Product-type research checklist: Document/workspace lifecycle, editing and formatting semantics, search, collaboration/presence, comments/revisions, sharing/permissions, import/export fidelity, offline/conflict behavior, accessibility and interoperability.
-- Product metadata: `rae products show apple-pages --format json`.
-- Research dossier: retrieve it from the installed CLI with `rae research dossier apple-pages`; source copy: [`research/companies/apple/products/apple-pages.md`](https://github.com/EnzoVezzaro/rea-faang/blob/main/research/companies/apple/products/apple-pages.md).
-- Alternative candidates and coverage: `rae alternatives list --product apple-pages`; source landscape file when available: `catalog/skills/apple/apple-pages.md`.
-- Optional local product workspace/specifications: `./apple-pages (a separately generated workspace; choose a writable output directory)`.
-- Opportunity decision, when present in the source repository: `opportunities/apple-pages.md`.
-- Official product page: https://www.apple.com/pages/.
-- Research status: **pending**; alternative coverage: **mature alternative listed**. This coverage label describes existing-project research only, not the ability to build this product.
+- **Tasks:** Review access, privacy, abuse, migration, backup, observability and recovery as applicable.
+- **Prerequisites:** Phase 5 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** Select after evidence review
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Applicable security/recovery checks and risks recorded.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-### Capability coverage ledger
+### Phase 7 — Verification and release
 
-Use the table as a live planning artifact in the user’s project. Split a catalog bullet when it contains multiple independently testable workflows; add evidence-discovered behaviors not listed here; never mark “complete” without a source and a verified acceptance check. Keep out-of-scope decisions visible.
+- **Tasks:** Run project checks; inspect behavior, accessibility, compatibility, license and docs.
+- **Prerequisites:** Phase 6 and evidence/scope decisions
+- **Deliverables:** Integrated working slice and updated traceability
+- **Requirements:** Select after evidence review
+- **Tests:** Focused tests for implemented requirements and failures
+- **Completion:** Reproducible result and transparent completion/gap report.
+- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
-| Requirement | User/actor + goal | Evidence/confidence | Acceptance scenario | Implementation/test link | Status/exception |
+
+## 14. Evidence, uncertainty and exclusions
+
+### Evidence index
+
+| Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| APPLE-PAGES-CAP-001: Word processing and page layout | Discover and verify | Missing until claim-level source is recorded | Main, alternate, invalid and denied path | Add source → spec → code → test links | Untriaged: include, exclude with reason, or defer |
-| APPLE-PAGES-CAP-002: Word/docx import and export | Discover and verify | Missing until claim-level source is recorded | Main, alternate, invalid and denied path | Add source → spec → code → test links | Untriaged: include, exclude with reason, or defer |
-| APPLE-PAGES-CAP-003: Templates, shapes, media placement | Discover and verify | Missing until claim-level source is recorded | Main, alternate, invalid and denied path | Add source → spec → code → test links | Untriaged: include, exclude with reason, or defer |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.apple.com/pages/) | Not recorded | Pages is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev_2f50324bbf5cb3d093423deac83de14301c8132820cd65d38e36d02602f22ccc` | Pages Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://support.apple.com/pages) | 2026-10-13T18:58:09.359Z | A dated unauthenticated snapshot exposed controls button: Store menu, button: Mac menu, button: iPad menu, button: iPhone menu, button: Watch menu, button: Vision menu, button: AirPods menu, button: Home menu, button: Entertainment menu, button: Accessories menu, button: Support menu, button: Search Support, button: Shopping Bag, button: Submit, link: Apple, link: Store, link: Mac, link: iPad, link: iPhone, link: Watch, link: Vision, link: AirPods, link: Home, link: Entertainment, link: Accessories, link: Support, link: Get started, link: Draw, annotate, and use Scribble, link: Create a table of contents, link: Start the process, link: Explore Apple Creator Studio , link: Pages for iCloud, textbox: Search Support, link: Ask or search now, link: Download the Apple Support app, link: iPhone Support, link: Mac Support, link: iPad Support, link: Watch Support, link: Apple Vision Pro Support, link: AirPods Support, link: TV Support, link: Support Site Map, link: Apple Repair Options, link: Service and Repair Information, link: AppleCare Products, link: Hardware Warranties, link: Software License Agreements, link: Complimentary Support, link: My Support, link: Product Documentation, link: Apple Support Videos, link: Accessibility, link: Contact Us, link: Support app, link: Apple Communities, link: United States. Choose your country or region, link: Privacy Policy, link: Terms of Use, link: Sales and Refunds, link: Site Map and landmarks navigation: Global, main, contentinfo: Apple Footer, navigation: Breadcrumbs, navigation: Apple Directory. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
+### Confidence classifications
 
-### Installed-CLI workflow
+VERIFIED: observed/documented within exact scope. CORROBORATED: supported by multiple compatible sources. INFERRED: reasoned, not directly established. PROPOSED: independent design or candidate. UNKNOWN: not established. CONFLICTED: sources disagree. A source URL alone is not verification; confidence cannot exceed the source. Every important claim in a future completed research record must cite its source location and access date.
 
-Use the installed RAE CLI; no source checkout is required. Inspect product metadata with `rae products show apple-pages --format json` and retrieve dossier contents with `rae research dossier apple-pages` (or add `--format json` for machine-readable output). Check catalog readiness with `rae research coverage` and `rae research validate`. These checks validate catalog structure, not whether all product claims are researched or current. Generate a portable agent kit with `rae apple-pages --out ./apple-pages-agent`. Give the generated skill to your coding agent in the project where you want this product built. A starter workspace is optional: scaffold one with `rae build product apple-pages --out ./apple-pages` only if useful. Keep generated outputs separate; inspect existing paths before writing and do not overwrite existing work. For current product behavior, verify public sources and maintain the coverage ledger below.
+### Prioritized unknowns
 
+| Priority | Unknown / blocker | Next evidence action |
+|---|---|---|
+| P0 | Claim-level evidence linked to each capability. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Investigate official documentation and authorized public behavior; update evidence IDs. |
+| P0 | Intended user, roles, user jobs, and requested implementation boundary. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Research product/user scope; ask user when scope choice materially changes deliverable. |
+| P0 | Full successful, denied, failed, cancelled, retry and recovery workflows. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Observe authorized workflows; record checkpoint and observable oracle. |
+| P1 | Supported versions, platforms, responsive and accessibility behavior. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Verify product version and platform documentation; run authorized observation. |
+| P1 | Data model, state, ownership, retention, import/export and concurrency. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Use primary docs or record as unknown; propose only the independent slice model. |
+| P1 | API/protocol contracts, integrations, authorization, limits and errors. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Use official API spec or label independent contract PROPOSED. |
+| P1 | Candidate repository state, implementation, tests, license and operations. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Inspect exact repository/version and distribution dependencies before recommendation. |
+| P2 | Representative performance targets and operational scale. | QUESTION → SELECT TOOL → INVESTIGATE → RECORD EVIDENCE → TRACE BEHAVIOR → UPDATE REQUIREMENTS → VERIFY. Define workload and target before measurement; avoid scale equivalence claims. |
 
-## CLI commands
+### Resumable investigation checkpoint
 
-- Inspect product metadata: `rae products show apple-pages --format json`.
-- Read the dossier: `rae research dossier apple-pages`.
-- Check research readiness: `rae research coverage` and `rae research validate`.
-- Generate a copy of this skill and optional MCP config: `rae apple-pages --out ./apple-pages-agent`. Give `skill.md` to your coding agent in the project where you want to build.
-- Optionally scaffold a starter workspace: `rae build product apple-pages --out ./apple-pages`.
+Resume token: `apple-pages`. Read dossier, REA report and raw Evidence before repeating. Record question/reason, authorized source/tool, target/version/scope, actions, Evidence IDs and locations, observation vs inference, conflicts/unknowns, affected feature/requirement IDs, checks/date and next question. Reuse evidence when sufficient/current. Select specialized REA/native inspection only when ordinary public/repository inspection cannot answer a user-visible question and the target/tool are authorized; do not assume tools are installed. Current capture covers a public unauthenticated page only.
 
-## Sources
+### Dossier notes (not independently verified)
 
-- https://www.libreoffice.org/
-- https://www.howtogeek.com/apple-pages-vs-libreoffice-writer-which-free-word-processor-is-best/
-- https://opensource.com/article/17/6/3-alternatives-libreoffice-writer
+# 1. Executive summary
+
+Pages is Apple's word processing application, part of the iWork productivity suite. It offers a WYSIWYG document editor with real-time collaboration, templates, and export to PDF, Word, and other formats.
+
+# 2. Product identity and ownership
+
+- **Official name:** Pages
+- **Company and business unit:** Apple
+- **Parent organization:** Apple Inc.
+- **Original launch date:** 2005 (as part of iLife; moved to iWork 2008)
+- **Current lifecycle status:** active
+- **Previous names:** iWork Pages, Apple Pages
+- **Acquisitions or ownership changes:** None; Apple-native application
+- **Related products:** Keynote, Numbers, iWork, iCloud
+- **Official website:** https://www.apple.com/pages/
+- **Official documentation:** https://www.apple.com/pages/support/
+
+# 3. Product capabilities
+
+- WYSIWYG word processing document editing
+- Real-time collaboration with other iWork users
+- Templates for resumes, reports, letters, and more
+- Export to PDF, Word (.docx), EPUB, and Pages '09
+- iCloud synchronization across devices
+- Dark mode support
+- Image, chart, and table insertion
+- Text styles, themes, and formatting options
+
+# 4. Technical architecture
+
+Pages is a macOS and iOS native application:
+
+- macOS version built with Swift and AppKit/AppKit
+- iOS version built with Swift and UIKit/SwiftUI
+- iCloud sync via CloudKit
+- Real-time collaboration via iWork Cloud Engine
+
+Document formats and collaboration protocol are partially documented; full internal architecture is proprietary.
+
+# 5. User workflows
+
+Primary workflows: document creation and editing, template usage, collaboration, and export. Essential: document editing, export. Advanced: real-time collaboration, template customization.
+
+# 6. Pricing and access
+
+Free with Apple ID. Included with Apple Devices. iCloud storage may be shared with other iWork and iCloud services.
+
+# 7. API and integration surface
+
+- iWork API (limited; primarily iCloud sync)
+- No public REST API for document manipulation
+- Automation via AppleScript and Shortcuts
+- Export formats: PDF, Word, EPUB
+
+# 8. Existing open-source alternatives
+
+LibreOffice, Microsoft Word, Google Docs, OnlyOffice. No free tool replicates Pages' template system and iCloud synchronization exactly.
+
+# 9. Alternative comparison
+
+Google Docs provides the closest web-based collaboration alternative. LibreOffice provides the closest feature-parity desktop alternative. Neither replicates Pages' template system and iCloud integration.
+
+# 10. Missing capabilities and opportunity analysis
+
+Template system, iCloud synchronization, and real-time collaboration workflow represent gaps. Google Docs and LibreOffice cover basic word processing but not Pages-specific features.
+
+# 11. RAE implementation strategy
+
+Focus on document creation and editing use cases. Google Docs or LibreOffice for compatibility. iCloud synchronization and template system are out of scope.
+
+# 12. Security, privacy, and compliance
+
+Local encryption. No server-side processing by default. iCloud sync subject to Apple's iCloud security and privacy.
+
+# 13. Sources and evidence
+
+- https://www.apple.com/pages/ (product page)
+- https://www.apple.com/pages/support/ (support documentation)
+- https://github.com/libreoffice/libreoffice (reference)
+
+# 14. Open questions
+
+- What is the template system workflow that Pages users rely on?
+- How does iCloud sync conflict resolution work?
+- Can offline editing be replicated without iCloud?
+
+# 15. Research history
+
+Initial research record created 2026-01-13. No prior research events.
 
 ---
 
-Generated from the RAE FAANG catalog — https://github.com/EnzoVezzaro/rea-faang
+# 16. Alternative comparison (continued)
+
+Google Docs and LibreOffice cover basic word processing. Pages' template system and iCloud integration are unique.
+
+---
+
+# 17. RAE implementation strategy (continued)
+
+Focus on document editing use cases. Google Docs or LibreOffice for compatibility. iCloud sync and templates are out of scope.
+
+Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+
+## 15. Downstream execution instructions
+
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier apple-pages` and inspect canonical identity with `npx rae-faang products show apple-pages --format json`.
+2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
+3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
+4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
+5. Make a minimal dependency-aware plan for a functioning vertical slice.
+6. Implement the slice with original code/assets and the host project’s conventions.
+7. Add deterministic tests for every implemented requirement, including relevant failure and permission paths.
+8. Implement remaining scoped capabilities incrementally; explicitly mark partial, excluded and unknown items.
+9. Review security, privacy, dependencies, licensing, accessibility and compatibility.
+10. Run actual project checks and inspect behavior through the interface the user will use.
+11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
+12. Document deviations, unimplemented requirements, limitations and checks not run.
+13. Report requirement → code → test evidence and actual command results.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang apple-pages --out ./apple-pages.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit apple-pages --out ./apple-pages-agent`.
+
+### Multi-agent task plan and outputs
+
+Researcher: own the evidence ledger and unknowns. Architect: approve scope, boundaries and contracts before parallel work. Implementers: deliver non-overlapping, integrated vertical slices. Tester: map acceptance checks to requirement IDs. Reviewer: inspect privacy, security, accessibility and license risk. Documenter: preserve setup and limitations. Handoffs record changed files, requirement IDs, commands/exit codes, checks not run and one specific next action.
+
+### Acceptance criteria and definition of done
+
+- Every in-scope behavior has a unique requirement ID, evidence/confidence, bounded scope, measurable acceptance oracle and associated test/manual check.
+- Each implemented requirement maps to code and a deterministic passing test or repeatable manual observation; unknown requirements remain blocked/unknown.
+- Primary and relevant alternate/failure workflows run through the user-facing interface; partial/excluded scope and recovery behavior are documented.
+- Security, privacy, dependency/license, accessibility, compatibility, setup, project checks, and unrun checks are reported honestly.
+- Requirement trace is evidence → workflow → specification/contract → implementation → automated test; passing specification checks do not claim target parity.
+
+### Product quality and verification plan
+
+- Correctness: tested success, empty, malformed, denied, duplicate, timeout/retry, cancellation, partial failure and recovery cases as relevant.
+- Security/privacy: trust boundaries, least privilege, secret handling, data minimization, retention/export/deletion and abuse controls.
+- UX/accessibility: keyboard/screen reader, labels/focus, loading/empty/error/success states, responsive behavior and reduced motion where relevant.
+- Reliability/performance: reproducible setup, migrations, backup/restore, observability, representative workloads and measured targets before claims.
+- Compatibility/licensing: test claimed versions/platforms; check direct/transitive license obligations and dependencies.
+
+### End-to-end implementation milestones
+
+Follow the seven dependency-aware phases in the roadmap above. Prefer a complete, tested vertical slice over disconnected scaffolding; continue remaining verified in-scope requirements and record blockers.
+
+### Required deliverables
+
+- Evidence ledger, behavior/capability map, prioritized unknowns and source limitations.
+- User scope, architecture/data/API decisions with original-vs-proposed labels, and a candidate reuse/license evaluation.
+- Working implementation, requirement-to-test traceability, actual project check results and interface-level verification.
+- Documented deviations, partial/not-started/excluded requirements, unrun checks, setup and next actionable step.
+
+### Provenance
+
+- Product: [catalog/products.jsonl](../../products.jsonl) (`apple-pages`).
+- Dossier: [research/companies/apple/products/apple-pages.md](../../../research/companies/apple/products/apple-pages.md).
+- REA capture: [catalog/rea/apple/apple-pages.md](../../rea/apple/apple-pages.md) (2026-10-13T18:58:09.359Z); raw record: [catalog/rea/evidence/apple-pages.json](../../rea/evidence/apple-pages.json).
+- Curated alternative source: tools/skills/catalog-data.mjs; see candidate qualifications above.
+
+## Sources
+
+- [Official product page](https://www.apple.com/pages/) — Pages is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [Pages Public web-surface observation (REA)](https://support.apple.com/pages) — A dated unauthenticated snapshot exposed controls button: Store menu, button: Mac menu, button: iPad menu, button: iPhone menu, button: Watch menu, button: Vision menu, button: AirPods menu, button: Home menu, button: Entertainment menu, button: Accessories menu, button: Support menu, button: Search Support, button: Shopping Bag, button: Submit, link: Apple, link: Store, link: Mac, link: iPad, link: iPhone, link: Watch, link: Vision, link: AirPods, link: Home, link: Entertainment, link: Accessories, link: Support, link: Get started, link: Draw, annotate, and use Scribble, link: Create a table of contents, link: Start the process, link: Explore Apple Creator Studio , link: Pages for iCloud, textbox: Search Support, link: Ask or search now, link: Download the Apple Support app, link: iPhone Support, link: Mac Support, link: iPad Support, link: Watch Support, link: Apple Vision Pro Support, link: AirPods Support, link: TV Support, link: Support Site Map, link: Apple Repair Options, link: Service and Repair Information, link: AppleCare Products, link: Hardware Warranties, link: Software License Agreements, link: Complimentary Support, link: My Support, link: Product Documentation, link: Apple Support Videos, link: Accessibility, link: Contact Us, link: Support app, link: Apple Communities, link: United States. Choose your country or region, link: Privacy Policy, link: Terms of Use, link: Sales and Refunds, link: Site Map and landmarks navigation: Global, main, contentinfo: Apple Footer, navigation: Breadcrumbs, navigation: Apple Directory. (VERIFIED; accessed 2026-10-13T18:58:09.359Z).

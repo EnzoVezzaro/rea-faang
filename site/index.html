@@ -150,7 +150,7 @@
         <div class="wrap">
           <div class="section-head reveal-target" data-reveal>
             <h2 id="map-h">77 products your agent can build.</h2>
-            <p class="section-lede">Explore products from Meta, Amazon, Apple, Netflix and Google. Each record links to product research, candidate projects and build instructions for your coding agent.</p>
+            <p class="section-lede">Explore products from Meta, Amazon, Apple, Netflix and Google. Each record links to research, candidate projects and build instructions. Use the published npm CLI with <span class="mono">npx rae-faang &lt;product-id&gt; --out ./&lt;product-id&gt;.md</span>, or download a ready-to-use skill below.</p>
           </div>
           <div class="catalog-glyph-field">
           <section class="catalog-glyph-group" aria-labelledby="glyph-company-google">
@@ -297,7 +297,7 @@
             </div>
             <div class="stat" data-reveal>
               <dt>Tooling test cases</dt>
-              <dd><span class="num">44</span></dd>
+              <dd><span class="num">56</span></dd>
               <p class="stat-note">in the repository; run <span class="mono">npm test</span> for the current test results</p>
             </div>
           </dl>
@@ -417,26 +417,26 @@
             <ul class="principles">
               <li>
                 <strong>77</strong> products catalogued across 6 company
-                entries: <span class="mono">rae products list</span>
+                entries: <span class="mono">npx rae-faang products list</span>
               </li>
               <li>
-                <strong>77</strong> research dossiers; schema checks run with <span class="mono">npm run validate</span>
+                <strong>77</strong> research dossiers; check bundled catalog integrity with <span class="mono">npx rae-faang research validate</span>
               </li>
               <li>
                 <strong>77</strong> REA reports of public web pages, with captured evidence committed;
-                run <span class="mono">npm run rea:catalog</span> to add reports
+                source contributors can refresh them with <span class="mono">npm run rea:catalog</span>
               </li>
               <li>
                 <strong>40 / 29 / 8</strong> mature alternative / partial coverage / no verified alternative
-                research states: <span class="mono">npm run skills:catalog</span>
+                research states: <span class="mono">npx rae-faang alternatives coverage</span>
               </li>
               <li>
-                <strong>44</strong> tooling test cases in the repository.
+                <strong>56</strong> tooling test cases in the repository.
                 Run <span class="mono">npm test</span> for the current results.
               </li>
               <li>
-                <strong>This page</strong> is generated from the same data:
-                <span class="mono">npm run site:build</span>
+                <strong>This page</strong> is generated from catalog data; get portable product instructions with:
+                <span class="mono">npx rae-faang &lt;product-id&gt; --out ./&lt;product-id&gt;.md</span>
               </li>
             </ul>
           </div>
@@ -465,7 +465,8 @@
               <p>
                 The catalog brings together product behavior, research and open-source projects that
                 may be useful foundations. Review what fits your needs, then ask your coding agent to
-                build and test an independent version in your project. A product skill is available as a direct handoff.
+                build and test an independent version in your project. Download a skill here, or get
+                one with <span class="mono">npx rae-faang &lt;product-id&gt; --out ./&lt;product-id&gt;.md</span>.
               </p>
             </details>
             <details>

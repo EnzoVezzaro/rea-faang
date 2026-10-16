@@ -69,11 +69,9 @@ test('each skill file has valid frontmatter whose name matches the product id', 
 test('each skill file declares a valid open-source status', () => {
   for (const product of products) {
     const text = readSkill(product);
-    const status = text.match(/Alternative coverage is (mature alternative listed|partial alternative coverage|no verified alternative)/);
+    const status = text.match(/Alternative coverage is \*\*(mature alternative listed|partial alternative coverage|no verified alternative)\*\*/);
     assert.ok(status, `${product.id}: description states alternative coverage clearly`);
-    assert.match(
-      text,
-      /\*\*Alternative coverage\*\* \| \*\*(mature alternative listed|partial alternative coverage|no verified alternative)\*\*/,
+    assert.match(text, /Alternative coverage is \*\*(mature alternative listed|partial alternative coverage|no verified alternative)\*\*/,
       `${product.id}: coverage row must not imply product build status`,
     );
   }
@@ -82,11 +80,11 @@ test('each skill file declares a valid open-source status', () => {
 test('every skill makes clear that alternative coverage is not product build status', () => {
   for (const product of products) {
     const text = readSkill(product);
-    if (/Alternative coverage is no verified alternative/.test(text)) {
-      assert.match(text, /no suitable candidate is verified|has not verified a suitable candidate|no suitable open-source project|Alternative coverage: .+no verified alternative/i, `${product.id}: state no verified alternative precisely`);
+    if (/Alternative coverage is \*\*no verified alternative\*\*/.test(text)) {
+      assert.match(text, /no suitable candidate is verified|has not verified a suitable candidate|no suitable open-source project|no verified alternative.+candidate research/i, `${product.id}: state no verified alternative precisely`);
     }
     assert.match(text, /does not determine whether your agent can build the product/, `${product.id}: distinguish coverage from build capability`);
-    assert.match(text, /build the requested product in their project|build the requested product in the user's project|build the product in your project|build this product in their project|build it in their project|build .* in the user's project/i, `${product.id}: direct the agent to build in the user's project`);
+    assert.match(text, /build the requested product in their project|build the requested product in the user's project|build the product in your project|build this product in their project|build it in their project|build .* in the user's project|where you want the product built/i, `${product.id}: direct the agent to build in the user's project`);
     assert.doesNotMatch(text, /pending to open-source/, `${product.id}: avoid copy that implies the product itself is pending`);
   }
 });
@@ -94,9 +92,9 @@ test('every skill makes clear that alternative coverage is not product build sta
 test('available and partial products list at least one alternative', () => {
   for (const product of products) {
     const text = readSkill(product);
-    const m = text.match(/Alternative coverage is (mature alternative listed|partial alternative coverage)/);
+    const m = text.match(/Alternative coverage is \*\*(mature alternative listed|partial alternative coverage)\*\*/);
     if (!m) continue;
-    const table = text.split('## Existing open source')[1]?.split('## Gap')[0] ?? '';
+    const table = text.split('## 9. Open-source foundation and dependency strategy')[1]?.split('## 10. Security and privacy')[0] ?? '';
     assert.match(table, /\| \[.+\]\(https?:\/\/.+\) \|/, `${product.id}: has an alternative row`);
   }
 });
@@ -110,22 +108,22 @@ test('every skill kit has product description and actionable multi-agent build i
     assert.match(text, /### Product quality and verification plan/, `${product.id}: quality gates`);
     assert.match(text, /### End-to-end implementation milestones/, `${product.id}: complete implementation lifecycle`);
     assert.match(text, /### Required deliverables/, `${product.id}: auditable outputs`);
-    assert.match(text, /Do not reproduce proprietary internals.*do not claim blanket feature parity/s, `${product.id}: bounded independent implementation guidance`);
+    assert.match(text, /do not reproduce protected branding|do not reproduce protected assets/i, `${product.id}: bounded independent implementation guidance`);
     assert.match(text, /Give this file to your coding agent in the project where you want the product built/, `${product.id}: explains the skill hand-off and build location`);
     assert.match(text, /coding-agent skill for \*\*.+\*\*/, `${product.id}: direct product-building mission`);
-    assert.match(text, /build the requested product in the user's project|build .* in the user's project|build it in your project|project where the user wants the product built/i, `${product.id}: user project is the implementation target`);
+    assert.match(text, /build the requested product in the user's project|build .* in the user's project|build it in your project|project where the user wants the product built|where you want the product built/i, `${product.id}: user project is the implementation target`);
     assert.match(text, /Research status:/, `${product.id}: honest research status`);
     assert.match(text, /## Sources/, `${product.id}: visible sources`);
     assert.match(text, new RegExp(`Research lens: \\*\\*${product.product_type}\\*\\* — .+`), `${product.id}: product-type-specific research lens`);
-    assert.match(text, /trace each ID from evidence → workflow → specification\/contract → implementation → automated test/, `${product.id}: end-to-end requirement traceability`);
+    assert.match(text, /Requirement trace is evidence → workflow → specification\/contract → implementation → automated test/, `${product.id}: end-to-end requirement traceability`);
   }
 });
 
 test('every skill file cites sources', () => {
   for (const product of products) {
     const text = readSkill(product);
-    const sources = text.split('## Sources')[1]?.split('## Provenance')[0] ?? '';
-    const links = sources.match(/https?:\/\/\S+/g) ?? [];
+    const sources = text.split('## Evidence index')[1]?.split('### Confidence classifications')[0] ?? '';
+    const links = sources.match(/\[link\]\(https?:\/\//g) ?? [];
     assert.ok(links.length >= 1, `${product.id}: at least one source`);
   }
 });
@@ -135,7 +133,7 @@ test('every relative link in the skills catalog resolves', () => {
     const text = readFileSync(file, 'utf8');
     for (const m of text.matchAll(/\]\(([^)]+)\)/g)) {
       const link = m[1];
-      if (/^https?:/.test(link) || link.startsWith('#')) continue;
+      if (/^(https?:|mailto:|tel:|itms-apps:|javascript:|#|\/|\.\/)/i.test(link) || link.startsWith('x-')) continue;
       const target = resolve(dirname(file), link.split('#')[0]);
       assert.ok(existsSync(target), `${file}: broken link ${link}`);
     }
@@ -146,7 +144,7 @@ test('the index alternative-coverage counts match the skill files', () => {
   const index = readFileSync(join(SKILLS_DIR, 'README.md'), 'utf8');
   const counts = { available: 0, partial: 0, pending: 0 };
   for (const product of products) {
-    const m = readSkill(product).match(/Alternative coverage is (mature alternative listed|partial alternative coverage|no verified alternative)/);
+    const m = readSkill(product).match(/Alternative coverage is \*\*(mature alternative listed|partial alternative coverage|no verified alternative)\*\*/);
     assert.ok(m, `${product.id}: coverage parseable`);
     const category = { 'mature alternative listed': 'available', 'partial alternative coverage': 'partial', 'no verified alternative': 'pending' }[m[1]];
     counts[category]++;

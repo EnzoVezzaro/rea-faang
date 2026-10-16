@@ -2,23 +2,27 @@
 
 # CLI reference
 
-Use `rae` to browse products, read research, compare candidate open-source projects and generate a Markdown skill for your coding agent. The skill helps your agent plan work in your project. The CLI can check catalog data; it does not build or test your implementation.
+Use the published npm CLI to browse products, read research, compare candidate open-source projects and generate a Markdown skill for your coding agent. The skill helps your agent plan work in your project. The CLI can check catalog data; it does not build or test your implementation.
 
 ## Run the CLI
+
+One-off use from npm:
+
+```bash
+npx rae-faang products list
+npx rae-faang research dossier google-search
+npx rae-faang google-search --out ./google-search.md
+```
+
+Or install globally for the `rae` and `rae-faang` commands:
 
 ```bash
 npm install -g rae-faang
 rae products list
+rae google-search --out ./google-search.md
 ```
 
-The published `rae-faang` package includes the catalog, research dossiers, candidate projects and skill generator. It installs both `rae` and `rae-faang` commands. You can browse products, read dossiers, validate catalog data and generate a skill without cloning the source repository.
-
-In a source checkout, the same commands run through the local package:
-
-```bash
-npx rae <group> <command> [product-id] [options]
-npm run cli -- <group> <command> [options]   # equivalent
-```
+The published package includes the catalog, research dossiers, candidate projects, schemas and skill generator. From npm, `npx rae-faang <id> --out ./<id>.md` writes one portable product skill; omitting `--out` writes `./<id>.md`. This shorthand does not create a kit directory. The explicit `skills generate <id>` form is also available; batch generation writes under `./rae-skills/`. To create a kit directory with `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit <id> --out ./<id>-agent`. No source checkout is needed for bundled catalog, research and skill commands. In a source checkout use `npm run cli -- <group> <command> [options]`. `npx` may prompt to confirm a one-off package install; `--yes` is optional and omitted here so users see that prompt.
 
 ## Options available on every command
 
@@ -53,8 +57,8 @@ Validation commands return exit code `1` when they find errors, so CI can stop a
 the research label the catalog page and product skills use.
 
 ```bash
-rae products list --company amazon_aws
-rae products show google-search --format json
+npx rae-faang products list --company amazon_aws
+npx rae-faang products show google-search --format json
 ```
 
 ---
@@ -69,8 +73,8 @@ rae products show google-search --format json
 **Options:** `--format json`.
 
 ```bash
-rae companies list
-rae companies show netflix --format json
+npx rae-faang companies list
+npx rae-faang companies show netflix --format json
 ```
 
 ---
@@ -88,11 +92,11 @@ rae companies show netflix --format json
 **Options:** `--company <id>` (coverage), `--format json`.
 
 ```bash
-rae research coverage --format json
-rae research dossier google-search
-rae research dossier google-search --format json
-rae research validate
-rae research pending
+npx rae-faang research coverage --format json
+npx rae-faang research dossier google-search
+npx rae-faang research dossier google-search --format json
+npx rae-faang research validate
+npx rae-faang research pending
 ```
 
 `research validate` exits `1` when any error is found (missing files are
@@ -115,9 +119,9 @@ bundled with the package, so an agent can read evidence without a clone.
 `--format json`.
 
 ```bash
-rae gaps products
-rae gaps alternatives --status none_verified
-rae gaps all --format json
+npx rae-faang gaps products
+npx rae-faang gaps alternatives --status none_verified
+npx rae-faang gaps all --format json
 ```
 
 ---
@@ -133,8 +137,8 @@ rae gaps all --format json
 **Options:** `--product <id>` (list), `--format json`.
 
 ```bash
-rae alternatives coverage
-rae alternatives validate
+npx rae-faang alternatives coverage
+npx rae-faang alternatives validate
 ```
 
 ---
@@ -151,10 +155,10 @@ rae alternatives validate
 **Options:** `--format json`.
 
 ```bash
-rae opportunities validate
-rae opportunities export > opportunities.json
+npx rae-faang opportunities validate
+npx rae-faang opportunities export > opportunities.json
 # or write directly:
-rae opportunities export --out opportunities.json
+npx rae-faang opportunities export --out opportunities.json
 ```
 
 ---
@@ -163,19 +167,26 @@ rae opportunities export --out opportunities.json
 
 | Command | Description |
 |---|---|
+| `skills generate <product-id>` | Compile and write one skill. From an npm-installed package, default output is `./<product-id>.md`; `--out FILE` selects an explicit file. Batch options process products under `./rae-skills/<company>/<product-id>.md`. In a source checkout, default output is the canonical `catalog/skills/<company>/<product-id>.md`. |
+| `skills validate [<product-id>]` | Check required sections, IDs and traceability against the bundled canonical skill; supports `--company ID` and `--all`. |
+| `skills coverage` | Report per-product missing research and catalog-wide skill-generation coverage; does not write files. |
 | `build agent-kit <product-id>` | Generate a copy of the product-specific Markdown build skill (`skill.md`) and optional MCP configuration in a separate directory (default: `./<product-id>-agent`; override with `--out DIR`). Give the skill to your coding agent in the project where you want the product built. |
 | `build product <product-id>` | Optionally scaffold a starter workspace with an ACE shim, `package.json`, and specification files (default: `./<product-id>`; override with `--out DIR`). Give the product's Markdown skill to your coding agent in the project where you want to build; the scaffold is optional. Existing workspaces are left alone unless you pass `--force`. |
 | `rea capture <product-id>` | Capture observations from the product's public web pages with REA; requires the repository research tools, not just the installed CLI package. |
 | `alternatives clone <product-id>` | Clone a listed open-source project. By default, the CLI chooses the first non-proprietary entry. Use `--alt NAME` to choose a project, `--repo URL` to set its repository, or `--into DIR` to choose where it goes. |
-| `<product-id>` | Shorthand: generate the product's agent skill. Use `--out DIR` to choose where to save it. Give the skill to your coding agent; the agent builds in your project. With `--alt NAME`, clone a listed alternative instead. |
+| `<product-id>` | Shorthand: generate one portable Markdown skill. Use `--out FILE` to choose the output path (default: `./<product-id>.md`). Give the file to your coding agent; the agent builds in your project. With `--alt NAME`, clone a listed alternative instead. |
 
 ```bash
-rae build agent-kit gmail --out ./gmail-agent
-rae gmail --out ./gmail-agent
-rae build product gmail --out ./gmail-workspace
-rae research dossier gmail
-rae alternatives clone aws-s3 --into ./alternatives
-rae aws-s3 --alt "Ceph (RADOS Gateway)"
+npx rae-faang google-search --out ./google-search.md
+npx rae-faang skills generate --all --format json
+npx rae-faang skills validate --all
+npx rae-faang skills coverage --format json
+npx rae-faang build agent-kit gmail --out ./gmail-agent
+npx rae-faang gmail --out ./gmail.md
+npx rae-faang build product gmail --out ./gmail-workspace
+npx rae-faang research dossier gmail
+npx rae-faang alternatives clone aws-s3 --into ./alternatives
+npx rae-faang aws-s3 --alt "Ceph (RADOS Gateway)"
 ```
 
 ## Use the CLI from another tool
@@ -183,6 +194,6 @@ rae aws-s3 --alt "Ceph (RADOS Gateway)"
 Pass `--format json` when another script or program needs to read command output. For example:
 
 ```bash
-rae research coverage --format json \
-  | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);console.log(j.total)})"
+npx rae-faang research coverage --format json \
+  | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);console.log(j.total.cataloged)})"
 ```

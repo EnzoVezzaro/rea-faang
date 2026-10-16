@@ -113,7 +113,7 @@
             </div>
             <div class="rail-block">
               <p class="rail-key">Product skill</p>
-              <input class="rail-input" type="text" value="rae aws-sqs --out ./aws-sqs-agent" title="Click to copy" aria-label="Command to generate the SQS skill" readonly>
+              <input class="rail-input" type="text" value="npx rae-faang aws-sqs --out ./aws-sqs.md" title="Click to copy" aria-label="Command to generate the SQS skill" readonly>
               <a class="rail-dl" href="agent-kit.md" download>Download Markdown skill</a>
             </div>
             <div class="rail-block">
@@ -150,7 +150,7 @@
             </div>
             <p class="alt-covers">Mature multi-protocol message broker.</p>
             <p class="alt-note">Queue semantics differ from SQS.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-sqs --alt &quot;RabbitMQ&quot;" title="Click to copy" aria-label="Command to clone RabbitMQ" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-sqs --alt &quot;RabbitMQ&quot;" title="Click to copy" aria-label="Command to clone RabbitMQ" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -159,7 +159,7 @@
             </div>
             <p class="alt-covers">Lightweight messaging and JetStream persistence.</p>
             <p class="alt-note">Cloud-native broker.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-sqs --alt &quot;NATS&quot;" title="Click to copy" aria-label="Command to clone NATS" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-sqs --alt &quot;NATS&quot;" title="Click to copy" aria-label="Command to clone NATS" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -168,7 +168,7 @@
             </div>
             <p class="alt-covers">Implements a subset of the SQS API.</p>
             <p class="alt-note">Drop-in SQS-compatible queue.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-sqs --alt &quot;ElasticMQ&quot;" title="Click to copy" aria-label="Command to clone ElasticMQ" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-sqs --alt &quot;ElasticMQ&quot;" title="Click to copy" aria-label="Command to clone ElasticMQ" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -177,7 +177,7 @@
             </div>
             <p class="alt-covers">SQS-compatible message queue.</p>
             <p class="alt-note">Newer drop-in replacement.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-sqs --alt &quot;SmoothMQ&quot;" title="Click to copy" aria-label="Command to clone SmoothMQ" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-sqs --alt &quot;SmoothMQ&quot;" title="Click to copy" aria-label="Command to clone SmoothMQ" readonly>
           </article>
           <article class="alt">
             <div class="alt-head">
@@ -186,7 +186,7 @@
             </div>
             <p class="alt-covers">Java multi-protocol broker.</p>
             <p class="alt-note">JMS-oriented.</p>
-            <input class="rail-input alt-cmd" type="text" value="rae alternatives clone aws-sqs --alt &quot;Apache ActiveMQ&quot;" title="Click to copy" aria-label="Command to clone Apache ActiveMQ" readonly>
+            <input class="rail-input alt-cmd" type="text" value="npx rae-faang alternatives clone aws-sqs --alt &quot;Apache ActiveMQ&quot;" title="Click to copy" aria-label="Command to clone Apache ActiveMQ" readonly>
           </article>
               </div>
             </section>
@@ -210,14 +210,14 @@
               <p>This Markdown file is the coding-agent skill for SQS. Give it to your agent in your project; it guides research, reuse decisions, implementation and verification.</p>
               <div class="cmd-banner">
                 <p class="cmd-banner-label">Get the SQS build skill</p>
-                <pre class="cmd-block"><code>rae aws-sqs --out ./aws-sqs-agent</code></pre>
+                <pre class="cmd-block"><code>npx rae-faang aws-sqs --out ./aws-sqs.md</code></pre>
                 <p class="cmd-banner-note">Generate the skill with the RAE CLI, or <a href="agent-kit.md" download>download the Markdown skill</a>. The <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/catalog/skills/amazon_aws/aws-sqs.md" rel="noopener noreferrer" target="_blank">source skill</a> is also available in the catalog.</p>
               </div>
               <ul class="artifact-list">
               <li class="artifact"><a class="artifact-name" href="agent-kit.md" download>agent-kit.md</a><span class="artifact-note">Downloadable Markdown skill with product-specific instructions for your coding agent.</span><span class="pill pill-available"><span class="pill-dot" aria-hidden="true"></span>available</span></li>
-              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — <span class="mono">rae aws-sqs --out ./aws-sqs-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — <span class="mono">rae aws-sqs --out ./aws-sqs-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
-              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">rae build product aws-sqs --out ./aws-sqs</span>.</span></li>
+              <li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — use <span class="mono">npx rae-faang build agent-kit aws-sqs --out ./aws-sqs-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — use <span class="mono">npx rae-faang build agent-kit aws-sqs --out ./aws-sqs-agent</span>.</span><span class="pill pill-neutral"><span class="pill-dot" aria-hidden="true"></span>in kit</span></li>
+              <li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">npx rae-faang build product aws-sqs --out ./aws-sqs</span>.</span></li>
               </ul>
               <ol class="stepper" aria-label="How to build this product with your agent">
               <li class="step step-todo">
@@ -260,7 +260,7 @@
               <h2 id="next-h">Next step</h2>
               <div class="callout callout-plain">
                 <p>Give the SQS skill to your coding agent in your project. Ask it to evaluate <a href="https://www.rabbitmq.com/" rel="noopener noreferrer" target="_blank">RabbitMQ ↗</a> against your needs, reuse what fits, then follow the skill's build and verification instructions.</p>
-                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">rae build product aws-sqs --out ./aws-sqs</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
+                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">npx rae-faang build product aws-sqs --out ./aws-sqs</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
               </div>
             </section>
           </div>

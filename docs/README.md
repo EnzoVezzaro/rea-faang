@@ -6,20 +6,21 @@ Use this guide to browse the catalog, generate a product skill and work on the r
 
 ## Contributor entry points
 
-Useful contributions improve catalog data, research, product skills or the tools that check and publish them.
+Install the published npm CLI for catalog use; clone the source repository only to change data/code, run repository checks, or regenerate the public site. Useful contributions improve catalog data, research, product skills or the tools that check and publish them.
 
 - **First build or install?** [`getting-started.md`](getting-started.md).
 - **Change the catalog?** [`catalog-and-schemas.md`](catalog-and-schemas.md), then run
   `npm run validate` (CI gate) and `npm test`.
-- **Improve a product skill?** Edit `catalog/skills/<company>/<product>.md` or the generator
-  in `tools/skills-catalog.mjs`, then `npm run skills:catalog` so the index rebuilds.
+- **Improve a product skill?** Update its canonical research/source inputs and compiler
+  (`tools/product-skill-generator.mjs`), then run `npm run skills:catalog` and
+  `npm run site:build`; do not hand-edit generated skill files.
 - **Improve the site?** Edit the templates in `tools/site/` or `site/styles.css`, then
   `npm run site:build` — everything else under `site/` is generated output.
 - **Ship a change?** Follow the contribution loop in
   [`CONTRIBUTING.md`](../CONTRIBUTING.md), and record user-visible changes in
   [`CHANGELOG.md`](../CHANGELOG.md).
 - **Research a product?** Fill the dossier sections and cite evidence, then check coverage
-  with `rae research coverage --company <id>`.
+  with `npx rae-faang research coverage --company <id>`.
 
 ## Contents
 
