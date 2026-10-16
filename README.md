@@ -279,9 +279,9 @@ referenced projects keep their own licenses.
 
 <div align="center">
 
-**Choose a product. Start with the research. Build what your users need.**
+**We don't need FAANG anymore.**
 
-Give your coding agent the product's Markdown skill, review its plan, and test the result in your project.
+Use your agent to build any of their products.
 
 <img src="docs/assets/brand-logo.png" width="320" alt="" />
 
