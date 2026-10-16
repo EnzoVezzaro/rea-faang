@@ -78,13 +78,32 @@ test('duplicate capability IDs and duplicate generated feature IDs are rejected'
   assert.ok(validateSkillText(duplicatedMarkdown, { product: products.find((p) => p.id === 'google-search') }).errors.some((error) => error.includes('duplicate feature ID')), validateSkillText(duplicatedMarkdown, { product: products.find((p) => p.id === 'google-search') }).errors.join('; '));
 });
 
-test('batch CLI isolates an unknown product and returns per-product reports', () => {
-  const result = spawnSync(process.execPath, [join(ROOT, 'src/cli.js'), 'skills', 'generate', '--all', '--format', 'json'], { cwd: ROOT, encoding: 'utf8' });
-  assert.equal(result.status, 0, result.stderr);
-  const output = JSON.parse(result.stdout);
-  assert.equal(output.summary.selected, products.length);
-  assert.equal(output.summary.failed, 0);
-  assert.ok(output.products.every((item) => item.status === 'generated_with_gaps'));
+test('batch CLI writes all generated skills to the caller directory outside a source checkout', () => {
+  const temp = mkdtempSync(join(tmpdir(), 'rae-batch-package-'));
+  const packageRoot = join(temp, 'node_modules', 'rae-faang');
+  const canonicalSkill = join(ROOT, 'catalog/skills/google/google-search.md');
+  const canonicalBefore = readFileSync(canonicalSkill, 'utf8');
+  try {
+    for (const path of ['catalog', 'research', 'tools']) {
+      cpSync(join(ROOT, path), join(packageRoot, path), { recursive: true });
+    }
+    mkdirSync(join(packageRoot, 'node_modules'), { recursive: true });
+    for (const dependency of ['js-yaml', 'minimist']) {
+      symlinkSync(join(ROOT, 'node_modules', dependency), join(packageRoot, 'node_modules', dependency), 'dir');
+    }
+    mkdirSync(join(packageRoot, 'src'), { recursive: true });
+    cpSync(join(ROOT, 'src/cli.js'), join(packageRoot, 'src/cli.js'));
+    cpSync(join(ROOT, 'package.json'), join(packageRoot, 'package.json'));
+
+    const result = spawnSync(process.execPath, [join(packageRoot, 'src/cli.js'), 'skills', 'generate', '--all', '--format', 'json'], { cwd: temp, encoding: 'utf8' });
+    assert.equal(result.status, 0, result.stderr);
+    const output = JSON.parse(result.stdout);
+    assert.equal(output.summary.selected, products.length);
+    assert.equal(output.summary.failed, 0);
+    assert.ok(output.products.every((item) => item.status === 'generated_with_gaps'));
+    assert.ok(existsSync(join(temp, 'rae-skills', 'google', 'google-search.md')), 'batch output is kept in the caller directory');
+    assert.equal(readFileSync(canonicalSkill, 'utf8'), canonicalBefore, 'npm batch generation must not rewrite the source checkout');
+  } finally { rmSync(temp, { recursive: true, force: true }); }
 });
 
 test('canonical skill index and site download use the shared compiler output', () => {
