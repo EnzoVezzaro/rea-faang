@@ -47,9 +47,9 @@
     "rea:catalog": "node tools/rea-catalog.mjs",
     "skills:catalog": "node tools/skills-catalog.mjs",
     "site:build": "node tools/site-build.mjs",
-    "test": "node --test tests/",
+    "test": "node --test tests/*.test.js",
     "prepublishOnly": "npm test && npm run validate",
-    "verify": "node src/cli.js research validate && node --test tests/",
+    "verify": "node src/cli.js research validate && node --test tests/*.test.js",
     "govern": "ace govern",
     "status": "ace status"
   },

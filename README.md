@@ -22,7 +22,7 @@ implementation and its dependencies have their own licenses.
 
 <code>npx rae-faang products list</code>
 
-**[Live site](https://enzovezzaro.github.io/rae-faang/) ·
+**[Live site](https://enzovezzaro.github.io/rea-faang/) ·
 [Choose a product to build](#build-a-product-with-your-agent) ·
 [Contributing](CONTRIBUTING.md) ·
 [Issues](https://github.com/EnzoVezzaro/rea-faang/issues)**
@@ -43,7 +43,7 @@ implementation and its dependencies have their own licenses.
 
 ## Build a product with your agent
 
-1. Choose any product in the [live catalog](https://enzovezzaro.github.io/rae-faang/) or the
+1. Choose any product in the [live catalog](https://enzovezzaro.github.io/rea-faang/) or the
    [`catalog/skills/`](catalog/skills/README.md) index.
 2. Give its Markdown skill to your coding agent from the project where you want to work.
 3. Ask the agent to check the research, assess candidate projects, then plan, build and test a
@@ -136,7 +136,7 @@ implementation is feasible.
 
 **77 products** · **40** with a mature candidate listed · **29** with partial coverage · **8** with
 no verified alternative. These labels summarize catalog research, not product parity. See
-`catalog/products.jsonl` and the [live catalog](https://enzovezzaro.github.io/rae-faang/) for current counts.
+`catalog/products.jsonl` and the [live catalog](https://enzovezzaro.github.io/rea-faang/) for current counts.
 
 ---
 
