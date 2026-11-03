@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_c4dec31bbb151480e3276330b35c63a887345e436f29293cad3a651bd768073d",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/products/connect/decisions/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "431560c340c3bcb70b891272453dae5ed28827c360b4ce5cce077581871ae158"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 7777,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 4323,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/products/connect/decisions/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2552,
+        "before_url": {
+          "url": "https://aws.amazon.com/products/connect/decisions/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/products/connect/decisions/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "181389e153db0163101cb1a02ff1165c9968c9aa89374de322388af2107daaa5",
+              "bytes": 14663,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - main:\n    - paragraph: Amazon Connect Decisions\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /products/connect/decisions/\n      - button \"Capabilities submenu\": Capabilities\n      - listitem:\n        - link \"Pricing\":\n          - /url: /products/connect/decisions/pricing/\n      - listitem:\n        - link \"Resources\":\n          - /url: /products/connect/decisions/resources/\n      - listitem:\n        - link \"FAQs\":\n          - /url: /products/connect/decisions/faqs/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Amazon Connect\":\n            - /url: /products/connect/\n        - listitem: Decisions\n    - 'heading \"Amazon Connect Decisions: Agentic supply chain planning and intelligence\" [level=1]'\n    - paragraph: AI teammates adapt to your business, learn from your team, and continuously improve your operation, helping your business stay ahead.\n    - button \"Contact us\"\n    - heading \"What is Amazon Connect Decisions?\" [level=2]\n    - paragraph: Amazon Connect Decisions is a supply chain planning and intelligence solution with AI teammates that work alongside your team harmonizing demand signals into consensus forecasts, generating constraint-aware supply plans, and actively monitoring your operations to prevent problems, resolve issues, and identify root causes for continuous improvement.\n    - paragraph: Amazon Connect Decisions is the next generation of AWS Supply Chain.\n    - paragraph: \"AI teammates adapt to how you work: driven by your operating procedures and rules, integrating with your existing systems and learning from your practitioners' decisions. It leverages Amazon supply chain expertise to deliver effective plans and recommendations from day one.\"\n    - paragraph: You lead a team of AI agents that handle coordination and execute actions, freeing you to focus on strategic decisions that drive service levels and working capital efficiency.\n    - button \"Play:\"\n    - img \"Missing alt text value\"\n    - heading \"Key benefits\" [level=2]\n    - heading \"Adapt with your business\" [level=3]:\n      - button \"Adapt with your business\"\n    - heading \"Prevent problems before they start\" [level=3]:\n      - button \"Prevent problems before they start\"\n    - heading \"Stay ahead of what’s coming\" [level=3]:\n      - button \"Stay ahead of what’s coming\"\n    - heading \"Make confident decisions from day one\" [level=3]:\n      - button \"Make confident decisions from day one\"\n    - heading \"Adaptive intelligence\" [level=2]\n    - paragraph: Adaptive intelligence is the foundational infrastructure that powers all capabilities. AI teammates learn from every decision your team makes, capturing expertise, and translating it into better recommendations over time. This closed loop learning powers all capabilities, demand forecasting improves as teammates learn your patterns, supply planning adapts to your priorities, and institutional knowledge compounds across your organization. Unlike static systems that require manual retraining, AI agents continuously evolve with your business, ensuring recommendations stay aligned with how you actually operate.\n    - 'link \"Learn more: Adaptive intelligence\"':\n      - /url: /products/connect/decisions/adaptive-intelligence/\n      - text: Learn more\n    - img \"Missing alt text value\"\n    - heading \"Demand intelligence\" [level=2]\n    - paragraph: AI teammates dynamically orchestrate multiple foundation models, intelligent forecasting tools, and continuously learn to generate better forecasts at the item level. Leveraging Amazon forecasting technology, AI agents generate forecasts from limited history, sparse patterns, and new product launches that automatically tune every cycle with learnings from your demand patterns and planner adjustments. It also autonomously discovers and incorporates public external signals, (e.g. like weather, holidays, and sporting events), to capture demand drivers your historical data can't. Through a natural language interface, you collaborate with AI agents to harmonize system-generated forecasts with customer commitments and cross-functional inputs, continuously monitoring accuracy with automated root cause analysis to deliver plans that stay aligned with reality.\n    - 'link \"Learn more: Demand intelligence\"':\n      - /url: /products/connect/decisions/demand-intelligence/\n      - text: Learn more\n    - img \"Missing alt text value\"\n    - heading \"Supply intelligence\" [level=2]\n    - paragraph: AI teammates generate supply plans that continuously adapt to real-world constraints, learning from execution outcomes to improve future recommendations. AI agents work 24/7 monitoring inventory positions, supplier performance, and demand signals, detecting invisible patterns and performing automated root cause analysis that show why the problem happened. AI teammates triage thousands of exceptions for you, and surface only what matters through actionable recommendations grouped by common action, executing you’re approved decisions on your behalf.\n    - 'link \"Learn more: Supply intelligence\"':\n      - /url: /products/connect/decisions/supply-intelligence/\n      - text: Learn more\n    - img \"Missing alt text value\"\n    - heading \"Onboarding intelligence\" [level=2]\n    - paragraph: Connect fragmented data quickly with AI-powered onboarding agents that guide you through setup and help you ingest, prepare, and validate your data, all through natural language conversation. Configure business rules, policies, and priorities in plain language, with real-time previews before committing. Automatically connect your data, prepare it to work with Amazon Connect Decisions, and flag issues before they affect your forecasts, getting your supply chain up and running in weeks, not months.\n    - 'link \"Learn more: Onboarding intelligence\"':\n      - /url: /products/connect/decisions/onboarding-intelligence/\n      - text: Learn more\n    - img \"Missing alt text value\"\n    - heading \"Customers\" [level=2]\n    - tablist:\n      - tab \"Wells Vehicle Electronics\" [selected]\n      - tab \"TE Connectivity\"\n      - tab \"TVS Motor Company Ltd.\"\n    - tabpanel \"Wells Vehicle Electronics\":\n      - heading \"Wells Vehicle Electronics\" [level=3]\n      - paragraph: \"\\\"We reduced inventory 7% in three months while our fill rate went up. For one of our big-box auto retailers, our line fill penalties dropped to zero. And we're just getting started with Amazon Connect Decisions.\\\"\"\n      - paragraph: – Ben Sobczak, VP Supply Chain & Digital Transformation, Wells Vehicle Electronics\n      - paragraph\n      - img \"Missing alt text value\"\n    - heading \"Analyst reports\" [level=2]\n    - paragraph: Gartner | Coolest Vendor Innovations in Supply Chain Planning Technology\n    - paragraph: Amazon recognized as a Cool Vendor in Innovations in Supply Chain Planning Software.\n    - 'link \"Read now: Analyst reports\"':\n      - /url: /resources/analyst-reports/gartner/global-mq-ardm-26-coolest-vendor-innovations-in-supply-chain-planning-technology/?trk=33a0c5ec-1a3d-4d5b-ae6c-76a176191cde&sc_channel=el\n      - text: Read now\n    - heading \"Ready to start?\" [level=2]\n    - link \"Getting started Contact us Learn more\":\n      - /url: https://pages.awscloud.com/amazon-connect-decisions-contact-us.html\n      - text: Getting started\n      - heading \"Contact us\" [level=3]\n      - text: Learn more\n    - link \"Pricing Find out about Amazon Connect Decisions Pricing Learn more\":\n      - /url: /products/connect/decisions/pricing/\n      - text: Pricing\n      - heading \"Find out about Amazon Connect Decisions Pricing\" [level=3]\n      - text: Learn more\n    - heading \"Did you find what you were looking for today?\" [level=2]\n    - paragraph: Let us know so we can improve the quality of the content on our pages\n    - button \"Yes, give us positive feedback\": \"Yes\"\n    - button \"No, give us constructive feedback\": \"No\"\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /products/connect/decisions/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /products/connect/decisions/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/products/connect/decisions/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

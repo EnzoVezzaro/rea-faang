@@ -111,7 +111,9 @@ catalog/skills/
 └── <company_id>/<product_id>.md   one skill-structured file per product
 ```
 
-Each Markdown file is the skill for building that product with a coding agent. It directs the agent to assess existing projects, choose what to reuse, implement the product in the user's project, and verify the result. The coverage status below describes only the catalog's research into open-source alternatives—it is not a product-build status.
+Each Markdown file is the skill for building that product with a coding agent. It opens with an operating procedure rather than a description: confirm identity and authorization, run the Reverse Engineer Anything framework with its real tools, write an evidence ledger, extract capabilities/workflows/states/limits/unknowns, pass a mandatory foundation gate (REUSE / INTEGRATE / EXTEND / BUILD / INVESTIGATE MORE), turn the findings into a plan, build an independent implementation in the consumer's project, then verify and report. The catalog itself never implements the product.
+
+A skill without open-source candidates is not a claim that none exists: its foundation section records **UNKNOWN / PENDING** and the search the consuming agent must run before building from scratch. `validateSkillText` rejects a generated skill that omits the operating procedure, the real REA CLI invocation, any of the five verdicts, or the product's own CLI command. The coverage status below describes only the catalog's research into open-source alternatives—it is not a product-build status.
 
 | Status | Meaning |
 |---|---|

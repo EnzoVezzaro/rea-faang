@@ -15,18 +15,18 @@
     <meta property="og:site_name" content="RAE FAANG" />
     <meta property="og:title" content="Catalog and schemas — RAE FAANG docs" />
     <meta property="og:description" content="Understand product records, research dossiers, alternatives, and validation." />
-    <meta property="og:url" content="https://rae-faang-landing.vercel.app/docs/catalog-and-schemas.html" />
-    <meta property="og:image" content="https://rae-faang-landing.vercel.app/assets/rae-banner.png" />
+    <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/docs/catalog-and-schemas.html" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
     <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
     <meta property="og:image:width" content="1774" />
     <meta property="og:image:height" content="887" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Catalog and schemas — RAE FAANG docs" />
     <meta name="twitter:description" content="Understand product records, research dossiers, alternatives, and validation." />
-    <meta name="twitter:image" content="https://rae-faang-landing.vercel.app/assets/rae-banner.png" />
-    <link rel="canonical" href="https://rae-faang-landing.vercel.app/docs/catalog-and-schemas.html" />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/docs/catalog-and-schemas.html" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="sitemap" type="application/xml" href="https://rae-faang-landing.vercel.app/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
     <link rel="apple-touch-icon" href="../docs/assets/icon-192.png" />
     <link rel="icon" href="../docs/assets/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="icon" href="../docs/assets/icon-512.png" type="image/png" sizes="512x512" />
@@ -153,7 +153,8 @@ node tools/rea-catalog.mjs --only netflix-streaming --wait 6000</code></pre>
 <pre><code>catalog/skills/
 ├── README.md                      index (per company) + status counts
 └── &lt;company_id&gt;/&lt;product_id&gt;.md   one skill-structured file per product</code></pre>
-<p>Each Markdown file is the skill for building that product with a coding agent. It directs the agent to assess existing projects, choose what to reuse, implement the product in the user's project, and verify the result. The coverage status below describes only the catalog's research into open-source alternatives—it is not a product-build status.</p>
+<p>Each Markdown file is the skill for building that product with a coding agent. It opens with an operating procedure rather than a description: confirm identity and authorization, run the Reverse Engineer Anything framework with its real tools, write an evidence ledger, extract capabilities/workflows/states/limits/unknowns, pass a mandatory foundation gate (REUSE / INTEGRATE / EXTEND / BUILD / INVESTIGATE MORE), turn the findings into a plan, build an independent implementation in the consumer's project, then verify and report. The catalog itself never implements the product.</p>
+<p>A skill without open-source candidates is not a claim that none exists: its foundation section records <strong>UNKNOWN / PENDING</strong> and the search the consuming agent must run before building from scratch. <code>validateSkillText</code> rejects a generated skill that omits the operating procedure, the real REA CLI invocation, any of the five verdicts, or the product's own CLI command. The coverage status below describes only the catalog's research into open-source alternatives—it is not a product-build status.</p>
 <div class="table-wrap"><table>
 <thead>
 <tr><th scope="col">Status</th><th scope="col">Meaning</th></tr>

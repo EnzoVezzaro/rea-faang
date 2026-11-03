@@ -1,258 +1,591 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://rae-faang-landing.vercel.app/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/docs/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/docs/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-search/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-search/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-gemini/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-nimble-studio/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/gmail/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-nova-act/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-maps/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-opensearch-service/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-chrome/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-personalize/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/android/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-polly/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/youtube/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-q-developer/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-cloud/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-quicksight/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-firebase/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-rekognition/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-tensorflow/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-route-53/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-workspace/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-security-lake/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-xcode/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-ses/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-ios/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-pinpoint/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-macos/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-neptune/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-safari/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-mq/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-pages/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-monitron/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-numbers/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-mwaa/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-keynote/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-msk/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-final-cut-pro/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-managed-prometheus/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-logic-pro/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-managed-grafana/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-vision-pro/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-gemini/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/amazon-ec2/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/gmail/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-lambda/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-maps/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-s3/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-chrome/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-rds/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/android/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-api-gateway/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/youtube/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-sqs/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-cloud/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-ecs/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-firebase/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/amazon-eks/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-tensorflow/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/amazon-online-retail/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-workspace/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/amazon-prime/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-xcode/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/netflix-streaming/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-ios/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/meta-whatsapp/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-macos/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/meta-llama/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-safari/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-drive/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-pages/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-docs/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-numbers/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-sheets/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-keynote/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-meet/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-final-cut-pro/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-calendar/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-logic-pro/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-photos/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-vision-pro/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-news/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-ec2/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-play/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-lambda/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-analytics/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-s3/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-classroom/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-rds/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-ads/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-api-gateway/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/youtube-music/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-appflow/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-cloud-storage/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-sqs/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/google-pubsub/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-ecs/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-iphone/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-eks/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-ipad/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-online-retail/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-watch/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-prime/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-icloud/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/netflix-streaming/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-messages/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-whatsapp/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-facetime/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-llama/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-siri/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-drive/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-music/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-docs/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-pay/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-sheets/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/apple-passwords/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-meet/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-dynamodb/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-calendar/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-cloudfront/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-photos/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-elasticache/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-news/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-sns/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-play/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-redshift/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-analytics/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-bedrock/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-classroom/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-ecr/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-ads/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-eventbridge/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/youtube-music/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/aws-sagemaker/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-cloud-storage/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/amazon-alexa/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-pubsub/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/netflix-games/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-iphone/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/netflix-kids/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-ipad/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/netflix-profiles/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-watch/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/netflix-tudum/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-icloud/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/meta-instagram/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-messages/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/meta-facebook/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-facetime/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/meta-threads/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-siri/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/amazon-kindle/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-music/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/catalog/amazon-luna/</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-pay/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/docs/getting-started.html</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/apple-passwords/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/docs/cli-reference.html</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-dynamodb/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/docs/catalog-and-schemas.html</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-cloudfront/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/docs/agent-workflow.html</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-elasticache/</loc>
   </url>
   <url>
-    <loc>https://rae-faang-landing.vercel.app/docs/product-research-and-build-plan.html</loc>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-sns/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-redshift/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-bedrock/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-ecr/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-eventbridge/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-sagemaker/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-alexa/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/netflix-games/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/netflix-kids/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/netflix-profiles/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/netflix-tudum/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-instagram/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-facebook/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-threads/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-kindle/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-luna/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/microsoft-windows/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/microsoft-365/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/microsoft-teams/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/microsoft-azure/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/microsoft-skype/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/google-stadia/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/netflix-dvd/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-athena/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-augmented-ai/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-aurora/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-bio-discovery/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-braket/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-chime/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-chime-sdk/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-cloudsearch/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-cloudwatch/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-codeguru/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-cognito/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-comprehend/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-connect-customer/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-connect-decisions/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-connect-health/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-connect-talent/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-data-firehose/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-detective/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-devops-guru/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-documentdb/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-ec2-auto-scaling/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-ecs-anywhere/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-eks-anywhere/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-eks-distro/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-elastic-block-store/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-elastic-container-service/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-elastic-file-system/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-elastic-kubernetes-service/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-elasticache-memcached/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-elasticache-redis/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-emr/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-file-cache/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-fsx-lustre/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-forecast/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-fraud-detector/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-fsx-ontap/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-fsx-openzfs/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-fsx-windows/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-gamelift/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-guardduty/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-healthlake/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-inspector/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-ivs/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-kendra/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-keyspaces/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-kinesis-data-streams/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-kinesis-video-streams/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-lex/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-lightsail/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-location/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-lookout-equipment/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-lookout-metrics/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-lookout-vision/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-managed-blockchain/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-macie/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-managed-service-apache-flink/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-textract/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-transcribe/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-timestream/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-translate/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-verified-permissions/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-vpc/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-workmail/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-workspaces/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-workspaces-applications/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/amazon-workspaces-secure-browser/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-amplify/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-app-mesh/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-app-runner/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-app2container/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-appsync/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-artifact/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-audit-manager/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-auto-scaling/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-backup/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-batch/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-billing-conductor/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-cloudformation/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-cloud-map/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-cloud-wan/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/docs/getting-started.html</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/docs/cli-reference.html</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/docs/catalog-and-schemas.html</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/docs/agent-workflow.html</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/docs/product-research-and-build-plan.html</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/docs/research-batches.html</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/docs/catalog-gap-report.html</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/docs/inventory-audit.html</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/docs/release-process.html</loc>
   </url>
 </urlset>

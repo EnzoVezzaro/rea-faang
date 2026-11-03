@@ -9,11 +9,11 @@ Browser capture of the public web surface of Google Cloud Storage, recorded with
 | Target | https://cloud.google.com/storage |
 | Resolved URL | https://cloud.google.com/storage |
 | Page title | Cloud Storage |
-| Captured | 2026-10-14T03:54:09.582Z |
+| Captured | 2026-11-03T01:37:43.906Z |
 | Status | captured |
-| REA Evidence ID | `ev_f16fb300eeeba95e27355e5f61789b039c7bfcc5cb0aed21c155f9aac008beed` |
+| REA Evidence ID | `ev_1ec3cda5d85a06aa90cf782fb834b1a0a8e7105c17d6bb2055f2fbd87260c940` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -109,12 +109,12 @@ access control is bypassed.
 - [Business Case](/storage#business-case)
 - [FAQ](/storage#section-1)
 - [Release notes](https://cloud.google.com/storage/docs/release-notes)
-- [Documentation](https://cloud.google.com/storage/docs)
+- [Documentation](https://docs.cloud.google.com/storage/docs/introduction)
 - [Resources and guides](https://cloud.google.com/architecture)
 - [Training](https://www.cloudskillsboost.google/catalog?keywords=Storage&locale=)
 - [85% of enterprise data is unstructured. Don't let it become dark data. Watch the fireside chat to learn how smart storage instantly becomes your AI foundation.](https://www.youtube.com/watch?v=yF_V0TYwSyE)
-- [Try Storage free](https://console.cloud.google.com/freetrial/?redirectPath=/storage)
-- [Contact sales](https://cloud.google.com/contact)
+- [Try Cloud Storage free](https://console.cloud.google.com/freetrial/?redirectPath=/storage)
+- [View documentation](https://docs.cloud.google.com/storage/docs/introduction)
 - [personal, team, and block storage options](https://cloud.google.com/products/storage)
 - [Automatically transition to lower-cost storage classes](/storage#features)
 - [Standard, nearline, coldline, and archive storage options](/storage#options)
@@ -148,9 +148,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -158,6 +158,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/google-cloud-storage.json`
-- Evidence ID: `ev_f16fb300eeeba95e27355e5f61789b039c7bfcc5cb0aed21c155f9aac008beed`
-- Accessibility outline: 47974 bytes
+- Evidence ID: `ev_1ec3cda5d85a06aa90cf782fb834b1a0a8e7105c17d6bb2055f2fbd87260c940`
+- Accessibility outline: 48207 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

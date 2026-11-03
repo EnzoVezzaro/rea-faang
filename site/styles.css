@@ -2562,6 +2562,26 @@ body {
 .cmd-banner-note a {
   color: var(--primary);
 }
+.cmd-banner-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 12px 0 0;
+}
+.cmd-banner-actions .rail-dl {
+  font: inherit;
+  font-size: 13px;
+  color: var(--text-subtle);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cmd-banner-actions .rail-dl:hover {
+  color: var(--primary);
+}
 
 .artifact-list {
   list-style: none;

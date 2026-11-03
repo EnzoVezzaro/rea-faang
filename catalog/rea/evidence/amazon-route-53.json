@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_ed1d010580201c6acd84a8f48a273451b25988104ee222af7a993cbcdde0cbe8",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/route53/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "b5527ada14a9dd8c9f42a439edf42f38ab9e9cb90c6cd2ed7f0744d7597db8cd"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 7110,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 4075,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/route53/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2595,
+        "before_url": {
+          "url": "https://aws.amazon.com/route53/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/route53/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "3af4ff1f32ee3a0237dc2324c37e141ef401d69eead5d27c3f6999df086cc9e9",
+              "bytes": 12896,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - tooltip \"Feedback\"\n  - main:\n    - paragraph: Amazon Route 53\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /route53/\n      - button \"Features submenu\": Features\n      - listitem:\n        - link \"Pricing\":\n          - /url: /route53/pricing/\n      - listitem:\n        - link \"Resources\":\n          - /url: /route53/resources/\n      - listitem:\n        - link \"FAQs\":\n          - /url: /route53/faqs/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Networking and Content Delivery\":\n            - /url: /products/networking/\n        - listitem: Amazon Route 53\n    - heading \"Amazon Route 53 - DNS service\" [level=1]\n    - paragraph: A reliable and cost-effective way to route end users to Internet applications\n    - button \"Get started with Route 53\"\n    - button \"Connect with an expert\"\n    - heading \"Benefits of Route 53\" [level=2]\n    - heading \"Route end users to your site reliably with globally-dispersed Domain Name System (DNS) servers and automatic scaling.\" [level=3]:\n      - button \"Route end users to your site reliably with globally-dispersed Domain Name System (DNS) servers and automatic scaling.\"\n    - heading \"Set up your DNS routing in minutes with domain name registration and straightforward visual traffic flow tools.\" [level=3]:\n      - button \"Set up your DNS routing in minutes with domain name registration and straightforward visual traffic flow tools.\"\n    - heading \"Customize your DNS routing policies to reduce latency, improve application availability, and maintain compliance.\" [level=3]:\n      - button \"Customize your DNS routing policies to reduce latency, improve application availability, and maintain compliance.\"\n    - heading \"How it works\" [level=2]\n    - paragraph\n    - heading [level=3]\n    - paragraph:\n      - text: Amazon Route 53 provides highly available and scalable\n      - link \"Domain Name System (DNS)\":\n        - /url: /route53/what-is-dns/\n      - text: \",\"\n      - link \"domain name registration\":\n        - /url: /blogs/networking-and-content-delivery/benefits-of-domain-registration-with-amazon-route-53/\n      - text: \", and\"\n      - link \"health-checking\":\n        - /url: https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover.html\n      - text: cloud services. It is designed to give developers and businesses an extremely reliable and cost-effective way to route end users to internet applications by translating names like example.com into the numeric IP addresses, such as 192.0.2.1, that computers use to connect to each other. You can combine your Route 53 DNS with health-checking services to route traffic to healthy endpoints or to independently monitor and alarm on endpoints. You can also use the\n      - link \"Traffic Flow\":\n        - /url: /route53/traffic-flow/\n      - text: visual policy builder to simplify the implementation of your routing policies, and you can purchase and manage domain names such as example.com and automatically configure DNS settings for your domains. In addition,\n      - link \"Route 53 Resolver\":\n        - /url: /route53/resolver/\n      - text: provides a regional DNS service that performs recursive DNS lookups for names hosted in Amazon Elastic Compute Cloud (EC2), as well as public names on the internet. Lastly, the\n      - link \"Route 53 Resolver DNS Firewall\":\n        - /url: /route53/resolver-dns-firewall/\n      - text: allows you to block queries made for known or suspected malicious domains, and to allow queries for trusted domains when using the Route 53 Resolver for recursive DNS resolution.\n    - heading [level=3]\n    - paragraph\n    - heading \"Use cases\" [level=2]\n    - paragraph\n    - heading \"Manage network traffic globally\" [level=3]:\n      - button \"Manage network traffic globally\"\n    - heading \"Build highly available applications\" [level=3]:\n      - button \"Build highly available applications\"\n    - heading \"Set up private DNS\" [level=3]:\n      - button \"Set up private DNS\"\n    - heading \"Customers\" [level=2]\n    - link \"Missing alt text value Capital One improves cloud resilience with Amazon Route 53 Watch the video\":\n      - /url: https://www.youtube.com/watch?v=YuHQAcNzAsE\n      - img \"Missing alt text value\"\n      - heading \"Capital One improves cloud resilience with Amazon Route 53\" [level=3]\n      - text: Watch the video\n    - link \"Missing alt text value Netflix improved application resiliency with Amazon Route 53 Watch the video\":\n      - /url: https://www.youtube.com/watch?v=WDDkLOT8SCk\n      - img \"Missing alt text value\"\n      - heading \"Netflix improved application resiliency with Amazon Route 53\" [level=3]\n      - text: Watch the video\n    - link \"Missing alt text value McDonald’s manages global traffic routing with Amazon Route 53 Watch the video\":\n      - /url: https://www.youtube.com/watch?v=4FcUtjfkgB8&amp;t=5s\n      - img \"Missing alt text value\"\n      - heading \"McDonald’s manages global traffic routing with Amazon Route 53\" [level=3]\n      - text: Watch the video\n    - heading \"Get started\" [level=2]\n    - link \"Features page Read more about Amazon Route 53 Learn more\":\n      - /url: /route53/features/\n      - text: Features page\n      - heading \"Read more about Amazon Route 53\" [level=2]\n      - text: Learn more\n    - link \"Getting started Secure your Amazon VPC DNS resolution with Amazon Route 53 Resolver DNS Firewall Learn more\":\n      - /url: /blogs/networking-and-content-delivery/secure-your-amazon-vpc-dns-resolution-with-amazon-route-53-resolver-dns-firewall/\n      - text: Getting started\n      - heading \"Secure your Amazon VPC DNS resolution with Amazon Route 53 Resolver DNS Firewall\" [level=2]\n      - text: Learn more\n    - link \"Contact us Connect with an expert Contact us\":\n      - /url: /contact-us/sales-support/\n      - text: Contact us\n      - heading \"Connect with an expert\" [level=2]\n      - text: Contact us\n    - heading \"Did you find what you were looking for today?\" [level=2]\n    - paragraph: Let us know so we can improve the quality of the content on our pages\n    - button \"Yes, give us positive feedback\": \"Yes\"\n    - button \"No, give us constructive feedback\": \"No\"\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /route53/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /route53/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/route53/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

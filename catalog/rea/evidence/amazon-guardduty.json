@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_1b020fd858bab4fd2ef3eb6e523ffb0c96c2e00225b53d810677736c1fbe2604",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/guardduty/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "c6e77c899ebbb7c65262fa6ee3c7d79b2d249d942c1cd439e79b5b139fb3dc05"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 6484,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3167,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/guardduty/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2566,
+        "before_url": {
+          "url": "https://aws.amazon.com/guardduty/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/guardduty/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "ebd65d933625e0baeed06cd427207da7f6b5f451f65fa3022d34a68010a95a50",
+              "bytes": 14443,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - main:\n    - paragraph: Amazon GuardDuty\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /guardduty/\n      - listitem:\n        - link \"Features\":\n          - /url: /guardduty/features/\n      - listitem:\n        - link \"Pricing\":\n          - /url: /guardduty/pricing/\n      - listitem:\n        - link \"Getting started\":\n          - /url: /guardduty/getting-started/\n      - button \"Resources submenu\": Resources\n      - listitem:\n        - link \"Security Hub\":\n          - /url: /security-hub/\n      - listitem:\n        - link \"Partners\":\n          - /url: /guardduty/resources/partners/\n      - listitem:\n        - link \"Customers\":\n          - /url: /guardduty/customers/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Security, Identity & Compliance\":\n            - /url: /products/security/\n        - listitem: Amazon GuardDuty\n    - heading \"Amazon GuardDuty\" [level=1]\n    - paragraph: Protect your AWS accounts, workloads, and data with intelligent threat detection\n    - button \"Create an AWS Account\"\n    - heading \"Benefits of Amazon GuardDuty\" [level=2]\n    - heading \"Continuous monitoring\" [level=3]:\n      - button \"Continuous monitoring\"\n    - heading \"AI/ML-powered threat detection\" [level=3]:\n      - button \"AI/ML-powered threat detection\"\n    - heading \"Respond faster to threats\" [level=3]:\n      - button \"Respond faster to threats\"\n    - heading \"Scalable, fully managed threat detection\" [level=3]:\n      - button \"Scalable, fully managed threat detection\"\n    - heading \"End-to-end visibility into AWS compute workloads\" [level=3]:\n      - button \"End-to-end visibility into AWS compute workloads\"\n    - heading \"What is GuardDuty?\" [level=2]\n    - paragraph: Amazon GuardDuty uses AI and ML with integrated threat intelligence from AWS and leading third parties to help protect your AWS accounts, workloads, and data from threats.\n    - button \"Play:\" [disabled]\n    - img \"Missing alt text value\"\n    - heading \"How it works\" [level=2]\n    - paragraph: Amazon GuardDuty is a threat detection service that continuously monitors your AWS accounts and workloads for malicious activity and delivers detailed security findings for visibility and remediation.\n    - img \"Missing alt text value\"\n    - heading \"GuardDuty for AWS workload protection\" [level=2]\n    - paragraph: Learn more about how you can apply the broad threat detection coverage in GuardDuty to workloads and resources across your AWS environment.\n    - list:\n      - listitem:\n        - link \"Compute Protection 4\":\n          - /url: /guardduty/#compute-protection--1e0ixp6\n      - listitem:\n        - link \"Storage Protection 3\":\n          - /url: /guardduty/#storage-protection--1e0ixp6\n      - listitem:\n        - link \"Database Protection 1\":\n          - /url: /guardduty/#database-protection--1e0ixp6\n      - listitem:\n        - link \"AI Protection 1\":\n          - /url: /guardduty/#ai-protection--1e0ixp6\n    - heading \"Compute Protection\" [level=3]\n    - button \"Open all\"\n    - heading \"GuardDuty Malware Protection for Amazon EC2\" [level=4]:\n      - button \"GuardDuty Malware Protection for Amazon EC2\"\n    - heading \"GuardDuty EKS Protection\" [level=4]:\n      - button \"GuardDuty EKS Protection\"\n    - heading \"GuardDuty Runtime Monitoring\" [level=4]:\n      - button \"GuardDuty Runtime Monitoring\"\n    - heading \"GuardDuty Lambda Protection\" [level=4]:\n      - button \"GuardDuty Lambda Protection\"\n    - heading \"Storage Protection\" [level=3]\n    - button \"Open all\"\n    - heading \"GuardDuty S3 Protection\" [level=4]:\n      - button \"GuardDuty S3 Protection\"\n    - heading \"GuardDuty Malware Protection for Amazon S3\" [level=4]:\n      - button \"GuardDuty Malware Protection for Amazon S3\"\n    - heading \"GuardDuty Malware Protection for AWS Backup\" [level=4]:\n      - button \"GuardDuty Malware Protection for AWS Backup\"\n    - heading \"Database Protection\" [level=3]\n    - button \"Open all\"\n    - heading \"GuardDuty RDS Protection\" [level=4]:\n      - button \"GuardDuty RDS Protection\"\n    - heading \"AI Protection\" [level=3]\n    - button \"Open all\"\n    - heading \"GuardDuty AI Protection\" [level=4]:\n      - button \"GuardDuty AI Protection\"\n    - heading \"Use cases\" [level=2]\n    - heading \"Detect suspicious multi-stage security threats in your generative AI workloads\" [level=3]:\n      - button \"Detect suspicious multi-stage security threats in your generative AI workloads\"\n    - heading \"Accelerate investigations and automate remediation\" [level=3]:\n      - button \"Accelerate investigations and automate remediation\"\n    - heading \"Protect against ransomware and other types of malware\" [level=3]:\n      - button \"Protect against ransomware and other types of malware\"\n    - heading \"Centralize threat detection for AWS container workloads\" [level=3]:\n      - button \"Centralize threat detection for AWS container workloads\"\n    - heading \"More easily meet compliance requirements, like PCI DSS\" [level=3]:\n      - button \"More easily meet compliance requirements, like PCI DSS\"\n    - heading \"Customers\" [level=2]\n    - link \"SAP Logo SAP enforces zero-trust security across 10,000 AWS accounts with GuardDuty Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/sap-case-study/\n      - img \"SAP Logo\"\n      - heading \"SAP enforces zero-trust security across 10,000 AWS accounts with GuardDuty\" [level=3]\n      - text: Read the case study\n    - link \"The Warner Bros. Discovery logo featuring the classic WB shield above the company name in blue text. Warner Bros Discovery quickly scales container threat detection with Amazon GuardDuty Watch the video\":\n      - /url: https://youtu.be/VEUxtZR9wqU?trk=157c2924-0799-44a0-874c-6f933d97154c&sc_channel=el\n      - img \"The Warner Bros. Discovery logo featuring the classic WB shield above the company name in blue text.\"\n      - heading \"Warner Bros Discovery quickly scales container threat detection with Amazon GuardDuty\" [level=3]\n      - text: Watch the video\n    - link \"Missing alt text value Siemens strengthens security and enhances productivity using AWS Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/siemens-security/\n      - img \"Missing alt text value\"\n      - heading \"Siemens strengthens security and enhances productivity using AWS\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value AppsFlyer automates suspicious activity detection on AWS Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/appsflyer-security/?pg=ln&sec=c\n      - img \"Missing alt text value\"\n      - heading \"AppsFlyer automates suspicious activity detection on AWS\" [level=3]\n      - text: Read the case study\n    - heading \"Get started with GuardDuty\" [level=2]\n    - link \"Features page Learn more about GuardDuty features and capabilities Explore GuardDuty features\":\n      - /url: /guardduty/features/\n      - text: Features page\n      - heading \"Learn more about GuardDuty features and capabilities\" [level=3]\n      - text: Explore GuardDuty features\n    - link \"Customers See how global companies are using GuardDuty to protect their AWS accounts with intelligent threat detection. Learn more\":\n      - /url: /guardduty/customers/\n      - text: Customers\n      - heading \"See how global companies are using GuardDuty to protect their AWS accounts with intelligent threat detection.\" [level=3]\n      - text: Learn more\n    - heading \"Did you find what you were looking for today?\" [level=2]\n    - paragraph: Let us know so we can improve the quality of the content on our pages\n    - button \"Yes, give us positive feedback\": \"Yes\"\n    - button \"No, give us constructive feedback\": \"No\"\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /guardduty/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /guardduty/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/guardduty/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

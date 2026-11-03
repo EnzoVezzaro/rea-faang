@@ -9,11 +9,11 @@ Browser capture of the public web surface of Threads, recorded with REA.
 | Target | https://www.threads.net/ |
 | Resolved URL | https://www.threads.com/ |
 | Page title | Threads |
-| Captured | 2026-10-14T03:57:01.569Z |
+| Captured | 2026-11-03T01:40:29.096Z |
 | Status | captured |
-| REA Evidence ID | `ev_f66adcf2fb5029259c9a4692973f331aa94c04427238b9380a29854da4866b6b` |
+| REA Evidence ID | `ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -81,9 +81,9 @@ _No headings exposed._
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -91,6 +91,6 @@ _No headings exposed._
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/meta-threads.json`
-- Evidence ID: `ev_f66adcf2fb5029259c9a4692973f331aa94c04427238b9380a29854da4866b6b`
+- Evidence ID: `ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f`
 - Accessibility outline: 762 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

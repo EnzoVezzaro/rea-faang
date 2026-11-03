@@ -4,8 +4,8 @@ Reverse-engineering observations of each catalogued product's **public web surfa
 captured with [REA](https://github.com/morluto/rea) (`rea-agents`). One report per
 product, plus the raw REA Evidence for provenance.
 
-- Products captured: **77/77**
-- Generated: 2026-10-14T04:00:33.511Z
+- Products captured: **183/184**
+- Generated: 2026-11-03T04:19:07.389Z
 - Regenerate: `npm run rea:catalog`
 
 ## Method and scope
@@ -24,108 +24,220 @@ only** — no login, no access-control bypass. See the repository's
 
 | Product | Target | Status | Evidence | Report |
 |---|---|---|---|---|
-| Alexa | https://developer.amazon.com/alexa | captured | `ev_922364d49…` | [report](amazon/amazon-alexa.md) |
-| Kindle | https://www.amazon.com/kindle/ | captured | `ev_e18abe08b…` | [report](amazon/amazon-kindle.md) |
-| Luna | https://luna.amazon.com/ | captured | `ev_5e2157296…` | [report](amazon/amazon-luna.md) |
-| Amazon Online Retail | https://www.amazon.com/ | captured | `ev_81ed5913b…` | [report](amazon/amazon-online-retail.md) |
-| Amazon Prime | https://www.amazon.com/prime | captured | `ev_4d85a3e73…` | [report](amazon/amazon-prime.md) |
+| Alexa | https://developer.amazon.com/alexa | failed | — | [report](amazon/amazon-alexa.md) |
+| Kindle | https://www.amazon.com/kindle/ | captured | `ev_1801a5099…` | [report](amazon/amazon-kindle.md) |
+| Luna | https://luna.amazon.com/ | captured | `ev_08666cddd…` | [report](amazon/amazon-luna.md) |
+| Amazon Online Retail | https://www.amazon.com/ | captured | `ev_5af512b40…` | [report](amazon/amazon-online-retail.md) |
+| Amazon Prime | https://www.amazon.com/prime | captured | `ev_39d84a935…` | [report](amazon/amazon-prime.md) |
 
 ### Amazon Web Services (`amazon_aws`)
 
 | Product | Target | Status | Evidence | Report |
 |---|---|---|---|---|
-| Amazon EC2 | https://aws.amazon.com/ec2/ | captured | `ev_7c39c7a26…` | [report](amazon_aws/amazon-ec2.md) |
-| Amazon EKS | https://aws.amazon.com/eks/ | captured | `ev_680d5f654…` | [report](amazon_aws/amazon-eks.md) |
-| API Gateway | https://aws.amazon.com/api-gateway/ | captured | `ev_bf18af6d1…` | [report](amazon_aws/aws-api-gateway.md) |
-| Bedrock | https://aws.amazon.com/bedrock/ | captured | `ev_5aacc9932…` | [report](amazon_aws/aws-bedrock.md) |
-| CloudFront | https://aws.amazon.com/cloudfront/ | captured | `ev_dab6b57cb…` | [report](amazon_aws/aws-cloudfront.md) |
-| DynamoDB | https://aws.amazon.com/dynamodb/ | captured | `ev_d762082f1…` | [report](amazon_aws/aws-dynamodb.md) |
-| Elastic Container Registry (ECR) | https://aws.amazon.com/ecr/ | captured | `ev_efc5aad50…` | [report](amazon_aws/aws-ecr.md) |
-| ECS | https://aws.amazon.com/ecs/ | captured | `ev_30ff92fcf…` | [report](amazon_aws/aws-ecs.md) |
-| ElastiCache | https://aws.amazon.com/elasticache/ | captured | `ev_9196b0230…` | [report](amazon_aws/aws-elasticache.md) |
-| EventBridge | https://aws.amazon.com/eventbridge/ | captured | `ev_c7282e3a6…` | [report](amazon_aws/aws-eventbridge.md) |
-| AWS Lambda | https://aws.amazon.com/lambda/ | captured | `ev_22aedf7d0…` | [report](amazon_aws/aws-lambda.md) |
-| Amazon RDS | https://aws.amazon.com/rds/ | captured | `ev_b184295d3…` | [report](amazon_aws/aws-rds.md) |
-| Redshift | https://aws.amazon.com/redshift/ | captured | `ev_aefb1e80c…` | [report](amazon_aws/aws-redshift.md) |
-| Amazon S3 | https://aws.amazon.com/s3/ | captured | `ev_f20b86665…` | [report](amazon_aws/aws-s3.md) |
-| SageMaker | https://aws.amazon.com/sagemaker/ | captured | `ev_622fb72a7…` | [report](amazon_aws/aws-sagemaker.md) |
-| Simple Notification Service (SNS) | https://aws.amazon.com/sns/ | captured | `ev_6ef49c937…` | [report](amazon_aws/aws-sns.md) |
-| SQS | https://aws.amazon.com/sqs/ | captured | `ev_095e3c60d…` | [report](amazon_aws/aws-sqs.md) |
+| Amazon AppFlow | https://aws.amazon.com/appflow/ | captured | `ev_4e9e6e30d…` | [report](amazon_aws/amazon-appflow.md) |
+| Amazon Athena | https://aws.amazon.com/athena/ | captured | `ev_f771fae73…` | [report](amazon_aws/amazon-athena.md) |
+| Amazon Augmented AI | https://docs.aws.amazon.com/augmented-ai/ | captured | `ev_0c331d3fc…` | [report](amazon_aws/amazon-augmented-ai.md) |
+| Amazon Aurora | https://aws.amazon.com/rds/aurora/ | captured | `ev_30018d69c…` | [report](amazon_aws/amazon-aurora.md) |
+| Amazon Bio Discovery | https://aws.amazon.com/biodiscovery/ | captured | `ev_6a0714f17…` | [report](amazon_aws/amazon-bio-discovery.md) |
+| Amazon Braket | https://aws.amazon.com/braket/ | captured | `ev_d964937e8…` | [report](amazon_aws/amazon-braket.md) |
+| Amazon Chime | https://aws.amazon.com/chime/ | captured | `ev_8c12a0c7c…` | [report](amazon_aws/amazon-chime.md) |
+| Amazon Chime SDK | https://aws.amazon.com/chime/chime-sdk/ | captured | `ev_54a94eb05…` | [report](amazon_aws/amazon-chime-sdk.md) |
+| Amazon CloudSearch | https://aws.amazon.com/cloudsearch/ | captured | `ev_a77d7e919…` | [report](amazon_aws/amazon-cloudsearch.md) |
+| Amazon CloudWatch | https://aws.amazon.com/cloudwatch/ | captured | `ev_b58562556…` | [report](amazon_aws/amazon-cloudwatch.md) |
+| Amazon CodeGuru | https://aws.amazon.com/codeguru/ | captured | `ev_65946f535…` | [report](amazon_aws/amazon-codeguru.md) |
+| Amazon Cognito | https://aws.amazon.com/cognito/ | captured | `ev_1acf298aa…` | [report](amazon_aws/amazon-cognito.md) |
+| Amazon Comprehend | https://aws.amazon.com/comprehend/ | captured | `ev_b957dd4b8…` | [report](amazon_aws/amazon-comprehend.md) |
+| Amazon Connect Customer | https://aws.amazon.com/connect/ | captured | `ev_71491b7c0…` | [report](amazon_aws/amazon-connect-customer.md) |
+| Amazon Connect Decisions | https://aws.amazon.com/products/connect/decisions/ | captured | `ev_c4dec31bb…` | [report](amazon_aws/amazon-connect-decisions.md) |
+| Amazon Connect Health | https://aws.amazon.com/products/connect/health/ | captured | `ev_2ef4c47f6…` | [report](amazon_aws/amazon-connect-health.md) |
+| Amazon Connect Talent | https://aws.amazon.com/products/connect/talent/ | captured | `ev_cf8a2ee39…` | [report](amazon_aws/amazon-connect-talent.md) |
+| Amazon Data Firehose | https://aws.amazon.com/firehose/ | captured | `ev_af81e1fc2…` | [report](amazon_aws/amazon-data-firehose.md) |
+| Amazon Detective | https://aws.amazon.com/detective/ | captured | `ev_ba0b8644f…` | [report](amazon_aws/amazon-detective.md) |
+| Amazon DevOps Guru | https://aws.amazon.com/devops-guru/ | captured | `ev_319545c5b…` | [report](amazon_aws/amazon-devops-guru.md) |
+| Amazon DocumentDB | https://aws.amazon.com/documentdb/ | captured | `ev_44348b44d…` | [report](amazon_aws/amazon-documentdb.md) |
+| Amazon EC2 | https://aws.amazon.com/ec2/ | captured | `ev_bbdad7a4c…` | [report](amazon_aws/amazon-ec2.md) |
+| Amazon EC2 Auto Scaling | https://aws.amazon.com/ec2/autoscaling/ | captured | `ev_bea0a512d…` | [report](amazon_aws/amazon-ec2-auto-scaling.md) |
+| Amazon ECS Anywhere | https://aws.amazon.com/ecs/anywhere/ | captured | `ev_d87edf791…` | [report](amazon_aws/amazon-ecs-anywhere.md) |
+| Amazon EKS | https://aws.amazon.com/eks/ | captured | `ev_1efa19b08…` | [report](amazon_aws/amazon-eks.md) |
+| Amazon EKS Anywhere | https://aws.amazon.com/eks/eks-anywhere/ | captured | `ev_2ed716d53…` | [report](amazon_aws/amazon-eks-anywhere.md) |
+| Amazon EKS Distro | https://aws.amazon.com/eks/eks-distro/ | captured | `ev_a1540b601…` | [report](amazon_aws/amazon-eks-distro.md) |
+| Amazon Elastic Block Store | https://aws.amazon.com/ebs/ | captured | `ev_26ccbb3be…` | [report](amazon_aws/amazon-elastic-block-store.md) |
+| Amazon Elastic Container Service | https://aws.amazon.com/ecs/ | captured | `ev_75ba6e7e0…` | [report](amazon_aws/amazon-elastic-container-service.md) |
+| Amazon Elastic File System | https://aws.amazon.com/efs/ | captured | `ev_c17cebeab…` | [report](amazon_aws/amazon-elastic-file-system.md) |
+| Amazon Elastic Kubernetes Service | https://aws.amazon.com/eks/ | captured | `ev_a5d8dcff7…` | [report](amazon_aws/amazon-elastic-kubernetes-service.md) |
+| Amazon ElastiCache for Memcached | https://aws.amazon.com/elasticache/ | captured | `ev_d84179890…` | [report](amazon_aws/amazon-elasticache-memcached.md) |
+| Amazon ElastiCache for Redis OSS | https://aws.amazon.com/elasticache/ | captured | `ev_7364a8bd5…` | [report](amazon_aws/amazon-elasticache-redis.md) |
+| Amazon EMR | https://aws.amazon.com/emr/ | captured | `ev_9da5ce3c7…` | [report](amazon_aws/amazon-emr.md) |
+| Amazon File Cache | https://aws.amazon.com/filecache/ | captured | `ev_d26062290…` | [report](amazon_aws/amazon-file-cache.md) |
+| Amazon Forecast | https://aws.amazon.com/forecast/ | captured | `ev_62e48d84f…` | [report](amazon_aws/amazon-forecast.md) |
+| Amazon Fraud Detector | https://aws.amazon.com/fraud-detector/ | captured | `ev_6bc15c8ab…` | [report](amazon_aws/amazon-fraud-detector.md) |
+| Amazon FSx for Lustre | https://aws.amazon.com/fsx/lustre/ | captured | `ev_ae2934968…` | [report](amazon_aws/amazon-fsx-lustre.md) |
+| Amazon FSx for NetApp ONTAP | https://aws.amazon.com/fsx/netapp-ontap/ | captured | `ev_d61e52e01…` | [report](amazon_aws/amazon-fsx-ontap.md) |
+| Amazon FSx for OpenZFS | https://aws.amazon.com/fsx/openzfs/ | captured | `ev_3ea495f31…` | [report](amazon_aws/amazon-fsx-openzfs.md) |
+| Amazon FSx for Windows File Server | https://aws.amazon.com/fsx/windows/ | captured | `ev_a979e3512…` | [report](amazon_aws/amazon-fsx-windows.md) |
+| Amazon GameLift | https://aws.amazon.com/gamelift/ | captured | `ev_90cc264ed…` | [report](amazon_aws/amazon-gamelift.md) |
+| Amazon GuardDuty | https://aws.amazon.com/guardduty/ | captured | `ev_1b020fd85…` | [report](amazon_aws/amazon-guardduty.md) |
+| Amazon HealthLake | https://aws.amazon.com/healthlake/ | captured | `ev_6dd7c2f06…` | [report](amazon_aws/amazon-healthlake.md) |
+| Amazon Inspector | https://aws.amazon.com/inspector/ | captured | `ev_bfdd1de52…` | [report](amazon_aws/amazon-inspector.md) |
+| Amazon Interactive Video Service | https://aws.amazon.com/ivs/ | captured | `ev_79b345912…` | [report](amazon_aws/amazon-ivs.md) |
+| Amazon Kendra | https://aws.amazon.com/kendra/ | captured | `ev_49c121ac2…` | [report](amazon_aws/amazon-kendra.md) |
+| Amazon Keyspaces (for Apache Cassandra) | https://aws.amazon.com/keyspaces/ | captured | `ev_f4deda801…` | [report](amazon_aws/amazon-keyspaces.md) |
+| Amazon Kinesis Data Streams | https://aws.amazon.com/kinesis/data-streams/ | captured | `ev_cd41a92ee…` | [report](amazon_aws/amazon-kinesis-data-streams.md) |
+| Amazon Kinesis Video Streams | https://aws.amazon.com/kinesis/video-streams/ | captured | `ev_3b7b49cc9…` | [report](amazon_aws/amazon-kinesis-video-streams.md) |
+| Amazon Lex | https://aws.amazon.com/lex/ | captured | `ev_55f032493…` | [report](amazon_aws/amazon-lex.md) |
+| Amazon Lightsail | https://aws.amazon.com/lightsail/ | captured | `ev_1a6a5e4fe…` | [report](amazon_aws/amazon-lightsail.md) |
+| Amazon Location Service | https://aws.amazon.com/location/ | captured | `ev_62891d0a0…` | [report](amazon_aws/amazon-location.md) |
+| Amazon Lookout for Equipment | https://aws.amazon.com/lookout-for-equipment/ | captured | `ev_b71f8325d…` | [report](amazon_aws/amazon-lookout-equipment.md) |
+| Amazon Lookout for Metrics | https://aws.amazon.com/lookout-for-metrics/ | captured | `ev_c384dcb3a…` | [report](amazon_aws/amazon-lookout-metrics.md) |
+| Amazon Lookout for Vision | https://aws.amazon.com/lookout-for-vision/ | captured | `ev_e2c4ef7c3…` | [report](amazon_aws/amazon-lookout-vision.md) |
+| Amazon Macie | https://aws.amazon.com/macie/ | captured | `ev_9f6ba1017…` | [report](amazon_aws/amazon-macie.md) |
+| Amazon Managed Blockchain | https://aws.amazon.com/managed-blockchain/ | captured | `ev_e6cd17d27…` | [report](amazon_aws/amazon-managed-blockchain.md) |
+| Amazon Managed Grafana | https://aws.amazon.com/grafana/ | captured | `ev_5533477b4…` | [report](amazon_aws/amazon-managed-grafana.md) |
+| Amazon Managed Service for Prometheus | https://aws.amazon.com/prometheus/ | captured | `ev_fd631a84b…` | [report](amazon_aws/amazon-managed-prometheus.md) |
+| Amazon Managed Service for Apache Flink | https://aws.amazon.com/managed-service-apache-flink/ | captured | `ev_a95daecee…` | [report](amazon_aws/amazon-managed-service-apache-flink.md) |
+| Amazon Monitron | https://aws.amazon.com/monitron/ | captured | `ev_999b57da2…` | [report](amazon_aws/amazon-monitron.md) |
+| Amazon MQ | https://aws.amazon.com/amazon-mq/ | captured | `ev_b306948a3…` | [report](amazon_aws/amazon-mq.md) |
+| Amazon Managed Streaming for Apache Kafka | https://aws.amazon.com/msk/ | captured | `ev_66fec70e4…` | [report](amazon_aws/amazon-msk.md) |
+| Amazon Managed Workflows for Apache Airflow | https://aws.amazon.com/managed-workflows-for-apache-airflow/ | captured | `ev_b54001711…` | [report](amazon_aws/amazon-mwaa.md) |
+| Amazon Neptune | https://aws.amazon.com/neptune/ | captured | `ev_02bc5ac7f…` | [report](amazon_aws/amazon-neptune.md) |
+| Amazon Nimble Studio | https://aws.amazon.com/nimble-studio/ | captured | `ev_199f4dde9…` | [report](amazon_aws/amazon-nimble-studio.md) |
+| Amazon Nova Act | https://aws.amazon.com/nova/ | captured | `ev_2f37510ca…` | [report](amazon_aws/amazon-nova-act.md) |
+| Amazon OpenSearch Service | https://aws.amazon.com/opensearch-service/ | captured | `ev_847857832…` | [report](amazon_aws/amazon-opensearch-service.md) |
+| Amazon Personalize | https://aws.amazon.com/personalize/ | captured | `ev_33d87d7c6…` | [report](amazon_aws/amazon-personalize.md) |
+| Amazon Pinpoint | https://aws.amazon.com/pinpoint/ | captured | `ev_c7d0e83ea…` | [report](amazon_aws/amazon-pinpoint.md) |
+| Amazon Polly | https://aws.amazon.com/polly/ | captured | `ev_66cc563a8…` | [report](amazon_aws/amazon-polly.md) |
+| Amazon Q Developer | https://aws.amazon.com/q/developer/ | captured | `ev_cbfaf40d7…` | [report](amazon_aws/amazon-q-developer.md) |
+| Amazon QuickSight | https://aws.amazon.com/quicksight/ | captured | `ev_3990c5966…` | [report](amazon_aws/amazon-quicksight.md) |
+| Amazon Rekognition | https://aws.amazon.com/rekognition/ | captured | `ev_7d5a666e7…` | [report](amazon_aws/amazon-rekognition.md) |
+| Amazon Route 53 | https://aws.amazon.com/route53/ | captured | `ev_ed1d01058…` | [report](amazon_aws/amazon-route-53.md) |
+| Amazon Security Lake | https://aws.amazon.com/security-lake/ | captured | `ev_5f3b4ad46…` | [report](amazon_aws/amazon-security-lake.md) |
+| Amazon Simple Email Service | https://aws.amazon.com/ses/ | captured | `ev_4d21c4cc7…` | [report](amazon_aws/amazon-ses.md) |
+| Amazon Textract | https://aws.amazon.com/textract/ | captured | `ev_a49c7a920…` | [report](amazon_aws/amazon-textract.md) |
+| Amazon Timestream | https://aws.amazon.com/timestream/ | captured | `ev_9f1c5be9e…` | [report](amazon_aws/amazon-timestream.md) |
+| Amazon Transcribe | https://aws.amazon.com/transcribe/ | captured | `ev_a882a2589…` | [report](amazon_aws/amazon-transcribe.md) |
+| Amazon Translate | https://aws.amazon.com/translate/ | captured | `ev_4793f28a1…` | [report](amazon_aws/amazon-translate.md) |
+| Amazon Verified Permissions | https://aws.amazon.com/verified-permissions/ | captured | `ev_ac9380501…` | [report](amazon_aws/amazon-verified-permissions.md) |
+| Amazon Virtual Private Cloud | https://aws.amazon.com/vpc/ | captured | `ev_546c1dd75…` | [report](amazon_aws/amazon-vpc.md) |
+| Amazon WorkMail | https://aws.amazon.com/workmail/ | captured | `ev_8ced4acc5…` | [report](amazon_aws/amazon-workmail.md) |
+| Amazon WorkSpaces | https://aws.amazon.com/workspaces/ | captured | `ev_b450e63e3…` | [report](amazon_aws/amazon-workspaces.md) |
+| Amazon WorkSpaces Applications | https://aws.amazon.com/workspaces/applications/ | captured | `ev_fd9425d7d…` | [report](amazon_aws/amazon-workspaces-applications.md) |
+| Amazon WorkSpaces Secure Browser | https://aws.amazon.com/workspaces/secure-browser/ | captured | `ev_b840d776d…` | [report](amazon_aws/amazon-workspaces-secure-browser.md) |
+| AWS Amplify | https://aws.amazon.com/amplify/ | captured | `ev_a01351435…` | [report](amazon_aws/aws-amplify.md) |
+| API Gateway | https://aws.amazon.com/api-gateway/ | captured | `ev_f8fec9089…` | [report](amazon_aws/aws-api-gateway.md) |
+| AWS App Mesh | https://aws.amazon.com/app-mesh/ | captured | `ev_1bcf1f580…` | [report](amazon_aws/aws-app-mesh.md) |
+| AWS App Runner | https://aws.amazon.com/apprunner/ | captured | `ev_0e1e34397…` | [report](amazon_aws/aws-app-runner.md) |
+| AWS App2Container | https://aws.amazon.com/app2container/ | captured | `ev_561266f38…` | [report](amazon_aws/aws-app2container.md) |
+| AWS AppSync | https://aws.amazon.com/appsync/ | captured | `ev_84217d74d…` | [report](amazon_aws/aws-appsync.md) |
+| AWS Artifact | https://aws.amazon.com/artifact/ | captured | `ev_064d17b87…` | [report](amazon_aws/aws-artifact.md) |
+| AWS Audit Manager | https://aws.amazon.com/audit-manager/ | captured | `ev_038cfd848…` | [report](amazon_aws/aws-audit-manager.md) |
+| AWS Auto Scaling | https://aws.amazon.com/autoscaling/ | captured | `ev_06ca78d42…` | [report](amazon_aws/aws-auto-scaling.md) |
+| AWS Backup | https://aws.amazon.com/backup/ | captured | `ev_1c60c5351…` | [report](amazon_aws/aws-backup.md) |
+| AWS Batch | https://aws.amazon.com/batch/ | captured | `ev_a12ee76e2…` | [report](amazon_aws/aws-batch.md) |
+| Bedrock | https://aws.amazon.com/bedrock/ | captured | `ev_a7a435adf…` | [report](amazon_aws/aws-bedrock.md) |
+| AWS Billing Conductor | https://aws.amazon.com/aws-cost-management/aws-billing-conductor/ | captured | `ev_fdabeae82…` | [report](amazon_aws/aws-billing-conductor.md) |
+| AWS Cloud Map | https://aws.amazon.com/cloud-map/ | captured | `ev_5b424cd2e…` | [report](amazon_aws/aws-cloud-map.md) |
+| AWS Cloud WAN | https://aws.amazon.com/cloud-wan/ | captured | `ev_9b54eb368…` | [report](amazon_aws/aws-cloud-wan.md) |
+| AWS CloudFormation | https://aws.amazon.com/cloudformation/ | captured | `ev_a721a2e11…` | [report](amazon_aws/aws-cloudformation.md) |
+| CloudFront | https://aws.amazon.com/cloudfront/ | captured | `ev_887daf9fd…` | [report](amazon_aws/aws-cloudfront.md) |
+| DynamoDB | https://aws.amazon.com/dynamodb/ | captured | `ev_b68c6c111…` | [report](amazon_aws/aws-dynamodb.md) |
+| Elastic Container Registry (ECR) | https://aws.amazon.com/ecr/ | captured | `ev_99b224dc8…` | [report](amazon_aws/aws-ecr.md) |
+| ECS | https://aws.amazon.com/ecs/ | captured | `ev_d973aed6f…` | [report](amazon_aws/aws-ecs.md) |
+| ElastiCache | https://aws.amazon.com/elasticache/ | captured | `ev_4a87962b9…` | [report](amazon_aws/aws-elasticache.md) |
+| EventBridge | https://aws.amazon.com/eventbridge/ | captured | `ev_16577e307…` | [report](amazon_aws/aws-eventbridge.md) |
+| AWS Lambda | https://aws.amazon.com/lambda/ | captured | `ev_74b54e9c0…` | [report](amazon_aws/aws-lambda.md) |
+| Amazon RDS | https://aws.amazon.com/rds/ | captured | `ev_bd53c9bea…` | [report](amazon_aws/aws-rds.md) |
+| Redshift | https://aws.amazon.com/redshift/ | captured | `ev_81394f974…` | [report](amazon_aws/aws-redshift.md) |
+| Amazon S3 | https://aws.amazon.com/s3/ | captured | `ev_50124d2cb…` | [report](amazon_aws/aws-s3.md) |
+| SageMaker | https://aws.amazon.com/sagemaker/ | captured | `ev_b8c844b16…` | [report](amazon_aws/aws-sagemaker.md) |
+| Simple Notification Service (SNS) | https://aws.amazon.com/sns/ | captured | `ev_436cb0778…` | [report](amazon_aws/aws-sns.md) |
+| SQS | https://aws.amazon.com/sqs/ | captured | `ev_8088a1640…` | [report](amazon_aws/aws-sqs.md) |
 
 ### Apple (`apple`)
 
 | Product | Target | Status | Evidence | Report |
 |---|---|---|---|---|
-| FaceTime | https://www.apple.com/facetime/ | captured | `ev_a90e9ee26…` | [report](apple/apple-facetime.md) |
-| Final Cut Pro | https://www.apple.com/final-cut-pro/ | captured | `ev_f5e8b0549…` | [report](apple/apple-final-cut-pro.md) |
-| iCloud | https://www.icloud.com/ | captured | `ev_0b659aa4c…` | [report](apple/apple-icloud.md) |
-| iOS | https://www.apple.com/ios/ | captured | `ev_ce697ef64…` | [report](apple/apple-ios.md) |
-| iPad | https://www.apple.com/ipad/ | captured | `ev_09b86233e…` | [report](apple/apple-ipad.md) |
-| iPhone | https://www.apple.com/iphone/ | captured | `ev_857cffdb1…` | [report](apple/apple-iphone.md) |
-| Keynote | https://www.apple.com/keynote/ | captured | `ev_e072dbee1…` | [report](apple/apple-keynote.md) |
-| Logic Pro | https://www.apple.com/logic-pro/ | captured | `ev_6ec0f8762…` | [report](apple/apple-logic-pro.md) |
-| macOS | https://www.apple.com/macos/ | captured | `ev_5be5899a6…` | [report](apple/apple-macos.md) |
-| Messages (iMessage) | https://www.apple.com/messages/ | captured | `ev_8273e3e1b…` | [report](apple/apple-messages.md) |
-| Apple Music | https://www.apple.com/apple-music/ | captured | `ev_5580e369c…` | [report](apple/apple-music.md) |
-| Numbers | https://www.apple.com/numbers/ | captured | `ev_7a2edeb45…` | [report](apple/apple-numbers.md) |
-| Pages | https://www.apple.com/pages/ | captured | `ev_2f50324bb…` | [report](apple/apple-pages.md) |
-| Passwords | https://support.apple.com/guide/iphone/passwords-iphf9219d8c9/ios | captured | `ev_b7b1420df…` | [report](apple/apple-passwords.md) |
-| Apple Pay | https://www.apple.com/apple-pay/ | captured | `ev_a09c046e0…` | [report](apple/apple-pay.md) |
-| Safari | https://www.apple.com/safari/ | captured | `ev_d016bd159…` | [report](apple/apple-safari.md) |
-| Siri | https://www.apple.com/siri/ | captured | `ev_0aef99b34…` | [report](apple/apple-siri.md) |
-| Vision Pro | https://www.apple.com/apple-vision-pro/ | captured | `ev_506818f02…` | [report](apple/apple-vision-pro.md) |
-| Apple Watch | https://www.apple.com/watch/ | captured | `ev_844f9cbc1…` | [report](apple/apple-watch.md) |
-| Xcode | https://developer.apple.com/xcode/ | captured | `ev_4d2894a8d…` | [report](apple/apple-xcode.md) |
+| FaceTime | https://www.apple.com/facetime/ | captured | `ev_d7981265d…` | [report](apple/apple-facetime.md) |
+| Final Cut Pro | https://www.apple.com/final-cut-pro/ | captured | `ev_a367f5129…` | [report](apple/apple-final-cut-pro.md) |
+| iCloud | https://www.icloud.com/ | captured | `ev_2301c78b2…` | [report](apple/apple-icloud.md) |
+| iOS | https://www.apple.com/ios/ | captured | `ev_0b63a719a…` | [report](apple/apple-ios.md) |
+| iPad | https://www.apple.com/ipad/ | captured | `ev_b788cb414…` | [report](apple/apple-ipad.md) |
+| iPhone | https://www.apple.com/iphone/ | captured | `ev_c6b7db6b8…` | [report](apple/apple-iphone.md) |
+| Keynote | https://www.apple.com/keynote/ | captured | `ev_4941e564c…` | [report](apple/apple-keynote.md) |
+| Logic Pro | https://www.apple.com/logic-pro/ | captured | `ev_98b07c0c7…` | [report](apple/apple-logic-pro.md) |
+| macOS | https://www.apple.com/macos/ | captured | `ev_252abea7d…` | [report](apple/apple-macos.md) |
+| Messages (iMessage) | https://www.apple.com/messages/ | captured | `ev_8149ab97b…` | [report](apple/apple-messages.md) |
+| Apple Music | https://www.apple.com/apple-music/ | captured | `ev_954e4942c…` | [report](apple/apple-music.md) |
+| Numbers | https://www.apple.com/numbers/ | captured | `ev_6bfec54d5…` | [report](apple/apple-numbers.md) |
+| Pages | https://www.apple.com/pages/ | captured | `ev_01b203036…` | [report](apple/apple-pages.md) |
+| Passwords | https://support.apple.com/guide/iphone/passwords-iphf9219d8c9/ios | captured | `ev_42b476db3…` | [report](apple/apple-passwords.md) |
+| Apple Pay | https://www.apple.com/apple-pay/ | captured | `ev_9a1edb26a…` | [report](apple/apple-pay.md) |
+| Safari | https://www.apple.com/safari/ | captured | `ev_6250618ba…` | [report](apple/apple-safari.md) |
+| Siri | https://www.apple.com/siri/ | captured | `ev_1fbf64b3a…` | [report](apple/apple-siri.md) |
+| Vision Pro | https://www.apple.com/apple-vision-pro/ | captured | `ev_e741a77e5…` | [report](apple/apple-vision-pro.md) |
+| Apple Watch | https://www.apple.com/watch/ | captured | `ev_3237e21bb…` | [report](apple/apple-watch.md) |
+| Xcode | https://developer.apple.com/xcode/ | captured | `ev_4bc7b7ff3…` | [report](apple/apple-xcode.md) |
 
 ### Google (`google`)
 
 | Product | Target | Status | Evidence | Report |
 |---|---|---|---|---|
-| Android | https://www.android.com/ | captured | `ev_98d731fef…` | [report](google/android.md) |
-| Gmail | https://mail.google.com/ | captured | `ev_469bd2dae…` | [report](google/gmail.md) |
-| Google Ads | https://ads.google.com/ | captured | `ev_c0c102ec0…` | [report](google/google-ads.md) |
-| Google Analytics | https://analytics.google.com/ | captured | `ev_01f1f4c1a…` | [report](google/google-analytics.md) |
-| Google Calendar | https://calendar.google.com/ | captured | `ev_22491da4b…` | [report](google/google-calendar.md) |
-| Google Chrome | https://www.google.com/chrome/ | captured | `ev_a9078dc8c…` | [report](google/google-chrome.md) |
-| Google Classroom | https://classroom.google.com/ | captured | `ev_cc3b384d1…` | [report](google/google-classroom.md) |
-| Google Cloud | https://cloud.google.com/ | captured | `ev_b6ba5680b…` | [report](google/google-cloud.md) |
-| Google Cloud Storage | https://cloud.google.com/storage | captured | `ev_f16fb300e…` | [report](google/google-cloud-storage.md) |
-| Google Docs | https://docs.google.com/ | captured | `ev_7e1a47338…` | [report](google/google-docs.md) |
-| Google Drive | https://drive.google.com/ | captured | `ev_a76171b2c…` | [report](google/google-drive.md) |
-| Firebase | https://firebase.google.com/ | captured | `ev_d99e81bf8…` | [report](google/google-firebase.md) |
-| Google Gemini | https://gemini.google.com/ | captured | `ev_ee78d9ac8…` | [report](google/google-gemini.md) |
-| Google Maps | https://maps.google.com/ | captured | `ev_3feba79b4…` | [report](google/google-maps.md) |
-| Google Meet | https://meet.google.com/ | captured | `ev_ccfc7d122…` | [report](google/google-meet.md) |
-| Google News | https://news.google.com/ | captured | `ev_f04699c32…` | [report](google/google-news.md) |
-| Google Photos | https://photos.google.com/ | captured | `ev_2e5170026…` | [report](google/google-photos.md) |
-| Google Play | https://play.google.com/ | captured | `ev_ec6171ac3…` | [report](google/google-play.md) |
-| Pub/Sub | https://cloud.google.com/pubsub | captured | `ev_58973d207…` | [report](google/google-pubsub.md) |
-| Google Search | https://www.google.com/ | captured | `ev_3e6b1b7bf…` | [report](google/google-search.md) |
-| Google Sheets | https://sheets.google.com/ | captured | `ev_12e32b341…` | [report](google/google-sheets.md) |
-| TensorFlow | https://www.tensorflow.org/ | captured | `ev_89d56862c…` | [report](google/google-tensorflow.md) |
-| Google Workspace | https://workspace.google.com/ | captured | `ev_24efa0744…` | [report](google/google-workspace.md) |
-| YouTube | https://www.youtube.com/ | captured | `ev_74e627d3b…` | [report](google/youtube.md) |
-| YouTube Music | https://music.youtube.com/ | captured | `ev_6d6f87b3b…` | [report](google/youtube-music.md) |
+| Android | https://www.android.com/ | captured | `ev_81e8cc9ad…` | [report](google/android.md) |
+| Gmail | https://mail.google.com/ | captured | `ev_4de2a03a5…` | [report](google/gmail.md) |
+| Google Ads | https://ads.google.com/ | captured | `ev_8c35405d4…` | [report](google/google-ads.md) |
+| Google Analytics | https://analytics.google.com/ | captured | `ev_7ec24b9eb…` | [report](google/google-analytics.md) |
+| Google Calendar | https://calendar.google.com/ | captured | `ev_a8267b145…` | [report](google/google-calendar.md) |
+| Google Chrome | https://www.google.com/chrome/ | captured | `ev_26f0d87e3…` | [report](google/google-chrome.md) |
+| Google Classroom | https://classroom.google.com/ | captured | `ev_70b07e7ed…` | [report](google/google-classroom.md) |
+| Google Cloud | https://cloud.google.com/ | captured | `ev_3ee055d5d…` | [report](google/google-cloud.md) |
+| Google Cloud Storage | https://cloud.google.com/storage | captured | `ev_1ec3cda5d…` | [report](google/google-cloud-storage.md) |
+| Google Docs | https://docs.google.com/ | captured | `ev_dca9d6d18…` | [report](google/google-docs.md) |
+| Google Drive | https://drive.google.com/ | captured | `ev_126cc070f…` | [report](google/google-drive.md) |
+| Firebase | https://firebase.google.com/ | captured | `ev_01dc5c781…` | [report](google/google-firebase.md) |
+| Google Gemini | https://gemini.google.com/ | captured | `ev_d842928e9…` | [report](google/google-gemini.md) |
+| Google Maps | https://maps.google.com/ | captured | `ev_a88368bce…` | [report](google/google-maps.md) |
+| Google Meet | https://meet.google.com/ | captured | `ev_d60630c8c…` | [report](google/google-meet.md) |
+| Google News | https://news.google.com/ | captured | `ev_bed91a4fc…` | [report](google/google-news.md) |
+| Google Photos | https://photos.google.com/ | captured | `ev_e99987afe…` | [report](google/google-photos.md) |
+| Google Play | https://play.google.com/ | captured | `ev_71042c2df…` | [report](google/google-play.md) |
+| Pub/Sub | https://cloud.google.com/pubsub | captured | `ev_9707bccc1…` | [report](google/google-pubsub.md) |
+| Google Search | https://www.google.com/ | captured | `ev_6c841f20f…` | [report](google/google-search.md) |
+| Google Sheets | https://sheets.google.com/ | captured | `ev_2dc2a4ade…` | [report](google/google-sheets.md) |
+| Google Stadia | https://stadia.google.com/ | captured | `ev_0eb600d38…` | [report](google/google-stadia.md) |
+| TensorFlow | https://www.tensorflow.org/ | captured | `ev_a90c9c09f…` | [report](google/google-tensorflow.md) |
+| Google Workspace | https://workspace.google.com/ | captured | `ev_e843dee14…` | [report](google/google-workspace.md) |
+| YouTube | https://www.youtube.com/ | captured | `ev_9d4052f32…` | [report](google/youtube.md) |
+| YouTube Music | https://music.youtube.com/ | captured | `ev_c274a080c…` | [report](google/youtube-music.md) |
 
 ### Meta (`meta`)
 
 | Product | Target | Status | Evidence | Report |
 |---|---|---|---|---|
-| Facebook | https://www.facebook.com/ | captured | `ev_b659c3292…` | [report](meta/meta-facebook.md) |
-| Instagram | https://www.instagram.com/ | captured | `ev_ae37a64de…` | [report](meta/meta-instagram.md) |
-| Llama | https://ai.meta.com/llama/ | captured | `ev_9d8633a6f…` | [report](meta/meta-llama.md) |
-| Threads | https://www.threads.net/ | captured | `ev_f66adcf2f…` | [report](meta/meta-threads.md) |
-| WhatsApp | https://www.whatsapp.com/ | captured | `ev_5073e5492…` | [report](meta/meta-whatsapp.md) |
+| Facebook | https://www.facebook.com/ | captured | `ev_e1687e697…` | [report](meta/meta-facebook.md) |
+| Instagram | https://www.instagram.com/ | captured | `ev_76952569a…` | [report](meta/meta-instagram.md) |
+| Llama | https://ai.meta.com/llama/ | captured | `ev_7bc078a31…` | [report](meta/meta-llama.md) |
+| Threads | https://www.threads.net/ | captured | `ev_865189a53…` | [report](meta/meta-threads.md) |
+| WhatsApp | https://www.whatsapp.com/ | captured | `ev_2d51430c5…` | [report](meta/meta-whatsapp.md) |
+
+### Microsoft (`microsoft`)
+
+| Product | Target | Status | Evidence | Report |
+|---|---|---|---|---|
+| Microsoft 365 | https://www.microsoft.com/en-us/microsoft-365 | captured | `ev_c99ad19e5…` | [report](microsoft/microsoft-365.md) |
+| Microsoft Azure | https://azure.microsoft.com/en-us | captured | `ev_064601d5f…` | [report](microsoft/microsoft-azure.md) |
+| Skype | https://www.skype.com/ | captured | `ev_492ef4159…` | [report](microsoft/microsoft-skype.md) |
+| Microsoft Teams | https://www.microsoft.com/en-us/microsoft-teams/group-chat-software | captured | `ev_576c79eff…` | [report](microsoft/microsoft-teams.md) |
+| Microsoft Windows | https://www.microsoft.com/en-us/windows/ | captured | `ev_b834d9000…` | [report](microsoft/microsoft-windows.md) |
 
 ### Netflix (`netflix`)
 
 | Product | Target | Status | Evidence | Report |
 |---|---|---|---|---|
-| Netflix Games | https://www.netflix.com/tudum/games | captured | `ev_353953024…` | [report](netflix/netflix-games.md) |
-| Netflix Kids | https://www.netflix.com/kids | captured | `ev_309080a3e…` | [report](netflix/netflix-kids.md) |
-| Netflix Profiles | https://www.netflix.com/ | captured | `ev_211ae07e5…` | [report](netflix/netflix-profiles.md) |
-| Netflix Streaming | https://www.netflix.com/ | captured | `ev_ce771cfc0…` | [report](netflix/netflix-streaming.md) |
-| Tudum | https://www.netflix.com/tudum | captured | `ev_d1f6ebad8…` | [report](netflix/netflix-tudum.md) |
+| Netflix DVD | https://dvd.netflix.com/ | captured | `ev_31d292d67…` | [report](netflix/netflix-dvd.md) |
+| Netflix Games | https://www.netflix.com/tudum/games | captured | `ev_83f397cd5…` | [report](netflix/netflix-games.md) |
+| Netflix Kids | https://www.netflix.com/kids | captured | `ev_0b3946ed4…` | [report](netflix/netflix-kids.md) |
+| Netflix Profiles | https://www.netflix.com/ | captured | `ev_b85b808dc…` | [report](netflix/netflix-profiles.md) |
+| Netflix Streaming | https://www.netflix.com/ | captured | `ev_c2763ee78…` | [report](netflix/netflix-streaming.md) |
+| Tudum | https://www.netflix.com/tudum | captured | `ev_9de9f82f3…` | [report](netflix/netflix-tudum.md) |
 
 ---
 

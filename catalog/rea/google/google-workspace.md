@@ -9,11 +9,11 @@ Browser capture of the public web surface of Google Workspace, recorded with REA
 | Target | https://workspace.google.com/ |
 | Resolved URL | https://workspace.google.com/ |
 | Page title | The better way to work |
-| Captured | 2026-10-13T19:00:09.158Z |
+| Captured | 2026-11-03T01:39:52.833Z |
 | Status | captured |
-| REA Evidence ID | `ev_24efa0744e107fc9f0cde6d54cb4cba70cdd5e8d4a8a73ad30ad6f1d43dce72c` |
+| REA Evidence ID | `ev_e843dee14725d33ba8ad4d2c7a1a6742e0ba0eb6deb286e6d62ab7c58b7b54ea` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.40 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -92,13 +92,13 @@ access control is bypassed.
 ### Links
 
 - [Open the Google Workspace page](https://workspace.google.com/)
-- [Contact the sales team at Google Workspace](https://workspace.google.com/contact/?source=gafb-alpha_home_6806262-globalnav-en)
-- [Get started with Google Workspace](https://workspace.google.com/business/signup/welcome?source=gafb-alpha_home_6806262-globalnav-en&hl=en&ga_region=noram&ga_country=us&ga_lang=en)
+- [Contact the sales team at Google Workspace](https://workspace.google.com/contact/?source=gafb-home-globalnav-en)
+- [Get started with Google Workspace](https://workspace.google.com/business/signup/welcome?source=gafb-home-globalnav-en&hl=en&ga_region=noram&ga_country=us&ga_lang=en)
 - [Open the AI page](https://workspace.google.com/solutions/ai/)
-- [Open the Pricing page](https://workspace.google.com/pricing?source=gafb-alpha_home_6806262-globalnav-en&hl=en&ga_region=noram&ga_country=us&ga_lang=en)
+- [Open the Pricing page](https://workspace.google.com/pricing?source=gafb-home-globalnav-en&hl=en&ga_region=noram&ga_country=us&ga_lang=en)
 - [Visit the admin console](https://admin.google.com/)
 - [Learn more about Workspace Intelligence](https://workspace.google.com/intelligence/?source=gafb-home-promo_banner-en)
-- [Get started with Google Workspace](https://workspace.google.com/business/signup/welcome?source=gafb-alpha_home_6806262-hero-en&hl=en&ga_region=noram&ga_country=us&ga_lang=en)
+- [Get started with Google Workspace](https://workspace.google.com/business/signup/welcome?source=gafb-home-hero-en&hl=en&ga_region=noram&ga_country=us&ga_lang=en)
 - [Open the context of your work page](https://workspace.google.com/intelligence/)
 - [Open the Gmail page](https://workspace.google.com/products/gmail/)
 - [Open the Drive page](https://workspace.google.com/products/drive)
@@ -123,14 +123,14 @@ access control is bypassed.
 - [Visit the Video Conferencing resource page](https://workspace.google.com/resources/video-conferencing/)
 - [Visit the Gemini for Google Workspace page](https://workspace.google.com/solutions/ai/)
 - [Visit the Google Workspace Security page](https://workspace.google.com/security/)
-- [Get started Business Starter](https://workspace.google.com/business/signup/welcome?hl=en&sku=businessstarter&source=gafb-alpha_home_6806262-businessstarter-en&ga_region=noram&ga_country=us&ga_lang=en)
-- [Get started Business Standard](https://workspace.google.com/business/signup/welcome?hl=en&sku=businessstandard&source=gafb-alpha_home_6806262-businessstandard-en&ga_region=noram&ga_country=us&ga_lang=en)
-- [Get started Business Plus](https://workspace.google.com/business/signup/welcome?hl=en&sku=businessplus&source=gafb-alpha_home_6806262-businessplus-en&ga_region=noram&ga_country=us&ga_lang=en)
-- [Contact the sales team at Google Workspace](https://workspace.google.com/contact-form/?source=gafb-alpha_home_6806262-body-en)
+- [Get started Business Starter](https://workspace.google.com/business/signup/welcome?hl=en&sku=businessstarter&source=gafb-home-businessstarter-en&ga_region=noram&ga_country=us&ga_lang=en)
+- [Data is not used to train models](https://knowledge.workspace.google.com/admin/gemini/generative-ai-in-google-workspace-privacy-hub)
+- [Get started Business Standard](https://workspace.google.com/business/signup/welcome?hl=en&sku=businessstandard&source=gafb-home-businessstandard-en&ga_region=noram&ga_country=us&ga_lang=en)
+- [Get started Business Plus](https://workspace.google.com/business/signup/welcome?hl=en&sku=businessplus&source=gafb-home-businessplus-en&ga_region=noram&ga_country=us&ga_lang=en)
+- [Contact the sales team at Google Workspace](https://workspace.google.com/contact-form/?source=gafb-home-body-en)
 - [Visit the Google Workspace FAQ page](https://workspace.google.com/faq/)
 - [Visit resources to learn about AI for work](https://workspace.google.com/learning/)
 - [Get support on the Google Workspace support page](https://workspace.google.com/support/?referral-tabs_activeEl=enhanced-support)
-- [Learn more about Gemini for Workspace](https://workspace.google.com/solutions/ai/)
 
 ### Controls
 
@@ -149,9 +149,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -159,6 +159,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/google-workspace.json`
-- Evidence ID: `ev_24efa0744e107fc9f0cde6d54cb4cba70cdd5e8d4a8a73ad30ad6f1d43dce72c`
-- Accessibility outline: 42428 bytes
+- Evidence ID: `ev_e843dee14725d33ba8ad4d2c7a1a6742e0ba0eb6deb286e6d62ab7c58b7b54ea`
+- Accessibility outline: 44162 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

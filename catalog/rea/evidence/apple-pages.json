@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_2f50324bbf5cb3d093423deac83de14301c8132820cd65d38e36d02602f22ccc",
+  "evidence_id": "ev_01b2030362861d227d8fb6b353d445b15dfa16a90dc985970d24c8d3ed73f624",
   "subject": null,
   "provider": {
     "id": "rea-playwright-browser-scenario",
@@ -55,9 +55,19 @@
         "request_body": false,
         "response_body": false,
         "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "scenario_sha256": "245d0c9b4a1bc8de670c5ab1386ac6409919e840ece091d8dcdfe060f51080c1"
+    "scenario_sha256": "fd424d64184109c664cb848959deed633f86c052e03bd752bf649c99a0e6521d"
   },
   "raw_result": null,
   "normalized_result": {
@@ -66,7 +76,7 @@
       "process_ownership": "provider-owned",
       "cleanup": "terminated-owned-process",
       "product": "Chromium",
-      "version": "155.0.8059.40"
+      "version": "156.0.8078.80"
     },
     "scenario": {
       "start_origin": "https://www.apple.com",
@@ -76,15 +86,26 @@
         "request_body": false,
         "response_body": false,
         "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "duration_ms": 4998,
+    "duration_ms": 5382,
     "steps": [
       {
         "step_index": 0,
         "step_id": "scenario_start",
         "action": "goto_start",
-        "elapsed_ms": 2233,
+        "elapsed_ms": 2567,
         "before_url": {
           "url": "about:blank",
           "origin": null,
@@ -132,7 +153,7 @@
         "step_index": 1,
         "step_id": "settle",
         "action": "wait_for_timeout",
-        "elapsed_ms": 2532,
+        "elapsed_ms": 2541,
         "before_url": {
           "url": "https://support.apple.com/pages",
           "origin": "https://support.apple.com",
@@ -191,7 +212,12 @@
     "events": {
       "retained": 0,
       "dropped": 0,
-      "items": []
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
     },
     "completeness": {
       "status": "complete",
@@ -201,9 +227,9 @@
     },
     "limitations": [
       "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
-      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
       "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
-      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
       "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
       "Storage values are hashed only after declared-secret redaction."
     ]
@@ -211,7 +237,7 @@
   "confidence": "observed",
   "authority": "controlled-replay",
   "environment": {
-    "id": "Chromium@155.0.8059.40",
+    "id": "Chromium@156.0.8078.80",
     "platform": "unknown",
     "architecture": "unknown",
     "isolation": "process"
@@ -219,13 +245,14 @@
   "limitations": [
     "Artifact identity is unavailable for this observation.",
     "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
-    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
     "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
-    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
     "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
     "Storage values are hashed only after declared-secret redaction.",
     "Browser host platform and architecture were not observed."
   ],
+  "relationship_coverage": null,
   "locations": [],
   "evidence_links": []
 }

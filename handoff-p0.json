@@ -1,0 +1,62 @@
+{
+  "taskId": "task_mvzlunky_ok1jsl",
+  "attempt": 1,
+  "from": "primary-backend",
+  "status": "complete",
+  "committed": false,
+  "summary": "Published one canonical count set for the 77-product catalog, added a regression test that ties README, skills index and generated site counts to their canonical sources, corrected the stale PLAN.md status, and fixed the same Node 22 test-discovery bug in all 16 product workspaces.",
+  "changed_files": [
+    "PLAN.md",
+    "tests/cli.test.js",
+    "site/index.html",
+    "products/apple/apple-final-cut-pro/package.json",
+    "products/apple/apple-ios/package.json",
+    "products/apple/apple-safari/package.json",
+    "products/apple/apple-xcode/package.json",
+    "products/aws/aws-api-gateway/package.json",
+    "products/aws/aws-lambda/package.json",
+    "products/aws/aws-s3/package.json",
+    "products/aws/aws-sqs/package.json",
+    "products/google/google-chrome/package.json",
+    "products/google/google-cloud/package.json",
+    "products/google/google-gemini/package.json",
+    "products/google/google-search/package.json",
+    "products/meta/meta-llama/package.json",
+    "products/meta/meta-whatsapp/package.json",
+    "products/netflix/netflix-streaming/package.json",
+    "products/youtube/youtube/package.json"
+  ],
+  "commands": [
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "duration": 4238
+    },
+    {
+      "command": "npm run validate",
+      "exitCode": 0,
+      "duration": 1489
+    },
+    {
+      "command": "for f in products/*/*/package.json; do (cd $(dirname $f) && npm test); done",
+      "exitCode": 0,
+      "duration": 7781
+    }
+  ],
+  "checksNotRun": [
+    "npm publish (release requires maintainer approval)",
+    "GitHub Pages deploy (requires maintainer approval)"
+  ],
+  "decisions": [
+    "Catalog identity and scope are canonical in catalog/products.jsonl plus catalog/manifests/faang.json; the open-source landscape is canonical in tools/skills/catalog-data.mjs.",
+    "README and PLAN numbers are guarded by a test instead of being generated, because README is hand-edited prose.",
+    "Workspace test scripts now pass tests/*.test.mjs explicitly, matching the root fix for Node 22."
+  ],
+  "risks": [
+    "catalog/products.jsonl still records alternative_status none_verified for all 77 products while the skills landscape records 40 available / 29 partial / 8 pending; gaps alternatives therefore lists all 77.",
+    "The site generator still emits canonical/OG URLs for rae-faang-landing.vercel.app while the Pages workflow and README use enzovezzaro.github.io/rea-faang; changing the canonical domain is an SEO decision left to the maintainer.",
+    "Changes are worktree-only until committed."
+  ],
+  "recommendedNextAction": "Review the count-consistency test, then align catalog/products.jsonl alternative_status with catalog-data.mjs in a separate evidenced change.",
+  "completedAt": "2026-11-02T18:42:14Z"
+}

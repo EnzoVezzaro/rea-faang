@@ -9,11 +9,11 @@ Browser capture of the public web surface of Llama, recorded with REA.
 | Target | https://ai.meta.com/llama/ |
 | Resolved URL | https://dev.meta.ai/ |
 | Page title | Your next build starts with Muse. |
-| Captured | 2026-10-13T19:00:17.972Z |
+| Captured | 2026-11-03T01:40:20.026Z |
 | Status | captured |
-| REA Evidence ID | `ev_9d8633a6f9d6448fca6021be8dc9031511434605e44963851a584f203820d57e` |
+| REA Evidence ID | `ev_7bc078a31c3d97a5234e71dda0eacb27797462bb2f8cc8f5f168efcd05614b05` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.40 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -61,6 +61,7 @@ access control is bypassed.
 - Muse Wonder
 - Muse Wonder Full
 - Muse Spark 1.3
+- Muse Spark Open
 - SAM 3.1
 - Muse Voice Transcribe
 - Muse Image
@@ -84,17 +85,17 @@ access control is bypassed.
 
 ### Links
 
-- [Apply Now](https://cerebralvalley.ai/e/meta-ai-developer-hackathon)
 - [Meta home](/)
 - [Documentation](/docs)
 - [Contact Sales](/contact-sales?referrer_path=%2F)
 - [Login](/api/auth/login)
 - [Skip to content](#astryx-app-shell-main)
-- [Start building](/api/auth/login)
+- [Try Muse models](/api/auth/login)
 - [Contact sales](/contact-sales?referrer_path=%2F)
 - [Sign in to open the chat playground](/api/auth/login?next=%2Fplayground%3Fmodel_id%3Dmuse-wonder-1.0)
 - [Learn more about Muse Wonder Full (opens in new tab)](https://dev.meta.ai/models/muse-wonder)
 - [Sign in to use Muse Spark 1.3 in Playground](/api/auth/login?next=%2Fplayground%3Fmodel_id%3Dmuse-spark-1.3-contributor)
+- [Learn more about Muse Spark Open (opens in new tab)](https://research.meta.ai/blog/muse-spark-open)
 - [Sign in to use SAM 3.1 in Playground](/api/auth/login?next=%2Fplayground%2Fsegmentation%3Fmodel_id%3Dsam-3.1)
 - [Sign in to use Muse Voice Transcribe in Playground](/api/auth/login?next=%2Fplayground%2Faudio%3Fmodel_id%3Dmuse-voice-transcribe-1.0)
 - [Sign in to use Muse Image in Playground](/api/auth/login?next=%2Fplayground%2Fimage%3Fmodel_id%3Dmuse-image-1.0)
@@ -111,9 +112,9 @@ access control is bypassed.
 - [Computer use Give Muse Wonder eyes and a pair of hands and it can build software the way you do. Learn more](https://dev.meta.ai/docs/cookbook/computer-use)
 - [GitHub agent Build an autonomous GitHub bot on Meta Model API with Muse Wonder and OpenCode. Learn more](https://dev.meta.ai/docs/cookbook/github-agent)
 - [Search grounding Give your model live access to the web. Add a single tool to your request to get real time information. Learn more](https://dev.meta.ai/docs/cookbook/search-grounding)
+- [Read more](/resources/blog/build-with-muse-wonder)
+- [Read more](/resources/blog/build-with-muse-spark-open)
 - [Read more](/resources/blog/muse-code-new-plans-and-features)
-- [Read more](/resources/blog/build-with-muse-Image)
-- [Read more](/resources/blog/build-with-muse-glimmer)
 - [Subscribe](/subscribe)
 - [post image](https://www.facebook.com/AIatMeta/)
 - [post image](https://twitter.com/aiatmeta/)
@@ -147,9 +148,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -157,6 +158,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/meta-llama.json`
-- Evidence ID: `ev_9d8633a6f9d6448fca6021be8dc9031511434605e44963851a584f203820d57e`
-- Accessibility outline: 12329 bytes
+- Evidence ID: `ev_7bc078a31c3d97a5234e71dda0eacb27797462bb2f8cc8f5f168efcd05614b05`
+- Accessibility outline: 12618 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

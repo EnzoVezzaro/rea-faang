@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_c384dcb3ae80928e0589abd9888b83ca430b06528d45813433518d4ab68edaee",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/lookout-for-metrics/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "21755e8ea07a39bebb41558f09d660d08ad580755143be7c950804e23747fe51"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 9056,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 6140,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2580,
+        "before_url": {
+          "url": "https://aws.amazon.com/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "fa1635ebeb278f3f59ff70b23d76146ba16c82ecaa8ed81199d95effd9b458d8",
+              "bytes": 18902,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - main:\n    - heading \"Adopt industry-first cloud innovations\" [level=1]\n    - paragraph: We think years ahead to innovate on your behalf, delivering the first cloud-native compute, serverless, storage, and relational databases\n    - link \"Start free with AWS\":\n      - /url: https://portal.aws.amazon.com/billing/signup?sc_icampaign=hp-4-free-tier-25&sc_ichannel=ha&sc_iplace=hero&trk=a3c4a4e5-2749-4d31-bde5-8797858876c6\n    - img \"Missing alt text value\"\n    - heading \"What's new\" [level=2]\n    - paragraph: Catch up on the most talked-about launches, updates, and success stories across AWS.\n    - link \"Register now Event AWS re:Invent is almost here Go hands-on with the engineers who build AWS services. Register now to join re:Invent this November. Register now\":\n      - /url: https://aws.amazon.com/events/reinvent/?sc_icampaign=hp-event_reinvent-registration_2026&sc_ichannel=ha&sc_iplace=hero&trk=07559c16-7516-4ef9-af91-afcda95decc3\n      - img \"Register now\"\n      - text: Event\n      - heading \"AWS re:Invent is almost here\" [level=3]\n      - text: Go hands-on with the engineers who build AWS services. Register now to join re:Invent this November. Register now\n    - link \"The hackathon you have to see to believe Event The hackathon you have to see to believe Teams sprint to the finish. Celebrity judges. One winning team takes home $100K grand prize. Watch live on November 29\":\n      - /url: https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=road%20to&search.type=1758123356883001uWDI&sc_icampaign=hp-event_road-to-reinvent_2026&sc_ichannel=ha&sc_iplace=hero&trk=e0cbbce8-2b96-4b89-9551-1181b8675ab2\n      - img \"The hackathon you have to see to believe\"\n      - text: Event\n      - heading \"The hackathon you have to see to believe\" [level=3]\n      - text: Teams sprint to the finish. Celebrity judges. One winning team takes home $100K grand prize. Watch live on November 29\n    - link \"Join us at re:Play, the official re:Invent party Event Join us at re:Play, the official re:Invent party Catch live performances at Allegiant stadium from St. Vincent, Calvin Harris, and more. Join us on December 3 for a night of music, food, and fun. Register to attend\":\n      - /url: https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search=re%3APlay&search.type=1758123356883001uWDI&sc_icampaign=hp-event_reinvent-replay_2026&sc_ichannel=ha&sc_iplace=hero&trk=0b28e784-dd2f-4db9-9217-e464190bf3bc\n      - img \"Join us at re:Play, the official re:Invent party\"\n      - text: Event\n      - heading \"Join us at re:Play, the official re:Invent party\" [level=3]\n      - text: Catch live performances at Allegiant stadium from St. Vincent, Calvin Harris, and more. Join us on December 3 for a night of music, food, and fun. Register to attend\n    - status\n    - heading \"Move beyond AI coding to agentic engineering\" [level=2]\n    - text: Kiro turns your prompt into requirements, a design, and implementation tasks, then helps you build and test the code. Click through the demo below to see how it works.\n    - button \"Skip ahead to Kiro\"\n    - img \"Kiro interactive demo\"\n    - status:\n      - link \"https://kiro.dev/?trk=fda71bb0-5060-4ce7-b181-351d0ccdf977\":\n        - /url: https://kiro.dev/?trk=fda71bb0-5060-4ce7-b181-351d0ccdf977\n    - region \"AWS Information\":\n      - heading \"From startups to enterprises, AWS is how leaders have powered innovation for 20 years\" [level=2]\n      - paragraph: Join the largest global community of innovators who trust AWS to accelerate transformation and redefine industries.\n      - link \"View more stories\":\n        - /url: /solutions/case-studies/innovators/?hp=rei\n      - region \"carousel\":\n        - link \"Automotive Missing alt text value AWS is how Nissan accelerates software innovation with AWS View the story\":\n          - /url: /solutions/case-studies/innovators/nissan/?hp=cs\n          - text: Automotive\n          - img \"Missing alt text value\"\n          - heading \"AWS is how Nissan accelerates software innovation with AWS\" [level=2]\n          - text: View the story\n      - button \"Previous slide\"\n      - button \"Next slide\"\n    - heading \"I want to see new customer stories in\" [level=2]:\n      - text: I want to see new customer stories in\n      - combobox: retail\n    - link \"Card image Retail Adidas drives enterprise-wide transformation Adidas accelerates application deployment 40x using AWS for SAP, streamlining business operations and resource planning. View the story\":\n      - /url: https://aws.amazon.com/solutions/case-studies/innovators/adidas/?hp=com\n      - img \"Card image\"\n      - text: Retail\n      - heading \"Adidas drives enterprise-wide transformation\" [level=3]\n      - text: Adidas accelerates application deployment 40x using AWS for SAP, streamlining business operations and resource planning. View the story\n    - link \"Card image Retail Tapestry amplifies store associate voices worldwide Tapestry implements AWS AI-powered feedback analysis, enabling data-driven decisions through enhanced associate insights. View the story\":\n      - /url: https://aws.amazon.com/solutions/case-studies/tapestry-generative-ai-case-study/?hp=com\n      - img \"Card image\"\n      - text: Retail\n      - heading \"Tapestry amplifies store associate voices worldwide\" [level=3]\n      - text: Tapestry implements AWS AI-powered feedback analysis, enabling data-driven decisions through enhanced associate insights. View the story\n    - heading \"Powering what’s next in every industry\" [level=2]\n    - paragraph: Discover how AWS helps organizations in every sector build, scale, and transform.\n    - link \"Explore AWS for your industry\":\n      - /url: /industries/?hp=i0\n    - search:\n      - textbox \"Search\"\n    - status:\n      - status: Displaying 1-8 (18)\n    - link \"fin, financial, finserve, finance, bank, ins, pay Financial services Develop innovative and secure solutions across banking, capital markets, insurance, and payments View industry\":\n      - /url: https://aws.amazon.com/financial-services/?hp=icard\n      - img \"fin, financial, finserve, finance, bank, ins, pay\"\n      - heading \"Financial services\" [level=3]\n      - text: Develop innovative and secure solutions across banking, capital markets, insurance, and payments View industry\n    - link \"health, hea, medical, medicine, he, pharma, pharmaceutical, med, lif, life, sci, science Healthcare and Life Sciences Accelerate innovation and improve patient care with healthcare data management and security View industry\":\n      - /url: https://aws.amazon.com/health/?hp=icard\n      - img \"health, hea, medical, medicine, he, pharma, pharmaceutical, med, lif, life, sci, science\"\n      - heading \"Healthcare and Life Sciences\" [level=3]\n      - text: Accelerate innovation and improve patient care with healthcare data management and security View industry\n    - link \"aer, sat Aerospace and Satellite Cloud solutions to help customers build satellites, conduct space and launch operations, and reimagine space exploration View industry\":\n      - /url: https://aws.amazon.com/aerospace-and-satellite/?hp=icard\n      - img \"aer, sat\"\n      - heading \"Aerospace and Satellite\" [level=3]\n      - text: Cloud solutions to help customers build satellites, conduct space and launch operations, and reimagine space exploration View industry\n    - link \"tel, tele, telecom, wir, wireless Telecommunications Accelerate innovation, scale with confidence, and add agility with cloud-based telecom solutions View industry\":\n      - /url: https://aws.amazon.com/telecom/?hp=icard\n      - img \"tel, tele, telecom, wir, wireless\"\n      - heading \"Telecommunications\" [level=3]\n      - text: Accelerate innovation, scale with confidence, and add agility with cloud-based telecom solutions View industry\n    - link \"adv, mar Advertising and Marketing Turn data into customer-winning campaigns View industry\":\n      - /url: https://aws.amazon.com/advertising-marketing/?hp=icard\n      - img \"adv, mar\"\n      - heading \"Advertising and Marketing\" [level=3]\n      - text: Turn data into customer-winning campaigns View industry\n    - link \"man, manufacture, ind, industry, industrial, pac, pack, packing, shi, ship, shipping Manufacturing Optimize production and speed time-to-market View industry\":\n      - /url: https://aws.amazon.com/manufacturing/?hp=icard\n      - img \"man, manufacture, ind, industry, industrial, pac, pack, packing, shi, ship, shipping\"\n      - heading \"Manufacturing\" [level=3]\n      - text: Optimize production and speed time-to-market View industry\n    - link \"med, ent, str, stream, streaming, vid, video, cab, cable Media and Entertainment Transform media & entertainment with the most purpose-built capabilities and partner solutions of any cloud View industry\":\n      - /url: https://aws.amazon.com/media/?hp=icard\n      - img \"med, ent, str, stream, streaming, vid, video, cab, cable\"\n      - heading \"Media and Entertainment\" [level=3]\n      - text: Transform media & entertainment with the most purpose-built capabilities and partner solutions of any cloud View industry\n    - link \"gam, game Games Enable game development for every genre and platform, from AAA titles to indie studios View industry\":\n      - /url: https://aws.amazon.com/gametech/?hp=icard\n      - img \"gam, game\"\n      - heading \"Games\" [level=3]\n      - text: Enable game development for every genre and platform, from AAA titles to indie studios View industry\n    - button \"Show 8 more\"\n    - status\n    - heading \"AWS Global Infrastructure\" [level=2]\n    - heading \"The AWS Cloud spans 124 Availability Zones within 39 Geographic Regions, with announced plans for 7 more Availability Zones and 2 more AWS Regions in the Kingdom of Saudi Arabia, and Chile.\" [level=3]\n    - tablist:\n      - tab \"North America\" [selected]\n      - tab \"South America\"\n      - tab \"Europe\"\n      - tab \"Middle East\"\n      - tab \"Africa\"\n      - tab \"Asia Pacific\"\n      - tab \"Australia and New Zealand\"\n    - tabpanel \"North America\":\n      - text: AWS Coverage Regions North America\n      - heading \"Geographic Regions 9\" [level=3]:\n        - button \"Geographic Regions 9\" [expanded]\n      - button \"AWS GovCloud (US-East)\"\n      - button \"AWS GovCloud (US-West)\"\n      - button \"Canada (Central)\"\n      - button \"Canada West (Calgary)\"\n      - button \"Mexico (Central)\"\n      - button \"US West (Northern California)\"\n      - button \"US East (Northern Virginia)\"\n      - button \"US East (Ohio)\"\n      - button \"US West (Oregon)\"\n      - text: Available Coming soon\n      - heading \"Edge Locations 31\" [level=3]:\n        - button \"Edge Locations 31\"\n    - heading \"I want to\" [level=2]:\n      - text: I want to\n      - combobox: try AWS for free\n    - link \"Gain free, hands-on experience Sign up for AWS and get $100 in AWS Free Tier credits right away, plus up to $100 more as you explore. You can test AWS services for up to 6 months at no cost. You'll only pay when you're ready to grow. Create a free account\":\n      - /url: https://aws.amazon.com/free/?hp=nsfree1\n      - heading \"Gain free, hands-on experience\" [level=3]\n      - text: Sign up for AWS and get $100 in AWS Free Tier credits right away, plus up to $100 more as you explore. You can test AWS services for up to 6 months at no cost. You'll only pay when you're ready to grow. Create a free account\n    - link \"Track your AWS Free Tier usage Explore AWS services at no cost within specified usage limits. Learn to track your AWS Free Tier usage, manage credits, and set up cost alerts in this 10 minute tutorial. View tutorial\":\n      - /url: https://docs.aws.amazon.com/hands-on/latest/control-your-costs-free-tier-budgets/control-your-costs-free-tier-budgets.html?hp=nsfree2\n      - heading \"Track your AWS Free Tier usage\" [level=3]\n      - text: Explore AWS services at no cost within specified usage limits. Learn to track your AWS Free Tier usage, manage credits, and set up cost alerts in this 10 minute tutorial. View tutorial\n    - heading \"Did you find what you were looking for today?\" [level=2]\n    - paragraph: Let us know so we can improve the quality of the content on our pages\n    - button \"Yes, give us positive feedback\": \"Yes\"\n    - button \"No, give us constructive feedback\": \"No\"\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

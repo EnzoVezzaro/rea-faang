@@ -9,11 +9,11 @@ Browser capture of the public web surface of Bedrock, recorded with REA.
 | Target | https://aws.amazon.com/bedrock/ |
 | Resolved URL | https://aws.amazon.com/bedrock/ |
 | Page title | Amazon Bedrock |
-| Captured | 2026-10-14T03:55:49.703Z |
+| Captured | 2026-11-03T01:34:10.276Z |
 | Status | captured |
-| REA Evidence ID | `ev_5aacc993231e3f21733b1c72825b7b8335a1640ae28a302b9083b8bdba54c5b8` |
+| REA Evidence ID | `ev_a7a435adf240483c7b1c8a04629892cf35c2d2073541edd7d2db7c86c669f39c` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -103,7 +103,6 @@ access control is bypassed.
 - [Artificial Intelligence](/ai/)
 - [Generative AI](/ai/generative-ai/)
 - [Learn more about model choice](/bedrock/model-choice/)
-- [Explore AI for startups](https://aws.amazon.com/startups/ai-for-startups/?sc_icampaign=aware_startups-napkin_2026&sc_ichannel=ha&sc_iplace=banner&trk=22ab15bf-01fe-4c50-a3e6-74eaa3399151)
 - [Video Amazon Bedrock customer success stories Watch the videos](https://www.youtube.com/playlist?list=PLhr1KZpdzukdxGUL7B_Gv45OG4-NECKcS)
 - [Documentation Amazon Bedrock documentation Read the documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/getting-started.html)
 - [Workshop Explore common Amazon Bedrock use cases with a guided workshop View workshop](https://catalog.us-east-1.prod.workshops.aws/workshops/a4bdb007-5600-4368-81c5-ff5b4154f518/en-US)
@@ -130,6 +129,7 @@ access control is bypassed.
 - [.NET on AWS](https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr)
 - [Python on AWS](https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr)
 - [Java on AWS](https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr)
+- [PHP on AWS](https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr)
 
 ### Controls
 
@@ -158,9 +158,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/aws-bedrock.json`
-- Evidence ID: `ev_5aacc993231e3f21733b1c72825b7b8335a1640ae28a302b9083b8bdba54c5b8`
-- Accessibility outline: 15583 bytes
+- Evidence ID: `ev_a7a435adf240483c7b1c8a04629892cf35c2d2073541edd7d2db7c86c669f39c`
+- Accessibility outline: 14687 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

@@ -3,21 +3,21 @@
   "source": "catalog/products.jsonl + tools/skills/catalog-data.mjs",
   "counts": {
     "available": 40,
-    "partial": 29,
-    "pending": 8
+    "partial": 66,
+    "pending": 78
   },
   "companies": {
     "google": {
       "name": "Google",
-      "count": 25
+      "count": 26
+    },
+    "amazon_aws": {
+      "name": "Amazon Web Services",
+      "count": 117
     },
     "apple": {
       "name": "Apple",
       "count": 20
-    },
-    "amazon_aws": {
-      "name": "Amazon Web Services",
-      "count": 17
     },
     "amazon": {
       "name": "Amazon",
@@ -25,10 +25,14 @@
     },
     "netflix": {
       "name": "Netflix",
-      "count": 5
+      "count": 6
     },
     "meta": {
       "name": "Meta",
+      "count": 5
+    },
+    "microsoft": {
+      "name": "Microsoft",
       "count": 5
     }
   },
@@ -82,6 +86,720 @@
         "specs": true,
         "src": false,
         "tests": true
+      }
+    },
+    {
+      "id": "amazon-nimble-studio",
+      "name": "Amazon Nimble Studio",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "media",
+      "categories": [
+        "virtual-studio",
+        "visual-effects",
+        "animation",
+        "game-development",
+        "cloud-workstations",
+        "rendering"
+      ],
+      "official_url": "https://aws.amazon.com/nimble-studio/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-nimble-studio/",
+      "alternatives": [],
+      "gap": "The service is discontinued and AWS lists it among services in full shutdown. Open-source creative-workstation, storage and render-farm components cover subsets, but no equivalent replacement has been verified here.",
+      "verdict": "Retired. Keep this entry for catalog completeness and historical reverse engineering; do not recommend a new implementation under the Amazon Nimble Studio name.",
+      "sources": [
+        "https://aws.amazon.com/nimble-studio/",
+        "https://aws.amazon.com/about-aws/whats-new/2021/04/aws-announces-general-availability-amazon-nimble-studio/",
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html",
+        "https://docs.aws.amazon.com/nimble-studio/latest/userguide/what-is-nimble-studio.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-nova-act",
+      "name": "Amazon Nova Act",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_agent_platform",
+      "categories": [
+        "browser-automation",
+        "agentic-ai",
+        "workflow-automation",
+        "computer-use",
+        "developer-tool"
+      ],
+      "official_url": "https://aws.amazon.com/nova/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-nova-act/",
+      "alternatives": [],
+      "gap": "Browser automation frameworks and agent runtimes cover parts of the workflow, but Nova Act's model behavior, reliability, deployment plane, API semantics and escalation behavior are not yet compared.",
+      "verdict": "Pending REA research; verify the public interfaces, workflow state model, safety boundaries, deployment contract and open-source foundations before implementation.",
+      "sources": [
+        "https://aws.amazon.com/nova/",
+        "https://aws.amazon.com/documentation-overview/nova-act/",
+        "https://docs.aws.amazon.com/nova-act/",
+        "https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html",
+        "https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-opensearch-service",
+      "name": "Amazon OpenSearch Service",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "search",
+      "categories": [
+        "search",
+        "analytics",
+        "observability",
+        "managed-service",
+        "serverless",
+        "open-source"
+      ],
+      "official_url": "https://aws.amazon.com/opensearch-service/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-opensearch-service/",
+      "alternatives": [
+        {
+          "name": "OpenSearch",
+          "url": "https://github.com/opensearch-project/OpenSearch",
+          "license": "Apache-2.0",
+          "covers": "Open-source search and analytics engine with APIs, indexing, queries and extensions.",
+          "note": "Does not provide AWS's managed provisioning, account plane, regional operations, quotas or service integrations by itself."
+        }
+      ],
+      "gap": "OpenSearch covers the core search and analytics engine, but the AWS managed control plane, Serverless mode, provisioning, IAM/VPC integrations, scaling, snapshots, quotas and operational guarantees remain distinct.",
+      "verdict": "Partial. Use OpenSearch as the primary open-source foundation for an independent implementation, but scope the AWS service plane separately and do not claim full equivalence without evidence.",
+      "sources": [
+        "https://aws.amazon.com/opensearch-service/",
+        "https://docs.aws.amazon.com/opensearch-service/",
+        "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html",
+        "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Operations_Amazon_OpenSearch_Service.html",
+        "https://opensearch.org/",
+        "https://github.com/opensearch-project/OpenSearch"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-personalize",
+      "name": "Amazon Personalize",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "machine_learning_framework",
+      "categories": [
+        "recommendations",
+        "personalization",
+        "machine-learning",
+        "ranking",
+        "customer-experience"
+      ],
+      "official_url": "https://aws.amazon.com/personalize/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-personalize/",
+      "alternatives": [
+        {
+          "name": "RecBole",
+          "url": "https://github.com/RUCAIBox/RecBole",
+          "license": "MIT",
+          "covers": "Open-source recommendation research and model library covering general, sequential, context-aware and knowledge-based recommendation.",
+          "note": "Provides algorithms and evaluation rather than AWS's managed ingestion, private model hosting, real-time service plane, quotas and operational integrations."
+        }
+      ],
+      "gap": "RecBole covers recommendation algorithms and evaluation, but not Amazon Personalize's managed data import, private model lifecycle, real-time/batch service APIs, filters, promotions, segments, security or AWS operations.",
+      "verdict": "Partial. RecBole is a useful open-source foundation for an independent recommendation implementation, but the managed AWS service plane and production operations require separate design and verification.",
+      "sources": [
+        "https://aws.amazon.com/personalize/",
+        "https://aws.amazon.com/documentation-overview/personalize/",
+        "https://aws.amazon.com/personalize/faqs/",
+        "https://docs.aws.amazon.com/personalize/",
+        "https://docs.aws.amazon.com/personalize/latest/dg/setup.html",
+        "https://github.com/RUCAIBox/RecBole"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-polly",
+      "name": "Amazon Polly",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_application",
+      "categories": [
+        "text-to-speech",
+        "speech-synthesis",
+        "voice",
+        "accessibility",
+        "audio"
+      ],
+      "official_url": "https://aws.amazon.com/polly/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-polly/",
+      "alternatives": [
+        {
+          "name": "Piper",
+          "url": "https://github.com/OHF-Voice/piper1-gpl",
+          "license": "GPL-3.0",
+          "covers": "Fast local neural text-to-speech engine with downloadable voice models.",
+          "note": "Does not cover Polly's hosted voice catalog, language coverage, managed API, streaming/service plane or all voice/model licensing."
+        }
+      ],
+      "gap": "Piper covers local neural synthesis, but Amazon Polly's hosted API, voice portfolio, language coverage, SSML/lexicon behavior, streaming, quotas, privacy and managed operations remain distinct.",
+      "verdict": "Partial. Piper is a viable local foundation for an independent TTS implementation, but full Polly equivalence requires separate work for service APIs, voices, languages, streaming, permissions and operations.",
+      "sources": [
+        "https://aws.amazon.com/polly/",
+        "https://aws.amazon.com/documentation-overview/polly/",
+        "https://docs.aws.amazon.com/polly/",
+        "https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html",
+        "https://github.com/OHF-Voice/piper1-gpl"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-q-developer",
+      "name": "Amazon Q Developer",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_agent_platform",
+      "categories": [
+        "coding-assistant",
+        "developer-tool",
+        "agentic-ai",
+        "aws-operations",
+        "security"
+      ],
+      "official_url": "https://aws.amazon.com/q/developer/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-q-developer/",
+      "alternatives": [
+        {
+          "name": "OpenHands",
+          "url": "https://github.com/OpenHands/OpenHands",
+          "license": "MIT",
+          "covers": "Open-source AI-driven development agent with SDK, tools, workspaces and agent-server integrations.",
+          "note": "Does not provide Amazon's AWS-grounded knowledge, Bedrock-backed models, IAM/service integrations, managed quotas or Q-specific interfaces."
+        }
+      ],
+      "gap": "OpenHands covers an open agentic development foundation, but Amazon Q Developer's AWS grounding, model and safety plane, IDE/CLI integrations, IAM-aware operations, security scans, modernization flows and managed service limits remain distinct.",
+      "verdict": "Partial. OpenHands is a credible open-source foundation for an independent coding agent, but it is not a drop-in replacement for Amazon Q Developer's AWS-specific product and managed control plane.",
+      "sources": [
+        "https://aws.amazon.com/q/developer/",
+        "https://aws.amazon.com/q/developer/getting-started/",
+        "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/",
+        "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/explain-update-code.html",
+        "https://github.com/OpenHands/OpenHands"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-quicksight",
+      "name": "Amazon QuickSight",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "business_software",
+      "categories": [
+        "business-intelligence",
+        "analytics",
+        "data-visualization",
+        "dashboards",
+        "embedded-analytics"
+      ],
+      "official_url": "https://aws.amazon.com/quicksight/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-quicksight/",
+      "alternatives": [
+        {
+          "name": "Apache Superset",
+          "url": "https://github.com/apache/superset",
+          "license": "Apache-2.0",
+          "covers": "Open-source data exploration, visualization, SQL and dashboard platform that can be self-hosted.",
+          "note": "Does not provide QuickSight's SPICE engine, AWS account integrations, managed operations, embedded contract or exact connector and governance behavior."
+        }
+      ],
+      "gap": "Apache Superset covers core BI dashboards and exploration, but QuickSight's SPICE storage and query layer, AWS integrations, embedded analytics, permissions, tenant model and managed operations remain distinct.",
+      "verdict": "Partial. Apache Superset is a strong open-source BI foundation, but full QuickSight equivalence requires a separate data plane, embedding model, AWS integration layer and operational design.",
+      "sources": [
+        "https://aws.amazon.com/quicksight/",
+        "https://docs.aws.amazon.com/quicksight/",
+        "https://docs.aws.amazon.com/quicksight/latest/user/welcome.html",
+        "https://docs.aws.amazon.com/cli/latest/reference/quicksight/",
+        "https://github.com/apache/superset"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-rekognition",
+      "name": "Amazon Rekognition",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_application",
+      "categories": [
+        "computer-vision",
+        "image-analysis",
+        "video-analysis",
+        "face-analysis",
+        "moderation"
+      ],
+      "official_url": "https://aws.amazon.com/rekognition/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-rekognition/",
+      "alternatives": [
+        {
+          "name": "CompreFace",
+          "url": "https://github.com/exadel-inc/CompreFace",
+          "license": "Apache-2.0",
+          "covers": "Self-hosted REST face detection, recognition and verification service with Docker deployment.",
+          "note": "Covers an important face-analysis subset, but not Rekognition's general image/video analysis, moderation, custom labels, liveness, streaming and AWS managed plane."
+        }
+      ],
+      "gap": "CompreFace covers face detection and recognition locally, but Rekognition's broader image/video APIs, moderation, custom labels, liveness, streaming, quotas, regional service plane and managed operations remain distinct.",
+      "verdict": "Partial. CompreFace is a useful open-source foundation for face-analysis workflows, but full Rekognition equivalence requires separate computer-vision models, video processing, moderation, liveness and managed-service design.",
+      "sources": [
+        "https://aws.amazon.com/rekognition/",
+        "https://docs.aws.amazon.com/rekognition/latest/dg/",
+        "https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works.html",
+        "https://docs.aws.amazon.com/rekognition/latest/APIReference/",
+        "https://github.com/exadel-inc/CompreFace"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-route-53",
+      "name": "Amazon Route 53",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "networking",
+      "categories": [
+        "dns",
+        "domain-registration",
+        "traffic-routing",
+        "health-checking",
+        "networking"
+      ],
+      "official_url": "https://aws.amazon.com/route53/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-route-53/",
+      "alternatives": [
+        {
+          "name": "PowerDNS Authoritative Server",
+          "url": "https://github.com/PowerDNS/pdns",
+          "license": "GPL-2.0",
+          "covers": "Open-source authoritative DNS server with multiple backends, APIs and DNSSEC support.",
+          "note": "Does not provide Route 53's domain registrar, AWS account plane, global health-check service, routing products, Resolver or managed operations by itself."
+        }
+      ],
+      "gap": "PowerDNS covers authoritative DNS and automation foundations, but Route 53's registrar, global health checks, failover and traffic policies, Resolver, Profiles, AWS integrations and managed availability remain distinct.",
+      "verdict": "Partial. PowerDNS is a strong open-source authoritative DNS foundation, but full Route 53 equivalence requires separate registrar, health-check, global routing, resolver and operational services.",
+      "sources": [
+        "https://aws.amazon.com/route53/",
+        "https://aws.amazon.com/documentation-overview/route53/",
+        "https://docs.aws.amazon.com/route53/",
+        "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/",
+        "https://github.com/PowerDNS/pdns"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-security-lake",
+      "name": "Amazon Security Lake",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "security",
+        "data-lake",
+        "siem",
+        "log-management",
+        "threat-detection"
+      ],
+      "official_url": "https://aws.amazon.com/security-lake/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-security-lake/",
+      "alternatives": [
+        {
+          "name": "Matano",
+          "url": "https://github.com/matanolabs/matano",
+          "license": "Apache-2.0",
+          "covers": "Open-source cloud-native security data lake for AWS with log normalization, Apache Iceberg, detection-as-code and serverless ingestion.",
+          "note": "Does not reproduce Security Lake's exact AWS source/subscriber contracts, OCSF implementation, permissions, regional service plane or managed operations."
+        }
+      ],
+      "gap": "Matano covers a large part of the open security-data-lake foundation, but Security Lake's managed source and subscriber APIs, OCSF behavior, Lake Formation integration, notifications, quotas and AWS operational plane remain distinct.",
+      "verdict": "Partial. Matano is a strong open-source foundation for an independent AWS security data lake, but full Security Lake equivalence requires separate validation of schemas, integrations, permissions and managed operations.",
+      "sources": [
+        "https://aws.amazon.com/security-lake/",
+        "https://docs.aws.amazon.com/security-lake/",
+        "https://docs.aws.amazon.com/security-lake/latest/userguide/getting-started.html",
+        "https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html",
+        "https://github.com/matanolabs/matano"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-ses",
+      "name": "Amazon Simple Email Service",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "business_software",
+      "categories": [
+        "email",
+        "transactional-email",
+        "smtp",
+        "messaging",
+        "deliverability"
+      ],
+      "official_url": "https://aws.amazon.com/ses/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-ses/",
+      "alternatives": [
+        {
+          "name": "Postal",
+          "url": "https://github.com/postalserver/postal",
+          "license": "MIT",
+          "covers": "Self-hosted mail delivery platform for incoming and outgoing email, with SMTP, tracking and webhooks.",
+          "note": "Does not provide SES's managed deliverability, AWS account and IAM integrations, regional quotas, reputation systems or exact API and event contracts."
+        }
+      ],
+      "gap": "Postal covers a self-hosted email-delivery foundation, but SES's managed deliverability, identity and reputation systems, SMTP/API contracts, quotas, event integrations and AWS operations remain distinct.",
+      "verdict": "Partial. Postal is a credible open-source foundation for independent email delivery, but full SES equivalence requires separate work for deliverability, identity, reputation, eventing, compliance and managed operations.",
+      "sources": [
+        "https://aws.amazon.com/ses/",
+        "https://aws.amazon.com/ses/getting-started/",
+        "https://docs.aws.amazon.com/ses/",
+        "https://docs.aws.amazon.com/ses/latest/APIReference-V2/",
+        "https://github.com/postalserver/postal"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-pinpoint",
+      "name": "Amazon Pinpoint",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "business_software",
+      "categories": [
+        "customer-engagement",
+        "messaging",
+        "campaigns",
+        "analytics",
+        "mobile-push"
+      ],
+      "official_url": "https://aws.amazon.com/pinpoint/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-pinpoint/",
+      "alternatives": [],
+      "gap": "The service is retired. AWS directs messaging-channel users toward AWS End User Messaging, while the historical engagement plane has different replacement paths; no open-source equivalent is verified here.",
+      "verdict": "Retired. Keep this entry for historical catalog and reverse-engineering completeness; do not recommend a new implementation under the Amazon Pinpoint name.",
+      "sources": [
+        "https://aws.amazon.com/pinpoint/",
+        "https://aws.amazon.com/pinpoint/faqs/",
+        "https://docs.aws.amazon.com/pinpoint/",
+        "https://docs.aws.amazon.com/pinpoint/latest/userguide/migrate.html",
+        "https://docs.aws.amazon.com/pinpoint/latest/apireference/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-neptune",
+      "name": "Amazon Neptune",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "database",
+      "categories": [
+        "graph-database",
+        "graph-analytics",
+        "gremlin",
+        "opencypher",
+        "sparql"
+      ],
+      "official_url": "https://aws.amazon.com/neptune/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-neptune/",
+      "alternatives": [],
+      "gap": "Open-source graph databases and analytics engines cover portions of the service, but AWS storage, availability, APIs, security and Neptune Analytics behavior are not yet compared.",
+      "verdict": "Active reference entry; investigate Database and Analytics surfaces, query behavior, operations and independent foundation before implementation.",
+      "sources": [
+        "https://aws.amazon.com/neptune/",
+        "https://docs.aws.amazon.com/neptune/",
+        "https://docs.aws.amazon.com/neptune/latest/userguide/",
+        "https://docs.aws.amazon.com/neptune/latest/userguide/neptune-setup.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-mq",
+      "name": "Amazon MQ",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "messaging",
+      "categories": [
+        "message-broker",
+        "activemq",
+        "rabbitmq",
+        "messaging",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/amazon-mq/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-mq/",
+      "alternatives": [],
+      "gap": "ActiveMQ, RabbitMQ and other brokers cover the core protocols, but managed AWS lifecycle, networking, security and HA behavior are not yet compared.",
+      "verdict": "Active reference entry; investigate broker lifecycle, protocol behavior, HA, migration, security and independent foundation before implementation.",
+      "sources": [
+        "https://aws.amazon.com/amazon-mq/",
+        "https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/",
+        "https://docs.aws.amazon.com/amazon-mq/latest/api-reference/welcome.html",
+        "https://aws.amazon.com/amazon-mq/faqs/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-monitron",
+      "name": "Amazon Monitron",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "machine_learning_framework",
+      "categories": [
+        "industrial-iot",
+        "predictive-maintenance",
+        "condition-monitoring",
+        "sensors",
+        "discontinued-new-customer-access"
+      ],
+      "official_url": "https://aws.amazon.com/monitron/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-monitron/",
+      "alternatives": [],
+      "gap": "AWS points existing customers to partner alternatives; equivalent sensor, gateway, ML, workflow and lifecycle coverage is not yet verified.",
+      "verdict": "Historical/active-for-existing-customers reference; not recommended for new deployments until access and replacement paths are independently verified.",
+      "sources": [
+        "https://aws.amazon.com/monitron/",
+        "https://aws.amazon.com/blogs/machine-learning/maintain-access-and-consider-alternatives-for-amazon-monitron/",
+        "https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html",
+        "https://aws.amazon.com/monitron/pricing/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-mwaa",
+      "name": "Amazon Managed Workflows for Apache Airflow",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "workflow-orchestration",
+        "apache-airflow",
+        "data-pipelines",
+        "managed-service",
+        "automation"
+      ],
+      "official_url": "https://aws.amazon.com/managed-workflows-for-apache-airflow/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-mwaa/",
+      "alternatives": [],
+      "gap": "Open-source Apache Airflow covers the core orchestration engine, but AWS environment provisioning, security, scaling, upgrades and integrations are not yet compared.",
+      "verdict": "Active reference entry; investigate environment lifecycle, Airflow versions, worker behavior, security and independent foundation before implementation.",
+      "sources": [
+        "https://aws.amazon.com/managed-workflows-for-apache-airflow/",
+        "https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html",
+        "https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html",
+        "https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-msk",
+      "name": "Amazon Managed Streaming for Apache Kafka",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "streaming",
+        "messaging",
+        "apache-kafka",
+        "event-driven",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/msk/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-msk/",
+      "alternatives": [],
+      "gap": "Apache Kafka and other streaming systems cover portions of the service, but managed operations, serverless scaling, security and AWS integrations are not yet compared.",
+      "verdict": "Active reference entry; investigate cluster lifecycle, serverless behavior, connectors, security and independent foundation before implementation.",
+      "sources": [
+        "https://aws.amazon.com/msk/",
+        "https://aws.amazon.com/documentation-overview/msk/",
+        "https://docs.aws.amazon.com/msk/",
+        "https://aws.amazon.com/msk/faqs/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-managed-prometheus",
+      "name": "Amazon Managed Service for Prometheus",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "observability",
+        "monitoring",
+        "prometheus",
+        "containers",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/prometheus/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-managed-prometheus/",
+      "alternatives": [],
+      "gap": "Open-source Prometheus and related observability tools cover the data model and query language, but AWS managed scaling, collectors, IAM, retention and operations are not yet compared.",
+      "verdict": "Active reference entry; investigate workspaces, ingestion, scrapers, query APIs, retention and independent foundation before implementation.",
+      "sources": [
+        "https://aws.amazon.com/documentation-overview/prometheus/",
+        "https://docs.aws.amazon.com/prometheus/latest/userguide/",
+        "https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html",
+        "https://docs.aws.amazon.com/general/latest/gr/prometheus-service.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-managed-grafana",
+      "name": "Amazon Managed Grafana",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "observability",
+        "visualization",
+        "dashboards",
+        "monitoring",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/grafana/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-managed-grafana/",
+      "alternatives": [],
+      "gap": "Open-source Grafana and other observability dashboards cover portions of the experience, but AWS provisioning, IAM integration, data-source permissions and managed operations are not yet compared.",
+      "verdict": "Active reference entry; investigate workspace lifecycle, authentication, data-source permissions and independent foundation before implementation.",
+      "sources": [
+        "https://aws.amazon.com/grafana/",
+        "https://docs.aws.amazon.com/grafana/latest/userguide/",
+        "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-workspaces-users.html",
+        "https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
       }
     },
     {
@@ -1438,6 +2156,36 @@
         "specs": true,
         "src": false,
         "tests": true
+      }
+    },
+    {
+      "id": "amazon-appflow",
+      "name": "Amazon AppFlow",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "business_software",
+      "categories": [
+        "data-integration",
+        "etl",
+        "saas-integration"
+      ],
+      "official_url": "https://aws.amazon.com/appflow/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-appflow/",
+      "alternatives": [],
+      "gap": "Open-source alternatives, connector coverage, operational semantics and implementation scope remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/appflow/",
+        "https://docs.aws.amazon.com/appflow/latest/userguide/what-is-appflow.html",
+        "https://docs.aws.amazon.com/cli/latest/reference/appflow/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
       }
     },
     {
@@ -3561,6 +4309,3151 @@
       "sources": [
         "https://github.com/LizardByte/Sunshine",
         "https://moonlight-stream.org/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "microsoft-windows",
+      "name": "Microsoft Windows",
+      "company_id": "microsoft",
+      "company": "Microsoft",
+      "product_type": "operating_system",
+      "categories": [
+        "platform",
+        "desktop"
+      ],
+      "official_url": "https://www.microsoft.com/en-us/windows/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/microsoft-windows/",
+      "alternatives": [
+        {
+          "name": "ReactOS",
+          "url": "https://reactos.org/",
+          "license": "GPL-2.0",
+          "covers": "Independent reimplementation targeting Windows binary and driver compatibility.",
+          "note": "Research project; not a production replacement."
+        },
+        {
+          "name": "Wine",
+          "url": "https://www.winehq.org/",
+          "license": "LGPL-2.1",
+          "covers": "Runs many Windows applications on POSIX systems.",
+          "note": "A compatibility layer, not an operating system."
+        }
+      ],
+      "gap": "No open-source operating system verifies production-grade Win32 application and driver compatibility at Windows scale.",
+      "verdict": "Partial. Wine and ReactOS cover parts of the compatibility surface, but a supported, secure desktop OS with the full driver and servicing model is not available as open source.",
+      "sources": [
+        "https://www.microsoft.com/en-us/windows/",
+        "https://learn.microsoft.com/en-us/windows/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "microsoft-365",
+      "name": "Microsoft 365",
+      "company_id": "microsoft",
+      "company": "Microsoft",
+      "product_type": "consumer_subscription",
+      "categories": [
+        "productivity",
+        "collaboration",
+        "subscription"
+      ],
+      "official_url": "https://www.microsoft.com/en-us/microsoft-365",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/microsoft-365/",
+      "alternatives": [
+        {
+          "name": "LibreOffice",
+          "url": "https://www.libreoffice.org/",
+          "license": "MPL-2.0",
+          "covers": "Desktop office suite with document formats.",
+          "note": "No hosted collaboration or identity layer."
+        },
+        {
+          "name": "ONLYOFFICE",
+          "url": "https://www.onlyoffice.com/",
+          "license": "AGPL-3.0",
+          "covers": "Document editors with self-hosted collaboration server.",
+          "note": "Smaller ecosystem and fewer enterprise integrations."
+        },
+        {
+          "name": "Nextcloud",
+          "url": "https://nextcloud.com/",
+          "license": "AGPL-3.0",
+          "covers": "Self-hosted files, calendar and online office integration.",
+          "note": "Depends on an office backend for full document editing."
+        }
+      ],
+      "gap": "The pieces exist as separate open-source projects (office suite, storage, mail, chat), but no single subscription-equivalent bundle verifies the same integration and identity story.",
+      "verdict": "Partial. LibreOffice, ONLYOFFICE, Nextcloud and open mail/chat servers each cover a slice; the integrated, tenant-managed bundle remains unbuilt.",
+      "sources": [
+        "https://www.microsoft.com/en-us/microsoft-365",
+        "https://learn.microsoft.com/en-us/microsoft-365/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "microsoft-teams",
+      "name": "Microsoft Teams",
+      "company_id": "microsoft",
+      "company": "Microsoft",
+      "product_type": "messaging",
+      "categories": [
+        "collaboration",
+        "meetings"
+      ],
+      "official_url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/microsoft-teams/",
+      "alternatives": [
+        {
+          "name": "Element",
+          "url": "https://element.io/",
+          "license": "AGPL-3.0",
+          "covers": "Matrix-based chat, rooms and calls with self-hosting.",
+          "note": "Meeting and recording features are less integrated."
+        },
+        {
+          "name": "Jitsi",
+          "url": "https://jitsi.org/",
+          "license": "Apache-2.0",
+          "covers": "Self-hosted video meetings and screen sharing.",
+          "note": "No persistent team chat or admin tenant model."
+        }
+      ],
+      "gap": "Matrix-based chat and Jitsi-class meetings are open source, but the combined tenant, recording and admin model is not available as one self-hosted product.",
+      "verdict": "Partial. Element and Jitsi cover chat and meetings separately; the integrated team workspace with admin controls is a composed build, not a drop-in replacement.",
+      "sources": [
+        "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+        "https://learn.microsoft.com/en-us/microsoftteams/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "microsoft-azure",
+      "name": "Microsoft Azure",
+      "company_id": "microsoft",
+      "company": "Microsoft",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "cloud",
+        "platform"
+      ],
+      "official_url": "https://azure.microsoft.com/en-us",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/microsoft-azure/",
+      "alternatives": [
+        {
+          "name": "OpenStack",
+          "url": "https://www.openstack.org/",
+          "license": "Apache-2.0",
+          "covers": "Self-hosted compute, storage and networking control plane.",
+          "note": "No managed-service catalogue or global regions."
+        },
+        {
+          "name": "Apache CloudStack",
+          "url": "https://cloudstack.apache.org/",
+          "license": "Apache-2.0",
+          "covers": "IaaS orchestration for private clouds.",
+          "note": "Narrower service catalogue than a hyperscaler."
+        }
+      ],
+      "gap": "OpenStack and CloudStack provide an IaaS control plane, but no open-source project verifies a comparable managed-service catalogue and global region footprint.",
+      "verdict": "Partial. Private-cloud IaaS is well covered; the managed-service breadth and operational model of a hyperscaler remain a research and integration problem, not a drop-in replacement.",
+      "sources": [
+        "https://azure.microsoft.com/en-us",
+        "https://learn.microsoft.com/en-us/azure/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "microsoft-skype",
+      "name": "Skype",
+      "company_id": "microsoft",
+      "company": "Microsoft",
+      "product_type": "messaging",
+      "categories": [
+        "calling",
+        "messaging"
+      ],
+      "official_url": "https://www.skype.com/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "partial",
+      "page": "catalog/microsoft-skype/",
+      "alternatives": [
+        {
+          "name": "Jitsi",
+          "url": "https://jitsi.org/",
+          "license": "Apache-2.0",
+          "covers": "Self-hosted video meetings and screen sharing.",
+          "note": "Meeting-centric rather than a contact-based calling app."
+        },
+        {
+          "name": "Element",
+          "url": "https://element.io/",
+          "license": "AGPL-3.0",
+          "covers": "Matrix chat with one-to-one and group calls.",
+          "note": "Requires a Matrix homeserver to self-host."
+        }
+      ],
+      "gap": "No build is required: the service is retired and open calling/chat stacks already cover the need.",
+      "verdict": "Available. Jitsi and Element provide self-hosted calling and chat, so the retired product is recorded for completeness rather than as a build target.",
+      "sources": [
+        "https://support.microsoft.com/en-us/skype/skype-is-retiring-in-may-2025-what-you-need-to-know",
+        "https://www.microsoft.com/en-us/copilot/blog/2025/02/28/the-next-chapter-moving-from-skype-to-microsoft-teams/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "google-stadia",
+      "name": "Google Stadia",
+      "company_id": "google",
+      "company": "Google",
+      "product_type": "games",
+      "categories": [
+        "cloud-gaming",
+        "streaming"
+      ],
+      "official_url": "https://stadia.google.com/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "partial",
+      "page": "catalog/google-stadia/",
+      "alternatives": [
+        {
+          "name": "Sunshine",
+          "url": "https://github.com/LizardByte/Sunshine",
+          "license": "GPL-3.0",
+          "covers": "Self-hosted game-streaming host with low-latency encoding.",
+          "note": "Streams your own hardware; not a game store."
+        },
+        {
+          "name": "Moonlight",
+          "url": "https://moonlight-stream.org/",
+          "license": "GPL-3.0",
+          "covers": "Client for self-hosted game streaming.",
+          "note": "Client only; needs a host such as Sunshine."
+        }
+      ],
+      "gap": "No build is required: the service is retired and self-hosted streaming (Sunshine + Moonlight) covers the technical need without a game store.",
+      "verdict": "Available. Sunshine and Moonlight provide open, self-hosted game streaming; Stadia is recorded as retired for inventory completeness.",
+      "sources": [
+        "https://blog.google/products-and-platforms/products/stadia/message-on-stadia-streaming-strategy/",
+        "https://support.google.com/stadia/answer/12790109"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "netflix-dvd",
+      "name": "Netflix DVD",
+      "company_id": "netflix",
+      "company": "Netflix",
+      "product_type": "media",
+      "categories": [
+        "rental",
+        "physical-media"
+      ],
+      "official_url": "https://dvd.netflix.com/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "partial",
+      "page": "catalog/netflix-dvd/",
+      "alternatives": [
+        {
+          "name": "Jellyfin",
+          "url": "https://jellyfin.org/",
+          "license": "GPL-2.0",
+          "covers": "Self-hosted media library and streaming server.",
+          "note": "Streams files you own; no physical rental logistics."
+        }
+      ],
+      "gap": "No build is required: the service is retired, and physical-disc logistics are not a software problem the catalog should try to solve.",
+      "verdict": "Available. Jellyfin covers self-hosted media streaming for discs you already own; the retired rental service is recorded for completeness only.",
+      "sources": [
+        "https://about.netflix.com/news/netflix-dvd-the-final-season"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-athena",
+      "name": "Amazon Athena",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "analytics",
+        "sql",
+        "serverless"
+      ],
+      "official_url": "https://aws.amazon.com/athena/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-athena/",
+      "alternatives": [],
+      "gap": "Open-source alternatives, query semantics, connector coverage and operational limits remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/athena/",
+        "https://docs.aws.amazon.com/athena/latest/ug/what-is.html",
+        "https://docs.aws.amazon.com/athena/latest/APIReference/Welcome.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-augmented-ai",
+      "name": "Amazon Augmented AI",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_application",
+      "categories": [
+        "human-in-the-loop",
+        "machine-learning",
+        "workflow"
+      ],
+      "official_url": "https://docs.aws.amazon.com/augmented-ai/",
+      "lifecycle_status": "deprecated",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-augmented-ai/",
+      "alternatives": [],
+      "gap": "The service is deprecated for new customers and open-source alternatives and current operational semantics remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/augmented-ai/",
+        "https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-getting-started.html",
+        "https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-api-references.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-aurora",
+      "name": "Amazon Aurora",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "database",
+      "categories": [
+        "relational-database",
+        "mysql",
+        "postgresql",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/rds/aurora/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-aurora/",
+      "alternatives": [],
+      "gap": "Open-source alternatives, compatibility details, storage semantics and operational limits remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/rds/aurora/",
+        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/",
+        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-bio-discovery",
+      "name": "Amazon Bio Discovery",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_application",
+      "categories": [
+        "drug-discovery",
+        "biology",
+        "lab-in-the-loop",
+        "ai-agents"
+      ],
+      "official_url": "https://aws.amazon.com/biodiscovery/",
+      "lifecycle_status": "preview",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-bio-discovery/",
+      "alternatives": [],
+      "gap": "Public API, model licensing, scientific validation, lab integrations and open-source alternatives remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/biodiscovery/",
+        "https://aws.amazon.com/biodiscovery/pricing/",
+        "https://aws.amazon.com/blogs/industries/introducing-amazon-bio-discovery/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-braket",
+      "name": "Amazon Braket",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "research_platform",
+      "categories": [
+        "quantum-computing",
+        "quantum-simulation",
+        "developer-tool"
+      ],
+      "official_url": "https://aws.amazon.com/braket/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-braket/",
+      "alternatives": [],
+      "gap": "Provider behavior, simulator limits, pricing and open-source alternative coverage remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/braket/",
+        "https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html",
+        "https://docs.aws.amazon.com/braket/latest/developerguide/braket-how-it-works.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-chime",
+      "name": "Amazon Chime",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "messaging",
+      "categories": [
+        "video-conferencing",
+        "chat",
+        "calling"
+      ],
+      "official_url": "https://aws.amazon.com/chime/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-chime/",
+      "alternatives": [],
+      "gap": "The product is retired; current replacement coverage and historical API behavior are not being treated as a build recommendation.",
+      "verdict": "Retired. Keep separate from Amazon Chime SDK and do not recommend a new implementation from this entry.",
+      "sources": [
+        "https://aws.amazon.com/chime/getting-started/",
+        "https://aws.amazon.com/blogs/messaging-and-targeting/update-on-support-for-amazon-chime/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-chime-sdk",
+      "name": "Amazon Chime SDK",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "sdk",
+      "categories": [
+        "real-time-communications",
+        "audio-video",
+        "messaging",
+        "screen-sharing"
+      ],
+      "official_url": "https://aws.amazon.com/chime/chime-sdk/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-chime-sdk/",
+      "alternatives": [],
+      "gap": "Media topology, pricing, quotas, platform behavior and open-source alternative coverage remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/chime/chime-sdk/",
+        "https://docs.aws.amazon.com/chime-sdk/latest/dg/",
+        "https://docs.aws.amazon.com/chime-sdk/latest/APIReference/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-cloudsearch",
+      "name": "Amazon CloudSearch",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "search_service",
+      "categories": [
+        "search",
+        "managed-service",
+        "developer-tool"
+      ],
+      "official_url": "https://aws.amazon.com/cloudsearch/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-cloudsearch/",
+      "alternatives": [],
+      "gap": "The service is restricted for new customers; open-source search engines cover core indexing but not CloudSearch account integration or historical behavior.",
+      "verdict": "Retired. Retain for catalog completeness; do not recommend a new implementation from this entry.",
+      "sources": [
+        "https://docs.aws.amazon.com/cloudsearch/latest/developerguide/what-is-cloudsearch.html",
+        "https://aws.amazon.com/cloudsearch/",
+        "https://aws.amazon.com/compare/cloudsearch-and-opensearch/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-cloudwatch",
+      "name": "Amazon CloudWatch",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "observability",
+        "monitoring",
+        "logging",
+        "metrics",
+        "application-performance"
+      ],
+      "official_url": "https://aws.amazon.com/cloudwatch/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-cloudwatch/",
+      "alternatives": [],
+      "gap": "Open-source components cover individual telemetry planes but their combined coverage of AWS-native integrations and managed operations remains unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html",
+        "https://docs.aws.amazon.com/cloudwatch/",
+        "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-codeguru",
+      "name": "Amazon CodeGuru",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "developer_tool",
+      "categories": [
+        "code-quality",
+        "security-analysis",
+        "performance-profiling",
+        "machine-learning"
+      ],
+      "official_url": "https://aws.amazon.com/codeguru/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-codeguru/",
+      "alternatives": [],
+      "gap": "Open-source analyzers and profilers cover portions of CodeGuru, but component status, learned recommendations and managed integrations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/codeguru/",
+        "https://aws.amazon.com/documentation-overview/codeguru/",
+        "https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-amazon-codeguru-reviewer.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-cognito",
+      "name": "Amazon Cognito",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "security",
+      "categories": [
+        "identity",
+        "authentication",
+        "authorization",
+        "federation",
+        "developer-tool"
+      ],
+      "official_url": "https://aws.amazon.com/cognito/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-cognito/",
+      "alternatives": [],
+      "gap": "Open-source identity servers cover portions of Cognito but AWS-native role exchange, managed login and service operations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/cognito/",
+        "https://aws.amazon.com/cognito/",
+        "https://aws.amazon.com/cognito/dev-resources/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-comprehend",
+      "name": "Amazon Comprehend",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_application",
+      "categories": [
+        "natural-language-processing",
+        "machine-learning",
+        "text-analysis",
+        "document-analysis"
+      ],
+      "official_url": "https://aws.amazon.com/comprehend/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-comprehend/",
+      "alternatives": [],
+      "gap": "Open-source NLP libraries cover individual tasks but managed APIs, model catalog, batch jobs and AWS integrations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/comprehend/latest/dg/",
+        "https://docs.aws.amazon.com/comprehend/latest/APIReference/Welcome.html",
+        "https://aws.amazon.com/comprehend/features/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-connect-customer",
+      "name": "Amazon Connect Customer",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "business_software",
+      "categories": [
+        "contact-center",
+        "customer-service",
+        "omnichannel",
+        "agentic-ai"
+      ],
+      "official_url": "https://aws.amazon.com/connect/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-connect-customer/",
+      "alternatives": [],
+      "gap": "Open-source contact-center components cover individual channels but integrated routing, telephony, analytics, AI and AWS operations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/connect/latest/adminguide/what-is-amazon-connect.html",
+        "https://aws.amazon.com/connect/",
+        "https://aws.amazon.com/documentation-overview/connect-customer/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-connect-decisions",
+      "name": "Amazon Connect Decisions",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_agent_platform",
+      "categories": [
+        "supply-chain",
+        "forecasting",
+        "decisioning",
+        "agentic-ai"
+      ],
+      "official_url": "https://aws.amazon.com/products/connect/decisions/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-connect-decisions/",
+      "alternatives": [],
+      "gap": "Open-source planning and optimization components cover individual functions but the integrated AI-teammate and managed execution plane remains unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/connect-decisions/latest/userguide/what-is-amazon-connect-decisions.html",
+        "https://aws.amazon.com/products/connect/decisions/",
+        "https://aws.amazon.com/about-aws/whats-new/2026/04/amazon-connect-decisions-april/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-connect-health",
+      "name": "Amazon Connect Health",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_agent_platform",
+      "categories": [
+        "healthcare",
+        "patient-engagement",
+        "clinical-documentation",
+        "medical-coding",
+        "agentic-ai"
+      ],
+      "official_url": "https://aws.amazon.com/products/connect/health/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-connect-health/",
+      "alternatives": [],
+      "gap": "Open healthcare and NLP components cover isolated functions but managed agents, EHR integration, clinical safeguards and traceability remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/connecthealth/latest/userguide/what-is-service.html",
+        "https://aws.amazon.com/products/connect/health/",
+        "https://aws.amazon.com/about-aws/whats-new/2026/03/amazon-connect-health-agentic-ai-healthcare/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-connect-talent",
+      "name": "Amazon Connect Talent",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_agent_platform",
+      "categories": [
+        "recruiting",
+        "talent-acquisition",
+        "voice-interview",
+        "assessment",
+        "agentic-ai"
+      ],
+      "official_url": "https://aws.amazon.com/products/connect/talent/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-connect-talent/",
+      "alternatives": [],
+      "gap": "Open ATS, conversational AI and assessment components cover isolated functions but integrated interviews, scoring, audit and AWS operations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/about-aws/whats-new/2026/09/amazon-connect-talent/",
+        "https://aws.amazon.com/products/connect/talent/",
+        "https://aws.amazon.com/products/connect/talent/faqs/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-data-firehose",
+      "name": "Amazon Data Firehose",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "streaming",
+        "data-ingestion",
+        "etl",
+        "analytics",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/firehose/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-data-firehose/",
+      "alternatives": [],
+      "gap": "Open-source streaming and connector tools cover portions of Firehose but managed scaling, buffering guarantees and AWS-native integrations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/firehose/latest/dev/",
+        "https://aws.amazon.com/about-aws/whats-new/2024/02/amazon-data-firehose-formerly-kinesis-data-firehose/",
+        "https://aws.amazon.com/documentation-overview/kinesis-data-firehose/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-detective",
+      "name": "Amazon Detective",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "security",
+      "categories": [
+        "security-investigation",
+        "threat-detection",
+        "graph-analysis",
+        "incident-response"
+      ],
+      "official_url": "https://aws.amazon.com/detective/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-detective/",
+      "alternatives": [],
+      "gap": "Open-source security analytics and graph tools cover portions of Detective but managed behavior graphs, AWS-native telemetry and ML investigations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/detective/latest/userguide/",
+        "https://docs.aws.amazon.com/detective/latest/APIReference/Welcome.html",
+        "https://aws.amazon.com/detective/faqs/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-devops-guru",
+      "name": "Amazon DevOps Guru",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "developer_tool",
+      "categories": [
+        "observability",
+        "anomaly-detection",
+        "operations",
+        "machine-learning"
+      ],
+      "official_url": "https://aws.amazon.com/devops-guru/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-devops-guru/",
+      "alternatives": [],
+      "gap": "The service is being retired; open-source observability tools cover portions but not its historical managed AWS integration or learned recommendations.",
+      "verdict": "Retired. Keep for catalog completeness; do not recommend a new implementation from this entry.",
+      "sources": [
+        "https://docs.aws.amazon.com/devops-guru/latest/userguide/",
+        "https://docs.aws.amazon.com/devops-guru/latest/userguide/devops-guru-end-of-support.html",
+        "https://aws.amazon.com/devops-guru/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-documentdb",
+      "name": "Amazon DocumentDB",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "database",
+      "categories": [
+        "document-database",
+        "nosql",
+        "mongodb-compatibility",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/documentdb/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-documentdb/",
+      "alternatives": [],
+      "gap": "Open-source document databases cover core JSON storage but compatibility, managed operations, storage architecture and AWS integrations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/documentdb/latest/devguide/what-is.html",
+        "https://docs.aws.amazon.com/documentdb/latest/devguide/how-it-works.html",
+        "https://docs.aws.amazon.com/documentdb/latest/APIReference/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-ec2-auto-scaling",
+      "name": "Amazon EC2 Auto Scaling",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "compute",
+      "categories": [
+        "compute",
+        "autoscaling",
+        "high-availability",
+        "infrastructure"
+      ],
+      "official_url": "https://aws.amazon.com/ec2/autoscaling/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-ec2-auto-scaling/",
+      "alternatives": [],
+      "gap": "Open-source orchestrators cover workload scaling but EC2 lifecycle, purchase options, AWS health checks and managed integrations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html",
+        "https://docs.aws.amazon.com/autoscaling/ec2/APIReference/Welcome.html",
+        "https://aws.amazon.com/documentation-overview/ec2-autoscaling/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-ecs-anywhere",
+      "name": "Amazon ECS Anywhere",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "container_orchestration",
+      "categories": [
+        "containers",
+        "orchestration",
+        "hybrid-cloud",
+        "on-premises"
+      ],
+      "official_url": "https://aws.amazon.com/ecs/anywhere/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-ecs-anywhere/",
+      "alternatives": [],
+      "gap": "Open-source orchestrators cover hybrid container management but ECS task semantics, AWS control-plane integration and agent behavior remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-anywhere.html",
+        "https://aws.amazon.com/ecs/anywhere/faqs/",
+        "https://aws.amazon.com/ecs/anywhere/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-eks-anywhere",
+      "name": "Amazon EKS Anywhere",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "container_orchestration",
+      "categories": [
+        "kubernetes",
+        "containers",
+        "hybrid-cloud",
+        "on-premises",
+        "edge"
+      ],
+      "official_url": "https://aws.amazon.com/eks/eks-anywhere/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-eks-anywhere/",
+      "alternatives": [],
+      "gap": "Open Kubernetes distributions and Cluster API stacks cover core operations but EKS Distro, curated packages, provider support and AWS integrations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/eks/latest/userguide/eks-deployment-options.html",
+        "https://aws.amazon.com/eks/eks-anywhere/",
+        "https://aws.amazon.com/eks/eks-anywhere/pricing/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-eks-distro",
+      "name": "Amazon EKS Distro",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "container_orchestration",
+      "categories": [
+        "kubernetes",
+        "containers",
+        "open-source",
+        "hybrid-cloud",
+        "security"
+      ],
+      "official_url": "https://aws.amazon.com/eks/eks-distro/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-eks-distro/",
+      "alternatives": [],
+      "gap": "Upstream Kubernetes distributions may cover the core platform, but EKS-D build provenance, curation, patching, compatibility and operational boundaries remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/eks/eks-distro/",
+        "https://distro.eks.amazonaws.com/",
+        "https://github.com/aws/eks-distro",
+        "https://docs.aws.amazon.com/eks/latest/userguide/eks-deployment-options.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-elastic-block-store",
+      "name": "Amazon Elastic Block Store",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "storage",
+      "categories": [
+        "block-storage",
+        "cloud-storage",
+        "snapshots",
+        "backup",
+        "encryption"
+      ],
+      "official_url": "https://aws.amazon.com/ebs/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-elastic-block-store/",
+      "alternatives": [],
+      "gap": "Open-source block-storage systems can cover persistent volumes, but EBS's EC2 integration, regional placement, snapshots, KMS integration and managed guarantees remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/ebs/",
+        "https://aws.amazon.com/documentation-overview/ebs/",
+        "https://docs.aws.amazon.com/ebs/",
+        "https://docs.aws.amazon.com/cli/latest/reference/ebs/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-elastic-container-service",
+      "name": "Amazon Elastic Container Service",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "container_orchestration",
+      "categories": [
+        "containers",
+        "orchestration",
+        "compute",
+        "serverless",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/ecs/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-elastic-container-service/",
+      "alternatives": [],
+      "gap": "Open-source orchestrators cover container scheduling, but ECS's task model, capacity providers, IAM integration, Fargate integration and managed control plane remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/ecs/",
+        "https://docs.aws.amazon.com/ecs/",
+        "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html",
+        "https://aws.amazon.com/ecs/faqs/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-elastic-file-system",
+      "name": "Amazon Elastic File System",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "storage",
+      "categories": [
+        "file-storage",
+        "shared-storage",
+        "nfs",
+        "serverless",
+        "cloud-storage"
+      ],
+      "official_url": "https://aws.amazon.com/efs/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-elastic-file-system/",
+      "alternatives": [],
+      "gap": "Open-source file systems can provide shared NFS or POSIX access, but EFS's managed elasticity, AWS integrations, mount-target model and operational guarantees remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/efs/",
+        "https://aws.amazon.com/efs/faq/",
+        "https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html",
+        "https://docs.aws.amazon.com/efs/latest/APIReference/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-elastic-kubernetes-service",
+      "name": "Amazon Elastic Kubernetes Service",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "container_orchestration",
+      "categories": [
+        "kubernetes",
+        "containers",
+        "managed-service",
+        "cloud-native",
+        "orchestration"
+      ],
+      "official_url": "https://aws.amazon.com/eks/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-elastic-kubernetes-service/",
+      "alternatives": [],
+      "gap": "Open-source Kubernetes distributions can run clusters, but EKS control-plane management, Auto Mode, IAM integration, add-ons and AWS operational guarantees remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/eks/",
+        "https://docs.aws.amazon.com/eks/",
+        "https://docs.aws.amazon.com/eks/latest/userguide/",
+        "https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-elasticache-memcached",
+      "name": "Amazon ElastiCache for Memcached",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "database",
+      "categories": [
+        "caching",
+        "in-memory-database",
+        "memcached",
+        "distributed-systems",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/elasticache/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-elasticache-memcached/",
+      "alternatives": [],
+      "gap": "Self-managed Memcached and other cache engines cover core caching, but ElastiCache's managed node lifecycle, networking, monitoring, recovery and auto-discovery remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/documentation-overview/memcached/",
+        "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/",
+        "https://aws.amazon.com/elasticache/faqs/",
+        "https://aws.amazon.com/elasticache/pricing/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-elasticache-redis",
+      "name": "Amazon ElastiCache for Redis OSS",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "database",
+      "categories": [
+        "caching",
+        "in-memory-database",
+        "redis",
+        "distributed-systems",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/elasticache/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-elasticache-redis/",
+      "alternatives": [],
+      "gap": "Redis OSS and Valkey cover core engine behavior, but ElastiCache's managed lifecycle, failover, network integration, serverless mode and support model remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/",
+        "https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/engine-versions.html",
+        "https://aws.amazon.com/elasticache/faqs/",
+        "https://aws.amazon.com/elasticache/pricing/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-emr",
+      "name": "Amazon EMR",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "big-data",
+        "data-processing",
+        "analytics",
+        "hadoop",
+        "spark"
+      ],
+      "official_url": "https://aws.amazon.com/emr/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-emr/",
+      "alternatives": [],
+      "gap": "Open-source frameworks provide processing engines, but EMR's curated releases, managed lifecycle, EKS and Serverless modes and AWS integrations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/emr/",
+        "https://docs.aws.amazon.com/emr/",
+        "https://docs.aws.amazon.com/emr/latest/ManagementGuide/",
+        "https://docs.aws.amazon.com/emr/latest/ReleaseGuide/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-file-cache",
+      "name": "Amazon File Cache",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "storage",
+      "categories": [
+        "file-storage",
+        "cache",
+        "high-performance-computing",
+        "s3",
+        "nfs"
+      ],
+      "official_url": "https://aws.amazon.com/filecache/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-file-cache/",
+      "alternatives": [],
+      "gap": "Open-source caches and parallel file systems can accelerate data access, but File Cache's unified S3/NFS namespace, managed lifecycle, lazy loading and AWS integration remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/filecache/",
+        "https://aws.amazon.com/filecache/faqs/",
+        "https://docs.aws.amazon.com/fsx/latest/FileCacheGuide/what-is.html",
+        "https://docs.aws.amazon.com/fsx/latest/FileCacheGuide/managing-caches.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-fsx-lustre",
+      "name": "Amazon FSx for Lustre",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "storage",
+      "categories": [
+        "parallel-file-system",
+        "high-performance-computing",
+        "machine-learning",
+        "s3",
+        "lustre"
+      ],
+      "official_url": "https://aws.amazon.com/fsx/lustre/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-fsx-lustre/",
+      "alternatives": [],
+      "gap": "Upstream Lustre and other parallel file systems cover core storage, but FSx's managed lifecycle, storage classes, S3 tasks, support and AWS integrations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/fsx/lustre/",
+        "https://docs.aws.amazon.com/fsx/latest/LustreGuide/",
+        "https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html",
+        "https://aws.amazon.com/fsx/lustre/faqs/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-forecast",
+      "name": "Amazon Forecast",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "machine_learning_framework",
+      "categories": [
+        "time-series",
+        "forecasting",
+        "machine-learning",
+        "automl",
+        "analytics"
+      ],
+      "official_url": "https://aws.amazon.com/forecast/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-forecast/",
+      "alternatives": [],
+      "gap": "Open-source forecasting libraries can replace parts of the modeling workflow, but migration coverage for the retired service's dataset, predictor, API and operational model remains unverified.",
+      "verdict": "Retired; no new deployment is recommended. Preserve as a historical entry pending migration research.",
+      "sources": [
+        "https://aws.amazon.com/forecast/",
+        "https://docs.aws.amazon.com/forecast/",
+        "https://docs.aws.amazon.com/forecast/latest/dg/what-is-forecast.html",
+        "https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-fraud-detector",
+      "name": "Amazon Fraud Detector",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "security",
+      "categories": [
+        "fraud-detection",
+        "machine-learning",
+        "risk",
+        "online-fraud",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/fraud-detector/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-fraud-detector/",
+      "alternatives": [],
+      "gap": "AWS identifies AutoGluon, SageMaker and WAF Fraud Control as related alternatives, but migration coverage for the historical event, detector, rule and prediction APIs remains unverified.",
+      "verdict": "Retired; no new deployment is recommended. Preserve as a historical entry pending migration research.",
+      "sources": [
+        "https://aws.amazon.com/fraud-detector/",
+        "https://docs.aws.amazon.com/frauddetector/latest/ug/frauddetector-availability-change.html",
+        "https://docs.aws.amazon.com/frauddetector/latest/ug/",
+        "https://aws.amazon.com/fraud-detector/faqs/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-fsx-ontap",
+      "name": "Amazon FSx for NetApp ONTAP",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "storage",
+      "categories": [
+        "file-storage",
+        "netapp-ontap",
+        "nfs",
+        "smb",
+        "enterprise-storage"
+      ],
+      "official_url": "https://aws.amazon.com/fsx/netapp-ontap/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-fsx-ontap/",
+      "alternatives": [],
+      "gap": "Open-source systems cover subsets of file, block, snapshot and replication workflows, but managed ONTAP, tiering, multi-protocol behavior and AWS operations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/fsx/netapp-ontap/",
+        "https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html",
+        "https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/how-it-works-fsx-ontap.html",
+        "https://aws.amazon.com/fsx/netapp-ontap/faqs/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-fsx-openzfs",
+      "name": "Amazon FSx for OpenZFS",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "storage",
+      "categories": [
+        "file-storage",
+        "openzfs",
+        "nfs",
+        "snapshots",
+        "enterprise-storage"
+      ],
+      "official_url": "https://aws.amazon.com/fsx/openzfs/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-fsx-openzfs/",
+      "alternatives": [],
+      "gap": "OpenZFS deployments cover the underlying file system, but FSx's managed lifecycle, deployment options, failover, backups, S3 access and AWS operations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/fsx/openzfs/",
+        "https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/what-is-fsx.html",
+        "https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/getting-started.html",
+        "https://aws.amazon.com/fsx/openzfs/features/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-fsx-windows",
+      "name": "Amazon FSx for Windows File Server",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "storage",
+      "categories": [
+        "file-storage",
+        "windows",
+        "smb",
+        "active-directory",
+        "enterprise-storage"
+      ],
+      "official_url": "https://aws.amazon.com/fsx/windows/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-fsx-windows/",
+      "alternatives": [],
+      "gap": "Samba and Windows Server can provide SMB shares, but FSx's managed lifecycle, AD integration, backups, performance controls and AWS operations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/fsx/windows/",
+        "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html",
+        "https://docs.aws.amazon.com/fsx/latest/WindowsGuide/getting-started.html",
+        "https://aws.amazon.com/fsx/windows/faqs/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-gamelift",
+      "name": "Amazon GameLift",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "games",
+      "categories": [
+        "game-development",
+        "multiplayer",
+        "game-servers",
+        "matchmaking",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/gamelift/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-gamelift/",
+      "alternatives": [],
+      "gap": "Agones, Open Match and self-managed fleets cover subsets, but the combined GameLift hosting, placement, scaling, matchmaking, observability and AWS integration behavior remains unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/gamelift/",
+        "https://aws.amazon.com/documentation-overview/gamelift/",
+        "https://docs.aws.amazon.com/gamelift/latest/developerguide/",
+        "https://docs.aws.amazon.com/cli/latest/reference/gamelift/",
+        "https://docs.aws.amazon.com/general/latest/gr/gamelift.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-guardduty",
+      "name": "Amazon GuardDuty",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "security",
+      "categories": [
+        "threat-detection",
+        "security-monitoring",
+        "malware-detection",
+        "cloud-security",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/guardduty/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-guardduty/",
+      "alternatives": [],
+      "gap": "Falco, Wazuh, Suricata, Zeek, OpenSearch Security Analytics, YARA and ClamAV cover subsets, but the combined managed AWS ingestion, threat intelligence, ML detection, malware scanning and organization operations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/guardduty/",
+        "https://aws.amazon.com/documentation-overview/guardduty/",
+        "https://docs.aws.amazon.com/guardduty/latest/ug/",
+        "https://docs.aws.amazon.com/guardduty/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/guardduty/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-healthlake",
+      "name": "Amazon HealthLake",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "healthcare",
+        "fhir",
+        "clinical-data",
+        "health-data-lake",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/healthlake/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-healthlake/",
+      "alternatives": [],
+      "gap": "HAPI FHIR, IBM FHIR Server, Smile CDR, Aidbox, OpenMRS and custom pipelines cover subsets, but managed scaling, NLP, SQL-on-FHIR, compliance and AWS integrations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/healthlake/",
+        "https://aws.amazon.com/documentation-overview/healthlake/",
+        "https://docs.aws.amazon.com/healthlake/latest/devguide/",
+        "https://docs.aws.amazon.com/healthlake/latest/APIReference/",
+        "https://aws.amazon.com/healthlake/getting-started/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-inspector",
+      "name": "Amazon Inspector",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "security",
+      "categories": [
+        "vulnerability-management",
+        "security-scanning",
+        "cloud-security",
+        "sbom",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/inspector/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-inspector/",
+      "alternatives": [],
+      "gap": "Trivy, Grype, Clair, OpenVAS, Dependency-Check, Semgrep and Falco cover subsets, but managed discovery, network exposure, continuous coverage, scoring, SBOM and AWS operations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/inspector/",
+        "https://aws.amazon.com/documentation-overview/inspector/",
+        "https://docs.aws.amazon.com/inspector/latest/user/",
+        "https://docs.aws.amazon.com/inspector/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/inspector2/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-ivs",
+      "name": "Amazon Interactive Video Service",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "media_streaming",
+      "categories": [
+        "live-video",
+        "low-latency-streaming",
+        "real-time-video",
+        "interactive-media",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/ivs/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-ivs/",
+      "alternatives": [],
+      "gap": "WebRTC, Janus, LiveKit, Jitsi, Owncast, OvenMediaEngine, SRS, MediaMTX and PeerTube cover subsets, but the combined managed streaming, real-time, Chat, SDK, scale and operations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/ivs/",
+        "https://aws.amazon.com/documentation-overview/interactive-video-service/",
+        "https://docs.aws.amazon.com/ivs/",
+        "https://docs.aws.amazon.com/cli/latest/reference/ivs/",
+        "https://aws.amazon.com/ivs/pricing/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-kendra",
+      "name": "Amazon Kendra",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "search",
+      "categories": [
+        "enterprise-search",
+        "semantic-search",
+        "information-retrieval",
+        "rag",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/kendra/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-kendra/",
+      "alternatives": [],
+      "gap": "OpenSearch, Solr, Vespa, Elasticsearch, Typesense, Meilisearch, Weaviate, Qdrant and Haystack pipelines cover subsets, but Kendra's managed connectors, semantic ranking, enrichment, access filtering and account constraints remain unverified.",
+      "verdict": "Pending REA research; new-customer availability is restricted and no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/kendra/",
+        "https://aws.amazon.com/documentation-overview/kendra/",
+        "https://docs.aws.amazon.com/kendra/latest/dg/",
+        "https://docs.aws.amazon.com/kendra/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/kendra/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-keyspaces",
+      "name": "Amazon Keyspaces (for Apache Cassandra)",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "database",
+      "categories": [
+        "cassandra",
+        "nosql",
+        "serverless-database",
+        "distributed-database",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/keyspaces/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-keyspaces/",
+      "alternatives": [],
+      "gap": "Apache Cassandra, ScyllaDB, YugabyteDB and HBase cover portions of the model or API, but Keyspaces' managed serverless operations, AWS controls, scaling and replication behavior remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/keyspaces/",
+        "https://aws.amazon.com/documentation-overview/keyspaces/",
+        "https://docs.aws.amazon.com/keyspaces/latest/devguide/",
+        "https://docs.aws.amazon.com/keyspaces/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/keyspaces/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-kinesis-data-streams",
+      "name": "Amazon Kinesis Data Streams",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "event-streaming",
+        "real-time-analytics",
+        "data-ingestion",
+        "stream-processing",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/kinesis/data-streams/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-kinesis-data-streams/",
+      "alternatives": [],
+      "gap": "Kafka, Redpanda, Pulsar, NATS JetStream, RabbitMQ Streams, Redis Streams and Samza cover subsets, but Kinesis's managed control plane, shard semantics, AWS integrations and scaling remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/kinesis/data-streams/",
+        "https://aws.amazon.com/documentation-overview/kinesis-data-streams/",
+        "https://aws.amazon.com/kinesis/data-streams/getting-started/",
+        "https://docs.aws.amazon.com/streams/latest/dev/",
+        "https://docs.aws.amazon.com/kinesis/latest/APIReference/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-kinesis-video-streams",
+      "name": "Amazon Kinesis Video Streams",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "media_streaming",
+      "categories": [
+        "video-ingestion",
+        "video-storage",
+        "computer-vision",
+        "webrtc",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/kinesis/video-streams/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-kinesis-video-streams/",
+      "alternatives": [],
+      "gap": "WebRTC, Janus, LiveKit, MediaMTX, GStreamer, SRS, OvenMediaEngine, Shinobi and Frigate cover subsets, but the combined device, storage, playback, WebRTC, retention and AWS operations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/kinesis/video-streams/",
+        "https://aws.amazon.com/documentation-overview/kinesis-video-streams/",
+        "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/",
+        "https://docs.aws.amazon.com/kinesisvideostreams/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/kinesisvideo/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-lex",
+      "name": "Amazon Lex",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_application",
+      "categories": [
+        "conversational-ai",
+        "chatbot",
+        "natural-language-understanding",
+        "speech-recognition",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/lex/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-lex/",
+      "alternatives": [],
+      "gap": "Rasa, Botpress, Botkit, Microsoft Bot Framework SDK and open-source NLU stacks cover subsets, but the combined Lex ASR/NLU, dialogue, fulfillment, versioning, channels and managed operations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/lex/",
+        "https://aws.amazon.com/documentation-overview/lex/",
+        "https://docs.aws.amazon.com/lexv2/latest/dg/",
+        "https://docs.aws.amazon.com/lexv2/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/lexv2-models/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-lightsail",
+      "name": "Amazon Lightsail",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "virtual-private-server",
+        "containers",
+        "managed-database",
+        "hosting",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/lightsail/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-lightsail/",
+      "alternatives": [],
+      "gap": "OpenStack, Proxmox, CapRover, Coolify, Dokku, Cloudron and self-hosted VPS platforms cover subsets, but Lightsail's bundles, AWS operations, billing, migration and integrated resources remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/lightsail/",
+        "https://aws.amazon.com/documentation-overview/lightsail/",
+        "https://docs.aws.amazon.com/lightsail/latest/userguide/",
+        "https://docs.aws.amazon.com/lightsail/latest/reference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/lightsail/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-location",
+      "name": "Amazon Location Service",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "maps",
+        "places",
+        "routes",
+        "geofencing",
+        "asset-tracking"
+      ],
+      "official_url": "https://aws.amazon.com/location/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-location/",
+      "alternatives": [],
+      "gap": "OpenStreetMap, MapLibre, Valhalla, OSRM, GraphHopper, Pelias, Nominatim, TileServer GL, Traccar and PostGIS cover subsets, but managed providers, APIs, attribution, trackers and AWS operations remain unverified.",
+      "verdict": "Pending REA research; no open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/location/",
+        "https://aws.amazon.com/location/getting-started/",
+        "https://docs.aws.amazon.com/location/latest/developerguide/",
+        "https://docs.aws.amazon.com/location/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/location/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-lookout-equipment",
+      "name": "Amazon Lookout for Equipment",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "machine_learning_framework",
+      "categories": [
+        "predictive-maintenance",
+        "industrial-iot",
+        "anomaly-detection",
+        "time-series",
+        "discontinued"
+      ],
+      "official_url": "https://aws.amazon.com/lookout-for-equipment/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-lookout-equipment/",
+      "alternatives": [],
+      "gap": "River, PyOD, Merlion, Kats, Sktime, InfluxDB/Telegraf, Grafana and OpenSearch cover subsets of the historical workflow; no active open-source equivalence is claimed.",
+      "verdict": "Retired reference entry; no new deployment or open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/lookout-for-equipment/",
+        "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/",
+        "https://docs.aws.amazon.com/lookout-for-equipment/latest/userguide/how-it-works.html",
+        "https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/doc-history.html",
+        "https://docs.aws.amazon.com/general/latest/gr/lookoutequipment.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-lookout-metrics",
+      "name": "Amazon Lookout for Metrics",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "machine_learning_framework",
+      "categories": [
+        "anomaly-detection",
+        "metrics",
+        "time-series",
+        "business-analytics",
+        "discontinued"
+      ],
+      "official_url": "https://aws.amazon.com/lookout-for-metrics/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-lookout-metrics/",
+      "alternatives": [],
+      "gap": "Grafana/Prometheus, OpenSearch anomaly detection, River, Merlion, Kats, PyOD, ADTK and Flink CEP cover subsets of the historical workflow; no active equivalence is claimed.",
+      "verdict": "Retired reference entry; no new deployment or open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/lookout-for-metrics/",
+        "https://docs.aws.amazon.com/lookoutmetrics/latest/dev/",
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html",
+        "https://docs.aws.amazon.com/cli/latest/reference/lookoutmetrics/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-lookout-vision",
+      "name": "Amazon Lookout for Vision",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "machine_learning_framework",
+      "categories": [
+        "computer-vision",
+        "industrial-inspection",
+        "anomaly-detection",
+        "image-analysis",
+        "discontinued"
+      ],
+      "official_url": "https://aws.amazon.com/lookout-for-vision/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-lookout-vision/",
+      "alternatives": [],
+      "gap": "OpenCV, YOLO, Detectron2, Anomalib, FiftyOne, TensorFlow, PyTorch and OpenVINO cover subsets of the historical workflow; no active equivalence is claimed.",
+      "verdict": "Retired reference entry; no new deployment or open-source equivalence is claimed.",
+      "sources": [
+        "https://aws.amazon.com/lookout-for-vision/",
+        "https://docs.aws.amazon.com/lookout-for-vision/latest/developer-guide/",
+        "https://docs.aws.amazon.com/general/latest/gr/full_shutdown_services.html",
+        "https://docs.aws.amazon.com/cli/latest/reference/lookoutvision/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-managed-blockchain",
+      "name": "Amazon Managed Blockchain",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "blockchain",
+        "web3",
+        "distributed-ledger",
+        "managed-service",
+        "sunset-notice"
+      ],
+      "official_url": "https://aws.amazon.com/managed-blockchain/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-managed-blockchain/",
+      "alternatives": [],
+      "gap": "Open-source and managed alternatives may cover nodes, Hyperledger Fabric, Ethereum access or indexed blockchain data, but equivalent coverage and migration paths are not yet verified.",
+      "verdict": "Active but sunset-bound reference entry; research the public APIs, migration constraints and independent implementation boundary before recommending a foundation.",
+      "sources": [
+        "https://aws.amazon.com/managed-blockchain/",
+        "https://docs.aws.amazon.com/managed-blockchain/latest/APIReference/Welcome.html",
+        "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/managed-blockchain-end-of-support.html",
+        "https://docs.aws.amazon.com/managed-blockchain/latest/AMBQ-APIReference/Welcome.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-macie",
+      "name": "Amazon Macie",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "security",
+      "categories": [
+        "data-security",
+        "sensitive-data-discovery",
+        "privacy",
+        "s3",
+        "machine-learning"
+      ],
+      "official_url": "https://aws.amazon.com/macie/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-macie/",
+      "alternatives": [],
+      "gap": "Open-source DLP, classification and S3 security alternatives have not yet been compared for coverage, operations and licensing.",
+      "verdict": "Active reference entry; investigate the public API, classification behavior, findings lifecycle and independent foundation before implementation.",
+      "sources": [
+        "https://aws.amazon.com/macie/",
+        "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html",
+        "https://docs.aws.amazon.com/macie/latest/APIReference/welcome.html",
+        "https://docs.aws.amazon.com/general/latest/gr/macie.html"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-managed-service-apache-flink",
+      "name": "Amazon Managed Service for Apache Flink",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "stream-processing",
+        "real-time-analytics",
+        "apache-flink",
+        "serverless",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/managed-service-apache-flink/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/amazon-managed-service-apache-flink/",
+      "alternatives": [],
+      "gap": "Apache Flink itself and other stream-processing engines may cover portions of the service, but managed lifecycle, integrations, scaling and recovery equivalence are not verified.",
+      "verdict": "Active reference entry; investigate the application lifecycle, API surface, connector behavior and independent foundation before implementation.",
+      "sources": [
+        "https://aws.amazon.com/managed-service-apache-flink/",
+        "https://docs.aws.amazon.com/managed-flink/latest/java/",
+        "https://docs.aws.amazon.com/managed-flink/latest/apiv2/Welcome.html",
+        "https://aws.amazon.com/about-aws/whats-new/2023/08/amazon-managed-service-apache-flink/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-textract",
+      "name": "Amazon Textract",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_application",
+      "categories": [
+        "ocr",
+        "document-analysis",
+        "forms",
+        "tables",
+        "handwriting",
+        "machine-learning"
+      ],
+      "official_url": "https://aws.amazon.com/textract/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-textract/",
+      "alternatives": [
+        {
+          "name": "Tesseract OCR",
+          "url": "https://github.com/tesseract-ocr/tesseract",
+          "license": "Apache-2.0",
+          "covers": "Open-source OCR engine for extracting printed text from images and documents, usable as a local library or command-line tool.",
+          "note": "Covers core OCR locally, but not Textract's managed API, forms and tables semantics, queries, signatures, layout model, handwriting coverage, quotas or AWS service plane."
+        }
+      ],
+      "gap": "Tesseract covers a useful local OCR foundation, but Textract's structured forms and tables, queries, signatures, layout, asynchronous jobs, confidence/block model, managed APIs and AWS operations remain distinct.",
+      "verdict": "Partial. Tesseract is a practical open-source OCR foundation for an independent implementation, but full Textract equivalence requires separate document-layout, forms, tables, handwriting, queries, signature, job-state and service-plane work.",
+      "sources": [
+        "https://aws.amazon.com/textract/",
+        "https://aws.amazon.com/textract/faqs/",
+        "https://docs.aws.amazon.com/textract/latest/dg/",
+        "https://docs.aws.amazon.com/textract/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/textract/",
+        "https://github.com/tesseract-ocr/tesseract"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-transcribe",
+      "name": "Amazon Transcribe",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_application",
+      "categories": [
+        "speech-to-text",
+        "automatic-speech-recognition",
+        "audio",
+        "streaming",
+        "machine-learning"
+      ],
+      "official_url": "https://aws.amazon.com/transcribe/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-transcribe/",
+      "alternatives": [
+        {
+          "name": "Whisper",
+          "url": "https://github.com/openai/whisper",
+          "license": "MIT",
+          "covers": "Open-source automatic speech-recognition model and Python tooling for local audio transcription and language identification.",
+          "note": "Covers a strong local speech-to-text foundation, but not Transcribe's managed streaming protocol, AWS job plane, speaker/channel workflows, custom vocabulary APIs, medical/compliance features or service operations."
+        }
+      ],
+      "gap": "Whisper covers local speech recognition and language identification, but Transcribe's managed batch and streaming APIs, speaker/channel analytics, custom vocabulary, medical workflows, HealthScribe, quotas and AWS operations remain distinct.",
+      "verdict": "Partial. Whisper is a strong open-source foundation for an independent transcription implementation, but full Transcribe equivalence requires separate streaming, job, diarization, channel, customization, domain and service-plane work.",
+      "sources": [
+        "https://aws.amazon.com/transcribe/",
+        "https://docs.aws.amazon.com/transcribe/latest/dg/",
+        "https://docs.aws.amazon.com/transcribe/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/transcribe/",
+        "https://github.com/openai/whisper"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-timestream",
+      "name": "Amazon Timestream",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "data_platform",
+      "categories": [
+        "time-series",
+        "database",
+        "iot",
+        "observability",
+        "analytics",
+        "serverless"
+      ],
+      "official_url": "https://aws.amazon.com/timestream/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-timestream/",
+      "alternatives": [
+        {
+          "name": "VictoriaMetrics",
+          "url": "https://github.com/VictoriaMetrics/VictoriaMetrics",
+          "license": "Apache-2.0",
+          "covers": "Open-source time-series database and monitoring backend with high-ingestion storage, query APIs and cluster options.",
+          "note": "Provides a local or self-hosted time-series foundation, but not Timestream's AWS IAM, serverless scaling, storage-tier semantics, SQL/InfluxDB product split, quotas or managed service plane."
+        }
+      ],
+      "gap": "VictoriaMetrics covers a strong self-hosted time-series foundation, but Timestream's serverless ingestion, memory and magnetic tiers, adaptive SQL query engine, AWS integrations, IAM and managed operations remain distinct.",
+      "verdict": "Partial. VictoriaMetrics is a credible open-source foundation for independent time-series storage and analytics, but full Timestream equivalence requires separate retention, tiering, query, ingestion, integration and service-plane work.",
+      "sources": [
+        "https://aws.amazon.com/timestream/",
+        "https://aws.amazon.com/documentation-overview/timestream/",
+        "https://aws.amazon.com/timestream/faqs/",
+        "https://docs.aws.amazon.com/timestream/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/timestream-query/",
+        "https://github.com/VictoriaMetrics/VictoriaMetrics"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-translate",
+      "name": "Amazon Translate",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "ai_application",
+      "categories": [
+        "machine-translation",
+        "natural-language-processing",
+        "localization",
+        "language",
+        "machine-learning"
+      ],
+      "official_url": "https://aws.amazon.com/translate/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-translate/",
+      "alternatives": [
+        {
+          "name": "Argos Translate",
+          "url": "https://github.com/argosopentech/argos-translate",
+          "license": "MIT",
+          "covers": "Open-source offline neural machine translation library and CLI with installable language packages.",
+          "note": "Provides a local translation foundation, but not Amazon Translate's language coverage, managed APIs, batch service plane, parallel-data customization, terminology lifecycle, quotas or AWS operations."
+        }
+      ],
+      "gap": "Argos Translate covers local neural translation and offline execution, but Amazon Translate's managed APIs, supported-language breadth, batch workflows, custom terminology, parallel data, quotas and AWS service plane remain distinct.",
+      "verdict": "Partial. Argos Translate is a useful open-source foundation for an independent translation tool, but full Amazon Translate equivalence requires separate language, customization, batch, API, security and managed-operation work.",
+      "sources": [
+        "https://aws.amazon.com/translate/",
+        "https://aws.amazon.com/translate/details/",
+        "https://docs.aws.amazon.com/translate/latest/dg/",
+        "https://docs.aws.amazon.com/translate/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/translate/",
+        "https://github.com/argosopentech/argos-translate"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-verified-permissions",
+      "name": "Amazon Verified Permissions",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "security",
+      "categories": [
+        "authorization",
+        "access-control",
+        "cedar",
+        "policy-engine",
+        "security"
+      ],
+      "official_url": "https://aws.amazon.com/verified-permissions/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-verified-permissions/",
+      "alternatives": [
+        {
+          "name": "Cedar",
+          "url": "https://github.com/cedar-policy/cedar",
+          "license": "Apache-2.0",
+          "covers": "Open-source policy language and authorization engine used by Verified Permissions for policy evaluation and validation.",
+          "note": "Provides the policy engine and language locally, but not Verified Permissions' managed policy stores, hosted APIs, IAM integration, CloudTrail administration, scaling, quotas or AWS service plane."
+        }
+      ],
+      "gap": "Cedar covers the core open authorization language and evaluator, but Verified Permissions' managed policy stores, schema administration, hosted APIs, IAM, CloudTrail, consistency and operational plane remain distinct.",
+      "verdict": "Partial. Cedar is the strongest open-source foundation for an independent authorization implementation, but full Verified Permissions equivalence requires separate management APIs, persistence, tenancy, audit, scaling and AWS integration work.",
+      "sources": [
+        "https://aws.amazon.com/verified-permissions/",
+        "https://aws.amazon.com/verified-permissions/faqs/",
+        "https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/",
+        "https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/verifiedpermissions/",
+        "https://github.com/cedar-policy/cedar"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-vpc",
+      "name": "Amazon Virtual Private Cloud",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "networking",
+        "virtual-network",
+        "subnets",
+        "routing",
+        "security"
+      ],
+      "official_url": "https://aws.amazon.com/vpc/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-vpc/",
+      "alternatives": [
+        {
+          "name": "OpenStack Neutron",
+          "url": "https://github.com/openstack/neutron",
+          "license": "Apache-2.0",
+          "covers": "Open-source virtual networking service for tenant networks, ports, subnets, routers, security groups and networking plugins.",
+          "note": "Covers a substantial virtual-network control plane, but not AWS VPC's account and region model, managed gateways, PrivateLink, IPAM, traffic analysis, quotas or service integrations."
+        }
+      ],
+      "gap": "OpenStack Neutron covers a strong self-hosted virtual-network foundation, but VPC's AWS account and region semantics, managed gateways, endpoints, IPAM, analysis tools, IAM and integrated service plane remain distinct.",
+      "verdict": "Partial. Neutron is a credible open-source foundation for independent virtual-network orchestration, but full VPC equivalence requires separate cloud topology, gateway, identity, multi-region, quota and operations work.",
+      "sources": [
+        "https://aws.amazon.com/vpc/",
+        "https://aws.amazon.com/vpc/faqs/",
+        "https://docs.aws.amazon.com/vpc/latest/userguide/",
+        "https://docs.aws.amazon.com/vpc/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/ec2/",
+        "https://github.com/openstack/neutron"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-workmail",
+      "name": "Amazon WorkMail",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "business_software",
+      "categories": [
+        "email",
+        "calendar",
+        "contacts",
+        "collaboration",
+        "managed-service",
+        "sunset-notice"
+      ],
+      "official_url": "https://aws.amazon.com/workmail/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-workmail/",
+      "alternatives": [
+        {
+          "name": "mailcow: dockerized",
+          "url": "https://github.com/mailcow/mailcow-dockerized",
+          "license": "GPL-3.0",
+          "covers": "Open-source self-hosted email groupware stack with mail transport, IMAP, webmail, calendars, contacts and administration components.",
+          "note": "Covers a self-hosted collaboration and mail foundation, but not WorkMail's AWS IAM, managed availability, client behavior, directory integration, message-flow APIs, quotas or service plane."
+        }
+      ],
+      "gap": "Mailcow covers a substantial self-hosted email and groupware foundation, but WorkMail's managed AWS organization, IAM, directory, message-flow, client, compliance and operational behavior remain distinct; WorkMail also has an AWS end-of-support notice for March 31, 2027.",
+      "verdict": "Partial. Mailcow is a practical open-source foundation for an independent mail and calendar service, but full WorkMail equivalence is not recommended without accounting for the announced end of support and validating its historical AWS-specific behavior.",
+      "sources": [
+        "https://aws.amazon.com/workmail/",
+        "https://docs.aws.amazon.com/workmail/latest/userguide/",
+        "https://docs.aws.amazon.com/workmail/latest/adminguide/",
+        "https://docs.aws.amazon.com/workmail/latest/APIReference/",
+        "https://docs.aws.amazon.com/general/latest/gr/workmail.html",
+        "https://github.com/mailcow/mailcow-dockerized"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-workspaces",
+      "name": "Amazon WorkSpaces",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "virtual-desktop",
+        "desktop-as-a-service",
+        "remote-access",
+        "managed-service",
+        "end-user-computing"
+      ],
+      "official_url": "https://aws.amazon.com/workspaces/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-workspaces/",
+      "alternatives": [
+        {
+          "name": "Apache Guacamole",
+          "url": "https://github.com/apache/guacamole-server",
+          "license": "Apache-2.0",
+          "covers": "Open-source clientless remote desktop gateway supporting browser access to RDP, VNC and SSH sessions.",
+          "note": "Covers browser-based remote access, but not WorkSpaces' managed desktop provisioning, images, directory integration, billing modes, client controls, pools or AWS service plane."
+        }
+      ],
+      "gap": "Apache Guacamole covers a useful remote-access foundation, but WorkSpaces' managed desktop lifecycle, bundles, images, directories, pools, billing, protocols, quotas and AWS operations remain distinct.",
+      "verdict": "Partial. Guacamole is a practical open-source foundation for browser-mediated remote desktop access, but full WorkSpaces equivalence requires separate desktop orchestration, image, identity, provisioning, scaling and managed-operation work.",
+      "sources": [
+        "https://aws.amazon.com/workspaces/",
+        "https://docs.aws.amazon.com/workspaces/latest/adminguide/",
+        "https://docs.aws.amazon.com/workspaces/latest/userguide/",
+        "https://docs.aws.amazon.com/workspaces/latest/api/welcome.html",
+        "https://docs.aws.amazon.com/cli/latest/reference/workspaces/",
+        "https://github.com/apache/guacamole-server"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-workspaces-applications",
+      "name": "Amazon WorkSpaces Applications",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "application-streaming",
+        "desktop-as-a-service",
+        "saas-conversion",
+        "remote-access",
+        "managed-service"
+      ],
+      "official_url": "https://aws.amazon.com/workspaces/applications/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-workspaces-applications/",
+      "alternatives": [
+        {
+          "name": "Apache Guacamole",
+          "url": "https://github.com/apache/guacamole-server",
+          "license": "Apache-2.0",
+          "covers": "Open-source clientless browser gateway for RDP, VNC and SSH sessions.",
+          "note": "Provides browser-based remote access, but not WorkSpaces Applications' image and app-block packaging, fleet autoscaling, multi-session, GPU streaming, authentication modes, MCP controls or AWS service plane."
+        }
+      ],
+      "gap": "Apache Guacamole covers a remote-access subset, but WorkSpaces Applications' application packaging, image builders, fleets, stacks, autoscaling, encrypted pixel protocol, GPU support, authentication and agent/MCP controls remain distinct.",
+      "verdict": "Partial. Guacamole is useful for independent remote-access workflows, but full WorkSpaces Applications equivalence requires separate application streaming, packaging, fleet, scaling, protocol, identity and agent-control work.",
+      "sources": [
+        "https://aws.amazon.com/workspaces/applications/",
+        "https://aws.amazon.com/workspaces/applications/faqs/",
+        "https://docs.aws.amazon.com/appstream2/latest/developerguide/",
+        "https://docs.aws.amazon.com/appstream2/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/appstream/",
+        "https://github.com/apache/guacamole-server"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "amazon-workspaces-secure-browser",
+      "name": "Amazon WorkSpaces Secure Browser",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "secure-browser",
+        "browser-isolation",
+        "remote-access",
+        "zero-trust",
+        "managed-service",
+        "sunset-notice"
+      ],
+      "official_url": "https://aws.amazon.com/workspaces/secure-browser/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/amazon-workspaces-secure-browser/",
+      "alternatives": [
+        {
+          "name": "Apache Guacamole",
+          "url": "https://github.com/apache/guacamole-server",
+          "license": "Apache-2.0",
+          "covers": "Open-source browser-based gateway for remote desktop protocols and isolated sessions.",
+          "note": "Provides remote-access primitives, but not WorkSpaces Secure Browser's disposable browser sessions, Chrome policy enforcement, pixel isolation, portal/IdP integration, data-protection controls or AWS service plane."
+        }
+      ],
+      "gap": "Apache Guacamole covers a remote-access subset, but Secure Browser's disposable cloud browser, browser policy, URL filtering, data protection, identity, portal, logging and managed operations remain distinct; AWS has also announced a new-customer closure date of October 29, 2026.",
+      "verdict": "Partial. Guacamole can support an independent remote-access foundation, but full Secure Browser equivalence requires browser isolation, policy enforcement, data-protection, identity, portal and managed-operation work. The sunset notice must remain visible.",
+      "sources": [
+        "https://aws.amazon.com/workspaces/secure-browser/",
+        "https://aws.amazon.com/workspaces/secure-browser/faqs/",
+        "https://docs.aws.amazon.com/workspaces-web/latest/adminguide/",
+        "https://docs.aws.amazon.com/workspaces-web/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/workspaces-web/",
+        "https://github.com/apache/guacamole-server"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-amplify",
+      "name": "AWS Amplify",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "developer_tool",
+      "categories": [
+        "full-stack",
+        "web",
+        "mobile",
+        "hosting",
+        "authentication",
+        "serverless"
+      ],
+      "official_url": "https://aws.amazon.com/amplify/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/aws-amplify/",
+      "alternatives": [
+        {
+          "name": "Appwrite",
+          "url": "https://github.com/appwrite/appwrite",
+          "license": "BSD-3-Clause",
+          "covers": "Open-source backend-as-a-service with authentication, databases, storage, functions and web APIs for application development.",
+          "note": "Covers a broad backend foundation, but not Amplify's AWS-native resource generation, CDK integration, hosting, frontend libraries, mobile tooling, Studio or AWS deployment plane."
+        }
+      ],
+      "gap": "Appwrite covers authentication, databases, storage and functions, but Amplify's AWS-native provisioning, CDK, hosting, frontend/mobile libraries, Studio, CI/CD and managed AWS integration remain distinct.",
+      "verdict": "Partial. Appwrite is a credible open-source full-stack backend foundation, but full Amplify equivalence requires separate frontend tooling, mobile libraries, AWS resource generation, hosting and deployment integration.",
+      "sources": [
+        "https://aws.amazon.com/amplify/",
+        "https://aws.amazon.com/documentation-overview/amplify/",
+        "https://docs.amplify.aws/",
+        "https://docs.aws.amazon.com/amplify/",
+        "https://github.com/aws-amplify/amplify-cli",
+        "https://github.com/appwrite/appwrite"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-app-mesh",
+      "name": "AWS App Mesh",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "service-mesh",
+        "microservices",
+        "envoy",
+        "networking",
+        "observability",
+        "discontinued"
+      ],
+      "official_url": "https://aws.amazon.com/app-mesh/",
+      "lifecycle_status": "discontinued",
+      "open_source_status": "pending",
+      "page": "catalog/aws-app-mesh/",
+      "alternatives": [
+        {
+          "name": "Istio",
+          "url": "https://github.com/istio/istio",
+          "license": "Apache-2.0",
+          "covers": "Open-source service mesh with Envoy data plane, traffic management, security, telemetry and Kubernetes integration.",
+          "note": "Provides a strong mesh foundation, but not App Mesh's historical AWS control plane, IAM, ECS/EC2 integration, quotas, regional service behavior or migration path."
+        }
+      ],
+      "gap": "Istio covers the open service-mesh and Envoy capabilities, but App Mesh's AWS control plane, resource APIs, IAM, ECS/EC2 integrations and historical managed behavior remain distinct. The AWS service is discontinued.",
+      "verdict": "Retired. Preserve this entry for catalog completeness and migration research; do not recommend implementing a new App Mesh-compatible service. Use Istio or AWS's documented successor paths for new work.",
+      "sources": [
+        "https://aws.amazon.com/app-mesh/",
+        "https://docs.aws.amazon.com/app-mesh/latest/userguide/",
+        "https://docs.aws.amazon.com/app-mesh/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/appmesh/",
+        "https://aws.amazon.com/blogs/containers/migrate-amazon-ecs-workloads-from-aws-app-mesh-to-amazon-vpc-lattice/",
+        "https://github.com/istio/istio"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-app-runner",
+      "name": "AWS App Runner",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "application-platform",
+        "containers",
+        "paas",
+        "deployment",
+        "web-applications",
+        "restricted-onboarding"
+      ],
+      "official_url": "https://aws.amazon.com/apprunner/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/aws-app-runner/",
+      "alternatives": [
+        {
+          "name": "Coolify",
+          "url": "https://github.com/coollabsio/coolify",
+          "license": "Apache-2.0",
+          "covers": "Self-hostable PaaS for deploying applications and databases from repositories or container images with managed domains, TLS and deployment workflows.",
+          "note": "Covers self-hosted application deployment, but not App Runner's AWS-managed control plane, IAM, regional service behavior, built-in AWS integrations or operational guarantees."
+        }
+      ],
+      "gap": "Coolify provides a credible self-hosted PaaS workflow, but it does not reproduce App Runner's AWS control plane, managed runtimes, IAM, VPC behavior, CloudWatch integration, scaling semantics or AWS-native deployment surface.",
+      "verdict": "Partial. Coolify is a useful open-source deployment alternative for a self-hosted build, while AWS App Runner remains relevant for historical compatibility and existing-customer migration research; AWS recommends ECS Express Mode for new customers.",
+      "sources": [
+        "https://aws.amazon.com/apprunner/",
+        "https://docs.aws.amazon.com/apprunner/",
+        "https://docs.aws.amazon.com/apprunner/latest/api/",
+        "https://docs.aws.amazon.com/cli/latest/reference/apprunner/",
+        "https://docs.aws.amazon.com/apprunner/latest/dg/apprunner-availability-change.html",
+        "https://github.com/coollabsio/coolify"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-app2container",
+      "name": "AWS App2Container",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "developer_tool",
+      "categories": [
+        "application-modernization",
+        "containers",
+        "migration",
+        "cli",
+        "dotnet",
+        "java"
+      ],
+      "official_url": "https://aws.amazon.com/app2container/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/aws-app2container/",
+      "alternatives": [
+        {
+          "name": "Konveyor Tackle",
+          "url": "https://github.com/konveyor/tackle2-hub",
+          "license": "Apache-2.0",
+          "covers": "Open-source application modernization and migration platform for inventory, assessment and planning across application portfolios.",
+          "note": "Covers portfolio assessment and modernization planning, but not App2Container's exact CLI, container image generation, AWS deployment artifacts or supported runtime behavior."
+        }
+      ],
+      "gap": "Konveyor Tackle covers open modernization assessment and planning, but does not reproduce App2Container's application-server inventory, Dockerfile/image generation, AWS deployment templates, IAM integrations or CLI state machine.",
+      "verdict": "Partial. Konveyor Tackle is a credible open-source modernization foundation, but an App2Container-equivalent implementation requires separate inventory agents, container build logic, runtime-specific dependency analysis and AWS deployment integrations.",
+      "sources": [
+        "https://aws.amazon.com/app2container/",
+        "https://docs.aws.amazon.com/app2container/",
+        "https://docs.aws.amazon.com/app2container/latest/UserGuide/what-is-a2c.html",
+        "https://docs.aws.amazon.com/app2container/latest/UserGuide/cmd-help.html",
+        "https://docs.aws.amazon.com/app2container/latest/UserGuide/a2c-commands.html",
+        "https://github.com/konveyor/tackle2-hub"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-appsync",
+      "name": "AWS AppSync",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "developer_tool",
+      "categories": [
+        "graphql",
+        "api-management",
+        "realtime",
+        "websockets",
+        "serverless",
+        "data-integration"
+      ],
+      "official_url": "https://aws.amazon.com/appsync/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/aws-appsync/",
+      "alternatives": [
+        {
+          "name": "Hasura GraphQL Engine",
+          "url": "https://github.com/hasura/graphql-engine",
+          "license": "Apache-2.0",
+          "covers": "Open-source GraphQL engine that exposes databases and services through GraphQL APIs with authorization, actions, subscriptions and event workflows.",
+          "note": "Covers a strong GraphQL foundation, but not AppSync's AWS control plane, managed integrations, AppSync Events, IAM semantics, regional behavior or operational guarantees."
+        }
+      ],
+      "gap": "Hasura covers GraphQL API generation, authorization, subscriptions and data integration, but does not reproduce AppSync's AWS resource model, service integrations, AppSync Events control plane, IAM behavior, caching or regional managed semantics.",
+      "verdict": "Partial. Hasura is a credible open-source GraphQL foundation, while a functionally equivalent AppSync implementation still requires an independent managed control plane, AWS-compatible integrations, real-time event channels and documented deviation handling.",
+      "sources": [
+        "https://aws.amazon.com/appsync/",
+        "https://docs.aws.amazon.com/appsync/",
+        "https://docs.aws.amazon.com/appsync/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/appsync/",
+        "https://docs.aws.amazon.com/appsync/latest/APIReference/API_CreateApi.html",
+        "https://github.com/hasura/graphql-engine"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-artifact",
+      "name": "AWS Artifact",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "security",
+      "categories": [
+        "compliance",
+        "audit",
+        "governance",
+        "agreements",
+        "security-documentation"
+      ],
+      "official_url": "https://aws.amazon.com/artifact/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/aws-artifact/",
+      "alternatives": [],
+      "gap": "No open-source project was verified as an equivalent source of AWS's confidential compliance reports, certifications, agreements, account-scoped access controls or legal acceptance workflows.",
+      "verdict": "No verified alternative. AWS Artifact depends on AWS-issued evidence, confidential agreements and account-specific authorization; evaluate governance and compliance platforms only as adjacent tools, not as equivalent substitutes.",
+      "sources": [
+        "https://aws.amazon.com/artifact/",
+        "https://aws.amazon.com/artifact/faq/",
+        "https://docs.aws.amazon.com/artifact/",
+        "https://docs.aws.amazon.com/artifact/latest/APIReference/Welcome.html",
+        "https://docs.aws.amazon.com/cli/latest/reference/artifact/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-audit-manager",
+      "name": "AWS Audit Manager",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "security",
+      "categories": [
+        "compliance",
+        "audit",
+        "governance",
+        "evidence-collection",
+        "controls",
+        "restricted-onboarding"
+      ],
+      "official_url": "https://aws.amazon.com/audit-manager/",
+      "lifecycle_status": "active",
+      "open_source_status": "pending",
+      "page": "catalog/aws-audit-manager/",
+      "alternatives": [],
+      "gap": "No open-source project was verified as an equivalent of AWS Audit Manager's AWS-native evidence collection, managed controls, account integrations, frameworks, delegated administration and assessment workflows.",
+      "verdict": "No verified alternative. Preserve the entry for existing-customer compatibility and compliance research; assess open GRC tools only as adjacent components and account for the restricted onboarding status.",
+      "sources": [
+        "https://aws.amazon.com/audit-manager/",
+        "https://docs.aws.amazon.com/audit-manager/",
+        "https://docs.aws.amazon.com/audit-manager/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/auditmanager/",
+        "https://aws.amazon.com/audit-manager/faqs/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-auto-scaling",
+      "name": "AWS Auto Scaling",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "autoscaling",
+        "capacity-management",
+        "predictive-scaling",
+        "resource-management",
+        "cloud-operations"
+      ],
+      "official_url": "https://aws.amazon.com/autoscaling/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/aws-auto-scaling/",
+      "alternatives": [
+        {
+          "name": "KEDA",
+          "url": "https://github.com/kedacore/keda",
+          "license": "Apache-2.0",
+          "covers": "Open-source Kubernetes event-driven autoscaler supporting scale-to-zero and event-based workloads across many metrics and integrations.",
+          "note": "Covers workload autoscaling in Kubernetes, but not AWS scaling plans, EC2 capacity, AWS resource control planes, predictive forecasts or IAM semantics."
+        }
+      ],
+      "gap": "KEDA provides a strong open autoscaling foundation for Kubernetes, but does not reproduce AWS Auto Scaling's multi-service scaling plans, EC2 predictive scaling, AWS resource integrations, forecast APIs or managed control plane.",
+      "verdict": "Partial. KEDA is a credible open-source autoscaling component, while AWS Auto Scaling equivalence requires an independent multi-resource planner, forecast engine, provider adapters and cloud-specific authorization semantics.",
+      "sources": [
+        "https://aws.amazon.com/autoscaling/",
+        "https://docs.aws.amazon.com/autoscaling/",
+        "https://docs.aws.amazon.com/autoscaling/plans/APIReference/Welcome.html",
+        "https://docs.aws.amazon.com/cli/latest/reference/autoscaling-plans/",
+        "https://aws.amazon.com/autoscaling/faqs/",
+        "https://github.com/kedacore/keda"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-backup",
+      "name": "AWS Backup",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "backup",
+        "disaster-recovery",
+        "storage",
+        "compliance",
+        "restore",
+        "data-protection"
+      ],
+      "official_url": "https://aws.amazon.com/backup/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/aws-backup/",
+      "alternatives": [
+        {
+          "name": "Restic",
+          "url": "https://github.com/restic/restic",
+          "license": "BSD-2-Clause",
+          "covers": "Open-source, encrypted, deduplicated backup program supporting local and cloud-compatible repositories with snapshots and restore operations.",
+          "note": "Covers portable backup and restore primitives, but not AWS Backup's multi-service resource adapters, account governance, vault controls, managed restore testing, compliance reporting or AWS control plane."
+        }
+      ],
+      "gap": "Restic provides portable encrypted backup primitives, but does not reproduce AWS Backup's managed resource integrations, cross-account governance, vault policies, restore testing, service-specific recovery semantics or AWS IAM control plane.",
+      "verdict": "Partial. Restic is a strong open-source backup foundation, while an AWS Backup-equivalent implementation requires a multi-service adapter layer, policy engine, recovery-point model, governance controls and cloud-specific integrations.",
+      "sources": [
+        "https://aws.amazon.com/backup/",
+        "https://docs.aws.amazon.com/aws-backup/",
+        "https://docs.aws.amazon.com/aws-backup/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/backup/",
+        "https://docs.aws.amazon.com/aws-backup/latest/devguide/backup-feature-availability.html",
+        "https://github.com/restic/restic"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-batch",
+      "name": "AWS Batch",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "cloud_infrastructure",
+      "categories": [
+        "batch-computing",
+        "job-scheduling",
+        "containers",
+        "high-performance-computing",
+        "machine-learning",
+        "analytics"
+      ],
+      "official_url": "https://aws.amazon.com/batch/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/aws-batch/",
+      "alternatives": [
+        {
+          "name": "Slurm",
+          "url": "https://github.com/SchedMD/slurm",
+          "license": "GPL-2.0",
+          "covers": "Open-source workload manager and job scheduler for clusters, supporting queues, dependencies, resource allocation, fair-share and high-performance computing workloads.",
+          "note": "Covers batch scheduling and cluster resource management, but not AWS Batch's managed cloud provisioning, ECS/EKS/Fargate integrations, AWS IAM model or service-specific control plane."
+        }
+      ],
+      "gap": "Slurm provides mature open batch scheduling, but does not reproduce AWS Batch's managed compute environments, container integrations, cloud provisioning, service jobs, AWS quotas or IAM and regional semantics.",
+      "verdict": "Partial. Slurm is a strong open-source scheduling foundation, while AWS Batch equivalence requires a managed cloud adapter layer, dynamic capacity provisioning, container orchestration integrations and AWS-specific authorization.",
+      "sources": [
+        "https://aws.amazon.com/batch/",
+        "https://docs.aws.amazon.com/batch/",
+        "https://docs.aws.amazon.com/batch/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/batch/",
+        "https://docs.aws.amazon.com/batch/latest/userguide/what-is-batch.html",
+        "https://github.com/SchedMD/slurm"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-billing-conductor",
+      "name": "AWS Billing Conductor",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "business_software",
+      "categories": [
+        "billing",
+        "chargeback",
+        "showback",
+        "cost-management",
+        "pricing",
+        "finops"
+      ],
+      "official_url": "https://aws.amazon.com/aws-cost-management/aws-billing-conductor/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/aws-billing-conductor/",
+      "alternatives": [
+        {
+          "name": "Lago",
+          "url": "https://github.com/getlago/lago",
+          "license": "AGPL-3.0",
+          "covers": "Open-source usage-based billing platform with meters, pricing models, invoices, credits, subscriptions and customer billing workflows.",
+          "note": "Covers product and usage billing, but not AWS Organizations account grouping, AWS CUR semantics, AWS pricing rules or the Billing Conductor management-account view."
+        }
+      ],
+      "gap": "Lago provides an open usage-billing foundation, but does not reproduce AWS Billing Conductor's AWS account associations, pricing-plan model, custom line items, Organization semantics, AWS cost data or billing-console integration.",
+      "verdict": "Partial. Lago is a useful open-source billing foundation, while Billing Conductor equivalence requires AWS cost ingestion, account grouping, rate transformation, chargeback reporting and provider-specific authorization.",
+      "sources": [
+        "https://aws.amazon.com/aws-cost-management/aws-billing-conductor/",
+        "https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html",
+        "https://docs.aws.amazon.com/billingconductor/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/billingconductor/",
+        "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/",
+        "https://github.com/getlago/lago"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-cloudformation",
+      "name": "AWS CloudFormation",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "developer_tool",
+      "categories": [
+        "infrastructure-as-code",
+        "provisioning",
+        "orchestration",
+        "templates",
+        "stacksets",
+        "resource-management"
+      ],
+      "official_url": "https://aws.amazon.com/cloudformation/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/aws-cloudformation/",
+      "alternatives": [
+        {
+          "name": "OpenTofu",
+          "url": "https://github.com/opentofu/opentofu",
+          "license": "MPL-2.0",
+          "covers": "Open-source infrastructure-as-code tool with declarative configuration, state, providers, plans and resource lifecycle management across cloud and infrastructure APIs.",
+          "note": "Covers a broad IaC foundation, but not CloudFormation's stack semantics, AWS resource handlers, StackSets, Registry, Hooks, rollback behavior or AWS control-plane integration."
+        }
+      ],
+      "gap": "OpenTofu provides a strong open IaC foundation, but does not reproduce CloudFormation's stack and change-set model, AWS resource type handlers, StackSets, Registry extensions, Hooks, drift semantics or rollback behavior.",
+      "verdict": "Partial. OpenTofu is a credible open-source IaC foundation, while CloudFormation equivalence requires a provider/resource registry, stack engine, change-set planner, rollback coordinator and AWS-specific control-plane semantics.",
+      "sources": [
+        "https://aws.amazon.com/cloudformation/",
+        "https://docs.aws.amazon.com/cloudformation/",
+        "https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/",
+        "https://docs.aws.amazon.com/cli/latest/reference/cloudformation/",
+        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/WhatIsCloudFormation.html",
+        "https://github.com/opentofu/opentofu"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-cloud-map",
+      "name": "AWS Cloud Map",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "networking",
+      "categories": [
+        "service-discovery",
+        "dns",
+        "registry",
+        "health-checks",
+        "networking",
+        "microservices"
+      ],
+      "official_url": "https://aws.amazon.com/cloud-map/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/aws-cloud-map/",
+      "alternatives": [
+        {
+          "name": "Netflix Eureka",
+          "url": "https://github.com/Netflix/eureka",
+          "license": "Apache-2.0",
+          "covers": "Open-source service registry and discovery system for locating services and handling registration and heartbeats in distributed applications.",
+          "note": "Covers service registration and discovery, but not Cloud Map's Route 53 DNS integration, AWS resource naming, namespaces, IAM, health-check semantics or regional managed control plane."
+        }
+      ],
+      "gap": "Netflix Eureka provides open service registration and discovery, but does not reproduce Cloud Map's DNS and API surfaces, AWS resource integrations, namespaces, cross-account sharing, IAM or managed health-check behavior.",
+      "verdict": "Partial. Eureka is a credible open service-registry foundation, while Cloud Map equivalence requires DNS integration, resource adapters, namespace governance, health checks and AWS-specific authorization and regional behavior.",
+      "sources": [
+        "https://aws.amazon.com/cloud-map/",
+        "https://docs.aws.amazon.com/cloud-map/",
+        "https://docs.aws.amazon.com/cloud-map/latest/api/",
+        "https://docs.aws.amazon.com/cli/latest/reference/servicediscovery/",
+        "https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html",
+        "https://github.com/Netflix/eureka"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "aws-cloud-wan",
+      "name": "AWS Cloud WAN",
+      "company_id": "amazon_aws",
+      "company": "Amazon Web Services",
+      "product_type": "networking",
+      "categories": [
+        "wide-area-network",
+        "sd-wan",
+        "global-networking",
+        "network-segmentation",
+        "transit-gateway",
+        "network-management"
+      ],
+      "official_url": "https://aws.amazon.com/cloud-wan/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/aws-cloud-wan/",
+      "alternatives": [
+        {
+          "name": "OpenZiti",
+          "url": "https://github.com/openziti/ziti",
+          "license": "Apache-2.0",
+          "covers": "Open-source zero-trust overlay networking platform for connecting services, devices and identities across networks without exposing them directly to the public internet.",
+          "note": "Covers secure overlay connectivity, but not Cloud WAN's AWS core-network model, policy-driven regional segmentation, Transit Gateway integration, branch attachments or managed topology dashboard."
+        }
+      ],
+      "gap": "OpenZiti provides an open secure-overlay foundation, but does not reproduce Cloud WAN's AWS global network, core edges, policy model, segmentation, Transit Gateway and SD-WAN integrations, quotas or managed operations.",
+      "verdict": "Partial. OpenZiti is a credible open networking foundation, while Cloud WAN equivalence requires a global network control plane, regional edge orchestration, attachment adapters, policy reconciliation and provider-specific routing semantics.",
+      "sources": [
+        "https://aws.amazon.com/cloud-wan/",
+        "https://docs.aws.amazon.com/network-manager/latest/cloudwan/what-is-cloudwan.html",
+        "https://docs.aws.amazon.com/network-manager/latest/cloudwan/",
+        "https://docs.aws.amazon.com/general/latest/gr/cloudwan.html",
+        "https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-getting-started.html",
+        "https://github.com/openziti/ziti"
       ],
       "build": {
         "scaffolded": false,

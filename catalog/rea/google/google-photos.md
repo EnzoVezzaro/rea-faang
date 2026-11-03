@@ -9,11 +9,11 @@ Browser capture of the public web surface of Google Photos, recorded with REA.
 | Target | https://photos.google.com/ |
 | Resolved URL | https://www.google.com/photos/about/ |
 | Page title | Makes editing organization search photos feel like magic |
-| Captured | 2026-10-14T03:53:26.797Z |
+| Captured | 2026-11-03T01:38:52.191Z |
 | Status | captured |
-| REA Evidence ID | `ev_2e517002618151c4d97edae82717f10ec62c28048a5ba68226397fbd0fbb4b74` |
+| REA Evidence ID | `ev_e99987afe4542ce3c85c72514aba4d4966cb66762ff1512a636e6fa1c245ef93` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -114,11 +114,11 @@ access control is bypassed.
 - [Explore all Google Photos editing features](/photos/editing/)
 - [Learn more about Google Photos security (opens in new window)](https://safety.google/intl/en_us/photos/ )
 - [Visit the Google Photos Printing page](https://photos.google.com/printstore?utm_source=website_photos&utm_campaign=photos_print )
+- [Celebrate Halloween with these tricks in Google Photos. (opens in new window)](https://blog.google/products-and-platforms/products/photos/halloween-tricks-2026/)
 - [5 Google Photos updates to make the most of summer memories. (opens in new window)](https://blog.google/products-and-platforms/products/photos/google-photos-updates/)
 - [Create shareable video clips in seconds with Video Remix in Google Photos. (opens in new window)](https://blog.google/products-and-platforms/products/photos/video-remix/)
 - [A new way to create a digital wardrobe from your Google Photos (opens in new window)](https://blog.google/products-and-platforms/products/photos/google-photos-wardrobe-feature/)
 - [Enjoy new ways to create, search and stream on Google TV (opens in new window)](https://blog.google/products-and-platforms/platforms/google-tv/enjoy-new-ways-to-create-search-and-stream-on-google-tv/)
-- [New touch-up tools in Google Photos’ image editor let you make quick, subtle fixes. (opens in new window)](https://blog.google/products-and-platforms/products/photos/new-touch-up-tools-google-photos/)
 - [Visit the blog (opens in new window)](https://blog.google/products/photos/)
 - [Learn more (opens in new window)](https://support.google.com/photos/)
 - [Show footnote 8](#footnote:newsletter_unsubscribe)
@@ -163,9 +163,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -173,6 +173,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/google-photos.json`
-- Evidence ID: `ev_2e517002618151c4d97edae82717f10ec62c28048a5ba68226397fbd0fbb4b74`
-- Accessibility outline: 21330 bytes
+- Evidence ID: `ev_e99987afe4542ce3c85c72514aba4d4966cb66762ff1512a636e6fa1c245ef93`
+- Accessibility outline: 21300 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

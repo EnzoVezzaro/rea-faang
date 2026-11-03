@@ -1,0 +1,57 @@
+{
+  "taskId": "task_mvzlunv6_tm32ku",
+  "attempt": 1,
+  "from": "primary-backend",
+  "status": "complete",
+  "committed": false,
+  "summary": "Single-sourced the site canonical origin: tools/site/templates.mjs now derives BASE_URL from RAE_SITE_URL with the GitHub Pages origin that package.json homepage and .github/workflows/pages.yml actually deploy, tests assert against that one source plus the package homepage instead of a duplicated Vercel literal, and the regenerated site fixed canonical/OG/sitemap/robots. Verified the npm package surface (369 files) and CLI version (0.3.2) match the same sources.",
+  "changed_files": [
+    "tools/site/templates.mjs",
+    "tests/site-build.test.js",
+    "site/README.md",
+    "site/index.html",
+    "site/sitemap.xml",
+    "site/robots.txt",
+    "site/catalog/index.html",
+    "site/404.html"
+  ],
+  "commands": [
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "duration": 4082
+    },
+    {
+      "command": "npm run validate",
+      "exitCode": 0,
+      "duration": 1273
+    },
+    {
+      "command": "npm run site:build",
+      "exitCode": 0,
+      "duration": 562
+    },
+    {
+      "command": "npm pack --dry-run",
+      "exitCode": 0,
+      "duration": 1235
+    }
+  ],
+  "checksNotRun": [
+    "No live deploy was performed (GitHub Pages and Vercel both require maintainer approval).",
+    "Vercel is still documented as an optional second host; the site was not rebuilt or verified against that deployment.",
+    "No browser rendering check of the rebuilt pages."
+  ],
+  "decisions": [
+    "The canonical origin is GitHub Pages because that is what the deploy workflow and package.json homepage already publish; Vercel stays available only through RAE_SITE_URL at build time.",
+    "Tests import BASE_URL instead of restating a domain, so changing the host is one edit and cannot silently desync canonical/OG/sitemap/robots.",
+    null
+  ],
+  "risks": [
+    "Google Search Console and any inbound links may still index the Vercel host; switching canonical affects SEO and needs maintainer awareness.",
+    "All generated pages under site/ were rebuilt, so the diff is large even though the substantive change is the origin plus test wiring.",
+    "Changes are worktree-only until committed; npm publish and Pages deploy are not part of this task."
+  ],
+  "recommendedNextAction": "Commit the canonical-origin change and, after the next Pages deploy, confirm the served /sitemap.xml and canonical tags resolve on enzovezzaro.github.io/rea-faang.",
+  "completedAt": "2026-11-02T18:50:11Z"
+}

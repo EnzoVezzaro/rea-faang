@@ -1,0 +1,36 @@
+{
+  "taskId": "task_mvvavnd4_nwlne7",
+  "attempt": 1,
+  "from": "primary-backend",
+  "status": "complete",
+  "committed": false,
+  "summary": "Restored root test discovery on Node 22 by passing the committed test filenames explicitly to node --test in the test and verify scripts. All five tracked root test files ran: 56 tests passed.",
+  "changed_files": [
+    "package.json"
+  ],
+  "commands": [
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "duration": 2700
+    },
+    {
+      "command": "npm run validate",
+      "exitCode": 0,
+      "duration": 818
+    }
+  ],
+  "checksNotRun": [
+    "npm run verify (its test command was updated alongside npm test; root suite already ran directly through npm test)",
+    "ace config check (not required by this task's acceptance criteria)"
+  ],
+  "decisions": [
+    "Use tests/*.test.js so Node receives the five committed root test files rather than attempting to resolve tests/ as a module.",
+    "Apply the same discovery fix to verify to avoid retaining a broken duplicate test command."
+  ],
+  "risks": [
+    "A pre-existing uncommitted README.md change was preserved and is unrelated to this task."
+  ],
+  "recommendedNextAction": "Have the ACE supervisor verify this handoff, then resume the roadmap at W1.1/W2.1 or T3.4 according to available task ownership and evidence.",
+  "completedAt": "2026-10-30T18:59:35Z"
+}

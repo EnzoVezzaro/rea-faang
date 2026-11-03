@@ -5,6 +5,42 @@ The project follows [semver](https://semver.org/); npm releases match the tags i
 
 ## [Unreleased]
 
+Proposed next release: **0.3.3** (patch — no CLI command, flag, schema or catalog
+record changes). See [`docs/release-process.md`](docs/release-process.md).
+
+### Fixed
+
+- Root and product-workspace test scripts now name their test files explicitly
+  (`node --test tests/*.test.js`, `node --test tests/*.test.mjs`) instead of
+  relying on directory discovery, which Node 22 no longer performs. `npm test`
+  runs the 58 committed root tests again, and all 16 workspaces are green.
+- The generated site's canonical and Open Graph URLs, `sitemap.xml` and
+  `robots.txt` now use the GitHub Pages origin that the deploy workflow actually
+  serves, instead of a stale Vercel preview domain. The origin is single-sourced
+  as `BASE_URL` in `tools/site/templates.mjs`, matches `package.json`
+  `homepage`, and can be overridden at build time with `RAE_SITE_URL`.
+
+### Added
+
+- A count-consistency test that ties the README badge and summary, the skills
+  index counts and the generated site metrics to their canonical sources
+  (`catalog/products.jsonl`, `catalog/manifests/faang.json`,
+  `tools/skills/catalog-data.mjs`), so published numbers cannot drift silently.
+- `docs/research-batches.md`: the coverage inventory and six prioritized research
+  batches, each naming its allowed sources and its definition of done.
+- `docs/release-process.md`: the SemVer policy, release checklist and the
+  maintainer approval gate for publishing or deploying.
+- A finished specification set for `google-search`
+  (`products/google/google-search/specs/01…10`), replacing the ten `WIP`
+  placeholders with testable requirements, data models, API contracts and
+  acceptance criteria that name their verification.
+
+### Changed
+
+- `PLAN.md` status corrected to measured facts: 77 catalogued products, 58 tests
+  across 5 files, 77 pending dossiers, and 150 of 160 specification files still
+  placeholders.
+
 ## [0.3.2] - 2026-10-16
 
 ### Changed

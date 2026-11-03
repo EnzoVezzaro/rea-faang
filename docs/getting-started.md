@@ -158,7 +158,7 @@ ace <cmd>               # ACE command (source checkout/workspace dependencies)
 | `node: command not found` | Install Node.js 20+ (nodejs.org or nvm). |
 | `Cannot find module 'js-yaml'` | Run `npm install`. |
 | `ace status` prints `runtime not available yet` | The root `lib/` is missing. Re-copy it: `cp -R node_modules/ace-proagents/lib ./lib`. |
-| `INCOMPATIBLE_ADAPTER` from `ace config check` | You used a provider that isn't installed. Compare against `ace adapters list`. |
+| `INCOMPATIBLE_ADAPTER` from `ace config check` | Either the provider isn't installed (compare `ace adapters list`), or the `ace` on your `PATH` is an older global install than the `ace-proagents` pinned in `package.json`. Run the repository's own copy instead: `npm run ace -- config check`. |
 | `MISSING_CREDENTIAL` | Run `ace secret set <name>` for the required credential. |
 | `research validate` reports errors | Fix the catalog line or research frontmatter the report names, then re-run. |
 | A product's `ace` command fails | The workspace shim expects to sit under `products/<company>/<product>/`. |

@@ -1,5 +1,4 @@
-<div align="center">
-  <img src="docs/assets/brand-logo-icon.png" width="420" alt="RAE FAANG — robot-box icon and wordmark with Meta, Amazon, Apple, Netflix and Google marks" />
+<div align="center">    <img src="docs/assets/brand-logo-icon.png" width="420" alt="RAE FAANG — robot-box icon and wordmark with Meta, Amazon, Apple, Netflix, Google and Microsoft marks" />
 
 # RAE FAANG
 
@@ -7,7 +6,7 @@
 
 **Use your agent to build any of their products.**
 
-RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Choose a product and
+RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft. Choose a product and
 use your coding agent to build it in your project. Each entry links product context, research,
 candidate open-source projects and product-specific build instructions to help you get started.
 These are starting points, not limits on what you can build. RAE FAANG is MIT-licensed; your
@@ -16,7 +15,7 @@ implementation and its dependencies have their own licenses.
 [![npm version](https://img.shields.io/npm/v/rae-faang?style=flat-square&labelColor=101114&color=E8FF6B)](https://www.npmjs.com/package/rae-faang)
 [![CI](https://github.com/EnzoVezzaro/rea-faang/actions/workflows/ci.yml/badge.svg)](https://github.com/EnzoVezzaro/rea-faang/actions/workflows/ci.yml)
 [![Node.js 20+](https://img.shields.io/badge/Node.js-20%2B-E8FF6B?style=flat-square&labelColor=101114&logo=nodedotjs&logoColor=white)](docs/getting-started.md)
-[![products: 77](https://img.shields.io/badge/products-77-E8FF6B?style=flat-square&labelColor=101114)](#catalog-at-a-glance)
+[![products: 184](https://img.shields.io/badge/products-184-E8FF6B?style=flat-square&labelColor=101114)](#catalog-at-a-glance)
 [![license: MIT](https://img.shields.io/badge/license-MIT-E8FF6B?style=flat-square&labelColor=101114)](LICENSE)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-101114?style=flat-square&labelColor=101114)](CONTRIBUTING.md)
 
@@ -29,7 +28,7 @@ implementation and its dependencies have their own licenses.
 
 <br />
 
-<img src="docs/assets/site-catalog.png" alt="The live RAE FAANG catalog: 77 products from Meta, Amazon, Apple, Netflix and Google with coverage stats and open-source alternatives" width="1100" />
+<img src="docs/assets/site-catalog.png" alt="The live RAE FAANG catalog: 184 products from Meta, Amazon, Apple, Netflix, Google and Microsoft with coverage stats and open-source alternatives" width="1100" />
 
 <br />
 </div>
@@ -133,8 +132,9 @@ implementation is feasible.
 | **Apple** | Desktop and mobile experiences, productivity, creative applications, media services, device ecosystems |
 | **Netflix** | Video streaming, content discovery, recommendation systems, media delivery, creator tooling |
 | **Google** | Search, maps, email, video, office productivity, cloud infrastructure, developer tools, AI services |
+| **Microsoft** | Operating systems, productivity suites, collaboration, cloud infrastructure, developer platforms |
 
-**77 products** · **40** with a mature candidate listed · **29** with partial coverage · **8** with
+**184 products** · **40** with a mature candidate listed · **66** with partial coverage · **78** with
 no verified alternative. These labels summarize catalog research, not product parity. See
 `catalog/products.jsonl` and the [live catalog](https://enzovezzaro.github.io/rea-faang/) for current counts.
 
@@ -142,7 +142,7 @@ no verified alternative. These labels summarize catalog research, not product pa
 
 ## What the repository includes
 
-- **`catalog/`** — 77 product records with JSON Schemas, research manifests, and the REA
+- **`catalog/`** — 184 product records with JSON Schemas, research manifests, and the REA
   web-surface reports captured with [REA](https://github.com/morluto/rea).
 - **`catalog/skills/`** — one Markdown build skill per product, from the skills index
   catalog down to the per-product file.
@@ -203,7 +203,7 @@ is required.
 </details>
 
 <details>
-<summary><strong>Do I have to build all 77 products?</strong></summary>
+<summary><strong>Do I have to build all 184 products?</strong></summary>
 
 No. Pick one product, scope it to your needs, and build that. The catalog's research gives
 your agent where to start; your project defines how far it goes.

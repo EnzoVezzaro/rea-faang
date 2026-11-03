@@ -42,10 +42,12 @@
   "scripts": {
     "cli": "node src/cli.js",
     "ace": "ace",
-    "validate": "node src/cli.js research validate && node src/cli.js alternatives validate && node src/cli.js opportunities validate && node tools/skills-catalog.mjs --check && node tools/site-build.mjs --check",
+    "validate": "node src/cli.js research validate && node src/cli.js alternatives validate && node src/cli.js opportunities validate && node tools/skills-catalog.mjs --check && node tools/catalog-gap-report.mjs --check && node tools/pending-catalog.mjs --check && node tools/site-build.mjs --check",
     "gaps": "node src/cli.js gaps all",
+    "gap:report": "node tools/catalog-gap-report.mjs",
     "rea:catalog": "node tools/rea-catalog.mjs",
     "skills:catalog": "node tools/skills-catalog.mjs",
+    "skills:pending": "node tools/pending-catalog.mjs",
     "site:build": "node tools/site-build.mjs",
     "test": "node --test tests/*.test.js",
     "prepublishOnly": "npm test && npm run validate",

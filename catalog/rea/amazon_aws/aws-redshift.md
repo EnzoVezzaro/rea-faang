@@ -9,11 +9,11 @@ Browser capture of the public web surface of Redshift, recorded with REA.
 | Target | https://aws.amazon.com/redshift/ |
 | Resolved URL | https://aws.amazon.com/redshift/ |
 | Page title | Amazon Redshift |
-| Captured | 2026-10-14T03:55:43.654Z |
+| Captured | 2026-11-03T01:35:56.103Z |
 | Status | captured |
-| REA Evidence ID | `ev_aefb1e80c6e266f4df946394f4e8db7fcfc6b0c5914600839018ecc568ec4605` |
+| REA Evidence ID | `ev_81394f9741a18151d3835a144a449cd769c109df3ea5e7d42c5e1ea659bfab34` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -102,7 +102,6 @@ access control is bypassed.
 - [Analytics](/products/analytics/)
 - [Unified, open, and secure data lakehouse Unify access across Amazon Redshift data warehouses, Amazon S3 data lakes, and third-party and federated data sources with the lakehouse in Amazon SageMaker Learn more](/sagemaker/lakehouse/)
 - [SQL analytics in Amazon SageMaker Gain insights on unified data using Amazon Redshift, the most price-performant SQL engine Learn more](/sagemaker/)
-- [Learn how to get started](https://aws.amazon.com/campaigns/data-migration-awareness/?sc_icampaign=launch_migrate-databases_2026&sc_ichannel=ha&sc_iplace=banner&trk=e083ccd8-3475-4bc4-b291-8f2f43c451ed)
 - [A decade of innovation with Amazon Redshift Watch the video](https://www.youtube.com/watch?v=k6H4axO_LJY)
 - [Missing alt text value Peloton embraces Amazon Redshift to use data to help millions of customers reach their fitness goals Read the case study](/blogs/big-data/peloton-embraces-amazon-redshift-to-unlock-the-power-of-data-during-changing-times/)
 - [Missing alt text value McDonalds uses Amazon Redshift across the enterprise, driving digitization and personalized customer experiences Watch video](https://www.youtube.com/watch?v=eby75koNf0c)
@@ -130,6 +129,7 @@ access control is bypassed.
 - [Analyst Reports](/resources/analyst-reports/?nc1=f_cc)
 - [AWS Partners](/partners/work-with-partners/?nc1=f_dr)
 - [Builder Center](https://builder.aws.com/?nc1=f_dr)
+- [SDKs & Tools](https://builder.aws.com/build/tools?nc1=f_dr)
 
 ### Controls
 
@@ -158,9 +158,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/aws-redshift.json`
-- Evidence ID: `ev_aefb1e80c6e266f4df946394f4e8db7fcfc6b0c5914600839018ecc568ec4605`
-- Accessibility outline: 16735 bytes
+- Evidence ID: `ev_81394f9741a18151d3835a144a449cd769c109df3ea5e7d42c5e1ea659bfab34`
+- Accessibility outline: 15740 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

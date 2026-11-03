@@ -9,11 +9,11 @@ Browser capture of the public web surface of Netflix Games, recorded with REA.
 | Target | https://www.netflix.com/tudum/games |
 | Resolved URL | https://www.netflix.com/tudum/games |
 | Page title | All of The Games on Netflix Right Now - Netflix Tudum |
-| Captured | 2026-10-14T03:56:22.119Z |
+| Captured | 2026-11-03T01:42:04.687Z |
 | Status | captured |
-| REA Evidence ID | `ev_35395302435935f8f8728ea1ed3181a6d65803db9875378bea12336f19fbc77c` |
+| REA Evidence ID | `ev_83f397cd5df618cd8373920b48173cbf4fa268c16c7334abff52b1a0eb6038ea` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -126,11 +126,11 @@ access control is bypassed.
 - [Sci-Fi](/tudum/topics/sci-fi)
 - [Article](/tudum/topics/article)
 - [Tudum Magazine Privacy Statement and Terms of Use](/tudum/articles/tudum-magazine-terms-and-conditions)
-- [Below Surfaces to the No. 1 Spot in This Week’s Top 10](/tudum/articles/top-10-october-5-2026)
-- [The Mosquito Bowl Trailer Puts Four College Football Heroes on the Front Lines](/tudum/articles/the-mosquito-bowl-trailer)
-- [24 Thrillers Too Suspenseful to Pause for Even a Second](/tudum/articles/best-thrillers-on-netflix)
-- [The 2nd and 3rd STAGE of STEEL BALL RUN JoJo’s Bizarre Adventure Have Started](/tudum/articles/steel-ball-run-jojos-bizarre-adventure-release-date-news)
-- [10 Creature Features for When You’ve Had Enough of Humanity](/tudum/articles/best-creature-features-movies-shows)
+- [7 Indian Thrillers That’ll Have Your Heart Racing](/tudum/articles/indian-thrillers-like-gandhari)
+- [9 Inspiring Movies and Shows to Celebrate Native American Heritage Month](/tudum/articles/native-american-movies-shows)
+- [New on Netflix in November 2026](/tudum/articles/new-on-netflix)
+- [Meet the Cast of The Mosquito Bowl and the Real-Life Marines They Play](/tudum/articles/the-mosquito-bowl-cast)
+- [La Bola Negra Opens in Theaters Nationwide](/tudum/features/la-bola-negra-theatrical-dates-locations)
 
 ### Controls
 
@@ -159,9 +159,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -169,6 +169,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/netflix-games.json`
-- Evidence ID: `ev_35395302435935f8f8728ea1ed3181a6d65803db9875378bea12336f19fbc77c`
-- Accessibility outline: 23411 bytes
+- Evidence ID: `ev_83f397cd5df618cd8373920b48173cbf4fa268c16c7334abff52b1a0eb6038ea`
+- Accessibility outline: 22517 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

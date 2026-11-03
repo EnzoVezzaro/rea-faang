@@ -15,18 +15,18 @@
     <meta property="og:site_name" content="RAE FAANG" />
     <meta property="og:title" content="Agent workflow (ACE) — RAE FAANG docs" />
     <meta property="og:description" content="How the ACE environment and the multi-agent loop fit together." />
-    <meta property="og:url" content="https://rae-faang-landing.vercel.app/docs/agent-workflow.html" />
-    <meta property="og:image" content="https://rae-faang-landing.vercel.app/assets/rae-banner.png" />
+    <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/docs/agent-workflow.html" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
     <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
     <meta property="og:image:width" content="1774" />
     <meta property="og:image:height" content="887" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Agent workflow (ACE) — RAE FAANG docs" />
     <meta name="twitter:description" content="How the ACE environment and the multi-agent loop fit together." />
-    <meta name="twitter:image" content="https://rae-faang-landing.vercel.app/assets/rae-banner.png" />
-    <link rel="canonical" href="https://rae-faang-landing.vercel.app/docs/agent-workflow.html" />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/docs/agent-workflow.html" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="sitemap" type="application/xml" href="https://rae-faang-landing.vercel.app/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
     <link rel="apple-touch-icon" href="../docs/assets/icon-192.png" />
     <link rel="icon" href="../docs/assets/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="icon" href="../docs/assets/icon-512.png" type="image/png" sizes="512x512" />
@@ -79,6 +79,7 @@
               <li><a href="#what-ace-manages">What ACE manages</a></li>
               <li><a href="#where-things-live">Where things live</a></li>
               <li><a href="#configuration-and-layers">Configuration and layers</a></li>
+              <li><a href="#worker-models">Worker models</a></li>
               <li><a href="#roles">Roles</a></li>
               <li><a href="#task-lifecycle">Task lifecycle</a></li>
               <li><a href="#handoff-and-verification">Handoff and verification</a></li>
@@ -128,7 +129,15 @@ ace config check       # validate it (actionable errors)</code></pre>
 <li><code>adapters</code> binding each capability to a provider: <code>workspace: git-worktree</code>, <code>agent-runtime: opencode</code>, <code>context: acc</code>, <code>handoff: proagents</code>, <code>verification: package-scripts</code>, <code>persistence: filesystem</code>;</li>
 <li><code>policies</code> (<code>require_review_before_merge: true</code>), <code>concurrency</code> (<code>max_active_agents</code>), and <code>lifecycle</code> behaviour.</li>
 </ul>
-<p>If <code>config check</code> reports <code>INCOMPATIBLE_ADAPTER</code>, compare the configured provider with the list from <code>ace adapters list</code>.</p>
+<p>If <code>config check</code> reports <code>INCOMPATIBLE_ADAPTER</code>, compare the configured provider with the list from <code>ace adapters list</code>. Run the check through the repository's pinned copy — <code>npm run ace -- config check</code> — because a globally installed <code>ace</code> can be an older snapshot that rejects providers the version pinned in <code>package.json</code> already knows.</p>
+<h2 id="worker-models">Worker models</h2>
+<p>Each agent resolves a route of the form <code>runtime:model</code>. Before delegating work, confirm the route points at a model the provider actually serves, and that it is free:</p>
+<pre><code class="language-bash">ace route show primary-researcher                 # effective route and change history
+opencode models | grep -F '&lt;model-name&gt;'          # is the model listed at all?
+opencode run -m &lt;provider&gt;/&lt;model&gt; &quot;Reply with exactly: OK&quot;   # does it answer?
+ace route set primary-researcher opencode:&lt;provider&gt;/&lt;model&gt; --reason &quot;verified free route&quot;</code></pre>
+<p>A route can be configured and still be unusable: an unlisted model fails with <code>Model unavailable</code>, and a free tier that is exhausted fails with a usage-limit error. Both exit non-zero, so the probe is the evidence. Never route workers to a paid model or to a runtime this repository does not configure without the maintainer's approval.</p>
+<p><code>ace route show &lt;agent&gt;</code> reports the recorded switch history, while <code>ace crew</code> prints the route from the declared configuration; the two can disagree after a <code>route set</code> (this has been observed, and which one a spawn actually uses has not been verified here — probe the model, then confirm the first worker run).</p>
 <h2 id="roles">Roles</h2>
 <p>Each task has one owner. The roles describe the work each agent handles:</p>
 <div class="table-wrap"><table>

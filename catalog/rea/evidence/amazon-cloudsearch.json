@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_a77d7e9198b69bf9e144864fc028f05835db2e51183911be34d7cb38eb6f9386",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/cloudsearch/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "1263661a5502d12c45f3045553d75b12497674f8b3c391dae33c1a0ba4a385a3"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 5122,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 2285,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/cloudsearch/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2559,
+        "before_url": {
+          "url": "https://aws.amazon.com/cloudsearch/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/cloudsearch/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "f5dcb398f3f2d4723bcb25525a70d017ea320bca82b88d300b92a7f8f32c4e93",
+              "bytes": 12902,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - tooltip \"Feedback\"\n  - main:\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem: Amazon CloudSearch\n    - heading \"Amazon CloudSearch\" [level=1]\n    - paragraph: For more flexibility in search and analytics capabilities, try Amazon OpenSearch Service\n    - button \"Learn more here\"\n    - heading \"Service Updates\" [level=2]\n    - paragraph:\n      - text: If you are exploring using Amazon CloudSearch for the first time, we recommend trying Amazon OpenSearch Service for comprehensive search, AI and analytics capabilities.\n      - link \"Learn more\":\n        - /url: /blogs/big-data/transition-from-amazon-cloudsearch-to-amazon-opensearch-service/\n    - heading \"What is Amazon CloudSearch?\" [level=2]\n    - paragraph: Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and cost-effective to set up, manage, and scale a search solution for your website or application.\n    - paragraph:\n      - text: Amazon CloudSearch supports 34 languages and popular search features such as highlighting, autocomplete, and geospatial search. For more information, see\n      - link \"Benefits\":\n        - /url: /cloudsearch/#benefits\n      - text: . To learn about the latest new features and announcements for Amazon CloudSearch, see the\n      - link \"what's new page\":\n        - /url: /cloudsearch/whats-new/\n      - text: .\n    - button \"Play:\"\n    - img \"Missing alt text value\"\n    - heading \"Benefits\" [level=2]\n    - paragraph: With Amazon CloudSearch, you can quickly add rich search capabilities to your website or application. You don't need to become a search expert or worry about hardware provisioning, setup, and maintenance. With a few clicks in the AWS Management Console, you can create a search domain and upload the data that you want to make searchable, and Amazon CloudSearch will automatically provision the required resources and deploy a highly tuned search index. You can easily change your search parameters, fine tune search relevance, and apply new settings at any time. As your volume of data and traffic fluctuates, Amazon CloudSearch seamlessly scales to meet your needs.\n    - heading \"Simple\" [level=3]\n    - paragraph:\n      - text: You can configure and manage an Amazon CloudSearch domain through the\n      - link \"AWS Management Console\":\n        - /url: /console/\n      - text: \",\"\n      - link \"AWS CLI\":\n        - /url: /cli/\n      - text: \", and\"\n      - link \"AWS SDKs\":\n        - /url: /tools/\n      - text: . Simply point to a sample of your data and Amazon CloudSearch will automatically recommend how to configure your domain's indexing options. You can easily add or delete index fields and customize search options such as faceting and highlighting. Configuration changes do not require you to re-upload your data.\n    - heading \"Scalable\" [level=3]\n    - paragraph:\n      - text: Amazon CloudSearch offers powerful\n      - link \"autoscaling\":\n        - /url: http://docs.aws.amazon.com/cloudsearch/latest/developerguide/concepts-scaling.html\n      - text: for all search domains. As your data or query volume changes, Amazon CloudSearch can scale your search domain's resources up or down as needed. You can\n      - link \"control scaling\":\n        - /url: http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html\n      - text: if you know that you need more capacity for bulk uploads or are expecting a surge in search traffic.\n    - heading \"Reliable\" [level=3]\n    - paragraph:\n      - text: Amazon CloudSearch provides automatic monitoring and recovery for your search domains. When\n      - link \"Multi-AZ\":\n        - /url: http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html\n      - text: is enabled, Amazon CloudSearch provisions and maintains resources for a search domain in two Availability Zones to ensure high availability. Updates are automatically applied to the search instances in both Availability Zones. Search traffic is distributed across both Availability Zones and the instances in either zone are capable of handling the full load in the event of a failure.\n    - heading \"High performance\" [level=3]\n    - paragraph: Amazon CloudSearch ensures low latency and high throughput performance, even at large scale through automatic sharding and horizontal and vertical autoscaling.\n    - heading \"Fully managed\" [level=3]\n    - paragraph: Amazon CloudSearch is a fully managed custom search service. Hardware and software provisioning, setup and configuration, software patching, data partitioning, node monitoring, scaling, and data durability are handled for you.\n    - heading \"Rich search features\" [level=3]\n    - paragraph: \"Amazon CloudSearch supports powerful search features such as:\"\n    - list:\n      - listitem:\n        - paragraph: Free text, Boolean, and Faceted search\n      - listitem:\n        - paragraph: Autocomplete suggestions\n      - listitem:\n        - paragraph: Customizable relevance ranking and query-time rank expressions\n      - listitem:\n        - paragraph: Field weighting\n      - listitem:\n        - paragraph: Geospatial search\n      - listitem:\n        - paragraph: Highlighting\n      - listitem:\n        - paragraph: Support for 34 languages\n    - heading \"Cost-effective\" [level=3]\n    - paragraph:\n      - text: Amazon CloudSearch is designed to be cost-effective. You pay low hourly rates, and only for the resources you use. Amazon CloudSearch offers low total cost of ownership for your search applications compared to operating a search environment on your own. For detailed pricing information, see\n      - link \"Pricing\":\n        - /url: /cloudsearch/pricing/\n      - text: .\n    - heading \"Secure\" [level=3]\n    - paragraph:\n      - text: Amazon CloudSearch uses strong cryptographic methods to authenticate users and prevent unauthorized access to your domains. Amazon CloudSearch supports HTTPS and integrates with\n      - link \"Identity and Access Management\":\n        - /url: /iam/\n      - text: (IAM) to control access to the CloudSearch configuration service and each domain’s document, search, and suggest services.\n    - button \"Show more\"\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /cloudsearch/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /cloudsearch/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/cloudsearch/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

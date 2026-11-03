@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_cbfaf40d7a5851cdf3fc1b808c2b65b58143d9b9bb302148f513ed0c94a8a1c0",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/q/developer/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "6214cf3912d192640e0eb2c7c1a2fde562a66f6b5ad6709c57a682071439ca9d"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 9345,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 6196,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/q/developer/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2842,
+        "before_url": {
+          "url": "https://aws.amazon.com/q/developer/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/q/developer/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "3ccadef9dc0e34fdd72578a4377e16b34c64a17704ae872a4cba044ff31819e3",
+              "bytes": 19461,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - main:\n    - paragraph: Amazon Q Developer\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /q/developer/?p=qdev&z=subnav&loc=1\n      - button \"Features submenu\": Features\n      - listitem:\n        - link \"Pricing\":\n          - /url: /q/developer/pricing/?p=qdev&z=subnav&loc=7\n      - listitem:\n        - link \"Documentation\":\n          - /url: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/what-is.html?p=qdev&z=subnav&loc=8\n      - button \"Resources submenu\": Resources\n      - listitem:\n        - link \"Get started\":\n          - /url: /q/developer/getting-started/?p=qdev&z=subnav&loc=13\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Generative AI\":\n            - /url: /ai/generative-ai/\n        - listitem:\n          - link \"Amazon Q\":\n            - /url: /q/\n        - listitem: Amazon Q Developer\n    - heading \"Amazon Q Developer\" [level=1]\n    - paragraph: The most capable generative AI–powered assistant for software development\n    - img \"Missing alt text value\"\n    - heading \"End of support notice\" [level=2]\n    - text: On April 30, 2027, AWS will discontinue support for Amazon Q Developer IDE plugins. For capabilities similar to Amazon Q Developer IDE plugins, explore Kiro to access the latest models and features, including agentic coding, chat and MCP support.\n    - heading \"Download Amazon Q Developer\" [level=2]\n    - paragraph:\n      - text: Amazon Q Developer is available for use in your code editor. Download a plugin or extension below and get started on the\n      - link \"Amazon Q Developer Free Tier\":\n        - /url: /q/developer/pricing/\n      - strong\n      - text: in a few minutes.\n    - 'link \"See installation instructions: Download Amazon Q Developer\"':\n      - /url: /q/getting-started/#ide\n      - text: See installation instructions\n    - heading \"Get started for free\" [level=2]\n    - link \"IDE JetBrains Download now\":\n      - /url: https://plugins.jetbrains.com/plugin/24267-amazon-q/?b=jb&p=build&s=tiles\n      - text: IDE\n      - heading \"JetBrains\" [level=3]\n      - text: Download now\n    - link \"IDE VS Code Download now\":\n      - /url: https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.amazon-q-vscode\n      - text: IDE\n      - heading \"VS Code\" [level=3]\n      - text: Download now\n    - link \"IDE Visual Studio Download now\":\n      - /url: https://marketplace.visualstudio.com/items?itemName=AmazonWebServices.AWSToolkitforVisualStudio2022\n      - text: IDE\n      - heading \"Visual Studio\" [level=3]\n      - text: Download now\n    - link \"Command Line Command line Download now\":\n      - /url: https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/command-line-installing.html?b=cli&p=overview&s=tiles\n      - text: Command Line\n      - heading \"Command line\" [level=3]\n      - text: Download now\n    - link \"IDE Eclipse Download now\":\n      - /url: https://marketplace.eclipse.org/content/amazon-q?b=e&p=build&s=tiles\n      - text: IDE\n      - heading \"Eclipse\" [level=3]\n      - text: Download now\n    - heading \"Build faster\" [level=2]\n    - paragraph: To accelerate building across the entire software development lifecycle, Amazon Q Developer agentic capabilities can autonomously perform a range of tasks–everything from implementing features, documenting, testing, reviewing, and refactoring code, to performing software upgrades.\n    - 'link \"Learn more: Build faster\"':\n      - /url: /q/developer/build/\n      - text: Learn more\n    - figure:\n      - img \"Missing alt text value\":\n        - img\n    - heading \"Amazon Q Developer makes the whole development lifecycle easier\" [level=2]\n    - heading \"up to 0%\" [level=2]\n    - text: Speeds up a variety of development tasks. Based on an internal study.\n    - link \"Safe Software quote\":\n      - /url: /q/developer/customers/\n    - heading \"up to 0%\" [level=3]\n    - text: Developer productivity increase.\n    - link \"Eviden quote\":\n      - /url: /q/customers/#:~:text=Officer%2C%20Virgin%20Pulse-,Amazon%20Q%20Developer%20customers,-Ancileo%20insurance%20software\n    - heading \"0%\" [level=3]\n    - text: Acceptance rate. The highest reported* code acceptance rate among assistants that perform multiline code suggestions.\n    - link \"*as recently reported by BT Group\":\n      - /url: https://newsroom.bt.com/bt-group-advances-ai-enhanced-product-development-with-amazon-codewhisperer/\n    - heading \"Operate on AWS\" [level=2]\n    - paragraph: Amazon Q Developer is an expert on AWS and is in the AWS Management Console and available in Microsoft Teams and Slack to help optimize your cloud costs and resources, provide guidance on architectural best practices, investigate operational incidents, and diagnose and resolve networking issues.\n    - 'link \"Learn more: Operate on AWS\"':\n      - /url: /q/developer/operate/\n      - text: Learn more\n    - figure:\n      - img \"Missing alt text value\":\n        - img\n    - heading \"Transform applications\" [level=2]\n    - paragraph: Amazon Q Developer agents accelerate .NET porting from Windows to Linux and Java upgrades to streamline processes and reduce costs.\n    - 'link \"Learn more: Transform applications\"':\n      - /url: /q/developer/transform/\n      - text: Learn more\n    - figure:\n      - img \"Missing alt text value\":\n        - img\n    - heading \"Upgrade from Java 8 to Java 17\" [level=2]\n    - heading \"0+\" [level=2]\n    - text: Upgraded production applications\n    - heading \"0 minutes\" [level=3]\n    - text: Average per application\n    - heading \"0 days\" [level=3]\n    - text: To upgrade\n    - heading \"Leverage data and AI\" [level=2]\n    - paragraph: Amazon Q Developer helps you get the most from your data to easily build analytics, AI/ML, and generative AI applications faster. Create queries using natural language, get coding help for data pipelines, design ML models, and collaborate on AI projects with built-in data governance.\n    - 'link \"Learn more: Leverage data and AI\"':\n      - /url: /q/developer/data/\n      - text: Learn more\n    - figure:\n      - img \"Missing alt text value\":\n        - img\n    - heading \"How Amazon Q Developer accelerates development tasks\" [level=2]\n    - tablist:\n      - tab \"Get expert assistance\" [selected]\n      - tab \"Code faster\"\n      - tab \"Customize code\"\n      - tab \"Improve reliability and security\"\n      - tab \"Build with agentic capabilities\"\n    - tabpanel \"Get expert assistance\":\n      - heading \"Get expert assistance on AWS\" [level=3]\n      - paragraph: Start a conversation with Amazon Q to explore new AWS capabilities, review your resources, analyze your bill, and architect solutions—it’s an expert in AWS well-architected patterns, documentation, solutions implementation, and more.\n      - 'link \"See more features: Get expert assistance on AWS\"':\n        - /url: /q/developer/features/\n        - text: See more features\n      - figure:\n        - img \"Missing alt text value\":\n          - img\n    - heading \"Amazon Q Developer pricing and the AWS Free Tier\" [level=2]\n    - paragraph:\n      - text: Try Amazon Q Developer at no cost with the\n      - link \"AWS Free Tier\":\n        - /url: /free/\n      - text: . The Amazon Q Developer perpetual Free Tier gives you 50 agentic chat interactions per month. You can also transform up to 1,000 lines of code per month. To learn about pricing and the Amazon Q Developer Free Tier, visit\n      - link \"Amazon Q Developer pricing\":\n        - /url: /q/developer/pricing/\n      - text: .\n    - heading \"Customers empower development teams with Amazon Q Developer\" [level=2]\n    - link \"Missing alt text value Reducing Development Time by 30% Using Amazon Q with nnamu Read the case study\":\n      - /url: /solutions/case-studies/nnamu/\n      - img \"Missing alt text value\"\n      - heading \"Reducing Development Time by 30% Using Amazon Q with nnamu\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Boosting Customer Service and Developer Productivity Using Generative AI on AWS with BPC Read the case study\":\n      - /url: /solutions/case-studies/bpc/\n      - img \"Missing alt text value\"\n      - heading \"Boosting Customer Service and Developer Productivity Using Generative AI on AWS with BPC\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Modernizing Applications in Minutes Using Amazon Q Developer with Novacomp Read the case study\":\n      - /url: /solutions/case-studies/novacomp-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Modernizing Applications in Minutes Using Amazon Q Developer with Novacomp\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Accenture Expedites Infrastructure Deployment with Amazon Q Developer Read the blog\":\n      - /url: /blogs/devops/accenture-expedites-infrastructure-deployment-with-amazon-q-developer/\n      - img \"Missing alt text value\"\n      - heading \"Accenture Expedites Infrastructure Deployment with Amazon Q Developer\" [level=3]\n      - text: Read the blog\n    - link \"Missing alt text value How SmugMug Increased Data Modeling Productivity with Amazon Q Developer Read the blog\":\n      - /url: /blogs/devops/how-smugmug-increased-data-modeling-productivity-with-amazon-q-developer/\n      - img \"Missing alt text value\"\n      - heading \"How SmugMug Increased Data Modeling Productivity with Amazon Q Developer\" [level=3]\n      - text: Read the blog\n    - heading [level=2]\n    - paragraph\n    - img \"Missing alt text value\"\n    - img \"Missing alt text value\"\n    - img \"Missing alt text value\"\n    - img \"Missing alt text value\"\n    - img \"Missing alt text value\"\n    - img \"Missing alt text value\"\n    - heading [level=2]\n    - paragraph\n    - img \"Missing alt text value\"\n    - img \"Missing alt text value\"\n    - img \"Missing alt text value\"\n    - img \"Missing alt text value\"\n    - img \"Missing alt text value\"\n    - img \"Missing alt text value\"\n    - heading \"By your side wherever you work...\" [level=2]\n    - heading \"IDE\" [level=3]\n    - paragraph: Amazon Q Developer provides inline code suggestions, vulnerability scanning, and chat in popular integrated development environments (IDEs), including JetBrains, IntelliJ IDEA, Visual Studio, VS Code, and Eclipse (preview).\n    - heading \"CLI\" [level=3]\n    - paragraph: Get CLI autocompletions and AI chat in your favorite terminal (locally and over Secure Shell).\n    - heading \"AWS CONSOLE\" [level=3]\n    - paragraph: Want extra help in the console? Open the Amazon Q panel and you've got it—even in the AWS Console Mobile Application for iOS and Android.\n    - heading \"GITLAB\" [level=3]\n    - paragraph: Use GitLab Duo with Amazon Q to accelerate team productivity and development velocity using the GitLab workflows you already know.\n    - heading \"By your side wherever you work...\" [level=2]\n    - heading \"CHAT APPLICATIONS\" [level=3]\n    - paragraph: Amazon Q Developer is available in Microsoft Teams and Slack to help you monitor operational events, troubleshoot issues, and operate AWS resources.\n    - heading \"GITHUB.COM AND GITHUB ENTERPRISE CLOUD\" [level=3]\n    - paragraph: Use Amazon Q Developer within GitHub to implement features, perform code reviews, and transform Java applications to streamline the developer experience (preview).\n    - heading \"The privacy you expect...\" [level=2]\n    - heading \"Your content is yours\" [level=3]\n    - paragraph:\n      - text: When you use\n      - link \"Amazon Q Developer Pro\":\n        - /url: /q/developer/pricing/\n      - text: \", your proprietary content is not used for service improvement.\"\n    - heading \"Enterprise-grade access controls\" [level=3]\n    - paragraph: Amazon Q provides familiar security and access controls and can understand and respect your existing AWS IAM Identity Center governance identities, roles, and permissions to personalize its interactions.\n    - region \"AWS Information\":\n      - heading \"What's new?\" [level=2]\n      - region \"carousel\":\n        - link \"Announcing GitLab Duo with Amazon Q GA Learn more\":\n          - /url: /blogs/devops/announcing-general-availability-of-gitlab-duo-with-amazon-q/\n          - heading \"Announcing GitLab Duo with Amazon Q GA\" [level=2]\n          - text: Learn more\n      - button \"Previous slide\"\n      - button \"Next slide\"\n    - heading \"Getting started\" [level=2]\n    - link \"Getting started Get started on the AWS Free Tier Visit the getting started page\":\n      - /url: /q/developer/getting-started/\n      - text: Getting started\n      - heading \"Get started on the AWS Free Tier\" [level=3]\n      - text: Visit the getting started page\n    - link \"Pricing Explore Amazon Q Developer pricing Visit the pricing page\":\n      - /url: /q/developer/pricing/\n      - text: Pricing\n      - heading \"Explore Amazon Q Developer pricing\" [level=3]\n      - text: Visit the pricing page\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /q/developer/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /q/developer/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/q/developer/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

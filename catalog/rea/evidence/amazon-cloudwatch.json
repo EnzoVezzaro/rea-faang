@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_b58562556d1e152cf5900c05805fe12e2ea9030c59f87a130040bd0264c4b96f",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/cloudwatch/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "1dc05ea8a4967933cebf68d2e5f3592695cbeaae660c9c29784059e6b633bc59"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 7537,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 4496,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/cloudwatch/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2571,
+        "before_url": {
+          "url": "https://aws.amazon.com/cloudwatch/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/cloudwatch/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "34f14cc0659663d679d4b1fa10e3770ae3460f8107e10e1ad7c5b7e424802e5f",
+              "bytes": 17938,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - main:\n    - paragraph: Amazon CloudWatch\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /cloudwatch/\n      - button \"Features submenu\": Features\n      - listitem:\n        - link \"Pricing\":\n          - /url: /cloudwatch/pricing/\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /cloudwatch/getting-started/\n      - listitem:\n        - link \"FAQs\":\n          - /url: /cloudwatch/faqs/\n      - listitem:\n        - link \"Customers\":\n          - /url: /cloudwatch/customers/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Management and Governance\":\n            - /url: /products/management-and-governance/\n        - listitem: Amazon CloudWatch\n    - heading \"Amazon CloudWatch\" [level=1]\n    - paragraph: Observe and optimize your workloads at any scale\n    - button \"Get started with CloudWatch\"\n    - button \"Hands-on Workshop\"\n    - heading \"What is Amazon CloudWatch?\" [level=2]\n    - paragraph: Amazon CloudWatch is AWS's fully managed monitoring and observability service that collects and visualizes metrics, logs, and traces across your entire AWS environment. It provides real-time visibility into resource utilization, application performance, and operational health, enabling teams to detect anomalies, set alarms, and automate responses before issues reach end users. With native integrations across virtually every AWS service, CloudWatch offers capabilities like composite alarms, anomaly detection, and cross-account observability. As workloads become increasingly AI-driven, CloudWatch also delivers purpose-built AI and agent observability, helping teams monitor model inference performance, trace multi-step agent workflows, and pinpoint failures across complex, autonomous systems. Whether you're running a single EC2 instance or operating distributed, AI-powered applications at scale, CloudWatch provides the unified intelligence you need to keep everything running reliably.\n    - 'link \"Learn more about CloudWatch Omni: What is Amazon CloudWatch?\"':\n      - /url: /cloudwatch/omni/\n      - text: Learn more about CloudWatch Omni\n    - heading [level=2]\n    - paragraph\n    - img \"Missing alt text value\"\n    - heading \"See everything in one place\" [level=2]\n    - paragraph: Get a unified view of your generative AI agents, applications, workloads, and the infrastructure that powers them. CloudWatch connects metrics, logs, and traces to help you quickly understand relationships, spot performance bottlenecks, and uncover hidden dependencies without jumping between tools.\n    - paragraph: CloudWatch Omni, the next generation of CloudWatch offers a re-imagined, AI-powered observability experience built on open standards and delivered where you already work. It embraces openness at its core, working with your existing stack, frameworks, and languages through native OpenTelemetry support. Developers building AI agents get eval-driven observability with continuous quality signals on every invocation, right inside VS Code, Kiro, or Cursor. Operators get application-centric intelligence with auto topology discovery, AI-powered investigation, and fleet-level dashboards, no AWS Console required. The result is one unified experience where you can see agent behavior alongside your applications, all observable from a single place.\n    - paragraph:\n      - link \"Explore Application Performance Monitoring (APM) features\":\n        - /url: /cloudwatch/features/application-observability-apm/\n      - link \"Explore CloudWatch Omni\":\n        - /url: /cloudwatch/omni/\n    - img \"Missing alt text value\"\n    - heading \"AI and Agent Observability\" [level=2]\n    - paragraph: Monitor your AI agents with the same confidence you monitor your applications. CloudWatch provides purpose-built observability for AI workloads, giving you full visibility into agent execution paths, model inference performance, and multi-step workflows. Trace every invocation end to end, run continuous evaluations on real user sessions, and pinpoint failures across complex, autonomous systems. With native support for popular agent frameworks including LangChain, LangGraph, CrewAI, OpenAI Agents SDK, Vercel AI SDK, and Strands, CloudWatch works with your existing stack through OpenTelemetry.\n    - paragraph:\n      - link \"Explore Generative AI Observability features\":\n        - /url: /cloudwatch/features/generative-ai-observability/\n    - paragraph:\n      - text: With\n      - link \"CloudWatch Omni\":\n        - /url: /cloudwatch/omni/\n      - text: \", agent observability extends into your IDE. Instrument agents with a single prompt, trace execution paths, run evaluations, and experiment on prompt and model configurations without leaving VS Code, Kiro, or Cursor. See agent behavior alongside your applications in one unified view, with eval-driven quality signals that close the observe-evaluate-iterate loop right where you build.\"\n    - paragraph:\n      - link \"Explore CloudWatch Omni\":\n        - /url: /cloudwatch/omni/\n    - img \"Missing alt text value\"\n    - heading \"Simplify operations\" [level=2]\n    - paragraph: Improve operational efficiency with built-in insights for databases, containers, and serverless such as Lambda—no need to build from scratch. CloudWatch also integrates with popular open-source monitoring and observability solutions like Prometheus and Grafana, plus it supports OpenTelemetry standards, giving you the flexibility to use the best approach for your needs.\n    - paragraph:\n      - link \"Explore Infrastructure Observability features\":\n        - /url: /cloudwatch/features/infrastructure-observability/\n    - img \"Missing alt text value\"\n    - heading \"Let AI help you\" [level=2]\n    - paragraph:\n      - text: Find and resolve issues with AI-powered\n      - link \"CloudWatch investigations\":\n        - /url: /cloudwatch/features/aiops/\n      - text: and Anomaly Detection. Ask questions in plain English to quickly search logs and metrics—natural language query transforms your questions into precise queries automatically. Connect your own agents directly to your CloudWatch data through\n      - link \"Model Context Protocol (MCP) servers\":\n        - /url: /blogs/mt/enhance-your-aiops-introducing-amazon-cloudwatch-and-application-signals-mcp-servers/\n      - text: for integration with your existing AI workflows. Start troubleshooting from wherever you work.\n    - paragraph:\n      - link \"Explore AIOps features\":\n        - /url: /cloudwatch/features/aiops/\n    - img \"Missing alt text value\"\n    - heading \"Troubleshoot smarter, not harder\" [level=2]\n    - paragraph: Get analytics and insights your way with flexible capabilities that deliver intelligence wherever you need it. Choose out-of-the-box dashboards, build custom queries with plain English or popular languages such as SQL, or access embedded insights that surface automatically within your workflow.\n    - paragraph:\n      - link \"Explore Analytics and insights\":\n        - /url: /cloudwatch/features/analytics-and-insights/\n    - img \"Missing alt text value\"\n    - heading \"Capabilities\" [level=2]\n    - tablist:\n      - tab \"AIOps\" [selected]\n      - tab \"GenAI observability\"\n      - tab \"Complete visibility\"\n      - tab \"Open standards\"\n      - tab \"Multicloud\"\n    - tabpanel \"AIOps\":\n      - heading \"Operate intelligently with AIOps\" [level=3]\n      - paragraph:\n        - text: Transform how you identify, investigate, and resolve operational issues with AIOps capabilities. Rapidly diagnose complex problems across your AWS environment using AI-powered root cause analysis through CloudWatch investigations, or create tailored workflows through supporting capabilities such as\n        - link \"MCP servers\":\n          - /url: https://github.com/awslabs/mcp\n        - text: and\n        - link \"Strands Agent SDK\":\n          - /url: https://strandsagents.com/\n        - text: .\n      - paragraph:\n        - text: Navigate interconnected operational data using simple conversational questions. Surface critical patterns, interpret anomalies, and generate actionable summaries in seconds. Whether investigating performance degradation, analyzing trends, or responding to incidents, CloudWatch\n        - link \"AIOps features\":\n          - /url: /cloudwatch/features/aiops/\n        - text: can make it easy.\n      - img \"Missing alt text value\"\n    - heading \"Customers\" [level=2]\n    - link \"Missing alt text value Mapbox uses CloudWatch to ingest multiple data sources and monitor key workloads Learn more\":\n      - /url: https://aws.amazon.com/cloudwatch/customers#Mapbox\n      - img \"Missing alt text value\"\n      - heading \"Mapbox uses CloudWatch to ingest multiple data sources and monitor key workloads\" [level=3]\n      - text: Learn more\n    - link \"Missing alt text value CloudPassage uses CloudWatch to reduce mean time to repair for its microservices-based architecture Learn more\":\n      - /url: https://aws.amazon.com/cloudwatch/customers/#CloudPassage\n      - img \"Missing alt text value\"\n      - heading \"CloudPassage uses CloudWatch to reduce mean time to repair for its microservices-based architecture\" [level=3]\n      - text: Learn more\n    - link \"Missing alt text value Pushpay uses CloudWatch Logs Insights to query logs and reduce operational complexity Learn more\":\n      - /url: https://aws.amazon.com/cloudwatch/customers/#Pushpay\n      - img \"Missing alt text value\"\n      - heading \"Pushpay uses CloudWatch Logs Insights to query logs and reduce operational complexity\" [level=3]\n      - text: Learn more\n    - link \"Missing alt text value EA Sports uses CloudWatch Internet Monitor to improve operations by tracking internet performance impact Learn more\":\n      - /url: https://aws.amazon.com/cloudwatch/customers/#Electronic%20Arts\n      - img \"Missing alt text value\"\n      - heading \"EA Sports uses CloudWatch Internet Monitor to improve operations by tracking internet performance impact\" [level=3]\n      - text: Learn more\n    - heading \"Get started with CloudWatch\" [level=2]\n    - link \"Workshop Learn with hands-on AWS One Observability Workshop Explore the Workshop\":\n      - /url: https://catalog.us-east-1.prod.workshops.aws/v2/workshops/31676d37-bbe9-4992-9cd1-ceae13c5116c/en-US\n      - text: Workshop\n      - heading \"Learn with hands-on AWS One Observability Workshop\" [level=2]\n      - text: Explore the Workshop\n    - link \"Blog See how observability can benefit your operations Read the blog\":\n      - /url: /blogs/mt/category/management-and-governance/monitoring-and-observability/\n      - text: Blog\n      - heading \"See how observability can benefit your operations\" [level=2]\n      - text: Read the blog\n    - link \"Features Learn how to transform your observability with the latest features Learn more\":\n      - /url: /cloudops/transform/\n      - text: Features\n      - heading \"Learn how to transform your observability with the latest features\" [level=2]\n      - text: Learn more\n    - heading \"Did you find what you were looking for today?\" [level=2]\n    - paragraph: Let us know so we can improve the quality of the content on our pages\n    - button \"Yes, give us positive feedback\": \"Yes\"\n    - button \"No, give us constructive feedback\": \"No\"\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /cloudwatch/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /cloudwatch/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/cloudwatch/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

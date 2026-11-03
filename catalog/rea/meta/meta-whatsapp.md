@@ -9,11 +9,11 @@ Browser capture of the public web surface of WhatsApp, recorded with REA.
 | Target | https://www.whatsapp.com/ |
 | Resolved URL | https://www.whatsapp.com/ |
 | Page title | Message privately |
-| Captured | 2026-10-13T19:00:23.758Z |
+| Captured | 2026-11-03T01:40:37.680Z |
 | Status | captured |
-| REA Evidence ID | `ev_5073e54921a52ed3d2811b82bad647e35edab7dbe6fea66ec1de8dd0161e13b5` |
+| REA Evidence ID | `ev_2d51430c5665dd5f396b308148e3acc540c27a608a92d2a67a99c81b18a87538` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.40 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -76,6 +76,7 @@ access control is bypassed.
 
 ### Links
 
+- [Try it](http://web.whatsapp.com/)
 - [WhatsApp's homepage](https://www.whatsapp.com/)
 - [Privacy feature on WhatsApp](https://www.whatsapp.com/privacy)
 - [Blog on WhatsApp](https://blog.whatsapp.com/)
@@ -111,14 +112,14 @@ access control is bypassed.
 - [WhatsApp's latest security advisories](https://www.whatsapp.com/security/advisories)
 - [WhatsApp legal policies](https://www.whatsapp.com/legal/)
 - [Sitemap](https://www.whatsapp.com/sitemap)
-- [Twitter](https://x.com/whatsapp)
+- [X](https://x.com/whatsapp)
 - [Youtube](https://www.youtube.com/channel/UCAuerig2N-RZWJT8x75V9yw)
 - [Instagram](https://www.instagram.com/whatsapp/?hl=en)
 - [Facebook](https://www.facebook.com/profile.php?id=100064758844406)
-- [Threads](https://www.threads.com/@whatsapp)
 
 ### Controls
 
+- button: Close
 - button: Features
 - button: Get started
 - button: English
@@ -127,9 +128,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -137,6 +138,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/meta-whatsapp.json`
-- Evidence ID: `ev_5073e54921a52ed3d2811b82bad647e35edab7dbe6fea66ec1de8dd0161e13b5`
-- Accessibility outline: 8791 bytes
+- Evidence ID: `ev_2d51430c5665dd5f396b308148e3acc540c27a608a92d2a67a99c81b18a87538`
+- Accessibility outline: 8989 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

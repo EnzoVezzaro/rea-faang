@@ -190,6 +190,136 @@ function roadmap(caps) {
   ];
   return phases.map(([name, task, done], i) => `### Phase ${i + 1} — ${name}\n\n- **Tasks:** ${task}\n- **Prerequisites:** ${i ? `Phase ${i} and evidence/scope decisions` : 'Repository inspection and user scope.'}\n- **Deliverables:** ${i ? 'Integrated working slice and updated traceability' : 'Project map, evidence ledger, reuse decision, bounded plan'}\n- **Requirements:** ${i === 1 || i === 2 ? refs : 'Select after evidence review'}\n- **Tests:** ${i ? 'Focused tests for implemented requirements and failures' : 'Clean setup/validation smoke test'}\n- **Completion:** ${done}\n- **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.\n`).join('\n');
 }
+function operatingProcedure({ product, capture, landscape, caps }) {
+  const docs = product.official_docs_url ? `[${product.official_docs_url}](${product.official_docs_url})` : 'Not recorded in the catalog; find the official documentation and record it before relying on prose.';
+  const altCount = landscape.alternatives?.length || 0;
+  const first = landscape.alternatives?.[0];
+  const inputs = [
+    '| Input | Value for this product | Source of truth |',
+    '|---|---|---|',
+    `| Product identity | ${md(product.name)} / ${code(product.id)} | \`catalog/products.jsonl\` |`,
+    `| Official product URL | [${product.official_url}](${product.official_url}) | Catalog record; re-check it resolves and is first-party |`,
+    `| Official documentation | ${docs} | Catalog record |`,
+    `| Research dossier | \`npx rae-faang research dossier ${product.id}\` | \`research/companies/${product.company_id}/products/${product.id}.md\` |`,
+    `| REA report | \`catalog/rea/${product.company_id}/${product.id}.md\`${capture ? ` (captured ${md(capture.captured)}, status ${md(capture.status)})` : ' (none recorded)'} | Catalog evidence |`,
+    `| REA raw evidence | \`catalog/rea/evidence/${product.id}.json\`${capture?.id ? ` (${code(capture.id)})` : ''} | Catalog evidence |`,
+    `| Alternative candidates | ${altCount ? `${altCount} candidate(s) recorded in section 9` : 'None recorded — this is a research gap'} | Curated landscape |`,
+    '| User scope | Requested product area, platforms, users and non-goals | The user; ask when the answer changes the deliverable |',
+    '| Consumer project | Absolute path, stack, conventions, test commands, deployment target | The user’s repository, read before writing |',
+    '| Authorization | Public surfaces and the user’s own project only | Clean-room boundary in section 14 |',
+  ].join('\n');
+  const outputs = [
+    '| Output | Where | Required content |',
+    '|---|---|---|',
+    '| Evidence ledger | `FINDINGS.md` in the consumer project | One row per claim: evidence ID, scope, action, classification, source location, access date, limitation |',
+    '| Capability and workflow map | `FINDINGS.md` | Evidenced capabilities, complete/partial workflows, states, permissions, failures and unknowns |',
+    '| Foundation decision record | `DECISION.md` in the consumer project | Candidate audit, coverage comparison and one explicit verdict from section 9 |',
+    '| Implementation plan | `PLAN.md` in the consumer project | Scope, requirement IDs, chosen foundation, architecture, proposed contracts, test plan, exclusions |',
+    '| Implementation | The consumer project’s own source tree | Original code and assets in the project’s conventions; no copied proprietary source |',
+    '| Tests | The consumer project’s test suite | Deterministic tests per implemented requirement plus relevant failure and permission paths |',
+    '| Report | `REPORT.md` in the consumer project | Requirement → code → test evidence, commands with real exit codes, partial/excluded/unknown items, checks not run |',
+  ].join('\n');
+  return [
+    '## Operating procedure — from authorized observation to a working implementation', '',
+    'This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.', '',
+    `Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.`, '',
+    '### Inputs you must confirm before acting', '', inputs, '',
+    '### Step 1 — confirm identity and authorization', '',
+    `Run \`npx rae-faang products show ${product.id} --format json\` and \`npx rae-faang research dossier ${product.id}\` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.`, '',
+    '### Step 2 — run the Reverse Engineer Anything framework', '',
+    'REA lives at <https://github.com/morluto/rea>. Use the framework’s own routing: browser surface → browser-scenario capture; supplied JavaScript/Electron/ASAR package → package analysis; native/mobile/firmware artifact → inventory then focused inspection; complete source repository with no shipped artifact question → ordinary repository analysis instead of REA.', '',
+    '**Tools that actually exist** (do not assume any of them are installed, and do not invent command names):', '',
+    '- **REA MCP tools**, when registered in your client: use the registered tool that matches the route above. List the available tools first; the catalog does not rename or wrap them.',
+    '- **REA CLI fallback**, only for an authorized local JavaScript tree or ASAR: `npx -y rea-agents@latest analyze-javascript-application /absolute/path/to/app --json`.',
+    `${capture ? `- **Browser surface, as recorded for this product:** provider \`rea-playwright-browser-scenario v1\`, target [${capture.url || product.official_url}](${capture.url || product.official_url}), captured ${md(capture.captured)}, evidence ${code(capture.id || 'not recorded')}. Reproduce it with the REA browser-scenario tool when registered; if the capability is unavailable, record the capture as blocked instead of substituting screenshots or guesses.` : '- **Browser surface:** no capture is recorded for this product. Use the REA browser-scenario tool when registered; otherwise record the capture as blocked.'}`,
+    '- If a required capability is unavailable, record the blocker and continue with supported evidence. Never install unrelated engines merely because a tool is missing.', '',
+    '**Recorded for every action:** target URL/artifact and version or commit, tool and version, start state, exact actions, timestamps, evidence IDs, and what was observed versus inferred. Never bypass authentication, access controls, rate limits or licensing; never decompile protected binaries or redistribute protected assets.', '',
+    '### Step 3 — write the evidence ledger', '',
+    'One row per claim in `FINDINGS.md`, using the classifications in section 14: `VERIFIED` (observed or documented within the exact scope), `CORROBORATED` (multiple compatible sources), `INFERRED` (reasoned, not established), `PROPOSED` (independent design or candidate), `UNKNOWN`, `CONFLICTED`. A URL is not evidence; a claim needs a location in the source, an access date and its scope limit.', '',
+    '### Step 4 — extract capabilities, workflows, states, limits and unknowns', '',
+    `Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: ${caps.length ? caps.map((cap) => code(featureId(product, cap.text))).join(', ') : 'no capability leads exist yet, so research them before planning'}.`, '',
+    '### Step 5 — decide the open-source foundation (mandatory gate)', '',
+    'Do not start building until section 9 records an explicit verdict: **REUSE**, **INTEGRATE**, **EXTEND**, **BUILD** or **INVESTIGATE MORE**. The verdict names the candidate (or none) and the evidence behind it. A curated candidate is a lead, never an approved foundation.', '',
+    '### Step 6 — turn findings into a plan', '',
+    '`PLAN.md` must carry: the agreed scope and non-goals; requirement IDs with their evidence/confidence; the foundation verdict and its obligations; architecture and data model labelled PROPOSED where they are your design; API/protocol contracts with authorization, errors, limits and idempotency; the test plan per requirement; and the explicit exclusion/unknown list. Anything still UNKNOWN stays blocked rather than guessed.', '',
+    '### Step 7 — build in the consumer project', '',
+    'Implement in the user’s repository with its stack, conventions and tests. Write original code and assets; do not copy proprietary source, protected assets, branding, copy text or assets you are not licensed to use. Match observable behavior and user-facing outcomes within the agreed scope — a functional equivalent, not a replica, and never a parity claim.', '',
+    '### Step 8 — verify and report', '',
+    'Run the project’s real checks and capture exit codes. Exercise the primary workflow plus the relevant failure, permission, cancellation and recovery paths through the interface the user will use. Report requirement → code → test evidence, everything partial, excluded or unknown, and every check not run. Do not weaken, skip or delete a failing check to make a result look green.', '',
+    '### Outputs expected', '', outputs, '',
+    '### Stop conditions', '',
+    '- Authorization, target identity or user scope is unclear → stop and ask.',
+    '- A capability, contract or data structure is still UNKNOWN → keep it blocked; do not infer it from category, marketing or competitor behavior.',
+    '- No foundation verdict is recorded → return to section 9; do not begin implementation.',
+    '- A required tool or surface is unavailable → record the blocker and report the reduced scope.', '',
+  ].join('\n');
+}
+
+function alternativesSection({ product, landscape, capture, caps }) {
+  const candidates = landscape.alternatives || [];
+  const verdicts = ['REUSE', 'INTEGRATE', 'EXTEND', 'BUILD', 'INVESTIGATE MORE'];
+  const allowed = (value) => verdicts.includes(String(value || '').toUpperCase().replaceAll('-', ' ')) ? String(value).toUpperCase().replaceAll('-', ' ') : null;
+  const header = [
+    '**Mandatory decision gate.** Identify real candidates, compare them against the findings from section 14, and record one explicit verdict before any implementation work. A curated candidate is a research lead; nothing here has been cloned, executed, license-audited or security-reviewed by the catalog compiler.', '',
+  ];
+  if (!candidates.length) {
+    return [
+      ...header,
+      '### 9.1 Candidate register', '',
+      'No candidate is recorded for this product in the curated landscape. That is a **research gap**, not evidence that no project exists — never state or imply that no open-source alternative exists.', '',
+      'Before building from scratch, run the search the catalog has not done: search for the user job and for each capability lead in section 2, inspect the exact repository and version, and record what you find with its license, activity and coverage. Candidates found at that point are added to the register below, not to the catalog.', '',
+      '### 9.2 Comparison against the REA findings', '',
+      '| Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |',
+      '|---|---|---|---|',
+      '| Every feature ID in section 2 | Not assessed | None — no candidate recorded | Full capability, unless your own search produces one |', '',
+      '### 9.3 Decision', '',
+      '**Current verdict: UNKNOWN / PENDING — INVESTIGATE MORE.** No verified foundation exists for this product, so reuse, integration and extension cannot be claimed and a fresh build is not yet justified either. Complete the search in 9.1, then record one of the five verdicts with the candidate name and the evidence behind it.', '',
+      decisionObligations(),
+    ].join('\n');
+  }
+  const rows = candidates.map((a) => {
+    const verdict = allowed(a.decision) || 'INVESTIGATE MORE';
+    return `| [${md(a.name)}](${a.url}) | ${a.repo ? `[repository](${a.repo})` : 'Not recorded; verify the canonical repository'} | ${md(a.license || 'Unknown')} (unverified) | ${md(a.covers || 'Not established')} | ${md(a.note || 'No limitation recorded')} | ${md(a.maintenance || 'Not recorded — verify last release, commit activity and open issues')} | ${md(a.compatibility || 'Not recorded — verify language, runtime, deployment and integration surface')} | **${verdict}** |`;
+  });
+  const primary = candidates[0];
+  const primaryVerdict = allowed(primary.decision) || 'INVESTIGATE MORE';
+  return [
+    ...header,
+    '### 9.1 Candidate register', '',
+    '| Candidate | Repository | License | Claimed coverage (unverified) | Limitations | Maintenance | Compatibility | Verdict |',
+    '|---|---|---|---|---|---|---|---|',
+    ...rows, '',
+    `Repository, license, maintenance and compatibility are catalog claims until you check them. Re-verify each against the exact version you would adopt; a README, a star count or this table is not proof.`, '',
+    '### 9.2 Comparison against the REA findings', '',
+    'Map every capability lead and requirement from sections 2 and 5 to what the candidate actually implements, and say what evidence supports the mapping. Where the catalog has no verified behavior, the comparison is a research task, not a conclusion:', '',
+    '| Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |',
+    '|---|---|---|---|',
+    ...caps.map((cap) => `| ${code(featureId(product, cap.text))} — ${md(cap.text)} | Not verified against ${md(primary.name)} | None yet${capture?.id ? `; compare with ${code(capture.id)}` : ''} | Candidate code path and tests must be inspected |`), '',
+    '### 9.3 Decision', '',
+    `**Current verdict: ${primaryVerdict}** — ${primaryVerdict === 'INVESTIGATE MORE' ? `the first candidate to audit is **${md(primary.name)}** (${md(primary.covers || 'coverage not established')}), and no candidate has been verified yet.` : `recorded for **${md(primary.name)}**; keep the evidence that justifies it with the ledger.`}`, '',
+    'Provisional routing for this product, to be confirmed by that audit:', '',
+    `- If **${md(primary.name)}** implements the core capability leads with a compatible license and maintainable code → **REUSE** it as the foundation.`,
+    `- If it covers only part of the scope, or would need to run beside the user’s existing system → **INTEGRATE** it behind a defined boundary, or **EXTEND** it with original modules where its extension points allow it.`,
+    '- If no candidate survives inspection → **BUILD** an independent implementation, and record which candidates failed and why.',
+    '- If the evidence is still insufficient → **INVESTIGATE MORE**, naming the exact question, source and check that would settle it.', '',
+    decisionObligations(),
+  ].join('\n');
+}
+
+function decisionObligations() {
+  return [
+    '### 9.4 What each verdict obliges', '',
+    '| Verdict | You must have | It commits you to |',
+    '|---|---|---|',
+    '| **REUSE** | The candidate implements the in-scope capability leads; license and dependencies checked against the user’s distribution model; version pinned; tests/CI reviewed | Adopt it as the foundation, keep its license notices, and document the upstream version and update path |',
+    '| **INTEGRATE** | A verified boundary: API/protocol, data ownership, failure and upgrade behavior, plus a license review of both sides | Run the candidate beside the user’s system through an explicit contract; test the boundary and its failure modes |',
+    '| **EXTEND** | Documented extension points, an upstream contribution or fork policy, and a migration path for local changes | Add original modules on top of the candidate; record what is upstream versus local and how it survives updates |',
+    '| **BUILD** | The candidates that were searched, inspected and rejected, with reasons; the evidenced scope; a test plan | Build independently with original code and assets, reusing only libraries whose licenses permit it |',
+    '| **INVESTIGATE MORE** | The exact open question, the source or tool that answers it, and the date by which it must be answered | Do not implement the affected scope yet; resolve or explicitly block it first |', '',
+    '**No verified alternative is a valid outcome**: mark the coverage UNKNOWN / PENDING, say what you searched and what you inspected, and let the verdict be INVESTIGATE MORE or BUILD. Absence of evidence in this catalog is never evidence of absence.', '',
+  ].join('\n');
+}
+
 function renderSkill({ product, company, research, capture, landscape, caps, sources }) {
   const byId = new Map(sources.map((item) => [item.id, item]));
   const trace = reqsAndTests(product, caps, byId);
@@ -197,7 +327,6 @@ function renderSkill({ product, company, research, capture, landscape, caps, sou
   const controls = capture?.observed.controls || [];
   const workflowList = caps.length ? caps.map((cap) => `- **${md(cap.text)}:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.`).join('\n') : 'No capability-backed critical workflows are recorded; research before specifying.';
   const list = (items) => items.length ? items.map((x) => code(md(x))).join(', ') : 'Not recorded';
-  const altRows = (landscape.alternatives || []).map((a) => `| [${md(a.name)}](${a.url}) | ${a.repo ? `[Repository](${a.repo})` : 'Not recorded'} | ${md(a.license || 'Unknown')} (unverified) | ${md(a.covers || 'Not established')} | ${md(a.note || 'No limitation recorded')} | Proposed evaluation lead; no verified foundation |`).join('\n');
   const securityFocus = {
     messaging: 'Never invent cryptography; use an established audited protocol/library and review key/device/membership changes.',
     storage: 'Verify tenant isolation, object access, integrity, retention, deletion and backup/restore.',
@@ -215,6 +344,8 @@ function renderSkill({ product, company, research, capture, landscape, caps, sou
     `> This is the coding-agent build skill for **${md(product.name)}**. Give this file to your coding agent in the project where you want the product built.`, '',
     '## Product description', '',
     `This is the coding-agent skill for **${md(product.name)}** (${code(product.id)}). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.`, '',
+    `**Same file, three ways to get it:** download or copy \`catalog/skills/${product.company_id}/${product.id}.md\` from the catalog page, or run \`npx rae-faang ${product.id} --out ./${product.id}.md\`, \`npx rae-faang skills generate ${product.id}\` or \`npx rae-faang build agent-kit ${product.id} --out ./${product.id}-agent\`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.`, '',
+    operatingProcedure({ product, capture, landscape, caps }), '',
     '## 1. Product identity and scope', '', identity(product, company), '',
     `Research lens: **${product.product_type}** — verify real users/jobs, complete lifecycles, platform/version support, permissions, persistence, failure and recovery behavior. Product type is a question prompt, not evidence of features.`, '',
     '## 2. Product capability map', '', capabilitySection(product, caps, byId), '',
@@ -241,8 +372,7 @@ function renderSkill({ product, company, research, capture, landscape, caps, sou
     '```mermaid', 'flowchart LR', '  UI[Interface] --> APP[Application and domain boundary]', '  APP --> DB[(Persistence if needed)]', '  APP --> EXT[Authorized integrations if needed]', '```', '',
     'Separate interface/domain/persistence/integration boundaries. Enforce access at trusted boundaries, isolate tenants where relevant, and define timeout/partial failure behavior. Add queues/caches/scaling/deployment components only when requirements justify them. Record configuration, secrets, data flow, recovery, observability and deployment assumptions in the implementation project.', '',
     '## 9. Open-source foundation and dependency strategy', '',
-    landscape.alternatives?.length ? '**Decision: candidates are PROPOSED for evaluation, not approved foundations.** Verify repository/version, license and dependency terms, actual code/modules, extension points, tests/CI, maintenance, security, deployment and integration cost. Map each requirement to actual code and test evidence; README claims and popularity are not proof.' : '**Decision:** no suitable project verified in the current catalog. This is a research gap, not proof no candidate exists. Search by user job before a fresh build.', '',
-    landscape.alternatives?.length ? ['| Candidate | Repository | Catalog license (unverified) | Claimed coverage (unverified) | Limitation | Decision |', '|---|---|---|---|---|---|', altRows, '', 'No candidate has been independently cloned, executed, license-reviewed or security-reviewed by this generator.'].join('\n') : '',
+    alternativesSection({ product, landscape, capture, caps }), '',
     '## 10. Security and privacy', '',
     'No product-specific security/privacy controls are verified by current evidence. Proposed independent controls: authenticate/authorize state changes server-side; validate inputs; protect secrets; apply least privilege and suitable abuse/rate controls; minimize data; define consent, retention, export/delete, backup/restore; keep sensitive payloads out of logs; handle external trust boundaries/timeouts/retries; test cross-user access, malformed inputs, leaks, abuse and recovery.', '',
     `Product-specific review: ${securityFocus} Do not claim compliance, privacy or security parity without scoped assessment.`, '',
@@ -328,6 +458,10 @@ export function validateSkillText(markdown, { product = null, knownEvidenceIds =
     if (!markdown.includes(`${code(req)} → ${code(expected)}`)) errors.push(`${req} lacks requirement-to-test trace`);
   }
   for (const classification of CLASSIFICATIONS) if (!markdown?.includes(classification)) errors.push(`missing evidence classification ${classification}`);
+  if (!markdown?.includes('## Operating procedure')) errors.push('missing operating procedure section');
+  if (!markdown?.includes('rea-agents@latest analyze-javascript-application')) errors.push('missing real REA CLI invocation');
+  for (const verdict of ['REUSE', 'INTEGRATE', 'EXTEND', 'BUILD', 'INVESTIGATE MORE']) if (!markdown?.includes(`**${verdict}**`)) errors.push(`missing foundation verdict ${verdict}`);
+  if (product && !markdown?.includes(`npx rae-faang ${product.id} --out ./${product.id}.md`)) errors.push(`missing CLI generation command for ${product.id}`);
   if (knownEvidenceIds) for (const [, id] of markdown.matchAll(/\[\[evidence:([^\]]+)\]\]/g)) if (!knownEvidenceIds.has(id)) errors.push(`invalid evidence reference ${id}`);
   if (product && !markdown?.includes(code(product.id))) errors.push(`stable product ID ${product.id} is missing`);
   if (!markdown?.includes('Resumable investigation checkpoint')) errors.push('missing investigation checkpoint');

@@ -7,13 +7,13 @@ Browser capture of the public web surface of Google Calendar, recorded with REA.
 | Product | Google Calendar (`google-calendar`) |
 | Company | Google |
 | Target | https://calendar.google.com/ |
-| Resolved URL | https://accounts.google.com/v3/signin/identifier?continue=https://calendar.google.com/calendar/u/0/r&emr=1&followup=https://calendar.google.com/calendar/u/0/r&osid=1&passive=1209600&service=cl&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-550254256:1791949996953618 |
+| Resolved URL | https://accounts.google.com/v3/signin/identifier?continue=https://calendar.google.com/calendar/u/0/r&emr=1&followup=https://calendar.google.com/calendar/u/0/r&osid=1&passive=1209600&service=cl&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-1776550570:1793669822556014 |
 | Page title | Sign in |
-| Captured | 2026-10-14T03:53:20.132Z |
+| Captured | 2026-11-03T01:37:05.724Z |
 | Status | captured |
-| REA Evidence ID | `ev_22491da4b8ee32911e42071185c333c187cc290b58aa3c332805979aa4e60ddf` |
+| REA Evidence ID | `ev_a8267b1453cbd69b6a47b374afeaed2f0b5f99d95dce5f0dad7262be94d1d0ad` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -63,9 +63,9 @@ access control is bypassed.
 
 ### Links
 
-- [Forgot email?](/signin/usernamerecovery?continue=https://calendar.google.com/calendar/u/0/r&dsh=S-550254256:1791949996953618&emr=1&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://calendar.google.com/calendar/u/0/r&osid=1&service=cl)
+- [Forgot email?](/signin/usernamerecovery?continue=https://calendar.google.com/calendar/u/0/r&dsh=S-1776550570:1793669822556014&emr=1&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://calendar.google.com/calendar/u/0/r&osid=1&service=cl)
 - [Learn more about using Guest mode (external, opens in a new window)](https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US)
-- [Create account](/lifecycle/flows/signup?continue=https://calendar.google.com/calendar/u/0/r&dsh=S-550254256:1791949996953618&emr=1&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://calendar.google.com/calendar/u/0/r&osid=1&service=cl)
+- [Create account](/lifecycle/flows/signup?continue=https://calendar.google.com/calendar/u/0/r&dsh=S-1776550570:1793669822556014&emr=1&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://calendar.google.com/calendar/u/0/r&osid=1&service=cl)
 - [Open Google Account Help Center (external, opens in a new window)](https://support.google.com/accounts?hl=en-US&p=account_iph)
 - [Privacy Policy (external, opens in a new window)](https://accounts.google.com/TOS?loc=US&hl=en-US&privacy=true)
 - [Google Terms of Service (external, opens in a new window)](https://accounts.google.com/TOS?loc=US&hl=en-US)
@@ -78,9 +78,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -88,6 +88,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/google-calendar.json`
-- Evidence ID: `ev_22491da4b8ee32911e42071185c333c187cc290b58aa3c332805979aa4e60ddf`
-- Accessibility outline: 4325 bytes
+- Evidence ID: `ev_a8267b1453cbd69b6a47b374afeaed2f0b5f99d95dce5f0dad7262be94d1d0ad`
+- Accessibility outline: 4327 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

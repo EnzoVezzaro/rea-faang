@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_064601d5f93f5cfc8c54e241fabf59232c88b98356c9a556cc9da7ea94f983ad",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://azure.microsoft.com/en-us",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "63750734c1ea5d72ba80dbb08c7df67ae82abfbe310221e4d959a2fe7d454331"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://azure.microsoft.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 13604,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 10701,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://azure.microsoft.com/en-us",
+          "origin": "https://azure.microsoft.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2590,
+        "before_url": {
+          "url": "https://azure.microsoft.com/en-us",
+          "origin": "https://azure.microsoft.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://azure.microsoft.com/en-us",
+          "origin": "https://azure.microsoft.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "59de9a761fca6c7662da4328cf1cf05935279de879f803a2c40bfe4c5184448b",
+              "bytes": 22489,
+              "text": "- document:\n  - link \"Skip to main content\":\n    - /url: \"#mainContent\"\n  - banner:\n    - link \"Microsoft\":\n      - /url: https://www.microsoft.com\n      - img \"Microsoft\"\n    - link \"Azure\":\n      - /url: https://azure.microsoft.com/en-us\n    - navigation \"Contextual menu\":\n      - button \"Explore \"\n      - button \"Products \"\n      - button \"Solutions \"\n      - button \"More \"\n    - button \"Search Azure\": \n    - status\n    - link \"Learn\":\n      - /url: https://learn.microsoft.com/azure\n    - link \"Support\":\n      - /url: https://azure.microsoft.com/en-us/support/\n    - link \"Contact Sales\":\n      - /url: https://azure.microsoft.com/en-us/contact\n    - link \"Get started with Azure\":\n      - /url: https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account\n    - link \"Sign in\":\n      - /url: https://portal.azure.com/\n  - main:\n    - text: AZURE. YOUR INTELLIGENT CLOUD.\n    - heading \"Turn four days at Microsoft Ignite into Azure value that lasts\" [level=1]\n    - text: Find Azure sessions that match your priorities, build your schedule, and get expert guidance to pressure-test your strategy and move plans forward.\n    - 'link \"Get started with Azure: Build in the cloud with an Azure account\"':\n      - /url: https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account\n      - text: Get started with Azure\n    - link \"Register now for Microsoft Ignite\":\n      - /url: https://go.microsoft.com/fwlink/?LinkId=2385239&clcid=0x409\n      - text: Register now\n    - navigation \"In page quick links\":\n      - list:\n        - listitem:\n          - link \"Featured news\":\n            - /url: \"#featured-news\"\n        - listitem:\n          - link \"Solutions\":\n            - /url: \"#solutions\"\n        - listitem:\n          - link \"Products and services\":\n            - /url: \"#products-and-services\"\n        - listitem:\n          - link \"Resources by role\":\n            - /url: \"#resources-by-role\"\n        - listitem:\n          - link \"Customer stories\":\n            - /url: \"#customer-stories\"\n      - 'link \"Get started with Azure: Build in the cloud with an Azure account\"':\n        - /url: https://azure.microsoft.com/en-us/free\n        - text: Get started with Azure\n    - heading \"Ask Microsoft\" [level=2]\n    - text: Need help finding a product or solution? Try Ask Microsoft.\n    - search:\n      - searchbox \"Ask a question about Azure.\"\n      - button \"Submit\" [disabled]\n      - list:\n        - listitem:\n          - 'button \"How can I try Azure? : Ask Microsoft a work question or make a request\"': How can I try Azure?\n        - listitem:\n          - 'button \"How will Microsoft Foundry help my business? : Ask Microsoft a work question or make a request\"': How will Microsoft Foundry help my business?\n    - text: FEATURED NEWS\n    - heading \"Discover what’s happening on Azure\" [level=2]\n    - heading \"Azure SQL Database performance in a single view\" [level=3]\n    - text: New performance monitoring brings database signals and diagnostics together.\n    - 'link \"Read the blog ⁠: Performance monitoring for Azure SQL in Database Hub\"':\n      - /url: https://go.microsoft.com/fwlink/?LinkId=2383611&clcid=0x409\n      - text: Read the blog ⁠\n    - heading \"Scale AI apps on AKS with open-source frameworks like Ray, vLLM, and KAITO\" [level=3]\n    - text: New capabilities for mission-critical AI apps with open flexibility and Azure reliability.\n    - link \"Learn more about kubernetes service\":\n      - /url: https://azure.microsoft.com/en-us/products/kubernetes-service\n      - text: Learn more\n    - text: Accelerate AI with greater control, choice, and scale Explore Sovereign AI innovations across public cloud, private cloud, and partner solutions.\n    - link \"Read the blog about Sovereign AI innovations across public cloud, private cloud, and partner solutions.\":\n      - /url: https://go.microsoft.com/fwlink/?LinkId=2383431&clcid=0x409\n      - text: Read the blog\n    - text: SOLUTIONS\n    - heading \"Find solutions for putting your ideas into action\" [level=2]\n    - tablist:\n      - tab \"Featured Solutions\" [selected]\n      - tab \"Modernization\"\n      - tab \"Data transformation\"\n      - tab \"App development\"\n      - tab \"AI\"\n    - tabpanel:\n      - list:\n        - listitem:\n          - button \" Application and data modernization\" [expanded]:\n            - text: \n            - heading \"Application and data modernization\" [level=3]\n          - text: Unify IT and developer workflows with Azure Copilot and GitHub Copilot.\n          - link \"Discover agentic tools - Learn about modernizing applications and databases with Azure solutions.\":\n            - /url: https://azure.microsoft.com/en-us/solutions/application-and-database-modernization/\n            - text: Discover agentic tools\n          - img \"A women typing on a keyboard.\"\n        - listitem:\n          - button \" Azure AI apps and agents\":\n            - text: \n            - heading \"Azure AI apps and agents\" [level=3]\n        - listitem:\n          - button \" Cloud databases\":\n            - text: \n            - heading \"Cloud databases\" [level=3]\n        - listitem:\n          - button \" Data platform for AI\":\n            - text: \n            - heading \"Data platform for AI\" [level=3]\n        - listitem:\n          - button \" Azure AI infrastructure\":\n            - text: \n            - heading \"Azure AI infrastructure\" [level=3]\n    - link \"Back to tabs\":\n      - /url: \"#pill-bar-solutions_tab0-tab\"\n    - link \"View all solutions (40 plus) of Azure Cloud\":\n      - /url: https://azure.microsoft.com/en-us/solutions/\n      - text: View all solutions (40+)\n    - text: Products and Services\n    - heading \"Explore tools for bringing your vision to life\" [level=2]\n    - tablist:\n      - tab \"Featured\" [selected]\n      - tab \"AI + machine learning\"\n      - tab \"App development\"\n      - tab \"Compute\"\n      - tab \"Databases + analytics\"\n      - tab \"Hybrid + multicloud\"\n    - tabpanel:\n      - heading \"Microsoft Foundry\" [level=3]\n      - text: Build, evaluate, and deploy generative AI solutions and custom agents.\n      - link \"Explore the product - Discover AI Foundry tools and solutions on Microsoft Azure.\":\n        - /url: https://azure.microsoft.com/en-us/products/ai-foundry\n        - text: Explore the product\n      - heading \"Microsoft Fabric\" [level=4]\n      - text: Unify your teams and data to accelerate AI innovation with a complete data platform.\n      - link \"Explore the product- Microsoft Fabric's data analytics and integration features.\":\n        - /url: https://www.microsoft.com/en-us/microsoft-fabric\n        - text: Explore the product\n      - heading \"Microsoft IQ\" [level=4]\n      - text: Connect agents securely to your systems, data, and workflows so they reason and act with your business context.\n      - 'link \"Explore the product: Foundry Models\"':\n        - /url: https://www.microsoft.com/en-us/ai/microsoft-iq\n        - text: Explore the product\n      - heading \"Visual Studio Code\" [level=4]\n      - text: Get a powerful, lightweight, free code editor with integrated tools to develop, debug, and deploy all from one place.\n      - link \"Explore the product - Visual Studio Code features, benefits, and developer tools\":\n        - /url: https://azure.microsoft.com/en-us/products/visual-studio-code\n        - text: Explore the product\n      - heading \"Azure Kubernetes Service (AKS)\" [level=4]\n      - text: Build and scale apps with managed Kubernetes.\n      - link \"Explore the product - Azure Kubernetes Service features, benefits, and container management solutions.\":\n        - /url: https://azure.microsoft.com/en-us/products/kubernetes-service/\n        - text: Explore the product\n      - heading \"GitHub Copilot\" [level=4]\n      - text: Increase software development velocity and inspire continuous innovation.\n      - link \"Explore the product - GitHub Copilot, an AI-powered coding assistant by Microsoft Azure.\":\n        - /url: https://azure.microsoft.com/en-us/products/github/Copilot\n        - text: Explore the product\n      - heading \"Azure HorizonDBPREVIEW\" [level=4]:\n        - text: Azure HorizonDB\n        - superscript: PREVIEW\n      - text: Build and scale mission-critical applications on a new PostgreSQL cloud database service.\n      - link \"Explore the product - Azure HorizonDBPREVIEW\":\n        - /url: https://azure.microsoft.com/en-us/products/horizondb\n        - text: Explore the product\n    - link \"Back to tabs\":\n      - /url: \"#pill-bar-products_tab0-tab\"\n    - link \"See all products (200+) of Azure cloud services\":\n      - /url: https://azure.microsoft.com/en-us/products/\n      - text: See all products (200+)\n    - text: RESOURCES BY ROLE\n    - heading \"Transform the way you work\" [level=2]\n    - tablist:\n      - tab \"IT professionals\" [selected]\n      - tab \"Developers\"\n      - tab \"Data analysts\"\n      - tab \"Business leaders\"\n      - tab \"Startups\"\n      - tab \"Students\"\n    - tabpanel:\n      - text: Optimize your infrastructure with popular Azure solutions and services.\n      - link \"Explore migration solutions - Learn more about Azure solutions for migration, innovation, and digital transformation strategies.\":\n        - /url: https://azure.microsoft.com/en-us/solutions/migrate-to-innovate\n        - text: Explore migration solutions\n    - link \"Back to tabs\":\n      - /url: \"#tabs-resourcesbyrole_tab0-tab\"\n    - heading \"Global infrastructure designed to support the world’s most advanced AI\" [level=2]\n    - text: From datacenters to silicon, Azure delivers infrastructure at global scale with more regions than any other cloud provider. Our silicon to systems approach, optimizing every layer of the infrastructure, allows Azure to deliver performance and efficiency to meet your need.\n    - 'link \"Explore the globe: Azure global infrastructure\"':\n      - /url: https://azure.microsoft.com/en-us/explore/global-infrastructure\n      - text: Explore the globe\n    - 'link \"Discover our purpose-built infrastructure: Explore Azure infrastructure from silicon to systems.\"':\n      - /url: https://azure.microsoft.com/en-us/explore/global-infrastructure/silicon-systems\n      - text: Discover our purpose-built infrastructure\n    - text: Customer Stories\n    - heading \"See how customers are innovating with Azure\" [level=2]\n    - link \"View all stories about Microsoft Azure customer success and solutions across industries.\":\n      - /url: https://www.microsoft.com/en-us/customers/search?filters=product%3Aazure\n      - text: View all stories\n    - region \"Customer Stories section\":\n      - text: previous\n      - list:\n        - listitem:\n          - button \"Slide 1 Levi Strauss & Co. simplifies work and accelerates decision-making with Microsoft Foundry current slide\":\n            - img \"Levi Strauss and Co\"\n            - text: Slide 1\n        - listitem:\n          - button \"Slide 2 Replit and Microsoft Azure enable enterprise software building for every Hexaware employee\":\n            - img \"Replit\"\n            - text: Slide 1\n        - listitem:\n          - button \"Slide 3 Premier League drives deep fan connection with Microsoft Foundry and Azure Cosmos DB\":\n            - img \"Premier League\"\n            - text: Slide 1\n        - listitem:\n          - button \"Slide 4 August AI enriches patient care with AI health companion powered by Microsoft Azure\":\n            - img \"August AI\"\n            - text: Slide 1\n        - listitem:\n          - button \"Slide 5 Ecolab embraces agentic AI and streamlines root-cause analysis with Azure SRE Agent\":\n            - img \"Ecolab\"\n            - text: Slide 1\n      - group \"Slide 1 of 6\":\n        - img \"Levi Strauss and Co\"\n        - heading \"Levi Strauss & Co. simplifies work and accelerates decision-making with Microsoft Foundry\" [level=4]\n        - paragraph: Levi Strauss & Co. builds a unified Super Agent with Microsoft Azure AI Foundry to reduce complexity, accelerate work, and deliver better fan experiences.\n        - text: Products\n        - list:\n          - listitem:\n            - img \"Microsoft Foundry\"\n            - link \"Microsoft Foundry\":\n              - /url: https://go.microsoft.com/fwlink/?linkid=2288830\n          - listitem:\n            - img \"GitHub Copilot\"\n            - link \"GitHub Copilot\":\n              - /url: https://go.microsoft.com/fwlink/?linkid=2288905\n          - listitem:\n            - img \"Azure Functions\"\n            - link \"Azure Functions\":\n              - /url: https://go.microsoft.com/fwlink/?linkid=2288702\n        - link \"Read the story Levi Strauss & Co. simplifies work and accelerates decision-making with Microsoft Foundry\":\n          - /url: https://www.microsoft.com/en/customers/story/26647-levi-strauss-and-co-microsoft-foundry\n          - text: Read the story\n      - link \"Back to Customer Stories section\":\n        - /url: javascript:void(0);\n    - heading \"Take the next step\" [level=2]\n    - img \"A man holding a cup and using a laptop.\"\n    - heading \"Choose the Azure account that’s right for you\" [level=3]\n    - text: Pay as you go or try Azure for free for up to 30 days.\n    - link \"Get started with Azure - Try Azure for free of Build in the cloud with an Azure free account\":\n      - /url: https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account\n      - text: Get started with Azure\n    - img \"A man wearing glasses looking at a computer.\"\n    - heading \"Connect with a sales specialist\" [level=3]\n    - text: Chat with or call a sales specialist for personalized guidance.\n    - link \"Get in Touch with azure sales\":\n      - /url: https://azure.microsoft.com/en-us/contact/\n      - text: Get in touch\n    - img \"A man and woman looking at a laptop.\"\n    - heading \"New to Azure? Learn at your own pace.\" [level=3]\n    - text: Learn cloud computing basics with self-paced modules on Microsoft Learn.\n    - 'link \"Get Started with Microsoft Azure Fundamentals: Describe cloud concepts\"':\n      - /url: https://go.microsoft.com/fwlink/?linkid=2300282&clcid=0x409\n      - text: Get started\n    - link \"Explore Azure Portal - Build, deploy, and optimize resources centrally for your Azure account from cloud to edge with an intelligent and intuitive portal for fast and efficient operations.\":\n      - /url: https://azure.microsoft.com/get-started/azure-portal\n      - text: Explore Azure Portal\n    - region \"Social media to follow\":\n      - list:\n        - listitem:\n          - link \"follow Microsoft Azure on twitter\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2275431\n            - img \"X\"\n        - listitem:\n          - link \"follow Microsoft Azure on Instagram\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2301856\n            - img \"Instagram\"\n        - listitem:\n          - link \"follow Microsoft Azure on LinkedIn\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2268687\n            - img \"LinkedIn\"\n        - listitem:\n          - link \"follow Microsoft Azure on YouTube\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2239941\n            - img \"YouTube\"\n  - contentinfo:\n    - navigation \"Footer Resource links\":\n      - heading \"Explore Azure\" [level=2]\n      - list:\n        - listitem:\n          - link \"What is Azure?\":\n            - /url: https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-azure/\n        - listitem:\n          - link \"Get started with Azure\":\n            - /url: https://azure.microsoft.com/en-us/get-started/\n        - listitem:\n          - link \"Global infrastructure\":\n            - /url: https://azure.microsoft.com/en-us/explore/global-infrastructure/\n        - listitem:\n          - link \"Datacenter regions\":\n            - /url: https://azure.microsoft.com/en-us/explore/global-infrastructure/geographies/\n        - listitem:\n          - link \"Trust your cloud\":\n            - /url: https://azure.microsoft.com/en-us/explore/trusted-cloud/\n        - listitem:\n          - link \"Azure Essentials\":\n            - /url: https://azure.microsoft.com/en-us/solutions/azure-essentials\n        - listitem:\n          - link \"Customer stories\":\n            - /url: https://www.microsoft.com/en-us/customers/search?filters=product%3Aazure\n      - heading \"Products and pricing\" [level=2]\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: https://azure.microsoft.com/en-us/products/\n        - listitem:\n          - link \"Azure pricing\":\n            - /url: https://azure.microsoft.com/en-us/pricing/\n        - listitem:\n          - link \"Free Azure services\":\n            - /url: https://azure.microsoft.com/en-us/pricing/free-services/\n        - listitem:\n          - link \"Flexible purchase options\":\n            - /url: https://azure.microsoft.com/en-us/pricing/purchase-options/\n        - listitem:\n          - link \"FinOps on Azure\":\n            - /url: https://azure.microsoft.com/en-us/solutions/finops/\n        - listitem:\n          - link \"Maximize ROI from AI\":\n            - /url: https://azure.microsoft.com/en-us/solutions/maximize-roi-from-ai\n      - heading \"Solutions and support\" [level=2]\n      - list:\n        - listitem:\n          - link \"Solutions\":\n            - /url: https://azure.microsoft.com/en-us/solutions/\n        - listitem:\n          - link \"Resources for accelerating growth\":\n            - /url: https://azure.microsoft.com/en-us/solutions/turn-your-vision-into-impact-with-azure/\n        - listitem:\n          - link \"Solution architectures\":\n            - /url: https://learn.microsoft.com/azure/architecture/browse/\n        - listitem:\n          - link \"Support\":\n            - /url: https://azure.microsoft.com/en-us/support/\n        - listitem:\n          - link \"Azure demo and live Q&A\":\n            - /url: https://azure.microsoft.com/en-us/get-started/welcome-to-azure/\n      - heading \"Partners\" [level=2]\n      - list:\n        - listitem:\n          - link \"Software Development Companies\":\n            - /url: https://www.microsoft.com/en-us/software-development-companies\n        - listitem:\n          - link \"Microsoft Marketplace\":\n            - /url: https://marketplace.microsoft.com/en-us/\n        - listitem:\n          - link \"Find a partner\":\n            - /url: https://azure.microsoft.com/en-us/partners/\n      - heading \"Resources\" [level=2]\n      - list:\n        - listitem:\n          - link \"Documentation\":\n            - /url: https://learn.microsoft.com/en-us/azure/\n        - listitem:\n          - link \"Blog\":\n            - /url: https://azure.microsoft.com/en-us/blog/\n        - listitem:\n          - link \"Developer resources\":\n            - /url: https://azure.microsoft.com/en-us/resources/developers/\n        - listitem:\n          - link \"Students\":\n            - /url: https://azure.microsoft.com/en-us/resources/students/\n        - listitem:\n          - link \"Events and Webinars\":\n            - /url: https://azure.microsoft.com/en-us/resources/events/\n        - listitem:\n          - link \"Analyst reports, white papers, and e-books\":\n            - /url: https://azure.microsoft.com/en-us/resources/research/\n        - listitem:\n          - link \"Videos\":\n            - /url: https://azure.microsoft.com/en-us/resources/videos\n      - heading \"Cloud computing\" [level=2]\n      - list:\n        - listitem:\n          - link \"What is cloud computing?\":\n            - /url: https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing/\n        - listitem:\n          - link \"What is multicloud?\":\n            - /url: https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-multi-cloud\n        - listitem:\n          - link \"What is machine learning?\":\n            - /url: https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-machine-learning-platform\n        - listitem:\n          - link \"What is deep learning?\":\n            - /url: https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-deep-learning\n        - listitem:\n          - link \"What is AIaaS?\":\n            - /url: https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-aiaas\n        - listitem:\n          - link \"What are LLMs?\":\n            - /url: https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-are-large-language-models-llms\n        - listitem:\n          - link \"What is a container?\":\n            - /url: https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-a-container\n        - listitem:\n          - link \"What is RAG?\":\n            - /url: https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-retrieval-augmented-generation-rag\n    - text: \n    - link \"Content Language Selector. Currently set to English (United States)\":\n      - /url: https://azure.microsoft.com/en-us/locale\n      - text: English (United States)\n    - link \"Your Privacy Choices Opt-Out Icon Your Privacy Choices\":\n      - /url: https://aka.ms/yourcaliforniaprivacychoices\n      - img \"Your Privacy Choices Opt-Out Icon\"\n      - text: Your Privacy Choices\n    - link \"Consumer Health Privacy\":\n      - /url: https://go.microsoft.com/fwlink/?linkid=2259814\n    - navigation \"Microsoft corporate links\":\n      - list:\n        - listitem:\n          - link \"Sitemap\":\n            - /url: https://www.microsoft.com/en-us/sitemap1.aspx\n        - listitem:\n          - link \"Contact Microsoft\":\n            - /url: https://support.microsoft.com/contactus\n        - listitem:\n          - link \"Privacy\":\n            - /url: https://go.microsoft.com/fwlink/?LinkId=521839\n        - listitem:\n          - link \"Terms of use\":\n            - /url: https://go.microsoft.com/fwlink/?LinkID=206977\n        - listitem:\n          - link \"Trademarks\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2196228\n        - listitem:\n          - link \"Safety & eco\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2196227\n        - listitem:\n          - link \"Recycling\":\n            - /url: https://www.microsoft.com/en-us/legal/compliance/recycling\n        - listitem:\n          - link \"About our ads\":\n            - /url: https://choice.microsoft.com\n        - listitem: © Microsoft 2026\n  - button \"Open Ask Microsoft web assistant\":\n    - text: Ask Microsoft\n    - button \"Chat dialog Collapsed. Click to expand Ask Microsoft chat dialog.\"\n  - dialog \"Web Assistant\": Ask questions or make requests to the web AI assistant. Use the text input at the bottom to send messages."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://azure.microsoft.com/en-us",
+              "origin": "https://azure.microsoft.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

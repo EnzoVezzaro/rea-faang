@@ -1,0 +1,70 @@
+{
+  "taskId": "task_mvzmo2hp_9gnzxx",
+  "attempt": 1,
+  "from": "primary-documenter",
+  "status": "complete",
+  "committed": false,
+  "summary": "Documented the verified ACE environment facts: worker-model routing (probe before delegating, free-only rule, route show vs crew discrepancy), the pinned-config-check pitfall caused by a stale global ace binary, and switched the release checklist to npm run ace -- config check.",
+  "changed_files": [
+    "docs/agent-workflow.md",
+    "docs/getting-started.md",
+    "docs/release-process.md",
+    "site/docs/agent-workflow.html",
+    "site/docs/getting-started.html",
+    "site/docs/release-process.html"
+  ],
+  "commands": [
+    {
+      "command": "npm run site:build",
+      "exitCode": 0,
+      "duration": 562
+    },
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "duration": 4082
+    },
+    {
+      "command": "npm run validate",
+      "exitCode": 0,
+      "duration": 1273
+    },
+    {
+      "command": "npm run ace -- config check",
+      "exitCode": 0,
+      "duration": 900
+    },
+    {
+      "command": "opencode run -m opencode/fledge-alpha-free \"Reply with exactly: OK\"",
+      "exitCode": 1,
+      "duration": 327
+    },
+    {
+      "command": "opencode run -m opencode/deepseek-v4.1-flash-free \"Reply with exactly: OK\"",
+      "exitCode": 1,
+      "duration": 1152
+    },
+    {
+      "command": "opencode run -m nvidia/deepseek-ai/deepseek-v4.1-flash \"Reply with exactly: OK\"",
+      "exitCode": 0,
+      "duration": 149746
+    }
+  ],
+  "checksNotRun": [
+    "No worker was spawned to prove that a route change is honoured on spawn; the model probe proves provider availability, not crew wiring.",
+    "No paid model and no Codex runtime were used, per the task constraints.",
+    "Nothing was published, deployed or committed."
+  ],
+  "decisions": [
+    "The docs describe the procedure (list, probe, set) rather than naming a model as the project default, so the guidance does not rot when free model names change.",
+    "The observed crew-vs-route-show disagreement is documented as unverified rather than asserted as a rule, because a spawn was not observed after the route change.",
+    "Routes for governor, supervisor and all seven worker roles were set to the verified free NVIDIA DeepSeek route; this is local .ace runtime state, untracked by git, and reversible with ace route set."
+  ],
+  "risks": [
+    "The verified free route is slow (about 150 s for a one-word reply), so parallel workers would be minutes per turn; the work in this session was executed by the supervisor instead of delegating.",
+    "The global ace binary at ~/.local/bin/ace is an older snapshot that fails config check on the committed proagents handoff provider; anyone using it will see a false INCOMPATIBLE_ADAPTER.",
+    "docs/agent-workflow.md#worker-models describes behaviour of the pinned ace-proagents 0.1.4 only."
+  ],
+  "recommendedNextAction": "Spawn one worker on the NVIDIA DeepSeek route for a trivial task and record whether the spawn uses the route set in .ace, so the documented discrepancy can be resolved with evidence.",
+  "completedAt": "2026-11-02T19:04:56Z"
+}

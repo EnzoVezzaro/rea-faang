@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_3feba79b413a7346487bcb5ab785804d71eb56aad000bc5b1ee628a587934d5c",
+  "evidence_id": "ev_a88368bcedb1e5f3e1f141985640f3408b73a1c23962974901b9d2661c75e22e",
   "subject": null,
   "provider": {
     "id": "rea-playwright-browser-scenario",
@@ -55,9 +55,19 @@
         "request_body": false,
         "response_body": false,
         "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "scenario_sha256": "6a9eefc4fb479125ac464ddf0a5fc1e241841d084131232dd0c8b3cb87ed29dd"
+    "scenario_sha256": "526d6ed0b9a9148fcf5bd305764eeb606c45559326d059421b7bbb302e0e235a"
   },
   "raw_result": null,
   "normalized_result": {
@@ -66,7 +76,7 @@
       "process_ownership": "provider-owned",
       "cleanup": "terminated-owned-process",
       "product": "Chromium",
-      "version": "155.0.8059.40"
+      "version": "156.0.8078.80"
     },
     "scenario": {
       "start_origin": "https://maps.google.com",
@@ -76,15 +86,26 @@
         "request_body": false,
         "response_body": false,
         "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "duration_ms": 5844,
+    "duration_ms": 6009,
     "steps": [
       {
         "step_index": 0,
         "step_id": "scenario_start",
         "action": "goto_start",
-        "elapsed_ms": 3042,
+        "elapsed_ms": 2858,
         "before_url": {
           "url": "about:blank",
           "origin": null,
@@ -132,7 +153,7 @@
         "step_index": 1,
         "step_id": "settle",
         "action": "wait_for_timeout",
-        "elapsed_ms": 2529,
+        "elapsed_ms": 2538,
         "before_url": {
           "url": "https://www.google.com/maps",
           "origin": "https://www.google.com",
@@ -140,12 +161,9 @@
           "redacted": false
         },
         "after_url": {
-          "url": "https://www.google.com/maps/@40.7248158,-73.9934208,14z?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D",
+          "url": "https://www.google.com/maps",
           "origin": "https://www.google.com",
-          "query_parameter_names": [
-            "entry",
-            "g_ep"
-          ],
+          "query_parameter_names": [],
           "redacted": false
         },
         "event_sequence_start": 1,
@@ -160,20 +178,17 @@
           "accessibility": {
             "state": "captured",
             "value": {
-              "sha256": "e4c56f28d151f1d4650d3a343fdae3b3df64ad4631df572d32c96fc3a367585d",
-              "bytes": 1603,
-              "text": "- document:\n  - application \"Map · Use arrow keys to pan the map. · Get details about a place by pressing its corresponding number key.\"\n  - search:\n    - text: Search Google Maps\n    - combobox \"Search Google Maps\"\n    - button \"Search\"\n    - button \"Directions\"\n  - region \"This area\":\n    - heading \"This area\" [level=1]\n    - region \"Traffic\":\n      - button \"Heavy traffic in this area Typical conditions with delays up to 16 min\"\n  - region \"Available search options for this area\":\n    - button \"Restaurants\"\n    - button \"Hotels\"\n    - button \"Things to do\"\n    - button \"Museums\"\n    - button \"Transit\"\n    - button \"Pharmacies\"\n    - button \"ATMs\"\n  - list:\n    - listitem:\n      - button \"Menu\"\n    - listitem:\n      - button \"Saved\"\n    - listitem:\n      - button \"Recents\" [disabled]\n    - listitem:\n      - button \"Get app\"\n  - button \"Google apps\"\n  - link \"Sign in\":\n    - /url: https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https%3A%2F%2Fwww.google.com%2Fmaps%2F%4040.7248158%2C-73.9934208%2C14z%3Fcoh%3D318247%26entry%3Dtt%26ved%3D1t%253A314688&service=local&ec=GAZAcQ\n  - button \"Show Your Location\"\n  - button \"Zoom in\"\n  - button \"Zoom out\"\n  - button \"Browse Street View images\":\n    - text: Check out Dua Lipa’s New York City list on Google Maps -\n    - link \"goo.gle/dua\":\n      - /url: https://goo.gle/dua\n  - button \"Show imagery\"\n  - text: Layers\n  - button \"Layers\"\n  - contentinfo:\n    - text: Map data ©2026 Google\n    - button \"United States\"\n    - button \"Terms\"\n    - button \"Privacy\"\n    - button \"Send Product Feedback\"\n  - button \"2000 ft\""
+              "sha256": "9cb5c3bbf245cddb0a239ec8210d62ccf021d1afe51b56bca05ad1e47c4b43ac",
+              "bytes": 445,
+              "text": "- document:\n  - application \"Map · Use arrow keys to pan the map. · Get details about a place by pressing its corresponding number key.\"\n  - search:\n    - text: Search Google Maps\n    - combobox \"Search Google Maps\"\n    - button \"Search\"\n    - button \"Directions\"\n  - list:\n    - listitem:\n      - button \"Menu\"\n    - listitem:\n      - button \"Saved\"\n    - listitem:\n      - button \"Recents\" [disabled]\n    - listitem:\n      - button \"Get app\""
             }
           },
           "url": {
             "state": "captured",
             "value": {
-              "url": "https://www.google.com/maps/@40.7248158,-73.9934208,14z?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D",
+              "url": "https://www.google.com/maps",
               "origin": "https://www.google.com",
-              "query_parameter_names": [
-                "entry",
-                "g_ep"
-              ],
+              "query_parameter_names": [],
               "redacted": false
             }
           },
@@ -197,7 +212,12 @@
     "events": {
       "retained": 0,
       "dropped": 0,
-      "items": []
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
     },
     "completeness": {
       "status": "complete",
@@ -207,9 +227,9 @@
     },
     "limitations": [
       "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
-      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
       "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
-      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
       "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
       "Storage values are hashed only after declared-secret redaction."
     ]
@@ -217,7 +237,7 @@
   "confidence": "observed",
   "authority": "controlled-replay",
   "environment": {
-    "id": "Chromium@155.0.8059.40",
+    "id": "Chromium@156.0.8078.80",
     "platform": "unknown",
     "architecture": "unknown",
     "isolation": "process"
@@ -225,13 +245,14 @@
   "limitations": [
     "Artifact identity is unavailable for this observation.",
     "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
-    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
     "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
-    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
     "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
     "Storage values are hashed only after declared-secret redaction.",
     "Browser host platform and architecture were not observed."
   ],
+  "relationship_coverage": null,
   "locations": [],
   "evidence_links": []
 }

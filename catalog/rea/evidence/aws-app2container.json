@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_561266f382e3b2e692cf6f5395cf67a0d456f8664451524f8bb94eeb9aadce0c",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/app2container/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "66a0bab1e43facf0089a05097083cd44b011763f87aff712794a7b71330f773b"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 7053,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 4190,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/transform/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2567,
+        "before_url": {
+          "url": "https://aws.amazon.com/transform/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/transform/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "87d54caa9a33ed23abcaef15ce21dae8c809a816e9b7b57bb241c4f2cfacb650",
+              "bytes": 18286,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - main:\n    - paragraph: AWS Transform\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /transform/\n      - button \"Use cases submenu\": Use cases\n      - listitem:\n        - link \"FAQs\":\n          - /url: /transform/faq/\n      - listitem:\n        - link \"Pricing\":\n          - /url: /transform/pricing/\n      - listitem:\n        - link \"Partners\":\n          - /url: /transform/partners/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Migration and Modernization\":\n            - /url: /migration-and-modernization/\n        - listitem: AWS Transform\n    - heading \"AWS Transform\" [level=1]\n    - paragraph: \"Migrate. Modernize. Stay modern: reduce technical debt and get AI-ready.\"\n    - button \"Get started with AWS Transform\"\n    - button \"Latest innovations\"\n    - heading \"Migrate, modernize, and stay modern with agentic AI\" [level=2]\n    - paragraph: Enterprise transformation rarely ends with a single project. Infrastructure must move off legacy platforms, decades-old applications need modernizing, and technical debt keeps growing as AI speeds up code creation. Legacy systems are risky to change, so many programs stall or stretch into years. AWS Transform uses agentic AI to accelerate and de-risk each stage of that journey. It migrates infrastructure, modernizes applications such as Mainframe and Windows, and continuously fixes technical debt across your portfolio, so your teams spend less time maintaining legacy systems and more time on innovation.\n    - 'link \"Interactive demo: Migrate, modernize, and stay modern with agentic AI\"':\n      - /url: https://app.storylane.io/share/7heinbrwbeh6\n      - text: Interactive demo\n    - button \"Play:\"\n    - img \"Missing alt text value\"\n    - heading \"Build what's next at AWS re:Invent 2026\" [level=2]\n    - paragraph: See AWS Transform in action. Smash tech debt and get AI-ready with agentic modernization. Explore over 200 migration and modernization sessions. Nov. 30 – Dec. 4, Las Vegas\n    - 'link \"Browse Migration & Modernization sessions: Build what''s next at AWS re:Invent 2026\"':\n      - /url: https://registration.awsevents.com/flow/awsevents/reinvent2026/eventcatalog/page/eventcatalog?search.topic=1752157283215011FTI6&p=atx&c=mm&z=reinvent\n      - text: Browse Migration & Modernization sessions\n    - heading \"Capabilities for every stage of your journey\" [level=2]\n    - img \"aws-library_illustration_connect_11_1200\"\n    - heading \"Migrate\" [level=3]\n    - paragraph:\n      - text: Move legacy infrastructure to AWS faster with\n      - link \"cloud migration\":\n        - /url: /transform/migrations/\n      - text: .\n    - img \"aws-library_illustration_cloud_2_1200\"\n    - heading \"Modernize\" [level=3]\n    - paragraph:\n      - text: Modernize applications including\n      - link \"Windows\":\n        - /url: /transform/windows/\n      - text: \",\"\n      - link \"Mainframe\":\n        - /url: /transform/mainframe/\n      - text: \", and\"\n      - link \"custom\":\n        - /url: /transform/custom/\n      - text: code.\n    - img \"aws-library_illustration_data_6_1200\"\n    - heading \"Stay modern\" [level=3]\n    - paragraph:\n      - text: Reduce technical debt and get AI-ready with\n      - link \"continuous modernization\":\n        - /url: /transform/continuous-modernization/\n      - text: .\n    - heading \"Benefits\" [level=2]\n    - heading \"Accelerate enterprise transformation with agentic AI\" [level=3]:\n      - button \"Accelerate enterprise transformation with agentic AI\"\n    - heading \"Transform at enterprise scale\" [level=3]:\n      - button \"Transform at enterprise scale\"\n    - heading \"Reduce licensing, infrastructure, and modernization costs\" [level=3]:\n      - button \"Reduce licensing, infrastructure, and modernization costs\"\n    - heading \"Modernize with less risk\" [level=3]:\n      - button \"Modernize with less risk\"\n    - heading \"Stay ahead of technical debt\" [level=3]:\n      - button \"Stay ahead of technical debt\"\n    - heading \"Impact by the numbers\" [level=2]\n    - heading \"0\" [level=2]\n    - text: hours of manual effort - equivalent of 1,672 developer years of work saved.\n    - heading \"0B\" [level=3]\n    - text: lines of code analyzed by customers.\n    - heading \"0x\" [level=3]\n    - text: Up to 5x faster full-stack Windows modernization including .NET and SQL Server.\n    - heading \"What's new\" [level=2]\n    - link \"What's New AWS recognized as a Leader in the 2026 Gartner Magic Quadrant for AI Augmented Code Modernization Tools Learn more\":\n      - /url: https://pages.awscloud.com/GLOBAL-brand-awareness-content-download-26-gartner-ardm-ai-augmented-code-modernization-mq-learn.html?trk=4afa392d-478a-4323-aa57-654fbef5629d&sc_channel=el\n      - text: What's New\n      - heading \"AWS recognized as a Leader in the 2026 Gartner Magic Quadrant for AI Augmented Code Modernization Tools\" [level=3]\n      - text: Learn more\n    - link \"blog Reduce Tech Debt Autonomously with Continuous Modernization Read more\":\n      - /url: /blogs/aws/proactively-reduce-tech-debt-autonomously-with-aws-transform-continuous-modernization-preview/\n      - text: blog\n      - heading \"Reduce Tech Debt Autonomously with Continuous Modernization\" [level=3]\n      - text: Read more\n    - 'link \"Report Gartner: 13 Strategies to Overcome Cloud Migration Barriers Learn more\"':\n      - /url: https://pages.awscloud.com/GLOBAL-brand-awareness-content-download-26-gartner-ardm-crush-cloud-migration-challenges-report-learn.html\n      - text: Report\n      - 'heading \"Gartner: 13 Strategies to Overcome Cloud Migration Barriers\" [level=3]'\n      - text: Learn more\n    - text: Stop setting up. Start building. AWS Builder Center gives you access to free sandbox environments inside a real account. No credit card, no setup. Launch an eligible Workshop and build for up to 8 hours.\n    - link \"Explore Workshops\":\n      - /url: https://builder.aws.com/build/workshops/?accessType=free-sandbox&tab=discover&sc_icampaign=launch_builder-center-sandbox_2026&sc_ichannel=ha&sc_iplace=banner&trk=c243de2e-eafc-4962-8ffc-4915bb208b5b\n    - button \"Close\"\n    - text: Stop setting up. Start building. AWS Builder Center gives you access to free sandbox environments inside a real account. No credit card, no setup. Launch an eligible Workshop and build for up to 8 hours.\n    - link \"Explore Workshops\":\n      - /url: https://builder.aws.com/build/workshops/?accessType=free-sandbox&tab=discover&sc_icampaign=launch_builder-center-sandbox_2026&sc_ichannel=ha&sc_iplace=banner&trk=c243de2e-eafc-4962-8ffc-4915bb208b5b\n    - button \"Close\"\n    - heading \"Latest innovations\" [level=2]\n    - tablist:\n      - tab \"Continuous modernization\" [selected]\n      - tab \"Mainframe\"\n      - tab \"AI workloads migration\"\n      - tab \"Storage migration\"\n      - tab \"Agentic IDEs\"\n    - tabpanel \"Continuous modernization\":\n      - heading \"Continuous tech debt analysis and remediation at scale\" [level=3]\n      - paragraph: Turn reactive, manual software maintenance into proactive, continuous modernization. AWS Transform continuous modernization shifts code transformation from periodic projects into an always-on, autonomous practice, evolving your pipeline toward CI/CD/CM (continuous modernization). Get full visibility into tech debt across thousands of repositories and autonomously detect, prioritize, remediate, and document common findings like end-of-life dependencies, outdated frameworks, and security vulnerabilities. Replace recurring fire drills with steady, measurable progress at scale.\n      - paragraph:\n        - link \"Read the blog\":\n          - /url: /blogs/aws/proactively-reduce-tech-debt-autonomously-with-aws-transform-continuous-modernization-preview/\n      - img \"Network flow diagram with green circular nodes connected by dark gray and cyan curved lines, featuring white rectangular modules with yellow highlights arranged in stepped pattern against teal-to-blue gradient background.\"\n    - heading \"Transformation in Motion\" [level=2]\n    - paragraph: Wherever you are on your AI journey, AWS meets you there — with proven foundation, enterprise security, and flexibility to move from first pilot to full-scale transformation.\n    - img \"Missing alt text value\"\n    - heading \"Choose your starting point\" [level=2]\n    - link \"Migration & Modernization Leverage an unmatched breadth of services, scale, and expertise to migrate, modernize, and build applications that power the future of your business. Learn more\":\n      - /url: /migration-and-modernization/\n      - heading \"Migration & Modernization\" [level=3]\n      - text: Leverage an unmatched breadth of services, scale, and expertise to migrate, modernize, and build applications that power the future of your business. Learn more\n    - link \"Artificial Intelligence Build agentic AI your way with comprehensive tools and enterprise-grade security—scalable, versatile, and secure from day one. Learn more\":\n      - /url: /ai/\n      - heading \"Artificial Intelligence\" [level=3]\n      - text: Build agentic AI your way with comprehensive tools and enterprise-grade security—scalable, versatile, and secure from day one. Learn more\n    - link \"Data & Analytics A comprehensive set of capabilities for every analytics workload, optimized for price performance and scale. Learn more\":\n      - /url: /data/\n      - heading \"Data & Analytics\" [level=3]\n      - text: A comprehensive set of capabilities for every analytics workload, optimized for price performance and scale. Learn more\n    - status\n    - heading \"Use cases\" [level=2]\n    - heading \"Infrastructure migration and modernization\" [level=3]:\n      - button \"Infrastructure migration and modernization\"\n    - heading \"Full-stack Windows modernization\" [level=3]:\n      - button \"Full-stack Windows modernization\"\n    - heading \"Mainframe modernization\" [level=3]:\n      - button \"Mainframe modernization\"\n    - heading \"Custom code transformations\" [level=3]:\n      - button \"Custom code transformations\"\n    - heading \"Continuous modernization for technical debt remediation\" [level=3]:\n      - button \"Continuous modernization for technical debt remediation\"\n    - region \"AWS Information\":\n      - heading \"Customer success\" [level=2]\n      - region \"carousel\":\n        - link \"Case study \\\"\\\" Thomson Reuters modernizes Windows applications 4x faster with AWS Transform Read the case study\":\n          - /url: /solutions/case-studies/thomson-reuters-case-study/\n          - text: Case study\n          - img \"\\\"\\\"\"\n          - heading \"Thomson Reuters modernizes Windows applications 4x faster with AWS Transform\" [level=2]\n          - text: Read the case study\n      - button \"Previous slide\"\n      - button \"Next slide\"\n    - heading \"Get started\" [level=2]\n    - link \"Workshop Hands-on technical workshops Join a workshop\":\n      - /url: https://aws-experience.com/amer/smb/events/series/Skill-up-on-agentic-transformation\n      - text: Workshop\n      - heading \"Hands-on technical workshops\" [level=2]\n      - text: Join a workshop\n    - link \"Guide Explore the user guide Learn more\":\n      - /url: https://docs.aws.amazon.com/transform/latest/userguide/what-is-service.html\n      - text: Guide\n      - heading \"Explore the user guide\" [level=2]\n      - text: Learn more\n    - link \"Getting started Get started in the AWS Transform web experience Access the web experience\":\n      - /url: https://console.aws.amazon.com/transform/home\n      - text: Getting started\n      - heading \"Get started in the AWS Transform web experience\" [level=2]\n      - text: Access the web experience\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /transform/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /transform/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/transform/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

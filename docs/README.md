@@ -31,6 +31,11 @@ Install the published npm CLI for catalog use; clone the source repository only 
 | [catalog-and-schemas.md](catalog-and-schemas.md) | Product records, research dossiers, alternative coverage, and validation |
 | [agent-workflow.md](agent-workflow.md) | How product skills guide your agent and how ACE can coordinate a team |
 | [product-research-and-build-plan.md](product-research-and-build-plan.md) | How to make product research and agent instructions actionable |
+| [research-batches.md](research-batches.md) | The prioritized research batches derived from current coverage |
+| [release-process.md](release-process.md) | SemVer policy, the release checklist, and the approval gate before publishing |
+| [inventory-audit.md](inventory-audit.md) | Per-company inventory review: promoted products, noise, duplicates, missing and retired entries |
+| [catalog-gap-report.md](catalog-gap-report.md) | Generated reconciliation of the canonical catalog against the expanded candidate inventory, with the promotion gate |
+| [catalog-entry-example.md](catalog-entry-example.md) | One canonical entry (`google-search`) traced end to end: record, dossier, REA capture, alternative status, generated skill, CLI commands |
 
 Repository-root documents:
 

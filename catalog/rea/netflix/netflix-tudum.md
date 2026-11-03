@@ -9,11 +9,11 @@ Browser capture of the public web surface of Tudum, recorded with REA.
 | Target | https://www.netflix.com/tudum |
 | Resolved URL | https://www.netflix.com/tudum |
 | Page title | Netflix Tudum - Go behind the streams |
-| Captured | 2026-10-14T03:56:41.368Z |
+| Captured | 2026-11-03T01:42:38.525Z |
 | Status | captured |
-| REA Evidence ID | `ev_d1f6ebad860cc18df5129b3b4454b109ab6a62fd39f5f7c9a34365a2dceab9d8` |
+| REA Evidence ID | `ev_9de9f82f3c479d1bbf5b4c18c471bf6a2496191fcb8b11470b885e2caf02c18c` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -85,34 +85,34 @@ access control is bypassed.
 - [Puzzled](/tudum/puzzled)
 - [Podcasts](/tudum/podcasts)
 - [Shop opens in a new tab](https://netflix.shop)
-- [East of Eden](/tudum/east-of-eden)
 - [Animals](/tudum/animals)
-- [UNABOMBER](/tudum/unabomber)
+- [Love Is Blind](/tudum/love-is-blind)
 - [Below](/tudum/below)
+- [The Diplomat](/tudum/the-diplomat)
+- [East of Eden](/tudum/east-of-eden)
+- [Nobody Wants This](/tudum/nobody-wants-this)
+- [Lupin](/tudum/lupin)
 - [The Perfect Lie](/tudum/the-perfect-lie)
-- [The Gentlemen](/tudum/the-gentlemen)
-- [The Whisper Man](/tudum/the-whisper-man)
-- [Wonka's The Golden Ticket](/tudum/wonkas-the-golden-ticket)
-- [Crew Girl](/tudum/crew-girl)
-- [Below Surfaces to the No. 1 Spot in This Week’s Top 10](/tudum/articles/top-10-october-5-2026)
-- [East of Eden Composer Laura Karpman on the Power of Scoring the Unsung](/tudum/articles/east-of-eden-score-laura-karpman)
-- [See More](/tudum/topics/trending)
 - [KPop Demon Hunters](/tudum/kpop-demon-hunters)
+- [The Gentlemen](/tudum/the-gentlemen)
+- [New on Netflix in November 2026](/tudum/articles/new-on-netflix)
+- [La Bola Negra Opens in Theaters Nationwide](/tudum/features/la-bola-negra-theatrical-dates-locations)
+- [Learn Every Move with Official KPop Demon Hunters Choreography Videos](/tudum/articles/kpop-demon-hunters-choreography)
+- [Love Is Blind’s Rob and Michaella Unpack Their Split and That Mixer ‘Meltdown’](/tudum/articles/love-is-blind-season-11-rob-and-michaella-breakup-interview)
+- [See More](/tudum/topics/trending)
 - [Our Sticky Love](/tudum/our-sticky-love)
+- [Crew Girl](/tudum/crew-girl)
 - [Beauty in Black](/tudum/beauty-in-black)
-- [A Different World](/tudum/a-different-world)
-- [My Life With the Walter Boys](/tudum/my-life-with-the-walter-boys)
-- [Florence Pugh Is Cathy Ames in East of Eden](/tudum/articles/east-of-eden-series)
-- [Nellie Oleson Is Bringing the Side-Eye to Little House on the Prairie Season 2](/tudum/articles/willa-dunn-nellie-oleson-little-house-on-the-prairie-season-2)
-- [Little House on the Prairie Season 2 Wraps Production](/tudum/articles/little-house-on-the-prairie-season-2-cast-release-date-news)
+- [Wednesday](/tudum/wednesday)
+- [Druski Announces Netflix Partnership, New Comedy Series Collect & Praise](/tudum/articles/druski-netflix-deal-collect-and-praise-series-news)
+- [‘Skip Intro’ with Krista Smith](/tudum/skip-intro)
+- [The Diplomat Will Return for Season 5](/tudum/articles/the-diplomat-season-5-release-date-cast-news)
+- [TYSON FURY Documentary Goes Beyond the Ring Ahead of Joshua Fight](/tudum/articles/tyson-fury-netflix-documentary-release-date-news)
 - [See More](/tudum/topics/news)
-- [Watch](https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Fwatch%252F81288983%253FtrackId%253D263218445%2526trkId%253D263218445%2526src%253Dtudum)
-- [Explore](/tudum/the-diplomat)
-- [Explore](/tudum/the-one-about-matthew-perry)
 - [Watch](https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Fwatch%252F80996601%253FtrackId%253D263218445%2526trkId%253D263218445%2526src%253Dtudum)
 - [Explore](/tudum/love-is-blind)
-- [Watch](https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Fwatch%252F80994082%253FtrackId%253D263218445%2526trkId%253D263218445%2526src%253Dtudum)
-- [Explore](/tudum/lupin)
+- [Explore](/tudum/taken-natalee-holloway)
+- [Watch](https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fprofiles%2Fchoose%3Fnext%3Dhttps%253A%252F%252Fwww.netflix.com%252Fwatch%252F81222923%253FtrackId%253D263218445%2526trkId%253D263218445%2526src%253Dtudum)
 
 ### Controls
 
@@ -125,9 +125,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -135,6 +135,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/netflix-tudum.json`
-- Evidence ID: `ev_d1f6ebad860cc18df5129b3b4454b109ab6a62fd39f5f7c9a34365a2dceab9d8`
-- Accessibility outline: 35207 bytes
+- Evidence ID: `ev_9de9f82f3c479d1bbf5b4c18c471bf6a2496191fcb8b11470b885e2caf02c18c`
+- Accessibility outline: 33140 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

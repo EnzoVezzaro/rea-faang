@@ -9,11 +9,11 @@ Browser capture of the public web surface of iPhone, recorded with REA.
 | Target | https://www.apple.com/iphone/ |
 | Resolved URL | https://www.apple.com/iphone/ |
 | Page title | iPhone |
-| Captured | 2026-10-14T03:54:21.543Z |
+| Captured | 2026-11-03T01:32:03.022Z |
 | Status | captured |
-| REA Evidence ID | `ev_857cffdb1530acad230dc1fcea9e23d5550a09330fdb26f079a081a1fe84db04` |
+| REA Evidence ID | `ev_c6b7db6b8a53fbd03c1a9ad1c07a71d646e2d784463a1efb7cd3cbe0f292b23c` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -73,20 +73,20 @@ access control is bypassed.
 - Delivery and Pickup
 - Guided Shopping
 - Apple Store App
-- Get to know iPhone.
-- Design
-- Cutting-Edge Cameras
-- Chip and Battery Life
-- Apple Intelligence and Siri AI
-- Environment
-- Privacy
+- iPhone essentials.
+- iPhone accessories
+- AirTag
+- Significant others.
+- iPhone and Mac
+- iPhone and Apple Watch
+- iPhone and AirPods
 
 ### Landmarks
 
 - navigation: Global
 - main
 - navigation: iPhone family
-- navigation: iPhone Explore iPhone Explore All iPhone iPhone Duo iPhone 18 Pro iPhone Air iPhone 17 iPhone 17e iPhone 16 Compare iPhone Switch from Android Shop iPhone Shop iPhone iPhone Accessories Apple Upgrade Apple Trade In Carrier Deals at Apple Financing Personal Setup More from iPhone iPhone Support AppleCare iOS 27 Apple Intelligence and Siri Apps by Apple iPhone Privacy Better with Mac iCloud+ Wallet, Pay, Card Apple at Work
+- navigation: iPhone
 - contentinfo: Apple Footer
 - region: Footnotes
 - navigation: Breadcrumbs
@@ -106,7 +106,8 @@ access control is bypassed.
 - [Entertainment](/entertainment/)
 - [Accessories](/us/shop/goto/buy_accessories)
 - [Support](https://support.apple.com/?cid=gn-ols-home-hp-tab)
-- [Get started, iPhone Duo pre-order](/us/shop/goto/buy_iphone)
+- [Footnote § symbol](#footnote-upgrade-2026)
+- [Learn more, Apple Upgrade](/us/shop/goto/apple_upgrade)
 - [iPhone Duo New](/iphone-duo/)
 - [iPhone 18 Pro New](/iphone-18-pro/)
 - [iPhone Air](/iphone-air/)
@@ -117,12 +118,12 @@ access control is bypassed.
 - [Accessories](/us/shop/goto/iphone/accessories)
 - [Shop iPhone](/us/shop/goto/buy_iphone)
 - [iOS 27](/os/ios/)
+- [Buy, iPhone Duo](/us/shop/goto/buy_iphone/iphone_duo)
 - [Learn more, iPhone Duo](/iphone-duo/)
-- [View pricing, iPhone Duo](/us/shop/goto/buy_iphone/iphone_duo)
 - [Compare all models](/iphone/compare/)
 - [iPhone Duo, Star White color, angled to the left, inner display with display screen showing an image of a dessert, iPhone Duo, Star White color, angled to the left, closed, back exterior, 48MP Dual Fusion rear cameras in top corner, two lenses, microphone, flash](/iphone-duo/)
-- [Footnote 9](#footnote-12)
-- [Footnote ◊ symbol](#footnote-3)
+- [Footnote 1](#footnote-3)
+- [Footnote ◊ symbol](#footnote-2)
 - [iPhone 18 Pro, Burgundy color, side angle, partial front exterior, all-screen design display, action button, volume up/down buttons, iPhone 18 Pro, Burgundy color, side angle, complete back exterior, 48MP Pro Fusion camera system, Apple logo in center, side button, Camera Control button](/iphone-18-pro/)
 - [Learn more, iPhone 18 Pro](/iphone-18-pro/)
 - [Buy, iPhone 18 Pro](/us/shop/goto/buy_iphone/iphone_18_pro)
@@ -133,7 +134,6 @@ access control is bypassed.
 - [Learn more, iPhone 17](/iphone-17/)
 - [Buy, iPhone 17](/us/shop/goto/buy_iphone/iphone_17)
 - [Front and back of iPhone 17e in soft pink, partial front screen, full back with Apple logo and single camera, side shows Action, volume and side buttons.](/iphone-17e/)
-- [Learn more, iPhone 17e](/iphone-17e/)
 
 ### Controls
 
@@ -150,21 +150,21 @@ access control is bypassed.
 - button: Support menu
 - button: Search apple.com
 - button: Shopping Bag
-- button: next item
-- button: Play Hero gallery
-- button: Previous item in Explore the lineup gallery
-- button: Next item in Explore the lineup gallery
-- button: Read more about Apple Trade in
-- button: Read more about Apple Card
-- button: Read more about Personal Setup
+- button: Play Hero Gallery
+- button: Previous item, Explore the lineup gallery
+- button: Next item, Explore the lineup gallery
+- button: Read more, Apple Trade In
+- button: Read more, Apple Card
+- button: Read more, Personal Setup
+- button: Read more, delivery and pickup
 
 ## Limitations (from REA)
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -172,6 +172,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/apple-iphone.json`
-- Evidence ID: `ev_857cffdb1530acad230dc1fcea9e23d5550a09330fdb26f079a081a1fe84db04`
-- Accessibility outline: 117990 bytes
+- Evidence ID: `ev_c6b7db6b8a53fbd03c1a9ad1c07a71d646e2d784463a1efb7cd3cbe0f292b23c`
+- Accessibility outline: 113319 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

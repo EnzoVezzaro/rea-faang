@@ -57,7 +57,23 @@ The `ace` section in the root `package.json` sets:
 - `policies` (`require_review_before_merge: true`), `concurrency`
   (`max_active_agents`), and `lifecycle` behaviour.
 
-If `config check` reports `INCOMPATIBLE_ADAPTER`, compare the configured provider with the list from `ace adapters list`.
+If `config check` reports `INCOMPATIBLE_ADAPTER`, compare the configured provider with the list from `ace adapters list`. Run the check through the repository's pinned copy — `npm run ace -- config check` — because a globally installed `ace` can be an older snapshot that rejects providers the version pinned in `package.json` already knows.
+
+## Worker models
+
+Each agent resolves a route of the form `runtime:model`. Before delegating work, confirm the route points at a model the provider actually serves, and that it is free:
+
+```bash
+ace route show primary-researcher                 # effective route and change history
+opencode models | grep -F '<model-name>'          # is the model listed at all?
+opencode run -m <provider>/<model> "Reply with exactly: OK"   # does it answer?
+ace route set primary-researcher opencode:<provider>/<model> --reason "verified free route"
+```
+
+A route can be configured and still be unusable: an unlisted model fails with `Model unavailable`, and a free tier that is exhausted fails with a usage-limit error. Both exit non-zero, so the probe is the evidence. Never route workers to a paid model or to a runtime this repository does not configure without the maintainer's approval.
+
+`ace route show <agent>` reports the recorded switch history, while `ace crew` prints the route from the declared configuration; the two can disagree after a `route set` (this has been observed, and which one a spawn actually uses has not been verified here — probe the model, then confirm the first worker run).
+
 
 ## Roles
 

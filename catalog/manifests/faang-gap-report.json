@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "scope": "FAANG plus Microsoft, product-level public catalog",
+  "method": [
+    "Product-level scope only: SKUs, plans, regions, API operations, model versions, documentation topics, marketplace listings and internal systems are excluded from the product count.",
+    "Canonical rows are catalog/products.jsonl. Candidate rows come from catalog/manifests/faang-expanded-candidates.json, built from public first-party catalogs.",
+    "Duplicates are merged by normalized name inside a company and listed separately. Navigation/editorial rows are listed separately and never counted as products.",
+    "Promotion requires verified identity, a first-party product page, product-level (not SKU/plan/region/API operation), a research dossier and an alternatives entry. Unverified rows stay research_status: pending.",
+    "This is a reconciliation of the documented scope, not a claim of permanent completeness: vendor catalogs change continuously."
+  ],
+  "counts": {
+    "canonical": 184,
+    "products": 1465,
+    "candidate": 1281,
+    "verified": 170,
+    "retired": 14,
+    "duplicates": 147,
+    "navigation": 150,
+    "rows_with_required_fields": 1762,
+    "rows_with_field_problems": 0,
+    "candidates_without_url": 125,
+    "candidates_unclassified": 1281
+  },
+  "lanes": [
+    {
+      "lane": 1,
+      "name": "Google",
+      "companies": [
+        "google"
+      ],
+      "queued": 544,
+      "first": [
+        "google-about-google",
+        "google-accessibility-support",
+        "google-active-assist"
+      ]
+    },
+    {
+      "lane": 2,
+      "name": "Amazon/AWS",
+      "companies": [
+        "amazon",
+        "amazon_aws"
+      ],
+      "queued": 145,
+      "first": [
+        "amazon-aws-aws-budgets",
+        "amazon-aws-aws-certificate-manager",
+        "amazon-aws-aws-clean-rooms"
+      ]
+    },
+    {
+      "lane": 3,
+      "name": "Microsoft",
+      "companies": [
+        "microsoft"
+      ],
+      "queued": 372,
+      "first": [
+        "microsoft-net-apps-migration",
+        "microsoft-about-microsoft",
+        "microsoft-about-our-ads"
+      ]
+    },
+    {
+      "lane": 4,
+      "name": "Apple/Meta/Netflix",
+      "companies": [
+        "apple",
+        "meta",
+        "netflix"
+      ],
+      "queued": 220,
+      "first": [
+        "apple-product-red",
+        "apple-accessories",
+        "apple-airplay"
+      ]
+    }
+  ],
+  "by_company": [
+    {
+      "company_id": "google",
+      "canonical": 26,
+      "products": 570,
+      "verified": 25,
+      "candidates": 544,
+      "retired": 1,
+      "duplicates": 23,
+      "navigation": 116,
+      "candidates_without_url": 31,
+      "unclassified": 544
+    },
+    {
+      "company_id": "apple",
+      "canonical": 20,
+      "products": 240,
+      "verified": 20,
+      "candidates": 220,
+      "retired": 0,
+      "duplicates": 5,
+      "navigation": 0,
+      "candidates_without_url": 0,
+      "unclassified": 220
+    },
+    {
+      "company_id": "amazon",
+      "canonical": 5,
+      "products": 5,
+      "verified": 5,
+      "candidates": 0,
+      "retired": 0,
+      "duplicates": 0,
+      "navigation": 0,
+      "candidates_without_url": 0,
+      "unclassified": 0
+    },
+    {
+      "company_id": "amazon_aws",
+      "canonical": 117,
+      "products": 262,
+      "verified": 106,
+      "candidates": 145,
+      "retired": 11,
+      "duplicates": 112,
+      "navigation": 27,
+      "candidates_without_url": 93,
+      "unclassified": 145
+    },
+    {
+      "company_id": "meta",
+      "canonical": 5,
+      "products": 5,
+      "verified": 5,
+      "candidates": 0,
+      "retired": 0,
+      "duplicates": 0,
+      "navigation": 0,
+      "candidates_without_url": 0,
+      "unclassified": 0
+    },
+    {
+      "company_id": "netflix",
+      "canonical": 6,
+      "products": 6,
+      "verified": 5,
+      "candidates": 0,
+      "retired": 1,
+      "duplicates": 0,
+      "navigation": 0,
+      "candidates_without_url": 0,
+      "unclassified": 0
+    },
+    {
+      "company_id": "microsoft",
+      "canonical": 5,
+      "products": 377,
+      "verified": 4,
+      "candidates": 372,
+      "retired": 1,
+      "duplicates": 7,
+      "navigation": 7,
+      "candidates_without_url": 1,
+      "unclassified": 372
+    }
+  ],
+  "reconciliation": {
+    "canonical_found_in_manifest": 184,
+    "canonical_missing_from_manifest": [],
+    "verified_rows_not_canonical": [],
+    "id_collisions": [],
+    "field_problems": []
+  },
+  "promotion": {
+    "promoted_this_pass": 0,
+    "reason": "No candidate in this pass satisfied every promotion condition; identity alone is not enough while a dossier, alternatives entry and REA evidence are missing.",
+    "gate": [
+      "identity and official name confirmed on a first-party product page",
+      "product-level row, not a SKU, plan, region, API operation, model version or documentation topic",
+      "research/companies/<company>/products/<id>.md dossier with valid frontmatter",
+      "tools/skills/catalog-data.mjs entry, so exactly one skill can be generated",
+      "no duplicate of an existing canonical id"
+    ]
+  }
+}

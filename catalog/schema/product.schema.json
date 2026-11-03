@@ -2,7 +2,15 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Product Schema",
   "type": "object",
-  "required": ["id", "company_id", "name", "product_type", "lifecycle_status", "official_url", "research_status"],
+  "required": [
+    "id",
+    "company_id",
+    "name",
+    "product_type",
+    "lifecycle_status",
+    "official_url",
+    "research_status"
+  ],
   "properties": {
     "id": {
       "type": "string",
@@ -61,12 +69,16 @@
     },
     "categories": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Product categories"
     },
     "aliases": {
       "type": "array",
-      "items": { "type": "string" },
+      "items": {
+        "type": "string"
+      },
       "description": "Product aliases and former names"
     },
     "official_url": {
@@ -75,14 +87,19 @@
       "description": "Official product URL"
     },
     "official_docs_url": {
-      "type": ["string", "null"],
+      "type": [
+        "string",
+        "null"
+      ],
       "format": "uri",
       "description": "Official documentation URL",
       "default": null
     },
     "official_source_urls": {
       "type": "array",
-      "items": { "format": "uri" },
+      "items": {
+        "format": "uri"
+      },
       "description": "Additional official source URLs"
     },
     "lifecycle_status": {
@@ -105,14 +122,19 @@
         "pending",
         "in_progress",
         "researched",
+        "retired",
         "stale",
         "insufficient_evidence"
       ],
-      "description": "Research completion status"
+      "description": "Research completion status; a product that was withdrawn by its vendor is recorded as retired instead of deleted"
     },
     "research_confidence": {
       "type": "string",
-      "enum": ["verified", "unverified", "low"],
+      "enum": [
+        "verified",
+        "unverified",
+        "low"
+      ],
       "description": "Research confidence level"
     },
     "alternative_status": {
@@ -129,7 +151,9 @@
     },
     "alternative_coverage": {
       "type": "string",
-      "enum": ["unknown"],
+      "enum": [
+        "unknown"
+      ],
       "description": "Alternative coverage classification"
     },
     "opportunity_status": {
@@ -166,14 +190,19 @@
     },
     "evidence": {
       "type": "array",
-      "items": { "$ref": "#/definitions/evidence" },
+      "items": {
+        "$ref": "#/definitions/evidence"
+      },
       "description": "Evidence supporting material claims"
     },
     "capabilities": {
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["capability_id", "support"],
+        "required": [
+          "capability_id",
+          "support"
+        ],
         "properties": {
           "capability_id": {
             "type": "string",
@@ -181,12 +210,20 @@
           },
           "support": {
             "type": "string",
-            "enum": ["supported", "partial", "unsupported", "unknown", "not_applicable"],
+            "enum": [
+              "supported",
+              "partial",
+              "unsupported",
+              "unknown",
+              "not_applicable"
+            ],
             "description": "Support level"
           },
           "evidence_ids": {
             "type": "array",
-            "items": { "type": "string" },
+            "items": {
+              "type": "string"
+            },
             "description": "Evidence IDs supporting this capability"
           },
           "notes": {
@@ -197,15 +234,51 @@
         "additionalProperties": false
       },
       "description": "Product capabilities"
+    },
+    "inventory_status": {
+      "type": "string",
+      "enum": [
+        "verified",
+        "candidate",
+        "duplicate",
+        "navigation",
+        "retired"
+      ],
+      "description": "Where the row lives: canonical catalog entries are verified or retired; the candidate manifest may also carry candidate, duplicate and navigation rows"
+    },
+    "command_status": {
+      "type": "string",
+      "enum": [
+        "documented",
+        "not_applicable",
+        "pending"
+      ],
+      "description": "Whether an official CLI/API/SDK surface is documented for this product, or does not exist, or has not been checked yet"
+    },
+    "command_source": {
+      "type": "string",
+      "description": "Official documentation URL for the documented CLI/API/SDK surface"
     }
   },
   "definitions": {
     "evidence": {
       "type": "object",
-      "required": ["id", "url", "source_type", "claim", "claim_type"],
+      "required": [
+        "id",
+        "url",
+        "source_type",
+        "claim",
+        "claim_type"
+      ],
       "properties": {
-        "id": { "type": "string", "pattern": "^ev-[a-z0-9-]+$" },
-        "url": { "type": "string", "format": "uri" },
+        "id": {
+          "type": "string",
+          "pattern": "^ev-[a-z0-9-]+$"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
         "source_type": {
           "type": "string",
           "enum": [
@@ -219,11 +292,29 @@
             "secondary_source"
           ]
         },
-        "publisher": { "type": "string" },
-        "title": { "type": "string" },
-        "published_at": { "type": ["string", "null"], "format": "date-time" },
-        "accessed_at": { "type": ["string", "null"], "format": "date-time" },
-        "claim": { "type": "string" },
+        "publisher": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "published_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "accessed_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "claim": {
+          "type": "string"
+        },
         "claim_type": {
           "type": "string",
           "enum": [
@@ -236,14 +327,38 @@
             "api_surface"
           ]
         },
-        "supporting_excerpt_or_summary": { "type": "string" },
-        "reliability": { "type": "string", "enum": ["primary", "secondary", "tertiary"] },
+        "supporting_excerpt_or_summary": {
+          "type": "string"
+        },
+        "reliability": {
+          "type": "string",
+          "enum": [
+            "primary",
+            "secondary",
+            "tertiary"
+          ]
+        },
         "verification_status": {
           "type": "string",
-          "enum": ["verified", "unverified", "conflicting", "unavailable"]
+          "enum": [
+            "verified",
+            "unverified",
+            "conflicting",
+            "unavailable"
+          ]
         },
-        "related_product_ids": { "type": "array", "items": { "type": "string" } },
-        "related_alternative_ids": { "type": "array", "items": { "type": "string" } }
+        "related_product_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "related_alternative_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "additionalProperties": false
     }

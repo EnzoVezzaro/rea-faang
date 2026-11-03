@@ -9,11 +9,11 @@ Browser capture of the public web surface of Siri, recorded with REA.
 | Target | https://www.apple.com/siri/ |
 | Resolved URL | https://www.apple.com/apple-intelligence/ |
 | Page title | Apple Intelligence and Siri |
-| Captured | 2026-10-14T03:54:54.870Z |
+| Captured | 2026-11-03T01:33:29.510Z |
 | Status | captured |
-| REA Evidence ID | `ev_0aef99b348d75d31267ce1833ad73fd397e5d3f3b7bd90f83f74ee12079f3ebb` |
+| REA Evidence ID | `ev_1fbf64b3a679e3eb4863fe01e7ee7b22a3767886faffc3e8ce59c8015de35f4d` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -122,7 +122,7 @@ access control is bypassed.
 - [Footnote 9](#footnote-9)
 - [Footnote 10](#footnote-10)
 - [Learn more, iPhone Duo](/iphone-duo/)
-- [View pricing, iPhone Duo](/us/shop/goto/buy_iphone/iphone_duo)
+- [Buy, iPhone Duo](/us/shop/goto/buy_iphone/iphone_duo)
 - [iPhone 18 Pro](/iphone-18-pro/)
 - [Learn more, iPhone 18 Pro](/iphone-18-pro/)
 - [Buy, iPhone 18 Pro](/us/shop/goto/buy_iphone/iphone_18_pro)
@@ -161,9 +161,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -171,6 +171,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/apple-siri.json`
-- Evidence ID: `ev_0aef99b348d75d31267ce1833ad73fd397e5d3f3b7bd90f83f74ee12079f3ebb`
-- Accessibility outline: 39047 bytes
+- Evidence ID: `ev_1fbf64b3a679e3eb4863fe01e7ee7b22a3767886faffc3e8ce59c8015de35f4d`
+- Accessibility outline: 39253 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

@@ -9,7 +9,11 @@ categories:
   - "messaging"
 official_url: "https://aws.amazon.com/sqs/"
 official_docs_url: "https://docs.aws.amazon.com/sqs/"
-official_source_urls: []
+official_source_urls:
+  - "https://aws.amazon.com/sqs/"
+  - "https://docs.aws.amazon.com/sqs/"
+  - "https://docs.aws.amazon.com/sqs/latest/APIReference/"
+  - "https://docs.aws.amazon.com/cli/latest/reference/sqs/"
 lifecycle_status: "active"
 research_status: "pending"
 research_confidence: "unverified"
@@ -17,7 +21,7 @@ alternative_status: "none_verified"
 alternative_coverage: "unknown"
 opportunity_status: "integrate_existing"
 last_researched_at: null
-last_verified_at: null
+last_verified_at: "2026-11-02T00:00:00Z"
 next_review_at: null
 research_version: 1
 ---

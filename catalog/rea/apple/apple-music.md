@@ -9,11 +9,11 @@ Browser capture of the public web surface of Apple Music, recorded with REA.
 | Target | https://www.apple.com/apple-music/ |
 | Resolved URL | https://www.apple.com/apple-music/ |
 | Page title | Apple Music |
-| Captured | 2026-10-14T03:55:00.269Z |
+| Captured | 2026-11-03T01:32:41.820Z |
 | Status | captured |
-| REA Evidence ID | `ev_5580e369c15707f4261157c4764aba488117dfb83c8d61b1ce54cf872ed2e516` |
+| REA Evidence ID | `ev_954e4942c329c1044e53c526f273edde066a1d84ae6ea12b2c3c20f240c7a272` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -56,7 +56,7 @@ access control is bypassed.
 ### Headings
 
 - Apple Music
-- For the love of music.
+- All access. No ads. Sounds incredible.
 - Start listening for free.
 - New Subscriber
 - Family Plan
@@ -110,29 +110,29 @@ access control is bypassed.
 - [Footnote ** symbol](#footnote-2)
 - [Learn more, Apple One](https://offers.appleone.apple/new-device-offer)
 - [Footnote 1](#footnote-4)
-- [Footnote 2](#footnote-5)
-- [Footnote 3](#footnote-6)
 - [Try Apple Music free, * footnote](https://music.apple.com/home?itscg=10000&itsct=music_overview_hero)
 - [Compare plans](#plans)
 - [Try Apple Music individual plan 1 month free, * footnote](https://music.apple.com/home?itscg=10000&itsct=music_overview_plan_individual)
-- [Try Apple Music family plan 1 month free, 4 footnote](https://music.apple.com/subscribe?itscg=10000&itsct=music_overview_plan_family)
-- [Try Apple Music new device plan 3 months free, 5 footnote](https://offers.applemusic.apple/new-device-offer?itscg=10000&itsct=music_overview_plan_hwb)
-- [Try Apple Music student plan 1 month free, 6 footnote](https://music.apple.com/student?itscg=10000&itsct=music_overview_plan_student)
-- [Try Apple One 1 month free, 7 footnote](https://one.apple.com/us/music?itscg=10000&itsct=music_overview_plan_appleone)
+- [Try Apple Music family plan 1 month free, 2 footnote](https://music.apple.com/subscribe?itscg=10000&itsct=music_overview_plan_family)
+- [Try Apple Music new device plan 3 months free, 3 footnote](https://offers.applemusic.apple/new-device-offer?itscg=10000&itsct=music_overview_plan_hwb)
+- [Try Apple Music student plan 1 month free, 4 footnote](https://music.apple.com/student?itscg=10000&itsct=music_overview_plan_student)
+- [Try Apple One 1 month free, 5 footnote](https://one.apple.com/us/music?itscg=10000&itsct=music_overview_plan_appleone)
 - [Find compatible vehicles](/ios/carplay/available-models/)
 - [Download on Google Play](https://play.google.com/store/apps/details?id=com.apple.android.music&referrer=utm_source=http%3A%2F%2Fmusic.apple.com%2Fsubscribe%3Fapp%3Dmusic%26at%3D1000lpya%26ct%3D)
 - [Download on Microsoft Store](https://apps.microsoft.com/detail/9pfhdd62mxs1?hl=en-US&gl=US)
 - [Set up your device](https://support.apple.com/HT211087?cid=general-applemusic-marcom-08152025)
 - [Try Apple Music individual plan free, * footnote](https://music.apple.com/subscribe?itscg=10000&itsct=music_overview_compare_individual)
-- [Try Apple Music family plan free, 4 footnote](https://music.apple.com/subscribe?itscg=10000&itsct=music_overview_compare_family)
-- [Try Apple Music student plan free, 6 footnote](https://music.apple.com/student?itscg=10000&itsct=music_overview_compare_student)
-- [try Apple One free, 7 footnote](https://one.apple.com/us/music?itscg=10000&itsct=music_overview_compare_appleone)
+- [Try Apple Music family plan free, 2 footnote](https://music.apple.com/subscribe?itscg=10000&itsct=music_overview_compare_family)
+- [Try Apple Music student plan free, 4 footnote](https://music.apple.com/student?itscg=10000&itsct=music_overview_compare_student)
+- [try Apple One free, 5 footnote](https://one.apple.com/us/music?itscg=10000&itsct=music_overview_compare_appleone)
 - [Learn more, Apple One](/apple-one/)
 - [Apple Music for Artists, learn more](https://artists.apple.com/)
 - [Apple Performance Partners Program, learn more](/music/workingwithus/)
 - [terms](/promo/)
 - [apple.com/family-sharing](/family-sharing/)
 - [Entertainment](/services/)
+- [AirTag](/airtag/)
+- [Gift Cards](/us/shop/goto/giftcards)
 
 ### Controls
 
@@ -161,9 +161,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -171,6 +171,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/apple-music.json`
-- Evidence ID: `ev_5580e369c15707f4261157c4764aba488117dfb83c8d61b1ce54cf872ed2e516`
-- Accessibility outline: 30604 bytes
+- Evidence ID: `ev_954e4942c329c1044e53c526f273edde066a1d84ae6ea12b2c3c20f240c7a272`
+- Accessibility outline: 30423 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

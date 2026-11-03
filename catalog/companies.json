@@ -12,7 +12,12 @@
     "engineering_blog": "https://blog.google",
     "research_portal": "https://deepmind.google/",
     "brand_resource_page": "https://marketing.google.com",
-    "subsidiaries": ["deepmind", "waymo", "calico", "GV"],
+    "subsidiaries": [
+      "deepmind",
+      "waymo",
+      "calico",
+      "GV"
+    ],
     "date_last_verified": "2026-01-13",
     "evidence": [
       {
@@ -41,7 +46,12 @@
     "engineering_blog": "https://www.apple.com/newsroom/",
     "research_portal": null,
     "brand_resource_page": "https://www.apple.com/brand-resources/",
-    "subsidiaries": ["authentic", "filemaker", "primordial", "claris"],
+    "subsidiaries": [
+      "authentic",
+      "filemaker",
+      "primordial",
+      "claris"
+    ],
     "date_last_verified": "2026-01-13",
     "evidence": [
       {
@@ -70,7 +80,12 @@
     "engineering_blog": "https://aws.amazon.com/blog/",
     "research_portal": null,
     "brand_resource_page": null,
-    "subsidiaries": ["aws", "whole_foods", "zoox", "krisp"],
+    "subsidiaries": [
+      "aws",
+      "whole_foods",
+      "zoox",
+      "krisp"
+    ],
     "date_last_verified": "2026-01-13",
     "evidence": [
       {
@@ -148,7 +163,9 @@
     "id": "meta",
     "name": "Meta",
     "common_name": "Meta",
-    "former_names": ["facebook"],
+    "former_names": [
+      "facebook"
+    ],
     "parent_organization": null,
     "official_website": "https://www.meta.com/",
     "product_directory": "https://about.meta.com",
@@ -157,7 +174,12 @@
     "engineering_blog": "https://engineering.fb.com",
     "research_portal": null,
     "brand_resource_page": "https://about.meta.com/brand-resources",
-    "subsidiaries": ["instagram", "whatsapp", "reality_labs", "oculus"],
+    "subsidiaries": [
+      "instagram",
+      "whatsapp",
+      "reality_labs",
+      "oculus"
+    ],
     "date_last_verified": "2026-01-13",
     "evidence": [
       {
@@ -168,6 +190,39 @@
         "title": "Meta",
         "claim": "Meta Platforms Inc. (formerly Facebook Inc.).",
         "claim_type": "ownership",
+        "reliability": "primary",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  "microsoft": {
+    "id": "microsoft",
+    "name": "Microsoft",
+    "common_name": "Microsoft",
+    "former_names": [],
+    "parent_organization": null,
+    "official_website": "https://www.microsoft.com/",
+    "product_directory": "https://www.microsoft.com/en-us/microsoft-365/products-apps-services",
+    "developer_portal": "https://learn.microsoft.com/",
+    "open_source_organization": "https://opensource.microsoft.com/",
+    "engineering_blog": "https://blogs.microsoft.com/",
+    "research_portal": "https://www.microsoft.com/en-us/research/",
+    "brand_resource_page": "https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks",
+    "subsidiaries": [
+      "github",
+      "linkedin",
+      "nuance"
+    ],
+    "date_last_verified": "2026-11-03",
+    "evidence": [
+      {
+        "id": "ev-microsoft-identity",
+        "url": "https://www.microsoft.com/en-us/about",
+        "source_type": "official_website",
+        "publisher": "Microsoft",
+        "title": "About Microsoft",
+        "claim": "Microsoft Corporation publishes official product information on microsoft.com.",
+        "claim_type": "identity",
         "reliability": "primary",
         "verification_status": "verified"
       }

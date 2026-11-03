@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_492ef4159bf0e43607843887a18873250203bf9a7dc0853fadbbb99e992de8d6",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.skype.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "12669b8dcaa7606d903ac237b144d710fc9b3524b138d924c09f96a5155604c7"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://www.skype.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 5571,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 2712,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://teams.live.com/free",
+          "origin": "https://teams.live.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2545,
+        "before_url": {
+          "url": "https://teams.live.com/free",
+          "origin": "https://teams.live.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://teams.live.com/free",
+          "origin": "https://teams.live.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "6ad3056fac27010bae5f490cb3f3c39ea5164e3e73efc6154bc1d6ecdbee3b3b",
+              "bytes": 2036,
+              "text": "- document:\n  - text: \"-->\"\n  - banner:\n    - link \"Teams meetings\":\n      - /url: \"#\"\n    - link \"What's new\":\n      - /url: https://insider.teams.com/whats-new/\n    - button \"Download Teams\"\n    - button \"Sign in\"\n  - main:\n    - heading \"Video calls and chats with anyone, anytime\" [level=1]\n    - paragraph: Use Copilot to help plan your meetings and turn recordings into notes.\n    - paragraph:\n      - button \"Start a meeting for free\"\n      - button \"Join a meeting\"\n    - heading \"60-min free meetings\" [level=2]\n    - text: Share meeting links with anyone on any device\n    - paragraph\n    - text: Paid feature\n    - heading \"Record meetings and calls\" [level=2]\n    - text: Remember the important moments\n    - paragraph\n    - text: Paid feature\n    - heading \"Power up with AI\" [level=2]\n    - text: Unlock AI features with Microsoft Copilot\n    - paragraph\n    - heading \"Files\" [level=2]\n    - text: Share documents and more\n    - paragraph\n    - heading \"Collaboration tools\" [level=2]\n    - text: Share, play, shop together\n    - paragraph\n    - heading \"Chat themes\" [level=2]\n    - text: Reflect your style\n    - paragraph\n    - heading \"See what's new!\" [level=2]\n    - paragraph: Read about new features and improvements in Teams\n    - link \"See what's new!\":\n      - /url: https://insider.teams.com/whats-new/\n      - text: Updates\n  - contentinfo:\n    - button \"Download the Teams app\"\n    - link \"Need help?\":\n      - /url: https://support.microsoft.com/office/microsoft-teams-free-help-08fd2b61-1c3e-47e2-821b-d312709b933d\n    - link \"Your Privacy Choices\":\n      - /url: https://aka.ms/yourcaliforniaprivacychoices\n    - link \"Consumer Health Privacy\":\n      - /url: https://go.microsoft.com/fwlink/?linkid=2259814\n    - link \"Privacy & cookies\":\n      - /url: https://go.microsoft.com/fwlink/?LinkId=521839\n    - link \"Terms of use\":\n      - /url: https://go.microsoft.com/fwlink/?LinkID=206977\n    - link \"Trademarks\":\n      - /url: https://go.microsoft.com/fwlink/?linkid=2196228\n    - text: © Microsoft 2026"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://teams.live.com/free",
+              "origin": "https://teams.live.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

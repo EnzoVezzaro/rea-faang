@@ -15,18 +15,18 @@
     <meta property="og:site_name" content="RAE FAANG" />
     <meta property="og:title" content="Get started — RAE FAANG docs" />
     <meta property="og:description" content="Set up the repository, check the catalog, and start coordinating product work." />
-    <meta property="og:url" content="https://rae-faang-landing.vercel.app/docs/getting-started.html" />
-    <meta property="og:image" content="https://rae-faang-landing.vercel.app/assets/rae-banner.png" />
+    <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/docs/getting-started.html" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
     <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
     <meta property="og:image:width" content="1774" />
     <meta property="og:image:height" content="887" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Get started — RAE FAANG docs" />
     <meta name="twitter:description" content="Set up the repository, check the catalog, and start coordinating product work." />
-    <meta name="twitter:image" content="https://rae-faang-landing.vercel.app/assets/rae-banner.png" />
-    <link rel="canonical" href="https://rae-faang-landing.vercel.app/docs/getting-started.html" />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/docs/getting-started.html" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="sitemap" type="application/xml" href="https://rae-faang-landing.vercel.app/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
     <link rel="apple-touch-icon" href="../docs/assets/icon-192.png" />
     <link rel="icon" href="../docs/assets/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="icon" href="../docs/assets/icon-512.png" type="image/png" sizes="512x512" />
@@ -190,7 +190,7 @@ ace &lt;cmd&gt;               # ACE command (source checkout/workspace dependenc
 <tr><td><code>node: command not found</code></td><td>Install Node.js 20+ (nodejs.org or nvm).</td></tr>
 <tr><td><code>Cannot find module 'js-yaml'</code></td><td>Run <code>npm install</code>.</td></tr>
 <tr><td><code>ace status</code> prints <code>runtime not available yet</code></td><td>The root <code>lib/</code> is missing. Re-copy it: <code>cp -R node_modules/ace-proagents/lib ./lib</code>.</td></tr>
-<tr><td><code>INCOMPATIBLE_ADAPTER</code> from <code>ace config check</code></td><td>You used a provider that isn't installed. Compare against <code>ace adapters list</code>.</td></tr>
+<tr><td><code>INCOMPATIBLE_ADAPTER</code> from <code>ace config check</code></td><td>Either the provider isn't installed (compare <code>ace adapters list</code>), or the <code>ace</code> on your <code>PATH</code> is an older global install than the <code>ace-proagents</code> pinned in <code>package.json</code>. Run the repository's own copy instead: <code>npm run ace -- config check</code>.</td></tr>
 <tr><td><code>MISSING_CREDENTIAL</code></td><td>Run <code>ace secret set &lt;name&gt;</code> for the required credential.</td></tr>
 <tr><td><code>research validate</code> reports errors</td><td>Fix the catalog line or research frontmatter the report names, then re-run.</td></tr>
 <tr><td>A product's <code>ace</code> command fails</td><td>The workspace shim expects to sit under <code>products/&lt;company&gt;/&lt;product&gt;/</code>.</td></tr>

@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_6dd7c2f06b74701972d9b0afe8ae4e4911d8616571b1f27c778d95b2d02674f3",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/healthlake/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "6f0b18cb31d7f97fdbe846185ceb064f46a543e4bd3ba096309bcfae6721bbf9"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 6502,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3587,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/healthlake/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2594,
+        "before_url": {
+          "url": "https://aws.amazon.com/healthlake/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/healthlake/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "d4c75b937ccc3527e77b119b33b21341244699926abe8aa163ef6cc7ea042050",
+              "bytes": 17576,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - tooltip \"Feedback\"\n  - main:\n    - paragraph: AWS HealthLake\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /healthlake/\n      - button \"Features submenu\": Features\n      - listitem:\n        - link \"Pricing\":\n          - /url: /healthlake/pricing/\n      - listitem:\n        - link \"FAQs\":\n          - /url: /healthlake/faqs/\n      - listitem:\n        - link \"Resources\":\n          - /url: /healthlake/resources/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Product\":\n            - /url: /products/\n        - listitem:\n          - link \"Machine Learning\":\n            - /url: /machine-learning/\n        - listitem: AWS HealthLake\n    - heading \"High-performance FHIR interactions at petabyte scale\" [level=1]\n    - paragraph: Accelerate healthcare interoperability and intelligence with AWS HealthLake, a standards-based FHIR service\n    - button \"Get started with HealthLake\"\n    - button \"Connect with a specialist\"\n    - heading \"What is HealthLake?\" [level=2]\n    - paragraph: AWS HealthLake is a fully managed, HIPAA-eligible service that serves as a AI-ready FHIR persistence layer, transforming fragmented healthcare data into a unified repository with performance at petabyte scale. Processing billions of transactions annually with sub-second latency, HealthLake provides high-throughput APIs that meet CMS and ONC compliance requirements while maintaining the performance and reliability proven across hundreds of healthcare customers. By seamlessly integrating with AWS's healthcare and AI services, HealthLake delivers a comprehensive data infrastructure that powers advanced analytics, ML models, and generative AI innovations—all with enterprise-grade security and zero infrastructure management overhead.\n    - button \"Play:\"\n    - img \"Missing alt text value\"\n    - heading \"Introducing Data Transformation Agent\" [level=2]\n    - paragraph: Transform legacy clinical documents into queryable FHIR resources in days, not months.\n    - 'link \"Learn more: Introducing Data Transformation Agent\"':\n      - /url: /about-aws/whats-new/2026/03/aws-healthlake-data-transformation-agent/\n      - text: Learn more\n    - heading \"Features\" [level=2]\n    - link \"Enterprise-Scale FHIR Server Enterprise-Scale FHIR Server AWS HealthLake provides a fully managed, enterprise-scale FHIR R4 server that powers patient and member-facing applications without the operational burden of building and maintaining FHIR infrastructure at scale. Learn more\":\n      - /url: /healthlake/features/enterprise-scale-fhir-server/\n      - img \"Enterprise-Scale FHIR Server\"\n      - heading \"Enterprise-Scale FHIR Server\" [level=3]\n      - text: AWS HealthLake provides a fully managed, enterprise-scale FHIR R4 server that powers patient and member-facing applications without the operational burden of building and maintaining FHIR infrastructure at scale. Learn more\n    - link \"Unified Patient Record Unified Patient Record AWS HealthLake resolves fragmented, duplicate patient identities across claims, clinical, and ADT sources into a single standards-based record — accessible through both FHIR search and SQL, without custom pipelines or specialized FHIR expertise. Learn more\":\n      - /url: /healthlake/features/unified-patient-record/\n      - img \"Unified Patient Record\"\n      - heading \"Unified Patient Record\" [level=3]\n      - text: AWS HealthLake resolves fragmented, duplicate patient identities across claims, clinical, and ADT sources into a single standards-based record — accessible through both FHIR search and SQL, without custom pipelines or specialized FHIR expertise. Learn more\n    - link \"AI & Analytics Integration AI & Analytics Integration AWS HealthLake connects to agentic solutions like Amazon Connect Health and provides an MCP Server for customers building custom agents through AWS Bedrock AgentCore Gateway. Learn more\":\n      - /url: /healthlake/features/ai-analytics-integration/\n      - img \"AI & Analytics Integration\"\n      - heading \"AI & Analytics Integration\" [level=3]\n      - text: AWS HealthLake connects to agentic solutions like Amazon Connect Health and provides an MCP Server for customers building custom agents through AWS Bedrock AgentCore Gateway. Learn more\n    - status\n    - heading \"Customers\" [level=2]\n    - tablist:\n      - tab \"Greenway Health\" [selected]\n      - tab \"Labcorp\"\n      - tab \"MHK\"\n      - tab \"MEDHOST\"\n    - tabpanel \"Greenway Health\":\n      - heading \"Greenway Health\" [level=3]\n      - paragraph: \"\\\"Using AWS HealthLake, we are providing advanced security compared with how apps were integrating before. The whole FHIR system greatly advances the provider’s control over how they access their data versus our legacy system. The provider is empowered with the ability to control what data is being accessed at a much more granular level.\\\"\"\n      - paragraph: —— Philip Nick,Vice President and Distinguished, Engineer, Greenway Health, LLC\n      - 'link \"See case study here: Greenway Health\"':\n        - /url: /solutions/case-studies/latest-greenway-aws-healthlake-case-study/\n        - text: See case study here\n      - img \"Missing alt text value\"\n    - region \"AWS Information\":\n      - heading \"What's New\" [level=2]\n      - region \"carousel\":\n        - link \"AWS HealthLake identifies and links duplicate patient, provider, and organization records (Preview)\":\n          - /url: /about-aws/whats-new/2026/07/aws-healthlake/\n          - heading \"AWS HealthLake identifies and links duplicate patient, provider, and organization records (Preview)\" [level=2]\n      - button \"Previous slide\"\n      - button \"Next slide\"\n    - heading \"Unlock substantial cost savings\" [level=2]\n    - paragraph: AWS HealthLake's usage-based pricing model and fully managed infrastructure offer a cost-effective solution, especially at enterprise scale.\n    - 'link \"Discover AWS HealthLake Pricing: Unlock substantial cost savings\"':\n      - /url: /healthlake/pricing/\n      - text: Discover AWS HealthLake Pricing\n    - heading \"Use cases\" [level=2]\n    - link \"Regulatory Compliance Efficient implementation of Patient Access, Provider Directory, Provider Access, and Prior Authorization APIs for CMS mandates. Learn more\":\n      - /url: /solutions/case-studies/mhk-case-study/\n      - heading \"Regulatory Compliance\" [level=3]\n      - paragraph: Efficient implementation of Patient Access, Provider Directory, Provider Access, and Prior Authorization APIs for CMS mandates.\n      - text: Learn more\n    - link \"Infrastructure for Real-Time Utilization Management Instant data access for concurrent utilization management workflows, prior authorization decisions, and real-time member engagement tools that improve care coordination and reduce administrative costs. Learn more\":\n      - /url: /blogs/machine-learning/automate-prior-authorization-using-crd-with-cds-hooks-and-aws-healthlake/\n      - heading \"Infrastructure for Real-Time Utilization Management\" [level=3]\n      - paragraph: Instant data access for concurrent utilization management workflows, prior authorization decisions, and real-time member engagement tools that improve care coordination and reduce administrative costs.\n      - text: Learn more\n    - link \"Accelerate Product Development and Compliance Rapidly build and scale your FHIR-based applications that meet HTI-1 and CMS requirements without managing complex infrastructure. Learn more\":\n      - /url: /solutions/case-studies/latest-greenway-aws-healthlake-case-study/\n      - heading \"Accelerate Product Development and Compliance\" [level=3]\n      - paragraph: Rapidly build and scale your FHIR-based applications that meet HTI-1 and CMS requirements without managing complex infrastructure.\n      - text: Learn more\n    - link \"Reduce Development Costs Minimize data engineering investments by leveraging a structured FHIR data foundation with embedded analytics capabilities that enhance your product capabilities. Learn more\":\n      - /url: /solutions/case-studies/latest-greenway-aws-healthlake-case-study/\n      - heading \"Reduce Development Costs\" [level=3]\n      - paragraph: Minimize data engineering investments by leveraging a structured FHIR data foundation with embedded analytics capabilities that enhance your product capabilities.\n      - text: Learn more\n    - link \"Modernize Patient-Facing Applications Use a standards-compliant FHIR datastore that enables real-time access to health data from multiple providers while ensuring seamless interoperability across healthcare systems and platforms. Learn more\":\n      - /url: /blogs/industries/hms-people-heart-study-streamlines-digital-research-with-aws/\n      - heading \"Modernize Patient-Facing Applications\" [level=3]\n      - paragraph: Use a standards-compliant FHIR datastore that enables real-time access to health data from multiple providers while ensuring seamless interoperability across healthcare systems and platforms.\n      - text: Learn more\n    - link \"Enhance Population Health Systems Create unified FHIR repositories that aggregate clinical data from disparate sources, enabling comprehensive population-level disease surveillance and outbreak monitoring. Learn more\":\n      - /url: /blogs/publicsector/build-population-health-systems-to-enhance-healthcare-customer-experiences-on-aws/\n      - heading \"Enhance Population Health Systems\" [level=3]\n      - paragraph: Create unified FHIR repositories that aggregate clinical data from disparate sources, enabling comprehensive population-level disease surveillance and outbreak monitoring.\n      - text: Learn more\n    - link \"Unify Clinical Data Create comprehensive patient records that integrate data from multiple EHRs, departmental systems, and external sources to support quality initiatives, care coordination workflows and research initiatives. Learn more\":\n      - /url: /blogs/industries/ai-powered-patient-profiles-using-aws-healthlake-and-amazon-bedrock/\n      - heading \"Unify Clinical Data\" [level=3]\n      - paragraph: Create comprehensive patient records that integrate data from multiple EHRs, departmental systems, and external sources to support quality initiatives, care coordination workflows and research initiatives.\n      - text: Learn more\n    - heading \"Get started with AWS HealthLake\" [level=2]\n    - link \"Learn more about pricing Learn more\":\n      - /url: /healthlake/pricing/\n      - heading \"Learn more about pricing\" [level=2]\n      - text: Learn more\n    - link \"Start using AWS HealthLake in Console Get started\":\n      - /url: https://console.aws.amazon.com/healthlake/home\n      - heading \"Start using AWS HealthLake in Console\" [level=2]\n      - text: Get started\n    - link \"See latest AWS HealthLake releases Learn more\":\n      - /url: https://docs.aws.amazon.com/healthlake/latest/devguide/releases.html\n      - heading \"See latest AWS HealthLake releases\" [level=2]\n      - text: Learn more\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /healthlake/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /healthlake/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/healthlake/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

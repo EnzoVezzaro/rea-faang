@@ -15,18 +15,18 @@
     <meta property="og:site_name" content="RAE FAANG" />
     <meta property="og:title" content="Build Apple Pay with your agent — RAE FAANG" />
     <meta property="og:description" content="Build Apple Pay with your coding agent. Product research, reusable projects and instructions to build and verify in your project." />
-    <meta property="og:url" content="https://rae-faang-landing.vercel.app/catalog/apple-pay/" />
-    <meta property="og:image" content="https://rae-faang-landing.vercel.app/assets/rae-banner.png" />
+    <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/catalog/apple-pay/" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
     <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
     <meta property="og:image:width" content="1774" />
     <meta property="og:image:height" content="887" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Build Apple Pay with your agent — RAE FAANG" />
     <meta name="twitter:description" content="Build Apple Pay with your coding agent. Product research, reusable projects and instructions to build and verify in your project." />
-    <meta name="twitter:image" content="https://rae-faang-landing.vercel.app/assets/rae-banner.png" />
-    <link rel="canonical" href="https://rae-faang-landing.vercel.app/catalog/apple-pay/" />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/catalog/apple-pay/" />
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
-    <link rel="sitemap" type="application/xml" href="https://rae-faang-landing.vercel.app/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
     <link rel="apple-touch-icon" href="../../docs/assets/icon-192.png" />
     <link rel="icon" href="../../docs/assets/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="icon" href="../../docs/assets/icon-512.png" type="image/png" sizes="512x512" />
@@ -162,7 +162,8 @@
               <div class="cmd-banner">
                 <p class="cmd-banner-label">Get the Apple Pay build skill</p>
                 <pre class="cmd-block"><code>npx rae-faang apple-pay --out ./apple-pay.md</code></pre>
-                <p class="cmd-banner-note">Generate the skill with the RAE CLI, or <a href="agent-kit.md" download>download the Markdown skill</a>. The <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/catalog/skills/apple/apple-pay.md" rel="noopener noreferrer" target="_blank">source skill</a> is also available in the catalog.</p>
+                <p class="cmd-banner-note">Download or copy this exact Markdown, or generate the same file with the RAE CLI: <span class="mono">npx rae-faang apple-pay --out ./apple-pay.md</span>, <span class="mono">npx rae-faang skills generate apple-pay</span>, or <span class="mono">npx rae-faang build agent-kit apple-pay --out ./apple-pay-agent</span>. The <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/catalog/skills/apple/apple-pay.md" rel="noopener noreferrer" target="_blank">canonical skill</a> is the same file in the catalog.</p>
+                <p class="cmd-banner-actions"><a class="rail-dl" href="agent-kit.md" download>Download Markdown skill</a> <button class="rail-dl" type="button" data-copy-skill>Copy Markdown skill</button></p>
               </div>
               <ul class="artifact-list">
               <li class="artifact"><a class="artifact-name" href="agent-kit.md" download>agent-kit.md</a><span class="artifact-note">Downloadable Markdown skill with product-specific instructions for your coding agent.</span><span class="pill pill-available"><span class="pill-dot" aria-hidden="true"></span>available</span></li>
@@ -224,6 +225,22 @@
         </div>
       </section>
       <script>
+        document.querySelectorAll('[data-copy-skill]').forEach(function (button) {
+          button.addEventListener('click', function () {
+            var label = button.textContent;
+            var done = function (text) {
+              button.textContent = text;
+              setTimeout(function () { button.textContent = label; }, 1600);
+            };
+            fetch('agent-kit.md')
+              .then(function (response) { if (!response.ok) { throw new Error(response.status); } return response.text(); })
+              .then(function (markdown) {
+                if (navigator.clipboard) { return navigator.clipboard.writeText(markdown).then(function () { done('Copied'); }); }
+                throw new Error('clipboard unavailable');
+              })
+              .catch(function () { done('Copy failed — use download'); });
+          });
+        });
         document.querySelectorAll('.rail-input').forEach(function (input) {
           input.addEventListener('click', function () {
             input.select();

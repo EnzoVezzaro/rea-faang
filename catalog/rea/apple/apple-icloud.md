@@ -9,11 +9,11 @@ Browser capture of the public web surface of iCloud, recorded with REA.
 | Target | https://www.icloud.com/ |
 | Resolved URL | https://www.icloud.com/ |
 | Page title | iCloud |
-| Captured | 2026-10-14T03:54:37.586Z |
+| Captured | 2026-11-03T01:31:37.772Z |
 | Status | captured |
-| REA Evidence ID | `ev_0b659aa4c9fad62236363e0bc6caca8466a44bad5a850b2848d992e202605406` |
+| REA Evidence ID | `ev_2301c78b2780bc1d0dd4789c23b147b57c1b1efd37a529c9037228e05bbed0b5` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -83,9 +83,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -93,6 +93,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/apple-icloud.json`
-- Evidence ID: `ev_0b659aa4c9fad62236363e0bc6caca8466a44bad5a850b2848d992e202605406`
+- Evidence ID: `ev_2301c78b2780bc1d0dd4789c23b147b57c1b1efd37a529c9037228e05bbed0b5`
 - Accessibility outline: 1903 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

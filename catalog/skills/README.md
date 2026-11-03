@@ -6,8 +6,8 @@ research, reuse/build guidance and verification steps. The coverage counts below
 describe alternative research only, not whether a product can be built.
 
 - **40 mature alternatives listed** — a suitable open-source project is a candidate to evaluate.
-- **29 partial alternative coverage** — projects cover some needs; review the documented gaps.
-- **8 with no verified alternative** — ask your agent to assess current projects and build in your project.
+- **66 partial alternative coverage** — projects cover some needs; review the documented gaps.
+- **78 with no verified alternative** — ask your agent to assess current projects and build in your project.
 
 Regenerate with `npm run skills:catalog` (or `node tools/skills-catalog.mjs`),
 and verify without writing with `node tools/skills-catalog.mjs --check`.
@@ -37,11 +37,111 @@ landscape, not legal advice.
 
 | Product | ID | Alternative coverage | Lead alternative |
 |---|---|---|---|
+| [Amazon AppFlow](amazon_aws/amazon-appflow.md) | `amazon-appflow` | no verified alternative | — |
+| [Amazon Athena](amazon_aws/amazon-athena.md) | `amazon-athena` | no verified alternative | — |
+| [Amazon Augmented AI](amazon_aws/amazon-augmented-ai.md) | `amazon-augmented-ai` | no verified alternative | — |
+| [Amazon Aurora](amazon_aws/amazon-aurora.md) | `amazon-aurora` | no verified alternative | — |
+| [Amazon Bio Discovery](amazon_aws/amazon-bio-discovery.md) | `amazon-bio-discovery` | no verified alternative | — |
+| [Amazon Braket](amazon_aws/amazon-braket.md) | `amazon-braket` | no verified alternative | — |
+| [Amazon Chime](amazon_aws/amazon-chime.md) | `amazon-chime` | no verified alternative | — |
+| [Amazon Chime SDK](amazon_aws/amazon-chime-sdk.md) | `amazon-chime-sdk` | no verified alternative | — |
+| [Amazon CloudSearch](amazon_aws/amazon-cloudsearch.md) | `amazon-cloudsearch` | no verified alternative | — |
+| [Amazon CloudWatch](amazon_aws/amazon-cloudwatch.md) | `amazon-cloudwatch` | no verified alternative | — |
+| [Amazon CodeGuru](amazon_aws/amazon-codeguru.md) | `amazon-codeguru` | no verified alternative | — |
+| [Amazon Cognito](amazon_aws/amazon-cognito.md) | `amazon-cognito` | no verified alternative | — |
+| [Amazon Comprehend](amazon_aws/amazon-comprehend.md) | `amazon-comprehend` | no verified alternative | — |
+| [Amazon Connect Customer](amazon_aws/amazon-connect-customer.md) | `amazon-connect-customer` | no verified alternative | — |
+| [Amazon Connect Decisions](amazon_aws/amazon-connect-decisions.md) | `amazon-connect-decisions` | no verified alternative | — |
+| [Amazon Connect Health](amazon_aws/amazon-connect-health.md) | `amazon-connect-health` | no verified alternative | — |
+| [Amazon Connect Talent](amazon_aws/amazon-connect-talent.md) | `amazon-connect-talent` | no verified alternative | — |
+| [Amazon Data Firehose](amazon_aws/amazon-data-firehose.md) | `amazon-data-firehose` | no verified alternative | — |
+| [Amazon Detective](amazon_aws/amazon-detective.md) | `amazon-detective` | no verified alternative | — |
+| [Amazon DevOps Guru](amazon_aws/amazon-devops-guru.md) | `amazon-devops-guru` | no verified alternative | — |
+| [Amazon DocumentDB](amazon_aws/amazon-documentdb.md) | `amazon-documentdb` | no verified alternative | — |
 | [Amazon EC2](amazon_aws/amazon-ec2.md) | `amazon-ec2` | mature alternative listed | OpenStack |
+| [Amazon EC2 Auto Scaling](amazon_aws/amazon-ec2-auto-scaling.md) | `amazon-ec2-auto-scaling` | no verified alternative | — |
+| [Amazon ECS Anywhere](amazon_aws/amazon-ecs-anywhere.md) | `amazon-ecs-anywhere` | no verified alternative | — |
 | [Amazon EKS](amazon_aws/amazon-eks.md) | `amazon-eks` | mature alternative listed | k3s |
+| [Amazon EKS Anywhere](amazon_aws/amazon-eks-anywhere.md) | `amazon-eks-anywhere` | no verified alternative | — |
+| [Amazon EKS Distro](amazon_aws/amazon-eks-distro.md) | `amazon-eks-distro` | no verified alternative | — |
+| [Amazon Elastic Block Store](amazon_aws/amazon-elastic-block-store.md) | `amazon-elastic-block-store` | no verified alternative | — |
+| [Amazon Elastic Container Service](amazon_aws/amazon-elastic-container-service.md) | `amazon-elastic-container-service` | no verified alternative | — |
+| [Amazon Elastic File System](amazon_aws/amazon-elastic-file-system.md) | `amazon-elastic-file-system` | no verified alternative | — |
+| [Amazon Elastic Kubernetes Service](amazon_aws/amazon-elastic-kubernetes-service.md) | `amazon-elastic-kubernetes-service` | no verified alternative | — |
+| [Amazon ElastiCache for Memcached](amazon_aws/amazon-elasticache-memcached.md) | `amazon-elasticache-memcached` | no verified alternative | — |
+| [Amazon ElastiCache for Redis OSS](amazon_aws/amazon-elasticache-redis.md) | `amazon-elasticache-redis` | no verified alternative | — |
+| [Amazon EMR](amazon_aws/amazon-emr.md) | `amazon-emr` | no verified alternative | — |
+| [Amazon File Cache](amazon_aws/amazon-file-cache.md) | `amazon-file-cache` | no verified alternative | — |
+| [Amazon Forecast](amazon_aws/amazon-forecast.md) | `amazon-forecast` | no verified alternative | — |
+| [Amazon Fraud Detector](amazon_aws/amazon-fraud-detector.md) | `amazon-fraud-detector` | no verified alternative | — |
+| [Amazon FSx for Lustre](amazon_aws/amazon-fsx-lustre.md) | `amazon-fsx-lustre` | no verified alternative | — |
+| [Amazon FSx for NetApp ONTAP](amazon_aws/amazon-fsx-ontap.md) | `amazon-fsx-ontap` | no verified alternative | — |
+| [Amazon FSx for OpenZFS](amazon_aws/amazon-fsx-openzfs.md) | `amazon-fsx-openzfs` | no verified alternative | — |
+| [Amazon FSx for Windows File Server](amazon_aws/amazon-fsx-windows.md) | `amazon-fsx-windows` | no verified alternative | — |
+| [Amazon GameLift](amazon_aws/amazon-gamelift.md) | `amazon-gamelift` | no verified alternative | — |
+| [Amazon GuardDuty](amazon_aws/amazon-guardduty.md) | `amazon-guardduty` | no verified alternative | — |
+| [Amazon HealthLake](amazon_aws/amazon-healthlake.md) | `amazon-healthlake` | no verified alternative | — |
+| [Amazon Inspector](amazon_aws/amazon-inspector.md) | `amazon-inspector` | no verified alternative | — |
+| [Amazon Interactive Video Service](amazon_aws/amazon-ivs.md) | `amazon-ivs` | no verified alternative | — |
+| [Amazon Kendra](amazon_aws/amazon-kendra.md) | `amazon-kendra` | no verified alternative | — |
+| [Amazon Keyspaces (for Apache Cassandra)](amazon_aws/amazon-keyspaces.md) | `amazon-keyspaces` | no verified alternative | — |
+| [Amazon Kinesis Data Streams](amazon_aws/amazon-kinesis-data-streams.md) | `amazon-kinesis-data-streams` | no verified alternative | — |
+| [Amazon Kinesis Video Streams](amazon_aws/amazon-kinesis-video-streams.md) | `amazon-kinesis-video-streams` | no verified alternative | — |
+| [Amazon Lex](amazon_aws/amazon-lex.md) | `amazon-lex` | no verified alternative | — |
+| [Amazon Lightsail](amazon_aws/amazon-lightsail.md) | `amazon-lightsail` | no verified alternative | — |
+| [Amazon Location Service](amazon_aws/amazon-location.md) | `amazon-location` | no verified alternative | — |
+| [Amazon Lookout for Equipment](amazon_aws/amazon-lookout-equipment.md) | `amazon-lookout-equipment` | no verified alternative | — |
+| [Amazon Lookout for Metrics](amazon_aws/amazon-lookout-metrics.md) | `amazon-lookout-metrics` | no verified alternative | — |
+| [Amazon Lookout for Vision](amazon_aws/amazon-lookout-vision.md) | `amazon-lookout-vision` | no verified alternative | — |
+| [Amazon Macie](amazon_aws/amazon-macie.md) | `amazon-macie` | no verified alternative | — |
+| [Amazon Managed Blockchain](amazon_aws/amazon-managed-blockchain.md) | `amazon-managed-blockchain` | no verified alternative | — |
+| [Amazon Managed Grafana](amazon_aws/amazon-managed-grafana.md) | `amazon-managed-grafana` | no verified alternative | — |
+| [Amazon Managed Service for Apache Flink](amazon_aws/amazon-managed-service-apache-flink.md) | `amazon-managed-service-apache-flink` | no verified alternative | — |
+| [Amazon Managed Service for Prometheus](amazon_aws/amazon-managed-prometheus.md) | `amazon-managed-prometheus` | no verified alternative | — |
+| [Amazon Managed Streaming for Apache Kafka](amazon_aws/amazon-msk.md) | `amazon-msk` | no verified alternative | — |
+| [Amazon Managed Workflows for Apache Airflow](amazon_aws/amazon-mwaa.md) | `amazon-mwaa` | no verified alternative | — |
+| [Amazon Monitron](amazon_aws/amazon-monitron.md) | `amazon-monitron` | no verified alternative | — |
+| [Amazon MQ](amazon_aws/amazon-mq.md) | `amazon-mq` | no verified alternative | — |
+| [Amazon Neptune](amazon_aws/amazon-neptune.md) | `amazon-neptune` | no verified alternative | — |
+| [Amazon Nimble Studio](amazon_aws/amazon-nimble-studio.md) | `amazon-nimble-studio` | no verified alternative | — |
+| [Amazon Nova Act](amazon_aws/amazon-nova-act.md) | `amazon-nova-act` | no verified alternative | — |
+| [Amazon OpenSearch Service](amazon_aws/amazon-opensearch-service.md) | `amazon-opensearch-service` | partial alternative coverage | OpenSearch |
+| [Amazon Personalize](amazon_aws/amazon-personalize.md) | `amazon-personalize` | partial alternative coverage | RecBole |
+| [Amazon Pinpoint](amazon_aws/amazon-pinpoint.md) | `amazon-pinpoint` | no verified alternative | — |
+| [Amazon Polly](amazon_aws/amazon-polly.md) | `amazon-polly` | partial alternative coverage | Piper |
+| [Amazon Q Developer](amazon_aws/amazon-q-developer.md) | `amazon-q-developer` | partial alternative coverage | OpenHands |
+| [Amazon QuickSight](amazon_aws/amazon-quicksight.md) | `amazon-quicksight` | partial alternative coverage | Apache Superset |
 | [Amazon RDS](amazon_aws/aws-rds.md) | `aws-rds` | mature alternative listed | CloudNativePG |
+| [Amazon Rekognition](amazon_aws/amazon-rekognition.md) | `amazon-rekognition` | partial alternative coverage | CompreFace |
+| [Amazon Route 53](amazon_aws/amazon-route-53.md) | `amazon-route-53` | partial alternative coverage | PowerDNS Authoritative Server |
 | [Amazon S3](amazon_aws/aws-s3.md) | `aws-s3` | mature alternative listed | Ceph (RADOS Gateway) |
+| [Amazon Security Lake](amazon_aws/amazon-security-lake.md) | `amazon-security-lake` | partial alternative coverage | Matano |
+| [Amazon Simple Email Service](amazon_aws/amazon-ses.md) | `amazon-ses` | partial alternative coverage | Postal |
+| [Amazon Textract](amazon_aws/amazon-textract.md) | `amazon-textract` | partial alternative coverage | Tesseract OCR |
+| [Amazon Timestream](amazon_aws/amazon-timestream.md) | `amazon-timestream` | partial alternative coverage | VictoriaMetrics |
+| [Amazon Transcribe](amazon_aws/amazon-transcribe.md) | `amazon-transcribe` | partial alternative coverage | Whisper |
+| [Amazon Translate](amazon_aws/amazon-translate.md) | `amazon-translate` | partial alternative coverage | Argos Translate |
+| [Amazon Verified Permissions](amazon_aws/amazon-verified-permissions.md) | `amazon-verified-permissions` | partial alternative coverage | Cedar |
+| [Amazon Virtual Private Cloud](amazon_aws/amazon-vpc.md) | `amazon-vpc` | partial alternative coverage | OpenStack Neutron |
+| [Amazon WorkMail](amazon_aws/amazon-workmail.md) | `amazon-workmail` | partial alternative coverage | mailcow: dockerized |
+| [Amazon WorkSpaces](amazon_aws/amazon-workspaces.md) | `amazon-workspaces` | partial alternative coverage | Apache Guacamole |
+| [Amazon WorkSpaces Applications](amazon_aws/amazon-workspaces-applications.md) | `amazon-workspaces-applications` | partial alternative coverage | Apache Guacamole |
+| [Amazon WorkSpaces Secure Browser](amazon_aws/amazon-workspaces-secure-browser.md) | `amazon-workspaces-secure-browser` | partial alternative coverage | Apache Guacamole |
 | [API Gateway](amazon_aws/aws-api-gateway.md) | `aws-api-gateway` | mature alternative listed | Apache APISIX |
+| [AWS Amplify](amazon_aws/aws-amplify.md) | `aws-amplify` | partial alternative coverage | Appwrite |
+| [AWS App Mesh](amazon_aws/aws-app-mesh.md) | `aws-app-mesh` | no verified alternative | Istio |
+| [AWS App Runner](amazon_aws/aws-app-runner.md) | `aws-app-runner` | partial alternative coverage | Coolify |
+| [AWS App2Container](amazon_aws/aws-app2container.md) | `aws-app2container` | partial alternative coverage | Konveyor Tackle |
+| [AWS AppSync](amazon_aws/aws-appsync.md) | `aws-appsync` | partial alternative coverage | Hasura GraphQL Engine |
+| [AWS Artifact](amazon_aws/aws-artifact.md) | `aws-artifact` | no verified alternative | — |
+| [AWS Audit Manager](amazon_aws/aws-audit-manager.md) | `aws-audit-manager` | no verified alternative | — |
+| [AWS Auto Scaling](amazon_aws/aws-auto-scaling.md) | `aws-auto-scaling` | partial alternative coverage | KEDA |
+| [AWS Backup](amazon_aws/aws-backup.md) | `aws-backup` | partial alternative coverage | Restic |
+| [AWS Batch](amazon_aws/aws-batch.md) | `aws-batch` | partial alternative coverage | Slurm |
+| [AWS Billing Conductor](amazon_aws/aws-billing-conductor.md) | `aws-billing-conductor` | partial alternative coverage | Lago |
+| [AWS Cloud Map](amazon_aws/aws-cloud-map.md) | `aws-cloud-map` | partial alternative coverage | Netflix Eureka |
+| [AWS Cloud WAN](amazon_aws/aws-cloud-wan.md) | `aws-cloud-wan` | partial alternative coverage | OpenZiti |
+| [AWS CloudFormation](amazon_aws/aws-cloudformation.md) | `aws-cloudformation` | partial alternative coverage | OpenTofu |
 | [AWS Lambda](amazon_aws/aws-lambda.md) | `aws-lambda` | mature alternative listed | OpenFaaS |
 | [Bedrock](amazon_aws/aws-bedrock.md) | `aws-bedrock` | partial alternative coverage | Ollama |
 | [CloudFront](amazon_aws/aws-cloudfront.md) | `aws-cloudfront` | mature alternative listed | Apache Traffic Server |
@@ -104,6 +204,7 @@ landscape, not legal advice.
 | [Google Play](google/google-play.md) | `google-play` | partial alternative coverage | F-Droid |
 | [Google Search](google/google-search.md) | `google-search` | partial alternative coverage | SearXNG |
 | [Google Sheets](google/google-sheets.md) | `google-sheets` | partial alternative coverage | Grist |
+| [Google Stadia](google/google-stadia.md) | `google-stadia` | partial alternative coverage | Sunshine |
 | [Google Workspace](google/google-workspace.md) | `google-workspace` | mature alternative listed | Nextcloud |
 | [Pub/Sub](google/google-pubsub.md) | `google-pubsub` | mature alternative listed | NATS |
 | [TensorFlow](google/google-tensorflow.md) | `google-tensorflow` | mature alternative listed | TensorFlow itself |
@@ -120,10 +221,21 @@ landscape, not legal advice.
 | [Threads](meta/meta-threads.md) | `meta-threads` | mature alternative listed | Mastodon |
 | [WhatsApp](meta/meta-whatsapp.md) | `meta-whatsapp` | mature alternative listed | Matrix / Element |
 
+### Microsoft (`microsoft`)
+
+| Product | ID | Alternative coverage | Lead alternative |
+|---|---|---|---|
+| [Microsoft 365](microsoft/microsoft-365.md) | `microsoft-365` | partial alternative coverage | LibreOffice |
+| [Microsoft Azure](microsoft/microsoft-azure.md) | `microsoft-azure` | partial alternative coverage | OpenStack |
+| [Microsoft Teams](microsoft/microsoft-teams.md) | `microsoft-teams` | partial alternative coverage | Element |
+| [Microsoft Windows](microsoft/microsoft-windows.md) | `microsoft-windows` | partial alternative coverage | ReactOS |
+| [Skype](microsoft/microsoft-skype.md) | `microsoft-skype` | partial alternative coverage | Jitsi |
+
 ### Netflix (`netflix`)
 
 | Product | ID | Alternative coverage | Lead alternative |
 |---|---|---|---|
+| [Netflix DVD](netflix/netflix-dvd.md) | `netflix-dvd` | partial alternative coverage | Jellyfin |
 | [Netflix Games](netflix/netflix-games.md) | `netflix-games` | no verified alternative | — |
 | [Netflix Kids](netflix/netflix-kids.md) | `netflix-kids` | partial alternative coverage | Jellyfin |
 | [Netflix Profiles](netflix/netflix-profiles.md) | `netflix-profiles` | partial alternative coverage | Jellyfin |

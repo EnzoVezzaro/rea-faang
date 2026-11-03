@@ -9,7 +9,10 @@ import { escapeHtml } from './markdown.mjs';
 import { companyLogoSvg } from './logos.mjs';
 import { agentInstructions, productDescription } from '../agent-kit-content.mjs';
 
-export const BASE_URL = 'https://rae-faang-landing.vercel.app';
+// Canonical origin for the published site. The repository deploys to GitHub
+// Pages (see .github/workflows/pages.yml) and declares the same URL in
+// package.json "homepage"; set RAE_SITE_URL to build for a preview host.
+export const BASE_URL = (process.env.RAE_SITE_URL || 'https://enzovezzaro.github.io/rea-faang').replace(/\/+$/, '');
 export const REPO_URL = 'https://github.com/EnzoVezzaro/rea-faang';
 
 export const STATUS_META = {
@@ -267,7 +270,7 @@ ${rows}
             <h1>We don't need<br />FAANG anymore.</h1>
             <p class="hero-proposition">Use your agent to build any of their products.</p>
             <p class="lede">
-              RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Choose what
+              RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft. Choose what
               you want to build; product research and candidate open-source projects give your coding
               agent a concrete place to start in your project. A product build skill is there when you
               want a direct handoff.
@@ -304,7 +307,7 @@ ${heroProducts}
             <p class="eyebrow">From catalog to your project</p>
             <h2 id="story-h">Choose what you want your agent to build.</h2>
             <p>
-              RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google so you can
+              RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft so you can
               choose what to build with your coding agent. Each product page brings together behavior,
               research and candidate open-source projects worth evaluating.
             </p>
@@ -976,7 +979,8 @@ ${alts.join('\n')}
               <div class="cmd-banner">
                 <p class="cmd-banner-label">Get the ${esc(p.name)} build skill</p>
                 <pre class="cmd-block"><code>npx rae-faang ${attr(p.id)} --out ./${attr(p.id)}.md</code></pre>
-                <p class="cmd-banner-note">Generate the skill with the RAE CLI, or <a href="agent-kit.md" download>download the Markdown skill</a>. The <a href="${skillUrl}">source skill</a> is also available in the catalog.</p>
+                <p class="cmd-banner-note">Download or copy this exact Markdown, or generate the same file with the RAE CLI: <span class="mono">npx rae-faang ${attr(p.id)} --out ./${attr(p.id)}.md</span>, <span class="mono">npx rae-faang skills generate ${attr(p.id)}</span>, or <span class="mono">npx rae-faang build agent-kit ${attr(p.id)} --out ./${attr(p.id)}-agent</span>. The <a href="${skillUrl}">canonical skill</a> is the same file in the catalog.</p>
+                <p class="cmd-banner-actions"><a class="rail-dl" href="agent-kit.md" download>Download Markdown skill</a> <button class="rail-dl" type="button" data-copy-skill>Copy Markdown skill</button></p>
               </div>
               <ul class="artifact-list">
               ${artifactRows}
@@ -1022,6 +1026,22 @@ ${stepper}
         </div>
       </section>
       <script>
+        document.querySelectorAll('[data-copy-skill]').forEach(function (button) {
+          button.addEventListener('click', function () {
+            var label = button.textContent;
+            var done = function (text) {
+              button.textContent = text;
+              setTimeout(function () { button.textContent = label; }, 1600);
+            };
+            fetch('agent-kit.md')
+              .then(function (response) { if (!response.ok) { throw new Error(response.status); } return response.text(); })
+              .then(function (markdown) {
+                if (navigator.clipboard) { return navigator.clipboard.writeText(markdown).then(function () { done('Copied'); }); }
+                throw new Error('clipboard unavailable');
+              })
+              .catch(function () { done('Copy failed — use download'); });
+          });
+        });
         document.querySelectorAll('.rail-input').forEach(function (input) {
           input.addEventListener('click', function () {
             input.select();

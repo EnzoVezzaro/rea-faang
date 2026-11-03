@@ -41,6 +41,30 @@ ACE declares these workers in the root `package.json` `ace.agents.workers`:
 
 A task is owned by exactly one agent at a time. ACE enforces the lease.
 
+### Project Header Section
+
+RAE FAANG is operated inside its project Header Section, whose canonical
+logical code is `rae-faang`. The Section is the project execution boundary and
+is distinct from the repository, workspace, or a department Section.
+
+```text
+Header Section: rae-faang
+└── Supervisor (required)
+    └── Workers created or reused by that supervisor
+```
+
+The Section must contain at least one accountable supervisor before project
+tasks are assigned. The supervisor receives the accepted backlog and may create
+or reuse workers from the declared ACE roster inside the same project scope.
+Workers work one task at a time, report to the supervisor, and do not direct
+other projects or departments. External subagents are not a substitute for the
+project Header Section workers.
+
+The contract or a `running` session label is not runtime proof. Before work is
+assigned, verify the Header Section/session, workspace and cwd, repository,
+supervisor, model and worker state. Record unknown mappings as `TBD` and do not
+claim activity or completion without a handoff and command evidence.
+
 ---
 
 ## 3. Command reference

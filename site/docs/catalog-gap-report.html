@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Runs before the stylesheet so reveal styles only apply where the
+         motion layer can actually drive them. -->
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <title>Catalog gap report — RAE FAANG docs</title>
+    <meta name="description" content="Deterministic reconciliation of the canonical catalog against the expanded FAANG plus Microsoft candidate inventory." />
+    <meta name="robots" content="index,follow" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0B0C0A" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="RAE FAANG" />
+    <meta property="og:title" content="Catalog gap report — RAE FAANG docs" />
+    <meta property="og:description" content="Deterministic reconciliation of the canonical catalog against the expanded FAANG plus Microsoft candidate inventory." />
+    <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/docs/catalog-gap-report.html" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
+    <meta property="og:image:width" content="1774" />
+    <meta property="og:image:height" content="887" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Catalog gap report — RAE FAANG docs" />
+    <meta name="twitter:description" content="Deterministic reconciliation of the canonical catalog against the expanded FAANG plus Microsoft candidate inventory." />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/docs/catalog-gap-report.html" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
+    <link rel="apple-touch-icon" href="../docs/assets/icon-192.png" />
+    <link rel="icon" href="../docs/assets/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="../docs/assets/icon-512.png" type="image/png" sizes="512x512" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-doc">
+    <div class="scroll-rail" data-scroll-rail aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/" aria-current="page">Docs</a>
+          
+        </nav>
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile primary">
+            <a href="../catalog/">Catalog</a>
+            <a href="../docs/">Docs</a>
+            
+          </nav>
+        </details>
+        <a class="btn btn-ghost header-github" href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero page-hero-doc" id="top">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Docs</a><span aria-hidden="true">/</span><span>Catalog gap report</span>
+          </nav>
+          <h1>Catalog gap report</h1>
+          <p class="lede">Deterministic reconciliation of the canonical catalog against the expanded FAANG plus Microsoft candidate inventory.</p>
+        </div>
+      </section>
+
+      <section class="section section-tight section-last">
+        <div class="wrap">
+          <details class="toc">
+            <summary>On this page</summary>
+            <ul>
+              <li><a href="#what-this-report-does-and-does-not-claim">What this report does and does not claim</a></li>
+              <li><a href="#counts">Counts</a></li>
+              <li><a href="#per-company">Per company</a></li>
+              <li><a href="#reconciliation-with-the-canonical-catalog">Reconciliation with the canonical catalog</a></li>
+              <li><a href="#queue-assignment">Queue assignment</a></li>
+              <li><a href="#promotion-gate">Promotion gate</a></li>
+              <li><a href="#reproduce">Reproduce</a></li>
+            </ul>
+          </details>
+          <article class="doc">
+<h1>Catalog gap report — FAANG plus Microsoft</h1>
+<p>Generated by <code>node tools/catalog-gap-report.mjs</code> from the canonical catalog and the expanded candidate inventory. Do not edit by hand: regenerate and run the check.</p>
+<h2 id="what-this-report-does-and-does-not-claim">What this report does and does not claim</h2>
+<ul>
+<li>Product-level scope only: SKUs, plans, regions, API operations, model versions, documentation topics, marketplace listings and internal systems are excluded from the product count.</li>
+<li>Canonical rows are catalog/products.jsonl. Candidate rows come from catalog/manifests/faang-expanded-candidates.json, built from public first-party catalogs.</li>
+<li>Duplicates are merged by normalized name inside a company and listed separately. Navigation/editorial rows are listed separately and never counted as products.</li>
+<li>Promotion requires verified identity, a first-party product page, product-level (not SKU/plan/region/API operation), a research dossier and an alternatives entry. Unverified rows stay research_status: pending.</li>
+<li>This is a reconciliation of the documented scope, not a claim of permanent completeness: vendor catalogs change continuously.</li>
+</ul>
+<h2 id="counts">Counts</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Measure</th><th scope="col">Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Canonical products</td><td>184</td></tr>
+<tr><td>Product-level rows in the candidate inventory</td><td>1465</td></tr>
+<tr><td>Candidates awaiting review</td><td>1281</td></tr>
+<tr><td>Canonical entries carried into the manifest</td><td>170</td></tr>
+<tr><td>Retired canonical entries</td><td>14</td></tr>
+<tr><td>Duplicates merged and listed separately</td><td>147</td></tr>
+<tr><td>Navigation/editorial rows excluded</td><td>150</td></tr>
+<tr><td>Rows carrying every required field</td><td>1762 of 1762</td></tr>
+<tr><td>Candidates without a resolvable official URL</td><td>125</td></tr>
+<tr><td>Candidates whose product type still needs review</td><td>1281</td></tr>
+</tbody>
+</table></div>
+<h2 id="per-company">Per company</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Company</th><th scope="col">Canonical</th><th scope="col">Candidates</th><th scope="col">Verified</th><th scope="col">Retired</th><th scope="col">Duplicates</th><th scope="col">Navigation</th><th scope="col">Candidates without URL</th><th scope="col">Unclassified</th></tr>
+</thead>
+<tbody>
+<tr><td>google</td><td>26</td><td>544</td><td>25</td><td>1</td><td>23</td><td>116</td><td>31</td><td>544</td></tr>
+<tr><td>apple</td><td>20</td><td>220</td><td>20</td><td>0</td><td>5</td><td>0</td><td>0</td><td>220</td></tr>
+<tr><td>amazon</td><td>5</td><td>0</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>amazon_aws</td><td>117</td><td>145</td><td>106</td><td>11</td><td>112</td><td>27</td><td>93</td><td>145</td></tr>
+<tr><td>meta</td><td>5</td><td>0</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>netflix</td><td>6</td><td>0</td><td>5</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+<tr><td>microsoft</td><td>5</td><td>372</td><td>4</td><td>1</td><td>7</td><td>7</td><td>1</td><td>372</td></tr>
+</tbody>
+</table></div>
+<p>Amazon, Meta and Netflix show zero candidates because this generator only scrapes first-party catalogs with a stable product index (Google, Apple, AWS documentation overview, Azure sitemap, Microsoft 365 catalog). The consumer Amazon, Meta and Netflix catalogs are listed in the scope document but not yet machine-readable, so their absence here is a <strong>source gap</strong>, not evidence that they have no further products.</p>
+<h2 id="reconciliation-with-the-canonical-catalog">Reconciliation with the canonical catalog</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Check</th><th scope="col">Result</th></tr>
+</thead>
+<tbody>
+<tr><td>Canonical entries found in the manifest</td><td>184 of 184</td></tr>
+<tr><td>Canonical entries missing from the manifest</td><td>none</td></tr>
+<tr><td>Manifest rows marked verified that are not canonical</td><td>none</td></tr>
+<tr><td>Stable-id collisions</td><td>none</td></tr>
+<tr><td>Rows violating the field contract</td><td>none</td></tr>
+</tbody>
+</table></div>
+<h2 id="queue-assignment">Queue assignment</h2>
+<p>The pending drafts are worked one document per task, one task per worker, at most four workers at a time (the documented maximum for this Header Section). Lane membership is fixed and non-overlapping; the queue order below is deterministic (company, then name, then id) so two runs assign the same document to the same lane.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Lane</th><th scope="col">Companies</th><th scope="col">Queued documents</th><th scope="col">First in queue</th></tr>
+</thead>
+<tbody>
+<tr><td>1 — Google</td><td>google</td><td>544</td><td><code>google-about-google</code>, <code>google-accessibility-support</code>, <code>google-active-assist</code></td></tr>
+<tr><td>2 — Amazon/AWS</td><td>amazon, amazon_aws</td><td>145</td><td><code>amazon-aws-aws-budgets</code>, <code>amazon-aws-aws-certificate-manager</code>, <code>amazon-aws-aws-clean-rooms</code></td></tr>
+<tr><td>3 — Microsoft</td><td>microsoft</td><td>372</td><td><code>microsoft-net-apps-migration</code>, <code>microsoft-about-microsoft</code>, <code>microsoft-about-our-ads</code></td></tr>
+<tr><td>4 — Apple/Meta/Netflix</td><td>apple, meta, netflix</td><td>220</td><td><code>apple-product-red</code>, <code>apple-accessories</code>, <code>apple-airplay</code></td></tr>
+</tbody>
+</table></div>
+<p>Total queued: 1281 drafts. A worker owns exactly one draft, may not edit the canonical catalog or the generated site, and returns a handoff. A draft leaves the queue only after review accepts its identity, official source, REA evidence and alternatives.</p>
+<h2 id="promotion-gate">Promotion gate</h2>
+<p>Promoted in this pass: <strong>0</strong>. No candidate in this pass satisfied every promotion condition; identity alone is not enough while a dossier, alternatives entry and REA evidence are missing.</p>
+<p>A candidate becomes canonical only when all of the following hold:</p>
+<ul>
+<li>identity and official name confirmed on a first-party product page</li>
+<li>product-level row, not a SKU, plan, region, API operation, model version or documentation topic</li>
+<li>research/companies/&lt;company&gt;/products/&lt;id&gt;.md dossier with valid frontmatter</li>
+<li>tools/skills/catalog-data.mjs entry, so exactly one skill can be generated</li>
+<li>no duplicate of an existing canonical id</li>
+</ul>
+<p>Every promoted product then gets exactly one generated skill at <code>catalog/skills/&lt;company_id&gt;/&lt;product_id&gt;.md</code>, produced by <code>npm run skills:catalog</code>, with the catalog record, dossier, REA report, alternatives entry, site page and indexes generated from the same inputs. A promoted product whose dossier is incomplete keeps <code>research_status: pending</code>, and its skill reports the gaps.</p>
+<h2 id="reproduce">Reproduce</h2>
+<pre><code class="language-bash">node tools/expand-faang-inventory.mjs      # rebuild the candidate inventory (network)
+node tools/catalog-gap-report.mjs          # write the report
+node tools/catalog-gap-report.mjs --check  # verify the committed report without writing
+npm test &amp;&amp; npm run validate</code></pre>
+<p>Manifest schema 1.1; scope: FAANG plus Microsoft.</p>
+
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>            <p class="footer-mark">RAE FAANG</p>
+          <p class="footer-mission">
+            We don't need FAANG anymore. Choose a product from Meta, Amazon, Apple, Netflix or Google
+            and use your agent to build it in your project. RAE FAANG brings together the catalog,
+            product research and candidate open-source projects. MIT licensed.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/">Docs</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE" rel="noopener noreferrer" target="_blank">MIT License</a>
+          <a href="https://github.com/EnzoVezzaro/repo-shield" rel="noopener noreferrer" target="_blank">Repo Shield</a>
+        </div>
+      </div>
+      <div class="wrap footer-fine">
+        <p>
+          Product names are used as functional references only and imply no
+          affiliation or endorsement. Implementations must comply with applicable
+          laws, licenses, and third-party rights. No AI training: see
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/NOTICE" rel="noopener noreferrer" target="_blank">NOTICE</a>.
+        </p>
+      </div>
+    </footer>
+    
+  </body>
+</html>

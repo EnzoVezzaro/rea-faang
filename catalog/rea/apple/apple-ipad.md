@@ -9,11 +9,11 @@ Browser capture of the public web surface of iPad, recorded with REA.
 | Target | https://www.apple.com/ipad/ |
 | Resolved URL | https://www.apple.com/ipad/ |
 | Page title | iPad |
-| Captured | 2026-10-14T03:54:26.853Z |
+| Captured | 2026-11-03T01:31:54.760Z |
 | Status | captured |
-| REA Evidence ID | `ev_09b86233efdb1ce40b1760282fe9910a50093c5fd9bf71793607d6ed65b1af4d` |
+| REA Evidence ID | `ev_b788cb414fe73eab3c8f5657dcc105fd1b919701ffc0535d09c7c205c75a8fe3` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -70,16 +70,16 @@ access control is bypassed.
 - Engraving
 - Guided Shopping
 - Apple Store App
-- Get to know iPad.
-- iPadOS + Apps
-- Apple Intelligence
-- Productivity
-- Creativity
-- Learning
-- Entertainment
-- Apple Pencil
 - iPad essentials.
+- Apple Pencil
 - Keyboards for iPad
+- Significant others.
+- iPad and iPhone
+- iPad and Mac
+- iPad and Apple Watch
+- Explore iPad
+- Shop iPad
+- More from iPad
 
 ### Landmarks
 
@@ -111,7 +111,7 @@ access control is bypassed.
 - [iPad Pro](/ipad-pro/)
 - [iPad Air](/ipad-air/)
 - [iPad](/ipad-11/)
-- [iPad mini](/ipad-mini/)
+- [iPad mini New](/ipad-mini/)
 - [Compare iPad models](/ipad/compare/)
 - [Apple Pencil](/apple-pencil/)
 - [Keyboards](/ipad-keyboards/)
@@ -128,7 +128,7 @@ access control is bypassed.
 - [Learn more, iPad (A16)](/ipad-11/)
 - [Buy, iPad (A16)](/us/shop/goto/buy_ipad/ipad)
 - [Learn more, iPad mini](/ipad-mini/)
-- [Buy, iPad mini](/us/shop/goto/buy_ipad/ipad_mini)
+- [Pre-order, iPad mini](/us/shop/goto/buy_ipad/ipad_mini)
 - [Shop iPad](/us/shop/goto/buy_ipad)
 - [Footnote ◊◊◊ symbol](#footnote-external-3)
 - [Footnote 1](#footnote-numbered-1)
@@ -162,9 +162,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -172,6 +172,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/apple-ipad.json`
-- Evidence ID: `ev_09b86233efdb1ce40b1760282fe9910a50093c5fd9bf71793607d6ed65b1af4d`
-- Accessibility outline: 39334 bytes
+- Evidence ID: `ev_b788cb414fe73eab3c8f5657dcc105fd1b919701ffc0535d09c7c205c75a8fe3`
+- Accessibility outline: 34991 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

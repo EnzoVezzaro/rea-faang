@@ -9,11 +9,11 @@ Browser capture of the public web surface of DynamoDB, recorded with REA.
 | Target | https://aws.amazon.com/dynamodb/ |
 | Resolved URL | https://aws.amazon.com/dynamodb/ |
 | Page title | Amazon DynamoDB |
-| Captured | 2026-10-14T03:55:19.288Z |
+| Captured | 2026-11-03T01:34:28.924Z |
 | Status | captured |
-| REA Evidence ID | `ev_d762082f18695e9591442ef7eb1ba0a5489a0220968af9c6928e733dd9d72fa3` |
+| REA Evidence ID | `ev_b68c6c111970f420a9bab78e7234567891bd9188c4ef6e5a09eccfc881b49701` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -109,13 +109,13 @@ access control is bypassed.
 - [Highest application resilience Enable apps to achieve zero RPO with global tables - multi-Region, active-active database - designed for 99.999% availability and ability to always read the latest data from any Region. Learn more](/dynamodb/global-tables/)
 - [Optimize costs Pay only for what you use even for workloads with variable demands - and warm throughput prevents cold starts as all resources are instantaneously available. Learn more](/dynamodb/features/#topic-2)
 - [Interoperability across AWS Do more with your data using built-in tools to perform analytics and AI/ML, and native integrations to manage granular permissions, perform monitoring and observability, and more. Learn more](/dynamodb/integrations/)
-- [Explore Workshops](https://builder.aws.com/build/workshops?accessType=free-sandbox&tab=discover&sc_icampaign=launch_builder-center-sandbox_2026&sc_ichannel=ha&sc_iplace=banner&trk=c243de2e-eafc-4962-8ffc-4915bb208b5b)
+- [Explore Workshops](https://builder.aws.com/build/workshops/?accessType=free-sandbox&tab=discover&sc_icampaign=launch_builder-center-sandbox_2026&sc_ichannel=ha&sc_iplace=banner&trk=c243de2e-eafc-4962-8ffc-4915bb208b5b)
 - [Learn more »](https://d1.awsstatic.com/whitepapers/IDC_BV_Amazon_DynamoDB_Snapshot.pdf)
 - [Disney+ ingests billions of daily customer actions to improve the viewer experience Watch the video](https://www.youtube.com/watch?v=TCnmtSY2dFM)
 - [Missing alt text value Genesys built an AI-powered experience-orchestration platform achieving 99.999% availability with Amazon DynamoDB Read the case study](https://aws.amazon.com/solutions/case-studies/genesys-dynamodb-case-study)
 - [Missing alt text value Snap Inc. reduced median latency by 20% with DynamoDB Read the case study](https://aws.amazon.com/solutions/case-studies/snap-dynamodb)
 - [Missing alt text value Zoom Video Communications, Inc. managed the surge of 10M to 300M daily meeting participants Read the case study](https://aws.amazon.com/dynamodb/customers/?pg=dynamodb&sec=cs#Zoom)
-- [Free tier Sign up for a free account Try for free](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html)
+- [Free tier Sign up for a free account Try for free](https://signin.aws.amazon.com/signup?request_type=builderId)
 - [Resources Learn with hands-on training Get started with DynamoDB](/dynamodb/resources/)
 - [Documentation Dive deep on DynamoDB Read the documentation](https://docs.aws.amazon.com/dynamodb/)
 - [Console Start building in the console Sign in](https://console.aws.amazon.com/dynamodb)
@@ -158,9 +158,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/aws-dynamodb.json`
-- Evidence ID: `ev_d762082f18695e9591442ef7eb1ba0a5489a0220968af9c6928e733dd9d72fa3`
-- Accessibility outline: 17109 bytes
+- Evidence ID: `ev_b68c6c111970f420a9bab78e7234567891bd9188c4ef6e5a09eccfc881b49701`
+- Accessibility outline: 17100 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

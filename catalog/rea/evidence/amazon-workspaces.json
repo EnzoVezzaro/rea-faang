@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_b450e63e3b83384dd9cad32ca76e1b5f6894e3bde44530b9282dd5059f11698b",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/workspaces/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "64aa628efe27213cd0745759056b85931c2406248bb3002f2a538b1e8a1f0a7e"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 5354,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 2505,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/workspaces/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2571,
+        "before_url": {
+          "url": "https://aws.amazon.com/workspaces/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/workspaces/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "1957bca718b67db16369535678746fd7a4d6b10168c08c6c50e86fbaaa1d7df7",
+              "bytes": 14721,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - tooltip \"Feedback\"\n  - main:\n    - paragraph: WorkSpaces\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /workspaces/\n      - button \"Features submenu\": Features\n      - button \"Pricing submenu\": Pricing\n      - listitem:\n        - link \"Customers\":\n          - /url: /workspaces/customers/\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /workspaces/getting-started/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem: WorkSpaces\n    - heading \"Amazon WorkSpaces\" [level=1]\n    - paragraph: Deliver secure, high-performance cloud desktops and applications to anyone, anywhere with the global scale of AWS\n    - button \"Get started\"\n    - button \"Contact a specialist\"\n    - heading \"Why WorkSpaces?\" [level=2]\n    - paragraph: WorkSpaces gives you the flexibility to choose the optimal cloud based Virtual Desktop Infrastructure (VDI) solution for your specific use case. From task workers, contact center agents, and back-office staff, to developers, engineers, and data scientists, this highly secure, fully managed service adapts to your organization's needs across remote and hybrid teams. Deploy in minutes, scale instantly, and only pay for what you use—all while managing everything centrally through the AWS Console.\n    - img \"A man sitting at a desk in a modern office waves and smiles at a woman on a computer screen during a video conference call.\"\n    - heading \"Benefits\" [level=2]\n    - heading \"Cost efficiency\" [level=3]:\n      - button \"Cost efficiency\"\n    - heading \"Performance optimization\" [level=3]:\n      - button \"Performance optimization\"\n    - heading \"Enhance security\" [level=3]:\n      - button \"Enhance security\"\n    - heading \"Scalable & adaptable\" [level=3]:\n      - button \"Scalable & adaptable\"\n    - heading \"Built for reliability and scale\" [level=2]\n    - term: Financially-backed service level agreement on monthly uptime percentage\n    - definition: 99.9%\n    - term: Global regions for WorkSpaces DaaS services\n    - definition: \"19\"\n    - heading \"Awards and analyst recognition\" [level=2]\n    - term: Third year running. Leader in the Gartner Magic Quadrant for Desktop as a Service\n    - definition: \"2026\"\n    - link \"Read the full Gartner report\":\n      - /url: /resources/analyst-reports/gartner/global-mq-ardm-26-desktop-as-a-service/?trk=2f86cb2c-e865-4cca-9f1f-6f58fc7b3fe1&sc_channel=el\n    - term: Leader for IDC MarketScapes for DaaS and VCC\n    - definition: \"2026\"\n    - link \"Read the full IDC MarketScape report\":\n      - /url: /resources/analyst-reports/idc/global-ar-report-ardm-26-desktop-as-a-service/?trk=c70f2f47-b6d1-4a55-981a-ecad5342dd6b&sc_channel=el\n    - heading \"Virtual desktops and application streaming\" [level=2]\n    - link \"Applications Applications streaming to any device Learn more\":\n      - /url: /workspaces/applications/\n      - heading \"Applications\" [level=3]\n      - paragraph: Applications streaming to any device\n      - text: Learn more\n    - link \"Desktop as a Service (DaaS) Fully managed virtual desktop solutions Learn more\":\n      - /url: /workspaces/desktop-as-a-service/\n      - heading \"Desktop as a Service (DaaS)\" [level=3]\n      - paragraph: Fully managed virtual desktop solutions\n      - text: Learn more\n    - link \"Secure browser Cloud-native, remote enterprise browser Learn more\":\n      - /url: /workspaces/secure-browser/\n      - heading \"Secure browser\" [level=3]\n      - paragraph: Cloud-native, remote enterprise browser\n      - text: Learn more\n    - link \"VDI partners Virtual desktop infrastructure and APIs for third-party VDI software Learn more\":\n      - /url: /workspaces/vdi-partners/\n      - heading \"VDI partners\" [level=3]\n      - paragraph: Virtual desktop infrastructure and APIs for third-party VDI software\n      - text: Learn more\n    - heading \"Tools for builders and ISVs\" [level=2]\n    - link \"AI agents Connect your agents to desktop applications through a managed MCP server Learn more\":\n      - /url: /workspaces/ai-agents/\n      - heading \"AI agents\" [level=3]\n      - paragraph: Connect your agents to desktop applications through a managed MCP server\n      - text: Learn more\n    - link \"Streaming protocols High-performance display compression for remote visualization Learn more\":\n      - /url: /hpc/dcv/\n      - heading \"Streaming protocols\" [level=3]\n      - paragraph: High-performance display compression for remote visualization\n      - text: Learn more\n    - link \"Convert desktop apps to SaaS Convert desktop apps to SaaS or web-based delivery Learn more\":\n      - /url: /workspaces/applications/\n      - heading \"Convert desktop apps to SaaS\" [level=3]\n      - paragraph: Convert desktop apps to SaaS or web-based delivery\n      - text: Learn more\n    - heading \"Use Cases\" [level=2]\n    - heading \"Remote and hybrid workforce\" [level=3]:\n      - button \"Remote and hybrid workforce\"\n    - heading \"Knowledge workers\" [level=3]:\n      - button \"Knowledge workers\"\n    - heading \"Administration and back-office\" [level=3]:\n      - button \"Administration and back-office\"\n    - heading \"Contract and contingent workers\" [level=3]:\n      - button \"Contract and contingent workers\"\n    - heading \"Contact centers\" [level=3]:\n      - button \"Contact centers\"\n    - heading \"Amazon WorkSpaces customers\" [level=2]\n    - paragraph\n    - img \"Black and white icon representing end user computing, featuring a computer monitor, a cloud, a tablet, and a mobile phone.\"\n    - img \"AVEVA company logo in purple text on a white background.\"\n    - img \"Missing alt text value\"\n    - img \"Maximus logo\"\n    - img \"Genpact logo\"\n    - img \"Arizona State University logo\"\n    - img \"Intuit company logo in blue on a white background.\"\n    - img \"Missing alt text value\"\n    - heading [level=2]\n    - paragraph\n    - img \"Logo of Vanguard with black and red text on a transparent background.\"\n    - img \"The Air Canada logo featuring a red maple leaf inside a circle to the left of the text 'AIR CANADA' in bold black letters.\"\n    - img \"Logo of Genomics England featuring the text 'Genomics England' and an outline map of England.\"\n    - img \"Veolia logo with red text and symbol on a transparent background.\"\n    - img \"Acuity logo\"\n    - img \"Atlanticus logo\"\n    - img \"AppsAnywhere logo with color text on a white background.\"\n    - img \"Samsung Engineering company logo with 'SAMSUNG ENGINEERING' text in blue.\"\n    - heading \"Case studies\" [level=2]\n    - link \"Missing alt text value WorkSpaces DaaS helps Ferrari reduce virtual desktop deployment times by 90% Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/ferrari-workspaces-case-study/\n      - img \"Missing alt text value\"\n      - heading \"WorkSpaces DaaS helps Ferrari reduce virtual desktop deployment times by 90%\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Lucid Motors runs VMware Horizon 8 on Amazon WorkSpaces DaaS to deliver a high- performance end-user experience Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/lucid-workspaces-core-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Lucid Motors runs VMware Horizon 8 on Amazon WorkSpaces DaaS to deliver a high- performance end-user experience\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Docusign automates client management with a DaaS system for under $2 per month with WorkSpaces Read the case study\":\n      - /url: /solutions/case-studies/docusign-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Docusign automates client management with a DaaS system for under $2 per month with WorkSpaces\" [level=3]\n      - text: Read the case study\n    - heading \"Did you find what you were looking for today?\" [level=2]\n    - paragraph: Let us know so we can improve the quality of the content on our pages\n    - button \"Yes, give us positive feedback\": \"Yes\"\n    - button \"No, give us constructive feedback\": \"No\"\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /workspaces/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /workspaces/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/workspaces/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

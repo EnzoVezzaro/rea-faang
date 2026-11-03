@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_55f032493b4e31e574840b9d96d92adcc67560acb733df8fcc8439a7bd7cdf4e",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/lex/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "789e6c66f1f46cb125d6053c43c0df51ef22a663a76de2365dc20b84e4742adc"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 7383,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 4497,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/lex/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2557,
+        "before_url": {
+          "url": "https://aws.amazon.com/lex/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/lex/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "40b7fdd411a3ffb97d57fd3218cce5b5747d04059dbf624e8b9e16d36117a367",
+              "bytes": 14197,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - main:\n    - paragraph: Amazon Lex\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /lex/?nc=sn&loc=1\n      - listitem:\n        - link \"Features\":\n          - /url: /lex/features/?nc=sn&loc=2\n      - button \"Use Cases submenu\": Use Cases\n      - listitem:\n        - link \"Pricing\":\n          - /url: /lex/pricing/?nc=sn&loc=4\n      - button \"Resources submenu\": Resources\n      - listitem:\n        - link \"Customers\":\n          - /url: /lex/customers/?nc=sn&loc=6\n      - listitem:\n        - link \"Amazon Connect Integration\":\n          - /url: /connect/connect-lexchatbot/?nc=sn&loc=7\n      - listitem:\n        - link \"Automated Chatbot Designer\":\n          - /url: /lex/chatbot-designer/?nc=sn&loc=8\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Machine Learning\":\n            - /url: /ai/machine-learning/\n        - listitem: Amazon Lex\n    - heading \"Amazon Lex - AI Chat Builder\" [level=1]\n    - paragraph: Add sophisticated, natural language, AI-powered chatbots to new and existing applications.\n    - button \"Create an AWS account\"\n    - button \"Get Started with Amazon Lex\"\n    - heading \"What is Amazon Lex?\" [level=2]\n    - paragraph: Powered by the same technology as Alexa, Amazon Lex is an AI chat builder that allows users to interact with any application using natural language voice or chat. Use Amazon Lex to build and deploy conversational AI interfaces for any application. Integrating AI chat into existing business processes and use cases gives users more flexibility and support to get work done in ways that are natural to your users. AI chat experiences in customer-facing applications enhance customer satisfaction.\n    - button \"Play:\"\n    - img \"Colorful illustration of people working together with an overlay of images showing connections between different computer pages\"\n    - heading \"Benefits of Amazon Lex\" [level=2]\n    - heading \"Leverage scalable, secure generative AI\" [level=3]:\n      - button \"Leverage scalable, secure generative AI\"\n    - heading \"Drive efficiency with omnichannel engagement\" [level=3]:\n      - button \"Drive efficiency with omnichannel engagement\"\n    - heading \"Accelerate time to market with automation\" [level=3]:\n      - button \"Accelerate time to market with automation\"\n    - heading \"Pay-as-you-go pricing\" [level=3]:\n      - button \"Pay-as-you-go pricing\"\n    - heading \"How text and voice AI chat transforms business processes\" [level=2]\n    - term: IVR Containment rates within the contact center\n    - definition: 80%\n    - link \"NAB (National Australian Bank)\":\n      - /url: https://www.youtube.com/watch?v=TJcTsd1cBo0\n    - term: Increase in self-service rate\n    - definition: 65%\n    - link \"nib Health Insurance\":\n      - /url: /solutions/case-studies/nibgroup/\n    - term: Completely automated end-to-end calls\n    - definition: 35%\n    - link \"AMA (Alberta Motor Association)\":\n      - /url: https://www.genesys.com/webinars/how-alberta-motor-association-improved-cx-with-ai-and-self-service_live-qa?utm_campaign=genesys&utm_medium=organicsocial&utm_source=linkedin/\n    - term: Reduction in agent call volume\n    - definition: 30%\n    - link \"WaFd Bank\":\n      - /url: /solutions/case-studies/wafd-bank-case-study/\n    - heading \"Use cases\" [level=2]\n    - heading \"Customer service\" [level=3]:\n      - button \"Customer service\"\n    - heading \"Intelligent routing\" [level=3]:\n      - button \"Intelligent routing\"\n    - heading \"Enterprise productivity\" [level=3]:\n      - button \"Enterprise productivity\"\n    - heading \"AI chat-assisted application features\" [level=3]:\n      - button \"AI chat-assisted application features\"\n    - heading \"Customers\" [level=2]\n    - link \"Missing alt text value Govchat processed over 250 million messages making it South Africa’s largest citizen engagement platform Watch the video\":\n      - /url: https://www.youtube.com/watch?v=-KNnitvr-Hc\n      - img \"Missing alt text value\"\n      - heading \"Govchat processed over 250 million messages making it South Africa’s largest citizen engagement platform\" [level=3]\n      - text: Watch the video\n    - link \"The official Vanguard logo in red text on a transparent background. Vanguard optimized call routing for over 40,000 calls a day - Eliminated unnecessary transfers, reduced the long hold, first call resolution times Watch the video\":\n      - /url: https://www.youtube.com/watch?t=642&v=kbLUMzw--VY&feature=youtu.be\n      - img \"The official Vanguard logo in red text on a transparent background.\"\n      - heading \"Vanguard optimized call routing for over 40,000 calls a day - Eliminated unnecessary transfers, reduced the long hold, first call resolution times\" [level=3]\n      - text: Watch the video\n    - link \"Missing alt text value Dropbox resolved 85% issues serving 600 million customers across 180 countries Watch the video\":\n      - /url: https://www.youtube.com/watch?v=W-dHQI6Za5c\n      - img \"Missing alt text value\"\n      - heading \"Dropbox resolved 85% issues serving 600 million customers across 180 countries\" [level=3]\n      - text: Watch the video\n    - link \"Missing alt text value Morrisons delivered a self-serve contact center in 8 Weeks using Amazon Lex on Amazon Connect Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/Morrisons-Connect-case-study/\n      - img \"Missing alt text value\"\n      - heading \"Morrisons delivered a self-serve contact center in 8 Weeks using Amazon Lex on Amazon Connect\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value TechStyleOS saved $250,000 in annual licensing and improved uptime by 90% Read the customer story\":\n      - /url: https://www.genesys.com/customer-stories/techstyleos\n      - img \"Missing alt text value\"\n      - heading \"TechStyleOS saved $250,000 in annual licensing and improved uptime by 90%\" [level=3]\n      - text: Read the customer story\n    - heading \"Next steps\" [level=2]\n    - link \"Features page Find out more about conversational AI, automatic speech recognition (ASR), natural language understanding (NLU), and more Explore Amazon Lex features\":\n      - /url: /lex/features/\n      - text: Features page\n      - heading \"Find out more about conversational AI, automatic speech recognition (ASR), natural language understanding (NLU), and more\" [level=3]\n      - text: Explore Amazon Lex features\n    - link \"Getting started Learn how to create a bot, use streaming APIs to manage interruptions, and deploy your bot across services Check out our tutorials\":\n      - /url: /lex/getting-started/\n      - text: Getting started\n      - heading \"Learn how to create a bot, use streaming APIs to manage interruptions, and deploy your bot across services\" [level=3]\n      - text: Check out our tutorials\n    - heading \"FAQs\" [level=2]\n    - heading \"Can I make my own chat AI?\" [level=3]:\n      - button \"Can I make my own chat AI?\"\n    - heading \"What is an AI chat interface?\" [level=3]:\n      - button \"What is an AI chat interface?\"\n    - heading \"What is AI chat used for?\" [level=3]:\n      - button \"What is AI chat used for?\"\n    - heading \"Can I create a chatbot for free?\" [level=3]:\n      - button \"Can I create a chatbot for free?\"\n    - heading \"Did you find what you were looking for today?\" [level=2]\n    - paragraph: Let us know so we can improve the quality of the content on our pages\n    - button \"Yes, give us positive feedback\": \"Yes\"\n    - button \"No, give us constructive feedback\": \"No\"\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /lex/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /lex/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/lex/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

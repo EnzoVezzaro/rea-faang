@@ -1,21 +1,14 @@
 # REA web-surface report — Alexa (`amazon-alexa`)
 
-Browser capture of the public web surface of Alexa, recorded with REA.
+REA capture of the public web surface of Alexa did not complete.
 
 | | |
 |---|---|
 | Product | Alexa (`amazon-alexa`) |
 | Company | Amazon |
 | Target | https://developer.amazon.com/alexa |
-| Resolved URL | https://developer.amazon.com/en-US/alexa |
-| Page title | AI-native SDKs for Alexa+ |
-| Captured | 2026-10-14T03:56:14.783Z |
-| Status | captured |
-| REA Evidence ID | `ev_922364d49ab497db2c4f2b923751153eee4e47281f3e3f25330c3c2bbbcc19d6` |
-| REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
-| Confidence | observed |
-| Completeness | complete |
+| Captured | 2026-11-03T01:29:19.616Z |
+| Status | failed |
 
 ## Method
 
@@ -51,105 +44,9 @@ access control is bypassed.
 }
 ```
 
-## Observations
+## Result
 
-### Headings
+Capture failed: `{"error":"Browser scenario capture failed","code":"provider_timeout","category":"timeout","message":"Browser launch and persistent-context startup exceeded its 20000 ms command_timeout_ms deadline (deadlineExpired). This is not the caller observation window, the 10000 ms CDP discovery deadline, or the 5000 ms cleanup grace.","retryable":true,"remediation":{"action":"Set command_timeout_ms in the capture-browser-scenario JSON above 20000 (integer milliseconds from 1 to 2147483647; omitted means 20000). Applies on the next call. Allow execution, cleanup and delivery headroom in the outer MCP client deadline. Confirm outstanding work and cleanup before retrying. command_timeout_ms does not raise the fixed protocol, retained-event, or source byte budgets, the 10000 ms CDP discovery response deadline, or the 5000 ms cleanup grace. Those have no runtime override."},"details":{"operation":"capture_browser_scenario","reason":"timeout","diagnostics":{"phase":"launch","command_timeout_ms":20000},"cleanup_history":{"primary_error":{"code":"provider_timeout","category":"timeout","message":"Browser launch and persistent-context startup exceeded its 20000 ms command_timeout_ms deadline (deadlineExpired). This is not the caller observation window, the 10000 ms CDP discovery deadline, or the 5000 ms cleanup grace.","retryable":true,"remediation":{"action":"Set command_timeout_ms in the capture-browser-scenario JSON above 20000 (integer milliseconds from 1 to 2147483647; omitted means 20000). Applies on the next call. Allow execution, cleanup and delivery headroom in the outer MCP client deadline. Confirm outstanding work and cleanup before retrying. command_timeout_ms does not raise the fixed protocol, retained-event, or source byte budgets, the 10000 ms CDP discovery response deadline, or the 5000 ms cleanup grace. Those have no runtime override."},"details":{"operation":"capture_browser_scenario","reason":"timeout","diagnostics":{"phase":"launch","command_timeout_ms":20000}}},"cleanup_error":{"code":"cleanup_incomplete","category":"execution_failure","message":"Provider cleanup could not be fully confirmed. Review the reported local resources before opening another target.","retryable":false,"remediation":{"action":"Provider cleanup could not be fully confirmed. Review the reported local resources before opening another target."},"details":{"provider_id":"rea-playwright-browser-scenario","operation":"capture_browser_scenario","cleanup":"incomplete","resources":[],"diagnostics":{"reason":"Browser scenario cleanup capabilities remain retained."},"execution_failure":"execution_failure"}}}}}`
 
-- AI-native SDKs for Alexa+
-- Helps your customers get things done.
-- What Is Alexa?
-- What Can You Build with Alexa?
-- Create Alexa Skills
-- Build Alexa Devices
-- Develop Enterprise Solutions
-- Alexa Skills Kit
-- ASK Resources
-- Device Makers
-- Alexa Built-in Devices
-- Alexa Connected Devices
-- Solution Providers
-- Agreements
-- Community
-- Blogs
-- Support
-
-### Landmarks
-
-- banner
-- navigation
-- banner
-- navigation
-- contentinfo
-- navigation
-- contentinfo
-
-### Links
-
-- [Alexa Developer Console](/alexa)
-- [Sign In](https://developer.amazon.com/alexa/console/signin)
-- [](#)
-- [Skill Builders](/en-US/alexa/alexa-skills-kit)
-- [Alexa Skills Kit](/en-US/alexa/alexa-skills-kit)
-- [Documentation](https://developer.amazon.com/en-US/docs/alexa/ask-overviews/what-is-the-alexa-skills-kit.html)
-- [Developer Console](https://developer.amazon.com/alexa/console/ask)
-- [Skill Agencies](https://developer.amazon.com/en-US/alexa/skill-building-agencies)
-- [Device Makers](/en-US/alexa/devices)
-- [Overview](https://developer.amazon.com/alexa/devices/alexa-built-in)
-- [Overview](https://developer.amazon.com/alexa/devices/connected-devices)
-- [Development Resources](https://developer.amazon.com/alexa/devices/connected-devices/development-resources)
-- [Business Resources](https://developer.amazon.com/alexa/devices/connected-devices/business-resources)
-- [What's New](https://developer.amazon.com/alexa/devices/connected-devices/whats-new)
-- [Consoles](https://developer.amazon.com/alexa/devices/connected-devices/consoles)
-- [Alexa Connect Kit](/en-US/alexa/solution-providers/alexa-connect-kit)
-- [Alexa Routines Kit](https://developer.amazon.com/en-US/alexa/alexa-routines-kit/)
-- [Radio Skills Kit](https://developer.amazon.com/en-US/alexa/alexa-skills-kit/radio-skills-kit)
-- [Alexa Built-In](https://developer.amazon.com/alexa/devices/alexa-built-in)
-- [Alexa Smart Home](https://developer.amazon.com/en-US/alexa/smarthomeinsider)
-- [Dash Services](https://developer.amazon.com/en-US/alexa/dash-services)
-- [Hospitality](https://alexa.design/hospitality)
-- [Senior Living](https://developer.amazon.com/en-US/alexa/seniorliving)
-- [Echo Branding](https://developer.amazon.com/en-US/alexa/branding/echo-guidelines)
-- [Alexa Branding](https://developer.amazon.com/en-US/alexa/branding/alexa-guidelines)
-- [Alexa Fund](https://developer.amazon.com/alexa/alexa-startups/alexa-fund)
-- [Alexa Champions](https://developer.amazon.com/alexa/champions)
-- [Voice Interoperability Initiative](https://developer.amazon.com/en-US/alexa/voice-interoperability)
-- [Docs](https://developer.amazon.com/en-US/docs/alexa/documentation-home.html)
-- [Alexa Skills Kit](https://developer.amazon.com/en-US/docs/alexa/ask-overviews/what-is-the-alexa-skills-kit.html)
-- [Smart Home Skills](https://developer.amazon.com/docs/smarthome/understand-the-smart-home-skill-api.html)
-- [ASK CLI and SMAPI](https://developer.amazon.com/docs/smapi/ask-cli-intro.html)
-- [Alexa Connect Kit](https://developer.amazon.com/docs/alexa/ack/overview.html)
-- [Hospitality](https://developer.amazon.com/en-US/docs/alexa/alexa-smart-properties/about-alexa-for-hospitality.html)
-- [Senior Living](https://developer.amazon.com/en-US/docs/alexa/alexa-smart-properties/about-asp-in-senior-living.html)
-- [Alexa Trainings and Workshops](https://developer.amazon.com/en-US/alexa/trainings_and_workshops)
-- [Matter](https://developer.amazon.com/en-US/docs/alexa/smarthome/matter-support.html)
-- [Blog](https://developer.amazon.com/en-US/blogs/alexa)
-- [Alexa Skills Kit](https://developer.amazon.com/en-US/blogs/alexa/alexa-skills-kit)
-- [Device Makers](https://developer.amazon.com/en-US/blogs/alexa/device-makers)
-
-### Controls
-
-- button: All Search
-- button: AI Mode
-- button: Create Alexa Skills
-- button: Build Alexa Devices
-- button: Engage Solution Providers
-- button: Develop Enterprise Solutions
-- button: English (US)
-
-## Limitations (from REA)
-
-- Artifact identity is unavailable for this observation.
-- Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
-- Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
-- Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
-- Storage values are hashed only after declared-secret redaction.
-- Browser host platform and architecture were not observed.
-
-## Provenance
-
-- Raw REA Evidence: `catalog/rea/evidence/amazon-alexa.json`
-- Evidence ID: `ev_922364d49ab497db2c4f2b923751153eee4e47281f3e3f25330c3c2bbbcc19d6`
-- Accessibility outline: 16959 bytes
-- Tool: REA (`rea-agents`) — https://github.com/morluto/rea
+The page may be unavailable, geo-restricted, require authentication, or need a
+longer settle window. Re-run with `--only amazon-alexa --wait 6000`.

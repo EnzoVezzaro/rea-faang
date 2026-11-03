@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_0c331d3fc6b7110c2143695bbb64cece5a4208375c055ac74057b5f24cb4f882",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://docs.aws.amazon.com/augmented-ai/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "937896c34c4b89deb4301c1f124463a01835d69c02e57056fb5ebffb1a354de3"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://docs.aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 6832,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3935,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://docs.aws.amazon.com/augmented-ai/",
+          "origin": "https://docs.aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2557,
+        "before_url": {
+          "url": "https://docs.aws.amazon.com/augmented-ai/",
+          "origin": "https://docs.aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://docs.aws.amazon.com/augmented-ai/",
+          "origin": "https://docs.aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "699df2017a9c7a43df6c4c017a9a04cbcce1751973f57f1177f5d7e4a7da534b",
+              "bytes": 11763,
+              "text": "- document:\n  - banner \"AWS Documentation site header\":\n    - link \"Skip to main content\":\n      - /url: \"#skip-link\"\n    - 'link \"Language Selector. Currently set to: English\"':\n      - /url: \"#\"\n      - text: English\n    - link \"preferences\":\n      - /url: \"#\"\n      - text: Preferences\n    - link \"Contact Us\":\n      - /url: https://aws.amazon.com/contact-us/?cmpid=docs_headercta_contactus\n    - link \"AWS Documentation\":\n      - /url: https://docs.aws.amazon.com\n      - img \"AWS Documentation\"\n    - button \"Scroll left\" [disabled]\n    - link \"Get started\":\n      - /url: \"#\"\n    - link \"Service guides\":\n      - /url: \"#\"\n    - link \"Developer tools\":\n      - /url: \"#\"\n    - link \"AI resources\":\n      - /url: \"#\"\n    - button \"Scroll right\" [disabled]\n    - button \"Search\"\n    - link \"Create an AWS Account\":\n      - /url: https://portal.aws.amazon.com\n  - main:\n    - heading \"Amazon Augmented AI\" [level=1]\n    - text: Amazon Augmented AI (Amazon A2I) enables you to build the workflows required for human review of ML predictions. Amazon A2I brings human review to all developers, removing the undifferentiated heavy lifting associated with building human review systems or managing large numbers of human reviewers.\n    - region \"Developer Guide\":\n      - heading \"Developer Guide\" [level=2]\n      - list:\n        - listitem:\n          - heading \"Developer Guide\" [level=3]:\n            - link \"Developer Guide\":\n              - /url: https://docs.aws.amazon.com/sagemaker/latest/dg/use-augmented-ai-a2i-human-review-loops.html?icmpid=docs_a2i_lp\n          - text: Provides a conceptual overview of Amazon A2I. Offers step-by-step instructions for using AI applications such as Amazon Rekognition, Amazon Textract, or your custom machine learning (ML) models to create workflows required for human review of ML predictions.\n          - list:\n            - listitem:\n              - link \"Developer Guide HTML\":\n                - /url: https://docs.aws.amazon.com/sagemaker/latest/dg/use-augmented-ai-a2i-human-review-loops.html?icmpid=docs_a2i_lp\n                - text: HTML\n              - text: \"|\"\n            - listitem:\n              - link \"Developer Guide PDF\":\n                - /url: https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-dg.pdf#use-augmented-ai-a2i-human-review-loops?icmpid=docs_a2i_lp\n                - text: PDF\n    - region \"API Reference\":\n      - heading \"API Reference\" [level=2]\n      - list:\n        - listitem:\n          - heading \"Amazon A2I Runtime Model\" [level=3]:\n            - link \"Amazon A2I Runtime Model\":\n              - /url: /augmented-ai/2019-11-07/APIReference/Welcome.html?icmpid=docs_a2i_lp/index.html\n          - text: This API reference includes information about API actions and data types that you can use to interact with Amazon A2I programmatically.\n          - list:\n            - listitem:\n              - link \"Amazon A2I Runtime Model HTML\":\n                - /url: /augmented-ai/2019-11-07/APIReference/Welcome.html?icmpid=docs_a2i_lp/index.html\n                - text: HTML\n    - region \"Tutorials and Samples\":\n      - heading \"Tutorials and Samples\" [level=2]\n      - list:\n        - listitem:\n          - heading \"Using Amazon A2I with Amazon Textract\" [level=3]:\n            - link \"Using Amazon A2I with Amazon Textract\":\n              - /url: https://docs.aws.amazon.com/textract/latest/dg/a2i-textract.html?icmpid=docs_a2i_lp\n          - text: Provides step-by-step instructions for using Amazon A2I with Amazon Textract.\n          - list:\n            - listitem:\n              - link \"Using Amazon A2I with Amazon Textract HTML\":\n                - /url: https://docs.aws.amazon.com/textract/latest/dg/a2i-textract.html?icmpid=docs_a2i_lp\n                - text: HTML\n              - text: \"|\"\n            - listitem:\n              - link \"Using Amazon A2I with Amazon Textract PDF\":\n                - /url: https://docs.aws.amazon.com/textract/latest/dg/textract-dg.pdf#a2i-textract?icmpid=docs_a2i_lp\n                - text: PDF\n        - listitem:\n          - heading \"Reviewing Unsafe Content with Amazon A2I Using Amazon Rekognition\" [level=3]:\n            - link \"Reviewing Unsafe Content with Amazon A2I Using Amazon Rekognition\":\n              - /url: https://docs.aws.amazon.com/rekognition/latest/dg/a2i-rekognition.html?icmpid=docs_a2i_lp\n          - text: Provides step-by-step instructions for using Amazon A2I with Amazon Rekognition.\n          - list:\n            - listitem:\n              - link \"Reviewing Unsafe Content with Amazon A2I Using Amazon Rekognition HTML\":\n                - /url: https://docs.aws.amazon.com/rekognition/latest/dg/a2i-rekognition.html?icmpid=docs_a2i_lp\n                - text: HTML\n              - text: \"|\"\n            - listitem:\n              - link \"Reviewing Unsafe Content with Amazon A2I Using Amazon Rekognition PDF\":\n                - /url: https://docs.aws.amazon.com/rekognition/latest/dg/rekognition-dg.pdf#a2i-rekognition?icmpid=docs_a2i_lp\n                - text: PDF\n        - listitem:\n          - heading \"Crowd HTML Elements Reference\" [level=3]:\n            - link \"Crowd HTML Elements Reference\":\n              - /url: https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html?icmpid=docs_a2i_lp\n          - text: Use HTML elements to create custom worker user interfaces (UIs) for your human review workflows.\n          - list:\n            - listitem:\n              - link \"Crowd HTML Elements Reference HTML\":\n                - /url: https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html?icmpid=docs_a2i_lp\n                - text: HTML\n              - text: \"|\"\n            - listitem:\n              - link \"Crowd HTML Elements Reference PDF\":\n                - /url: https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-dg.pdf#sms-ui-template-reference?icmpid=docs_a2i_lp\n                - text: PDF\n        - listitem:\n          - heading \"Sample Task User Interfaces (UIs) Opens in a new tab\" [level=3]:\n            - link \"Sample Task User Interfaces (UIs) Opens in a new tab\":\n              - /url: https://github.com/aws-samples/amazon-a2i-sample-task-uis?icmpid=docs_a2i_lp\n              - text: Sample Task User Interfaces (UIs)\n              - img \"Opens in a new tab\"\n          - text: A GitHub repository of example task UIs built using HTML crowd elements.\n          - list:\n            - listitem:\n              - link \"Sample Task User Interfaces (UIs) GitHub\":\n                - /url: https://github.com/aws-samples/amazon-a2i-sample-task-uis?icmpid=docs_a2i_lp\n                - text: GitHub\n                - img \"Opens in a new tab\"\n        - listitem:\n          - heading \"Jupyter Notebook Demos Opens in a new tab\" [level=3]:\n            - link \"Jupyter Notebook Demos Opens in a new tab\":\n              - /url: https://github.com/aws-samples/amazon-a2i-sample-jupyter-notebooks?icmpid=docs_a2i_lp\n              - text: Jupyter Notebook Demos\n              - img \"Opens in a new tab\"\n          - text: A GitHub repository of example Jupyter Notebooks that demonstrate how to integrate Amazon A2I in machine learning workflows.\n          - list:\n            - listitem:\n              - link \"Jupyter Notebook Demos GitHub\":\n                - /url: https://github.com/aws-samples/amazon-a2i-sample-jupyter-notebooks?icmpid=docs_a2i_lp\n                - text: GitHub\n                - img \"Opens in a new tab\"\n    - complementary \"Help panel\":\n      - button \"Close help panel\"\n      - heading \"On this page\" [level=2]\n      - list:\n        - listitem:\n          - link \"Developer Guide\":\n            - /url: \"#developer-guide\"\n        - listitem:\n          - link \"API Reference\":\n            - /url: \"#api-reference\"\n        - listitem:\n          - link \"Tutorials and Samples\":\n            - /url: \"#tutorials-and-samples\"\n      - text: Related Links\n      - list:\n        - listitem:\n          - link \"AWS Glossary\":\n            - /url: http://docs.aws.amazon.com/general/latest/gr/glos-chap.html\n        - listitem:\n          - link \"Getting Started with AWS Opens in a new tab\":\n            - /url: https://aws.amazon.com/documentation/gettingstarted/\n            - text: Getting Started with AWS\n            - img \"Opens in a new tab\"\n        - listitem:\n          - link \"SDKs & Tools Opens in a new tab\":\n            - /url: https://aws.amazon.com/tools/\n            - text: SDKs & Tools\n            - img \"Opens in a new tab\"\n        - listitem:\n          - link \"AWS General Reference\":\n            - /url: http://docs.aws.amazon.com/general/latest/gr/Welcome.html\n        - listitem:\n          - link \"AWS Training Opens in a new tab\":\n            - /url: https://aws.amazon.com/training/\n            - text: AWS Training\n            - img \"Opens in a new tab\"\n        - listitem:\n          - link \"AWS Case Studies Opens in a new tab\":\n            - /url: https://aws.amazon.com/solutions/case-studies/\n            - text: AWS Case Studies\n            - img \"Opens in a new tab\"\n        - listitem:\n          - link \"AWS Whitepapers Opens in a new tab\":\n            - /url: https://aws.amazon.com/whitepapers/\n            - text: AWS Whitepapers\n            - img \"Opens in a new tab\"\n  - contentinfo:\n    - heading \"Get Started\" [level=2]\n    - link \"AWS Hands-On Tutorials Opens in a new tab\":\n      - /url: https://aws.amazon.com/getting-started/hands-on/\n      - text: AWS Hands-On Tutorials\n      - img \"Opens in a new tab\"\n    - link \"AWS Solutions Library Opens in a new tab\":\n      - /url: https://aws.amazon.com/solutions/\n      - text: AWS Solutions Library\n      - img \"Opens in a new tab\"\n    - link \"AWS Decision Guides\":\n      - /url: https://docs.aws.amazon.com/decision-guides/\n    - heading \"Service Guides\" [level=2]\n    - link \"Choosing a generative AI service\":\n      - /url: https://docs.aws.amazon.com/decision-guides/latest/decision-guides/genai-guide.html\n    - link \"AWS service guides\":\n      - /url: https://docs.aws.amazon.com/#products\n    - link \"AWS CLI Tutorials on GitHub Opens in a new tab\":\n      - /url: https://github.com/aws-samples/sample-developer-tutorials\n      - text: AWS CLI Tutorials on GitHub\n      - img \"Opens in a new tab\"\n    - heading \"Developer Tools\" [level=2]\n    - link \"AWS Code Example Library\":\n      - /url: https://docs.aws.amazon.com/code-library/latest/ug/what-is-code-library.html\n    - link \"AWS CLI\":\n      - /url: https://docs.aws.amazon.com/cli/\n    - link \"AWS Builder Center Opens in a new tab\":\n      - /url: https://builder.aws.com/\n      - text: AWS Builder Center\n      - img \"Opens in a new tab\"\n    - link \"AWS Developer Tools Blog Opens in a new tab\":\n      - /url: https://aws.amazon.com/blogs/developer/\n      - text: AWS Developer Tools Blog\n      - img \"Opens in a new tab\"\n    - heading \"Helpful Links\" [level=2]\n    - link \"Download the AWS Docs MCP Server Opens in a new tab\":\n      - /url: https://github.com/awslabs/mcp/tree/main/src/aws-documentation-mcp-server\n      - text: Download the AWS Docs MCP Server\n      - img \"Opens in a new tab\"\n    - link \"Sign into the AWS Console Opens in a new tab\":\n      - /url: https://console.aws.amazon.com/\n      - text: Sign into the AWS Console\n      - img \"Opens in a new tab\"\n    - link \"AWS re:Post Opens in a new tab\":\n      - /url: https://repost.aws/\n      - text: AWS re:Post\n      - img \"Opens in a new tab\"\n    - link \"Privacy\":\n      - /url: https://aws.amazon.com/privacy\n    - text: \"|\"\n    - link \"Site terms\":\n      - /url: https://aws.amazon.com/terms\n    - text: \"|\"\n    - link \"Cookie preferences\":\n      - /url: \"#\"\n    - text: \"| © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved.\"\n    - button \"Language selector English\": English\n    - button \"Top\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://docs.aws.amazon.com/augmented-ai/",
+              "origin": "https://docs.aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

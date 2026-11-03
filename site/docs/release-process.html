@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Runs before the stylesheet so reveal styles only apply where the
+         motion layer can actually drive them. -->
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <title>Release process — RAE FAANG docs</title>
+    <meta name="description" content="SemVer policy, the verification checklist, and the approval gate before publishing or deploying." />
+    <meta name="robots" content="index,follow" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0B0C0A" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="RAE FAANG" />
+    <meta property="og:title" content="Release process — RAE FAANG docs" />
+    <meta property="og:description" content="SemVer policy, the verification checklist, and the approval gate before publishing or deploying." />
+    <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/docs/release-process.html" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
+    <meta property="og:image:width" content="1774" />
+    <meta property="og:image:height" content="887" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Release process — RAE FAANG docs" />
+    <meta name="twitter:description" content="SemVer policy, the verification checklist, and the approval gate before publishing or deploying." />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/docs/release-process.html" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
+    <link rel="apple-touch-icon" href="../docs/assets/icon-192.png" />
+    <link rel="icon" href="../docs/assets/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="../docs/assets/icon-512.png" type="image/png" sizes="512x512" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-doc">
+    <div class="scroll-rail" data-scroll-rail aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/" aria-current="page">Docs</a>
+          
+        </nav>
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile primary">
+            <a href="../catalog/">Catalog</a>
+            <a href="../docs/">Docs</a>
+            
+          </nav>
+        </details>
+        <a class="btn btn-ghost header-github" href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero page-hero-doc" id="top">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Docs</a><span aria-hidden="true">/</span><span>Release process</span>
+          </nav>
+          <h1>Release process</h1>
+          <p class="lede">SemVer policy, the verification checklist, and the approval gate before publishing or deploying.</p>
+        </div>
+      </section>
+
+      <section class="section section-tight section-last">
+        <div class="wrap">
+          <details class="toc">
+            <summary>On this page</summary>
+            <ul>
+              <li><a href="#version-sources">Version sources</a></li>
+              <li><a href="#semver-rules-for-this-project">SemVer rules for this project</a></li>
+              <li><a href="#preparing-a-release">Preparing a release</a></li>
+              <li><a href="#publishing-maintainer-only">Publishing (maintainer only)</a></li>
+              <li><a href="#what-a-handoff-must-record">What a handoff must record</a></li>
+              <li><a href="#related">Related</a></li>
+            </ul>
+          </details>
+          <article class="doc">
+<h1>Release process</h1>
+<p>How a version of RAE FAANG is prepared, verified and published. Publishing and deploying are maintainer decisions: an agent may prepare a release and prove it locally, but must not push a tag, <code>npm publish</code>, or deploy the site without explicit approval.</p>
+<h2 id="version-sources">Version sources</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Surface</th><th scope="col">Source of truth</th></tr>
+</thead>
+<tbody>
+<tr><td>Package version</td><td><code>version</code> in <code>package.json</code> (mirrored in <code>package-lock.json</code>)</td></tr>
+<tr><td>CLI version</td><td><code>RAE CLI v&lt;version&gt;</code> reads <code>package.json</code> at runtime (<code>src/cli.js</code>)</td></tr>
+<tr><td>Release history</td><td><code>CHANGELOG.md</code>, one section per released version</td></tr>
+<tr><td>Tag</td><td><code>v&lt;version&gt;</code>, matching the changelog link reference</td></tr>
+</tbody>
+</table></div>
+<p>Nothing else stores the version, so a release is one <code>package.json</code> bump plus a <code>package-lock.json</code> update.</p>
+<h2 id="semver-rules-for-this-project">SemVer rules for this project</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Change</th><th scope="col">Bump</th></tr>
+</thead>
+<tbody>
+<tr><td>Breaking change to a CLI command, flag, output shape, or a catalog JSON Schema</td><td><strong>major</strong></td></tr>
+<tr><td>New CLI command or flag, new schema field, new catalogued product, new opportunity spec or documentation surface</td><td><strong>minor</strong></td></tr>
+<tr><td>Data corrections, copy and docs fixes, generator fixes that keep every interface intact, test-script repairs</td><td><strong>patch</strong></td></tr>
+</tbody>
+</table></div>
+<p>While the project is on <code>0.x</code>, the same mapping applies; treat the release as <code>0.&lt;minor&gt;.&lt;patch&gt;</code> and bump <code>minor</code> for any new surface. A change to catalog data alone is a patch unless it changes the schema.</p>
+<h2 id="preparing-a-release">Preparing a release</h2>
+<ol>
+<li><strong>Collect the change.</strong> Move everything under <code>## [Unreleased]</code> in <code>CHANGELOG.md</code> into a new <code>## [&lt;version&gt;] - &lt;YYYY-MM-DD&gt;</code> section, and add the <code>[&lt;version&gt;]: https://github.com/EnzoVezzaro/rea-faang/releases/tag/v&lt;version&gt;</code> link reference at the bottom of the file.</li>
+<li><strong>Bump the version.</strong> <code>npm version &lt;major|minor|patch&gt; --no-git-tag-version</code> updates <code>package.json</code> and <code>package-lock.json</code> without creating a commit or tag, so the bump can land in the same reviewed change.</li>
+<li><strong>Regenerate derived output.</strong> Run <code>npm run skills:catalog</code> and <code>npm run site:build</code> whenever catalog data, skills or docs changed; the validation step fails on drift.</li>
+<li><p><strong>Verify.</strong> Run every command below and record the real exit codes in the handoff artifact:</p>
+<pre><code class="language-bash">npm ci
+npm run validate          # catalog, research, opportunities, skills, site --check
+npm test                  # 58 root tests across 5 files
+for f in products/*/*/package.json; do (cd &quot;$(dirname &quot;$f&quot;)&quot; &amp;&amp; npm test) || exit 1; done
+npm run ace -- config check  # the pinned ace-proagents, not a global install
+npm pack --dry-run        # package contents, no publish
+node src/cli.js --version # must print the new version</code></pre>
+</li>
+</ol>
+<ol>
+<li><strong>Describe the artifact.</strong> <code>npm pack --dry-run --json</code> lists the files and size that would be published. It must include <code>src/</code>, <code>lib/</code>, <code>catalog/</code>, <code>research/</code>, <code>opportunities/</code>, <code>tools/</code>, <code>docs/</code>, <code>ace.mjs</code> and the license files; a missing directory means the <code>files</code> list in <code>package.json</code> needs updating.</li>
+<li><strong>Stop at the gate.</strong> Commit the prepared release, then wait for maintainer approval before tagging, publishing or deploying.</li>
+</ol>
+<h2 id="publishing-maintainer-only">Publishing (maintainer only)</h2>
+<pre><code class="language-bash">git tag -a v&lt;version&gt; -m &quot;v&lt;version&gt;&quot; &amp;&amp; git push origin v&lt;version&gt;
+npm publish</code></pre>
+<p>The site is deployed by <code>.github/workflows/pages.yml</code> after a successful CI run on <code>main</code>; the Vercel project is optional and only canonical when the build is run with <code>RAE_SITE_URL=https://rae-faang-landing.vercel.app</code>.</p>
+<h2 id="what-a-handoff-must-record">What a handoff must record</h2>
+<ul>
+<li>The version prepared and the changelog section that describes it.</li>
+<li>Exit codes for every verification command above.</li>
+<li>Any check that could not run, with the reason (for example no network, no <code>ace</code> runtime, or a maintainer-only step).</li>
+<li>An explicit statement that nothing was published, tagged or deployed.</li>
+</ul>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/CHANGELOG.md" rel="noopener noreferrer" target="_blank"><code>../CHANGELOG.md</code></a> — release history and the prepared <code>[Unreleased]</code> section.</li>
+<li><a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/CONTRIBUTING.md" rel="noopener noreferrer" target="_blank"><code>../CONTRIBUTING.md</code></a> — the contribution loop that feeds a release.</li>
+<li><a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/PLAN.md" rel="noopener noreferrer" target="_blank"><code>../PLAN.md</code></a> — workstreams and project definition of done.</li>
+</ul>
+
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>            <p class="footer-mark">RAE FAANG</p>
+          <p class="footer-mission">
+            We don't need FAANG anymore. Choose a product from Meta, Amazon, Apple, Netflix or Google
+            and use your agent to build it in your project. RAE FAANG brings together the catalog,
+            product research and candidate open-source projects. MIT licensed.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/">Docs</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE" rel="noopener noreferrer" target="_blank">MIT License</a>
+          <a href="https://github.com/EnzoVezzaro/repo-shield" rel="noopener noreferrer" target="_blank">Repo Shield</a>
+        </div>
+      </div>
+      <div class="wrap footer-fine">
+        <p>
+          Product names are used as functional references only and imply no
+          affiliation or endorsement. Implementations must comply with applicable
+          laws, licenses, and third-party rights. No AI training: see
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/NOTICE" rel="noopener noreferrer" target="_blank">NOTICE</a>.
+        </p>
+      </div>
+    </footer>
+    
+  </body>
+</html>

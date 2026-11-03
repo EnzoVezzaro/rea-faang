@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_84785783223c858dcfe3f84077bb36f3827d7dcf6805f64781a17cb075894f0a",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/opensearch-service/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "e973ea3d69de683024e25bc1f2f0d5e291ab9182075d664861b2d626e98259a8"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 7482,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 4635,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/opensearch-service/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2562,
+        "before_url": {
+          "url": "https://aws.amazon.com/opensearch-service/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/opensearch-service/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "ce396b8379c9f373b18d1ea2eb54b990f1c257698c9ce6fa7d2dd2e08a959d31",
+              "bytes": 14646,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - main:\n    - paragraph: Amazon OpenSearch Service\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /opensearch-service/\n      - button \"Features submenu\": Features\n      - listitem:\n        - link \"Pricing\":\n          - /url: /opensearch-service/pricing/\n      - button \"Getting Started submenu\": Getting Started\n      - button \"Resources submenu\": Resources\n      - listitem:\n        - link \"Migrations\":\n          - /url: /opensearch-service/migrations/\n      - listitem:\n        - link \"Partners\":\n          - /url: /opensearch-service/partners/\n      - listitem:\n        - link \"FAQs\":\n          - /url: /opensearch-service/faqs/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Analytics\":\n            - /url: /big-data/datalakes-and-analytics/\n        - listitem: Amazon OpenSearch Service\n    - heading \"Amazon OpenSearch Service - Managed Retrieval Engine\" [level=1]\n    - paragraph: Real-time retrieval engine for AI, search, and analytics — at any scale\n    - button \"Get started with OpenSearch Service\"\n    - button \"Build with OpenSearch Agent Skills\"\n    - heading \"What is Amazon OpenSearch Service\" [level=2]\n    - paragraph:\n      - text: Amazon OpenSearch Service is a managed retrieval engine built on\n      - link \"OpenSearch\":\n        - /url: https://opensearch.org/\n      - text: for agentic AI, search, and analytics. It combines vector, lexical, hybrid, and agentic retrieval in a single system, delivering low-latency, highly relevant results at petabyte scale. Native AI and ML capabilities enable embedding generation, inference, and agentic workflows directly within the service. Seamless access to data with\n      - link \"ZeroETL\":\n        - /url: /blogs/big-data/zero-etl-integrations-with-amazon-opensearch-service/\n      - text: and direct integrations with AI services like\n      - link \"Amazon Bedrock\":\n        - /url: /bedrock/knowledge-bases/\n      - text: and third-party models allow you to accelerate AI development and go to market faster.\n    - img \"Missing alt text value\"\n    - heading \"Core Features\" [level=2]\n    - tablist:\n      - tab \"Serverless\" [selected]\n      - tab \"Vector database\"\n      - tab \"Observability\"\n    - tabpanel \"Serverless\":\n      - heading \"Serverless\" [level=3]\n      - paragraph: Power agentic AI and dynamic workloads with instant scale up and scale to zero, with no infrastructure to manage, and no idle costs.\n      - 'link \"Learn more: Serverless\"':\n        - /url: /opensearch-service/features/serverless/\n        - text: Learn more\n    - heading \"Benefits of Amazon OpenSearch Service\" [level=2]\n    - heading \"Integrated retrieval for any use case\" [level=3]:\n      - button \"Integrated retrieval for any use case\"\n    - heading \"Accelerate AI development\" [level=3]:\n      - button \"Accelerate AI development\"\n    - heading \"Flexibility without tradeoff\" [level=3]:\n      - button \"Flexibility without tradeoff\"\n    - heading \"Operate at scale with confidence\" [level=3]:\n      - button \"Operate at scale with confidence\"\n    - heading \"Use cases\" [level=2]\n    - heading \"Retrieval Augmented Generation (RAG) for agentic and generative AI\" [level=3]:\n      - button \"Retrieval Augmented Generation (RAG) for agentic and generative AI\"\n    - heading \"Vector database for semantic and multimodal search\" [level=3]:\n      - button \"Vector database for semantic and multimodal search\"\n    - heading \"Intuitive and personalized search\" [level=3]:\n      - button \"Intuitive and personalized search\"\n    - heading \"Real-time logs and observability\" [level=3]:\n      - button \"Real-time logs and observability\"\n    - heading \"Adobe\" [level=2]\n    - paragraph: Adobe scaled Acrobat AI Assistant from proof of concept to hundreds of millions of users on AWS. Amazon OpenSearch Service powers the attribution and citation capabilities at the core of the experience, and Amazon Bedrock expands multilingual AI support to reach a global audience. With trillions of PDFs in circulation, Adobe helps users extract actionable insights from documents faster.\n    - button \"Play:\" [disabled]\n    - img \"Missing alt text value\"\n    - heading \"Customers\" [level=2]\n    - link \"A simple black and white icon depicting a vertical bar chart, commonly used to represent analytics or data analysis. Learn how AutoDesk monitors and fixes software problems Read the case study\":\n      - /url: /solutions/case-studies/autodesk-log-analytics/\n      - img \"A simple black and white icon depicting a vertical bar chart, commonly used to represent analytics or data analysis.\"\n      - heading \"Learn how AutoDesk monitors and fixes software problems\" [level=3]\n      - text: Read the case study\n    - link \"A black and white icon of a magnifying glass positioned over a bar graph, representing analytics or data analysis. Learn how Compass simplified and modernized property searches Read the testimonial\":\n      - /url: /blogs/big-data/simplifying-and-modernizing-home-search-at-compass-with-amazon-es/\n      - img \"A black and white icon of a magnifying glass positioned over a bar graph, representing analytics or data analysis.\"\n      - heading \"Learn how Compass simplified and modernized property searches\" [level=3]\n      - text: Read the testimonial\n    - link \"The Pearson company logo with a stylized 'P' inside a blue oval, followed by the word 'Pearson' in black text. Pearson identifies security events and behavior patterns to protect data Read the case study\":\n      - /url: /solutions/case-studies/pearson-elasticsearch-case-study/\n      - img \"The Pearson company logo with a stylized 'P' inside a blue oval, followed by the word 'Pearson' in black text.\"\n      - heading \"Pearson identifies security events and behavior patterns to protect data\" [level=3]\n      - text: Read the case study\n    - link \"The Pinterest logo, featuring a red circle with a white stylized 'P' and the word 'Pinterest' in red text. Pinterest uses an observability solution to monitor and issue alerts Read the case study\":\n      - /url: /solutions/case-studies/pinterest-elasticsearch-case-study/\n      - img \"The Pinterest logo, featuring a red circle with a white stylized 'P' and the word 'Pinterest' in red text.\"\n      - heading \"Pinterest uses an observability solution to monitor and issue alerts\" [level=3]\n      - text: Read the case study\n    - heading \"Go deeper on data and analytics at AWS re:Invent 2026\" [level=2]\n    - paragraph: We curated sessions for teams running production data workloads. From open lakehouses to database deep dives to data governance for AI, learn the patterns behind agent-ready data from the engineers who built these services.\n    - 'link \"See the curated agenda: Go deeper on data and analytics at AWS re:Invent 2026\"':\n      - /url: https://catalog.awsevents.com/widget/awsevents/reinvent2026/1789671442728001j4hL?trk=0961556f-0d7a-4e0a-8cd9-924e7dfff7d4&sc_channel=el\n      - text: See the curated agenda\n    - img \"Missing alt text value\"\n    - heading \"Next steps\" [level=2]\n    - link \"Documentation Amazon OpenSearch Service documentation Read the documentation\":\n      - /url: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html\n      - text: Documentation\n      - heading \"Amazon OpenSearch Service documentation\" [level=3]\n      - text: Read the documentation\n    - link \"Demo View demos of OpenSearch Service capabilities Watch the demos\":\n      - /url: https://www.youtube.com/@AmazonOpenSearchService/featured\n      - text: Demo\n      - heading \"View demos of OpenSearch Service capabilities\" [level=3]\n      - text: Watch the demos\n    - link \"Workshop Build AI-powered search in three steps Read the documentation\":\n      - /url: https://catalog.workshops.aws/ai-powered-search/en-US\n      - text: Workshop\n      - heading \"Build AI-powered search in three steps\" [level=3]\n      - text: Read the documentation\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /opensearch-service/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /opensearch-service/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/opensearch-service/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

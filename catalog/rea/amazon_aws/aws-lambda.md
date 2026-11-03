@@ -9,11 +9,11 @@ Browser capture of the public web surface of AWS Lambda, recorded with REA.
 | Target | https://aws.amazon.com/lambda/ |
 | Resolved URL | https://aws.amazon.com/lambda/ |
 | Page title | AWS Lambda |
-| Captured | 2026-10-13T18:58:44.865Z |
+| Captured | 2026-11-03T01:35:36.010Z |
 | Status | captured |
-| REA Evidence ID | `ev_22aedf7d08e7a152deeaa8094bb9c5a6d77550205aae7a414ad1ae26c841ecbf` |
+| REA Evidence ID | `ev_74b54e9c0d0afc0f934254ef9996c9240d7728df4f597f36db2605e456d82429` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.40 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -96,6 +96,12 @@ access control is bypassed.
 - [Click here to return to Amazon Web Services homepage](/?nc2=h_home)
 - [re:Invent](/events/reinvent/?nc2=h_l1_f)
 - [Sign in to console](https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin)
+- [Overview](/lambda/)
+- [Pricing](/lambda/pricing/)
+- [Getting Started](/lambda/getting-started/)
+- [Resources](/lambda/resources/)
+- [FAQs](/lambda/faqs/)
+- [Partners](/lambda/partners/)
 - [Products](/products/)
 - [Compute](/products/compute/)
 - [Event Functions Run code at any scale with zero infrastructure management. 220+ native AWS integrations with pay-per-use billing. Lambda Functions](/lambda/lambda-functions/)
@@ -119,17 +125,11 @@ access control is bypassed.
 - [Learn more](/blogs/compute/building-fault-tolerant-long-running-application-with-aws-lambda-durable-functions/)
 - [Lambda Managed Instances](/lambda/lambda-managed-instances/)
 - [Learn more](/blogs/big-data/building-serverless-event-streaming-applications-with-amazon-msk-and-aws-lambda/)
-- [Get started free](https://aws.amazon.com/products/developer-tools/agent-toolkit-for-aws/?sc_icampaign=aware_agent-toolkit_2026&sc_ichannel=ha&sc_iplace=banner&trk=51d778e4-7fc0-488a-8e05-7ce791578608)
 - [Automotive Scania Scania uses AWS Lambda to scale its connected-vehicle solution with 80% lower latency, processing telemetry from trucks across a global hybrid network. Read the case study](/solutions/case-studies/scania-case-study/)
 - [Financial Services Capital One Capital One improved cost efficiency, speed to market, and developer quality of life by adopting AWS Lambda and Amazon ECS across its enterprise platform. Read the case study](/solutions/case-studies/capital-one-lambda-ecs-case-study/)
 - [Gaming ZigZa ZigZa scaled its flagship mobile games to 4 million concurrent players using AWS Lambda, achieving 70% lower infrastructure costs while handling 44% year-over-year growth. Read the case study](/solutions/case-studies/zigzagames-case-study/)
 - [Media & Entertainment KTO.com KTO.com migrated to AWS Lambda and Amazon EC2 to handle a massive influx of traffic and payment transactions during the soccer World Cup without degrading customer experience. Read the case study](/solutions/case-studies/kto-case-study/)
 - [Software & Internet LangGenius LangGenius uses AWS Lambda to run isolated, auto-scaling plugin sandboxes for its open-source LLM application development platform, enabling secure multi-tenant agent and RAG workflows. Read the case study](/solutions/case-studies/dify-lambda-case-study/)
-- [Software & Internet CyberGRX CyberGRX reduced its ML-based cyber risk modeling runtime from 8 days to 1 hour using AWS Step Functions and AWS Lambda, while cutting compute costs by 90%. Read the case study](/solutions/case-studies/cybergrx-step-functions-case-study/)
-- [How do I choose between Lambda Event Functions, Lambda Web Functions, and Lambda MicroVMs?](/lambda/#amsc1--uizb9d)
-- [When should I use Lambda Managed Instances?](/lambda/#amsc2--uizb9d)
-- [Lambda Event Functions](/lambda/lambda-functions/)
-- [Lambda Web Functions](/lambda/lambda-web-functions/)
 
 ### Controls
 
@@ -145,10 +145,10 @@ access control is bypassed.
 - button: Toggle search
 - button: Create account
 - button: Open feedback
-- button: Get started for free
+- button: Features submenu
+- button: Get started now
 - button: See the documentation
 - button: Copy
-- button: Close
 - button: Yes, give us positive feedback
 - button: No, give us constructive feedback
 - button: Create an AWS account
@@ -158,9 +158,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/aws-lambda.json`
-- Evidence ID: `ev_22aedf7d08e7a152deeaa8094bb9c5a6d77550205aae7a414ad1ae26c841ecbf`
-- Accessibility outline: 23807 bytes
+- Evidence ID: `ev_74b54e9c0d0afc0f934254ef9996c9240d7728df4f597f36db2605e456d82429`
+- Accessibility outline: 23523 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

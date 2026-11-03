@@ -9,11 +9,11 @@ Browser capture of the public web surface of Pages, recorded with REA.
 | Target | https://www.apple.com/pages/ |
 | Resolved URL | https://support.apple.com/pages |
 | Page title | Pages Support |
-| Captured | 2026-10-13T18:58:09.359Z |
+| Captured | 2026-11-03T01:32:57.912Z |
 | Status | captured |
-| REA Evidence ID | `ev_2f50324bbf5cb3d093423deac83de14301c8132820cd65d38e36d02602f22ccc` |
+| REA Evidence ID | `ev_01b2030362861d227d8fb6b353d445b15dfa16a90dc985970d24c8d3ed73f624` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.40 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -145,9 +145,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -155,6 +155,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/apple-pages.json`
-- Evidence ID: `ev_2f50324bbf5cb3d093423deac83de14301c8132820cd65d38e36d02602f22ccc`
+- Evidence ID: `ev_01b2030362861d227d8fb6b353d445b15dfa16a90dc985970d24c8d3ed73f624`
 - Accessibility outline: 8326 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

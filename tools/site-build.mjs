@@ -66,6 +66,22 @@ const DOC_META = {
     title: 'Research and build every product',
     description: 'Document products with cited evidence, then guide coding agents from research to tested alternatives.',
   },
+  'research-batches': {
+    title: 'Research batch plan',
+    description: 'Ordered research batches and their sources, derived from current catalog coverage.',
+  },
+  'catalog-gap-report': {
+    title: 'Catalog gap report',
+    description: 'Deterministic reconciliation of the canonical catalog against the expanded FAANG plus Microsoft candidate inventory.',
+  },
+  'inventory-audit': {
+    title: 'Inventory audit',
+    description: 'Per-company review of canonical products, candidate noise, duplicates, missing products and retired entries.',
+  },
+  'release-process': {
+    title: 'Release process',
+    description: 'SemVer policy, the verification checklist, and the approval gate before publishing or deploying.',
+  },
 };
 
 // The motion layer is a real, reviewable source file rather than a template

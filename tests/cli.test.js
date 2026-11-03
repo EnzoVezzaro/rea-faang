@@ -250,3 +250,46 @@ test('--help documents the product-id Markdown skill shorthand', () => {
   assert.match(result.stdout, /--alt NAME, clone/);
   assert.match(result.stdout, /--out FILE/);
 });
+
+test('published counts match the canonical catalog sources', async () => {
+  const products = readFileSync(join(ROOT, 'catalog', 'products.jsonl'), 'utf8')
+    .trim()
+    .split('\n')
+    .map((line) => JSON.parse(line));
+  const manifest = JSON.parse(readFileSync(join(ROOT, 'catalog', 'manifests', 'faang.json'), 'utf8'));
+
+  assert.equal(products.length, manifest.total_in_scope, 'catalog records must match the manifest in-scope total');
+  const perCompany = {};
+  for (const product of products) perCompany[product.company_id] = (perCompany[product.company_id] ?? 0) + 1;
+  for (const [companyId, entry] of Object.entries(manifest.companies)) {
+    assert.equal(perCompany[companyId] ?? 0, entry.in_scope, `${companyId}: cataloged records must match the manifest`);
+  }
+
+  const { PRODUCTS } = await import('../tools/skills/catalog-data.mjs');
+  assert.equal(PRODUCTS.length, products.length, 'skills catalog must cover every product record');
+  assert.deepEqual(
+    PRODUCTS.map((p) => p.id).sort(),
+    products.map((p) => p.id).sort(),
+    'skills catalog and product records must describe the same products',
+  );
+  const landscape = { available: 0, partial: 0, pending: 0 };
+  for (const product of PRODUCTS) landscape[product.status] += 1;
+
+  const readme = readFileSync(join(ROOT, 'README.md'), 'utf8');
+  assert.match(readme, new RegExp(`badge/products-${products.length}-`), 'README product badge must match the catalog');
+  assert.match(
+    readme,
+    new RegExp(`\\*\\*${products.length} products\\*\\* · \\*\\*${landscape.available}\\*\\* with a mature candidate listed · \\*\\*${landscape.partial}\\*\\* with partial coverage · \\*\\*${landscape.pending}\\*\\* with`),
+    'README summary counts must match the skills landscape',
+  );
+
+  const skillsIndex = readFileSync(join(ROOT, 'catalog', 'skills', 'README.md'), 'utf8');
+  assert.match(skillsIndex, new RegExp(`\\*\\*${landscape.available} mature alternatives listed\\*\\*`));
+  assert.match(skillsIndex, new RegExp(`\\*\\*${landscape.partial} partial alternative coverage\\*\\*`));
+  assert.match(skillsIndex, new RegExp(`\\*\\*${landscape.pending} with no verified alternative\\*\\*`));
+
+  const siteCatalog = JSON.parse(readFileSync(join(ROOT, 'site', 'catalog.json'), 'utf8'));
+  assert.equal(siteCatalog.products.length, products.length, 'generated site catalog must cover every product');
+  const home = readFileSync(join(ROOT, 'site', 'index.html'), 'utf8');
+  assert.match(home, new RegExp(`<strong>${products.length}</strong> products catalogued`), 'site product count must match the catalog');
+});

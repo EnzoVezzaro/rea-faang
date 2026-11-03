@@ -7,13 +7,13 @@ Browser capture of the public web surface of Google Search, recorded with REA.
 | Product | Google Search (`google-search`) |
 | Company | Google |
 | Target | https://www.google.com/ |
-| Resolved URL | https://www.google.com/ |
+| Resolved URL | https://www.google.com/?zx=1793669956500 |
 | Page title | Google Search |
-| Captured | 2026-10-13T18:59:53.994Z |
+| Captured | 2026-11-03T01:39:19.283Z |
 | Status | captured |
-| REA Evidence ID | `ev_3e6b1b7bf15e482d0a6171b0d87cf84325c79f1ed9fb2be997a8f6eea24ee10a` |
+| REA Evidence ID | `ev_6c841f20f586944d02e01777db0b7e904c4b2538326a4ed85a9fcf33f40c219e` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.40 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -90,9 +90,9 @@ _No headings exposed._
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -100,6 +100,6 @@ _No headings exposed._
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/google-search.json`
-- Evidence ID: `ev_3e6b1b7bf15e482d0a6171b0d87cf84325c79f1ed9fb2be997a8f6eea24ee10a`
-- Accessibility outline: 1694 bytes
+- Evidence ID: `ev_6c841f20f586944d02e01777db0b7e904c4b2538326a4ed85a9fcf33f40c219e`
+- Accessibility outline: 1750 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

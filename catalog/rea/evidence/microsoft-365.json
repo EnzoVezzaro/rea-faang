@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_c99ad19e5625c4adb0787ebed9609c6c4927e32e1265ced64a95b81fe851fc1a",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.microsoft.com/en-us/microsoft-365",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "90a729e54dfbc874681fae5c20686d7b8367568ca15bec179427f177567fc377"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://www.microsoft.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 18903,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 15807,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.microsoft.com/en-us/microsoft-365",
+          "origin": "https://www.microsoft.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2624,
+        "before_url": {
+          "url": "https://www.microsoft.com/en-us/microsoft-365",
+          "origin": "https://www.microsoft.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.microsoft.com/en-us/microsoft-365",
+          "origin": "https://www.microsoft.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "122ff88b93931479297c5b738d06742e41adeb66d64cf4c2990fc6a8165587de",
+              "bytes": 36059,
+              "text": "- document:\n  - link \"Skip to main content\":\n    - /url: \"#mainContent\"\n  - banner:\n    - link \"Microsoft\":\n      - /url: https://www.microsoft.com\n      - img \"Microsoft\"\n    - link \"Microsoft 365\":\n      - /url: https://www.microsoft.com/en-us/microsoft-365\n    - navigation \"Contextual menu\":\n      - button \"Products \"\n      - link \"Plans and pricing\":\n        - /url: https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-plans-and-pricing\n      - button \"Resources \"\n      - button \"Support \"\n    - button \"Search Microsoft 365\": \n    - status\n    - link \"Try for free\":\n      - /url: https://www.microsoft.com/en-us/microsoft-365/try-prs?ocid=cmmo4xgt3j5\n    - button \"ME\"\n  - main:\n    - alert:\n      - paragraph\n      - text: Learn how to create and edit within your Word, Excel, PowerPoint, and Outlook apps.\n      - paragraph\n    - link \"Watch our Copilot webinar on demand.\":\n      - /url: https://go.microsoft.com/fwlink/?linkid=2362435&clcid=0x409&culture=en-us&country=us\n    - button \"Close Announcement Banner\": \n    - text: Microsoft 365 for individuals\n    - heading \"The apps you know go further with Copilot\" [level=1]\n    - text: Create, organize, and move faster with AI-powered help across your favorite Microsoft 365 apps\n    - superscript:\n      - link \"Footnote 2\":\n        - /url: \"#note-2\"\n        - text: \"2\"\n    - text: \", plus secure cloud storage and advanced protection, all in one plan.\"\n    - superscript:\n      - link \"Footnote 1\":\n        - /url: \"#note-1\"\n        - text: \"1\"\n    - link \"See Copilot in action\":\n      - /url: \"#m365-hero-video-1307281\"\n    - 'link \"Try for free: Microsoft 365\"':\n      - /url: https://www.microsoft.com/en-us/microsoft-365/try-prs?ocid=cmmo4xgt3j5\n      - text: Try for free\n    - list:\n      - listitem:\n        - link \"For individuals\":\n          - /url: https://www.microsoft.com/en-us/microsoft-365\n      - listitem:\n        - link \"For business\":\n          - /url: https://www.microsoft.com/en-us/microsoft-365/microsoft-365-business\n      - listitem:\n        - link \"For enterprise\":\n          - /url: https://www.microsoft.com/en-us/microsoft-365/microsoft-365-enterprise\n      - listitem:\n        - link \"For education\":\n          - /url: https://www.microsoft.com/en-us/microsoft-365/microsoft-365-education\n    - navigation \"In Page quick links\":\n      - list:\n        - listitem:\n          - link \"How it works\":\n            - /url: \"#How-it-works\"\n        - listitem:\n          - link \"features\":\n            - /url: \"#features\"\n            - text: Features\n        - listitem:\n          - link \"news\":\n            - /url: \"#news\"\n            - text: News\n        - listitem:\n          - link \"What’s included\":\n            - /url: \"#Whats-included\"\n        - listitem:\n          - link \"Plans\":\n            - /url: \"#Plans\"\n        - listitem:\n          - link \"Get started\":\n            - /url: \"#Get-started\"\n        - listitem:\n          - link \"FAQ\":\n            - /url: \"#FAQ\"\n            - text: FAQs\n      - link \"See plans and pricing for Microsoft 365\":\n        - /url: https://go.microsoft.com/fwlink/p/?linkid=2220705&clcid=0x409&culture=en-us&country=us\n        - text: See plans and pricing\n      - 'link \"Try for free: Microsoft 365\"':\n        - /url: https://www.microsoft.com/en-us/microsoft-365/try-prs?ocid=cmmo4xgt3j5\n        - text: Try for free\n    - text: How it works\n    - heading \"Boost your productivity with Copilot\" [level=2]\n    - list:\n      - listitem:\n        - button \" Brainstorm and research with ease\" [expanded]:\n          - text: \n          - heading \"Brainstorm and research with ease\" [level=3]\n        - text: Research topics and questions with Copilot, then get detailed, source-cited reports to help you understand your options and decide what to do next.\n        - superscript:\n          - link \"Footnote 1\":\n            - /url: \"#note-1\"\n            - text: \"1\"\n        - group \"Brainstorm and research with ease\":\n          - button \"Play\":\n            - img\n      - listitem:\n        - button \" Organize and plan with precision\":\n          - text: \n          - heading \"Organize and plan with precision\" [level=3]\n      - listitem:\n        - button \" Create and polish with confidence\":\n          - text: \n          - heading \"Create and polish with confidence\" [level=3]\n      - listitem:\n        - button \" Protect what’s important\":\n          - text: \n          - heading \"Protect what’s important\" [level=3]\n    - link \"Learn more about Microsoft 365 for individuals\":\n      - /url: https://www.microsoft.com/en-us/microsoft-365/explore-microsoft-365-for-home\n    - text: Features\n    - heading \"AI features included with Microsoft 365 to help you explore, create, and solve\" [level=2]\n    - region \"Features section\":\n      - text: Showing 1-2 of 10 slides\n      - button \"Previous Slide\" [disabled]\n      - button \"Next Slide\"\n      - group \"1 of 10\":\n        - img \"Copilot workflow showing message review and reply drafting steps.\"\n        - heading \"Cowork (Premium and Pro only)\" [level=3]\n        - text: Turn ideas into action with Cowork in Microsoft Copilot, an AI-powered collaborator that helps plan and complete complex, multi-step tasks while keeping you in control.\n        - superscript:\n          - link \"footnote1\":\n            - /url: \"#note-1\"\n            - text: \"1\"\n        - 'link \"See Copilot plans: Flexible Copilot plans for every individual\"':\n          - /url: https://www.microsoft.com/en-us/copilot/pricing/individuals\n          - text: See Copilot plans\n      - group \"2 of 10\":\n        - img \"Copilot researching job opportunities and creating a report.\"\n        - heading \"Researcher (Premium and Pro only)\" [level=3]\n        - text: Save time and streamline complex research with Researcher in Microsoft Copilot, delivering detailed, source-cited AI-powered reports from the web.\n        - superscript:\n          - link \"footnote1\":\n            - /url: \"#note-1\"\n            - text: \"1\"\n        - 'link \"See Copilot plans: Flexible Copilot plans for every individual\"':\n          - /url: https://www.microsoft.com/en-us/copilot/pricing/individuals\n          - text: See Copilot plans\n      - link \"Back to Features section\":\n        - /url: javascript:void(0);\n    - text: News\n    - heading \"Discover what’s happening with Microsoft 365\" [level=2]\n    - img \"Student using a laptop and digital notes for study.\"\n    - text: Special offer\n    - heading \"Students save 50% on our AI and productivity subscription\" [level=3]\n    - text: Use your college email to save 50% on Microsoft 365 with Copilot included.\n    - link \"Get offer - Explore Microsoft 365 discounted plans for college students and enhance productivity.\":\n      - /url: https://www.microsoft.com/en-us/microsoft-365/college-student-pricing\n      - text: Get offer\n    - img \"Copilot surrounded by photos of people and activities.\"\n    - text: Copilot\n    - heading \"Built for work. Made for you.\" [level=3]\n    - text: Whether you spend time in Excel, PowerPoint, or Word, Copilot is designed to help you tackle more kinds of work.\n    - superscript:\n      - link \"footnote1\":\n        - /url: \"#note-1\"\n        - text: \"1\"\n    - 'link \"Open Copilot: Microsoft Cloud\"':\n      - /url: https://go.microsoft.com/fwlink/?LinkId=2381237&clcid=0x409&culture=en-us&country=us\n      - text: Open Copilot\n    - text: What’s included\n    - heading \"Powerful apps to simplify your life and work\" [level=2]\n    - link \"Explore all apps, products and services of microsoft 365\":\n      - /url: https://www.microsoft.com/en-us/microsoft-365/products-apps-services\n      - text: Explore all apps\n    - tablist:\n      - tab \"Productivity Apps\" [selected]\n      - tab \"Security & Storage Apps\"\n    - tabpanel:\n      - img \"Copilot app icon\"\n      - text: Copilot\n      - heading \"Copilot is built for work\" [level=3]\n      - text: Easily navigate everyday tasks with Copilot, your AI companion that provides answers to complex questions and simplifies dense information into clear insights.\n      - 'link \"Get started: Microsoft Cloud\"':\n        - /url: https://go.microsoft.com/fwlink/?LinkId=2379522&clcid=0x409&culture=en-us&country=us\n        - text: Get started\n      - img \"Word app icon\"\n      - text: Word\n      - heading \"Create your best work\" [level=3]\n      - text: Turn your thoughts into a first draft in minutes with powerful AI tools.\n      - superscript:\n        - link \"Footnote 1\":\n          - /url: \"#note-1\"\n          - text: \"1\"\n      - link \"Learn more about Microsoft Word\":\n        - /url: https://www.microsoft.com/en-us/microsoft-365/word\n        - text: Learn more\n      - img \"Excel app icon\"\n      - text: Excel\n      - heading \"Turn data into insights\" [level=3]\n      - text: Simplify complex data into easy-to-read spreadsheets and use Copilot to effortlessly analyze data.\n      - superscript:\n        - link \"Footnote 1\":\n          - /url: \"#note-1\"\n          - text: \"1\"\n      - link \"Learn more about Microsoft excel\":\n        - /url: https://www.microsoft.com/en-us/microsoft-365/excel\n        - text: Learn more\n      - img \"PowerPoint app icon\"\n      - text: PowerPoint\n      - heading \"Polish your presentations\" [level=3]\n      - text: Create polished slides in minutes using AI-driven design\n      - superscript:\n        - link \"Footnote 1\":\n          - /url: \"#note-1\"\n          - text: \"1\"\n      - text: and collaboration tools in PowerPoint.\n      - link \"Learn more about Microsoft powerpoint\":\n        - /url: https://www.microsoft.com/en-us/microsoft-365/powerpoint\n        - text: Learn more\n      - img \"Outlook app icon\"\n      - text: Outlook\n      - heading \"Your inbox, organized\" [level=3]\n      - text: Stay on top of multiple accounts with email, calendars, and contacts in one place.\n      - link \"Learn more about Your inbox, organized. Your day, planned\":\n        - /url: https://www.microsoft.com/en-us/microsoft-365/outlook/email-and-calendar-software-microsoft-outlook\n        - text: Learn more\n      - img \"Microsoft Note icon\"\n      - text: OneNote\n      - heading \"Uplevel your notes\" [level=3]\n      - text: Capture ideas, organize projects, and keep everything in one place—accessible across all your devices.\n      - link \"Learn more about OneNote\":\n        - /url: https://www.microsoft.com/en-us/microsoft-365/onenote/digital-note-taking-app\n        - text: Learn more\n      - img \"Teams app icon\"\n      - text: Microsoft Teams\n      - heading \"Connect with anyone\" [level=3]\n      - text: Transform the way you work with next-generation AI capabilities and bring together your physical and digital worlds.\n      - superscript:\n        - link \"Footnote 1\":\n          - /url: \"#note-1\"\n          - text: \"1\"\n      - link \"Learn more about Connect with anyone in Teams for free\":\n        - /url: https://www.microsoft.com/en-us/microsoft-teams/teams-free\n        - text: Learn more\n    - link \"Back to tabs for what's included section\":\n      - /url: \"#tabs-pill-bar-oc58d2_tab0-tab\"\n      - text: Back to tabs\n    - text: Plans\n    - heading \"Find the plan that’s right for you\" [level=2]\n    - tablist \"Choose Plans for Yearly/Monthly\":\n      - tab \"Yearly\" [selected]\n      - tab \"Monthly\"\n    - tabpanel:\n      - region \"Plans section\":\n        - text: Showing 1-2 of 5 slides\n        - button \"Previous Slide\" [disabled]\n        - button \"Next Slide\"\n        - group \"1 of 5\":\n          - heading \"Microsoft 365\" [level=3]\n          - text: Free\n          - link \"Create a free Microsoft account\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2269915&clcid=0x409&culture=en-us&country=us\n            - text: Create a free account\n          - list:\n            - listitem: For one person\n            - listitem: 5 GB cloud storage\n            - listitem: Works on web, iOS, and Android\n            - listitem: Web and mobile versions of Word, Excel, PowerPoint, OneNote, OneDrive, and more apps\n            - listitem: Ad-supported Outlook email and calendar\n        - group \"2 of 5\":\n          - heading \"Microsoft 365 Basic\" [level=3]\n          - text: $19.99 /year Subscription automatically renews unless canceled in Microsoft account.\n          - link \"See terms.\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2265909\n            - text: See terms\n          - text: .\n          - link \"Buy now\":\n            - /url: https://go.microsoft.com/fwlink/p/?LinkID=2186361&clcid=0x409&culture=en-us&country=us\n          - heading \"Microsoft 365 Basic includes:\" [level=4]\n          - list:\n            - listitem: For 1 person\n            - listitem:\n              - text: Works on web, iOS, and Android\n              - button \"More information\"\n            - listitem: 100 GB of secure cloud storage\n            - listitem: OneDrive ransomware protection for your photos and files\n            - listitem:\n              - text: Outlook ad-free secure\n              - button \"More information\"\n              - text: email\n            - listitem: Ongoing support for help when you need it\n          - list:\n            - listitem:\n              - button \"Outlook\":\n                - img \"Outlook\"\n            - listitem:\n              - button \"OneDrive\":\n                - img \"OneDrive\"\n        - group \"3 of 5\":\n          - heading \"Microsoft 365 Personal\" [level=3]\n          - text: $99.99 /year Subscription automatically renews unless canceled in Microsoft account.\n          - link \"See terms\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2265909\n          - text: .\n          - link \"Buy now\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2234515&clcid=0x409&culture=en-us&country=us\n          - link \"Try for free\":\n            - /url: https://www.microsoft.com/en-us/microsoft-365/try-prs\n          - heading \"Everything in Microsoft 365 Basic, plus:\" [level=4]\n          - list:\n            - listitem: Sign into 5 devices at once\n            - listitem:\n              - text: Use on PCs, Macs, phones & tablets\n              - button \"More information\"\n              - button \"More information\"\n            - listitem: 1 TB of secure cloud storage\n            - listitem:\n              - text: Word, Excel\n              - button \"More information\"\n              - text: \", PowerPoint, Outlook, and OneNote desktop apps with Microsoft Copilot\"\n              - button \"More information\"\n            - listitem:\n              - text: Advanced Copilot\n              - button \"More information\"\n              - text: chat with higher usage than free\n            - listitem:\n              - text: Use Copilot in select apps with work files in a secure way\n              - button \"More information\"\n            - listitem:\n              - text: Higher usage than free for AI image creation in Copilot\n              - button \"More information\"\n            - listitem:\n              - text: Identity\n              - button \"More information\"\n              - text: \", data, and device security\"\n            - listitem:\n              - text: All-day video calling and Copilot\n              - button \"More information\"\n              - text: in Teams\n          - list:\n            - listitem:\n              - button \"Microsoft Copilot\":\n                - img \"Microsoft Copilot\"\n            - listitem:\n              - button \"Word (web and mobile only)\":\n                - img \"Word (web and mobile only)\"\n            - listitem:\n              - button \"Excel (web and mobile only)\":\n                - img \"Excel (web and mobile only)\"\n            - listitem:\n              - button \"PowerPoint (web and mobile only)\":\n                - img \"PowerPoint (web and mobile only)\"\n            - listitem:\n              - button \"Outlook\":\n                - img \"Outlook\"\n            - listitem:\n              - button \"OneNote (web and mobile only)\":\n                - img \"OneNote (web and mobile only)\"\n            - listitem:\n              - button \"OneDrive\":\n                - img \"OneDrive\"\n            - listitem:\n              - button \"Microsoft Defender\":\n                - img \"Microsoft Defender\"\n            - listitem:\n              - button \"Microsoft Teams\":\n                - img \"Microsoft Teams\"\n        - group \"4 of 5\":\n          - heading \"Microsoft 365 Family\" [level=3]\n          - text: $129.99 /year Subscription automatically renews unless canceled in Microsoft account.\n          - link \"see terms for yearly option of Microsoft 365 family\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2265909\n            - text: See terms\n          - text: .\n          - link \"Buy now your Microsoft 365 family account\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2234616&clcid=0x409&culture=en-us&country=us\n            - text: Buy now\n          - link \"Try for free Microsoft 365 Family for free trial period\":\n            - /url: https://www.microsoft.com/en-us/microsoft-365/try\n            - text: Try for free\n          - heading \"Everything in Microsoft 365 Personal, plus:\" [level=4]\n          - list:\n            - listitem: For 1 to 6 people (AI for subscription owner only)\n            - listitem: Each person can use on up to 5 devices simultaneously\n            - listitem: 2 TB of shared, secure cloud storage\n          - list:\n            - listitem:\n              - button \"Microsoft Copilot\":\n                - img \"Microsoft Copilot\"\n            - listitem:\n              - button \"Word\":\n                - img \"Word\"\n            - listitem:\n              - button \"Excel\":\n                - img \"Excel\"\n            - listitem:\n              - button \"PowerPoint\":\n                - img \"PowerPoint\"\n            - listitem:\n              - button \"Outlook\":\n                - img \"Outlook\"\n            - listitem:\n              - button \"OneNote\":\n                - img \"OneNote\"\n            - listitem:\n              - button \"OneDrive\":\n                - img \"OneDrive\"\n            - listitem:\n              - button \"Microsoft Defender\":\n                - img \"Microsoft Defender\"\n            - listitem:\n              - button \"Microsoft Teams\":\n                - img \"Microsoft Teams\"\n        - group \"5 of 5\":\n          - text: Best for AI & productivity\n          - heading \"Microsoft 365 Premium\" [level=3]\n          - text: $199.99 /year Subscription automatically renews unless canceled in Microsoft account.\n          - link \"see terms of yearly Microsoft 365 premium subscription\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2265909\n            - text: See terms\n          - text: .\n          - link \"Buy now yearly microsoft 365 premium subscription\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2321511&clcid=0x409&culture=en-us&country=us\n            - text: Buy now\n          - link \"Try for free Microsoft 365 premium free trial\":\n            - /url: https://www.microsoft.com/en-us/microsoft-365/try-premium\n            - text: Try for free\n          - heading \"Everything in Microsoft 365 Family, plus:\" [level=4]\n          - list:\n            - listitem:\n              - text: Advanced Copilot\n              - button \"More information\"\n              - text: chat with extensive usage\n            - listitem:\n              - text: Agentic AI features that get things done for you, including advanced research and analytics\n              - button \"More information\"\n            - listitem:\n              - text: Extensive usage for AI image creation in Copilot\n              - button \"More information\"\n          - heading \"Popular apps and services included:\" [level=6]\n          - list:\n            - listitem:\n              - button \"Microsoft Copilot\":\n                - img \"Microsoft Copilot\"\n            - listitem:\n              - button \"Word (web and mobile only)\":\n                - img \"Word (web and mobile only)\"\n            - listitem:\n              - button \"Excel (web and mobile only)\":\n                - img \"Excel (web and mobile only)\"\n            - listitem:\n              - button \"PowerPoint (web and mobile only)\":\n                - img \"PowerPoint (web and mobile only)\"\n            - listitem:\n              - button \"Outlook\":\n                - img \"Outlook\"\n            - listitem:\n              - button \"OneNote (web and mobile only)\":\n                - img \"OneNote (web and mobile only)\"\n            - listitem:\n              - button \"OneDrive\":\n                - img \"OneDrive\"\n            - listitem:\n              - button \"Microsoft Defender\":\n                - img \"Microsoft Defender\"\n            - listitem:\n              - button \"Microsoft Teams\":\n                - img \"Microsoft Teams\"\n        - link \"Back to carousel navigation controls\":\n          - /url: javascript:void(0);\n    - link \"Back to tabs for plans section\":\n      - /url: \"#tabs-pill-bar-10_tab0-tab\"\n      - text: Back to tabs\n    - paragraph: Subscription continues to be charged at the regular price and selected term, unless canceled in Microsoft account.\n    - text: Get started\n    - heading \"Take the next step with Microsoft 365\" [level=2]\n    - img \"Person editing a presentation across desktop and mobile devices.\"\n    - heading \"Choose your plan\" [level=3]\n    - text: Get the tools you need to work faster and collaborate more efficiently—including cloud storage, innovative AI\n    - superscript:\n      - link \"Footnote 1\":\n        - /url: \"#note-1\"\n        - text: \"1\"\n    - text: \", and digital security.\"\n    - 'link \"See plans and pricing: compare all microsoft 365 products\"':\n      - /url: https://www.microsoft.com/en-us/microsoft-365/buy/compare-all-microsoft-365-products\n      - text: See plans and pricing\n    - img \"Icons representing document review, analytics, and security protection.\"\n    - 'heading \"Microsoft Frontier program: what''s next in AI\" [level=3]'\n    - text: Unlock innovative and emerging AI features before general availability by opting in with a Microsoft 365 Pro, Premium, Personal, or Family account.\n    - link \"Learn more about how to Try what’s next in AI\":\n      - /url: https://www.microsoft.com/en-us/copilot/resources/frontier-program\n      - text: Learn more\n    - heading \"Frequently asked questions\" [level=2]\n    - group:\n      - button \"Expand all\"\n      - button \"Collapse all\" [disabled] [pressed]\n    - list:\n      - listitem:\n        - button \"01/ What is Microsoft 365 and what features are included with a subscription? \":\n          - text: 01/\n          - heading \"What is Microsoft 365 and what features are included with a subscription?\" [level=3]\n          - text: \n      - listitem:\n        - button \"02/ Was Microsoft Office 365 renamed to Microsoft 365? \":\n          - text: 02/\n          - heading \"Was Microsoft Office 365 renamed to Microsoft 365?\" [level=3]\n          - text: \n      - listitem:\n        - button \"03/ When do I need a Microsoft 365 subscription? \":\n          - text: 03/\n          - heading \"When do I need a Microsoft 365 subscription?\" [level=3]\n          - text: \n      - listitem:\n        - button \"04/ What is the difference between Microsoft 365 Basic, Personal, Family, Premium, and Pro? \":\n          - text: 04/\n          - heading \"What is the difference between Microsoft 365 Basic, Personal, Family, Premium, and Pro?\" [level=3]\n          - text: \n      - listitem:\n        - button \"05/ How is Copilot integrated across Microsoft 365 apps? \":\n          - text: 05/\n          - heading \"How is Copilot integrated across Microsoft 365 apps?\" [level=3]\n          - text: \n      - listitem:\n        - button \"06/ How does Microsoft use my data and protect my privacy? \":\n          - text: 06/\n          - heading \"How does Microsoft use my data and protect my privacy?\" [level=3]\n          - text: \n      - listitem:\n        - button \"07/ What devices can I use Microsoft 365 on? \":\n          - text: 07/\n          - heading \"What devices can I use Microsoft 365 on?\" [level=3]\n          - text: \n      - listitem:\n        - button \"08/ Why should I choose Microsoft 365 over tools like Google Workspace? \":\n          - text: 08/\n          - heading \"Why should I choose Microsoft 365 over tools like Google Workspace?\" [level=3]\n          - text: \n    - region \"Footnotes\":\n      - list:\n        - listitem:\n          - link \"Back to footnote 1\":\n            - /url: \"#noteone1\"\n            - text: \"[1]\"\n          - text: AI features are not available in Microsoft 365 Basic. AI features only available to subscription owner and cannot be shared; usage limits apply.\n          - 'link \"Learn more: AI credits and limits for Microsoft 365 subscriptions\"':\n            - /url: https://go.microsoft.com/fwlink/?linkid=2280151\n            - text: Learn more\n          - text: . Minimum age limits may apply to use of AI features.\n          - 'link \"Details: See FAQs about Copilot in Microsoft 365 subscriptions\"':\n            - /url: https://go.microsoft.com/fwlink/?linkid=2280902\n            - text: Details\n          - text: .\n        - listitem:\n          - link \"Back to footnote 2\":\n            - /url: \"#footnote2\"\n            - text: \"[2]\"\n          - text: App availability varies by device/language. Features vary by platform.\n        - listitem:\n          - link \"Back to footnote 3\":\n            - /url: \"#footnote-3\"\n            - text: \"[3]\"\n          - text: Copilot in Excel requires AutoSave to be enabled, meaning the file must be saved to OneDrive; it doesn't function with unsaved files.\n        - listitem:\n          - link \"Back to footnote 4\":\n            - /url: \"#footnote-4\"\n            - text: \"[4]\"\n          - text: Employer must have an enterprise subscription that includes Microsoft 365 desktop apps and have multi-account access enabled (excludes government tenants). Applies to select AI features in Word, Excel, PowerPoint, and Outlook desktop apps and in select mobile apps.\n          - link \"Click to see details about Microsoft 365 Personal, Family, or Premium subscription\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2339523\n            - text: See details\n          - text: .\n    - region \"Follow Microsoft Copilot links\":\n      - heading \"Follow Microsoft Copilot\" [level=2]\n      - list:\n        - listitem:\n          - link \"Follow Microsoft 365 on Linkedin\":\n            - /url: https://go.microsoft.com/fwlink/?LinkId=2382200\n            - img \"linkedin logo\"\n        - listitem:\n          - link \"Follow Microsoft 365 on Twitter\":\n            - /url: https://go.microsoft.com/fwlink/?LinkId=2382201\n            - img \"Twitter logo\"\n        - listitem:\n          - link \"Follow Microsoft 365 on Instagram\":\n            - /url: https://go.microsoft.com/fwlink/?LinkId=2382202\n            - img \"Instagram logo\"\n        - listitem:\n          - link \"Follow Microsoft 365 on Threads\":\n            - /url: https://go.microsoft.com/fwlink/?LinkId=2382203\n            - img \"Threads logo\"\n        - listitem:\n          - link \"Follow Microsoft 365 on Facebook\":\n            - /url: https://go.microsoft.com/fwlink/?LinkId=2381131\n            - img \"Facebook logo\"\n        - listitem:\n          - link \"Follow Microsoft 365 on TikTok\":\n            - /url: https://go.microsoft.com/fwlink/?LinkId=2381130\n            - img \"TikTok\"\n        - listitem:\n          - link \"Follow Microsoft 365 on YouTube\":\n            - /url: https://go.microsoft.com/fwlink/?LinkId=2381240\n            - img \"YouTube logo\"\n  - contentinfo:\n    - navigation \"Footer Resource links\":\n      - heading \"What's new\" [level=2]\n      - list:\n        - listitem:\n          - link \"Surface Laptop Ultra\":\n            - /url: https://www.microsoft.com/en-us/surface/devices/surface-laptop-ultra?icid=DSM_Footer_WhatsNew_SurfaceLaptopUltra\n        - listitem:\n          - link \"Surface Pro\":\n            - /url: https://www.microsoft.com/surface/devices/surface-pro\n        - listitem:\n          - link \"Surface Laptop\":\n            - /url: https://www.microsoft.com/surface/devices/surface-laptop\n        - listitem:\n          - link \"Surface RTX Spark Dev Box\":\n            - /url: https://www.microsoft.com/en-us/surface/devices/surface-rtx-spark-dev-box?icid=DSM_Footer_WhatsNew_SurfaceRTXSparkDevBox\n        - listitem:\n          - link \"Explore Copilot\":\n            - /url: https://www.microsoft.com/en-us/copilot?icid=DSM_Footer_WhatsNew_Copilot\n        - listitem:\n          - link \"Explore Microsoft products\":\n            - /url: https://www.microsoft.com/en-us/microsoft-products-and-apps\n        - listitem:\n          - link \"Windows 11 apps\":\n            - /url: https://www.microsoft.com/en-us/windows/apps-for-windows?icid=DSM_Footer_WhatsNew_Windows11apps\n      - heading \"Microsoft Store\" [level=2]\n      - list:\n        - listitem:\n          - link \"Account profile\":\n            - /url: https://account.microsoft.com/\n        - listitem:\n          - link \"Download Center\":\n            - /url: https://www.microsoft.com/en-us/download\n        - listitem:\n          - link \"Microsoft Store support\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2139749\n        - listitem:\n          - link \"Returns\":\n            - /url: https://www.microsoft.com/en-us/store/b/returns\n        - listitem:\n          - link \"Order tracking\":\n            - /url: https://www.microsoft.com/en-us/store/b/order-tracking\n        - listitem:\n          - link \"Certified Refurbished\":\n            - /url: https://www.microsoft.com/en-us/store/b/certified-refurbished-products\n        - listitem:\n          - link \"Why buy from Microsoft Store\":\n            - /url: https://www.microsoft.com/en-us/store/b/why-microsoft-store?icid=footer_why-msft-store?icid=DSM_Footer_MicrosoftStore_WhyBuy\n        - listitem:\n          - link \"Flexible Payments\":\n            - /url: https://www.microsoft.com/en-us/store/b/payment-financing-options?icid=footer_financing_vcc\n      - heading \"Education\" [level=2]\n      - list:\n        - listitem:\n          - link \"Microsoft in education\":\n            - /url: https://www.microsoft.com/en-us/education\n        - listitem:\n          - link \"Devices for education\":\n            - /url: https://www.microsoft.com/en-us/education/devices/overview\n        - listitem:\n          - link \"Microsoft Teams for Education\":\n            - /url: https://www.microsoft.com/en-us/education/products/teams\n        - listitem:\n          - link \"Microsoft 365 Education\":\n            - /url: https://www.microsoft.com/en-us/education/products/microsoft-365\n        - listitem:\n          - link \"How to buy for your school\":\n            - /url: https://www.microsoft.com/education/how-to-buy\n        - listitem:\n          - link \"Educator training and development\":\n            - /url: https://education.microsoft.com/\n        - listitem:\n          - link \"Deals for students and parents\":\n            - /url: https://www.microsoft.com/en-us/store/b/education\n        - listitem:\n          - link \"AI for education\":\n            - /url: https://www.microsoft.com/en-us/education/ai-in-education\n      - heading \"Business\" [level=2]\n      - list:\n        - listitem:\n          - link \"Microsoft AI\":\n            - /url: https://www.microsoft.com/en-us/ai?icid=DSM_Footer_AI\n        - listitem:\n          - link \"Microsoft Security\":\n            - /url: https://www.microsoft.com/en-us/security\n        - listitem:\n          - link \"Dynamics 365\":\n            - /url: https://www.microsoft.com/en-us/dynamics-365\n        - listitem:\n          - link \"Microsoft 365\":\n            - /url: https://www.microsoft.com/en-us/microsoft-365/business\n        - listitem:\n          - link \"Microsoft Power Platform\":\n            - /url: https://www.microsoft.com/en-us/power-platform\n        - listitem:\n          - link \"Microsoft Teams\":\n            - /url: https://www.microsoft.com/en-us/microsoft-teams/group-chat-software\n        - listitem:\n          - link \"Microsoft Copilot\":\n            - /url: https://www.microsoft.com/en-us/copilot?icid=DSM_Footer_Business_Copilot\n        - listitem:\n          - link \"Small Business\":\n            - /url: https://www.microsoft.com/en-us/store/b/business?icid=CNavBusinessStore\n      - heading \"Developer & IT\" [level=2]\n      - list:\n        - listitem:\n          - link \"Azure\":\n            - /url: https://azure.microsoft.com/en-us/\n        - listitem:\n          - link \"Microsoft Developer\":\n            - /url: https://developer.microsoft.com/en-us/\n        - listitem:\n          - link \"Microsoft Learn\":\n            - /url: https://learn.microsoft.com/\n        - listitem:\n          - link \"Support for AI marketplace apps\":\n            - /url: https://www.microsoft.com/software-development-companies/offers-benefits/isv-success?icid=DSM_Footer_SupportAIMarketplace&ocid=cmm3atxvn98\n        - listitem:\n          - link \"Microsoft Tech Community\":\n            - /url: https://techcommunity.microsoft.com/\n        - listitem:\n          - link \"Microsoft Marketplace\":\n            - /url: https://marketplace.microsoft.com?icid=DSM_Footer_Marketplace&ocid=cmm3atxvn98\n        - listitem:\n          - link \"Software companies\":\n            - /url: https://www.microsoft.com/software-development-companies?icid=DSM_Footer_SoftwareCompanies&ocid=cmm3atxvn98\n        - listitem:\n          - link \"Visual Studio\":\n            - /url: https://visualstudio.microsoft.com/\n      - heading \"Company\" [level=2]\n      - list:\n        - listitem:\n          - link \"Careers\":\n            - /url: https://careers.microsoft.com/\n        - listitem:\n          - link \"About Microsoft\":\n            - /url: https://www.microsoft.com/about\n        - listitem:\n          - link \"Company news\":\n            - /url: https://news.microsoft.com/source/?icid=DSM_Footer_Company_CompanyNews\n        - listitem:\n          - link \"Privacy at Microsoft\":\n            - /url: https://www.microsoft.com/en-us/privacy?icid=DSM_Footer_Company_Privacy\n        - listitem:\n          - link \"Investors\":\n            - /url: https://www.microsoft.com/investor/default.aspx\n        - listitem:\n          - link \"Diversity and inclusion\":\n            - /url: https://www.microsoft.com/en-us/diversity/default?icid=DSM_Footer_Company_Diversity\n        - listitem:\n          - link \"Accessibility\":\n            - /url: https://www.microsoft.com/en-us/accessibility\n        - listitem:\n          - link \"Sustainability\":\n            - /url: https://www.microsoft.com/en-us/corporate-responsibility/sustainability?icid=DSM_Footer_Sustainability\n    - text: \n    - link \"Content Language Selector. Currently set to English (United States)\":\n      - /url: https://www.microsoft.com/en-US/microsoft-365/locale\n      - text: English (United States)\n    - link \"Your Privacy Choices Opt-Out Icon Your Privacy Choices\":\n      - /url: https://aka.ms/yourcaliforniaprivacychoices\n      - img \"Your Privacy Choices Opt-Out Icon\"\n      - text: Your Privacy Choices\n    - link \"Consumer Health Privacy\":\n      - /url: https://go.microsoft.com/fwlink/?linkid=2259814\n    - navigation \"Microsoft corporate links\":\n      - list:\n        - listitem:\n          - link \"Sitemap\":\n            - /url: https://www.microsoft.com/en-us/sitemap1.aspx\n        - listitem:\n          - link \"Contact Microsoft\":\n            - /url: https://support.microsoft.com/contactus\n        - listitem:\n          - link \"Privacy\":\n            - /url: https://go.microsoft.com/fwlink/?LinkId=521839\n        - listitem:\n          - link \"Terms of use\":\n            - /url: https://go.microsoft.com/fwlink/?LinkID=206977\n        - listitem:\n          - link \"Trademarks\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2196228\n        - listitem:\n          - link \"Safety & eco\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2196227\n        - listitem:\n          - link \"Recycling\":\n            - /url: https://www.microsoft.com/en-us/legal/compliance/recycling\n        - listitem:\n          - link \"About our ads\":\n            - /url: https://choice.microsoft.com\n        - listitem: © Microsoft 2026\n  - button \"Feedback\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.microsoft.com/en-us/microsoft-365",
+              "origin": "https://www.microsoft.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

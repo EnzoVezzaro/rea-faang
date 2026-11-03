@@ -9,11 +9,11 @@ Browser capture of the public web surface of Firebase, recorded with REA.
 | Target | https://firebase.google.com/ |
 | Resolved URL | https://firebase.google.com/ |
 | Page title | Get $300 to unlock all Firebase features |
-| Captured | 2026-10-13T18:59:34.985Z |
+| Captured | 2026-11-03T01:38:08.105Z |
 | Status | captured |
-| REA Evidence ID | `ev_d99e81bf8c94ed8e76f683ebc831d49b53a3a17bfe6952fe9a535c625d264f04` |
+| REA Evidence ID | `ev_01dc5c781a0ae7d002af9d74201e9852a5ed3f49b3d0ba426b36aecab6eac65d` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.40 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -63,6 +63,7 @@ access control is bypassed.
 - Keep up to date on everything Firebase
 - Building an iOS app in 6 hours with Firebase and Antigravity
 - Google Analytics for Firebase iOS SDK outage on September 28, 2026
+- Can an agent port our Android app to iOS?
 - Trusted by the largest apps and games
 - All Firebase products
 - Build
@@ -93,6 +94,7 @@ access control is bypassed.
 - [Blog](//firebase.blog)
 - [Go to console](//console.firebase.google.com)
 - [Sign in](https://firebase.google.com/_d/signin?continue=https%3A%2F%2Ffirebase.google.com%2F&prompt=select_account)
+- [Learn more.](https://firebase.google.com/docs/ai-logic/models)
 - [Get Started](https://console.cloud.google.com/freetrial?om=fb&redirectPath=https://console.firebase.google.com/project/_/overview?purchaseBillingPlan=metered&redirectWithId=true&flow=firebaseMetered&accountNameKey=firebase)
 - [Get started in console](https://console.firebase.google.com/)
 - [App Hosting](/products/app-hosting)
@@ -123,8 +125,7 @@ access control is bypassed.
 - [Read more - Building an iOS app in 6 hours with Firebase and Antigravity](https://firebase.blog/posts/2026/09/build-ios-app-firebase-antigravity)
 - [- Google Analytics for Firebase iOS SDK outage on September 28, 2026](https://firebase.blog/posts/2026/10/firebase-analytics-outage)
 - [Read more - Google Analytics for Firebase iOS SDK outage on September 28, 2026](https://firebase.blog/posts/2026/10/firebase-analytics-outage)
-- [View solutions](/solutions)
-- [Get started](https://console.firebase.google.com/)
+- [YouTube - Can an agent port our Android app to iOS?](https://www.youtube.com/watch?v=xRryePAlo9w)
 
 ### Controls
 
@@ -138,9 +139,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -148,6 +149,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/google-firebase.json`
-- Evidence ID: `ev_d99e81bf8c94ed8e76f683ebc831d49b53a3a17bfe6952fe9a535c625d264f04`
-- Accessibility outline: 15116 bytes
+- Evidence ID: `ev_01dc5c781a0ae7d002af9d74201e9852a5ed3f49b3d0ba426b36aecab6eac65d`
+- Accessibility outline: 15165 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

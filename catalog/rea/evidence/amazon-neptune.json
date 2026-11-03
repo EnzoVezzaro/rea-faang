@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_02bc5ac7f8ab5227f446b38c5ca8ce8d2b8b89fb53de8982606b6b50499ee46f",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/neptune/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "f47204047e15e28819e3891ce155e3c12bbc20a0446b1d6c1be05f9cd5346e6a"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 6954,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 4092,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/neptune/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2558,
+        "before_url": {
+          "url": "https://aws.amazon.com/neptune/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/neptune/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "55c04c96fc9a89c4684085657a09893b7684acf52a3352d010bd77463f76151a",
+              "bytes": 15557,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - tooltip \"Feedback\"\n  - main:\n    - paragraph: Amazon Neptune\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /neptune/\n      - listitem:\n        - link \"Features\":\n          - /url: /neptune/features/\n      - listitem:\n        - link \"Pricing\":\n          - /url: /neptune/pricing/\n      - button \"Resources submenu\": Resources\n      - listitem:\n        - link \"FAQs\":\n          - /url: /neptune/faqs/\n      - listitem:\n        - link \"Customers\":\n          - /url: /neptune/customers/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Products\":\n            - /url: /products/\n        - listitem:\n          - link \"Databases\":\n            - /url: /products/databases/\n        - listitem: Amazon Neptune\n    - heading \"Amazon Neptune\" [level=1]\n    - paragraph: Serverless graph database service for connected data and improved AI accuracy\n    - button \"Get started with Neptune\"\n    - button \"Connect with an AWS specialist\"\n    - heading \"What is Neptune\" [level=2]\n    - paragraph: Neptune instantly scales graph workloads, removing the need to manage capacity. By modeling data as a graph, Neptune captures context that improves accuracy and explainability of generative AI applications. To make AI application development easier, Neptune offers fully managed GraphRAG with Amazon Bedrock Knowledge Bases, and integrations with Strands AI Agents SDK and popular agentic memory tools. It also easily analyzes tens of billions of relationships across structured and unstructured data within seconds delivering strategic insights. Neptune is the only database that gives you the power of connected data with the enterprise capabilities and value of AWS.\n    - button \"Play:\" [disabled]\n    - img \"Missing alt text value\"\n    - button \"Play:\" [disabled]\n    - img \"Missing alt text value\"\n    - heading \"Benefits of Neptune\" [level=2]\n    - link \"Insights in seconds Easily analyze tens of billions of relationships across structured and unstructured data within seconds using built-in algorithms, and perform vector search with your graph for gen AI apps. Learn more\":\n      - /url: /blogs/aws/introducing-amazon-neptune-analytics-a-high-performance-graph-analytics\n      - heading \"Insights in seconds\" [level=3]\n      - paragraph: Easily analyze tens of billions of relationships across structured and unstructured data within seconds using built-in algorithms, and perform vector search with your graph for gen AI apps.\n      - text: Learn more\n    - link \"Trusted AI Improve the accuracy and explainability of your generative AI apps with automated GraphRAG, and integrations with Strands AI SDK and popular memory tools for agents. Learn more\":\n      - /url: /neptune/features/#topic-4\n      - heading \"Trusted AI\" [level=3]\n      - paragraph: Improve the accuracy and explainability of your generative AI apps with automated GraphRAG, and integrations with Strands AI SDK and popular memory tools for agents.\n      - text: Learn more\n    - link \"Performance and scalability Scale your graphs with unlimited vertices and edges, 100k+ queries per second, up to 128 TiB storage per cluster, and up to 15 read replicas per cluster. Learn more\":\n      - /url: /neptune/features/#topic-0\n      - heading \"Performance and scalability\" [level=3]\n      - paragraph: Scale your graphs with unlimited vertices and edges, 100k+ queries per second, up to 128 TiB storage per cluster, and up to 15 read replicas per cluster.\n      - text: Learn more\n    - link \"Enterprise security and reliability Unlock best-in-class security and reliability synonymous with AWS, including ACID transactions, automated backups, cross-Region replication, PITR, encryption at transit and at rest, granular resource permissions, and more. Learn more\":\n      - /url: /neptune/features/#topic-2\n      - heading \"Enterprise security and reliability\" [level=3]\n      - paragraph: Unlock best-in-class security and reliability synonymous with AWS, including ACID transactions, automated backups, cross-Region replication, PITR, encryption at transit and at rest, granular resource permissions, and more.\n      - text: Learn more\n    - link \"Cost effective Reduce your total cost of ownership with no upfront commitments and no hidden costs, pay-for-use billing, and transparent support billing. Learn more\":\n      - /url: /neptune/features/#topic-7\n      - heading \"Cost effective\" [level=3]\n      - paragraph: Reduce your total cost of ownership with no upfront commitments and no hidden costs, pay-for-use billing, and transparent support billing.\n      - text: Learn more\n    - text: Stop setting up. Start building. AWS Builder Center gives you access to free sandbox environments inside a real account. No credit card, no setup. Launch an eligible Workshop and build for up to 8 hours.\n    - link \"Explore Workshops\":\n      - /url: https://builder.aws.com/build/workshops/?accessType=free-sandbox&tab=discover&sc_icampaign=launch_builder-center-sandbox_2026&sc_ichannel=ha&sc_iplace=banner&trk=c243de2e-eafc-4962-8ffc-4915bb208b5b\n    - button \"Close\"\n    - text: Stop setting up. Start building. AWS Builder Center gives you access to free sandbox environments inside a real account. No credit card, no setup. Launch an eligible Workshop and build for up to 8 hours.\n    - link \"Explore Workshops\":\n      - /url: https://builder.aws.com/build/workshops/?accessType=free-sandbox&tab=discover&sc_icampaign=launch_builder-center-sandbox_2026&sc_ichannel=ha&sc_iplace=banner&trk=c243de2e-eafc-4962-8ffc-4915bb208b5b\n    - button \"Close\"\n    - heading \"Use cases\" [level=2]\n    - heading \"Graphs for AI\" [level=3]:\n      - button \"Graphs for AI\"\n    - heading \"Customer 360\" [level=3]:\n      - button \"Customer 360\"\n    - heading \"Fraud detection\" [level=3]:\n      - button \"Fraud detection\"\n    - heading \"Cybersecurity\" [level=3]:\n      - button \"Cybersecurity\"\n    - heading \"Customers\" [level=2]\n    - link \"Missing alt text value How Smartsheet enhances recommendations using Amazon Neptune and Knowledge Graphs Read the blog\":\n      - /url: https://aws.amazon.com/blogs/database/how-smartsheet-enhances-recommendations-using-amazon-neptune-and-knowledge-graphs\n      - img \"Missing alt text value\"\n      - heading \"How Smartsheet enhances recommendations using Amazon Neptune and Knowledge Graphs\" [level=3]\n      - text: Read the blog\n    - link \"Missing alt text value Protecting and governing sensitive data in the cloud on AWS with ALTR Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/altr-case-study\n      - img \"Missing alt text value\"\n      - heading \"Protecting and governing sensitive data in the cloud on AWS with ALTR\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Building an agentic AI solution using Amazon Neptune with Trend Micro Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/trendmicro\n      - img \"Missing alt text value\"\n      - heading \"Building an agentic AI solution using Amazon Neptune with Trend Micro\" [level=3]\n      - text: Read the case study\n    - link \"Wiz logo in blue text with a star symbol Reimagining cloud security using Amazon Neptune graph database with Wiz Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/wiz-neptune\n      - img \"Wiz logo in blue text with a star symbol\"\n      - heading \"Reimagining cloud security using Amazon Neptune graph database with Wiz\" [level=3]\n      - text: Read the case study\n    - 'link \"Missing alt text value Powering the Future of Sports for 220 Million Fans: Dream11’s Vision to Make Sports Better Using AWS Read the case study\"':\n      - /url: https://aws.amazon.com/solutions/case-studies/dream11\n      - img \"Missing alt text value\"\n      - 'heading \"Powering the Future of Sports for 220 Million Fans: Dream11’s Vision to Make Sports Better Using AWS\" [level=3]'\n      - text: Read the case study\n    - heading \"Next steps\" [level=2]\n    - link \"Resources Learn with hands-on training Get started with Neptune\":\n      - /url: /neptune/resources/\n      - text: Resources\n      - heading \"Learn with hands-on training\" [level=3]\n      - text: Get started with Neptune\n    - link \"Documentation Dive deep on Neptune Read the documentation\":\n      - /url: https://docs.aws.amazon.com/neptune\n      - text: Documentation\n      - heading \"Dive deep on Neptune\" [level=3]\n      - text: Read the documentation\n    - link \"Free tier Sign up for a free account Try for free\":\n      - /url: https://signin.aws.amazon.com/signup?request_type=builderId\n      - text: Free tier\n      - heading \"Sign up for a free account\" [level=3]\n      - text: Try for free\n    - link \"Console Start building in the console Sign in\":\n      - /url: https://console.aws.amazon.com/neptune\n      - text: Console\n      - heading \"Start building in the console\" [level=3]\n      - text: Sign in\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /neptune/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /neptune/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/neptune/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

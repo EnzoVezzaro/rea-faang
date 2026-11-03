@@ -9,11 +9,11 @@ Browser capture of the public web surface of Luna, recorded with REA.
 | Target | https://luna.amazon.com/ |
 | Resolved URL | https://luna.amazon.com/ |
 | Page title | Luna |
-| Captured | 2026-10-14T04:00:33.498Z |
+| Captured | 2026-11-03T01:30:33.221Z |
 | Status | captured |
-| REA Evidence ID | `ev_5e21572966259e9ca7d9205812a476d7783bce90cafcd4fee4d113c852e0ef3d` |
+| REA Evidence ID | `ev_08666cddd28a4042a26da30442d58c09506db343810867d1e5931ce8e75466bf` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -68,6 +68,7 @@ access control is bypassed.
 - [Navigate to home](/)
 - [Navigate to gamenight](/gamenight)
 - [Navigate to remote-play](/remote-play)
+- [Navigate to about](/about)
 - [Leave feedback](https://luna.amazon.com/settings?subNav=help_and_feedback)
 - [Discover](https://www.amazon.com/luna/landing-page)
 - [Download Luna](https://luna.amazon.com/settings?subNav=download)
@@ -100,30 +101,30 @@ access control is bypassed.
 - button: Home
 - button: GameNight
 - button: My Stuff
-- button: Remote Play NEW
+- button: Remote Play
+- button: About
 - button: Sign In
 - button: Navigate to search
 - button: Click to login
-- button: Letter Trek Your word adventure starts now!
+- button: featured product Shadow of the Tomb Raider Definitive Edition Become The Tomb Raider. Survive Her Darkest Hour. Rise as a Legend.
 - button: More Info
-- button: SONIC X SHADOW GENERATIONS Available now
-- button: Sonic Mania Plus Race through all-new original Zones and updated Classics
-- button: Garfield Kart 2 - All You Can Drift Ready to race against a real heavyweight?
-- button: Centipede Swarm One centipede becomes many. Your nightmare begins now.
+- button: featured product Angry Birds Flock Party Fling birds, topple towers, and master the art of the slingshot
+- button: featured product Bowling Mayhem Bowl like a pro. Sabotage like a villain.
+- button: featured product WRC Generations Fully Loaded Edition Drive into the thick of the action
+- button: featured product Centipede Swarm One centipede becomes many. Your nightmare begins now.
 - button: Go to slide 1
 - button: Go to slide 2
 - button: Go to slide 3
 - button: Go to slide 4
 - button: Go to slide 5
-- button: Go to slide 6
 
 ## Limitations (from REA)
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -131,6 +132,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-luna.json`
-- Evidence ID: `ev_5e21572966259e9ca7d9205812a476d7783bce90cafcd4fee4d113c852e0ef3d`
-- Accessibility outline: 8717 bytes
+- Evidence ID: `ev_08666cddd28a4042a26da30442d58c09506db343810867d1e5931ce8e75466bf`
+- Accessibility outline: 9285 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

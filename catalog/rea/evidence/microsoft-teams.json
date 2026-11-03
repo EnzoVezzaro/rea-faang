@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_576c79eff944e04fd76f75ec38ea63f6fdf967d9d0624a28b529b70b7ae6fab4",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "11e54393420c44e9adc4b0b2c0de527c06b51ebde49e8eb7823eb83f4167e9dc"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://www.microsoft.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 7824,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 4932,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+          "origin": "https://www.microsoft.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2576,
+        "before_url": {
+          "url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+          "origin": "https://www.microsoft.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+          "origin": "https://www.microsoft.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "ff6b82cad50700c451d49f79c21b6d8e24f53cea739d34193f88320cf743d3e2",
+              "bytes": 25719,
+              "text": "- document:\n  - link \"Skip to main content\":\n    - /url: \"#mainContent\"\n  - banner:\n    - link \"Microsoft\":\n      - /url: https://www.microsoft.com\n      - img \"Microsoft\"\n    - link \"Teams\":\n      - /url: \"https://www.microsoft.com/en-us/microsoft-teams/group-chat-software \"\n    - navigation \"Contextual menu\":\n      - button \"Products \"\n      - link \"Plans and pricing\":\n        - /url: https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-options?activetab=pivot:primaryr1\n      - button \"Features \"\n      - button \"Solutions \"\n      - button \"Resources \"\n      - button \"More \"\n    - link \"Try for free\":\n      - /url: https://www.microsoft.com/en-us/microsoft-teams/teams-trials\n    - link \"Download Teams\":\n      - /url: https://www.microsoft.com/en-us/microsoft-teams/download-app\n    - link \"Sign in\":\n      - /url: https://go.microsoft.com/fwlink/p/?linkid=873020\n  - main:\n    - paragraph: Discover what's coming to Microsoft Ignite, Nov 17-20, 2026.\n    - 'link \"Register now for Microsoft Ignite: Get hands-on with AI and cloud innovations\"':\n      - /url: https://go.microsoft.com/fwlink/?LinkId=2378705&clcid=0x409&culture=en-us&country=us\n      - text: Register now\n    - button \"Dismiss\"\n    - 'heading \"Microsoft Teams: The AI-Powered Platform for Work\" [level=1]'\n    - text: Transform the way you communicate, collaborate, and engage at work, in the era of AI.\n    - link \"Download now - Download Microsoft Teams for desktop and mobile to collaborate and connect across devices.\":\n      - /url: https://www.microsoft.com/en-us/microsoft-teams/download-app#download-for-desktop1\n      - text: Download now\n    - navigation \"In page quick links\":\n      - list \"Featured news \":\n        - listitem:\n          - link \"Featured news\":\n            - /url: \"#Featured-news\"\n        - listitem:\n          - link \"Solutions\":\n            - /url: \"#Solutions\"\n        - listitem:\n          - link \"Products and services\":\n            - /url: \"#Products-and-services\"\n        - listitem:\n          - link \"Customer stories\":\n            - /url: \"#Customer-stories\"\n        - listitem:\n          - link \"Get started\":\n            - /url: \"#Get-started\"\n      - link \"See plans and pricing to find the right Microsoft Teams for your needs\":\n        - /url: https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-options?rtc=1&activetab=pivot:primaryr1\n        - text: See plans and pricing\n    - heading \"Ask Microsoft\" [level=2]\n    - text: Need help finding a product or solution? Try Ask Microsoft.\n    - search:\n      - searchbox \"Ask a question about Teams.\"\n      - button \"Submit\" [disabled]\n      - list:\n        - listitem:\n          - button \"What are the key benefits of Teams?\"\n        - listitem:\n          - button \"Get a custom quote\"\n    - text: FEATURED NEWS\n    - heading \"Discover what’s happening with Teams\" [level=2]\n    - img \"A screenshot of Microsoft teams\"\n    - 'heading \"From Threads to Workflows: Microsoft Teams Features That Boost Everyone’s Productivity\" [level=3]'\n    - text: Organizations want to work faster and smarter. Guided by customer feedback, Microsoft Teams is adding new features like threads, multiple emoji reactions, and emoji-triggered workflows.\n    - link \"Learn more about Microsoft Teams features that boost everyone’s productivity\":\n      - /url: https://go.microsoft.com/fwlink/?linkid=2330221&clcid=0x409&culture=en-us&country=us\n      - text: Learn more\n    - img \"A screenshot of Microsoft teams\"\n    - heading \"Gartner® Magic Quadrant™\" [level=3]\n    - text: Microsoft was named a Leader in the Gartner® Magic Quadrant™ for Unified Communications as a Service (UCaaS) for the eighth consecutive year, and positioned highest on the evaluation’s “ability to execute” axis and furthest on the ‘completeness of vision’ axis\n    - superscript:\n      - link \"footnote 1\":\n        - /url: \"#Footnote-1\"\n        - text: \"1\"\n    - text: in 2026.\n    - superscript\n    - 'link \"Read the report: 2025 Gartner Magic Quadrant for Unified Communications as a Service\"':\n      - /url: https://go.microsoft.com/fwlink/?linkid=2339803&clcid=0x409&culture=en-us&country=us\n      - text: Read the report\n    - img \"A focused man sitting at a table working on a laptop in a well-lit room\"\n    - heading \"Prompt like a pro with Microsoft 365 Copilot in Teams\" [level=3]\n    - text: Realize the full potential of your team's decision-making with prompts for Copilot in Teams. Streamline and transform your meetings so that every idea is visualized, evaluated, and brought to life.\n    - link \"Learn more about Copilot in Teams\":\n      - /url: https://go.microsoft.com/fwlink/?linkid=2275490&clcid=0x409&culture=en-us&country=us\n      - text: Learn more\n    - text: SOLUTIONS\n    - heading \"Simple, smart, secure\" [level=2]\n    - tablist \"Previous / Next tabs\":\n      - tab \"Chat & Channels\" [selected]\n      - tab \"Meetings & Events\"\n      - tab \"Phone\"\n      - tab \"Rooms\"\n    - tabpanel:\n      - list:\n        - listitem:\n          - button \" Streamline teamwork\" [expanded]:\n            - text: \n            - heading \"Streamline teamwork\" [level=3]\n          - text: Bring conversations, shared content, Microsoft Loop and OneNote pages, and third-party apps together in one place.\n          - group \"Streamline teamwork with Teams\":\n            - button \"Play\":\n              - img\n        - listitem:\n          - button \" Customize views\":\n            - text: \n            - heading \"Customize views\" [level=3]\n        - listitem:\n          - button \" Collaborate securely\":\n            - text: \n            - heading \"Collaborate securely\" [level=3]\n        - listitem:\n          - button \" Increase effectiveness\":\n            - text: \n            - heading \"Increase effectiveness\" [level=3]\n    - link \"Back to tabs\":\n      - /url: \"#tabs-pill-bar-oc93e3_tab0-tab\"\n    - text: Products and Services\n    - heading \"Find the right Teams plan and add-ons for your needs\" [level=2]\n    - tablist \"PRODUCTS AND SERVICES section\":\n      - tab \"Business\" [selected]\n      - tab \"Individuals\"\n      - tab \"Enterprise\"\n      - tab \"Education\"\n    - tabpanel:\n      - img \"A person smiling while holding a phone\"\n      - heading \"Teams for small business\" [level=3]\n      - text: Grow your customer base with communications software designed for up to 300 employees.\n      - link \"Learn more about how Microsoft Teams can keep your business connected.\":\n        - /url: https://www.microsoft.com/en-us/microsoft-teams/small-medium-business\n        - text: Learn more\n      - img \"Teams logo\"\n      - heading \"Teams Essentials\" [level=4]\n      - text: Connect with customers by video, chat, and phone using an affordable, all-in-one solution for up to 300 people.\n      - link \"Learn more about Microsoft Teams Essentials, an affordable and professional meeting solution for small businesses.\":\n        - /url: https://www.microsoft.com/en-us/microsoft-teams/essentials?activetab=pivot:overviewtab\n        - text: Learn more\n      - heading \"Microsoft 365 Business Standard\" [level=4]\n      - text: Choose between plans with and without Microsoft Teams and get desktop versions of Microsoft 365 apps and Clipchamp.\n      - link \"Learn more about how Microsoft 365 Business Standard can help you manage your business and connect employees across devices.\":\n        - /url: https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-standard?activetab=pivot:overviewtab\n        - text: Learn more\n      - heading \"Microsoft 365 Business Premium\" [level=4]\n      - text: Get everything in Microsoft 365 Business Standard plus advanced security and device management.\n      - link \"Learn more about Microsoft 365 Business Premium with comprehensive security and cloud services\":\n        - /url: https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-premium?activetab=pivot:overviewtab\n        - text: Learn more\n      - img \"Teams logo\"\n      - heading \"Teams Phone\" [level=4]\n      - text: Add cloud-based phone service to Teams to get all the features of a landline.\n      - link \"Learn more about Microsoft Teams Phone Teams Phone more than a cloud phone system. Experience smart communication\":\n        - /url: https://www.microsoft.com/en-us/microsoft-teams/microsoft-teams-phone#heading-oc4df0\n        - text: Learn more\n      - img \"Teams logo\"\n      - heading \"Teams Rooms\" [level=4]\n      - text: Strengthen hybrid work with enhanced meeting experiences for every space.\n      - link \"Learn more about turning any meeting room into an inclusive and collaborative space with Microsoft Teams Rooms\":\n        - /url: https://www.microsoft.com/en-us/microsoft-teams/microsoft-teams-rooms\n        - text: Learn more\n      - img \"Teams logo\"\n      - heading \"Teams Premium\" [level=4]\n      - text: Get extra features that help make meetings more personalized, intelligent, and protected.\n      - link \"Learn more about Microsoft Teams Premium the smart place to work\":\n        - /url: https://www.microsoft.com/en-us/microsoft-teams/premium\n        - text: Learn more\n    - link \"Back to PRODUCTS AND SERVICES section\":\n      - /url: \"#tabs-pill-bar-oc58d2_tab0-tab\"\n      - text: Back to tabs\n    - text: CUSTOMER STORIES\n    - heading \"See how customers are innovating with Teams\" [level=2]\n    - region \"SUCCESS STORIES section\":\n      - text: previous\n      - list:\n        - listitem:\n          - button \"Slide 1 Make-A-Wish Foundation cuts costs 40% using Clerk Chat and Microsoft Teams current slide\":\n            - img \"Make a Wish Foundation of America\"\n        - listitem:\n          - button \"Slide 2 Global health nonprofit PATH elevates its security and protects private data with Microsoft Defender XDR\":\n            - img \"PATH Company\"\n        - listitem:\n          - button \"Slide 3 Moody’s guards against risk with decision-grade intelligence live in Copilot\":\n            - img \"Moodys\"\n        - listitem:\n          - button \"Slide 4 Levi Strauss & Co. simplifies work and accelerates decision-making with Microsoft Foundry\":\n            - img \"Levi Strauss and Co\"\n        - listitem:\n          - button \"Slide 5 Kimley-Horn brings Microsoft 365 Copilot to AEC work\":\n            - img \"Kimley Horn\"\n        - listitem:\n          - button \"Slide 6 Premera Blue Cross makes AI mainstream with Copilot and Copilot Studio\":\n            - img \"Premera Blue Cross\"\n      - link \"See all customer stories\":\n        - /url: https://www.microsoft.com/en-us/customers/search?filters=product%3Amicrosoft-teams\n      - group \"Slide 1 of 6\":\n        - img \"Make a Wish Foundation of America\"\n        - heading \"Make-A-Wish Foundation cuts costs 40% using Clerk Chat and Microsoft Teams\" [level=4]\n        - paragraph: Make-A-Wish Foundation cuts recurring telecommunication costs up to 40% monthly by site using Clerk Chat unified communications and Microsoft Teams.\n        - text: Products\n        - list:\n          - listitem:\n            - img \"Microsoft Teams\"\n            - link \"Microsoft Teams\":\n              - /url: https://go.microsoft.com/fwlink/?linkid=2289106\n        - link \"Read the story Make-A-Wish Foundation cuts costs 40% using Clerk Chat and Microsoft Teams\":\n          - /url: https://www.microsoft.com/en/customers/story/27211-make-a-wish-foundation-of-america-microsoft-teams\n          - text: Read the story\n      - link \"Back to SUCCESS STORIES section\":\n        - /url: javascript:void(0);\n    - text: GET STARTED\n    - heading \"Take the next step with AI enhanced Teams - built for your work, your passions, and the ideas you’re turning into reality.\" [level=2]\n    - heading \"For business\" [level=3]\n    - text: Grow your customer base with communications software designed for up to 300 employees.\n    - link \"See plans and pricing for Microsoft Teams tailored to your organization's needs.\":\n      - /url: https://www.microsoft.com/en-us/microsoft-teams/compare-microsoft-teams-business-options?activetab=pivot:primaryr1\n      - text: See plans and pricing\n    - heading \"For individuals\" [level=3]\n    - text: Grow your business, stay organized, and collaborate with clients. Plan events, share photos, and stay close to friends and family.\n    - link \"Try Teams for free and easily manage your needs for home and life, all in Microsoft Teams\":\n      - /url: https://www.microsoft.com/en-us/microsoft-teams/teams-for-home\n      - text: Try Teams for free\n    - heading \"For enterprise\" [level=3]\n    - text: Achieve more with Teams accounts for more than 300 people.\n    - 'link \"Get Started: Learn more about Microsoft Teams for enterprise, the smart place to work connect and collaborate at home, in the office, and on-the-go with Teams\"':\n      - /url: https://www.microsoft.com/en-us/microsoft-teams/enterprise\n      - text: Get started\n    - heading \"For education\" [level=3]\n    - text: Make learning collaborative—for both students and educators.\n    - link \"Learn more about how Copilot for Microsoft 365 is now available for small and medium-sized businesses.\":\n      - /url: https://www.microsoft.com/en-us/microsoft-teams/education\n      - text: Learn more\n    - region:\n      - list:\n        - listitem:\n          - link \"footnote-label-1\":\n            - /url: \"#Footnote-1\"\n            - text: \"[1]\"\n          - text: Gartner, Magic Quadrant for Unified Communications as a Service, Worldwide, Pankil Sheth, Megan Fernandez, Rafael Benitez, Nitin Narang, 28 July 2026. Gartner and Magic Quadrant are trademarks of Gartner, Inc., and/or its affiliates. This graphic was published by Gartner, Inc. as part of a larger research document and should be evaluated in the context of the entire document. The Gartner document is available\n          - link \"here\":\n            - /url: https://www.gartner.com/doc/reprints?id=00ThR000008VafOUAS&ct=260803&st=sb\n          - text: . Gartner does not endorse any company, vendor, product or service depicted in its publications, and does not advise technology users to select only those vendors with the highest ratings or other designation. Gartner publications consist of the opinions of Gartner’s business and technology insights organization and should not be construed as statements of fact. Gartner disclaims all warranties, expressed or implied, with respect to this publication, including any warranties of merchantability or fitness for a particular purpose.\n        - listitem:\n          - link \"footnote-label-2\":\n            - /url: \"#Footnote-2\"\n            - text: \"[2]\"\n          - text: Microsoft Teams agents require a Microsoft 365 Copilot license.\n        - listitem:\n          - link \"footnote-label-3\":\n            - /url: \"#Footnote-3\"\n            - text: \"[3]\"\n          - text: Available as an add-on license, Attendee Capacity Packs extend Teams events to support up to 100,000 attendees.\n        - listitem:\n          - link \"footnote-label-4\":\n            - /url: \"#Footnote-4\"\n            - text: \"[4]\"\n          - text: Teams Phone enables advanced call handling and connectivity with a Public Switched Telephone Network (PSTN) solution. A PSTN solution is separate from a Teams Phone license. A PSTN solution provides a customer’s tenant with phone numbers and PSTN access to domestic, international, and emergency calling.\n        - listitem:\n          - link \"footnote-label-5\":\n            - /url: \"#Footnote-5\"\n            - text: \"[5]\"\n          - text: A Teams Premium license add-on to Teams Phone is required to access the Queues app.\n        - listitem:\n          - link \"footnote-label-6\":\n            - /url: \"#Footnote-6\"\n            - text: \"[6]\"\n          - text: Intelligent AI booking features require a M365 Copilot license.\n        - listitem:\n          - link \"footnote-label-7\":\n            - /url: \"#Footnote-7\"\n            - text: \"[7]\"\n          - text: AI-powered meeting features are included in a Teams Rooms Pro licensed room. No additional Copilot license is required.\n    - region \"Social Follow links\":\n      - heading \"Follow Microsoft Teams\" [level=2]\n      - list:\n        - listitem:\n          - link \"Follow Microsoft Teams on Twitter\":\n            - /url: https://go.microsoft.com/fwlink/p/?linkid=2132086\n            - img \"Twitter logo\"\n        - listitem:\n          - link \"Follow Microsoft Teams on Instagram\":\n            - /url: https://go.microsoft.com/fwlink/p/?linkid=2202629\n            - img \"Instagram logo\"\n        - listitem:\n          - link \"Follow Microsoft Teams on YouTube\":\n            - /url: https://go.microsoft.com/fwlink/p/?linkid=2202418\n            - img \"YouTube logo\"\n        - listitem:\n          - link \"Follow Microsoft Teams on Blog\":\n            - /url: https://go.microsoft.com/fwlink/p/?linkid=2132085\n            - img \"Blog logo\"\n  - contentinfo:\n    - navigation \"Footer Resource links\":\n      - heading \"What's new\" [level=2]\n      - list:\n        - listitem:\n          - link \"Surface Laptop Ultra\":\n            - /url: https://www.microsoft.com/en-us/surface/devices/surface-laptop-ultra?icid=DSM_Footer_WhatsNew_SurfaceLaptopUltra\n        - listitem:\n          - link \"Surface Pro\":\n            - /url: https://www.microsoft.com/surface/devices/surface-pro\n        - listitem:\n          - link \"Surface Laptop\":\n            - /url: https://www.microsoft.com/surface/devices/surface-laptop\n        - listitem:\n          - link \"Surface RTX Spark Dev Box\":\n            - /url: https://www.microsoft.com/en-us/surface/devices/surface-rtx-spark-dev-box?icid=DSM_Footer_WhatsNew_SurfaceRTXSparkDevBox\n        - listitem:\n          - link \"Explore Copilot\":\n            - /url: https://www.microsoft.com/en-us/copilot?icid=DSM_Footer_WhatsNew_Copilot\n        - listitem:\n          - link \"Explore Microsoft products\":\n            - /url: https://www.microsoft.com/en-us/microsoft-products-and-apps\n        - listitem:\n          - link \"Windows 11 apps\":\n            - /url: https://www.microsoft.com/en-us/windows/apps-for-windows?icid=DSM_Footer_WhatsNew_Windows11apps\n      - heading \"Microsoft Store\" [level=2]\n      - list:\n        - listitem:\n          - link \"Account profile\":\n            - /url: https://account.microsoft.com/\n        - listitem:\n          - link \"Download Center\":\n            - /url: https://www.microsoft.com/en-us/download\n        - listitem:\n          - link \"Microsoft Store support\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2139749\n        - listitem:\n          - link \"Returns\":\n            - /url: https://www.microsoft.com/en-us/store/b/returns\n        - listitem:\n          - link \"Order tracking\":\n            - /url: https://www.microsoft.com/en-us/store/b/order-tracking\n        - listitem:\n          - link \"Certified Refurbished\":\n            - /url: https://www.microsoft.com/en-us/store/b/certified-refurbished-products\n        - listitem:\n          - link \"Why buy from Microsoft Store\":\n            - /url: https://www.microsoft.com/en-us/store/b/why-microsoft-store?icid=footer_why-msft-store?icid=DSM_Footer_MicrosoftStore_WhyBuy\n        - listitem:\n          - link \"Flexible Payments\":\n            - /url: https://www.microsoft.com/en-us/store/b/payment-financing-options?icid=footer_financing_vcc\n      - heading \"Education\" [level=2]\n      - list:\n        - listitem:\n          - link \"Microsoft in education\":\n            - /url: https://www.microsoft.com/en-us/education\n        - listitem:\n          - link \"Devices for education\":\n            - /url: https://www.microsoft.com/en-us/education/devices/overview\n        - listitem:\n          - link \"Microsoft Teams for Education\":\n            - /url: https://www.microsoft.com/en-us/education/products/teams\n        - listitem:\n          - link \"Microsoft 365 Education\":\n            - /url: https://www.microsoft.com/en-us/education/products/microsoft-365\n        - listitem:\n          - link \"How to buy for your school\":\n            - /url: https://www.microsoft.com/education/how-to-buy\n        - listitem:\n          - link \"Educator training and development\":\n            - /url: https://education.microsoft.com/\n        - listitem:\n          - link \"Deals for students and parents\":\n            - /url: https://www.microsoft.com/en-us/store/b/education\n        - listitem:\n          - link \"AI for education\":\n            - /url: https://www.microsoft.com/en-us/education/ai-in-education\n      - heading \"Business\" [level=2]\n      - list:\n        - listitem:\n          - link \"Microsoft AI\":\n            - /url: https://www.microsoft.com/en-us/ai?icid=DSM_Footer_AI\n        - listitem:\n          - link \"Microsoft Security\":\n            - /url: https://www.microsoft.com/en-us/security\n        - listitem:\n          - link \"Dynamics 365\":\n            - /url: https://www.microsoft.com/en-us/dynamics-365\n        - listitem:\n          - link \"Microsoft 365\":\n            - /url: https://www.microsoft.com/en-us/microsoft-365/business\n        - listitem:\n          - link \"Microsoft Power Platform\":\n            - /url: https://www.microsoft.com/en-us/power-platform\n        - listitem:\n          - link \"Microsoft Teams\":\n            - /url: https://www.microsoft.com/en-us/microsoft-teams/group-chat-software\n        - listitem:\n          - link \"Microsoft Copilot\":\n            - /url: https://www.microsoft.com/en-us/copilot?icid=DSM_Footer_Business_Copilot\n        - listitem:\n          - link \"Small Business\":\n            - /url: https://www.microsoft.com/en-us/store/b/business?icid=CNavBusinessStore\n      - heading \"Developer & IT\" [level=2]\n      - list:\n        - listitem:\n          - link \"Azure\":\n            - /url: https://azure.microsoft.com/en-us/\n        - listitem:\n          - link \"Microsoft Developer\":\n            - /url: https://developer.microsoft.com/en-us/\n        - listitem:\n          - link \"Microsoft Learn\":\n            - /url: https://learn.microsoft.com/\n        - listitem:\n          - link \"Support for AI marketplace apps\":\n            - /url: https://www.microsoft.com/software-development-companies/offers-benefits/isv-success?icid=DSM_Footer_SupportAIMarketplace&ocid=cmm3atxvn98\n        - listitem:\n          - link \"Microsoft Tech Community\":\n            - /url: https://techcommunity.microsoft.com/\n        - listitem:\n          - link \"Microsoft Marketplace\":\n            - /url: https://marketplace.microsoft.com?icid=DSM_Footer_Marketplace&ocid=cmm3atxvn98\n        - listitem:\n          - link \"Software companies\":\n            - /url: https://www.microsoft.com/software-development-companies?icid=DSM_Footer_SoftwareCompanies&ocid=cmm3atxvn98\n        - listitem:\n          - link \"Visual Studio\":\n            - /url: https://visualstudio.microsoft.com/\n      - heading \"Company\" [level=2]\n      - list:\n        - listitem:\n          - link \"Careers\":\n            - /url: https://careers.microsoft.com/\n        - listitem:\n          - link \"About Microsoft\":\n            - /url: https://www.microsoft.com/about\n        - listitem:\n          - link \"Company news\":\n            - /url: https://news.microsoft.com/source/?icid=DSM_Footer_Company_CompanyNews\n        - listitem:\n          - link \"Privacy at Microsoft\":\n            - /url: https://www.microsoft.com/en-us/privacy?icid=DSM_Footer_Company_Privacy\n        - listitem:\n          - link \"Investors\":\n            - /url: https://www.microsoft.com/investor/default.aspx\n        - listitem:\n          - link \"Diversity and inclusion\":\n            - /url: https://www.microsoft.com/en-us/diversity/default?icid=DSM_Footer_Company_Diversity\n        - listitem:\n          - link \"Accessibility\":\n            - /url: https://www.microsoft.com/en-us/accessibility\n        - listitem:\n          - link \"Sustainability\":\n            - /url: https://www.microsoft.com/en-us/corporate-responsibility/sustainability?icid=DSM_Footer_Sustainability\n    - text: \n    - link \"Content Language Selector. Currently set to English (United States)\":\n      - /url: https://www.microsoft.com/en-US/microsoft-teams/locale\n      - text: English (United States)\n    - link \"Your Privacy Choices Opt-Out Icon Your Privacy Choices\":\n      - /url: https://aka.ms/yourcaliforniaprivacychoices\n      - img \"Your Privacy Choices Opt-Out Icon\"\n      - text: Your Privacy Choices\n    - link \"Consumer Health Privacy\":\n      - /url: https://go.microsoft.com/fwlink/?linkid=2259814\n    - navigation \"Microsoft corporate links\":\n      - list:\n        - listitem:\n          - link \"Sitemap\":\n            - /url: https://www.microsoft.com/en-us/sitemap1.aspx\n        - listitem:\n          - link \"Contact Microsoft\":\n            - /url: https://support.microsoft.com/contactus\n        - listitem:\n          - link \"Privacy\":\n            - /url: https://go.microsoft.com/fwlink/?LinkId=521839\n        - listitem:\n          - link \"Terms of use\":\n            - /url: https://go.microsoft.com/fwlink/?LinkID=206977\n        - listitem:\n          - link \"Trademarks\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2196228\n        - listitem:\n          - link \"Safety & eco\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2196227\n        - listitem:\n          - link \"Recycling\":\n            - /url: https://www.microsoft.com/en-us/legal/compliance/recycling\n        - listitem:\n          - link \"About our ads\":\n            - /url: https://choice.microsoft.com\n        - listitem: © Microsoft 2026\n  - button \"Open Ask Microsoft web assistant\":\n    - text: Ask Microsoft\n    - button \"Chat dialog Collapsed. Click to expand Ask Microsoft chat dialog.\"\n  - dialog \"Web Assistant\": Ask questions or make requests to the web AI assistant. Use the text input at the bottom to send messages.\n  - button \"Feedback\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
+              "origin": "https://www.microsoft.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

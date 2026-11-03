@@ -9,11 +9,11 @@ Browser capture of the public web surface of Netflix Streaming, recorded with RE
 | Target | https://www.netflix.com/ |
 | Resolved URL | https://www.netflix.com/ |
 | Page title | Unlimited movies, TV shows, and more |
-| Captured | 2026-10-13T19:00:31.351Z |
+| Captured | 2026-11-03T01:42:29.769Z |
 | Status | captured |
-| REA Evidence ID | `ev_ce771cfc0eb32389548eb43ce294121604ed2ea892ef495a01ac03ef3120c6f6` |
+| REA Evidence ID | `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.40 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -109,15 +109,15 @@ access control is bypassed.
 
 - button: Get Started
 - button: Learn More
-- button: Doing Life 1
-- button: A Different World 2
-- button: Why Did I Get Married Again? 3
-- button: Animals 4
-- button: Below 5
-- button: Beauty in Black 7
-- button: East of Eden 8
-- button: Haunted Hotel 9
-- button: Tires 10
+- button: Nobody Wants This 2
+- button: KPop Demon Hunters PLAYlist 3
+- button: From 4
+- button: Love Is Blind 5
+- button: Doing Life 6
+- button: Below 7
+- button: Animals 8
+- button: The Diplomat 9
+- button: Beauty in Black 10
 - button: What is Netflix?
 - button: How much does Netflix cost?
 - button: Where can I watch?
@@ -129,9 +129,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -139,6 +139,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/netflix-streaming.json`
-- Evidence ID: `ev_ce771cfc0eb32389548eb43ce294121604ed2ea892ef495a01ac03ef3120c6f6`
-- Accessibility outline: 5235 bytes
+- Evidence ID: `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b`
+- Accessibility outline: 5223 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

@@ -9,11 +9,11 @@ Browser capture of the public web surface of macOS, recorded with REA.
 | Target | https://www.apple.com/macos/ |
 | Resolved URL | https://www.apple.com/os/macos/ |
 | Page title | macOS 27 Golden Gate |
-| Captured | 2026-10-13T18:57:57.261Z |
+| Captured | 2026-11-03T01:32:26.675Z |
 | Status | captured |
-| REA Evidence ID | `ev_5be5899a66e9c2e41480b1cf7fed8deddff816f47b3e6794b6e058bb015e22f6` |
+| REA Evidence ID | `ev_252abea7da098596146ce2dc410f3ade04def55918c19be55f17d79c38e98967` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.40 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -121,18 +121,18 @@ access control is bypassed.
 - [Explore Mac](/mac/)
 - [MacBook Neo (2026)](/macbook-neo/)
 - [MacBook Air with Apple silicon (2020 and later)](/macbook-air/)
-- [MacBook Pro with Apple silicon (2020 and later)](/macbook-pro/)
+- [MacBook Pro with Apple silicon (2020 and later)](/macbook-pro/liquid-retina-xdr-display/)
+- [MacBook Pro with PROLED XDR Display (2026)](/macbook-pro/proled-xdr-display/)
 - [iMac with Apple silicon (2021 and later)](/imac/)
 - [Mac mini with Apple silicon (2020 and later)](/mac-mini/)
 - [Mac Studio (2022 and later)](/mac-studio/)
 - [Learn more about developing for macOS](https://developer.apple.com/macos/)
-- [apple.com/apple-intelligence](/apple-intelligence/)
+- [support.apple.com/148587](https://support.apple.com/148587)
 - [Operating Systems](/os/)
 - [AirTag](/airtag/)
 - [Gift Cards](/us/shop/goto/giftcards)
 - [Wallet](/wallet/)
 - [Apple Card](/apple-card/)
-- [Apple Pay](/apple-pay/)
 
 ### Controls
 
@@ -161,9 +161,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -171,6 +171,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/apple-macos.json`
-- Evidence ID: `ev_5be5899a66e9c2e41480b1cf7fed8deddff816f47b3e6794b6e058bb015e22f6`
-- Accessibility outline: 31028 bytes
+- Evidence ID: `ev_252abea7da098596146ce2dc410f3ade04def55918c19be55f17d79c38e98967`
+- Accessibility outline: 31253 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

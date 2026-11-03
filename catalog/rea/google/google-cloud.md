@@ -9,11 +9,11 @@ Browser capture of the public web surface of Google Cloud, recorded with REA.
 | Target | https://cloud.google.com/ |
 | Resolved URL | https://cloud.google.com/ |
 | Page title | The new way to cloud |
-| Captured | 2026-10-13T18:59:27.082Z |
+| Captured | 2026-11-03T01:37:30.924Z |
 | Status | captured |
-| REA Evidence ID | `ev_b6ba5680b42f1fc508d44b4bd8289ea38bbf962d10f539b8c0d824d7dc667aad` |
+| REA Evidence ID | `ev_3ee055d5d47a7b5ac5570f928b1ed3445cca52a178112442039f442e8848474c` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.40 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -94,13 +94,13 @@ access control is bypassed.
 - [AI Announcements What Google Cloud announced in AI this month AI generated image](https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month)
 - [AI Infrastructure What’s new in AI infrastructure and orchestration this month AI Hypercomputer graphic](https://cloud.google.com/blog/topics/ai-infrastructure/whats-new-in-ai-infrastructure-this-month)
 - [Customer Stories Learn how the world's leading innovators build with Gemini Illuminated modern glass enterprise campus atrium at dusk](https://cloud.google.com/customers)
-- [Build with Gemini Events Register to get hands-on experience with Gemini in a city near you](https://cloud.google.com/events/build-with-gemini-2026)
+- [AI generated colored squares Events Register to learn about the future of AI infrastructure on November 9th](https://cloudonair.withgoogle.com/events/the-future-of-ai-infrastructure?utm_source=cgc-site&utm_medium=et&utm_campaign=FY26-Q4-GLOBAL-STO885-onlineevent-er-aiinfrafutr-255935&utm_content=webinar_invite_cgc_home_page_tile&utm_term=-sprint2)
 - [developer tools Developer tools Introducing the developer plugin for AI coding agents](https://cloud.google.com/blog/topics/developers-practitioners/introducing-the-google-cloud-developer-plugin-for-ai-coding-agents)
 - [See all 150+ products](https://cloud.google.com/products)
 - [Gemini platform](https://cloud.google.com/products/gemini-enterprise-agent-platform)
 - [Get started for free](https://console.cloud.google.com/freetrial/?redirectPath=/agent-platform/overview)
 - [View more AI products](https://cloud.google.com/products/ai)
-- [Play video](https://www.youtube.com/watch?v=e8hehBcYU7E)
+- [Agent evals in 4 steps , 26 minutes 08 seconds](https://www.youtube.com/watch?v=e8hehBcYU7E)
 - [Gemini Enterprise icon Securely share AI agents with your organization Try Gemini Enterprise Plus edition](https://console.cloud.google.com/freetrial?redirectPath=/gemini-enterprise)
 - [icon Get 35 learning credits at no cost on Google Skills with GEAR Join GEAR](https://developers.google.com/program/gear/?utm_source=web&utm_medium=cgc&utm_campaign=FY26-Q2-GLOBAL-GOO38926-onlineevent-er-gear-135947-web-AgentPlatform-cgchomepage&utm_content=Next26&utm_term=-)
 - [icon Access free offers for common AI use cases View 10 free AI tools](https://cloud.google.com/use-cases/free-ai-tools)
@@ -151,9 +151,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -161,6 +161,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/google-cloud.json`
-- Evidence ID: `ev_b6ba5680b42f1fc508d44b4bd8289ea38bbf962d10f539b8c0d824d7dc667aad`
-- Accessibility outline: 20876 bytes
+- Evidence ID: `ev_3ee055d5d47a7b5ac5570f928b1ed3445cca52a178112442039f442e8848474c`
+- Accessibility outline: 21279 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

@@ -9,11 +9,11 @@ Browser capture of the public web surface of Amazon EC2, recorded with REA.
 | Target | https://aws.amazon.com/ec2/ |
 | Resolved URL | https://aws.amazon.com/ec2/ |
 | Page title | Amazon EC2 |
-| Captured | 2026-10-13T18:56:50.062Z |
+| Captured | 2026-11-03T01:29:54.426Z |
 | Status | captured |
-| REA Evidence ID | `ev_7c39c7a2628d673f2a40902302a065147bfbb6941f8b73a0a5e3c528872a6207` |
+| REA Evidence ID | `ev_bbdad7a4c7cbdd321bf6cff5da371b2bb65dc3811288e981305b416d6fe81533` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.40 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -57,29 +57,29 @@ access control is bypassed.
 
 - Amazon EC2
 - What is Amazon EC2?
-- How much does Amazon EC2 cost?
-- What problems does Amazon EC2 solve?
-- Limited processor and instance choice
-- Slow, costly capacity scaling
-- High cost for compute-heavy workload
-- Expensive Machine Learning infrastructure
-- How does Amazon EC2 work?
-- 1. Choose an instance type
-- 2. Launch your instance
-- 3. Select a purchase model
-- 4. Scale capacity with demand
-- What are the top Amazon EC2 use cases?
+- Pricing
+- Benefits of Amazon EC2
+- SLA commitment
+- AWS Nitro System
+- Optimize performance and cost
+- AWS Migration Tools
+- Use cases
+- Run cloud-native and enterprise applications
+- Scale for HPC applications
 - Develop for Apple platforms
-- Scale for High Performance Computing applications
-- Modernize and migrate workloads
-- Case studies
+- Train and deploy ML applications
+- Customers
 - How Toyota got a 66% reduction in financial book-closing times on Intel Xeon 6-powered instances on AWS
-- Ready to scale infrastructure on demand?
-- Access resizable compute capacity for virtually any workload.
+- Frequently asked questions
+- Who is Amazon EC2 best for?
+- What are the benefits of Amazon EC2?
+- What processors does Amazon EC2 support?
+- Is Amazon EC2 a good choice for machine learning?
+- How secure is Amazon EC2?
+- Did you find what you were looking for today?
+- Learn
 - Resources
-- Amazon EC2 user guide
-- Find your Amazon EC2 instance
-- See the latest updates
+- Developers
 
 ### Landmarks
 
@@ -107,15 +107,7 @@ access control is bypassed.
 - [Compute](/products/compute/)
 - [Learn more about the AWS Free Tier](/free/?p=pdp&c=ec2&s=3)
 - [View detailed pricing](/ec2/pricing/?p=pdp&c=ec2&s=3)
-- [instance type](/ec2/instance-explorer/)
-- [AWS Nitro System](/ec2/nitro/?pg=ln&sec=be)
-- [Develop for Apple platforms EC2 Mac instances let teams build, test, and sign macOS workloads on demand with pay-as-you-go pricing. Learn more](/ec2/instance-types/mac/)
-- [Scale for High Performance Computing applications EC2 provides on-demand capacity to run high performance computing applications faster and more cost-effectively. Learn more](/hpc/)
-- [Modernize and migrate workloads EC2 supports migration and modernization with AWS Migration Tools and Managed Services. Learn more](/migration-and-modernization/)
 - [Missing alt text value How Toyota got a 66% reduction in financial book-closing times on Intel Xeon 6-powered instances on AWS Learn more](/solutions/case-studies/toyota-intel-case-study/)
-- [Amazon EC2 user guide Documentation for launching instances, configuring security groups, attaching storage, and managing Auto Scaling policies. Learn more](https://docs.aws.amazon.com/ec2/)
-- [Find your Amazon EC2 instance Amazon EC2 provides over 1,000 instance types optimized to fit different use cases. Learn more](/ec2/instance-types/)
-- [See the latest updates Check out the latest blog posts on Amazon EC2 to get started. Learn more](/blogs/compute/)
 - [What Is AWS?](/what-is-aws/?nc1=f_cc)
 - [What Is Cloud Computing?](/what-is-cloud-computing/?nc1=f_cc)
 - [What Is Agentic AI?](/what-is/agentic-ai/?nc1=f_cc)
@@ -132,6 +124,14 @@ access control is bypassed.
 - [Architecture Center](/architecture/?nc1=f_cc)
 - [Product and Technical FAQs](/faqs/?nc1=f_dr)
 - [Analyst Reports](/resources/analyst-reports/?nc1=f_cc)
+- [AWS Partners](/partners/work-with-partners/?nc1=f_dr)
+- [Builder Center](https://builder.aws.com/?nc1=f_dr)
+- [SDKs & Tools](https://builder.aws.com/build/tools?nc1=f_dr)
+- [.NET on AWS](https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr)
+- [Python on AWS](https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr)
+- [Java on AWS](https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr)
+- [PHP on AWS](https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr)
+- [JavaScript on AWS](https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr)
 
 ### Controls
 
@@ -152,17 +152,17 @@ access control is bypassed.
 - button: Get started with Amazon EC2
 - button: View user guide
 - button: Play:
-- button: Previous slide
-- button: Next slide
-- button: Who is Amazon EC2 best for?
+- button: SLA commitment
+- button: AWS Nitro System
+- button: Optimize performance and cost
 
 ## Limitations (from REA)
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -170,6 +170,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-ec2.json`
-- Evidence ID: `ev_7c39c7a2628d673f2a40902302a065147bfbb6941f8b73a0a5e3c528872a6207`
-- Accessibility outline: 15650 bytes
+- Evidence ID: `ev_bbdad7a4c7cbdd321bf6cff5da371b2bb65dc3811288e981305b416d6fe81533`
+- Accessibility outline: 11234 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

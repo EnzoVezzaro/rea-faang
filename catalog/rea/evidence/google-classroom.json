@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_cc3b384d1302285c18af995edd865cd00fb13a8badbaac370937cedcb79187ef",
+  "evidence_id": "ev_70b07e7eddbb6dbee2c318869672f3ec9090b1a258f8ad52f887d09714c70346",
   "subject": null,
   "provider": {
     "id": "rea-playwright-browser-scenario",
@@ -55,9 +55,19 @@
         "request_body": false,
         "response_body": false,
         "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "scenario_sha256": "bcc6fe0129ee83d33b8138d655ae7ae435880b3b267e1d3867fef6aa2fd54acb"
+    "scenario_sha256": "6fa5a78dd8f8f2ea060bfb55be15ca45c86166876c42f8bd7b63279adf5de345"
   },
   "raw_result": null,
   "normalized_result": {
@@ -66,7 +76,7 @@
       "process_ownership": "provider-owned",
       "cleanup": "terminated-owned-process",
       "product": "Chromium",
-      "version": "155.0.8059.79"
+      "version": "156.0.8078.80"
     },
     "scenario": {
       "start_origin": "https://classroom.google.com",
@@ -76,15 +86,26 @@
         "request_body": false,
         "response_body": false,
         "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "duration_ms": 4288,
+    "duration_ms": 4627,
     "steps": [
       {
         "step_index": 0,
         "step_id": "scenario_start",
         "action": "goto_start",
-        "elapsed_ms": 1535,
+        "elapsed_ms": 1820,
         "before_url": {
           "url": "about:blank",
           "origin": null,
@@ -92,7 +113,7 @@
           "redacted": false
         },
         "after_url": {
-          "url": "https://accounts.google.com/v3/signin/identifier?continue=https://classroom.google.com/&emr=1&followup=https://classroom.google.com/&passive=1209600&service=classroom&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S1328410279:1791950026744500",
+          "url": "https://accounts.google.com/v3/signin/identifier?continue=https://classroom.google.com/&emr=1&followup=https://classroom.google.com/&passive=1209600&service=classroom&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S1327791954:1793669838151050",
           "origin": "https://accounts.google.com",
           "query_parameter_names": [
             "continue",
@@ -141,9 +162,9 @@
         "step_index": 1,
         "step_id": "settle",
         "action": "wait_for_timeout",
-        "elapsed_ms": 2528,
+        "elapsed_ms": 2534,
         "before_url": {
-          "url": "https://accounts.google.com/v3/signin/identifier?continue=https://classroom.google.com/&emr=1&followup=https://classroom.google.com/&passive=1209600&service=classroom&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S1328410279:1791950026744500",
+          "url": "https://accounts.google.com/v3/signin/identifier?continue=https://classroom.google.com/&emr=1&followup=https://classroom.google.com/&passive=1209600&service=classroom&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S1327791954:1793669838151050",
           "origin": "https://accounts.google.com",
           "query_parameter_names": [
             "continue",
@@ -158,7 +179,7 @@
           "redacted": false
         },
         "after_url": {
-          "url": "https://accounts.google.com/v3/signin/identifier?continue=https://classroom.google.com/&emr=1&followup=https://classroom.google.com/&passive=1209600&service=classroom&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S1328410279:1791950026744500",
+          "url": "https://accounts.google.com/v3/signin/identifier?continue=https://classroom.google.com/&emr=1&followup=https://classroom.google.com/&passive=1209600&service=classroom&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S1327791954:1793669838151050",
           "origin": "https://accounts.google.com",
           "query_parameter_names": [
             "continue",
@@ -184,15 +205,15 @@
           "accessibility": {
             "state": "captured",
             "value": {
-              "sha256": "a8da139a5d12c0bac288640e29172379862931f9bed0c01fa2a1c23956967d86",
+              "sha256": "b2ab98fb0ea8925aa37560d7ec032bb7a581975906a6642bf2f05d7d1eb917a1",
               "bytes": 4273,
-              "text": "- document:\n  - img \"Google\"\n  - heading \"Sign in\" [level=1]\n  - paragraph: with your Google Account. This account will be available to other Google apps in the browser.\n  - textbox \"Email or phone\"\n  - text: Email or phone\n  - paragraph:\n    - link \"Forgot email?\":\n      - /url: /signin/usernamerecovery?continue=https://classroom.google.com/&dsh=S1328410279:1791950026744500&emr=1&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://classroom.google.com/&service=classroom\n  - paragraph:\n    - text: Not your computer? Use a private browsing window to sign in.\n    - link \"Learn more about using Guest mode (external, opens in a new window)\":\n      - /url: https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US\n      - text: Learn more about using Guest mode\n  - button \"Next\"\n  - link \"Create account\":\n    - /url: /lifecycle/flows/signup?continue=https://classroom.google.com/&dsh=S1328410279:1791950026744500&emr=1&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://classroom.google.com/&service=classroom\n  - contentinfo:\n    - combobox:\n      - option \"Afrikaans\"\n      - option \"azərbaycan\"\n      - option \"bosanski\"\n      - option \"català\"\n      - option \"Čeština\"\n      - option \"Cymraeg\"\n      - option \"Dansk\"\n      - option \"Deutsch\"\n      - option \"eesti\"\n      - option \"English (United Kingdom)\"\n      - option \"English (United States)\" [selected]\n      - option \"Español (España)\"\n      - option \"Español (Latinoamérica)\"\n      - option \"euskara\"\n      - option \"Filipino\"\n      - option \"Français (Canada)\"\n      - option \"Français (France)\"\n      - option \"Gaeilge\"\n      - option \"galego\"\n      - option \"Hrvatski\"\n      - option \"Indonesia\"\n      - option \"isiZulu\"\n      - option \"íslenska\"\n      - option \"Italiano\"\n      - option \"Kiswahili\"\n      - option \"latviešu\"\n      - option \"lietuvių\"\n      - option \"magyar\"\n      - option \"Melayu\"\n      - option \"Nederlands\"\n      - option \"norsk\"\n      - option \"o‘zbek\"\n      - option \"polski\"\n      - option \"Português (Brasil)\"\n      - option \"Português (Portugal)\"\n      - option \"română\"\n      - option \"shqip\"\n      - option \"Slovenčina\"\n      - option \"slovenščina\"\n      - option \"srpski (latinica)\"\n      - option \"Suomi\"\n      - option \"Svenska\"\n      - option \"Tiếng Việt\"\n      - option \"Türkçe\"\n      - option \"Ελληνικά\"\n      - option \"беларуская\"\n      - option \"български\"\n      - option \"кыргызча\"\n      - option \"қазақ тілі\"\n      - option \"македонски\"\n      - option \"монгол\"\n      - option \"Русский\"\n      - option \"српски (ћирилица)\"\n      - option \"Українська\"\n      - option \"ქართული\"\n      - option \"հայերեն\"\n      - option \"‫עברית‬‎\"\n      - option \"‫اردو‬‎\"\n      - option \"‫العربية‬‎\"\n      - option \"‫فارسی‬‎\"\n      - option \"አማርኛ\"\n      - option \"नेपाली\"\n      - option \"मराठी\"\n      - option \"हिन्दी\"\n      - option \"অসমীয়া\"\n      - option \"বাংলা\"\n      - option \"ਪੰਜਾਬੀ\"\n      - option \"ગુજરાતી\"\n      - option \"ଓଡ଼ିଆ\"\n      - option \"தமிழ்\"\n      - option \"తెలుగు\"\n      - option \"ಕನ್ನಡ\"\n      - option \"മലയാളം\"\n      - option \"සිංහල\"\n      - option \"ไทย\"\n      - option \"ລາວ\"\n      - option \"မြန်မာ\"\n      - option \"ខ្មែរ\"\n      - option \"한국어\"\n      - option \"中文（香港）\"\n      - option \"日本語\"\n      - option \"简体中文\"\n      - option \"繁體中文\"\n    - list:\n      - listitem:\n        - link \"Open Google Account Help Center (external, opens in a new window)\":\n          - /url: https://support.google.com/accounts?hl=en-US&p=account_iph\n          - text: Help\n      - listitem:\n        - link \"Privacy Policy (external, opens in a new window)\":\n          - /url: https://accounts.google.com/TOS?loc=US&hl=en-US&privacy=true\n          - text: Privacy\n      - listitem:\n        - link \"Google Terms of Service (external, opens in a new window)\":\n          - /url: https://accounts.google.com/TOS?loc=US&hl=en-US\n          - text: Terms"
+              "text": "- document:\n  - img \"Google\"\n  - heading \"Sign in\" [level=1]\n  - paragraph: with your Google Account. This account will be available to other Google apps in the browser.\n  - textbox \"Email or phone\"\n  - text: Email or phone\n  - paragraph:\n    - link \"Forgot email?\":\n      - /url: /signin/usernamerecovery?continue=https://classroom.google.com/&dsh=S1327791954:1793669838151050&emr=1&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://classroom.google.com/&service=classroom\n  - paragraph:\n    - text: Not your computer? Use a private browsing window to sign in.\n    - link \"Learn more about using Guest mode (external, opens in a new window)\":\n      - /url: https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US\n      - text: Learn more about using Guest mode\n  - button \"Next\"\n  - link \"Create account\":\n    - /url: /lifecycle/flows/signup?continue=https://classroom.google.com/&dsh=S1327791954:1793669838151050&emr=1&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://classroom.google.com/&service=classroom\n  - contentinfo:\n    - combobox:\n      - option \"Afrikaans\"\n      - option \"azərbaycan\"\n      - option \"bosanski\"\n      - option \"català\"\n      - option \"Čeština\"\n      - option \"Cymraeg\"\n      - option \"Dansk\"\n      - option \"Deutsch\"\n      - option \"eesti\"\n      - option \"English (United Kingdom)\"\n      - option \"English (United States)\" [selected]\n      - option \"Español (España)\"\n      - option \"Español (Latinoamérica)\"\n      - option \"euskara\"\n      - option \"Filipino\"\n      - option \"Français (Canada)\"\n      - option \"Français (France)\"\n      - option \"Gaeilge\"\n      - option \"galego\"\n      - option \"Hrvatski\"\n      - option \"Indonesia\"\n      - option \"isiZulu\"\n      - option \"íslenska\"\n      - option \"Italiano\"\n      - option \"Kiswahili\"\n      - option \"latviešu\"\n      - option \"lietuvių\"\n      - option \"magyar\"\n      - option \"Melayu\"\n      - option \"Nederlands\"\n      - option \"norsk\"\n      - option \"o‘zbek\"\n      - option \"polski\"\n      - option \"Português (Brasil)\"\n      - option \"Português (Portugal)\"\n      - option \"română\"\n      - option \"shqip\"\n      - option \"Slovenčina\"\n      - option \"slovenščina\"\n      - option \"srpski (latinica)\"\n      - option \"Suomi\"\n      - option \"Svenska\"\n      - option \"Tiếng Việt\"\n      - option \"Türkçe\"\n      - option \"Ελληνικά\"\n      - option \"беларуская\"\n      - option \"български\"\n      - option \"кыргызча\"\n      - option \"қазақ тілі\"\n      - option \"македонски\"\n      - option \"монгол\"\n      - option \"Русский\"\n      - option \"српски (ћирилица)\"\n      - option \"Українська\"\n      - option \"ქართული\"\n      - option \"հայերեն\"\n      - option \"‫עברית‬‎\"\n      - option \"‫اردو‬‎\"\n      - option \"‫العربية‬‎\"\n      - option \"‫فارسی‬‎\"\n      - option \"አማርኛ\"\n      - option \"नेपाली\"\n      - option \"मराठी\"\n      - option \"हिन्दी\"\n      - option \"অসমীয়া\"\n      - option \"বাংলা\"\n      - option \"ਪੰਜਾਬੀ\"\n      - option \"ગુજરાતી\"\n      - option \"ଓଡ଼ିଆ\"\n      - option \"தமிழ்\"\n      - option \"తెలుగు\"\n      - option \"ಕನ್ನಡ\"\n      - option \"മലയാളം\"\n      - option \"සිංහල\"\n      - option \"ไทย\"\n      - option \"ລາວ\"\n      - option \"မြန်မာ\"\n      - option \"ខ្មែរ\"\n      - option \"한국어\"\n      - option \"中文（香港）\"\n      - option \"日本語\"\n      - option \"简体中文\"\n      - option \"繁體中文\"\n    - list:\n      - listitem:\n        - link \"Open Google Account Help Center (external, opens in a new window)\":\n          - /url: https://support.google.com/accounts?hl=en-US&p=account_iph\n          - text: Help\n      - listitem:\n        - link \"Privacy Policy (external, opens in a new window)\":\n          - /url: https://accounts.google.com/TOS?loc=US&hl=en-US&privacy=true\n          - text: Privacy\n      - listitem:\n        - link \"Google Terms of Service (external, opens in a new window)\":\n          - /url: https://accounts.google.com/TOS?loc=US&hl=en-US\n          - text: Terms"
             }
           },
           "url": {
             "state": "captured",
             "value": {
-              "url": "https://accounts.google.com/v3/signin/identifier?continue=https://classroom.google.com/&emr=1&followup=https://classroom.google.com/&passive=1209600&service=classroom&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S1328410279:1791950026744500",
+              "url": "https://accounts.google.com/v3/signin/identifier?continue=https://classroom.google.com/&emr=1&followup=https://classroom.google.com/&passive=1209600&service=classroom&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S1327791954:1793669838151050",
               "origin": "https://accounts.google.com",
               "query_parameter_names": [
                 "continue",
@@ -227,7 +248,12 @@
     "events": {
       "retained": 0,
       "dropped": 0,
-      "items": []
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
     },
     "completeness": {
       "status": "complete",
@@ -237,9 +263,9 @@
     },
     "limitations": [
       "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
-      "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
       "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
-      "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
       "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
       "Storage values are hashed only after declared-secret redaction."
     ]
@@ -247,7 +273,7 @@
   "confidence": "observed",
   "authority": "controlled-replay",
   "environment": {
-    "id": "Chromium@155.0.8059.79",
+    "id": "Chromium@156.0.8078.80",
     "platform": "unknown",
     "architecture": "unknown",
     "isolation": "process"
@@ -255,13 +281,14 @@
   "limitations": [
     "Artifact identity is unavailable for this observation.",
     "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
-    "Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
     "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
-    "Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
     "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
     "Storage values are hashed only after declared-secret redaction.",
     "Browser host platform and architecture were not observed."
   ],
+  "relationship_coverage": null,
   "locations": [],
   "evidence_links": []
 }

@@ -7,13 +7,13 @@ Browser capture of the public web surface of Netflix Kids, recorded with REA.
 | Product | Netflix Kids (`netflix-kids`) |
 | Company | Netflix |
 | Target | https://www.netflix.com/kids |
-| Resolved URL | https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fkids&serverState=Bgj1wOvcAxKnAlJ37hGd5MiEpWbLmHnHRuRvtuLF6MiLWQ5Q3ScVL1oeqlb4K1hbZhEZciUHaHQ9jlLIR%2ByniKYpMWiKpXSYWCLTpR%2F5jxlQyByw3w5Xi5LZT2ugucB4t%2FlGp4um6aUoDi9f%2BPofmsdnldttwcmFFQP8ffO2BbUNJn8Tcfqpp3nJVAdSTbV2NNsmxek2avnFUKWh1QGq%2B%2Bx%2B%2F2hok9NQEgKMUPSh0cMzY2YBmmn4LNl1r8yxdG%2FH6Fm5ssqzZD6r5%2Fjlc7euWokwdx6pYNJ4okBhp0MWcCgMoVjTJN9ArMJMnJZyTrJmff9e8u16JT1wKCgN3%2BMZE%2BOJBg8Gdj9xACn%2Fbf%2BygDUBsCfkaQC3pIvUbHwCGAbHOqYGk1qgVnOyMGjoHH9Ys5MYBiIOCgw7SIFOnWgx1XGu%2BQw%3D |
+| Resolved URL | https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fkids&serverState=Bgj1wOvcAxKnAqQfymdgAXw7ZO2MWK1dMZgd4K%2BBe0%2FrNUg583o1H9g%2FBwuYUQued7IP8IfvEk0dHZjZdNLmmPDIJpnKhye8zwFbJMf%2Fv8iSJDzMQXXd%2BJRPwAZRXa60bA%2BqSxoJFfKmsk5%2Br%2FdZvyaz7nctULKXi3PKMPfFgyesDJum2ETHaiam2O6Fq66i%2FcN74ir0fyyFqrJ2yP3uUMKxwoXiMssoLlcyzatAYBFdM7%2FC%2FL9USvn9w0Mz6d1q41nYPcrnLxwpCYf7bcuoNH5NFPOmpPA4sdgDlO%2FVfP5VsBQ058dwPShkefaiEdigeizY71aAxNUTl8%2BFVDUptxY%2F8EwY8gVxiNtUsz9BoMWmNirjxbTicnJB3NF7RnBaf1tLzcX0w1%2Bxx0pqZhhNd1kYBiIOCgycCSK4otOanObS2f8%3D |
 | Page title | Enter your info to sign in |
-| Captured | 2026-10-14T03:56:28.669Z |
+| Captured | 2026-11-03T01:42:14.254Z |
 | Status | captured |
-| REA Evidence ID | `ev_309080a3e6fd1bfc656070598d01884c06794bd4d0affac23bf8086ca1083721` |
+| REA Evidence ID | `ev_0b3946ed46f0dafac1826a24e16d37bc16d792d4caca4a5b6669e2458af1a8b9` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -87,9 +87,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -97,6 +97,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/netflix-kids.json`
-- Evidence ID: `ev_309080a3e6fd1bfc656070598d01884c06794bd4d0affac23bf8086ca1083721`
+- Evidence ID: `ev_0b3946ed46f0dafac1826a24e16d37bc16d792d4caca4a5b6669e2458af1a8b9`
 - Accessibility outline: 1695 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

@@ -9,11 +9,11 @@ Browser capture of the public web surface of SageMaker, recorded with REA.
 | Target | https://aws.amazon.com/sagemaker/ |
 | Resolved URL | https://aws.amazon.com/sagemaker/ |
 | Page title | Amazon SageMaker |
-| Captured | 2026-10-14T03:56:08.421Z |
+| Captured | 2026-11-03T01:36:15.284Z |
 | Status | captured |
-| REA Evidence ID | `ev_622fb72a79d46d2d45f6b540a81b6028b1926469e60c53f4af6ddca3905970b1` |
+| REA Evidence ID | `ev_b8c844b165d75cc4b667703412ceeea04090610c578c70eccaffb013f815b76d` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -114,7 +114,6 @@ access control is bypassed.
 - [JumpStart](/sagemaker/ai/jumpstart/)
 - [MLOps](/sagemaker/ai/mlops/)
 - [Amazon Q Developer](/q/developer/data/)
-- [Register for the beta exam](https://aws.amazon.com/certification/certified-ai-business-strategist/?sc_icampaign=launch_ai-business-strategist_2026&sc_ichannel=ha&sc_iplace=banner&trk=86a1f59c-fa95-4b44-99f1-6fc5ba60886a)
 - [Model development Build, train, and deploy ML and FMs with fully managed infrastructure, tools, and workflows with Amazon SageMaker AI Learn more](/sagemaker/ai/)
 - [Generative AI application development Build and scale generative AI applications with Amazon Bedrock Learn more](/bedrock/unifiedstudio/)
 - [SQL analytics Gain insights with Amazon Redshift, the most price-performant SQL engine Learn more](/redshift/)
@@ -130,6 +129,7 @@ access control is bypassed.
 - [AWS Cloud Security](/security/?nc1=f_cc)
 - [What's New](/new/?nc1=f_cc)
 - [Blogs](/blogs/?nc1=f_cc)
+- [Press Releases](https://press.aboutamazon.com/aws)
 
 ### Controls
 
@@ -149,18 +149,18 @@ access control is bypassed.
 - button: Get started with SageMaker
 - button: Try a demo
 - button: Play:
-- button: Close
 - button: Develop and scale AI models with SageMaker AI (formerly Amazon SageMaker)
 - button: Build with all your tools for analytics and AI in SageMaker Unified Studio
 - button: Reduce data silos and unify all your data with a lakehouse architecture
+- button: Meet your enterprise security needs with end-to-end data and AI governance
 
 ## Limitations (from REA)
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/aws-sagemaker.json`
-- Evidence ID: `ev_622fb72a79d46d2d45f6b540a81b6028b1926469e60c53f4af6ddca3905970b1`
-- Accessibility outline: 16544 bytes
+- Evidence ID: `ev_b8c844b165d75cc4b667703412ceeea04090610c578c70eccaffb013f815b76d`
+- Accessibility outline: 15620 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

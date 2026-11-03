@@ -9,11 +9,11 @@ Browser capture of the public web surface of Google Meet, recorded with REA.
 | Target | https://meet.google.com/ |
 | Resolved URL | https://workspace.google.com/products/meet/ |
 | Page title | Video calls, enhanced with AI |
-| Captured | 2026-10-14T03:53:14.548Z |
+| Captured | 2026-11-03T01:38:35.007Z |
 | Status | captured |
-| REA Evidence ID | `ev_ccfc7d1224e29dd74f4c6cf5ac08df5b43dcfd2e2e5ab82239f1a174e9c4294d` |
+| REA Evidence ID | `ev_d60630c8c77544245f5de0ab70780c190339f8e6267cc3a0ffc96cdfdb20995e` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -100,23 +100,20 @@ access control is bypassed.
 - [Open the Google Workspace page](/)
 - [Skip to main content](#main)
 - [Open the AI page](/solutions/ai/)
-- [Open the Pricing page](https://workspace.google.com/pricing?source=gafb-alpha_meet_6806265-globalnav-en&hl=en&ga_region=noram&ga_country=us&ga_lang=en)
-- [Visit the admin console](https://admin.google.com/)
-- [Contact the sales team at Google Workspace](/contact/?source=gafb-alpha_meet_6806265-globalnav-en)
-- [Get started with Google Workspace](https://workspace.google.com/business/signup/welcome?source=gafb-alpha_meet_6806265-globalnav-en&hl=en&ga_region=noram&ga_country=us&ga_lang=en)
+- [Open the Pricing page](https://workspace.google.com/pricing?source=gafb-meet-globalnav-en&hl=en&ga_region=noram&ga_country=us&ga_lang=en)
+- [Try Meet for Work with Google Workspace](https://workspace.google.com/products/meet/for-work/?from=gafb-meet-def-en)
 - [Sign into Google Meet](https://accounts.google.com/ServiceLogin?ltmpl=meet&continue=https%3A%2F%2Fmeet.google.com%3Fhs%3D193&ec=wgc-meet-[module]-signin)
-- [Try Meet for Work with Google Workspace](https://workspace.google.com/products/meet/for-work/?from=gafb-meet_6806265-def-en)
-- [Open the Gemini in Google Meet page](https://workspace.google.com/resources/ai-for-meetings/)
+- [Open the Gemini in Google Meet page](https://workspace.google.com/products/meet/ai/?from=gafb-meet-def-en)
 - [Open the App Store page in a new tab](https://apps.apple.com/us/app/google-meet/id1096918571)
 - [Open the Play Store page in a new tab](https://play.google.com/store/apps/details?id=com.google.android.apps.tachyon)
-- [Open the Google Docs page](https://workspace.google.com/products/docs/?from=gafb-meet_6806265-def-en)
-- [Open the Sheets page](https://workspace.google.com/products/sheets/?from=gafb-meet_6806265-def-en)
-- [Open the Slides page](https://workspace.google.com/products/slides/?from=gafb-meet_6806265-def-en)
+- [Open the Google Docs page](https://workspace.google.com/products/docs/?from=gafb-meet-def-en)
+- [Open the Sheets page](https://workspace.google.com/products/sheets/?from=gafb-meet-def-en)
+- [Open the Slides page](https://workspace.google.com/products/slides/?from=gafb-meet-def-en)
 - [Open the encrypted page in a new tab](https://support.google.com/a/answer/7582940#zippy=%2Cencryption)
 - [Open the safety measures page](https://workspace.google.com/security)
 - [Open the controls page in a new tab](https://support.google.com/a/answer/7582940)
 - [Open the Google Meet hardware page in a new tab](https://meetingdevices.withgoogle.com/)
-- [Open the Google Workspace page](https://workspace.google.com/pricing.html?source=gafb-alpha_meet_6806265-body-en&hl=en&ga_region=noram&ga_country=us&ga_lang=en)
+- [Open the Google Workspace page](https://workspace.google.com/pricing.html?source=gafb-meet-body-en&hl=en&ga_region=noram&ga_country=us&ga_lang=en)
 - [Open the Google One Premium page in a new tab](https://one.google.com/about/plans)
 - [Learn more about MEDITECH customer story](https://workspace.google.com/blog/customer-stories/how-meditech-integrating-gemini-highly-regulated-healthcare-workflows?e=48754805)
 - [Learn more about the Robinhood customer story](https://workspace.google.com/blog/customer-stories/robinhood)
@@ -134,9 +131,12 @@ access control is bypassed.
 - [Open the footer social links Facebook page in a new tab](https://www.facebook.com/googleworkspace/)
 - [Open the footer social links TikTok page in a new tab](https://goo.gle/3xj0b2F)
 - [Open the Included applications page](/features/)
-- [Open the Gmail page](https://workspace.google.com/products/gmail/?from=gafb-meet_6806265-def-en)
-- [Open the Meet page](https://workspace.google.com/products/meet/?from=gafb-meet_6806265-def-en)
-- [Open the Chat page](https://workspace.google.com/products/chat/?from=gafb-meet_6806265-def-en)
+- [Open the Gmail page](https://workspace.google.com/products/gmail/?from=gafb-meet-def-en)
+- [Open the Gmail AI page](https://workspace.google.com/products/gmail/ai/?from=gafb-meet-def-en)
+- [Open the Meet page](https://workspace.google.com/products/meet/?from=gafb-meet-def-en)
+- [Open the Chat page](https://workspace.google.com/products/chat/?from=gafb-meet-def-en)
+- [Open the Calendar page](https://workspace.google.com/products/calendar/?from=gafb-meet-def-en)
+- [Open the Drive page](https://workspace.google.com/products/drive/?from=gafb-meet-def-en)
 
 ### Controls
 
@@ -157,9 +157,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -167,6 +167,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/google-meet.json`
-- Evidence ID: `ev_ccfc7d1224e29dd74f4c6cf5ac08df5b43dcfd2e2e5ab82239f1a174e9c4294d`
-- Accessibility outline: 40333 bytes
+- Evidence ID: `ev_d60630c8c77544245f5de0ab70780c190339f8e6267cc3a0ffc96cdfdb20995e`
+- Accessibility outline: 41281 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

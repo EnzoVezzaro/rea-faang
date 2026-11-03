@@ -4,6 +4,8 @@ import { readFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
+import { BASE_URL } from '../tools/site/templates.mjs';
+
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SITE = join(ROOT, 'site');
 
@@ -59,7 +61,7 @@ test('the home landing presents the complete catalog glyph field and interactive
   assert.match(home, /href="catalog\/youtube\/"[^>]*>View dossier/, 'pass should link the selected dossier');
   assert.match(home, /We don't need<br\s*\/>FAANG anymore\./, 'hero should lead with the product premise');
   assert.match(home, /Use your agent to build any of their products\./, 'hero should say what the product enables');
-  assert.match(home, /RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google\./, 'hero should describe the actual catalog');
+  assert.match(home, /RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft\./, 'hero should describe the actual catalog');
   assert.match(home, /Explore products/, 'primary action should take the visitor to product discovery');
   assert.match(home, /npx rae-faang &lt;product-id&gt; --out \.\/&lt;product-id&gt;\.md/, 'landing should show the bundled npm CLI product-skill form');
   assert.match(home, /A product build skill is there when you\s+want a direct handoff/i, 'supporting copy should keep skills secondary to the product premise');
@@ -219,30 +221,33 @@ test('the home and product pages consistently describe agent skills and user-led
   const home = readFileSync(join(SITE, 'index.html'), 'utf8');
   const readme = readFileSync(join(ROOT, 'README.md'), 'utf8');
   assert.match(readme, /### We don't need FAANG anymore\.[\s\S]*?Use your agent to build any of their products\./, 'README should lead with the exact build-any-product premise');
-  assert.match(readme, /RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google/);
+  assert.match(readme, /RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft/);
   assert.match(readme, /Use your agent to build any of their products/);
   assert.match(home, /We don't need<br\s*\/>FAANG anymore\./);
   assert.match(home, /Use your agent to build any of their products\./);
   assert.match(home, /<title>Build products with your agent \| RAE FAANG<\/title>/);
   assert.match(home, /<meta name="description" content="Choose a product from Meta, Amazon, Apple, Netflix or Google\. Explore product research and open-source foundations, then build with your coding agent\."/);
-  assert.match(home, /<meta property="og:image" content="https:\/\/rae-faang-landing\.vercel\.app\/assets\/rae-banner\.png"/);
+  assert.ok(home.includes(`<meta property="og:image" content="${BASE_URL}/assets/rae-banner.png"`), 'og:image should use the canonical site origin');
   assert.match(home, /<meta name="twitter:card" content="summary_large_image"/);
   assert.match(home, /<meta property="og:site_name" content="RAE FAANG"/);
-  assert.match(home, /<link rel="canonical" href="https:\/\/rae-faang-landing\.vercel\.app\/"/);
+  assert.ok(home.includes(`<link rel="canonical" href="${BASE_URL}/"`), 'canonical link should use the canonical site origin');
   assert.match(home, /<link rel="icon" href="favicon\.svg" type="image\/svg\+xml"/);
   assert.match(readFileSync(join(SITE, 'favicon.svg'), 'utf8'), /viewBox="0 0 64 64"[\s\S]*?#C8FF55/);
-  assert.match(readFileSync(join(SITE, 'robots.txt'), 'utf8'), /User-agent: \*\nAllow: \/\nSitemap: https:\/\/rae-faang-landing\.vercel\.app\/sitemap\.xml/);
+  assert.ok(
+    readFileSync(join(SITE, 'robots.txt'), 'utf8').includes(`Sitemap: ${BASE_URL}/sitemap.xml`),
+    'robots.txt should advertise the canonical sitemap',
+  );
   assert.match(readFileSync(join(SITE, '404.html'), 'utf8'), /<meta name="robots" content="noindex,follow"/);
   assert.ok(existsSync(join(SITE, 'docs/assets/icon-192.png')), 'site should publish a PNG touch icon');
   assert.ok(existsSync(join(SITE, 'docs/assets/icon-512.png')), 'site should publish a 512px PNG icon');
 
-  assert.match(home, /RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google\./);
+  assert.match(home, /RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft\./);
   assert.match(readme, /Each entry links product context, research,\s+candidate open-source projects and product-specific build instructions/);
   assert.match(readme, /npx rae-faang google-search --out \.\/google-search\.md/);
   assert.match(readme, /(?:test (?:the result|it) in your project|review its choices and the test results)/i);
   assert.match(home, /A stronger starting point for the build\./);
   assert.doesNotMatch(home, /Don't take our word for it|Why should I trust the catalog/);
-  for (const slug of ['getting-started', 'cli-reference', 'catalog-and-schemas', 'agent-workflow']) {
+  for (const slug of ['getting-started', 'cli-reference', 'catalog-and-schemas', 'agent-workflow', 'research-batches', 'release-process', 'inventory-audit']) {
     const doc = readFileSync(join(SITE, 'docs', `${slug}.html`), 'utf8');
     assert.match(doc, /your coding agent|your agent/i, `${slug}: should explain the user's agent workflow`);
   }
@@ -250,7 +255,7 @@ test('the home and product pages consistently describe agent skills and user-led
 });
 
 test('the docs set is rendered for every documented page', () => {
-  const slugs = ['getting-started', 'cli-reference', 'catalog-and-schemas', 'agent-workflow'];
+  const slugs = ['getting-started', 'cli-reference', 'catalog-and-schemas', 'agent-workflow', 'research-batches', 'release-process', 'inventory-audit'];
   const docsIndex = readFileSync(join(SITE, 'docs', 'index.html'), 'utf8');
   for (const slug of slugs) {
     const page = join(SITE, 'docs', `${slug}.html`);
@@ -263,7 +268,7 @@ test('the docs set is rendered for every documented page', () => {
 
 test('docs pages resolve every internal link against the generated site', () => {
   const docsDir = join(SITE, 'docs');
-  for (const slug of ['getting-started', 'cli-reference', 'catalog-and-schemas', 'agent-workflow']) {
+  for (const slug of ['getting-started', 'cli-reference', 'catalog-and-schemas', 'agent-workflow', 'research-batches', 'release-process', 'inventory-audit']) {
     const html = readFileSync(join(docsDir, `${slug}.html`), 'utf8');
     const hrefs = [...html.matchAll(/href="([^"#]+)"/g)]
       .map((m) => m[1])
@@ -277,9 +282,18 @@ test('docs pages resolve every internal link against the generated site', () => 
   }
 });
 
+test('the canonical site origin matches the declared package homepage', () => {
+  const pkg = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'));
+  assert.equal(
+    BASE_URL.replace(/\/$/, ''),
+    String(pkg.homepage).replace(/\/$/, ''),
+    'site canonical origin should be the URL the package declares as its homepage',
+  );
+});
+
 test('the sitemap covers the home, catalog, products and docs', () => {
   const sitemap = readFileSync(join(SITE, 'sitemap.xml'), 'utf8');
-  assert.ok(sitemap.includes('<loc>https://rae-faang-landing.vercel.app/</loc>'), 'sitemap should include the canonical home URL');
+  assert.ok(sitemap.includes(`<loc>${BASE_URL}/</loc>`), 'sitemap should include the canonical home URL');
   assert.ok(sitemap.includes('<loc>https://'), 'sitemap should carry absolute URLs');
   for (const product of products) {
     assert.ok(

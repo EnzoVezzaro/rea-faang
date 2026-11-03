@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_30018d69cbb06094e952c9b9ac565325a729b7bafa1555fd7a6f1d8af9e5eaa0",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://aws.amazon.com/rds/aurora/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "16f99f94b81a9695a0b0babc8f33247d3400f5486e2e669ffee41222d07814bd"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://aws.amazon.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 15883,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 13009,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/rds/aurora/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2575,
+        "before_url": {
+          "url": "https://aws.amazon.com/rds/aurora/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://aws.amazon.com/rds/aurora/",
+          "origin": "https://aws.amazon.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "637779396c1287a0bd5ef3faa7cc03b281c90809981ead29db75523defc0ca86",
+              "bytes": 14528,
+              "text": "- document:\n  - link \"Skip to main content link\":\n    - /url: \"#aws-page-content-main\"\n    - text: Skip to main content\n  - navigation \"Global navigation\":\n    - list:\n      - listitem:\n        - button \"English\"\n      - listitem:\n        - link \"Contact us\":\n          - /url: /contact-us/?nc2=h_ut_cu\n      - listitem:\n        - link \"AWS Marketplace\":\n          - /url: /marketplace?nc2=h_utmp\n      - listitem:\n        - button \"Support\"\n      - listitem:\n        - button \"My account\"\n    - button \"AWS Profile\"\n    - list:\n      - listitem:\n        - link \"Click here to return to Amazon Web Services homepage\":\n          - /url: /?nc2=h_home\n      - listitem:\n        - link \"re:Invent\":\n          - /url: /events/reinvent/?nc2=h_l1_f\n      - listitem:\n        - button \"Discover AWS\"\n      - listitem:\n        - button \"Products\"\n      - listitem:\n        - button \"Solutions\"\n      - listitem:\n        - button \"Pricing\"\n      - listitem:\n        - button \"Resources\"\n    - list:\n      - listitem:\n        - button \"Toggle search\":\n          - paragraph: Search\n      - listitem:\n        - link \"Sign in to console\":\n          - /url: https://console.aws.amazon.com/console/home/?nc2=h_si&src=header-signin\n      - listitem:\n        - button \"Create account\"\n  - button \"Open feedback\"\n  - main:\n    - paragraph: Amazon Aurora\n    - list:\n      - listitem:\n        - link \"Overview\":\n          - /url: /rds/aurora/\n      - button \"Engines submenu\": Engines\n      - listitem:\n        - link \"Features\":\n          - /url: /rds/aurora/features/\n      - listitem:\n        - link \"Pricing\":\n          - /url: /rds/aurora/pricing/\n      - listitem:\n        - link \"Resources\":\n          - /url: /rds/aurora/resources/\n      - listitem:\n        - link \"FAQs\":\n          - /url: /rds/aurora/faqs/\n      - listitem:\n        - link \"Customers\":\n          - /url: /rds/aurora/customers/\n      - listitem:\n        - link \"Migrate with AWS DMS\":\n          - /url: /dms/\n    - navigation \"Breadcrumb\":\n      - list:\n        - listitem:\n          - link \"Databases\":\n            - /url: /products/databases/\n        - listitem:\n          - link \"Amazon RDS\":\n            - /url: /rds/\n        - listitem: Amazon Aurora\n    - heading \"Amazon Aurora\" [level=1]\n    - paragraph: Unparalleled high performance and availability at global scale for PostgreSQL, MySQL, and DSQL\n    - button \"Get started with Aurora\"\n    - button \"Connect with an Aurora specialist\"\n    - heading \"What is Aurora\" [level=2]\n    - paragraph: Aurora is a serverless, relational database service that is easy to use with zero infrastructure management, zero downtime maintenance, and instant scaling to any demand. Aurora offers 6x the throughput of PostgreSQL and MySQL, and is fully compatible with PostgreSQL and MySQL. With Aurora DSQL, you have the fastest serverless distributed SQL database that is PostgreSQL-compatible. Aurora is designed for up to 99.999% multi-Region availability and virtually unlimited scale in and across regions to meet your workload needs. Broad compliance standards and enterprise security capabilities along with effortless integration with analytics and agentic AI services makes Aurora ideal for your relational workloads.\n    - button \"Play:\"\n    - img \"Missing alt text value\"\n    - heading \"Benefits of Aurora\" [level=2]\n    - link \"High performance Power internet-scale applications with 6x the throughput of PostgreSQL and MySQL, and the fastest distributed SQL reads and writes with Aurora DSQL. Learn more\":\n      - /url: /rds/aurora/features/#high-performance-and-scalability--3m3tsn\n      - heading \"High performance\" [level=3]\n      - paragraph: Power internet-scale applications with 6x the throughput of PostgreSQL and MySQL, and the fastest distributed SQL reads and writes with Aurora DSQL.\n      - text: Learn more\n    - link \"High availability Designed for up to 99.99% single-Region and 99.999% multi-Region availability with fault-tolerant distributed storage to ensure continuous data access and durability for your applications. Learn more\":\n      - /url: /rds/aurora/features/#high-availability-and-durability--3m3tsn\n      - heading \"High availability\" [level=3]\n      - paragraph: Designed for up to 99.99% single-Region and 99.999% multi-Region availability with fault-tolerant distributed storage to ensure continuous data access and durability for your applications.\n      - text: Learn more\n    - link \"Scale and build with ease Automatically scale to the demands of any workload, removing bottlenecks while maintaining performance. Learn more\":\n      - /url: /rds/aurora/dsql/\n      - heading \"Scale and build with ease\" [level=3]\n      - paragraph: Automatically scale to the demands of any workload, removing bottlenecks while maintaining performance.\n      - text: Learn more\n    - link \"Cost-effective Improve productivity and lower total cost of ownership with a fully managed database including innovations like serverless so you can focus on building applications that delight your users. Learn more\":\n      - /url: /rds/aurora/pricing/\n      - heading \"Cost-effective\" [level=3]\n      - paragraph: Improve productivity and lower total cost of ownership with a fully managed database including innovations like serverless so you can focus on building applications that delight your users.\n      - text: Learn more\n    - link \"Easy to migrate Easily migrate MySQL or PostgreSQL databases to and from Aurora using standard tools, or run legacy SQL Server applications with Babelfish for Aurora PostgreSQL with minimal code change. Learn more\":\n      - /url: /rds/aurora/features/#migration-support--3m3tsn\n      - heading \"Easy to migrate\" [level=3]\n      - paragraph: Easily migrate MySQL or PostgreSQL databases to and from Aurora using standard tools, or run legacy SQL Server applications with Babelfish for Aurora PostgreSQL with minimal code change.\n      - text: Learn more\n    - heading \"Use cases\" [level=2]\n    - heading \"Modernize enterprise applications\" [level=3]:\n      - button \"Modernize enterprise applications\"\n    - heading \"Build SaaS applications\" [level=3]:\n      - button \"Build SaaS applications\"\n    - heading \"Deploy globally distributed applications\" [level=3]:\n      - button \"Deploy globally distributed applications\"\n    - heading \"Go serverless\" [level=3]:\n      - button \"Go serverless\"\n    - heading \"Customers\" [level=2]\n    - link \"See more customer stories\":\n      - /url: https://docs.aws.amazon.com/rds/latest/auroraextendedcontent/aurora-customers.html\n    - link \"Missing alt text value BMW increased scalability and reduced costs with Aurora Serverless Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/bmw-group-aurora-serverless-case-study\n      - img \"Missing alt text value\"\n      - heading \"BMW increased scalability and reduced costs with Aurora Serverless\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value Samsung migrated 1.1 billion users from Oracle to Aurora with AWS Database Migration Service Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/samsung-migrates-off-oracle-to-amazon-aurora\n      - img \"Missing alt text value\"\n      - heading \"Samsung migrated 1.1 billion users from Oracle to Aurora with AWS Database Migration Service\" [level=3]\n      - text: Read the case study\n    - link \"\\\"Coinbase logo in blue lowercase letters.\\\" Coinbase Launches an Ultra-Low-Latency Cryptocurrency Exchange on AWS Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/coinbase-cryptocurrency-exchange-case-study/\n      - img \"\\\"Coinbase logo in blue lowercase letters.\\\"\"\n      - heading \"Coinbase Launches an Ultra-Low-Latency Cryptocurrency Exchange on AWS\" [level=3]\n      - text: Read the case study\n    - link \"Missing alt text value DraftKings Scales Its Financial Ledger with Amazon Aurora Read the case study\":\n      - /url: https://aws.amazon.com/solutions/case-studies/draftkings-aurora-case-study/\n      - img \"Missing alt text value\"\n      - heading \"DraftKings Scales Its Financial Ledger with Amazon Aurora\" [level=3]\n      - text: Read the case study\n    - heading \"Next Steps\" [level=2]\n    - link \"Resources Learn with hands-on training Get started with Aurora\":\n      - /url: /rds/aurora/resources/\n      - text: Resources\n      - heading \"Learn with hands-on training\" [level=3]\n      - text: Get started with Aurora\n    - link \"Documentation Dive deep on Aurora Read the documentation\":\n      - /url: https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html\n      - text: Documentation\n      - heading \"Dive deep on Aurora\" [level=3]\n      - text: Read the documentation\n    - link \"Free tier Sign up for a free account Try for free\":\n      - /url: https://signin.aws.amazon.com/signup?request_type=builderId\n      - text: Free tier\n      - heading \"Sign up for a free account\" [level=3]\n      - text: Try for free\n    - link \"Console Start building in the console Sign in\":\n      - /url: https://console.aws.amazon.com/rds\n      - text: Console\n      - heading \"Start building in the console\" [level=3]\n      - text: Sign in\n  - contentinfo:\n    - button \"Create an AWS account\"\n    - heading \"Learn\" [level=2]\n    - list:\n      - listitem:\n        - link \"What Is AWS?\":\n          - /url: /what-is-aws/?nc1=f_cc\n      - listitem:\n        - link \"What Is Cloud Computing?\":\n          - /url: /what-is-cloud-computing/?nc1=f_cc\n      - listitem:\n        - link \"What Is Agentic AI?\":\n          - /url: /what-is/agentic-ai/?nc1=f_cc\n      - listitem:\n        - link \"Cloud Computing Concepts Hub\":\n          - /url: /what-is/?nc1=f_cc\n      - listitem:\n        - link \"AWS Cloud Security\":\n          - /url: /security/?nc1=f_cc\n      - listitem:\n        - link \"What's New\":\n          - /url: /new/?nc1=f_cc\n      - listitem:\n        - link \"Blogs\":\n          - /url: /blogs/?nc1=f_cc\n      - listitem:\n        - link \"Press Releases\":\n          - /url: https://press.aboutamazon.com/aws\n      - listitem:\n        - link \"Careers\":\n          - /url: https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc\n    - heading \"Resources\" [level=2]\n    - list:\n      - listitem:\n        - link \"Getting Started\":\n          - /url: /getting-started/?nc1=f_cc\n      - listitem:\n        - link \"Training\":\n          - /url: /training/?nc1=f_cc\n      - listitem:\n        - link \"AWS Trust Center\":\n          - /url: /trust-center/?nc1=f_cc\n      - listitem:\n        - link \"AWS Solutions Library\":\n          - /url: /solutions/?nc1=f_cc\n      - listitem:\n        - link \"Architecture Center\":\n          - /url: /architecture/?nc1=f_cc\n      - listitem:\n        - link \"Product and Technical FAQs\":\n          - /url: /faqs/?nc1=f_dr\n      - listitem:\n        - link \"Analyst Reports\":\n          - /url: /resources/analyst-reports/?nc1=f_cc\n      - listitem:\n        - link \"AWS Partners\":\n          - /url: /partners/work-with-partners/?nc1=f_dr\n    - heading \"Developers\" [level=2]\n    - list:\n      - listitem:\n        - link \"Builder Center\":\n          - /url: https://builder.aws.com/?nc1=f_dr\n      - listitem:\n        - link \"SDKs & Tools\":\n          - /url: https://builder.aws.com/build/tools?nc1=f_dr\n      - listitem:\n        - link \".NET on AWS\":\n          - /url: https://builder.aws.com/content/2zSx6gTiseJULEcqQFXqm3pzJoW/aws-tools-and-resources-net?nc1=f_dr\n      - listitem:\n        - link \"Python on AWS\":\n          - /url: https://builder.aws.com/content/2zYQkMbmrsxHPtT89s3teyKJh79/aws-tools-and-resources-python?nc1=f_dr\n      - listitem:\n        - link \"Java on AWS\":\n          - /url: https://builder.aws.com/content/2zZDrpGNFIOPAOT9PXifxnumRUC/aws-tools-and-resources-java?nc1=f_dr\n      - listitem:\n        - link \"PHP on AWS\":\n          - /url: https://builder.aws.com/content/2zYR2daUzavSaUwnAI9X92Q1tfd/aws-tools-and-resources-php?nc1=f_dr\n      - listitem:\n        - link \"JavaScript on AWS\":\n          - /url: https://builder.aws.com/content/2zYRIN2NxZTNLhwP9ZyaiJBEWrI/aws-tools-and-resources-javascript?nc1=f_dr\n    - heading \"Help\" [level=2]\n    - list:\n      - listitem:\n        - link \"Contact Us\":\n          - /url: /contact-us/?nc1=f_m\n      - listitem:\n        - link \"File a Support Ticket\":\n          - /url: https://console.aws.amazon.com/support/home/?nc1=f_dr\n      - listitem:\n        - link \"AWS re:Post\":\n          - /url: https://repost.aws/?nc1=f_dr\n      - listitem:\n        - link \"Knowledge Center\":\n          - /url: https://repost.aws/knowledge-center?nc1=f_dr\n      - listitem:\n        - link \"AWS Support Overview\":\n          - /url: /premiumsupport/?nc1=f_dr\n      - listitem:\n        - link \"AWS Accessibility\":\n          - /url: /accessibility/?nc1=f_cc\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/?nc1=f_cc\n      - listitem:\n        - link \"Event Code of Conduct\":\n          - /url: /codeofconduct/?nc1=f_cc\n      - listitem:\n        - link \"Event Terms & Conditions\":\n          - /url: /events/terms/?nc1=f_cc\n    - button \"English\"\n    - button \"Back to top\"\n    - text: Amazon is an equal opportunity employer and does not discriminate on the basis of protected veteran status, disability or other legally protected status. Veterans, military spouses, and people with disabilities are encouraged to apply.\n    - link \"X\":\n      - /url: https://x.com/awscloud\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/amazonwebservices\n    - link \"Linkedin\":\n      - /url: https://www.linkedin.com/company/amazon-web-services/\n    - link \"Instagram\":\n      - /url: https://www.instagram.com/amazonwebservices/\n    - link \"Twitch\":\n      - /url: https://www.twitch.tv/aws\n    - link \"Youtube\":\n      - /url: https://www.youtube.com/user/AmazonWebServices/Cloud/\n    - link \"Podcasts\":\n      - /url: /podcasts/?nc1=f_cc\n    - link \"Email\":\n      - /url: /preferences/email/manage?nc1=f_icon\n    - list:\n      - listitem:\n        - link \"Privacy\":\n          - /url: /privacy/?nc1=f_pr\n      - listitem:\n        - link \"Site terms\":\n          - /url: /terms/?nc1=f_pr\n      - listitem:\n        - link \"Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon\":\n          - /url: /rds/aurora/\n          - text: Your Privacy Choices\n          - img \"California Consumer Privacy Act (CCPA) Opt-Out Icon\"\n      - listitem:\n        - link \"Cookie Preferences\":\n          - /url: /rds/aurora/\n    - text: © 2026, Amazon Web Services, Inc. or its affiliates. All rights reserved."
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://aws.amazon.com/rds/aurora/",
+              "origin": "https://aws.amazon.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

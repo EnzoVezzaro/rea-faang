@@ -1,0 +1,50 @@
+{
+  "taskId": "task_mvzlunru_u1csmo",
+  "attempt": 1,
+  "from": "primary-researcher",
+  "status": "complete",
+  "committed": false,
+  "summary": "Added docs/research-batches.md: a snapshot-verified coverage inventory (77 catalogued, 0 researched, 77 pending, 40/29/8 alternative landscape, 16 workspaces) with reproducible sourcing commands, batch rules, six ordered research batches, and honest unknowns; wired the new page into the docs index and the explicit site page list, then regenerated the site.",
+  "changed_files": [
+    "docs/research-batches.md",
+    "docs/README.md",
+    "tools/site-build.mjs",
+    "site/docs/index.html",
+    "site/docs/research-batches.html",
+    "site/sitemap.xml"
+  ],
+  "commands": [
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "duration": 3893
+    },
+    {
+      "command": "npm run validate",
+      "exitCode": 0,
+      "duration": 1261
+    },
+    {
+      "command": "npm run site:build",
+      "exitCode": 0,
+      "duration": 563
+    }
+  ],
+  "checksNotRun": [
+    "No dossier content was rewritten: the 77 pending dossiers stay pending until each batch is researched and promoted.",
+    "No external source fetching was performed in this task; batches name the official documentation surfaces to cite per product.",
+    "GitHub Pages deploy and npm publish (require maintainer approval)."
+  ],
+  "decisions": [
+    "The inventory is a document, not a new CLI command, because the deterministic coverage numbers already come from rae-faang research/alternatives/skills coverage; duplicating them in code would create a second source of truth.",
+    "Batch order is driven by products with no verified alternative first (highest build value), then landscape partials, then cross-company surfaces.",
+    "The site generator keeps an explicit documentation page list, so adding a doc requires registering it in tools/site-build.mjs; the docs index and the page list were updated together to avoid a broken link."
+  ],
+  "risks": [
+    "All numbers in docs/research-batches.md are a 2026-11-02 snapshot; nothing regenerates them automatically, so they can drift like the PLAN.md counts did before the guard test.",
+    "catalog/products.jsonl still records alternative_status none_verified for all 77 products while the landscape records 40 available, so gaps alternatives still lists all 77 products.",
+    "Changes are worktree-only until committed."
+  ],
+  "recommendedNextAction": "Run batch 1 of docs/research-batches.md starting with google-search: fill sections 1-15 from official sources, add evidence[], set research_status researched, then npx rae-faang research validate.",
+  "completedAt": "2026-11-02T18:48:11Z"
+}

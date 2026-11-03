@@ -7,13 +7,13 @@ Browser capture of the public web surface of Google Sheets, recorded with REA.
 | Product | Google Sheets (`google-sheets`) |
 | Company | Google |
 | Target | https://sheets.google.com/ |
-| Resolved URL | https://accounts.google.com/v3/signin/identifier?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&passive=1209600&service=wise&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-550254256:1791949984732040 |
+| Resolved URL | https://accounts.google.com/v3/signin/identifier?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&passive=1209600&service=wise&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-1776550570:1793669963976791 |
 | Page title | Sign in |
-| Captured | 2026-10-14T03:53:07.757Z |
+| Captured | 2026-11-03T01:39:27.138Z |
 | Status | captured |
-| REA Evidence ID | `ev_12e32b341b5532768cd349e89a2ee79309faa9ac9c62345ff4bcef7084048d6c` |
+| REA Evidence ID | `ev_2dc2a4ade8ac58fcf175a097b56606083221a9924f65f7c5dbbfbe8c4496b8b9` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -63,9 +63,9 @@ access control is bypassed.
 
 ### Links
 
-- [Forgot email?](/signin/usernamerecovery?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&dsh=S-550254256:1791949984732040&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&service=wise)
+- [Forgot email?](/signin/usernamerecovery?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&dsh=S-1776550570:1793669963976791&flowEntry=ServiceLogin&flowName=WebLiteSignIn&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&service=wise)
 - [Learn more about using Guest mode (external, opens in a new window)](https://support.google.com/accounts?p=signin_privatebrowsing&hl=en-US)
-- [Create account](/lifecycle/flows/signup?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&dsh=S-550254256:1791949984732040&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&service=wise)
+- [Create account](/lifecycle/flows/signup?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&dsh=S-1776550570:1793669963976791&flowEntry=SignUp&flowName=GlifWebSignIn&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&service=wise)
 - [Open Google Account Help Center (external, opens in a new window)](https://support.google.com/accounts?hl=en-US&p=account_iph)
 - [Privacy Policy (external, opens in a new window)](https://accounts.google.com/TOS?loc=US&hl=en-US&privacy=true)
 - [Google Terms of Service (external, opens in a new window)](https://accounts.google.com/TOS?loc=US&hl=en-US)
@@ -78,9 +78,9 @@ access control is bypassed.
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -88,6 +88,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/google-sheets.json`
-- Evidence ID: `ev_12e32b341b5532768cd349e89a2ee79309faa9ac9c62345ff4bcef7084048d6c`
-- Accessibility outline: 4420 bytes
+- Evidence ID: `ev_2dc2a4ade8ac58fcf175a097b56606083221a9924f65f7c5dbbfbe8c4496b8b9`
+- Accessibility outline: 4422 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

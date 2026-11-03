@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Runs before the stylesheet so reveal styles only apply where the
+         motion layer can actually drive them. -->
+    <script>document.documentElement.classList.replace("no-js", "js");</script>
+    <title>Inventory audit — RAE FAANG docs</title>
+    <meta name="description" content="Per-company review of canonical products, candidate noise, duplicates, missing products and retired entries." />
+    <meta name="robots" content="index,follow" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#0B0C0A" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="RAE FAANG" />
+    <meta property="og:title" content="Inventory audit — RAE FAANG docs" />
+    <meta property="og:description" content="Per-company review of canonical products, candidate noise, duplicates, missing products and retired entries." />
+    <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/docs/inventory-audit.html" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
+    <meta property="og:image:width" content="1774" />
+    <meta property="og:image:height" content="887" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Inventory audit — RAE FAANG docs" />
+    <meta name="twitter:description" content="Per-company review of canonical products, candidate noise, duplicates, missing products and retired entries." />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/docs/inventory-audit.html" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
+    <link rel="apple-touch-icon" href="../docs/assets/icon-192.png" />
+    <link rel="icon" href="../docs/assets/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="icon" href="../docs/assets/icon-512.png" type="image/png" sizes="512x512" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body class="page-doc">
+    <div class="scroll-rail" data-scroll-rail aria-hidden="true"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/" aria-current="page">Docs</a>
+          
+        </nav>
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile primary">
+            <a href="../catalog/">Catalog</a>
+            <a href="../docs/">Docs</a>
+            
+          </nav>
+        </details>
+        <a class="btn btn-ghost header-github" href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub ↗</a>
+      </div>
+    </header>
+    <main id="main">
+      <section class="page-hero page-hero-doc" id="top">
+        <div class="wrap">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="index.html">Docs</a><span aria-hidden="true">/</span><span>Inventory audit</span>
+          </nav>
+          <h1>Inventory audit</h1>
+          <p class="lede">Per-company review of canonical products, candidate noise, duplicates, missing products and retired entries.</p>
+        </div>
+      </section>
+
+      <section class="section section-tight section-last">
+        <div class="wrap">
+          <details class="toc">
+            <summary>On this page</summary>
+            <ul>
+              <li><a href="#method">Method</a></li>
+              <li><a href="#where-rows-live-now">Where rows live now</a></li>
+              <li><a href="#batch-results">Batch results</a></li>
+              <li><a href="#totals-for-this-pass">Totals for this pass</a></li>
+              <li><a href="#known-limits">Known limits</a></li>
+              <li><a href="#next-actions">Next actions</a></li>
+            </ul>
+          </details>
+          <article class="doc">
+<h1>Inventory audit — FAANG plus Microsoft</h1>
+<p>Snapshot: <strong>2026-11-03</strong>. This page records what one review pass found in each company's public product catalogue and what the canonical catalog does about it. It separates four things that were previously mixed: the canonical catalog, the machine-built candidate manifest, duplicate/navigation rows, and retired products.</p>
+<h2 id="method">Method</h2>
+<ul>
+<li><strong>Canonical catalog</strong> — <code>catalog/products.jsonl</code>, one record per product, plus a research dossier, a generated skill and a REA web-surface report.</li>
+<li><strong>Candidate manifest</strong> — <code>catalog/manifests/faang-expanded-candidates.json</code>, built by <code>node tools/expand-faang-inventory.mjs</code> from first-party catalog pages. It is intentionally noisy and never feeds the catalog directly.</li>
+<li><strong>Evidence</strong> — only public first-party pages: vendor product directories, product pages, official documentation and official announcements. No account, no private surface, no decompilation.</li>
+<li><strong>Promotion rule</strong> — a candidate becomes canonical only when its identity, product level and official URL are verified. Everything unpromoted stays in the candidate manifest; nothing is marked <code>research_status: complete</code> by this pass.</li>
+</ul>
+<p>Run the same checks:</p>
+<pre><code class="language-bash">node tools/expand-faang-inventory.mjs        # rebuild the candidate manifest
+npx rae-faang research coverage --format json
+npx rae-faang gaps products
+npm test &amp;&amp; npm run validate</code></pre>
+<h2 id="where-rows-live-now">Where rows live now</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Bucket</th><th scope="col">Location</th><th scope="col">Fields</th></tr>
+</thead>
+<tbody>
+<tr><td>Canonical, active</td><td><code>catalog/products.jsonl</code></td><td><code>inventory_status: verified</code>, <code>research_status: pending</code></td></tr>
+<tr><td>Canonical, withdrawn</td><td><code>catalog/products.jsonl</code></td><td><code>inventory_status: retired</code>, <code>research_status: retired</code>, <code>lifecycle_status: discontinued</code></td></tr>
+<tr><td>Candidate, unreviewed</td><td><code>catalog/manifests/faang-expanded-candidates.json</code></td><td><code>inventory_status: candidate</code></td></tr>
+<tr><td>Duplicate / navigation</td><td>candidate manifest only, never promoted</td><td><code>inventory_status: candidate</code> with the reason in this page</td></tr>
+</tbody>
+</table></div>
+<p>A retired product is kept in the catalog on purpose: deleting it invites someone to re-add the same product as new research.</p>
+<h2 id="batch-results">Batch results</h2>
+<h3>Microsoft (new company)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Promoted to canonical</th><th scope="col">Type</th><th scope="col">Official source</th></tr>
+</thead>
+<tbody>
+<tr><td><code>microsoft-windows</code></td><td>operating_system</td><td>https://www.microsoft.com/en-us/windows/</td></tr>
+<tr><td><code>microsoft-365</code></td><td>consumer_subscription</td><td>https://www.microsoft.com/en-us/microsoft-365</td></tr>
+<tr><td><code>microsoft-teams</code></td><td>messaging</td><td>https://www.microsoft.com/en-us/microsoft-teams/group-chat-software</td></tr>
+<tr><td><code>microsoft-azure</code></td><td>cloud_infrastructure</td><td>https://azure.microsoft.com/en-us</td></tr>
+<tr><td><code>microsoft-skype</code> (<strong>retired</strong> 2025-05-05)</td><td>messaging</td><td>https://support.microsoft.com/en-us/skype/skype-is-retiring-in-may-2025-what-you-need-to-know</td></tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Real products still unpromoted</strong> (identified, not added in this pass): Microsoft Edge, Microsoft Copilot, Microsoft 365 Copilot, Xbox, SQL Server, Visual Studio, Entra ID, Intune, Dynamics 365, Outlook (as a standalone app), OneDrive (as a standalone product), Windows Server.</li>
+<li><strong>Noise in the candidate manifest</strong> — 380 Microsoft candidate rows, of which 38 match navigation or editorial labels (<code>About Microsoft</code>, <code>Azure Blog</code>, <code>Admin self-help</code>, <code>Follow Microsoft Copilot</code>, <code>Find a plan</code>).</li>
+<li><strong>Duplicates</strong> — 22 rows are a prefix or marketing variant of another row (for example <code>AI and Agents</code> vs <code>AI and Agents Get enterprise-ready AI.</code>, <code>Azure</code> vs <code>Azure cloud migration an modernization</code>). The generator's normalized-name merge does not catch marketing suffixes; these need review, not automatic promotion.</li>
+<li><strong>Notable collisions to resolve before promoting the rest</strong> — <code>Microsoft 365</code> vs <code>Office 365</code> vs <code>Microsoft Office</code> are one subscription family with three labels and must not become three catalog entries; <code>Windows</code> covers client and server editions, so <code>Windows Server</code> needs an explicit scope decision.</li>
+</ul>
+<h3>Google</h3>
+<ul>
+<li><strong>Canonical</strong> — 26 products after this pass (25 + <code>google-stadia</code>, retired).</li>
+<li><strong>Retired</strong> — <code>google-stadia</code>, offline since 2023-01-18 (https://blog.google/products-and-platforms/products/stadia/message-on-stadia-streaming-strategy/).</li>
+<li><strong>Missing, identified</strong> — BigQuery (https://cloud.google.com/bigquery), Cloud Run (https://cloud.google.com/run), Google Kubernetes Engine (https://cloud.google.com/kubernetes-engine), Google Translate (https://translate.google.com/), Google Wallet (https://wallet.google/).</li>
+<li><strong>Noise</strong> — 570 candidate rows; 27 are navigation/editorial (<code>About Google</code>, <code>Accessibility support</code>, <code>AI and Machine Learning</code>).</li>
+<li><strong>Duplicates</strong> — 133 rows are prefixes or marketing expansions of another row (<code>AI and Agents</code> vs <code>AI and Agents Get enterprise-ready AI.</code>). Google's product directory also lists solution pages next to products, which is the main source of this noise.</li>
+</ul>
+<h3>Amazon and AWS</h3>
+<ul>
+<li><strong>Canonical</strong> — 22 products (17 AWS + 5 Amazon).</li>
+<li><strong>Missing, identified</strong> — Route 53 (https://aws.amazon.com/route53/), CloudWatch (https://aws.amazon.com/cloudwatch/), IAM (https://aws.amazon.com/iam/), Amazon Music (https://music.amazon.com/), Amazon Ads (https://advertising.amazon.com/).</li>
+<li><strong>Noise</strong> — 275 AWS candidate rows; 15 are navigation or editorial (<code>AWS Free Tier</code>, <code>Why AWS</code>, <code>Analyst report</code>).</li>
+<li><strong>Duplicates</strong> — 5 prefix duplicates; AWS product pages reuse service names with a marketing suffix, so the same service can appear twice.</li>
+<li><strong>Retired candidates</strong> — Amazon Drive (retired 2023-12-31) was not promoted in this pass; it belongs in the same retired treatment as Skype and Stadia when the Amazon batch is reviewed.</li>
+</ul>
+<h3>Apple</h3>
+<ul>
+<li><strong>Canonical</strong> — 20 products, all active.</li>
+<li><strong>Missing, identified</strong> — Apple Maps (https://www.apple.com/maps/), Apple TV+ (https://www.apple.com/apple-tv-plus/), Apple News+ (https://www.apple.com/apple-news/), Apple Wallet (https://www.apple.com/wallet/), Apple Health (https://www.apple.com/health/).</li>
+<li><strong>Noise</strong> — 240 candidate rows; 24 are navigation or support labels.</li>
+<li><strong>Duplicates</strong> — 11 prefix duplicates (for example <code>iPhone</code> vs <code>iPhone 16 Pro</code> and <code>AirPods</code> vs <code>AirPods Pro</code>), which are product-line variations rather than distinct catalog entries.</li>
+<li><strong>Retired candidates</strong> — iPod (discontinued 2022) was not promoted in this pass.</li>
+</ul>
+<h3>Meta, Netflix</h3>
+<ul>
+<li><strong>Meta</strong> — 5 canonical products; the seed-only source yields no new candidates, so the next review needs <code>about.meta.com/technologies/</code> parsed by hand. Missing, identified: Messenger (https://www.messenger.com/), Meta Quest (https://www.meta.com/quest/), Meta AI (https://www.meta.ai/).</li>
+<li><strong>Netflix</strong> — 6 canonical products (5 active + <code>netflix-dvd</code>, retired 2023-09-29, https://about.netflix.com/news/netflix-dvd-the-final-season). Missing, identified: Netflix Ads (https://ads.netflix.com/).</li>
+<li>Neither company produced candidate noise in this pass because both sources are seed-only and were not re-crawled.</li>
+</ul>
+<h2 id="totals-for-this-pass">Totals for this pass</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr><th scope="col">Fact</th><th scope="col">Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Canonical products before</td><td>77</td></tr>
+<tr><td>Promoted</td><td>4 active (Microsoft) + 3 retired</td></tr>
+<tr><td>Canonical products after</td><td>84 across 7 company entries</td></tr>
+<tr><td>Retired in the canonical catalog</td><td>3 (<code>microsoft-skype</code>, <code>google-stadia</code>, <code>netflix-dvd</code>)</td></tr>
+<tr><td>Candidate rows reviewed</td><td>1,480 (1,403 not canonical)</td></tr>
+<tr><td>Navigation-like candidate rows</td><td>104</td></tr>
+<tr><td>Prefix/marketing duplicates</td><td>171</td></tr>
+<tr><td>Documented <code>command_status</code> in the new entries</td><td>4 documented, 3 not_applicable</td></tr>
+<tr><td>Research promoted to <code>complete</code></td><td>0 — every new entry is still <code>pending</code></td></tr>
+</tbody>
+</table></div>
+<h2 id="known-limits">Known limits</h2>
+<ul>
+<li>The candidate manifest is a crawl of marketing pages, so its noise rate is high by construction; only the canonical catalog is authoritative.</li>
+<li>Missing-product lists above are curated from the first-party directories, not exhaustive; they name the next promotions, not the full long tail.</li>
+<li><code>command_status: documented</code> records that an official CLI/API/SDK exists and where it is documented. No command in the new entries was executed against a vendor system, and no vendor credential was used.</li>
+<li>All new research dossiers are <code>pending</code>: they record official identity, URL and documented surface, not verified capability parity.</li>
+</ul>
+<h2 id="next-actions">Next actions</h2>
+<ol>
+<li>Promote the remaining Microsoft flagships, resolving the Microsoft 365 / Office 365 / Office collision first.</li>
+<li>Give Amazon Drive and iPod the same retired treatment as Skype, Stadia and Netflix DVD.</li>
+<li>Extend the candidate generator to classify navigation rows and marketing suffixes so the manifest carries fewer duplicates on the next run.</li>
+</ol>
+
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <div>            <p class="footer-mark">RAE FAANG</p>
+          <p class="footer-mission">
+            We don't need FAANG anymore. Choose a product from Meta, Amazon, Apple, Netflix or Google
+            and use your agent to build it in your project. RAE FAANG brings together the catalog,
+            product research and candidate open-source projects. MIT licensed.
+          </p>
+        </div>
+        <div class="footer-links">
+          <a href="../catalog/">Catalog</a>
+          <a href="../docs/">Docs</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang" rel="noopener noreferrer" target="_blank">GitHub</a>
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/LICENSE" rel="noopener noreferrer" target="_blank">MIT License</a>
+          <a href="https://github.com/EnzoVezzaro/repo-shield" rel="noopener noreferrer" target="_blank">Repo Shield</a>
+        </div>
+      </div>
+      <div class="wrap footer-fine">
+        <p>
+          Product names are used as functional references only and imply no
+          affiliation or endorsement. Implementations must comply with applicable
+          laws, licenses, and third-party rights. No AI training: see
+          <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/NOTICE" rel="noopener noreferrer" target="_blank">NOTICE</a>.
+        </p>
+      </div>
+    </footer>
+    
+  </body>
+</html>

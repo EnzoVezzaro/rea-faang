@@ -1,0 +1,53 @@
+{
+  "taskId": "task_mvzlunoe_84d8cm",
+  "attempt": 1,
+  "from": "primary-architect",
+  "status": "complete",
+  "committed": false,
+  "summary": "Replaced all ten google-search WIP placeholder specs with an internally consistent, evidence-grounded specification set for a single-node self-hostable search engine, including 13 automated acceptance criteria each mapped to a named test file and four reproducible manual checks.",
+  "changed_files": [
+    "products/google/google-search/specs/01-product-vision.md",
+    "products/google/google-search/specs/02-user-workflows.md",
+    "products/google/google-search/specs/03-feature-catalog.md",
+    "products/google/google-search/specs/04-data-models.md",
+    "products/google/google-search/specs/05-api-contracts.md",
+    "products/google/google-search/specs/06-architecture.md",
+    "products/google/google-search/specs/07-acceptance-criteria.md",
+    "products/google/google-search/specs/08-security-model.md",
+    "products/google/google-search/specs/09-integration-points.md",
+    "products/google/google-search/specs/10-migration-guide.md"
+  ],
+  "commands": [
+    {
+      "command": "npm test",
+      "exitCode": 0,
+      "duration": 3955
+    },
+    {
+      "command": "npm run validate",
+      "exitCode": 0,
+      "duration": 1619
+    },
+    {
+      "command": "rg -n '^WIP$' products/google/google-search/specs",
+      "exitCode": 0,
+      "duration": 40
+    }
+  ],
+  "checksNotRun": [
+    "Implementation tests AC-01..AC-13 do not exist yet; the criteria name the tests that a future build must add.",
+    "MANUAL-01..MANUAL-04 require a running implementation and were not executed."
+  ],
+  "decisions": [
+    "Scoped the MVP to a bounded single-node corpus rather than general-web parity, matching the opportunity spec and the dossier's stated gap.",
+    "Reused OpenSearch for BM25 instead of hand-writing an index, per the opportunity spec's reuse-before-build rule.",
+    "Kept the v1 contract as a documented JSON API and deferred OpenSearch DSL compatibility.",
+    "Cited only sources already present in the dossier and opportunity spec; no new claims about Google were introduced."
+  ],
+  "risks": [
+    "The specification describes software that does not exist yet; no acceptance criterion is currently proven.",
+    "The latency target (p95 < 200 ms) is untested and depends on corpus size and hardware, which the criteria require to be recorded."
+  ],
+  "recommendedNextAction": "Open the T4.1 implementation task and build the document model, health endpoint, and single-seed crawl first, adding AC-01/AC-07/AC-11 tests before widening scope.",
+  "completedAt": "2026-11-02T18:46:06Z"
+}

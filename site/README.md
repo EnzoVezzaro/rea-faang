@@ -77,8 +77,11 @@ Two live mirrors, both serving the same generated `site/` directory:
    - **Live:** https://rae-faang-landing.vercel.app
 
 All internal links are relative, so both the root domain (Vercel) and the
-subpath (GitHub Pages) work. Canonical URLs and `sitemap.xml` use the Vercel
-domain.
+subpath (GitHub Pages) work. Canonical and Open Graph URLs and `sitemap.xml`
+use the GitHub Pages origin declared in `tools/site/templates.mjs` (also the
+`homepage` in `package.json`); rebuild with
+`RAE_SITE_URL=https://rae-faang-landing.vercel.app npm run site:build` to make
+the Vercel deployment canonical instead.
 
 Note: GitHub Pages is not available for **private** repositories on the free
 plan. The repository is public, which is why the Pages deploy works. If the

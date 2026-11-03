@@ -9,11 +9,11 @@ Browser capture of the public web surface of Facebook, recorded with REA.
 | Target | https://www.facebook.com/ |
 | Resolved URL | https://www.facebook.com/ |
 | Page title | Facebook |
-| Captured | 2026-10-14T03:56:54.841Z |
+| Captured | 2026-11-03T01:40:00.726Z |
 | Status | captured |
-| REA Evidence ID | `ev_b659c329254f90da106474ee25a50d855c69aa24757ea4f7c666e7f71d3bf2a9` |
+| REA Evidence ID | `ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00` |
 | REA provider | rea-playwright-browser-scenario v1 |
-| Browser | Chromium 155.0.8059.79 |
+| Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
 | Completeness | complete |
 
@@ -63,7 +63,7 @@ _No headings exposed._
 
 ### Links
 
-- [Forgot password?](/recover/initiate/?privacy_mutation_token=eyJ0eXBlIjo1LCJjcmVhdGlvbl90aW1lIjoxNzkxOTUwMjEwfQ%3D%3D&ars=facebook_login)
+- [Forgot password?](/recover/initiate/?privacy_mutation_token=eyJ0eXBlIjo1LCJjcmVhdGlvbl90aW1lIjoxNzkzNjY5OTk2fQ%3D%3D&ars=facebook_login)
 - [Create new account](/reg/?entry_point=login)
 - [Español](#)
 - [Français (France)](#)
@@ -74,17 +74,17 @@ _No headings exposed._
 - [More languages…](#)
 - [Sign Up](https://www.facebook.com/reg/)
 - [Log In](https://www.facebook.com/login/)
-- [Messenger](https://l.facebook.com/l.php?u=https%3A%2F%2Fmessenger.com%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4)
+- [Messenger](https://l.facebook.com/l.php?u=https%3A%2F%2Fmessenger.com%2F&h=AUBKJw9Sr1nRs8LmAUbfPj2BSQNXV9TUIs90eUV3fZmr7DelmsDDFWwdXPOCWK2-2jRibI399nrtKyDwiJHzikqgymrNitkdkxUs6rnw-C6WQDI98LdOa124-oPv9zOT_f5mh5eeSEJ5kd0ahTqpWeS1dOc)
 - [Facebook Lite](https://www.facebook.com/lite/)
 - [Video](https://www.facebook.com/watch/)
-- [Meta Pay](https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.meta.com%2Ftechnologies%2Fmeta-pay&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4)
-- [Meta Store](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.com%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4)
-- [Meta Quest](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.com%2Fquest%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4)
-- [Ray-Ban Meta](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.com%2Fai-glasses%2Fray-ban-meta%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4)
-- [Meta AI](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.ai%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4)
-- [Muse](https://l.facebook.com/l.php?u=https%3A%2F%2Fmuse.ai%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4)
-- [Instagram](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4)
-- [Threads](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.threads.com%2F&h=AUCF3FJzGKV9OELuEvrFRAMRV-Sw5qboyhccuw6iI06VUHeTzBeiMa_4v19c2TiVRWoGjj5scz_FueHsdOJixiaAHutNGbhMiPKco447TiBtmwX1-yS1bF7s-AEPnUQGI9cF47ydnnGcsYsuLM0hBKA4Do4)
+- [Meta Pay](https://l.facebook.com/l.php?u=https%3A%2F%2Fabout.meta.com%2Ftechnologies%2Fmeta-pay&h=AUBKJw9Sr1nRs8LmAUbfPj2BSQNXV9TUIs90eUV3fZmr7DelmsDDFWwdXPOCWK2-2jRibI399nrtKyDwiJHzikqgymrNitkdkxUs6rnw-C6WQDI98LdOa124-oPv9zOT_f5mh5eeSEJ5kd0ahTqpWeS1dOc)
+- [Meta Store](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.com%2F&h=AUBKJw9Sr1nRs8LmAUbfPj2BSQNXV9TUIs90eUV3fZmr7DelmsDDFWwdXPOCWK2-2jRibI399nrtKyDwiJHzikqgymrNitkdkxUs6rnw-C6WQDI98LdOa124-oPv9zOT_f5mh5eeSEJ5kd0ahTqpWeS1dOc)
+- [Meta Quest](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.com%2Fquest%2F&h=AUBKJw9Sr1nRs8LmAUbfPj2BSQNXV9TUIs90eUV3fZmr7DelmsDDFWwdXPOCWK2-2jRibI399nrtKyDwiJHzikqgymrNitkdkxUs6rnw-C6WQDI98LdOa124-oPv9zOT_f5mh5eeSEJ5kd0ahTqpWeS1dOc)
+- [Ray-Ban Meta](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.com%2Fai-glasses%2Fray-ban-meta%2F&h=AUBKJw9Sr1nRs8LmAUbfPj2BSQNXV9TUIs90eUV3fZmr7DelmsDDFWwdXPOCWK2-2jRibI399nrtKyDwiJHzikqgymrNitkdkxUs6rnw-C6WQDI98LdOa124-oPv9zOT_f5mh5eeSEJ5kd0ahTqpWeS1dOc)
+- [Meta AI](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.meta.ai%2F&h=AUBKJw9Sr1nRs8LmAUbfPj2BSQNXV9TUIs90eUV3fZmr7DelmsDDFWwdXPOCWK2-2jRibI399nrtKyDwiJHzikqgymrNitkdkxUs6rnw-C6WQDI98LdOa124-oPv9zOT_f5mh5eeSEJ5kd0ahTqpWeS1dOc)
+- [Muse](https://l.facebook.com/l.php?u=https%3A%2F%2Fmuse.ai%2F&h=AUBKJw9Sr1nRs8LmAUbfPj2BSQNXV9TUIs90eUV3fZmr7DelmsDDFWwdXPOCWK2-2jRibI399nrtKyDwiJHzikqgymrNitkdkxUs6rnw-C6WQDI98LdOa124-oPv9zOT_f5mh5eeSEJ5kd0ahTqpWeS1dOc)
+- [Instagram](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F&h=AUBKJw9Sr1nRs8LmAUbfPj2BSQNXV9TUIs90eUV3fZmr7DelmsDDFWwdXPOCWK2-2jRibI399nrtKyDwiJHzikqgymrNitkdkxUs6rnw-C6WQDI98LdOa124-oPv9zOT_f5mh5eeSEJ5kd0ahTqpWeS1dOc)
+- [Threads](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.threads.com%2F&h=AUBKJw9Sr1nRs8LmAUbfPj2BSQNXV9TUIs90eUV3fZmr7DelmsDDFWwdXPOCWK2-2jRibI399nrtKyDwiJHzikqgymrNitkdkxUs6rnw-C6WQDI98LdOa124-oPv9zOT_f5mh5eeSEJ5kd0ahTqpWeS1dOc)
 - [Privacy Policy](https://www.facebook.com/privacy/policy/?entry_point=facebook_page_footer)
 - [Consumer Health Privacy](https://www.facebook.com/privacy/policies/health/?entry_point=facebook_page_footer)
 - [Privacy Center](https://www.facebook.com/privacy/center/?entry_point=facebook_page_footer)
@@ -107,9 +107,9 @@ _No headings exposed._
 
 - Artifact identity is unavailable for this observation.
 - Event sequence records provider receipt order; simultaneous browser causality is not inferred.
-- Network content is retained only when selected; response bytes are browser-decoded, not compressed wire bytes.
+- Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.
 - Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.
-- Network content reads settle within 5 seconds each and never wait for unfinished responses or refetch them.
+- Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.
 - Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.
 - Storage values are hashed only after declared-secret redaction.
 - Browser host platform and architecture were not observed.
@@ -117,6 +117,6 @@ _No headings exposed._
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/meta-facebook.json`
-- Evidence ID: `ev_b659c329254f90da106474ee25a50d855c69aa24757ea4f7c666e7f71d3bf2a9`
+- Evidence ID: `ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00`
 - Accessibility outline: 4764 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea
