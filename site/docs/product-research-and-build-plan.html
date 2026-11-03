@@ -15,18 +15,18 @@
     <meta property="og:site_name" content="RAE FAANG" />
     <meta property="og:title" content="Research and build every product — RAE FAANG docs" />
     <meta property="og:description" content="Document products with cited evidence, then guide coding agents from research to tested alternatives." />
-    <meta property="og:url" content="https://rae-faang-landing.vercel.app/docs/product-research-and-build-plan.html" />
-    <meta property="og:image" content="https://rae-faang-landing.vercel.app/assets/rae-banner.png" />
+    <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/docs/product-research-and-build-plan.html" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
     <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
     <meta property="og:image:width" content="1774" />
     <meta property="og:image:height" content="887" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Research and build every product — RAE FAANG docs" />
     <meta name="twitter:description" content="Document products with cited evidence, then guide coding agents from research to tested alternatives." />
-    <meta name="twitter:image" content="https://rae-faang-landing.vercel.app/assets/rae-banner.png" />
-    <link rel="canonical" href="https://rae-faang-landing.vercel.app/docs/product-research-and-build-plan.html" />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/docs/product-research-and-build-plan.html" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="sitemap" type="application/xml" href="https://rae-faang-landing.vercel.app/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
     <link rel="apple-touch-icon" href="../docs/assets/icon-192.png" />
     <link rel="icon" href="../docs/assets/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="icon" href="../docs/assets/icon-512.png" type="image/png" sizes="512x512" />
@@ -121,7 +121,7 @@ npx rae-faang gaps all</code></pre>
 <tr><td>Generated product page and skill</td><td><code>site/catalog/&lt;id&gt;/</code></td><td>Human-readable product page and downloadable Markdown skill for your coding agent.</td></tr>
 </tbody>
 </table></div>
-<p>The dossier is the research record; the single product Markdown file is the coding-agent skill for building that product in the user's project; optional specifications add implementation detail; generated site pages are views, never independent sources of truth. From npm, generate one portable skill with <code>npx rae-faang &lt;id&gt; --out ./&lt;id&gt;.md</code>, generate all bundled skills with <code>npx rae-faang skills generate --all</code> (writes under <code>./rae-skills/</code>), validate bundled skills with <code>npx rae-faang skills validate --all</code>, and inspect research gaps with <code>npx rae-faang skills coverage --format json</code>. Source contributors may instead use the <code>rae</code> binary locally, review generator/catalog inputs, and run the repository checks. Avoid copying manually maintained facts into several stores.</p>
+<p>The dossier is the research record; the single product Markdown file is the coding-agent skill for building that product in the user's project; optional specifications add implementation detail; generated site pages are views, never independent sources of truth. From npm, generate one portable skill with <code>npx rae-faang &lt;id&gt; --out ./&lt;id&gt;.md</code>, or generate all bundled skills with <code>npx rae-faang skills generate --all</code> (writes under <code>./rae-skills/</code>). In a source checkout, the same batch command regenerates the canonical <code>catalog/skills/&lt;company&gt;/&lt;product-id&gt;.md</code> files; use <code>--out</code> only for one product. Validate bundled skills with <code>npx rae-faang skills validate --all</code>, and inspect research gaps with <code>npx rae-faang skills coverage --format json</code>. Source contributors may instead use the <code>rae</code> binary locally, review generator/catalog inputs, and run the repository checks. Avoid copying manually maintained facts into several stores.</p>
 <h2 id="product-description-standard">Product-description standard</h2>
 <p>Expand every product beyond a one-line summary. The reader should understand what the product does without already knowing its brand. Cover, when evidence is available:</p>
 <ul>

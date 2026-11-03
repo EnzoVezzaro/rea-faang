@@ -15,18 +15,18 @@
     <meta property="og:site_name" content="RAE FAANG" />
     <meta property="og:title" content="CLI reference — RAE FAANG docs" />
     <meta property="og:description" content="Browse products, check research, compare alternatives, and find missing work." />
-    <meta property="og:url" content="https://rae-faang-landing.vercel.app/docs/cli-reference.html" />
-    <meta property="og:image" content="https://rae-faang-landing.vercel.app/assets/rae-banner.png" />
+    <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/docs/cli-reference.html" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
     <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
     <meta property="og:image:width" content="1774" />
     <meta property="og:image:height" content="887" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="CLI reference — RAE FAANG docs" />
     <meta name="twitter:description" content="Browse products, check research, compare alternatives, and find missing work." />
-    <meta name="twitter:image" content="https://rae-faang-landing.vercel.app/assets/rae-banner.png" />
-    <link rel="canonical" href="https://rae-faang-landing.vercel.app/docs/cli-reference.html" />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/docs/cli-reference.html" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="sitemap" type="application/xml" href="https://rae-faang-landing.vercel.app/sitemap.xml" />
+    <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
     <link rel="apple-touch-icon" href="../docs/assets/icon-192.png" />
     <link rel="icon" href="../docs/assets/icon-192.png" type="image/png" sizes="192x192" />
     <link rel="icon" href="../docs/assets/icon-512.png" type="image/png" sizes="512x512" />
@@ -230,7 +230,7 @@ npx rae-faang opportunities export --out opportunities.json</code></pre>
 <tr><th scope="col">Command</th><th scope="col">Description</th></tr>
 </thead>
 <tbody>
-<tr><td><code>skills generate &lt;product-id&gt;</code></td><td>Compile and write one skill. From an npm-installed package, default output is <code>./&lt;product-id&gt;.md</code>; <code>--out FILE</code> selects an explicit file. Batch options process products under <code>./rae-skills/&lt;company&gt;/&lt;product-id&gt;.md</code>. In a source checkout, default output is the canonical <code>catalog/skills/&lt;company&gt;/&lt;product-id&gt;.md</code>.</td></tr>
+<tr><td><code>skills generate &lt;product-id&gt;</code></td><td>Compile and write one skill. From an npm-installed package, default output is <code>./&lt;product-id&gt;.md</code>; <code>--out FILE</code> selects an explicit file. Batch generation from the installed package writes under <code>./rae-skills/&lt;company&gt;/&lt;product-id&gt;.md</code>. In a source checkout, generation without <code>--out</code> updates the canonical <code>catalog/skills/&lt;company&gt;/&lt;product-id&gt;.md</code>; <code>--out</code> is allowed only for one product.</td></tr>
 <tr><td><code>skills validate [&lt;product-id&gt;]</code></td><td>Check required sections, IDs and traceability against the bundled canonical skill; supports <code>--company ID</code> and <code>--all</code>.</td></tr>
 <tr><td><code>skills coverage</code></td><td>Report per-product missing research and catalog-wide skill-generation coverage; does not write files.</td></tr>
 <tr><td><code>build agent-kit &lt;product-id&gt;</code></td><td>Generate a copy of the product-specific Markdown build skill (<code>skill.md</code>) and optional MCP configuration in a separate directory (default: <code>./&lt;product-id&gt;-agent</code>; override with <code>--out DIR</code>). Give the skill to your coding agent in the project where you want the product built.</td></tr>

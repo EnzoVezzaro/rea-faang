@@ -167,7 +167,7 @@ npx rae-faang opportunities export --out opportunities.json
 
 | Command | Description |
 |---|---|
-| `skills generate <product-id>` | Compile and write one skill. From an npm-installed package, default output is `./<product-id>.md`; `--out FILE` selects an explicit file. Batch options process products under `./rae-skills/<company>/<product-id>.md`. In a source checkout, default output is the canonical `catalog/skills/<company>/<product-id>.md`. |
+| `skills generate <product-id>` | Compile and write one skill. From an npm-installed package, default output is `./<product-id>.md`; `--out FILE` selects an explicit file. Batch generation from the installed package writes under `./rae-skills/<company>/<product-id>.md`. In a source checkout, generation without `--out` updates the canonical `catalog/skills/<company>/<product-id>.md`; `--out` is allowed only for one product. |
 | `skills validate [<product-id>]` | Check required sections, IDs and traceability against the bundled canonical skill; supports `--company ID` and `--all`. |
 | `skills coverage` | Report per-product missing research and catalog-wide skill-generation coverage; does not write files. |
 | `build agent-kit <product-id>` | Generate a copy of the product-specific Markdown build skill (`skill.md`) and optional MCP configuration in a separate directory (default: `./<product-id>-agent`; override with `--out DIR`). Give the skill to your coding agent in the project where you want the product built. |
