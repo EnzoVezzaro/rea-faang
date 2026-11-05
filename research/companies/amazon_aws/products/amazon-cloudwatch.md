@@ -78,7 +78,7 @@ Open-source observability components can cover metrics, logs, traces and dashboa
 
 REA research should map CloudWatch's product surfaces separately rather than treating it as one monolithic monitor: metrics, logs, traces, alarms, dashboards, agents, query languages, integrations, retention and cross-account behavior.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public AWS documentation, public API specifications and permitted client behavior only. A clean-room equivalent should begin with an explicitly bounded telemetry scope and may compose open-source components; it must not copy AWS implementation or proprietary assets.
 

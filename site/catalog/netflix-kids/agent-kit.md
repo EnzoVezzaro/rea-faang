@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Netflix Kids (netflix-kids); invest
 
 # Netflix Kids — implementation skill (`netflix-kids`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** retired. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Netflix Kids**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Netflix Kids (netflix-kids); invest
 
 This is the coding-agent skill for **Netflix Kids** (`netflix-kids`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/netflix/netflix-kids.md` from the catalog page, or run `npx rae-faang netflix-kids --out ./netflix-kids.md`, `npx rae-faang skills generate netflix-kids` or `npx rae-faang build agent-kit netflix-kids --out ./netflix-kids-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/netflix/netflix-kids.md` from the catalog page, or run `npx rea-faang netflix-kids --out ./netflix-kids.md`, `npx rea-faang skills generate netflix-kids` or `npx rea-faang build agent-kit netflix-kids --out ./netflix-kids-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,18 +27,18 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Netflix Kids / `netflix-kids` | `catalog/products.jsonl` |
 | Official product URL | [https://www.netflix.com/kids](https://www.netflix.com/kids) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier netflix-kids` | `research/companies/netflix/products/netflix-kids.md` |
+| Official documentation | [https://help.netflix.com/en/node/53045](https://help.netflix.com/en/node/53045) | Catalog record |
+| Research dossier | `npx rea-faang research dossier netflix-kids` | `research/companies/netflix/products/netflix-kids.md` |
 | REA report | `catalog/rea/netflix/netflix-kids.md` (captured 2026-11-03T01:42:14.254Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/netflix-kids.json` (`ev_0b3946ed46f0dafac1826a24e16d37bc16d792d4caca4a5b6669e2458af1a8b9`) | Catalog evidence |
-| Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
+| Alternative candidates | None recorded — this is a research gap | Curated landscape |
 | User scope | Requested product area, platforms, users and non-goals | The user; ask when the answer changes the deliverable |
 | Consumer project | Absolute path, stack, conventions, test commands, deployment target | The user’s repository, read before writing |
 | Authorization | Public surfaces and the user’s own project only | Clean-room boundary in section 14 |
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show netflix-kids --format json` and `npx rae-faang research dossier netflix-kids` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show netflix-kids --format json` and `npx rea-faang research dossier netflix-kids` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `NETFLIX-KIDS-CAP-567D84C1`, `NETFLIX-KIDS-CAP-0B20348B`, `NETFLIX-KIDS-CAP-FB38F965`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `NETFLIX-KIDS-CAP-50FD8524`, `NETFLIX-KIDS-CAP-6497963D`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,8 +103,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Netflix Kids** / `netflix-kids` | Product catalog |
 | Company / category | Netflix / `media_streaming` / `kids-profiles` | Product catalog |
-| Official website / docs | [https://www.netflix.com/kids](https://www.netflix.com/kids) / Not recorded | URL lead; compiler does not fetch source |
-| Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
+| Official website / docs | [https://www.netflix.com/kids](https://www.netflix.com/kids) / [https://help.netflix.com/en/node/53045](https://help.netflix.com/en/node/53045) | URL lead; compiler does not fetch source |
+| Lifecycle / supported versions / platforms | deprecated / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
 | Independent implementation scope | User-selected; start with evidenced vertical slice | Proposed decision |
@@ -118,17 +118,15 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `NETFLIX-KIDS-CAP-567D84C1` | Kid-filtered catalogue | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `NETFLIX-KIDS-CAP-0B20348B` | Age-appropriate profiles | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `NETFLIX-KIDS-CAP-FB38F965` | Parental controls | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-KIDS-CAP-50FD8524` | The Kids experience and its child-focused catalog are documented as a Netflix profile mode. | VERIFIED | `ev-netflix-kids-grouping` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-KIDS-CAP-6497963D` | Parent-controlled maturity and profile settings are documented; implementation internals remain unknown. | VERIFIED | `ev-netflix-kids-controls` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Continue`, `button: Get Help`, `link: Netflix`, `textbox: Email or mobile number`, `textbox: Password`, `link: 1-844-569-7700 (Toll-Free)`, `link: FAQ`, `link: Help Center`, `link: Netflix House`, `link: Netflix Shop`, `link: Terms of Use`, `link: Privacy`, `link: Cookie Preferences`, `link: Corporate Information`, `link: Do Not Sell or Share My Personal Information`, `link: Ad Choices`, `combobox: Select language`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Kid-filtered catalogue:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Age-appropriate profiles:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Parental controls:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The Kids experience and its child-focused catalog are documented as a Netflix profile mode.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Parent-controlled maturity and profile settings are documented; implementation internals remain unknown.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +143,23 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-567D84C1 — Kid-filtered catalogue
+### REQ-FUNC-50FD8524 — The Kids experience and its child-focused catalog are documented as a Netflix profile mode.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-netflix-kids-grouping`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-567D84C1`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-KIDS-CAP-567D84C1` → `REQ-FUNC-567D84C1` → `TEST-FUNC-567D84C1`.
+- **Associated test ID:** `TEST-FUNC-50FD8524`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-KIDS-CAP-50FD8524` → `REQ-FUNC-50FD8524` → `TEST-FUNC-50FD8524`.
 
-### REQ-FUNC-0B20348B — Age-appropriate profiles
+### REQ-FUNC-6497963D — Parent-controlled maturity and profile settings are documented; implementation internals remain unknown.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-netflix-kids-controls`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-0B20348B`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-KIDS-CAP-0B20348B` → `REQ-FUNC-0B20348B` → `TEST-FUNC-0B20348B`.
-
-### REQ-FUNC-FB38F965 — Parental controls
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-FB38F965`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-KIDS-CAP-FB38F965` → `REQ-FUNC-FB38F965` → `TEST-FUNC-FB38F965`.
+- **Associated test ID:** `TEST-FUNC-6497963D`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-KIDS-CAP-6497963D` → `REQ-FUNC-6497963D` → `TEST-FUNC-6497963D`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -203,32 +192,19 @@ Separate interface/domain/persistence/integration boundaries. Enforce access at 
 
 ### 9.1 Candidate register
 
-| Candidate | Repository | License | Claimed coverage (unverified) | Limitations | Maintenance | Compatibility | Verdict |
-|---|---|---|---|---|---|---|---|
-| [Jellyfin](https://jellyfin.org/) | Not recorded; verify the canonical repository | GPL-2.0 (unverified) | Kids profiles and parental controls in a self-hosted media server. | No limitation recorded | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+No candidate is recorded for this product in the curated landscape. That is a **research gap**, not evidence that no project exists — never state or imply that no open-source alternative exists.
 
-Repository, license, maintenance and compatibility are catalog claims until you check them. Re-verify each against the exact version you would adopt; a README, a star count or this table is not proof.
+Before building from scratch, run the search the catalog has not done: search for the user job and for each capability lead in section 2, inspect the exact repository and version, and record what you find with its license, activity and coverage. Candidates found at that point are added to the register below, not to the catalog.
 
 ### 9.2 Comparison against the REA findings
 
-Map every capability lead and requirement from sections 2 and 5 to what the candidate actually implements, and say what evidence supports the mapping. Where the catalog has no verified behavior, the comparison is a research task, not a conclusion:
-
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `NETFLIX-KIDS-CAP-567D84C1` — Kid-filtered catalogue | Not verified against Jellyfin | None yet; compare with `ev_0b3946ed46f0dafac1826a24e16d37bc16d792d4caca4a5b6669e2458af1a8b9` | Candidate code path and tests must be inspected |
-| `NETFLIX-KIDS-CAP-0B20348B` — Age-appropriate profiles | Not verified against Jellyfin | None yet; compare with `ev_0b3946ed46f0dafac1826a24e16d37bc16d792d4caca4a5b6669e2458af1a8b9` | Candidate code path and tests must be inspected |
-| `NETFLIX-KIDS-CAP-FB38F965` — Parental controls | Not verified against Jellyfin | None yet; compare with `ev_0b3946ed46f0dafac1826a24e16d37bc16d792d4caca4a5b6669e2458af1a8b9` | Candidate code path and tests must be inspected |
+| Every feature ID in section 2 | Not assessed | None — no candidate recorded | Full capability, unless your own search produces one |
 
 ### 9.3 Decision
 
-**Current verdict: INVESTIGATE MORE** — the first candidate to audit is **Jellyfin** (Kids profiles and parental controls in a self-hosted media server.), and no candidate has been verified yet.
-
-Provisional routing for this product, to be confirmed by that audit:
-
-- If **Jellyfin** implements the core capability leads with a compatible license and maintainable code → **REUSE** it as the foundation.
-- If it covers only part of the scope, or would need to run beside the user’s existing system → **INTEGRATE** it behind a defined boundary, or **EXTEND** it with original modules where its extension points allow it.
-- If no candidate survives inspection → **BUILD** an independent implementation, and record which candidates failed and why.
-- If the evidence is still insufficient → **INVESTIGATE MORE**, naming the exact question, source and check that would settle it.
+**Current verdict: UNKNOWN / PENDING — INVESTIGATE MORE.** No verified foundation exists for this product, so reuse, integration and extension cannot be claimed and a fresh build is not yet justified either. Complete the search in 9.1, then record one of the five verdicts with the candidate name and the evidence behind it.
 
 ### 9.4 What each verdict obliges
 
@@ -265,9 +241,8 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-567D84C1** → `REQ-FUNC-567D84C1`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-0B20348B** → `REQ-FUNC-0B20348B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-FB38F965** → `REQ-FUNC-FB38F965`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-50FD8524** → `REQ-FUNC-50FD8524`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-6497963D** → `REQ-FUNC-6497963D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -288,7 +263,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-567D84C1, REQ-FUNC-0B20348B, REQ-FUNC-FB38F965
+- **Requirements:** REQ-FUNC-50FD8524, REQ-FUNC-6497963D
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -298,7 +273,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-567D84C1, REQ-FUNC-0B20348B, REQ-FUNC-FB38F965
+- **Requirements:** REQ-FUNC-50FD8524, REQ-FUNC-6497963D
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -320,7 +295,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-567D84C1, REQ-FUNC-0B20348B, REQ-FUNC-FB38F965; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-50FD8524, REQ-FUNC-6497963D; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -350,7 +325,15 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.netflix.com/kids) | Not recorded | Netflix Kids is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-netflix-kids-grouping` | How to create a profile for kids — Netflix Help describes selecting a Kids Profile and lists its simplified interface, restricted account settings and child-selected catalog. | [link](https://help.netflix.com/en/node/114275) | 2026-11-03T00:00:00Z | Netflix Kids is a profile experience configured inside a Netflix account, not a separate service identity. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-kids-controls` | Parental controls on Netflix — Netflix Help directs account owners to create or manage profiles, maturity ratings, title blocks, profile locks and PIN controls. | [link](https://help.netflix.com/en/node/53045) | 2026-11-03T00:00:00Z | Kids behavior is implemented through profile maturity settings and parental controls. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-kids-grouping` | How to create a profile for kids — Netflix Help describes selecting a Kids Profile and lists its simplified interface, restricted account settings and child-selected catalog. | [link](https://help.netflix.com/en/node/114275) | 2026-11-03T00:00:00Z | Netflix Kids is a profile experience configured inside a Netflix account, not a separate service identity. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-kids-controls` | Parental controls on Netflix — Netflix Help directs account owners to create or manage profiles, maturity ratings, title blocks, profile locks and PIN controls. | [link](https://help.netflix.com/en/node/53045) | 2026-11-03T00:00:00Z | Kids behavior is implemented through profile maturity settings and parental controls. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.netflix.com/kids) | 2026-11-03T00:00:00Z | Netflix Kids is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://help.netflix.com/en/node/53045) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://help.netflix.com/en/node/114275) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://help.netflix.com/en/node/53045) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://help.netflix.com/en/node/10421) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_0b3946ed46f0dafac1826a24e16d37bc16d792d4caca4a5b6669e2458af1a8b9` | Netflix Kids Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fkids&serverState=Bgj1wOvcAxKnAqQfymdgAXw7ZO2MWK1dMZgd4K%2BBe0%2FrNUg583o1H9g%2FBwuYUQued7IP8IfvEk0dHZjZdNLmmPDIJpnKhye8zwFbJMf%2Fv8iSJDzMQXXd%2BJRPwAZRXa60bA%2BqSxoJFfKmsk5%2Br%2FdZvyaz7nctULKXi3PKMPfFgyesDJum2ETHaiam2O6Fq66i%2FcN74ir0fyyFqrJ2yP3uUMKxwoXiMssoLlcyzatAYBFdM7%2FC%2FL9USvn9w0Mz6d1q41nYPcrnLxwpCYf7bcuoNH5NFPOmpPA4sdgDlO%2FVfP5VsBQ058dwPShkefaiEdigeizY71aAxNUTl8%2BFVDUptxY%2F8EwY8gVxiNtUsz9BoMWmNirjxbTicnJB3NF7RnBaf1tLzcX0w1%2Bxx0pqZhhNd1kYBiIOCgycCSK4otOanObS2f8%3D) | 2026-11-03T01:42:14.254Z | A dated unauthenticated snapshot exposed controls button: Continue, button: Get Help, link: Netflix, textbox: Email or mobile number, textbox: Password, link: 1-844-569-7700 (Toll-Free), link: FAQ, link: Help Center, link: Netflix House, link: Netflix Shop, link: Terms of Use, link: Privacy, link: Cookie Preferences, link: Corporate Information, link: Do Not Sell or Share My Personal Information, link: Ad Choices, combobox: Select language and landmarks banner, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -378,115 +361,75 @@ Resume token: `netflix-kids`. Read dossier, REA report and raw Evidence before r
 
 # 1. Executive summary
 
-Netflix Kids is Netflix's children's experience: a filtered catalogue and profiles for kids.
-
----
+Netflix Kids is not maintained as an independent service entry. Official Netflix documentation describes it as the Netflix Kids experience, a profile mode configured inside a Netflix account. It is therefore retained as a deprecated catalog record and grouped conceptually under `netflix-profiles` to avoid double-counting the same product surface.
 
 # 2. Product identity and ownership
 
-- **Official name:** Netflix Kids
-- **Company and business unit:** netflix
-- **Current lifecycle status:** active
-- **Official website:** https://www.netflix.com/kids
-
----
+- **Observed name:** Netflix Kids experience
+- **Canonical catalog decision:** feature/profile mode, not a separate service
+- **Parent product:** `netflix-profiles`
+- **Official documentation:** https://help.netflix.com/en/node/114275
+- **Catalog status:** deprecated / retired from active product research
 
 # 3. Product capabilities
 
-- Kid-filtered catalogue
-- Age-appropriate profiles
-- Parental controls
-
----
+The official Help Center documents a simplified interface, a child-selected catalog, restricted direct access to account settings, no direct email sign-in for Kids profiles, maturity controls and profile-level parental settings.
 
 # 4. Technical architecture
 
-Not yet researched.
-
----
+No independent service architecture was identified. The verified architecture boundary is a profile mode and account-level parental-control configuration within Netflix.
 
 # 5. User workflows
 
-Not yet researched.
-
----
+1. An account owner opens profile management.
+2. The owner creates or edits a profile and selects the Kids experience or a Kids Profile.
+3. The profile receives the documented child-oriented interface and content restrictions.
+4. The owner manages maturity ratings, title blocks, profile locks and PIN controls from Netflix's parental-control surfaces.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+Netflix Kids does not have a separate subscription or independent account entitlement in the reviewed sources; it is configured within an existing Netflix account.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+No public API for an independent Netflix Kids service was identified. The relevant public surface is Netflix account/profile management documentation.
 
 # 8. Existing open-source alternatives
 
-Open-source candidates exist: Jellyfin (GPL-2.0) — Kids profiles and parental controls in a self-hosted media server.. Coverage is unverified until the dossier is researched.
-
----
+No alternative is evaluated because the catalog decision is that this is a feature of Netflix Profiles, not an independent product to reproduce or compare separately.
 
 # 9. Alternative comparison
 
-Jellyfin covers profiles and parental controls; the licensed children's catalogue is not replicable.
-
----
+Any comparison should be made against the parent profile and parental-control product, not against a standalone Netflix Kids service.
 
 # 10. Missing capabilities and opportunity analysis
 
-Jellyfin covers profiles and parental controls; the licensed children's catalogue is not replicable.
+The important catalog correction is eliminating duplicate product scope. A future independent media service may implement child profiles and parental controls, but that work belongs to the parent profile/media product scope.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Partial. The experience is self-hostable (Jellyfin) for content you own; the catalogue is licensed content.
-
----
+No separate REA capture is treated as evidence of an independent service. Existing public documentation is sufficient to record the grouping decision; authenticated account behavior remains untested.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+The official sources establish the existence of profile and parental-control surfaces but do not constitute an implementation security specification. Child privacy, age assurance, content classification and account recovery require separate review under the parent product.
 
 # 13. Sources and evidence
 
-- https://jellyfin.org/
-- https://en.wikipedia.org/wiki/Netflix
+- `ev-netflix-kids-grouping` — https://help.netflix.com/en/node/114275
+- `ev-netflix-kids-controls` — https://help.netflix.com/en/node/53045
+- Profile management — https://help.netflix.com/en/node/10421
 
----
+# 14. Research history
 
-# 14. Open questions
+- v1: dossier treated Netflix Kids as a separate pending product.
+- v2: official Netflix Help sources verified that it is a profile experience; record deprecated and grouped under `netflix-profiles`.
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
-
-# 15. Research history
-
-- v1: dossier created; research pending.
-
----
-
-# 16. Alternative comparison (continued)
-
-Jellyfin covers profiles and parental controls; the licensed children's catalogue is not replicable.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Partial. The experience is self-hostable (Jellyfin) for content you own; the catalogue is licensed content.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **retired**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier netflix-kids` and inspect canonical identity with `npx rae-faang products show netflix-kids --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier netflix-kids` and inspect canonical identity with `npx rea-faang products show netflix-kids --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -499,7 +442,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang netflix-kids --out ./netflix-kids.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit netflix-kids --out ./netflix-kids-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang netflix-kids --out ./netflix-kids.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit netflix-kids --out ./netflix-kids-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -541,5 +484,13 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://www.netflix.com/kids) — Netflix Kids is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [How to create a profile for kids](https://help.netflix.com/en/node/114275) — Netflix Kids is a profile experience configured inside a Netflix account, not a separate service identity. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Parental controls on Netflix](https://help.netflix.com/en/node/53045) — Kids behavior is implemented through profile maturity settings and parental controls. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [How to create a profile for kids](https://help.netflix.com/en/node/114275) — Netflix Kids is a profile experience configured inside a Netflix account, not a separate service identity. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Parental controls on Netflix](https://help.netflix.com/en/node/53045) — Kids behavior is implemented through profile maturity settings and parental controls. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://www.netflix.com/kids) — Netflix Kids is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://help.netflix.com/en/node/53045) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://help.netflix.com/en/node/114275) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://help.netflix.com/en/node/53045) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://help.netflix.com/en/node/10421) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Netflix Kids Public web-surface observation (REA)](https://www.netflix.com/login?nextpage=https%3A%2F%2Fwww.netflix.com%2Fkids&serverState=Bgj1wOvcAxKnAqQfymdgAXw7ZO2MWK1dMZgd4K%2BBe0%2FrNUg583o1H9g%2FBwuYUQued7IP8IfvEk0dHZjZdNLmmPDIJpnKhye8zwFbJMf%2Fv8iSJDzMQXXd%2BJRPwAZRXa60bA%2BqSxoJFfKmsk5%2Br%2FdZvyaz7nctULKXi3PKMPfFgyesDJum2ETHaiam2O6Fq66i%2FcN74ir0fyyFqrJ2yP3uUMKxwoXiMssoLlcyzatAYBFdM7%2FC%2FL9USvn9w0Mz6d1q41nYPcrnLxwpCYf7bcuoNH5NFPOmpPA4sdgDlO%2FVfP5VsBQ058dwPShkefaiEdigeizY71aAxNUTl8%2BFVDUptxY%2F8EwY8gVxiNtUsz9BoMWmNirjxbTicnJB3NF7RnBaf1tLzcX0w1%2Bxx0pqZhhNd1kYBiIOCgycCSK4otOanObS2f8%3D) — A dated unauthenticated snapshot exposed controls button: Continue, button: Get Help, link: Netflix, textbox: Email or mobile number, textbox: Password, link: 1-844-569-7700 (Toll-Free), link: FAQ, link: Help Center, link: Netflix House, link: Netflix Shop, link: Terms of Use, link: Privacy, link: Cookie Preferences, link: Corporate Information, link: Do Not Sell or Share My Personal Information, link: Ad Choices, combobox: Select language and landmarks banner, contentinfo. (VERIFIED; accessed 2026-11-03T01:42:14.254Z).

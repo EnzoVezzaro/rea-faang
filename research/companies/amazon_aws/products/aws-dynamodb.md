@@ -88,7 +88,7 @@ Covered by mature distributed databases; the gap is the serverless operations mo
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Available. Cassandra and ScyllaDB cover the technology; the operations model differs.
 
@@ -125,6 +125,6 @@ Covered by mature distributed databases; the gap is the serverless operations mo
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Available. Cassandra and ScyllaDB cover the technology; the operations model differs.

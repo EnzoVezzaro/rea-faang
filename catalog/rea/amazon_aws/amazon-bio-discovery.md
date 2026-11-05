@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Bio Discovery, recorded with
 | Target | https://aws.amazon.com/biodiscovery/ |
 | Resolved URL | https://aws.amazon.com/biodiscovery/ |
 | Page title | Amazon Bio Discovery |
-| Captured | 2026-11-03T02:44:45.663Z |
+| Captured | 2026-11-04T02:39:42.695Z |
 | Status | captured |
-| REA Evidence ID | `ev_6a0714f17372b8adf4255efa6de8154c34c338d742536ece38539ab89383f471` |
+| REA Evidence ID | `ev_7dbc5ea5a0ae21f773d588cdced2f81f5745dbf3d982ec9350deb27f08ca0696` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -166,6 +166,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-bio-discovery.json`
-- Evidence ID: `ev_6a0714f17372b8adf4255efa6de8154c34c338d742536ece38539ab89383f471`
+- Evidence ID: `ev_7dbc5ea5a0ae21f773d588cdced2f81f5745dbf3d982ec9350deb27f08ca0696`
 - Accessibility outline: 15576 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

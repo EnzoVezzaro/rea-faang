@@ -74,9 +74,9 @@ Compare project initialization, backend-as-code, auth, data modeling, storage, f
 
 Research must map Gen 1 and Gen 2 CLI, library, schema, auth, data, storage, function, Hosting, Studio, CDK, environment, sandbox and deployment behavior. Any implementation must use original code and isolated synthetic applications.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official Amplify product, documentation, Gen 2 guide, AWS documentation and CLI repository as primary sources. The generated RAE skill should instruct an agent to build an independent full-stack developer platform beginning with open backend components such as Appwrite where useful, then add frontend/mobile SDKs, infrastructure generation, hosting, environments and CI/CD only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS-native parity.
+Use the official Amplify product, documentation, Gen 2 guide, AWS documentation and CLI repository as primary sources. The generated REA skill should instruct an agent to build an independent full-stack developer platform beginning with open backend components such as Appwrite where useful, then add frontend/mobile SDKs, infrastructure generation, hosting, environments and CI/CD only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS-native parity.
 
 # 12. Security, privacy, and compliance
 

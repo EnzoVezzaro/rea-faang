@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for AWS Cloud WAN (aws-cloud-wan); inve
 
 This is the coding-agent skill for **AWS Cloud WAN** (`aws-cloud-wan`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/aws-cloud-wan.md` from the catalog page, or run `npx rae-faang aws-cloud-wan --out ./aws-cloud-wan.md`, `npx rae-faang skills generate aws-cloud-wan` or `npx rae-faang build agent-kit aws-cloud-wan --out ./aws-cloud-wan-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/aws-cloud-wan.md` from the catalog page, or run `npx rea-faang aws-cloud-wan --out ./aws-cloud-wan.md`, `npx rea-faang skills generate aws-cloud-wan` or `npx rea-faang build agent-kit aws-cloud-wan --out ./aws-cloud-wan-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | AWS Cloud WAN / `aws-cloud-wan` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/cloud-wan/](https://aws.amazon.com/cloud-wan/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/network-manager/latest/cloudwan/](https://docs.aws.amazon.com/network-manager/latest/cloudwan/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier aws-cloud-wan` | `research/companies/amazon_aws/products/aws-cloud-wan.md` |
+| Research dossier | `npx rea-faang research dossier aws-cloud-wan` | `research/companies/amazon_aws/products/aws-cloud-wan.md` |
 | REA report | `catalog/rea/amazon_aws/aws-cloud-wan.md` (captured 2026-11-03T04:19:07.374Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/aws-cloud-wan.json` (`ev_9b54eb368315db91e333a45f87a3fa8f8a94392a1a0c78d83c62eafde0949fb2`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show aws-cloud-wan --format json` and `npx rae-faang research dossier aws-cloud-wan` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show aws-cloud-wan --format json` and `npx rea-faang research dossier aws-cloud-wan` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -452,7 +452,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier aws-cloud-wan` and inspect canonical identity with `npx rae-faang products show aws-cloud-wan --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier aws-cloud-wan` and inspect canonical identity with `npx rea-faang products show aws-cloud-wan --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -465,7 +465,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang aws-cloud-wan --out ./aws-cloud-wan.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit aws-cloud-wan --out ./aws-cloud-wan-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang aws-cloud-wan --out ./aws-cloud-wan.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit aws-cloud-wan --out ./aws-cloud-wan-agent`.
 
 ### Multi-agent task plan and outputs
 

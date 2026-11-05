@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Nova Act (amazon-nova-act); 
 
 # Amazon Nova Act — implementation skill (`amazon-nova-act`)
 
-> **Research status:** pending. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Nova Act**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Nova Act (amazon-nova-act); 
 
 This is the coding-agent skill for **Amazon Nova Act** (`amazon-nova-act`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-nova-act.md` from the catalog page, or run `npx rae-faang amazon-nova-act --out ./amazon-nova-act.md`, `npx rae-faang skills generate amazon-nova-act` or `npx rae-faang build agent-kit amazon-nova-act --out ./amazon-nova-act-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-nova-act.md` from the catalog page, or run `npx rea-faang amazon-nova-act --out ./amazon-nova-act.md`, `npx rea-faang skills generate amazon-nova-act` or `npx rea-faang build agent-kit amazon-nova-act --out ./amazon-nova-act-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,17 +28,17 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Nova Act / `amazon-nova-act` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/nova/](https://aws.amazon.com/nova/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/nova-act/](https://docs.aws.amazon.com/nova-act/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-nova-act` | `research/companies/amazon_aws/products/amazon-nova-act.md` |
+| Research dossier | `npx rea-faang research dossier amazon-nova-act` | `research/companies/amazon_aws/products/amazon-nova-act.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-nova-act.md` (captured 2026-11-03T03:35:32.694Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-nova-act.json` (`ev_2f37510ca597e8deb1a8848ddf0e8d498c541572b7915217a97501e3dabadbd7`) | Catalog evidence |
-| Alternative candidates | None recorded — this is a research gap | Curated landscape |
+| Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
 | User scope | Requested product area, platforms, users and non-goals | The user; ask when the answer changes the deliverable |
 | Consumer project | Absolute path, stack, conventions, test commands, deployment target | The user’s repository, read before writing |
 | Authorization | Public surfaces and the user’s own project only | Clean-room boundary in section 14 |
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-nova-act --format json` and `npx rae-faang research dossier amazon-nova-act` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-nova-act --format json` and `npx rea-faang research dossier amazon-nova-act` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-NOVA-ACT-CAP-B24A4AE8`, `AMAZON-NOVA-ACT-CAP-B73741DF`, `AMAZON-NOVA-ACT-CAP-C0E71C3C`, `AMAZON-NOVA-ACT-CAP-4B27BB65`, `AMAZON-NOVA-ACT-CAP-CF579255`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-NOVA-ACT-CAP-9B93B720`, `AMAZON-NOVA-ACT-CAP-2E80508D`, `AMAZON-NOVA-ACT-CAP-7AB1D899`, `AMAZON-NOVA-ACT-CAP-50014134`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-NOVA-ACT-CAP-B24A4AE8` | browser-based UI workflow automation | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-NOVA-ACT-CAP-B73741DF` | Python SDK and natural-language act instructions | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-NOVA-ACT-CAP-C0E71C3C` | local development with SDK, CLI and IDE extension | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-NOVA-ACT-CAP-4B27BB65` | deployment and monitoring of agent fleets in AWS | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-NOVA-ACT-CAP-CF579255` | API, tool and human-escalation integrations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-NOVA-ACT-CAP-9B93B720` | Browser UI workflow automation and documented use cases are verified. | VERIFIED | `ev-amazon-nova-act-identity`, `ev-amazon-nova-act-safety` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-NOVA-ACT-CAP-2E80508D` | Acts, steps, sessions, workflows and workflow runs are documented. | VERIFIED | `ev-amazon-nova-act-terminology`, `ev-amazon-nova-act-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-NOVA-ACT-CAP-7AB1D899` | REST API operations and IAM action surfaces are documented. | VERIFIED | `ev-amazon-nova-act-api`, `ev-amazon-nova-act-iam` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-NOVA-ACT-CAP-50014134` | Open-source browser frameworks cover subsets, but the AWS model, managed deployment plane, fleet operations and safety behavior are not equivalent. | VERIFIED | `ev-amazon-nova-act-safety` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Try it today`, `button: Build with Amazon Nova`, `button: Play:`, `button: Previous slide`, `button: Next slide`, `button: Built for enterprise scale`, `button: Proven customer momentum`, `button: Safe, responsible AI`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Nova Act`, `link: Nova Forge`, `link: Nova Models`, `link: Pricing`, `link: Customers`, `link: Artificial Intelligence`, `link: Generative AI`, `link: Nova Act Service Nova Act Nova Act is a new AWS service to build, deploy, and manage fleets of AI agents for automating production UI workflows. Nova Act provides high reliability, fastest time-to-value, and ease of implementation at scale, powered by a customer Nova computer use Learn more`, `link: Nova Forge Service Nova Forge Nova Forge is a new service to build your own frontier models using Nova. Organizations of all sizes can now experience the benefits of a purpose-built frontier model, without the prohibitive compute, cost, and time needed to train from scratch. Learn more`, `link: models Models Nova Models Amazon Nova models deliver frontier intelligence and industry-leading price-performance. With the most comprehensive suite of customization capabilities for any proprietary model family, organizations can customize Nova to deliver responses that reflect t Learn more`, `link: Nova Act Read how you can build and manage fleets of reliable agents to automate production UI workflows at scale Read the blog`, `link: Learn more`, `link: Missing alt text value Improving threat investigation with Amazon Nova, at nearly 100 times lower cost Read more about Trellix`, `link: Missing alt text value Helping parents better understand and engage with their children's gaming experiences with Amazon Nova Lite Read more about GuardianGamer`, `link: Missing alt text value Helping filmmakers transform scripts into visual narratives within minutes with Amazon Nova Reel Read more about Rubbrband`, `link: Missing alt text value Powering the future of real estate using generative AI and Amazon Nova Pro Read more about AppFolio`, `link: Missing alt text value Digital tools to help administrators, teachers, and parents while supporting and protecting students with Amazon Nova Read more about Ativion`, `button: Get started for free`, `link: Get started with Nova Read the guide`, `link: Learn more about safety and commitment to responsible AI Read the service card`, `button: Yes, give us positive feedback`, `button: No, give us constructive feedback`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **browser-based UI workflow automation:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Python SDK and natural-language act instructions:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **local development with SDK, CLI and IDE extension:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **deployment and monitoring of agent fleets in AWS:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **API, tool and human-escalation integrations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Browser UI workflow automation and documented use cases are verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Acts, steps, sessions, workflows and workflow runs are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **REST API operations and IAM action surfaces are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Open-source browser frameworks cover subsets, but the AWS model, managed deployment plane, fleet operations and safety behavior are not equivalent.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-B24A4AE8 — browser-based UI workflow automation
+### REQ-FUNC-9B93B720 — Browser UI workflow automation and documented use cases are verified.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-nova-act-identity`, `ev-amazon-nova-act-safety`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-B24A4AE8`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-NOVA-ACT-CAP-B24A4AE8` → `REQ-FUNC-B24A4AE8` → `TEST-FUNC-B24A4AE8`.
+- **Associated test ID:** `TEST-FUNC-9B93B720`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-NOVA-ACT-CAP-9B93B720` → `REQ-FUNC-9B93B720` → `TEST-FUNC-9B93B720`.
 
-### REQ-FUNC-B73741DF — Python SDK and natural-language act instructions
+### REQ-FUNC-2E80508D — Acts, steps, sessions, workflows and workflow runs are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-nova-act-terminology`, `ev-amazon-nova-act-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-B73741DF`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-NOVA-ACT-CAP-B73741DF` → `REQ-FUNC-B73741DF` → `TEST-FUNC-B73741DF`.
+- **Associated test ID:** `TEST-FUNC-2E80508D`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-NOVA-ACT-CAP-2E80508D` → `REQ-FUNC-2E80508D` → `TEST-FUNC-2E80508D`.
 
-### REQ-FUNC-C0E71C3C — local development with SDK, CLI and IDE extension
+### REQ-FUNC-7AB1D899 — REST API operations and IAM action surfaces are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-nova-act-api`, `ev-amazon-nova-act-iam`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-C0E71C3C`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-NOVA-ACT-CAP-C0E71C3C` → `REQ-FUNC-C0E71C3C` → `TEST-FUNC-C0E71C3C`.
+- **Associated test ID:** `TEST-FUNC-7AB1D899`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-NOVA-ACT-CAP-7AB1D899` → `REQ-FUNC-7AB1D899` → `TEST-FUNC-7AB1D899`.
 
-### REQ-FUNC-4B27BB65 — deployment and monitoring of agent fleets in AWS
+### REQ-FUNC-50014134 — Open-source browser frameworks cover subsets, but the AWS model, managed deployment plane, fleet operations and safety behavior are not equivalent.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-nova-act-safety`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-4B27BB65`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-NOVA-ACT-CAP-4B27BB65` → `REQ-FUNC-4B27BB65` → `TEST-FUNC-4B27BB65`.
-
-### REQ-FUNC-CF579255 — API, tool and human-escalation integrations
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-CF579255`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-NOVA-ACT-CAP-CF579255` → `REQ-FUNC-CF579255` → `TEST-FUNC-CF579255`.
+- **Associated test ID:** `TEST-FUNC-50014134`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-NOVA-ACT-CAP-50014134` → `REQ-FUNC-50014134` → `TEST-FUNC-50014134`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -225,19 +214,35 @@ Separate interface/domain/persistence/integration boundaries. Enforce access at 
 
 ### 9.1 Candidate register
 
-No candidate is recorded for this product in the curated landscape. That is a **research gap**, not evidence that no project exists — never state or imply that no open-source alternative exists.
+| Candidate | Repository | License | Claimed coverage (unverified) | Limitations | Maintenance | Compatibility | Verdict |
+|---|---|---|---|---|---|---|---|
+| [Browser Use](https://github.com/browser-use/browser-use) | Not recorded; verify the canonical repository | MIT (unverified) | Open-source browser-agent framework for browser control, extraction, testing and agent workflows. | Covers agentic browser interaction but not Nova Act's AWS model, managed fleet plane or service APIs. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [Stagehand](https://github.com/browserbase/stagehand) | Not recorded; verify the canonical repository | MIT (unverified) | Open-source hybrid browser automation with AI primitives and deterministic browser APIs. | Covers bounded browser automation but not Nova Act's managed workflow and human-escalation service. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [Playwright](https://playwright.dev/) | [repository](https://github.com/microsoft/playwright) | Apache-2.0 (unverified) | Deterministic cross-browser automation and testing foundation. | A browser-control foundation, not a complete autonomous agent platform. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 
-Before building from scratch, run the search the catalog has not done: search for the user job and for each capability lead in section 2, inspect the exact repository and version, and record what you find with its license, activity and coverage. Candidates found at that point are added to the register below, not to the catalog.
+Repository, license, maintenance and compatibility are catalog claims until you check them. Re-verify each against the exact version you would adopt; a README, a star count or this table is not proof.
 
 ### 9.2 Comparison against the REA findings
 
+Map every capability lead and requirement from sections 2 and 5 to what the candidate actually implements, and say what evidence supports the mapping. Where the catalog has no verified behavior, the comparison is a research task, not a conclusion:
+
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| Every feature ID in section 2 | Not assessed | None — no candidate recorded | Full capability, unless your own search produces one |
+| `AMAZON-NOVA-ACT-CAP-9B93B720` — Browser UI workflow automation and documented use cases are verified. | Not verified against Browser Use | None yet; compare with `ev_2f37510ca597e8deb1a8848ddf0e8d498c541572b7915217a97501e3dabadbd7` | Candidate code path and tests must be inspected |
+| `AMAZON-NOVA-ACT-CAP-2E80508D` — Acts, steps, sessions, workflows and workflow runs are documented. | Not verified against Browser Use | None yet; compare with `ev_2f37510ca597e8deb1a8848ddf0e8d498c541572b7915217a97501e3dabadbd7` | Candidate code path and tests must be inspected |
+| `AMAZON-NOVA-ACT-CAP-7AB1D899` — REST API operations and IAM action surfaces are documented. | Not verified against Browser Use | None yet; compare with `ev_2f37510ca597e8deb1a8848ddf0e8d498c541572b7915217a97501e3dabadbd7` | Candidate code path and tests must be inspected |
+| `AMAZON-NOVA-ACT-CAP-50014134` — Open-source browser frameworks cover subsets, but the AWS model, managed deployment plane, fleet operations and safety behavior are not equivalent. | Not verified against Browser Use | None yet; compare with `ev_2f37510ca597e8deb1a8848ddf0e8d498c541572b7915217a97501e3dabadbd7` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
-**Current verdict: UNKNOWN / PENDING — INVESTIGATE MORE.** No verified foundation exists for this product, so reuse, integration and extension cannot be claimed and a fresh build is not yet justified either. Complete the search in 9.1, then record one of the five verdicts with the candidate name and the evidence behind it.
+**Current verdict: INVESTIGATE MORE** — the first candidate to audit is **Browser Use** (Open-source browser-agent framework for browser control, extraction, testing and agent workflows.), and no candidate has been verified yet.
+
+Provisional routing for this product, to be confirmed by that audit:
+
+- If **Browser Use** implements the core capability leads with a compatible license and maintainable code → **REUSE** it as the foundation.
+- If it covers only part of the scope, or would need to run beside the user’s existing system → **INTEGRATE** it behind a defined boundary, or **EXTEND** it with original modules where its extension points allow it.
+- If no candidate survives inspection → **BUILD** an independent implementation, and record which candidates failed and why.
+- If the evidence is still insufficient → **INVESTIGATE MORE**, naming the exact question, source and check that would settle it.
 
 ### 9.4 What each verdict obliges
 
@@ -273,11 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-B24A4AE8** → `REQ-FUNC-B24A4AE8`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-B73741DF** → `REQ-FUNC-B73741DF`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-C0E71C3C** → `REQ-FUNC-C0E71C3C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-4B27BB65** → `REQ-FUNC-4B27BB65`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-CF579255** → `REQ-FUNC-CF579255`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-9B93B720** → `REQ-FUNC-9B93B720`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-2E80508D** → `REQ-FUNC-2E80508D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-7AB1D899** → `REQ-FUNC-7AB1D899`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-50014134** → `REQ-FUNC-50014134`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -298,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-B24A4AE8, REQ-FUNC-B73741DF, REQ-FUNC-C0E71C3C, REQ-FUNC-4B27BB65, REQ-FUNC-CF579255
+- **Requirements:** REQ-FUNC-9B93B720, REQ-FUNC-2E80508D, REQ-FUNC-7AB1D899, REQ-FUNC-50014134
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -308,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-B24A4AE8, REQ-FUNC-B73741DF, REQ-FUNC-C0E71C3C, REQ-FUNC-4B27BB65, REQ-FUNC-CF579255
+- **Requirements:** REQ-FUNC-9B93B720, REQ-FUNC-2E80508D, REQ-FUNC-7AB1D899, REQ-FUNC-50014134
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -330,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-B24A4AE8, REQ-FUNC-B73741DF, REQ-FUNC-C0E71C3C, REQ-FUNC-4B27BB65, REQ-FUNC-CF579255; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-9B93B720, REQ-FUNC-2E80508D, REQ-FUNC-7AB1D899, REQ-FUNC-50014134; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -360,13 +364,18 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/nova/) | 2026-11-02T00:00:00Z | Amazon Nova Act is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/nova-act/) | 2026-11-02T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-nova-act-identity` | What is Amazon Nova Act? — The official user guide describes Nova Act as a service for reliable production UI workflow automation at scale. | [link](https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html) | Not recorded | Amazon Nova Act is an AWS service for building and managing AI agents that automate production browser workflows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-nova-act-terminology` | Nova Act terminology — The official guide explains that act calls run within sessions, workflows orchestrate acts and code, and workflow runs invoke definitions. | [link](https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html) | Not recorded | Nova Act defines acts, steps, sessions, workflows and workflow runs as its core execution concepts. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-nova-act-api` | Amazon Nova Act API Reference — The official API reference lists create, get, update, delete, invoke and list operations for the Nova Act resource model. | [link](https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html) | Not recorded | The service API documents workflow, run, session, act and model operations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-nova-act-iam` | Nova Act Service Authorization Reference — AWS documents service-specific actions including CreateWorkflowRun, CreateSession, InvokeActStep and ListModels. | [link](https://docs.aws.amazon.com/service-authorization/latest/reference/list_nova-act.html) | Not recorded | Nova Act exposes IAM actions and resource permissions for workflows, runs, sessions and acts. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-nova-act-safety` | Amazon Nova Act AI Service Card — The official service card describes browser automation, human-in-the-loop escalation, tool use and context-processing limitations. | [link](https://docs.aws.amazon.com/ai/responsible-ai/nova-act/overview.html) | Not recorded | Nova Act uses UI screenshots and prompts for browser actions and documents human escalation, limitations and safety considerations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/nova/) | 2026-11-03T00:00:00Z | Amazon Nova Act is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/nova-act/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/nova/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/documentation-overview/nova-act/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/nova-act/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/ai/responsible-ai/nova-act/overview.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/service-authorization/latest/reference/list_nova-act.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_2f37510ca597e8deb1a8848ddf0e8d498c541572b7915217a97501e3dabadbd7` | Amazon Nova Act Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/nova/) | 2026-11-03T03:35:32.694Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Try it today, button: Build with Amazon Nova, button: Play:, button: Previous slide, button: Next slide, button: Built for enterprise scale, button: Proven customer momentum, button: Safe, responsible AI, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Nova Act, link: Nova Forge, link: Nova Models, link: Pricing, link: Customers, link: Artificial Intelligence, link: Generative AI, link: Nova Act Service Nova Act Nova Act is a new AWS service to build, deploy, and manage fleets of AI agents for automating production UI workflows. Nova Act provides high reliability, fastest time-to-value, and ease of implementation at scale, powered by a customer Nova computer use Learn more, link: Nova Forge Service Nova Forge Nova Forge is a new service to build your own frontier models using Nova. Organizations of all sizes can now experience the benefits of a purpose-built frontier model, without the prohibitive compute, cost, and time needed to train from scratch. Learn more, link: models Models Nova Models Amazon Nova models deliver frontier intelligence and industry-leading price-performance. With the most comprehensive suite of customization capabilities for any proprietary model family, organizations can customize Nova to deliver responses that reflect t Learn more, link: Nova Act Read how you can build and manage fleets of reliable agents to automate production UI workflows at scale Read the blog, link: Learn more, link: Missing alt text value Improving threat investigation with Amazon Nova, at nearly 100 times lower cost Read more about Trellix, link: Missing alt text value Helping parents better understand and engage with their children's gaming experiences with Amazon Nova Lite Read more about GuardianGamer, link: Missing alt text value Helping filmmakers transform scripts into visual narratives within minutes with Amazon Nova Reel Read more about Rubbrband, link: Missing alt text value Powering the future of real estate using generative AI and Amazon Nova Pro Read more about AppFolio, link: Missing alt text value Digital tools to help administrators, teachers, and parents while supporting and protecting students with Amazon Nova Read more about Ativion, button: Get started for free, link: Get started with Nova Read the guide, link: Learn more about safety and commitment to responsible AI Read the service card, button: Yes, give us positive feedback, button: No, give us constructive feedback, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, region: AWS Information, region: carousel, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -394,83 +403,98 @@ Resume token: `amazon-nova-act`. Read dossier, REA report and raw Evidence befor
 
 # 1. Executive summary
 
-Amazon Nova Act is an AWS service and developer toolchain for building, deploying and managing AI agents that automate browser-based user-interface workflows. AWS documentation describes natural-language instructions combined with Python code, local development interfaces, deployment to AWS, monitoring, API/tool integrations and human escalation. This entry remains `pending` until the complete public workflow and safety boundaries are independently validated.
+Amazon Nova Act is an AWS service and developer toolchain for building, deploying and managing AI agents that automate production browser workflows. A workflow combines natural-language `act()` instructions with Python code; sessions contain sequential acts, and workflow runs execute the workflow. AWS documents a web playground, SDK, IDE extension, CLI, AWS deployment and console monitoring.
 
 # 2. Product identity and ownership
 
 - **Official name:** Amazon Nova Act
 - **Company:** Amazon Web Services
-- **Lifecycle:** Active
-- **Primary scope:** Production UI workflow automation and related developer tooling
+- **Lifecycle:** active
+- **Canonical website:** https://aws.amazon.com/nova/
+- **Official documentation:** https://docs.aws.amazon.com/nova-act/
+- **Primary scope:** production UI workflow automation and related agent-development tooling.
+- **Availability:** AWS documentation currently lists US East (N. Virginia) support; region availability must be checked before use.
 
 # 3. Product capabilities
 
-- Define browser actions using natural-language instructions and Python.
-- Explore workflows in a hosted playground and develop locally with an SDK.
-- Use an IDE extension and CLI as part of the development-to-deployment path.
-- Deploy and monitor workflows in AWS.
-- Integrate APIs, tools, remote MCP and human escalation where supported.
+- Browser workflow automation for data entry, extraction, checkout/booking and web QA use cases.
+- Natural-language `act()` calls combined with Python orchestration.
+- Sessions representing browser or API-client context, with sequential acts.
+- Workflow definitions and repeatable workflow runs.
+- External tool integrations through API calls, remote MCP and supported agentic frameworks.
+- Human escalation for unresolved or explicitly delegated cases.
+- Playground, SDK, IDE extension, CLI, AWS deployment and console monitoring.
+- API operations for workflow definitions, runs, sessions, acts and model listing.
 
 # 4. Technical architecture
 
-Public documentation distinguishes a playground, SDK, IDE extension, CLI, AWS service and console. The execution model, browser isolation, model/version selection, session state, tool permissions, trajectory storage, retries and fleet scheduling require direct validation.
+AWS describes a custom model, orchestrator, browser actuator and service tooling as an integrated system. An `act()` call executes an agentic loop within a session; each act has sequential steps in which the model observes the page and takes an action. A workflow run invokes a workflow definition and can contain multiple sessions. The service can process UI screenshots and prompts through its documented service APIs. Exact model internals, browser isolation and fleet implementation remain proprietary.
 
-# 5. User workflows
+# 5. User and developer workflows
 
-Documented workflow stages include exploring a browser task, exporting or authoring Python, developing and debugging locally, packaging/deploying with the CLI, monitoring executions in the AWS console, and escalating to a human when appropriate. Exact inputs, outputs, failure states, cancellation, retries and persistence remain pending.
+1. Explore a browser task in the Nova Act web playground.
+2. Author or export a Python workflow and use `act()` calls for bounded UI tasks.
+3. Develop and debug with the SDK and IDE extension, using explicit tools, permissions and test data.
+4. Create a workflow definition and run it through the documented SDK, CLI or API surfaces.
+5. Monitor runs, sessions, acts and trajectory data in the AWS control plane; add human escalation and failure handling before production use.
 
 # 6. Pricing and access
 
-Access may involve the Nova Act playground, API-key or AWS IAM authentication and AWS deployment terms. Current pricing, quotas, supported regions, model entitlements and account requirements must be verified before any implementation or cost claim.
+AWS directs users to the current Nova Act pricing page and account requirements. Access, region, quotas, model availability, IAM and deployment costs must be checked for the target AWS account. This dossier does not assert a current price or quota.
 
 # 7. API and integration surface
 
-AWS documents a REST API for workflow definitions, workflow runs, sessions and acts, plus SDK, CLI, IDE extension, console, tool/API integrations and remote MCP. The complete command, schema, authentication and error matrix remains pending.
+- REST API actions include creating, reading, updating and deleting workflow definitions and runs.
+- Session and act operations include create, list, update and invoke-step behavior.
+- Model listing and AWS service-authorization/IAM references are documented.
+- SDK, CLI, IDE extension, playground and AWS Management Console are part of the developer surface.
+- API calls, remote MCP and supported agentic frameworks extend work beyond the browser.
 
 # 8. Existing open-source alternatives
 
-No full open-source alternative is verified in this entry. Browser automation libraries, agent frameworks and workflow engines may cover subsets, but model reliability, production deployment, fleet management, safety controls and human escalation are not assumed equivalent.
+- **Browser Use:** open-source browser-agent framework for browser control, extraction, testing and agent workflows.
+- **Stagehand:** open-source browser automation toolkit combining natural-language AI primitives with deterministic Playwright-style control.
+- **Playwright:** Apache-2.0 browser automation library for deterministic cross-browser testing and automation.
 
 # 9. Alternative comparison
 
-Candidate foundations must be compared across browser control, locator robustness, natural-language planning, deterministic code integration, sessions, retries, observability, credentials, tool calls, human handoff and deployment. A browser driver alone is not a replacement for the full service.
+Browser Use and Stagehand cover agentic or hybrid browser automation, while Playwright provides the deterministic browser-control foundation. None reproduces Nova Act's integrated model, AWS deployment plane, workflow/session/run APIs, managed fleet operations, service authorization, trajectory tooling or documented human-escalation path. Coverage is therefore **partial** for the complete AWS service.
 
 # 10. Missing capabilities and opportunity analysis
 
-Research must map `act()` semantics, workflow/session/run state transitions, supported browsers, selectors, action timeouts, assertions, retries, recovery, model versions, tool permissions, authentication, trajectory export, monitoring and production isolation.
+An independent implementation still needs browser isolation, reliable action planning, session and run state, retries, credentials, tool permissions, observability, trajectory handling, human handoff, deployment and multi-tenant operations. The open-source projects are foundations, not proof of service parity.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official AWS product and documentation URLs with authorized public or user-owned test surfaces. Record browser observations, SDK/CLI commands, API schemas and error behavior. Any independent implementation must use original code, avoid AWS proprietary assets and clearly separate observed behavior from proposed design.
+Use Playwright for deterministic browser actions and add Stagehand or Browser Use only where agentic interaction is required. Define an explicit workflow state machine, approval gates for purchases or submissions, credential isolation, replayable traces and human escalation. Do not claim Nova Act compatibility without testing each selected API, SDK and failure mode.
 
 # 12. Security, privacy, and compliance
 
-Verify credential handling, browser isolation, prompt and page-data boundaries, tool permissions, IAM policies, remote MCP access, logging, trajectory retention, human approval and sensitive-data handling before implementation.
+Browser agents can access authenticated sites, page data and external tools. Restrict file access, browser origins, IAM actions, remote MCP servers, payment actions and data retention. Review screenshots, prompts, trajectory exports, logs and human handoff for sensitive data before production use.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/nova/ — official Amazon Nova portfolio and Nova Act product context.
-- https://aws.amazon.com/documentation-overview/nova-act/ — official capability and workflow overview.
-- https://docs.aws.amazon.com/nova-act/ — official documentation entry point.
-- https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html — service concepts and `act()` terminology.
-- https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html — REST API reference.
+- [What is Amazon Nova Act?](https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html) — official identity, terminology, workflows, availability and use cases.
+- [Amazon Nova Act API Reference](https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html) — official API surface for workflows, runs, sessions, acts and models.
+- [Amazon Nova Act Service Authorization](https://docs.aws.amazon.com/service-authorization/latest/reference/list_nova-act.html) — official IAM actions and resource permissions.
+- [Amazon Nova Act Responsible AI Service Card](https://docs.aws.amazon.com/ai/responsible-ai/nova-act/overview.html) — official architecture, context handling, limitations and human-escalation guidance.
 
-# 14. Unknowns
+# 14. Open questions
 
-- Complete SDK, CLI and REST API command/schema matrix.
-- Browser/runtime isolation, model behavior and deterministic replay semantics.
-- Exact quotas, pricing, regions, supported browsers and model versions.
-- Verified open-source foundation and coverage for production deployment and safety.
+- Which AWS region, model, browser targets and quotas apply to the intended account?
+- Which workflows require human approval before irreversible actions such as checkout or submission?
+- What trace, replay, retry and credential-isolation guarantees are required?
 
-# 15. Research status
+# 15. Research history
 
-`pending`: identity and public capability surface are documented from AWS sources, but full REA capture, authenticated workflow behavior, limits, safety controls and alternatives remain unverified.
+- v1: catalog candidate with public AWS capability notes, research pending.
+- v2: updated 2026-11-03 from official AWS user guide, API reference, IAM reference and Responsible AI service card. Status: `researched`; managed service behavior, pricing and full parity with open-source browser agents remain unverified.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-nova-act` and inspect canonical identity with `npx rae-faang products show amazon-nova-act --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-nova-act` and inspect canonical identity with `npx rea-faang products show amazon-nova-act --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -483,7 +507,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-nova-act --out ./amazon-nova-act.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-nova-act --out ./amazon-nova-act-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-nova-act --out ./amazon-nova-act.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-nova-act --out ./amazon-nova-act-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -525,11 +549,16 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/nova/) — Amazon Nova Act is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
-- [Official documentation entry](https://docs.aws.amazon.com/nova-act/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
+- [What is Amazon Nova Act?](https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html) — Amazon Nova Act is an AWS service for building and managing AI agents that automate production browser workflows. (VERIFIED; accessed Not recorded).
+- [Nova Act terminology](https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html) — Nova Act defines acts, steps, sessions, workflows and workflow runs as its core execution concepts. (VERIFIED; accessed Not recorded).
+- [Amazon Nova Act API Reference](https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html) — The service API documents workflow, run, session, act and model operations. (VERIFIED; accessed Not recorded).
+- [Nova Act Service Authorization Reference](https://docs.aws.amazon.com/service-authorization/latest/reference/list_nova-act.html) — Nova Act exposes IAM actions and resource permissions for workflows, runs, sessions and acts. (VERIFIED; accessed Not recorded).
+- [Amazon Nova Act AI Service Card](https://docs.aws.amazon.com/ai/responsible-ai/nova-act/overview.html) — Nova Act uses UI screenshots and prompts for browser actions and documents human escalation, limitations and safety considerations. (VERIFIED; accessed Not recorded).
+- [Official product page](https://aws.amazon.com/nova/) — Amazon Nova Act is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/nova-act/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/nova/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://aws.amazon.com/documentation-overview/nova-act/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/nova-act/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/ai/responsible-ai/nova-act/overview.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/service-authorization/latest/reference/list_nova-act.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Nova Act Public web-surface observation (REA)](https://aws.amazon.com/nova/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Try it today, button: Build with Amazon Nova, button: Play:, button: Previous slide, button: Next slide, button: Built for enterprise scale, button: Proven customer momentum, button: Safe, responsible AI, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Nova Act, link: Nova Forge, link: Nova Models, link: Pricing, link: Customers, link: Artificial Intelligence, link: Generative AI, link: Nova Act Service Nova Act Nova Act is a new AWS service to build, deploy, and manage fleets of AI agents for automating production UI workflows. Nova Act provides high reliability, fastest time-to-value, and ease of implementation at scale, powered by a customer Nova computer use Learn more, link: Nova Forge Service Nova Forge Nova Forge is a new service to build your own frontier models using Nova. Organizations of all sizes can now experience the benefits of a purpose-built frontier model, without the prohibitive compute, cost, and time needed to train from scratch. Learn more, link: models Models Nova Models Amazon Nova models deliver frontier intelligence and industry-leading price-performance. With the most comprehensive suite of customization capabilities for any proprietary model family, organizations can customize Nova to deliver responses that reflect t Learn more, link: Nova Act Read how you can build and manage fleets of reliable agents to automate production UI workflows at scale Read the blog, link: Learn more, link: Missing alt text value Improving threat investigation with Amazon Nova, at nearly 100 times lower cost Read more about Trellix, link: Missing alt text value Helping parents better understand and engage with their children's gaming experiences with Amazon Nova Lite Read more about GuardianGamer, link: Missing alt text value Helping filmmakers transform scripts into visual narratives within minutes with Amazon Nova Reel Read more about Rubbrband, link: Missing alt text value Powering the future of real estate using generative AI and Amazon Nova Pro Read more about AppFolio, link: Missing alt text value Digital tools to help administrators, teachers, and parents while supporting and protecting students with Amazon Nova Read more about Ativion, button: Get started for free, link: Get started with Nova Read the guide, link: Learn more about safety and commitment to responsible AI Read the service card, button: Yes, give us positive feedback, button: No, give us constructive feedback, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, region: AWS Information, region: carousel, contentinfo. (VERIFIED; accessed 2026-11-03T03:35:32.694Z).

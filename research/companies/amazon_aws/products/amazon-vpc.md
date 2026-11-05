@@ -74,9 +74,9 @@ Compare CIDR and address allocation, tenant isolation, subnets, routing, gateway
 
 Research must map every VPC and EC2-networking operation, resource dependency, state, route and policy rule, endpoint and gateway behavior, IPAM, reachability, traffic mirroring, quota, error and regional semantic. Any implementation must use original code and isolated synthetic network fixtures.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product, user guide, FAQ, API and CLI references as primary sources. The generated RAE skill should instruct an agent to build an independent virtual-network control plane beginning with Neutron concepts where useful, then add routing, gateways, security, endpoints, IPAM, identity and multi-region behavior only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS service parity.
+Use the official product, user guide, FAQ, API and CLI references as primary sources. The generated REA skill should instruct an agent to build an independent virtual-network control plane beginning with Neutron concepts where useful, then add routing, gateways, security, endpoints, IPAM, identity and multi-region behavior only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS service parity.
 
 # 12. Security, privacy, and compliance
 

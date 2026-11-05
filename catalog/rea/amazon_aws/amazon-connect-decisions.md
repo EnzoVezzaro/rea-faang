@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Connect Decisions, recorded 
 | Target | https://aws.amazon.com/products/connect/decisions/ |
 | Resolved URL | https://aws.amazon.com/products/connect/decisions/ |
 | Page title | What is Amazon Connect Decisions? |
-| Captured | 2026-11-03T02:53:11.449Z |
+| Captured | 2026-11-04T02:40:50.931Z |
 | Status | captured |
-| REA Evidence ID | `ev_c4dec31bbb151480e3276330b35c63a887345e436f29293cad3a651bd768073d` |
+| REA Evidence ID | `ev_0640ff82a904f34c5fd48ca1c7b59f56013e55d360d5ea9828f7f9c0d4b98d21` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -164,6 +164,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-connect-decisions.json`
-- Evidence ID: `ev_c4dec31bbb151480e3276330b35c63a887345e436f29293cad3a651bd768073d`
+- Evidence ID: `ev_0640ff82a904f34c5fd48ca1c7b59f56013e55d360d5ea9828f7f9c0d4b98d21`
 - Accessibility outline: 14663 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

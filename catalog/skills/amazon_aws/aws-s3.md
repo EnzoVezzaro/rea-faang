@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon S3 (aws-s3); investigate, as
 
 This is the coding-agent skill for **Amazon S3** (`aws-s3`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/aws-s3.md` from the catalog page, or run `npx rae-faang aws-s3 --out ./aws-s3.md`, `npx rae-faang skills generate aws-s3` or `npx rae-faang build agent-kit aws-s3 --out ./aws-s3-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/aws-s3.md` from the catalog page, or run `npx rea-faang aws-s3 --out ./aws-s3.md`, `npx rea-faang skills generate aws-s3` or `npx rea-faang build agent-kit aws-s3 --out ./aws-s3-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon S3 / `aws-s3` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/s3/](https://aws.amazon.com/s3/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/s3/](https://docs.aws.amazon.com/s3/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier aws-s3` | `research/companies/amazon_aws/products/aws-s3.md` |
+| Research dossier | `npx rea-faang research dossier aws-s3` | `research/companies/amazon_aws/products/aws-s3.md` |
 | REA report | `catalog/rea/amazon_aws/aws-s3.md` (captured 2026-11-03T01:36:05.896Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/aws-s3.json` (`ev_50124d2cbf0d40499ed047a045f921bdb14665060594a404e7d72cc53051de69`) | Catalog evidence |
 | Alternative candidates | 4 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show aws-s3 --format json` and `npx rae-faang research dossier aws-s3` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show aws-s3 --format json` and `npx rea-faang research dossier aws-s3` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -467,7 +467,7 @@ MinIO provides the closest S3-compatible object storage for on-premises deployme
 
 S3's durability model, event notification architecture, and storage class lifecycle management represent gaps. MinIO provides S3-compatible storage but lacks the managed service experience, global availability, and some advanced features.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Not recommended to build a managed object storage service from scratch. Consider contributing to or extending MinIO for S3-compatible on-premises object storage. Focus on application-level patterns rather than service replication.
 
@@ -499,7 +499,7 @@ MinIO provides the closest S3-compatible object storage. Ceph and Swift are alte
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Focus on self-hostable S3-compatible storage (MinIO) for on-premises needs. Managed service replication is out of scope.
 
@@ -507,7 +507,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier aws-s3` and inspect canonical identity with `npx rae-faang products show aws-s3 --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier aws-s3` and inspect canonical identity with `npx rea-faang products show aws-s3 --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -520,7 +520,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang aws-s3 --out ./aws-s3.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit aws-s3 --out ./aws-s3-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang aws-s3 --out ./aws-s3.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit aws-s3 --out ./aws-s3-agent`.
 
 ### Multi-agent task plan and outputs
 

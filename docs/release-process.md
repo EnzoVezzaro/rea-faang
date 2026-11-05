@@ -1,6 +1,6 @@
 # Release process
 
-How a version of RAE FAANG is prepared, verified and published. Publishing and
+How a version of REA FAANG is prepared, verified and published. Publishing and
 deploying are maintainer decisions: an agent may prepare a release and prove it
 locally, but must not push a tag, `npm publish`, or deploy the site without
 explicit approval.
@@ -10,7 +10,7 @@ explicit approval.
 | Surface | Source of truth |
 |---|---|
 | Package version | `version` in `package.json` (mirrored in `package-lock.json`) |
-| CLI version | `RAE CLI v<version>` reads `package.json` at runtime (`src/cli.js`) |
+| CLI version | `REA CLI v<version>` reads `package.json` at runtime (`src/cli.js`) |
 | Release history | `CHANGELOG.md`, one section per released version |
 | Tag | `v<version>`, matching the changelog link reference |
 
@@ -71,7 +71,7 @@ npm publish
 
 The site is deployed by `.github/workflows/pages.yml` after a successful CI run on
 `main`; the Vercel project is optional and only canonical when the build is run
-with `RAE_SITE_URL=https://rae-faang-landing.vercel.app`.
+with `REA_SITE_URL=https://rea-faang-landing.vercel.app`.
 
 ## What a handoff must record
 

@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Monitron (amazon-monitron); 
 
 # Amazon Monitron — implementation skill (`amazon-monitron`)
 
-> **Research status:** pending. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Monitron**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Monitron (amazon-monitron); 
 
 This is the coding-agent skill for **Amazon Monitron** (`amazon-monitron`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-monitron.md` from the catalog page, or run `npx rae-faang amazon-monitron --out ./amazon-monitron.md`, `npx rae-faang skills generate amazon-monitron` or `npx rae-faang build agent-kit amazon-monitron --out ./amazon-monitron-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-monitron.md` from the catalog page, or run `npx rea-faang amazon-monitron --out ./amazon-monitron.md`, `npx rea-faang skills generate amazon-monitron` or `npx rea-faang build agent-kit amazon-monitron --out ./amazon-monitron-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Monitron / `amazon-monitron` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/monitron/](https://aws.amazon.com/monitron/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html](https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-monitron` | `research/companies/amazon_aws/products/amazon-monitron.md` |
+| Research dossier | `npx rea-faang research dossier amazon-monitron` | `research/companies/amazon_aws/products/amazon-monitron.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-monitron.md` (captured 2026-11-03T03:30:17.135Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-monitron.json` (`ev_999b57da2ace790b50953e0e016b3b8dde47e1c39c3d3631c43e3e0a85e9ca3d`) | Catalog evidence |
 | Alternative candidates | None recorded — this is a research gap | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-monitron --format json` and `npx rae-faang research dossier amazon-monitron` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-monitron --format json` and `npx rea-faang research dossier amazon-monitron` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-MONITRON-CAP-68B3A2D7`, `AMAZON-MONITRON-CAP-F670D276`, `AMAZON-MONITRON-CAP-9F83ABFE`, `AMAZON-MONITRON-CAP-83C3045E`, `AMAZON-MONITRON-CAP-97F491D8`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-MONITRON-CAP-1D327F7A`, `AMAZON-MONITRON-CAP-5AA95E98`, `AMAZON-MONITRON-CAP-852753DF`, `AMAZON-MONITRON-CAP-26F17958`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-MONITRON-CAP-68B3A2D7` | industrial equipment condition monitoring | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MONITRON-CAP-F670D276` | purpose-built vibration and temperature sensors | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MONITRON-CAP-9F83ABFE` | gateway-to-cloud telemetry | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MONITRON-CAP-83C3045E` | ML-based abnormality detection | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MONITRON-CAP-97F491D8` | mobile and web monitoring applications | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MONITRON-CAP-1D327F7A` | Sensor, gateway, cloud ML analysis, alerts and feedback workflow are documented. | VERIFIED | `ev-amazon-monitron-identity`, `ev-amazon-monitron-workflow` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MONITRON-CAP-5AA95E98` | Project/site/asset/sensor hierarchy and mobile commissioning are documented. | VERIFIED | `ev-amazon-monitron-hierarchy`, `ev-amazon-monitron-setup` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MONITRON-CAP-852753DF` | Mobile/web viewing, CSV export and administration surfaces are documented. | VERIFIED | `ev-amazon-monitron-platforms`, `ev-amazon-monitron-security` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MONITRON-CAP-26F17958` | Existing-customer access and historical pricing are documented, but new-customer availability is closed and current replacement parity is not verified. | VERIFIED | `ev-amazon-monitron-availability`, `ev-amazon-monitron-pricing` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Get started with Amazon Monitron`, `button: Play:`, `button: Machine Learning (ML)`, `button: Easy set up`, `button: Technician Feedback`, `button: Create an AWS account`, `button: Back to top`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Features`, `link: Pricing`, `link: Getting Started`, `link: Resources`, `link: FAQs`, `link: Customers`, `link: Products`, `link: Machine Learning`, `link: Missing alt text value Baxter improves operational efficiency by saving 500 machine hours of downtime with Amazon Monitron Read the case study`, `link: Missing alt text value Koch Ag & Energy Solutions reduces unplanned downtime with AWS Watch the video`, `link: Missing alt text value Amazon Customer Fulfillment increases productivity and reduces unplanned equipment downtime by 69% using Amazon Monitron Read the case study`, `link: Missing alt text value Fender heads off costly breakdowns to stay competitive Learn more about Fender`, `link: Find out how Amazon Monitron works Explore Amazon Monitron Features`, `link: Talk to a support team Connect with an expert`, `link: Calculate proof-of-concept cost Learn more about pricing`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **industrial equipment condition monitoring:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **purpose-built vibration and temperature sensors:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **gateway-to-cloud telemetry:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **ML-based abnormality detection:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **mobile and web monitoring applications:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Sensor, gateway, cloud ML analysis, alerts and feedback workflow are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Project/site/asset/sensor hierarchy and mobile commissioning are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Mobile/web viewing, CSV export and administration surfaces are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Existing-customer access and historical pricing are documented, but new-customer availability is closed and current replacement parity is not verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-68B3A2D7 — industrial equipment condition monitoring
+### REQ-FUNC-1D327F7A — Sensor, gateway, cloud ML analysis, alerts and feedback workflow are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-monitron-identity`, `ev-amazon-monitron-workflow`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-68B3A2D7`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MONITRON-CAP-68B3A2D7` → `REQ-FUNC-68B3A2D7` → `TEST-FUNC-68B3A2D7`.
+- **Associated test ID:** `TEST-FUNC-1D327F7A`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MONITRON-CAP-1D327F7A` → `REQ-FUNC-1D327F7A` → `TEST-FUNC-1D327F7A`.
 
-### REQ-FUNC-F670D276 — purpose-built vibration and temperature sensors
+### REQ-FUNC-5AA95E98 — Project/site/asset/sensor hierarchy and mobile commissioning are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-monitron-hierarchy`, `ev-amazon-monitron-setup`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-F670D276`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MONITRON-CAP-F670D276` → `REQ-FUNC-F670D276` → `TEST-FUNC-F670D276`.
+- **Associated test ID:** `TEST-FUNC-5AA95E98`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MONITRON-CAP-5AA95E98` → `REQ-FUNC-5AA95E98` → `TEST-FUNC-5AA95E98`.
 
-### REQ-FUNC-9F83ABFE — gateway-to-cloud telemetry
+### REQ-FUNC-852753DF — Mobile/web viewing, CSV export and administration surfaces are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-monitron-platforms`, `ev-amazon-monitron-security`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-9F83ABFE`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MONITRON-CAP-9F83ABFE` → `REQ-FUNC-9F83ABFE` → `TEST-FUNC-9F83ABFE`.
+- **Associated test ID:** `TEST-FUNC-852753DF`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MONITRON-CAP-852753DF` → `REQ-FUNC-852753DF` → `TEST-FUNC-852753DF`.
 
-### REQ-FUNC-83C3045E — ML-based abnormality detection
+### REQ-FUNC-26F17958 — Existing-customer access and historical pricing are documented, but new-customer availability is closed and current replacement parity is not verified.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-monitron-availability`, `ev-amazon-monitron-pricing`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-83C3045E`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MONITRON-CAP-83C3045E` → `REQ-FUNC-83C3045E` → `TEST-FUNC-83C3045E`.
-
-### REQ-FUNC-97F491D8 — mobile and web monitoring applications
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-97F491D8`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MONITRON-CAP-97F491D8` → `REQ-FUNC-97F491D8` → `TEST-FUNC-97F491D8`.
+- **Associated test ID:** `TEST-FUNC-26F17958`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MONITRON-CAP-26F17958` → `REQ-FUNC-26F17958` → `TEST-FUNC-26F17958`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -273,11 +262,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-68B3A2D7** → `REQ-FUNC-68B3A2D7`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-F670D276** → `REQ-FUNC-F670D276`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-9F83ABFE** → `REQ-FUNC-9F83ABFE`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-83C3045E** → `REQ-FUNC-83C3045E`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-97F491D8** → `REQ-FUNC-97F491D8`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-1D327F7A** → `REQ-FUNC-1D327F7A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-5AA95E98** → `REQ-FUNC-5AA95E98`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-852753DF** → `REQ-FUNC-852753DF`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-26F17958** → `REQ-FUNC-26F17958`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -298,7 +286,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-68B3A2D7, REQ-FUNC-F670D276, REQ-FUNC-9F83ABFE, REQ-FUNC-83C3045E, REQ-FUNC-97F491D8
+- **Requirements:** REQ-FUNC-1D327F7A, REQ-FUNC-5AA95E98, REQ-FUNC-852753DF, REQ-FUNC-26F17958
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -308,7 +296,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-68B3A2D7, REQ-FUNC-F670D276, REQ-FUNC-9F83ABFE, REQ-FUNC-83C3045E, REQ-FUNC-97F491D8
+- **Requirements:** REQ-FUNC-1D327F7A, REQ-FUNC-5AA95E98, REQ-FUNC-852753DF, REQ-FUNC-26F17958
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -330,7 +318,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-68B3A2D7, REQ-FUNC-F670D276, REQ-FUNC-9F83ABFE, REQ-FUNC-83C3045E, REQ-FUNC-97F491D8; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-1D327F7A, REQ-FUNC-5AA95E98, REQ-FUNC-852753DF, REQ-FUNC-26F17958; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -360,12 +348,24 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/monitron/) | 2026-11-02T00:00:00Z | Amazon Monitron is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html) | 2026-11-02T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-monitron-identity` | What is Amazon Monitron? — AWS documents purpose-built vibration/temperature sensors, gateways, cloud analysis and applications for equipment monitoring. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html) | 2026-11-04T00:00:00Z | Amazon Monitron is an end-to-end machine-learning condition-monitoring system using sensors, gateways and mobile/web applications. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-monitron-workflow` | The Amazon Monitron workflow — AWS documents the sensor → gateway → cloud ML service → app path and technician feedback. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/deployed-workflow.html) | 2026-11-04T00:00:00Z | Monitron sends sensor data through a gateway to AWS analysis, produces abnormalities and exposes alerts and feedback workflows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-monitron-hierarchy` | Amazon Monitron concepts — The official terminology page documents the resource hierarchy, roles and setup constraints. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/monitron-terminology.html) | 2026-11-04T00:00:00Z | Monitron structures implementations as Project, Site, Asset, Position and Sensor, with gateways transferring telemetry. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-monitron-setup` | Adding assets and installing devices — AWS documents gateway installation, asset creation and sensor pairing through supported mobile devices. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/step-2.html) | 2026-11-04T00:00:00Z | Monitron uses its mobile app to add gateways, assets and paired sensors, with Bluetooth/NFC device setup requirements. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-monitron-platforms` | Choosing your measurement viewing platform — AWS documents the platform differences and export workflow. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/platform-chapter.html) | 2026-11-04T00:00:00Z | Monitron provides mobile and web monitoring surfaces; the web app supports measurement viewing and CSV download while setup capabilities differ. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-monitron-availability` | Maintain access and consider alternatives for Amazon Monitron — AWS states no new features were planned and identifies Tactical Edge, IndustrAI and Factory AI as alternatives to explore. | [link](https://aws.amazon.com/blogs/machine-learning/maintain-access-and-consider-alternatives-for-amazon-monitron/) | 2026-11-04T00:00:00Z | Amazon Monitron closed to new customers on October 31, 2024; existing customers could continue and AWS named partner alternatives. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-monitron-pricing` | Amazon Monitron pricing — AWS documents the availability restriction and historical pay-as-you-go model. | [link](https://aws.amazon.com.cdn.amazon.com/monitron/pricing/) | 2026-11-04T00:00:00Z | The official pricing page states that Monitron is unavailable to new customers and describes its historical device and sensor usage charges. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-monitron-security` | What is Amazon Monitron? — The official guide documents IT manager setup, IAM Identity Center-related access and CloudTrail log visibility. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html) | 2026-11-04T00:00:00Z | Monitron documents project administration, user directory setup and CloudTrail visibility as part of its operating surface. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/monitron/) | 2026-11-04T00:00:00Z | Amazon Monitron is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html) | 2026-11-04T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/monitron/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/blogs/machine-learning/maintain-access-and-consider-alternatives-for-amazon-monitron/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/monitron/pricing/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/deployed-workflow.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/monitron-terminology.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/step-2.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/Monitron/latest/user-guide/platform-chapter.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com.cdn.amazon.com/monitron/pricing/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_999b57da2ace790b50953e0e016b3b8dde47e1c39c3d3631c43e3e0a85e9ca3d` | Amazon Monitron Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/monitron/) | 2026-11-03T03:30:17.135Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon Monitron, button: Play:, button: Machine Learning (ML), button: Easy set up, button: Technician Feedback, button: Create an AWS account, button: Back to top, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Getting Started, link: Resources, link: FAQs, link: Customers, link: Products, link: Machine Learning, link: Missing alt text value Baxter improves operational efficiency by saving 500 machine hours of downtime with Amazon Monitron Read the case study, link: Missing alt text value Koch Ag & Energy Solutions reduces unplanned downtime with AWS Watch the video, link: Missing alt text value Amazon Customer Fulfillment increases productivity and reduces unplanned equipment downtime by 69% using Amazon Monitron Read the case study, link: Missing alt text value Fender heads off costly breakdowns to stay competitive Learn more about Fender, link: Find out how Amazon Monitron works Explore Amazon Monitron Features, link: Talk to a support team Connect with an expert, link: Calculate proof-of-concept cost Learn more about pricing, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -392,67 +392,69 @@ Resume token: `amazon-monitron`. Read dossier, REA report and raw Evidence befor
 ### Dossier notes (not independently verified)
 
 # 1. Executive summary
-Amazon Monitron is AWS's industrial condition-monitoring system. It combines purpose-built vibration and temperature sensors, gateways, cloud ML analysis and mobile/web applications to detect developing equipment faults. AWS stopped offering it to new customers on October 31, 2024; existing customers may continue under the documented access model.
+Amazon Monitron is AWS's industrial condition-monitoring system for existing customers. It combines purpose-built vibration and temperature sensors, gateways, cloud ML analysis and mobile/web applications to detect developing equipment faults. AWS states that the service is no longer available to new customers from October 31, 2024 and does not plan new features; it is not a recommended foundation for a new deployment.
 
 # 2. Product identity and ownership
 - **Official name:** Amazon Monitron
 - **Company:** Amazon Web Services
-- **Lifecycle:** Active for existing customers; unavailable to new customers
+- **Lifecycle:** Existing-customer maintenance; unavailable to new customers
 
 # 3. Product capabilities
 - Capture vibration and temperature data from industrial assets.
 - Transfer telemetry through Ethernet or Wi-Fi gateways.
-- Detect abnormalities with ISO and ML models.
+- Detect abnormalities using vibration ISO standards and ML analysis.
 - Notify technicians and reliability managers through applications.
-- Record feedback, failure modes, causes and corrective actions.
+- Record feedback, failure modes, causes and corrective actions so the service can improve its alerts.
 
 # 4. Technical architecture
-The documented surface includes projects, sites, assets, sensors, gateways, cloud analysis, mobile/web applications and role-based technician access. Hardware lifecycle, telemetry protocol, model behavior and account migration remain pending.
+The documented surface is structured as `Project → Site → Asset → Position → Sensor`, with gateways transmitting sensor telemetry to the AWS service and mobile/web applications presenting measurements and abnormalities. The mobile app is required for initial hardware setup; the web app supports monitoring and data export but not all setup operations. Hardware lifecycle, telemetry protocol, model behavior and account migration remain pending.
 
 # 5. User workflows
-Expected workflows include creating a project, adding assets, commissioning sensors and gateways, reviewing measurements, acknowledging abnormalities and recording corrective actions.
+Expected workflows include creating a project, adding sites and assets, commissioning gateways and sensors, reviewing measurements, acknowledging abnormalities, recording corrective actions and exporting measurements from the web application.
 
 # 6. Pricing and access
-The pricing page states that Monitron is unavailable to new customers as of October 31, 2024. Existing-customer device purchase, service fees, regions and warranty behavior require current verification.
+AWS's pricing page states that Monitron is unavailable to new customers as of October 31, 2024. The AWS announcement says existing customers could continue using the service and that devices would be sold until July 2025 with a five-year warranty; current existing-customer device purchase, service fees, regions and support behavior require verification.
 
 # 7. API and integration surface
-Public documentation focuses on console, mobile and web workflows, devices, gateways and IAM Identity Center. Any API, export or downstream integration must be verified rather than inferred.
+Public documentation focuses on console, mobile and web workflows, devices, gateways, IAM Identity Center, CloudTrail and CSV export. Any additional API, export or downstream integration must be verified rather than inferred.
 
 # 8. Existing open-source alternatives
-AWS recommends partner solutions rather than claiming a single equivalent. Industrial IoT telemetry, vibration analysis and predictive-maintenance stacks may cover subsets, but no alternative is verified here.
+AWS recommends partner solutions rather than claiming a single equivalent, naming Tactical Edge, IndustrAI and Factory AI in its availability notice. These are partner leads, not verified drop-in replacements. Industrial IoT telemetry, vibration analysis and predictive-maintenance stacks may cover subsets.
 
 # 9. Alternative comparison
-Candidate systems may reproduce sensor ingestion, anomaly detection or maintenance workflows separately. Equivalent hardware, cloud service, mobile UX, ML feedback loop and lifecycle support are unverified.
+Candidate systems may reproduce sensor ingestion, anomaly detection or maintenance workflows separately. Equivalent hardware, cloud service, mobile UX, ML feedback loop, device supply and lifecycle support are unverified; no new implementation should use Amazon Monitron branding or AWS assets.
 
 # 10. Missing capabilities and opportunity analysis
-Research must map sensor/gateway protocols, calibration, data retention, alerts, feedback learning, mobile permissions, APIs, export, regions, device supply and migration options.
+Research must map sensor/gateway protocols, calibration, data retention, alerts, feedback learning, mobile permissions, CSV export, APIs, regions, device supply, existing-customer access and migration options.
 
-# 11. RAE implementation strategy
-Use official AWS documentation and the availability notice for historical and existing-customer research. Do not present a new implementation as Amazon Monitron or use AWS assets; build only an independent functional equivalent after a foundation verdict.
+# 11. REA implementation strategy
+Use official AWS documentation, pricing notice and availability announcement for historical and existing-customer research. Do not present a new implementation as Amazon Monitron or use AWS assets; build only an independent functional equivalent after a foundation verdict. Treat AWS partner names as leads requiring separate due diligence.
 
 # 12. Security, privacy, and compliance
 Verify device identity, gateway networking, encryption, IAM Identity Center, role boundaries, industrial telemetry privacy and retention.
 
-# 13. Evidence register
-- https://aws.amazon.com/blogs/machine-learning/maintain-access-and-consider-alternatives-for-amazon-monitron/ — new-customer restriction and alternatives.
-- https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html — system components and workflows.
-- https://docs.aws.amazon.com/Monitron/latest/user-guide/deployed-workflow.html — sensor/gateway/cloud/app flow.
-- https://aws.amazon.com/monitron/pricing/ — availability and pricing notice.
+# 13. Sources and evidence
+- **Availability and lifecycle:** [AWS availability announcement](https://aws.amazon.com/blogs/machine-learning/maintain-access-and-consider-alternatives-for-amazon-monitron/) states that Monitron closed to new customers on October 31, 2024, existing customers could continue, no new features were planned, and names partner alternatives.
+- **Identity and components:** [What is Amazon Monitron?](https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html) documents sensors, gateways, projects, apps, roles and monitoring workflows.
+- **Telemetry flow:** [Deployed workflow](https://docs.aws.amazon.com/Monitron/latest/user-guide/deployed-workflow.html) documents sensor → gateway → AWS ML service → application, alerts and technician feedback.
+- **Hierarchy and setup:** [Monitron concepts](https://docs.aws.amazon.com/Monitron/latest/user-guide/monitron-terminology.html) and [adding assets/installing devices](https://docs.aws.amazon.com/Monitron/latest/user-guide/step-2.html) document Project/Site/Asset/Sensor structure and mobile commissioning.
+- **Viewing and export:** [Measurement viewing platforms](https://docs.aws.amazon.com/Monitron/latest/user-guide/platform-chapter.html) documents mobile/web differences and CSV export.
+- **Pricing:** [Monitron pricing](https://aws.amazon.com.cdn.amazon.com/monitron/pricing/) states the new-customer restriction and historical pricing model.
 
 # 14. Unknowns
-- Complete API/export and telemetry contract.
-- Device lifecycle, firmware, calibration and supported regions.
+- Complete API/export and telemetry contract beyond documented CSV workflows.
+- Device lifecycle, firmware, calibration, supported regions and post-July-2025 supply.
 - ML training/feedback semantics and retention.
-- Verified replacement foundation for new deployments.
+- Verified replacement foundation for new deployments and due diligence on AWS partner leads.
 
 # 15. Research status
-`pending`: identity, public workflow and new-customer restriction are documented from AWS sources, but full REA capture, detailed behavior and alternatives remain unverified.
+Researched with verified public AWS sources. Product identity, sensor/gateway/service/app workflow, resource hierarchy, existing-customer restriction, viewing/export surfaces and partner alternatives are documented. Exact API, hardware lifecycle, current access, pricing, regional behavior and replacement parity remain unknown; opportunity status is not recommended for new deployments.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-monitron` and inspect canonical identity with `npx rae-faang products show amazon-monitron --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-monitron` and inspect canonical identity with `npx rea-faang products show amazon-monitron --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -465,7 +467,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-monitron --out ./amazon-monitron.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-monitron --out ./amazon-monitron-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-monitron --out ./amazon-monitron.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-monitron --out ./amazon-monitron-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -507,10 +509,22 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/monitron/) — Amazon Monitron is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
-- [Official documentation entry](https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
+- [What is Amazon Monitron?](https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html) — Amazon Monitron is an end-to-end machine-learning condition-monitoring system using sensors, gateways and mobile/web applications. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [The Amazon Monitron workflow](https://docs.aws.amazon.com/Monitron/latest/user-guide/deployed-workflow.html) — Monitron sends sensor data through a gateway to AWS analysis, produces abnormalities and exposes alerts and feedback workflows. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Amazon Monitron concepts](https://docs.aws.amazon.com/Monitron/latest/user-guide/monitron-terminology.html) — Monitron structures implementations as Project, Site, Asset, Position and Sensor, with gateways transferring telemetry. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Adding assets and installing devices](https://docs.aws.amazon.com/Monitron/latest/user-guide/step-2.html) — Monitron uses its mobile app to add gateways, assets and paired sensors, with Bluetooth/NFC device setup requirements. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Choosing your measurement viewing platform](https://docs.aws.amazon.com/Monitron/latest/user-guide/platform-chapter.html) — Monitron provides mobile and web monitoring surfaces; the web app supports measurement viewing and CSV download while setup capabilities differ. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Maintain access and consider alternatives for Amazon Monitron](https://aws.amazon.com/blogs/machine-learning/maintain-access-and-consider-alternatives-for-amazon-monitron/) — Amazon Monitron closed to new customers on October 31, 2024; existing customers could continue and AWS named partner alternatives. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Amazon Monitron pricing](https://aws.amazon.com.cdn.amazon.com/monitron/pricing/) — The official pricing page states that Monitron is unavailable to new customers and describes its historical device and sensor usage charges. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [What is Amazon Monitron?](https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html) — Monitron documents project administration, user directory setup and CloudTrail visibility as part of its operating surface. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Official product page](https://aws.amazon.com/monitron/) — Amazon Monitron is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-04T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-04T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/monitron/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://aws.amazon.com/blogs/machine-learning/maintain-access-and-consider-alternatives-for-amazon-monitron/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/Monitron/latest/user-guide/what-is-monitron.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://aws.amazon.com/monitron/pricing/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/Monitron/latest/user-guide/deployed-workflow.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/Monitron/latest/user-guide/monitron-terminology.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/Monitron/latest/user-guide/step-2.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/Monitron/latest/user-guide/platform-chapter.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://aws.amazon.com.cdn.amazon.com/monitron/pricing/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Monitron Public web-surface observation (REA)](https://aws.amazon.com/monitron/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon Monitron, button: Play:, button: Machine Learning (ML), button: Easy set up, button: Technician Feedback, button: Create an AWS account, button: Back to top, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Getting Started, link: Resources, link: FAQs, link: Customers, link: Products, link: Machine Learning, link: Missing alt text value Baxter improves operational efficiency by saving 500 machine hours of downtime with Amazon Monitron Read the case study, link: Missing alt text value Koch Ag & Energy Solutions reduces unplanned downtime with AWS Watch the video, link: Missing alt text value Amazon Customer Fulfillment increases productivity and reduces unplanned equipment downtime by 69% using Amazon Monitron Read the case study, link: Missing alt text value Fender heads off costly breakdowns to stay competitive Learn more about Fender, link: Find out how Amazon Monitron works Explore Amazon Monitron Features, link: Talk to a support team Connect with an expert, link: Calculate proof-of-concept cost Learn more about pricing, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:30:17.135Z).

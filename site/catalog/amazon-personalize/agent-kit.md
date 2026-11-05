@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Personalize (amazon-personal
 
 # Amazon Personalize — implementation skill (`amazon-personalize`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Personalize**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Personalize (amazon-personal
 
 This is the coding-agent skill for **Amazon Personalize** (`amazon-personalize`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-personalize.md` from the catalog page, or run `npx rae-faang amazon-personalize --out ./amazon-personalize.md`, `npx rae-faang skills generate amazon-personalize` or `npx rae-faang build agent-kit amazon-personalize --out ./amazon-personalize-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-personalize.md` from the catalog page, or run `npx rea-faang amazon-personalize --out ./amazon-personalize.md`, `npx rea-faang skills generate amazon-personalize` or `npx rea-faang build agent-kit amazon-personalize --out ./amazon-personalize-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Personalize / `amazon-personalize` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/personalize/](https://aws.amazon.com/personalize/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/personalize/](https://docs.aws.amazon.com/personalize/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-personalize` | `research/companies/amazon_aws/products/amazon-personalize.md` |
+| Research dossier | `npx rea-faang research dossier amazon-personalize` | `research/companies/amazon_aws/products/amazon-personalize.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-personalize.md` (captured 2026-11-03T03:37:47.249Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-personalize.json` (`ev_33d87d7c69f05e9863ddcd8f07374099338125488cbd9fa3cab4a4f408344409`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-personalize --format json` and `npx rae-faang research dossier amazon-personalize` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-personalize --format json` and `npx rea-faang research dossier amazon-personalize` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-PERSONALIZE-CAP-DA64049D`, `AMAZON-PERSONALIZE-CAP-10AB933F`, `AMAZON-PERSONALIZE-CAP-2C0D17AD`, `AMAZON-PERSONALIZE-CAP-FDEB09C2`, `AMAZON-PERSONALIZE-CAP-1240AD87`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-PERSONALIZE-CAP-73C6E51E`, `AMAZON-PERSONALIZE-CAP-7EA711F7`, `AMAZON-PERSONALIZE-CAP-0D38C52C`, `AMAZON-PERSONALIZE-CAP-EFD7B3C8`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-PERSONALIZE-CAP-DA64049D` | managed recommendation models trained on user, item and interaction data | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-PERSONALIZE-CAP-10AB933F` | real-time and batch recommendations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-PERSONALIZE-CAP-2C0D17AD` | personalized ranking, similar items, Trending Now and Next Best Action | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-PERSONALIZE-CAP-FDEB09C2` | contextual recommendations, filters and promotions | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-PERSONALIZE-CAP-1240AD87` | segments, metadata, unstructured text and generative content features | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-PERSONALIZE-CAP-73C6E51E` | Managed datasets, interaction data and recommendation use cases are documented. | VERIFIED | `ev-amazon-personalize-identity`, `ev-amazon-personalize-data` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-PERSONALIZE-CAP-7EA711F7` | Real-time, batch, ranking and user-segment recommendation workflows are documented. | VERIFIED | `ev-amazon-personalize-recommendations` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-PERSONALIZE-CAP-0D38C52C` | Filters, expressions and promotions are documented. | VERIFIED | `ev-amazon-personalize-filters` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-PERSONALIZE-CAP-EFD7B3C8` | RecBole covers recommendation algorithms and evaluation but not AWS managed ingestion, private model lifecycle, inference APIs or operations. | VERIFIED | `ev-amazon-personalize-recbole`, `ev-amazon-personalize-recommendations` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Get started with Amazon Personalize`, `button: Play:`, `button: Deploy hyper-personalized user recommendations across websites, apps, and marketing channels at scale with ultra-low latency`, `button: Set up and start using a fully-managed recommendation engine in hours instead of days`, `button: Deliver intelligent recommendations that dynamically adapt in real-time with precision`, `button: Improve customer segmentation and generate impactful, user-centric content with Amazon Personalize and Amazon Bedrock`, `button: Hyper-personalize and rank streaming recommendations`, `button: Highlight trending retail products in real-time`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Features`, `link: Pricing`, `link: Resources`, `link: FAQs`, `link: Customers`, `link: Partners`, `link: Products`, `link: Machine Learning`, `button: Deliver popular and seasonally-relevant travel content across channels`, `button: Recommend in-app related items, services, and content`, `link: Missing alt text value Lotte Mart increased new product purchases by 1.7x Read the blog`, `link: Missing alt text value Bundesliga increased customer session duration by 17% Watch video`, `link: Missing alt text value Calm increased daily app use by 3.4% Read the blog`, `link: Demo Generate personalized movie recommendations with the Magic Movie Machine Try a free demo`, `link: Guide Personalize a video streaming app, create customized emails, and more Explore the developer guide`, `link: Console Get started with Amazon Personalize in the AWS Management Console Start building now`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **managed recommendation models trained on user, item and interaction data:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **real-time and batch recommendations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **personalized ranking, similar items, Trending Now and Next Best Action:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **contextual recommendations, filters and promotions:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **segments, metadata, unstructured text and generative content features:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Managed datasets, interaction data and recommendation use cases are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Real-time, batch, ranking and user-segment recommendation workflows are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Filters, expressions and promotions are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **RecBole covers recommendation algorithms and evaluation but not AWS managed ingestion, private model lifecycle, inference APIs or operations.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-DA64049D — managed recommendation models trained on user, item and interaction data
+### REQ-FUNC-73C6E51E — Managed datasets, interaction data and recommendation use cases are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-personalize-identity`, `ev-amazon-personalize-data`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-DA64049D`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-PERSONALIZE-CAP-DA64049D` → `REQ-FUNC-DA64049D` → `TEST-FUNC-DA64049D`.
+- **Associated test ID:** `TEST-FUNC-73C6E51E`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-PERSONALIZE-CAP-73C6E51E` → `REQ-FUNC-73C6E51E` → `TEST-FUNC-73C6E51E`.
 
-### REQ-FUNC-10AB933F — real-time and batch recommendations
+### REQ-FUNC-7EA711F7 — Real-time, batch, ranking and user-segment recommendation workflows are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-personalize-recommendations`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-10AB933F`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-PERSONALIZE-CAP-10AB933F` → `REQ-FUNC-10AB933F` → `TEST-FUNC-10AB933F`.
+- **Associated test ID:** `TEST-FUNC-7EA711F7`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-PERSONALIZE-CAP-7EA711F7` → `REQ-FUNC-7EA711F7` → `TEST-FUNC-7EA711F7`.
 
-### REQ-FUNC-2C0D17AD — personalized ranking, similar items, Trending Now and Next Best Action
+### REQ-FUNC-0D38C52C — Filters, expressions and promotions are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-personalize-filters`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-2C0D17AD`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-PERSONALIZE-CAP-2C0D17AD` → `REQ-FUNC-2C0D17AD` → `TEST-FUNC-2C0D17AD`.
+- **Associated test ID:** `TEST-FUNC-0D38C52C`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-PERSONALIZE-CAP-0D38C52C` → `REQ-FUNC-0D38C52C` → `TEST-FUNC-0D38C52C`.
 
-### REQ-FUNC-FDEB09C2 — contextual recommendations, filters and promotions
+### REQ-FUNC-EFD7B3C8 — RecBole covers recommendation algorithms and evaluation but not AWS managed ingestion, private model lifecycle, inference APIs or operations.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-personalize-recbole`, `ev-amazon-personalize-recommendations`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-FDEB09C2`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-PERSONALIZE-CAP-FDEB09C2` → `REQ-FUNC-FDEB09C2` → `TEST-FUNC-FDEB09C2`.
-
-### REQ-FUNC-1240AD87 — segments, metadata, unstructured text and generative content features
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-1240AD87`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-PERSONALIZE-CAP-1240AD87` → `REQ-FUNC-1240AD87` → `TEST-FUNC-1240AD87`.
+- **Associated test ID:** `TEST-FUNC-EFD7B3C8`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-PERSONALIZE-CAP-EFD7B3C8` → `REQ-FUNC-EFD7B3C8` → `TEST-FUNC-EFD7B3C8`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -237,11 +226,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `AMAZON-PERSONALIZE-CAP-DA64049D` — managed recommendation models trained on user, item and interaction data | Not verified against RecBole | None yet; compare with `ev_33d87d7c69f05e9863ddcd8f07374099338125488cbd9fa3cab4a4f408344409` | Candidate code path and tests must be inspected |
-| `AMAZON-PERSONALIZE-CAP-10AB933F` — real-time and batch recommendations | Not verified against RecBole | None yet; compare with `ev_33d87d7c69f05e9863ddcd8f07374099338125488cbd9fa3cab4a4f408344409` | Candidate code path and tests must be inspected |
-| `AMAZON-PERSONALIZE-CAP-2C0D17AD` — personalized ranking, similar items, Trending Now and Next Best Action | Not verified against RecBole | None yet; compare with `ev_33d87d7c69f05e9863ddcd8f07374099338125488cbd9fa3cab4a4f408344409` | Candidate code path and tests must be inspected |
-| `AMAZON-PERSONALIZE-CAP-FDEB09C2` — contextual recommendations, filters and promotions | Not verified against RecBole | None yet; compare with `ev_33d87d7c69f05e9863ddcd8f07374099338125488cbd9fa3cab4a4f408344409` | Candidate code path and tests must be inspected |
-| `AMAZON-PERSONALIZE-CAP-1240AD87` — segments, metadata, unstructured text and generative content features | Not verified against RecBole | None yet; compare with `ev_33d87d7c69f05e9863ddcd8f07374099338125488cbd9fa3cab4a4f408344409` | Candidate code path and tests must be inspected |
+| `AMAZON-PERSONALIZE-CAP-73C6E51E` — Managed datasets, interaction data and recommendation use cases are documented. | Not verified against RecBole | None yet; compare with `ev_33d87d7c69f05e9863ddcd8f07374099338125488cbd9fa3cab4a4f408344409` | Candidate code path and tests must be inspected |
+| `AMAZON-PERSONALIZE-CAP-7EA711F7` — Real-time, batch, ranking and user-segment recommendation workflows are documented. | Not verified against RecBole | None yet; compare with `ev_33d87d7c69f05e9863ddcd8f07374099338125488cbd9fa3cab4a4f408344409` | Candidate code path and tests must be inspected |
+| `AMAZON-PERSONALIZE-CAP-0D38C52C` — Filters, expressions and promotions are documented. | Not verified against RecBole | None yet; compare with `ev_33d87d7c69f05e9863ddcd8f07374099338125488cbd9fa3cab4a4f408344409` | Candidate code path and tests must be inspected |
+| `AMAZON-PERSONALIZE-CAP-EFD7B3C8` — RecBole covers recommendation algorithms and evaluation but not AWS managed ingestion, private model lifecycle, inference APIs or operations. | Not verified against RecBole | None yet; compare with `ev_33d87d7c69f05e9863ddcd8f07374099338125488cbd9fa3cab4a4f408344409` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -288,11 +276,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-DA64049D** → `REQ-FUNC-DA64049D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-10AB933F** → `REQ-FUNC-10AB933F`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-2C0D17AD** → `REQ-FUNC-2C0D17AD`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-FDEB09C2** → `REQ-FUNC-FDEB09C2`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-1240AD87** → `REQ-FUNC-1240AD87`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-73C6E51E** → `REQ-FUNC-73C6E51E`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-7EA711F7** → `REQ-FUNC-7EA711F7`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-0D38C52C** → `REQ-FUNC-0D38C52C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-EFD7B3C8** → `REQ-FUNC-EFD7B3C8`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -313,7 +300,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-DA64049D, REQ-FUNC-10AB933F, REQ-FUNC-2C0D17AD, REQ-FUNC-FDEB09C2, REQ-FUNC-1240AD87
+- **Requirements:** REQ-FUNC-73C6E51E, REQ-FUNC-7EA711F7, REQ-FUNC-0D38C52C, REQ-FUNC-EFD7B3C8
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -323,7 +310,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-DA64049D, REQ-FUNC-10AB933F, REQ-FUNC-2C0D17AD, REQ-FUNC-FDEB09C2, REQ-FUNC-1240AD87
+- **Requirements:** REQ-FUNC-73C6E51E, REQ-FUNC-7EA711F7, REQ-FUNC-0D38C52C, REQ-FUNC-EFD7B3C8
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -345,7 +332,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-DA64049D, REQ-FUNC-10AB933F, REQ-FUNC-2C0D17AD, REQ-FUNC-FDEB09C2, REQ-FUNC-1240AD87; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-73C6E51E, REQ-FUNC-7EA711F7, REQ-FUNC-0D38C52C, REQ-FUNC-EFD7B3C8; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -375,13 +362,18 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/personalize/) | Not recorded | Amazon Personalize is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/personalize/) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
-| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/personalize/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/personalize/faqs/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/personalize/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/personalize/latest/dg/setup.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/general/latest/gr/personalize.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `ev-amazon-personalize-identity` | What is Amazon Personalize? — AWS describes managed recommendation and segmentation use cases using interaction, item and user data. | [link](https://docs.aws.amazon.com/personalize/latest/dg/) | Not recorded | Amazon Personalize is a fully managed machine-learning service that generates item recommendations and user segments from customer data. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-personalize-data` | Importing training data — The official guide documents schema/dataset setup and bulk or individual data import workflows. | [link](https://docs.aws.amazon.com/personalize/latest/dg/import-data.html) | Not recorded | Amazon Personalize accepts bulk CSV imports from S3 and individual or streamed interaction records. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-personalize-recommendations` | Getting recommendations — AWS documents campaigns, recommenders, batch inference and recommendation scoring behavior. | [link](https://docs.aws.amazon.com/personalize/latest/dg/getting-recommendations.html) | Not recorded | Amazon Personalize supports real-time and batch recommendations and user-segment workflows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-personalize-filters` | Filtering recommendations and user segments — The official guide documents filter creation, application, parameters and promotion rules. | [link](https://docs.aws.amazon.com/personalize/latest/dg/filter.html) | Not recorded | Amazon Personalize supports filters, filter expressions and promotions for real-time and batch recommendation workflows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-personalize-recbole` | RecBole — The official repository documents recommendation algorithms, training and evaluation and states the MIT license. | [link](https://github.com/RUCAIBox/RecBole) | Not recorded | RecBole is an MIT-licensed open-source recommendation library. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/personalize/) | 2026-11-03T00:00:00Z | Amazon Personalize is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/personalize/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/personalize/latest/dg/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/personalize/latest/dg/import-data.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/personalize/latest/dg/getting-recommendations.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/personalize/latest/dg/filter.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://github.com/RUCAIBox/RecBole) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_33d87d7c69f05e9863ddcd8f07374099338125488cbd9fa3cab4a4f408344409` | Amazon Personalize Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/personalize/) | 2026-11-03T03:37:47.249Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon Personalize, button: Play:, button: Deploy hyper-personalized user recommendations across websites, apps, and marketing channels at scale with ultra-low latency, button: Set up and start using a fully-managed recommendation engine in hours instead of days, button: Deliver intelligent recommendations that dynamically adapt in real-time with precision, button: Improve customer segmentation and generate impactful, user-centric content with Amazon Personalize and Amazon Bedrock, button: Hyper-personalize and rank streaming recommendations, button: Highlight trending retail products in real-time, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Resources, link: FAQs, link: Customers, link: Partners, link: Products, link: Machine Learning, button: Deliver popular and seasonally-relevant travel content across channels, button: Recommend in-app related items, services, and content, link: Missing alt text value Lotte Mart increased new product purchases by 1.7x Read the blog, link: Missing alt text value Bundesliga increased customer session duration by 17% Watch video, link: Missing alt text value Calm increased daily app use by 3.4% Read the blog, link: Demo Generate personalized movie recommendations with the Magic Movie Machine Try a free demo, link: Guide Personalize a video streaming app, create customized emails, and more Explore the developer guide, link: Console Get started with Amazon Personalize in the AWS Management Console Start building now, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -454,7 +446,7 @@ An independent equivalent should compare data schemas, event ingestion, model tr
 
 Research must map dataset schemas, recipes, solution/recommender state transitions, campaign deployment, event tracking, inference contracts, batch output, filters, promotions, contextual metadata, text extraction, quotas, retries and model refresh behavior.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, API references and authorized test data. Capture data import, training, deployment, inference and failure paths. Use RecBole or another reviewed foundation only after recording a foundation verdict; implement an independent service in the consumer project without copying AWS code, branding or protected assets.
 
@@ -462,14 +454,13 @@ Use official AWS documentation, API references and authorized test data. Capture
 
 Verify IAM roles, encryption in transit and at rest, KMS, regional data processing, customer model isolation, event payload minimization, retention, audit logging and access to recommendation outputs.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/personalize/ — official product context.
-- https://aws.amazon.com/documentation-overview/personalize/ — documented capabilities and use cases.
-- https://aws.amazon.com/personalize/faqs/ — data, workflow and privacy details.
-- https://docs.aws.amazon.com/personalize/ — official documentation entry point.
-- https://docs.aws.amazon.com/personalize/latest/dg/setup.html — access, regions, CLI and SDK setup.
-- https://github.com/RUCAIBox/RecBole — open-source alternative candidate and MIT license.
+- [What is Amazon Personalize?](https://docs.aws.amazon.com/personalize/latest/dg/) — official identity, use cases and managed recommendation model.
+- [Importing training data](https://docs.aws.amazon.com/personalize/latest/dg/import-data.html) — official bulk and individual data-import workflows.
+- [Getting recommendations](https://docs.aws.amazon.com/personalize/latest/dg/getting-recommendations.html) — official real-time, batch and scoring workflows.
+- [Filtering recommendations](https://docs.aws.amazon.com/personalize/latest/dg/filter.html) — official filters, promotions and recommendation controls.
+- [RecBole](https://github.com/RUCAIBox/RecBole) — open-source recommendation foundation and MIT license.
 
 # 14. Unknowns
 
@@ -480,13 +471,13 @@ Verify IAM roles, encryption in transit and at rest, KMS, regional data processi
 
 # 15. Research status
 
-`pending`: identity, public workflow and a partial open-source foundation are documented from official AWS and project sources, but full REA capture, detailed behavior, limits, security and implementation equivalence remain unverified.
+`researched`: identity, data import, recommendation, filtering and batch/real-time capabilities were verified from official AWS documentation. Pricing, quotas, account-specific behavior and full service-plane equivalence to RecBole remain outside this pass.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-personalize` and inspect canonical identity with `npx rae-faang products show amazon-personalize --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-personalize` and inspect canonical identity with `npx rea-faang products show amazon-personalize --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -499,7 +490,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-personalize --out ./amazon-personalize.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-personalize --out ./amazon-personalize-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-personalize --out ./amazon-personalize.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-personalize --out ./amazon-personalize-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -541,11 +532,16 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/personalize/) — Amazon Personalize is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://docs.aws.amazon.com/personalize/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://aws.amazon.com/personalize/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://aws.amazon.com/personalize/faqs/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/personalize/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/personalize/latest/dg/setup.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/general/latest/gr/personalize.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [What is Amazon Personalize?](https://docs.aws.amazon.com/personalize/latest/dg/) — Amazon Personalize is a fully managed machine-learning service that generates item recommendations and user segments from customer data. (VERIFIED; accessed Not recorded).
+- [Importing training data](https://docs.aws.amazon.com/personalize/latest/dg/import-data.html) — Amazon Personalize accepts bulk CSV imports from S3 and individual or streamed interaction records. (VERIFIED; accessed Not recorded).
+- [Getting recommendations](https://docs.aws.amazon.com/personalize/latest/dg/getting-recommendations.html) — Amazon Personalize supports real-time and batch recommendations and user-segment workflows. (VERIFIED; accessed Not recorded).
+- [Filtering recommendations and user segments](https://docs.aws.amazon.com/personalize/latest/dg/filter.html) — Amazon Personalize supports filters, filter expressions and promotions for real-time and batch recommendation workflows. (VERIFIED; accessed Not recorded).
+- [RecBole](https://github.com/RUCAIBox/RecBole) — RecBole is an MIT-licensed open-source recommendation library. (VERIFIED; accessed Not recorded).
+- [Official product page](https://aws.amazon.com/personalize/) — Amazon Personalize is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/personalize/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://docs.aws.amazon.com/personalize/latest/dg/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/personalize/latest/dg/import-data.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/personalize/latest/dg/getting-recommendations.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/personalize/latest/dg/filter.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://github.com/RUCAIBox/RecBole) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Personalize Public web-surface observation (REA)](https://aws.amazon.com/personalize/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon Personalize, button: Play:, button: Deploy hyper-personalized user recommendations across websites, apps, and marketing channels at scale with ultra-low latency, button: Set up and start using a fully-managed recommendation engine in hours instead of days, button: Deliver intelligent recommendations that dynamically adapt in real-time with precision, button: Improve customer segmentation and generate impactful, user-centric content with Amazon Personalize and Amazon Bedrock, button: Hyper-personalize and rank streaming recommendations, button: Highlight trending retail products in real-time, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Resources, link: FAQs, link: Customers, link: Partners, link: Products, link: Machine Learning, button: Deliver popular and seasonally-relevant travel content across channels, button: Recommend in-app related items, services, and content, link: Missing alt text value Lotte Mart increased new product purchases by 1.7x Read the blog, link: Missing alt text value Bundesliga increased customer session duration by 17% Watch video, link: Missing alt text value Calm increased daily app use by 3.4% Read the blog, link: Demo Generate personalized movie recommendations with the Magic Movie Machine Try a free demo, link: Guide Personalize a video streaming app, create customized emails, and more Explore the developer guide, link: Console Get started with Amazon Personalize in the AWS Management Console Start building now, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:37:47.249Z).

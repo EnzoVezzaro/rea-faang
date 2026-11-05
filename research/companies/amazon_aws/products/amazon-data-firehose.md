@@ -80,7 +80,7 @@ Open-source streaming and delivery tools can cover parts of Firehose, but no equ
 
 REA should map ingestion APIs, buffering, retries, transformations, format conversion, dynamic partitioning, each destination, encryption, observability and failure recovery separately.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public AWS documentation, API references and permitted test data only. A clean-room equivalent should compose independently licensed streaming and connector components and must not copy AWS implementation or proprietary assets.
 

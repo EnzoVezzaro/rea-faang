@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Neptune (amazon-neptune); in
 
 # Amazon Neptune — implementation skill (`amazon-neptune`)
 
-> **Research status:** pending. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Neptune**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Neptune (amazon-neptune); in
 
 This is the coding-agent skill for **Amazon Neptune** (`amazon-neptune`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-neptune.md` from the catalog page, or run `npx rae-faang amazon-neptune --out ./amazon-neptune.md`, `npx rae-faang skills generate amazon-neptune` or `npx rae-faang build agent-kit amazon-neptune --out ./amazon-neptune-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-neptune.md` from the catalog page, or run `npx rea-faang amazon-neptune --out ./amazon-neptune.md`, `npx rea-faang skills generate amazon-neptune` or `npx rea-faang build agent-kit amazon-neptune --out ./amazon-neptune-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Neptune / `amazon-neptune` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/neptune/](https://aws.amazon.com/neptune/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/neptune/](https://docs.aws.amazon.com/neptune/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-neptune` | `research/companies/amazon_aws/products/amazon-neptune.md` |
+| Research dossier | `npx rea-faang research dossier amazon-neptune` | `research/companies/amazon_aws/products/amazon-neptune.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-neptune.md` (captured 2026-11-03T03:31:48.846Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-neptune.json` (`ev_02bc5ac7f8ab5227f446b38c5ca8ce8d2b8b89fb53de8982606b6b50499ee46f`) | Catalog evidence |
 | Alternative candidates | None recorded — this is a research gap | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-neptune --format json` and `npx rae-faang research dossier amazon-neptune` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-neptune --format json` and `npx rea-faang research dossier amazon-neptune` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-NEPTUNE-CAP-8A9D3839`, `AMAZON-NEPTUNE-CAP-6FDE2A58`, `AMAZON-NEPTUNE-CAP-8CEB2DA1`, `AMAZON-NEPTUNE-CAP-787F346C`, `AMAZON-NEPTUNE-CAP-5F5FFA95`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-NEPTUNE-CAP-114DFAFE`, `AMAZON-NEPTUNE-CAP-E90B905B`, `AMAZON-NEPTUNE-CAP-7D145FCD`, `AMAZON-NEPTUNE-CAP-B603E982`, `AMAZON-NEPTUNE-CAP-CE1A10D2`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,21 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-NEPTUNE-CAP-8A9D3839` | managed property-graph and RDF database | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-NEPTUNE-CAP-6FDE2A58` | Gremlin, openCypher and SPARQL queries | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-NEPTUNE-CAP-8CEB2DA1` | Neptune Database clusters and read replicas | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-NEPTUNE-CAP-787F346C` | Neptune Analytics in-memory graph analysis | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-NEPTUNE-CAP-5F5FFA95` | backups, multi-AZ replication, security and APIs | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-NEPTUNE-CAP-114DFAFE` | Managed property-graph and RDF surfaces with documented Database operations. | VERIFIED | `ev-amazon-neptune-identity`, `ev-amazon-neptune-database` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-NEPTUNE-CAP-E90B905B` | Data APIs and S3/query-based loading paths are documented. | VERIFIED | `ev-amazon-neptune-data-api`, `ev-amazon-neptune-loading` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-NEPTUNE-CAP-7D145FCD` | Neptune Analytics memory processing, vector search and graph algorithms are documented. | VERIFIED | `ev-amazon-neptune-analytics`, `ev-amazon-neptune-algorithms` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-NEPTUNE-CAP-B603E982` | VPC/KMS security and encrypted resource behavior are documented. | VERIFIED | `ev-amazon-neptune-security` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-NEPTUNE-CAP-CE1A10D2` | TinkerPop and JanusGraph cover portions of property-graph workflows but not AWS-managed operations, RDF/SPARQL or Neptune Analytics parity. | VERIFIED | `ev-amazon-neptune-tinkerpop`, `ev-amazon-neptune-janusgraph` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Resources submenu`, `button: Get started with Neptune`, `button: Connect with an AWS specialist`, `button: Play:`, `button: Close`, `button: Graphs for AI`, `button: Customer 360`, `button: Fraud detection`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Features`, `link: Pricing`, `link: FAQs`, `link: Customers`, `link: Products`, `link: Databases`, `link: Insights in seconds Easily analyze tens of billions of relationships across structured and unstructured data within seconds using built-in algorithms, and perform vector search with your graph for gen AI apps. Learn more`, `link: Trusted AI Improve the accuracy and explainability of your generative AI apps with automated GraphRAG, and integrations with Strands AI SDK and popular memory tools for agents. Learn more`, `link: Performance and scalability Scale your graphs with unlimited vertices and edges, 100k+ queries per second, up to 128 TiB storage per cluster, and up to 15 read replicas per cluster. Learn more`, `link: Enterprise security and reliability Unlock best-in-class security and reliability synonymous with AWS, including ACID transactions, automated backups, cross-Region replication, PITR, encryption at transit and at rest, granular resource permissions, and more. Learn more`, `link: Cost effective Reduce your total cost of ownership with no upfront commitments and no hidden costs, pay-for-use billing, and transparent support billing. Learn more`, `link: Explore Workshops`, `button: Cybersecurity`, `link: Missing alt text value How Smartsheet enhances recommendations using Amazon Neptune and Knowledge Graphs Read the blog`, `link: Missing alt text value Protecting and governing sensitive data in the cloud on AWS with ALTR Read the case study`, `link: Missing alt text value Building an agentic AI solution using Amazon Neptune with Trend Micro Read the case study`, `link: Wiz logo in blue text with a star symbol Reimagining cloud security using Amazon Neptune graph database with Wiz Read the case study`, `link: Resources Learn with hands-on training Get started with Neptune`, `link: Documentation Dive deep on Neptune Read the documentation`, `link: Free tier Sign up for a free account Try for free`, `link: Console Start building in the console Sign in`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **managed property-graph and RDF database:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Gremlin, openCypher and SPARQL queries:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Neptune Database clusters and read replicas:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Neptune Analytics in-memory graph analysis:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **backups, multi-AZ replication, security and APIs:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Managed property-graph and RDF surfaces with documented Database operations.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Data APIs and S3/query-based loading paths are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Neptune Analytics memory processing, vector search and graph algorithms are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **VPC/KMS security and encrypted resource behavior are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **TinkerPop and JanusGraph cover portions of property-graph workflows but not AWS-managed operations, RDF/SPARQL or Neptune Analytics parity.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +149,50 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-8A9D3839 — managed property-graph and RDF database
+### REQ-FUNC-114DFAFE — Managed property-graph and RDF surfaces with documented Database operations.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-neptune-identity`, `ev-amazon-neptune-database`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-8A9D3839`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-NEPTUNE-CAP-8A9D3839` → `REQ-FUNC-8A9D3839` → `TEST-FUNC-8A9D3839`.
+- **Associated test ID:** `TEST-FUNC-114DFAFE`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-NEPTUNE-CAP-114DFAFE` → `REQ-FUNC-114DFAFE` → `TEST-FUNC-114DFAFE`.
 
-### REQ-FUNC-6FDE2A58 — Gremlin, openCypher and SPARQL queries
+### REQ-FUNC-E90B905B — Data APIs and S3/query-based loading paths are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-neptune-data-api`, `ev-amazon-neptune-loading`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-6FDE2A58`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-NEPTUNE-CAP-6FDE2A58` → `REQ-FUNC-6FDE2A58` → `TEST-FUNC-6FDE2A58`.
+- **Associated test ID:** `TEST-FUNC-E90B905B`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-NEPTUNE-CAP-E90B905B` → `REQ-FUNC-E90B905B` → `TEST-FUNC-E90B905B`.
 
-### REQ-FUNC-8CEB2DA1 — Neptune Database clusters and read replicas
+### REQ-FUNC-7D145FCD — Neptune Analytics memory processing, vector search and graph algorithms are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-neptune-analytics`, `ev-amazon-neptune-algorithms`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-8CEB2DA1`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-NEPTUNE-CAP-8CEB2DA1` → `REQ-FUNC-8CEB2DA1` → `TEST-FUNC-8CEB2DA1`.
+- **Associated test ID:** `TEST-FUNC-7D145FCD`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-NEPTUNE-CAP-7D145FCD` → `REQ-FUNC-7D145FCD` → `TEST-FUNC-7D145FCD`.
 
-### REQ-FUNC-787F346C — Neptune Analytics in-memory graph analysis
+### REQ-FUNC-B603E982 — VPC/KMS security and encrypted resource behavior are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-neptune-security`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-787F346C`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-NEPTUNE-CAP-787F346C` → `REQ-FUNC-787F346C` → `TEST-FUNC-787F346C`.
+- **Associated test ID:** `TEST-FUNC-B603E982`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-NEPTUNE-CAP-B603E982` → `REQ-FUNC-B603E982` → `TEST-FUNC-B603E982`.
 
-### REQ-FUNC-5F5FFA95 — backups, multi-AZ replication, security and APIs
+### REQ-FUNC-CE1A10D2 — TinkerPop and JanusGraph cover portions of property-graph workflows but not AWS-managed operations, RDF/SPARQL or Neptune Analytics parity.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-neptune-tinkerpop`, `ev-amazon-neptune-janusgraph`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-5F5FFA95`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-NEPTUNE-CAP-5F5FFA95` → `REQ-FUNC-5F5FFA95` → `TEST-FUNC-5F5FFA95`.
+- **Associated test ID:** `TEST-FUNC-CE1A10D2`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-NEPTUNE-CAP-CE1A10D2` → `REQ-FUNC-CE1A10D2` → `TEST-FUNC-CE1A10D2`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -273,11 +273,11 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-8A9D3839** → `REQ-FUNC-8A9D3839`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-6FDE2A58** → `REQ-FUNC-6FDE2A58`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-8CEB2DA1** → `REQ-FUNC-8CEB2DA1`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-787F346C** → `REQ-FUNC-787F346C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-5F5FFA95** → `REQ-FUNC-5F5FFA95`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-114DFAFE** → `REQ-FUNC-114DFAFE`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-E90B905B** → `REQ-FUNC-E90B905B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-7D145FCD** → `REQ-FUNC-7D145FCD`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-B603E982** → `REQ-FUNC-B603E982`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-CE1A10D2** → `REQ-FUNC-CE1A10D2`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -298,7 +298,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-8A9D3839, REQ-FUNC-6FDE2A58, REQ-FUNC-8CEB2DA1, REQ-FUNC-787F346C, REQ-FUNC-5F5FFA95
+- **Requirements:** REQ-FUNC-114DFAFE, REQ-FUNC-E90B905B, REQ-FUNC-7D145FCD, REQ-FUNC-B603E982, REQ-FUNC-CE1A10D2
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -308,7 +308,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-8A9D3839, REQ-FUNC-6FDE2A58, REQ-FUNC-8CEB2DA1, REQ-FUNC-787F346C, REQ-FUNC-5F5FFA95
+- **Requirements:** REQ-FUNC-114DFAFE, REQ-FUNC-E90B905B, REQ-FUNC-7D145FCD, REQ-FUNC-B603E982, REQ-FUNC-CE1A10D2
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -330,7 +330,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-8A9D3839, REQ-FUNC-6FDE2A58, REQ-FUNC-8CEB2DA1, REQ-FUNC-787F346C, REQ-FUNC-5F5FFA95; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-114DFAFE, REQ-FUNC-E90B905B, REQ-FUNC-7D145FCD, REQ-FUNC-B603E982, REQ-FUNC-CE1A10D2; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -360,12 +360,29 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/neptune/) | 2026-11-02T00:00:00Z | Amazon Neptune is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/neptune/) | 2026-11-02T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-neptune-identity` | What Is Amazon Neptune? — AWS documents Gremlin and openCypher for property graphs and SPARQL for RDF graphs, with managed operations and security. | [link](https://docs.aws.amazon.com/neptune/latest/userguide/) | 2026-11-04T00:00:00Z | Amazon Neptune is a managed graph platform supporting property graphs and RDF graphs. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-neptune-database` | Amazon Neptune User Guide — AWS documents SSD-backed storage, read replicas, automated backups and failover behavior for Neptune DB clusters. | [link](https://docs.aws.amazon.com/neptune/latest/userguide/) | 2026-11-04T00:00:00Z | Neptune Database provides managed graph clusters with storage, replicas, backups and failover. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-neptune-data-api` | Amazon Neptune Data API Reference — The AWS data API reference documents query operations, data access and SDK support for Gremlin and openCypher. | [link](https://docs.aws.amazon.com/neptune/latest/userguide/data-api.html) | 2026-11-04T00:00:00Z | Neptune exposes documented data APIs for loading, querying and maintaining graph data. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-neptune-loading` | Loading data into Amazon Neptune — AWS documents S3 bulk loading for Gremlin and RDF data, query-based loading and Database Migration Service workflows. | [link](https://docs.aws.amazon.com/neptune/latest/userguide/load-data.html) | 2026-11-04T00:00:00Z | Neptune supports query-based loading, bulk loading from Amazon S3 and AWS DMS loading paths. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-neptune-security` | Encrypting Neptune resources at rest — AWS documents KMS key management and encryption of storage, logs, backups and snapshots for encrypted Neptune clusters. | [link](https://docs.aws.amazon.com/neptune/latest/userguide/encrypt.html) | 2026-11-04T00:00:00Z | Neptune supports KMS-managed encryption at rest for encrypted clusters and related backups and snapshots. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-neptune-analytics` | What is Neptune Analytics? — AWS distinguishes Neptune Analytics from Neptune Database and documents in-memory graph processing, vector search and graph loading. | [link](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/what-is-neptune-analytics.html) | 2026-11-04T00:00:00Z | Neptune Analytics is a memory-optimized graph analytics service with low-latency queries and vector search. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-neptune-algorithms` | Neptune Analytics algorithms — AWS documents more than 25 algorithms and variants exposed through openCypher procedures and SDK/CLI query operations. | [link](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/algorithms.html) | 2026-11-04T00:00:00Z | Neptune Analytics documents optimized graph algorithms across pathfinding, centrality, similarity, community detection and vector similarity. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-neptune-tinkerpop` | Apache TinkerPop — The official project page describes TinkerPop for graph databases and analytic systems and identifies Gremlin as its traversal language. | [link](https://tinkerpop.apache.org/) | 2026-11-04T00:00:00Z | Apache TinkerPop is a graph-computing framework and Gremlin ecosystem that can provide a partial foundation for property-graph work. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-neptune-janusgraph` | JanusGraph architectural overview — The official documentation describes storage and indexing adapters and interaction through Gremlin Server. | [link](https://docs.janusgraph.org/master/getting-started/architecture/) | 2026-11-04T00:00:00Z | JanusGraph is a modular graph engine with storage, indexing and Gremlin Server integration that covers part of Neptune Database workflows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/neptune/) | 2026-11-04T00:00:00Z | Amazon Neptune is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/neptune/) | 2026-11-04T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/neptune/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/neptune/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/neptune/latest/userguide/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-setup.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/neptune/latest/userguide/data-api.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/neptune/latest/userguide/load-data.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/neptune/latest/userguide/encrypt.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/what-is-neptune-analytics.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-9` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/neptune-analytics-features.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-10` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/algorithms.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-11` | Additional official source lead — Claim/section not recorded. | [link](https://tinkerpop.apache.org/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-12` | Additional official source lead — Claim/section not recorded. | [link](https://docs.janusgraph.org/master/getting-started/architecture/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_02bc5ac7f8ab5227f446b38c5ca8ce8d2b8b89fb53de8982606b6b50499ee46f` | Amazon Neptune Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/neptune/) | 2026-11-03T03:31:48.846Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Resources submenu, button: Get started with Neptune, button: Connect with an AWS specialist, button: Play:, button: Close, button: Graphs for AI, button: Customer 360, button: Fraud detection, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: FAQs, link: Customers, link: Products, link: Databases, link: Insights in seconds Easily analyze tens of billions of relationships across structured and unstructured data within seconds using built-in algorithms, and perform vector search with your graph for gen AI apps. Learn more, link: Trusted AI Improve the accuracy and explainability of your generative AI apps with automated GraphRAG, and integrations with Strands AI SDK and popular memory tools for agents. Learn more, link: Performance and scalability Scale your graphs with unlimited vertices and edges, 100k+ queries per second, up to 128 TiB storage per cluster, and up to 15 read replicas per cluster. Learn more, link: Enterprise security and reliability Unlock best-in-class security and reliability synonymous with AWS, including ACID transactions, automated backups, cross-Region replication, PITR, encryption at transit and at rest, granular resource permissions, and more. Learn more, link: Cost effective Reduce your total cost of ownership with no upfront commitments and no hidden costs, pay-for-use billing, and transparent support billing. Learn more, link: Explore Workshops, button: Cybersecurity, link: Missing alt text value How Smartsheet enhances recommendations using Amazon Neptune and Knowledge Graphs Read the blog, link: Missing alt text value Protecting and governing sensitive data in the cloud on AWS with ALTR Read the case study, link: Missing alt text value Building an agentic AI solution using Amazon Neptune with Trend Micro Read the case study, link: Wiz logo in blue text with a star symbol Reimagining cloud security using Amazon Neptune graph database with Wiz Read the case study, link: Resources Learn with hands-on training Get started with Neptune, link: Documentation Dive deep on Neptune Read the documentation, link: Free tier Sign up for a free account Try for free, link: Console Start building in the console Sign in, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -392,7 +409,7 @@ Resume token: `amazon-neptune`. Read dossier, REA report and raw Evidence before
 ### Dossier notes (not independently verified)
 
 # 1. Executive summary
-Amazon Neptune is AWS's managed graph database service for highly connected datasets. It supports property-graph queries with Gremlin and openCypher, RDF queries with SPARQL, and separate Neptune Database and Neptune Analytics capabilities.
+Amazon Neptune is AWS's managed graph platform for highly connected datasets. The official surface separates Neptune Database, a transactional managed graph database, from Neptune Analytics, a memory-optimized graph analytics service with openCypher procedures and vector search. This dossier records the two surfaces separately and does not claim that one is a drop-in replacement for the other.
 
 # 2. Product identity and ownership
 - **Official name:** Amazon Neptune
@@ -403,57 +420,59 @@ Amazon Neptune is AWS's managed graph database service for highly connected data
 # 3. Product capabilities
 - Store and query property-graph and RDF data.
 - Use Gremlin, openCypher and SPARQL.
-- Run managed Neptune Database clusters with replicas and backups.
-- Analyze graph datasets with Neptune Analytics algorithms and low-latency queries.
-- Use VPC, KMS, multi-AZ replication, APIs and data loading tools.
+- Run managed Neptune Database clusters with replicas, automated backups and failover.
+- Load graph data from Amazon S3 with the Neptune bulk loader or query-based loaders.
+- Analyze graph datasets with Neptune Analytics algorithms, low-latency queries and vector search.
+- Use VPC isolation, KMS encryption, APIs, SDKs and AWS CLI surfaces.
 
 # 4. Technical architecture
-Public documentation describes cluster instances, shared storage, replicas, backups, loaders, query endpoints, Neptune Analytics, APIs, networking and security. Exact engine versions, limits, algorithm coverage and cross-region behavior remain pending.
+Public documentation describes Neptune Database clusters, SSD-backed virtualized storage, replicas, backups, loaders, query endpoints, Neptune Analytics graphs, APIs, networking and security. Neptune Database exposes Gremlin and openCypher for property graphs and SPARQL for RDF; Neptune Analytics uses an in-memory graph engine and openCypher procedures. Exact engine versions, limits, algorithm coverage and cross-region behavior remain pending.
 
 # 5. User workflows
-Expected workflows include creating a database or analytics resource, loading graph data, querying, running algorithms, monitoring, scaling, backing up and restoring, and deleting resources.
+Expected workflows include creating a database cluster or analytics graph, loading graph data from S3 or another Neptune surface, querying with Gremlin/openCypher/SPARQL as applicable, running analytics algorithms, monitoring, scaling, backing up, restoring and deleting resources.
 
 # 6. Pricing and access
-Neptune Database and Neptune Analytics have distinct usage and resource pricing. Current instance, storage, query, analytics and free-tier details must be verified before implementation or cost claims.
+Neptune Database and Neptune Analytics have distinct resource and usage models. Current instance, storage, query, analytics, capacity-unit and free-tier details must be verified before implementation or cost claims.
 
 # 7. API and integration surface
-Neptune management and data APIs, AWS CLI/SDKs, Gremlin/openCypher/SPARQL endpoints, bulk loaders, CloudWatch, VPC and KMS integrations.
+Neptune management and data APIs, AWS CLI/SDKs, Gremlin/openCypher/SPARQL endpoints, Neptune bulk loader, S3, CloudWatch, VPC and KMS integrations. Neptune Analytics also documents graph query, query-status, cancellation, summary and algorithm operations.
 
 # 8. Existing open-source alternatives
 Apache TinkerPop, JanusGraph, Neo4j Community, Apache Jena and other graph systems may cover subsets. No full equivalence is claimed.
 
 # 9. Alternative comparison
-Open-source graph stacks may provide query languages or storage, but managed multi-AZ storage, backups, APIs, security, analytics algorithms and AWS operations differ and require evidence.
+Apache TinkerPop provides the Gremlin graph-computing framework, while JanusGraph provides a modular graph engine with storage and indexing adapters. They cover portions of Neptune's property-graph workflows, but do not reproduce Neptune's managed multi-AZ storage, backups, APIs, security, RDF/SPARQL surface, Neptune Analytics memory service or AWS operations.
 
 # 10. Missing capabilities and opportunity analysis
-Research must map data models, query semantics, loaders, algorithms, indexes, transactions, replicas, backups, limits, versions, security and migration behavior.
+Research must map data models, query semantics, loaders, algorithms, indexes, transactions, replicas, backups, limits, versions, security, vector search and migration behavior for Database and Analytics independently.
 
-# 11. RAE implementation strategy
-Use official AWS and upstream graph documentation and authorized API observation. Capture Database and Analytics contracts separately before selecting a foundation or implementing an independent equivalent.
+# 11. REA implementation strategy
+Use official AWS and upstream graph documentation and authorized API observation. Capture Database and Analytics contracts separately before selecting TinkerPop or JanusGraph as a partial foundation or implementing an independent equivalent. Preserve the distinction between a graph database and an in-memory analytics engine.
 
 # 12. Security, privacy, and compliance
 Verify VPC isolation, IAM, KMS, encryption, access control, backups, network endpoints, logging and data retention.
 
-# 13. Evidence register
-- https://aws.amazon.com/neptune/ — official product context.
-- https://docs.aws.amazon.com/neptune/ — Database and Analytics documentation.
-- https://docs.aws.amazon.com/neptune/latest/userguide/ — capabilities and security.
-- https://docs.aws.amazon.com/neptune/latest/userguide/neptune-setup.html — setup and architecture.
+# 13. Sources and evidence
+- **Product and Database identity:** [Amazon Neptune User Guide](https://docs.aws.amazon.com/neptune/latest/userguide/) documents managed graph APIs, property graphs, RDF/SPARQL, VPC isolation, KMS encryption and managed operations.
+- **Data API and loading:** [Neptune Data API](https://docs.aws.amazon.com/neptune/latest/userguide/data-api.html), [loading data](https://docs.aws.amazon.com/neptune/latest/userguide/load-data.html) and [bulk loader](https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load.html) document query/API and ingestion surfaces.
+- **Analytics:** [What is Neptune Analytics?](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/what-is-neptune-analytics.html), [features](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/neptune-analytics-features.html) and [algorithms](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/algorithms.html) document the memory-optimized analytics service, graph loading, vector search and algorithm categories.
+- **Security:** [Neptune encryption](https://docs.aws.amazon.com/neptune/latest/userguide/encrypt.html) documents KMS-based encryption at rest for clusters, backups and snapshots.
+- **Alternatives:** [Apache TinkerPop](https://tinkerpop.apache.org/) documents the Gremlin graph-computing framework; [JanusGraph architecture](https://docs.janusgraph.org/master/getting-started/architecture/) documents its modular storage and indexing model. Both are partial foundations, not equivalent managed services.
 
 # 14. Unknowns
-- Complete API/CLI/SDK and query matrix.
-- Exact engine versions, limits and algorithm coverage.
-- Analytics, backup, replication and migration semantics.
+- Complete API/CLI/SDK and query matrix for Database and Analytics.
+- Exact engine versions, limits, pricing and algorithm coverage.
+- Analytics, backup, replication, vector-search and migration semantics under representative workloads.
 - Verified independent foundation and compatibility scope.
 
 # 15. Research status
-`pending`: identity and public capability surface are documented from official AWS sources, but full REA capture, detailed behavior, limits and alternatives remain unverified.
+Researched with verified public AWS and upstream sources. Product identity, Database/Analytics distinction, query languages, loading, security, API surface and Analytics algorithms are documented. Exact pricing, quotas, versions, regional behavior and full alternative parity remain unknown and are not asserted.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-neptune` and inspect canonical identity with `npx rae-faang products show amazon-neptune --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-neptune` and inspect canonical identity with `npx rea-faang products show amazon-neptune --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -466,7 +485,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-neptune --out ./amazon-neptune.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-neptune --out ./amazon-neptune-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-neptune --out ./amazon-neptune.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-neptune --out ./amazon-neptune-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -508,10 +527,27 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/neptune/) — Amazon Neptune is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
-- [Official documentation entry](https://docs.aws.amazon.com/neptune/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
+- [What Is Amazon Neptune?](https://docs.aws.amazon.com/neptune/latest/userguide/) — Amazon Neptune is a managed graph platform supporting property graphs and RDF graphs. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Amazon Neptune User Guide](https://docs.aws.amazon.com/neptune/latest/userguide/) — Neptune Database provides managed graph clusters with storage, replicas, backups and failover. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Amazon Neptune Data API Reference](https://docs.aws.amazon.com/neptune/latest/userguide/data-api.html) — Neptune exposes documented data APIs for loading, querying and maintaining graph data. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Loading data into Amazon Neptune](https://docs.aws.amazon.com/neptune/latest/userguide/load-data.html) — Neptune supports query-based loading, bulk loading from Amazon S3 and AWS DMS loading paths. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Encrypting Neptune resources at rest](https://docs.aws.amazon.com/neptune/latest/userguide/encrypt.html) — Neptune supports KMS-managed encryption at rest for encrypted clusters and related backups and snapshots. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [What is Neptune Analytics?](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/what-is-neptune-analytics.html) — Neptune Analytics is a memory-optimized graph analytics service with low-latency queries and vector search. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Neptune Analytics algorithms](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/algorithms.html) — Neptune Analytics documents optimized graph algorithms across pathfinding, centrality, similarity, community detection and vector similarity. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Apache TinkerPop](https://tinkerpop.apache.org/) — Apache TinkerPop is a graph-computing framework and Gremlin ecosystem that can provide a partial foundation for property-graph work. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [JanusGraph architectural overview](https://docs.janusgraph.org/master/getting-started/architecture/) — JanusGraph is a modular graph engine with storage, indexing and Gremlin Server integration that covers part of Neptune Database workflows. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Official product page](https://aws.amazon.com/neptune/) — Amazon Neptune is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-04T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/neptune/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-04T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/neptune/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/neptune/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/neptune/latest/userguide/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/neptune/latest/userguide/neptune-setup.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/neptune/latest/userguide/data-api.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/neptune/latest/userguide/load-data.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/neptune/latest/userguide/encrypt.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/what-is-neptune-analytics.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/neptune-analytics-features.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/neptune-analytics/latest/userguide/algorithms.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://tinkerpop.apache.org/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.janusgraph.org/master/getting-started/architecture/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Neptune Public web-surface observation (REA)](https://aws.amazon.com/neptune/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Resources submenu, button: Get started with Neptune, button: Connect with an AWS specialist, button: Play:, button: Close, button: Graphs for AI, button: Customer 360, button: Fraud detection, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: FAQs, link: Customers, link: Products, link: Databases, link: Insights in seconds Easily analyze tens of billions of relationships across structured and unstructured data within seconds using built-in algorithms, and perform vector search with your graph for gen AI apps. Learn more, link: Trusted AI Improve the accuracy and explainability of your generative AI apps with automated GraphRAG, and integrations with Strands AI SDK and popular memory tools for agents. Learn more, link: Performance and scalability Scale your graphs with unlimited vertices and edges, 100k+ queries per second, up to 128 TiB storage per cluster, and up to 15 read replicas per cluster. Learn more, link: Enterprise security and reliability Unlock best-in-class security and reliability synonymous with AWS, including ACID transactions, automated backups, cross-Region replication, PITR, encryption at transit and at rest, granular resource permissions, and more. Learn more, link: Cost effective Reduce your total cost of ownership with no upfront commitments and no hidden costs, pay-for-use billing, and transparent support billing. Learn more, link: Explore Workshops, button: Cybersecurity, link: Missing alt text value How Smartsheet enhances recommendations using Amazon Neptune and Knowledge Graphs Read the blog, link: Missing alt text value Protecting and governing sensitive data in the cloud on AWS with ALTR Read the case study, link: Missing alt text value Building an agentic AI solution using Amazon Neptune with Trend Micro Read the case study, link: Wiz logo in blue text with a star symbol Reimagining cloud security using Amazon Neptune graph database with Wiz Read the case study, link: Resources Learn with hands-on training Get started with Neptune, link: Documentation Dive deep on Neptune Read the documentation, link: Free tier Sign up for a free account Try for free, link: Console Start building in the console Sign in, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:31:48.846Z).

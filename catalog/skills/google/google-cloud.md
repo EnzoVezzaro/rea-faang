@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Cloud (google-cloud); invest
 
 # Google Cloud — implementation skill (`google-cloud`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Cloud**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Cloud (google-cloud); invest
 
 This is the coding-agent skill for **Google Cloud** (`google-cloud`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-cloud.md` from the catalog page, or run `npx rae-faang google-cloud --out ./google-cloud.md`, `npx rae-faang skills generate google-cloud` or `npx rae-faang build agent-kit google-cloud --out ./google-cloud-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-cloud.md` from the catalog page, or run `npx rea-faang google-cloud --out ./google-cloud.md`, `npx rea-faang skills generate google-cloud` or `npx rea-faang build agent-kit google-cloud --out ./google-cloud-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Google Cloud / `google-cloud` | `catalog/products.jsonl` |
 | Official product URL | [https://cloud.google.com/](https://cloud.google.com/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://cloud.google.com/docs](https://cloud.google.com/docs) | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-cloud` | `research/companies/google/products/google-cloud.md` |
+| Research dossier | `npx rea-faang research dossier google-cloud` | `research/companies/google/products/google-cloud.md` |
 | REA report | `catalog/rea/google/google-cloud.md` (captured 2026-11-03T01:37:30.924Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-cloud.json` (`ev_3ee055d5d47a7b5ac5570f928b1ed3445cca52a178112442039f442e8848474c`) | Catalog evidence |
 | Alternative candidates | 4 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-cloud --format json` and `npx rae-faang research dossier google-cloud` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-cloud --format json` and `npx rea-faang research dossier google-cloud` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-CLOUD-CAP-0A568161`, `GOOGLE-CLOUD-CAP-567B0AC1`, `GOOGLE-CLOUD-CAP-5F05567C`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-CLOUD-CAP-937F9FD3`, `GOOGLE-CLOUD-CAP-877368FA`, `GOOGLE-CLOUD-CAP-12837C5B`, `GOOGLE-CLOUD-CAP-0470C9D1`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,7 +102,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Google Cloud** / `google-cloud` | Product catalog |
-| Company / category | Google / `cloud_infrastructure` / `cloud_infrastructure` | Product catalog |
+| Company / category | Google / `cloud_infrastructure` / `cloud_infrastructure`, `platform` | Product catalog |
 | Official website / docs | [https://cloud.google.com/](https://cloud.google.com/) / [https://cloud.google.com/docs](https://cloud.google.com/docs) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-CLOUD-CAP-0A568161` | IaaS compute, block/object storage, networking | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-CLOUD-CAP-567B0AC1` | Managed databases, data and ML services | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-CLOUD-CAP-5F05567C` | Global regions and managed control plane | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CLOUD-CAP-937F9FD3` | Google Cloud is verified as a broad platform with compute, storage, data, AI, networking and developer service families. | VERIFIED | `ev-google-cloud-identity`, `ev-google-cloud-overview` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CLOUD-CAP-877368FA` | The platform supports composing services into workload infrastructure; exact service behavior remains product-specific. | VERIFIED | `ev-google-cloud-overview` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CLOUD-CAP-12837C5B` | The gcloud CLI and documented authentication provide an integration surface; permissions and project access are required. | VERIFIED | `ev-google-cloud-auth` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CLOUD-CAP-0470C9D1` | Platform identity and access model are verified, but pricing, quotas, regions, compliance and project behavior were not exhaustively verified. | VERIFIED | `ev-google-cloud-identity`, `ev-google-cloud-auth` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Previous`, `button: Next`, `button: AI and machine learning keyboard_arrow_down`, `button: Compute keyboard_arrow_down`, `button: Storage keyboard_arrow_down`, `button: Databases keyboard_arrow_down`, `button: Data analytics keyboard_arrow_down`, `button: Networking keyboard_arrow_down`, `button: Developer tools keyboard_arrow_down`, `button: Security keyboard_arrow_down`, `button: Previous slide`, `button: Next slide`, `button: Pause animation`, `button: Ask Google Cloud`, `button: Search`, `link: Get started for free`, `link: Contact sales`, `link: Security Outpace adversaries in the AI era with Google AI Threat Defense Agentic Defense graphic`, `link: AI Announcements What Google Cloud announced in AI this month AI generated image`, `link: AI Infrastructure What’s new in AI infrastructure and orchestration this month AI Hypercomputer graphic`, `link: Customer Stories Learn how the world's leading innovators build with Gemini Illuminated modern glass enterprise campus atrium at dusk`, `link: AI generated colored squares Events Register to learn about the future of AI infrastructure on November 9th`, `link: developer tools Developer tools Introducing the developer plugin for AI coding agents`, `link: See all 150+ products`, `link: Gemini platform`, `link: View more AI products`, `link: Agent evals in 4 steps , 26 minutes 08 seconds`, `link: Gemini Enterprise icon Securely share AI agents with your organization Try Gemini Enterprise Plus edition`, `link: icon Get 35 learning credits at no cost on Google Skills with GEAR Join GEAR`, `link: icon Access free offers for common AI use cases View 10 free AI tools`, `link: Target and Google Cloud Target modernized their data infrastructure using Google Cloud to improve advertising performance. Watch video`, `link: Home Depot The Home Depot turns fragmented customer service into seamless journeys with Google Cloud Watch video`, `link: VW logo Volkswagen uses Gemini to power its virtual assistant in the myVW app, surfacing helpful information from the owner’s manual Watch video`, `link: Gemini`, `link: product discovery`, `link: bank fraud`, `link: Request a demo`, `link: See all industries`, `link: best buy boxes 9 / top 10 retail companies trust Google Cloud Bestbuy Best Buy uses Google Cloud generative AI to power its virtual assistants, freeing up their customer care agents to troubleshoot product issues, change order delivery and schedules, and manage subscriptions. Discover what you can do with our retail solutions. Explore retail solutions`, `link: See more customers`, `link: Google Cloud`, `link: Overview`, `link: Solutions`, `link: Products`, `link: Pricing`, `link: Resources`, `combobox: Search`, `link: Docs`, `link: Support`, `link: Sign in`, `link: Choosing Google Cloud`, `link: Trust and security`, `link: Modern Infrastructure Cloud`, `link: Multicloud`, `link: Global infrastructure`, `link: Locations`, `link: Customers and case studies`, `link: Analyst reports`, `link: Whitepapers`, `link: Blog`, `link: Google Cloud pricing`, `link: Google Workspace pricing`, `link: See all products`, `link: Infrastructure modernization`, `link: Databases`, `link: Application modernization`, `link: Smart analytics`, `link: Artificial Intelligence`, `link: Security`, `link: Productivity & work transformation`, `link: Industry solutions`, `link: DevOps solutions`, `link: Small business solutions`, `link: See all solutions`, `link: Google Cloud Affiliate Program`, `link: Google Cloud documentation`, `link: Google Cloud quickstarts`, `link: Google Cloud Marketplace`, `link: Learn about cloud computing`, `link: Code samples`, `link: Cloud Architecture Center`, `link: Training`, `link: Builders Hub`, `link: Certifications`, `link: Google for Developers`, `link: Google Cloud for Startups`, `link: System status`, `link: Release Notes`, `link: Find a Partner`, `link: Become a Partner`, `link: Events`, `link: Podcasts`, `link: Developer Center`, `link: Press Corner`, `link: Google Cloud on YouTube`, `link: Google Cloud Tech on YouTube`, `link: Follow on X`, `link: Join User Research`, `link: We're hiring. Join Google Cloud!`, `link: Community forums`, `link: About Google`, `link: Privacy`, `link: Site terms`, `link: Google Cloud terms`, `link: Subscribe`, `combobox: Language Selector`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **IaaS compute, block/object storage, networking:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Managed databases, data and ML services:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Global regions and managed control plane:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Google Cloud is verified as a broad platform with compute, storage, data, AI, networking and developer service families.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The platform supports composing services into workload infrastructure; exact service behavior remains product-specific.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The gcloud CLI and documented authentication provide an integration surface; permissions and project access are required.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Platform identity and access model are verified, but pricing, quotas, regions, compliance and project behavior were not exhaustively verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-0A568161 — IaaS compute, block/object storage, networking
+### REQ-FUNC-937F9FD3 — Google Cloud is verified as a broad platform with compute, storage, data, AI, networking and developer service families.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-cloud-identity`, `ev-google-cloud-overview`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-0A568161`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CLOUD-CAP-0A568161` → `REQ-FUNC-0A568161` → `TEST-FUNC-0A568161`.
+- **Associated test ID:** `TEST-FUNC-937F9FD3`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CLOUD-CAP-937F9FD3` → `REQ-FUNC-937F9FD3` → `TEST-FUNC-937F9FD3`.
 
-### REQ-FUNC-567B0AC1 — Managed databases, data and ML services
+### REQ-FUNC-877368FA — The platform supports composing services into workload infrastructure; exact service behavior remains product-specific.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-cloud-overview`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-567B0AC1`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CLOUD-CAP-567B0AC1` → `REQ-FUNC-567B0AC1` → `TEST-FUNC-567B0AC1`.
+- **Associated test ID:** `TEST-FUNC-877368FA`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CLOUD-CAP-877368FA` → `REQ-FUNC-877368FA` → `TEST-FUNC-877368FA`.
 
-### REQ-FUNC-5F05567C — Global regions and managed control plane
+### REQ-FUNC-12837C5B — The gcloud CLI and documented authentication provide an integration surface; permissions and project access are required.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-cloud-auth`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-5F05567C`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CLOUD-CAP-5F05567C` → `REQ-FUNC-5F05567C` → `TEST-FUNC-5F05567C`.
+- **Associated test ID:** `TEST-FUNC-12837C5B`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CLOUD-CAP-12837C5B` → `REQ-FUNC-12837C5B` → `TEST-FUNC-12837C5B`.
+
+### REQ-FUNC-0470C9D1 — Platform identity and access model are verified, but pricing, quotas, regions, compliance and project behavior were not exhaustively verified.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-cloud-identity`, `ev-google-cloud-auth`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-0470C9D1`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CLOUD-CAP-0470C9D1` → `REQ-FUNC-0470C9D1` → `TEST-FUNC-0470C9D1`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -218,9 +229,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-CLOUD-CAP-0A568161` — IaaS compute, block/object storage, networking | Not verified against OpenStack | None yet; compare with `ev_3ee055d5d47a7b5ac5570f928b1ed3445cca52a178112442039f442e8848474c` | Candidate code path and tests must be inspected |
-| `GOOGLE-CLOUD-CAP-567B0AC1` — Managed databases, data and ML services | Not verified against OpenStack | None yet; compare with `ev_3ee055d5d47a7b5ac5570f928b1ed3445cca52a178112442039f442e8848474c` | Candidate code path and tests must be inspected |
-| `GOOGLE-CLOUD-CAP-5F05567C` — Global regions and managed control plane | Not verified against OpenStack | None yet; compare with `ev_3ee055d5d47a7b5ac5570f928b1ed3445cca52a178112442039f442e8848474c` | Candidate code path and tests must be inspected |
+| `GOOGLE-CLOUD-CAP-937F9FD3` — Google Cloud is verified as a broad platform with compute, storage, data, AI, networking and developer service families. | Not verified against OpenStack | None yet; compare with `ev_3ee055d5d47a7b5ac5570f928b1ed3445cca52a178112442039f442e8848474c` | Candidate code path and tests must be inspected |
+| `GOOGLE-CLOUD-CAP-877368FA` — The platform supports composing services into workload infrastructure; exact service behavior remains product-specific. | Not verified against OpenStack | None yet; compare with `ev_3ee055d5d47a7b5ac5570f928b1ed3445cca52a178112442039f442e8848474c` | Candidate code path and tests must be inspected |
+| `GOOGLE-CLOUD-CAP-12837C5B` — The gcloud CLI and documented authentication provide an integration surface; permissions and project access are required. | Not verified against OpenStack | None yet; compare with `ev_3ee055d5d47a7b5ac5570f928b1ed3445cca52a178112442039f442e8848474c` | Candidate code path and tests must be inspected |
+| `GOOGLE-CLOUD-CAP-0470C9D1` — Platform identity and access model are verified, but pricing, quotas, regions, compliance and project behavior were not exhaustively verified. | Not verified against OpenStack | None yet; compare with `ev_3ee055d5d47a7b5ac5570f928b1ed3445cca52a178112442039f442e8848474c` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -267,9 +279,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-0A568161** → `REQ-FUNC-0A568161`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-567B0AC1** → `REQ-FUNC-567B0AC1`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-5F05567C** → `REQ-FUNC-5F05567C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-937F9FD3** → `REQ-FUNC-937F9FD3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-877368FA** → `REQ-FUNC-877368FA`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-12837C5B** → `REQ-FUNC-12837C5B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-0470C9D1** → `REQ-FUNC-0470C9D1`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -290,7 +303,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-0A568161, REQ-FUNC-567B0AC1, REQ-FUNC-5F05567C
+- **Requirements:** REQ-FUNC-937F9FD3, REQ-FUNC-877368FA, REQ-FUNC-12837C5B, REQ-FUNC-0470C9D1
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -300,7 +313,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-0A568161, REQ-FUNC-567B0AC1, REQ-FUNC-5F05567C
+- **Requirements:** REQ-FUNC-937F9FD3, REQ-FUNC-877368FA, REQ-FUNC-12837C5B, REQ-FUNC-0470C9D1
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -322,7 +335,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-0A568161, REQ-FUNC-567B0AC1, REQ-FUNC-5F05567C; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-937F9FD3, REQ-FUNC-877368FA, REQ-FUNC-12837C5B, REQ-FUNC-0470C9D1; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -352,9 +365,19 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://cloud.google.com/) | Not recorded | Google Cloud is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://cloud.google.com/docs) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-google-cloud-identity` | Products and Services — The official catalogue lists more than one hundred Google Cloud products across compute, storage, AI/ML, databases, analytics, security and application development. | [link](https://cloud.google.com/products) | 2026-11-03T00:00:00Z | Google Cloud is an active public cloud platform with a broad catalogue of infrastructure, data, AI and developer services. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-cloud-overview` | Google Cloud overview — The official overview describes selecting and combining Google Cloud services to build required infrastructure and workloads. | [link](https://docs.cloud.google.com/docs/overview) | 2026-11-03T00:00:00Z | Google Cloud services are combined into infrastructure for websites and applications. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-cloud-auth` | Authenticate for the gcloud CLI — The official documentation describes user and application authentication for gcloud and Google Cloud APIs. | [link](https://docs.cloud.google.com/sdk/docs/authenticate) | 2026-11-03T00:00:00Z | The Google Cloud CLI must authenticate before accessing Google Cloud APIs and resources. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://cloud.google.com/) | 2026-11-03T00:00:00Z | Google Cloud is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://cloud.google.com/docs) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://cloud.google.com/products) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.cloud.google.com/docs/overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.cloud.google.com/sdk/docs/authenticate) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_3ee055d5d47a7b5ac5570f928b1ed3445cca52a178112442039f442e8848474c` | Google Cloud Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://cloud.google.com/) | 2026-11-03T01:37:30.924Z | A dated unauthenticated snapshot exposed controls button: Previous, button: Next, button: AI and machine learning keyboard_arrow_down, button: Compute keyboard_arrow_down, button: Storage keyboard_arrow_down, button: Databases keyboard_arrow_down, button: Data analytics keyboard_arrow_down, button: Networking keyboard_arrow_down, button: Developer tools keyboard_arrow_down, button: Security keyboard_arrow_down, button: Previous slide, button: Next slide, button: Pause animation, button: Ask Google Cloud, button: Search, link: Get started for free, link: Contact sales, link: Security Outpace adversaries in the AI era with Google AI Threat Defense Agentic Defense graphic, link: AI Announcements What Google Cloud announced in AI this month AI generated image, link: AI Infrastructure What’s new in AI infrastructure and orchestration this month AI Hypercomputer graphic, link: Customer Stories Learn how the world's leading innovators build with Gemini Illuminated modern glass enterprise campus atrium at dusk, link: AI generated colored squares Events Register to learn about the future of AI infrastructure on November 9th, link: developer tools Developer tools Introducing the developer plugin for AI coding agents, link: See all 150+ products, link: Gemini platform, link: View more AI products, link: Agent evals in 4 steps , 26 minutes 08 seconds, link: Gemini Enterprise icon Securely share AI agents with your organization Try Gemini Enterprise Plus edition, link: icon Get 35 learning credits at no cost on Google Skills with GEAR Join GEAR, link: icon Access free offers for common AI use cases View 10 free AI tools, link: Target and Google Cloud Target modernized their data infrastructure using Google Cloud to improve advertising performance. Watch video, link: Home Depot The Home Depot turns fragmented customer service into seamless journeys with Google Cloud Watch video, link: VW logo Volkswagen uses Gemini to power its virtual assistant in the myVW app, surfacing helpful information from the owner’s manual Watch video, link: Gemini, link: product discovery, link: bank fraud, link: Request a demo, link: See all industries, link: best buy boxes 9 / top 10 retail companies trust Google Cloud Bestbuy Best Buy uses Google Cloud generative AI to power its virtual assistants, freeing up their customer care agents to troubleshoot product issues, change order delivery and schedules, and manage subscriptions. Discover what you can do with our retail solutions. Explore retail solutions, link: See more customers, link: Google Cloud, link: Overview, link: Solutions, link: Products, link: Pricing, link: Resources, combobox: Search, link: Docs, link: Support, link: Sign in, link: Choosing Google Cloud, link: Trust and security, link: Modern Infrastructure Cloud, link: Multicloud, link: Global infrastructure, link: Locations, link: Customers and case studies, link: Analyst reports, link: Whitepapers, link: Blog, link: Google Cloud pricing, link: Google Workspace pricing, link: See all products, link: Infrastructure modernization, link: Databases, link: Application modernization, link: Smart analytics, link: Artificial Intelligence, link: Security, link: Productivity & work transformation, link: Industry solutions, link: DevOps solutions, link: Small business solutions, link: See all solutions, link: Google Cloud Affiliate Program, link: Google Cloud documentation, link: Google Cloud quickstarts, link: Google Cloud Marketplace, link: Learn about cloud computing, link: Code samples, link: Cloud Architecture Center, link: Training, link: Builders Hub, link: Certifications, link: Google for Developers, link: Google Cloud for Startups, link: System status, link: Release Notes, link: Find a Partner, link: Become a Partner, link: Events, link: Podcasts, link: Developer Center, link: Press Corner, link: Google Cloud on YouTube, link: Google Cloud Tech on YouTube, link: Follow on X, link: Join User Research, link: We're hiring. Join Google Cloud!, link: Community forums, link: About Google, link: Privacy, link: Site terms, link: Google Cloud terms, link: Subscribe, combobox: Language Selector and landmarks banner, navigation, contentinfo, navigation: Footer Links, navigation: Utility links. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
+| `SRC-CANDIDATE-1` | OpenStack candidate — Curated entry; repository only when recorded. | [link](https://www.openstack.org/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-2` | Apache CloudStack candidate — Curated entry; repository only when recorded. | [link](https://cloudstack.apache.org/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-3` | Kubernetes candidate — Curated entry; repository only when recorded. | [link](https://kubernetes.io/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-4` | OpenNebula candidate — Curated entry; repository only when recorded. | [link](https://opennebula.io/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
 
 ### Confidence classifications
 
@@ -381,118 +404,87 @@ Resume token: `google-cloud`. Read dossier, REA report and raw Evidence before r
 
 # 1. Executive summary
 
-Google Cloud is Google's cloud computing platform, offering infrastructure services, data storage, AI/ML, developer tools, and enterprise applications. It competes with Amazon Web Services and Microsoft Azure.
+Google Cloud is Google's public cloud platform for compute, storage, networking, data, AI/ML, developer tools and managed services. It is a platform catalogue rather than one application and is distinct from Google Workspace and individual Google Cloud services.
 
 # 2. Product identity and ownership
 
-- **Official name:** Google Cloud
-- **Company and business unit:** Google Cloud
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2008 (as Google Apps), rebranded 2011
-- **Current lifecycle status:** active
-- **Previous names:** Google Apps, Google Apps for Business, Google Workspace
-- **Acquisitions or ownership changes:** None; evolved from Google's enterprise tools
-- **Related products:** Google Workspace, Google Cloud Platform, Google AI, Vertex AI
-- **Official website:** https://cloud.google.com/
-- **Official documentation:** https://cloud.google.com/docs
+**Official name:** Google Cloud  
+**Company:** Google LLC, part of Alphabet Inc.  
+**Lifecycle status:** active  
+**Official website:** https://cloud.google.com/
+
+Google's official product catalogue presents more than one hundred Google Cloud products across infrastructure, AI/ML, databases, analytics, developer tools, security, identity and application hosting.
 
 # 3. Product capabilities
 
-- Compute (Compute Engine, GKE, Cloud Run, App Engine)
-- Storage (Cloud Storage, Cloud SQL, Cloud Firestore, Cloud Spanner)
-- Networking (VPC, Cloud CDN, Cloud Load Balancing)
-- AI and Machine Learning (Vertex AI, AI Platform, TensorFlow integration)
-- Data analytics (BigQuery, Cloud Dataflow, Cloud Datalab)
-- Developer tools (Cloud SDK, Cloud Build, Cloud Source Repositories)
-- Security and identity (IAM, Cloud Armor, Security Command Center)
-- Internet of Things (Cloud IoT Core, now deprecated)
-- Management and monitoring (Cloud Monitoring, Cloud Logging)
+- Compute, containers, serverless hosting and networking.
+- Object storage, databases, analytics and data pipelines.
+- AI/ML platforms, models, GPUs/TPUs and developer tooling.
+- Identity, security, monitoring, governance and cost-management services.
+- Infrastructure management through projects, resources, APIs and the Google Cloud CLI.
+
+The exact service, quota, region, pricing and compliance surface depends on the selected product and project. This dossier treats Google Cloud as the platform-level product; individual services are not duplicated as separate entries here.
 
 # 4. Technical architecture
 
-Google Cloud runs on the same infrastructure as Google's end-user products. Key components:
-
-- Global network of fiber and points of presence
-- Compute Engine virtual machines and containers
-- Kubernetes Engine (GKE) managed Kubernetes
-- Cloud Storage object storage with regional/dual-region buckets
-- BigQuery analytics on Colossus filesystem
-- Vertex AI infrastructure on TPU and GPU clusters
-
-Full internal architecture is proprietary; public documentation covers service APIs and capabilities.
+Google Cloud is a managed cloud platform operated by Google. Its public documentation describes projects, resources, service APIs, IAM, regions and the control surfaces available through the console, APIs, SDKs and CLI. Internal infrastructure and managed-service implementations are proprietary.
 
 # 5. User workflows
 
-Primary workflows: infrastructure provisioning, application deployment, data storage and querying, AI model training and inference, monitoring and logging. Essential: compute resources, storage, networking. Advanced: auto-scaling, multi-region deployment, cost optimization.
+A customer creates or selects a project, enables services, assigns IAM permissions, provisions resources through the console, APIs, Terraform or `gcloud`, and operates workloads with monitoring, logging, security and cost controls.
 
 # 6. Pricing and access
 
-Pay-as-you-go pricing with sustained use discounts. Commitment discounts (1-3 year terms). Free tier available for many services. Pricing varies by region, resource type, and usage. Google Cloud Free Tier provides limited monthly credits.
+Google Cloud uses service- and usage-dependent pricing with product, region, resource, commitment and account factors. This research verifies the platform and authentication model, not current prices, quotas, credits or entitlement for a particular project.
 
 # 7. API and integration surface
 
-- REST/JSON APIs for all services
-- Google Cloud CLI (gcloud) and Terraform provider
-- Client libraries (Python, Node.js, Java, Go, PHP, .NET, Ruby)
-- Cloud Client Libraries for simplified access
-- gRPC and REST conventions
+Google Cloud exposes documented service APIs, client libraries, Terraform integrations and the Google Cloud CLI. The official authentication documentation states that CLI commands must authenticate before accessing Google Cloud APIs; no authenticated project access is assumed here.
 
 # 8. Existing open-source alternatives
 
-- Cloud provider alternatives: Amazon Web Services, Microsoft Azure
-- Open-source infrastructure: OpenStack, Kubernetes, Terraform, Ansible
-- Specific services: MinIO (object storage), PostgreSQL, MySQL, Prometheus, Grafana
-- No direct feature-for-feature replacement for Google Cloud's integrated suite
+- OpenStack (Apache-2.0): self-hosted compute, storage and networking control plane.
+- Apache CloudStack (Apache-2.0): private-cloud IaaS orchestration.
+- Kubernetes (Apache-2.0): container orchestration and application platform.
+- OpenNebula (Apache-2.0): private-cloud management.
 
 # 9. Alternative comparison
 
-AWS and Azure provide the most direct competition. Open-source components (Kubernetes, Terraform) can replace individual pieces but not the integrated Google Cloud experience. Google's global network is a differentiating advantage.
+These projects cover parts of Google Cloud. None is verified here as a drop-in replacement for its managed-service catalogue, global operations, identity, billing, support and integrated AI/data platform.
 
 # 10. Missing capabilities and opportunity analysis
 
-Multi-region deployment patterns, cost optimization for sustained workloads, and integrated AI/ML pipelines on independent infrastructure represent opportunities. Replicating Google's global network is not feasible for most organizations.
+The main gap is the integrated managed-service platform: a credible alternative must combine compute, data, AI, networking, identity, observability, billing and operations rather than only provide an IaaS control plane.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Focus on specific Google Cloud services for replacement or extension: managed Kubernetes (K8s), object storage, or observability stack. Not recommended to rebuild the entire cloud platform.
+Do not attempt to rebuild Google Cloud wholesale. Select one workload class, reuse an existing open-source component, define security and service boundaries, and validate deployment, operations, cost and recovery behavior with evidence.
 
 # 12. Security, privacy, and compliance
 
-IAM policies, VPC Service Controls, Cloud Security Command Center, GDPR and HIPAA data region options. Security token management and audit logging.
+IAM, project isolation, network controls, secrets, logs, backups and data residency depend on the selected service and configuration. Do not infer compliance or isolation from the platform name; verify the project, service, region and policy settings.
 
 # 13. Sources and evidence
 
-- https://cloud.google.com/ (product page)
-- https://cloud.google.com/docs (documentation)
-- https://cloud.google.com/blog (blog)
+- [Google Cloud products and services](https://cloud.google.com/products) — official product catalogue.
+- [Google Cloud overview](https://docs.cloud.google.com/docs/overview) — official platform overview.
+- [Authenticate for the gcloud CLI](https://docs.cloud.google.com/sdk/docs/authenticate) — official authentication and CLI documentation.
 
 # 14. Open questions
 
-- What is the cost-equivalent alternative for sustained Google Cloud workloads?
-- How do multi-region replication patterns compare across cloud providers?
-- What is the overhead of replacing Google's global network with alternative infrastructure?
+- Which Google Cloud service family should be evaluated separately next?
+- Which workload and region would make an honest open-source comparison meaningful?
+- What recovery, cost and compliance evidence is required for the target use case?
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
+Record updated 2026-11-03 from official Google Cloud and Google Cloud Documentation sources. Status: `researched`; service-specific pricing, quotas, regions, compliance and private implementation details remain outside this pass.
 
----
-
-# 16. Alternative comparison (continued)
-
-AWS, Azure are the primary commercial competitors. Open-source components can replace individual services but not the integrated platform.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Select specific Google Cloud services to replace (e.g., Kubernetes, object storage). Build or integrate open-source alternatives for chosen services.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-cloud` and inspect canonical identity with `npx rae-faang products show google-cloud --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-cloud` and inspect canonical identity with `npx rea-faang products show google-cloud --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -505,7 +497,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-cloud --out ./google-cloud.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-cloud --out ./google-cloud-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-cloud --out ./google-cloud.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-cloud --out ./google-cloud-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -547,6 +539,16 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://cloud.google.com/) — Google Cloud is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://cloud.google.com/docs) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [Products and Services](https://cloud.google.com/products) — Google Cloud is an active public cloud platform with a broad catalogue of infrastructure, data, AI and developer services. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Cloud overview](https://docs.cloud.google.com/docs/overview) — Google Cloud services are combined into infrastructure for websites and applications. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Authenticate for the gcloud CLI](https://docs.cloud.google.com/sdk/docs/authenticate) — The Google Cloud CLI must authenticate before accessing Google Cloud APIs and resources. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://cloud.google.com/) — Google Cloud is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://cloud.google.com/docs) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://cloud.google.com/products) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.cloud.google.com/docs/overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.cloud.google.com/sdk/docs/authenticate) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Cloud Public web-surface observation (REA)](https://cloud.google.com/) — A dated unauthenticated snapshot exposed controls button: Previous, button: Next, button: AI and machine learning keyboard_arrow_down, button: Compute keyboard_arrow_down, button: Storage keyboard_arrow_down, button: Databases keyboard_arrow_down, button: Data analytics keyboard_arrow_down, button: Networking keyboard_arrow_down, button: Developer tools keyboard_arrow_down, button: Security keyboard_arrow_down, button: Previous slide, button: Next slide, button: Pause animation, button: Ask Google Cloud, button: Search, link: Get started for free, link: Contact sales, link: Security Outpace adversaries in the AI era with Google AI Threat Defense Agentic Defense graphic, link: AI Announcements What Google Cloud announced in AI this month AI generated image, link: AI Infrastructure What’s new in AI infrastructure and orchestration this month AI Hypercomputer graphic, link: Customer Stories Learn how the world's leading innovators build with Gemini Illuminated modern glass enterprise campus atrium at dusk, link: AI generated colored squares Events Register to learn about the future of AI infrastructure on November 9th, link: developer tools Developer tools Introducing the developer plugin for AI coding agents, link: See all 150+ products, link: Gemini platform, link: View more AI products, link: Agent evals in 4 steps , 26 minutes 08 seconds, link: Gemini Enterprise icon Securely share AI agents with your organization Try Gemini Enterprise Plus edition, link: icon Get 35 learning credits at no cost on Google Skills with GEAR Join GEAR, link: icon Access free offers for common AI use cases View 10 free AI tools, link: Target and Google Cloud Target modernized their data infrastructure using Google Cloud to improve advertising performance. Watch video, link: Home Depot The Home Depot turns fragmented customer service into seamless journeys with Google Cloud Watch video, link: VW logo Volkswagen uses Gemini to power its virtual assistant in the myVW app, surfacing helpful information from the owner’s manual Watch video, link: Gemini, link: product discovery, link: bank fraud, link: Request a demo, link: See all industries, link: best buy boxes 9 / top 10 retail companies trust Google Cloud Bestbuy Best Buy uses Google Cloud generative AI to power its virtual assistants, freeing up their customer care agents to troubleshoot product issues, change order delivery and schedules, and manage subscriptions. Discover what you can do with our retail solutions. Explore retail solutions, link: See more customers, link: Google Cloud, link: Overview, link: Solutions, link: Products, link: Pricing, link: Resources, combobox: Search, link: Docs, link: Support, link: Sign in, link: Choosing Google Cloud, link: Trust and security, link: Modern Infrastructure Cloud, link: Multicloud, link: Global infrastructure, link: Locations, link: Customers and case studies, link: Analyst reports, link: Whitepapers, link: Blog, link: Google Cloud pricing, link: Google Workspace pricing, link: See all products, link: Infrastructure modernization, link: Databases, link: Application modernization, link: Smart analytics, link: Artificial Intelligence, link: Security, link: Productivity & work transformation, link: Industry solutions, link: DevOps solutions, link: Small business solutions, link: See all solutions, link: Google Cloud Affiliate Program, link: Google Cloud documentation, link: Google Cloud quickstarts, link: Google Cloud Marketplace, link: Learn about cloud computing, link: Code samples, link: Cloud Architecture Center, link: Training, link: Builders Hub, link: Certifications, link: Google for Developers, link: Google Cloud for Startups, link: System status, link: Release Notes, link: Find a Partner, link: Become a Partner, link: Events, link: Podcasts, link: Developer Center, link: Press Corner, link: Google Cloud on YouTube, link: Google Cloud Tech on YouTube, link: Follow on X, link: Join User Research, link: We're hiring. Join Google Cloud!, link: Community forums, link: About Google, link: Privacy, link: Site terms, link: Google Cloud terms, link: Subscribe, combobox: Language Selector and landmarks banner, navigation, contentinfo, navigation: Footer Links, navigation: Utility links. (VERIFIED; accessed 2026-11-03T01:37:30.924Z).
+- [OpenStack candidate](https://www.openstack.org/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [Apache CloudStack candidate](https://cloudstack.apache.org/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [Kubernetes candidate](https://kubernetes.io/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [OpenNebula candidate](https://opennebula.io/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).

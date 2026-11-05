@@ -1,8 +1,8 @@
-![RAE FAANG](assets/brand-logo-icon.png)
+![REA FAANG](assets/brand-logo-icon.png)
 
 # Get started
 
-Install RAE, choose a product, then give its Markdown skill to your coding agent. It provides research and directions for assessing candidate projects, planning the work and testing an independent implementation in your project. You can use the published CLI without cloning this repository.
+Install REA, choose a product, then give its Markdown skill to your coding agent. It provides research and directions for assessing candidate projects, planning the work and testing an independent implementation in your project. You can use the published CLI without cloning this repository.
 
 ## Prerequisites
 
@@ -21,15 +21,15 @@ The CLI and ACE run on Node.js. Installing the source checkout with `npm install
 ## Install the CLI
 
 ```bash
-npx rae-faang --help
-npx rae-faang products list
+npx rea-faang --help
+npx rea-faang products list
 ```
 
-For repeated use, install the published package globally; it provides both `rae` and `rae-faang` commands:
+For repeated use, install the published package globally; it provides both `rea` and `rea-faang` commands:
 
 ```bash
-npm install -g rae-faang
-rae --help
+npm install -g rea-faang
+rea --help
 ```
 
 The package includes the catalog, dossiers, candidate projects and schemas, so you can browse products, check catalog data and generate a skill without a source checkout.
@@ -39,8 +39,8 @@ The package includes the catalog, dossiers, candidate projects and schemas, so y
 Clone the repository only when you need to edit catalog/source files, run the full project test suite and generators, or use repository-only tools such as REA capture:
 
 ```bash
-git clone <your-repo-url> rae-faang
-cd rae-faang
+git clone <your-repo-url> rea-faang
+cd rea-faang
 npm install
 ```
 
@@ -49,8 +49,8 @@ npm install
 Run the tests and catalog checks, then make sure ACE can read its configuration:
 
 ```bash
-npx rae-faang research coverage  # product research status
-npx rae-faang research validate  # bundled catalog integrity
+npx rea-faang research coverage  # product research status
+npx rea-faang research validate  # bundled catalog integrity
 
 # In a source checkout only:
 npm test                               # deterministic project suite
@@ -66,33 +66,33 @@ The tests should pass, validation should report no errors, and `ace config check
 Use the CLI to browse products, review alternative research and generate a Markdown skill for your coding agent. Start with its help:
 
 ```bash
-npx rae-faang --help
+npx rea-faang --help
 ```
 
 Common one-off commands from npm:
 
 ```bash
 # What products do we track?
-npx rae-faang products list
-npx rae-faang products list --company google --format json
+npx rea-faang products list
+npx rea-faang products list --company google --format json
 
 # One product and its evidence dossier
-npx rae-faang products show google-search
-npx rae-faang research dossier google-search
+npx rea-faang products show google-search
+npx rea-faang research dossier google-search
 
 # How complete is the research?
-npx rae-faang research coverage
-npx rae-faang research pending
+npx rea-faang research coverage
+npx rea-faang research pending
 
 # What is missing?
-npx rae-faang gaps all
-npx rae-faang opportunities validate
+npx rea-faang gaps all
+npx rea-faang opportunities validate
 
 # Generate one portable Google Search skill for your coding agent
-npx rae-faang google-search --out ./google-search.md
+npx rea-faang google-search --out ./google-search.md
 
-# Use `rae` after a global npm install
-rae google-search --out ./google-search.md
+# Use `rea` after a global npm install
+rea google-search --out ./google-search.md
 ```
 
 Full reference: [cli-reference.md](cli-reference.md).
@@ -115,7 +115,7 @@ ace doctor --json     # diagnostics
 
 ### Product workspaces
 
-In a source checkout, existing product workspaces under `products/<company>/<product>/` can run ACE. To build a product, give its Markdown skill to your coding agent in your project. A starter workspace is optional: scaffold one with `npx rae-faang build product <id> --out ./<id>` and install its dependencies before running its ACE shim:
+In a source checkout, existing product workspaces under `products/<company>/<product>/` can run ACE. To build a product, give its Markdown skill to your coding agent in your project. A starter workspace is optional: scaffold one with `npx rea-faang build product <id> --out ./<id>` and install its dependencies before running its ACE shim:
 
 ```bash
 cd products/netflix/netflix-streaming
@@ -146,7 +146,7 @@ npm run validate         # research + alternatives + skills + site integrity
 npm run verify           # validate + test
 npm run gaps             # inventory shortfall report
 npm run site:build       # regenerate the public website into site/
-npx rae-faang <command> # one-off published CLI; `rae <command>` after global install
+npx rea-faang <command> # one-off published CLI; `rea <command>` after global install
 npm run cli -- <cmd>     # source checkout only
 ace <cmd>               # ACE command (source checkout/workspace dependencies)
 ```

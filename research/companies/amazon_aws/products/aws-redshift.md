@@ -87,7 +87,7 @@ Columnar analytics is mature in open source; the gap is managed operations and e
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Available. ClickHouse and Druid are production columnar warehouses.
 
@@ -124,6 +124,6 @@ Columnar analytics is mature in open source; the gap is managed operations and e
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Available. ClickHouse and Druid are production columnar warehouses.

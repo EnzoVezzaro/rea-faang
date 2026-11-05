@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Q Developer (amazon-q-develo
 
 # Amazon Q Developer — implementation skill (`amazon-q-developer`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Q Developer**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Q Developer (amazon-q-develo
 
 This is the coding-agent skill for **Amazon Q Developer** (`amazon-q-developer`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-q-developer.md` from the catalog page, or run `npx rae-faang amazon-q-developer --out ./amazon-q-developer.md`, `npx rae-faang skills generate amazon-q-developer` or `npx rae-faang build agent-kit amazon-q-developer --out ./amazon-q-developer-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-q-developer.md` from the catalog page, or run `npx rea-faang amazon-q-developer --out ./amazon-q-developer.md`, `npx rea-faang skills generate amazon-q-developer` or `npx rea-faang build agent-kit amazon-q-developer --out ./amazon-q-developer-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Q Developer / `amazon-q-developer` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/q/developer/](https://aws.amazon.com/q/developer/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-q-developer` | `research/companies/amazon_aws/products/amazon-q-developer.md` |
+| Research dossier | `npx rea-faang research dossier amazon-q-developer` | `research/companies/amazon_aws/products/amazon-q-developer.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-q-developer.md` (captured 2026-11-03T03:42:38.416Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-q-developer.json` (`ev_cbfaf40d7a5851cdf3fc1b808c2b65b58143d9b9bb302148f513ed0c94a8a1c0`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-q-developer --format json` and `npx rae-faang research dossier amazon-q-developer` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-q-developer --format json` and `npx rea-faang research dossier amazon-q-developer` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-Q-DEVELOPER-CAP-76A67527`, `AMAZON-Q-DEVELOPER-CAP-FB0D5AA3`, `AMAZON-Q-DEVELOPER-CAP-2DC81296`, `AMAZON-Q-DEVELOPER-CAP-2164FB6A`, `AMAZON-Q-DEVELOPER-CAP-F242ED89`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-Q-DEVELOPER-CAP-2C22DCBD`, `AMAZON-Q-DEVELOPER-CAP-E185DC98`, `AMAZON-Q-DEVELOPER-CAP-D178D73D`, `AMAZON-Q-DEVELOPER-CAP-D41018EB`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-Q-DEVELOPER-CAP-76A67527` | AWS-aware conversational assistance | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-Q-DEVELOPER-CAP-FB0D5AA3` | code explanation, generation, completion and updates | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-Q-DEVELOPER-CAP-2DC81296` | IDE, CLI, console, web and chat integrations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-Q-DEVELOPER-CAP-2164FB6A` | security scanning, debugging and code modernization | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-Q-DEVELOPER-CAP-F242ED89` | AWS architecture, resource, cost and operations guidance | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-Q-DEVELOPER-CAP-2C22DCBD` | AWS-grounded conversational and IDE assistance are documented. | VERIFIED | `ev-amazon-q-developer-identity`, `ev-amazon-q-developer-ide` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-Q-DEVELOPER-CAP-E185DC98` | Code explanation, edits, fixes, tests and optimization are documented. | VERIFIED | `ev-amazon-q-developer-code` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-Q-DEVELOPER-CAP-D178D73D` | Security, secrets, IaC, quality, deployment-risk and composition reviews are documented. | VERIFIED | `ev-amazon-q-developer-review` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-Q-DEVELOPER-CAP-D41018EB` | OpenHands covers general agentic development, but AWS grounding, IAM-aware operations, Bedrock model plane and managed integrations remain distinct. | VERIFIED | `ev-amazon-q-developer-openhands`, `ev-amazon-q-developer-identity` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Features submenu`, `button: Resources submenu`, `button: Previous slide`, `button: Next slide`, `button: Create an AWS account`, `button: Back to top`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Pricing`, `link: Documentation`, `link: Get started`, `link: Generative AI`, `link: Amazon Q`, `link: Amazon Q Developer Free Tier`, `link: IDE JetBrains Download now`, `link: IDE VS Code Download now`, `link: IDE Visual Studio Download now`, `link: Command Line Command line Download now`, `link: IDE Eclipse Download now`, `link: Safe Software quote`, `link: Eviden quote`, `link: *as recently reported by BT Group`, `link: AWS Free Tier`, `link: Amazon Q Developer pricing`, `link: Missing alt text value Reducing Development Time by 30% Using Amazon Q with nnamu Read the case study`, `link: Missing alt text value Boosting Customer Service and Developer Productivity Using Generative AI on AWS with BPC Read the case study`, `link: Missing alt text value Modernizing Applications in Minutes Using Amazon Q Developer with Novacomp Read the case study`, `link: Missing alt text value Accenture Expedites Infrastructure Deployment with Amazon Q Developer Read the blog`, `link: Missing alt text value How SmugMug Increased Data Modeling Productivity with Amazon Q Developer Read the blog`, `link: Amazon Q Developer Pro`, `link: Announcing GitLab Duo with Amazon Q GA Learn more`, `link: Getting started Get started on the AWS Free Tier Visit the getting started page`, `link: Pricing Explore Amazon Q Developer pricing Visit the pricing page`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **AWS-aware conversational assistance:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **code explanation, generation, completion and updates:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **IDE, CLI, console, web and chat integrations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **security scanning, debugging and code modernization:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **AWS architecture, resource, cost and operations guidance:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **AWS-grounded conversational and IDE assistance are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Code explanation, edits, fixes, tests and optimization are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Security, secrets, IaC, quality, deployment-risk and composition reviews are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **OpenHands covers general agentic development, but AWS grounding, IAM-aware operations, Bedrock model plane and managed integrations remain distinct.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-76A67527 — AWS-aware conversational assistance
+### REQ-FUNC-2C22DCBD — AWS-grounded conversational and IDE assistance are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-q-developer-identity`, `ev-amazon-q-developer-ide`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-76A67527`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-Q-DEVELOPER-CAP-76A67527` → `REQ-FUNC-76A67527` → `TEST-FUNC-76A67527`.
+- **Associated test ID:** `TEST-FUNC-2C22DCBD`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-Q-DEVELOPER-CAP-2C22DCBD` → `REQ-FUNC-2C22DCBD` → `TEST-FUNC-2C22DCBD`.
 
-### REQ-FUNC-FB0D5AA3 — code explanation, generation, completion and updates
+### REQ-FUNC-E185DC98 — Code explanation, edits, fixes, tests and optimization are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-q-developer-code`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-FB0D5AA3`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-Q-DEVELOPER-CAP-FB0D5AA3` → `REQ-FUNC-FB0D5AA3` → `TEST-FUNC-FB0D5AA3`.
+- **Associated test ID:** `TEST-FUNC-E185DC98`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-Q-DEVELOPER-CAP-E185DC98` → `REQ-FUNC-E185DC98` → `TEST-FUNC-E185DC98`.
 
-### REQ-FUNC-2DC81296 — IDE, CLI, console, web and chat integrations
+### REQ-FUNC-D178D73D — Security, secrets, IaC, quality, deployment-risk and composition reviews are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-q-developer-review`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-2DC81296`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-Q-DEVELOPER-CAP-2DC81296` → `REQ-FUNC-2DC81296` → `TEST-FUNC-2DC81296`.
+- **Associated test ID:** `TEST-FUNC-D178D73D`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-Q-DEVELOPER-CAP-D178D73D` → `REQ-FUNC-D178D73D` → `TEST-FUNC-D178D73D`.
 
-### REQ-FUNC-2164FB6A — security scanning, debugging and code modernization
+### REQ-FUNC-D41018EB — OpenHands covers general agentic development, but AWS grounding, IAM-aware operations, Bedrock model plane and managed integrations remain distinct.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-q-developer-openhands`, `ev-amazon-q-developer-identity`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-2164FB6A`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-Q-DEVELOPER-CAP-2164FB6A` → `REQ-FUNC-2164FB6A` → `TEST-FUNC-2164FB6A`.
-
-### REQ-FUNC-F242ED89 — AWS architecture, resource, cost and operations guidance
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-F242ED89`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-Q-DEVELOPER-CAP-F242ED89` → `REQ-FUNC-F242ED89` → `TEST-FUNC-F242ED89`.
+- **Associated test ID:** `TEST-FUNC-D41018EB`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-Q-DEVELOPER-CAP-D41018EB` → `REQ-FUNC-D41018EB` → `TEST-FUNC-D41018EB`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -237,11 +226,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `AMAZON-Q-DEVELOPER-CAP-76A67527` — AWS-aware conversational assistance | Not verified against OpenHands | None yet; compare with `ev_cbfaf40d7a5851cdf3fc1b808c2b65b58143d9b9bb302148f513ed0c94a8a1c0` | Candidate code path and tests must be inspected |
-| `AMAZON-Q-DEVELOPER-CAP-FB0D5AA3` — code explanation, generation, completion and updates | Not verified against OpenHands | None yet; compare with `ev_cbfaf40d7a5851cdf3fc1b808c2b65b58143d9b9bb302148f513ed0c94a8a1c0` | Candidate code path and tests must be inspected |
-| `AMAZON-Q-DEVELOPER-CAP-2DC81296` — IDE, CLI, console, web and chat integrations | Not verified against OpenHands | None yet; compare with `ev_cbfaf40d7a5851cdf3fc1b808c2b65b58143d9b9bb302148f513ed0c94a8a1c0` | Candidate code path and tests must be inspected |
-| `AMAZON-Q-DEVELOPER-CAP-2164FB6A` — security scanning, debugging and code modernization | Not verified against OpenHands | None yet; compare with `ev_cbfaf40d7a5851cdf3fc1b808c2b65b58143d9b9bb302148f513ed0c94a8a1c0` | Candidate code path and tests must be inspected |
-| `AMAZON-Q-DEVELOPER-CAP-F242ED89` — AWS architecture, resource, cost and operations guidance | Not verified against OpenHands | None yet; compare with `ev_cbfaf40d7a5851cdf3fc1b808c2b65b58143d9b9bb302148f513ed0c94a8a1c0` | Candidate code path and tests must be inspected |
+| `AMAZON-Q-DEVELOPER-CAP-2C22DCBD` — AWS-grounded conversational and IDE assistance are documented. | Not verified against OpenHands | None yet; compare with `ev_cbfaf40d7a5851cdf3fc1b808c2b65b58143d9b9bb302148f513ed0c94a8a1c0` | Candidate code path and tests must be inspected |
+| `AMAZON-Q-DEVELOPER-CAP-E185DC98` — Code explanation, edits, fixes, tests and optimization are documented. | Not verified against OpenHands | None yet; compare with `ev_cbfaf40d7a5851cdf3fc1b808c2b65b58143d9b9bb302148f513ed0c94a8a1c0` | Candidate code path and tests must be inspected |
+| `AMAZON-Q-DEVELOPER-CAP-D178D73D` — Security, secrets, IaC, quality, deployment-risk and composition reviews are documented. | Not verified against OpenHands | None yet; compare with `ev_cbfaf40d7a5851cdf3fc1b808c2b65b58143d9b9bb302148f513ed0c94a8a1c0` | Candidate code path and tests must be inspected |
+| `AMAZON-Q-DEVELOPER-CAP-D41018EB` — OpenHands covers general agentic development, but AWS grounding, IAM-aware operations, Bedrock model plane and managed integrations remain distinct. | Not verified against OpenHands | None yet; compare with `ev_cbfaf40d7a5851cdf3fc1b808c2b65b58143d9b9bb302148f513ed0c94a8a1c0` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -288,11 +276,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-76A67527** → `REQ-FUNC-76A67527`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-FB0D5AA3** → `REQ-FUNC-FB0D5AA3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-2DC81296** → `REQ-FUNC-2DC81296`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-2164FB6A** → `REQ-FUNC-2164FB6A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-F242ED89** → `REQ-FUNC-F242ED89`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-2C22DCBD** → `REQ-FUNC-2C22DCBD`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-E185DC98** → `REQ-FUNC-E185DC98`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-D178D73D** → `REQ-FUNC-D178D73D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-D41018EB** → `REQ-FUNC-D41018EB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -313,7 +300,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-76A67527, REQ-FUNC-FB0D5AA3, REQ-FUNC-2DC81296, REQ-FUNC-2164FB6A, REQ-FUNC-F242ED89
+- **Requirements:** REQ-FUNC-2C22DCBD, REQ-FUNC-E185DC98, REQ-FUNC-D178D73D, REQ-FUNC-D41018EB
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -323,7 +310,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-76A67527, REQ-FUNC-FB0D5AA3, REQ-FUNC-2DC81296, REQ-FUNC-2164FB6A, REQ-FUNC-F242ED89
+- **Requirements:** REQ-FUNC-2C22DCBD, REQ-FUNC-E185DC98, REQ-FUNC-D178D73D, REQ-FUNC-D41018EB
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -345,7 +332,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-76A67527, REQ-FUNC-FB0D5AA3, REQ-FUNC-2DC81296, REQ-FUNC-2164FB6A, REQ-FUNC-F242ED89; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-2C22DCBD, REQ-FUNC-E185DC98, REQ-FUNC-D178D73D, REQ-FUNC-D41018EB; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -375,13 +362,20 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/q/developer/) | Not recorded | Amazon Q Developer is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
-| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/q/developer/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/q/developer/getting-started/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/explain-update-code.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `ev-amazon-q-developer-identity` | What is Amazon Q Developer? — The official guide describes AWS-grounded assistance, Bedrock foundation and supported application/development surfaces. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/) | Not recorded | Amazon Q Developer is an AWS generative AI assistant for understanding, building, extending and operating AWS applications. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-q-developer-ide` | Installing the Amazon Q Developer extension or plugin — The official setup guide documents IDE installation and free or Pro authentication paths. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE-setup.html) | Not recorded | Amazon Q Developer supports IDE workflows with Builder ID or IAM Identity Center authentication. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-q-developer-code` | Explaining and updating code — The official guide lists explain, refactor, fix, generate tests, optimize and prompt workflows. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/explain-update-code.html) | Not recorded | Amazon Q Developer can explain, refactor, fix, test and optimize selected code in supported IDEs. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-q-developer-review` | Reviewing code — The official review guide documents SAST, secrets detection, IaC, quality, deployment-risk and SCA categories and scan quotas. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/code-reviews.html) | Not recorded | Amazon Q Developer reviews code for security, secrets, IaC, quality, deployment-risk and composition issues. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-q-developer-access` | Getting started with Amazon Q Developer — The official getting-started guide documents Free and Pro tiers and personal or workforce authentication. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/getting-started-q-dev.html) | Not recorded | Amazon Q Developer offers Free and Pro access paths with Builder ID and IAM Identity Center setup. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-q-developer-openhands` | OpenHands — The official repository identifies OpenHands as an AI-driven development project and states the MIT license. | [link](https://github.com/OpenHands/OpenHands) | Not recorded | OpenHands is an MIT-licensed open-source AI-driven development project. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/q/developer/) | 2026-11-03T00:00:00Z | Amazon Q Developer is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE-setup.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/explain-update-code.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/code-reviews.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/getting-started-q-dev.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://github.com/OpenHands/OpenHands) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_cbfaf40d7a5851cdf3fc1b808c2b65b58143d9b9bb302148f513ed0c94a8a1c0` | Amazon Q Developer Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/q/developer/) | 2026-11-03T03:42:38.416Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Features submenu, button: Resources submenu, button: Previous slide, button: Next slide, button: Create an AWS account, button: Back to top, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Pricing, link: Documentation, link: Get started, link: Generative AI, link: Amazon Q, link: Amazon Q Developer Free Tier, link: IDE JetBrains Download now, link: IDE VS Code Download now, link: IDE Visual Studio Download now, link: Command Line Command line Download now, link: IDE Eclipse Download now, link: Safe Software quote, link: Eviden quote, link: *as recently reported by BT Group, link: AWS Free Tier, link: Amazon Q Developer pricing, link: Missing alt text value Reducing Development Time by 30% Using Amazon Q with nnamu Read the case study, link: Missing alt text value Boosting Customer Service and Developer Productivity Using Generative AI on AWS with BPC Read the case study, link: Missing alt text value Modernizing Applications in Minutes Using Amazon Q Developer with Novacomp Read the case study, link: Missing alt text value Accenture Expedites Infrastructure Deployment with Amazon Q Developer Read the blog, link: Missing alt text value How SmugMug Increased Data Modeling Productivity with Amazon Q Developer Read the blog, link: Amazon Q Developer Pro, link: Announcing GitLab Duo with Amazon Q GA Learn more, link: Getting started Get started on the AWS Free Tier Visit the getting started page, link: Pricing Explore Amazon Q Developer pricing Visit the pricing page, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, region: AWS Information, region: carousel, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -454,7 +448,7 @@ Compare repository context, code editing, terminal and browser tools, agent loop
 
 The remaining research must map CLI and IDE commands, agent configuration, context windows, model and region selection, tool permissions, approval flows, patch semantics, security-scan contracts, modernization workflows, AWS resource access, rate limits, errors, audit logs and data-retention behavior.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation and authorized test repositories. Capture conversational, coding, CLI, security and AWS-operations cases with explicit permission boundaries. Use OpenHands only after recording the partial-foundation verdict, and create an independent implementation with original code, compatible licensing and no AWS branding or protected content.
 
@@ -462,13 +456,14 @@ Use official AWS documentation and authorized test repositories. Capture convers
 
 Verify IAM scope, least privilege, repository and prompt data handling, code retention, model-training controls, logging, encryption, regional processing, secret redaction, security-scan data flow and human approval for resource-changing actions. No compliance guarantee is inferred from the product description.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/q/developer/ — official product scope and integrations.
-- https://aws.amazon.com/q/developer/getting-started/ — supported entry points and onboarding.
-- https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/ — official capabilities and AWS grounding.
-- https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/explain-update-code.html — documented code assistance.
-- https://github.com/OpenHands/OpenHands — open-source alternative foundation and MIT license.
+- [What is Amazon Q Developer?](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/) — official identity, AWS grounding, Bedrock foundation and supported surfaces.
+- [IDE setup](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE-setup.html) — official authentication and IDE entry points.
+- [Explaining and updating code](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/explain-update-code.html) — official code assistance operations.
+- [Reviewing code](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/code-reviews.html) — official security, secrets, IaC, quality and deployment-risk review capabilities.
+- [Amazon Q Developer tiers](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/getting-started-q-dev.html) — official Free and Pro access paths.
+- [OpenHands](https://github.com/OpenHands/OpenHands) — open-source alternative foundation and MIT license.
 
 # 14. Unknowns
 
@@ -479,13 +474,13 @@ Verify IAM scope, least privilege, repository and prompt data handling, code ret
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources and a partial open-source foundation are documented; no full equivalence claim is made.
+`researched`: identity, AWS grounding, IDE and access paths, code assistance and code-review capabilities were verified from official AWS documentation. AWS currently documents an April 30, 2027 end-of-support date for Amazon Q Developer IDE plugins; service surfaces, pricing and full parity with OpenHands remain outside this pass.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-q-developer` and inspect canonical identity with `npx rae-faang products show amazon-q-developer --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-q-developer` and inspect canonical identity with `npx rea-faang products show amazon-q-developer --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -498,7 +493,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-q-developer --out ./amazon-q-developer.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-q-developer --out ./amazon-q-developer-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-q-developer --out ./amazon-q-developer.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-q-developer --out ./amazon-q-developer-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -540,11 +535,18 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/q/developer/) — Amazon Q Developer is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://aws.amazon.com/q/developer/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://aws.amazon.com/q/developer/getting-started/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [What is Amazon Q Developer?](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/) — Amazon Q Developer is an AWS generative AI assistant for understanding, building, extending and operating AWS applications. (VERIFIED; accessed Not recorded).
+- [Installing the Amazon Q Developer extension or plugin](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE-setup.html) — Amazon Q Developer supports IDE workflows with Builder ID or IAM Identity Center authentication. (VERIFIED; accessed Not recorded).
+- [Explaining and updating code](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/explain-update-code.html) — Amazon Q Developer can explain, refactor, fix, test and optimize selected code in supported IDEs. (VERIFIED; accessed Not recorded).
+- [Reviewing code](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/code-reviews.html) — Amazon Q Developer reviews code for security, secrets, IaC, quality, deployment-risk and composition issues. (VERIFIED; accessed Not recorded).
+- [Getting started with Amazon Q Developer](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/getting-started-q-dev.html) — Amazon Q Developer offers Free and Pro access paths with Builder ID and IAM Identity Center setup. (VERIFIED; accessed Not recorded).
+- [OpenHands](https://github.com/OpenHands/OpenHands) — OpenHands is an MIT-licensed open-source AI-driven development project. (VERIFIED; accessed Not recorded).
+- [Official product page](https://aws.amazon.com/q/developer/) — Amazon Q Developer is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE-setup.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/explain-update-code.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/code-reviews.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/getting-started-q-dev.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://github.com/OpenHands/OpenHands) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Q Developer Public web-surface observation (REA)](https://aws.amazon.com/q/developer/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Features submenu, button: Resources submenu, button: Previous slide, button: Next slide, button: Create an AWS account, button: Back to top, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Pricing, link: Documentation, link: Get started, link: Generative AI, link: Amazon Q, link: Amazon Q Developer Free Tier, link: IDE JetBrains Download now, link: IDE VS Code Download now, link: IDE Visual Studio Download now, link: Command Line Command line Download now, link: IDE Eclipse Download now, link: Safe Software quote, link: Eviden quote, link: *as recently reported by BT Group, link: AWS Free Tier, link: Amazon Q Developer pricing, link: Missing alt text value Reducing Development Time by 30% Using Amazon Q with nnamu Read the case study, link: Missing alt text value Boosting Customer Service and Developer Productivity Using Generative AI on AWS with BPC Read the case study, link: Missing alt text value Modernizing Applications in Minutes Using Amazon Q Developer with Novacomp Read the case study, link: Missing alt text value Accenture Expedites Infrastructure Deployment with Amazon Q Developer Read the blog, link: Missing alt text value How SmugMug Increased Data Modeling Productivity with Amazon Q Developer Read the blog, link: Amazon Q Developer Pro, link: Announcing GitLab Duo with Amazon Q GA Learn more, link: Getting started Get started on the AWS Free Tier Visit the getting started page, link: Pricing Explore Amazon Q Developer pricing Visit the pricing page, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, region: AWS Information, region: carousel, contentinfo. (VERIFIED; accessed 2026-11-03T03:42:38.416Z).

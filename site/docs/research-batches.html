@@ -6,24 +6,24 @@
     <!-- Runs before the stylesheet so reveal styles only apply where the
          motion layer can actually drive them. -->
     <script>document.documentElement.classList.replace("no-js", "js");</script>
-    <title>Research batch plan — RAE FAANG docs</title>
+    <title>Research batch plan — REA FAANG docs</title>
     <meta name="description" content="Ordered research batches and their sources, derived from current catalog coverage." />
     <meta name="robots" content="index,follow" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#0B0C0A" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="RAE FAANG" />
-    <meta property="og:title" content="Research batch plan — RAE FAANG docs" />
+    <meta property="og:site_name" content="REA FAANG" />
+    <meta property="og:title" content="Research batch plan — REA FAANG docs" />
     <meta property="og:description" content="Ordered research batches and their sources, derived from current catalog coverage." />
     <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/docs/research-batches.html" />
-    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
-    <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rea-banner.png" />
+    <meta property="og:image:alt" content="REA FAANG — choose products to build with your coding agent" />
     <meta property="og:image:width" content="1774" />
     <meta property="og:image:height" content="887" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Research batch plan — RAE FAANG docs" />
+    <meta name="twitter:title" content="Research batch plan — REA FAANG docs" />
     <meta name="twitter:description" content="Ordered research batches and their sources, derived from current catalog coverage." />
-    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rea-banner.png" />
     <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/docs/research-batches.html" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
@@ -40,8 +40,8 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
-          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        <a class="wordmark" href="../index.html" aria-label="REA FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="REA FAANG" width="224" height="43" />
         </a>
         <nav class="nav" aria-label="Primary">
           <a href="../catalog/">Catalog</a>
@@ -89,26 +89,26 @@
           </details>
           <article class="doc">
 <h1>Research batch plan</h1>
-<p>Snapshot: <strong>2026-11-02</strong>. This plan turns the pending research into ordered, reviewable batches. It does not mark any dossier as researched; promotion happens only when a dossier's evidence is filled and the validators pass.</p>
+<p>Snapshot: <strong>2026-11-03</strong>. This plan turns the pending research into ordered, reviewable batches. It does not mark any dossier as researched; promotion happens only when a dossier's evidence is filled and the validators pass.</p>
 <h2 id="current-state-verified">Current state (verified)</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr><th scope="col">Fact</th><th scope="col">Value</th><th scope="col">Source</th></tr>
 </thead>
 <tbody>
-<tr><td>Catalogued products</td><td>77</td><td><code>catalog/products.jsonl</code></td></tr>
-<tr><td>In-scope inventory</td><td>77 (no missing)</td><td><code>catalog/manifests/faang.json</code>, <code>npx rae-faang gaps products</code></td></tr>
-<tr><td>Research status</td><td>0 researched, 77 pending</td><td><code>npx rae-faang research coverage</code></td></tr>
-<tr><td>Alternative landscape</td><td>40 available, 29 partial, 8 pending</td><td><code>tools/skills/catalog-data.mjs</code></td></tr>
-<tr><td>REA web-surface reports</td><td>77</td><td><code>catalog/rea/</code></td></tr>
+<tr><td>Catalogued products</td><td>193</td><td><code>catalog/products.jsonl</code></td></tr>
+<tr><td>In-scope inventory</td><td>193 (no missing)</td><td><code>catalog/manifests/faang.json</code>, <code>npx rea-faang gaps products</code></td></tr>
+<tr><td>Research status</td><td>66 researched, 111 pending, 16 retired</td><td><code>npx rea-faang research coverage</code></td></tr>
+<tr><td>Alternative landscape</td><td>193 records with unknown coverage; curated candidates remain separate</td><td><code>tools/skills/catalog-data.mjs</code>, <code>npx rea-faang alternatives coverage</code></td></tr>
+<tr><td>REA web-surface reports</td><td>193 reports captured</td><td><code>catalog/rea/</code></td></tr>
 <tr><td>Product workspaces</td><td>16, all with placeholder specs</td><td><code>products/&lt;company&gt;/&lt;product&gt;/specs/</code></td></tr>
 </tbody>
 </table></div>
 <p>Reproduce these numbers with:</p>
-<pre><code class="language-bash">npx rae-faang gaps products
-npx rae-faang research coverage --format json
-npx rae-faang alternatives coverage --format json
-npx rae-faang skills coverage --format json</code></pre>
+<pre><code class="language-bash">npx rea-faang gaps products
+npx rea-faang research coverage --format json
+npx rea-faang alternatives coverage --format json
+npx rea-faang skills coverage --format json</code></pre>
 <p><strong>There is no catalog inventory gap.</strong> The remaining work is depth: every dossier is <code>research_status: pending</code>, and the counts above describe candidate research, not verified product parity.</p>
 <h2 id="batch-rules">Batch rules</h2>
 <ul>
@@ -116,7 +116,7 @@ npx rae-faang skills coverage --format json</code></pre>
 <li>Sources: official product pages, official documentation, published pricing, published protocols, and unauthenticated help-centre pages. No private surfaces, no decompilation, no access-control bypass.</li>
 <li>Each material claim gets a primary source in <code>evidence[]</code>. Unknowns are recorded as unknowns — never filled with inference.</li>
 <li>An alternative is described by what it verifiably covers; no parity claims.</li>
-<li>Definition of done for a dossier: sections 1–15 filled, <code>research_status: researched</code>, <code>last_researched_at</code> set, <code>research_confidence</code> justified, <code>evidence[]</code> populated, and <code>npx rae-faang research validate</code> clean.</li>
+<li>Definition of done for a dossier: sections 1–15 filled, <code>research_status: researched</code>, <code>last_researched_at</code> set, <code>research_confidence</code> justified, <code>evidence[]</code> populated, and <code>npx rea-faang research validate</code> clean.</li>
 </ul>
 <h2 id="batch-1-no-verified-alternative-the-build-critical-product-9">Batch 1 — No verified alternative + the build-critical product (9)</h2>
 <p>Highest reuse value: these products currently have no verified open-source candidate, so research decides whether they are build opportunities.</p>
@@ -176,7 +176,7 @@ npx rae-faang skills coverage --format json</code></pre>
 <li><strong>No parity claims.</strong> Alternative coverage labels describe research, not build feasibility or product parity.</li>
 </ol>
 <h2 id="suggested-next-action">Suggested next action</h2>
-<p>Start Batch 1 with <code>google-search</code>, because its specification set is already written and its evidence directly unblocks acceptance criteria. Promote it only after <code>npx rae-faang research validate</code> and a reviewer check pass.</p>
+<p>Start Batch 1 with <code>google-search</code>, because its specification set is already written and its evidence directly unblocks acceptance criteria. Promote it only after <code>npx rea-faang research validate</code> and a reviewer check pass.</p>
 
           </article>
         </div>
@@ -184,10 +184,10 @@ npx rae-faang skills coverage --format json</code></pre>
     </main>
     <footer class="site-footer">
       <div class="wrap footer-inner">
-        <div>            <p class="footer-mark">RAE FAANG</p>
+        <div>            <p class="footer-mark">REA FAANG</p>
           <p class="footer-mission">
             We don't need FAANG anymore. Choose a product from Meta, Amazon, Apple, Netflix or Google
-            and use your agent to build it in your project. RAE FAANG brings together the catalog,
+            and use your agent to build it in your project. REA FAANG brings together the catalog,
             product research and candidate open-source projects. MIT licensed.
           </p>
         </div>

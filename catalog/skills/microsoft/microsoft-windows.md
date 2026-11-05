@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Microsoft Windows (microsoft-window
 
 # Microsoft Windows — implementation skill (`microsoft-windows`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Microsoft Windows**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Microsoft Windows (microsoft-window
 
 This is the coding-agent skill for **Microsoft Windows** (`microsoft-windows`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/microsoft/microsoft-windows.md` from the catalog page, or run `npx rae-faang microsoft-windows --out ./microsoft-windows.md`, `npx rae-faang skills generate microsoft-windows` or `npx rae-faang build agent-kit microsoft-windows --out ./microsoft-windows-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/microsoft/microsoft-windows.md` from the catalog page, or run `npx rea-faang microsoft-windows --out ./microsoft-windows.md`, `npx rea-faang skills generate microsoft-windows` or `npx rea-faang build agent-kit microsoft-windows --out ./microsoft-windows-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Microsoft Windows / `microsoft-windows` | `catalog/products.jsonl` |
 | Official product URL | [https://www.microsoft.com/en-us/windows/](https://www.microsoft.com/en-us/windows/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | [https://learn.microsoft.com/en-us/windows/](https://learn.microsoft.com/en-us/windows/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier microsoft-windows` | `research/companies/microsoft/products/microsoft-windows.md` |
+| Official documentation | [https://learn.microsoft.com/en-us/windows/resources/](https://learn.microsoft.com/en-us/windows/resources/) | Catalog record |
+| Research dossier | `npx rea-faang research dossier microsoft-windows` | `research/companies/microsoft/products/microsoft-windows.md` |
 | REA report | `catalog/rea/microsoft/microsoft-windows.md` (captured 2026-11-03T01:41:47.457Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/microsoft-windows.json` (`ev_b834d9000750d0c6bda1b5c38436d584221d0e35b520e1a8576e8a5496ccfba5`) | Catalog evidence |
 | Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show microsoft-windows --format json` and `npx rae-faang research dossier microsoft-windows` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show microsoft-windows --format json` and `npx rea-faang research dossier microsoft-windows` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `MICROSOFT-WINDOWS-CAP-1924C765`, `MICROSOFT-WINDOWS-CAP-ECDBCDC3`, `MICROSOFT-WINDOWS-CAP-EC00CAF7`, `MICROSOFT-WINDOWS-CAP-35825CE5`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `MICROSOFT-WINDOWS-CAP-47644ECC`, `MICROSOFT-WINDOWS-CAP-AE53EB00`, `MICROSOFT-WINDOWS-CAP-BCC79373`, `MICROSOFT-WINDOWS-CAP-FB003AC3`, `MICROSOFT-WINDOWS-CAP-53EF4801`, `MICROSOFT-WINDOWS-CAP-50FC1D85`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,7 +103,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Microsoft Windows** / `microsoft-windows` | Product catalog |
 | Company / category | Microsoft / `operating_system` / `platform`, `desktop` | Product catalog |
-| Official website / docs | [https://www.microsoft.com/en-us/windows/](https://www.microsoft.com/en-us/windows/) / [https://learn.microsoft.com/en-us/windows/](https://learn.microsoft.com/en-us/windows/) | URL lead; compiler does not fetch source |
+| Official website / docs | [https://www.microsoft.com/en-us/windows/](https://www.microsoft.com/en-us/windows/) / [https://learn.microsoft.com/en-us/windows/resources/](https://learn.microsoft.com/en-us/windows/resources/) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,19 +118,23 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `MICROSOFT-WINDOWS-CAP-1924C765` | Desktop operating system with the Win32 and Windows App SDK application models | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `MICROSOFT-WINDOWS-CAP-ECDBCDC3` | Windows Update servicing for the OS and drivers | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `MICROSOFT-WINDOWS-CAP-EC00CAF7` | Hyper-V virtualization and Windows Subsystem for Linux | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `MICROSOFT-WINDOWS-CAP-35825CE5` | Security features including Defender, BitLocker and Secure Boot | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-WINDOWS-CAP-47644ECC` | Windows client operating system | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-WINDOWS-CAP-AE53EB00` | Deployment and device management | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-WINDOWS-CAP-BCC79373` | Security and privacy administration | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-WINDOWS-CAP-FB003AC3` | Windows Update servicing | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-WINDOWS-CAP-53EF4801` | WinGet application management | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-WINDOWS-CAP-50FC1D85` | Documented Windows application interfaces | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Shop PCs `, `button: All Microsoft `, `button: Search or ask a question`, `button: ME`, `button: Play video`, `button: A wide world of PCs`, `button: Faster ways to work`, `button: Peace of mind, built in`, `button: More games. More fun.`, `button: Find your app-y place`, `button: Push pause to stop the video`, `button: previous`, `button: next`, `button: Click the arrows to move forward or backwards or push the pause button to stop scrolling`, `button: Expand all frequently asked questions`, `button: Collapse all frequently asked questions`, `button: What is Microsoft Windows?`, `button: What is the latest Windows version?`, `button: What can you do with Windows 11?`, `button: What is Copilot?`, `link: Skip to main content`, `link: Microsoft`, `link: Discover Windows`, `link: Compare`, `link: Help and support`, `link: For business`, `link: Shop new Windows PCs powered by NVIDIA RTX Spark >`, `link: Shop new Windows PCs powered by NVIDIA RTX Spark`, `link: Shop PCs opens the Windows shop PCs webpage`, `link: Footnote 6`, `link: Shop now opens Premium Performance PCs webpage`, `link: Shop now opens Everyday Productivity PCs webpage`, `link: Shop now opens Power Gaming PCs webpage`, `link: Shop now opens Creator Pro PCs webpage`, `link: Shop now opens Core Essentials PCs webpage`, `link: Buy opens the device webpage`, `link: Footnote 3`, `link: Footnote 2`, `link: Compare PCs webpage opens`, `link: Footnote 13`, `link: Read article opens article webpage`, `link: Footnote 1`, `button: Does Windows 11 include AI features?`, `button: What is local AI on Windows?`, `button: How do I download Windows 11?`, `button: What is a premium PC?`, `link: footnoteReturnLabel *`, `link: footnoteReturnLabel 1`, `link: Learn more about M365 subscriptions opens in a new tab`, `link: Details about Copilot in Microsoft 365 subscriptions opens in a new tab`, `link: footnoteReturnLabel 2`, `link: The preferences powering PC gaming opens in a new tab`, `link: footnoteReturnLabel 3`, `link: Learn more opens Windows support webpage`, `link: footnoteReturnLabel 6`, `link: footnoteReturnLabel 9`, `link: footnoteReturnLabel 10`, `link: aka.ms/copilotpluspcs webpage`, `link: footnoteReturnLabel 13`, `link: footnoteReturnLabel 14`, `link: See full terms webpage`, `link: Surface Laptop Ultra`, `link: Surface Pro`, `link: Surface Laptop`, `link: Surface RTX Spark Dev Box`, `link: Explore Copilot`, `link: Explore Microsoft products`, `link: Windows 11 apps`, `link: Account profile`, `link: Download Center`, `link: Microsoft Store support`, `link: Returns`, `link: Order tracking`, `link: Certified Refurbished`, `link: Why buy from Microsoft Store`, `link: Flexible Payments`, `link: Microsoft in education`, `link: Devices for education`, `link: Microsoft Teams for Education`, `link: Microsoft 365 Education`, `link: How to buy for your school`, `link: Educator training and development`, `link: Deals for students and parents`, `link: AI for education`, `link: Microsoft AI`, `link: Microsoft Security`, `link: Dynamics 365`, `link: Microsoft 365`, `link: Microsoft Power Platform`, `link: Microsoft Teams`, `link: Microsoft Copilot`, `link: Small Business`, `link: Azure`, `link: Microsoft Developer`, `link: Microsoft Learn`, `link: Support for AI marketplace apps`, `link: Microsoft Tech Community`, `link: Microsoft Marketplace`, `link: Software companies`, `link: Visual Studio`, `link: Careers`, `link: About Microsoft`, `link: Company news`, `link: Privacy at Microsoft`, `link: Investors`, `link: Diversity and inclusion`, `link: Accessibility`, `link: Sustainability`, `link: Content Language Selector. Currently set to English (United States)`, `link: Your Privacy Choices Opt-Out Icon Your Privacy Choices`, `link: Consumer Health Privacy`, `link: Sitemap`, `link: Contact Microsoft`, `link: Privacy`, `link: Terms of use`, `link: Trademarks`, `link: Safety & eco`, `link: Recycling`, `link: About our ads`, `button: Open Ask Windows Chat`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Desktop operating system with the Win32 and Windows App SDK application models:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Windows Update servicing for the OS and drivers:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Hyper-V virtualization and Windows Subsystem for Linux:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Security features including Defender, BitLocker and Secure Boot:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Windows client operating system:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Deployment and device management:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Security and privacy administration:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Windows Update servicing:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **WinGet application management:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Documented Windows application interfaces:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -147,41 +151,59 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-1924C765 — Desktop operating system with the Win32 and Windows App SDK application models
+### REQ-FUNC-47644ECC — Windows client operating system
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-1924C765`; fixture and expected output must be specified from evidence.
-- **Trace:** `MICROSOFT-WINDOWS-CAP-1924C765` → `REQ-FUNC-1924C765` → `TEST-FUNC-1924C765`.
+- **Associated test ID:** `TEST-FUNC-47644ECC`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-WINDOWS-CAP-47644ECC` → `REQ-FUNC-47644ECC` → `TEST-FUNC-47644ECC`.
 
-### REQ-FUNC-ECDBCDC3 — Windows Update servicing for the OS and drivers
+### REQ-FUNC-AE53EB00 — Deployment and device management
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-ECDBCDC3`; fixture and expected output must be specified from evidence.
-- **Trace:** `MICROSOFT-WINDOWS-CAP-ECDBCDC3` → `REQ-FUNC-ECDBCDC3` → `TEST-FUNC-ECDBCDC3`.
+- **Associated test ID:** `TEST-FUNC-AE53EB00`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-WINDOWS-CAP-AE53EB00` → `REQ-FUNC-AE53EB00` → `TEST-FUNC-AE53EB00`.
 
-### REQ-FUNC-EC00CAF7 — Hyper-V virtualization and Windows Subsystem for Linux
+### REQ-FUNC-BCC79373 — Security and privacy administration
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-EC00CAF7`; fixture and expected output must be specified from evidence.
-- **Trace:** `MICROSOFT-WINDOWS-CAP-EC00CAF7` → `REQ-FUNC-EC00CAF7` → `TEST-FUNC-EC00CAF7`.
+- **Associated test ID:** `TEST-FUNC-BCC79373`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-WINDOWS-CAP-BCC79373` → `REQ-FUNC-BCC79373` → `TEST-FUNC-BCC79373`.
 
-### REQ-FUNC-35825CE5 — Security features including Defender, BitLocker and Secure Boot
+### REQ-FUNC-FB003AC3 — Windows Update servicing
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-35825CE5`; fixture and expected output must be specified from evidence.
-- **Trace:** `MICROSOFT-WINDOWS-CAP-35825CE5` → `REQ-FUNC-35825CE5` → `TEST-FUNC-35825CE5`.
+- **Associated test ID:** `TEST-FUNC-FB003AC3`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-WINDOWS-CAP-FB003AC3` → `REQ-FUNC-FB003AC3` → `TEST-FUNC-FB003AC3`.
+
+### REQ-FUNC-53EF4801 — WinGet application management
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-53EF4801`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-WINDOWS-CAP-53EF4801` → `REQ-FUNC-53EF4801` → `TEST-FUNC-53EF4801`.
+
+### REQ-FUNC-50FC1D85 — Documented Windows application interfaces
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-50FC1D85`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-WINDOWS-CAP-50FC1D85` → `REQ-FUNC-50FC1D85` → `TEST-FUNC-50FC1D85`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -227,10 +249,12 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `MICROSOFT-WINDOWS-CAP-1924C765` — Desktop operating system with the Win32 and Windows App SDK application models | Not verified against ReactOS | None yet; compare with `ev_b834d9000750d0c6bda1b5c38436d584221d0e35b520e1a8576e8a5496ccfba5` | Candidate code path and tests must be inspected |
-| `MICROSOFT-WINDOWS-CAP-ECDBCDC3` — Windows Update servicing for the OS and drivers | Not verified against ReactOS | None yet; compare with `ev_b834d9000750d0c6bda1b5c38436d584221d0e35b520e1a8576e8a5496ccfba5` | Candidate code path and tests must be inspected |
-| `MICROSOFT-WINDOWS-CAP-EC00CAF7` — Hyper-V virtualization and Windows Subsystem for Linux | Not verified against ReactOS | None yet; compare with `ev_b834d9000750d0c6bda1b5c38436d584221d0e35b520e1a8576e8a5496ccfba5` | Candidate code path and tests must be inspected |
-| `MICROSOFT-WINDOWS-CAP-35825CE5` — Security features including Defender, BitLocker and Secure Boot | Not verified against ReactOS | None yet; compare with `ev_b834d9000750d0c6bda1b5c38436d584221d0e35b520e1a8576e8a5496ccfba5` | Candidate code path and tests must be inspected |
+| `MICROSOFT-WINDOWS-CAP-47644ECC` — Windows client operating system | Not verified against ReactOS | None yet; compare with `ev_b834d9000750d0c6bda1b5c38436d584221d0e35b520e1a8576e8a5496ccfba5` | Candidate code path and tests must be inspected |
+| `MICROSOFT-WINDOWS-CAP-AE53EB00` — Deployment and device management | Not verified against ReactOS | None yet; compare with `ev_b834d9000750d0c6bda1b5c38436d584221d0e35b520e1a8576e8a5496ccfba5` | Candidate code path and tests must be inspected |
+| `MICROSOFT-WINDOWS-CAP-BCC79373` — Security and privacy administration | Not verified against ReactOS | None yet; compare with `ev_b834d9000750d0c6bda1b5c38436d584221d0e35b520e1a8576e8a5496ccfba5` | Candidate code path and tests must be inspected |
+| `MICROSOFT-WINDOWS-CAP-FB003AC3` — Windows Update servicing | Not verified against ReactOS | None yet; compare with `ev_b834d9000750d0c6bda1b5c38436d584221d0e35b520e1a8576e8a5496ccfba5` | Candidate code path and tests must be inspected |
+| `MICROSOFT-WINDOWS-CAP-53EF4801` — WinGet application management | Not verified against ReactOS | None yet; compare with `ev_b834d9000750d0c6bda1b5c38436d584221d0e35b520e1a8576e8a5496ccfba5` | Candidate code path and tests must be inspected |
+| `MICROSOFT-WINDOWS-CAP-50FC1D85` — Documented Windows application interfaces | Not verified against ReactOS | None yet; compare with `ev_b834d9000750d0c6bda1b5c38436d584221d0e35b520e1a8576e8a5496ccfba5` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -277,10 +301,12 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-1924C765** → `REQ-FUNC-1924C765`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-ECDBCDC3** → `REQ-FUNC-ECDBCDC3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-EC00CAF7** → `REQ-FUNC-EC00CAF7`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-35825CE5** → `REQ-FUNC-35825CE5`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-47644ECC** → `REQ-FUNC-47644ECC`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-AE53EB00** → `REQ-FUNC-AE53EB00`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-BCC79373** → `REQ-FUNC-BCC79373`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-FB003AC3** → `REQ-FUNC-FB003AC3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-53EF4801** → `REQ-FUNC-53EF4801`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-50FC1D85** → `REQ-FUNC-50FC1D85`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -301,7 +327,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-1924C765, REQ-FUNC-ECDBCDC3, REQ-FUNC-EC00CAF7, REQ-FUNC-35825CE5
+- **Requirements:** REQ-FUNC-47644ECC, REQ-FUNC-AE53EB00, REQ-FUNC-BCC79373, REQ-FUNC-FB003AC3, REQ-FUNC-53EF4801, REQ-FUNC-50FC1D85
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -311,7 +337,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-1924C765, REQ-FUNC-ECDBCDC3, REQ-FUNC-EC00CAF7, REQ-FUNC-35825CE5
+- **Requirements:** REQ-FUNC-47644ECC, REQ-FUNC-AE53EB00, REQ-FUNC-BCC79373, REQ-FUNC-FB003AC3, REQ-FUNC-53EF4801, REQ-FUNC-50FC1D85
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -333,7 +359,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-1924C765, REQ-FUNC-ECDBCDC3, REQ-FUNC-EC00CAF7, REQ-FUNC-35825CE5; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-47644ECC, REQ-FUNC-AE53EB00, REQ-FUNC-BCC79373, REQ-FUNC-FB003AC3, REQ-FUNC-53EF4801, REQ-FUNC-50FC1D85; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -363,10 +389,15 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
+| `ev-microsoft-windows-docs` | Windows client documentation — The official documentation hub covers deployment, security, privacy, management and Windows client versions. | [link](https://learn.microsoft.com/en-us/windows/resources/) | 2026-11-03T00:00:00Z | Microsoft documents Windows client deployment, security, privacy and management for Windows 10 and Windows 11. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-microsoft-windows-winget` | Use WinGet to install and manage applications — Microsoft documents WinGet commands, supported versions, installer formats and the open-source client repository. | [link](https://learn.microsoft.com/en-us/windows/package-manager/winget/) | 2026-11-03T00:00:00Z | WinGet discovers, installs, upgrades, removes and configures applications on supported Windows versions. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-microsoft-windows-security` | Windows security documentation — The official security documentation lists Windows security features and administration guidance. | [link](https://learn.microsoft.com/en-us/windows/security/) | 2026-11-03T00:00:00Z | Microsoft documents Windows security features, baselines, BitLocker and Windows Hello for Business. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
 | `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.microsoft.com/en-us/windows/) | 2026-11-03T00:00:00Z | Microsoft Windows is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://learn.microsoft.com/en-us/windows/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
-| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://www.microsoft.com/en-us/windows/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://learn.microsoft.com/en-us/windows/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://learn.microsoft.com/en-us/windows/resources/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://learn.microsoft.com/en-us/windows/resources/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://learn.microsoft.com/en-us/windows/package-manager/winget/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://learn.microsoft.com/en-us/windows/security/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_b834d9000750d0c6bda1b5c38436d584221d0e35b520e1a8576e8a5496ccfba5` | Microsoft Windows Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.microsoft.com/en-us/windows/) | 2026-11-03T01:41:47.457Z | A dated unauthenticated snapshot exposed controls button: Shop PCs , button: All Microsoft , button: Search or ask a question, button: ME, button: Play video, button: A wide world of PCs, button: Faster ways to work, button: Peace of mind, built in, button: More games. More fun., button: Find your app-y place, button: Push pause to stop the video, button: previous, button: next, button: Click the arrows to move forward or backwards or push the pause button to stop scrolling, button: Expand all frequently asked questions, button: Collapse all frequently asked questions, button: What is Microsoft Windows?, button: What is the latest Windows version?, button: What can you do with Windows 11?, button: What is Copilot?, link: Skip to main content, link: Microsoft, link: Discover Windows, link: Compare, link: Help and support, link: For business, link: Shop new Windows PCs powered by NVIDIA RTX Spark >, link: Shop new Windows PCs powered by NVIDIA RTX Spark, link: Shop PCs opens the Windows shop PCs webpage, link: Footnote 6, link: Shop now opens Premium Performance PCs webpage, link: Shop now opens Everyday Productivity PCs webpage, link: Shop now opens Power Gaming PCs webpage, link: Shop now opens Creator Pro PCs webpage, link: Shop now opens Core Essentials PCs webpage, link: Buy opens the device webpage, link: Footnote 3, link: Footnote 2, link: Compare PCs webpage opens, link: Footnote 13, link: Read article opens article webpage, link: Footnote 1, button: Does Windows 11 include AI features?, button: What is local AI on Windows?, button: How do I download Windows 11?, button: What is a premium PC?, link: footnoteReturnLabel *, link: footnoteReturnLabel 1, link: Learn more about M365 subscriptions opens in a new tab, link: Details about Copilot in Microsoft 365 subscriptions opens in a new tab, link: footnoteReturnLabel 2, link: The preferences powering PC gaming opens in a new tab, link: footnoteReturnLabel 3, link: Learn more opens Windows support webpage, link: footnoteReturnLabel 6, link: footnoteReturnLabel 9, link: footnoteReturnLabel 10, link: aka.ms/copilotpluspcs webpage, link: footnoteReturnLabel 13, link: footnoteReturnLabel 14, link: See full terms webpage, link: Surface Laptop Ultra, link: Surface Pro, link: Surface Laptop, link: Surface RTX Spark Dev Box, link: Explore Copilot, link: Explore Microsoft products, link: Windows 11 apps, link: Account profile, link: Download Center, link: Microsoft Store support, link: Returns, link: Order tracking, link: Certified Refurbished, link: Why buy from Microsoft Store, link: Flexible Payments, link: Microsoft in education, link: Devices for education, link: Microsoft Teams for Education, link: Microsoft 365 Education, link: How to buy for your school, link: Educator training and development, link: Deals for students and parents, link: AI for education, link: Microsoft AI, link: Microsoft Security, link: Dynamics 365, link: Microsoft 365, link: Microsoft Power Platform, link: Microsoft Teams, link: Microsoft Copilot, link: Small Business, link: Azure, link: Microsoft Developer, link: Microsoft Learn, link: Support for AI marketplace apps, link: Microsoft Tech Community, link: Microsoft Marketplace, link: Software companies, link: Visual Studio, link: Careers, link: About Microsoft, link: Company news, link: Privacy at Microsoft, link: Investors, link: Diversity and inclusion, link: Accessibility, link: Sustainability, link: Content Language Selector. Currently set to English (United States), link: Your Privacy Choices Opt-Out Icon Your Privacy Choices, link: Consumer Health Privacy, link: Sitemap, link: Contact Microsoft, link: Privacy, link: Terms of use, link: Trademarks, link: Safety & eco, link: Recycling, link: About our ads, button: Open Ask Windows Chat and landmarks banner, navigation: Contextual menu, navigation: All Microsoft menu, main, region: A wide world of PCs, region: Powerful choices, region: Windows vs. others, region: Discover more of Windows, region: What is Microsoft Windows?, region: What is the latest Windows version?, region: What can you do with Windows 11?, region: What is Copilot?, region: Does Windows 11 include AI features?, region: What is local AI on Windows?, region: How do I download Windows 11?, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -392,82 +423,107 @@ Resume token: `microsoft-windows`. Read dossier, REA report and raw Evidence bef
 
 ### Dossier notes (not independently verified)
 
-# 1. Executive summary
+# Microsoft Windows
 
-Windows is Microsoft's desktop operating system family, shipped preinstalled by OEMs and licensed to consumers and organisations; the implementation is proprietary and observed only through documented APIs.
+## Research verdict
 
+Windows is Microsoft's active desktop operating-system family for consumer and
+organizational devices. Microsoft documents Windows client deployment, security,
+privacy, management, servicing and application-installation workflows. The
+implementation is proprietary; this dossier records public platform behavior and
+documented interfaces, not internal source code or undocumented architecture.
 
-# 2. Product identity and ownership
+The open-source alternative coverage is **partial**. Wine covers application
+compatibility on a POSIX host, while ReactOS targets an independent Windows-like
+operating system. Neither provides the complete supported Windows driver,
+security, servicing and commercial ecosystem.
 
-**Official name:** Microsoft Windows
-**Company:** Microsoft Corporation
-**Current release:** Windows 11 (as documented by Microsoft)
-**Lifecycle status:** active
-**Official website:** https://www.microsoft.com/en-us/windows/
+## Product identity and boundary
 
-# 3. Product capabilities
+- **Owner:** Microsoft Corporation
+- **Canonical product ID:** `microsoft-windows`
+- **Lifecycle:** Active
+- **Public entry point:** https://www.microsoft.com/en-us/windows/
+- **Documentation:** https://learn.microsoft.com/en-us/windows/resources/
+- **Product boundary:** Windows client operating-system capabilities, management,
+  security, servicing and documented application interfaces.
+- **Related catalog entries:** Microsoft 365, Teams, Edge, OneDrive and Azure are
+  separate products/services; their presence on or integration with Windows does
+  not merge their catalog identities.
 
-- Desktop OS shell, window manager and application model (Win32, Windows App SDK)
-- Servicing through Windows Update, including driver distribution
-- Hyper-V virtualization and the Windows Subsystem for Linux
-- Defender antimalware, BitLocker encryption and Secure Boot
-- Microsoft account and Entra ID sign-in
+## Verified capabilities
 
-# 4. Technical architecture
+Microsoft's official documentation verifies that Windows supports:
 
-Windows uses the NT kernel with user-mode subsystems and a proprietary driver model. No public source tree exists; the documented APIs on Microsoft Learn and observed public behaviour are the only authorized surfaces for this catalog.
+1. Deployment, administration and management of Windows 10 and Windows 11 client
+   devices, including enterprise deployment and Autopilot-related workflows.
+2. Security features and guidance including BitLocker, Windows Hello for Business,
+   Secure Boot and Windows security baselines.
+3. Windows Update and regular feature/security servicing; release information
+   documents Windows 11 servicing and monthly security updates.
+4. Application discovery, installation, upgrade, removal and configuration through
+   WinGet on supported Windows versions.
+5. Documented privacy and diagnostic-data management for organizational deployments.
 
-# 5. User workflows
+Feature availability and requirements vary by edition, version, hardware,
+organization policy and lifecycle stage.
 
-Users install or receive the OS, run applications, apply updates, sign in with a Microsoft or work account and manage devices through Settings or Intune. Enterprise fleets add imaging, policy and update-ring management.
+## Technical boundary
 
-# 6. Pricing and access
+The sources verify documented platform and administration surfaces. They do not
+verify Microsoft's complete kernel, driver, boot, update, telemetry, identity,
+virtualization or security implementation. Do not claim NT-internal behavior or
+full API compatibility from this dossier alone.
 
-Distributed as OEM licences, retail licences and volume licensing for organisations. Pricing varies by edition and channel; the catalog does not record prices.
+## Alternative assessment
 
-# 7. API and integration surface
+### Wine — application-compatibility alternative
 
-Official surfaces: the Win32 API and Windows App SDK, documented on Microsoft Learn, plus the `winget` package-manager CLI documented at https://learn.microsoft.com/en-us/windows/package-manager/winget/. Command status: documented, with the official documentation as the source.
+Wine implements Windows API compatibility on POSIX systems. It can be reused when
+the job is running selected Windows applications, but it is not a Windows
+operating system and does not provide Microsoft's driver, update or security model.
 
-# 8. Existing open-source alternatives
+### ReactOS — operating-system research alternative
 
-ReactOS (GPL-2.0) targets binary compatibility; Wine (LGPL-2.1) implements the Windows API on POSIX systems. Neither is an operating system replacement with Microsoft's driver, servicing and security model.
+ReactOS is an independent project targeting Windows application and driver
+compatibility. It remains a research/development project rather than a verified
+production replacement for Windows.
 
-# 9. Alternative comparison
+## REA/build implications
 
-ReactOS is incomplete for daily production use; Wine covers application compatibility but relies on a host OS. The verified gap is the complete, supported OS platform, not individual APIs.
+Choose a bounded implementation goal: application compatibility, a desktop shell,
+device management, or a secure update workflow. Reuse Wine or ReactOS where their
+documented scope fits. Do not copy proprietary Windows assets, bypass licensing,
+or claim OS-level parity without testing hardware, drivers, servicing and security
+requirements.
 
-# 10. Missing capabilities and opportunity analysis
+## Evidence record
 
-An open replacement would need driver compatibility, secure boot trust, a servicing pipeline and long-term security response. Research should scope a compatibility layer rather than an OS clone.
+| Claim | Source | What it supports |
+|---|---|---|
+| Windows client documentation covers deployment, security, privacy and management | [Windows client documentation](https://learn.microsoft.com/en-us/windows/resources/) | Product identity and administrative surface |
+| WinGet discovers, installs, upgrades, removes and configures applications | [Use WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget/) | Documented package-management interface and supported versions |
+| Windows documents security features and baselines | [Windows security documentation](https://learn.microsoft.com/en-us/windows/security/) | Security surface |
+| Windows 11 has documented release and servicing information | [Windows 11 release information](https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information) | Lifecycle and update behavior |
+| Wine and ReactOS cover narrower compatibility jobs | [Wine](https://www.winehq.org/), [ReactOS](https://reactos.org/) | Alternative scope, not parity claims |
 
-# 11. RAE implementation strategy
+## Known gaps
 
-Reuse Wine where application compatibility is the goal; treat OS-level parity as out of scope until a supported driver and servicing model is demonstrated.
+- Edition-specific licensing, hardware requirements, policy controls and feature
+  availability need a dated check for the target Windows release.
+- Full internal architecture and proprietary APIs are not public implementation
+  specifications.
+- Alternative compatibility requires hardware and application testing; catalog
+  status is not a performance guarantee.
 
-# 12. Security, privacy, and compliance
+**Research date:** 2026-11-03.  
+**Confidence:** Verified for documented platform surfaces; partial for alternatives.
 
-Security depends on code signing, Secure Boot and a vendor-run update channel; a clean-room catalog entry records only public documentation and never redistributes protected assets.
-
-# 13. Sources and evidence
-
-- https://www.microsoft.com/en-us/windows/
-- https://learn.microsoft.com/en-us/windows/
-
-# 14. Open questions
-
-- Which documented APIs are sufficient for a credible application-compatibility target?
-- How would an independent project handle driver signing and secure boot?
-
-# 15. Research history
-
-Record created 2026-11-03 from public official sources during the FAANG+Microsoft inventory expansion. Status: `pending`; nothing beyond official documentation and public announcements is asserted.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier microsoft-windows` and inspect canonical identity with `npx rae-faang products show microsoft-windows --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier microsoft-windows` and inspect canonical identity with `npx rea-faang products show microsoft-windows --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -480,7 +536,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang microsoft-windows --out ./microsoft-windows.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit microsoft-windows --out ./microsoft-windows-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang microsoft-windows --out ./microsoft-windows.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit microsoft-windows --out ./microsoft-windows-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -522,8 +578,13 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
+- [Windows client documentation](https://learn.microsoft.com/en-us/windows/resources/) — Microsoft documents Windows client deployment, security, privacy and management for Windows 10 and Windows 11. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Use WinGet to install and manage applications](https://learn.microsoft.com/en-us/windows/package-manager/winget/) — WinGet discovers, installs, upgrades, removes and configures applications on supported Windows versions. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Windows security documentation](https://learn.microsoft.com/en-us/windows/security/) — Microsoft documents Windows security features, baselines, BitLocker and Windows Hello for Business. (VERIFIED; accessed 2026-11-03T00:00:00Z).
 - [Official product page](https://www.microsoft.com/en-us/windows/) — Microsoft Windows is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
-- [Official documentation entry](https://learn.microsoft.com/en-us/windows/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
-- [Additional official source lead](https://www.microsoft.com/en-us/windows/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://learn.microsoft.com/en-us/windows/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Official documentation entry](https://learn.microsoft.com/en-us/windows/resources/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://learn.microsoft.com/en-us/windows/resources/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://learn.microsoft.com/en-us/windows/package-manager/winget/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://learn.microsoft.com/en-us/windows/security/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Microsoft Windows Public web-surface observation (REA)](https://www.microsoft.com/en-us/windows/) — A dated unauthenticated snapshot exposed controls button: Shop PCs , button: All Microsoft , button: Search or ask a question, button: ME, button: Play video, button: A wide world of PCs, button: Faster ways to work, button: Peace of mind, built in, button: More games. More fun., button: Find your app-y place, button: Push pause to stop the video, button: previous, button: next, button: Click the arrows to move forward or backwards or push the pause button to stop scrolling, button: Expand all frequently asked questions, button: Collapse all frequently asked questions, button: What is Microsoft Windows?, button: What is the latest Windows version?, button: What can you do with Windows 11?, button: What is Copilot?, link: Skip to main content, link: Microsoft, link: Discover Windows, link: Compare, link: Help and support, link: For business, link: Shop new Windows PCs powered by NVIDIA RTX Spark >, link: Shop new Windows PCs powered by NVIDIA RTX Spark, link: Shop PCs opens the Windows shop PCs webpage, link: Footnote 6, link: Shop now opens Premium Performance PCs webpage, link: Shop now opens Everyday Productivity PCs webpage, link: Shop now opens Power Gaming PCs webpage, link: Shop now opens Creator Pro PCs webpage, link: Shop now opens Core Essentials PCs webpage, link: Buy opens the device webpage, link: Footnote 3, link: Footnote 2, link: Compare PCs webpage opens, link: Footnote 13, link: Read article opens article webpage, link: Footnote 1, button: Does Windows 11 include AI features?, button: What is local AI on Windows?, button: How do I download Windows 11?, button: What is a premium PC?, link: footnoteReturnLabel *, link: footnoteReturnLabel 1, link: Learn more about M365 subscriptions opens in a new tab, link: Details about Copilot in Microsoft 365 subscriptions opens in a new tab, link: footnoteReturnLabel 2, link: The preferences powering PC gaming opens in a new tab, link: footnoteReturnLabel 3, link: Learn more opens Windows support webpage, link: footnoteReturnLabel 6, link: footnoteReturnLabel 9, link: footnoteReturnLabel 10, link: aka.ms/copilotpluspcs webpage, link: footnoteReturnLabel 13, link: footnoteReturnLabel 14, link: See full terms webpage, link: Surface Laptop Ultra, link: Surface Pro, link: Surface Laptop, link: Surface RTX Spark Dev Box, link: Explore Copilot, link: Explore Microsoft products, link: Windows 11 apps, link: Account profile, link: Download Center, link: Microsoft Store support, link: Returns, link: Order tracking, link: Certified Refurbished, link: Why buy from Microsoft Store, link: Flexible Payments, link: Microsoft in education, link: Devices for education, link: Microsoft Teams for Education, link: Microsoft 365 Education, link: How to buy for your school, link: Educator training and development, link: Deals for students and parents, link: AI for education, link: Microsoft AI, link: Microsoft Security, link: Dynamics 365, link: Microsoft 365, link: Microsoft Power Platform, link: Microsoft Teams, link: Microsoft Copilot, link: Small Business, link: Azure, link: Microsoft Developer, link: Microsoft Learn, link: Support for AI marketplace apps, link: Microsoft Tech Community, link: Microsoft Marketplace, link: Software companies, link: Visual Studio, link: Careers, link: About Microsoft, link: Company news, link: Privacy at Microsoft, link: Investors, link: Diversity and inclusion, link: Accessibility, link: Sustainability, link: Content Language Selector. Currently set to English (United States), link: Your Privacy Choices Opt-Out Icon Your Privacy Choices, link: Consumer Health Privacy, link: Sitemap, link: Contact Microsoft, link: Privacy, link: Terms of use, link: Trademarks, link: Safety & eco, link: Recycling, link: About our ads, button: Open Ask Windows Chat and landmarks banner, navigation: Contextual menu, navigation: All Microsoft menu, main, region: A wide world of PCs, region: Powerful choices, region: Windows vs. others, region: Discover more of Windows, region: What is Microsoft Windows?, region: What is the latest Windows version?, region: What can you do with Windows 11?, region: What is Copilot?, region: Does Windows 11 include AI features?, region: What is local AI on Windows?, region: How do I download Windows 11?, contentinfo. (VERIFIED; accessed 2026-11-03T01:41:47.457Z).

@@ -73,9 +73,9 @@ Pending evidence-backed comparison; the product's deprecated intake status is a 
 
 The primary research opportunity is a self-hostable human-review workflow with explicit task routing, worker UI templates, auditability and model feedback. This is a proposed direction, not observed parity.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the RAE skill against the public A2I documentation and permitted surfaces. Preserve the deprecated lifecycle status and design an independent implementation only where current access and user scope justify it.
+Use the REA skill against the public A2I documentation and permitted surfaces. Preserve the deprecated lifecycle status and design an independent implementation only where current access and user scope justify it.
 
 # 12. Security, privacy, and compliance
 

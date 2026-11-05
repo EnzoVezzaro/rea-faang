@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Route 53 (amazon-route-53); 
 
 # Amazon Route 53 — implementation skill (`amazon-route-53`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Route 53**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Route 53 (amazon-route-53); 
 
 This is the coding-agent skill for **Amazon Route 53** (`amazon-route-53`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-route-53.md` from the catalog page, or run `npx rae-faang amazon-route-53 --out ./amazon-route-53.md`, `npx rae-faang skills generate amazon-route-53` or `npx rae-faang build agent-kit amazon-route-53 --out ./amazon-route-53-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-route-53.md` from the catalog page, or run `npx rea-faang amazon-route-53 --out ./amazon-route-53.md`, `npx rea-faang skills generate amazon-route-53` or `npx rea-faang build agent-kit amazon-route-53 --out ./amazon-route-53-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Route 53 / `amazon-route-53` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/route53/](https://aws.amazon.com/route53/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/route53/](https://docs.aws.amazon.com/route53/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-route-53` | `research/companies/amazon_aws/products/amazon-route-53.md` |
+| Research dossier | `npx rea-faang research dossier amazon-route-53` | `research/companies/amazon_aws/products/amazon-route-53.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-route-53.md` (captured 2026-11-03T03:46:39.292Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-route-53.json` (`ev_ed1d010580201c6acd84a8f48a273451b25988104ee222af7a993cbcdde0cbe8`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-route-53 --format json` and `npx rae-faang research dossier amazon-route-53` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-route-53 --format json` and `npx rea-faang research dossier amazon-route-53` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-ROUTE-53-CAP-BE237F08`, `AMAZON-ROUTE-53-CAP-ABAD9352`, `AMAZON-ROUTE-53-CAP-B50EE499`, `AMAZON-ROUTE-53-CAP-FA7FDD34`, `AMAZON-ROUTE-53-CAP-5E4B9480`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-ROUTE-53-CAP-89D29043`, `AMAZON-ROUTE-53-CAP-8E4C8775`, `AMAZON-ROUTE-53-CAP-A106A484`, `AMAZON-ROUTE-53-CAP-9092B988`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-ROUTE-53-CAP-BE237F08` | authoritative DNS hosting | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-ROUTE-53-CAP-ABAD9352` | domain registration and transfer | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-ROUTE-53-CAP-B50EE499` | health checks and DNS failover | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-ROUTE-53-CAP-FA7FDD34` | latency, weighted, geolocation and geoproximity routing | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-ROUTE-53-CAP-5E4B9480` | Resolver, Profiles and traffic-flow configuration | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-ROUTE-53-CAP-89D29043` | DNS service, hosted zones and record routing are documented. | VERIFIED | `ev-amazon-route-53-identity`, `ev-amazon-route-53-dns-routing` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-ROUTE-53-CAP-8E4C8775` | Health checks, failover and DNSSEC are documented; propagation and timing behavior remain unverified here. | VERIFIED | `ev-amazon-route-53-health`, `ev-amazon-route-53-dnssec` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-ROUTE-53-CAP-A106A484` | API families for DNS, domains, Resolver and Profiles are documented; account-specific authorization was not tested. | VERIFIED | `ev-amazon-route-53-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-ROUTE-53-CAP-9092B988` | PowerDNS covers an authoritative-DNS foundation but not Route 53's registrar, health-check plane, routing products, Resolver, Profiles or managed AWS operations. | VERIFIED | `ev-amazon-route-53-powerdns`, `ev-amazon-route-53-dns-routing` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Features submenu`, `button: Get started with Route 53`, `button: Connect with an expert`, `button: Route end users to your site reliably with globally-dispersed Domain Name System (DNS) servers and automatic scaling.`, `button: Set up your DNS routing in minutes with domain name registration and straightforward visual traffic flow tools.`, `button: Customize your DNS routing policies to reduce latency, improve application availability, and maintain compliance.`, `button: Manage network traffic globally`, `button: Build highly available applications`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Pricing`, `link: Resources`, `link: FAQs`, `link: Products`, `link: Networking and Content Delivery`, `link: Domain Name System (DNS)`, `link: domain name registration`, `link: health-checking`, `link: Traffic Flow`, `link: Route 53 Resolver`, `link: Route 53 Resolver DNS Firewall`, `button: Set up private DNS`, `link: Missing alt text value Capital One improves cloud resilience with Amazon Route 53 Watch the video`, `link: Missing alt text value Netflix improved application resiliency with Amazon Route 53 Watch the video`, `link: Missing alt text value McDonald’s manages global traffic routing with Amazon Route 53 Watch the video`, `link: Features page Read more about Amazon Route 53 Learn more`, `link: Getting started Secure your Amazon VPC DNS resolution with Amazon Route 53 Resolver DNS Firewall Learn more`, `link: Contact us Connect with an expert Contact us`, `button: Yes, give us positive feedback`, `button: No, give us constructive feedback`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **authoritative DNS hosting:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **domain registration and transfer:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **health checks and DNS failover:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **latency, weighted, geolocation and geoproximity routing:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Resolver, Profiles and traffic-flow configuration:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **DNS service, hosted zones and record routing are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Health checks, failover and DNSSEC are documented; propagation and timing behavior remain unverified here.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **API families for DNS, domains, Resolver and Profiles are documented; account-specific authorization was not tested.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **PowerDNS covers an authoritative-DNS foundation but not Route 53's registrar, health-check plane, routing products, Resolver, Profiles or managed AWS operations.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-BE237F08 — authoritative DNS hosting
+### REQ-FUNC-89D29043 — DNS service, hosted zones and record routing are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-route-53-identity`, `ev-amazon-route-53-dns-routing`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-BE237F08`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-ROUTE-53-CAP-BE237F08` → `REQ-FUNC-BE237F08` → `TEST-FUNC-BE237F08`.
+- **Associated test ID:** `TEST-FUNC-89D29043`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-ROUTE-53-CAP-89D29043` → `REQ-FUNC-89D29043` → `TEST-FUNC-89D29043`.
 
-### REQ-FUNC-ABAD9352 — domain registration and transfer
+### REQ-FUNC-8E4C8775 — Health checks, failover and DNSSEC are documented; propagation and timing behavior remain unverified here.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-route-53-health`, `ev-amazon-route-53-dnssec`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-ABAD9352`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-ROUTE-53-CAP-ABAD9352` → `REQ-FUNC-ABAD9352` → `TEST-FUNC-ABAD9352`.
+- **Associated test ID:** `TEST-FUNC-8E4C8775`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-ROUTE-53-CAP-8E4C8775` → `REQ-FUNC-8E4C8775` → `TEST-FUNC-8E4C8775`.
 
-### REQ-FUNC-B50EE499 — health checks and DNS failover
+### REQ-FUNC-A106A484 — API families for DNS, domains, Resolver and Profiles are documented; account-specific authorization was not tested.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-route-53-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-B50EE499`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-ROUTE-53-CAP-B50EE499` → `REQ-FUNC-B50EE499` → `TEST-FUNC-B50EE499`.
+- **Associated test ID:** `TEST-FUNC-A106A484`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-ROUTE-53-CAP-A106A484` → `REQ-FUNC-A106A484` → `TEST-FUNC-A106A484`.
 
-### REQ-FUNC-FA7FDD34 — latency, weighted, geolocation and geoproximity routing
+### REQ-FUNC-9092B988 — PowerDNS covers an authoritative-DNS foundation but not Route 53's registrar, health-check plane, routing products, Resolver, Profiles or managed AWS operations.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-route-53-powerdns`, `ev-amazon-route-53-dns-routing`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-FA7FDD34`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-ROUTE-53-CAP-FA7FDD34` → `REQ-FUNC-FA7FDD34` → `TEST-FUNC-FA7FDD34`.
-
-### REQ-FUNC-5E4B9480 — Resolver, Profiles and traffic-flow configuration
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-5E4B9480`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-ROUTE-53-CAP-5E4B9480` → `REQ-FUNC-5E4B9480` → `TEST-FUNC-5E4B9480`.
+- **Associated test ID:** `TEST-FUNC-9092B988`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-ROUTE-53-CAP-9092B988` → `REQ-FUNC-9092B988` → `TEST-FUNC-9092B988`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -237,11 +226,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `AMAZON-ROUTE-53-CAP-BE237F08` — authoritative DNS hosting | Not verified against PowerDNS Authoritative Server | None yet; compare with `ev_ed1d010580201c6acd84a8f48a273451b25988104ee222af7a993cbcdde0cbe8` | Candidate code path and tests must be inspected |
-| `AMAZON-ROUTE-53-CAP-ABAD9352` — domain registration and transfer | Not verified against PowerDNS Authoritative Server | None yet; compare with `ev_ed1d010580201c6acd84a8f48a273451b25988104ee222af7a993cbcdde0cbe8` | Candidate code path and tests must be inspected |
-| `AMAZON-ROUTE-53-CAP-B50EE499` — health checks and DNS failover | Not verified against PowerDNS Authoritative Server | None yet; compare with `ev_ed1d010580201c6acd84a8f48a273451b25988104ee222af7a993cbcdde0cbe8` | Candidate code path and tests must be inspected |
-| `AMAZON-ROUTE-53-CAP-FA7FDD34` — latency, weighted, geolocation and geoproximity routing | Not verified against PowerDNS Authoritative Server | None yet; compare with `ev_ed1d010580201c6acd84a8f48a273451b25988104ee222af7a993cbcdde0cbe8` | Candidate code path and tests must be inspected |
-| `AMAZON-ROUTE-53-CAP-5E4B9480` — Resolver, Profiles and traffic-flow configuration | Not verified against PowerDNS Authoritative Server | None yet; compare with `ev_ed1d010580201c6acd84a8f48a273451b25988104ee222af7a993cbcdde0cbe8` | Candidate code path and tests must be inspected |
+| `AMAZON-ROUTE-53-CAP-89D29043` — DNS service, hosted zones and record routing are documented. | Not verified against PowerDNS Authoritative Server | None yet; compare with `ev_ed1d010580201c6acd84a8f48a273451b25988104ee222af7a993cbcdde0cbe8` | Candidate code path and tests must be inspected |
+| `AMAZON-ROUTE-53-CAP-8E4C8775` — Health checks, failover and DNSSEC are documented; propagation and timing behavior remain unverified here. | Not verified against PowerDNS Authoritative Server | None yet; compare with `ev_ed1d010580201c6acd84a8f48a273451b25988104ee222af7a993cbcdde0cbe8` | Candidate code path and tests must be inspected |
+| `AMAZON-ROUTE-53-CAP-A106A484` — API families for DNS, domains, Resolver and Profiles are documented; account-specific authorization was not tested. | Not verified against PowerDNS Authoritative Server | None yet; compare with `ev_ed1d010580201c6acd84a8f48a273451b25988104ee222af7a993cbcdde0cbe8` | Candidate code path and tests must be inspected |
+| `AMAZON-ROUTE-53-CAP-9092B988` — PowerDNS covers an authoritative-DNS foundation but not Route 53's registrar, health-check plane, routing products, Resolver, Profiles or managed AWS operations. | Not verified against PowerDNS Authoritative Server | None yet; compare with `ev_ed1d010580201c6acd84a8f48a273451b25988104ee222af7a993cbcdde0cbe8` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -288,11 +276,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-BE237F08** → `REQ-FUNC-BE237F08`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-ABAD9352** → `REQ-FUNC-ABAD9352`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-B50EE499** → `REQ-FUNC-B50EE499`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-FA7FDD34** → `REQ-FUNC-FA7FDD34`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-5E4B9480** → `REQ-FUNC-5E4B9480`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-89D29043** → `REQ-FUNC-89D29043`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-8E4C8775** → `REQ-FUNC-8E4C8775`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-A106A484** → `REQ-FUNC-A106A484`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-9092B988** → `REQ-FUNC-9092B988`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -313,7 +300,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-BE237F08, REQ-FUNC-ABAD9352, REQ-FUNC-B50EE499, REQ-FUNC-FA7FDD34, REQ-FUNC-5E4B9480
+- **Requirements:** REQ-FUNC-89D29043, REQ-FUNC-8E4C8775, REQ-FUNC-A106A484, REQ-FUNC-9092B988
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -323,7 +310,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-BE237F08, REQ-FUNC-ABAD9352, REQ-FUNC-B50EE499, REQ-FUNC-FA7FDD34, REQ-FUNC-5E4B9480
+- **Requirements:** REQ-FUNC-89D29043, REQ-FUNC-8E4C8775, REQ-FUNC-A106A484, REQ-FUNC-9092B988
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -345,7 +332,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-BE237F08, REQ-FUNC-ABAD9352, REQ-FUNC-B50EE499, REQ-FUNC-FA7FDD34, REQ-FUNC-5E4B9480; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-89D29043, REQ-FUNC-8E4C8775, REQ-FUNC-A106A484, REQ-FUNC-9092B988; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -375,13 +362,24 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/route53/) | Not recorded | Amazon Route 53 is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/route53/) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-route-53-identity` | Amazon Route 53 API Reference — The official API reference describes Route 53's DNS, domain registration, health checking and Resolver functions. | [link](https://docs.aws.amazon.com/Route53/latest/APIReference/) | 2026-11-03T00:00:00Z | Amazon Route 53 is AWS's highly available and scalable DNS web service with domain, health-check and Resolver functions. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-route-53-dns-routing` | Routing traffic to your resources — AWS documents hosted zones, records and routing of internet or VPC traffic to resources. | [link](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-routing-traffic-to-resources.html) | 2026-11-03T00:00:00Z | Route 53 uses public or private hosted zones and records to route traffic to resources. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-route-53-health` | How Amazon Route 53 checks resource health — AWS documents endpoint checks, failure thresholds, notifications and routing away from unhealthy resources. | [link](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) | 2026-11-03T00:00:00Z | Route 53 health checks can monitor endpoints and support DNS failover when resources become unhealthy. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-route-53-concepts` | Amazon Route 53 concepts — The concepts guide describes Route 53 control and data planes, hosted zones, health checks and DNS failover. | [link](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html) | 2026-11-03T00:00:00Z | Route 53 separates control-plane APIs and globally distributed DNS and health-check data planes. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-route-53-dnssec` | Configuring DNSSEC for a domain — AWS documents the DNSSEC chain of trust, public-key registration and signing configuration. | [link](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-configure-dnssec.html) | 2026-11-03T00:00:00Z | Route 53 supports DNSSEC signing and DNSSEC for domain registration. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-route-53-api` | Route 53 API operations — The API reference lists resource and operation families for DNS, domains, Resolver, Global Resolver and Profiles. | [link](https://docs.aws.amazon.com/Route53/latest/APIReference/) | 2026-11-03T00:00:00Z | Route 53 APIs manage hosted zones, records, health checks, domain registration, Resolver and Profiles. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-route-53-powerdns` | PowerDNS — The official repository documents PowerDNS Authoritative, Recursor and dnsdist and identifies GPL-2.0 licensing. | [link](https://github.com/PowerDNS/pdns) | 2026-11-03T00:00:00Z | PowerDNS provides open-source authoritative DNS and recursive DNS components under GPL-2.0. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/route53/) | 2026-11-03T00:00:00Z | Amazon Route 53 is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/route53/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/route53/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/documentation-overview/route53/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/route53/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/cli/latest/reference/route53/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-routing-traffic-to-resources.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-configure-dnssec.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/Route53/latest/APIReference/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-9` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/cli/latest/reference/route53/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_ed1d010580201c6acd84a8f48a273451b25988104ee222af7a993cbcdde0cbe8` | Amazon Route 53 Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/route53/) | 2026-11-03T03:46:39.292Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Features submenu, button: Get started with Route 53, button: Connect with an expert, button: Route end users to your site reliably with globally-dispersed Domain Name System (DNS) servers and automatic scaling., button: Set up your DNS routing in minutes with domain name registration and straightforward visual traffic flow tools., button: Customize your DNS routing policies to reduce latency, improve application availability, and maintain compliance., button: Manage network traffic globally, button: Build highly available applications, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Pricing, link: Resources, link: FAQs, link: Products, link: Networking and Content Delivery, link: Domain Name System (DNS), link: domain name registration, link: health-checking, link: Traffic Flow, link: Route 53 Resolver, link: Route 53 Resolver DNS Firewall, button: Set up private DNS, link: Missing alt text value Capital One improves cloud resilience with Amazon Route 53 Watch the video, link: Missing alt text value Netflix improved application resiliency with Amazon Route 53 Watch the video, link: Missing alt text value McDonald’s manages global traffic routing with Amazon Route 53 Watch the video, link: Features page Read more about Amazon Route 53 Learn more, link: Getting started Secure your Amazon VPC DNS resolution with Amazon Route 53 Resolver DNS Firewall Learn more, link: Contact us Connect with an expert Contact us, button: Yes, give us positive feedback, button: No, give us constructive feedback, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -454,7 +452,7 @@ Compare zone and record APIs, DNSSEC, propagation, dynamic updates, health check
 
 Research must map hosted-zone and record state, registrar lifecycle, health-check transitions, routing policy selection, Resolver endpoints and rules, Profiles, Traffic Flow, DNSSEC, propagation, caching, quotas, failures and recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, CLI references and a controlled non-production domain. Capture record changes, health transitions, routing decisions, Resolver flows, DNSSEC and failure recovery. Use PowerDNS only after recording the partial-foundation verdict, and implement independent tooling with original code and no AWS branding or protected data.
 
@@ -462,13 +460,12 @@ Use official AWS documentation, CLI references and a controlled non-production d
 
 Verify IAM least privilege, registrar account protection, DNSSEC key management, change audit, cross-account sharing, Resolver query logging, private-zone boundaries, deletion safeguards and domain transfer controls. Do not infer availability or security guarantees from DNS documentation alone.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/route53/ — official product scope.
-- https://aws.amazon.com/documentation-overview/route53/ — service documentation overview.
-- https://docs.aws.amazon.com/route53/ — developer and API documentation.
-- https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ — Route 53 workflows and features.
-- https://github.com/PowerDNS/pdns — open-source alternative and GPL-2.0 license.
+- **Product and scope:** [Route 53 documentation](https://docs.aws.amazon.com/route53/) and [API reference](https://docs.aws.amazon.com/Route53/latest/APIReference/) document domain registration, DNS, health checks, Resolver, Profiles and API families.
+- **DNS and routing:** [Route 53 concepts](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html) and [routing traffic](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-routing-traffic-to-resources.html) support hosted-zone, record and routing claims.
+- **Health and security:** [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) and [DNSSEC](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-configure-dnssec.html) support health-aware failover and DNSSEC claims.
+- **Alternative:** [PowerDNS](https://github.com/PowerDNS/pdns) is the recorded GPL-2.0 open-source authoritative DNS foundation; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -479,13 +476,13 @@ Verify IAM least privilege, registrar account protection, DNSSEC key management,
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, hosted zones, routing, health checks, DNSSEC, Resolver and API surface are documented. Exact propagation, caching, quotas, pricing, regional behavior and cross-account semantics remain unknown and are not asserted.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-route-53` and inspect canonical identity with `npx rae-faang products show amazon-route-53 --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-route-53` and inspect canonical identity with `npx rea-faang products show amazon-route-53 --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -498,7 +495,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-route-53 --out ./amazon-route-53.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-route-53 --out ./amazon-route-53-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-route-53 --out ./amazon-route-53.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-route-53 --out ./amazon-route-53-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -540,11 +537,22 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/route53/) — Amazon Route 53 is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://docs.aws.amazon.com/route53/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [Amazon Route 53 API Reference](https://docs.aws.amazon.com/Route53/latest/APIReference/) — Amazon Route 53 is AWS's highly available and scalable DNS web service with domain, health-check and Resolver functions. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Routing traffic to your resources](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-routing-traffic-to-resources.html) — Route 53 uses public or private hosted zones and records to route traffic to resources. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [How Amazon Route 53 checks resource health](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) — Route 53 health checks can monitor endpoints and support DNS failover when resources become unhealthy. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Amazon Route 53 concepts](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html) — Route 53 separates control-plane APIs and globally distributed DNS and health-check data planes. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Configuring DNSSEC for a domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-configure-dnssec.html) — Route 53 supports DNSSEC signing and DNSSEC for domain registration. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Route 53 API operations](https://docs.aws.amazon.com/Route53/latest/APIReference/) — Route 53 APIs manage hosted zones, records, health checks, domain registration, Resolver and Profiles. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [PowerDNS](https://github.com/PowerDNS/pdns) — PowerDNS provides open-source authoritative DNS and recursive DNS components under GPL-2.0. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://aws.amazon.com/route53/) — Amazon Route 53 is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/route53/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/route53/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://aws.amazon.com/documentation-overview/route53/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/route53/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-routing-traffic-to-resources.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-configure-dnssec.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/Route53/latest/APIReference/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/cli/latest/reference/route53/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Route 53 Public web-surface observation (REA)](https://aws.amazon.com/route53/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Features submenu, button: Get started with Route 53, button: Connect with an expert, button: Route end users to your site reliably with globally-dispersed Domain Name System (DNS) servers and automatic scaling., button: Set up your DNS routing in minutes with domain name registration and straightforward visual traffic flow tools., button: Customize your DNS routing policies to reduce latency, improve application availability, and maintain compliance., button: Manage network traffic globally, button: Build highly available applications, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Pricing, link: Resources, link: FAQs, link: Products, link: Networking and Content Delivery, link: Domain Name System (DNS), link: domain name registration, link: health-checking, link: Traffic Flow, link: Route 53 Resolver, link: Route 53 Resolver DNS Firewall, button: Set up private DNS, link: Missing alt text value Capital One improves cloud resilience with Amazon Route 53 Watch the video, link: Missing alt text value Netflix improved application resiliency with Amazon Route 53 Watch the video, link: Missing alt text value McDonald’s manages global traffic routing with Amazon Route 53 Watch the video, link: Features page Read more about Amazon Route 53 Learn more, link: Getting started Secure your Amazon VPC DNS resolution with Amazon Route 53 Resolver DNS Firewall Learn more, link: Contact us Connect with an expert Contact us, button: Yes, give us positive feedback, button: No, give us constructive feedback, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:46:39.292Z).

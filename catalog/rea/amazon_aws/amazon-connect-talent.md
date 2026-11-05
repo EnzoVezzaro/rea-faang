@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Connect Talent, recorded wit
 | Target | https://aws.amazon.com/products/connect/talent/ |
 | Resolved URL | https://aws.amazon.com/products/connect/talent/ |
 | Page title | Amazon Connect Talent |
-| Captured | 2026-11-03T02:54:25.541Z |
+| Captured | 2026-11-04T02:41:05.315Z |
 | Status | captured |
-| REA Evidence ID | `ev_cf8a2ee392d842ef25c44eb7a52cac12ddcae90b43e72ccdf7715e91ff2f729e` |
+| REA Evidence ID | `ev_1445c1937e3a4159450219968dea12f6b3cdf00c5c346950e0ed6f4807431666` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -161,6 +161,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-connect-talent.json`
-- Evidence ID: `ev_cf8a2ee392d842ef25c44eb7a52cac12ddcae90b43e72ccdf7715e91ff2f729e`
+- Evidence ID: `ev_1445c1937e3a4159450219968dea12f6b3cdf00c5c346950e0ed6f4807431666`
 - Accessibility outline: 11108 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

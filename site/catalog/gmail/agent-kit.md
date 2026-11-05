@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Gmail (gmail); investigate, assess 
 
 # Gmail — implementation skill (`gmail`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Gmail**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Gmail (gmail); investigate, assess 
 
 This is the coding-agent skill for **Gmail** (`gmail`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/gmail.md` from the catalog page, or run `npx rae-faang gmail --out ./gmail.md`, `npx rae-faang skills generate gmail` or `npx rae-faang build agent-kit gmail --out ./gmail-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/gmail.md` from the catalog page, or run `npx rea-faang gmail --out ./gmail.md`, `npx rea-faang skills generate gmail` or `npx rea-faang build agent-kit gmail --out ./gmail-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Gmail / `gmail` | `catalog/products.jsonl` |
 | Official product URL | [https://mail.google.com/](https://mail.google.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier gmail` | `research/companies/google/products/gmail.md` |
+| Official documentation | [https://developers.google.com/workspace/gmail](https://developers.google.com/workspace/gmail) | Catalog record |
+| Research dossier | `npx rea-faang research dossier gmail` | `research/companies/google/products/gmail.md` |
 | REA report | `catalog/rea/google/gmail.md` (captured 2026-11-03T01:36:39.606Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/gmail.json` (`ev_4de2a03a5d3cdd83a37890ddbd4bb74483d56b7f81066765e435db509c6852cd`) | Catalog evidence |
 | Alternative candidates | 4 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show gmail --format json` and `npx rae-faang research dossier gmail` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show gmail --format json` and `npx rea-faang research dossier gmail` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GMAIL-CAP-DCB229AD`, `GMAIL-CAP-CE485D57`, `GMAIL-CAP-E8C04D4C`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GMAIL-CAP-D3E62D61`, `GMAIL-CAP-D1249AB6`, `GMAIL-CAP-9E3F9925`, `GMAIL-CAP-21E91820`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,7 +103,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Gmail** / `gmail` | Product catalog |
 | Company / category | Google / `consumer_application` / `productivity` | Product catalog |
-| Official website / docs | [https://mail.google.com/](https://mail.google.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Official website / docs | [https://mail.google.com/](https://mail.google.com/) / [https://developers.google.com/workspace/gmail](https://developers.google.com/workspace/gmail) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GMAIL-CAP-DCB229AD` | IMAP/POP/SMTP mail delivery and storage | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GMAIL-CAP-CE485D57` | Webmail client, search, labelling | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GMAIL-CAP-E8C04D4C` | Spam and phishing filtering, filtering rules | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GMAIL-CAP-D3E62D61` | Authorized mailbox access with message, thread, label, history, draft, settings and attachment resources. | VERIFIED | `ev-gmail-api-overview`, `ev-gmail-api-reference` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GMAIL-CAP-D1249AB6` | Search operators, labels, filters, categories, stars, snooze, archive and deletion workflows. | VERIFIED | `ev-gmail-search-filters`, `ev-gmail-organize` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GMAIL-CAP-9E3F9925` | Programmatic sending and mailbox-change synchronization through documented API and Pub/Sub watch flows. | VERIFIED | `ev-gmail-api-overview`, `ev-gmail-push` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GMAIL-CAP-21E91820` | Storage, security, compliance, routing and recipient limits vary by personal account or Workspace edition. | VERIFIED | `ev-gmail-workspace-editions` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Next`, `textbox: Email or phone`, `link: Forgot email?`, `link: Learn more about using Guest mode (external, opens in a new window)`, `link: Create account`, `link: Open Google Account Help Center (external, opens in a new window)`, `link: Privacy Policy (external, opens in a new window)`, `link: Google Terms of Service (external, opens in a new window)`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **IMAP/POP/SMTP mail delivery and storage:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Webmail client, search, labelling:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Spam and phishing filtering, filtering rules:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Authorized mailbox access with message, thread, label, history, draft, settings and attachment resources.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Search operators, labels, filters, categories, stars, snooze, archive and deletion workflows.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Programmatic sending and mailbox-change synchronization through documented API and Pub/Sub watch flows.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Storage, security, compliance, routing and recipient limits vary by personal account or Workspace edition.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-DCB229AD — IMAP/POP/SMTP mail delivery and storage
+### REQ-FUNC-D3E62D61 — Authorized mailbox access with message, thread, label, history, draft, settings and attachment resources.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-gmail-api-overview`, `ev-gmail-api-reference`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-DCB229AD`; fixture and expected output must be specified from evidence.
-- **Trace:** `GMAIL-CAP-DCB229AD` → `REQ-FUNC-DCB229AD` → `TEST-FUNC-DCB229AD`.
+- **Associated test ID:** `TEST-FUNC-D3E62D61`; fixture and expected output must be specified from evidence.
+- **Trace:** `GMAIL-CAP-D3E62D61` → `REQ-FUNC-D3E62D61` → `TEST-FUNC-D3E62D61`.
 
-### REQ-FUNC-CE485D57 — Webmail client, search, labelling
+### REQ-FUNC-D1249AB6 — Search operators, labels, filters, categories, stars, snooze, archive and deletion workflows.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-gmail-search-filters`, `ev-gmail-organize`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-CE485D57`; fixture and expected output must be specified from evidence.
-- **Trace:** `GMAIL-CAP-CE485D57` → `REQ-FUNC-CE485D57` → `TEST-FUNC-CE485D57`.
+- **Associated test ID:** `TEST-FUNC-D1249AB6`; fixture and expected output must be specified from evidence.
+- **Trace:** `GMAIL-CAP-D1249AB6` → `REQ-FUNC-D1249AB6` → `TEST-FUNC-D1249AB6`.
 
-### REQ-FUNC-E8C04D4C — Spam and phishing filtering, filtering rules
+### REQ-FUNC-9E3F9925 — Programmatic sending and mailbox-change synchronization through documented API and Pub/Sub watch flows.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-gmail-api-overview`, `ev-gmail-push`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-E8C04D4C`; fixture and expected output must be specified from evidence.
-- **Trace:** `GMAIL-CAP-E8C04D4C` → `REQ-FUNC-E8C04D4C` → `TEST-FUNC-E8C04D4C`.
+- **Associated test ID:** `TEST-FUNC-9E3F9925`; fixture and expected output must be specified from evidence.
+- **Trace:** `GMAIL-CAP-9E3F9925` → `REQ-FUNC-9E3F9925` → `TEST-FUNC-9E3F9925`.
+
+### REQ-FUNC-21E91820 — Storage, security, compliance, routing and recipient limits vary by personal account or Workspace edition.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-gmail-workspace-editions`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-21E91820`; fixture and expected output must be specified from evidence.
+- **Trace:** `GMAIL-CAP-21E91820` → `REQ-FUNC-21E91820` → `TEST-FUNC-21E91820`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -207,7 +218,7 @@ Separate interface/domain/persistence/integration boundaries. Enforce access at 
 |---|---|---|---|---|---|---|---|
 | [Mailcow](https://mailcow.email/) | [repository](https://github.com/mailcow/mailcow-dockerized) | GPL-3.0 (unverified) | Dockerised full mail server (Postfix, Dovecot, Rspamd, SOGo). | Self-hosted; you own deliverability and DNS. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 | [Mail-in-a-Box](https://mailinabox.email/) | [repository](https://github.com/mail-in-a-box/mailinabox) | CC0-1.0 (unverified) | One-command personal mail server bundle. | Opinionated, single-box. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
-| [Mox / Stalwart](https://github.com/Mindbaz/awesome-opensource-email) | Not recorded; verify the canonical repository | MIT (unverified) | Modern all-in-one mail servers. | Newer entrants in the same space. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [Mox / Stalwart](https://stalw.art/) | Not recorded; verify the canonical repository | project-specific; verify current release (unverified) | Modern all-in-one mail servers. | Scope, protocol support and operating model differ by project. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 | [Roundcube](https://roundcube.net/) | [repository](https://github.com/roundcube/roundcubemail) | GPL-3.0 (unverified) | Mature webmail client. | Client only; pair with a server. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 
 Repository, license, maintenance and compatibility are catalog claims until you check them. Re-verify each against the exact version you would adopt; a README, a star count or this table is not proof.
@@ -218,9 +229,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GMAIL-CAP-DCB229AD` — IMAP/POP/SMTP mail delivery and storage | Not verified against Mailcow | None yet; compare with `ev_4de2a03a5d3cdd83a37890ddbd4bb74483d56b7f81066765e435db509c6852cd` | Candidate code path and tests must be inspected |
-| `GMAIL-CAP-CE485D57` — Webmail client, search, labelling | Not verified against Mailcow | None yet; compare with `ev_4de2a03a5d3cdd83a37890ddbd4bb74483d56b7f81066765e435db509c6852cd` | Candidate code path and tests must be inspected |
-| `GMAIL-CAP-E8C04D4C` — Spam and phishing filtering, filtering rules | Not verified against Mailcow | None yet; compare with `ev_4de2a03a5d3cdd83a37890ddbd4bb74483d56b7f81066765e435db509c6852cd` | Candidate code path and tests must be inspected |
+| `GMAIL-CAP-D3E62D61` — Authorized mailbox access with message, thread, label, history, draft, settings and attachment resources. | Not verified against Mailcow | None yet; compare with `ev_4de2a03a5d3cdd83a37890ddbd4bb74483d56b7f81066765e435db509c6852cd` | Candidate code path and tests must be inspected |
+| `GMAIL-CAP-D1249AB6` — Search operators, labels, filters, categories, stars, snooze, archive and deletion workflows. | Not verified against Mailcow | None yet; compare with `ev_4de2a03a5d3cdd83a37890ddbd4bb74483d56b7f81066765e435db509c6852cd` | Candidate code path and tests must be inspected |
+| `GMAIL-CAP-9E3F9925` — Programmatic sending and mailbox-change synchronization through documented API and Pub/Sub watch flows. | Not verified against Mailcow | None yet; compare with `ev_4de2a03a5d3cdd83a37890ddbd4bb74483d56b7f81066765e435db509c6852cd` | Candidate code path and tests must be inspected |
+| `GMAIL-CAP-21E91820` — Storage, security, compliance, routing and recipient limits vary by personal account or Workspace edition. | Not verified against Mailcow | None yet; compare with `ev_4de2a03a5d3cdd83a37890ddbd4bb74483d56b7f81066765e435db509c6852cd` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -267,9 +279,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-DCB229AD** → `REQ-FUNC-DCB229AD`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-CE485D57** → `REQ-FUNC-CE485D57`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-E8C04D4C** → `REQ-FUNC-E8C04D4C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-D3E62D61** → `REQ-FUNC-D3E62D61`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-D1249AB6** → `REQ-FUNC-D1249AB6`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-9E3F9925** → `REQ-FUNC-9E3F9925`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-21E91820** → `REQ-FUNC-21E91820`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -290,7 +303,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-DCB229AD, REQ-FUNC-CE485D57, REQ-FUNC-E8C04D4C
+- **Requirements:** REQ-FUNC-D3E62D61, REQ-FUNC-D1249AB6, REQ-FUNC-9E3F9925, REQ-FUNC-21E91820
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -300,7 +313,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-DCB229AD, REQ-FUNC-CE485D57, REQ-FUNC-E8C04D4C
+- **Requirements:** REQ-FUNC-D3E62D61, REQ-FUNC-D1249AB6, REQ-FUNC-9E3F9925, REQ-FUNC-21E91820
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -322,7 +335,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-DCB229AD, REQ-FUNC-CE485D57, REQ-FUNC-E8C04D4C; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-D3E62D61, REQ-FUNC-D1249AB6, REQ-FUNC-9E3F9925, REQ-FUNC-21E91820; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -352,7 +365,27 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://mail.google.com/) | Not recorded | Gmail is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-gmail-identity` | Gmail — The official URL resolves to Google's Gmail sign-in surface; the repository records a dated REA capture of that unauthenticated entry page. | [link](https://mail.google.com/) | 2026-11-03T00:00:00Z | The canonical public product surface is Gmail at mail.google.com. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-api-overview` | Gmail API overview — Google documents mailbox access, programmatic sending, message and thread resources, labels, delegates, aliases and related Gmail API concepts. | [link](https://developers.google.com/workspace/gmail/api/guides) | 2026-11-03T00:00:00Z | The Gmail API is a REST API for authorized mailbox access and sending mail, including messages, threads, labels and delegation concepts. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-push` | Configure push notifications with the Gmail API — The official guide documents watch requests, history IDs, Pub/Sub delivery, renewal at least every seven days, acknowledgement and notification limitations. | [link](https://developers.google.com/workspace/gmail/api/guides/push) | 2026-11-03T00:00:00Z | The Gmail API can publish mailbox-change notifications through Google Cloud Pub/Sub watches. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-search-filters` | Refine searches in Gmail — Google Help documents operators including label, category, has, filename, in, is and header, with examples and query behavior notes. | [link](https://support.google.com/mail/answer/7190) | 2026-11-03T00:00:00Z | Gmail documents search operators and filterable message properties such as labels, categories, attachments and headers. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-organize` | Organize and archive email — The official help page describes labels and filters, starring, snoozing, archiving and deleting messages; Gmail labels are not folders. | [link](https://support.google.com/mail/answer/9259770) | 2026-11-03T00:00:00Z | Gmail provides labels, filters, stars, snooze, archive and deletion workflows for organizing mail. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-workspace-editions` | Compare Gmail features across Google Workspace editions — Google comparison tables distinguish editions, storage, recipient limits, filtering, malware/phishing protection, retention, routing and other administrator-controlled features. | [link](https://knowledge.workspace.google.com/admin/gmail/compare-gmail-features-across-google-workspace-editions) | 2026-11-03T00:00:00Z | Gmail capabilities, limits, storage and security/compliance features vary by Google Workspace edition. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-api-reference` | Gmail API REST reference — The official REST reference lists Gmail API resources and methods, including message, thread, label and history operations. | [link](https://developers.google.com/workspace/gmail/api/reference/rest) | 2026-11-03T00:00:00Z | The Gmail API exposes REST resources for users, messages, threads, labels, history, drafts, settings and attachments. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-identity` | Gmail — The official URL resolves to Google's Gmail sign-in surface; the repository records a dated REA capture of that unauthenticated entry page. | [link](https://mail.google.com/) | 2026-11-03T00:00:00Z | The canonical public product surface is Gmail at mail.google.com. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-api-overview` | Gmail API overview — Google documents mailbox access, programmatic sending, message and thread resources, labels, delegates, aliases and related Gmail API concepts. | [link](https://developers.google.com/workspace/gmail/api/guides) | 2026-11-03T00:00:00Z | The Gmail API is a REST API for authorized mailbox access and sending mail, including messages, threads, labels and delegation concepts. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-push` | Configure push notifications with the Gmail API — The official guide documents watch requests, history IDs, Pub/Sub delivery, renewal at least every seven days, acknowledgement and notification limitations. | [link](https://developers.google.com/workspace/gmail/api/guides/push) | 2026-11-03T00:00:00Z | The Gmail API can publish mailbox-change notifications through Google Cloud Pub/Sub watches. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-search-filters` | Refine searches in Gmail — Google Help documents operators including label, category, has, filename, in, is and header, with examples and query behavior notes. | [link](https://support.google.com/mail/answer/7190) | 2026-11-03T00:00:00Z | Gmail documents search operators and filterable message properties such as labels, categories, attachments and headers. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-organize` | Organize and archive email — The official help page describes labels and filters, starring, snoozing, archiving and deleting messages; Gmail labels are not folders. | [link](https://support.google.com/mail/answer/9259770) | 2026-11-03T00:00:00Z | Gmail provides labels, filters, stars, snooze, archive and deletion workflows for organizing mail. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-workspace-editions` | Compare Gmail features across Google Workspace editions — Google's comparison tables distinguish editions, storage, recipient limits, filtering, malware protection, retention and other administrator-controlled features. | [link](https://knowledge.workspace.google.com/admin/gmail/compare-gmail-features-across-google-workspace-editions) | 2026-11-03T00:00:00Z | Gmail capabilities, limits, storage and security/compliance features vary by Google Workspace edition. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-gmail-api-reference` | Gmail API REST reference — The official REST reference lists Gmail API resources and methods, including message, thread, label and history operations. | [link](https://developers.google.com/workspace/gmail/api/reference/rest) | 2026-11-03T00:00:00Z | The Gmail API exposes REST resources for users, messages, threads, labels, history, drafts, settings and attachments. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://mail.google.com/) | 2026-11-03T00:00:00Z | Gmail is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/workspace/gmail) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/gmail/api/guides) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/gmail/api/guides/push) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/mail/answer/9259770) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/mail/answer/7190) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://knowledge.workspace.google.com/admin/gmail/compare-gmail-features-across-google-workspace-editions) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_4de2a03a5d3cdd83a37890ddbd4bb74483d56b7f81066765e435db509c6852cd` | Gmail Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://accounts.google.com/v3/signin/identifier?continue=https://mail.google.com/mail/u/0/&emr=1&followup=https://mail.google.com/mail/u/0/&osid=1&passive=1209600&service=mail&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S824674267:1793669796380126) | 2026-11-03T01:36:39.606Z | A dated unauthenticated snapshot exposed controls button: Next, textbox: Email or phone, link: Forgot email?, link: Learn more about using Guest mode (external, opens in a new window), link: Create account, link: Open Google Account Help Center (external, opens in a new window), link: Privacy Policy (external, opens in a new window), link: Google Terms of Service (external, opens in a new window) and landmarks contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -380,112 +413,124 @@ Resume token: `gmail`. Read dossier, REA report and raw Evidence before repeatin
 
 # 1. Executive summary
 
-Gmail is Google's free email service, offering users web-based email with search, conversation view, spam filtering, and integration with Google Workspace services. It is one of the world's most widely used email platforms.
+Gmail is Google's hosted email service and mailbox platform. The official evidence verifies public Gmail identity, labels and filters, search operators, a REST API for authorized mailbox access, programmatic sending, message/thread resources and Pub/Sub push notifications. Workspace editions add different storage, security, compliance and delivery controls.
+
+This dossier promotes `gmail` to `researched` for the documented public and developer surfaces. It does not claim access to a private mailbox, parity with Google's anti-abuse systems, or identical behavior across personal Gmail, Google Workspace, Gmail API and other Google surfaces.
 
 # 2. Product identity and ownership
 
-- **Official name:** Gmail
-- **Company and business unit:** Google
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2004
-- **Current lifecycle status:** active
-- **Previous names:** None
-- **Acquisitions or ownership changes:** None
-- **Related products:** Google Workspace, Google Calendar, Google Chat
-- **Official website:** https://mail.google.com/
-- **Official documentation:** https://support.google.com/mail
+- **Canonical name:** Gmail
+- **Stable catalog ID:** `gmail`
+- **Company:** Google
+- **Product type:** hosted consumer and business email application
+- **Official product URL:** https://mail.google.com/
+- **Official developer documentation:** https://developers.google.com/workspace/gmail
+- **Lifecycle:** active at the time of review
+- **Identity evidence:** `ev-gmail-identity`, plus `catalog/rea/google/gmail.md`
+- **Edition matrix:** personal Gmail and Workspace editions have different limits, administrator controls and compliance features
+
+Gmail web, mobile clients, IMAP/SMTP, Gmail API and Workspace administration are related surfaces. They are not silently collapsed into separate product identities here. A separate catalog row is justified only when the lifecycle, owner or evidence scope differs materially.
 
 # 3. Product capabilities
 
-- Email sending and receiving
-- Conversation view threading
-- Advanced search with operators
-- Spam and phishing protection
-- Smart compose and smart reply
-- Nudging and email prioritization
-- Snooze and schedule sending
-- Confidential mode with expiration
-- Integration with Google Meet, Chat, and Drive
+The following claims are supported by the official sources in the evidence ledger:
+
+1. **Mail and mailbox resources:** Gmail exposes messages, threads, labels, drafts, history, settings and attachments through documented resources.
+2. **Search and organization:** Gmail documents search operators, labels, filters, categories, stars, snooze, archive and deletion workflows.
+3. **Authorized programmatic access:** Gmail API clients can access authorized mailboxes, send mail and manage organization workflows subject to authorization and quotas.
+4. **Delegation and aliases:** The Gmail API documents delegates and send-as aliases as supported account concepts.
+5. **Mailbox change notifications:** Gmail API watches can publish mailbox changes through Cloud Pub/Sub, with expiration and delivery limitations.
+6. **Workspace administration:** Workspace editions vary in storage, recipient limits, filtering, malware/phishing controls, retention, routing and compliance features.
+
+Not established by these sources: Google's private spam and abuse models, complete ranking or classification behavior, internal storage architecture, all client UI behavior, personal-account limits in every region, or a service-level guarantee for every API operation.
 
 # 4. Technical architecture
 
-Gmail uses a web-based frontend (SPA) communicating with Google's backend email infrastructure. Key components:
+**Verified public model:** Gmail client or authorized API caller → mailbox resources (messages, threads, labels and history) → optional filters, delegation, send-as or Pub/Sub notification integration. The REST reference and API guides document the resource boundaries and synchronization primitives.
 
-- Conversation threading algorithm
-- Spam classification using ML models
-- Attachment processing and virus scanning
-- Real-time synchronization via Google's sync infrastructure
-
-Web interface; internal architecture is proprietary. IMAP/POP3 and SMTP protocols are available for email clients.
+**Not verified:** internal storage, indexing, threading implementation, spam and malware classifier architecture, replication, queueing, retention internals, account recovery systems and regional deployment topology. These remain `UNKNOWN`; no internal architecture is inferred.
 
 # 5. User workflows
 
-Primary workflows: composing and sending email, organizing with labels/conversation threading, searching emails, managing attachments. Essential: sending/receiving, search, labeling. Advanced: confidential mode, snooze, schedule sending.
+The REA capture observed the unauthenticated Gmail sign-in surface only. Official help supports signed-in workflows for searching mail, applying labels and filters, starring, snoozing, archiving and deleting. The API documentation supports authorized programmatic reading, indexing, sending, organization and synchronization workflows.
+
+The following remain surface- or account-dependent and were not independently exercised: composing UI, conversation rendering, attachments, drafts, schedule send, confidential mode, mobile behavior, spam/quarantine behavior, delegation administration, connected Workspace applications, recovery, errors, retries and cancellation.
 
 # 6. Pricing and access
 
-Free with a Google Account. Google Workspace (paid) offers custom domains and increased storage. Free tier includes 15GB shared across Google services.
+Personal Gmail access requires a Google Account and has account-specific limits. Google Workspace is a paid/administered service with edition-specific storage, recipient limits, security, routing, retention and compliance options. Gmail API access requires OAuth or another authorized credential and is subject to current API quotas and policies.
+
+No account was accessed, no message was read or sent, and no billing or Workspace configuration was changed during this research.
 
 # 7. API and integration surface
 
-- IMAP, POP3, SMTP for email client access
-- Gmail API (RESTful, JSON) for programmatic access
-- Graph API alternatives limited
-- Send-as and delegation permissions
+- **Gmail API REST:** resources for users, messages, threads, labels, drafts, history, settings and attachments.
+- **Push notifications:** mailbox watches delivered through Google Cloud Pub/Sub; watches expire and require renewal.
+- **IMAP/POP/SMTP:** Google documents these as client connectivity surfaces, with availability and administrator controls varying by account or edition.
+- **Delegation and send-as:** documented account-level authorization concepts for Workspace and API integrations.
+- **Workspace administration:** edition and domain controls for routing, retention, filtering, security and compliance.
+
+Before integration, verify OAuth scopes, quotas, watch renewal, notification loss/recovery, data retention, tenant isolation and the specific personal or Workspace edition contract.
 
 # 8. Existing open-source alternatives
 
-Several open-source email clients and self-hosted solutions exist (Thunderbird, RainLoop, Roundcube), but they do not replicate Gmail's search, conversation threading, or integrated Google Workspace features.
+The curated landscape identifies partial alternatives:
+
+- **Mailcow:** self-hosted mail-server bundle covering delivery, storage, filtering and web access; it transfers DNS, deliverability and operations to the operator.
+- **Mail-in-a-Box:** opinionated personal mail-server bundle designed for single-box deployment.
+- **Stalwart / Mox:** modern self-hosted mail-server options with different protocol, storage and administration scopes.
+- **Roundcube:** mature open-source webmail client that must be paired with a mail server.
+
+These projects can cover mail-server or webmail functions, but none is verified here as a drop-in replacement for Gmail's hosted service, account ecosystem, anti-abuse systems, Workspace integration or API contract.
 
 # 9. Alternative comparison
 
-Open-source email clients implement basic IMAP/SMTP but lack Gmail's conversation threading, advanced search, and Google Workspace integration.
+The evidence supports **partial** alternative coverage. A self-hosted stack can provide SMTP/IMAP delivery, storage, filters and webmail, but the operator assumes deliverability, abuse prevention, backups, upgrades, DNS, security and compliance. Roundcube is a client rather than a complete mail service. Alternative coverage remains `unknown` until each candidate receives a current license, version, maintenance, security and capability review for the target scope.
 
 # 10. Missing capabilities and opportunity analysis
 
-Conversation threading algorithm, advanced ML-powered search, and Google Workspace integration represent gaps. Self-hosted email can provide basic mail functionality but not Gmail's user experience.
+The opportunity is a bounded, self-hosted mail or webmail system with explicit ownership of delivery, storage, search, retention and privacy—not a claim to reproduce Gmail's global hosted service. A viable first slice could choose a mail server, web client, bounded domain, backup policy, spam policy and API contract. Gmail-scale anti-abuse, deliverability, Workspace integrations and global reliability remain out of scope.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Build a web-based email client with IMAP/SMTP support, conversation threading, and search. Target basic email workflows rather than Gmail feature parity.
+Use the REA report only for the observed public sign-in contract. For an independent implementation, compare Mailcow, Mail-in-a-Box, Stalwart, Mox and Roundcube against the declared domain, protocol, webmail, backup, security and compliance requirements. Do not treat a client as a complete mail service or claim Gmail parity.
 
-# 12. Security, privacy, and compliance
+# 12. Security, privacy and compliance
 
-Email encryption (TLS in transit). Privacy policy governs data handling. HIPAA and GDPR considerations for self-hosted deployment.
+Email contains sensitive content. An independent implementation must define transport security, authentication, account recovery, mailbox isolation, spam and malware handling, attachment scanning, audit logs, retention, deletion/export, backups, abuse response and jurisdictional compliance. Workspace feature availability and administrator controls vary by edition. No compliance certification or privacy parity claim is made.
 
 # 13. Sources and evidence
 
-- https://mail.google.com/ (product page)
-- https://support.google.com/mail (documentation)
-- https://github.com/roundcube/roundcube (open-source email client reference)
+| Evidence ID | Source | Scope |
+|---|---|---|
+| `ev-gmail-identity` | https://mail.google.com/ | Product identity and public sign-in surface |
+| `ev-gmail-api-overview` | https://developers.google.com/workspace/gmail/api/guides | API resources and authorized workflows |
+| `ev-gmail-push` | https://developers.google.com/workspace/gmail/api/guides/push | Pub/Sub watches, renewal and delivery limits |
+| `ev-gmail-search-filters` | https://support.google.com/mail/answer/7190 | Search operators and message properties |
+| `ev-gmail-organize` | https://support.google.com/mail/answer/9259770 | Labels, filters, stars, snooze and archive |
+| `ev-gmail-workspace-editions` | https://knowledge.workspace.google.com/admin/gmail/compare-gmail-features-across-google-workspace-editions | Edition limits, security and compliance features |
+| `ev-gmail-api-reference` | https://developers.google.com/workspace/gmail/api/reference/rest | REST resources and methods |
+| REA capture | `catalog/rea/google/gmail.md` | Dated unauthenticated sign-in observation only |
 
-# 14. Open questions
+# 14. Open questions and exclusions
 
-- Can conversation threading be implemented without full Google-scale ML?
-- What search operator equivalents are viable in a self-hosted solution?
-- How does attachment handling differ from standard email clients?
+- Exact personal-account and Workspace quotas must be checked for the target account and edition.
+- OAuth scopes, watch renewal, Pub/Sub delivery and sync recovery require implementation-specific testing.
+- Private spam, abuse, ranking, storage and threading systems are not public evidence here.
+- Full signed-in UI, mobile, attachment, draft, delegation and connected-app workflows were not captured.
+- Alternative mail projects and licenses require separate current reviews.
+- No mailbox, account, billing, production data or administrator configuration was accessed.
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
+- **2026-11-03:** reviewed official Gmail API, Gmail Help and Google Workspace documentation; reconciled them with the existing REA sign-in capture; promoted the dossier from `pending` to `researched` with verified evidence and explicit unknowns.
+- **Next review:** 2027-02-03, or sooner if Gmail API, Workspace edition, quota or privacy documentation changes materially.
 
----
-
-# 16. Alternative comparison (continued)
-
-No open-source alternative replicates Gmail's conversation threading and integrated search.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Focus on basic email client functionality with search and threading. Google Workspace integration is out of scope for initial implementation.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier gmail` and inspect canonical identity with `npx rae-faang products show gmail --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier gmail` and inspect canonical identity with `npx rea-faang products show gmail --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -498,7 +543,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang gmail --out ./gmail.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit gmail --out ./gmail-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang gmail --out ./gmail.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit gmail --out ./gmail-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -540,5 +585,25 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://mail.google.com/) — Gmail is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [Gmail](https://mail.google.com/) — The canonical public product surface is Gmail at mail.google.com. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Gmail API overview](https://developers.google.com/workspace/gmail/api/guides) — The Gmail API is a REST API for authorized mailbox access and sending mail, including messages, threads, labels and delegation concepts. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Configure push notifications with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/push) — The Gmail API can publish mailbox-change notifications through Google Cloud Pub/Sub watches. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Refine searches in Gmail](https://support.google.com/mail/answer/7190) — Gmail documents search operators and filterable message properties such as labels, categories, attachments and headers. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Organize and archive email](https://support.google.com/mail/answer/9259770) — Gmail provides labels, filters, stars, snooze, archive and deletion workflows for organizing mail. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Compare Gmail features across Google Workspace editions](https://knowledge.workspace.google.com/admin/gmail/compare-gmail-features-across-google-workspace-editions) — Gmail capabilities, limits, storage and security/compliance features vary by Google Workspace edition. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Gmail API REST reference](https://developers.google.com/workspace/gmail/api/reference/rest) — The Gmail API exposes REST resources for users, messages, threads, labels, history, drafts, settings and attachments. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Gmail](https://mail.google.com/) — The canonical public product surface is Gmail at mail.google.com. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Gmail API overview](https://developers.google.com/workspace/gmail/api/guides) — The Gmail API is a REST API for authorized mailbox access and sending mail, including messages, threads, labels and delegation concepts. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Configure push notifications with the Gmail API](https://developers.google.com/workspace/gmail/api/guides/push) — The Gmail API can publish mailbox-change notifications through Google Cloud Pub/Sub watches. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Refine searches in Gmail](https://support.google.com/mail/answer/7190) — Gmail documents search operators and filterable message properties such as labels, categories, attachments and headers. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Organize and archive email](https://support.google.com/mail/answer/9259770) — Gmail provides labels, filters, stars, snooze, archive and deletion workflows for organizing mail. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Compare Gmail features across Google Workspace editions](https://knowledge.workspace.google.com/admin/gmail/compare-gmail-features-across-google-workspace-editions) — Gmail capabilities, limits, storage and security/compliance features vary by Google Workspace edition. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Gmail API REST reference](https://developers.google.com/workspace/gmail/api/reference/rest) — The Gmail API exposes REST resources for users, messages, threads, labels, history, drafts, settings and attachments. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://mail.google.com/) — Gmail is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.google.com/workspace/gmail) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://developers.google.com/workspace/gmail/api/guides) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/gmail/api/guides/push) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/mail/answer/9259770) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/mail/answer/7190) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://knowledge.workspace.google.com/admin/gmail/compare-gmail-features-across-google-workspace-editions) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Gmail Public web-surface observation (REA)](https://accounts.google.com/v3/signin/identifier?continue=https://mail.google.com/mail/u/0/&emr=1&followup=https://mail.google.com/mail/u/0/&osid=1&passive=1209600&service=mail&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S824674267:1793669796380126) — A dated unauthenticated snapshot exposed controls button: Next, textbox: Email or phone, link: Forgot email?, link: Learn more about using Guest mode (external, opens in a new window), link: Create account, link: Open Google Account Help Center (external, opens in a new window), link: Privacy Policy (external, opens in a new window), link: Google Terms of Service (external, opens in a new window) and landmarks contentinfo. (VERIFIED; accessed 2026-11-03T01:36:39.606Z).

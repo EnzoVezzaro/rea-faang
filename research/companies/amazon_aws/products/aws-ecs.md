@@ -111,7 +111,7 @@ Kubernetes is the dominant alternative with massive ecosystem, portability, and 
 
 Proprietary API (not Kubernetes), no multi-cloud control plane, Fargate serverless unique to AWS, Service Connect (lightweight mesh) vs full Istio/Linkerd. An open alternative could build an ECS-compatible API on Kubernetes (like EKS-Distro) or focus on Nomad with AWS provider improvements.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Not feasible to replicate ECS control plane. Strategy: Use Kubernetes (EKS, K3s, Talos) as the open orchestration layer. For ECS-like DX: Use Copilot-inspired tooling on K8s (e.g., `copter`, `garden`, `kluctl`). For Fargate-like serverless: Kata Containers, gVisor, or Firecracker on K8s (Kata Operator, KubeVirt). For Service Connect: Istio/Linkerd/Cilium Service Mesh.
 
@@ -145,6 +145,6 @@ Kubernetes is the answer for open orchestration. The gap is developer experience
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Phase 1: K8s cluster (Talos/K3s/EKS) with GitOps (Flux/ArgoCD). Phase 2: Developer CLI (Copilot-like) for service scaffolding, deploy, pipeline. Phase 3: Serverless containers via Kata Containers / Firecracker-containerd. Phase 4: Service mesh (Cilium/Istio) for Service Connect parity. Phase 5: ECS API compatibility layer (optional, for migration).

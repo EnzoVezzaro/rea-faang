@@ -84,7 +84,7 @@ Memcached itself provides the core open-source cache protocol, but it does not p
 
 REA should map cluster creation, node topology, hashing/sharding, auto discovery, client behavior, eviction, failover, scaling, TLS, parameter groups, metrics, quotas, maintenance and the distinction between node-based and serverless ElastiCache.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use AWS documentation and publicly documented Memcached behavior as research surfaces. A clean-room equivalent should use independently licensed Memcached or another cache engine, documenting differences in protocol, durability, topology, security and managed operations.
 

@@ -79,7 +79,7 @@ Open-source ATS, conversational AI and assessment components may cover isolated 
 
 REA should separate job configuration, assessment generation, voice interviewing, adaptive questioning, scoring, transcript handling, recruiter review, candidate privacy, ATS integration and fairness/audit controls.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public AWS materials, public interoperability surfaces and synthetic or authorized test candidates only. A clean-room equivalent must preserve human decision authority, use independent models and avoid copying Amazon hiring science, prompts, datasets or proprietary assets.
 

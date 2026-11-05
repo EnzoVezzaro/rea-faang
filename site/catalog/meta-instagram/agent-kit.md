@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Instagram (meta-instagram); investi
 
 # Instagram — implementation skill (`meta-instagram`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Instagram**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Instagram (meta-instagram); investi
 
 This is the coding-agent skill for **Instagram** (`meta-instagram`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/meta/meta-instagram.md` from the catalog page, or run `npx rae-faang meta-instagram --out ./meta-instagram.md`, `npx rae-faang skills generate meta-instagram` or `npx rae-faang build agent-kit meta-instagram --out ./meta-instagram-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/meta/meta-instagram.md` from the catalog page, or run `npx rea-faang meta-instagram --out ./meta-instagram.md`, `npx rea-faang skills generate meta-instagram` or `npx rea-faang build agent-kit meta-instagram --out ./meta-instagram-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Instagram / `meta-instagram` | `catalog/products.jsonl` |
 | Official product URL | [https://www.instagram.com/](https://www.instagram.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier meta-instagram` | `research/companies/meta/products/meta-instagram.md` |
+| Official documentation | [https://developers.meta.com/resources/](https://developers.meta.com/resources/) | Catalog record |
+| Research dossier | `npx rea-faang research dossier meta-instagram` | `research/companies/meta/products/meta-instagram.md` |
 | REA report | `catalog/rea/meta/meta-instagram.md` (captured 2026-11-03T01:40:08.018Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/meta-instagram.json` (`ev_76952569aa9cb9c3c5aab06eecaf05c6c0afdfa64f94cd7e7e847ddd2306a9d2`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show meta-instagram --format json` and `npx rae-faang research dossier meta-instagram` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show meta-instagram --format json` and `npx rea-faang research dossier meta-instagram` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `META-INSTAGRAM-CAP-C928931D`, `META-INSTAGRAM-CAP-0631418C`, `META-INSTAGRAM-CAP-D78CB6CB`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `META-INSTAGRAM-CAP-8B37DC2A`, `META-INSTAGRAM-CAP-6D09CF57`, `META-INSTAGRAM-CAP-D97F1615`, `META-INSTAGRAM-CAP-B1AB766D`, `META-INSTAGRAM-CAP-11762F6C`, `META-INSTAGRAM-CAP-E7A7F0D0`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,7 +103,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Instagram** / `meta-instagram` | Product catalog |
 | Company / category | Meta / `social_network` / `photo-sharing`, `social` | Product catalog |
-| Official website / docs | [https://www.instagram.com/](https://www.instagram.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Official website / docs | [https://www.instagram.com/](https://www.instagram.com/) / [https://developers.meta.com/resources/](https://developers.meta.com/resources/) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,23 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `META-INSTAGRAM-CAP-C928931D` | Photo and video sharing | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `META-INSTAGRAM-CAP-0631418C` | Stories and Reels | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `META-INSTAGRAM-CAP-D78CB6CB` | Following and discovery feeds | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-INSTAGRAM-CAP-8B37DC2A` | Feed photo and video publishing | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-INSTAGRAM-CAP-6D09CF57` | Stories | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-INSTAGRAM-CAP-D97F1615` | Reels | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-INSTAGRAM-CAP-B1AB766D` | Content discovery | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-INSTAGRAM-CAP-11762F6C` | Creator and business surfaces | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-INSTAGRAM-CAP-E7A7F0D0` | Permitted platform integrations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Log In`, `button: Log in with Facebook`, `textbox: Mobile number, username or email`, `textbox: Password`, `link: Forgot password?`, `link: Create new account`, `link: Meta`, `link: About`, `link: Blog`, `link: Jobs`, `link: Help`, `link: API`, `link: Privacy`, `link: Consumer Health Privacy`, `link: Terms`, `link: Locations`, `link: Popular`, `link: Instagram Lite`, `link: Meta AI`, `link: Muse`, `link: Threads`, `link: Contact Uploading & Non-Users`, `link: Meta Verified`, `combobox: Switch Display Language`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Photo and video sharing:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Stories and Reels:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Following and discovery feeds:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Feed photo and video publishing:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Stories:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Reels:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Content discovery:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Creator and business surfaces:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Permitted platform integrations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +151,59 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-C928931D — Photo and video sharing
+### REQ-FUNC-8B37DC2A — Feed photo and video publishing
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-C928931D`; fixture and expected output must be specified from evidence.
-- **Trace:** `META-INSTAGRAM-CAP-C928931D` → `REQ-FUNC-C928931D` → `TEST-FUNC-C928931D`.
+- **Associated test ID:** `TEST-FUNC-8B37DC2A`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-INSTAGRAM-CAP-8B37DC2A` → `REQ-FUNC-8B37DC2A` → `TEST-FUNC-8B37DC2A`.
 
-### REQ-FUNC-0631418C — Stories and Reels
+### REQ-FUNC-6D09CF57 — Stories
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-0631418C`; fixture and expected output must be specified from evidence.
-- **Trace:** `META-INSTAGRAM-CAP-0631418C` → `REQ-FUNC-0631418C` → `TEST-FUNC-0631418C`.
+- **Associated test ID:** `TEST-FUNC-6D09CF57`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-INSTAGRAM-CAP-6D09CF57` → `REQ-FUNC-6D09CF57` → `TEST-FUNC-6D09CF57`.
 
-### REQ-FUNC-D78CB6CB — Following and discovery feeds
+### REQ-FUNC-D97F1615 — Reels
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D78CB6CB`; fixture and expected output must be specified from evidence.
-- **Trace:** `META-INSTAGRAM-CAP-D78CB6CB` → `REQ-FUNC-D78CB6CB` → `TEST-FUNC-D78CB6CB`.
+- **Associated test ID:** `TEST-FUNC-D97F1615`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-INSTAGRAM-CAP-D97F1615` → `REQ-FUNC-D97F1615` → `TEST-FUNC-D97F1615`.
+
+### REQ-FUNC-B1AB766D — Content discovery
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-B1AB766D`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-INSTAGRAM-CAP-B1AB766D` → `REQ-FUNC-B1AB766D` → `TEST-FUNC-B1AB766D`.
+
+### REQ-FUNC-11762F6C — Creator and business surfaces
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-11762F6C`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-INSTAGRAM-CAP-11762F6C` → `REQ-FUNC-11762F6C` → `TEST-FUNC-11762F6C`.
+
+### REQ-FUNC-E7A7F0D0 — Permitted platform integrations
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-E7A7F0D0`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-INSTAGRAM-CAP-E7A7F0D0` → `REQ-FUNC-E7A7F0D0` → `TEST-FUNC-E7A7F0D0`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -215,9 +248,12 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `META-INSTAGRAM-CAP-C928931D` — Photo and video sharing | Not verified against Pixelfed | None yet; compare with `ev_76952569aa9cb9c3c5aab06eecaf05c6c0afdfa64f94cd7e7e847ddd2306a9d2` | Candidate code path and tests must be inspected |
-| `META-INSTAGRAM-CAP-0631418C` — Stories and Reels | Not verified against Pixelfed | None yet; compare with `ev_76952569aa9cb9c3c5aab06eecaf05c6c0afdfa64f94cd7e7e847ddd2306a9d2` | Candidate code path and tests must be inspected |
-| `META-INSTAGRAM-CAP-D78CB6CB` — Following and discovery feeds | Not verified against Pixelfed | None yet; compare with `ev_76952569aa9cb9c3c5aab06eecaf05c6c0afdfa64f94cd7e7e847ddd2306a9d2` | Candidate code path and tests must be inspected |
+| `META-INSTAGRAM-CAP-8B37DC2A` — Feed photo and video publishing | Not verified against Pixelfed | None yet; compare with `ev_76952569aa9cb9c3c5aab06eecaf05c6c0afdfa64f94cd7e7e847ddd2306a9d2` | Candidate code path and tests must be inspected |
+| `META-INSTAGRAM-CAP-6D09CF57` — Stories | Not verified against Pixelfed | None yet; compare with `ev_76952569aa9cb9c3c5aab06eecaf05c6c0afdfa64f94cd7e7e847ddd2306a9d2` | Candidate code path and tests must be inspected |
+| `META-INSTAGRAM-CAP-D97F1615` — Reels | Not verified against Pixelfed | None yet; compare with `ev_76952569aa9cb9c3c5aab06eecaf05c6c0afdfa64f94cd7e7e847ddd2306a9d2` | Candidate code path and tests must be inspected |
+| `META-INSTAGRAM-CAP-B1AB766D` — Content discovery | Not verified against Pixelfed | None yet; compare with `ev_76952569aa9cb9c3c5aab06eecaf05c6c0afdfa64f94cd7e7e847ddd2306a9d2` | Candidate code path and tests must be inspected |
+| `META-INSTAGRAM-CAP-11762F6C` — Creator and business surfaces | Not verified against Pixelfed | None yet; compare with `ev_76952569aa9cb9c3c5aab06eecaf05c6c0afdfa64f94cd7e7e847ddd2306a9d2` | Candidate code path and tests must be inspected |
+| `META-INSTAGRAM-CAP-E7A7F0D0` — Permitted platform integrations | Not verified against Pixelfed | None yet; compare with `ev_76952569aa9cb9c3c5aab06eecaf05c6c0afdfa64f94cd7e7e847ddd2306a9d2` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -264,9 +300,12 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-C928931D** → `REQ-FUNC-C928931D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-0631418C** → `REQ-FUNC-0631418C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-D78CB6CB** → `REQ-FUNC-D78CB6CB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-8B37DC2A** → `REQ-FUNC-8B37DC2A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-6D09CF57** → `REQ-FUNC-6D09CF57`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-D97F1615** → `REQ-FUNC-D97F1615`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-B1AB766D** → `REQ-FUNC-B1AB766D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-11762F6C** → `REQ-FUNC-11762F6C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-E7A7F0D0** → `REQ-FUNC-E7A7F0D0`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -287,7 +326,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-C928931D, REQ-FUNC-0631418C, REQ-FUNC-D78CB6CB
+- **Requirements:** REQ-FUNC-8B37DC2A, REQ-FUNC-6D09CF57, REQ-FUNC-D97F1615, REQ-FUNC-B1AB766D, REQ-FUNC-11762F6C, REQ-FUNC-E7A7F0D0
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -297,7 +336,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-C928931D, REQ-FUNC-0631418C, REQ-FUNC-D78CB6CB
+- **Requirements:** REQ-FUNC-8B37DC2A, REQ-FUNC-6D09CF57, REQ-FUNC-D97F1615, REQ-FUNC-B1AB766D, REQ-FUNC-11762F6C, REQ-FUNC-E7A7F0D0
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -319,7 +358,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-C928931D, REQ-FUNC-0631418C, REQ-FUNC-D78CB6CB; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-8B37DC2A, REQ-FUNC-6D09CF57, REQ-FUNC-D97F1615, REQ-FUNC-B1AB766D, REQ-FUNC-11762F6C, REQ-FUNC-E7A7F0D0; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -349,7 +388,14 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.instagram.com/) | Not recorded | Instagram is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-meta-instagram-content` | New Ways to Create Content on Instagram — Meta's official announcement describes improvements to Reels, feed photos, carousels, Stories and insights. | [link](https://about.fb.com/news/2023/11/new-ways-to-create-content-on-instagram/) | 2026-11-03T00:00:00Z | Instagram supports feed photos, carousels, Stories, Reels and creator insights as documented public content surfaces. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-meta-instagram-reels` | Introducing Instagram Reels — Meta documents Reels as a creation and discovery surface and explains related sharing workflows. | [link](https://about.fb.com/news/2020/08/introducing-instagram-reels/) | 2026-11-03T00:00:00Z | Instagram Reels can be shared to Stories, close friends or direct messages. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-meta-instagram-developer` | Meta Developer Resources — The official developer-resource directory lists Instagram Platform resources; it does not establish access to private consumer APIs. | [link](https://developers.meta.com/resources/) | 2026-11-03T00:00:00Z | Meta provides an Instagram Platform developer-resource entry point for permitted integrations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.instagram.com/) | 2026-11-03T00:00:00Z | Instagram is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.meta.com/resources/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://about.fb.com/news/2023/11/new-ways-to-create-content-on-instagram/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://about.fb.com/news/2020/08/introducing-instagram-reels/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://developers.meta.com/resources/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_76952569aa9cb9c3c5aab06eecaf05c6c0afdfa64f94cd7e7e847ddd2306a9d2` | Instagram Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.instagram.com/) | 2026-11-03T01:40:08.018Z | A dated unauthenticated snapshot exposed controls button: Log In, button: Log in with Facebook, textbox: Mobile number, username or email, textbox: Password, link: Forgot password?, link: Create new account, link: Meta, link: About, link: Blog, link: Jobs, link: Help, link: API, link: Privacy, link: Consumer Health Privacy, link: Terms, link: Locations, link: Popular, link: Instagram Lite, link: Meta AI, link: Muse, link: Threads, link: Contact Uploading & Non-Users, link: Meta Verified, combobox: Switch Display Language and landmarks contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -375,117 +421,99 @@ Resume token: `meta-instagram`. Read dossier, REA report and raw Evidence before
 
 ### Dossier notes (not independently verified)
 
-# 1. Executive summary
+# Instagram
 
-Instagram is Meta's photo- and video-sharing social network with Stories and Reels.
+## Research verdict
 
----
+Instagram is Meta's active social-network and media-sharing service. The public
+product surface includes feed posts, Stories, Reels, discovery, direct sharing,
+creator and business surfaces, and related messaging interactions. Meta's public
+materials verify user-facing capabilities and selected developer resources; they
+do not disclose Instagram's complete ranking, moderation, recommendation, or
+internal data systems.
 
-# 2. Product identity and ownership
+Pixelfed is a useful partial alternative for federated photo sharing. It does not
+reproduce Instagram's short-video ecosystem, centralized discovery, commercial
+tools, identity graph, or scale.
 
-- **Official name:** Instagram
-- **Company and business unit:** meta
-- **Current lifecycle status:** active
-- **Official website:** https://www.instagram.com/
+## Product identity and boundary
 
----
+- **Owner:** Meta Platforms, Inc.
+- **Canonical product ID:** `meta-instagram`
+- **Lifecycle:** Active
+- **Public entry point:** https://www.instagram.com/
+- **Product boundary:** Social photo/video sharing, discovery, creator/business
+  publishing and associated interactions.
+- **Related catalog entries:** Facebook and Threads are separate Meta products;
+  Instagram account and developer surfaces must not be duplicated as separate
+  social networks unless they have a distinct official product boundary.
 
-# 3. Product capabilities
+## Verified user capabilities
 
-- Photo and video sharing
-- Stories and Reels
-- Following and discovery feeds
+Official Meta materials verify that users can:
 
----
+1. Publish feed photos, carousels and video content.
+2. Create and consume Stories and Reels, including sharing Reels to Stories,
+   close friends, or direct messages.
+3. Discover content and creators through feed, Explore, Reels and other public
+   discovery surfaces; exact ranking behavior is not treated as public fact.
+4. Use creator and business-oriented tools and insights. API access is surface-,
+   account- and permission-dependent and is not equivalent to a public consumer
+   API.
 
-# 4. Technical architecture
+## Technical boundary
 
-Not yet researched.
+The evidence verifies public product features and Meta's developer-resource
+directory. It does not verify feed-ranking algorithms, recommendation models,
+moderation pipelines, storage, ad delivery, account graph, or private APIs. Those
+remain unknown and must not be inferred as implementation facts.
 
----
+## Alternative assessment
 
-# 5. User workflows
+### Pixelfed — partial alternative
 
-Not yet researched.
+Pixelfed is an open-source, federated photo-sharing platform using ActivityPub.
+Its official site documents photo sharing, federation and a privacy-focused,
+non-advertising model. It covers the image-sharing job, but not Instagram's Reels
+ecosystem, centralized discovery, creator/business stack, or network effects.
 
----
+Other federated social platforms may cover narrower jobs; none is treated here as
+a verified drop-in replacement.
 
-# 6. Pricing and access
+## REA/build implications
 
-Not yet researched.
+An independent implementation should choose a bounded job—such as federated
+photo sharing, creator publishing, or a private media community—and reuse Pixelfed
+where its ActivityPub and AGPL model fit. Do not scrape Instagram, copy protected
+content, imitate private APIs, or claim compatibility without testing and
+authorization.
 
----
+## Evidence record
 
-# 7. API and integration surface
+| Claim | Source | What it supports |
+|---|---|---|
+| Instagram publishes feed photos, carousels, Stories and Reels improvements | [Meta: New ways to create content on Instagram](https://about.fb.com/news/2023/11/new-ways-to-create-content-on-instagram/) | Public user-facing creation surfaces |
+| Reels can be shared to Stories, close friends or direct messages | [Meta: Introducing Instagram Reels](https://about.fb.com/news/2020/08/introducing-instagram-reels/) | Reels workflow and related sharing behavior |
+| Meta provides an Instagram Platform developer-resource surface | [Meta Developer Resources](https://developers.meta.com/resources/) | Public developer entry point; not a blanket consumer API claim |
+| Pixelfed is federated photo sharing using ActivityPub | [Pixelfed](https://pixelfed.org/) | Alternative capability, federation and scope |
+| Pixelfed source is AGPL-3.0 | [Pixelfed repository](https://github.com/pixelfed/pixelfed) | Alternative license and implementation evidence |
 
-Not yet researched.
+## Known gaps
 
----
+- Full Instagram API capabilities, permissions, rate limits and account eligibility
+  require a current developer-surface check.
+- Ranking, recommendations, moderation, ad systems, identity graph and internal
+  architecture are not established by the sources used here.
+- Region, account type and rollout state can change feature availability.
 
-# 8. Existing open-source alternatives
+**Research date:** 2026-11-03.  
+**Confidence:** Verified for documented public capabilities; partial for alternatives.
 
-Open-source candidates exist: Pixelfed (AGPL-3.0) — Federated image sharing on ActivityPub.. Coverage is unverified until the dossier is researched.
-
----
-
-# 9. Alternative comparison
-
-Pixelfed covers image sharing on the fediverse; short-video feeds and network scale are not replicated.
-
----
-
-# 10. Missing capabilities and opportunity analysis
-
-Pixelfed covers image sharing on the fediverse; short-video feeds and network scale are not replicated.
-
----
-
-# 11. RAE implementation strategy
-
-Partial. Pixelfed covers the core (photo sharing); Reels-scale video is not.
-
----
-
-# 12. Security, privacy, and compliance
-
-Not yet researched.
-
----
-
-# 13. Sources and evidence
-
-- https://pixelfed.org/
-- https://en.wikipedia.org/wiki/Instagram
-
----
-
-# 14. Open questions
-
-- Full feature inventory and technical architecture are not yet researched.
-
----
-
-# 15. Research history
-
-- v1: dossier created; research pending.
-
----
-
-# 16. Alternative comparison (continued)
-
-Pixelfed covers image sharing on the fediverse; short-video feeds and network scale are not replicated.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Partial. Pixelfed covers the core (photo sharing); Reels-scale video is not.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier meta-instagram` and inspect canonical identity with `npx rae-faang products show meta-instagram --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier meta-instagram` and inspect canonical identity with `npx rea-faang products show meta-instagram --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -498,7 +526,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang meta-instagram --out ./meta-instagram.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit meta-instagram --out ./meta-instagram-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang meta-instagram --out ./meta-instagram.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit meta-instagram --out ./meta-instagram-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -540,5 +568,12 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://www.instagram.com/) — Instagram is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [New Ways to Create Content on Instagram](https://about.fb.com/news/2023/11/new-ways-to-create-content-on-instagram/) — Instagram supports feed photos, carousels, Stories, Reels and creator insights as documented public content surfaces. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Introducing Instagram Reels](https://about.fb.com/news/2020/08/introducing-instagram-reels/) — Instagram Reels can be shared to Stories, close friends or direct messages. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Meta Developer Resources](https://developers.meta.com/resources/) — Meta provides an Instagram Platform developer-resource entry point for permitted integrations. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://www.instagram.com/) — Instagram is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.meta.com/resources/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://about.fb.com/news/2023/11/new-ways-to-create-content-on-instagram/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://about.fb.com/news/2020/08/introducing-instagram-reels/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.meta.com/resources/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Instagram Public web-surface observation (REA)](https://www.instagram.com/) — A dated unauthenticated snapshot exposed controls button: Log In, button: Log in with Facebook, textbox: Mobile number, username or email, textbox: Password, link: Forgot password?, link: Create new account, link: Meta, link: About, link: Blog, link: Jobs, link: Help, link: API, link: Privacy, link: Consumer Health Privacy, link: Terms, link: Locations, link: Popular, link: Instagram Lite, link: Meta AI, link: Muse, link: Threads, link: Contact Uploading & Non-Users, link: Meta Verified, combobox: Switch Display Language and landmarks contentinfo. (VERIFIED; accessed 2026-11-03T01:40:08.018Z).

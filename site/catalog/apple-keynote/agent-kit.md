@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Keynote (apple-keynote); investigat
 
 This is the coding-agent skill for **Keynote** (`apple-keynote`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/apple/apple-keynote.md` from the catalog page, or run `npx rae-faang apple-keynote --out ./apple-keynote.md`, `npx rae-faang skills generate apple-keynote` or `npx rae-faang build agent-kit apple-keynote --out ./apple-keynote-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/apple/apple-keynote.md` from the catalog page, or run `npx rea-faang apple-keynote --out ./apple-keynote.md`, `npx rea-faang skills generate apple-keynote` or `npx rea-faang build agent-kit apple-keynote --out ./apple-keynote-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Keynote / `apple-keynote` | `catalog/products.jsonl` |
 | Official product URL | [https://www.apple.com/keynote/](https://www.apple.com/keynote/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier apple-keynote` | `research/companies/apple/products/apple-keynote.md` |
+| Research dossier | `npx rea-faang research dossier apple-keynote` | `research/companies/apple/products/apple-keynote.md` |
 | REA report | `catalog/rea/apple/apple-keynote.md` (captured 2026-11-03T01:32:11.194Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/apple-keynote.json` (`ev_4941e564c5213f73d14bffa4214a2e52707f9236704de394cdc9c5c31ca3cae5`) | Catalog evidence |
 | Alternative candidates | 4 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show apple-keynote --format json` and `npx rae-faang research dossier apple-keynote` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show apple-keynote --format json` and `npx rea-faang research dossier apple-keynote` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -460,7 +460,7 @@ LibreOffice Impress and OnlyOffice are closest for traditional slide editing. Re
 
 Cinematic GPU-accelerated transitions, Magic Move, presenter display with notes/timer, multi-presenter sync, Apple Pencil annotation during presentation, and iCloud real-time collaboration are the main gaps. An open alternative could focus on web-based animated presentations with Reveal.js/Slidev as a base.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Build on Reveal.js or Slidev for web-based animated presentations. Add a visual editor for non-developers. Implement Magic Move equivalent using FLIP animation technique. Prioritize: themes, transitions, builds, presenter mode, PDF/PowerPoint export.
 
@@ -493,7 +493,7 @@ Reveal.js/Slidev are the strongest bases for an open Keynote alternative. They o
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Phase 1: Visual editor for Reveal.js/Slidev with theme system. Phase 2: Build animations, slide transitions (CSS/Web Animations API). Phase 3: Magic Move equivalent (FLIP). Phase 4: Presenter mode, multi-presenter, iCloud-like collaboration (Yjs). Phase 5: Native apps via Tauri.
 
@@ -501,7 +501,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier apple-keynote` and inspect canonical identity with `npx rae-faang products show apple-keynote --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier apple-keynote` and inspect canonical identity with `npx rea-faang products show apple-keynote --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -514,7 +514,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang apple-keynote --out ./apple-keynote.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit apple-keynote --out ./apple-keynote-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang apple-keynote --out ./apple-keynote.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit apple-keynote --out ./apple-keynote-agent`.
 
 ### Multi-agent task plan and outputs
 

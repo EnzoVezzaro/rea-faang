@@ -79,7 +79,7 @@ Open-source orchestrators can manage containers across infrastructure, but no eq
 
 REA should map registration, agent lifecycle, task scheduling, networking, IAM, external-instance health, upgrades, deregistration, logging and failure behavior separately.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public AWS documentation, public ECS agent material and synthetic workloads only. A clean-room equivalent should use an independent orchestrator and explicit hybrid-network/security design; it must not copy AWS control-plane or agent implementation.
 

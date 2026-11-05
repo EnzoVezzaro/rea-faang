@@ -88,7 +88,7 @@ Open voice stacks exist; the device fleet, far-field hardware and skills ecosyst
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Partial. OpenVoiceOS and Home Assistant cover local voice; ecosystem scale lags.
 
@@ -125,6 +125,6 @@ Open voice stacks exist; the device fleet, far-field hardware and skills ecosyst
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Partial. OpenVoiceOS and Home Assistant cover local voice; ecosystem scale lags.

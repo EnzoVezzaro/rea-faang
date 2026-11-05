@@ -75,9 +75,9 @@ Compare application packaging, image builders, app blocks, fleets, stacks, sessi
 
 Research must map image, app-block, fleet, stack, session, user, authentication, streaming, scaling, network, agent/MCP, error, quota and billing behavior. Any implementation must use original code and isolated synthetic applications.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product, FAQ, developer guide, API and CLI references as primary sources. The generated RAE skill should instruct an agent to build an independent application-streaming platform beginning with open remote-access components where useful, then add image packaging, app blocks, fleets, stacks, scaling, GPU, identity and agent controls only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS service parity.
+Use the official product, FAQ, developer guide, API and CLI references as primary sources. The generated REA skill should instruct an agent to build an independent application-streaming platform beginning with open remote-access components where useful, then add image packaging, app blocks, fleets, stacks, scaling, GPU, identity and agent controls only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS service parity.
 
 # 12. Security, privacy, and compliance
 

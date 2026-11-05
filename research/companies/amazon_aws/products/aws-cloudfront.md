@@ -87,7 +87,7 @@ The caching software is open and mature; the globally distributed edge footprint
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Available. Apache Traffic Server and Nginx power real CDNs; the PoP footprint is separate infrastructure.
 
@@ -124,6 +124,6 @@ The caching software is open and mature; the globally distributed edge footprint
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Available. Apache Traffic Server and Nginx power real CDNs; the PoP footprint is separate infrastructure.

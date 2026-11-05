@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to RAE FAANG are recorded here.
+All notable changes to REA FAANG are recorded here.
 The project follows [semver](https://semver.org/); npm releases match the tags in this repository.
 
 ## [Unreleased]
@@ -18,7 +18,7 @@ record changes). See [`docs/release-process.md`](docs/release-process.md).
   `robots.txt` now use the GitHub Pages origin that the deploy workflow actually
   serves, instead of a stale Vercel preview domain. The origin is single-sourced
   as `BASE_URL` in `tools/site/templates.mjs`, matches `package.json`
-  `homepage`, and can be overridden at build time with `RAE_SITE_URL`.
+  `homepage`, and can be overridden at build time with `REA_SITE_URL`.
 
 ### Added
 
@@ -45,7 +45,7 @@ record changes). See [`docs/release-process.md`](docs/release-process.md).
 
 ### Changed
 
-- Make `npx rae-faang <product-id> --out ./<product-id>.md` the product-skill quick start. The shorthand writes one Markdown file (default `./<product-id>.md`); use `build agent-kit` when a `skill.md` + `mcp.json` directory is wanted. Omit `--yes` so npx retains its normal install-confirmation prompt.
+- Make `npx rea-faang <product-id> --out ./<product-id>.md` the product-skill quick start. The shorthand writes one Markdown file (default `./<product-id>.md`); use `build agent-kit` when a `skill.md` + `mcp.json` directory is wanted. Omit `--yes` so npx retains its normal install-confirmation prompt.
 - Align README, canonical docs, generated skills, product pages and landing copy with the npm CLI behavior; keep source-only workflows clearly identified.
 
 ### Added
@@ -84,7 +84,7 @@ record changes). See [`docs/release-process.md`](docs/release-process.md).
 
 - Rewrote the README with the project's visual identity: the signal-slash logo, npm/CI/coverage
   badges, a centered header, and a catalog screenshot.
-- Added a Quick start with `npx rae-faang` one-liners, a five-stage agent-build table, a
+- Added a Quick start with `npx rea-faang` one-liners, a five-stage agent-build table, a
   catalog-at-a-glance section, and an FAQ, oriented around open-source development and
   contributions.
 - Oriented `docs/README.md` for contributors: added contributor entry points that map each
@@ -94,12 +94,12 @@ record changes). See [`docs/release-process.md`](docs/release-process.md).
 
 - `docs/assets/brand-logo-icon.png` and `brand-logo.png`, the official brand lockup from
   `design-system/` (transparent-background conversions from
-  `RAE FAANG Logo + Icon.png` / `RAE FAANG Logo.png`), used in the README header and footer
+  `REA FAANG Logo + Icon.png` / `REA FAANG Logo.png`), used in the README header and footer
   and on every docs page; plus PNG icons (`icon-192.png`, `icon-512.png`) derived from the
   brand icon.
 - `CHANGELOG.md` (this file) as the release record.
 - Catalog page improvements: pagination (20 rows per page), a total-products stat, stat labels
-  that match the filter chips, and click-to-copy `rae alternatives clone` commands under every
+  that match the filter chips, and click-to-copy `rea alternatives clone` commands under every
   alternative card on product pages.
 - CLI: `products list` now reports each product's `alternative_status` in the table (`alt:`
   column) and accepts `--alt-status <status>` filtering; `opportunities export --out <file>`
@@ -133,7 +133,7 @@ record changes). See [`docs/release-process.md`](docs/release-process.md).
 ### Added
 
 - Initial public release: 77-product FAANG catalog with JSON Schemas, research dossiers,
-  alternative coverage labels, the deterministic `rae` CLI, the ACE agent environment, and
+  alternative coverage labels, the deterministic `rea` CLI, the ACE agent environment, and
   the GitHub Pages landing site.
 
 [0.3.1]: https://github.com/EnzoVezzaro/rea-faang/releases/tag/v0.3.1

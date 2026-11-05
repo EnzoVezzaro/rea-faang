@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Athena, recorded with REA.
 | Target | https://aws.amazon.com/athena/ |
 | Resolved URL | https://aws.amazon.com/athena/ |
 | Page title | Amazon Athena |
-| Captured | 2026-11-03T01:55:15.424Z |
+| Captured | 2026-11-04T02:39:23.888Z |
 | Status | captured |
-| REA Evidence ID | `ev_f771fae737daa9c0a812f9b5c2f2aef79479f9768dead75f5e378b9c33de030e` |
+| REA Evidence ID | `ev_02c5ef6bd880b9b4934490b418121e0fedf2a40e8c601078b3f7950afe14848b` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-athena.json`
-- Evidence ID: `ev_f771fae737daa9c0a812f9b5c2f2aef79479f9768dead75f5e378b9c33de030e`
-- Accessibility outline: 11999 bytes
+- Evidence ID: `ev_02c5ef6bd880b9b4934490b418121e0fedf2a40e8c601078b3f7950afe14848b`
+- Accessibility outline: 12022 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

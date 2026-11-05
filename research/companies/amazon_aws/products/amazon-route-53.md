@@ -14,16 +14,21 @@ official_source_urls:
   - "https://aws.amazon.com/documentation-overview/route53/"
   - "https://docs.aws.amazon.com/route53/"
   - "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/"
+  - "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html"
+  - "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-routing-traffic-to-resources.html"
+  - "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html"
+  - "https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-configure-dnssec.html"
+  - "https://docs.aws.amazon.com/Route53/latest/APIReference/"
   - "https://docs.aws.amazon.com/cli/latest/reference/route53/"
-research_status: "pending"
-research_confidence: "unverified"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: "2027-02-03T00:00:00Z"
+research_version: 2
 ---
 
 # 1. Executive summary
@@ -73,7 +78,7 @@ Compare zone and record APIs, DNSSEC, propagation, dynamic updates, health check
 
 Research must map hosted-zone and record state, registrar lifecycle, health-check transitions, routing policy selection, Resolver endpoints and rules, Profiles, Traffic Flow, DNSSEC, propagation, caching, quotas, failures and recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, CLI references and a controlled non-production domain. Capture record changes, health transitions, routing decisions, Resolver flows, DNSSEC and failure recovery. Use PowerDNS only after recording the partial-foundation verdict, and implement independent tooling with original code and no AWS branding or protected data.
 
@@ -81,13 +86,12 @@ Use official AWS documentation, CLI references and a controlled non-production d
 
 Verify IAM least privilege, registrar account protection, DNSSEC key management, change audit, cross-account sharing, Resolver query logging, private-zone boundaries, deletion safeguards and domain transfer controls. Do not infer availability or security guarantees from DNS documentation alone.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/route53/ — official product scope.
-- https://aws.amazon.com/documentation-overview/route53/ — service documentation overview.
-- https://docs.aws.amazon.com/route53/ — developer and API documentation.
-- https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/ — Route 53 workflows and features.
-- https://github.com/PowerDNS/pdns — open-source alternative and GPL-2.0 license.
+- **Product and scope:** [Route 53 documentation](https://docs.aws.amazon.com/route53/) and [API reference](https://docs.aws.amazon.com/Route53/latest/APIReference/) document domain registration, DNS, health checks, Resolver, Profiles and API families.
+- **DNS and routing:** [Route 53 concepts](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-concepts.html) and [routing traffic](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-routing-traffic-to-resources.html) support hosted-zone, record and routing claims.
+- **Health and security:** [health checks](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html) and [DNSSEC](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-configure-dnssec.html) support health-aware failover and DNSSEC claims.
+- **Alternative:** [PowerDNS](https://github.com/PowerDNS/pdns) is the recorded GPL-2.0 open-source authoritative DNS foundation; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -98,4 +102,4 @@ Verify IAM least privilege, registrar account protection, DNSSEC key management,
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, hosted zones, routing, health checks, DNSSEC, Resolver and API surface are documented. Exact propagation, caching, quotas, pricing, regional behavior and cross-account semantics remain unknown and are not asserted.

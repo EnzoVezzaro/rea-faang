@@ -88,7 +88,7 @@ The reading software is open (KOReader, Calibre); the ebook store and the e-ink 
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Partial. Open reading software exists and even runs on Kindle hardware; the store and devices are closed.
 
@@ -125,6 +125,6 @@ The reading software is open (KOReader, Calibre); the ebook store and the e-ink 
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Partial. Open reading software exists and even runs on Kindle hardware; the store and devices are closed.

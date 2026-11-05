@@ -79,7 +79,7 @@ Open-source orchestrators can cover workload scaling, but no equivalence is clai
 
 REA should map group state, policy evaluation, capacity allocation, health replacement, lifecycle hooks, refresh, termination, Spot behavior, scheduled actions and load-balancer registration independently.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public AWS documentation, API references and synthetic workloads only. A clean-room equivalent should use an independent control loop and cloud abstraction, documenting provider-specific behavior without copying AWS implementation.
 

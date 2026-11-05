@@ -4,8 +4,8 @@ Reverse-engineering observations of each catalogued product's **public web surfa
 captured with [REA](https://github.com/morluto/rea) (`rea-agents`). One report per
 product, plus the raw REA Evidence for provenance.
 
-- Products captured: **183/184**
-- Generated: 2026-11-03T04:19:07.389Z
+- Products captured: **193/193**
+- Generated: 2026-11-04T02:54:54.138Z
 - Regenerate: `npm run rea:catalog`
 
 ## Method and scope
@@ -24,7 +24,7 @@ only** — no login, no access-control bypass. See the repository's
 
 | Product | Target | Status | Evidence | Report |
 |---|---|---|---|---|
-| Alexa | https://developer.amazon.com/alexa | failed | — | [report](amazon/amazon-alexa.md) |
+| Alexa | https://developer.amazon.com/alexa | captured | `ev_f9ace3285…` | [report](amazon/amazon-alexa.md) |
 | Kindle | https://www.amazon.com/kindle/ | captured | `ev_1801a5099…` | [report](amazon/amazon-kindle.md) |
 | Luna | https://luna.amazon.com/ | captured | `ev_08666cddd…` | [report](amazon/amazon-luna.md) |
 | Amazon Online Retail | https://www.amazon.com/ | captured | `ev_5af512b40…` | [report](amazon/amazon-online-retail.md) |
@@ -34,45 +34,45 @@ only** — no login, no access-control bypass. See the repository's
 
 | Product | Target | Status | Evidence | Report |
 |---|---|---|---|---|
-| Amazon AppFlow | https://aws.amazon.com/appflow/ | captured | `ev_4e9e6e30d…` | [report](amazon_aws/amazon-appflow.md) |
-| Amazon Athena | https://aws.amazon.com/athena/ | captured | `ev_f771fae73…` | [report](amazon_aws/amazon-athena.md) |
-| Amazon Augmented AI | https://docs.aws.amazon.com/augmented-ai/ | captured | `ev_0c331d3fc…` | [report](amazon_aws/amazon-augmented-ai.md) |
-| Amazon Aurora | https://aws.amazon.com/rds/aurora/ | captured | `ev_30018d69c…` | [report](amazon_aws/amazon-aurora.md) |
-| Amazon Bio Discovery | https://aws.amazon.com/biodiscovery/ | captured | `ev_6a0714f17…` | [report](amazon_aws/amazon-bio-discovery.md) |
-| Amazon Braket | https://aws.amazon.com/braket/ | captured | `ev_d964937e8…` | [report](amazon_aws/amazon-braket.md) |
-| Amazon Chime | https://aws.amazon.com/chime/ | captured | `ev_8c12a0c7c…` | [report](amazon_aws/amazon-chime.md) |
-| Amazon Chime SDK | https://aws.amazon.com/chime/chime-sdk/ | captured | `ev_54a94eb05…` | [report](amazon_aws/amazon-chime-sdk.md) |
-| Amazon CloudSearch | https://aws.amazon.com/cloudsearch/ | captured | `ev_a77d7e919…` | [report](amazon_aws/amazon-cloudsearch.md) |
-| Amazon CloudWatch | https://aws.amazon.com/cloudwatch/ | captured | `ev_b58562556…` | [report](amazon_aws/amazon-cloudwatch.md) |
-| Amazon CodeGuru | https://aws.amazon.com/codeguru/ | captured | `ev_65946f535…` | [report](amazon_aws/amazon-codeguru.md) |
-| Amazon Cognito | https://aws.amazon.com/cognito/ | captured | `ev_1acf298aa…` | [report](amazon_aws/amazon-cognito.md) |
-| Amazon Comprehend | https://aws.amazon.com/comprehend/ | captured | `ev_b957dd4b8…` | [report](amazon_aws/amazon-comprehend.md) |
-| Amazon Connect Customer | https://aws.amazon.com/connect/ | captured | `ev_71491b7c0…` | [report](amazon_aws/amazon-connect-customer.md) |
-| Amazon Connect Decisions | https://aws.amazon.com/products/connect/decisions/ | captured | `ev_c4dec31bb…` | [report](amazon_aws/amazon-connect-decisions.md) |
-| Amazon Connect Health | https://aws.amazon.com/products/connect/health/ | captured | `ev_2ef4c47f6…` | [report](amazon_aws/amazon-connect-health.md) |
-| Amazon Connect Talent | https://aws.amazon.com/products/connect/talent/ | captured | `ev_cf8a2ee39…` | [report](amazon_aws/amazon-connect-talent.md) |
-| Amazon Data Firehose | https://aws.amazon.com/firehose/ | captured | `ev_af81e1fc2…` | [report](amazon_aws/amazon-data-firehose.md) |
-| Amazon Detective | https://aws.amazon.com/detective/ | captured | `ev_ba0b8644f…` | [report](amazon_aws/amazon-detective.md) |
-| Amazon DevOps Guru | https://aws.amazon.com/devops-guru/ | captured | `ev_319545c5b…` | [report](amazon_aws/amazon-devops-guru.md) |
-| Amazon DocumentDB | https://aws.amazon.com/documentdb/ | captured | `ev_44348b44d…` | [report](amazon_aws/amazon-documentdb.md) |
-| Amazon EC2 | https://aws.amazon.com/ec2/ | captured | `ev_bbdad7a4c…` | [report](amazon_aws/amazon-ec2.md) |
-| Amazon EC2 Auto Scaling | https://aws.amazon.com/ec2/autoscaling/ | captured | `ev_bea0a512d…` | [report](amazon_aws/amazon-ec2-auto-scaling.md) |
-| Amazon ECS Anywhere | https://aws.amazon.com/ecs/anywhere/ | captured | `ev_d87edf791…` | [report](amazon_aws/amazon-ecs-anywhere.md) |
-| Amazon EKS | https://aws.amazon.com/eks/ | captured | `ev_1efa19b08…` | [report](amazon_aws/amazon-eks.md) |
-| Amazon EKS Anywhere | https://aws.amazon.com/eks/eks-anywhere/ | captured | `ev_2ed716d53…` | [report](amazon_aws/amazon-eks-anywhere.md) |
-| Amazon EKS Distro | https://aws.amazon.com/eks/eks-distro/ | captured | `ev_a1540b601…` | [report](amazon_aws/amazon-eks-distro.md) |
-| Amazon Elastic Block Store | https://aws.amazon.com/ebs/ | captured | `ev_26ccbb3be…` | [report](amazon_aws/amazon-elastic-block-store.md) |
-| Amazon Elastic Container Service | https://aws.amazon.com/ecs/ | captured | `ev_75ba6e7e0…` | [report](amazon_aws/amazon-elastic-container-service.md) |
-| Amazon Elastic File System | https://aws.amazon.com/efs/ | captured | `ev_c17cebeab…` | [report](amazon_aws/amazon-elastic-file-system.md) |
-| Amazon Elastic Kubernetes Service | https://aws.amazon.com/eks/ | captured | `ev_a5d8dcff7…` | [report](amazon_aws/amazon-elastic-kubernetes-service.md) |
-| Amazon ElastiCache for Memcached | https://aws.amazon.com/elasticache/ | captured | `ev_d84179890…` | [report](amazon_aws/amazon-elasticache-memcached.md) |
-| Amazon ElastiCache for Redis OSS | https://aws.amazon.com/elasticache/ | captured | `ev_7364a8bd5…` | [report](amazon_aws/amazon-elasticache-redis.md) |
-| Amazon EMR | https://aws.amazon.com/emr/ | captured | `ev_9da5ce3c7…` | [report](amazon_aws/amazon-emr.md) |
-| Amazon File Cache | https://aws.amazon.com/filecache/ | captured | `ev_d26062290…` | [report](amazon_aws/amazon-file-cache.md) |
-| Amazon Forecast | https://aws.amazon.com/forecast/ | captured | `ev_62e48d84f…` | [report](amazon_aws/amazon-forecast.md) |
-| Amazon Fraud Detector | https://aws.amazon.com/fraud-detector/ | captured | `ev_6bc15c8ab…` | [report](amazon_aws/amazon-fraud-detector.md) |
-| Amazon FSx for Lustre | https://aws.amazon.com/fsx/lustre/ | captured | `ev_ae2934968…` | [report](amazon_aws/amazon-fsx-lustre.md) |
-| Amazon FSx for NetApp ONTAP | https://aws.amazon.com/fsx/netapp-ontap/ | captured | `ev_d61e52e01…` | [report](amazon_aws/amazon-fsx-ontap.md) |
+| Amazon AppFlow | https://aws.amazon.com/appflow/ | captured | `ev_51d95b29b…` | [report](amazon_aws/amazon-appflow.md) |
+| Amazon Athena | https://aws.amazon.com/athena/ | captured | `ev_02c5ef6bd…` | [report](amazon_aws/amazon-athena.md) |
+| Amazon Augmented AI | https://docs.aws.amazon.com/augmented-ai/ | captured | `ev_511965187…` | [report](amazon_aws/amazon-augmented-ai.md) |
+| Amazon Aurora | https://aws.amazon.com/rds/aurora/ | captured | `ev_4b00af1f6…` | [report](amazon_aws/amazon-aurora.md) |
+| Amazon Bio Discovery | https://aws.amazon.com/biodiscovery/ | captured | `ev_7dbc5ea5a…` | [report](amazon_aws/amazon-bio-discovery.md) |
+| Amazon Braket | https://aws.amazon.com/braket/ | captured | `ev_fc08a1509…` | [report](amazon_aws/amazon-braket.md) |
+| Amazon Chime | https://aws.amazon.com/chime/ | captured | `ev_5b5d84f8d…` | [report](amazon_aws/amazon-chime.md) |
+| Amazon Chime SDK | https://aws.amazon.com/chime/chime-sdk/ | captured | `ev_4808cefbf…` | [report](amazon_aws/amazon-chime-sdk.md) |
+| Amazon CloudSearch | https://aws.amazon.com/cloudsearch/ | captured | `ev_8fe146590…` | [report](amazon_aws/amazon-cloudsearch.md) |
+| Amazon CloudWatch | https://aws.amazon.com/cloudwatch/ | captured | `ev_8e6289372…` | [report](amazon_aws/amazon-cloudwatch.md) |
+| Amazon CodeGuru | https://aws.amazon.com/codeguru/ | captured | `ev_1056e7b1d…` | [report](amazon_aws/amazon-codeguru.md) |
+| Amazon Cognito | https://aws.amazon.com/cognito/ | captured | `ev_10d5e0c1d…` | [report](amazon_aws/amazon-cognito.md) |
+| Amazon Comprehend | https://aws.amazon.com/comprehend/ | captured | `ev_82618b6cc…` | [report](amazon_aws/amazon-comprehend.md) |
+| Amazon Connect Customer | https://aws.amazon.com/connect/ | captured | `ev_b20e060f5…` | [report](amazon_aws/amazon-connect-customer.md) |
+| Amazon Connect Decisions | https://aws.amazon.com/products/connect/decisions/ | captured | `ev_0640ff82a…` | [report](amazon_aws/amazon-connect-decisions.md) |
+| Amazon Connect Health | https://aws.amazon.com/products/connect/health/ | captured | `ev_2fb0ef2fe…` | [report](amazon_aws/amazon-connect-health.md) |
+| Amazon Connect Talent | https://aws.amazon.com/products/connect/talent/ | captured | `ev_1445c1937…` | [report](amazon_aws/amazon-connect-talent.md) |
+| Amazon Data Firehose | https://aws.amazon.com/firehose/ | captured | `ev_462e46e2e…` | [report](amazon_aws/amazon-data-firehose.md) |
+| Amazon Detective | https://aws.amazon.com/detective/ | captured | `ev_ffd223bd5…` | [report](amazon_aws/amazon-detective.md) |
+| Amazon DevOps Guru | https://aws.amazon.com/devops-guru/ | captured | `ev_6384ac064…` | [report](amazon_aws/amazon-devops-guru.md) |
+| Amazon DocumentDB | https://aws.amazon.com/documentdb/ | captured | `ev_7590b45b6…` | [report](amazon_aws/amazon-documentdb.md) |
+| Amazon EC2 | https://aws.amazon.com/ec2/ | captured | `ev_e5cdbc55b…` | [report](amazon_aws/amazon-ec2.md) |
+| Amazon EC2 Auto Scaling | https://aws.amazon.com/ec2/autoscaling/ | captured | `ev_6fb50f784…` | [report](amazon_aws/amazon-ec2-auto-scaling.md) |
+| Amazon ECS Anywhere | https://aws.amazon.com/ecs/anywhere/ | captured | `ev_7052e7a89…` | [report](amazon_aws/amazon-ecs-anywhere.md) |
+| Amazon EKS | https://aws.amazon.com/eks/ | captured | `ev_8fd4c40e6…` | [report](amazon_aws/amazon-eks.md) |
+| Amazon EKS Anywhere | https://aws.amazon.com/eks/eks-anywhere/ | captured | `ev_b382ab73a…` | [report](amazon_aws/amazon-eks-anywhere.md) |
+| Amazon EKS Distro | https://aws.amazon.com/eks/eks-distro/ | captured | `ev_e4479cdc3…` | [report](amazon_aws/amazon-eks-distro.md) |
+| Amazon Elastic Block Store | https://aws.amazon.com/ebs/ | captured | `ev_fed4c77ea…` | [report](amazon_aws/amazon-elastic-block-store.md) |
+| Amazon Elastic Container Service | https://aws.amazon.com/ecs/ | captured | `ev_02ed46262…` | [report](amazon_aws/amazon-elastic-container-service.md) |
+| Amazon Elastic File System | https://aws.amazon.com/efs/ | captured | `ev_6b3289b8f…` | [report](amazon_aws/amazon-elastic-file-system.md) |
+| Amazon Elastic Kubernetes Service | https://aws.amazon.com/eks/ | captured | `ev_85a7eb4c3…` | [report](amazon_aws/amazon-elastic-kubernetes-service.md) |
+| Amazon ElastiCache for Memcached | https://aws.amazon.com/elasticache/ | captured | `ev_625856f6e…` | [report](amazon_aws/amazon-elasticache-memcached.md) |
+| Amazon ElastiCache for Redis OSS | https://aws.amazon.com/elasticache/ | captured | `ev_30a776a34…` | [report](amazon_aws/amazon-elasticache-redis.md) |
+| Amazon EMR | https://aws.amazon.com/emr/ | captured | `ev_644992be5…` | [report](amazon_aws/amazon-emr.md) |
+| Amazon File Cache | https://aws.amazon.com/filecache/ | captured | `ev_34833aaad…` | [report](amazon_aws/amazon-file-cache.md) |
+| Amazon Forecast | https://aws.amazon.com/forecast/ | captured | `ev_3a5d1a042…` | [report](amazon_aws/amazon-forecast.md) |
+| Amazon Fraud Detector | https://aws.amazon.com/fraud-detector/ | captured | `ev_e32e27e77…` | [report](amazon_aws/amazon-fraud-detector.md) |
+| Amazon FSx for Lustre | https://aws.amazon.com/fsx/lustre/ | captured | `ev_6c76778ca…` | [report](amazon_aws/amazon-fsx-lustre.md) |
+| Amazon FSx for NetApp ONTAP | https://aws.amazon.com/fsx/netapp-ontap/ | captured | `ev_ac2f9501a…` | [report](amazon_aws/amazon-fsx-ontap.md) |
 | Amazon FSx for OpenZFS | https://aws.amazon.com/fsx/openzfs/ | captured | `ev_3ea495f31…` | [report](amazon_aws/amazon-fsx-openzfs.md) |
 | Amazon FSx for Windows File Server | https://aws.amazon.com/fsx/windows/ | captured | `ev_a979e3512…` | [report](amazon_aws/amazon-fsx-windows.md) |
 | Amazon GameLift | https://aws.amazon.com/gamelift/ | captured | `ev_90cc264ed…` | [report](amazon_aws/amazon-gamelift.md) |
@@ -212,10 +212,17 @@ only** — no login, no access-control bypass. See the repository's
 
 | Product | Target | Status | Evidence | Report |
 |---|---|---|---|---|
+| Meta Account | https://www.meta.com/account/ | captured | `ev_6cedd7669…` | [report](meta/meta-account.md) |
+| Meta AI | https://www.meta.ai/ | captured | `ev_e9e738b3e…` | [report](meta/meta-ai.md) |
 | Facebook | https://www.facebook.com/ | captured | `ev_e1687e697…` | [report](meta/meta-facebook.md) |
 | Instagram | https://www.instagram.com/ | captured | `ev_76952569a…` | [report](meta/meta-instagram.md) |
 | Llama | https://ai.meta.com/llama/ | captured | `ev_7bc078a31…` | [report](meta/meta-llama.md) |
+| Messenger | https://www.messenger.com/ | captured | `ev_ccb32cbab…` | [report](meta/meta-messenger.md) |
+| Muse | https://muse.ai/ | captured | `ev_ccfd259bb…` | [report](meta/meta-muse.md) |
+| Meta One | https://www.meta.com/meta-one-plans/ | captured | `ev_b79eb8e2b…` | [report](meta/meta-one.md) |
+| Meta Pay | https://www.meta.com/meta-pay/ | captured | `ev_2d079b2fa…` | [report](meta/meta-pay.md) |
 | Threads | https://www.threads.net/ | captured | `ev_865189a53…` | [report](meta/meta-threads.md) |
+| Meta Verified | https://www.meta.com/meta-verified/ | captured | `ev_bc54e93bb…` | [report](meta/meta-verified.md) |
 | WhatsApp | https://www.whatsapp.com/ | captured | `ev_2d51430c5…` | [report](meta/meta-whatsapp.md) |
 
 ### Microsoft (`microsoft`)
@@ -224,6 +231,8 @@ only** — no login, no access-control bypass. See the repository's
 |---|---|---|---|---|
 | Microsoft 365 | https://www.microsoft.com/en-us/microsoft-365 | captured | `ev_c99ad19e5…` | [report](microsoft/microsoft-365.md) |
 | Microsoft Azure | https://azure.microsoft.com/en-us | captured | `ev_064601d5f…` | [report](microsoft/microsoft-azure.md) |
+| Microsoft Edge | https://www.microsoft.com/en-us/edge | captured | `ev_edac67db5…` | [report](microsoft/microsoft-edge.md) |
+| Microsoft OneDrive | https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage | captured | `ev_5bd1a0986…` | [report](microsoft/microsoft-onedrive.md) |
 | Skype | https://www.skype.com/ | captured | `ev_492ef4159…` | [report](microsoft/microsoft-skype.md) |
 | Microsoft Teams | https://www.microsoft.com/en-us/microsoft-teams/group-chat-software | captured | `ev_576c79eff…` | [report](microsoft/microsoft-teams.md) |
 | Microsoft Windows | https://www.microsoft.com/en-us/windows/ | captured | `ev_b834d9000…` | [report](microsoft/microsoft-windows.md) |

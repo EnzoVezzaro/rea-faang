@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Maps (google-maps); investig
 
 # Google Maps — implementation skill (`google-maps`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Maps**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Maps (google-maps); investig
 
 This is the coding-agent skill for **Google Maps** (`google-maps`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-maps.md` from the catalog page, or run `npx rae-faang google-maps --out ./google-maps.md`, `npx rae-faang skills generate google-maps` or `npx rae-faang build agent-kit google-maps --out ./google-maps-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-maps.md` from the catalog page, or run `npx rea-faang google-maps --out ./google-maps.md`, `npx rea-faang skills generate google-maps` or `npx rea-faang build agent-kit google-maps --out ./google-maps-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Google Maps / `google-maps` | `catalog/products.jsonl` |
 | Official product URL | [https://maps.google.com/](https://maps.google.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | [https://developers.google.com/maps](https://developers.google.com/maps) | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-maps` | `research/companies/google/products/google-maps.md` |
+| Official documentation | [https://developers.google.com/maps/documentation](https://developers.google.com/maps/documentation) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-maps` | `research/companies/google/products/google-maps.md` |
 | REA report | `catalog/rea/google/google-maps.md` (captured 2026-11-03T01:38:25.598Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-maps.json` (`ev_a88368bcedb1e5f3e1f141985640f3408b73a1c23962974901b9d2661c75e22e`) | Catalog evidence |
 | Alternative candidates | 4 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-maps --format json` and `npx rae-faang research dossier google-maps` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-maps --format json` and `npx rea-faang research dossier google-maps` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-MAPS-CAP-81D077B3`, `GOOGLE-MAPS-CAP-21A38F3A`, `GOOGLE-MAPS-CAP-A3902964`, `GOOGLE-MAPS-CAP-8DE9EB85`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-MAPS-CAP-B6D76ED3`, `GOOGLE-MAPS-CAP-F0CC8595`, `GOOGLE-MAPS-CAP-83DCE150`, `GOOGLE-MAPS-CAP-0021D83E`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,7 +103,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Google Maps** / `google-maps` | Product catalog |
 | Company / category | Google / `consumer_application` / `search`, `discovery` | Product catalog |
-| Official website / docs | [https://maps.google.com/](https://maps.google.com/) / [https://developers.google.com/maps](https://developers.google.com/maps) | URL lead; compiler does not fetch source |
+| Official website / docs | [https://maps.google.com/](https://maps.google.com/) / [https://developers.google.com/maps/documentation](https://developers.google.com/maps/documentation) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,19 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-MAPS-CAP-81D077B3` | Map tiles and place search | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-MAPS-CAP-21A38F3A` | Turn-by-turn routing and traffic | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-MAPS-CAP-A3902964` | Satellite/Street View imagery | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-MAPS-CAP-8DE9EB85` | Places and geocoding APIs | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-MAPS-CAP-B6D76ED3` | Interactive map rendering, markers, custom styles and custom data layers for web and mobile surfaces. | VERIFIED | `ev-google-maps-documentation`, `ev-google-maps-javascript` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-MAPS-CAP-F0CC8595` | Maps, Routes, Places, geocoding and related geospatial APIs and SDKs. | VERIFIED | `ev-google-maps-platform`, `ev-google-maps-documentation` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-MAPS-CAP-83DCE150` | Consumer workflows for directions, saved places, offline areas, route options, Street View and sharing. | VERIFIED | `ev-google-maps-offline`, `ev-google-maps-features` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-MAPS-CAP-0021D83E` | Usage-based Platform pricing, free usage caps and account/billing requirements vary by SKU and service. | VERIFIED | `ev-google-maps-pricing`, `ev-google-maps-platform` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Search`, `button: Directions`, `button: Menu`, `button: Saved`, `button: Recents`, `button: Get app`, `combobox: Search Google Maps`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Map tiles and place search:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Turn-by-turn routing and traffic:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Satellite/Street View imagery:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Places and geocoding APIs:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Interactive map rendering, markers, custom styles and custom data layers for web and mobile surfaces.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Maps, Routes, Places, geocoding and related geospatial APIs and SDKs.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Consumer workflows for directions, saved places, offline areas, route options, Street View and sharing.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Usage-based Platform pricing, free usage caps and account/billing requirements vary by SKU and service.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -147,41 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-81D077B3 — Map tiles and place search
+### REQ-FUNC-B6D76ED3 — Interactive map rendering, markers, custom styles and custom data layers for web and mobile surfaces.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-maps-documentation`, `ev-google-maps-javascript`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-81D077B3`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-MAPS-CAP-81D077B3` → `REQ-FUNC-81D077B3` → `TEST-FUNC-81D077B3`.
+- **Associated test ID:** `TEST-FUNC-B6D76ED3`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-MAPS-CAP-B6D76ED3` → `REQ-FUNC-B6D76ED3` → `TEST-FUNC-B6D76ED3`.
 
-### REQ-FUNC-21A38F3A — Turn-by-turn routing and traffic
+### REQ-FUNC-F0CC8595 — Maps, Routes, Places, geocoding and related geospatial APIs and SDKs.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-maps-platform`, `ev-google-maps-documentation`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-21A38F3A`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-MAPS-CAP-21A38F3A` → `REQ-FUNC-21A38F3A` → `TEST-FUNC-21A38F3A`.
+- **Associated test ID:** `TEST-FUNC-F0CC8595`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-MAPS-CAP-F0CC8595` → `REQ-FUNC-F0CC8595` → `TEST-FUNC-F0CC8595`.
 
-### REQ-FUNC-A3902964 — Satellite/Street View imagery
+### REQ-FUNC-83DCE150 — Consumer workflows for directions, saved places, offline areas, route options, Street View and sharing.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-maps-offline`, `ev-google-maps-features`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-A3902964`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-MAPS-CAP-A3902964` → `REQ-FUNC-A3902964` → `TEST-FUNC-A3902964`.
+- **Associated test ID:** `TEST-FUNC-83DCE150`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-MAPS-CAP-83DCE150` → `REQ-FUNC-83DCE150` → `TEST-FUNC-83DCE150`.
 
-### REQ-FUNC-8DE9EB85 — Places and geocoding APIs
+### REQ-FUNC-0021D83E — Usage-based Platform pricing, free usage caps and account/billing requirements vary by SKU and service.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-maps-pricing`, `ev-google-maps-platform`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-8DE9EB85`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-MAPS-CAP-8DE9EB85` → `REQ-FUNC-8DE9EB85` → `TEST-FUNC-8DE9EB85`.
+- **Associated test ID:** `TEST-FUNC-0021D83E`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-MAPS-CAP-0021D83E` → `REQ-FUNC-0021D83E` → `TEST-FUNC-0021D83E`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -229,10 +229,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-MAPS-CAP-81D077B3` — Map tiles and place search | Not verified against OpenStreetMap | None yet; compare with `ev_a88368bcedb1e5f3e1f141985640f3408b73a1c23962974901b9d2661c75e22e` | Candidate code path and tests must be inspected |
-| `GOOGLE-MAPS-CAP-21A38F3A` — Turn-by-turn routing and traffic | Not verified against OpenStreetMap | None yet; compare with `ev_a88368bcedb1e5f3e1f141985640f3408b73a1c23962974901b9d2661c75e22e` | Candidate code path and tests must be inspected |
-| `GOOGLE-MAPS-CAP-A3902964` — Satellite/Street View imagery | Not verified against OpenStreetMap | None yet; compare with `ev_a88368bcedb1e5f3e1f141985640f3408b73a1c23962974901b9d2661c75e22e` | Candidate code path and tests must be inspected |
-| `GOOGLE-MAPS-CAP-8DE9EB85` — Places and geocoding APIs | Not verified against OpenStreetMap | None yet; compare with `ev_a88368bcedb1e5f3e1f141985640f3408b73a1c23962974901b9d2661c75e22e` | Candidate code path and tests must be inspected |
+| `GOOGLE-MAPS-CAP-B6D76ED3` — Interactive map rendering, markers, custom styles and custom data layers for web and mobile surfaces. | Not verified against OpenStreetMap | None yet; compare with `ev_a88368bcedb1e5f3e1f141985640f3408b73a1c23962974901b9d2661c75e22e` | Candidate code path and tests must be inspected |
+| `GOOGLE-MAPS-CAP-F0CC8595` — Maps, Routes, Places, geocoding and related geospatial APIs and SDKs. | Not verified against OpenStreetMap | None yet; compare with `ev_a88368bcedb1e5f3e1f141985640f3408b73a1c23962974901b9d2661c75e22e` | Candidate code path and tests must be inspected |
+| `GOOGLE-MAPS-CAP-83DCE150` — Consumer workflows for directions, saved places, offline areas, route options, Street View and sharing. | Not verified against OpenStreetMap | None yet; compare with `ev_a88368bcedb1e5f3e1f141985640f3408b73a1c23962974901b9d2661c75e22e` | Candidate code path and tests must be inspected |
+| `GOOGLE-MAPS-CAP-0021D83E` — Usage-based Platform pricing, free usage caps and account/billing requirements vary by SKU and service. | Not verified against OpenStreetMap | None yet; compare with `ev_a88368bcedb1e5f3e1f141985640f3408b73a1c23962974901b9d2661c75e22e` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -279,10 +279,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-81D077B3** → `REQ-FUNC-81D077B3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-21A38F3A** → `REQ-FUNC-21A38F3A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-A3902964** → `REQ-FUNC-A3902964`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-8DE9EB85** → `REQ-FUNC-8DE9EB85`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-B6D76ED3** → `REQ-FUNC-B6D76ED3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-F0CC8595** → `REQ-FUNC-F0CC8595`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-83DCE150** → `REQ-FUNC-83DCE150`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-0021D83E** → `REQ-FUNC-0021D83E`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -303,7 +303,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-81D077B3, REQ-FUNC-21A38F3A, REQ-FUNC-A3902964, REQ-FUNC-8DE9EB85
+- **Requirements:** REQ-FUNC-B6D76ED3, REQ-FUNC-F0CC8595, REQ-FUNC-83DCE150, REQ-FUNC-0021D83E
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -313,7 +313,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-81D077B3, REQ-FUNC-21A38F3A, REQ-FUNC-A3902964, REQ-FUNC-8DE9EB85
+- **Requirements:** REQ-FUNC-B6D76ED3, REQ-FUNC-F0CC8595, REQ-FUNC-83DCE150, REQ-FUNC-0021D83E
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -335,7 +335,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-81D077B3, REQ-FUNC-21A38F3A, REQ-FUNC-A3902964, REQ-FUNC-8DE9EB85; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-B6D76ED3, REQ-FUNC-F0CC8595, REQ-FUNC-83DCE150, REQ-FUNC-0021D83E; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -365,8 +365,27 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://maps.google.com/) | Not recorded | Google Maps is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/maps) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-google-maps-identity` | Google Maps — The official URL resolves to the Google Maps web surface; the repository records a dated REA capture with search, directions, menu, saved and recent controls. | [link](https://maps.google.com/) | 2026-11-03T00:00:00Z | The canonical public product surface is Google Maps at maps.google.com. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-platform` | Google Maps Platform FAQ — Google lists Maps, Routes and Places APIs/SDKs, setup requirements, API keys, billing, usage limits and restrictions on accessing map tiles and imagery. | [link](https://developers.google.com/maps/faq) | 2026-11-03T00:00:00Z | Google Maps Platform provides APIs and SDKs for maps, routes, places and related location services. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-documentation` | Google Maps Platform documentation — The official documentation separates map rendering, directions and optimization, place search/details, geospatial environment data and datasets, with platform-specific APIs and SDKs. | [link](https://developers.google.com/maps/documentation) | 2026-11-03T00:00:00Z | Google documents distinct Maps, Routes, Places, Environment and Dataset capabilities. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-javascript` | Maps JavaScript API overview — Google documents web map rendering, markers, style customization, custom data layers, administrative boundaries and Places library usage. | [link](https://developers.google.com/maps/documentation/javascript/overview) | 2026-11-03T00:00:00Z | The Maps JavaScript API supports interactive 2D/3D maps, markers, custom data layers, styling and Places data. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-pricing` | Google Maps Platform pricing and billing — The official pricing documentation describes pay-as-you-go billing, subscriptions, usage monitoring and free monthly billable events by SKU. | [link](https://developers.google.com/maps/billing-and-pricing) | 2026-11-03T00:00:00Z | Google Maps Platform uses usage-based pricing with service-specific billable events, free usage caps and billing requirements. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-offline` | Download areas and navigate offline in Google Maps — Google Help documents downloading map areas and offline driving navigation, while noting that transit, bicycling, walking, traffic and alternate routes may be unavailable offline. | [link](https://support.google.com/maps/answer/6291838) | 2026-11-03T00:00:00Z | Google Maps supports downloading selected map areas for offline driving navigation, with limitations by region and mode. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-features` | Discover helpful features in Google Maps — Google Help lists user workflows for saved places, location sharing, offline maps, route options, Street View and measuring distances. | [link](https://support.google.com/maps/answer/6291839) | 2026-11-03T00:00:00Z | Google Maps documents saved places, location sharing, offline maps, route preferences, Street View and measurement features. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-identity` | Google Maps — The official URL resolves to the Google Maps web surface; the repository records a dated REA capture with search, directions, menu, saved and recent controls. | [link](https://maps.google.com/) | 2026-11-03T00:00:00Z | The canonical public product surface is Google Maps at maps.google.com. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-platform` | Google Maps Platform FAQ — Google lists Maps, Routes and Places APIs/SDKs, setup requirements, API keys, billing, usage limits and restrictions on accessing map tiles and imagery. | [link](https://developers.google.com/maps/faq) | 2026-11-03T00:00:00Z | Google Maps Platform provides APIs and SDKs for maps, routes, places and related location services. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-documentation` | Google Maps Platform documentation — The official documentation separates map rendering, directions and optimization, place search/details, geospatial environment data and datasets, with platform-specific APIs and SDKs. | [link](https://developers.google.com/maps/documentation) | 2026-11-03T00:00:00Z | Google documents distinct Maps, Routes, Places, Environment and Dataset capabilities. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-javascript` | Maps JavaScript API overview — Google documents web map rendering, markers, style customization, custom data layers, administrative boundaries and Places library usage. | [link](https://developers.google.com/maps/documentation/javascript/overview) | 2026-11-03T00:00:00Z | The Maps JavaScript API supports interactive 2D/3D maps, markers, custom data layers, styling and Places data. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-pricing` | Google Maps Platform pricing and billing — The official pricing documentation describes pay-as-you-go billing, subscriptions, usage monitoring and free monthly billable events by SKU. | [link](https://developers.google.com/maps/billing-and-pricing) | 2026-11-03T00:00:00Z | Google Maps Platform uses usage-based pricing with service-specific billable events, free usage caps and billing requirements. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-offline` | Download areas and navigate offline in Google Maps — Google Help documents downloading map areas and offline driving navigation, while noting that transit, bicycling, walking, traffic and alternate routes may be unavailable offline. | [link](https://support.google.com/maps/answer/6291838) | 2026-11-03T00:00:00Z | Google Maps supports downloading selected map areas for offline driving navigation, with limitations by region and mode. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-maps-features` | Discover helpful features in Google Maps — Google Help lists user workflows for saved places, location sharing, offline maps, route options, Street View and measuring distances. | [link](https://support.google.com/maps/answer/6291839) | 2026-11-03T00:00:00Z | Google Maps documents saved places, location sharing, offline maps, route preferences, Street View and measurement features. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://maps.google.com/) | 2026-11-03T00:00:00Z | Google Maps is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/maps/documentation) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/maps/faq) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/maps/documentation/javascript/overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/maps/billing-and-pricing) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/maps/answer/6291838) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/maps/answer/6291839) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_a88368bcedb1e5f3e1f141985640f3408b73a1c23962974901b9d2661c75e22e` | Google Maps Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.google.com/maps) | 2026-11-03T01:38:25.598Z | A dated unauthenticated snapshot exposed controls button: Search, button: Directions, button: Menu, button: Saved, button: Recents, button: Get app, combobox: Search Google Maps and landmarks search. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -394,142 +413,124 @@ Resume token: `google-maps`. Read dossier, REA report and raw Evidence before re
 
 # 1. Executive summary
 
-Google Maps is a web mapping platform providing satellite imagery, street maps, 360° panoramic views of streets, real-time traffic conditions, and route planning for traveling by foot, car, bicycle, air, and public transportation. It is one of the most widely used mapping services globally.
+Google Maps is Google's consumer mapping, place-discovery and navigation surface, with a separate Google Maps Platform of APIs and SDKs. Official documentation verifies maps, routes, places, geospatial datasets, web rendering, directions, offline-map behavior and usage-based pricing. The public evidence does not establish Google's internal geospatial data pipeline, proprietary imagery rights, global traffic quality or complete parity between consumer Maps and developer Platform products.
+
+This dossier promotes `google-maps` to `researched` for documented public and developer behavior. It keeps the consumer application, Platform APIs and data/licensing boundaries explicit and treats the dated REA capture as a limited public-surface observation.
 
 # 2. Product identity and ownership
 
-- **Official name:** Google Maps
-- **Company and business unit:** Google, a subsidiary of Alphabet Inc.
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2005
-- **Current lifecycle status:** active
-- **Previous names:** None
-- **Acquisitions or ownership changes:** Acquired Keyhole (Earth Viewer) in 2004; became part of Alphabet in 2015
-- **Related products:** Google Earth, Google Street View, Google Maps Platform, Waze
-- **Official website:** https://maps.google.com/
-- **Official documentation:** https://developers.google.com/maps
+- **Canonical name:** Google Maps
+- **Stable catalog ID:** `google-maps`
+- **Company:** Google
+- **Product type:** consumer mapping, places and navigation application
+- **Official product URL:** https://maps.google.com/
+- **Official developer documentation:** https://developers.google.com/maps/documentation
+- **Lifecycle:** active at the time of review
+- **Identity evidence:** `ev-google-maps-identity`, plus `catalog/rea/google/google-maps.md`
+- **Related surfaces:** Google Maps Platform, Street View, Places, Routes, Google Earth and Waze; related does not mean the same product contract
+
+Google Maps consumer features and Google Maps Platform APIs/SDKs are related but not interchangeable. The catalog keeps one product identity because the current row describes the public Maps surface; a future API-specific row should be added only if its lifecycle, owner or evidence scope requires it.
 
 # 3. Product capabilities
 
-- Interactive map rendering (vector and raster)
-- Turn-by-turn navigation
-- Real-time traffic data
-- Public transit directions
-- Street View (360° imagery)
-- Satellite and aerial imagery
-- Place search and details
-- Business listings and reviews
-- Custom map creation (My Maps)
-- Offline maps download
-- Location sharing
-- Indoor maps for venues
-- Cycling and walking routes
-- EV charging station finder
-- Air quality layer
-- Accessible places information
+The following claims are supported by the official sources in the evidence ledger:
+
+1. **Interactive map rendering:** Maps JavaScript API supports interactive 2D/3D maps, markers, custom styles and custom data layers.
+2. **Routes and navigation:** Google documents directions, travel modes, traffic-aware routes, route optimization and mobile Navigation SDKs.
+3. **Places and geospatial data:** Google documents place search/details, autocomplete, geocoding, address validation, datasets and environment-related APIs.
+4. **Consumer workflows:** Google Help documents saved places, route options, location sharing, Street View, measurement and offline map downloads.
+5. **Developer integration:** Maps Platform provides APIs and SDKs for web, Android and iOS, with API-key, billing and quota requirements.
+6. **Usage-based billing:** Google documents billable events, free monthly usage caps, SKU pricing, monitoring and subscriptions.
+
+Not established by these sources: internal tile generation, global traffic ingestion, proprietary imagery and place-data licensing, ranking/recommendation models, exact routing algorithms, complete regional availability or a service-level guarantee.
 
 # 4. Technical architecture
 
-Google Maps uses a distributed tile-based rendering system:
-- Vector tiles for dynamic styling
-- Raster tiles for satellite imagery
-- Real-time data ingestion for traffic and incidents
-- Distributed geocoding and routing engines
-- Edge caching for map tiles
-- Mobile SDKs for iOS and Android
-- JavaScript API for web integration
-- WebGL-based rendering for 3D views
+**Verified public model:** map or mobile client → Maps, Routes, Places or related Platform API/SDK → rendered map, place data, route or geospatial result. The JavaScript documentation verifies web rendering and custom layers; the Platform documentation separates Maps, Routes, Places, Environment and Dataset product families.
 
-Internal indexing, imagery processing, and data pipeline infrastructure is proprietary.
+**Not verified:** tile stores, imagery processing, traffic and incident ingestion, geocoding index, routing graph, edge cache, mobile synchronization, recommendation systems and internal access controls. These remain `UNKNOWN`; no proprietary architecture is inferred.
 
 # 5. User workflows
 
-Core workflows: search for places, get directions, explore area, view Street View, save locations, share location. Advanced: custom maps, offline areas, transit schedules, real-time traffic avoidance, incident reporting.
+The REA capture observed the public Maps surface with Search, Directions, Menu, Saved, Recents and Get app controls. Official help supports searching places, selecting route options, saving locations, sharing location, exploring Street View, measuring distances and downloading selected areas for offline driving navigation.
+
+The following remain surface-, device- or account-dependent and were not independently exercised: live navigation, traffic updates, transit and cycling routes, reviews, business editing, location history, account personalization, Street View coverage, offline expiry, incident reporting, accessibility behavior, errors, retries and cancellation.
 
 # 6. Pricing and access
 
-Free for consumer use. Google Maps Platform APIs have tiered pricing:
-- $200 monthly free credit
-- Pay-as-you-go for Maps, Routes, Places APIs
-- Volume discounts available
-- Separate pricing for Asset Tracking, Ride Sharing, and Gaming solutions
+The consumer Maps surface is available as a public application with account- and region-dependent features. Google Maps Platform requires selecting APIs or SDKs, configuring a Google Cloud project and API key, and meeting current billing and usage requirements. Platform pricing is usage- and SKU-dependent with free monthly usage caps; it is not a promise that all consumer Maps data or features are free to embed.
+
+No API key, billing account, paid request or production map data was used during this research.
 
 # 7. API and integration surface
 
-- Maps JavaScript API
-- Maps SDK for Android
-- Maps SDK for iOS
-- Maps Static API
-- Street View Static API
-- Directions API
-- Distance Matrix API
-- Roads API
-- Places API
-- Geocoding API
-- Time Zone API
-- Elevation API
-- Map Tiles API (2D and 3D)
+- **Maps:** Maps JavaScript API, Maps SDKs, Static Maps, Map Tiles, Street View and Maps URLs.
+- **Routes:** Routes API, Roads API, Route Optimization API and Navigation SDKs.
+- **Places:** Places API/SDKs, Places Library, autocomplete, details, geocoding and address validation.
+- **Other services:** Environment, Datasets, Elevation, Time Zone and related geospatial APIs.
+- **Consumer web/mobile:** search, directions, saved places, offline areas, Street View and sharing workflows.
+
+Before integration, verify API key restrictions, quotas, billable events, storage/caching terms, attribution, data retention, region support and restrictions on downloading or recreating Google's tiles and imagery.
 
 # 8. Existing open-source alternatives
 
-- OpenStreetMap (data and tile rendering)
-- MapLibre / Mapbox GL JS (rendering engines)
-- Organic Maps (offline maps app)
-- OsmAnd (offline navigation)
-- Leaflet (web mapping library)
-- QGIS (GIS desktop software)
-- No single open-source product replicates Google Maps' full feature set, real-time data, and global coverage
+The curated landscape identifies partial alternatives covering different layers:
+
+- **OpenStreetMap:** open map data under ODbL; it is a data/community project, not a complete hosted Maps replacement.
+- **Organic Maps:** offline navigation application using open map data; it does not provide Google's live traffic or imagery ecosystem.
+- **MapLibre:** open map-rendering libraries; they require compatible tile/data services.
+- **OSRM / Valhalla:** self-hostable routing engines; they require map data and operational infrastructure.
+
+None is verified here as a drop-in replacement for the combined Google Maps consumer experience, Places breadth, proprietary Street View, global traffic or Maps Platform contract.
 
 # 9. Alternative comparison
 
-OpenStreetMap provides the underlying data for many alternatives but lacks real-time traffic, Street View imagery, and integrated transit data. MapLibre offers a rendering engine but requires self-hosted tiles and services. Consumer apps like Organic Maps and OsmAnd provide offline navigation but lack real-time features.
+The evidence supports **partial** alternative coverage. OpenStreetMap supplies data, MapLibre supplies rendering, OSRM/Valhalla supply routing, and Organic Maps supplies an offline consumer application. A complete independent stack still requires tile hosting, geocoding, place search, routing, updates, offline packaging, privacy controls and possibly licensed traffic or transit data. Alternative coverage remains `unknown` until current version, license, maintenance, security and target-region reviews are completed.
 
 # 10. Missing capabilities and opportunity analysis
 
-Real-time traffic at global scale, Street View imagery, integrated transit feeds, and unified platform (mobile + web + API) are the primary gaps. An open alternative could focus on offline-first, privacy-respecting navigation using OSM data.
+The opportunity is a bounded, privacy-first mapping or navigation product using open data and explicit regional scope—not a claim to reproduce Google's global service. A viable first slice could target one region, offline maps, place search, routing and local storage. Proprietary imagery, global traffic, transit breadth, commercial place data and global reliability remain out of scope.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Build a privacy-first navigation app using OpenStreetMap data and MapLibre rendering. Prioritize offline maps, turn-by-turn navigation, and basic place search. Real-time traffic would require third-party data partnerships.
+Use the REA report only to reproduce the observed public entry controls. For an independent implementation, compare OpenStreetMap, MapLibre, Organic Maps, OSRM and Valhalla against the declared region, offline requirement, routing quality, data license, update cadence and privacy policy. Do not copy Google tiles, imagery or protected data, and do not claim Maps parity.
 
-# 12. Security, privacy, and compliance
+# 12. Security, privacy and compliance
 
-Location history is sensitive data. Open alternative should support local-only storage, no tracking by default, and clear data export. GDPR and CCPA compliance would be design requirements.
+Location and movement data are sensitive. An independent implementation must define local versus server storage, location permissions, sharing consent, account isolation, deletion/export, telemetry defaults, map-data attribution, tile access controls, API-key restrictions, billing alerts and regional privacy obligations. No compliance certification or privacy parity claim is made.
 
 # 13. Sources and evidence
 
-- https://maps.google.com/ (product page)
-- https://developers.google.com/maps (documentation)
-- https://blog.google/products/maps/ (product updates)
-- https://www.openstreetmap.org/ (open data reference)
+| Evidence ID | Source | Scope |
+|---|---|---|
+| `ev-google-maps-identity` | https://maps.google.com/ | Product identity and public Maps surface |
+| `ev-google-maps-platform` | https://developers.google.com/maps/faq | Platform APIs, SDKs, setup and restrictions |
+| `ev-google-maps-documentation` | https://developers.google.com/maps/documentation | Maps, Routes, Places, Environment and Dataset capabilities |
+| `ev-google-maps-javascript` | https://developers.google.com/maps/documentation/javascript/overview | Web rendering, markers, styles and Places library |
+| `ev-google-maps-pricing` | https://developers.google.com/maps/billing-and-pricing | Usage-based pricing, free caps and billing |
+| `ev-google-maps-offline` | https://support.google.com/maps/answer/6291838 | Offline map download and limitations |
+| `ev-google-maps-features` | https://support.google.com/maps/answer/6291839 | Saved places, routes, sharing, Street View and measurement |
+| REA capture | `catalog/rea/google/google-maps.md` | Dated public-surface observation only |
 
-# 14. Open questions
+# 14. Open questions and exclusions
 
-- What is the minimum viable tile server infrastructure for regional coverage?
-- How to handle transit data licensing for open-source use?
-- Can crowd-sourced traffic data achieve usable quality?
+- Full signed-in consumer workflows and live navigation were not captured.
+- Traffic, transit, Street View and place-data coverage varies by region and contract.
+- API billing, quotas, attribution and data-use restrictions must be checked for the target service.
+- Internal routing, imagery, tile, ranking and geospatial data systems are not public evidence here.
+- Open-source alternatives require separate current license, maintenance and security reviews.
+- No API key, billing account, private location data or production integration was accessed.
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
+- **2026-11-03:** reviewed official Google Maps Platform, Google Maps Help and Maps JavaScript documentation; reconciled them with the existing REA public-surface capture; promoted the dossier from `pending` to `researched` with verified evidence and explicit unknowns.
+- **Next review:** 2027-02-03, or sooner if Maps Platform pricing, APIs, terms or public consumer capabilities change materially.
 
----
-
-# 16. Alternative comparison (continued)
-
-OpenStreetMap ecosystem is the foundation; consumer-facing apps build on it. No open alternative provides the integrated "search + navigate + discover" experience at Google Maps' scale.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Phase 1: Offline map viewer with search. Phase 2: Turn-by-turn navigation. Phase 3: Community features (reviews, photos). Real-time traffic deferred.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-maps` and inspect canonical identity with `npx rae-faang products show google-maps --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-maps` and inspect canonical identity with `npx rea-faang products show google-maps --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -542,7 +543,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-maps --out ./google-maps.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-maps --out ./google-maps-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-maps --out ./google-maps.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-maps --out ./google-maps-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -584,6 +585,25 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://maps.google.com/) — Google Maps is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://developers.google.com/maps) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [Google Maps](https://maps.google.com/) — The canonical public product surface is Google Maps at maps.google.com. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Maps Platform FAQ](https://developers.google.com/maps/faq) — Google Maps Platform provides APIs and SDKs for maps, routes, places and related location services. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Maps Platform documentation](https://developers.google.com/maps/documentation) — Google documents distinct Maps, Routes, Places, Environment and Dataset capabilities. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Maps JavaScript API overview](https://developers.google.com/maps/documentation/javascript/overview) — The Maps JavaScript API supports interactive 2D/3D maps, markers, custom data layers, styling and Places data. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Maps Platform pricing and billing](https://developers.google.com/maps/billing-and-pricing) — Google Maps Platform uses usage-based pricing with service-specific billable events, free usage caps and billing requirements. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Download areas and navigate offline in Google Maps](https://support.google.com/maps/answer/6291838) — Google Maps supports downloading selected map areas for offline driving navigation, with limitations by region and mode. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Discover helpful features in Google Maps](https://support.google.com/maps/answer/6291839) — Google Maps documents saved places, location sharing, offline maps, route preferences, Street View and measurement features. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Maps](https://maps.google.com/) — The canonical public product surface is Google Maps at maps.google.com. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Maps Platform FAQ](https://developers.google.com/maps/faq) — Google Maps Platform provides APIs and SDKs for maps, routes, places and related location services. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Maps Platform documentation](https://developers.google.com/maps/documentation) — Google documents distinct Maps, Routes, Places, Environment and Dataset capabilities. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Maps JavaScript API overview](https://developers.google.com/maps/documentation/javascript/overview) — The Maps JavaScript API supports interactive 2D/3D maps, markers, custom data layers, styling and Places data. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Maps Platform pricing and billing](https://developers.google.com/maps/billing-and-pricing) — Google Maps Platform uses usage-based pricing with service-specific billable events, free usage caps and billing requirements. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Download areas and navigate offline in Google Maps](https://support.google.com/maps/answer/6291838) — Google Maps supports downloading selected map areas for offline driving navigation, with limitations by region and mode. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Discover helpful features in Google Maps](https://support.google.com/maps/answer/6291839) — Google Maps documents saved places, location sharing, offline maps, route preferences, Street View and measurement features. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://maps.google.com/) — Google Maps is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.google.com/maps/documentation) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://developers.google.com/maps/faq) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/maps/documentation/javascript/overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/maps/billing-and-pricing) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/maps/answer/6291838) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/maps/answer/6291839) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Maps Public web-surface observation (REA)](https://www.google.com/maps) — A dated unauthenticated snapshot exposed controls button: Search, button: Directions, button: Menu, button: Saved, button: Recents, button: Get app, combobox: Search Google Maps and landmarks search. (VERIFIED; accessed 2026-11-03T01:38:25.598Z).

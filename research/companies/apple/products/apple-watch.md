@@ -87,7 +87,7 @@ Watch firmware is open for a few devices (AsteroidOS, InfiniTime); comparable op
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Partial. Open watch firmware exists for selected hardware only.
 
@@ -124,6 +124,6 @@ Watch firmware is open for a few devices (AsteroidOS, InfiniTime); comparable op
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Partial. Open watch firmware exists for selected hardware only.

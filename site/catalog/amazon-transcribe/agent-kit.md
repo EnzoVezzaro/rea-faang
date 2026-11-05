@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Transcribe (amazon-transcrib
 
 # Amazon Transcribe — implementation skill (`amazon-transcribe`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Transcribe**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Transcribe (amazon-transcrib
 
 This is the coding-agent skill for **Amazon Transcribe** (`amazon-transcribe`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-transcribe.md` from the catalog page, or run `npx rae-faang amazon-transcribe --out ./amazon-transcribe.md`, `npx rae-faang skills generate amazon-transcribe` or `npx rae-faang build agent-kit amazon-transcribe --out ./amazon-transcribe-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-transcribe.md` from the catalog page, or run `npx rea-faang amazon-transcribe --out ./amazon-transcribe.md`, `npx rea-faang skills generate amazon-transcribe` or `npx rea-faang build agent-kit amazon-transcribe --out ./amazon-transcribe-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Transcribe / `amazon-transcribe` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/transcribe/](https://aws.amazon.com/transcribe/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/transcribe/](https://docs.aws.amazon.com/transcribe/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-transcribe` | `research/companies/amazon_aws/products/amazon-transcribe.md` |
+| Research dossier | `npx rea-faang research dossier amazon-transcribe` | `research/companies/amazon_aws/products/amazon-transcribe.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-transcribe.md` (captured 2026-11-03T03:52:27.158Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-transcribe.json` (`ev_a882a25890e3e16f55d7de26b0556376ba2d98e51999e4de6e5d280bda9ef789`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-transcribe --format json` and `npx rae-faang research dossier amazon-transcribe` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-transcribe --format json` and `npx rea-faang research dossier amazon-transcribe` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-TRANSCRIBE-CAP-3FE7E824`, `AMAZON-TRANSCRIBE-CAP-22AF6F18`, `AMAZON-TRANSCRIBE-CAP-467FA1FC`, `AMAZON-TRANSCRIBE-CAP-27E34237`, `AMAZON-TRANSCRIBE-CAP-FAA6E986`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-TRANSCRIBE-CAP-8636A97C`, `AMAZON-TRANSCRIBE-CAP-E435426B`, `AMAZON-TRANSCRIBE-CAP-D640CB3C`, `AMAZON-TRANSCRIBE-CAP-F8E96045`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-TRANSCRIBE-CAP-3FE7E824` | Batch transcription from media in Amazon S3 | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-TRANSCRIBE-CAP-22AF6F18` | Real-time streaming transcription | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-TRANSCRIBE-CAP-467FA1FC` | Speaker labels and channel identification | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-TRANSCRIBE-CAP-27E34237` | Custom vocabulary and language customization | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-TRANSCRIBE-CAP-FAA6E986` | Medical, call analytics and HealthScribe workflows | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-TRANSCRIBE-CAP-8636A97C` | Managed batch and real-time transcription scope is documented; account execution was not tested. | VERIFIED | `ev-amazon-transcribe-identity`, `ev-amazon-transcribe-streaming` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-TRANSCRIBE-CAP-E435426B` | Streaming result semantics and distinct API surfaces are documented. | VERIFIED | `ev-amazon-transcribe-partial`, `ev-amazon-transcribe-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-TRANSCRIBE-CAP-D640CB3C` | Customization, speaker labels and feature variants are documented; language-specific availability varies. | VERIFIED | `ev-amazon-transcribe-features`, `ev-amazon-transcribe-vocabulary`, `ev-amazon-transcribe-diarization` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-TRANSCRIBE-CAP-F8E96045` | Whisper covers a local speech-recognition foundation but not Transcribe's managed streaming protocol, job plane, customization APIs, domain variants or AWS operations. | VERIFIED | `ev-amazon-transcribe-whisper`, `ev-amazon-transcribe-streaming` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Use Cases submenu`, `button: Get started with Amazon Transcribe`, `button: Try Free Demo`, `button: Play:`, `button: Effectively build voice applications`, `button: Generate highly accurate transcriptions`, `button: Access advanced features`, `button: Accelerate time to insights`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Features`, `link: Pricing`, `link: Getting Started`, `link: Resources`, `link: FAQs`, `link: Customers`, `link: Products`, `link: Artificial Intelligence`, `button: Unleash the value of speech data with generative AI`, `button: Call analytics and agent assist`, `button: Subtitles for videos and meetings`, `button: Detect toxic content in audio`, `button: Clinical documentation`, `link: Read all customer testimonials.`, `link: Missing alt text value Intuit analyzes 274 million minutes to improve customer conversations Learn more`, `link: Missing alt text value Boost agent productivity by 10% with real-time agent assist powered by Amazon Transcribe Learn more`, `link: Missing alt text value Slack offers live meeting subtitles with Amazon Transcribe Learn more`, `link: Missing alt text value T-Mobile breaks down language barriers with visual voicemail powered by Amazon Transcribe Learn more`, `link: Missing alt text value Salesforce Health Cloud improves accessibility and remote care with live subtitles and meeting transcripts with Amazon Transcribe Learn more`, `link: Demo Check out our differentiating features Launch free 5 min demo`, `link: Console Test drive Amazon Transcribe Get started`, `button: Yes, give us positive feedback`, `button: No, give us constructive feedback`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Batch transcription from media in Amazon S3:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Real-time streaming transcription:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Speaker labels and channel identification:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Custom vocabulary and language customization:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Medical, call analytics and HealthScribe workflows:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Managed batch and real-time transcription scope is documented; account execution was not tested.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Streaming result semantics and distinct API surfaces are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Customization, speaker labels and feature variants are documented; language-specific availability varies.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Whisper covers a local speech-recognition foundation but not Transcribe's managed streaming protocol, job plane, customization APIs, domain variants or AWS operations.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-3FE7E824 — Batch transcription from media in Amazon S3
+### REQ-FUNC-8636A97C — Managed batch and real-time transcription scope is documented; account execution was not tested.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-transcribe-identity`, `ev-amazon-transcribe-streaming`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-3FE7E824`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TRANSCRIBE-CAP-3FE7E824` → `REQ-FUNC-3FE7E824` → `TEST-FUNC-3FE7E824`.
+- **Associated test ID:** `TEST-FUNC-8636A97C`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-TRANSCRIBE-CAP-8636A97C` → `REQ-FUNC-8636A97C` → `TEST-FUNC-8636A97C`.
 
-### REQ-FUNC-22AF6F18 — Real-time streaming transcription
+### REQ-FUNC-E435426B — Streaming result semantics and distinct API surfaces are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-transcribe-partial`, `ev-amazon-transcribe-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-22AF6F18`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TRANSCRIBE-CAP-22AF6F18` → `REQ-FUNC-22AF6F18` → `TEST-FUNC-22AF6F18`.
+- **Associated test ID:** `TEST-FUNC-E435426B`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-TRANSCRIBE-CAP-E435426B` → `REQ-FUNC-E435426B` → `TEST-FUNC-E435426B`.
 
-### REQ-FUNC-467FA1FC — Speaker labels and channel identification
+### REQ-FUNC-D640CB3C — Customization, speaker labels and feature variants are documented; language-specific availability varies.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-transcribe-features`, `ev-amazon-transcribe-vocabulary`, `ev-amazon-transcribe-diarization`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-467FA1FC`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TRANSCRIBE-CAP-467FA1FC` → `REQ-FUNC-467FA1FC` → `TEST-FUNC-467FA1FC`.
+- **Associated test ID:** `TEST-FUNC-D640CB3C`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-TRANSCRIBE-CAP-D640CB3C` → `REQ-FUNC-D640CB3C` → `TEST-FUNC-D640CB3C`.
 
-### REQ-FUNC-27E34237 — Custom vocabulary and language customization
+### REQ-FUNC-F8E96045 — Whisper covers a local speech-recognition foundation but not Transcribe's managed streaming protocol, job plane, customization APIs, domain variants or AWS operations.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-transcribe-whisper`, `ev-amazon-transcribe-streaming`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-27E34237`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TRANSCRIBE-CAP-27E34237` → `REQ-FUNC-27E34237` → `TEST-FUNC-27E34237`.
-
-### REQ-FUNC-FAA6E986 — Medical, call analytics and HealthScribe workflows
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-FAA6E986`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TRANSCRIBE-CAP-FAA6E986` → `REQ-FUNC-FAA6E986` → `TEST-FUNC-FAA6E986`.
+- **Associated test ID:** `TEST-FUNC-F8E96045`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-TRANSCRIBE-CAP-F8E96045` → `REQ-FUNC-F8E96045` → `TEST-FUNC-F8E96045`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -237,11 +226,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `AMAZON-TRANSCRIBE-CAP-3FE7E824` — Batch transcription from media in Amazon S3 | Not verified against Whisper | None yet; compare with `ev_a882a25890e3e16f55d7de26b0556376ba2d98e51999e4de6e5d280bda9ef789` | Candidate code path and tests must be inspected |
-| `AMAZON-TRANSCRIBE-CAP-22AF6F18` — Real-time streaming transcription | Not verified against Whisper | None yet; compare with `ev_a882a25890e3e16f55d7de26b0556376ba2d98e51999e4de6e5d280bda9ef789` | Candidate code path and tests must be inspected |
-| `AMAZON-TRANSCRIBE-CAP-467FA1FC` — Speaker labels and channel identification | Not verified against Whisper | None yet; compare with `ev_a882a25890e3e16f55d7de26b0556376ba2d98e51999e4de6e5d280bda9ef789` | Candidate code path and tests must be inspected |
-| `AMAZON-TRANSCRIBE-CAP-27E34237` — Custom vocabulary and language customization | Not verified against Whisper | None yet; compare with `ev_a882a25890e3e16f55d7de26b0556376ba2d98e51999e4de6e5d280bda9ef789` | Candidate code path and tests must be inspected |
-| `AMAZON-TRANSCRIBE-CAP-FAA6E986` — Medical, call analytics and HealthScribe workflows | Not verified against Whisper | None yet; compare with `ev_a882a25890e3e16f55d7de26b0556376ba2d98e51999e4de6e5d280bda9ef789` | Candidate code path and tests must be inspected |
+| `AMAZON-TRANSCRIBE-CAP-8636A97C` — Managed batch and real-time transcription scope is documented; account execution was not tested. | Not verified against Whisper | None yet; compare with `ev_a882a25890e3e16f55d7de26b0556376ba2d98e51999e4de6e5d280bda9ef789` | Candidate code path and tests must be inspected |
+| `AMAZON-TRANSCRIBE-CAP-E435426B` — Streaming result semantics and distinct API surfaces are documented. | Not verified against Whisper | None yet; compare with `ev_a882a25890e3e16f55d7de26b0556376ba2d98e51999e4de6e5d280bda9ef789` | Candidate code path and tests must be inspected |
+| `AMAZON-TRANSCRIBE-CAP-D640CB3C` — Customization, speaker labels and feature variants are documented; language-specific availability varies. | Not verified against Whisper | None yet; compare with `ev_a882a25890e3e16f55d7de26b0556376ba2d98e51999e4de6e5d280bda9ef789` | Candidate code path and tests must be inspected |
+| `AMAZON-TRANSCRIBE-CAP-F8E96045` — Whisper covers a local speech-recognition foundation but not Transcribe's managed streaming protocol, job plane, customization APIs, domain variants or AWS operations. | Not verified against Whisper | None yet; compare with `ev_a882a25890e3e16f55d7de26b0556376ba2d98e51999e4de6e5d280bda9ef789` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -288,11 +276,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-3FE7E824** → `REQ-FUNC-3FE7E824`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-22AF6F18** → `REQ-FUNC-22AF6F18`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-467FA1FC** → `REQ-FUNC-467FA1FC`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-27E34237** → `REQ-FUNC-27E34237`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-FAA6E986** → `REQ-FUNC-FAA6E986`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-8636A97C** → `REQ-FUNC-8636A97C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-E435426B** → `REQ-FUNC-E435426B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-D640CB3C** → `REQ-FUNC-D640CB3C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-F8E96045** → `REQ-FUNC-F8E96045`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -313,7 +300,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-3FE7E824, REQ-FUNC-22AF6F18, REQ-FUNC-467FA1FC, REQ-FUNC-27E34237, REQ-FUNC-FAA6E986
+- **Requirements:** REQ-FUNC-8636A97C, REQ-FUNC-E435426B, REQ-FUNC-D640CB3C, REQ-FUNC-F8E96045
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -323,7 +310,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-3FE7E824, REQ-FUNC-22AF6F18, REQ-FUNC-467FA1FC, REQ-FUNC-27E34237, REQ-FUNC-FAA6E986
+- **Requirements:** REQ-FUNC-8636A97C, REQ-FUNC-E435426B, REQ-FUNC-D640CB3C, REQ-FUNC-F8E96045
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -345,7 +332,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-3FE7E824, REQ-FUNC-22AF6F18, REQ-FUNC-467FA1FC, REQ-FUNC-27E34237, REQ-FUNC-FAA6E986; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-8636A97C, REQ-FUNC-E435426B, REQ-FUNC-D640CB3C, REQ-FUNC-F8E96045; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -375,12 +362,25 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/transcribe/) | Not recorded | Amazon Transcribe is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/transcribe/) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-transcribe-identity` | Amazon Transcribe Documentation — AWS documentation describes transcription services for files and streams and links to developer, domain-specific and API guides. | [link](https://docs.aws.amazon.com/transcribe/) | 2026-11-03T00:00:00Z | Amazon Transcribe provides managed transcription for audio files and audio streams. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-transcribe-streaming` | Transcribing streaming audio — AWS documents streaming media delivery, real-time transcript output and live captioning or monitoring use cases. | [link](https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html) | 2026-11-03T00:00:00Z | Transcribe supports real-time streaming transcription with sequential audio chunks and real-time transcript output. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-transcribe-partial` | Streaming and partial results — AWS documents IsPartial, result segments, partial-result stabilization, stable items and timing fields. | [link](https://docs.aws.amazon.com/transcribe/latest/dg/streaming-partial-results.html) | 2026-11-03T00:00:00Z | Streaming results can be partial or final and may use partial-result stabilization with timestamps and confidence values. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-transcribe-features` | Amazon Transcribe features — The official feature matrix maps capabilities across standard, medical and call-analytics variants and batch/streaming modes. | [link](https://docs.aws.amazon.com/transcribe/latest/dg/feature-matrix.html) | 2026-11-03T00:00:00Z | Transcribe documents batch, streaming, diarization, channel identification, custom vocabulary and domain-specific feature variants. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-transcribe-vocabulary` | Custom vocabularies — AWS documents custom vocabulary creation, limits, regional requirements and use in batch or streaming workflows. | [link](https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html) | 2026-11-03T00:00:00Z | Custom vocabularies can improve recognition of domain-specific words and are available to supported languages and modes. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-transcribe-diarization` | Partitioning speakers — AWS documents speaker partitioning, labels, segments and the maximum number of unique speakers. | [link](https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html) | 2026-11-03T00:00:00Z | Transcribe can label up to 30 distinct speakers in diarization output with timestamps and speaker segments. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-transcribe-api` | Amazon Transcribe API Reference — AWS documents separate API sections for S3 media batch transcription and real-time streaming and notes that CLI does not support streaming. | [link](https://docs.aws.amazon.com/transcribe/latest/APIReference/) | 2026-11-03T00:00:00Z | The Transcribe API reference separates batch service operations from streaming service operations and documents schemas and errors. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-transcribe-whisper` | Whisper — The official repository documents Whisper's robust speech-recognition model and MIT license. | [link](https://github.com/openai/whisper) | 2026-11-03T00:00:00Z | Whisper is an MIT-licensed open-source speech-recognition model and toolkit. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/transcribe/) | 2026-11-03T00:00:00Z | Amazon Transcribe is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/transcribe/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/transcribe/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/transcribe/latest/dg/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/transcribe/latest/APIReference/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/cli/latest/reference/transcribe/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/transcribe/latest/dg/streaming-partial-results.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/transcribe/latest/dg/feature-matrix.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/transcribe/latest/APIReference/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-9` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/cli/latest/reference/transcribe/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_a882a25890e3e16f55d7de26b0556376ba2d98e51999e4de6e5d280bda9ef789` | Amazon Transcribe Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/transcribe/) | 2026-11-03T03:52:27.158Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Use Cases submenu, button: Get started with Amazon Transcribe, button: Try Free Demo, button: Play:, button: Effectively build voice applications, button: Generate highly accurate transcriptions, button: Access advanced features, button: Accelerate time to insights, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Getting Started, link: Resources, link: FAQs, link: Customers, link: Products, link: Artificial Intelligence, button: Unleash the value of speech data with generative AI, button: Call analytics and agent assist, button: Subtitles for videos and meetings, button: Detect toxic content in audio, button: Clinical documentation, link: Read all customer testimonials., link: Missing alt text value Intuit analyzes 274 million minutes to improve customer conversations Learn more, link: Missing alt text value Boost agent productivity by 10% with real-time agent assist powered by Amazon Transcribe Learn more, link: Missing alt text value Slack offers live meeting subtitles with Amazon Transcribe Learn more, link: Missing alt text value T-Mobile breaks down language barriers with visual voicemail powered by Amazon Transcribe Learn more, link: Missing alt text value Salesforce Health Cloud improves accessibility and remote care with live subtitles and meeting transcripts with Amazon Transcribe Learn more, link: Demo Check out our differentiating features Launch free 5 min demo, link: Console Test drive Amazon Transcribe Get started, button: Yes, give us positive feedback, button: No, give us constructive feedback, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -454,21 +454,21 @@ Compare recognition quality, language coverage, timestamps, punctuation, diariza
 
 Research must map operations, streaming message types, audio constraints, partial/final result semantics, job states, output schema, custom vocabulary behavior, speaker/channel labels, medical and call-analytics boundaries, errors, throttling, quotas and regional semantics. Any implementation must use original code and authorized or synthetic audio fixtures.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product, developer, API and CLI documentation as primary sources. The generated RAE skill should instruct an agent to build an independent implementation beginning with local Whisper-based batch transcription, then add streaming, job orchestration, timestamps, speaker/channel handling and customization only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS managed-service parity.
+Use the official product, developer, API and CLI documentation as primary sources. The generated REA skill should instruct an agent to build an independent implementation beginning with local Whisper-based batch transcription, then add streaming, job orchestration, timestamps, speaker/channel handling and customization only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS managed-service parity.
 
 # 12. Security, privacy, and compliance
 
 Verify IAM scope, encryption, S3 permissions, stream transport security, retention, redaction, data residency and handling of medical or call recordings. Use synthetic or public audio fixtures only. Never store credentials, private recordings or personal data in the catalog, skill or report.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/transcribe/ — official product scope.
-- https://docs.aws.amazon.com/transcribe/latest/dg/ — developer guide and workflows.
-- https://docs.aws.amazon.com/transcribe/latest/APIReference/ — batch and streaming API surface.
-- https://docs.aws.amazon.com/cli/latest/reference/transcribe/ — AWS CLI command surface.
-- https://github.com/openai/whisper — open-source speech-recognition alternative.
+- **Product and scope:** [Transcribe documentation](https://docs.aws.amazon.com/transcribe/) covers audio files, streams, batch, streaming and domain-specific variants.
+- **Streaming:** [Streaming audio](https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html) and [partial results](https://docs.aws.amazon.com/transcribe/latest/dg/streaming-partial-results.html) support real-time, partial/final-result and stabilization claims.
+- **Features:** [feature matrix](https://docs.aws.amazon.com/transcribe/latest/dg/feature-matrix.html), [custom vocabularies](https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html) and [speaker diarization](https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html) support customization and speaker/channel claims.
+- **API:** [API Reference](https://docs.aws.amazon.com/transcribe/latest/APIReference/) distinguishes batch and streaming API sections and documents operations and errors.
+- **Alternative:** [Whisper](https://github.com/openai/whisper) is the recorded MIT-licensed open-source speech-recognition foundation; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -480,13 +480,13 @@ Verify IAM scope, encryption, S3 permissions, stream transport security, retenti
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources, command surface and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, batch/streaming modes, partial results, diarization, custom vocabulary and API surface are documented. Exact recognition quality, language-specific coverage, quotas, pricing, regional behavior and medical/HealthScribe boundaries remain unknown and are not asserted.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-transcribe` and inspect canonical identity with `npx rae-faang products show amazon-transcribe --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-transcribe` and inspect canonical identity with `npx rea-faang products show amazon-transcribe --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -499,7 +499,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-transcribe --out ./amazon-transcribe.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-transcribe --out ./amazon-transcribe-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-transcribe --out ./amazon-transcribe.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-transcribe --out ./amazon-transcribe-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -541,10 +541,23 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/transcribe/) — Amazon Transcribe is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://docs.aws.amazon.com/transcribe/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [Amazon Transcribe Documentation](https://docs.aws.amazon.com/transcribe/) — Amazon Transcribe provides managed transcription for audio files and audio streams. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Transcribing streaming audio](https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html) — Transcribe supports real-time streaming transcription with sequential audio chunks and real-time transcript output. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Streaming and partial results](https://docs.aws.amazon.com/transcribe/latest/dg/streaming-partial-results.html) — Streaming results can be partial or final and may use partial-result stabilization with timestamps and confidence values. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Amazon Transcribe features](https://docs.aws.amazon.com/transcribe/latest/dg/feature-matrix.html) — Transcribe documents batch, streaming, diarization, channel identification, custom vocabulary and domain-specific feature variants. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Custom vocabularies](https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html) — Custom vocabularies can improve recognition of domain-specific words and are available to supported languages and modes. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Partitioning speakers](https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html) — Transcribe can label up to 30 distinct speakers in diarization output with timestamps and speaker segments. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Amazon Transcribe API Reference](https://docs.aws.amazon.com/transcribe/latest/APIReference/) — The Transcribe API reference separates batch service operations from streaming service operations and documents schemas and errors. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Whisper](https://github.com/openai/whisper) — Whisper is an MIT-licensed open-source speech-recognition model and toolkit. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://aws.amazon.com/transcribe/) — Amazon Transcribe is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/transcribe/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/transcribe/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/transcribe/latest/dg/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/transcribe/latest/dg/streaming-partial-results.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/transcribe/latest/dg/feature-matrix.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/transcribe/latest/APIReference/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/cli/latest/reference/transcribe/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Transcribe Public web-surface observation (REA)](https://aws.amazon.com/transcribe/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Use Cases submenu, button: Get started with Amazon Transcribe, button: Try Free Demo, button: Play:, button: Effectively build voice applications, button: Generate highly accurate transcriptions, button: Access advanced features, button: Accelerate time to insights, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Getting Started, link: Resources, link: FAQs, link: Customers, link: Products, link: Artificial Intelligence, button: Unleash the value of speech data with generative AI, button: Call analytics and agent assist, button: Subtitles for videos and meetings, button: Detect toxic content in audio, button: Clinical documentation, link: Read all customer testimonials., link: Missing alt text value Intuit analyzes 274 million minutes to improve customer conversations Learn more, link: Missing alt text value Boost agent productivity by 10% with real-time agent assist powered by Amazon Transcribe Learn more, link: Missing alt text value Slack offers live meeting subtitles with Amazon Transcribe Learn more, link: Missing alt text value T-Mobile breaks down language barriers with visual voicemail powered by Amazon Transcribe Learn more, link: Missing alt text value Salesforce Health Cloud improves accessibility and remote care with live subtitles and meeting transcripts with Amazon Transcribe Learn more, link: Demo Check out our differentiating features Launch free 5 min demo, link: Console Test drive Amazon Transcribe Get started, button: Yes, give us positive feedback, button: No, give us constructive feedback, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:52:27.158Z).

@@ -87,7 +87,7 @@ Payments sit on proprietary bank and card-network rails; no open-source project 
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Pending. The payment rails are closed; no open-source equivalent exists.
 
@@ -123,6 +123,6 @@ Payments sit on proprietary bank and card-network rails; no open-source project 
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Pending. The payment rails are closed; no open-source equivalent exists.

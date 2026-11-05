@@ -74,9 +74,9 @@ Pending evidence-backed comparison; compatibility with an open database engine d
 
 Pending REA investigation. The main open implementation question is how much of Aurora's managed cluster, storage and failover behavior is required by the consumer project.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the RAE skill against official Aurora pages and permitted public interfaces. Prefer an independent implementation or reuse decision based on workload and evidence, not a claim of reproducing AWS internals.
+Use the REA skill against official Aurora pages and permitted public interfaces. Prefer an independent implementation or reuse decision based on workload and evidence, not a claim of reproducing AWS internals.
 
 # 12. Security, privacy, and compliance
 

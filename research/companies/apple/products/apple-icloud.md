@@ -89,7 +89,7 @@ Nextcloud covers files, sync and PIM; full iOS device backup and Apple's device-
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Partial. Sync and files are self-hostable (Nextcloud); device-level backup remains proprietary.
 
@@ -126,6 +126,6 @@ Nextcloud covers files, sync and PIM; full iOS device backup and Apple's device-
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Partial. Sync and files are self-hostable (Nextcloud); device-level backup remains proprietary.

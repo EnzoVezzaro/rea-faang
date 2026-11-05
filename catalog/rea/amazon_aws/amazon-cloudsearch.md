@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon CloudSearch, recorded with R
 | Target | https://aws.amazon.com/cloudsearch/ |
 | Resolved URL | https://aws.amazon.com/cloudsearch/ |
 | Page title | Amazon CloudSearch |
-| Captured | 2026-11-03T02:48:48.949Z |
+| Captured | 2026-11-04T02:40:09.015Z |
 | Status | captured |
-| REA Evidence ID | `ev_a77d7e9198b69bf9e144864fc028f05835db2e51183911be34d7cb38eb6f9386` |
+| REA Evidence ID | `ev_8fe14659017e0dbb486340015c63af56af6c3b0e7da58cd944503817d3d17903` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -156,6 +156,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-cloudsearch.json`
-- Evidence ID: `ev_a77d7e9198b69bf9e144864fc028f05835db2e51183911be34d7cb38eb6f9386`
+- Evidence ID: `ev_8fe14659017e0dbb486340015c63af56af6c3b0e7da58cd944503817d3d17903`
 - Accessibility outline: 12902 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

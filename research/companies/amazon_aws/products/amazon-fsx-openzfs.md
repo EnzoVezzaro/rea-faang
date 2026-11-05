@@ -82,7 +82,7 @@ OpenZFS deployments provide the underlying file-system technology, but they do n
 
 REA should map file-system and volume lifecycle, NFS semantics, snapshots, clones, compression, backups, deployment types, failover, throughput, IOPS, quotas, S3 Access Points, security and AWS integrations.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use AWS product and OpenZFS guide documentation plus public OpenZFS behavior as research surfaces. A clean-room equivalent should use independently licensed OpenZFS or another storage system and document differences in management, durability, performance, snapshots, networking and cloud operations.
 

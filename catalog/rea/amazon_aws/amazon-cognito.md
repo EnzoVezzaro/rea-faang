@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Cognito, recorded with REA.
 | Target | https://aws.amazon.com/cognito/ |
 | Resolved URL | https://aws.amazon.com/cognito/ |
 | Page title | Amazon Cognito |
-| Captured | 2026-11-03T02:50:55.188Z |
+| Captured | 2026-11-04T02:40:29.641Z |
 | Status | captured |
-| REA Evidence ID | `ev_1acf298aa978436b1ceb0fa36dd93dc0dd0601c70ae9d7a5f72b430e32841408` |
+| REA Evidence ID | `ev_10d5e0c1db70290eed3b3249de7d6038ef07d15838dc201160384436902fbc6b` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-cognito.json`
-- Evidence ID: `ev_1acf298aa978436b1ceb0fa36dd93dc0dd0601c70ae9d7a5f72b430e32841408`
-- Accessibility outline: 14775 bytes
+- Evidence ID: `ev_10d5e0c1db70290eed3b3249de7d6038ef07d15838dc201160384436902fbc6b`
+- Accessibility outline: 14798 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

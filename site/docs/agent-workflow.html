@@ -6,24 +6,24 @@
     <!-- Runs before the stylesheet so reveal styles only apply where the
          motion layer can actually drive them. -->
     <script>document.documentElement.classList.replace("no-js", "js");</script>
-    <title>Agent workflow (ACE) — RAE FAANG docs</title>
+    <title>Agent workflow (ACE) — REA FAANG docs</title>
     <meta name="description" content="How the ACE environment and the multi-agent loop fit together." />
     <meta name="robots" content="index,follow" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#0B0C0A" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="RAE FAANG" />
-    <meta property="og:title" content="Agent workflow (ACE) — RAE FAANG docs" />
+    <meta property="og:site_name" content="REA FAANG" />
+    <meta property="og:title" content="Agent workflow (ACE) — REA FAANG docs" />
     <meta property="og:description" content="How the ACE environment and the multi-agent loop fit together." />
     <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/docs/agent-workflow.html" />
-    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
-    <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rea-banner.png" />
+    <meta property="og:image:alt" content="REA FAANG — choose products to build with your coding agent" />
     <meta property="og:image:width" content="1774" />
     <meta property="og:image:height" content="887" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Agent workflow (ACE) — RAE FAANG docs" />
+    <meta name="twitter:title" content="Agent workflow (ACE) — REA FAANG docs" />
     <meta name="twitter:description" content="How the ACE environment and the multi-agent loop fit together." />
-    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rea-banner.png" />
     <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/docs/agent-workflow.html" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
@@ -40,8 +40,8 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
-          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        <a class="wordmark" href="../index.html" aria-label="REA FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="REA FAANG" width="224" height="43" />
         </a>
         <nav class="nav" aria-label="Primary">
           <a href="../catalog/">Catalog</a>
@@ -90,17 +90,17 @@
             </ul>
           </details>
           <article class="doc">
-<p><img src="assets/brand-logo-icon.png" alt="RAE FAANG" /></p>
+<p><img src="assets/brand-logo-icon.png" alt="REA FAANG" /></p>
 <h1>Agent workflow</h1>
-<p>Each product has a Markdown skill you can download from its page or generate with <code>rae</code>. Give it to your coding agent from the project where you want to work. It links to research and candidate projects, and offers directions for planning, building and testing an independent implementation. Coverage labels describe research into existing projects, not build feasibility. ACE (<code>ace-proagents</code>) is optional; use it when you want to coordinate a team of agents.</p>
+<p>Each product has a Markdown skill you can download from its page or generate with <code>rea</code>. Give it to your coding agent from the project where you want to work. It links to research and candidate projects, and offers directions for planning, building and testing an independent implementation. Coverage labels describe research into existing projects, not build feasibility. ACE (<code>ace-proagents</code>) is optional; use it when you want to coordinate a team of agents.</p>
 <p>Use <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/AGENTS.md" rel="noopener noreferrer" target="_blank"><code>AGENTS.md</code></a> for the command list and handoff template. This guide explains how the parts fit together.</p>
 <h2 id="what-ace-manages-source-repository">What ACE manages (source repository)</h2>
-<p>The published RAE package includes the CLI, catalog and skill generator. Install it to get a product skill; you do not need this source checkout for a product build. Clone the repository to edit its data or code, use the source-only tools, or run the full project checks.</p>
+<p>The published REA package includes the CLI, catalog and skill generator. Install it to get a product skill; you do not need this source checkout for a product build. Clone the repository to edit its data or code, use the source-only tools, or run the full project checks.</p>
 <h2 id="what-ace-manages">What ACE manages</h2>
 <ul>
 <li><strong>Configuration:</strong> <code>package.json</code> and <code>ace-lock.json</code> describe the workspace and its tools.</li>
 <li><strong>Task state:</strong> the repository stores active missions, assignments and handoffs in runtime directories.</li>
-<li><strong>Your product build:</strong> give the product's Markdown skill to your coding agent in your project. From npm, optionally scaffold a starter workspace with <code>npx rae-faang build product &lt;id&gt; --out ./&lt;id&gt;</code> and use ACE there; the scaffold is optional, not where the skill has to be used.</li>
+<li><strong>Your product build:</strong> give the product's Markdown skill to your coding agent in your project. From npm, optionally scaffold a starter workspace with <code>npx rea-faang build product &lt;id&gt; --out ./&lt;id&gt;</code> and use ACE there; the scaffold is optional, not where the skill has to be used.</li>
 <li><strong>Review:</strong> governors and supervisors coordinate work; workers take one task at a time.</li>
 <li><strong>Adapters:</strong> providers connect ACE to the workspace, agent runtime and verification tools. Run <code>ace adapters list</code> in the source repository to see what's available.</li>
 </ul>
@@ -198,10 +198,10 @@ npm run verify                 # this repo: validate + test</code></pre>
     </main>
     <footer class="site-footer">
       <div class="wrap footer-inner">
-        <div>            <p class="footer-mark">RAE FAANG</p>
+        <div>            <p class="footer-mark">REA FAANG</p>
           <p class="footer-mission">
             We don't need FAANG anymore. Choose a product from Meta, Amazon, Apple, Netflix or Google
-            and use your agent to build it in your project. RAE FAANG brings together the catalog,
+            and use your agent to build it in your project. REA FAANG brings together the catalog,
             product research and candidate open-source projects. MIT licensed.
           </p>
         </div>

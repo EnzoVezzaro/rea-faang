@@ -83,7 +83,7 @@ Open-source Kubernetes distributions can run clusters, but none is treated as a 
 
 REA should map cluster creation, control-plane boundaries, node lifecycle, Auto Mode, IAM/Kubernetes access, networking, add-ons, storage, ingress, observability, upgrades, version support, quotas, events, failure recovery and the distinctions among EKS, EKS Distro and EKS Anywhere.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use AWS product, user-guide, API, CLI and best-practices documentation plus public Kubernetes behavior as research surfaces. A clean-room equivalent should use independently licensed Kubernetes components and reproduce only independently observable behavior, documenting differences in managed operations, identity, networking and cloud integration.
 

@@ -12,7 +12,7 @@ Developers choosing a product they want their coding agent to build in their own
 
 ## Product Purpose
 
-RAE FAANG is a product-intelligence catalog that helps visitors choose among products from Meta, Amazon, Apple, Netflix, and Google, review product research and possible open-source foundations, and give a product-specific Markdown skill to their coding agent.
+REA FAANG is a product-intelligence catalog that helps visitors choose among products from Meta, Amazon, Apple, Netflix, and Google, review product research and possible open-source foundations, and give a product-specific Markdown skill to their coding agent.
 
 The desired visitor action is to choose a product and download or generate its skill for use in their own project.
 
@@ -22,7 +22,7 @@ Unlike a plain product or alternatives directory, each catalog product has a Mar
 
 ## Operating Context
 
-The public website contains a landing page, searchable and filterable product catalog, product dossier pages, and documentation. The generated site is static HTML/CSS with a small vanilla-JavaScript layer. The source of truth is catalog and documentation data rendered through `tools/site/` templates. Visitors can download a product skill or use the `rae` CLI to generate it.
+The public website contains a landing page, searchable and filterable product catalog, product dossier pages, and documentation. The generated site is static HTML/CSS with a small vanilla-JavaScript layer. The source of truth is catalog and documentation data rendered through `tools/site/` templates. Visitors can download a product skill or use the `rea` CLI to generate it.
 
 ## Capabilities and Constraints
 
@@ -36,7 +36,7 @@ The public website contains a landing page, searchable and filterable product ca
 
 ## Brand Commitments
 
-Keep the RAE FAANG name and the repository's independent, evidence-led, open-source purpose. The user selected the v0 IRL event landing template as a visual reference for all public pages and asked for creative adaptation, not copied event content.
+Keep the REA FAANG name and the repository's independent, evidence-led, open-source purpose. The user selected the v0 IRL event landing template as a visual reference for all public pages and asked for creative adaptation, not copied event content.
 
 ## Evidence on Hand
 

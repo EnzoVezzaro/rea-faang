@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_0c331d3fc6b7110c2143695bbb64cece5a4208375c055ac74057b5f24cb4f882",
+  "evidence_id": "ev_5119651876d088fcda55bd4b69036a4b4b1ec7c148ec804d772a2df413112dc1",
   "subject": null,
   "provider": {
     "id": "rea-playwright-browser-scenario",
@@ -99,13 +99,13 @@
         "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "duration_ms": 6832,
+    "duration_ms": 4887,
     "steps": [
       {
         "step_index": 0,
         "step_id": "scenario_start",
         "action": "goto_start",
-        "elapsed_ms": 3935,
+        "elapsed_ms": 2146,
         "before_url": {
           "url": "about:blank",
           "origin": null,
@@ -153,7 +153,7 @@
         "step_index": 1,
         "step_id": "settle",
         "action": "wait_for_timeout",
-        "elapsed_ms": 2557,
+        "elapsed_ms": 2546,
         "before_url": {
           "url": "https://docs.aws.amazon.com/augmented-ai/",
           "origin": "https://docs.aws.amazon.com",

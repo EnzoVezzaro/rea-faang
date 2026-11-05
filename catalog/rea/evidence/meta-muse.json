@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_ccfd259bb1869d86f0b12737e74be9bfa382f8472c681b4cb30de5d434abdf19",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://muse.ai/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "a268f6e93a881a2fb4f26643ab52dc23779737feff4503952169e838e378118f"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://muse.ai",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 7326,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 4564,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://muse.ai/",
+          "origin": "https://muse.ai",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2535,
+        "before_url": {
+          "url": "https://muse.ai/",
+          "origin": "https://muse.ai",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://muse.ai/",
+          "origin": "https://muse.ai",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "7048ba3e0a1f3dd9b4a3203d36913b3e16c93d17fbbb544a60ad506616887128",
+              "bytes": 7178,
+              "text": "- document:\n  - main:\n    - region \"Muse landing page\":\n      - img \"Meta\"\n      - button \"Download apps\":\n        - img\n        - text: Download apps\n      - status: A promotion for the desktop app is open. It offers a download and a close button.\n      - region \"Muse, AI that gets it done for you\":\n        - img \"Muse\"\n        - heading \"Muse, AI that gets it done for you\" [level=1]\n        - heading \"Log in or create an account\" [level=1]\n        - text: Mobile number or email (required)\n        - textbox \"Mobile number or email\"\n        - paragraph:\n          - text: You may receive SMS notifications from us by using your mobile number.\n          - link \"Learn more\":\n            - /url: https://www.meta.com/help/artificial-intelligence/31983416211257755/\n        - button \"Continue\"\n        - link \"Learn more\":\n          - /url: \"#landing-introduction-video-title\"\n      - article:\n        - region \"Muse introduction\":\n          - heading \"Built around your whole life\" [level=2]\n          - paragraph: Give Muse a goal or task and it handles the rest, from saving money and improving your health to smart shopping and helping you strengthen your relationships.\n          - img \"The Muse app icon\"\n          - button \"Muse introduction film\":\n            - img\n        - region \"Muse features\":\n          - region \"Every Muse user shares their own computer in the cloud with their Muse.\":\n            - heading \"Every Muse user shares their own computer in the cloud with their Muse.\" [level=3]\n            - paragraph: Muse Secure VM is a persistent, isolated Linux computer with a full browser that you and your agent can use to complete tasks, allowing you to intervene at any point. It's your computer and your browser, with the storage, CPU, and memory to handle real work.\n            - img \"Floating browser, search, map, calendar, and confirmation panels\"\n          - region \"Designed around the way you already communicate\":\n            - heading \"Designed around the way you already communicate\" [level=3]\n            - paragraph: Chat with your agent in the same way you message with other people, using the Muse app on mobile, Mac, or directly in WhatsApp. There's no learning curve, just tell Muse what you want to get done.\n            - img \"A chat on a phone where the agent has filled out a school form, shown beside a laptop\"\n          - region \"Stay in control of what your agent does\":\n            - heading \"Stay in control of what your agent does\" [level=3]\n            - paragraph: Approve actions your agent takes on your behalf before they happen, like sending emails and making purchases. See a complete audit trail of everything your agent has done (and what it's planning to do).\n            - img \"Floating purchase, message, activity, permission, and decision controls\"\n          - region \"Your data is kept secure and private\":\n            - heading \"Your data is kept secure and private\" [level=3]\n            - paragraph:\n              - text: Save your logins to a secure credential store Muse can't see, with 1Password integration coming soon. When shopping, a one-time card number is generated at checkout so your real card stays hidden from the merchant and your agent. Eligible purchases are covered by\n              - link \"Link's purchase protections\":\n                - /url: https://link.com/protections\n              - text: \", a first for AI agents, and your conversations are not shared with Meta's ad systems.\"\n            - img \"A vault, privacy shield, masked credential, security control, and virtual card\"\n          - region \"Proactively helps with your goals and suggests ideas\":\n            - heading \"Proactively helps with your goals and suggests ideas\" [level=3]\n            - paragraph: Muse helps you stay on top of things, takes tasks and projects off your plate, and turns long-term goals into real progress. It learns from conversations, reflects on what matters and gets sharper, coming back with ideas built around what you actually need, ready to act on them under your direction.\n            - img \"Floating checklist, calendar, route, progress, and idea panels\"\n          - region \"Connects to your apps and builds its own tools\":\n            - heading \"Connects to your apps and builds its own tools\" [level=3]\n            - paragraph: Connect the apps you use daily, like email, calendar, and Instagram. You decide what your agent can see and what it can do. If a task needs a tool that doesn't exist, your agent builds it for you.\n            - img \"Connected app, messaging, media, cloud, calendar, and automation tiles\"\n        - region \"Get the most out of your Muse\":\n          - heading \"Get the most out of your Muse\" [level=2]\n          - paragraph: A guided tour of Muse, from setting a first goal to seeing it through.\n          - img \"Product designer presenting a guided tour of Muse\"\n          - button \"Play the guided tour of Muse\":\n            - img\n        - region \"Learn more about Muse\":\n          - heading \"Learn more about Muse\" [level=2]\n          - paragraph: Explore the choices behind Muse and how it is built to deserve your trust.\n          - article:\n            - link \"How We Designed Muse When Muse works, it feels like magic. These are the product choices that make the experience possible.\":\n              - /url: https://introducing.muse.ai\n              - heading \"How We Designed Muse\" [level=3]\n              - paragraph: When Muse works, it feels like magic. These are the product choices that make the experience possible.\n          - article:\n            - link \"How We Built Safety Into Muse Muse is built for privacy, safety, and security. Learn how these principles shape every part of the product.\":\n              - /url: https://security.muse.ai\n              - heading \"How We Built Safety Into Muse\" [level=3]\n              - paragraph: Muse is built for privacy, safety, and security. Learn how these principles shape every part of the product.\n          - article:\n            - link \"Muse for Business Meet the AI agent that works for your small business and keeps jobs moving between your decisions.\":\n              - /url: /business\n              - heading \"Muse for Business\" [level=3]\n              - paragraph: Meet the AI agent that works for your small business and keeps jobs moving between your decisions.\n        - region \"Ready to try Muse?\":\n          - heading \"Ready to try Muse?\" [level=2]\n          - button \"Log in\"\n          - button \"Download apps\":\n            - img\n            - text: Download apps\n      - paragraph: © Meta 2026\n      - navigation \"Legal links\":\n        - link \"Privacy Policy\":\n          - /url: https://muse.ai/privacy\n        - link \"Cookie Policy\":\n          - /url: https://www.facebook.com/privacy/policies/cookies/\n        - link \"Terms\":\n          - /url: https://muse.ai/terms\n      - text: from\n      - img \"Meta\"\n  - region \"Notifications alt+T\"\n  - alert\n  - dialog:\n    - paragraph: Meet Muse for Mac\n    - paragraph: Muse can complete tasks using the files and local apps on your computer.\n    - link \"Download\":\n      - /url: /api/hatch/app-download/mac\n    - button \"Close\":\n      - img"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://muse.ai/",
+              "origin": "https://muse.ai",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

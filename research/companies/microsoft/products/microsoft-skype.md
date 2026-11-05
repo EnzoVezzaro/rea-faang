@@ -71,7 +71,7 @@ Jitsi is meeting-first; Element is chat-first with calls. Both are maintained an
 
 None: the product is out of scope because it is retired and the open alternatives are available.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 No implementation. Keep the record so the inventory does not re-add a retired product, and point users to Jitsi or Element.
 

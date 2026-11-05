@@ -78,7 +78,7 @@ Open-source security analytics and graph tools may cover portions of Detective, 
 
 REA should map behavior-graph ingestion, account administration, source data, finding groups, investigation APIs, visualizations, baselines, integrations and retention independently.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public AWS documentation, API references and synthetic or authorized security telemetry only. A clean-room equivalent should use independently licensed graph and security-analysis components; it must not copy AWS models, detection rules, proprietary data or assets.
 

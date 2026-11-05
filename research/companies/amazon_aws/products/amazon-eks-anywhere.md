@@ -81,7 +81,7 @@ Open Kubernetes distributions and Cluster API stacks can cover core cluster oper
 
 REA should map cluster creation, provider abstractions, upgrades, backups, air-gap packaging, networking, identity, observability, curated packages, console visibility and enterprise support separately.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public AWS documentation and the public open-source distribution only. A clean-room equivalent should use upstream Kubernetes/Cluster API and independently licensed components, documenting provider and support differences without copying AWS packaging or proprietary services.
 

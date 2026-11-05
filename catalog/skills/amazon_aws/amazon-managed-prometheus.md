@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Managed Service for Promethe
 
 # Amazon Managed Service for Prometheus — implementation skill (`amazon-managed-prometheus`)
 
-> **Research status:** pending. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Managed Service for Prometheus**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Managed Service for Promethe
 
 This is the coding-agent skill for **Amazon Managed Service for Prometheus** (`amazon-managed-prometheus`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-managed-prometheus.md` from the catalog page, or run `npx rae-faang amazon-managed-prometheus --out ./amazon-managed-prometheus.md`, `npx rae-faang skills generate amazon-managed-prometheus` or `npx rae-faang build agent-kit amazon-managed-prometheus --out ./amazon-managed-prometheus-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-managed-prometheus.md` from the catalog page, or run `npx rea-faang amazon-managed-prometheus --out ./amazon-managed-prometheus.md`, `npx rea-faang skills generate amazon-managed-prometheus` or `npx rea-faang build agent-kit amazon-managed-prometheus --out ./amazon-managed-prometheus-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Managed Service for Prometheus / `amazon-managed-prometheus` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/prometheus/](https://aws.amazon.com/prometheus/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/prometheus/](https://docs.aws.amazon.com/prometheus/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-managed-prometheus` | `research/companies/amazon_aws/products/amazon-managed-prometheus.md` |
+| Research dossier | `npx rea-faang research dossier amazon-managed-prometheus` | `research/companies/amazon_aws/products/amazon-managed-prometheus.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-managed-prometheus.md` (captured 2026-11-03T03:27:59.675Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-managed-prometheus.json` (`ev_fd631a84b45907e28c8549b4db91bd6938ea36f3ddce5d518b3727905b515986`) | Catalog evidence |
 | Alternative candidates | None recorded — this is a research gap | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-managed-prometheus --format json` and `npx rae-faang research dossier amazon-managed-prometheus` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-managed-prometheus --format json` and `npx rea-faang research dossier amazon-managed-prometheus` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-MANAGED-PROMETHEUS-CAP-7633A424`, `AMAZON-MANAGED-PROMETHEUS-CAP-F97125BC`, `AMAZON-MANAGED-PROMETHEUS-CAP-31C8FF70`, `AMAZON-MANAGED-PROMETHEUS-CAP-8E539AA1`, `AMAZON-MANAGED-PROMETHEUS-CAP-D98B0474`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-MANAGED-PROMETHEUS-CAP-CEF895DB`, `AMAZON-MANAGED-PROMETHEUS-CAP-DDD80DAB`, `AMAZON-MANAGED-PROMETHEUS-CAP-7BD83904`, `AMAZON-MANAGED-PROMETHEUS-CAP-361DF2EB`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-MANAGED-PROMETHEUS-CAP-7633A424` | managed Prometheus workspaces | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MANAGED-PROMETHEUS-CAP-F97125BC` | PromQL-compatible metric querying | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MANAGED-PROMETHEUS-CAP-31C8FF70` | remote write and metric ingestion | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MANAGED-PROMETHEUS-CAP-8E539AA1` | managed collectors and scrapers for container workloads | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MANAGED-PROMETHEUS-CAP-D98B0474` | IAM, CloudTrail and multi-AZ operational controls | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MANAGED-PROMETHEUS-CAP-CEF895DB` | Managed workspace and control/data API surfaces are documented. | VERIFIED | `ev-amazon-amp-identity`, `ev-amazon-amp-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MANAGED-PROMETHEUS-CAP-DDD80DAB` | Remote write, collectors and EKS/ACK integrations are documented. | VERIFIED | `ev-amazon-amp-ingest`, `ev-amazon-amp-ack` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MANAGED-PROMETHEUS-CAP-7BD83904` | Workspace retention/series controls and alert routing are documented. | VERIFIED | `ev-amazon-amp-config`, `ev-amazon-amp-alerts` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MANAGED-PROMETHEUS-CAP-361DF2EB` | Prometheus covers the open-source foundation, but not AMP managed storage, IAM/SigV4, quotas or AWS integrations. | VERIFIED | `ev-amazon-amp-prometheus`, `ev-amazon-amp-quotas` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Start using Managed Service for Prometheus`, `button: Hands-on Workshop`, `button: Play:`, `button: Filter, aggregate, ingest, and query unique time series metrics`, `button: Automatically scale`, `button: Security and compliance requirements`, `button: Reduce operational costs`, `button: Unified system monitoring`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Features`, `link: Pricing`, `link: Resources`, `link: FAQs`, `link: Customers`, `link: Partners`, `link: Products`, `link: Management and Governance`, `button: Troubleshooting and root cause analysis`, `button: Workload and application metrics monitoring`, `button: High-cardinality metrics monitoring`, `link: Missing alt text value Twilio modernized and scaled their observability stack Learn more`, `link: Missing alt text value HP monitors hardware and service metrics Learn more`, `link: Missing alt text value Fanatics monitors global application performance Learn more`, `link: Missing alt text value Curve collects, stores, and visualizes millions of metrics Learn more`, `link: Guide Review the documentation Read the guide`, `link: Getting started Explore observability options Read more`, `link: Console Start using Amazon Managed Service for Prometheus Sign in`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **managed Prometheus workspaces:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **PromQL-compatible metric querying:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **remote write and metric ingestion:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **managed collectors and scrapers for container workloads:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **IAM, CloudTrail and multi-AZ operational controls:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Managed workspace and control/data API surfaces are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Remote write, collectors and EKS/ACK integrations are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Workspace retention/series controls and alert routing are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Prometheus covers the open-source foundation, but not AMP managed storage, IAM/SigV4, quotas or AWS integrations.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-7633A424 — managed Prometheus workspaces
+### REQ-FUNC-CEF895DB — Managed workspace and control/data API surfaces are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-amp-identity`, `ev-amazon-amp-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-7633A424`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MANAGED-PROMETHEUS-CAP-7633A424` → `REQ-FUNC-7633A424` → `TEST-FUNC-7633A424`.
+- **Associated test ID:** `TEST-FUNC-CEF895DB`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MANAGED-PROMETHEUS-CAP-CEF895DB` → `REQ-FUNC-CEF895DB` → `TEST-FUNC-CEF895DB`.
 
-### REQ-FUNC-F97125BC — PromQL-compatible metric querying
+### REQ-FUNC-DDD80DAB — Remote write, collectors and EKS/ACK integrations are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-amp-ingest`, `ev-amazon-amp-ack`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-F97125BC`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MANAGED-PROMETHEUS-CAP-F97125BC` → `REQ-FUNC-F97125BC` → `TEST-FUNC-F97125BC`.
+- **Associated test ID:** `TEST-FUNC-DDD80DAB`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MANAGED-PROMETHEUS-CAP-DDD80DAB` → `REQ-FUNC-DDD80DAB` → `TEST-FUNC-DDD80DAB`.
 
-### REQ-FUNC-31C8FF70 — remote write and metric ingestion
+### REQ-FUNC-7BD83904 — Workspace retention/series controls and alert routing are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-amp-config`, `ev-amazon-amp-alerts`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-31C8FF70`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MANAGED-PROMETHEUS-CAP-31C8FF70` → `REQ-FUNC-31C8FF70` → `TEST-FUNC-31C8FF70`.
+- **Associated test ID:** `TEST-FUNC-7BD83904`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MANAGED-PROMETHEUS-CAP-7BD83904` → `REQ-FUNC-7BD83904` → `TEST-FUNC-7BD83904`.
 
-### REQ-FUNC-8E539AA1 — managed collectors and scrapers for container workloads
+### REQ-FUNC-361DF2EB — Prometheus covers the open-source foundation, but not AMP managed storage, IAM/SigV4, quotas or AWS integrations.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-amp-prometheus`, `ev-amazon-amp-quotas`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-8E539AA1`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MANAGED-PROMETHEUS-CAP-8E539AA1` → `REQ-FUNC-8E539AA1` → `TEST-FUNC-8E539AA1`.
-
-### REQ-FUNC-D98B0474 — IAM, CloudTrail and multi-AZ operational controls
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D98B0474`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MANAGED-PROMETHEUS-CAP-D98B0474` → `REQ-FUNC-D98B0474` → `TEST-FUNC-D98B0474`.
+- **Associated test ID:** `TEST-FUNC-361DF2EB`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MANAGED-PROMETHEUS-CAP-361DF2EB` → `REQ-FUNC-361DF2EB` → `TEST-FUNC-361DF2EB`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -273,11 +262,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-7633A424** → `REQ-FUNC-7633A424`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-F97125BC** → `REQ-FUNC-F97125BC`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-31C8FF70** → `REQ-FUNC-31C8FF70`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-8E539AA1** → `REQ-FUNC-8E539AA1`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-D98B0474** → `REQ-FUNC-D98B0474`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-CEF895DB** → `REQ-FUNC-CEF895DB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-DDD80DAB** → `REQ-FUNC-DDD80DAB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-7BD83904** → `REQ-FUNC-7BD83904`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-361DF2EB** → `REQ-FUNC-361DF2EB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -298,7 +286,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-7633A424, REQ-FUNC-F97125BC, REQ-FUNC-31C8FF70, REQ-FUNC-8E539AA1, REQ-FUNC-D98B0474
+- **Requirements:** REQ-FUNC-CEF895DB, REQ-FUNC-DDD80DAB, REQ-FUNC-7BD83904, REQ-FUNC-361DF2EB
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -308,7 +296,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-7633A424, REQ-FUNC-F97125BC, REQ-FUNC-31C8FF70, REQ-FUNC-8E539AA1, REQ-FUNC-D98B0474
+- **Requirements:** REQ-FUNC-CEF895DB, REQ-FUNC-DDD80DAB, REQ-FUNC-7BD83904, REQ-FUNC-361DF2EB
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -330,7 +318,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-7633A424, REQ-FUNC-F97125BC, REQ-FUNC-31C8FF70, REQ-FUNC-8E539AA1, REQ-FUNC-D98B0474; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-CEF895DB, REQ-FUNC-DDD80DAB, REQ-FUNC-7BD83904, REQ-FUNC-361DF2EB; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -360,12 +348,25 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/prometheus/) | 2026-11-02T00:00:00Z | Amazon Managed Service for Prometheus is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/prometheus/) | 2026-11-02T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
-| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/documentation-overview/prometheus/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `ev-amazon-amp-identity` | What is Amazon Managed Service for Prometheus? — AWS documents workspaces, regional endpoints, managed monitoring and separate control/data API surfaces. | [link](https://docs.aws.amazon.com/prometheus/latest/userguide/) | 2026-11-04T00:00:00Z | Amazon Managed Service for Prometheus is a managed Prometheus-compatible monitoring service with workspace control-plane and data-plane endpoints. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amp-api` | AMP API Reference — The official API reference documents both management operations and PromQL-compatible data APIs. | [link](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html) | 2026-11-04T00:00:00Z | AMP exposes AWS APIs for workspaces, scrapers, rule groups, Alert Manager definitions and logging, plus Prometheus-compatible HTTP APIs. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amp-ingest` | Using a Prometheus instance as a collector — AWS documents agent-mode collectors, remote write, high availability and deduplication considerations. | [link](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-ingest-with-prometheus.html) | 2026-11-04T00:00:00Z | Prometheus agents can scrape metrics and send them to AMP using remote write. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amp-ack` | Manage AMP with ACK — AWS documents ACK resources and EKS remote-write configuration using IAM roles. | [link](https://docs.aws.amazon.com/prometheus/latest/userguide/integrating-ack.html) | 2026-11-04T00:00:00Z | AMP integrates with AWS Controllers for Kubernetes and EKS for workspaces, scrapers, remote write, rules and alerting. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amp-config` | Configure your workspace — AWS documents retention up to three years, out-of-order windows and active-series label-set controls. | [link](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-workspace-configuration.html) | 2026-11-04T00:00:00Z | AMP documents retention, out-of-order windows, rule query offsets and active-series limits at workspace level. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amp-alerts` | Managing and forwarding alerts — AWS documents Alert Manager configuration, silences, inhibition, grouping and SNS routing. | [link](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-alert-manager.html) | 2026-11-04T00:00:00Z | AMP Alert Manager groups, deduplicates, silences and routes alerts, with SNS as the documented receiver. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amp-prometheus` | Prometheus documentation — The upstream documentation describes Prometheus workflows, PromQL, rules, exporters and monitoring operations. | [link](https://prometheus.io/docs/prometheus/latest/) | 2026-11-04T00:00:00Z | Prometheus is the open-source data model, PromQL and alert/rule foundation used for partial AMP compatibility. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amp-quotas` | Amazon Managed Service for Prometheus endpoints — The AWS general reference documents regional APS control and workspace endpoint families. | [link](https://docs.aws.amazon.com/general/latest/gr/prometheus-service.html) | 2026-11-04T00:00:00Z | AWS publishes regional service endpoints and service access surfaces for AMP. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/prometheus/) | 2026-11-04T00:00:00Z | Amazon Managed Service for Prometheus is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/prometheus/) | 2026-11-04T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/prometheus/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/prometheus/latest/userguide/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/general/latest/gr/prometheus-service.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-ingest-with-prometheus.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-workspace-configuration.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-alert-manager.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/prometheus/latest/userguide/integrating-ack.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/general/latest/gr/prometheus-service.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-9` | Additional official source lead — Claim/section not recorded. | [link](https://prometheus.io/docs/prometheus/latest/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_fd631a84b45907e28c8549b4db91bd6938ea36f3ddce5d518b3727905b515986` | Amazon Managed Service for Prometheus Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/prometheus/) | 2026-11-03T03:27:59.675Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Start using Managed Service for Prometheus, button: Hands-on Workshop, button: Play:, button: Filter, aggregate, ingest, and query unique time series metrics, button: Automatically scale, button: Security and compliance requirements, button: Reduce operational costs, button: Unified system monitoring, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Resources, link: FAQs, link: Customers, link: Partners, link: Products, link: Management and Governance, button: Troubleshooting and root cause analysis, button: Workload and application metrics monitoring, button: High-cardinality metrics monitoring, link: Missing alt text value Twilio modernized and scaled their observability stack Learn more, link: Missing alt text value HP monitors hardware and service metrics Learn more, link: Missing alt text value Fanatics monitors global application performance Learn more, link: Missing alt text value Curve collects, stores, and visualizes millions of metrics Learn more, link: Guide Review the documentation Read the guide, link: Getting started Explore observability options Read more, link: Console Start using Amazon Managed Service for Prometheus Sign in, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -393,7 +394,7 @@ Resume token: `amazon-managed-prometheus`. Read dossier, REA report and raw Evid
 
 # 1. Executive summary
 
-Amazon Managed Service for Prometheus is AWS's serverless, Prometheus-compatible monitoring service for container metrics. It provides managed workspaces for ingestion and querying, PromQL-compatible APIs, collectors and integrations with AWS security and container services.
+Amazon Managed Service for Prometheus (AMP) is AWS's serverless, Prometheus-compatible monitoring service. It provides managed workspaces with separate control-plane and data-plane endpoints for ingestion, querying, rules and alerts, plus managed collectors and AWS container/security integrations.
 
 # 2. Product identity and ownership
 
@@ -408,70 +409,71 @@ Amazon Managed Service for Prometheus is AWS's serverless, Prometheus-compatible
 - Ingest metrics through remote write, collectors and scrapers.
 - Query and alert with PromQL-compatible APIs.
 - Monitor EKS and self-managed Kubernetes workloads.
-- Manage workspace access with IAM, CloudTrail and multi-AZ service controls.
+- Manage workspace access with IAM, SigV4, CloudTrail and managed availability controls.
+- Configure recording/alerting rule groups and Alert Manager routing, including AWS SNS receivers.
 
 # 4. Technical architecture
 
-Public documentation describes workspaces, ingestion, querying, managed collectors, rule groups, alert manager definitions, scrapers, regional endpoints and retention. Exact cardinality limits, costs, data freshness and failure behavior remain pending.
+Public documentation describes workspaces, remote write ingestion, PromQL querying, managed collectors, scrapers, rule groups, Alert Manager definitions, regional endpoints, retention and out-of-order windows. AMP exposes both AWS management APIs and Prometheus-compatible APIs; exact cardinality limits, costs, data freshness and failure behavior remain version- and quota-sensitive.
 
 # 5. User workflows
 
-Expected workflows include creating a workspace, configuring ingestion or a scraper, querying metrics, defining rules and alerts, managing access, and deleting or updating workspace resources. Recovery and migration behavior require evidence.
+Expected workflows include creating a workspace, configuring remote write or a managed scraper, querying metrics with PromQL, defining recording/alerting rules, routing alerts, managing access, configuring retention and deleting or updating workspace resources. Recovery and migration behavior require evidence.
 
 # 6. Pricing and access
 
-Current pricing, retention charges, ingestion/query costs, quotas and regional availability must be verified before implementation or cost claims.
+Current pricing, retention charges, ingestion/query costs, active-series/cardinality quotas and regional availability must be verified before implementation or cost claims.
 
 # 7. API and integration surface
 
 - AWS APIs for workspaces, scrapers, rule groups, alert manager definitions and logging.
-- Prometheus-compatible remote-write and query APIs.
+- Prometheus-compatible remote-write, query, rule and alert APIs.
 - AWS CLI and SDKs.
 - EKS, MSK, OpenSearch, Grafana, IAM and CloudTrail integrations.
 
 # 8. Existing open-source alternatives
 
-Prometheus is the primary open-source foundation. Thanos, Cortex, Mimir and VictoriaMetrics may cover portions of long-term storage, federation or scale, but managed AWS semantics and integrations are not assumed equivalent.
+Prometheus is the primary open-source foundation. Thanos, Cortex, Mimir and VictoriaMetrics may cover portions of long-term storage, federation or scale, but managed AWS semantics, IAM/SigV4, collectors, quotas and integrations are not assumed equivalent.
 
 # 9. Alternative comparison
 
-Self-hosted Prometheus preserves the data model and PromQL but transfers storage, scaling, availability, collectors, security and operations to the implementer. A complete foundation decision remains pending.
+Self-hosted Prometheus preserves the data model, remote-write protocol and PromQL but transfers storage, scaling, availability, collectors, security, rules and operations to the implementer. Compare long-term storage, deduplication, alert routing, cardinality controls and migration separately.
 
 # 10. Missing capabilities and opportunity analysis
 
-Research must map workspace lifecycle, ingestion protocols, scraper behavior, retention, cardinality, query limits, alerting, rule evaluation, multi-account access, regional behavior and failure recovery.
+Research must map workspace lifecycle, remote-write and scrape behavior, retention, out-of-order handling, active-series/cardinality limits, query limits, rule evaluation, Alert Manager receivers, multi-account access, regional behavior and failure recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use official AWS and Prometheus documentation and authorized API observation. Capture contracts and behavior before selecting a foundation or implementing an independent equivalent in a consumer project.
+Use official AWS and Prometheus documentation and authorized API observation. Capture control-plane and data-plane contracts separately before selecting Prometheus, Thanos, Mimir, Cortex or VictoriaMetrics as a partial foundation or implementing an independent equivalent. Do not claim AWS-managed parity.
 
 # 12. Security, privacy, and compliance
 
 Verify IAM boundaries, workspace isolation, network access, encryption, CloudTrail coverage, metric sensitivity, cross-account roles and secret handling.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/documentation-overview/prometheus/ — official service overview.
-- https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html — AWS and Prometheus-compatible APIs.
-- https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-getting-started.html — workspace, ingestion and query workflow.
-- https://docs.aws.amazon.com/general/latest/gr/prometheus-service.html — endpoints and quotas.
+- **Identity and API surfaces:** [AMP User Guide](https://docs.aws.amazon.com/prometheus/latest/userguide/) and [API Reference](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html) document workspaces, separate AWS control-plane and Prometheus-compatible data-plane APIs.
+- **Ingestion:** [Prometheus collector ingestion](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-ingest-with-prometheus.html) and [ACK integration](https://docs.aws.amazon.com/prometheus/latest/userguide/integrating-ack.html) document remote write and managed Kubernetes integration.
+- **Workspace controls:** [workspace configuration](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-workspace-configuration.html) documents retention, out-of-order windows, rule offsets and active-series limits.
+- **Rules and alerts:** [Alert Manager](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-alert-manager.html) documents grouping, silencing, routing and SNS receivers; [Prometheus documentation](https://prometheus.io/docs/prometheus/latest/) documents the upstream rule model.
 
 # 14. Unknowns
 
 - Complete API/CLI/SDK command matrix.
-- Exact retention, cardinality, ingestion and query limits.
-- Collector, alerting, rule evaluation and failure semantics.
+- Exact retention, active-series/cardinality, ingestion and query limits.
+- Collector, alerting, rule evaluation, deduplication and failure semantics.
 - Verified open-source foundation and migration coverage.
 
 # 15. Research status
 
-`pending`: identity and public capability surface are documented from official AWS sources, but full REA capture, detailed behavior, limits and alternative coverage remain unverified.
+Researched with verified public AWS and Prometheus sources. AMP identity, workspace/control-plane and data-plane APIs, remote write, collectors, PromQL, rules, Alert Manager and workspace controls are documented. Exact pricing, quotas, regional behavior, failure semantics and full alternative parity remain unknown and are not asserted.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-managed-prometheus` and inspect canonical identity with `npx rae-faang products show amazon-managed-prometheus --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-managed-prometheus` and inspect canonical identity with `npx rea-faang products show amazon-managed-prometheus --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -484,7 +486,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-managed-prometheus --out ./amazon-managed-prometheus.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-managed-prometheus --out ./amazon-managed-prometheus-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-managed-prometheus --out ./amazon-managed-prometheus.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-managed-prometheus --out ./amazon-managed-prometheus-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -526,10 +528,23 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/prometheus/) — Amazon Managed Service for Prometheus is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
-- [Official documentation entry](https://docs.aws.amazon.com/prometheus/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
-- [Additional official source lead](https://aws.amazon.com/documentation-overview/prometheus/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [What is Amazon Managed Service for Prometheus?](https://docs.aws.amazon.com/prometheus/latest/userguide/) — Amazon Managed Service for Prometheus is a managed Prometheus-compatible monitoring service with workspace control-plane and data-plane endpoints. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [AMP API Reference](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html) — AMP exposes AWS APIs for workspaces, scrapers, rule groups, Alert Manager definitions and logging, plus Prometheus-compatible HTTP APIs. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Using a Prometheus instance as a collector](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-ingest-with-prometheus.html) — Prometheus agents can scrape metrics and send them to AMP using remote write. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Manage AMP with ACK](https://docs.aws.amazon.com/prometheus/latest/userguide/integrating-ack.html) — AMP integrates with AWS Controllers for Kubernetes and EKS for workspaces, scrapers, remote write, rules and alerting. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Configure your workspace](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-workspace-configuration.html) — AMP documents retention, out-of-order windows, rule query offsets and active-series limits at workspace level. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Managing and forwarding alerts](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-alert-manager.html) — AMP Alert Manager groups, deduplicates, silences and routes alerts, with SNS as the documented receiver. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Prometheus documentation](https://prometheus.io/docs/prometheus/latest/) — Prometheus is the open-source data model, PromQL and alert/rule foundation used for partial AMP compatibility. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Amazon Managed Service for Prometheus endpoints](https://docs.aws.amazon.com/general/latest/gr/prometheus-service.html) — AWS publishes regional service endpoints and service access surfaces for AMP. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Official product page](https://aws.amazon.com/prometheus/) — Amazon Managed Service for Prometheus is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-04T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/prometheus/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-04T00:00:00Z).
+- [Additional official source lead](https://aws.amazon.com/prometheus/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/prometheus/latest/userguide/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-ingest-with-prometheus.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-workspace-configuration.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-alert-manager.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/prometheus/latest/userguide/integrating-ack.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/general/latest/gr/prometheus-service.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://prometheus.io/docs/prometheus/latest/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Managed Service for Prometheus Public web-surface observation (REA)](https://aws.amazon.com/prometheus/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Start using Managed Service for Prometheus, button: Hands-on Workshop, button: Play:, button: Filter, aggregate, ingest, and query unique time series metrics, button: Automatically scale, button: Security and compliance requirements, button: Reduce operational costs, button: Unified system monitoring, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Resources, link: FAQs, link: Customers, link: Partners, link: Products, link: Management and Governance, button: Troubleshooting and root cause analysis, button: Workload and application metrics monitoring, button: High-cardinality metrics monitoring, link: Missing alt text value Twilio modernized and scaled their observability stack Learn more, link: Missing alt text value HP monitors hardware and service metrics Learn more, link: Missing alt text value Fanatics monitors global application performance Learn more, link: Missing alt text value Curve collects, stores, and visualizes millions of metrics Learn more, link: Guide Review the documentation Read the guide, link: Getting started Explore observability options Read more, link: Console Start using Amazon Managed Service for Prometheus Sign in, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:27:59.675Z).

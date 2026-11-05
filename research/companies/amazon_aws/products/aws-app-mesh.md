@@ -73,9 +73,9 @@ Compare mesh resources, Envoy configuration, traffic routing, retries, timeouts,
 
 Research must preserve the historical API and resource matrix while prioritizing migration documentation. Map successor behavior in VPC Lattice and ECS Service Connect, including service discovery, routing, identity, observability, limits and workload changes. Any new implementation must use original code and isolated synthetic services.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official API, user guide, CLI references and AWS migration notices as primary sources. The generated RAE skill should instruct an agent to reproduce historical App Mesh behavior only for migration or compatibility research, using Istio concepts where useful, and to prefer AWS successor paths for new systems. Do not claim current service availability or recommend a new App Mesh implementation.
+Use the official API, user guide, CLI references and AWS migration notices as primary sources. The generated REA skill should instruct an agent to reproduce historical App Mesh behavior only for migration or compatibility research, using Istio concepts where useful, and to prefer AWS successor paths for new systems. Do not claim current service availability or recommend a new App Mesh implementation.
 
 # 12. Security, privacy, and compliance
 

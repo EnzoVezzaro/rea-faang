@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Numbers (apple-numbers); investigat
 
 This is the coding-agent skill for **Numbers** (`apple-numbers`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/apple/apple-numbers.md` from the catalog page, or run `npx rae-faang apple-numbers --out ./apple-numbers.md`, `npx rae-faang skills generate apple-numbers` or `npx rae-faang build agent-kit apple-numbers --out ./apple-numbers-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/apple/apple-numbers.md` from the catalog page, or run `npx rea-faang apple-numbers --out ./apple-numbers.md`, `npx rea-faang skills generate apple-numbers` or `npx rea-faang build agent-kit apple-numbers --out ./apple-numbers-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Numbers / `apple-numbers` | `catalog/products.jsonl` |
 | Official product URL | [https://www.apple.com/numbers/](https://www.apple.com/numbers/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier apple-numbers` | `research/companies/apple/products/apple-numbers.md` |
+| Research dossier | `npx rea-faang research dossier apple-numbers` | `research/companies/apple/products/apple-numbers.md` |
 | REA report | `catalog/rea/apple/apple-numbers.md` (captured 2026-11-03T01:32:49.808Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/apple-numbers.json` (`ev_6bfec54d55903add65dd847db904c6b6f2d2663b23998983e23d4cdb5586c018`) | Catalog evidence |
 | Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show apple-numbers --format json` and `npx rae-faang research dossier apple-numbers` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show apple-numbers --format json` and `npx rea-faang research dossier apple-numbers` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -452,7 +452,7 @@ LibreOffice Calc and OnlyOffice are the closest functional equivalents for tradi
 
 Canvas-based multi-table model, form-based data entry on mobile, Apple Pencil integration, iCloud real-time collaboration, and Apple ecosystem integration are unique. An open alternative could adopt the canvas model with ODF/Excel compatibility.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Build a canvas-based spreadsheet using web technologies (Canvas/WebGL or DOM) with ODF/.xlsx import-export. Prioritize: multiple tables per sheet, categories/grouping, interactive charts, form view for mobile. Consider Univer or Luckysheet as a base.
 
@@ -485,7 +485,7 @@ LibreOffice Calc remains the most complete open-source spreadsheet. The canvas m
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Phase 1: Web-based canvas spreadsheet with single-table sheets, ODF import/export. Phase 2: Multi-table canvas, categories, charts. Phase 3: Mobile form view, real-time collaboration (Yjs/Automerge). Phase 4: Native apps via Tauri/Electron.
 
@@ -493,7 +493,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier apple-numbers` and inspect canonical identity with `npx rae-faang products show apple-numbers --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier apple-numbers` and inspect canonical identity with `npx rea-faang products show apple-numbers --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -506,7 +506,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang apple-numbers --out ./apple-numbers.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit apple-numbers --out ./apple-numbers-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang apple-numbers --out ./apple-numbers.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit apple-numbers --out ./apple-numbers-agent`.
 
 ### Multi-agent task plan and outputs
 

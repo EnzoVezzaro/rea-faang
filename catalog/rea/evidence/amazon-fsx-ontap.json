@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_d61e52e019a0449a5b39c386dbf64bb208d2dca2fb4e3556420a743c50602514",
+  "evidence_id": "ev_ac2f9501a6b33a1097c68e3cf7ca339d91c1138236596ac6a33b1dd7beaa74ea",
   "subject": null,
   "provider": {
     "id": "rea-playwright-browser-scenario",
@@ -99,13 +99,13 @@
         "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "duration_ms": 4966,
+    "duration_ms": 5009,
     "steps": [
       {
         "step_index": 0,
         "step_id": "scenario_start",
         "action": "goto_start",
-        "elapsed_ms": 2100,
+        "elapsed_ms": 2235,
         "before_url": {
           "url": "about:blank",
           "origin": null,
@@ -153,7 +153,7 @@
         "step_index": 1,
         "step_id": "settle",
         "action": "wait_for_timeout",
-        "elapsed_ms": 2569,
+        "elapsed_ms": 2561,
         "before_url": {
           "url": "https://aws.amazon.com/fsx/netapp-ontap/",
           "origin": "https://aws.amazon.com",

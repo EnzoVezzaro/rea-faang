@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Calendar (google-calendar); 
 
 # Google Calendar — implementation skill (`google-calendar`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Calendar**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Calendar (google-calendar); 
 
 This is the coding-agent skill for **Google Calendar** (`google-calendar`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-calendar.md` from the catalog page, or run `npx rae-faang google-calendar --out ./google-calendar.md`, `npx rae-faang skills generate google-calendar` or `npx rae-faang build agent-kit google-calendar --out ./google-calendar-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-calendar.md` from the catalog page, or run `npx rea-faang google-calendar --out ./google-calendar.md`, `npx rea-faang skills generate google-calendar` or `npx rea-faang build agent-kit google-calendar --out ./google-calendar-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,18 +27,18 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Google Calendar / `google-calendar` | `catalog/products.jsonl` |
 | Official product URL | [https://calendar.google.com/](https://calendar.google.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-calendar` | `research/companies/google/products/google-calendar.md` |
+| Official documentation | [https://developers.google.com/workspace/calendar](https://developers.google.com/workspace/calendar) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-calendar` | `research/companies/google/products/google-calendar.md` |
 | REA report | `catalog/rea/google/google-calendar.md` (captured 2026-11-03T01:37:05.724Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-calendar.json` (`ev_a8267b1453cbd69b6a47b374afeaed2f0b5f99d95dce5f0dad7262be94d1d0ad`) | Catalog evidence |
-| Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
+| Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
 | User scope | Requested product area, platforms, users and non-goals | The user; ask when the answer changes the deliverable |
 | Consumer project | Absolute path, stack, conventions, test commands, deployment target | The user’s repository, read before writing |
 | Authorization | Public surfaces and the user’s own project only | Clean-room boundary in section 14 |
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-calendar --format json` and `npx rae-faang research dossier google-calendar` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-calendar --format json` and `npx rea-faang research dossier google-calendar` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-CALENDAR-CAP-6F73AFB1`, `GOOGLE-CALENDAR-CAP-F0FED666`, `GOOGLE-CALENDAR-CAP-2308FC65`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-CALENDAR-CAP-BDF4B301`, `GOOGLE-CALENDAR-CAP-53940777`, `GOOGLE-CALENDAR-CAP-99EE0474`, `GOOGLE-CALENDAR-CAP-AAC831E8`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Google Calendar** / `google-calendar` | Product catalog |
-| Company / category | Google / `productivity_application` / `calendar`, `scheduling` | Product catalog |
-| Official website / docs | [https://calendar.google.com/](https://calendar.google.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Company / category | Google / `productivity_application` / `calendar`, `scheduling`, `collaboration` | Product catalog |
+| Official website / docs | [https://calendar.google.com/](https://calendar.google.com/) / [https://developers.google.com/workspace/calendar](https://developers.google.com/workspace/calendar) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-CALENDAR-CAP-6F73AFB1` | Web calendar with sharing | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-CALENDAR-CAP-F0FED666` | Invitations and scheduling | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-CALENDAR-CAP-2308FC65` | CalDAV sync | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CALENDAR-CAP-BDF4B301` | Calendar and event resources and their core operations are publicly documented. | VERIFIED | `ev-google-calendar-api`, `ev-google-calendar-reference` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CALENDAR-CAP-53940777` | The API documents recurring events, attendees, reminders, time zones and event metadata. | VERIFIED | `ev-google-calendar-reference` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CALENDAR-CAP-99EE0474` | OAuth scopes and access requirements are documented; actual entitlement remains account and policy dependent. | VERIFIED | `ev-google-calendar-auth` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CALENDAR-CAP-AAC831E8` | The public API documents integration surfaces, but hosted internals and complete Workspace behavior are not public. | VERIFIED | `ev-google-calendar-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Next`, `textbox: Email or phone`, `link: Forgot email?`, `link: Learn more about using Guest mode (external, opens in a new window)`, `link: Create account`, `link: Open Google Account Help Center (external, opens in a new window)`, `link: Privacy Policy (external, opens in a new window)`, `link: Google Terms of Service (external, opens in a new window)`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Web calendar with sharing:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Invitations and scheduling:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **CalDAV sync:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Calendar and event resources and their core operations are publicly documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The API documents recurring events, attendees, reminders, time zones and event metadata.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **OAuth scopes and access requirements are documented; actual entitlement remains account and policy dependent.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The public API documents integration surfaces, but hosted internals and complete Workspace behavior are not public.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-6F73AFB1 — Web calendar with sharing
+### REQ-FUNC-BDF4B301 — Calendar and event resources and their core operations are publicly documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-calendar-api`, `ev-google-calendar-reference`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-6F73AFB1`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CALENDAR-CAP-6F73AFB1` → `REQ-FUNC-6F73AFB1` → `TEST-FUNC-6F73AFB1`.
+- **Associated test ID:** `TEST-FUNC-BDF4B301`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CALENDAR-CAP-BDF4B301` → `REQ-FUNC-BDF4B301` → `TEST-FUNC-BDF4B301`.
 
-### REQ-FUNC-F0FED666 — Invitations and scheduling
+### REQ-FUNC-53940777 — The API documents recurring events, attendees, reminders, time zones and event metadata.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-calendar-reference`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-F0FED666`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CALENDAR-CAP-F0FED666` → `REQ-FUNC-F0FED666` → `TEST-FUNC-F0FED666`.
+- **Associated test ID:** `TEST-FUNC-53940777`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CALENDAR-CAP-53940777` → `REQ-FUNC-53940777` → `TEST-FUNC-53940777`.
 
-### REQ-FUNC-2308FC65 — CalDAV sync
+### REQ-FUNC-99EE0474 — OAuth scopes and access requirements are documented; actual entitlement remains account and policy dependent.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-calendar-auth`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-2308FC65`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CALENDAR-CAP-2308FC65` → `REQ-FUNC-2308FC65` → `TEST-FUNC-2308FC65`.
+- **Associated test ID:** `TEST-FUNC-99EE0474`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CALENDAR-CAP-99EE0474` → `REQ-FUNC-99EE0474` → `TEST-FUNC-99EE0474`.
+
+### REQ-FUNC-AAC831E8 — The public API documents integration surfaces, but hosted internals and complete Workspace behavior are not public.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-calendar-api`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-AAC831E8`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CALENDAR-CAP-AAC831E8` → `REQ-FUNC-AAC831E8` → `TEST-FUNC-AAC831E8`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -207,6 +218,7 @@ Separate interface/domain/persistence/integration boundaries. Enforce access at 
 |---|---|---|---|---|---|---|---|
 | [Nextcloud Calendar](https://nextcloud.com/calendar/) | Not recorded; verify the canonical repository | AGPL-3.0 (unverified) | Calendar server and web UI on CalDAV. | No limitation recorded | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 | [Radicale](https://radicale.org/) | Not recorded; verify the canonical repository | GPL-3.0 (unverified) | Lightweight CalDAV/CardDAV server. | No limitation recorded | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [EteSync Web](https://www.etesync.com/) | Not recorded; verify the canonical repository | AGPL-3.0 (unverified) | Encrypted synchronization-oriented calendar and contacts workflow. | Partial; does not reproduce Google's hosted Workspace and Calendar API surface. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 
 Repository, license, maintenance and compatibility are catalog claims until you check them. Re-verify each against the exact version you would adopt; a README, a star count or this table is not proof.
 
@@ -216,9 +228,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-CALENDAR-CAP-6F73AFB1` — Web calendar with sharing | Not verified against Nextcloud Calendar | None yet; compare with `ev_a8267b1453cbd69b6a47b374afeaed2f0b5f99d95dce5f0dad7262be94d1d0ad` | Candidate code path and tests must be inspected |
-| `GOOGLE-CALENDAR-CAP-F0FED666` — Invitations and scheduling | Not verified against Nextcloud Calendar | None yet; compare with `ev_a8267b1453cbd69b6a47b374afeaed2f0b5f99d95dce5f0dad7262be94d1d0ad` | Candidate code path and tests must be inspected |
-| `GOOGLE-CALENDAR-CAP-2308FC65` — CalDAV sync | Not verified against Nextcloud Calendar | None yet; compare with `ev_a8267b1453cbd69b6a47b374afeaed2f0b5f99d95dce5f0dad7262be94d1d0ad` | Candidate code path and tests must be inspected |
+| `GOOGLE-CALENDAR-CAP-BDF4B301` — Calendar and event resources and their core operations are publicly documented. | Not verified against Nextcloud Calendar | None yet; compare with `ev_a8267b1453cbd69b6a47b374afeaed2f0b5f99d95dce5f0dad7262be94d1d0ad` | Candidate code path and tests must be inspected |
+| `GOOGLE-CALENDAR-CAP-53940777` — The API documents recurring events, attendees, reminders, time zones and event metadata. | Not verified against Nextcloud Calendar | None yet; compare with `ev_a8267b1453cbd69b6a47b374afeaed2f0b5f99d95dce5f0dad7262be94d1d0ad` | Candidate code path and tests must be inspected |
+| `GOOGLE-CALENDAR-CAP-99EE0474` — OAuth scopes and access requirements are documented; actual entitlement remains account and policy dependent. | Not verified against Nextcloud Calendar | None yet; compare with `ev_a8267b1453cbd69b6a47b374afeaed2f0b5f99d95dce5f0dad7262be94d1d0ad` | Candidate code path and tests must be inspected |
+| `GOOGLE-CALENDAR-CAP-AAC831E8` — The public API documents integration surfaces, but hosted internals and complete Workspace behavior are not public. | Not verified against Nextcloud Calendar | None yet; compare with `ev_a8267b1453cbd69b6a47b374afeaed2f0b5f99d95dce5f0dad7262be94d1d0ad` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -265,9 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-6F73AFB1** → `REQ-FUNC-6F73AFB1`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-F0FED666** → `REQ-FUNC-F0FED666`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-2308FC65** → `REQ-FUNC-2308FC65`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-BDF4B301** → `REQ-FUNC-BDF4B301`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-53940777** → `REQ-FUNC-53940777`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-99EE0474** → `REQ-FUNC-99EE0474`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-AAC831E8** → `REQ-FUNC-AAC831E8`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -288,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-6F73AFB1, REQ-FUNC-F0FED666, REQ-FUNC-2308FC65
+- **Requirements:** REQ-FUNC-BDF4B301, REQ-FUNC-53940777, REQ-FUNC-99EE0474, REQ-FUNC-AAC831E8
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -298,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-6F73AFB1, REQ-FUNC-F0FED666, REQ-FUNC-2308FC65
+- **Requirements:** REQ-FUNC-BDF4B301, REQ-FUNC-53940777, REQ-FUNC-99EE0474, REQ-FUNC-AAC831E8
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -320,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-6F73AFB1, REQ-FUNC-F0FED666, REQ-FUNC-2308FC65; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-BDF4B301, REQ-FUNC-53940777, REQ-FUNC-99EE0474, REQ-FUNC-AAC831E8; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -350,7 +364,16 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://calendar.google.com/) | Not recorded | Google Calendar is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-google-calendar-identity` | Google Calendar — The canonical product URL is Google Calendar; official help and developer documentation describe calendars and events as its core resources. | [link](https://calendar.google.com/) | 2026-11-03T00:00:00Z | Google Calendar is Google's hosted calendar and scheduling product. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-calendar-api` | Google Calendar API overview — The official overview documents the REST API and its calendar, event, calendar-list, setting and ACL resource model. | [link](https://developers.google.com/workspace/calendar/api/guides/overview) | 2026-11-03T00:00:00Z | The Calendar API exposes calendars, events, calendar lists, settings and access-control resources. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-calendar-reference` | Google Calendar API reference — The official reference lists resource types and methods for calendars and events, including creation and mutation operations. | [link](https://developers.google.com/workspace/calendar/api/v3/reference) | 2026-11-03T00:00:00Z | The public API supports event and calendar operations including list, insert, update, move and delete. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-calendar-auth` | Choose Google Calendar API scopes — The official authorization guide enumerates narrowly scoped read, event, free/busy, calendar and ACL permissions. | [link](https://developers.google.com/workspace/calendar/api/auth) | 2026-11-03T00:00:00Z | Calendar API access is controlled through OAuth scopes with read-only, event, calendar and sharing permissions. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://calendar.google.com/) | 2026-11-03T00:00:00Z | Google Calendar is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/workspace/calendar) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/calendar) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/calendar/api/guides/overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/calendar/api/v3/reference) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/calendar/api/auth) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_a8267b1453cbd69b6a47b374afeaed2f0b5f99d95dce5f0dad7262be94d1d0ad` | Google Calendar Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://accounts.google.com/v3/signin/identifier?continue=https://calendar.google.com/calendar/u/0/r&emr=1&followup=https://calendar.google.com/calendar/u/0/r&osid=1&passive=1209600&service=cl&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-1776550570:1793669822556014) | 2026-11-03T01:37:05.724Z | A dated unauthenticated snapshot exposed controls button: Next, textbox: Email or phone, link: Forgot email?, link: Learn more about using Guest mode (external, opens in a new window), link: Create account, link: Open Google Account Help Center (external, opens in a new window), link: Privacy Policy (external, opens in a new window), link: Google Terms of Service (external, opens in a new window) and landmarks contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -378,115 +401,84 @@ Resume token: `google-calendar`. Read dossier, REA report and raw Evidence befor
 
 # 1. Executive summary
 
-Google Calendar is Google's calendar and scheduling service.
-
----
+Google Calendar is Google's hosted calendar and scheduling application. It models calendars, events, attendees, recurring events, availability, reminders and sharing, and exposes these resources through the Google Calendar API. It is a distinct application from Google Drive storage, Google Workspace as a suite and Google Meet as the conferencing surface, although those products integrate.
 
 # 2. Product identity and ownership
 
 - **Official name:** Google Calendar
-- **Company and business unit:** google
-- **Current lifecycle status:** active
-- **Official website:** https://calendar.google.com/
-
----
+- **Company:** Google LLC, part of Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://calendar.google.com/
+- **Identity evidence:** Google's help center and developer documentation identify calendars and events as the product's core resources.
 
 # 3. Product capabilities
 
-- Web calendar with sharing
-- Invitations and scheduling
-- CalDAV sync
-
----
+- Create and share primary or secondary calendars.
+- Create, update, list, move and delete events, including all-day and recurring events.
+- Invite attendees, manage responses, reminders, time zones and event visibility.
+- Query free/busy availability and integrate conference data such as Google Meet links.
+- Support add-ons, applications and automation through scoped OAuth access and the Calendar API.
 
 # 4. Technical architecture
 
-Not yet researched.
-
----
+The public model consists of calendar resources containing event resources, calendar-list entries, access-control rules, settings, colors, free/busy data and notification channels. Google operates the hosted service; implementation details, storage internals and synchronization internals are proprietary.
 
 # 5. User workflows
 
-Not yet researched.
-
----
+A user opens or creates a calendar, schedules an event with start/end times and participants, shares it or manages access, and receives updates or reminders. Recurring events, time zones, availability and conference details are handled as event/calendar metadata. Developers use the API to read or mutate those resources after authorization.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+Access depends on Google account type, Workspace edition, organisation policy, calendar permissions and API authorization. This pass verifies the product and public API surface, not current plan pricing, quotas or a particular account's entitlement.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+The Google Calendar API is a REST API with resources and methods for calendars, events, calendar lists, ACLs, free/busy, settings, colors and channels. OAuth scopes range from read-only access to calendar-wide mutation and sharing permissions; applications should request the narrowest scope required. Google Calendar also integrates with Workspace add-ons and Meet conference data.
 
 # 8. Existing open-source alternatives
 
-Open-source candidates exist: Nextcloud Calendar (AGPL-3.0) — Calendar server and web UI on CalDAV.; Radicale (GPL-3.0) — Lightweight CalDAV/CardDAV server.. Coverage is unverified until the dossier is researched.
-
----
+- **Nextcloud Calendar (AGPL-3.0):** self-hosted calendar and web UI built around CalDAV.
+- **Radicale (GPL-3.0):** lightweight CalDAV/CardDAV server.
+- **EteSync Web (AGPL-3.0):** encrypted synchronization-oriented calendar and contacts workflow.
 
 # 9. Alternative comparison
 
-Open calendaring is a solved problem via CalDAV; the missing pieces are Google's appointment-booking UX and integrations.
-
----
+These projects cover calendar storage, synchronization and web access. They do not provide a drop-in replacement for Google's account ecosystem, Workspace integrations, appointment-booking features, hosted scale, Google Meet linkage or Calendar API compatibility. Coverage is therefore partial.
 
 # 10. Missing capabilities and opportunity analysis
 
-Open calendaring is a solved problem via CalDAV; the missing pieces are Google's appointment-booking UX and integrations.
+The open-source core is mature through CalDAV, but a full replacement would need compatible event semantics, sharing and ACLs, free/busy, reminders, time zones, recurring-event behavior, add-ons, identity, audit controls and integrations with conferencing and mail.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Available. Open calendaring is mature (Nextcloud Calendar, Radicale) via the CalDAV standard.
-
----
+Target a narrow scheduling workflow first. Reuse a mature CalDAV server, define the event and permission model, add a web client and integrate only the required identity, reminders and conferencing features. Do not claim Google Calendar compatibility without testing recurring events, time zones, ACLs, free/busy and API behavior.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+Calendar data can reveal locations, participants, health, travel and business activity. Verify OAuth scopes, sharing ACLs, external attendee handling, event visibility, audit retention, free/busy disclosure and organisation policy before using an alternative with sensitive schedules.
 
 # 13. Sources and evidence
 
-- https://radicale.org/
-- https://nextcloud.com/calendar/
-
----
+- [Google Calendar Help](https://support.google.com/calendar) — official product workflows and controls.
+- [Google Calendar API overview](https://developers.google.com/workspace/calendar/api/guides/overview) — official API model and capabilities.
+- [Google Calendar API reference](https://developers.google.com/workspace/calendar/api/v3/reference) — official resources and methods.
+- [Calendar API authorization](https://developers.google.com/workspace/calendar/api/auth) — official OAuth scopes and access requirements.
 
 # 14. Open questions
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
+- Which current Workspace edition and API quota should a deployment target?
+- Is CalDAV interoperability or Google Calendar API compatibility the primary requirement?
+- Which sharing, audit, free/busy and conferencing behaviors require compatibility tests?
 
 # 15. Research history
 
-- v1: dossier created; research pending.
+Record updated 2026-11-03 from official Google Calendar Help and Google Developers sources. Status: `researched`; account-specific entitlements, current pricing, quotas and proprietary implementation details remain outside this pass.
 
----
-
-# 16. Alternative comparison (continued)
-
-Open calendaring is a solved problem via CalDAV; the missing pieces are Google's appointment-booking UX and integrations.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Available. Open calendaring is mature (Nextcloud Calendar, Radicale) via the CalDAV standard.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-calendar` and inspect canonical identity with `npx rae-faang products show google-calendar --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-calendar` and inspect canonical identity with `npx rea-faang products show google-calendar --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -499,7 +491,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-calendar --out ./google-calendar.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-calendar --out ./google-calendar-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-calendar --out ./google-calendar.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-calendar --out ./google-calendar-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -541,5 +533,14 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://calendar.google.com/) — Google Calendar is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [Google Calendar](https://calendar.google.com/) — Google Calendar is Google's hosted calendar and scheduling product. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Calendar API overview](https://developers.google.com/workspace/calendar/api/guides/overview) — The Calendar API exposes calendars, events, calendar lists, settings and access-control resources. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Calendar API reference](https://developers.google.com/workspace/calendar/api/v3/reference) — The public API supports event and calendar operations including list, insert, update, move and delete. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Choose Google Calendar API scopes](https://developers.google.com/workspace/calendar/api/auth) — Calendar API access is controlled through OAuth scopes with read-only, event, calendar and sharing permissions. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://calendar.google.com/) — Google Calendar is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.google.com/workspace/calendar) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://support.google.com/calendar) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/calendar/api/guides/overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/calendar/api/v3/reference) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/calendar/api/auth) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Calendar Public web-surface observation (REA)](https://accounts.google.com/v3/signin/identifier?continue=https://calendar.google.com/calendar/u/0/r&emr=1&followup=https://calendar.google.com/calendar/u/0/r&osid=1&passive=1209600&service=cl&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-1776550570:1793669822556014) — A dated unauthenticated snapshot exposed controls button: Next, textbox: Email or phone, link: Forgot email?, link: Learn more about using Guest mode (external, opens in a new window), link: Create account, link: Open Google Account Help Center (external, opens in a new window), link: Privacy Policy (external, opens in a new window), link: Google Terms of Service (external, opens in a new window) and landmarks contentinfo. (VERIFIED; accessed 2026-11-03T01:37:05.724Z).

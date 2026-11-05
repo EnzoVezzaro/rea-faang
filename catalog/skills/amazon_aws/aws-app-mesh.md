@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for AWS App Mesh (aws-app-mesh); invest
 
 This is the coding-agent skill for **AWS App Mesh** (`aws-app-mesh`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/aws-app-mesh.md` from the catalog page, or run `npx rae-faang aws-app-mesh --out ./aws-app-mesh.md`, `npx rae-faang skills generate aws-app-mesh` or `npx rae-faang build agent-kit aws-app-mesh --out ./aws-app-mesh-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/aws-app-mesh.md` from the catalog page, or run `npx rea-faang aws-app-mesh --out ./aws-app-mesh.md`, `npx rea-faang skills generate aws-app-mesh` or `npx rea-faang build agent-kit aws-app-mesh --out ./aws-app-mesh-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | AWS App Mesh / `aws-app-mesh` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/app-mesh/](https://aws.amazon.com/app-mesh/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/app-mesh/](https://docs.aws.amazon.com/app-mesh/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier aws-app-mesh` | `research/companies/amazon_aws/products/aws-app-mesh.md` |
+| Research dossier | `npx rea-faang research dossier aws-app-mesh` | `research/companies/amazon_aws/products/aws-app-mesh.md` |
 | REA report | `catalog/rea/amazon_aws/aws-app-mesh.md` (captured 2026-11-03T04:04:25.956Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/aws-app-mesh.json` (`ev_1bcf1f58088b7221ad39e4a31efb225475fd5bcac9f2f5d2f0b1077a29b1f75d`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show aws-app-mesh --format json` and `npx rae-faang research dossier aws-app-mesh` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show aws-app-mesh --format json` and `npx rea-faang research dossier aws-app-mesh` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -454,9 +454,9 @@ Compare mesh resources, Envoy configuration, traffic routing, retries, timeouts,
 
 Research must preserve the historical API and resource matrix while prioritizing migration documentation. Map successor behavior in VPC Lattice and ECS Service Connect, including service discovery, routing, identity, observability, limits and workload changes. Any new implementation must use original code and isolated synthetic services.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official API, user guide, CLI references and AWS migration notices as primary sources. The generated RAE skill should instruct an agent to reproduce historical App Mesh behavior only for migration or compatibility research, using Istio concepts where useful, and to prefer AWS successor paths for new systems. Do not claim current service availability or recommend a new App Mesh implementation.
+Use the official API, user guide, CLI references and AWS migration notices as primary sources. The generated REA skill should instruct an agent to reproduce historical App Mesh behavior only for migration or compatibility research, using Istio concepts where useful, and to prefer AWS successor paths for new systems. Do not claim current service availability or recommend a new App Mesh implementation.
 
 # 12. Security, privacy, and compliance
 
@@ -487,7 +487,7 @@ Research status is **retired**. Dossier prose above is preserved for context but
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier aws-app-mesh` and inspect canonical identity with `npx rae-faang products show aws-app-mesh --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier aws-app-mesh` and inspect canonical identity with `npx rea-faang products show aws-app-mesh --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -500,7 +500,7 @@ Research status is **retired**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang aws-app-mesh --out ./aws-app-mesh.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit aws-app-mesh --out ./aws-app-mesh-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang aws-app-mesh --out ./aws-app-mesh.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit aws-app-mesh --out ./aws-app-mesh-agent`.
 
 ### Multi-agent task plan and outputs
 

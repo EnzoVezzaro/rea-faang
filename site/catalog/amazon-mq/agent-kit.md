@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon MQ (amazon-mq); investigate,
 
 # Amazon MQ — implementation skill (`amazon-mq`)
 
-> **Research status:** pending. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon MQ**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon MQ (amazon-mq); investigate,
 
 This is the coding-agent skill for **Amazon MQ** (`amazon-mq`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-mq.md` from the catalog page, or run `npx rae-faang amazon-mq --out ./amazon-mq.md`, `npx rae-faang skills generate amazon-mq` or `npx rae-faang build agent-kit amazon-mq --out ./amazon-mq-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-mq.md` from the catalog page, or run `npx rea-faang amazon-mq --out ./amazon-mq.md`, `npx rea-faang skills generate amazon-mq` or `npx rea-faang build agent-kit amazon-mq --out ./amazon-mq-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon MQ / `amazon-mq` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/amazon-mq/](https://aws.amazon.com/amazon-mq/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/amazon-mq/](https://docs.aws.amazon.com/amazon-mq/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-mq` | `research/companies/amazon_aws/products/amazon-mq.md` |
+| Research dossier | `npx rea-faang research dossier amazon-mq` | `research/companies/amazon_aws/products/amazon-mq.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-mq.md` (captured 2026-11-03T03:31:05.326Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-mq.json` (`ev_b306948a31d6abfc4eea6b491ddb12960409666d4513a27734b66aec0b2f8782`) | Catalog evidence |
 | Alternative candidates | None recorded — this is a research gap | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-mq --format json` and `npx rae-faang research dossier amazon-mq` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-mq --format json` and `npx rea-faang research dossier amazon-mq` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-MQ-CAP-53D1F9A1`, `AMAZON-MQ-CAP-6C68462A`, `AMAZON-MQ-CAP-58A402BC`, `AMAZON-MQ-CAP-F11089CE`, `AMAZON-MQ-CAP-5119AA16`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-MQ-CAP-B775FA69`, `AMAZON-MQ-CAP-D8A79043`, `AMAZON-MQ-CAP-AC6B5AF5`, `AMAZON-MQ-CAP-C83C2620`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-MQ-CAP-53D1F9A1` | managed ActiveMQ Classic brokers | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MQ-CAP-6C68462A` | managed RabbitMQ brokers | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MQ-CAP-58A402BC` | JMS, NMS, AMQP, STOMP, MQTT and WebSocket protocols | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MQ-CAP-F11089CE` | high-availability, patching and version upgrades | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MQ-CAP-5119AA16` | REST API, CLI, SDK and CloudWatch integrations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MQ-CAP-B775FA69` | Managed ActiveMQ Classic and RabbitMQ broker surfaces and protocol-oriented clients are documented. | VERIFIED | `ev-amazon-mq-identity`, `ev-amazon-mq-protocols` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MQ-CAP-D8A79043` | Engine-specific high-availability and broker-network deployment options are documented. | VERIFIED | `ev-amazon-mq-deployments`, `ev-amazon-mq-active-network` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MQ-CAP-AC6B5AF5` | Lifecycle APIs and TLS/KMS security behavior are documented. | VERIFIED | `ev-amazon-mq-api`, `ev-amazon-mq-security` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MQ-CAP-C83C2620` | Upstream brokers provide partial foundations, but AWS-managed provisioning, HA, patching, integrations and account semantics are not equivalent. | VERIFIED | `ev-amazon-mq-artemis`, `ev-amazon-mq-rabbitmq` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Get started with Amazon MQ`, `button: Migrate more easily`, `button: Offload time-consuming tasks for message brokers.`, `button: Ensure high availability`, `button: Low-latency event messaging`, `button: Migrate with flexible configurations`, `button: Invoke AWS Lambda functions`, `button: Create an AWS account`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Features`, `link: Pricing`, `link: Resources`, `link: FAQs`, `link: Customers`, `link: Products`, `link: Features page Check out the product features Learn more about Amazon MQ, RabbitMQ, and ActiveMQ.`, `link: Console Start using Amazon MQ Get started with Amazon MQ in the AWS Management Console.`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **managed ActiveMQ Classic brokers:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **managed RabbitMQ brokers:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **JMS, NMS, AMQP, STOMP, MQTT and WebSocket protocols:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **high-availability, patching and version upgrades:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **REST API, CLI, SDK and CloudWatch integrations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Managed ActiveMQ Classic and RabbitMQ broker surfaces and protocol-oriented clients are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Engine-specific high-availability and broker-network deployment options are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Lifecycle APIs and TLS/KMS security behavior are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Upstream brokers provide partial foundations, but AWS-managed provisioning, HA, patching, integrations and account semantics are not equivalent.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-53D1F9A1 — managed ActiveMQ Classic brokers
+### REQ-FUNC-B775FA69 — Managed ActiveMQ Classic and RabbitMQ broker surfaces and protocol-oriented clients are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-mq-identity`, `ev-amazon-mq-protocols`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-53D1F9A1`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MQ-CAP-53D1F9A1` → `REQ-FUNC-53D1F9A1` → `TEST-FUNC-53D1F9A1`.
+- **Associated test ID:** `TEST-FUNC-B775FA69`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MQ-CAP-B775FA69` → `REQ-FUNC-B775FA69` → `TEST-FUNC-B775FA69`.
 
-### REQ-FUNC-6C68462A — managed RabbitMQ brokers
+### REQ-FUNC-D8A79043 — Engine-specific high-availability and broker-network deployment options are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-mq-deployments`, `ev-amazon-mq-active-network`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-6C68462A`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MQ-CAP-6C68462A` → `REQ-FUNC-6C68462A` → `TEST-FUNC-6C68462A`.
+- **Associated test ID:** `TEST-FUNC-D8A79043`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MQ-CAP-D8A79043` → `REQ-FUNC-D8A79043` → `TEST-FUNC-D8A79043`.
 
-### REQ-FUNC-58A402BC — JMS, NMS, AMQP, STOMP, MQTT and WebSocket protocols
+### REQ-FUNC-AC6B5AF5 — Lifecycle APIs and TLS/KMS security behavior are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-mq-api`, `ev-amazon-mq-security`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-58A402BC`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MQ-CAP-58A402BC` → `REQ-FUNC-58A402BC` → `TEST-FUNC-58A402BC`.
+- **Associated test ID:** `TEST-FUNC-AC6B5AF5`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MQ-CAP-AC6B5AF5` → `REQ-FUNC-AC6B5AF5` → `TEST-FUNC-AC6B5AF5`.
 
-### REQ-FUNC-F11089CE — high-availability, patching and version upgrades
+### REQ-FUNC-C83C2620 — Upstream brokers provide partial foundations, but AWS-managed provisioning, HA, patching, integrations and account semantics are not equivalent.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-mq-artemis`, `ev-amazon-mq-rabbitmq`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-F11089CE`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MQ-CAP-F11089CE` → `REQ-FUNC-F11089CE` → `TEST-FUNC-F11089CE`.
-
-### REQ-FUNC-5119AA16 — REST API, CLI, SDK and CloudWatch integrations
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-5119AA16`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MQ-CAP-5119AA16` → `REQ-FUNC-5119AA16` → `TEST-FUNC-5119AA16`.
+- **Associated test ID:** `TEST-FUNC-C83C2620`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MQ-CAP-C83C2620` → `REQ-FUNC-C83C2620` → `TEST-FUNC-C83C2620`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -274,11 +263,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-53D1F9A1** → `REQ-FUNC-53D1F9A1`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-6C68462A** → `REQ-FUNC-6C68462A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-58A402BC** → `REQ-FUNC-58A402BC`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-F11089CE** → `REQ-FUNC-F11089CE`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-5119AA16** → `REQ-FUNC-5119AA16`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-B775FA69** → `REQ-FUNC-B775FA69`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-D8A79043** → `REQ-FUNC-D8A79043`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-AC6B5AF5** → `REQ-FUNC-AC6B5AF5`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-C83C2620** → `REQ-FUNC-C83C2620`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -299,7 +287,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-53D1F9A1, REQ-FUNC-6C68462A, REQ-FUNC-58A402BC, REQ-FUNC-F11089CE, REQ-FUNC-5119AA16
+- **Requirements:** REQ-FUNC-B775FA69, REQ-FUNC-D8A79043, REQ-FUNC-AC6B5AF5, REQ-FUNC-C83C2620
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -309,7 +297,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-53D1F9A1, REQ-FUNC-6C68462A, REQ-FUNC-58A402BC, REQ-FUNC-F11089CE, REQ-FUNC-5119AA16
+- **Requirements:** REQ-FUNC-B775FA69, REQ-FUNC-D8A79043, REQ-FUNC-AC6B5AF5, REQ-FUNC-C83C2620
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -331,7 +319,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-53D1F9A1, REQ-FUNC-6C68462A, REQ-FUNC-58A402BC, REQ-FUNC-F11089CE, REQ-FUNC-5119AA16; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-B775FA69, REQ-FUNC-D8A79043, REQ-FUNC-AC6B5AF5, REQ-FUNC-C83C2620; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -361,12 +349,26 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/amazon-mq/) | 2026-11-02T00:00:00Z | Amazon MQ is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/amazon-mq/) | 2026-11-02T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-mq-identity` | What is Amazon MQ? — AWS documents the two engine surfaces, managed setup and maintenance, and standards-based messaging. | [link](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/) | 2026-11-04T00:00:00Z | Amazon MQ is a managed message broker service for Apache ActiveMQ Classic and RabbitMQ. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mq-protocols` | What is Amazon MQ? — AWS documents ActiveMQ and RabbitMQ brokers and their supported messaging protocols. | [link](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/) | 2026-11-04T00:00:00Z | Amazon MQ supports standards-based messaging applications and protocol-oriented client connections. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mq-deployments` | Deployment options for Amazon MQ for RabbitMQ brokers — AWS documents a single broker behind an NLB and a three-node cluster distributed across Availability Zones. | [link](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/rabbitmq-broker-architecture.html) | 2026-11-04T00:00:00Z | Amazon MQ documents single-instance and three-node multi-AZ RabbitMQ deployments. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mq-active-network` | Amazon MQ network of brokers — AWS documents connected single-instance or active/standby brokers and network connectors. | [link](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/network-of-brokers.html) | 2026-11-04T00:00:00Z | Amazon MQ for ActiveMQ supports networks of brokers for availability, fault tolerance and load balancing. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mq-api` | Amazon MQ REST API operations — The official API reference lists create, describe, update, delete, promote and related operations. | [link](https://docs.aws.amazon.com/amazon-mq/latest/api-reference/operations.html) | 2026-11-04T00:00:00Z | Amazon MQ exposes broker, configuration, user, tagging, reboot, promotion and lifecycle API operations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mq-security` | Data protection in Amazon MQ — AWS documents KMS-backed at-rest encryption and TLS connections. | [link](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/data-protection.html) | 2026-11-04T00:00:00Z | Amazon MQ encrypts data at rest with KMS and connections in transit with TLS. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mq-artemis` | Apache Artemis — The upstream project documents AMQP, MQTT, STOMP, Jakarta Messaging, clustering and high availability. | [link](https://artemis.apache.org/) | 2026-11-04T00:00:00Z | Apache Artemis is a multi-protocol open-source broker and a partial foundation for ActiveMQ-compatible messaging workflows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mq-rabbitmq` | RabbitMQ documentation — The official project documentation provides the upstream broker and protocol reference; AWS-managed lifecycle remains distinct. | [link](https://www.rabbitmq.com/docs) | 2026-11-04T00:00:00Z | RabbitMQ is the upstream broker foundation used by one Amazon MQ engine surface. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/amazon-mq/) | 2026-11-04T00:00:00Z | Amazon MQ is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/amazon-mq/) | 2026-11-04T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/amazon-mq/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazon-mq/latest/api-reference/welcome.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/amazon-mq/faqs/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/rabbitmq-broker-architecture.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/network-of-brokers.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/data-protection.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connect-to-amazonmq.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/amazon-mq/latest/api-reference/operations.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-9` | Additional official source lead — Claim/section not recorded. | [link](https://artemis.apache.org/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-10` | Additional official source lead — Claim/section not recorded. | [link](https://www.rabbitmq.com/docs) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_b306948a31d6abfc4eea6b491ddb12960409666d4513a27734b66aec0b2f8782` | Amazon MQ Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/amazon-mq/) | 2026-11-03T03:31:05.326Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon MQ, button: Migrate more easily, button: Offload time-consuming tasks for message brokers., button: Ensure high availability, button: Low-latency event messaging, button: Migrate with flexible configurations, button: Invoke AWS Lambda functions, button: Create an AWS account, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Resources, link: FAQs, link: Customers, link: Products, link: Features page Check out the product features Learn more about Amazon MQ, RabbitMQ, and ActiveMQ., link: Console Start using Amazon MQ Get started with Amazon MQ in the AWS Management Console., link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -393,7 +395,7 @@ Resume token: `amazon-mq`. Read dossier, REA report and raw Evidence before repe
 ### Dossier notes (not independently verified)
 
 # 1. Executive summary
-Amazon MQ is AWS's managed message-broker service for Apache ActiveMQ Classic and RabbitMQ. It provides standard messaging protocols and managed provisioning, patching, high availability, monitoring and upgrades.
+Amazon MQ is AWS's managed message-broker service for Apache ActiveMQ Classic and RabbitMQ. It preserves broker and protocol-oriented application interfaces while AWS manages provisioning, maintenance, monitoring, upgrades and high-availability options. ActiveMQ and RabbitMQ are separate engine surfaces and should not be treated as interchangeable.
 
 # 2. Product identity and ownership
 - **Official name:** Amazon MQ
@@ -404,57 +406,59 @@ Amazon MQ is AWS's managed message-broker service for Apache ActiveMQ Classic an
 # 3. Product capabilities
 - Create and manage ActiveMQ or RabbitMQ brokers.
 - Use JMS, NMS, AMQP, STOMP, MQTT and WebSocket protocols.
-- Configure single-instance or active/standby deployments.
-- Use encryption, VPC endpoints, IAM and CloudWatch.
+- Configure single-instance, active/standby or engine-specific clustered deployments.
+- Use TLS, KMS encryption at rest, private VPC networking, IAM controls and CloudWatch.
+- Use ActiveMQ networks of brokers or RabbitMQ replicated cluster deployments where supported.
 - Migrate standards-based messaging applications without rewriting protocol clients.
 
 # 4. Technical architecture
-Public documentation covers brokers, engines, endpoints, storage, HA, networking, authentication, encryption, upgrades, REST APIs, CLI/SDKs and monitoring. Exact version, quota, failover and cross-region behavior remains pending.
+Public documentation covers broker engines, endpoints, EBS-backed storage, single-instance and cluster/active-standby deployments, networking, authentication, encryption, upgrades, REST APIs, CLI/SDKs and CloudWatch. RabbitMQ clusters use three nodes across Availability Zones; ActiveMQ also documents network-of-brokers and cross-Region replication paths. Exact version, quota, failover and cross-region behavior remains pending.
 
 # 5. User workflows
-Expected workflows include creating a broker, configuring networking and credentials, connecting clients, managing queues/topics, monitoring metrics, upgrading versions and deleting brokers.
+Expected workflows include selecting an engine, creating a broker, configuring networking and credentials, connecting standard-protocol clients, managing queues/topics, monitoring metrics, applying configuration revisions, upgrading versions and deleting brokers.
 
 # 6. Pricing and access
-AWS charges for broker instance, storage and standard data transfer usage. Current pricing, regions, Free Tier and cross-region behavior must be verified before implementation or cost claims.
+AWS charges according to broker instance, storage and standard data-transfer usage. Current pricing, regions, Free Tier, instance availability and cross-region replication behavior must be verified before implementation or cost claims.
 
 # 7. API and integration surface
-Amazon MQ REST API, AWS CLI, SDKs, console, broker endpoints, standard messaging protocols, CloudWatch and IAM/VPC integrations.
+Amazon MQ REST API, AWS CLI, SDKs, console, broker endpoints, ActiveMQ/RabbitMQ management surfaces, JMS, NMS, AMQP, STOMP, MQTT and WebSocket protocols, CloudWatch, IAM, VPC and KMS integrations.
 
 # 8. Existing open-source alternatives
-Apache ActiveMQ, Apache Artemis and RabbitMQ are the principal open-source foundations. Other brokers may cover subsets, but AWS-managed lifecycle and integrations are not assumed equivalent.
+Apache ActiveMQ Classic, Apache Artemis and RabbitMQ are the principal open-source foundations. Artemis and RabbitMQ document multi-protocol, clustering and high-availability capabilities, but self-managed operation and version/configuration compatibility differ from Amazon MQ.
 
 # 9. Alternative comparison
-Self-managed brokers preserve protocol behavior but transfer provisioning, patching, HA, storage, security, monitoring and recovery operations to the operator.
+Self-managed brokers preserve portions of protocol behavior but transfer provisioning, patching, HA, storage, security, monitoring, recovery and upgrade operations to the operator. Compare engine version, client compatibility, configuration model, persistence, failover, authentication and observability separately for ActiveMQ and RabbitMQ.
 
 # 10. Missing capabilities and opportunity analysis
-Research must map broker states, protocols, engines, storage, HA, failover, client compatibility, auth, encryption, upgrades, migration and quotas.
+Research must map broker states, protocols, engines, storage, HA, failover, client compatibility, authentication, encryption, upgrades, migration, cross-Region replication and quotas separately by engine.
 
-# 11. RAE implementation strategy
-Use official AWS and upstream broker documentation and authorized API observation. Capture contracts before selecting a foundation or implementing an independent equivalent.
+# 11. REA implementation strategy
+Use official AWS and upstream broker documentation and authorized API observation. Capture ActiveMQ and RabbitMQ contracts separately before selecting Artemis, ActiveMQ Classic or RabbitMQ as a partial foundation or implementing an independent equivalent. Do not claim AWS-managed lifecycle parity.
 
 # 12. Security, privacy, and compliance
 Verify VPC isolation, TLS, IAM, Secrets Manager, encryption at rest, client authentication, audit logs, network exposure and cross-account boundaries.
 
-# 13. Evidence register
-- https://aws.amazon.com/amazon-mq/ — official service page.
-- https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/ — capabilities and operations.
-- https://docs.aws.amazon.com/amazon-mq/latest/api-reference/welcome.html — REST API.
-- https://aws.amazon.com/amazon-mq/faqs/ — protocols and managed operating model.
+# 13. Sources and evidence
+- **Identity and managed model:** [What is Amazon MQ?](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/) documents managed ActiveMQ Classic and RabbitMQ brokers, standard protocols, maintenance, upgrades, CloudWatch and security.
+- **Deployments:** [RabbitMQ broker architecture](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/rabbitmq-broker-architecture.html) documents single-instance and three-node cluster deployments; [network of brokers](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/network-of-brokers.html) documents ActiveMQ broker networks.
+- **API and connection:** [Amazon MQ operations](https://docs.aws.amazon.com/amazon-mq/latest/api-reference/operations.html) and [broker API](https://docs.aws.amazon.com/amazon-mq/latest/api-reference/brokers.html) document lifecycle operations; [connection guide](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connect-to-amazonmq.html) documents service and broker endpoints.
+- **Security:** [Data protection](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/data-protection.html) documents TLS and KMS-backed encryption at rest.
+- **Alternatives:** [Apache Artemis](https://artemis.apache.org/) and its [documentation](https://artemis.apache.org/components/artemis/documentation/) document a multi-protocol open-source broker; [RabbitMQ documentation](https://www.rabbitmq.com/docs) documents the upstream broker. These are partial foundations, not equivalent managed services.
 
 # 14. Unknowns
-- Complete API/CLI/SDK and protocol matrix.
-- Exact engine versions, quotas and failover behavior.
-- Migration, upgrade, storage and billing semantics.
+- Complete API/CLI/SDK and protocol matrix for ActiveMQ and RabbitMQ.
+- Exact engine versions, quotas, failover and cross-Region behavior.
+- Migration, upgrade, storage, authentication and billing semantics.
 - Verified independent foundation and compatibility scope.
 
 # 15. Research status
-`pending`: identity and public capability surface are documented from official AWS sources, but full REA capture, detailed behavior, limits and alternatives remain unverified.
+Researched with verified public AWS and upstream sources. Amazon MQ identity, ActiveMQ/RabbitMQ separation, broker lifecycle, protocols, deployments, APIs, security and partial alternatives are documented. Exact pricing, quotas, versions, regional behavior and full compatibility remain unknown and are not asserted.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-mq` and inspect canonical identity with `npx rae-faang products show amazon-mq --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-mq` and inspect canonical identity with `npx rea-faang products show amazon-mq --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -467,7 +471,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-mq --out ./amazon-mq.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-mq --out ./amazon-mq-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-mq --out ./amazon-mq.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-mq --out ./amazon-mq-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -509,10 +513,24 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/amazon-mq/) — Amazon MQ is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
-- [Official documentation entry](https://docs.aws.amazon.com/amazon-mq/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
+- [What is Amazon MQ?](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/) — Amazon MQ is a managed message broker service for Apache ActiveMQ Classic and RabbitMQ. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [What is Amazon MQ?](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/) — Amazon MQ supports standards-based messaging applications and protocol-oriented client connections. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Deployment options for Amazon MQ for RabbitMQ brokers](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/rabbitmq-broker-architecture.html) — Amazon MQ documents single-instance and three-node multi-AZ RabbitMQ deployments. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Amazon MQ network of brokers](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/network-of-brokers.html) — Amazon MQ for ActiveMQ supports networks of brokers for availability, fault tolerance and load balancing. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Amazon MQ REST API operations](https://docs.aws.amazon.com/amazon-mq/latest/api-reference/operations.html) — Amazon MQ exposes broker, configuration, user, tagging, reboot, promotion and lifecycle API operations. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Data protection in Amazon MQ](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/data-protection.html) — Amazon MQ encrypts data at rest with KMS and connections in transit with TLS. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Apache Artemis](https://artemis.apache.org/) — Apache Artemis is a multi-protocol open-source broker and a partial foundation for ActiveMQ-compatible messaging workflows. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [RabbitMQ documentation](https://www.rabbitmq.com/docs) — RabbitMQ is the upstream broker foundation used by one Amazon MQ engine surface. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Official product page](https://aws.amazon.com/amazon-mq/) — Amazon MQ is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-04T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/amazon-mq/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-04T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/amazon-mq/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/amazon-mq/latest/api-reference/welcome.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://aws.amazon.com/amazon-mq/faqs/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/rabbitmq-broker-architecture.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/network-of-brokers.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/data-protection.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/connect-to-amazonmq.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/amazon-mq/latest/api-reference/operations.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://artemis.apache.org/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://www.rabbitmq.com/docs) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon MQ Public web-surface observation (REA)](https://aws.amazon.com/amazon-mq/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon MQ, button: Migrate more easily, button: Offload time-consuming tasks for message brokers., button: Ensure high availability, button: Low-latency event messaging, button: Migrate with flexible configurations, button: Invoke AWS Lambda functions, button: Create an AWS account, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Resources, link: FAQs, link: Customers, link: Products, link: Features page Check out the product features Learn more about Amazon MQ, RabbitMQ, and ActiveMQ., link: Console Start using Amazon MQ Get started with Amazon MQ in the AWS Management Console., link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:31:05.326Z).

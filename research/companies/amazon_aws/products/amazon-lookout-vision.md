@@ -86,7 +86,7 @@ Open-source vision stacks can reproduce portions of data preparation, training, 
 
 Historical REA should map project/dataset lifecycle, labels, training, evaluation, anomaly masks, inference, hosting, edge compilation, APIs, quotas, Regions and retirement behavior.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use archived official documentation and the full-shutdown notice as research surfaces. Any replacement should use independently licensed vision and anomaly-detection components, document differences and not imply compatibility with a service AWS no longer operates.
 

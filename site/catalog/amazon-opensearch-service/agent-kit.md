@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon OpenSearch Service (amazon-o
 
 # Amazon OpenSearch Service — implementation skill (`amazon-opensearch-service`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon OpenSearch Service**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon OpenSearch Service (amazon-o
 
 This is the coding-agent skill for **Amazon OpenSearch Service** (`amazon-opensearch-service`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-opensearch-service.md` from the catalog page, or run `npx rae-faang amazon-opensearch-service --out ./amazon-opensearch-service.md`, `npx rae-faang skills generate amazon-opensearch-service` or `npx rae-faang build agent-kit amazon-opensearch-service --out ./amazon-opensearch-service-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-opensearch-service.md` from the catalog page, or run `npx rea-faang amazon-opensearch-service --out ./amazon-opensearch-service.md`, `npx rea-faang skills generate amazon-opensearch-service` or `npx rea-faang build agent-kit amazon-opensearch-service --out ./amazon-opensearch-service-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon OpenSearch Service / `amazon-opensearch-service` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/opensearch-service/](https://aws.amazon.com/opensearch-service/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/opensearch-service/](https://docs.aws.amazon.com/opensearch-service/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-opensearch-service` | `research/companies/amazon_aws/products/amazon-opensearch-service.md` |
+| Research dossier | `npx rea-faang research dossier amazon-opensearch-service` | `research/companies/amazon_aws/products/amazon-opensearch-service.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-opensearch-service.md` (captured 2026-11-03T03:36:44.514Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-opensearch-service.json` (`ev_84785783223c858dcfe3f84077bb36f3827d7dcf6805f64781a17cb075894f0a`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-opensearch-service --format json` and `npx rae-faang research dossier amazon-opensearch-service` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-opensearch-service --format json` and `npx rea-faang research dossier amazon-opensearch-service` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-OPENSEARCH-SERVICE-CAP-D7FAC5F6`, `AMAZON-OPENSEARCH-SERVICE-CAP-9C2F8D88`, `AMAZON-OPENSEARCH-SERVICE-CAP-73E22912`, `AMAZON-OPENSEARCH-SERVICE-CAP-85A6B104`, `AMAZON-OPENSEARCH-SERVICE-CAP-C66CF61A`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-OPENSEARCH-SERVICE-CAP-D006C107`, `AMAZON-OPENSEARCH-SERVICE-CAP-237B1F12`, `AMAZON-OPENSEARCH-SERVICE-CAP-944297D6`, `AMAZON-OPENSEARCH-SERVICE-CAP-E511A87E`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-OPENSEARCH-SERVICE-CAP-D7FAC5F6` | managed OpenSearch and legacy Elasticsearch OSS domains | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-OPENSEARCH-SERVICE-CAP-9C2F8D88` | OpenSearch Serverless collections | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-OPENSEARCH-SERVICE-CAP-73E22912` | indexing, search, SQL and PPL analytics | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-OPENSEARCH-SERVICE-CAP-85A6B104` | ingestion pipelines, dashboards, monitoring and alerting | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-OPENSEARCH-SERVICE-CAP-C66CF61A` | IAM, VPC, encryption, snapshots and managed scaling | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-OPENSEARCH-SERVICE-CAP-D006C107` | Managed OpenSearch domains and operational features are documented. | VERIFIED | `ev-amazon-opensearch-identity`, `ev-amazon-opensearch-features` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-OPENSEARCH-SERVICE-CAP-237B1F12` | Serverless collections and automatic capacity management are documented. | VERIFIED | `ev-amazon-opensearch-serverless` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-OPENSEARCH-SERVICE-CAP-944297D6` | Configuration and lifecycle API surfaces are documented. | VERIFIED | `ev-amazon-opensearch-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-OPENSEARCH-SERVICE-CAP-E511A87E` | OpenSearch covers the core engine, but the AWS control plane, managed scaling, regions, quotas and integrations remain distinct. | VERIFIED | `ev-amazon-opensearch-open`, `ev-amazon-opensearch-features` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Features submenu`, `button: Getting Started submenu`, `button: Resources submenu`, `button: Get started with OpenSearch Service`, `button: Build with OpenSearch Agent Skills`, `button: Integrated retrieval for any use case`, `button: Accelerate AI development`, `button: Flexibility without tradeoff`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Pricing`, `link: Migrations`, `link: Partners`, `link: FAQs`, `link: Products`, `link: Analytics`, `link: OpenSearch`, `link: ZeroETL`, `link: Amazon Bedrock`, `button: Operate at scale with confidence`, `button: Retrieval Augmented Generation (RAG) for agentic and generative AI`, `button: Vector database for semantic and multimodal search`, `button: Intuitive and personalized search`, `button: Real-time logs and observability`, `button: Play:`, `link: A simple black and white icon depicting a vertical bar chart, commonly used to represent analytics or data analysis. Learn how AutoDesk monitors and fixes software problems Read the case study`, `link: A black and white icon of a magnifying glass positioned over a bar graph, representing analytics or data analysis. Learn how Compass simplified and modernized property searches Read the testimonial`, `link: The Pearson company logo with a stylized 'P' inside a blue oval, followed by the word 'Pearson' in black text. Pearson identifies security events and behavior patterns to protect data Read the case study`, `link: The Pinterest logo, featuring a red circle with a white stylized 'P' and the word 'Pinterest' in red text. Pinterest uses an observability solution to monitor and issue alerts Read the case study`, `link: Documentation Amazon OpenSearch Service documentation Read the documentation`, `link: Demo View demos of OpenSearch Service capabilities Watch the demos`, `link: Workshop Build AI-powered search in three steps Read the documentation`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **managed OpenSearch and legacy Elasticsearch OSS domains:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **OpenSearch Serverless collections:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **indexing, search, SQL and PPL analytics:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **ingestion pipelines, dashboards, monitoring and alerting:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **IAM, VPC, encryption, snapshots and managed scaling:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Managed OpenSearch domains and operational features are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Serverless collections and automatic capacity management are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Configuration and lifecycle API surfaces are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **OpenSearch covers the core engine, but the AWS control plane, managed scaling, regions, quotas and integrations remain distinct.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-D7FAC5F6 — managed OpenSearch and legacy Elasticsearch OSS domains
+### REQ-FUNC-D006C107 — Managed OpenSearch domains and operational features are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-opensearch-identity`, `ev-amazon-opensearch-features`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D7FAC5F6`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-OPENSEARCH-SERVICE-CAP-D7FAC5F6` → `REQ-FUNC-D7FAC5F6` → `TEST-FUNC-D7FAC5F6`.
+- **Associated test ID:** `TEST-FUNC-D006C107`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-OPENSEARCH-SERVICE-CAP-D006C107` → `REQ-FUNC-D006C107` → `TEST-FUNC-D006C107`.
 
-### REQ-FUNC-9C2F8D88 — OpenSearch Serverless collections
+### REQ-FUNC-237B1F12 — Serverless collections and automatic capacity management are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-opensearch-serverless`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-9C2F8D88`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-OPENSEARCH-SERVICE-CAP-9C2F8D88` → `REQ-FUNC-9C2F8D88` → `TEST-FUNC-9C2F8D88`.
+- **Associated test ID:** `TEST-FUNC-237B1F12`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-OPENSEARCH-SERVICE-CAP-237B1F12` → `REQ-FUNC-237B1F12` → `TEST-FUNC-237B1F12`.
 
-### REQ-FUNC-73E22912 — indexing, search, SQL and PPL analytics
+### REQ-FUNC-944297D6 — Configuration and lifecycle API surfaces are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-opensearch-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-73E22912`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-OPENSEARCH-SERVICE-CAP-73E22912` → `REQ-FUNC-73E22912` → `TEST-FUNC-73E22912`.
+- **Associated test ID:** `TEST-FUNC-944297D6`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-OPENSEARCH-SERVICE-CAP-944297D6` → `REQ-FUNC-944297D6` → `TEST-FUNC-944297D6`.
 
-### REQ-FUNC-85A6B104 — ingestion pipelines, dashboards, monitoring and alerting
+### REQ-FUNC-E511A87E — OpenSearch covers the core engine, but the AWS control plane, managed scaling, regions, quotas and integrations remain distinct.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-opensearch-open`, `ev-amazon-opensearch-features`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-85A6B104`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-OPENSEARCH-SERVICE-CAP-85A6B104` → `REQ-FUNC-85A6B104` → `TEST-FUNC-85A6B104`.
-
-### REQ-FUNC-C66CF61A — IAM, VPC, encryption, snapshots and managed scaling
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-C66CF61A`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-OPENSEARCH-SERVICE-CAP-C66CF61A` → `REQ-FUNC-C66CF61A` → `TEST-FUNC-C66CF61A`.
+- **Associated test ID:** `TEST-FUNC-E511A87E`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-OPENSEARCH-SERVICE-CAP-E511A87E` → `REQ-FUNC-E511A87E` → `TEST-FUNC-E511A87E`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -237,11 +226,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `AMAZON-OPENSEARCH-SERVICE-CAP-D7FAC5F6` — managed OpenSearch and legacy Elasticsearch OSS domains | Not verified against OpenSearch | None yet; compare with `ev_84785783223c858dcfe3f84077bb36f3827d7dcf6805f64781a17cb075894f0a` | Candidate code path and tests must be inspected |
-| `AMAZON-OPENSEARCH-SERVICE-CAP-9C2F8D88` — OpenSearch Serverless collections | Not verified against OpenSearch | None yet; compare with `ev_84785783223c858dcfe3f84077bb36f3827d7dcf6805f64781a17cb075894f0a` | Candidate code path and tests must be inspected |
-| `AMAZON-OPENSEARCH-SERVICE-CAP-73E22912` — indexing, search, SQL and PPL analytics | Not verified against OpenSearch | None yet; compare with `ev_84785783223c858dcfe3f84077bb36f3827d7dcf6805f64781a17cb075894f0a` | Candidate code path and tests must be inspected |
-| `AMAZON-OPENSEARCH-SERVICE-CAP-85A6B104` — ingestion pipelines, dashboards, monitoring and alerting | Not verified against OpenSearch | None yet; compare with `ev_84785783223c858dcfe3f84077bb36f3827d7dcf6805f64781a17cb075894f0a` | Candidate code path and tests must be inspected |
-| `AMAZON-OPENSEARCH-SERVICE-CAP-C66CF61A` — IAM, VPC, encryption, snapshots and managed scaling | Not verified against OpenSearch | None yet; compare with `ev_84785783223c858dcfe3f84077bb36f3827d7dcf6805f64781a17cb075894f0a` | Candidate code path and tests must be inspected |
+| `AMAZON-OPENSEARCH-SERVICE-CAP-D006C107` — Managed OpenSearch domains and operational features are documented. | Not verified against OpenSearch | None yet; compare with `ev_84785783223c858dcfe3f84077bb36f3827d7dcf6805f64781a17cb075894f0a` | Candidate code path and tests must be inspected |
+| `AMAZON-OPENSEARCH-SERVICE-CAP-237B1F12` — Serverless collections and automatic capacity management are documented. | Not verified against OpenSearch | None yet; compare with `ev_84785783223c858dcfe3f84077bb36f3827d7dcf6805f64781a17cb075894f0a` | Candidate code path and tests must be inspected |
+| `AMAZON-OPENSEARCH-SERVICE-CAP-944297D6` — Configuration and lifecycle API surfaces are documented. | Not verified against OpenSearch | None yet; compare with `ev_84785783223c858dcfe3f84077bb36f3827d7dcf6805f64781a17cb075894f0a` | Candidate code path and tests must be inspected |
+| `AMAZON-OPENSEARCH-SERVICE-CAP-E511A87E` — OpenSearch covers the core engine, but the AWS control plane, managed scaling, regions, quotas and integrations remain distinct. | Not verified against OpenSearch | None yet; compare with `ev_84785783223c858dcfe3f84077bb36f3827d7dcf6805f64781a17cb075894f0a` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -288,11 +276,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-D7FAC5F6** → `REQ-FUNC-D7FAC5F6`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-9C2F8D88** → `REQ-FUNC-9C2F8D88`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-73E22912** → `REQ-FUNC-73E22912`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-85A6B104** → `REQ-FUNC-85A6B104`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-C66CF61A** → `REQ-FUNC-C66CF61A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-D006C107** → `REQ-FUNC-D006C107`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-237B1F12** → `REQ-FUNC-237B1F12`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-944297D6** → `REQ-FUNC-944297D6`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-E511A87E** → `REQ-FUNC-E511A87E`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -313,7 +300,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-D7FAC5F6, REQ-FUNC-9C2F8D88, REQ-FUNC-73E22912, REQ-FUNC-85A6B104, REQ-FUNC-C66CF61A
+- **Requirements:** REQ-FUNC-D006C107, REQ-FUNC-237B1F12, REQ-FUNC-944297D6, REQ-FUNC-E511A87E
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -323,7 +310,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-D7FAC5F6, REQ-FUNC-9C2F8D88, REQ-FUNC-73E22912, REQ-FUNC-85A6B104, REQ-FUNC-C66CF61A
+- **Requirements:** REQ-FUNC-D006C107, REQ-FUNC-237B1F12, REQ-FUNC-944297D6, REQ-FUNC-E511A87E
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -345,7 +332,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-D7FAC5F6, REQ-FUNC-9C2F8D88, REQ-FUNC-73E22912, REQ-FUNC-85A6B104, REQ-FUNC-C66CF61A; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-D006C107, REQ-FUNC-237B1F12, REQ-FUNC-944297D6, REQ-FUNC-E511A87E; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -375,13 +362,18 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/opensearch-service/) | 2026-11-02T00:00:00Z | Amazon OpenSearch Service is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/opensearch-service/) | 2026-11-02T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-opensearch-identity` | What is Amazon OpenSearch Service? — AWS describes domains as OpenSearch clusters and documents managed provisioning, scaling, node replacement and integrations. | [link](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html) | Not recorded | Amazon OpenSearch Service is a managed service for deploying, operating and scaling OpenSearch clusters in AWS. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-opensearch-features` | Amazon OpenSearch Service features — The official developer guide lists domain capacity, IAM/VPC, encryption, multi-AZ, snapshots, CloudWatch, CloudTrail, S3, Kinesis and DynamoDB integrations. | [link](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html) | Not recorded | The service documents domains, storage, security, dashboards, snapshots, monitoring and AWS integrations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-opensearch-serverless` | Amazon OpenSearch Serverless — AWS documents collections, automatic capacity scaling, managed upgrades, encryption and high availability. | [link](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless.html) | Not recorded | OpenSearch Serverless provides on-demand, auto-scaling collections for OpenSearch workloads. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-opensearch-api` | Amazon OpenSearch Service API operations — The official API reference lists create, describe, update, delete, migration, package, index and VPC operations. | [link](https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Operations_Amazon_OpenSearch_Service.html) | Not recorded | The service API documents domain, index, package, migration, VPC endpoint and application lifecycle operations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-opensearch-open` | About OpenSearch — The official project page describes OpenSearch, Dashboards and Data Prepper and identifies the Apache-2.0 open-source project. | [link](https://opensearch.org/About/) | Not recorded | OpenSearch is a community-driven open-source search and analytics suite released under Apache License 2.0. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/opensearch-service/) | 2026-11-03T00:00:00Z | Amazon OpenSearch Service is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/opensearch-service/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/opensearch-service/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/opensearch-service/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Operations_Amazon_OpenSearch_Service.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://opensearch.org/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://opensearch.org/About/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_84785783223c858dcfe3f84077bb36f3827d7dcf6805f64781a17cb075894f0a` | Amazon OpenSearch Service Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/opensearch-service/) | 2026-11-03T03:36:44.514Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Features submenu, button: Getting Started submenu, button: Resources submenu, button: Get started with OpenSearch Service, button: Build with OpenSearch Agent Skills, button: Integrated retrieval for any use case, button: Accelerate AI development, button: Flexibility without tradeoff, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Pricing, link: Migrations, link: Partners, link: FAQs, link: Products, link: Analytics, link: OpenSearch, link: ZeroETL, link: Amazon Bedrock, button: Operate at scale with confidence, button: Retrieval Augmented Generation (RAG) for agentic and generative AI, button: Vector database for semantic and multimodal search, button: Intuitive and personalized search, button: Real-time logs and observability, button: Play:, link: A simple black and white icon depicting a vertical bar chart, commonly used to represent analytics or data analysis. Learn how AutoDesk monitors and fixes software problems Read the case study, link: A black and white icon of a magnifying glass positioned over a bar graph, representing analytics or data analysis. Learn how Compass simplified and modernized property searches Read the testimonial, link: The Pearson company logo with a stylized 'P' inside a blue oval, followed by the word 'Pearson' in black text. Pearson identifies security events and behavior patterns to protect data Read the case study, link: The Pinterest logo, featuring a red circle with a white stylized 'P' and the word 'Pinterest' in red text. Pinterest uses an observability solution to monitor and issue alerts Read the case study, link: Documentation Amazon OpenSearch Service documentation Read the documentation, link: Demo View demos of OpenSearch Service capabilities Watch the demos, link: Workshop Build AI-powered search in three steps Read the documentation, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -454,7 +446,7 @@ An independent equivalent should separate the OpenSearch engine from the managed
 
 Research must map domain/collection lifecycle states, APIs, authentication, policy evaluation, network modes, node/storage options, autoscaling, Serverless capacity, ingestion transforms, query semantics, snapshots, upgrades, replication, alerts and quotas.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS pages and documentation for service behavior, and the official OpenSearch repository for the open-source engine. Capture public workflows and authorized test accounts only. Build an independent implementation in the consumer project with original configuration and code, clearly separating engine reuse from AWS-specific service behavior.
 
@@ -462,14 +454,16 @@ Use official AWS pages and documentation for service behavior, and the official 
 
 Verify IAM and fine-grained access policies, VPC/public access, TLS, encryption at rest, KMS, snapshots, audit logs, tenant isolation, plugin permissions, data retention and cross-account access.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
 - https://aws.amazon.com/opensearch-service/ — official product context.
 - https://docs.aws.amazon.com/opensearch-service/ — official capabilities, workflows and references.
 - https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html — domain and engine model.
-- https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Operations_Amazon_OpenSearch_Service.html — service API reference.
-- https://opensearch.org/ — open-source project context.
-- https://github.com/opensearch-project/OpenSearch — source repository and license lead.
+- [What is Amazon OpenSearch Service?](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html) — official managed-domain identity, integrations and operational features.
+- [Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless.html) — official serverless collections, scaling and encryption model.
+- [Amazon OpenSearch Service API operations](https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Operations_Amazon_OpenSearch_Service.html) — official configuration and lifecycle API surface.
+- [OpenSearch](https://opensearch.org/About/) — official open-source engine, dashboards and Apache-2.0 project context.
+- [OpenSearch downloads and license](https://opensearch.org/downloads/) — official Apache-2.0 licensing and self-managed distribution.
 
 # 14. Unknowns
 
@@ -480,13 +474,13 @@ Verify IAM and fine-grained access policies, VPC/public access, TLS, encryption 
 
 # 15. Research status
 
-`pending`: identity, public capabilities and the primary open-source foundation are documented, but full REA capture, behavior, limits, security and implementation equivalence remain unverified.
+`researched`: identity, managed-domain and Serverless capabilities, API surface and OpenSearch foundation were verified from official AWS and OpenSearch documentation. Pricing, quotas, account-specific behavior and full service-plane equivalence remain outside this pass.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-opensearch-service` and inspect canonical identity with `npx rae-faang products show amazon-opensearch-service --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-opensearch-service` and inspect canonical identity with `npx rea-faang products show amazon-opensearch-service --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -499,7 +493,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-opensearch-service --out ./amazon-opensearch-service.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-opensearch-service --out ./amazon-opensearch-service-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-opensearch-service --out ./amazon-opensearch-service.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-opensearch-service --out ./amazon-opensearch-service-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -541,11 +535,16 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/opensearch-service/) — Amazon OpenSearch Service is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
-- [Official documentation entry](https://docs.aws.amazon.com/opensearch-service/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
+- [What is Amazon OpenSearch Service?](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html) — Amazon OpenSearch Service is a managed service for deploying, operating and scaling OpenSearch clusters in AWS. (VERIFIED; accessed Not recorded).
+- [Amazon OpenSearch Service features](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html) — The service documents domains, storage, security, dashboards, snapshots, monitoring and AWS integrations. (VERIFIED; accessed Not recorded).
+- [Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless.html) — OpenSearch Serverless provides on-demand, auto-scaling collections for OpenSearch workloads. (VERIFIED; accessed Not recorded).
+- [Amazon OpenSearch Service API operations](https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Operations_Amazon_OpenSearch_Service.html) — The service API documents domain, index, package, migration, VPC endpoint and application lifecycle operations. (VERIFIED; accessed Not recorded).
+- [About OpenSearch](https://opensearch.org/About/) — OpenSearch is a community-driven open-source search and analytics suite released under Apache License 2.0. (VERIFIED; accessed Not recorded).
+- [Official product page](https://aws.amazon.com/opensearch-service/) — Amazon OpenSearch Service is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/opensearch-service/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/opensearch-service/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/opensearch-service/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Operations_Amazon_OpenSearch_Service.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://opensearch.org/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://opensearch.org/About/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon OpenSearch Service Public web-surface observation (REA)](https://aws.amazon.com/opensearch-service/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Features submenu, button: Getting Started submenu, button: Resources submenu, button: Get started with OpenSearch Service, button: Build with OpenSearch Agent Skills, button: Integrated retrieval for any use case, button: Accelerate AI development, button: Flexibility without tradeoff, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Pricing, link: Migrations, link: Partners, link: FAQs, link: Products, link: Analytics, link: OpenSearch, link: ZeroETL, link: Amazon Bedrock, button: Operate at scale with confidence, button: Retrieval Augmented Generation (RAG) for agentic and generative AI, button: Vector database for semantic and multimodal search, button: Intuitive and personalized search, button: Real-time logs and observability, button: Play:, link: A simple black and white icon depicting a vertical bar chart, commonly used to represent analytics or data analysis. Learn how AutoDesk monitors and fixes software problems Read the case study, link: A black and white icon of a magnifying glass positioned over a bar graph, representing analytics or data analysis. Learn how Compass simplified and modernized property searches Read the testimonial, link: The Pearson company logo with a stylized 'P' inside a blue oval, followed by the word 'Pearson' in black text. Pearson identifies security events and behavior patterns to protect data Read the case study, link: The Pinterest logo, featuring a red circle with a white stylized 'P' and the word 'Pinterest' in red text. Pinterest uses an observability solution to monitor and issue alerts Read the case study, link: Documentation Amazon OpenSearch Service documentation Read the documentation, link: Demo View demos of OpenSearch Service capabilities Watch the demos, link: Workshop Build AI-powered search in three steps Read the documentation, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:36:44.514Z).

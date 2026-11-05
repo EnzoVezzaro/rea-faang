@@ -79,7 +79,7 @@ Open-source contact-center components can cover individual voice, messaging, CRM
 
 REA should separate telephony, chat/SMS, email, contact flows, queues, workforce tools, customer profiles, cases, recordings, analytics, AI assistance and external integrations rather than treating the portfolio as one undifferentiated product.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public AWS documentation, API references and permitted test accounts only. A clean-room implementation must use independent telephony, messaging and workflow components and must not copy AWS interfaces, models, prompts or proprietary assets.
 

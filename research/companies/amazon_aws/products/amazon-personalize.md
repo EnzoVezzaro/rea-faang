@@ -15,16 +15,19 @@ official_source_urls:
   - "https://aws.amazon.com/personalize/faqs/"
   - "https://docs.aws.amazon.com/personalize/"
   - "https://docs.aws.amazon.com/personalize/latest/dg/setup.html"
-  - "https://docs.aws.amazon.com/general/latest/gr/personalize.html"
-research_status: "pending"
-research_confidence: "unverified"
+  - "https://docs.aws.amazon.com/personalize/latest/dg/getting-recommendations.html"
+  - "https://docs.aws.amazon.com/personalize/latest/dg/import-data.html"
+  - "https://docs.aws.amazon.com/personalize/latest/dg/filter.html"
+  - "https://github.com/RUCAIBox/RecBole"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: 2026-11-03T00:00:00Z
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: 2027-02-03T00:00:00Z
+research_version: 2
 ---
 
 # 1. Executive summary
@@ -74,7 +77,7 @@ An independent equivalent should compare data schemas, event ingestion, model tr
 
 Research must map dataset schemas, recipes, solution/recommender state transitions, campaign deployment, event tracking, inference contracts, batch output, filters, promotions, contextual metadata, text extraction, quotas, retries and model refresh behavior.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, API references and authorized test data. Capture data import, training, deployment, inference and failure paths. Use RecBole or another reviewed foundation only after recording a foundation verdict; implement an independent service in the consumer project without copying AWS code, branding or protected assets.
 
@@ -82,14 +85,13 @@ Use official AWS documentation, API references and authorized test data. Capture
 
 Verify IAM roles, encryption in transit and at rest, KMS, regional data processing, customer model isolation, event payload minimization, retention, audit logging and access to recommendation outputs.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/personalize/ — official product context.
-- https://aws.amazon.com/documentation-overview/personalize/ — documented capabilities and use cases.
-- https://aws.amazon.com/personalize/faqs/ — data, workflow and privacy details.
-- https://docs.aws.amazon.com/personalize/ — official documentation entry point.
-- https://docs.aws.amazon.com/personalize/latest/dg/setup.html — access, regions, CLI and SDK setup.
-- https://github.com/RUCAIBox/RecBole — open-source alternative candidate and MIT license.
+- [What is Amazon Personalize?](https://docs.aws.amazon.com/personalize/latest/dg/) — official identity, use cases and managed recommendation model.
+- [Importing training data](https://docs.aws.amazon.com/personalize/latest/dg/import-data.html) — official bulk and individual data-import workflows.
+- [Getting recommendations](https://docs.aws.amazon.com/personalize/latest/dg/getting-recommendations.html) — official real-time, batch and scoring workflows.
+- [Filtering recommendations](https://docs.aws.amazon.com/personalize/latest/dg/filter.html) — official filters, promotions and recommendation controls.
+- [RecBole](https://github.com/RUCAIBox/RecBole) — open-source recommendation foundation and MIT license.
 
 # 14. Unknowns
 
@@ -100,4 +102,4 @@ Verify IAM roles, encryption in transit and at rest, KMS, regional data processi
 
 # 15. Research status
 
-`pending`: identity, public workflow and a partial open-source foundation are documented from official AWS and project sources, but full REA capture, detailed behavior, limits, security and implementation equivalence remain unverified.
+`researched`: identity, data import, recommendation, filtering and batch/real-time capabilities were verified from official AWS documentation. Pricing, quotas, account-specific behavior and full service-plane equivalence to RecBole remain outside this pass.

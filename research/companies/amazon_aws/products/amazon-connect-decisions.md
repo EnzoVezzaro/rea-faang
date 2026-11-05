@@ -78,7 +78,7 @@ Open-source ERP, forecasting and optimization components may cover individual pl
 
 REA should map demand forecasting, consensus planning, supply constraints, exception clustering, root-cause analysis, business-rule learning, onboarding, integrations, approval gates and execution separately.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public AWS product and documentation surfaces only. A clean-room equivalent should combine independently licensed forecasting, optimization and workflow components; it must not copy Amazon operational knowledge, models, prompts or proprietary assets.
 

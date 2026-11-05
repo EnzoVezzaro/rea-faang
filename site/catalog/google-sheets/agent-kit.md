@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Sheets (google-sheets); inve
 
 # Google Sheets — implementation skill (`google-sheets`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Sheets**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Sheets (google-sheets); inve
 
 This is the coding-agent skill for **Google Sheets** (`google-sheets`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-sheets.md` from the catalog page, or run `npx rae-faang google-sheets --out ./google-sheets.md`, `npx rae-faang skills generate google-sheets` or `npx rae-faang build agent-kit google-sheets --out ./google-sheets-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-sheets.md` from the catalog page, or run `npx rea-faang google-sheets --out ./google-sheets.md`, `npx rea-faang skills generate google-sheets` or `npx rea-faang build agent-kit google-sheets --out ./google-sheets-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Google Sheets / `google-sheets` | `catalog/products.jsonl` |
 | Official product URL | [https://sheets.google.com/](https://sheets.google.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-sheets` | `research/companies/google/products/google-sheets.md` |
+| Official documentation | [https://developers.google.com/workspace/sheets](https://developers.google.com/workspace/sheets) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-sheets` | `research/companies/google/products/google-sheets.md` |
 | REA report | `catalog/rea/google/google-sheets.md` (captured 2026-11-03T01:39:27.138Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-sheets.json` (`ev_2dc2a4ade8ac58fcf175a097b56606083221a9924f65f7c5dbbfbe8c4496b8b9`) | Catalog evidence |
 | Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-sheets --format json` and `npx rae-faang research dossier google-sheets` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-sheets --format json` and `npx rea-faang research dossier google-sheets` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-SHEETS-CAP-D21D6943`, `GOOGLE-SHEETS-CAP-1D9E6646`, `GOOGLE-SHEETS-CAP-9B3FB23D`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-SHEETS-CAP-7347DBC6`, `GOOGLE-SHEETS-CAP-E1EA84DB`, `GOOGLE-SHEETS-CAP-FC90F5FF`, `GOOGLE-SHEETS-CAP-00016E4C`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Google Sheets** / `google-sheets` | Product catalog |
-| Company / category | Google / `productivity_application` / `spreadsheets`, `collaboration` | Product catalog |
-| Official website / docs | [https://sheets.google.com/](https://sheets.google.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Company / category | Google / `productivity_application` / `spreadsheets`, `collaboration`, `productivity` | Product catalog |
+| Official website / docs | [https://sheets.google.com/](https://sheets.google.com/) / [https://developers.google.com/workspace/sheets](https://developers.google.com/workspace/sheets) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-SHEETS-CAP-D21D6943` | Browser-based spreadsheet editing | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-SHEETS-CAP-1D9E6646` | Real-time co-authoring | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-SHEETS-CAP-9B3FB23D` | Formulas, charts and pivot tables | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-SHEETS-CAP-7347DBC6` | Online spreadsheet creation, editing, sharing and collaboration are verified. | VERIFIED | `ev-google-sheets-identity`, `ev-google-sheets-collaboration` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-SHEETS-CAP-E1EA84DB` | Spreadsheet creation, values, formatting and related API resources are documented. | VERIFIED | `ev-google-sheets-api`, `ev-google-sheets-rest` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-SHEETS-CAP-FC90F5FF` | Sharing, version history and protected content are documented; organisation policy may constrain them. | VERIFIED | `ev-google-sheets-collaboration` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-SHEETS-CAP-00016E4C` | Editor identity and API surface are verified, but quotas, plan entitlements, calculation behavior and authenticated settings were not exhaustively verified. | VERIFIED | `ev-google-sheets-identity`, `ev-google-sheets-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Next`, `textbox: Email or phone`, `link: Forgot email?`, `link: Learn more about using Guest mode (external, opens in a new window)`, `link: Create account`, `link: Open Google Account Help Center (external, opens in a new window)`, `link: Privacy Policy (external, opens in a new window)`, `link: Google Terms of Service (external, opens in a new window)`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Browser-based spreadsheet editing:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Real-time co-authoring:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Formulas, charts and pivot tables:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Online spreadsheet creation, editing, sharing and collaboration are verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Spreadsheet creation, values, formatting and related API resources are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Sharing, version history and protected content are documented; organisation policy may constrain them.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Editor identity and API surface are verified, but quotas, plan entitlements, calculation behavior and authenticated settings were not exhaustively verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-D21D6943 — Browser-based spreadsheet editing
+### REQ-FUNC-7347DBC6 — Online spreadsheet creation, editing, sharing and collaboration are verified.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-sheets-identity`, `ev-google-sheets-collaboration`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D21D6943`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-SHEETS-CAP-D21D6943` → `REQ-FUNC-D21D6943` → `TEST-FUNC-D21D6943`.
+- **Associated test ID:** `TEST-FUNC-7347DBC6`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-SHEETS-CAP-7347DBC6` → `REQ-FUNC-7347DBC6` → `TEST-FUNC-7347DBC6`.
 
-### REQ-FUNC-1D9E6646 — Real-time co-authoring
+### REQ-FUNC-E1EA84DB — Spreadsheet creation, values, formatting and related API resources are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-sheets-api`, `ev-google-sheets-rest`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-1D9E6646`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-SHEETS-CAP-1D9E6646` → `REQ-FUNC-1D9E6646` → `TEST-FUNC-1D9E6646`.
+- **Associated test ID:** `TEST-FUNC-E1EA84DB`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-SHEETS-CAP-E1EA84DB` → `REQ-FUNC-E1EA84DB` → `TEST-FUNC-E1EA84DB`.
 
-### REQ-FUNC-9B3FB23D — Formulas, charts and pivot tables
+### REQ-FUNC-FC90F5FF — Sharing, version history and protected content are documented; organisation policy may constrain them.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-sheets-collaboration`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-9B3FB23D`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-SHEETS-CAP-9B3FB23D` → `REQ-FUNC-9B3FB23D` → `TEST-FUNC-9B3FB23D`.
+- **Associated test ID:** `TEST-FUNC-FC90F5FF`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-SHEETS-CAP-FC90F5FF` → `REQ-FUNC-FC90F5FF` → `TEST-FUNC-FC90F5FF`.
+
+### REQ-FUNC-00016E4C — Editor identity and API surface are verified, but quotas, plan entitlements, calculation behavior and authenticated settings were not exhaustively verified.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-sheets-identity`, `ev-google-sheets-api`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-00016E4C`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-SHEETS-CAP-00016E4C` → `REQ-FUNC-00016E4C` → `TEST-FUNC-00016E4C`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -216,9 +227,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-SHEETS-CAP-D21D6943` — Browser-based spreadsheet editing | Not verified against Grist | None yet; compare with `ev_2dc2a4ade8ac58fcf175a097b56606083221a9924f65f7c5dbbfbe8c4496b8b9` | Candidate code path and tests must be inspected |
-| `GOOGLE-SHEETS-CAP-1D9E6646` — Real-time co-authoring | Not verified against Grist | None yet; compare with `ev_2dc2a4ade8ac58fcf175a097b56606083221a9924f65f7c5dbbfbe8c4496b8b9` | Candidate code path and tests must be inspected |
-| `GOOGLE-SHEETS-CAP-9B3FB23D` — Formulas, charts and pivot tables | Not verified against Grist | None yet; compare with `ev_2dc2a4ade8ac58fcf175a097b56606083221a9924f65f7c5dbbfbe8c4496b8b9` | Candidate code path and tests must be inspected |
+| `GOOGLE-SHEETS-CAP-7347DBC6` — Online spreadsheet creation, editing, sharing and collaboration are verified. | Not verified against Grist | None yet; compare with `ev_2dc2a4ade8ac58fcf175a097b56606083221a9924f65f7c5dbbfbe8c4496b8b9` | Candidate code path and tests must be inspected |
+| `GOOGLE-SHEETS-CAP-E1EA84DB` — Spreadsheet creation, values, formatting and related API resources are documented. | Not verified against Grist | None yet; compare with `ev_2dc2a4ade8ac58fcf175a097b56606083221a9924f65f7c5dbbfbe8c4496b8b9` | Candidate code path and tests must be inspected |
+| `GOOGLE-SHEETS-CAP-FC90F5FF` — Sharing, version history and protected content are documented; organisation policy may constrain them. | Not verified against Grist | None yet; compare with `ev_2dc2a4ade8ac58fcf175a097b56606083221a9924f65f7c5dbbfbe8c4496b8b9` | Candidate code path and tests must be inspected |
+| `GOOGLE-SHEETS-CAP-00016E4C` — Editor identity and API surface are verified, but quotas, plan entitlements, calculation behavior and authenticated settings were not exhaustively verified. | Not verified against Grist | None yet; compare with `ev_2dc2a4ade8ac58fcf175a097b56606083221a9924f65f7c5dbbfbe8c4496b8b9` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -265,9 +277,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-D21D6943** → `REQ-FUNC-D21D6943`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-1D9E6646** → `REQ-FUNC-1D9E6646`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-9B3FB23D** → `REQ-FUNC-9B3FB23D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-7347DBC6** → `REQ-FUNC-7347DBC6`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-E1EA84DB** → `REQ-FUNC-E1EA84DB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-FC90F5FF** → `REQ-FUNC-FC90F5FF`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-00016E4C** → `REQ-FUNC-00016E4C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -288,7 +301,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-D21D6943, REQ-FUNC-1D9E6646, REQ-FUNC-9B3FB23D
+- **Requirements:** REQ-FUNC-7347DBC6, REQ-FUNC-E1EA84DB, REQ-FUNC-FC90F5FF, REQ-FUNC-00016E4C
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -298,7 +311,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-D21D6943, REQ-FUNC-1D9E6646, REQ-FUNC-9B3FB23D
+- **Requirements:** REQ-FUNC-7347DBC6, REQ-FUNC-E1EA84DB, REQ-FUNC-FC90F5FF, REQ-FUNC-00016E4C
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -320,7 +333,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-D21D6943, REQ-FUNC-1D9E6646, REQ-FUNC-9B3FB23D; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-7347DBC6, REQ-FUNC-E1EA84DB, REQ-FUNC-FC90F5FF, REQ-FUNC-00016E4C; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -350,8 +363,20 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://sheets.google.com/) | Not recorded | Google Sheets is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-google-sheets-identity` | How to use Google Sheets — Google's official help describes creating, editing, formatting, sharing and working with other people in Sheets. | [link](https://support.google.com/docs/answer/6000292) | 2026-11-03T00:00:00Z | Google Sheets is an online spreadsheet application for creating, formatting and collaborating on spreadsheets. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-sheets-collaboration` | Collaborate in Sheets — The official collaboration guide documents sharing roles, comments, versions, protected ranges and limits. | [link](https://support.google.com/docs/answer/9331169) | 2026-11-03T00:00:00Z | Sheets provides sharing, comments, version history, protection and collaboration controls. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-sheets-api` | Google Sheets API overview — The official API overview describes spreadsheet, sheet, cell, formatting and Connected Sheets operations. | [link](https://developers.google.com/workspace/sheets/api/guides/concepts) | 2026-11-03T00:00:00Z | The Sheets API can create spreadsheets, read and write values, update formatting and manage connected sheets. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-sheets-rest` | Google Sheets API REST reference — The official REST reference lists the Sheets API service and spreadsheet-related resources. | [link](https://developers.google.com/workspace/sheets/api/reference/rest) | 2026-11-03T00:00:00Z | The Sheets API exposes spreadsheet, sheet, values and developer metadata resources. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://sheets.google.com/) | 2026-11-03T00:00:00Z | Google Sheets is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/workspace/sheets) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/docs/answer/6000292) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/docs/answer/9331169) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/sheets/api/guides/concepts) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/sheets/api/reference/rest) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_2dc2a4ade8ac58fcf175a097b56606083221a9924f65f7c5dbbfbe8c4496b8b9` | Google Sheets Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://accounts.google.com/v3/signin/identifier?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&passive=1209600&service=wise&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-1776550570:1793669963976791) | 2026-11-03T01:39:27.138Z | A dated unauthenticated snapshot exposed controls button: Next, textbox: Email or phone, link: Forgot email?, link: Learn more about using Guest mode (external, opens in a new window), link: Create account, link: Open Google Account Help Center (external, opens in a new window), link: Privacy Policy (external, opens in a new window), link: Google Terms of Service (external, opens in a new window) and landmarks contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
+| `SRC-CANDIDATE-1` | Grist candidate — Curated entry; repository only when recorded. | [link](https://www.getgrist.com/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-2` | ONLYOFFICE Docs candidate — Curated entry; repository only when recorded. | [link](https://www.onlyoffice.com/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-3` | Collabora Online candidate — Curated entry; repository only when recorded. | [link](https://www.collaboraonline.com/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
 
 ### Confidence classifications
 
@@ -378,115 +403,87 @@ Resume token: `google-sheets`. Read dossier, REA report and raw Evidence before 
 
 # 1. Executive summary
 
-Google Sheets is Google's browser-based collaborative spreadsheet application.
-
----
+Google Sheets is Google's online spreadsheet application for creating, formatting, analysing and collaboratively editing spreadsheets. It is part of Google Workspace and stores files through Drive, but it has its own spreadsheet model and Sheets API.
 
 # 2. Product identity and ownership
 
-- **Official name:** Google Sheets
-- **Company and business unit:** google
-- **Current lifecycle status:** active
-- **Official website:** https://sheets.google.com/
+**Official name:** Google Sheets  
+**Company:** Google LLC, part of Alphabet Inc.  
+**Lifecycle status:** active  
+**Official website:** https://sheets.google.com/
 
----
+Google's official help and developer documentation identify Sheets as an online spreadsheet application with a distinct spreadsheet resource and API.
 
 # 3. Product capabilities
 
-- Browser-based spreadsheet editing
-- Real-time co-authoring
-- Formulas, charts and pivot tables
+- Create, edit and format spreadsheets with values, formulas and functions.
+- Charts, filters, pivot tables, protected ranges and version history.
+- Share spreadsheets with viewer, commenter or editor permissions.
+- Collaborative editing, comments, tasks and access controls.
+- Apps Script, add-ons and Sheets API automation.
 
----
+Sheets is separate from Drive because Drive provides storage and file permissions while Sheets provides the spreadsheet editor and calculation model. It is also separate from Docs even though both are Workspace editors.
 
 # 4. Technical architecture
 
-Not yet researched.
-
----
+Sheets is a managed web application backed by Drive storage and Google identity. The Sheets API exposes spreadsheets, sheets, cells, values, formatting and metadata; the calculation engine and real-time collaboration implementation are proprietary.
 
 # 5. User workflows
 
-Not yet researched.
-
----
+A user creates or opens a spreadsheet, enters values or formulas, formats and analyses data, shares the file with collaborators, and reviews versions or protected ranges. Applications can create spreadsheets, read and write cell values, update formatting and manage connected data through the API.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+Access depends on Google account type, Workspace edition, organisation policies and spreadsheet permissions. This research verifies the editor and access model, not current plan pricing, quotas or a particular account's entitlement.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+The Google Sheets API is a REST interface for creating spreadsheets, reading and writing values, updating formatting and managing connected sheets. Apps Script and Workspace add-ons provide additional automation. OAuth scopes and spreadsheet permissions are required for real operations.
 
 # 8. Existing open-source alternatives
 
-Open-source candidates exist: Grist (Apache-2.0) — Relational spreadsheet, self-hostable.; ONLYOFFICE Docs (AGPL-3.0) — Collaborative spreadsheet editor.. Coverage is unverified until the dossier is researched.
-
----
+- Grist (Apache-2.0): self-hosted relational spreadsheet and database-like tables.
+- ONLYOFFICE Docs (AGPL-3.0): self-hosted collaborative spreadsheet editor.
+- Collabora Online (MPL-2.0): LibreOffice-based browser spreadsheet editor.
 
 # 9. Alternative comparison
 
-Self-hosted spreadsheet editors exist; performance at scale and the add-on ecosystem differ from Google Sheets.
-
----
+These projects cover spreadsheet editing or structured tables. None is verified here as a drop-in replacement for Sheets' Google account ecosystem, Drive integration, collaboration model, calculation behavior and API surface.
 
 # 10. Missing capabilities and opportunity analysis
 
-Self-hosted spreadsheet editors exist; performance at scale and the add-on ecosystem differ from Google Sheets.
+The integration gap combines spreadsheet calculation, real-time collaboration, sharing, version history, protected ranges, storage, identity and automation under one managed service.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Partial. Self-hosted collaborative spreadsheets exist (Grist, ONLYOFFICE); parity with Sheets at scale is partial.
-
----
+Choose a narrow spreadsheet workflow and reuse an existing editor or relational spreadsheet. Define formula compatibility, sharing, revision, permissions and storage integration before attempting broader parity.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+Spreadsheets can contain sensitive data and formulas. Verify sharing inheritance, protected ranges, link access, API scopes, version retention and organisation policies; do not infer access from a spreadsheet URL alone.
 
 # 13. Sources and evidence
 
-- https://www.getgrist.com/
-- https://www.onlyoffice.com/
-
----
+- [How to use Google Sheets](https://support.google.com/docs/answer/6000292) — official spreadsheet capabilities.
+- [Collaborate in Sheets](https://support.google.com/docs/answer/9331169) — official sharing, versioning and protection behavior.
+- [Google Sheets API overview](https://developers.google.com/workspace/sheets/api/guides/concepts) — official API capabilities.
+- [Google Sheets API REST reference](https://developers.google.com/workspace/sheets/api/reference/rest) — official resources and endpoints.
 
 # 14. Open questions
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
+- Which formulas, charts and data workflows should a future comparison cover?
+- Is the target a general spreadsheet, a database-like table or a reporting workflow?
+- What permission, versioning and audit requirements must an alternative satisfy?
 
 # 15. Research history
 
-- v1: dossier created; research pending.
+Record updated 2026-11-03 from official Google Sheets Help and Google Developers sources. Status: `researched`; plan-specific access, quotas, calculation internals and authenticated behavior remain outside this pass.
 
----
-
-# 16. Alternative comparison (continued)
-
-Self-hosted spreadsheet editors exist; performance at scale and the add-on ecosystem differ from Google Sheets.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Partial. Self-hosted collaborative spreadsheets exist (Grist, ONLYOFFICE); parity with Sheets at scale is partial.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-sheets` and inspect canonical identity with `npx rae-faang products show google-sheets --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-sheets` and inspect canonical identity with `npx rea-faang products show google-sheets --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -499,7 +496,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-sheets --out ./google-sheets.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-sheets --out ./google-sheets-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-sheets --out ./google-sheets.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-sheets --out ./google-sheets-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -541,5 +538,17 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://sheets.google.com/) — Google Sheets is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [How to use Google Sheets](https://support.google.com/docs/answer/6000292) — Google Sheets is an online spreadsheet application for creating, formatting and collaborating on spreadsheets. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Collaborate in Sheets](https://support.google.com/docs/answer/9331169) — Sheets provides sharing, comments, version history, protection and collaboration controls. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Sheets API overview](https://developers.google.com/workspace/sheets/api/guides/concepts) — The Sheets API can create spreadsheets, read and write values, update formatting and manage connected sheets. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Sheets API REST reference](https://developers.google.com/workspace/sheets/api/reference/rest) — The Sheets API exposes spreadsheet, sheet, values and developer metadata resources. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://sheets.google.com/) — Google Sheets is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.google.com/workspace/sheets) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://support.google.com/docs/answer/6000292) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/docs/answer/9331169) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/sheets/api/guides/concepts) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/sheets/api/reference/rest) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Sheets Public web-surface observation (REA)](https://accounts.google.com/v3/signin/identifier?continue=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&followup=https://docs.google.com/spreadsheets/?usp%3Ddirect_url&ltmpl=sheets&osid=1&passive=1209600&service=wise&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S-1776550570:1793669963976791) — A dated unauthenticated snapshot exposed controls button: Next, textbox: Email or phone, link: Forgot email?, link: Learn more about using Guest mode (external, opens in a new window), link: Create account, link: Open Google Account Help Center (external, opens in a new window), link: Privacy Policy (external, opens in a new window), link: Google Terms of Service (external, opens in a new window) and landmarks contentinfo. (VERIFIED; accessed 2026-11-03T01:39:27.138Z).
+- [Grist candidate](https://www.getgrist.com/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [ONLYOFFICE Docs candidate](https://www.onlyoffice.com/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [Collabora Online candidate](https://www.collaboraonline.com/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).

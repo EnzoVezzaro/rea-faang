@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Simple Email Service (amazon
 
 # Amazon Simple Email Service — implementation skill (`amazon-ses`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Simple Email Service**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Simple Email Service (amazon
 
 This is the coding-agent skill for **Amazon Simple Email Service** (`amazon-ses`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-ses.md` from the catalog page, or run `npx rae-faang amazon-ses --out ./amazon-ses.md`, `npx rae-faang skills generate amazon-ses` or `npx rae-faang build agent-kit amazon-ses --out ./amazon-ses-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-ses.md` from the catalog page, or run `npx rea-faang amazon-ses --out ./amazon-ses.md`, `npx rea-faang skills generate amazon-ses` or `npx rea-faang build agent-kit amazon-ses --out ./amazon-ses-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Simple Email Service / `amazon-ses` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/ses/](https://aws.amazon.com/ses/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/ses/](https://docs.aws.amazon.com/ses/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-ses` | `research/companies/amazon_aws/products/amazon-ses.md` |
+| Research dossier | `npx rea-faang research dossier amazon-ses` | `research/companies/amazon_aws/products/amazon-ses.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-ses.md` (captured 2026-11-03T03:48:40.362Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-ses.json` (`ev_4d21c4cc720a5b24a1f56d913e2ec76ed76992070cf993965c5bf1a5ea033d17`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-ses --format json` and `npx rae-faang research dossier amazon-ses` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-ses --format json` and `npx rea-faang research dossier amazon-ses` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-SES-CAP-26300B98`, `AMAZON-SES-CAP-37AAB8D2`, `AMAZON-SES-CAP-644C31EF`, `AMAZON-SES-CAP-9D879A19`, `AMAZON-SES-CAP-744F1A15`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-SES-CAP-272DE7C0`, `AMAZON-SES-CAP-09F9F4B5`, `AMAZON-SES-CAP-2DC683FB`, `AMAZON-SES-CAP-257BB626`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-SES-CAP-26300B98` | transactional and marketing email delivery | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-SES-CAP-37AAB8D2` | SMTP and API sending | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-SES-CAP-644C31EF` | identity and domain verification | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-SES-CAP-9D879A19` | DKIM, SPF, bounce and complaint handling | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-SES-CAP-744F1A15` | templates, configuration sets, event publishing and inbound email workflows | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-SES-CAP-272DE7C0` | Managed email identity and sending scope are documented; account access was not tested. | VERIFIED | `ev-amazon-ses-identity`, `ev-amazon-ses-verified-identities` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-SES-CAP-09F9F4B5` | Identity authentication and operational delivery events are documented. | VERIFIED | `ev-amazon-ses-auth`, `ev-amazon-ses-events` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-SES-CAP-2DC683FB` | API and event-destination surfaces are documented; exact account quotas and regional behavior remain unverified. | VERIFIED | `ev-amazon-ses-event-destination`, `ev-amazon-ses-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-SES-CAP-257BB626` | Postal covers a self-hosted mail foundation but not SES's managed deliverability, identity, IAM, quota, reputation or AWS service plane. | VERIFIED | `ev-amazon-ses-postal`, `ev-amazon-ses-identity` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Get started with Amazon SES`, `button: Contact sales`, `button: Play:`, `button: Send high-volume email`, `button: Increase email deliverability`, `button: Simplify email management`, `button: Streamlined secure communications`, `button: Automate transactional messages`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Features`, `link: Pricing`, `link: Getting Started`, `link: FAQs`, `link: Resources`, `link: Customers`, `link: Partners`, `link: Products`, `link: Business Applications`, `button: Globally deliver marketing emails`, `button: Send email from within any application`, `link: Missing alt text value Amazon sends hundreds of billions of emails per year through Amazon SES Watch the video`, `link: Missing alt text value Netflix increases email deliverability and sender scores Read the testimonial`, `link: Missing alt text value Duolingo sends daily practice emails and newsletters to over 300 million users Read the testimonial`, `link: Missing alt text value Reddit drives engagement with emails to millions of global users Read the testimonial`, `link: Find out how Amazon SES works Explore Amazon SES features`, `link: Improve inbox placement Learn more`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **transactional and marketing email delivery:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **SMTP and API sending:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **identity and domain verification:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **DKIM, SPF, bounce and complaint handling:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **templates, configuration sets, event publishing and inbound email workflows:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Managed email identity and sending scope are documented; account access was not tested.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Identity authentication and operational delivery events are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **API and event-destination surfaces are documented; exact account quotas and regional behavior remain unverified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Postal covers a self-hosted mail foundation but not SES's managed deliverability, identity, IAM, quota, reputation or AWS service plane.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-26300B98 — transactional and marketing email delivery
+### REQ-FUNC-272DE7C0 — Managed email identity and sending scope are documented; account access was not tested.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-ses-identity`, `ev-amazon-ses-verified-identities`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-26300B98`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-SES-CAP-26300B98` → `REQ-FUNC-26300B98` → `TEST-FUNC-26300B98`.
+- **Associated test ID:** `TEST-FUNC-272DE7C0`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-SES-CAP-272DE7C0` → `REQ-FUNC-272DE7C0` → `TEST-FUNC-272DE7C0`.
 
-### REQ-FUNC-37AAB8D2 — SMTP and API sending
+### REQ-FUNC-09F9F4B5 — Identity authentication and operational delivery events are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-ses-auth`, `ev-amazon-ses-events`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-37AAB8D2`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-SES-CAP-37AAB8D2` → `REQ-FUNC-37AAB8D2` → `TEST-FUNC-37AAB8D2`.
+- **Associated test ID:** `TEST-FUNC-09F9F4B5`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-SES-CAP-09F9F4B5` → `REQ-FUNC-09F9F4B5` → `TEST-FUNC-09F9F4B5`.
 
-### REQ-FUNC-644C31EF — identity and domain verification
+### REQ-FUNC-2DC683FB — API and event-destination surfaces are documented; exact account quotas and regional behavior remain unverified.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-ses-event-destination`, `ev-amazon-ses-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-644C31EF`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-SES-CAP-644C31EF` → `REQ-FUNC-644C31EF` → `TEST-FUNC-644C31EF`.
+- **Associated test ID:** `TEST-FUNC-2DC683FB`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-SES-CAP-2DC683FB` → `REQ-FUNC-2DC683FB` → `TEST-FUNC-2DC683FB`.
 
-### REQ-FUNC-9D879A19 — DKIM, SPF, bounce and complaint handling
+### REQ-FUNC-257BB626 — Postal covers a self-hosted mail foundation but not SES's managed deliverability, identity, IAM, quota, reputation or AWS service plane.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-ses-postal`, `ev-amazon-ses-identity`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-9D879A19`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-SES-CAP-9D879A19` → `REQ-FUNC-9D879A19` → `TEST-FUNC-9D879A19`.
-
-### REQ-FUNC-744F1A15 — templates, configuration sets, event publishing and inbound email workflows
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-744F1A15`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-SES-CAP-744F1A15` → `REQ-FUNC-744F1A15` → `TEST-FUNC-744F1A15`.
+- **Associated test ID:** `TEST-FUNC-257BB626`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-SES-CAP-257BB626` → `REQ-FUNC-257BB626` → `TEST-FUNC-257BB626`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -237,11 +226,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `AMAZON-SES-CAP-26300B98` — transactional and marketing email delivery | Not verified against Postal | None yet; compare with `ev_4d21c4cc720a5b24a1f56d913e2ec76ed76992070cf993965c5bf1a5ea033d17` | Candidate code path and tests must be inspected |
-| `AMAZON-SES-CAP-37AAB8D2` — SMTP and API sending | Not verified against Postal | None yet; compare with `ev_4d21c4cc720a5b24a1f56d913e2ec76ed76992070cf993965c5bf1a5ea033d17` | Candidate code path and tests must be inspected |
-| `AMAZON-SES-CAP-644C31EF` — identity and domain verification | Not verified against Postal | None yet; compare with `ev_4d21c4cc720a5b24a1f56d913e2ec76ed76992070cf993965c5bf1a5ea033d17` | Candidate code path and tests must be inspected |
-| `AMAZON-SES-CAP-9D879A19` — DKIM, SPF, bounce and complaint handling | Not verified against Postal | None yet; compare with `ev_4d21c4cc720a5b24a1f56d913e2ec76ed76992070cf993965c5bf1a5ea033d17` | Candidate code path and tests must be inspected |
-| `AMAZON-SES-CAP-744F1A15` — templates, configuration sets, event publishing and inbound email workflows | Not verified against Postal | None yet; compare with `ev_4d21c4cc720a5b24a1f56d913e2ec76ed76992070cf993965c5bf1a5ea033d17` | Candidate code path and tests must be inspected |
+| `AMAZON-SES-CAP-272DE7C0` — Managed email identity and sending scope are documented; account access was not tested. | Not verified against Postal | None yet; compare with `ev_4d21c4cc720a5b24a1f56d913e2ec76ed76992070cf993965c5bf1a5ea033d17` | Candidate code path and tests must be inspected |
+| `AMAZON-SES-CAP-09F9F4B5` — Identity authentication and operational delivery events are documented. | Not verified against Postal | None yet; compare with `ev_4d21c4cc720a5b24a1f56d913e2ec76ed76992070cf993965c5bf1a5ea033d17` | Candidate code path and tests must be inspected |
+| `AMAZON-SES-CAP-2DC683FB` — API and event-destination surfaces are documented; exact account quotas and regional behavior remain unverified. | Not verified against Postal | None yet; compare with `ev_4d21c4cc720a5b24a1f56d913e2ec76ed76992070cf993965c5bf1a5ea033d17` | Candidate code path and tests must be inspected |
+| `AMAZON-SES-CAP-257BB626` — Postal covers a self-hosted mail foundation but not SES's managed deliverability, identity, IAM, quota, reputation or AWS service plane. | Not verified against Postal | None yet; compare with `ev_4d21c4cc720a5b24a1f56d913e2ec76ed76992070cf993965c5bf1a5ea033d17` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -288,11 +276,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-26300B98** → `REQ-FUNC-26300B98`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-37AAB8D2** → `REQ-FUNC-37AAB8D2`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-644C31EF** → `REQ-FUNC-644C31EF`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-9D879A19** → `REQ-FUNC-9D879A19`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-744F1A15** → `REQ-FUNC-744F1A15`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-272DE7C0** → `REQ-FUNC-272DE7C0`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-09F9F4B5** → `REQ-FUNC-09F9F4B5`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-2DC683FB** → `REQ-FUNC-2DC683FB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-257BB626** → `REQ-FUNC-257BB626`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -313,7 +300,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-26300B98, REQ-FUNC-37AAB8D2, REQ-FUNC-644C31EF, REQ-FUNC-9D879A19, REQ-FUNC-744F1A15
+- **Requirements:** REQ-FUNC-272DE7C0, REQ-FUNC-09F9F4B5, REQ-FUNC-2DC683FB, REQ-FUNC-257BB626
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -323,7 +310,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-26300B98, REQ-FUNC-37AAB8D2, REQ-FUNC-644C31EF, REQ-FUNC-9D879A19, REQ-FUNC-744F1A15
+- **Requirements:** REQ-FUNC-272DE7C0, REQ-FUNC-09F9F4B5, REQ-FUNC-2DC683FB, REQ-FUNC-257BB626
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -345,7 +332,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-26300B98, REQ-FUNC-37AAB8D2, REQ-FUNC-644C31EF, REQ-FUNC-9D879A19, REQ-FUNC-744F1A15; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-272DE7C0, REQ-FUNC-09F9F4B5, REQ-FUNC-2DC683FB, REQ-FUNC-257BB626; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -375,13 +362,25 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/ses/) | Not recorded | Amazon Simple Email Service is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/ses/) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-ses-identity` | Amazon Simple Email Service Documentation — AWS documentation describes SES as a reliable email service and provides developer, API and CLI guides. | [link](https://docs.aws.amazon.com/ses/) | 2026-11-03T00:00:00Z | Amazon SES is AWS's email service for marketing, notification and transactional email. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-ses-verified-identities` | Verified identities in Amazon SES — AWS documents domain and email identities, verification state and sandbox recipient restrictions. | [link](https://docs.aws.amazon.com/ses/latest/dg/verify-addresses-and-domains.html) | 2026-11-03T00:00:00Z | SES requires verification of email-address or domain identities before they are used for sending or receiving. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-ses-auth` | Configuring identities in Amazon SES — AWS explains identity authentication and the use of SPF, DKIM and DMARC-related configuration for deliverability. | [link](https://docs.aws.amazon.com/ses/latest/dg/configure-identities.html) | 2026-11-03T00:00:00Z | SES documents SPF and DKIM authentication mechanisms for email identities. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-ses-events` | Setting up event notifications for Amazon SES — AWS documents notification methods, identity and Region scope, SNS destinations and event publishing. | [link](https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html) | 2026-11-03T00:00:00Z | SES supports bounce, complaint and delivery notifications through email, SNS and event publishing. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-ses-event-destination` | EventDestination — The SES v2 API reference lists event types and CloudWatch, Kinesis Firehose, Pinpoint and SNS destinations. | [link](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_EventDestination.html) | 2026-11-03T00:00:00Z | SES event destinations can receive send, delivery, bounce, complaint, open, click, rendering-failure and delay events. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-ses-api` | Amazon SES API v2 Reference — AWS documents the SES v2 API surface and regional endpoints. | [link](https://docs.aws.amazon.com/ses/latest/APIReference-V2/) | 2026-11-03T00:00:00Z | SES v2 exposes regional API operations, data types, parameters and schemas for programmatic email operations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-ses-postal` | Postal — The official repository documents Postal's mail-server capabilities and MIT license. | [link](https://github.com/postalserver/postal) | 2026-11-03T00:00:00Z | Postal is an MIT-licensed open-source self-hosted mail delivery platform for incoming and outgoing email. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/ses/) | 2026-11-03T00:00:00Z | Amazon Simple Email Service is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/ses/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/ses/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/ses/getting-started/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/ses/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/ses/latest/APIReference/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/ses/latest/APIReference-V2/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/ses/latest/dg/verify-addresses-and-domains.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/ses/latest/dg/configure-identities.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-9` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/ses/latest/dg/send-email-concepts-deliverability.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-10` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_EventDestination.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_4d21c4cc720a5b24a1f56d913e2ec76ed76992070cf993965c5bf1a5ea033d17` | Amazon Simple Email Service Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/ses/) | 2026-11-03T03:48:40.362Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon SES, button: Contact sales, button: Play:, button: Send high-volume email, button: Increase email deliverability, button: Simplify email management, button: Streamlined secure communications, button: Automate transactional messages, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Getting Started, link: FAQs, link: Resources, link: Customers, link: Partners, link: Products, link: Business Applications, button: Globally deliver marketing emails, button: Send email from within any application, link: Missing alt text value Amazon sends hundreds of billions of emails per year through Amazon SES Watch the video, link: Missing alt text value Netflix increases email deliverability and sender scores Read the testimonial, link: Missing alt text value Duolingo sends daily practice emails and newsletters to over 300 million users Read the testimonial, link: Missing alt text value Reddit drives engagement with emails to millions of global users Read the testimonial, link: Find out how Amazon SES works Explore Amazon SES features, link: Improve inbox placement Learn more, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -454,7 +453,7 @@ Compare SMTP and HTTP APIs, identity verification, DKIM/SPF, templates, queues, 
 
 Research must map identity states, production-access gates, SMTP and API request contracts, MIME limits, quota behavior, queue and retry semantics, events, suppression, inbound receipt, templates, tracking, reputation, abuse handling and regional differences.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, API references and authorized test identities only. Capture verification, sending, event, bounce, complaint, suppression and inbound cases without using personal or customer data. Use Postal only after recording the partial-foundation verdict, and implement independent delivery infrastructure with original code, compliant domains and explicit abuse controls.
 
@@ -462,13 +461,12 @@ Use official AWS documentation, API references and authorized test identities on
 
 Verify IAM scope, identity ownership, DKIM/SPF/DMARC, TLS, message and recipient privacy, logging, retention, unsubscribe and suppression behavior, inbound attachment handling, abuse prevention and data residency. Never place credentials or real recipient data in the dossier or tests.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/ses/ — official product scope.
-- https://aws.amazon.com/ses/getting-started/ — onboarding and sending workflows.
-- https://docs.aws.amazon.com/ses/ — developer, API and CLI documentation.
-- https://docs.aws.amazon.com/ses/latest/APIReference-V2/ — SES v2 API surface.
-- https://github.com/postalserver/postal — open-source alternative and MIT license.
+- **Product and API scope:** [SES documentation](https://docs.aws.amazon.com/ses/) and [API v2 reference](https://docs.aws.amazon.com/ses/latest/APIReference-V2/) document sending, API and CLI surfaces.
+- **Identity and authentication:** [verified identities](https://docs.aws.amazon.com/ses/latest/dg/verify-addresses-and-domains.html) and [identity configuration](https://docs.aws.amazon.com/ses/latest/dg/configure-identities.html) support domain/email verification and SPF/DKIM claims.
+- **Delivery events:** [event notifications](https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html), [deliverability](https://docs.aws.amazon.com/ses/latest/dg/send-email-concepts-deliverability.html) and [EventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_EventDestination.html) support bounce, complaint, delivery, suppression and event-destination claims.
+- **Alternative:** [Postal](https://github.com/postalserver/postal) is the recorded MIT-licensed self-hosted mail platform; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -479,13 +477,13 @@ Verify IAM scope, identity ownership, DKIM/SPF/DMARC, TLS, message and recipient
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, SMTP/API sending, identity verification, authentication, event destinations, bounces, complaints and suppression are documented. Exact reputation, queueing, regional limits, pricing and deliverability behavior remain unknown and are not asserted.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-ses` and inspect canonical identity with `npx rae-faang products show amazon-ses --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-ses` and inspect canonical identity with `npx rea-faang products show amazon-ses --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -498,7 +496,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-ses --out ./amazon-ses.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-ses --out ./amazon-ses-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-ses --out ./amazon-ses.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-ses --out ./amazon-ses-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -540,11 +538,23 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/ses/) — Amazon Simple Email Service is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://docs.aws.amazon.com/ses/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [Amazon Simple Email Service Documentation](https://docs.aws.amazon.com/ses/) — Amazon SES is AWS's email service for marketing, notification and transactional email. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Verified identities in Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/verify-addresses-and-domains.html) — SES requires verification of email-address or domain identities before they are used for sending or receiving. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Configuring identities in Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/configure-identities.html) — SES documents SPF and DKIM authentication mechanisms for email identities. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Setting up event notifications for Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html) — SES supports bounce, complaint and delivery notifications through email, SNS and event publishing. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [EventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_EventDestination.html) — SES event destinations can receive send, delivery, bounce, complaint, open, click, rendering-failure and delay events. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Amazon SES API v2 Reference](https://docs.aws.amazon.com/ses/latest/APIReference-V2/) — SES v2 exposes regional API operations, data types, parameters and schemas for programmatic email operations. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Postal](https://github.com/postalserver/postal) — Postal is an MIT-licensed open-source self-hosted mail delivery platform for incoming and outgoing email. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://aws.amazon.com/ses/) — Amazon Simple Email Service is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/ses/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/ses/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://aws.amazon.com/ses/getting-started/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/ses/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/ses/latest/APIReference/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/ses/latest/APIReference-V2/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/ses/latest/dg/verify-addresses-and-domains.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/ses/latest/dg/configure-identities.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/ses/latest/dg/send-email-concepts-deliverability.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_EventDestination.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Simple Email Service Public web-surface observation (REA)](https://aws.amazon.com/ses/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon SES, button: Contact sales, button: Play:, button: Send high-volume email, button: Increase email deliverability, button: Simplify email management, button: Streamlined secure communications, button: Automate transactional messages, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Getting Started, link: FAQs, link: Resources, link: Customers, link: Partners, link: Products, link: Business Applications, button: Globally deliver marketing emails, button: Send email from within any application, link: Missing alt text value Amazon sends hundreds of billions of emails per year through Amazon SES Watch the video, link: Missing alt text value Netflix increases email deliverability and sender scores Read the testimonial, link: Missing alt text value Duolingo sends daily practice emails and newsletters to over 300 million users Read the testimonial, link: Missing alt text value Reddit drives engagement with emails to millions of global users Read the testimonial, link: Find out how Amazon SES works Explore Amazon SES features, link: Improve inbox placement Learn more, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:48:40.362Z).

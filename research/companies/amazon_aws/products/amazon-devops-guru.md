@@ -77,7 +77,7 @@ Open-source observability tools can cover metrics, alerts and some anomaly detec
 
 No new implementation is recommended from this retired entry. Historical compatibility research would need to scope the input signals, insight model, notification behavior and migration target explicitly.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use this entry only for clean-room historical analysis or migration research. Do not reproduce proprietary ML models, detector logic or recommendation content, and do not treat it as a current build target.
 

@@ -87,7 +87,7 @@ Open-source platforms can simplify VPS and container deployment, but a clean-roo
 
 REA should map instance/blueprint lifecycle, firewall, bundles, container deployments, database operations, storage, snapshots, CDN/load balancer/certificates, DNS, alarms, VPC peering, account limits, pricing and EC2 upgrade behavior.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official Lightsail product page, user guide, API reference, CLI reference and getting-started workflows as research surfaces. A clean-room implementation should compose independently licensed provisioning and hosting components, document operational and pricing differences, and avoid copying AWS control-plane internals.
 

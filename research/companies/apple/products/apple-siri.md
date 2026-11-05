@@ -87,7 +87,7 @@ Open voice stacks exist (OpenVoiceOS, Home Assistant voice); capability, on-devi
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Partial. Open assistants exist; capability and integration depth lag.
 
@@ -124,6 +124,6 @@ Open voice stacks exist (OpenVoiceOS, Home Assistant voice); capability, on-devi
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Partial. Open assistants exist; capability and integration depth lag.

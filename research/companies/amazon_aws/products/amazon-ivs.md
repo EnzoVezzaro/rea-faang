@@ -87,7 +87,7 @@ Open-source systems can cover portions of WebRTC, RTMP, HLS, real-time rooms or 
 
 REA should map channel/stage lifecycle, ingest and playback, latency modes, codecs, ABR, recording, authorization, timed metadata, Chat messaging, participant permissions, compositions, SDK behavior, failure recovery, quotas and Region constraints.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official IVS product page, documentation hub, low-latency and real-time guides, API references and CLI reference as research surfaces. A clean-room implementation should use independently licensed media components, document latency and feature differences, and avoid copying AWS/Twitch implementation or proprietary SDK internals.
 

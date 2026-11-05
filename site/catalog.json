@@ -2,9 +2,9 @@
   "generator": "tools/site-build.mjs",
   "source": "catalog/products.jsonl + tools/skills/catalog-data.mjs",
   "counts": {
-    "available": 40,
-    "partial": 66,
-    "pending": 78
+    "available": 31,
+    "partial": 85,
+    "pending": 77
   },
   "companies": {
     "google": {
@@ -29,11 +29,11 @@
     },
     "meta": {
       "name": "Meta",
-      "count": 5
+      "count": 12
     },
     "microsoft": {
       "name": "Microsoft",
-      "count": 5
+      "count": 7
     }
   },
   "products": [
@@ -77,9 +77,9 @@
       "gap": "No self-hostable project provides the whole owned crawl → index → rank → query pipeline at a useful general-web scale; the metasearch projects rent someone else’s index.",
       "verdict": "Partial. The pieces are open source (crawlers, OpenSearch/Meilisearch, BM25), but the integrated, owned general-web engine is not — a bounded-corpus pipeline remains a build opportunity.",
       "sources": [
-        "https://www.reddit.com/r/selfhosted/comments/19eqv5k/google_search_self_hosted_alternative/",
-        "https://homelabcompass.com/alternatives/self-hosted-search-engine",
-        "https://www.xda-developers.com/self-hosted-search-engine-pros-cons/"
+        "https://github.com/searxng/searxng",
+        "https://yacy.net/docs/",
+        "https://github.com/benbusby/whoogle-search"
       ],
       "build": {
         "scaffolded": true,
@@ -139,15 +139,38 @@
       "lifecycle_status": "active",
       "open_source_status": "pending",
       "page": "catalog/amazon-nova-act/",
-      "alternatives": [],
-      "gap": "Browser automation frameworks and agent runtimes cover parts of the workflow, but Nova Act's model behavior, reliability, deployment plane, API semantics and escalation behavior are not yet compared.",
-      "verdict": "Pending REA research; verify the public interfaces, workflow state model, safety boundaries, deployment contract and open-source foundations before implementation.",
+      "alternatives": [
+        {
+          "name": "Browser Use",
+          "url": "https://github.com/browser-use/browser-use",
+          "license": "MIT",
+          "covers": "Open-source browser-agent framework for browser control, extraction, testing and agent workflows.",
+          "note": "Covers agentic browser interaction but not Nova Act's AWS model, managed fleet plane or service APIs."
+        },
+        {
+          "name": "Stagehand",
+          "url": "https://github.com/browserbase/stagehand",
+          "license": "MIT",
+          "covers": "Open-source hybrid browser automation with AI primitives and deterministic browser APIs.",
+          "note": "Covers bounded browser automation but not Nova Act's managed workflow and human-escalation service."
+        },
+        {
+          "name": "Playwright",
+          "url": "https://playwright.dev/",
+          "license": "Apache-2.0",
+          "covers": "Deterministic cross-browser automation and testing foundation.",
+          "note": "A browser-control foundation, not a complete autonomous agent platform."
+        }
+      ],
+      "gap": "Browser Use, Stagehand and Playwright cover browser-control subsets, but Nova Act's integrated model, reliability, AWS deployment plane, workflow APIs, fleet operations and escalation behavior remain distinct.",
+      "verdict": "Partial. Open-source browser foundations are credible for bounded implementations, but they are not equivalent to the managed Amazon Nova Act service.",
       "sources": [
-        "https://aws.amazon.com/nova/",
-        "https://aws.amazon.com/documentation-overview/nova-act/",
-        "https://docs.aws.amazon.com/nova-act/",
         "https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html",
-        "https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html"
+        "https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html",
+        "https://docs.aws.amazon.com/ai/responsible-ai/nova-act/overview.html",
+        "https://github.com/browser-use/browser-use",
+        "https://github.com/browserbase/stagehand",
+        "https://playwright.dev/"
       ],
       "build": {
         "scaffolded": false,
@@ -817,11 +840,18 @@
       "page": "catalog/google-gemini/",
       "alternatives": [
         {
-          "name": "Llama / Mistral / Qwen / Gemma",
-          "url": "https://huggingface.co/blog/daya-shankar/open-source-llm-models-to-run-locally",
-          "license": "mixed (mostly open weights)",
-          "covers": "Capable open-weight model families you can run yourself.",
-          "note": "Many are open-weight under custom licences, not OSI open source."
+          "name": "Gemma",
+          "url": "https://ai.google.dev/gemma",
+          "license": "Google model-specific terms; verify current release",
+          "covers": "Google-published open model family related to Gemini technology.",
+          "note": "Related open models are not the hosted Gemini service or a parity claim."
+        },
+        {
+          "name": "Mistral and Qwen model families",
+          "url": "https://mistral.ai/technology/",
+          "license": "model-specific; verify each release",
+          "covers": "Alternative open or openly distributed model families for selected workloads.",
+          "note": "Capabilities, licenses and hosting requirements vary by model."
         },
         {
           "name": "Ollama",
@@ -834,9 +864,10 @@
       "gap": "No open project matches a frontier hosted model on capability; open-weight families trail the hosted leaders and often carry use restrictions.",
       "verdict": "Partial. Self-hostable model runners and open-weight families exist and are improving fast, but a fully open, frontier-equivalent model is pending.",
       "sources": [
-        "https://huggingface.co/blog/daya-shankar/open-source-llm-models-to-run-locally",
-        "https://www.instaclustr.com/education/open-source-ai/top-7-open-source-llms-for-2026/",
-        "https://github.com/12britz/awesome-free-models"
+        "https://ai.google.dev/gemma",
+        "https://ollama.com/",
+        "https://mistral.ai/technology/",
+        "https://qwenlm.github.io/"
       ],
       "build": {
         "scaffolded": true,
@@ -856,7 +887,7 @@
       ],
       "official_url": "https://mail.google.com/",
       "lifecycle_status": "active",
-      "open_source_status": "available",
+      "open_source_status": "partial",
       "page": "catalog/gmail/",
       "alternatives": [
         {
@@ -875,10 +906,10 @@
         },
         {
           "name": "Mox / Stalwart",
-          "url": "https://github.com/Mindbaz/awesome-opensource-email",
-          "license": "MIT",
+          "url": "https://stalw.art/",
+          "license": "project-specific; verify current release",
           "covers": "Modern all-in-one mail servers.",
-          "note": "Newer entrants in the same space."
+          "note": "Scope, protocol support and operating model differ by project."
         },
         {
           "name": "Roundcube",
@@ -892,8 +923,10 @@
       "verdict": "Available. The full mail stack is open source and widely self-hosted.",
       "sources": [
         "https://mailinabox.email/",
-        "https://opensource.com/alternatives/gmail",
-        "https://github.com/Mindbaz/awesome-opensource-email"
+        "https://mailcow.email/",
+        "https://mailinabox.email/",
+        "https://stalw.art/",
+        "https://roundcube.net/"
       ],
       "build": {
         "scaffolded": false,
@@ -914,7 +947,7 @@
       ],
       "official_url": "https://maps.google.com/",
       "lifecycle_status": "active",
-      "open_source_status": "available",
+      "open_source_status": "partial",
       "page": "catalog/google-maps/",
       "alternatives": [
         {
@@ -949,9 +982,10 @@
       "gap": "Live traffic, Street View imagery and Google’s place-data breadth have no open equivalent.",
       "verdict": "Available. Map data, rendering and routing are open source; only the proprietary imagery and traffic layers remain closed.",
       "sources": [
-        "https://github.com/organicmaps/organicmaps",
-        "https://tuta.com/blog/google-maps-alternatives-foss",
-        "https://www.xda-developers.com/organic-maps-open-source-google-maps-alternative-delivers/"
+        "https://www.openstreetmap.org/",
+        "https://organicmaps.app/",
+        "https://maplibre.org/",
+        "https://project-osrm.org/"
       ],
       "build": {
         "scaffolded": false,
@@ -971,7 +1005,7 @@
       ],
       "official_url": "https://www.google.com/chrome/",
       "lifecycle_status": "active",
-      "open_source_status": "available",
+      "open_source_status": "partial",
       "page": "catalog/google-chrome/",
       "alternatives": [
         {
@@ -1006,9 +1040,10 @@
       "gap": "Google-hosted sync and Chrome-only DRM modules are closed.",
       "verdict": "Available. Two fully open engines and several open browsers exist.",
       "sources": [
-        "https://opensource.com/article/19/7/open-source-browsers",
-        "https://www.xda-developers.com/ditched-chrome-years-5-open-source-browsers-recommend-instead/",
-        "https://brave.com/"
+        "https://www.chromium.org/",
+        "https://www.mozilla.org/firefox/",
+        "https://brave.com/",
+        "https://librewolf.net/"
       ],
       "build": {
         "scaffolded": true,
@@ -1028,7 +1063,7 @@
       ],
       "official_url": "https://www.android.com/",
       "lifecycle_status": "active",
-      "open_source_status": "available",
+      "open_source_status": "partial",
       "page": "catalog/android/",
       "alternatives": [
         {
@@ -1061,11 +1096,15 @@
         }
       ],
       "gap": "Google Mobile Services, Play and the certified hardware ecosystem are proprietary.",
-      "verdict": "Available. Android’s core is open source and several independent distributions replace the proprietary layer.",
+      "verdict": "Partial. AOSP, LineageOS, GrapheneOS and /e/OS cover open or alternative Android cores, but not the complete Google Mobile Services, Play, certification and vendor ecosystem.",
       "sources": [
+        "https://source.android.com/docs/setup/about",
+        "https://source.android.com/docs/setup/about/faqs",
+        "https://developer.android.com/guide/platform",
+        "https://source.android.com/",
         "https://grapheneos.org/",
         "https://lineageos.org/",
-        "https://kevinboone.me/lineage-eos-graphene.html"
+        "https://e.foundation/e-os/"
       ],
       "build": {
         "scaffolded": false,
@@ -1085,7 +1124,7 @@
       ],
       "official_url": "https://www.youtube.com/",
       "lifecycle_status": "active",
-      "open_source_status": "available",
+      "open_source_status": "partial",
       "page": "catalog/youtube/",
       "alternatives": [
         {
@@ -1117,9 +1156,13 @@
           "note": "Clients, not platforms."
         }
       ],
-      "gap": "The software is replaceable; the licensed content library and creator monetisation are not.",
-      "verdict": "Available. PeerTube is a fully open hosting platform; the gap is content and network effects rather than code.",
+      "gap": "PeerTube covers self-hosted/federated video publishing, but no open project reproduces YouTube's content catalog, global delivery, recommendation, advertising, rights-management or partner ecosystem.",
+      "verdict": "Partial. PeerTube is a credible open video platform, while YouTube-specific content, network, policy and commercial surfaces remain provider-specific.",
       "sources": [
+        "https://developers.google.com/youtube/apis",
+        "https://developers.google.com/youtube/terms/developer-policies-guide",
+        "https://developers.google.com/youtube/data/live/getting-started",
+        "https://developers.google.com/youtube/analytics",
         "https://joinpeertube.org/",
         "https://invidious.io/",
         "https://github.com/iv-org/invidious"
@@ -1142,7 +1185,7 @@
       ],
       "official_url": "https://cloud.google.com/",
       "lifecycle_status": "active",
-      "open_source_status": "available",
+      "open_source_status": "partial",
       "page": "catalog/google-cloud/",
       "alternatives": [
         {
@@ -1177,9 +1220,9 @@
       "gap": "A globally distributed, fully managed public cloud and its economies of scale are not reproducible by a single operator.",
       "verdict": "Available. A private cloud can be built entirely from open source; the public-cloud service breadth and scale are the remaining gap.",
       "sources": [
-        "https://www.openstack.org/",
-        "https://www.amazee.io/blog/post/best-open-source-cloud-providers/",
-        "https://openalternative.co/alternatives/google-cloud"
+        "https://cloud.google.com/products",
+        "https://docs.cloud.google.com/docs/overview",
+        "https://docs.cloud.google.com/sdk/docs/authenticate"
       ],
       "build": {
         "scaffolded": true,
@@ -1199,7 +1242,7 @@
       ],
       "official_url": "https://firebase.google.com/",
       "lifecycle_status": "active",
-      "open_source_status": "available",
+      "open_source_status": "partial",
       "page": "catalog/google-firebase/",
       "alternatives": [
         {
@@ -1231,12 +1274,15 @@
           "note": "Mature, self-hosted."
         }
       ],
-      "gap": "Firebase’s managed scale, its proprietary SDK surface and vendor-hosted extensions have no single open equivalent.",
-      "verdict": "Available. Multiple mature, self-hostable backends cover the core.",
+      "gap": "Firebase’s integrated Google Cloud project plane, managed device testing, crash/performance products and provider-specific SDK surface have no single open equivalent.",
+      "verdict": "Partial. Supabase, Appwrite, Parse Platform and PocketBase cover core BaaS capabilities, but not the complete Firebase platform.",
       "sources": [
-        "https://www.nocobase.com/en/blog/open-source-firebase-alternatives",
-        "https://northflank.com/blog/appwrite-alternatives",
-        "https://supabase.com/"
+        "https://firebase.google.com/",
+        "https://firebase.google.com/docs/projects/learn-more",
+        "https://supabase.com/",
+        "https://appwrite.io/",
+        "https://parseplatform.org/",
+        "https://pocketbase.io/"
       ],
       "build": {
         "scaffolded": false,
@@ -1284,9 +1330,12 @@
       "gap": "None in licensing — the framework is already open source.",
       "verdict": "Available (already open source). Apache-2.0, with open alternatives in PyTorch and JAX.",
       "sources": [
-        "https://en.wikipedia.org/wiki/TensorFlow",
-        "https://softwaremill.com/ml-engineer-comparison-of-pytorch-tensorflow-jax-and-flax/",
-        "https://www.articsledge.com/post/tensorflow"
+        "https://www.tensorflow.org/guide/basics",
+        "https://www.tensorflow.org/api_docs",
+        "https://www.tensorflow.org/learn",
+        "https://github.com/tensorflow/tensorflow",
+        "https://pytorch.org/",
+        "https://github.com/jax-ml/jax"
       ],
       "build": {
         "scaffolded": false,
@@ -1306,7 +1355,7 @@
       ],
       "official_url": "https://workspace.google.com/",
       "lifecycle_status": "active",
-      "open_source_status": "available",
+      "open_source_status": "partial",
       "page": "catalog/google-workspace/",
       "alternatives": [
         {
@@ -1348,9 +1397,10 @@
       "gap": "Gmail/Meet/Calendar at hosted scale are matched feature-wise but not as one operated service.",
       "verdict": "Available. The suite can be assembled entirely from mature open-source components.",
       "sources": [
-        "https://nextcloud.com/",
-        "https://opensource.com/article/22/7/open-source-collabora-online",
-        "https://budgethomelab.com/articles/open-source-google-workspace-alternatives/"
+        "https://workspace.google.com/",
+        "https://developers.google.com/workspace/products",
+        "https://developers.google.com/workspace/guides/get-started",
+        "https://developers.google.com/workspace/admin/overview"
       ],
       "build": {
         "scaffolded": false,
@@ -2516,9 +2566,12 @@
           "note": "Not open source."
         }
       ],
-      "gap": "The licensed content library, the recommendation model and the DRM/content-licensing arrangements cannot be open-sourced.",
+      "gap": "Netflix's licensed catalogue, membership service, recommendation implementation, and rights arrangements are not reproduced by the open-source alternatives.",
       "verdict": "Partial. The streaming software is open source (Jellyfin); the catalogue, recommendations and rights are pending and will remain so.",
       "sources": [
+        "https://help.netflix.com/en/node/412",
+        "https://help.netflix.com/en/node/14361",
+        "https://help.netflix.com/en/node/54816",
         "https://jellyfin.org/",
         "https://selfhostedworld.com/alternative/netflix",
         "https://www.howtogeek.com/we-ditched-popular-paid-subscriptions-for-these-open-source-self-hosted-alternatives/"
@@ -2541,7 +2594,7 @@
       ],
       "official_url": "https://www.whatsapp.com/",
       "lifecycle_status": "active",
-      "open_source_status": "available",
+      "open_source_status": "partial",
       "page": "catalog/meta-whatsapp/",
       "alternatives": [
         {
@@ -2580,18 +2633,185 @@
           "note": "Specialised alternatives."
         }
       ],
-      "gap": "Network effects and the multi-billion-user contact graph are not reproducible; the protocol and clients are open.",
-      "verdict": "Available. Federated and P2P open messengers cover the function.",
+      "gap": "Signal and Matrix cover core secure-messaging jobs, but not WhatsApp’s contact graph, account ecosystem, business surface or network effects.",
+      "verdict": "Partial. Secure messaging and federation can be built or reused, but WhatsApp’s centralized consumer and business ecosystem is not a drop-in open replacement.",
       "sources": [
         "https://element.io/",
-        "https://simplex.chat/",
-        "https://eylenburg.github.io/im_comparison.htm"
+        "https://signal.org/",
+        "https://matrix.org/foundation/about/",
+        "https://support.signal.org/hc/en-us/articles/360007320391-Is-it-private-Can-I-trust-it"
       ],
       "build": {
         "scaffolded": true,
         "specs": true,
         "src": false,
         "tests": true
+      }
+    },
+    {
+      "id": "meta-messenger",
+      "name": "Messenger",
+      "company_id": "meta",
+      "company": "Meta",
+      "product_type": "messaging",
+      "categories": [
+        "messaging",
+        "voice-calling",
+        "video-calling",
+        "social"
+      ],
+      "official_url": "https://www.messenger.com/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/meta-messenger/",
+      "alternatives": [
+        {
+          "name": "Signal",
+          "url": "https://signal.org/",
+          "license": "AGPL-3.0",
+          "covers": "Privacy-focused messaging with open source client and server components.",
+          "note": "Covers core private messaging workflows but not Meta's account graph, ecosystem or rollout model."
+        },
+        {
+          "name": "Matrix/Element",
+          "url": "https://matrix.org/",
+          "license": "Apache-2.0 and related licenses",
+          "covers": "Federated messaging protocol and client ecosystem.",
+          "note": "Adds federation and independent homeservers, which differs from Messenger's centralized platform model."
+        },
+        {
+          "name": "Telegram",
+          "url": "https://telegram.org/",
+          "license": "GPL-2.0 for selected client code",
+          "covers": "Messaging, groups, channels and media workflows.",
+          "note": "Has a different privacy, server and ecosystem model; not a drop-in replacement for Messenger."
+        }
+      ],
+      "gap": "Open alternatives cover messaging, privacy or federation, but none reproduces Messenger's Meta account graph, cross-app integrations, moderation systems, rollout model and private platform behavior.",
+      "verdict": "Partial. Signal, Matrix/Element and Telegram are credible alternatives for bounded messaging scopes, while Messenger-specific ecosystem and platform semantics remain provider-specific.",
+      "sources": [
+        "https://www.meta.com/technologies/",
+        "https://www.messenger.com/",
+        "https://about.fb.com/news/2023/09/introducing-ai-powered-assistants-characters-and-creative-tools/",
+        "https://signal.org/",
+        "https://matrix.org/",
+        "https://telegram.org/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "meta-ai",
+      "name": "Meta AI",
+      "company_id": "meta",
+      "company": "Meta",
+      "product_type": "ai_application",
+      "categories": [
+        "ai",
+        "assistant",
+        "image-generation",
+        "search"
+      ],
+      "official_url": "https://www.meta.ai/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/meta-ai/",
+      "alternatives": [
+        {
+          "name": "Open WebUI",
+          "url": "https://openwebui.com/",
+          "license": "MIT",
+          "covers": "Self-hosted chat interface and model routing for local or remote models.",
+          "note": "Provides an independent assistant surface but not Meta's apps, account graph, proprietary models or search partnership."
+        },
+        {
+          "name": "LibreChat",
+          "url": "https://www.librechat.ai/",
+          "license": "MIT",
+          "covers": "Open conversational AI interface with multiple provider integrations.",
+          "note": "Covers chat orchestration but not Meta AI's proprietary service and cross-app distribution."
+        },
+        {
+          "name": "Jan",
+          "url": "https://jan.ai/",
+          "license": "Apache-2.0",
+          "covers": "Local-first desktop AI assistant and model runtime.",
+          "note": "Useful for local assistant workflows, but not a hosted Meta service or cross-app replacement."
+        }
+      ],
+      "gap": "Open alternatives cover assistant interfaces and local/provider routing, but none reproduces Meta AI's account graph, cross-app placement, proprietary models, search partnerships, safety systems or image-generation service.",
+      "verdict": "Partial. Open WebUI, LibreChat and Jan are credible foundations for bounded assistant implementations, while Meta AI-specific service semantics remain provider-specific.",
+      "sources": [
+        "https://www.meta.com/technologies/",
+        "https://www.meta.ai/",
+        "https://about.fb.com/news/2024/04/meta-ai-assistant-built-with-llama-3/",
+        "https://openwebui.com/",
+        "https://www.librechat.ai/",
+        "https://jan.ai/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "meta-pay",
+      "name": "Meta Pay",
+      "company_id": "meta",
+      "company": "Meta",
+      "product_type": "consumer_application",
+      "categories": [
+        "payments",
+        "checkout",
+        "money-transfer"
+      ],
+      "official_url": "https://www.meta.com/meta-pay/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/meta-pay/",
+      "alternatives": [
+        {
+          "name": "Medusa",
+          "url": "https://medusajs.com/",
+          "license": "MIT",
+          "covers": "Open commerce platform with checkout and payment-provider integrations.",
+          "note": "Provides commerce foundations but not Meta's payment rails, account graph, fraud systems or merchant network."
+        },
+        {
+          "name": "Saleor",
+          "url": "https://saleor.io/",
+          "license": "BSD-3-Clause",
+          "covers": "Open headless commerce platform with checkout and payment integrations.",
+          "note": "Useful for independent commerce, but not a drop-in replacement for Meta Pay's regional and platform semantics."
+        },
+        {
+          "name": "Open Payment Network",
+          "url": "https://openpaymentnetwork.org/",
+          "license": "Open standards and project-specific licenses",
+          "covers": "Open payment interoperability and experimentation resources.",
+          "note": "Covers standards-oriented payment exploration, not Meta Pay's consumer and merchant service."
+        }
+      ],
+      "gap": "Open alternatives provide commerce and payment foundations, but none reproduces Meta Pay's payment instruments, account integration, fraud systems, regional rails or merchant network.",
+      "verdict": "Partial. Medusa, Saleor and open payment standards are credible foundations for bounded payment implementations, while Meta Pay-specific service semantics remain provider-specific.",
+      "sources": [
+        "https://www.meta.com/technologies/",
+        "https://www.meta.com/meta-pay/",
+        "https://medusajs.com/",
+        "https://saleor.io/",
+        "https://openpaymentnetwork.org/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
       }
     },
     {
@@ -2640,9 +2860,10 @@
       "gap": "Llama’s licence is not OSI open source and carries use restrictions; fully open model families exist but at differing capability.",
       "verdict": "Partial. Llama is open-weight, and genuinely open-source-licensed alternatives (Mistral Apache-2.0, OLMo) exist — hence no single \"pending\" project.",
       "sources": [
-        "https://codetocloud.io/blog/open-source-llms-developers/",
-        "https://www.reddit.com/r/LocalLLaMA/comments/1sqh6kk/stop_letting_vc_bros_gaslight_us_qwen_and_llama/",
-        "https://onyx.app/insights/best-open-source-llms-2026"
+        "https://ai.meta.com/resources/models-and-libraries/llama-downloads/",
+        "https://github.com/meta-llama/llama",
+        "https://github.com/meta-llama/llama-models",
+        "https://github.com/meta-llama/llama/blob/main/MODEL_CARD.md"
       ],
       "build": {
         "scaffolded": true,
@@ -2677,8 +2898,10 @@
       "gap": "Nextcloud covers storage, sync and sharing; the real-time collaborative editors and Workspace integration remain the gap.",
       "verdict": "Partial. A mature self-hosted alternative exists for storage and sync (Nextcloud); collaborative editing is covered only in part.",
       "sources": [
-        "https://nextcloud.com/",
-        "https://en.wikipedia.org/wiki/Google_Drive"
+        "https://support.google.com/drive/answer/2424384",
+        "https://developers.google.com/workspace/drive/api/guides/about-sdk",
+        "https://developers.google.com/workspace/drive/api/reference/rest/v3",
+        "https://support.google.com/drive/answer/7166529"
       ],
       "build": {
         "scaffolded": false,
@@ -2720,8 +2943,10 @@
       "gap": "Self-hosted collaborative editors exist (ONLYOFFICE, Collabora) but lack Google's ecosystem integration and mainstream adoption.",
       "verdict": "Partial. Self-hosted collaborative editors exist and are usable today; ecosystem polish and integrations lag Google.",
       "sources": [
-        "https://www.onlyoffice.com/",
-        "https://www.collaboraonline.com/"
+        "https://support.google.com/docs/answer/7068618",
+        "https://developers.google.com/workspace/docs/api/how-tos/overview",
+        "https://developers.google.com/workspace/docs/api/reference/rest",
+        "https://support.google.com/docs/answer/16722399"
       ],
       "build": {
         "scaffolded": false,
@@ -2763,8 +2988,10 @@
       "gap": "Self-hosted spreadsheet editors exist; performance at scale and the add-on ecosystem differ from Google Sheets.",
       "verdict": "Partial. Self-hosted collaborative spreadsheets exist (Grist, ONLYOFFICE); parity with Sheets at scale is partial.",
       "sources": [
-        "https://www.getgrist.com/",
-        "https://www.onlyoffice.com/"
+        "https://support.google.com/docs/answer/6000292",
+        "https://support.google.com/docs/answer/9331169",
+        "https://developers.google.com/workspace/sheets/api/guides/concepts",
+        "https://developers.google.com/workspace/sheets/api/reference/rest"
       ],
       "build": {
         "scaffolded": false,
@@ -2793,13 +3020,28 @@
           "license": "Apache-2.0",
           "covers": "Self-hosted video conferencing with no account required.",
           "note": "Mature; deployed at scale."
+        },
+        {
+          "name": "BigBlueButton",
+          "url": "https://bigbluebutton.org/",
+          "license": "LGPL-3.0",
+          "covers": "Open-source web conferencing focused on teaching and structured online sessions.",
+          "note": "Partial; education-oriented rather than a general Workspace replacement."
+        },
+        {
+          "name": "Element Call",
+          "url": "https://element.io/call",
+          "license": "AGPL-3.0",
+          "covers": "Open video calls and conferencing built on Matrix infrastructure.",
+          "note": "Partial; requires Matrix deployment and does not reproduce Google's hosted Workspace integration."
         }
       ],
-      "gap": "Core video conferencing is fully covered by Jitsi Meet; the remaining gaps are polish, scale guarantees and Workspace integration.",
-      "verdict": "Available. Jitsi Meet covers the core function, is mature and self-hostable.",
+      "gap": "Jitsi Meet, BigBlueButton and Element Call cover the core conferencing use cases, but hosted reliability, Google Workspace integration, Meet-specific APIs and plan-dependent recording/transcription remain gaps.",
+      "verdict": "Partial. Open alternatives cover video conferencing, but not the full Google Meet and Workspace integration surface.",
       "sources": [
-        "https://jitsi.org/",
-        "https://en.wikipedia.org/wiki/Google_Meet"
+        "https://developers.google.com/workspace/meet/overview",
+        "https://developers.google.com/workspace/meet/api/guides/overview",
+        "https://support.google.com/meet/answer/9308681"
       ],
       "build": {
         "scaffolded": false,
@@ -2836,13 +3078,22 @@
           "license": "GPL-3.0",
           "covers": "Lightweight CalDAV/CardDAV server.",
           "note": ""
+        },
+        {
+          "name": "EteSync Web",
+          "url": "https://www.etesync.com/",
+          "license": "AGPL-3.0",
+          "covers": "Encrypted synchronization-oriented calendar and contacts workflow.",
+          "note": "Partial; does not reproduce Google's hosted Workspace and Calendar API surface."
         }
       ],
-      "gap": "Open calendaring is a solved problem via CalDAV; the missing pieces are Google's appointment-booking UX and integrations.",
-      "verdict": "Available. Open calendaring is mature (Nextcloud Calendar, Radicale) via the CalDAV standard.",
+      "gap": "Open calendaring is mature through CalDAV, but Google account integration, appointment booking, free/busy, Meet linkage and Calendar API compatibility remain gaps.",
+      "verdict": "Partial. Open alternatives cover core calendars and synchronization but not the full Google Calendar integration surface.",
       "sources": [
-        "https://radicale.org/",
-        "https://nextcloud.com/calendar/"
+        "https://support.google.com/calendar",
+        "https://developers.google.com/workspace/calendar/api/guides/overview",
+        "https://developers.google.com/workspace/calendar/api/v3/reference",
+        "https://developers.google.com/workspace/calendar/api/auth"
       ],
       "build": {
         "scaffolded": false,
@@ -2859,7 +3110,8 @@
       "product_type": "consumer_application",
       "categories": [
         "photo-management",
-        "backup"
+        "backup",
+        "media-library"
       ],
       "official_url": "https://photos.google.com/",
       "lifecycle_status": "active",
@@ -2872,13 +3124,30 @@
           "license": "AGPL-3.0",
           "covers": "Self-hosted photo and video backup with mobile apps.",
           "note": "Fast-moving; verify parity per release."
+        },
+        {
+          "name": "Photoprism",
+          "url": "https://www.photoprism.app/",
+          "license": "AGPL-3.0",
+          "covers": "Self-hosted photo management, indexing and browsing.",
+          "note": "Partial; does not reproduce Google's account storage and client ecosystem."
+        },
+        {
+          "name": "LibrePhotos",
+          "url": "https://github.com/LibrePhotos/librephotos",
+          "license": "MIT",
+          "covers": "Self-hosted photo management and visual organization.",
+          "note": "Partial; deployment, mobile and ML behavior differ from Google Photos."
         }
       ],
-      "gap": "Immich covers backup, albums and search well; ML-powered search quality and unlimited-scale economics remain Google's edge.",
+      "gap": "Open alternatives cover self-hosted backup, albums and browsing, but hosted scale, account integration, proprietary editing/ML and current Picker/Library API behavior remain gaps.",
       "verdict": "Partial. A strong self-hosted alternative exists (Immich); search quality and mobile polish approach but do not match Google Photos.",
       "sources": [
-        "https://immich.app/",
-        "https://en.wikipedia.org/wiki/Google_Photos"
+        "https://support.google.com/photos/answer/6193313",
+        "https://support.google.com/photos/answer/6128850",
+        "https://developers.google.com/photos/overview/about",
+        "https://developers.google.com/photos/library/reference/rest/",
+        "https://developers.google.com/photos/support/updates"
       ],
       "build": {
         "scaffolded": false,
@@ -2914,13 +3183,22 @@
           "license": "AGPL-3.0",
           "covers": "Minimalist RSS server.",
           "note": ""
+        },
+        {
+          "name": "Tiny Tiny RSS",
+          "url": "https://tt-rss.org/",
+          "license": "GPL-2.0",
+          "covers": "Self-hosted feed aggregation and filtering.",
+          "note": "Partial; RSS reading does not reproduce Google's ranking and publisher surfaces."
         }
       ],
-      "gap": "RSS covers following sources; Google's editorial ranking and personalization have no equivalent.",
-      "verdict": "Available for the core job (following sources): FreshRSS is a mature self-hosted news aggregator. The personalized ranking layer is not replicated.",
+      "gap": "RSS readers cover following known sources, but publisher discovery, story clustering, personalized ranking, local relevance, News Showcase and account signals remain gaps.",
+      "verdict": "Partial. Open alternatives cover feed reading and filtering but not the complete Google News aggregation and personalization surface.",
       "sources": [
-        "https://freshrss.org/",
-        "https://miniflux.net/"
+        "https://support.google.com/googlenews/answer/9005749",
+        "https://support.google.com/googlenews/answer/9010862",
+        "https://support.google.com/news/publisher-center/answer/9607025",
+        "https://support.google.com/news/publisher-center/"
       ],
       "build": {
         "scaffolded": false,
@@ -2936,7 +3214,9 @@
       "company": "Google",
       "product_type": "consumer_application",
       "categories": [
-        "app-store"
+        "app-store",
+        "digital-distribution",
+        "payments"
       ],
       "official_url": "https://play.google.com/",
       "lifecycle_status": "active",
@@ -2948,14 +3228,30 @@
           "url": "https://f-droid.org/",
           "license": "GPL-3.0",
           "covers": "Catalogue of free and open-source Android apps.",
-          "note": "Covers FOSS apps only."
+          "note": "Partial; no commercial catalogue, Google account billing or Play Protect equivalence."
+        },
+        {
+          "name": "Aurora Store",
+          "url": "https://gitlab.com/AuroraOSS/AuroraStore",
+          "license": "GPL-3.0",
+          "covers": "Alternative client for accessing Google Play catalogue content.",
+          "note": "Partial; depends on Google's catalogue and does not replace the distribution backend."
+        },
+        {
+          "name": "Obtainium",
+          "url": "https://github.com/ImranR98/Obtainium",
+          "license": "GPL-3.0",
+          "covers": "Android app updater that obtains releases from project sources.",
+          "note": "Partial; not a general marketplace or billing platform."
         }
       ],
-      "gap": "F-Droid covers open-source app distribution; the commercial catalogue, billing and DRM are structurally not replicated.",
+      "gap": "Open alternatives cover portions of FOSS discovery, installation and updating, but commercial catalogue, account purchases, billing, signing, Play Protect and Play Integrity remain gaps.",
       "verdict": "Partial. Open-source distribution exists (F-Droid) but covers only FOSS apps, with no paid catalogue.",
       "sources": [
-        "https://f-droid.org/",
-        "https://en.wikipedia.org/wiki/Google_Play"
+        "https://support.google.com/googleplay/answer/113409",
+        "https://developer.android.com/distribute",
+        "https://support.google.com/googleplay/answer/2812853",
+        "https://support.google.com/googleplay/android-developer/answer/13857328"
       ],
       "build": {
         "scaffolded": false,
@@ -2971,7 +3267,9 @@
       "company": "Google",
       "product_type": "business_software",
       "categories": [
-        "web-analytics"
+        "web-analytics",
+        "product-analytics",
+        "measurement"
       ],
       "official_url": "https://analytics.google.com/",
       "lifecycle_status": "active",
@@ -2991,13 +3289,22 @@
           "license": "AGPL-3.0",
           "covers": "Lightweight, privacy-first analytics.",
           "note": "Self-hostable community edition."
+        },
+        {
+          "name": "Umami",
+          "url": "https://umami.is/",
+          "license": "MIT",
+          "covers": "Self-hosted privacy-focused web analytics and dashboards.",
+          "note": "Partial; app analytics and Google integrations differ."
         }
       ],
-      "gap": "Web analytics is one of the strongest open-source categories; the core need is fully covered.",
-      "verdict": "Available. Self-hosted analytics is mature (Matomo, Plausible, Umami).",
+      "gap": "Open alternatives cover core web analytics and data ownership, but GA4 event semantics, cross-platform integrations, attribution, managed scale and APIs remain gaps.",
+      "verdict": "Partial. Mature self-hosted analytics exists, but it is not a drop-in replacement for the complete Google Analytics ecosystem.",
       "sources": [
-        "https://matomo.org/",
-        "https://plausible.io/"
+        "https://support.google.com/analytics/answer/9212670",
+        "https://developers.google.com/analytics",
+        "https://developers.google.com/analytics/devguides/config/admin/v1",
+        "https://developers.google.com/analytics/devguides/collection/protocol/ga4"
       ],
       "build": {
         "scaffolded": false,
@@ -3014,7 +3321,8 @@
       "product_type": "business_software",
       "categories": [
         "education",
-        "learning-management"
+        "learning-management",
+        "assignments"
       ],
       "official_url": "https://classroom.google.com/",
       "lifecycle_status": "active",
@@ -3033,14 +3341,23 @@
           "url": "https://www.instructure.com/canvas",
           "license": "AGPL-3.0",
           "covers": "Open-source LMS used by institutions.",
-          "note": ""
+          "note": "Partial; broader LMS surface and different Workspace integration."
+        },
+        {
+          "name": "Open edX",
+          "url": "https://openedx.org/",
+          "license": "AGPL-3.0",
+          "covers": "Open-source course and learning platform.",
+          "note": "Partial; course delivery differs from Classroom's roster and Workspace workflow."
         }
       ],
-      "gap": "Mature LMS platforms go far beyond Classroom; the gap is Google's Workspace integration, not features.",
-      "verdict": "Available. Moodle and Canvas are established open-source LMS platforms with large deployments.",
+      "gap": "Open LMS alternatives cover classes, assignments and grades, but Google identity, Drive/Docs integration, Classroom API semantics and Education administration remain gaps.",
+      "verdict": "Partial. Mature open-source LMS platforms exist, but none is a drop-in replacement for the complete Google Classroom surface.",
       "sources": [
-        "https://moodle.org/",
-        "https://en.wikipedia.org/wiki/Google_Classroom"
+        "https://support.google.com/edu/classroom/answer/6020279",
+        "https://developers.google.com/workspace/classroom/guides/get-started",
+        "https://developers.google.com/workspace/classroom/guides/key-concepts/api-structure",
+        "https://developers.google.com/workspace/classroom/reference/rest"
       ],
       "build": {
         "scaffolded": false,
@@ -3056,18 +3373,30 @@
       "company": "Google",
       "product_type": "advertising_technology",
       "categories": [
-        "advertising"
+        "advertising",
+        "campaign-management",
+        "measurement"
       ],
       "official_url": "https://ads.google.com/",
       "lifecycle_status": "active",
-      "open_source_status": "pending",
+      "open_source_status": "partial",
       "page": "catalog/google-ads/",
-      "alternatives": [],
-      "gap": "The core product is a marketplace, not just software: advertiser demand, publisher inventory and the ad auction have no open-source equivalent. Self-hosted ad servers cover only serving.",
-      "verdict": "No verified alternative. No open-source project replicates the ads marketplace; only ad serving is open (Revive Adserver).",
+      "alternatives": [
+        {
+          "name": "Revive Adserver",
+          "url": "https://www.revive-adserver.com/",
+          "license": "GPL-2.0",
+          "covers": "Self-hosted ad serving and campaign-management software.",
+          "note": "Partial; no Google demand, inventory, auction, Ads API or Google network equivalence."
+        }
+      ],
+      "gap": "Revive covers portions of self-hosted ad serving, but advertiser demand, Google inventory, auction, targeting scale, measurement ecosystem and policy enforcement remain gaps.",
+      "verdict": "Partial. An open ad server exists, but no open-source project replicates the complete Google Ads marketplace and platform.",
       "sources": [
-        "https://www.revive-adserver.com/",
-        "https://en.wikipedia.org/wiki/Google_Ads"
+        "https://developers.google.com/google-ads/api/docs/get-started/introduction",
+        "https://developers.google.com/google-ads/api/docs/concepts/api-structure",
+        "https://developers.google.com/google-ads/api/docs/ads/overview",
+        "https://developers.google.com/google-ads/api/docs/api-policy/access-levels"
       ],
       "build": {
         "scaffolded": false,
@@ -3083,7 +3412,9 @@
       "company": "Google",
       "product_type": "media_streaming",
       "categories": [
-        "music-streaming"
+        "music-streaming",
+        "podcasts",
+        "music-discovery"
       ],
       "official_url": "https://music.youtube.com/",
       "lifecycle_status": "active",
@@ -3105,9 +3436,14 @@
           "note": ""
         }
       ],
-      "gap": "Self-hosted servers stream a library you own; the licensed catalogue and recommendation engine are not replicable in open source.",
-      "verdict": "Partial. Streaming your own library is solved (Navidrome, Funkwhale); the licensed catalogue is not.",
+      "gap": "Self-hosted servers stream a library you own; they do not reproduce YouTube Music's licensed catalog, music-video ecosystem, recommendations, Premium membership or Google account/device integrations.",
+      "verdict": "Partial. Navidrome and Funkwhale cover owned-library streaming, but not the licensed catalog or Google service surface.",
       "sources": [
+        "https://support.google.com/youtubemusic/answer/6313529?hl=en-GB",
+        "https://support.google.com/youtubemusic/answer/9266556?hl=en-GB",
+        "https://support.google.com/youtubemusic/answer/9716522?hl=en",
+        "https://support.google.com/youtubemusic/answer/13401025?hl=en-GB",
+        "https://support.google.com/youtubemusic/answer/9231765?hl=en",
         "https://www.navidrome.org/",
         "https://funkwhale.audio/"
       ],
@@ -3363,7 +3699,7 @@
       ],
       "official_url": "https://www.apple.com/messages/",
       "lifecycle_status": "active",
-      "open_source_status": "pending",
+      "open_source_status": "partial",
       "page": "catalog/apple-messages/",
       "alternatives": [
         {
@@ -4010,11 +4346,14 @@
       "open_source_status": "pending",
       "page": "catalog/netflix-games/",
       "alternatives": [],
-      "gap": "Thousands of open-source games exist, but no project replicates a curated game subscription; the gap is curation, not technology.",
-      "verdict": "No verified alternative. No open-source equivalent of a game subscription exists; individual open games are abundant.",
+      "gap": "Open-source game engines and individual games can cover components, but no project replicates Netflix's member entitlement, curated catalog, licensed content, multi-surface distribution or profile-linked access.",
+      "verdict": "No verified alternative. The relevant gap is the integrated subscription/catalog platform, not the existence of individual open games.",
       "sources": [
-        "https://libregamewiki.org/",
-        "https://en.wikipedia.org/wiki/Netflix"
+        "https://www.netflix.com/tudum/games",
+        "https://help.netflix.com/en/node/121442",
+        "https://help.netflix.com/en/node/132197",
+        "https://help.netflix.com/en/node/702684345185380",
+        "https://about.netflix.com/en/news/whats-next-for-netflix-games"
       ],
       "build": {
         "scaffolded": false,
@@ -4033,23 +4372,15 @@
         "kids-profiles"
       ],
       "official_url": "https://www.netflix.com/kids",
-      "lifecycle_status": "active",
-      "open_source_status": "partial",
+      "lifecycle_status": "deprecated",
+      "open_source_status": "pending",
       "page": "catalog/netflix-kids/",
-      "alternatives": [
-        {
-          "name": "Jellyfin",
-          "url": "https://jellyfin.org/",
-          "license": "GPL-2.0",
-          "covers": "Kids profiles and parental controls in a self-hosted media server.",
-          "note": ""
-        }
-      ],
-      "gap": "Jellyfin covers profiles and parental controls; the licensed children's catalogue is not replicable.",
-      "verdict": "Partial. The experience is self-hostable (Jellyfin) for content you own; the catalogue is licensed content.",
+      "alternatives": [],
+      "gap": "This record is grouped under Netflix Profiles; evaluating it as a separate service would duplicate the parent product and obscure the actual scope.",
+      "verdict": "No standalone product. Treat as a documented Netflix Profiles feature rather than a separate build target.",
       "sources": [
-        "https://jellyfin.org/",
-        "https://en.wikipedia.org/wiki/Netflix"
+        "https://help.netflix.com/en/node/114275",
+        "https://help.netflix.com/en/node/53045"
       ],
       "build": {
         "scaffolded": false,
@@ -4080,11 +4411,14 @@
           "note": ""
         }
       ],
-      "gap": "Multi-user profiles are standard in self-hosted media servers; recommendation quality differs.",
-      "verdict": "Partial. Jellyfin provides per-user profiles; the recommender is not equivalent.",
+      "gap": "Jellyfin provides a partial self-hosted foundation for multi-user media profiles, but not Netflix's licensed catalog, recommendation system, account ecosystem or proprietary controls.",
+      "verdict": "Partial. Jellyfin is a credible foundation for bounded profile and media workflows; Netflix-specific personalization and platform semantics remain provider-specific.",
       "sources": [
         "https://jellyfin.org/",
-        "https://en.wikipedia.org/wiki/Netflix"
+        "https://help.netflix.com/en/node/10421",
+        "https://help.netflix.com/en/node/100639",
+        "https://help.netflix.com/en/node/114276",
+        "https://help.netflix.com/en/node/127831"
       ],
       "build": {
         "scaffolded": false,
@@ -4107,10 +4441,11 @@
       "open_source_status": "pending",
       "page": "catalog/netflix-tudum/",
       "alternatives": [],
-      "gap": "Editorial content is journalism, not software; open CMSs can serve a publication, but the content itself is Netflix's.",
-      "verdict": "No verified alternative. Not a software-replication problem; open CMSs cover publishing, not content.",
+      "gap": "Editorial content is journalism, not software; the entry is retained for traceability but excluded from active product-build work.",
+      "verdict": "Retired from the build-product inventory. Tudum is grouped conceptually under Netflix Streaming rather than treated as an independent service.",
       "sources": [
-        "https://en.wikipedia.org/wiki/Netflix"
+        "https://help.netflix.com/en/node/123481",
+        "https://about.netflix.com/news/meet-tudum-your-backstage-pass-to-the-netflix-stories-you-love"
       ],
       "build": {
         "scaffolded": false,
@@ -4142,11 +4477,14 @@
           "note": ""
         }
       ],
-      "gap": "Pixelfed covers image sharing on the fediverse; short-video feeds and network scale are not replicated.",
-      "verdict": "Partial. Pixelfed covers the core (photo sharing); Reels-scale video is not.",
+      "gap": "Pixelfed covers federated image sharing; Instagram's Reels ecosystem, centralized discovery, creator/business stack and network effects are not replicated.",
+      "verdict": "Partial. Pixelfed covers the image-sharing job, but it is not a drop-in replacement for Instagram.",
       "sources": [
         "https://pixelfed.org/",
-        "https://en.wikipedia.org/wiki/Instagram"
+        "https://github.com/pixelfed/pixelfed",
+        "https://about.fb.com/news/2023/11/new-ways-to-create-content-on-instagram/",
+        "https://about.fb.com/news/2020/08/introducing-instagram-reels/",
+        "https://developers.meta.com/resources/"
       ],
       "build": {
         "scaffolded": false,
@@ -4184,11 +4522,14 @@
           "note": ""
         }
       ],
-      "gap": "Open federated networks cover social posting well; the breadth of groups, marketplace and events at global scale is not matched by any single project.",
-      "verdict": "Partial. Open networks (Mastodon, Diaspora) cover core social networking; no single project matches Facebook's breadth.",
+      "gap": "Open federated networks cover social posting well; Facebook's combined groups, pages, events, marketplace, centralized discovery and identity graph are not matched by a single project.",
+      "verdict": "Partial. Mastodon and Diaspora cover parts of social networking, but neither is a drop-in Facebook replacement.",
       "sources": [
         "https://joinmastodon.org/",
-        "https://diasporafoundation.org/"
+        "https://diasporafoundation.org/",
+        "https://about.fb.com/news/2024/10/facebook-local-tab-messenger-communities-ai/",
+        "https://about.fb.com/news/2025/11/facebook-marketplace-gets-a-glow-up/",
+        "https://developers.meta.com/resources/"
       ],
       "build": {
         "scaffolded": false,
@@ -4219,11 +4560,14 @@
           "note": "Threads and Mastodon can interoperate via ActivityPub."
         }
       ],
-      "gap": "Microblogging is fully covered by ActivityPub (Mastodon and others), which Threads itself can federate with.",
-      "verdict": "Available. Mastodon is a mature, self-hostable microblogging platform covering the core function.",
+      "gap": "Mastodon covers federated microblogging, but not Threads' centralized product experience, Meta identity integrations, business tooling, moderation model or network graph.",
+      "verdict": "Partial. Mastodon covers the core public-posting job, but it is not a drop-in Threads replacement.",
       "sources": [
         "https://joinmastodon.org/",
-        "https://en.wikipedia.org/wiki/Threads_(app)"
+        "https://about.fb.com/news/2023/07/introducing-threads-new-app-text-sharing/",
+        "https://about.fb.com/news/2024/06/what-is-the-fediverse/",
+        "https://about.fb.com/news/2024/08/new-threads-features-for-creators-and-businesses/",
+        "https://developers.meta.com/resources/"
       ],
       "build": {
         "scaffolded": false,
@@ -4350,8 +4694,78 @@
       "gap": "No open-source operating system verifies production-grade Win32 application and driver compatibility at Windows scale.",
       "verdict": "Partial. Wine and ReactOS cover parts of the compatibility surface, but a supported, secure desktop OS with the full driver and servicing model is not available as open source.",
       "sources": [
-        "https://www.microsoft.com/en-us/windows/",
-        "https://learn.microsoft.com/en-us/windows/"
+        "https://learn.microsoft.com/en-us/windows/resources/",
+        "https://learn.microsoft.com/en-us/windows/package-manager/winget/",
+        "https://learn.microsoft.com/en-us/windows/security/",
+        "https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information",
+        "https://www.winehq.org/",
+        "https://reactos.org/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "microsoft-edge",
+      "name": "Microsoft Edge",
+      "company_id": "microsoft",
+      "company": "Microsoft",
+      "product_type": "browser",
+      "categories": [
+        "browser",
+        "web_platform",
+        "security",
+        "productivity"
+      ],
+      "official_url": "https://www.microsoft.com/en-us/edge",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/microsoft-edge/",
+      "alternatives": [
+        {
+          "name": "Chromium",
+          "url": "https://www.chromium.org/",
+          "license": "BSD-3-Clause and component licenses",
+          "covers": "Open browser foundation with Chromium's multi-process architecture, web platform and extension model.",
+          "note": "Closest open foundation, but it does not reproduce Edge branding, Microsoft integrations, enterprise defaults or every Edge-specific service."
+        },
+        {
+          "name": "Firefox",
+          "url": "https://www.mozilla.org/firefox/",
+          "license": "MPL-2.0",
+          "covers": "Independent browser with its own rendering engine, profiles, privacy controls and extension ecosystem.",
+          "note": "Provides a complete browser alternative but differs in engine, extension APIs, policy model and Microsoft integrations."
+        },
+        {
+          "name": "Brave",
+          "url": "https://brave.com/",
+          "license": "MPL-2.0 and component licenses",
+          "covers": "Chromium-based browser distribution with privacy and blocking features.",
+          "note": "Shares a Chromium foundation but does not reproduce Edge enterprise controls, Microsoft account integration or exact behavior."
+        },
+        {
+          "name": "LibreWolf",
+          "url": "https://librewolf.net/",
+          "license": "MPL-2.0 and component licenses",
+          "covers": "Privacy-oriented Firefox distribution with hardened defaults.",
+          "note": "Useful for privacy-focused browsing, but it has a different engine and does not provide Edge compatibility or enterprise integration."
+        }
+      ],
+      "gap": "Open alternatives cover browser foundations or distributions, but none reproduces Microsoft Edge's combination of Chromium compatibility, Microsoft services, work/personal profile separation, enterprise policy surface and servicing model.",
+      "verdict": "Partial. Chromium is the closest open foundation; Firefox, Brave and LibreWolf are viable browser alternatives, but Edge-specific integrations and enterprise behavior remain provider-specific.",
+      "sources": [
+        "https://www.microsoft.com/en-us/edge",
+        "https://explore.microsoft.com/en-us/edge/features",
+        "https://learn.microsoft.com/en-us/deployedge/",
+        "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-for-business",
+        "https://learn.microsoft.com/en-us/lifecycle/products/microsoft-edge",
+        "https://www.chromium.org/",
+        "https://www.mozilla.org/firefox/",
+        "https://brave.com/",
+        "https://librewolf.net/"
       ],
       "build": {
         "scaffolded": false,
@@ -4402,7 +4816,75 @@
       "verdict": "Partial. LibreOffice, ONLYOFFICE, Nextcloud and open mail/chat servers each cover a slice; the integrated, tenant-managed bundle remains unbuilt.",
       "sources": [
         "https://www.microsoft.com/en-us/microsoft-365",
-        "https://learn.microsoft.com/en-us/microsoft-365/"
+        "https://www.microsoft.com/en-us/microsoft-365/products-apps-services",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/what-is-microsoft-365-for-business",
+        "https://learn.microsoft.com/en-us/graph/overview"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "microsoft-onedrive",
+      "name": "Microsoft OneDrive",
+      "company_id": "microsoft",
+      "company": "Microsoft",
+      "product_type": "storage",
+      "categories": [
+        "storage",
+        "file-sharing",
+        "sync",
+        "collaboration"
+      ],
+      "official_url": "https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/microsoft-onedrive/",
+      "alternatives": [
+        {
+          "name": "Nextcloud",
+          "url": "https://nextcloud.com/",
+          "license": "AGPL-3.0",
+          "covers": "Self-hosted file storage, synchronization, sharing and collaboration platform.",
+          "note": "Covers core storage and collaboration workflows, but not Microsoft's Graph resource model, SharePoint relationship, tenant ecosystem or OneDrive client behavior."
+        },
+        {
+          "name": "ownCloud",
+          "url": "https://owncloud.com/",
+          "license": "AGPL-3.0 and enterprise components",
+          "covers": "Self-hosted file synchronization, sharing and content collaboration.",
+          "note": "Provides a credible self-hosted foundation but differs in APIs, identity, integrations, operations and enterprise feature boundaries."
+        },
+        {
+          "name": "Seafile",
+          "url": "https://www.seafile.com/",
+          "license": "AGPL-3.0 and enterprise components",
+          "covers": "File synchronization, libraries, sharing and collaboration with self-hosted deployment options.",
+          "note": "Covers storage and sync but not OneDrive's Microsoft Graph, SharePoint, Office and account integration."
+        },
+        {
+          "name": "Pydio Cells",
+          "url": "https://pydio.com/",
+          "license": "Apache-2.0 and enterprise components",
+          "covers": "Self-hosted content collaboration and file-sharing platform.",
+          "note": "Useful for controlled content collaboration, but not a drop-in replacement for OneDrive's APIs, clients or Microsoft 365 ecosystem."
+        }
+      ],
+      "gap": "Open alternatives cover storage, sharing and synchronization, but none reproduces OneDrive's Microsoft Graph resource model, SharePoint relationship, Office integration, tenant controls, account ecosystem and client behavior.",
+      "verdict": "Partial. Nextcloud, ownCloud, Seafile and Pydio Cells are credible open/self-hosted foundations, while OneDrive-specific integration and enterprise semantics remain provider-specific.",
+      "sources": [
+        "https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage",
+        "https://learn.microsoft.com/en-us/onedrive",
+        "https://learn.microsoft.com/en-us/graph/api/resources/onedrive",
+        "https://learn.microsoft.com/en-us/onedrive/developer/",
+        "https://support.microsoft.com/en-us/onedrive/store-your-work-files-on-onedrive",
+        "https://nextcloud.com/",
+        "https://owncloud.com/",
+        "https://www.seafile.com/",
+        "https://pydio.com/"
       ],
       "build": {
         "scaffolded": false,
@@ -4445,7 +4927,8 @@
       "verdict": "Partial. Element and Jitsi cover chat and meetings separately; the integrated team workspace with admin controls is a composed build, not a drop-in replacement.",
       "sources": [
         "https://www.microsoft.com/en-us/microsoft-teams/group-chat-software",
-        "https://learn.microsoft.com/en-us/microsoftteams/"
+        "https://learn.microsoft.com/en-us/microsoftteams/teams-overview",
+        "https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview"
       ],
       "build": {
         "scaffolded": false,
@@ -4487,8 +4970,10 @@
       "gap": "OpenStack and CloudStack provide an IaaS control plane, but no open-source project verifies a comparable managed-service catalogue and global region footprint.",
       "verdict": "Partial. Private-cloud IaaS is well covered; the managed-service breadth and operational model of a hyperscaler remain a research and integration problem, not a drop-in replacement.",
       "sources": [
-        "https://azure.microsoft.com/en-us",
-        "https://learn.microsoft.com/en-us/azure/"
+        "https://azure.microsoft.com/en-us/explore/",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager",
+        "https://learn.microsoft.com/en-us/azure/architecture/",
+        "https://learn.microsoft.com/en-us/cli/azure/"
       ],
       "build": {
         "scaffolded": false,
@@ -7454,6 +7939,234 @@
         "https://docs.aws.amazon.com/general/latest/gr/cloudwan.html",
         "https://docs.aws.amazon.com/network-manager/latest/cloudwan/cloudwan-getting-started.html",
         "https://github.com/openziti/ziti"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "meta-account",
+      "name": "Meta Account",
+      "company_id": "meta",
+      "company": "Meta",
+      "product_type": "consumer_application",
+      "categories": [
+        "identity",
+        "account-management",
+        "security",
+        "connected-experiences"
+      ],
+      "official_url": "https://www.meta.com/account/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/meta-account/",
+      "alternatives": [
+        {
+          "name": "Keycloak",
+          "url": "https://www.keycloak.org/",
+          "license": "Apache-2.0",
+          "covers": "Open-source identity and access-management server with federation and user management.",
+          "note": "Provides identity foundations but not Meta's connected app graph, consumer distribution or device ecosystem."
+        },
+        {
+          "name": "Authentik",
+          "url": "https://goauthentik.io/",
+          "license": "Open-core; community components under permissive licenses",
+          "covers": "Open-source identity provider and access platform.",
+          "note": "Useful for self-hosted identity workflows, but not a replacement for Meta-specific account and app semantics."
+        },
+        {
+          "name": "Zitadel",
+          "url": "https://zitadel.com/",
+          "license": "AGPL-3.0 and enterprise components",
+          "covers": "Open-source identity infrastructure for authentication and user management.",
+          "note": "Covers independent identity infrastructure but not Meta's account graph, rollout or proprietary security systems."
+        }
+      ],
+      "gap": "Open alternatives provide identity foundations, but none reproduces Meta Account's connected app graph, device ecosystem, consumer distribution, security systems or Meta-specific settings semantics.",
+      "verdict": "Partial. Keycloak, Authentik and Zitadel are credible foundations for bounded identity implementations, while Meta Account-specific ecosystem behavior remains provider-specific.",
+      "sources": [
+        "https://www.meta.com/technologies/",
+        "https://www.meta.com/account/",
+        "https://www.meta.com/help/accounts-center/",
+        "https://about.fb.com/news/2026/04/meta-account/",
+        "https://www.keycloak.org/",
+        "https://goauthentik.io/",
+        "https://zitadel.com/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "meta-verified",
+      "name": "Meta Verified",
+      "company_id": "meta",
+      "company": "Meta",
+      "product_type": "consumer_subscription",
+      "categories": [
+        "identity",
+        "verification",
+        "creator-tools",
+        "support",
+        "impersonation-protection"
+      ],
+      "official_url": "https://www.meta.com/meta-verified/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/meta-verified/",
+      "alternatives": [
+        {
+          "name": "Keycloak",
+          "url": "https://www.keycloak.org/",
+          "license": "Apache-2.0",
+          "covers": "Open-source identity and access-management server.",
+          "note": "Provides identity foundations but not Meta's subscription, platform verification or support operations."
+        },
+        {
+          "name": "Authentik",
+          "url": "https://goauthentik.io/",
+          "license": "Open-core; community components under permissive licenses",
+          "covers": "Open-source identity provider and access platform.",
+          "note": "Useful for self-hosted identity workflows, but not a replacement for Meta-specific verification and creator benefits."
+        },
+        {
+          "name": "Zitadel",
+          "url": "https://zitadel.com/",
+          "license": "AGPL-3.0 and enterprise components",
+          "covers": "Open-source identity infrastructure for authentication and user management.",
+          "note": "Covers independent identity infrastructure but not Meta Verified's billing, abuse and discovery ecosystem."
+        }
+      ],
+      "gap": "Open alternatives provide identity foundations, but none reproduces Meta Verified's subscription billing, platform verification, impersonation monitoring, support operations or creator-discovery ecosystem.",
+      "verdict": "Partial. Keycloak, Authentik and Zitadel are credible foundations for bounded identity implementations, while Meta Verified-specific subscription and platform semantics remain provider-specific.",
+      "sources": [
+        "https://www.meta.com/technologies/",
+        "https://www.meta.com/meta-verified/",
+        "https://www.keycloak.org/",
+        "https://goauthentik.io/",
+        "https://zitadel.com/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "meta-one",
+      "name": "Meta One",
+      "company_id": "meta",
+      "company": "Meta",
+      "product_type": "consumer_subscription",
+      "categories": [
+        "subscription",
+        "creator-tools",
+        "social",
+        "ai",
+        "analytics"
+      ],
+      "official_url": "https://www.meta.com/meta-one-plans/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/meta-one/",
+      "alternatives": [
+        {
+          "name": "WordPress",
+          "url": "https://wordpress.org/",
+          "license": "GPL-2.0-or-later",
+          "covers": "Open publishing platform with plugins, memberships and user roles.",
+          "note": "Covers publishing and community foundations but not Meta's app entitlements, social graph or bundled AI usage."
+        },
+        {
+          "name": "Ghost",
+          "url": "https://ghost.org/",
+          "license": "MIT for the core; separate terms for hosted services",
+          "covers": "Open publishing and membership platform.",
+          "note": "Useful for creator publishing and memberships, but not Meta's cross-app distribution, analytics or AI services."
+        },
+        {
+          "name": "Matomo",
+          "url": "https://matomo.org/",
+          "license": "GPL-3.0",
+          "covers": "Open analytics platform for owned web measurement.",
+          "note": "Covers analytics only and not Meta One's subscription, social, creator or AI features."
+        }
+      ],
+      "gap": "Open alternatives cover publishing, membership and analytics pieces, but none reproduces Meta One's bundled app entitlements, AI usage, social graph, account system or platform distribution.",
+      "verdict": "Partial. WordPress, Ghost and Matomo are credible foundations for bounded creator and analytics workflows, while Meta One-specific bundle and platform semantics remain provider-specific.",
+      "sources": [
+        "https://www.meta.com/technologies/",
+        "https://www.meta.com/meta-one-plans/",
+        "https://www.meta.com/meta-verified/",
+        "https://wordpress.org/",
+        "https://ghost.org/",
+        "https://matomo.org/"
+      ],
+      "build": {
+        "scaffolded": false,
+        "specs": false,
+        "src": false,
+        "tests": false
+      }
+    },
+    {
+      "id": "meta-muse",
+      "name": "Muse",
+      "company_id": "meta",
+      "company": "Meta",
+      "product_type": "ai_agent_platform",
+      "categories": [
+        "ai-agent",
+        "computer-use",
+        "browser-automation",
+        "personal-assistant",
+        "workflow-automation"
+      ],
+      "official_url": "https://muse.ai/",
+      "lifecycle_status": "active",
+      "open_source_status": "partial",
+      "page": "catalog/meta-muse/",
+      "alternatives": [
+        {
+          "name": "Open Interpreter",
+          "url": "https://github.com/OpenInterpreter/open-interpreter",
+          "license": "AGPL-3.0",
+          "covers": "Open-source natural-language computer interface for running local code and workflows.",
+          "note": "Provides an agent execution foundation, but not Muse's hosted browser computer, Meta distribution, credential store or product-specific safety controls."
+        },
+        {
+          "name": "OpenHands",
+          "url": "https://github.com/All-Hands-AI/OpenHands",
+          "license": "MIT",
+          "covers": "Open-source software-development agent platform with tool use and isolated execution.",
+          "note": "Covers agent orchestration and tool execution, but not Muse's consumer assistant surface, connected apps or hosted personal workflows."
+        },
+        {
+          "name": "Browser Use",
+          "url": "https://github.com/browser-use/browser-use",
+          "license": "MIT",
+          "covers": "Open-source browser automation library for browser-controlling agents.",
+          "note": "Covers browser control, but not Muse's broader personal-agent experience, approval model, audit trail or connected-app platform."
+        }
+      ],
+      "gap": "Open alternatives cover agent execution and browser automation, but none reproduces Muse's hosted personal-agent surface, connected applications, credential handling, approval workflows or Meta distribution.",
+      "verdict": "Partial. Open Interpreter, OpenHands and Browser Use are credible foundations for bounded agent and browser workflows, while Muse-specific hosted, safety and ecosystem semantics remain provider-specific.",
+      "sources": [
+        "https://www.meta.com/technologies/",
+        "https://muse.ai/",
+        "https://introducing.muse.ai/",
+        "https://security.muse.ai/",
+        "https://github.com/OpenInterpreter/open-interpreter",
+        "https://github.com/All-Hands-AI/OpenHands",
+        "https://github.com/browser-use/browser-use"
       ],
       "build": {
         "scaffolded": false,

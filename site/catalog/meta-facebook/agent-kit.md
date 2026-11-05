@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Facebook (meta-facebook); investiga
 
 # Facebook — implementation skill (`meta-facebook`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Facebook**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Facebook (meta-facebook); investiga
 
 This is the coding-agent skill for **Facebook** (`meta-facebook`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/meta/meta-facebook.md` from the catalog page, or run `npx rae-faang meta-facebook --out ./meta-facebook.md`, `npx rae-faang skills generate meta-facebook` or `npx rae-faang build agent-kit meta-facebook --out ./meta-facebook-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/meta/meta-facebook.md` from the catalog page, or run `npx rea-faang meta-facebook --out ./meta-facebook.md`, `npx rea-faang skills generate meta-facebook` or `npx rea-faang build agent-kit meta-facebook --out ./meta-facebook-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Facebook / `meta-facebook` | `catalog/products.jsonl` |
 | Official product URL | [https://www.facebook.com/](https://www.facebook.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier meta-facebook` | `research/companies/meta/products/meta-facebook.md` |
+| Official documentation | [https://www.facebook.com/help/](https://www.facebook.com/help/) | Catalog record |
+| Research dossier | `npx rea-faang research dossier meta-facebook` | `research/companies/meta/products/meta-facebook.md` |
 | REA report | `catalog/rea/meta/meta-facebook.md` (captured 2026-11-03T01:40:00.726Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/meta-facebook.json` (`ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00`) | Catalog evidence |
 | Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show meta-facebook --format json` and `npx rae-faang research dossier meta-facebook` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show meta-facebook --format json` and `npx rea-faang research dossier meta-facebook` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `META-FACEBOOK-CAP-0D4BEB47`, `META-FACEBOOK-CAP-A53B954D`, `META-FACEBOOK-CAP-09890DD8`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `META-FACEBOOK-CAP-61D48DF4`, `META-FACEBOOK-CAP-88B877D0`, `META-FACEBOOK-CAP-18CD212D`, `META-FACEBOOK-CAP-FCDA661A`, `META-FACEBOOK-CAP-0542F8DF`, `META-FACEBOOK-CAP-E7A7F0D0`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,7 +103,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Facebook** / `meta-facebook` | Product catalog |
 | Company / category | Meta / `social_network` / `social-network` | Product catalog |
-| Official website / docs | [https://www.facebook.com/](https://www.facebook.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Official website / docs | [https://www.facebook.com/](https://www.facebook.com/) / [https://www.facebook.com/help/](https://www.facebook.com/help/) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,23 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `META-FACEBOOK-CAP-0D4BEB47` | Profiles and social graph | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `META-FACEBOOK-CAP-A53B954D` | Groups and events | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `META-FACEBOOK-CAP-09890DD8` | Marketplace and pages | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-FACEBOOK-CAP-61D48DF4` | Profiles and Feed | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-FACEBOOK-CAP-88B877D0` | Groups, Pages and Events | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-FACEBOOK-CAP-18CD212D` | Marketplace listings and seller interactions | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-FACEBOOK-CAP-FCDA661A` | Local and Explore discovery | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-FACEBOOK-CAP-0542F8DF` | Creator and community surfaces | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-FACEBOOK-CAP-E7A7F0D0` | Permitted platform integrations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Log In`, `textbox: Email or mobile number`, `textbox: Password`, `link: Forgot password?`, `link: Create new account`, `link: Español`, `link: Français (France)`, `link: 中文(简体)`, `link: العربية`, `link: Português (Brasil)`, `link: Italiano`, `link: More languages…`, `link: Sign Up`, `link: Log In`, `link: Messenger`, `link: Facebook Lite`, `link: Video`, `link: Meta Pay`, `link: Meta Store`, `link: Meta Quest`, `link: Ray-Ban Meta`, `link: Meta AI`, `link: Muse`, `link: Instagram`, `link: Threads`, `link: Privacy Policy`, `link: Consumer Health Privacy`, `link: Privacy Center`, `link: About`, `link: Create ad`, `link: Create Page`, `link: Developers`, `link: Careers`, `link: Cookies`, `link: Ad choices`, `link: Terms`, `link: Help`, `link: Contact Uploading & Non-Users`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Profiles and social graph:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Groups and events:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Marketplace and pages:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Profiles and Feed:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Groups, Pages and Events:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Marketplace listings and seller interactions:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Local and Explore discovery:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Creator and community surfaces:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Permitted platform integrations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +151,59 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-0D4BEB47 — Profiles and social graph
+### REQ-FUNC-61D48DF4 — Profiles and Feed
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-0D4BEB47`; fixture and expected output must be specified from evidence.
-- **Trace:** `META-FACEBOOK-CAP-0D4BEB47` → `REQ-FUNC-0D4BEB47` → `TEST-FUNC-0D4BEB47`.
+- **Associated test ID:** `TEST-FUNC-61D48DF4`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-FACEBOOK-CAP-61D48DF4` → `REQ-FUNC-61D48DF4` → `TEST-FUNC-61D48DF4`.
 
-### REQ-FUNC-A53B954D — Groups and events
+### REQ-FUNC-88B877D0 — Groups, Pages and Events
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-A53B954D`; fixture and expected output must be specified from evidence.
-- **Trace:** `META-FACEBOOK-CAP-A53B954D` → `REQ-FUNC-A53B954D` → `TEST-FUNC-A53B954D`.
+- **Associated test ID:** `TEST-FUNC-88B877D0`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-FACEBOOK-CAP-88B877D0` → `REQ-FUNC-88B877D0` → `TEST-FUNC-88B877D0`.
 
-### REQ-FUNC-09890DD8 — Marketplace and pages
+### REQ-FUNC-18CD212D — Marketplace listings and seller interactions
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-09890DD8`; fixture and expected output must be specified from evidence.
-- **Trace:** `META-FACEBOOK-CAP-09890DD8` → `REQ-FUNC-09890DD8` → `TEST-FUNC-09890DD8`.
+- **Associated test ID:** `TEST-FUNC-18CD212D`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-FACEBOOK-CAP-18CD212D` → `REQ-FUNC-18CD212D` → `TEST-FUNC-18CD212D`.
+
+### REQ-FUNC-FCDA661A — Local and Explore discovery
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-FCDA661A`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-FACEBOOK-CAP-FCDA661A` → `REQ-FUNC-FCDA661A` → `TEST-FUNC-FCDA661A`.
+
+### REQ-FUNC-0542F8DF — Creator and community surfaces
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-0542F8DF`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-FACEBOOK-CAP-0542F8DF` → `REQ-FUNC-0542F8DF` → `TEST-FUNC-0542F8DF`.
+
+### REQ-FUNC-E7A7F0D0 — Permitted platform integrations
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-E7A7F0D0`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-FACEBOOK-CAP-E7A7F0D0` → `REQ-FUNC-E7A7F0D0` → `TEST-FUNC-E7A7F0D0`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -216,9 +249,12 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `META-FACEBOOK-CAP-0D4BEB47` — Profiles and social graph | Not verified against Mastodon | None yet; compare with `ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00` | Candidate code path and tests must be inspected |
-| `META-FACEBOOK-CAP-A53B954D` — Groups and events | Not verified against Mastodon | None yet; compare with `ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00` | Candidate code path and tests must be inspected |
-| `META-FACEBOOK-CAP-09890DD8` — Marketplace and pages | Not verified against Mastodon | None yet; compare with `ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00` | Candidate code path and tests must be inspected |
+| `META-FACEBOOK-CAP-61D48DF4` — Profiles and Feed | Not verified against Mastodon | None yet; compare with `ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00` | Candidate code path and tests must be inspected |
+| `META-FACEBOOK-CAP-88B877D0` — Groups, Pages and Events | Not verified against Mastodon | None yet; compare with `ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00` | Candidate code path and tests must be inspected |
+| `META-FACEBOOK-CAP-18CD212D` — Marketplace listings and seller interactions | Not verified against Mastodon | None yet; compare with `ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00` | Candidate code path and tests must be inspected |
+| `META-FACEBOOK-CAP-FCDA661A` — Local and Explore discovery | Not verified against Mastodon | None yet; compare with `ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00` | Candidate code path and tests must be inspected |
+| `META-FACEBOOK-CAP-0542F8DF` — Creator and community surfaces | Not verified against Mastodon | None yet; compare with `ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00` | Candidate code path and tests must be inspected |
+| `META-FACEBOOK-CAP-E7A7F0D0` — Permitted platform integrations | Not verified against Mastodon | None yet; compare with `ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -265,9 +301,12 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-0D4BEB47** → `REQ-FUNC-0D4BEB47`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-A53B954D** → `REQ-FUNC-A53B954D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-09890DD8** → `REQ-FUNC-09890DD8`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-61D48DF4** → `REQ-FUNC-61D48DF4`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-88B877D0** → `REQ-FUNC-88B877D0`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-18CD212D** → `REQ-FUNC-18CD212D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-FCDA661A** → `REQ-FUNC-FCDA661A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-0542F8DF** → `REQ-FUNC-0542F8DF`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-E7A7F0D0** → `REQ-FUNC-E7A7F0D0`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -288,7 +327,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-0D4BEB47, REQ-FUNC-A53B954D, REQ-FUNC-09890DD8
+- **Requirements:** REQ-FUNC-61D48DF4, REQ-FUNC-88B877D0, REQ-FUNC-18CD212D, REQ-FUNC-FCDA661A, REQ-FUNC-0542F8DF, REQ-FUNC-E7A7F0D0
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -298,7 +337,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-0D4BEB47, REQ-FUNC-A53B954D, REQ-FUNC-09890DD8
+- **Requirements:** REQ-FUNC-61D48DF4, REQ-FUNC-88B877D0, REQ-FUNC-18CD212D, REQ-FUNC-FCDA661A, REQ-FUNC-0542F8DF, REQ-FUNC-E7A7F0D0
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -320,7 +359,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-0D4BEB47, REQ-FUNC-A53B954D, REQ-FUNC-09890DD8; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-61D48DF4, REQ-FUNC-88B877D0, REQ-FUNC-18CD212D, REQ-FUNC-FCDA661A, REQ-FUNC-0542F8DF, REQ-FUNC-E7A7F0D0; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -350,7 +389,14 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.facebook.com/) | Not recorded | Facebook is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-meta-facebook-surfaces` | New Facebook Local Tab, Messenger Communities, AI Integrations and More — Meta describes Facebook Local and Explore surfaces and the content sources they combine. | [link](https://about.fb.com/news/2024/10/facebook-local-tab-messenger-communities-ai/) | 2026-11-03T00:00:00Z | Facebook brings together content and discovery from Reels, Marketplace, Groups, Events, Pages and creators in documented surfaces. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-meta-facebook-marketplace` | Facebook Marketplace Gets a Glow Up — Meta documents Marketplace listing, collaboration and checkout-related workflows. | [link](https://about.fb.com/news/2025/11/facebook-marketplace-gets-a-glow-up/) | 2026-11-03T00:00:00Z | Facebook Marketplace supports listings, seller communication, collections and partner checkout flows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-meta-facebook-developer` | Meta Developer Resources — The official resource directory is an integration entry point; it does not establish private API access. | [link](https://developers.meta.com/resources/) | 2026-11-03T00:00:00Z | Meta provides public developer resources for permitted platform integrations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.facebook.com/) | 2026-11-03T00:00:00Z | Facebook is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://www.facebook.com/help/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://about.fb.com/news/2024/10/facebook-local-tab-messenger-communities-ai/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://about.fb.com/news/2025/11/facebook-marketplace-gets-a-glow-up/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://developers.meta.com/resources/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_e1687e6977c70da271c370d5485dc64a172a5dd29d7d1c84f132f9c7ce92fe00` | Facebook Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.facebook.com/) | 2026-11-03T01:40:00.726Z | A dated unauthenticated snapshot exposed controls button: Log In, textbox: Email or mobile number, textbox: Password, link: Forgot password?, link: Create new account, link: Español, link: Français (France), link: 中文(简体), link: العربية, link: Português (Brasil), link: Italiano, link: More languages…, link: Sign Up, link: Log In, link: Messenger, link: Facebook Lite, link: Video, link: Meta Pay, link: Meta Store, link: Meta Quest, link: Ray-Ban Meta, link: Meta AI, link: Muse, link: Instagram, link: Threads, link: Privacy Policy, link: Consumer Health Privacy, link: Privacy Center, link: About, link: Create ad, link: Create Page, link: Developers, link: Careers, link: Cookies, link: Ad choices, link: Terms, link: Help, link: Contact Uploading & Non-Users and landmarks main. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -376,117 +422,104 @@ Resume token: `meta-facebook`. Read dossier, REA report and raw Evidence before 
 
 ### Dossier notes (not independently verified)
 
-# 1. Executive summary
+# Facebook
 
-Facebook is Meta's social network: profiles, groups, events, marketplace and pages.
+## Research verdict
 
----
+Facebook is Meta's active social-network platform combining personal profiles,
+Feed, Pages, Groups, Events, Marketplace, video and local discovery. The public
+evidence confirms those user-facing surfaces and ongoing product work. Messenger,
+Instagram, WhatsApp and Meta Account remain separate catalog products even when
+Facebook links to or shares data with them.
 
-# 2. Product identity and ownership
+Mastodon and Diaspora provide partial federated alternatives for social publishing
+and communities. Neither reproduces Facebook's combined groups, pages, events,
+marketplace, identity graph, centralized discovery, or network effects.
 
-- **Official name:** Facebook
-- **Company and business unit:** meta
-- **Current lifecycle status:** active
-- **Official website:** https://www.facebook.com/
+## Product identity and boundary
 
----
+- **Owner:** Meta Platforms, Inc.
+- **Canonical product ID:** `meta-facebook`
+- **Lifecycle:** Active
+- **Public entry point:** https://www.facebook.com/
+- **Product boundary:** The Facebook social-network experience and its integrated
+  community, creator, commerce and discovery surfaces.
+- **Related catalog entries:** Messenger handles messaging as its own product;
+  Instagram, WhatsApp and Threads are separate social products; Meta Account is
+  the account/identity surface.
 
-# 3. Product capabilities
+## Verified user capabilities
 
-- Profiles and social graph
-- Groups and events
-- Marketplace and pages
+Meta's official materials verify that Facebook supports:
 
----
+1. Personal profiles and a Feed for social content and recommendations.
+2. Groups, Pages and Events for communities, organizations and activities.
+3. Marketplace for local and online buying/selling workflows, with listings,
+   seller communication and partner checkout in documented flows.
+4. Local and Explore discovery surfaces that can combine content from Marketplace,
+   Groups, Events, Pages and creators.
+5. Integrations with Messenger and Meta AI in selected Facebook experiences.
 
-# 4. Technical architecture
+Feature availability, country coverage, account type, age restrictions and tests
+change over time. The evidence does not imply that every feature is available to
+every user.
 
-Not yet researched.
+## Technical boundary
 
----
+The public sources verify product surfaces and selected developer resources. They
+do not verify Facebook's ranking, recommendation, moderation, advertising,
+identity-graph, storage, payments, or internal API architecture. Do not describe
+those internals as facts without a more specific primary source.
 
-# 5. User workflows
+## Alternative assessment
 
-Not yet researched.
+### Mastodon — partial community/social alternative
 
----
+Mastodon provides federated social publishing through ActivityPub. It can cover
+profiles, timelines and community interaction, but not Facebook's integrated
+Marketplace, Pages, Events and centralized recommendation surface.
 
-# 6. Pricing and access
+### Diaspora — partial decentralized alternative
 
-Not yet researched.
+Diaspora provides a decentralized social-network model. Its scope and ecosystem
+differ from Facebook's product breadth and commercial infrastructure.
 
----
+No single open-source project is treated as a drop-in Facebook replacement.
 
-# 7. API and integration surface
+## REA/build implications
 
-Not yet researched.
+Choose a bounded job—federated communities, local listings, events, or social
+publishing—rather than attempting to replicate Facebook wholesale. Reuse Mastodon
+or Diaspora where their documented models fit. Do not scrape Facebook, copy user
+content, imitate private APIs, or reproduce its identity and advertising systems
+without authorization.
 
----
+## Evidence record
 
-# 8. Existing open-source alternatives
+| Claim | Source | What it supports |
+|---|---|---|
+| Facebook combines Local, Marketplace, Groups, Events, Pages and creator content | [Meta: Facebook Local](https://about.fb.com/news/2024/10/facebook-local-tab-messenger-communities-ai/) | Product surfaces and discovery workflows |
+| Marketplace supports listings, seller interactions and partner checkout flows | [Meta: Marketplace](https://about.fb.com/news/2025/11/facebook-marketplace-gets-a-glow-up/) | Commerce surface and documented workflow |
+| Meta publishes developer resources for platform integrations | [Meta Developer Resources](https://developers.meta.com/resources/) | Public integration entry point; not private API access |
+| Mastodon is a federated social network | [Mastodon](https://joinmastodon.org/) | Alternative scope |
+| Diaspora is a decentralized social network | [Diaspora Foundation](https://diasporafoundation.org/) | Alternative scope |
 
-Open-source candidates exist: Mastodon (AGPL-3.0) — Federated social networking on ActivityPub.; Diaspora (AGPL-3.0) — Decentralized social network.. Coverage is unverified until the dossier is researched.
+## Known gaps
 
----
+- Facebook's complete API permissions, review process and rate limits require a
+  current developer-surface check.
+- Ranking, moderation, ads, payments, identity graph and internal architecture are
+  not established by the sources used here.
+- Marketplace, Dating, monetization and local features vary by region and account.
 
-# 9. Alternative comparison
+**Research date:** 2026-11-03.  
+**Confidence:** Verified for documented public capabilities; partial for alternatives.
 
-Open federated networks cover social posting well; the breadth of groups, marketplace and events at global scale is not matched by any single project.
-
----
-
-# 10. Missing capabilities and opportunity analysis
-
-Open federated networks cover social posting well; the breadth of groups, marketplace and events at global scale is not matched by any single project.
-
----
-
-# 11. RAE implementation strategy
-
-Partial. Open networks (Mastodon, Diaspora) cover core social networking; no single project matches Facebook's breadth.
-
----
-
-# 12. Security, privacy, and compliance
-
-Not yet researched.
-
----
-
-# 13. Sources and evidence
-
-- https://joinmastodon.org/
-- https://diasporafoundation.org/
-
----
-
-# 14. Open questions
-
-- Full feature inventory and technical architecture are not yet researched.
-
----
-
-# 15. Research history
-
-- v1: dossier created; research pending.
-
----
-
-# 16. Alternative comparison (continued)
-
-Open federated networks cover social posting well; the breadth of groups, marketplace and events at global scale is not matched by any single project.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Partial. Open networks (Mastodon, Diaspora) cover core social networking; no single project matches Facebook's breadth.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier meta-facebook` and inspect canonical identity with `npx rae-faang products show meta-facebook --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier meta-facebook` and inspect canonical identity with `npx rea-faang products show meta-facebook --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -499,7 +532,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang meta-facebook --out ./meta-facebook.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit meta-facebook --out ./meta-facebook-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang meta-facebook --out ./meta-facebook.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit meta-facebook --out ./meta-facebook-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -541,5 +574,12 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://www.facebook.com/) — Facebook is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [New Facebook Local Tab, Messenger Communities, AI Integrations and More](https://about.fb.com/news/2024/10/facebook-local-tab-messenger-communities-ai/) — Facebook brings together content and discovery from Reels, Marketplace, Groups, Events, Pages and creators in documented surfaces. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Facebook Marketplace Gets a Glow Up](https://about.fb.com/news/2025/11/facebook-marketplace-gets-a-glow-up/) — Facebook Marketplace supports listings, seller communication, collections and partner checkout flows. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Meta Developer Resources](https://developers.meta.com/resources/) — Meta provides public developer resources for permitted platform integrations. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://www.facebook.com/) — Facebook is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://www.facebook.com/help/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://about.fb.com/news/2024/10/facebook-local-tab-messenger-communities-ai/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://about.fb.com/news/2025/11/facebook-marketplace-gets-a-glow-up/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.meta.com/resources/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Facebook Public web-surface observation (REA)](https://www.facebook.com/) — A dated unauthenticated snapshot exposed controls button: Log In, textbox: Email or mobile number, textbox: Password, link: Forgot password?, link: Create new account, link: Español, link: Français (France), link: 中文(简体), link: العربية, link: Português (Brasil), link: Italiano, link: More languages…, link: Sign Up, link: Log In, link: Messenger, link: Facebook Lite, link: Video, link: Meta Pay, link: Meta Store, link: Meta Quest, link: Ray-Ban Meta, link: Meta AI, link: Muse, link: Instagram, link: Threads, link: Privacy Policy, link: Consumer Health Privacy, link: Privacy Center, link: About, link: Create ad, link: Create Page, link: Developers, link: Careers, link: Cookies, link: Ad choices, link: Terms, link: Help, link: Contact Uploading & Non-Users and landmarks main. (VERIFIED; accessed 2026-11-03T01:40:00.726Z).

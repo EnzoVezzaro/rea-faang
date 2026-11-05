@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google News (google-news); investig
 
 # Google News — implementation skill (`google-news`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google News**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google News (google-news); investig
 
 This is the coding-agent skill for **Google News** (`google-news`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-news.md` from the catalog page, or run `npx rae-faang google-news --out ./google-news.md`, `npx rae-faang skills generate google-news` or `npx rae-faang build agent-kit google-news --out ./google-news-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-news.md` from the catalog page, or run `npx rea-faang google-news --out ./google-news.md`, `npx rea-faang skills generate google-news` or `npx rea-faang build agent-kit google-news --out ./google-news-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,18 +27,18 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Google News / `google-news` | `catalog/products.jsonl` |
 | Official product URL | [https://news.google.com/](https://news.google.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-news` | `research/companies/google/products/google-news.md` |
+| Official documentation | [https://support.google.com/googlenews/](https://support.google.com/googlenews/) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-news` | `research/companies/google/products/google-news.md` |
 | REA report | `catalog/rea/google/google-news.md` (captured 2026-11-03T01:38:43.209Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-news.json` (`ev_bed91a4fc061b5128e2d03562607f356c7a5ab53787bfae425a2c5918238be7e`) | Catalog evidence |
-| Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
+| Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
 | User scope | Requested product area, platforms, users and non-goals | The user; ask when the answer changes the deliverable |
 | Consumer project | Absolute path, stack, conventions, test commands, deployment target | The user’s repository, read before writing |
 | Authorization | Public surfaces and the user’s own project only | Clean-room boundary in section 14 |
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-news --format json` and `npx rae-faang research dossier google-news` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-news --format json` and `npx rea-faang research dossier google-news` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-NEWS-CAP-1B1CA7A4`, `GOOGLE-NEWS-CAP-8585F665`, `GOOGLE-NEWS-CAP-2D129591`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-NEWS-CAP-13DF7378`, `GOOGLE-NEWS-CAP-22363DAB`, `GOOGLE-NEWS-CAP-5B70E134`, `GOOGLE-NEWS-CAP-F3E8490C`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Google News** / `google-news` | Product catalog |
-| Company / category | Google / `media` / `news-aggregation` | Product catalog |
-| Official website / docs | [https://news.google.com/](https://news.google.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Company / category | Google / `media` / `news-aggregation`, `personalization`, `media` | Product catalog |
+| Official website / docs | [https://news.google.com/](https://news.google.com/) / [https://support.google.com/googlenews/](https://support.google.com/googlenews/) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-NEWS-CAP-1B1CA7A4` | Aggregation across publishers | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-NEWS-CAP-8585F665` | Personalized feed | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-NEWS-CAP-2D129591` | Alerts and follow topics | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-NEWS-CAP-13DF7378` | Official documentation verifies automated selection and publisher discovery; ranking implementation remains proprietary. | VERIFIED | `ev-google-news-selection`, `ev-google-news-publisher` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-NEWS-CAP-22363DAB` | Topic, source and location following plus story controls are documented. | VERIFIED | `ev-google-news-customization` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-NEWS-CAP-5B70E134` | Publisher and News Showcase surfaces are documented, with country and publisher constraints. | VERIFIED | `ev-google-news-publisher` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-NEWS-CAP-F3E8490C` | The official material reviewed does not establish a general public Google News content API. | VERIFIED | `ev-google-news-selection` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Advanced search`, `button: Search`, `button: Help`, `button: Settings`, `button: Google apps`, `button: Expand to view forecast`, `button: Use precise location`, `button: More - Plane may have broken apart ahead of deadly Florida jet crash, say investigators`, `button: More - 20-Year-Old Nathalia Filgueiras Was a Pilot on Learjet That Crashed in Florida`, `button: More - Passenger in deadly Florida plane crash identified as former Rice basketball player, university officials say`, `button: More - Austin tech entrepreneur, wife and young children among victims of Florida jet crash`, `button: More - Supreme Court rejects Trump administration push to set aside thousands of California ballots`, `button: More - Supreme Court quickly rejects Trump effort to target alleged noncitizen voters in California`, `button: More - Supreme Court rejects Trump request for California to set aside ballots from alleged noncitizens`, `button: More - El-Sayed campaign reports $2.4 million fundraising day as Stevens endorses GOP rival`, `button: Manage local news`, `button: More - Jean-Georges Vongerichten Is Opening Two New Restaurants in Hudson Yards`, `button: More - Watchdog says NY taxpayers pay $68,538 per film job`, `button: More - Blood pressure medication recalled nationwide. See the affected drug`, `button: More - El-Sayed, Michigan Democrats push to galvanize voters after stunning Senate race defection`, `link: Google News`, `combobox: Search for topics, locations & sources`, `link: Sign in`, `link: Google Weather`, `link: Top stories`, `link: Learjet crash in Florida kills nine people`, `link: Plane may have broken apart ahead of deadly Florida jet crash, say investigators - BBC - 1 hour ago - By Nardine Saad`, `link: 20-Year-Old Nathalia Filgueiras Was a Pilot on Learjet That Crashed in Florida - The New York Times - 16 minutes ago - By David Ovalle, Jacey Fortin & Shahrzad Rasekh`, `link: Passenger in deadly Florida plane crash identified as former Rice basketball player, university officials say - ABC13 Houston - 1 hour ago`, `link: Austin tech entrepreneur, wife and young children among victims of Florida jet crash - KUT - 2 hours ago - By Nathan Bernier`, `link: See more headlines & perspectives - Learjet crash in Florida kills nine people`, `link: Supreme Court rejects Trump administration push to set aside thousands of California ballots - AP News - 21 minutes ago - By Lindsay Whitehurst & Nicholas Riccardi`, `link: Supreme Court quickly rejects Trump effort to target alleged noncitizen voters in California - NBC News - 2 hours ago - By Lawrence Hurley`, `link: Supreme Court rejects Trump request for California to set aside ballots from alleged noncitizens - Yahoo - 38 minutes ago`, `link: See more headlines & perspectives`, `link: El-Sayed campaign reports $2.4 million fundraising day as Stevens endorses GOP rival - The Washington Post - 1 hour ago - By Amy B Wang & Erin Cox`, `link: See more headlines & perspectives - El-Sayed campaign reports $2.4 million fundraising day as Stevens endorses GOP rival`, `link: Local news`, `link: Jean-Georges Vongerichten Is Opening Two New Restaurants in Hudson Yards - Eater New York - 1 hour ago - By Melissa McCart`, `link: Watchdog says NY taxpayers pay $68,538 per film job - NEWS10 ABC - 1 hour ago - By Johan Sheridan`, `link: Blood pressure medication recalled nationwide. See the affected drug - USA Today - 7 hours ago - By Mary Walrath`, `link: See more headlines & perspectives - Blood pressure medication recalled nationwide. See the affected drug`, `link: El-Sayed, Michigan Democrats push to galvanize voters after stunning Senate race defection - AP News - 4 hours ago - By Joey Cappelletti, Corey Williams & Jacqueline GaNun`, `link: See more headlines & perspectives - El-Sayed, Michigan Democrats push to galvanize voters after stunning Senate race defection`, `button: More - New cyberattack on supermarket fridges sweeps across Europe`, `link: New cyberattack on supermarket fridges sweeps across Europe - Reuters - 4 hours ago - By Louise Lind Rasmussen, Marie Mannes & Helen Reid`, `link: See more headlines & perspectives - New cyberattack on supermarket fridges sweeps across Europe`, `button: More - Young co-pilot, 20, named as one of nine victims of deadly Florida plane crash`, `link: Young co-pilot, 20, named as one of nine victims of deadly Florida plane crash - The Guardian - 11 hours ago - By Richard Luscombe & Michael Sainato`, `link: See more headlines & perspectives - Young co-pilot, 20, named as one of nine victims of deadly Florida plane crash`, `button: More - Palantir reports booming U.S. commercial revenue growth, topping government for first time`, `link: Palantir reports booming U.S. commercial revenue growth, topping government for first time - CNBC - 4 hours ago - By Samantha Subin`, `link: See more headlines & perspectives - Palantir reports booming U.S. commercial revenue growth, topping government for first time`, `button: More - Utah girl missing for more than 500 days found in Oregon; FBI says ‘gore groups’ suspected`, `link: Utah girl missing for more than 500 days found in Oregon; FBI says ‘gore groups’ suspected - OregonLive.com - 9 hours ago - By Tatum Todd`, `link: See more headlines & perspectives - Utah girl missing for more than 500 days found in Oregon; FBI says ‘gore groups’ suspected`, `button: Customize`, `link: U.S.`, `button: More - Victims of Florida plane crash include a 20-year-old copilot and tech entrepreneur and his family`, `link: Victims of Florida plane crash include a 20-year-old copilot and tech entrepreneur and his family - AP News - 2 hours ago - By Ed White`, `link: See more headlines & perspectives - Victims of Florida plane crash include a 20-year-old copilot and tech entrepreneur and his family`, `button: More - Supreme Court Rejects Trump Administration Request to Intervene in California Ballot Case`, `link: Supreme Court Rejects Trump Administration Request to Intervene in California Ballot Case - The New York Times - 1 hour ago - By Abbie VanSickle`, `link: See more headlines & perspectives - Supreme Court Rejects Trump Administration Request to Intervene in California Ballot Case`, `link: World`, `button: More - British adventurer Karl Bushby returns home after 28-year walk around world`, `link: British adventurer Karl Bushby returns home after 28-year walk around world - Al Jazeera - 7 hours ago`, `link: See more headlines & perspectives - British adventurer Karl Bushby returns home after 28-year walk around world`, `button: More - King Charles Meets Both Joy and Criticism on Caribbean Tour`, `link: King Charles Meets Both Joy and Criticism on Caribbean Tour - The New York Times - 6 hours ago - By Denis Chabrol, Michael D. Shear & Rachel Knowles Scott`, `link: See more headlines & perspectives - King Charles Meets Both Joy and Criticism on Caribbean Tour`, `button: More - Ukrainian and Russian emergency alert apps send false warnings after hacks`, `link: Ukrainian and Russian emergency alert apps send false warnings after hacks - The Washington Post - 3 hours ago - By Francesca Ebel`, `link: See more headlines & perspectives - Ukrainian and Russian emergency alert apps send false warnings after hacks`, `link: Business`, `button: More - Frantic Binance Hackers Created Windfall for Fast Crypto Traders`, `link: Frantic Binance Hackers Created Windfall for Fast Crypto Traders - Bloomberg.com - 2 hours ago - By Sidhartha Shukla & Emily Nicolle`, `link: See more headlines & perspectives - Frantic Binance Hackers Created Windfall for Fast Crypto Traders`, `link: Dow Jones +0.41% 51,983.98`, `link: S&P 500 -0.51% 7,541.40`, `link: Nasdaq -1.07% 25,164.36`, `link: Disclaimer`, `link: More from Google Finance`, `link: Technology`, `button: More - Apple unsure when more foldable iPhones will be available after selling out`, `link: Apple unsure when more foldable iPhones will be available after selling out - BBC - 1 hour ago - By Kali Hays`, `link: See more headlines & perspectives - Apple unsure when more foldable iPhones will be available after selling out`, `button: More - One of Google’s Android partners turned 1.3 million set-top boxes into a botnet`, `link: One of Google’s Android partners turned 1.3 million set-top boxes into a botnet - The Verge - 5 hours ago - By Stevie Bonifield`, `link: See more headlines & perspectives - One of Google’s Android partners turned 1.3 million set-top boxes into a botnet`, `button: More - Privacy Display on Galaxy S27 Pro and S27 Ultra looks more promising in latest leak`, `link: Privacy Display on Galaxy S27 Pro and S27 Ultra looks more promising in latest leak - 9to5Google - 8 hours ago - By Andrew Romero`, `link: See more headlines & perspectives - Privacy Display on Galaxy S27 Pro and S27 Ultra looks more promising in latest leak`, `link: Entertainment`, `button: More - Martha Stewart Apologizes for Homeless Halloween Costume`, `link: Martha Stewart Apologizes for Homeless Halloween Costume - The New York Times - 4 hours ago - By Alisha Haridasani Gupta`, `link: See more headlines & perspectives - Martha Stewart Apologizes for Homeless Halloween Costume`, `button: More - 'Ellen DeGeneres Show' EP Matthew Wright Dies In \`, `link: 'Ellen DeGeneres Show' EP Matthew Wright Dies In \`, `link: See more headlines & perspectives - 'Ellen DeGeneres Show' EP Matthew Wright Dies In \`, `button: More - Justin Timberlake to Release Four-Part ‘Tell-All’ Docuseries, Featuring Janet Jackson, on Apple (EXCLUSIVE)`, `link: Justin Timberlake to Release Four-Part ‘Tell-All’ Docuseries, Featuring Janet Jackson, on Apple (EXCLUSIVE) - Variety - 3 hours ago - By Jem Aswad`, `link: See more headlines & perspectives - Justin Timberlake to Release Four-Part ‘Tell-All’ Docuseries, Featuring Janet Jackson, on Apple (EXCLUSIVE)`, `link: Sports`, `button: More - Hometown Remix jerseys receive rave reviews from NHL players`, `link: Hometown Remix jerseys receive rave reviews from NHL players - NHL.com - 2 hours ago - By Nick Cotsonika`, `link: See more headlines & perspectives - Hometown Remix jerseys receive rave reviews from NHL players`, `button: More - Blame Schottenheimer? No, the latest Cowboys implosion falls on the whole Jones family`, `link: Blame Schottenheimer? No, the latest Cowboys implosion falls on the whole Jones family - Dallas News - 9 hours ago - By Tim Cowlishaw`, `link: See more headlines & perspectives - Blame Schottenheimer? No, the latest Cowboys implosion falls on the whole Jones family`, `button: More - When Electric Cars Were the Clean, Quiet Choice for Women`, `link: When Electric Cars Were the Clean, Quiet Choice for Women - IEEE Spectrum - 3 days ago - By Allison Marsh`, `button: More - How Cleta Mitchell Turned Trump’s “Big Lie`, `link: How Cleta Mitchell Turned Trump’s “Big Lie`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Aggregation across publishers:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Personalized feed:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Alerts and follow topics:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Official documentation verifies automated selection and publisher discovery; ranking implementation remains proprietary.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Topic, source and location following plus story controls are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Publisher and News Showcase surfaces are documented, with country and publisher constraints.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The official material reviewed does not establish a general public Google News content API.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-1B1CA7A4 — Aggregation across publishers
+### REQ-FUNC-13DF7378 — Official documentation verifies automated selection and publisher discovery; ranking implementation remains proprietary.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-news-selection`, `ev-google-news-publisher`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-1B1CA7A4`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-NEWS-CAP-1B1CA7A4` → `REQ-FUNC-1B1CA7A4` → `TEST-FUNC-1B1CA7A4`.
+- **Associated test ID:** `TEST-FUNC-13DF7378`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-NEWS-CAP-13DF7378` → `REQ-FUNC-13DF7378` → `TEST-FUNC-13DF7378`.
 
-### REQ-FUNC-8585F665 — Personalized feed
+### REQ-FUNC-22363DAB — Topic, source and location following plus story controls are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-news-customization`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-8585F665`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-NEWS-CAP-8585F665` → `REQ-FUNC-8585F665` → `TEST-FUNC-8585F665`.
+- **Associated test ID:** `TEST-FUNC-22363DAB`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-NEWS-CAP-22363DAB` → `REQ-FUNC-22363DAB` → `TEST-FUNC-22363DAB`.
 
-### REQ-FUNC-2D129591 — Alerts and follow topics
+### REQ-FUNC-5B70E134 — Publisher and News Showcase surfaces are documented, with country and publisher constraints.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-news-publisher`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-2D129591`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-NEWS-CAP-2D129591` → `REQ-FUNC-2D129591` → `TEST-FUNC-2D129591`.
+- **Associated test ID:** `TEST-FUNC-5B70E134`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-NEWS-CAP-5B70E134` → `REQ-FUNC-5B70E134` → `TEST-FUNC-5B70E134`.
+
+### REQ-FUNC-F3E8490C — The official material reviewed does not establish a general public Google News content API.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-news-selection`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-F3E8490C`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-NEWS-CAP-F3E8490C` → `REQ-FUNC-F3E8490C` → `TEST-FUNC-F3E8490C`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -207,6 +218,7 @@ Separate interface/domain/persistence/integration boundaries. Enforce access at 
 |---|---|---|---|---|---|---|---|
 | [FreshRSS](https://freshrss.org/) | Not recorded; verify the canonical repository | AGPL-3.0 (unverified) | Self-hosted RSS aggregator with a Google Reader-like UI. | No limitation recorded | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 | [Miniflux](https://miniflux.net/) | Not recorded; verify the canonical repository | AGPL-3.0 (unverified) | Minimalist RSS server. | No limitation recorded | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [Tiny Tiny RSS](https://tt-rss.org/) | Not recorded; verify the canonical repository | GPL-2.0 (unverified) | Self-hosted feed aggregation and filtering. | Partial; RSS reading does not reproduce Google's ranking and publisher surfaces. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 
 Repository, license, maintenance and compatibility are catalog claims until you check them. Re-verify each against the exact version you would adopt; a README, a star count or this table is not proof.
 
@@ -216,9 +228,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-NEWS-CAP-1B1CA7A4` — Aggregation across publishers | Not verified against FreshRSS | None yet; compare with `ev_bed91a4fc061b5128e2d03562607f356c7a5ab53787bfae425a2c5918238be7e` | Candidate code path and tests must be inspected |
-| `GOOGLE-NEWS-CAP-8585F665` — Personalized feed | Not verified against FreshRSS | None yet; compare with `ev_bed91a4fc061b5128e2d03562607f356c7a5ab53787bfae425a2c5918238be7e` | Candidate code path and tests must be inspected |
-| `GOOGLE-NEWS-CAP-2D129591` — Alerts and follow topics | Not verified against FreshRSS | None yet; compare with `ev_bed91a4fc061b5128e2d03562607f356c7a5ab53787bfae425a2c5918238be7e` | Candidate code path and tests must be inspected |
+| `GOOGLE-NEWS-CAP-13DF7378` — Official documentation verifies automated selection and publisher discovery; ranking implementation remains proprietary. | Not verified against FreshRSS | None yet; compare with `ev_bed91a4fc061b5128e2d03562607f356c7a5ab53787bfae425a2c5918238be7e` | Candidate code path and tests must be inspected |
+| `GOOGLE-NEWS-CAP-22363DAB` — Topic, source and location following plus story controls are documented. | Not verified against FreshRSS | None yet; compare with `ev_bed91a4fc061b5128e2d03562607f356c7a5ab53787bfae425a2c5918238be7e` | Candidate code path and tests must be inspected |
+| `GOOGLE-NEWS-CAP-5B70E134` — Publisher and News Showcase surfaces are documented, with country and publisher constraints. | Not verified against FreshRSS | None yet; compare with `ev_bed91a4fc061b5128e2d03562607f356c7a5ab53787bfae425a2c5918238be7e` | Candidate code path and tests must be inspected |
+| `GOOGLE-NEWS-CAP-F3E8490C` — The official material reviewed does not establish a general public Google News content API. | Not verified against FreshRSS | None yet; compare with `ev_bed91a4fc061b5128e2d03562607f356c7a5ab53787bfae425a2c5918238be7e` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -265,9 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-1B1CA7A4** → `REQ-FUNC-1B1CA7A4`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-8585F665** → `REQ-FUNC-8585F665`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-2D129591** → `REQ-FUNC-2D129591`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-13DF7378** → `REQ-FUNC-13DF7378`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-22363DAB** → `REQ-FUNC-22363DAB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-5B70E134** → `REQ-FUNC-5B70E134`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-F3E8490C** → `REQ-FUNC-F3E8490C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -288,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-1B1CA7A4, REQ-FUNC-8585F665, REQ-FUNC-2D129591
+- **Requirements:** REQ-FUNC-13DF7378, REQ-FUNC-22363DAB, REQ-FUNC-5B70E134, REQ-FUNC-F3E8490C
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -298,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-1B1CA7A4, REQ-FUNC-8585F665, REQ-FUNC-2D129591
+- **Requirements:** REQ-FUNC-13DF7378, REQ-FUNC-22363DAB, REQ-FUNC-5B70E134, REQ-FUNC-F3E8490C
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -320,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-1B1CA7A4, REQ-FUNC-8585F665, REQ-FUNC-2D129591; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-13DF7378, REQ-FUNC-22363DAB, REQ-FUNC-5B70E134, REQ-FUNC-F3E8490C; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -350,7 +364,16 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://news.google.com/) | Not recorded | Google News is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-google-news-identity` | Google News — The canonical product URL and official Help/Publisher Center documentation describe Google News feeds, reader controls and publisher surfaces. | [link](https://news.google.com/) | 2026-11-03T00:00:00Z | Google News is a separate Google news aggregation and personalization experience. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-news-selection` | How Google News stories are selected — Google's official Help page describes algorithmic selection for headlines and personalized sections and identifies the documented signals. | [link](https://support.google.com/googlenews/answer/9005749) | 2026-11-03T00:00:00Z | Google News uses automated selection and personalization based on language, region, interests, sources and activity signals. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-news-customization` | Customize what you find on Google News — The official Help page documents following interests, liking or disliking stories and hiding sources. | [link](https://support.google.com/googlenews/answer/9010862) | 2026-11-03T00:00:00Z | Readers can follow or hide topics, locations and sources and tune story preferences. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-news-publisher` | News content across Google — Publisher Center documentation describes web crawling, Google News, News Showcase and related publisher surfaces. | [link](https://support.google.com/news/publisher-center/answer/9607025) | 2026-11-03T00:00:00Z | Google News discovers eligible publisher content through web crawling and provides publisher-facing surfaces and controls. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://news.google.com/) | 2026-11-03T00:00:00Z | Google News is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://support.google.com/googlenews/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/googlenews/answer/9005749) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/googlenews/answer/9010862) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/news/publisher-center/answer/9607025) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/news/publisher-center/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_bed91a4fc061b5128e2d03562607f356c7a5ab53787bfae425a2c5918238be7e` | Google News Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://news.google.com/home?hl=en-US&gl=US&ceid=US:en) | 2026-11-03T01:38:43.209Z | A dated unauthenticated snapshot exposed controls button: Advanced search, button: Search, button: Help, button: Settings, button: Google apps, button: Expand to view forecast, button: Use precise location, button: More - Plane may have broken apart ahead of deadly Florida jet crash, say investigators, button: More - 20-Year-Old Nathalia Filgueiras Was a Pilot on Learjet That Crashed in Florida, button: More - Passenger in deadly Florida plane crash identified as former Rice basketball player, university officials say, button: More - Austin tech entrepreneur, wife and young children among victims of Florida jet crash, button: More - Supreme Court rejects Trump administration push to set aside thousands of California ballots, button: More - Supreme Court quickly rejects Trump effort to target alleged noncitizen voters in California, button: More - Supreme Court rejects Trump request for California to set aside ballots from alleged noncitizens, button: More - El-Sayed campaign reports $2.4 million fundraising day as Stevens endorses GOP rival, button: Manage local news, button: More - Jean-Georges Vongerichten Is Opening Two New Restaurants in Hudson Yards, button: More - Watchdog says NY taxpayers pay $68,538 per film job, button: More - Blood pressure medication recalled nationwide. See the affected drug, button: More - El-Sayed, Michigan Democrats push to galvanize voters after stunning Senate race defection, link: Google News, combobox: Search for topics, locations & sources, link: Sign in, link: Google Weather, link: Top stories, link: Learjet crash in Florida kills nine people, link: Plane may have broken apart ahead of deadly Florida jet crash, say investigators - BBC - 1 hour ago - By Nardine Saad, link: 20-Year-Old Nathalia Filgueiras Was a Pilot on Learjet That Crashed in Florida - The New York Times - 16 minutes ago - By David Ovalle, Jacey Fortin & Shahrzad Rasekh, link: Passenger in deadly Florida plane crash identified as former Rice basketball player, university officials say - ABC13 Houston - 1 hour ago, link: Austin tech entrepreneur, wife and young children among victims of Florida jet crash - KUT - 2 hours ago - By Nathan Bernier, link: See more headlines & perspectives - Learjet crash in Florida kills nine people, link: Supreme Court rejects Trump administration push to set aside thousands of California ballots - AP News - 21 minutes ago - By Lindsay Whitehurst & Nicholas Riccardi, link: Supreme Court quickly rejects Trump effort to target alleged noncitizen voters in California - NBC News - 2 hours ago - By Lawrence Hurley, link: Supreme Court rejects Trump request for California to set aside ballots from alleged noncitizens - Yahoo - 38 minutes ago, link: See more headlines & perspectives, link: El-Sayed campaign reports $2.4 million fundraising day as Stevens endorses GOP rival - The Washington Post - 1 hour ago - By Amy B Wang & Erin Cox, link: See more headlines & perspectives - El-Sayed campaign reports $2.4 million fundraising day as Stevens endorses GOP rival, link: Local news, link: Jean-Georges Vongerichten Is Opening Two New Restaurants in Hudson Yards - Eater New York - 1 hour ago - By Melissa McCart, link: Watchdog says NY taxpayers pay $68,538 per film job - NEWS10 ABC - 1 hour ago - By Johan Sheridan, link: Blood pressure medication recalled nationwide. See the affected drug - USA Today - 7 hours ago - By Mary Walrath, link: See more headlines & perspectives - Blood pressure medication recalled nationwide. See the affected drug, link: El-Sayed, Michigan Democrats push to galvanize voters after stunning Senate race defection - AP News - 4 hours ago - By Joey Cappelletti, Corey Williams & Jacqueline GaNun, link: See more headlines & perspectives - El-Sayed, Michigan Democrats push to galvanize voters after stunning Senate race defection, button: More - New cyberattack on supermarket fridges sweeps across Europe, link: New cyberattack on supermarket fridges sweeps across Europe - Reuters - 4 hours ago - By Louise Lind Rasmussen, Marie Mannes & Helen Reid, link: See more headlines & perspectives - New cyberattack on supermarket fridges sweeps across Europe, button: More - Young co-pilot, 20, named as one of nine victims of deadly Florida plane crash, link: Young co-pilot, 20, named as one of nine victims of deadly Florida plane crash - The Guardian - 11 hours ago - By Richard Luscombe & Michael Sainato, link: See more headlines & perspectives - Young co-pilot, 20, named as one of nine victims of deadly Florida plane crash, button: More - Palantir reports booming U.S. commercial revenue growth, topping government for first time, link: Palantir reports booming U.S. commercial revenue growth, topping government for first time - CNBC - 4 hours ago - By Samantha Subin, link: See more headlines & perspectives - Palantir reports booming U.S. commercial revenue growth, topping government for first time, button: More - Utah girl missing for more than 500 days found in Oregon; FBI says ‘gore groups’ suspected, link: Utah girl missing for more than 500 days found in Oregon; FBI says ‘gore groups’ suspected - OregonLive.com - 9 hours ago - By Tatum Todd, link: See more headlines & perspectives - Utah girl missing for more than 500 days found in Oregon; FBI says ‘gore groups’ suspected, button: Customize, link: U.S., button: More - Victims of Florida plane crash include a 20-year-old copilot and tech entrepreneur and his family, link: Victims of Florida plane crash include a 20-year-old copilot and tech entrepreneur and his family - AP News - 2 hours ago - By Ed White, link: See more headlines & perspectives - Victims of Florida plane crash include a 20-year-old copilot and tech entrepreneur and his family, button: More - Supreme Court Rejects Trump Administration Request to Intervene in California Ballot Case, link: Supreme Court Rejects Trump Administration Request to Intervene in California Ballot Case - The New York Times - 1 hour ago - By Abbie VanSickle, link: See more headlines & perspectives - Supreme Court Rejects Trump Administration Request to Intervene in California Ballot Case, link: World, button: More - British adventurer Karl Bushby returns home after 28-year walk around world, link: British adventurer Karl Bushby returns home after 28-year walk around world - Al Jazeera - 7 hours ago, link: See more headlines & perspectives - British adventurer Karl Bushby returns home after 28-year walk around world, button: More - King Charles Meets Both Joy and Criticism on Caribbean Tour, link: King Charles Meets Both Joy and Criticism on Caribbean Tour - The New York Times - 6 hours ago - By Denis Chabrol, Michael D. Shear & Rachel Knowles Scott, link: See more headlines & perspectives - King Charles Meets Both Joy and Criticism on Caribbean Tour, button: More - Ukrainian and Russian emergency alert apps send false warnings after hacks, link: Ukrainian and Russian emergency alert apps send false warnings after hacks - The Washington Post - 3 hours ago - By Francesca Ebel, link: See more headlines & perspectives - Ukrainian and Russian emergency alert apps send false warnings after hacks, link: Business, button: More - Frantic Binance Hackers Created Windfall for Fast Crypto Traders, link: Frantic Binance Hackers Created Windfall for Fast Crypto Traders - Bloomberg.com - 2 hours ago - By Sidhartha Shukla & Emily Nicolle, link: See more headlines & perspectives - Frantic Binance Hackers Created Windfall for Fast Crypto Traders, link: Dow Jones +0.41% 51,983.98, link: S&P 500 -0.51% 7,541.40, link: Nasdaq -1.07% 25,164.36, link: Disclaimer, link: More from Google Finance, link: Technology, button: More - Apple unsure when more foldable iPhones will be available after selling out, link: Apple unsure when more foldable iPhones will be available after selling out - BBC - 1 hour ago - By Kali Hays, link: See more headlines & perspectives - Apple unsure when more foldable iPhones will be available after selling out, button: More - One of Google’s Android partners turned 1.3 million set-top boxes into a botnet, link: One of Google’s Android partners turned 1.3 million set-top boxes into a botnet - The Verge - 5 hours ago - By Stevie Bonifield, link: See more headlines & perspectives - One of Google’s Android partners turned 1.3 million set-top boxes into a botnet, button: More - Privacy Display on Galaxy S27 Pro and S27 Ultra looks more promising in latest leak, link: Privacy Display on Galaxy S27 Pro and S27 Ultra looks more promising in latest leak - 9to5Google - 8 hours ago - By Andrew Romero, link: See more headlines & perspectives - Privacy Display on Galaxy S27 Pro and S27 Ultra looks more promising in latest leak, link: Entertainment, button: More - Martha Stewart Apologizes for Homeless Halloween Costume, link: Martha Stewart Apologizes for Homeless Halloween Costume - The New York Times - 4 hours ago - By Alisha Haridasani Gupta, link: See more headlines & perspectives - Martha Stewart Apologizes for Homeless Halloween Costume, button: More - 'Ellen DeGeneres Show' EP Matthew Wright Dies In \, link: 'Ellen DeGeneres Show' EP Matthew Wright Dies In \, link: See more headlines & perspectives - 'Ellen DeGeneres Show' EP Matthew Wright Dies In \, button: More - Justin Timberlake to Release Four-Part ‘Tell-All’ Docuseries, Featuring Janet Jackson, on Apple (EXCLUSIVE), link: Justin Timberlake to Release Four-Part ‘Tell-All’ Docuseries, Featuring Janet Jackson, on Apple (EXCLUSIVE) - Variety - 3 hours ago - By Jem Aswad, link: See more headlines & perspectives - Justin Timberlake to Release Four-Part ‘Tell-All’ Docuseries, Featuring Janet Jackson, on Apple (EXCLUSIVE), link: Sports, button: More - Hometown Remix jerseys receive rave reviews from NHL players, link: Hometown Remix jerseys receive rave reviews from NHL players - NHL.com - 2 hours ago - By Nick Cotsonika, link: See more headlines & perspectives - Hometown Remix jerseys receive rave reviews from NHL players, button: More - Blame Schottenheimer? No, the latest Cowboys implosion falls on the whole Jones family, link: Blame Schottenheimer? No, the latest Cowboys implosion falls on the whole Jones family - Dallas News - 9 hours ago - By Tim Cowlishaw, link: See more headlines & perspectives - Blame Schottenheimer? No, the latest Cowboys implosion falls on the whole Jones family, button: More - When Electric Cars Were the Clean, Quiet Choice for Women, link: When Electric Cars Were the Clean, Quiet Choice for Women - IEEE Spectrum - 3 days ago - By Allison Marsh, button: More - How Cleta Mitchell Turned Trump’s “Big Lie, link: How Cleta Mitchell Turned Trump’s “Big Lie and landmarks banner, search, main, navigation. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -378,115 +401,84 @@ Resume token: `google-news`. Read dossier, REA report and raw Evidence before re
 
 # 1. Executive summary
 
-Google News is Google's news aggregation and personalization service.
-
----
+Google News is Google's news aggregation and personalization service. It presents headlines and coverage from publishers on the web and mobile, supports following topics, sources and locations, and uses automated selection plus account and region context. It is distinct from Google Search's general results and News tab, although the surfaces are related.
 
 # 2. Product identity and ownership
 
 - **Official name:** Google News
-- **Company and business unit:** google
-- **Current lifecycle status:** active
-- **Official website:** https://news.google.com/
-
----
+- **Company:** Google LLC, part of Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://news.google.com/
+- **Identity evidence:** Google Help and Publisher Center documentation describe Google News as a separate news experience with its own feed, personalization and publisher surfaces.
 
 # 3. Product capabilities
 
-- Aggregation across publishers
-- Personalized feed
-- Alerts and follow topics
-
----
+- Aggregate news coverage from eligible publishers and web crawls.
+- Present headlines, local news, full coverage, briefings and publisher features.
+- Personalize content using language, region, followed topics/sources and activity signals.
+- Follow or hide topics, locations and sources; save stories and manage notifications.
+- Provide publisher surfaces such as News Showcase and Reader Revenue Manager integration.
 
 # 4. Technical architecture
 
-Not yet researched.
-
----
+Google documents automated story selection, personalization, publisher eligibility and crawler-based discovery. Ranking algorithms, source evaluation, personalization implementation and infrastructure are proprietary. Google News is not a general-purpose public news API in this catalog entry.
 
 # 5. User workflows
 
-Not yet researched.
-
----
+A user opens Google News, reads headlines or full coverage, follows a topic or source, adjusts preferences, saves a story or manages notifications. Publishers expose eligible content through normal web crawling and applicable policies; participating publishers may use additional Showcase or revenue features.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+The reader experience depends on account, language, region, device and publisher access. Some stories may be paywalled; News Showcase and subscription features depend on country and publisher participation. This pass does not assert publisher eligibility or current commercial terms.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+The public official material reviewed documents reader, publisher, crawl and revenue surfaces rather than a general Google News content API. Publisher Center and Search Console workflows support discovery and measurement. Do not claim API access or automated ingestion of Google News content without a separate, current authorization review.
 
 # 8. Existing open-source alternatives
 
-Open-source candidates exist: FreshRSS (AGPL-3.0) — Self-hosted RSS aggregator with a Google Reader-like UI.; Miniflux (AGPL-3.0) — Minimalist RSS server.. Coverage is unverified until the dossier is researched.
-
----
+- **FreshRSS (AGPL-3.0):** self-hosted RSS aggregator with source subscriptions and a web UI.
+- **Miniflux (AGPL-3.0):** minimalist self-hosted RSS reader and server.
+- **Tiny Tiny RSS (GPL-2.0):** self-hosted feed aggregation and filtering.
 
 # 9. Alternative comparison
 
-RSS covers following sources; Google's editorial ranking and personalization have no equivalent.
-
----
+RSS readers cover following known feeds, reading and local filtering. They do not reproduce Google's publisher discovery, automated story clustering, personalized ranking, local-news surfaces, News Showcase or Google account activity signals. Coverage is partial.
 
 # 10. Missing capabilities and opportunity analysis
 
-RSS covers following sources; Google's editorial ranking and personalization have no equivalent.
+A broader replacement would need feed and crawl ingestion, deduplication, story clustering, source quality controls, personalization, regional relevance, notifications, publisher tooling, rights/paywall handling and transparent ranking controls.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Available for the core job (following sources): FreshRSS is a mature self-hosted news aggregator. The personalized ranking layer is not replicated.
-
----
+Start with explicit RSS subscriptions and transparent source/topic filtering. Add clustering and local indexing only with clear provenance and opt-in personalization. Do not scrape Google News or imply publisher rights; ingest sources through permitted feeds and documented APIs.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+News preferences and activity can reveal interests, location and sensitive topics. Verify account controls, notification handling, publisher rights, paywall boundaries, crawl directives, retention and ranking transparency before operating an alternative.
 
 # 13. Sources and evidence
 
-- https://freshrss.org/
-- https://miniflux.net/
-
----
+- [How Google News stories are selected](https://support.google.com/googlenews/answer/9005749) — official selection and personalization behavior.
+- [Customize what you find on Google News](https://support.google.com/googlenews/answer/9010862) — official topic, source and location controls.
+- [News content across Google](https://support.google.com/news/publisher-center/answer/9607025) — official publisher discovery and News surfaces.
+- [Publisher Center Help](https://support.google.com/news/publisher-center/) — official publisher and News Showcase surfaces.
 
 # 14. Open questions
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
+- Which regions, languages and publisher feeds should an alternative target?
+- Is the goal a personal RSS reader, a publisher discovery system or a ranked news service?
+- What provenance, rights, ranking transparency and notification controls are mandatory?
 
 # 15. Research history
 
-- v1: dossier created; research pending.
+Record updated 2026-11-03 from official Google News Help and Publisher Center sources. Status: `researched`; proprietary ranking, publisher eligibility decisions and account-specific personalization remain outside this pass.
 
----
-
-# 16. Alternative comparison (continued)
-
-RSS covers following sources; Google's editorial ranking and personalization have no equivalent.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Available for the core job (following sources): FreshRSS is a mature self-hosted news aggregator. The personalized ranking layer is not replicated.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-news` and inspect canonical identity with `npx rae-faang products show google-news --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-news` and inspect canonical identity with `npx rea-faang products show google-news --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -499,7 +491,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-news --out ./google-news.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-news --out ./google-news-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-news --out ./google-news.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-news --out ./google-news-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -541,5 +533,14 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://news.google.com/) — Google News is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [Google News](https://news.google.com/) — Google News is a separate Google news aggregation and personalization experience. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [How Google News stories are selected](https://support.google.com/googlenews/answer/9005749) — Google News uses automated selection and personalization based on language, region, interests, sources and activity signals. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Customize what you find on Google News](https://support.google.com/googlenews/answer/9010862) — Readers can follow or hide topics, locations and sources and tune story preferences. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [News content across Google](https://support.google.com/news/publisher-center/answer/9607025) — Google News discovers eligible publisher content through web crawling and provides publisher-facing surfaces and controls. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://news.google.com/) — Google News is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://support.google.com/googlenews/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://support.google.com/googlenews/answer/9005749) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/googlenews/answer/9010862) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/news/publisher-center/answer/9607025) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/news/publisher-center/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google News Public web-surface observation (REA)](https://news.google.com/home?hl=en-US&gl=US&ceid=US:en) — A dated unauthenticated snapshot exposed controls button: Advanced search, button: Search, button: Help, button: Settings, button: Google apps, button: Expand to view forecast, button: Use precise location, button: More - Plane may have broken apart ahead of deadly Florida jet crash, say investigators, button: More - 20-Year-Old Nathalia Filgueiras Was a Pilot on Learjet That Crashed in Florida, button: More - Passenger in deadly Florida plane crash identified as former Rice basketball player, university officials say, button: More - Austin tech entrepreneur, wife and young children among victims of Florida jet crash, button: More - Supreme Court rejects Trump administration push to set aside thousands of California ballots, button: More - Supreme Court quickly rejects Trump effort to target alleged noncitizen voters in California, button: More - Supreme Court rejects Trump request for California to set aside ballots from alleged noncitizens, button: More - El-Sayed campaign reports $2.4 million fundraising day as Stevens endorses GOP rival, button: Manage local news, button: More - Jean-Georges Vongerichten Is Opening Two New Restaurants in Hudson Yards, button: More - Watchdog says NY taxpayers pay $68,538 per film job, button: More - Blood pressure medication recalled nationwide. See the affected drug, button: More - El-Sayed, Michigan Democrats push to galvanize voters after stunning Senate race defection, link: Google News, combobox: Search for topics, locations & sources, link: Sign in, link: Google Weather, link: Top stories, link: Learjet crash in Florida kills nine people, link: Plane may have broken apart ahead of deadly Florida jet crash, say investigators - BBC - 1 hour ago - By Nardine Saad, link: 20-Year-Old Nathalia Filgueiras Was a Pilot on Learjet That Crashed in Florida - The New York Times - 16 minutes ago - By David Ovalle, Jacey Fortin & Shahrzad Rasekh, link: Passenger in deadly Florida plane crash identified as former Rice basketball player, university officials say - ABC13 Houston - 1 hour ago, link: Austin tech entrepreneur, wife and young children among victims of Florida jet crash - KUT - 2 hours ago - By Nathan Bernier, link: See more headlines & perspectives - Learjet crash in Florida kills nine people, link: Supreme Court rejects Trump administration push to set aside thousands of California ballots - AP News - 21 minutes ago - By Lindsay Whitehurst & Nicholas Riccardi, link: Supreme Court quickly rejects Trump effort to target alleged noncitizen voters in California - NBC News - 2 hours ago - By Lawrence Hurley, link: Supreme Court rejects Trump request for California to set aside ballots from alleged noncitizens - Yahoo - 38 minutes ago, link: See more headlines & perspectives, link: El-Sayed campaign reports $2.4 million fundraising day as Stevens endorses GOP rival - The Washington Post - 1 hour ago - By Amy B Wang & Erin Cox, link: See more headlines & perspectives - El-Sayed campaign reports $2.4 million fundraising day as Stevens endorses GOP rival, link: Local news, link: Jean-Georges Vongerichten Is Opening Two New Restaurants in Hudson Yards - Eater New York - 1 hour ago - By Melissa McCart, link: Watchdog says NY taxpayers pay $68,538 per film job - NEWS10 ABC - 1 hour ago - By Johan Sheridan, link: Blood pressure medication recalled nationwide. See the affected drug - USA Today - 7 hours ago - By Mary Walrath, link: See more headlines & perspectives - Blood pressure medication recalled nationwide. See the affected drug, link: El-Sayed, Michigan Democrats push to galvanize voters after stunning Senate race defection - AP News - 4 hours ago - By Joey Cappelletti, Corey Williams & Jacqueline GaNun, link: See more headlines & perspectives - El-Sayed, Michigan Democrats push to galvanize voters after stunning Senate race defection, button: More - New cyberattack on supermarket fridges sweeps across Europe, link: New cyberattack on supermarket fridges sweeps across Europe - Reuters - 4 hours ago - By Louise Lind Rasmussen, Marie Mannes & Helen Reid, link: See more headlines & perspectives - New cyberattack on supermarket fridges sweeps across Europe, button: More - Young co-pilot, 20, named as one of nine victims of deadly Florida plane crash, link: Young co-pilot, 20, named as one of nine victims of deadly Florida plane crash - The Guardian - 11 hours ago - By Richard Luscombe & Michael Sainato, link: See more headlines & perspectives - Young co-pilot, 20, named as one of nine victims of deadly Florida plane crash, button: More - Palantir reports booming U.S. commercial revenue growth, topping government for first time, link: Palantir reports booming U.S. commercial revenue growth, topping government for first time - CNBC - 4 hours ago - By Samantha Subin, link: See more headlines & perspectives - Palantir reports booming U.S. commercial revenue growth, topping government for first time, button: More - Utah girl missing for more than 500 days found in Oregon; FBI says ‘gore groups’ suspected, link: Utah girl missing for more than 500 days found in Oregon; FBI says ‘gore groups’ suspected - OregonLive.com - 9 hours ago - By Tatum Todd, link: See more headlines & perspectives - Utah girl missing for more than 500 days found in Oregon; FBI says ‘gore groups’ suspected, button: Customize, link: U.S., button: More - Victims of Florida plane crash include a 20-year-old copilot and tech entrepreneur and his family, link: Victims of Florida plane crash include a 20-year-old copilot and tech entrepreneur and his family - AP News - 2 hours ago - By Ed White, link: See more headlines & perspectives - Victims of Florida plane crash include a 20-year-old copilot and tech entrepreneur and his family, button: More - Supreme Court Rejects Trump Administration Request to Intervene in California Ballot Case, link: Supreme Court Rejects Trump Administration Request to Intervene in California Ballot Case - The New York Times - 1 hour ago - By Abbie VanSickle, link: See more headlines & perspectives - Supreme Court Rejects Trump Administration Request to Intervene in California Ballot Case, link: World, button: More - British adventurer Karl Bushby returns home after 28-year walk around world, link: British adventurer Karl Bushby returns home after 28-year walk around world - Al Jazeera - 7 hours ago, link: See more headlines & perspectives - British adventurer Karl Bushby returns home after 28-year walk around world, button: More - King Charles Meets Both Joy and Criticism on Caribbean Tour, link: King Charles Meets Both Joy and Criticism on Caribbean Tour - The New York Times - 6 hours ago - By Denis Chabrol, Michael D. Shear & Rachel Knowles Scott, link: See more headlines & perspectives - King Charles Meets Both Joy and Criticism on Caribbean Tour, button: More - Ukrainian and Russian emergency alert apps send false warnings after hacks, link: Ukrainian and Russian emergency alert apps send false warnings after hacks - The Washington Post - 3 hours ago - By Francesca Ebel, link: See more headlines & perspectives - Ukrainian and Russian emergency alert apps send false warnings after hacks, link: Business, button: More - Frantic Binance Hackers Created Windfall for Fast Crypto Traders, link: Frantic Binance Hackers Created Windfall for Fast Crypto Traders - Bloomberg.com - 2 hours ago - By Sidhartha Shukla & Emily Nicolle, link: See more headlines & perspectives - Frantic Binance Hackers Created Windfall for Fast Crypto Traders, link: Dow Jones +0.41% 51,983.98, link: S&P 500 -0.51% 7,541.40, link: Nasdaq -1.07% 25,164.36, link: Disclaimer, link: More from Google Finance, link: Technology, button: More - Apple unsure when more foldable iPhones will be available after selling out, link: Apple unsure when more foldable iPhones will be available after selling out - BBC - 1 hour ago - By Kali Hays, link: See more headlines & perspectives - Apple unsure when more foldable iPhones will be available after selling out, button: More - One of Google’s Android partners turned 1.3 million set-top boxes into a botnet, link: One of Google’s Android partners turned 1.3 million set-top boxes into a botnet - The Verge - 5 hours ago - By Stevie Bonifield, link: See more headlines & perspectives - One of Google’s Android partners turned 1.3 million set-top boxes into a botnet, button: More - Privacy Display on Galaxy S27 Pro and S27 Ultra looks more promising in latest leak, link: Privacy Display on Galaxy S27 Pro and S27 Ultra looks more promising in latest leak - 9to5Google - 8 hours ago - By Andrew Romero, link: See more headlines & perspectives - Privacy Display on Galaxy S27 Pro and S27 Ultra looks more promising in latest leak, link: Entertainment, button: More - Martha Stewart Apologizes for Homeless Halloween Costume, link: Martha Stewart Apologizes for Homeless Halloween Costume - The New York Times - 4 hours ago - By Alisha Haridasani Gupta, link: See more headlines & perspectives - Martha Stewart Apologizes for Homeless Halloween Costume, button: More - 'Ellen DeGeneres Show' EP Matthew Wright Dies In \, link: 'Ellen DeGeneres Show' EP Matthew Wright Dies In \, link: See more headlines & perspectives - 'Ellen DeGeneres Show' EP Matthew Wright Dies In \, button: More - Justin Timberlake to Release Four-Part ‘Tell-All’ Docuseries, Featuring Janet Jackson, on Apple (EXCLUSIVE), link: Justin Timberlake to Release Four-Part ‘Tell-All’ Docuseries, Featuring Janet Jackson, on Apple (EXCLUSIVE) - Variety - 3 hours ago - By Jem Aswad, link: See more headlines & perspectives - Justin Timberlake to Release Four-Part ‘Tell-All’ Docuseries, Featuring Janet Jackson, on Apple (EXCLUSIVE), link: Sports, button: More - Hometown Remix jerseys receive rave reviews from NHL players, link: Hometown Remix jerseys receive rave reviews from NHL players - NHL.com - 2 hours ago - By Nick Cotsonika, link: See more headlines & perspectives - Hometown Remix jerseys receive rave reviews from NHL players, button: More - Blame Schottenheimer? No, the latest Cowboys implosion falls on the whole Jones family, link: Blame Schottenheimer? No, the latest Cowboys implosion falls on the whole Jones family - Dallas News - 9 hours ago - By Tim Cowlishaw, link: See more headlines & perspectives - Blame Schottenheimer? No, the latest Cowboys implosion falls on the whole Jones family, button: More - When Electric Cars Were the Clean, Quiet Choice for Women, link: When Electric Cars Were the Clean, Quiet Choice for Women - IEEE Spectrum - 3 days ago - By Allison Marsh, button: More - How Cleta Mitchell Turned Trump’s “Big Lie, link: How Cleta Mitchell Turned Trump’s “Big Lie and landmarks banner, search, main, navigation. (VERIFIED; accessed 2026-11-03T01:38:43.209Z).

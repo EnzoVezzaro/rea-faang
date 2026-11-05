@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_ae2934968c87849d75c107258a88f9e0077f7171873c526424f7c6115492d55d",
+  "evidence_id": "ev_6c76778ca9b8ccc661ea7c1d9e4692cc3f0d285d4d7d6eb30613d92aff06a8ff",
   "subject": null,
   "provider": {
     "id": "rea-playwright-browser-scenario",
@@ -99,13 +99,13 @@
         "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "duration_ms": 6435,
+    "duration_ms": 5473,
     "steps": [
       {
         "step_index": 0,
         "step_id": "scenario_start",
         "action": "goto_start",
-        "elapsed_ms": 3579,
+        "elapsed_ms": 2591,
         "before_url": {
           "url": "about:blank",
           "origin": null,
@@ -153,7 +153,7 @@
         "step_index": 1,
         "step_id": "settle",
         "action": "wait_for_timeout",
-        "elapsed_ms": 2564,
+        "elapsed_ms": 2565,
         "before_url": {
           "url": "https://aws.amazon.com/fsx/lustre/",
           "origin": "https://aws.amazon.com",

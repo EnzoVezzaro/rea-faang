@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_65946f53555dc357023d19b2b50bb2473d53bf8ec5601974b064dcd91e242310",
+  "evidence_id": "ev_1056e7b1d78ebe155b4082ca595a8233df6bf3faa1d2865f82dc87dd444663e7",
   "subject": null,
   "provider": {
     "id": "rea-playwright-browser-scenario",
@@ -99,13 +99,13 @@
         "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "duration_ms": 7315,
+    "duration_ms": 4392,
     "steps": [
       {
         "step_index": 0,
         "step_id": "scenario_start",
         "action": "goto_start",
-        "elapsed_ms": 4015,
+        "elapsed_ms": 1612,
         "before_url": {
           "url": "about:blank",
           "origin": null,
@@ -153,7 +153,7 @@
         "step_index": 1,
         "step_id": "settle",
         "action": "wait_for_timeout",
-        "elapsed_ms": 2553,
+        "elapsed_ms": 2552,
         "before_url": {
           "url": "https://aws.amazon.com/codeguru/profiler/",
           "origin": "https://aws.amazon.com",

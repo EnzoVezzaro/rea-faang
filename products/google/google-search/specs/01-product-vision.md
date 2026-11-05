@@ -1,13 +1,13 @@
-# 01 — Product vision: RAE Search
+# 01 — Product vision: REA Search
 
 | Field | Value |
 |---|---|
-| Product | RAE Search (`google-search` workspace) |
+| Product | REA Search (`google-search` workspace) |
 | Target product | Google Search (`google-search`) |
 | Status | Proposed specification — no implementation yet |
 | Owner role | architect |
 | Grounding | `opportunities/google-search.md`, `research/companies/google/products/google-search.md` |
-| License | MIT (same as the RAE FAANG repository) |
+| License | MIT (same as the REA FAANG repository) |
 
 ## Problem
 
@@ -24,7 +24,7 @@ existing engine, ranks with open signals, and exposes a documented query API.
 
 ## Product statement
 
-RAE Search is a single-node, self-hostable search engine over a **bounded,
+REA Search is a single-node, self-hostable search engine over a **bounded,
 operator-supplied corpus**. An operator provides seeds or an open corpus slice;
 the service crawls, indexes, and serves ranked results through a web UI and a JSON
 API. Query text is not persisted by default.

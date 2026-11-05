@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for TensorFlow (google-tensorflow); inv
 
 # TensorFlow — implementation skill (`google-tensorflow`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **TensorFlow**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for TensorFlow (google-tensorflow); inv
 
 This is the coding-agent skill for **TensorFlow** (`google-tensorflow`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-tensorflow.md` from the catalog page, or run `npx rae-faang google-tensorflow --out ./google-tensorflow.md`, `npx rae-faang skills generate google-tensorflow` or `npx rae-faang build agent-kit google-tensorflow --out ./google-tensorflow-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-tensorflow.md` from the catalog page, or run `npx rea-faang google-tensorflow --out ./google-tensorflow.md`, `npx rea-faang skills generate google-tensorflow` or `npx rea-faang build agent-kit google-tensorflow --out ./google-tensorflow-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | TensorFlow / `google-tensorflow` | `catalog/products.jsonl` |
 | Official product URL | [https://www.tensorflow.org/](https://www.tensorflow.org/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | [https://www.tensorflow.org/api_docs](https://www.tensorflow.org/api_docs) | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-tensorflow` | `research/companies/google/products/google-tensorflow.md` |
+| Official documentation | [https://www.tensorflow.org/guide](https://www.tensorflow.org/guide) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-tensorflow` | `research/companies/google/products/google-tensorflow.md` |
 | REA report | `catalog/rea/google/google-tensorflow.md` (captured 2026-11-03T01:39:43.985Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-tensorflow.json` (`ev_a90c9c09fd5eb05fa68f3600b1743806ebe7374bac3a59e1b3831558b17ae765`) | Catalog evidence |
 | Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-tensorflow --format json` and `npx rae-faang research dossier google-tensorflow` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-tensorflow --format json` and `npx rea-faang research dossier google-tensorflow` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-TENSORFLOW-CAP-45821FCB`, `GOOGLE-TENSORFLOW-CAP-AD5F9F92`, `GOOGLE-TENSORFLOW-CAP-D457D65A`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-TENSORFLOW-CAP-23175DE3`, `GOOGLE-TENSORFLOW-CAP-6F12F757`, `GOOGLE-TENSORFLOW-CAP-CA6CD003`, `GOOGLE-TENSORFLOW-CAP-97CB6FD3`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **TensorFlow** / `google-tensorflow` | Product catalog |
-| Company / category | Google / `machine_learning_framework` / `machine_learning_framework` | Product catalog |
-| Official website / docs | [https://www.tensorflow.org/](https://www.tensorflow.org/) / [https://www.tensorflow.org/api_docs](https://www.tensorflow.org/api_docs) | URL lead; compiler does not fetch source |
+| Company / category | Google / `machine_learning_framework` / `machine_learning_framework`, `deep_learning`, `model_deployment`, `open_source` | Product catalog |
+| Official website / docs | [https://www.tensorflow.org/](https://www.tensorflow.org/) / [https://www.tensorflow.org/guide](https://www.tensorflow.org/guide) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-TENSORFLOW-CAP-45821FCB` | Tensor computation with GPU/TPU acceleration | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-TENSORFLOW-CAP-AD5F9F92` | Keras high-level training API | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-TENSORFLOW-CAP-D457D65A` | Serving, mobile (Lite) and browser (TF.js) runtimes | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-TENSORFLOW-CAP-23175DE3` | Open-source TensorFlow identity and core tensor/ML capabilities are verified. | VERIFIED | `ev-google-tensorflow-identity`, `ev-google-tensorflow-basics` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-TENSORFLOW-CAP-6F12F757` | Model construction, training, differentiation and Keras workflows are documented. | VERIFIED | `ev-google-tensorflow-basics`, `ev-google-tensorflow-keras` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-TENSORFLOW-CAP-CA6CD003` | Python, C++ and related API surfaces are documented with language-specific support caveats. | VERIFIED | `ev-google-tensorflow-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-TENSORFLOW-CAP-97CB6FD3` | Web, mobile/edge and production ML deployment paths are documented; runtime-specific behavior varies. | VERIFIED | `ev-google-tensorflow-deployment` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Dropdown menu for Learn`, `button: Dropdown menu for API`, `button: Dropdown menu for Ecosystem`, `button: Dropdown menu for Extended Navigation`, `button: Language`, `button: Dark code theme`, `button: Copy code sample`, `button: Watch now`, `button: More`, `button: Previous slide`, `button: Next slide`, `link: Skip to main content`, `link: TensorFlow`, `link: Install`, `link: Learn`, `link: API`, `link: Ecosystem`, `combobox: Search`, `link: GitHub`, `link: Sign in`, `link: Install TensorFlow`, `link: View tutorials`, `link: Run quickstart`, `link: Watch now`, `link: Analyze relational data using graph neural networks`, `link: Learn about TF GNN`, `link: Build recommendation systems with reinforcement learning`, `link: Read the blog`, `link: TensorFlow Blog - What's new in TensorFlow 2.20`, `link: TensorFlow Blog - What's new in TensorFlow 2.19`, `link: Library TensorFlow.js Train and run models directly in the browser using JavaScript or Node.js.`, `link: Library LiteRT Deploy ML on mobile and edge devices such as Android, iOS, Raspberry Pi, and Edge TPU.`, `link: API tf.data Preprocess data and create input pipelines for ML models.`, `link: Library TFX Create production ML pipelines and implement MLOps best practices.`, `link: API tf.keras Create ML models with TensorFlow's high-level API.`, `link: Resource Kaggle Models Find pre-trained models ready for fine-tuning and deployment.`, `link: Resource TensorFlow Datasets Browse the collection of standard datasets for initial training and validation.`, `link: Tool TensorBoard Visualize and track development of ML models.`, `link: ML models & datasets Pretrained models and ready-to-use datasets for image, text, audio, and video use cases.`, `link: Libraries & extensions Packages for domain-specific applications and APIs for languages other than Python.`, `link: Developer tools Tools to evaluate models, optimize performance, and productionize ML workflows.`, `link: Get involved`, `link: Explore resources`, `link: archive`, `link: forum logo Forum`, `link: x logo X`, `link: youtube logo YouTube`, `link: linkedin logo Linkedin`, `link: Explore tutorials`, `link: Blog`, `link: Forum`, `link: Twitter`, `link: YouTube`, `link: Issue tracker`, `link: Release notes`, `link: Stack Overflow`, `link: Brand guidelines`, `link: Cite TensorFlow`, `link: Terms`, `link: Privacy`, `link: Subscribe`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Tensor computation with GPU/TPU acceleration:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Keras high-level training API:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Serving, mobile (Lite) and browser (TF.js) runtimes:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Open-source TensorFlow identity and core tensor/ML capabilities are verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Model construction, training, differentiation and Keras workflows are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Python, C++ and related API surfaces are documented with language-specific support caveats.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Web, mobile/edge and production ML deployment paths are documented; runtime-specific behavior varies.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-45821FCB — Tensor computation with GPU/TPU acceleration
+### REQ-FUNC-23175DE3 — Open-source TensorFlow identity and core tensor/ML capabilities are verified.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-tensorflow-identity`, `ev-google-tensorflow-basics`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-45821FCB`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-TENSORFLOW-CAP-45821FCB` → `REQ-FUNC-45821FCB` → `TEST-FUNC-45821FCB`.
+- **Associated test ID:** `TEST-FUNC-23175DE3`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-TENSORFLOW-CAP-23175DE3` → `REQ-FUNC-23175DE3` → `TEST-FUNC-23175DE3`.
 
-### REQ-FUNC-AD5F9F92 — Keras high-level training API
+### REQ-FUNC-6F12F757 — Model construction, training, differentiation and Keras workflows are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-tensorflow-basics`, `ev-google-tensorflow-keras`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-AD5F9F92`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-TENSORFLOW-CAP-AD5F9F92` → `REQ-FUNC-AD5F9F92` → `TEST-FUNC-AD5F9F92`.
+- **Associated test ID:** `TEST-FUNC-6F12F757`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-TENSORFLOW-CAP-6F12F757` → `REQ-FUNC-6F12F757` → `TEST-FUNC-6F12F757`.
 
-### REQ-FUNC-D457D65A — Serving, mobile (Lite) and browser (TF.js) runtimes
+### REQ-FUNC-CA6CD003 — Python, C++ and related API surfaces are documented with language-specific support caveats.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-tensorflow-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D457D65A`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-TENSORFLOW-CAP-D457D65A` → `REQ-FUNC-D457D65A` → `TEST-FUNC-D457D65A`.
+- **Associated test ID:** `TEST-FUNC-CA6CD003`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-TENSORFLOW-CAP-CA6CD003` → `REQ-FUNC-CA6CD003` → `TEST-FUNC-CA6CD003`.
+
+### REQ-FUNC-97CB6FD3 — Web, mobile/edge and production ML deployment paths are documented; runtime-specific behavior varies.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-tensorflow-deployment`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-97CB6FD3`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-TENSORFLOW-CAP-97CB6FD3` → `REQ-FUNC-97CB6FD3` → `TEST-FUNC-97CB6FD3`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -217,9 +228,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-TENSORFLOW-CAP-45821FCB` — Tensor computation with GPU/TPU acceleration | Not verified against TensorFlow itself | None yet; compare with `ev_a90c9c09fd5eb05fa68f3600b1743806ebe7374bac3a59e1b3831558b17ae765` | Candidate code path and tests must be inspected |
-| `GOOGLE-TENSORFLOW-CAP-AD5F9F92` — Keras high-level training API | Not verified against TensorFlow itself | None yet; compare with `ev_a90c9c09fd5eb05fa68f3600b1743806ebe7374bac3a59e1b3831558b17ae765` | Candidate code path and tests must be inspected |
-| `GOOGLE-TENSORFLOW-CAP-D457D65A` — Serving, mobile (Lite) and browser (TF.js) runtimes | Not verified against TensorFlow itself | None yet; compare with `ev_a90c9c09fd5eb05fa68f3600b1743806ebe7374bac3a59e1b3831558b17ae765` | Candidate code path and tests must be inspected |
+| `GOOGLE-TENSORFLOW-CAP-23175DE3` — Open-source TensorFlow identity and core tensor/ML capabilities are verified. | Not verified against TensorFlow itself | None yet; compare with `ev_a90c9c09fd5eb05fa68f3600b1743806ebe7374bac3a59e1b3831558b17ae765` | Candidate code path and tests must be inspected |
+| `GOOGLE-TENSORFLOW-CAP-6F12F757` — Model construction, training, differentiation and Keras workflows are documented. | Not verified against TensorFlow itself | None yet; compare with `ev_a90c9c09fd5eb05fa68f3600b1743806ebe7374bac3a59e1b3831558b17ae765` | Candidate code path and tests must be inspected |
+| `GOOGLE-TENSORFLOW-CAP-CA6CD003` — Python, C++ and related API surfaces are documented with language-specific support caveats. | Not verified against TensorFlow itself | None yet; compare with `ev_a90c9c09fd5eb05fa68f3600b1743806ebe7374bac3a59e1b3831558b17ae765` | Candidate code path and tests must be inspected |
+| `GOOGLE-TENSORFLOW-CAP-97CB6FD3` — Web, mobile/edge and production ML deployment paths are documented; runtime-specific behavior varies. | Not verified against TensorFlow itself | None yet; compare with `ev_a90c9c09fd5eb05fa68f3600b1743806ebe7374bac3a59e1b3831558b17ae765` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -266,9 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-45821FCB** → `REQ-FUNC-45821FCB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-AD5F9F92** → `REQ-FUNC-AD5F9F92`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-D457D65A** → `REQ-FUNC-D457D65A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-23175DE3** → `REQ-FUNC-23175DE3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-6F12F757** → `REQ-FUNC-6F12F757`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-CA6CD003** → `REQ-FUNC-CA6CD003`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-97CB6FD3** → `REQ-FUNC-97CB6FD3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -289,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-45821FCB, REQ-FUNC-AD5F9F92, REQ-FUNC-D457D65A
+- **Requirements:** REQ-FUNC-23175DE3, REQ-FUNC-6F12F757, REQ-FUNC-CA6CD003, REQ-FUNC-97CB6FD3
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -299,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-45821FCB, REQ-FUNC-AD5F9F92, REQ-FUNC-D457D65A
+- **Requirements:** REQ-FUNC-23175DE3, REQ-FUNC-6F12F757, REQ-FUNC-CA6CD003, REQ-FUNC-97CB6FD3
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -321,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-45821FCB, REQ-FUNC-AD5F9F92, REQ-FUNC-D457D65A; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-23175DE3, REQ-FUNC-6F12F757, REQ-FUNC-CA6CD003, REQ-FUNC-97CB6FD3; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -351,8 +364,17 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.tensorflow.org/) | Not recorded | TensorFlow is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://www.tensorflow.org/api_docs) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-google-tensorflow-identity` | TensorFlow source repository — The official repository describes TensorFlow as an open-source machine-learning framework and identifies its Apache-2.0 license. | [link](https://github.com/tensorflow/tensorflow) | Not recorded | TensorFlow is an end-to-end open-source platform for machine learning. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-tensorflow-basics` | TensorFlow basics — The official basics guide lists these core capabilities and explains tensor-based workflows. | [link](https://www.tensorflow.org/guide/basics) | Not recorded | TensorFlow supports tensor computation, GPU and distributed processing, automatic differentiation, and model construction, training and export. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-tensorflow-api` | TensorFlow API documentation — The official API reference identifies Python as the most complete API and documents C++, JavaScript, Java and other bindings. | [link](https://www.tensorflow.org/api_docs) | Not recorded | TensorFlow provides documented Python and C++ APIs plus additional language bindings with different support guarantees. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-tensorflow-deployment` | Introduction to TensorFlow — The official learning page separates web, mobile and edge inference, and production training and inference with TFX. | [link](https://www.tensorflow.org/learn) | Not recorded | TensorFlow documents workflows for desktop, mobile, web, edge and production ML deployment. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-tensorflow-keras` | Keras high-level API — The official guide describes Keras as the high-level TensorFlow API for the ML workflow. | [link](https://www.tensorflow.org/guide/keras) | Not recorded | Keras is the high-level API of the TensorFlow platform and covers steps from data processing through deployment. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.tensorflow.org/) | 2026-11-03T00:00:00Z | TensorFlow is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://www.tensorflow.org/guide) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://www.tensorflow.org/guide/basics) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://www.tensorflow.org/api_docs) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://github.com/tensorflow/tensorflow) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://www.tensorflow.org/learn) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_a90c9c09fd5eb05fa68f3600b1743806ebe7374bac3a59e1b3831558b17ae765` | TensorFlow Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.tensorflow.org/) | 2026-11-03T01:39:43.985Z | A dated unauthenticated snapshot exposed controls button: Dropdown menu for Learn, button: Dropdown menu for API, button: Dropdown menu for Ecosystem, button: Dropdown menu for Extended Navigation, button: Language, button: Dark code theme, button: Copy code sample, button: Watch now, button: More, button: Previous slide, button: Next slide, link: Skip to main content, link: TensorFlow, link: Install, link: Learn, link: API, link: Ecosystem, combobox: Search, link: GitHub, link: Sign in, link: Install TensorFlow, link: View tutorials, link: Run quickstart, link: Watch now, link: Analyze relational data using graph neural networks, link: Learn about TF GNN, link: Build recommendation systems with reinforcement learning, link: Read the blog, link: TensorFlow Blog - What's new in TensorFlow 2.20, link: TensorFlow Blog - What's new in TensorFlow 2.19, link: Library TensorFlow.js Train and run models directly in the browser using JavaScript or Node.js., link: Library LiteRT Deploy ML on mobile and edge devices such as Android, iOS, Raspberry Pi, and Edge TPU., link: API tf.data Preprocess data and create input pipelines for ML models., link: Library TFX Create production ML pipelines and implement MLOps best practices., link: API tf.keras Create ML models with TensorFlow's high-level API., link: Resource Kaggle Models Find pre-trained models ready for fine-tuning and deployment., link: Resource TensorFlow Datasets Browse the collection of standard datasets for initial training and validation., link: Tool TensorBoard Visualize and track development of ML models., link: ML models & datasets Pretrained models and ready-to-use datasets for image, text, audio, and video use cases., link: Libraries & extensions Packages for domain-specific applications and APIs for languages other than Python., link: Developer tools Tools to evaluate models, optimize performance, and productionize ML workflows., link: Get involved, link: Explore resources, link: archive, link: forum logo Forum, link: x logo X, link: youtube logo YouTube, link: linkedin logo Linkedin, link: Explore tutorials, link: Blog, link: Forum, link: Twitter, link: YouTube, link: Issue tracker, link: Release notes, link: Stack Overflow, link: Brand guidelines, link: Cite TensorFlow, link: Terms, link: Privacy, link: Subscribe and landmarks banner, navigation: Upper tabs, main, navigation: On this page, navigation, navigation: Footer links, navigation: Utility links. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -380,117 +402,104 @@ Resume token: `google-tensorflow`. Read dossier, REA report and raw Evidence bef
 
 # 1. Executive summary
 
-TensorFlow is Google's open-source machine learning framework, widely used for research and production deployment of ML models. It has been a dominant framework since 2015 and has evolved to support both research experimentation and production serving.
+TensorFlow is Google's end-to-end open-source platform for machine learning. It provides tensor computation, automatic differentiation, model construction and training, export, deployment runtimes and an ecosystem for research and production workloads. The canonical product is the open-source TensorFlow project, not a hosted Google Cloud service.
 
 # 2. Product identity and ownership
 
 - **Official name:** TensorFlow
-- **Company and business unit:** Google Brain Team
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2015 (open-source release; internal use began 2011)
-- **Current lifecycle status:** active
-- **Previous names:** None (succeeded Learner)
-- **Acquisitions or ownership changes:** Open-sourced by Google; governance transferred to LF AI & Data Foundation
-- **Related products:** JAX, Keras (now tf.keras), TFLite, TFX, Magenta, DeepMind tools
-- **Official website:** https://www.tensorflow.org/
-- **Official documentation:** https://www.tensorflow.org/api_docs
+- **Company and origin:** developed by Google's Machine Intelligence team and released as an open-source project.
+- **Lifecycle:** active
+- **Canonical website:** https://www.tensorflow.org/
+- **Official documentation:** https://www.tensorflow.org/guide
+- **Source repository:** https://github.com/tensorflow/tensorflow
+- **License:** Apache License 2.0, as stated by the official source repository.
+- **Scope boundary:** TensorFlow Core, its documented APIs and the associated official ecosystem are cataloged together; TensorFlow-adjacent projects such as TensorBoard, TFX and LiteRT remain separate projects when they have their own identity.
 
 # 3. Product capabilities
 
-- Define-and-run computational graph paradigm
-- Keras high-level API (tf.keras)
-- Execution on CPU, GPU, TPU
-- Distributed training (parameter server, mirrored strategy)
-- TensorBoard visualization
-- TFLite for mobile and embedded deployment
-- TFX (TensorFlow Extended) for production pipelines
-- Automatic differentiation
-- Quantization and sparsity optimization
-- Model optimization and pruning
+- Multidimensional tensor computation and numerical operations.
+- Automatic differentiation and model construction, training and export.
+- Keras high-level API for the machine-learning workflow.
+- CPU, GPU, TPU and distributed-processing support subject to platform and build constraints.
+- SavedModel and related model serialization and deployment workflows.
+- TensorFlow.js for browser and JavaScript workloads.
+- LiteRT/TensorFlow Lite ecosystem for mobile and edge inference, with current migration considerations.
+- TensorFlow Serving API and production deployment tooling.
+- TensorBoard visualization and official models, tutorials and datasets ecosystem.
 
 # 4. Technical architecture
 
-TensorFlow's architecture:
+TensorFlow represents data as tensors and executes operations through device-specific kernels. The framework supports eager execution and graph/export workflows, automatic differentiation, device placement and distributed strategies. Python is the primary and most complete API; C++ and other language bindings are documented with different support guarantees. Training and export are separate from deployment runtimes such as TensorFlow Serving and LiteRT.
 
-- Computational graph with nodes (operations) and edges (tensors)
-- Data flow execution engine
-- Kernel registry for custom operations
-- Device placement and distribution strategies
-- Graph optimization (layout, arithmetic, fusion)
-- Session management and checkpointing
+# 5. User and developer workflows
 
-Core library is open source under Apache 2.0. Some optimizations and hardware extensions have separate licensing or are proprietary.
-
-# 5. User workflows
-
-Primary workflows: model definition, training, evaluation, saving/loading, and deployment. Essential: graph construction, training loop, model saving. Advanced: distributed training, custom kernels, TPU utilization, pipeline automation with TFX.
+1. Install a supported TensorFlow package or build from source for the target platform.
+2. Load and prepare data, define a model with TensorFlow or Keras, and train or fine-tune it.
+3. Evaluate the model and export a supported artifact such as SavedModel.
+4. Test the artifact on the intended serving, browser, mobile or edge runtime.
+5. Monitor accuracy, performance, resource usage, dependencies and security throughout deployment.
 
 # 6. Pricing and access
 
-Apache 2.0 open source - free to use. TensorFlow Extended (TFX) components may have enterprise support options. TPU access requires Google Cloud or TPU Pod subscription.
+TensorFlow is available under the Apache License 2.0. The framework itself does not require a paid service. Compute, GPU/TPU access, hosted serving, storage and other infrastructure may incur separate costs depending on the chosen provider; this dossier does not assert current provider pricing.
 
 # 7. API and integration surface
 
-- Python API (primary)
-- C++ API
-- Java API
-- SavedModel format for serialization
-- REST API via TensorFlow Serving
-- TensorFlow Lite Interpreter
+- Python and C++ APIs, with additional documented language bindings and support caveats.
+- Keras APIs for high-level model development.
+- TensorFlow Serving C++ API and serving interfaces.
+- TensorFlow.js for JavaScript/browser environments.
+- LiteRT/TensorFlow Lite runtimes for mobile and embedded deployment.
+- SavedModel, checkpoints, datasets, TensorBoard and official model/tooling repositories.
+- Install, Docker, source-build and platform-specific workflows documented by TensorFlow.
 
 # 8. Existing open-source alternatives
 
-PyTorch, JAX, Keras, FastAI, MindSpore, Caffe2. PyTorch has become the research dominant, while TensorFlow remains strong in production.
+- **PyTorch:** BSD-3-Clause open-source deep-learning framework with Python-first research and production workflows.
+- **JAX:** Apache-2.0 numerical-computing and machine-learning framework with composable transformations and accelerator compilation.
+- **Keras:** Apache-2.0 high-level deep-learning API that can target multiple backends; it is not a complete replacement for TensorFlow's lower-level runtime and ecosystem.
+- **Apache MXNet:** Apache-2.0 deep-learning framework, but its maintenance and ecosystem status must be checked before selecting it for new work.
 
 # 9. Alternative comparison
 
-PyTorch is the primary research alternative. JAX offers superior XLA compilation. Keras (now tf.keras) is the high-level API within TensorFlow. All three support GPU/TPU deployment.
+PyTorch and JAX are mature open-source alternatives for many model construction, training and accelerator workloads. Keras covers the high-level API layer but is not equivalent to TensorFlow Core by itself. None is a drop-in replacement for every TensorFlow API, export artifact, deployment runtime, hardware path and surrounding ecosystem. Because TensorFlow itself is open source, the REA recommendation is reuse or extend the existing project rather than rebuild the framework.
 
 # 10. Missing capabilities and opportunity analysis
 
-Research workflow integration, production pipeline automation (TFX), and model optimization techniques represent areas where independent implementations or significant improvements are possible. Attention to TFX pipeline components is a build opportunity.
+The framework is already available as open source. A new implementation would need to reproduce tensor kernels, autodiff, graph/export behavior, compiler and accelerator integration, distributed training, serialization, tooling and deployment compatibility. Bounded opportunities may exist in model conversion, observability, optimization, domain-specific layers and compatibility tooling; a general replacement is not justified by this catalog pass.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Contribute to existing framework features, build domain-specific extensions, or focus on model conversion and optimization tools rather than a new ML framework from scratch.
+Reuse TensorFlow for workloads that require its APIs, model formats or deployment ecosystem. Prefer a focused extension, model conversion tool, optimization pass, custom layer, evaluation harness or deployment adapter. Compare PyTorch and JAX against the actual workload before migrating; do not infer equivalence from framework popularity.
 
 # 12. Security, privacy, and compliance
 
-Model ownership and attribution, data poisoning risks, bias detection. TPU and GPU access considerations. Differential privacy and federated learning extensions available.
+Training and inference pipelines may process sensitive data and untrusted models. Pin dependencies, verify official packages and model artifacts, isolate custom operations, validate serialization inputs, protect checkpoints and secrets, and test data leakage, model poisoning and supply-chain controls. Infrastructure, telemetry and deployment compliance depend on the selected runtime and provider.
 
 # 13. Sources and evidence
 
-- https://www.tensorflow.org/ (product page)
-- https://github.com/tensorflow/tensorflow (source repository)
-- https://lfaidatafoundation.org/ (LF AI & Data governance)
+- [TensorFlow basics](https://www.tensorflow.org/guide/basics) — official tensor, differentiation, training and export overview.
+- [TensorFlow API documentation](https://www.tensorflow.org/api_docs) — official Python, C++ and related API references.
+- [TensorFlow Learn](https://www.tensorflow.org/learn) — official workflows for web, mobile/edge and production ML.
+- [TensorFlow source repository](https://github.com/tensorflow/tensorflow) — official project identity, open-source platform description and Apache-2.0 license.
+- [TensorFlow Keras guide](https://www.tensorflow.org/guide/keras) — official high-level API and workflow documentation.
 
 # 14. Open questions
 
-- What is the minimum viable ML framework feature set for independent research and production?
-- How do model conversion pipelines (SavedModel, ONNX) compare across frameworks?
-- What are the trade-offs between define-and-run vs. eager execution paradigms?
+- Which target runtime and accelerator must the project support?
+- Is the goal to extend TensorFlow, migrate away from it or build a compatibility layer?
+- Which model formats, serving guarantees and deployment environments are mandatory?
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
+- v1: catalog candidate with preliminary framework alternatives, research pending.
+- v2: updated 2026-11-03 from official TensorFlow documentation and source repository. Status: `researched`; exact feature parity across alternative frameworks and deployment runtimes remains workload-dependent.
 
----
-
-# 16. Alternative comparison (continued)
-
-PyTorch, JAX are the primary open-source ML framework alternatives. TFX provides production pipeline components.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Focus on model conversion, optimization, or domain-specific extensions to existing frameworks. Full framework development is high effort.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-tensorflow` and inspect canonical identity with `npx rae-faang products show google-tensorflow --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-tensorflow` and inspect canonical identity with `npx rea-faang products show google-tensorflow --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -503,7 +512,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-tensorflow --out ./google-tensorflow.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-tensorflow --out ./google-tensorflow-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-tensorflow --out ./google-tensorflow.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-tensorflow --out ./google-tensorflow-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -545,6 +554,15 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://www.tensorflow.org/) — TensorFlow is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://www.tensorflow.org/api_docs) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [TensorFlow source repository](https://github.com/tensorflow/tensorflow) — TensorFlow is an end-to-end open-source platform for machine learning. (VERIFIED; accessed Not recorded).
+- [TensorFlow basics](https://www.tensorflow.org/guide/basics) — TensorFlow supports tensor computation, GPU and distributed processing, automatic differentiation, and model construction, training and export. (VERIFIED; accessed Not recorded).
+- [TensorFlow API documentation](https://www.tensorflow.org/api_docs) — TensorFlow provides documented Python and C++ APIs plus additional language bindings with different support guarantees. (VERIFIED; accessed Not recorded).
+- [Introduction to TensorFlow](https://www.tensorflow.org/learn) — TensorFlow documents workflows for desktop, mobile, web, edge and production ML deployment. (VERIFIED; accessed Not recorded).
+- [Keras high-level API](https://www.tensorflow.org/guide/keras) — Keras is the high-level API of the TensorFlow platform and covers steps from data processing through deployment. (VERIFIED; accessed Not recorded).
+- [Official product page](https://www.tensorflow.org/) — TensorFlow is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://www.tensorflow.org/guide) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://www.tensorflow.org/guide/basics) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://www.tensorflow.org/api_docs) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://github.com/tensorflow/tensorflow) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://www.tensorflow.org/learn) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [TensorFlow Public web-surface observation (REA)](https://www.tensorflow.org/) — A dated unauthenticated snapshot exposed controls button: Dropdown menu for Learn, button: Dropdown menu for API, button: Dropdown menu for Ecosystem, button: Dropdown menu for Extended Navigation, button: Language, button: Dark code theme, button: Copy code sample, button: Watch now, button: More, button: Previous slide, button: Next slide, link: Skip to main content, link: TensorFlow, link: Install, link: Learn, link: API, link: Ecosystem, combobox: Search, link: GitHub, link: Sign in, link: Install TensorFlow, link: View tutorials, link: Run quickstart, link: Watch now, link: Analyze relational data using graph neural networks, link: Learn about TF GNN, link: Build recommendation systems with reinforcement learning, link: Read the blog, link: TensorFlow Blog - What's new in TensorFlow 2.20, link: TensorFlow Blog - What's new in TensorFlow 2.19, link: Library TensorFlow.js Train and run models directly in the browser using JavaScript or Node.js., link: Library LiteRT Deploy ML on mobile and edge devices such as Android, iOS, Raspberry Pi, and Edge TPU., link: API tf.data Preprocess data and create input pipelines for ML models., link: Library TFX Create production ML pipelines and implement MLOps best practices., link: API tf.keras Create ML models with TensorFlow's high-level API., link: Resource Kaggle Models Find pre-trained models ready for fine-tuning and deployment., link: Resource TensorFlow Datasets Browse the collection of standard datasets for initial training and validation., link: Tool TensorBoard Visualize and track development of ML models., link: ML models & datasets Pretrained models and ready-to-use datasets for image, text, audio, and video use cases., link: Libraries & extensions Packages for domain-specific applications and APIs for languages other than Python., link: Developer tools Tools to evaluate models, optimize performance, and productionize ML workflows., link: Get involved, link: Explore resources, link: archive, link: forum logo Forum, link: x logo X, link: youtube logo YouTube, link: linkedin logo Linkedin, link: Explore tutorials, link: Blog, link: Forum, link: Twitter, link: YouTube, link: Issue tracker, link: Release notes, link: Stack Overflow, link: Brand guidelines, link: Cite TensorFlow, link: Terms, link: Privacy, link: Subscribe and landmarks banner, navigation: Upper tabs, main, navigation: On this page, navigation, navigation: Footer links, navigation: Utility links. (VERIFIED; accessed 2026-11-03T01:39:43.985Z).

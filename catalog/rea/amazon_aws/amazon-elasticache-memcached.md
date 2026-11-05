@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon ElastiCache for Memcached, r
 | Target | https://aws.amazon.com/elasticache/ |
 | Resolved URL | https://aws.amazon.com/elasticache/ |
 | Page title | Amazon ElastiCache |
-| Captured | 2026-11-03T03:04:27.493Z |
+| Captured | 2026-11-04T02:42:52.022Z |
 | Status | captured |
-| REA Evidence ID | `ev_d84179890362df35f9479fc80bbfeb93bd34995cedcdc4fcf232af1a090deb06` |
+| REA Evidence ID | `ev_625856f6e43a6f00b726b498fb15d8b35ae6f5c1b1382827ee8d9a6526c0bfc0` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-elasticache-memcached.json`
-- Evidence ID: `ev_d84179890362df35f9479fc80bbfeb93bd34995cedcdc4fcf232af1a090deb06`
-- Accessibility outline: 15387 bytes
+- Evidence ID: `ev_625856f6e43a6f00b726b498fb15d8b35ae6f5c1b1382827ee8d9a6526c0bfc0`
+- Accessibility outline: 15410 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

@@ -73,9 +73,9 @@ Compare language coverage, quality, model packaging, offline operation, text and
 
 Research must map every translation, terminology and parallel-data operation, language matrix, document format, batch state, settings behavior, errors, limits, throttling, storage, output and regional semantics. Any implementation must use original code and public or synthetic text fixtures.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product, developer, API, CLI and feature documentation as primary sources. The generated RAE skill should instruct an agent to build an independent translation implementation beginning with Argos Translate or another documented local engine, then add language packages, terminology, document handling, batch jobs and customization only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS managed-service parity.
+Use the official product, developer, API, CLI and feature documentation as primary sources. The generated REA skill should instruct an agent to build an independent translation implementation beginning with Argos Translate or another documented local engine, then add language packages, terminology, document handling, batch jobs and customization only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS managed-service parity.
 
 # 12. Security, privacy, and compliance
 

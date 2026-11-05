@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Docs (google-docs); investig
 
 # Google Docs — implementation skill (`google-docs`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Docs**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Docs (google-docs); investig
 
 This is the coding-agent skill for **Google Docs** (`google-docs`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-docs.md` from the catalog page, or run `npx rae-faang google-docs --out ./google-docs.md`, `npx rae-faang skills generate google-docs` or `npx rae-faang build agent-kit google-docs --out ./google-docs-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-docs.md` from the catalog page, or run `npx rea-faang google-docs --out ./google-docs.md`, `npx rea-faang skills generate google-docs` or `npx rea-faang build agent-kit google-docs --out ./google-docs-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Google Docs / `google-docs` | `catalog/products.jsonl` |
 | Official product URL | [https://docs.google.com/](https://docs.google.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-docs` | `research/companies/google/products/google-docs.md` |
+| Official documentation | [https://developers.google.com/workspace/docs](https://developers.google.com/workspace/docs) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-docs` | `research/companies/google/products/google-docs.md` |
 | REA report | `catalog/rea/google/google-docs.md` (captured 2026-11-03T01:37:51.088Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-docs.json` (`ev_dca9d6d1804351283dfd6846f58c73a6aeda0b9fe43e6d7a9ea2e5e0b94e4b36`) | Catalog evidence |
 | Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-docs --format json` and `npx rae-faang research dossier google-docs` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-docs --format json` and `npx rea-faang research dossier google-docs` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-DOCS-CAP-F9964BC3`, `GOOGLE-DOCS-CAP-D8B46F35`, `GOOGLE-DOCS-CAP-9E0A7C6E`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-DOCS-CAP-53BB4B99`, `GOOGLE-DOCS-CAP-77C1B998`, `GOOGLE-DOCS-CAP-EF593D2B`, `GOOGLE-DOCS-CAP-9498E927`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Google Docs** / `google-docs` | Product catalog |
-| Company / category | Google / `productivity_application` / `documents`, `collaboration` | Product catalog |
-| Official website / docs | [https://docs.google.com/](https://docs.google.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Company / category | Google / `productivity_application` / `documents`, `collaboration`, `productivity` | Product catalog |
+| Official website / docs | [https://docs.google.com/](https://docs.google.com/) / [https://developers.google.com/workspace/docs](https://developers.google.com/workspace/docs) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-DOCS-CAP-F9964BC3` | Browser-based document editing | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-DOCS-CAP-D8B46F35` | Real-time co-authoring and comments | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-DOCS-CAP-9E0A7C6E` | Cloud storage and sharing | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-DOCS-CAP-53BB4B99` | Online document creation, editing and sharing are verified. | VERIFIED | `ev-google-docs-identity`, `ev-google-docs-sharing` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-DOCS-CAP-77C1B998` | Document creation, retrieval and batch updates are documented through the Docs API. | VERIFIED | `ev-google-docs-api`, `ev-google-docs-rest` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-DOCS-CAP-EF593D2B` | Viewer, commenter and editor access levels are documented; organisation policies may constrain them. | VERIFIED | `ev-google-docs-sharing` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-DOCS-CAP-9498E927` | Editor identity and API surface are verified, but quotas, plan entitlements, revision behavior and authenticated tenant settings were not exhaustively verified. | VERIFIED | `ev-google-docs-identity`, `ev-google-docs-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Next`, `textbox: Email or phone`, `link: Forgot email?`, `link: Learn more about using Guest mode (external, opens in a new window)`, `link: Create account`, `link: Open Google Account Help Center (external, opens in a new window)`, `link: Privacy Policy (external, opens in a new window)`, `link: Google Terms of Service (external, opens in a new window)`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Browser-based document editing:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Real-time co-authoring and comments:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Cloud storage and sharing:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Online document creation, editing and sharing are verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Document creation, retrieval and batch updates are documented through the Docs API.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Viewer, commenter and editor access levels are documented; organisation policies may constrain them.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Editor identity and API surface are verified, but quotas, plan entitlements, revision behavior and authenticated tenant settings were not exhaustively verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-F9964BC3 — Browser-based document editing
+### REQ-FUNC-53BB4B99 — Online document creation, editing and sharing are verified.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-docs-identity`, `ev-google-docs-sharing`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-F9964BC3`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-DOCS-CAP-F9964BC3` → `REQ-FUNC-F9964BC3` → `TEST-FUNC-F9964BC3`.
+- **Associated test ID:** `TEST-FUNC-53BB4B99`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-DOCS-CAP-53BB4B99` → `REQ-FUNC-53BB4B99` → `TEST-FUNC-53BB4B99`.
 
-### REQ-FUNC-D8B46F35 — Real-time co-authoring and comments
+### REQ-FUNC-77C1B998 — Document creation, retrieval and batch updates are documented through the Docs API.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-docs-api`, `ev-google-docs-rest`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D8B46F35`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-DOCS-CAP-D8B46F35` → `REQ-FUNC-D8B46F35` → `TEST-FUNC-D8B46F35`.
+- **Associated test ID:** `TEST-FUNC-77C1B998`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-DOCS-CAP-77C1B998` → `REQ-FUNC-77C1B998` → `TEST-FUNC-77C1B998`.
 
-### REQ-FUNC-9E0A7C6E — Cloud storage and sharing
+### REQ-FUNC-EF593D2B — Viewer, commenter and editor access levels are documented; organisation policies may constrain them.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-docs-sharing`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-9E0A7C6E`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-DOCS-CAP-9E0A7C6E` → `REQ-FUNC-9E0A7C6E` → `TEST-FUNC-9E0A7C6E`.
+- **Associated test ID:** `TEST-FUNC-EF593D2B`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-DOCS-CAP-EF593D2B` → `REQ-FUNC-EF593D2B` → `TEST-FUNC-EF593D2B`.
+
+### REQ-FUNC-9498E927 — Editor identity and API surface are verified, but quotas, plan entitlements, revision behavior and authenticated tenant settings were not exhaustively verified.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-docs-identity`, `ev-google-docs-api`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-9498E927`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-DOCS-CAP-9498E927` → `REQ-FUNC-9498E927` → `TEST-FUNC-9498E927`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -216,9 +227,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-DOCS-CAP-F9964BC3` — Browser-based document editing | Not verified against ONLYOFFICE Docs | None yet; compare with `ev_dca9d6d1804351283dfd6846f58c73a6aeda0b9fe43e6d7a9ea2e5e0b94e4b36` | Candidate code path and tests must be inspected |
-| `GOOGLE-DOCS-CAP-D8B46F35` — Real-time co-authoring and comments | Not verified against ONLYOFFICE Docs | None yet; compare with `ev_dca9d6d1804351283dfd6846f58c73a6aeda0b9fe43e6d7a9ea2e5e0b94e4b36` | Candidate code path and tests must be inspected |
-| `GOOGLE-DOCS-CAP-9E0A7C6E` — Cloud storage and sharing | Not verified against ONLYOFFICE Docs | None yet; compare with `ev_dca9d6d1804351283dfd6846f58c73a6aeda0b9fe43e6d7a9ea2e5e0b94e4b36` | Candidate code path and tests must be inspected |
+| `GOOGLE-DOCS-CAP-53BB4B99` — Online document creation, editing and sharing are verified. | Not verified against ONLYOFFICE Docs | None yet; compare with `ev_dca9d6d1804351283dfd6846f58c73a6aeda0b9fe43e6d7a9ea2e5e0b94e4b36` | Candidate code path and tests must be inspected |
+| `GOOGLE-DOCS-CAP-77C1B998` — Document creation, retrieval and batch updates are documented through the Docs API. | Not verified against ONLYOFFICE Docs | None yet; compare with `ev_dca9d6d1804351283dfd6846f58c73a6aeda0b9fe43e6d7a9ea2e5e0b94e4b36` | Candidate code path and tests must be inspected |
+| `GOOGLE-DOCS-CAP-EF593D2B` — Viewer, commenter and editor access levels are documented; organisation policies may constrain them. | Not verified against ONLYOFFICE Docs | None yet; compare with `ev_dca9d6d1804351283dfd6846f58c73a6aeda0b9fe43e6d7a9ea2e5e0b94e4b36` | Candidate code path and tests must be inspected |
+| `GOOGLE-DOCS-CAP-9498E927` — Editor identity and API surface are verified, but quotas, plan entitlements, revision behavior and authenticated tenant settings were not exhaustively verified. | Not verified against ONLYOFFICE Docs | None yet; compare with `ev_dca9d6d1804351283dfd6846f58c73a6aeda0b9fe43e6d7a9ea2e5e0b94e4b36` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -265,9 +277,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-F9964BC3** → `REQ-FUNC-F9964BC3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-D8B46F35** → `REQ-FUNC-D8B46F35`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-9E0A7C6E** → `REQ-FUNC-9E0A7C6E`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-53BB4B99** → `REQ-FUNC-53BB4B99`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-77C1B998** → `REQ-FUNC-77C1B998`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-EF593D2B** → `REQ-FUNC-EF593D2B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-9498E927** → `REQ-FUNC-9498E927`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -288,7 +301,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-F9964BC3, REQ-FUNC-D8B46F35, REQ-FUNC-9E0A7C6E
+- **Requirements:** REQ-FUNC-53BB4B99, REQ-FUNC-77C1B998, REQ-FUNC-EF593D2B, REQ-FUNC-9498E927
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -298,7 +311,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-F9964BC3, REQ-FUNC-D8B46F35, REQ-FUNC-9E0A7C6E
+- **Requirements:** REQ-FUNC-53BB4B99, REQ-FUNC-77C1B998, REQ-FUNC-EF593D2B, REQ-FUNC-9498E927
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -320,7 +333,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-F9964BC3, REQ-FUNC-D8B46F35, REQ-FUNC-9E0A7C6E; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-53BB4B99, REQ-FUNC-77C1B998, REQ-FUNC-EF593D2B, REQ-FUNC-9498E927; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -350,8 +363,19 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://docs.google.com/) | Not recorded | Google Docs is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-google-docs-identity` | How to use Google Docs — Google's official help describes creating, editing, formatting, sharing and working with other people in Docs. | [link](https://support.google.com/docs/answer/7068618) | 2026-11-03T00:00:00Z | Google Docs is an online word processor for creating, formatting and collaborating on documents. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-docs-api` | Google Docs API overview — The official overview documents automation, document creation, formatting, retrieval and updates through the Docs API. | [link](https://developers.google.com/workspace/docs/api/how-tos/overview) | 2026-11-03T00:00:00Z | The Docs API can create and modify Google Docs documents. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-docs-rest` | Google Docs API REST reference — The official REST reference lists the Docs API service endpoint and document methods. | [link](https://developers.google.com/workspace/docs/api/reference/rest) | 2026-11-03T00:00:00Z | The Docs API exposes document create, get and batchUpdate operations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-docs-sharing` | Learn more about access to Google files — Google's official help describes file access levels and permission behavior for Docs and related editors. | [link](https://support.google.com/docs/answer/16722399) | 2026-11-03T00:00:00Z | Google Docs files support viewer, commenter and editor access levels. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://docs.google.com/) | 2026-11-03T00:00:00Z | Google Docs is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/workspace/docs) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/docs/answer/7068618) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/docs/api/how-tos/overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/docs/api/reference/rest) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_dca9d6d1804351283dfd6846f58c73a6aeda0b9fe43e6d7a9ea2e5e0b94e4b36` | Google Docs Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://accounts.google.com/v3/signin/identifier?continue=https://docs.google.com/&emr=1&followup=https://docs.google.com/&osid=1&passive=1209600&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S1595766682:1793669867875837) | 2026-11-03T01:37:51.088Z | A dated unauthenticated snapshot exposed controls button: Next, textbox: Email or phone, link: Forgot email?, link: Learn more about using Guest mode (external, opens in a new window), link: Create account, link: Open Google Account Help Center (external, opens in a new window), link: Privacy Policy (external, opens in a new window), link: Google Terms of Service (external, opens in a new window) and landmarks contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
+| `SRC-CANDIDATE-1` | ONLYOFFICE Docs candidate — Curated entry; repository only when recorded. | [link](https://www.onlyoffice.com/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-2` | Collabora Online candidate — Curated entry; repository only when recorded. | [link](https://www.collaboraonline.com/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-3` | Etherpad candidate — Curated entry; repository only when recorded. | [link](https://etherpad.org/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
 
 ### Confidence classifications
 
@@ -378,115 +402,87 @@ Resume token: `google-docs`. Read dossier, REA report and raw Evidence before re
 
 # 1. Executive summary
 
-Google Docs is Google's browser-based collaborative word processor, part of Google Workspace.
-
----
+Google Docs is Google's online word processor for creating, formatting, sharing and collaboratively editing documents. It is part of Google Workspace and uses Drive for storage, but it has its own editor identity and Docs API.
 
 # 2. Product identity and ownership
 
-- **Official name:** Google Docs
-- **Company and business unit:** google
-- **Current lifecycle status:** active
-- **Official website:** https://docs.google.com/
+**Official name:** Google Docs  
+**Company:** Google LLC, part of Alphabet Inc.  
+**Lifecycle status:** active  
+**Official website:** https://docs.google.com/
 
----
+Google's user and developer documentation identifies Docs as a web-based document editor with document-specific APIs and sharing workflows.
 
 # 3. Product capabilities
 
-- Browser-based document editing
-- Real-time co-authoring and comments
-- Cloud storage and sharing
+- Create, edit, format and organise online documents.
+- Share documents with viewer, commenter or editor access.
+- Collaborate with other people, comments and suggested edits.
+- Store documents in Drive and integrate with Workspace applications.
+- Automate document creation, reading and updates through the Docs API and Apps Script.
 
----
+Docs is separate from Drive because Drive provides storage and permissions while Docs provides the document editor and document model. Both remain components of Workspace rather than duplicate suite rows.
 
 # 4. Technical architecture
 
-Not yet researched.
-
----
+Docs is a managed web application backed by Drive storage and Google identity. The Docs API exposes document structure and batch updates; the editor implementation and real-time collaboration infrastructure are proprietary.
 
 # 5. User workflows
 
-Not yet researched.
-
----
+A user creates or opens a document, edits and formats content, shares it with collaborators, reviews comments or suggestions, and accesses the document through Drive. Applications can create documents, retrieve content and apply batch updates through the API.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+Access depends on Google account type, Workspace edition, organisation policies and document permissions. This research verifies the editor and access model, not current plan pricing, quotas or a specific account's entitlement.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+The Google Docs API supports document creation, retrieval and atomic batch updates. Apps Script and Workspace add-ons provide additional automation and extension surfaces. Authentication and document permissions are required for real operations.
 
 # 8. Existing open-source alternatives
 
-Open-source candidates exist: ONLYOFFICE Docs (AGPL-3.0) — Self-hosted collaborative document editor.; Collabora Online (MPL-2.0) — LibreOffice-based collaborative suite in the browser.. Coverage is unverified until the dossier is researched.
-
----
+- ONLYOFFICE Docs (AGPL-3.0): self-hosted collaborative office editor.
+- Collabora Online (MPL-2.0): LibreOffice-based browser editor.
+- Etherpad (Apache-2.0): real-time collaborative text editor.
 
 # 9. Alternative comparison
 
-Self-hosted collaborative editors exist (ONLYOFFICE, Collabora) but lack Google's ecosystem integration and mainstream adoption.
-
----
+These projects cover collaborative editing to different degrees. None is verified here as a drop-in replacement for Docs' Google account ecosystem, Drive integration, sharing model, editor behavior and API surface.
 
 # 10. Missing capabilities and opportunity analysis
 
-Self-hosted collaborative editors exist (ONLYOFFICE, Collabora) but lack Google's ecosystem integration and mainstream adoption.
+The key integration gap is the combination of real-time editing, document fidelity, identity, sharing, comments, suggestions, revision history, Drive storage and automation under one managed product.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Partial. Self-hosted collaborative editors exist and are usable today; ecosystem polish and integrations lag Google.
-
----
+Select a narrow editor workflow and reuse an existing collaborative editor. Define supported formats, sharing roles, revision behavior and storage integration before attempting broader parity.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+Documents, comments and sharing permissions are sensitive. Verify document access, link-sharing policies, account ownership, revision retention and API scopes; do not infer access from a document URL alone.
 
 # 13. Sources and evidence
 
-- https://www.onlyoffice.com/
-- https://www.collaboraonline.com/
-
----
+- [How to use Google Docs](https://support.google.com/docs/answer/7068618) — official editor and collaboration capabilities.
+- [Google Docs API overview](https://developers.google.com/workspace/docs/api/how-tos/overview) — official API identity and operations.
+- [Google Docs API REST reference](https://developers.google.com/workspace/docs/api/reference/rest) — official service endpoint and methods.
+- [Google Docs developer resources](https://developers.google.com/workspace/docs) — official Apps Script and extension surfaces.
 
 # 14. Open questions
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
+- Which document formats and collaboration workflows should a future comparison cover?
+- Is the target storage model Drive-compatible or self-hosted?
+- What comments, suggestions, revision and permission behavior must an alternative support?
 
 # 15. Research history
 
-- v1: dossier created; research pending.
+Record updated 2026-11-03 from official Google Docs Help and Google Developers sources. Status: `researched`; plan-specific access, quotas, editor internals and authenticated behavior remain outside this pass.
 
----
-
-# 16. Alternative comparison (continued)
-
-Self-hosted collaborative editors exist (ONLYOFFICE, Collabora) but lack Google's ecosystem integration and mainstream adoption.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Partial. Self-hosted collaborative editors exist and are usable today; ecosystem polish and integrations lag Google.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-docs` and inspect canonical identity with `npx rae-faang products show google-docs --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-docs` and inspect canonical identity with `npx rea-faang products show google-docs --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -499,7 +495,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-docs --out ./google-docs.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-docs --out ./google-docs-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-docs --out ./google-docs.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-docs --out ./google-docs-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -541,5 +537,16 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://docs.google.com/) — Google Docs is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [How to use Google Docs](https://support.google.com/docs/answer/7068618) — Google Docs is an online word processor for creating, formatting and collaborating on documents. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Docs API overview](https://developers.google.com/workspace/docs/api/how-tos/overview) — The Docs API can create and modify Google Docs documents. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Docs API REST reference](https://developers.google.com/workspace/docs/api/reference/rest) — The Docs API exposes document create, get and batchUpdate operations. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Learn more about access to Google files](https://support.google.com/docs/answer/16722399) — Google Docs files support viewer, commenter and editor access levels. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://docs.google.com/) — Google Docs is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.google.com/workspace/docs) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://support.google.com/docs/answer/7068618) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/docs/api/how-tos/overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/docs/api/reference/rest) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Docs Public web-surface observation (REA)](https://accounts.google.com/v3/signin/identifier?continue=https://docs.google.com/&emr=1&followup=https://docs.google.com/&osid=1&passive=1209600&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S1595766682:1793669867875837) — A dated unauthenticated snapshot exposed controls button: Next, textbox: Email or phone, link: Forgot email?, link: Learn more about using Guest mode (external, opens in a new window), link: Create account, link: Open Google Account Help Center (external, opens in a new window), link: Privacy Policy (external, opens in a new window), link: Google Terms of Service (external, opens in a new window) and landmarks contentinfo. (VERIFIED; accessed 2026-11-03T01:37:51.088Z).
+- [ONLYOFFICE Docs candidate](https://www.onlyoffice.com/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [Collabora Online candidate](https://www.collaboraonline.com/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [Etherpad candidate](https://etherpad.org/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).

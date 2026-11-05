@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon AppFlow, recorded with REA.
 | Target | https://aws.amazon.com/appflow/ |
 | Resolved URL | https://aws.amazon.com/appflow/ |
 | Page title | Amazon AppFlow |
-| Captured | 2026-11-03T01:29:38.428Z |
+| Captured | 2026-11-04T02:39:17.617Z |
 | Status | captured |
-| REA Evidence ID | `ev_4e9e6e30d2589f91e42a0ba95d35e4e679ccfe576420d56eb575453016d936bc` |
+| REA Evidence ID | `ev_51d95b29bf927248bfcf93127b11176b1a7a589d57387bbe316e064276e5d459` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -162,6 +162,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-appflow.json`
-- Evidence ID: `ev_4e9e6e30d2589f91e42a0ba95d35e4e679ccfe576420d56eb575453016d936bc`
-- Accessibility outline: 10215 bytes
+- Evidence ID: `ev_51d95b29bf927248bfcf93127b11176b1a7a589d57387bbe316e064276e5d459`
+- Accessibility outline: 10192 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

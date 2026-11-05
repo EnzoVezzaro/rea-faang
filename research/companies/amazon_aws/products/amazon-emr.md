@@ -82,7 +82,7 @@ Open-source frameworks provide core processing engines, but they do not by thems
 
 REA should map release packaging, cluster and virtual-cluster lifecycle, node roles, instance fleets, bootstrap actions, steps, job scheduling, logs, security, storage, framework compatibility, EMR on EKS, Serverless and AWS data-store integrations.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use AWS product, management, release, API and CLI documentation plus the public Hadoop/Spark behavior as research surfaces. A clean-room equivalent should compose independently licensed frameworks and orchestration components, documenting differences in curation, lifecycle, cost and cloud integration.
 

@@ -81,7 +81,7 @@ Open-source caches and parallel file systems can accelerate data access, but non
 
 REA should map repository associations, namespace behavior, lazy loading, writeback/export, eviction, metadata semantics, mount access, throughput, failure recovery, quotas, region support and the boundaries among File Cache, EFS, FSx and S3.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use AWS product, FAQ and File Cache guide documentation as the research surface. A clean-room equivalent should compose independently licensed cache and file-system components, documenting differences in repository support, consistency, writeback, durability, performance and cloud integration.
 

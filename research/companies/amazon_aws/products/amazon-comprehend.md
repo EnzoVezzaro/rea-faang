@@ -78,7 +78,7 @@ Open-source NLP libraries can reproduce individual tasks, but they do not automa
 
 REA should map each analysis operation, input format, language, model path, confidence output, batch mode, custom-model lifecycle, endpoint behavior, quotas and integration separately.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public AWS documentation, API schemas and permitted sample documents only. A clean-room implementation should compose independently licensed NLP models and expose a bounded, documented API; it must not copy AWS model weights, training data or proprietary implementation.
 

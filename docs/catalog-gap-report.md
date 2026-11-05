@@ -15,16 +15,16 @@ expanded candidate inventory. Do not edit by hand: regenerate and run the check.
 
 | Measure | Value |
 | --- | --- |
-| Canonical products | 184 |
-| Product-level rows in the candidate inventory | 1465 |
-| Candidates awaiting review | 1281 |
-| Canonical entries carried into the manifest | 170 |
+| Canonical products | 193 |
+| Product-level rows in the candidate inventory | 1471 |
+| Candidates awaiting review | 1278 |
+| Canonical entries carried into the manifest | 179 |
 | Retired canonical entries | 14 |
-| Duplicates merged and listed separately | 147 |
+| Duplicates merged and listed separately | 148 |
 | Navigation/editorial rows excluded | 150 |
-| Rows carrying every required field | 1762 of 1762 |
+| Rows carrying every required field | 1769 of 1769 |
 | Candidates without a resolvable official URL | 125 |
-| Candidates whose product type still needs review | 1281 |
+| Candidates whose product type still needs review | 1278 |
 
 ## Per company
 
@@ -34,9 +34,9 @@ expanded candidate inventory. Do not edit by hand: regenerate and run the check.
 | apple | 20 | 220 | 20 | 0 | 5 | 0 | 0 | 220 |
 | amazon | 5 | 0 | 5 | 0 | 0 | 0 | 0 | 0 |
 | amazon_aws | 117 | 145 | 106 | 11 | 112 | 27 | 93 | 145 |
-| meta | 5 | 0 | 5 | 0 | 0 | 0 | 0 | 0 |
+| meta | 12 | 0 | 12 | 0 | 0 | 0 | 0 | 0 |
 | netflix | 6 | 0 | 5 | 1 | 0 | 0 | 0 | 0 |
-| microsoft | 5 | 372 | 4 | 1 | 7 | 7 | 1 | 372 |
+| microsoft | 7 | 369 | 6 | 1 | 8 | 7 | 1 | 369 |
 
 Amazon, Meta and Netflix show zero candidates because this generator only scrapes
 first-party catalogs with a stable product index (Google, Apple, AWS documentation
@@ -48,7 +48,7 @@ absence here is a **source gap**, not evidence that they have no further product
 
 | Check | Result |
 | --- | --- |
-| Canonical entries found in the manifest | 184 of 184 |
+| Canonical entries found in the manifest | 193 of 193 |
 | Canonical entries missing from the manifest | none |
 | Manifest rows marked verified that are not canonical | none |
 | Stable-id collisions | none |
@@ -65,10 +65,10 @@ membership is fixed and non-overlapping; the queue order below is deterministic
 | --- | --- | --- | --- |
 | 1 — Google | google | 544 | `google-about-google`, `google-accessibility-support`, `google-active-assist` |
 | 2 — Amazon/AWS | amazon, amazon_aws | 145 | `amazon-aws-aws-budgets`, `amazon-aws-aws-certificate-manager`, `amazon-aws-aws-clean-rooms` |
-| 3 — Microsoft | microsoft | 372 | `microsoft-net-apps-migration`, `microsoft-about-microsoft`, `microsoft-about-our-ads` |
+| 3 — Microsoft | microsoft | 369 | `microsoft-net-apps-migration`, `microsoft-about-microsoft`, `microsoft-about-our-ads` |
 | 4 — Apple/Meta/Netflix | apple, meta, netflix | 220 | `apple-product-red`, `apple-accessories`, `apple-airplay` |
 
-Total queued: 1281 drafts. A worker owns exactly one draft, may not edit the canonical catalog or the generated site, and returns a handoff. A draft leaves the queue only after review accepts its identity, official source, REA evidence and alternatives.
+Total queued: 1278 drafts. A worker owns exactly one draft, may not edit the canonical catalog or the generated site, and returns a handoff. A draft leaves the queue only after review accepts its identity, official source, REA evidence and alternatives.
 
 ## Promotion gate
 

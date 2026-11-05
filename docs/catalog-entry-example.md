@@ -75,7 +75,7 @@ research_version: 1
 
 The body carries the 15 numbered sections the schema and CLI expect (executive
 summary, identity, capabilities, architecture, workflows, pricing, API surface,
-open-source alternatives, comparison, opportunity analysis, RAE strategy,
+open-source alternatives, comparison, opportunity analysis, REA strategy,
 security/privacy, sources, open questions, research history), plus the two
 trailing alternative/strategy sections this product already had.
 
@@ -112,7 +112,7 @@ report says so.
 
 ## 4. Open-source alternative and its status
 
-Canonical answer, from the record and `npx rae-faang alternatives list
+Canonical answer, from the record and `npx rea-faang alternatives list
 --product google-search`: **`none_verified`**, coverage `unknown`. The dossier's
 section 8 reads "None verified. Some search engines exist (DuckDuckGo, SearX) but
 do not index at Google's scale."
@@ -136,7 +136,7 @@ read the candidate table as parity.
 company record, the research dossier, the REA report with its raw evidence, and
 the curated open-source landscape. It does **not** read
 `opportunities/google-search.md`; that spec is consumed only by
-`npx rae-faang gaps opportunities`. Do not hand-edit the skill; regenerate it.
+`npx rea-faang gaps opportunities`. Do not hand-edit the skill; regenerate it.
 
 ```yaml
 ---
@@ -165,29 +165,29 @@ consumer must run.
 
 The compiler enforces this: `validateSkillText` rejects a skill without the
 operating procedure, the real REA CLI invocation, all five verdict tokens, or the
-product's own CLI generation command. `npx rae-faang skills validate --all`
+product's own CLI generation command. `npx rea-faang skills validate --all`
 reports 84/84 valid.
 
 ## 6. The CLI commands, as they exist
 
 ```bash
 # list and inspect the entry
-npx rae-faang products list --company google --format json
-npx rae-faang products show google-search --format json
-npx rae-faang research dossier google-search --format json
-npx rae-faang alternatives list --product google-search --format json
+npx rea-faang products list --company google --format json
+npx rea-faang products show google-search --format json
+npx rea-faang research dossier google-search --format json
+npx rea-faang alternatives list --product google-search --format json
 
 # three equivalent ways to obtain the canonical skill
-npx rae-faang google-search --out ./google-search.md
-npx rae-faang skills generate google-search --out ./google-search.md
-npx rae-faang build agent-kit google-search --out ./google-search-agent
+npx rea-faang google-search --out ./google-search.md
+npx rea-faang skills generate google-search --out ./google-search.md
+npx rea-faang build agent-kit google-search --out ./google-search-agent
 
 # in a source checkout the same command with no --out rewrites
 # catalog/skills/google/google-search.md in place
 
 # validate
-npx rae-faang research validate --format json
-npx rae-faang skills validate --all
+npx rea-faang research validate --format json
+npx rea-faang skills validate --all
 npm test
 npm run validate
 ```
@@ -204,9 +204,9 @@ command. All five outputs below were compared byte for byte for
 | Route | File |
 |---|---|
 | Canonical | `catalog/skills/google/google-search.md` |
-| Product-ID shorthand | `npx rae-faang google-search --out ./google-search.md` |
-| Explicit generate | `npx rae-faang skills generate google-search --out ./google-search.md` |
-| Agent kit | `npx rae-faang build agent-kit google-search --out ./google-search-agent` → `skill.md` |
+| Product-ID shorthand | `npx rea-faang google-search --out ./google-search.md` |
+| Explicit generate | `npx rea-faang skills generate google-search --out ./google-search.md` |
+| Agent kit | `npx rea-faang build agent-kit google-search --out ./google-search-agent` → `skill.md` |
 | Page download / copy | `site/catalog/google-search/agent-kit.md` |
 
 ## 7. Verified vs pending, in one table
@@ -239,5 +239,5 @@ Run on 2026-11-03 from the repository root, after regenerating skills and site:
 |---|---|---|
 | `npm test` | 0 | 58 tests, 58 pass, 0 fail |
 | `npm run validate` | 0 | research, alternatives, opportunities clean; skills-catalog up to date (84 files + index); site-build up to date (190 files) |
-| `npx rae-faang skills validate --all` | 0 | every bundled skill valid, including `google-search` |
-| `npx rae-faang research coverage --company google` | 0 | 26 cataloged, 0 researched, 25 pending, 0 invalid |
+| `npx rea-faang skills validate --all` | 0 | every bundled skill valid, including `google-search` |
+| `npx rea-faang research coverage --company google` | 0 | 26 cataloged, 0 researched, 25 pending, 0 invalid |

@@ -87,7 +87,7 @@ Open-source scanners can identify package and image vulnerabilities, but a clean
 
 REA should map resource discovery, scan activation, EC2 agentless/agent-based behavior, ECR/Lambda/code-repository coverage, network reachability, risk-score inputs, finding states, SBOM schema, account administration, suppression, EventBridge/Security Hub delivery, quotas and failure recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official Inspector product page, user guide, API reference and CLI reference as research surfaces. A clean-room implementation should compose independently licensed scanners and cloud inventory integrations, document coverage differences, and avoid copying AWS vulnerability intelligence, proprietary scoring or implementation details.
 

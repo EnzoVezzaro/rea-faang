@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Forecast, recorded with REA.
 | Target | https://aws.amazon.com/forecast/ |
 | Resolved URL | https://aws.amazon.com/forecast/ |
 | Page title | Amazon Forecast |
-| Captured | 2026-11-03T03:08:07.275Z |
+| Captured | 2026-11-04T02:43:26.583Z |
 | Status | captured |
-| REA Evidence ID | `ev_62e48d84fba93dedcfb6e5b1d89f316311cacdfbb8d43d3d7dbda76bd5fbfb10` |
+| REA Evidence ID | `ev_3a5d1a042ac92cfbe63b3758ab6e1341435acb0069a9d7e22a46a19aaf48edd9` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -155,6 +155,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-forecast.json`
-- Evidence ID: `ev_62e48d84fba93dedcfb6e5b1d89f316311cacdfbb8d43d3d7dbda76bd5fbfb10`
+- Evidence ID: `ev_3a5d1a042ac92cfbe63b3758ab6e1341435acb0069a9d7e22a46a19aaf48edd9`
 - Accessibility outline: 11979 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

@@ -430,10 +430,10 @@ function buildPages(data, docs) {
 
   push('assets/catalog.js', CATALOG_JS);
   push('assets/motion.js', MOTION_JS);
-  push('assets/rae-mark.svg', readFileSync(join(ROOT, 'docs', 'assets', 'logo.svg'), 'utf8'));
+  push('assets/rea-mark.svg', readFileSync(join(ROOT, 'docs', 'assets', 'logo.svg'), 'utf8'));
   push('docs/assets/brand-logo.png', readFileSync(join(DOCS, 'assets', 'brand-logo.png')));
   push('docs/assets/brand-symbol.png', readFileSync(join(DOCS, 'assets', 'brand-symbol.png')));
-  push('assets/rae-banner.png', readFileSync(join(ROOT, 'site', 'assets', 'rae-banner.png')));
+  push('assets/rea-banner.png', readFileSync(join(ROOT, 'site', 'assets', 'rea-banner.png')));
   push('favicon.svg', T.faviconSvg());
   push('404.html', T.notFoundPage());
   push('catalog.json', catalogJson(data));

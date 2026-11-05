@@ -72,9 +72,9 @@ Pending evidence-backed comparison. Braket's managed multi-provider access and A
 
 Pending REA investigation. An independent implementation would need clear boundaries around local simulation, provider adapters, task scheduling and result persistence.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the RAE skill on public documentation and permitted interfaces. Prefer existing open quantum frameworks where they fit, and record provider, license and hardware-access limits before building.
+Use the REA skill on public documentation and permitted interfaces. Prefer existing open quantum frameworks where they fit, and record provider, license and hardware-access limits before building.
 
 # 12. Security, privacy, and compliance
 

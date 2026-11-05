@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Logic Pro (apple-logic-pro); invest
 
 This is the coding-agent skill for **Logic Pro** (`apple-logic-pro`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/apple/apple-logic-pro.md` from the catalog page, or run `npx rae-faang apple-logic-pro --out ./apple-logic-pro.md`, `npx rae-faang skills generate apple-logic-pro` or `npx rae-faang build agent-kit apple-logic-pro --out ./apple-logic-pro-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/apple/apple-logic-pro.md` from the catalog page, or run `npx rea-faang apple-logic-pro --out ./apple-logic-pro.md`, `npx rea-faang skills generate apple-logic-pro` or `npx rea-faang build agent-kit apple-logic-pro --out ./apple-logic-pro-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Logic Pro / `apple-logic-pro` | `catalog/products.jsonl` |
 | Official product URL | [https://www.apple.com/logic-pro/](https://www.apple.com/logic-pro/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier apple-logic-pro` | `research/companies/apple/products/apple-logic-pro.md` |
+| Research dossier | `npx rea-faang research dossier apple-logic-pro` | `research/companies/apple/products/apple-logic-pro.md` |
 | REA report | `catalog/rea/apple/apple-logic-pro.md` (captured 2026-11-03T01:32:19.043Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/apple-logic-pro.json` (`ev_98b07c0c7c68fe7207e5b7918305ab9b61c6eecb7abaffbd2c68378ee33429dd`) | Catalog evidence |
 | Alternative candidates | 4 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show apple-logic-pro --format json` and `npx rae-faang research dossier apple-logic-pro` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show apple-logic-pro --format json` and `npx rea-faang research dossier apple-logic-pro` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -475,7 +475,7 @@ Ardour is the most professional open-source DAW, excelling at recording, editing
 
 Built-in professional instrument library (7000+ loops, Alchemy, Sampler, Drum Machine Designer), Dolby Atmos/7.1.4 mixing, Core Audio integration, AUv3 sandboxing, Logic Remote, Smart Tempo, Flex Pitch/Time, and Final Cut Pro round-trip are major gaps. An open alternative could build on Ardour with a curated instrument/effect collection.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Not feasible to replicate Logic Pro entirely. Strategy: Contribute to Ardour for core DAW improvements. Curate a "Logic-like" open instrument/effect bundle (Surge, Vital, Helm, Dexed for synths; Dragonfly Reverb, TDR Nova for effects). Develop Apple Loops-compatible sample library (CC0/royalty-free). Explore LV2/CLAP plugin ecosystem for cross-platform instruments.
 
@@ -508,7 +508,7 @@ Ardour + curated plugins is the closest open path. REAPER (paid) is closer in wo
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Phase 1: Ardour contribution (workflow, macOS support). Phase 2: Curated open plugin bundle (Surge, Vital, Dragonfly, etc.). Phase 3: CC0 sample library (Apple Loops compatible). Phase 4: Logic Remote equivalent (web/OSC). Phase 5: Dolby Atmos rendering via open libraries (if feasible).
 
@@ -516,7 +516,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier apple-logic-pro` and inspect canonical identity with `npx rae-faang products show apple-logic-pro --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier apple-logic-pro` and inspect canonical identity with `npx rea-faang products show apple-logic-pro --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -529,7 +529,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang apple-logic-pro --out ./apple-logic-pro.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit apple-logic-pro --out ./apple-logic-pro-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang apple-logic-pro --out ./apple-logic-pro.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit apple-logic-pro --out ./apple-logic-pro-agent`.
 
 ### Multi-agent task plan and outputs
 

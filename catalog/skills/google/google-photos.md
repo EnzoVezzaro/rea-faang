@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Photos (google-photos); inve
 
 # Google Photos — implementation skill (`google-photos`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Photos**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Photos (google-photos); inve
 
 This is the coding-agent skill for **Google Photos** (`google-photos`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-photos.md` from the catalog page, or run `npx rae-faang google-photos --out ./google-photos.md`, `npx rae-faang skills generate google-photos` or `npx rae-faang build agent-kit google-photos --out ./google-photos-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-photos.md` from the catalog page, or run `npx rea-faang google-photos --out ./google-photos.md`, `npx rea-faang skills generate google-photos` or `npx rea-faang build agent-kit google-photos --out ./google-photos-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,18 +27,18 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Google Photos / `google-photos` | `catalog/products.jsonl` |
 | Official product URL | [https://photos.google.com/](https://photos.google.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-photos` | `research/companies/google/products/google-photos.md` |
+| Official documentation | [https://developers.google.com/photos](https://developers.google.com/photos) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-photos` | `research/companies/google/products/google-photos.md` |
 | REA report | `catalog/rea/google/google-photos.md` (captured 2026-11-03T01:38:52.191Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-photos.json` (`ev_e99987afe4542ce3c85c72514aba4d4966cb66762ff1512a636e6fa1c245ef93`) | Catalog evidence |
-| Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
+| Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
 | User scope | Requested product area, platforms, users and non-goals | The user; ask when the answer changes the deliverable |
 | Consumer project | Absolute path, stack, conventions, test commands, deployment target | The user’s repository, read before writing |
 | Authorization | Public surfaces and the user’s own project only | Clean-room boundary in section 14 |
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-photos --format json` and `npx rae-faang research dossier google-photos` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-photos --format json` and `npx rea-faang research dossier google-photos` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-PHOTOS-CAP-B06C4FF8`, `GOOGLE-PHOTOS-CAP-FAF088C1`, `GOOGLE-PHOTOS-CAP-02F36C35`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-PHOTOS-CAP-CF58E4A7`, `GOOGLE-PHOTOS-CAP-4E10E707`, `GOOGLE-PHOTOS-CAP-9644CC6C`, `GOOGLE-PHOTOS-CAP-CB8E9DEE`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Google Photos** / `google-photos` | Product catalog |
-| Company / category | Google / `consumer_application` / `photo-management`, `backup` | Product catalog |
-| Official website / docs | [https://photos.google.com/](https://photos.google.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Company / category | Google / `consumer_application` / `photo-management`, `backup`, `media-library` | Product catalog |
+| Official website / docs | [https://photos.google.com/](https://photos.google.com/) / [https://developers.google.com/photos](https://developers.google.com/photos) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-PHOTOS-CAP-B06C4FF8` | Automatic backup from devices | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-PHOTOS-CAP-FAF088C1` | Search and organization | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-PHOTOS-CAP-02F36C35` | Sharing and albums | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-PHOTOS-CAP-CF58E4A7` | Official Help documents device backup, account access and shared storage behavior. | VERIFIED | `ev-google-photos-backup` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-PHOTOS-CAP-4E10E707` | Official API documentation verifies Picker sessions, libraries, albums and media item concepts. | VERIFIED | `ev-google-photos-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-PHOTOS-CAP-9644CC6C` | Library API supports app-created media and album workflows through REST resources. | VERIFIED | `ev-google-photos-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-PHOTOS-CAP-CB8E9DEE` | API integration is constrained by current scopes and app-created-data restrictions; full consumer-library access is not established. | VERIFIED | `ev-google-photos-updates` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Show back of card`, `button: Show front of card`, `button: Play`, `button: Pause`, `button: Go to slide 1`, `button: Go to slide 2`, `button: Go to slide 3`, `button: Go to slide 4`, `button: Go to slide 5`, `button: Go to Previous Slide`, `button: Go to Next Slide`, `button: Previous`, `button: Next`, `button: How much storage do I get for my photos and videos?`, `button: Can I use Google Photos on an iOS device?`, `button: How do I back up my photos and videos?`, `button: How do I edit my photos?`, `button: How can I share my photos?`, `button: How do I search for my photos?`, `button: What are my Google Photos cloud storage options?`, `link: Skip to main content`, `link: Visit the Google Photos overview page`, `link: Visit the photo editing page`, `link: Visit Google Photos`, `link: Download the Google Photos app`, `link: Show footnote 1`, `link: Create now`, `link: Show footnote 2`, `link: Explore Google One storage plans (opens in new window)`, `link: Explore Google One plans (opens in new window)`, `link: Show footnote 3`, `link: Download on the App Store`, `link: Show footnote 7`, `link: See how you can edit your photos just by asking in Google Photos`, `link: Explore the Magic Eraser feature in Google Photos`, `link: Explore the Photo Unblur feature in Google Photos`, `link: Explore all Google Photos editing features`, `link: Learn more about Google Photos security (opens in new window)`, `link: Visit the Google Photos Printing page`, `link: Celebrate Halloween with these tricks in Google Photos. (opens in new window)`, `link: 5 Google Photos updates to make the most of summer memories. (opens in new window)`, `link: Create shareable video clips in seconds with Video Remix in Google Photos. (opens in new window)`, `link: A new way to create a digital wardrobe from your Google Photos (opens in new window)`, `link: Enjoy new ways to create, search and stream on Google TV (opens in new window)`, `link: Visit the blog (opens in new window)`, `button: Can I use cloud storage for 4K video and full-resolution RAW photos?`, `button: How do I find and delete photos to clean up storage space?`, `button: How secure is my online photo storage?`, `button: What is the best way to share photos privately with friends and family?`, `button: Can I allow others to add photos to a shared album?`, `button: How does automatic partner photo sharing work?`, `link: Learn more (opens in new window)`, `link: Show footnote 8`, `link: Sign up (opens in new window)`, `link: Get it on Google Play`, `button: Toggle app download panel`, `link: Instagram`, `link: X / Twitter`, `link: YouTube`, `link: Overview`, `link: Photo editing`, `link: Download Google Photos`, `link: Printing`, `link: Works with Google Photos`, `link: About Google`, `link: Google products`, `link: Privacy`, `link: Terms`, `link: Help`, `combobox: Select language`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Automatic backup from devices:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Search and organization:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Sharing and albums:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Official Help documents device backup, account access and shared storage behavior.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Official API documentation verifies Picker sessions, libraries, albums and media item concepts.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Library API supports app-created media and album workflows through REST resources.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **API integration is constrained by current scopes and app-created-data restrictions; full consumer-library access is not established.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-B06C4FF8 — Automatic backup from devices
+### REQ-FUNC-CF58E4A7 — Official Help documents device backup, account access and shared storage behavior.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-photos-backup`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-B06C4FF8`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-PHOTOS-CAP-B06C4FF8` → `REQ-FUNC-B06C4FF8` → `TEST-FUNC-B06C4FF8`.
+- **Associated test ID:** `TEST-FUNC-CF58E4A7`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-PHOTOS-CAP-CF58E4A7` → `REQ-FUNC-CF58E4A7` → `TEST-FUNC-CF58E4A7`.
 
-### REQ-FUNC-FAF088C1 — Search and organization
+### REQ-FUNC-4E10E707 — Official API documentation verifies Picker sessions, libraries, albums and media item concepts.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-photos-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-FAF088C1`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-PHOTOS-CAP-FAF088C1` → `REQ-FUNC-FAF088C1` → `TEST-FUNC-FAF088C1`.
+- **Associated test ID:** `TEST-FUNC-4E10E707`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-PHOTOS-CAP-4E10E707` → `REQ-FUNC-4E10E707` → `TEST-FUNC-4E10E707`.
 
-### REQ-FUNC-02F36C35 — Sharing and albums
+### REQ-FUNC-9644CC6C — Library API supports app-created media and album workflows through REST resources.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-photos-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-02F36C35`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-PHOTOS-CAP-02F36C35` → `REQ-FUNC-02F36C35` → `TEST-FUNC-02F36C35`.
+- **Associated test ID:** `TEST-FUNC-9644CC6C`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-PHOTOS-CAP-9644CC6C` → `REQ-FUNC-9644CC6C` → `TEST-FUNC-9644CC6C`.
+
+### REQ-FUNC-CB8E9DEE — API integration is constrained by current scopes and app-created-data restrictions; full consumer-library access is not established.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-photos-updates`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-CB8E9DEE`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-PHOTOS-CAP-CB8E9DEE` → `REQ-FUNC-CB8E9DEE` → `TEST-FUNC-CB8E9DEE`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -206,6 +217,8 @@ Separate interface/domain/persistence/integration boundaries. Enforce access at 
 | Candidate | Repository | License | Claimed coverage (unverified) | Limitations | Maintenance | Compatibility | Verdict |
 |---|---|---|---|---|---|---|---|
 | [Immich](https://immich.app/) | Not recorded; verify the canonical repository | AGPL-3.0 (unverified) | Self-hosted photo and video backup with mobile apps. | Fast-moving; verify parity per release. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [Photoprism](https://www.photoprism.app/) | Not recorded; verify the canonical repository | AGPL-3.0 (unverified) | Self-hosted photo management, indexing and browsing. | Partial; does not reproduce Google's account storage and client ecosystem. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [LibrePhotos](https://github.com/LibrePhotos/librephotos) | Not recorded; verify the canonical repository | MIT (unverified) | Self-hosted photo management and visual organization. | Partial; deployment, mobile and ML behavior differ from Google Photos. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 
 Repository, license, maintenance and compatibility are catalog claims until you check them. Re-verify each against the exact version you would adopt; a README, a star count or this table is not proof.
 
@@ -215,9 +228,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-PHOTOS-CAP-B06C4FF8` — Automatic backup from devices | Not verified against Immich | None yet; compare with `ev_e99987afe4542ce3c85c72514aba4d4966cb66762ff1512a636e6fa1c245ef93` | Candidate code path and tests must be inspected |
-| `GOOGLE-PHOTOS-CAP-FAF088C1` — Search and organization | Not verified against Immich | None yet; compare with `ev_e99987afe4542ce3c85c72514aba4d4966cb66762ff1512a636e6fa1c245ef93` | Candidate code path and tests must be inspected |
-| `GOOGLE-PHOTOS-CAP-02F36C35` — Sharing and albums | Not verified against Immich | None yet; compare with `ev_e99987afe4542ce3c85c72514aba4d4966cb66762ff1512a636e6fa1c245ef93` | Candidate code path and tests must be inspected |
+| `GOOGLE-PHOTOS-CAP-CF58E4A7` — Official Help documents device backup, account access and shared storage behavior. | Not verified against Immich | None yet; compare with `ev_e99987afe4542ce3c85c72514aba4d4966cb66762ff1512a636e6fa1c245ef93` | Candidate code path and tests must be inspected |
+| `GOOGLE-PHOTOS-CAP-4E10E707` — Official API documentation verifies Picker sessions, libraries, albums and media item concepts. | Not verified against Immich | None yet; compare with `ev_e99987afe4542ce3c85c72514aba4d4966cb66762ff1512a636e6fa1c245ef93` | Candidate code path and tests must be inspected |
+| `GOOGLE-PHOTOS-CAP-9644CC6C` — Library API supports app-created media and album workflows through REST resources. | Not verified against Immich | None yet; compare with `ev_e99987afe4542ce3c85c72514aba4d4966cb66762ff1512a636e6fa1c245ef93` | Candidate code path and tests must be inspected |
+| `GOOGLE-PHOTOS-CAP-CB8E9DEE` — API integration is constrained by current scopes and app-created-data restrictions; full consumer-library access is not established. | Not verified against Immich | None yet; compare with `ev_e99987afe4542ce3c85c72514aba4d4966cb66762ff1512a636e6fa1c245ef93` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -264,9 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-B06C4FF8** → `REQ-FUNC-B06C4FF8`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-FAF088C1** → `REQ-FUNC-FAF088C1`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-02F36C35** → `REQ-FUNC-02F36C35`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-CF58E4A7** → `REQ-FUNC-CF58E4A7`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-4E10E707** → `REQ-FUNC-4E10E707`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-9644CC6C** → `REQ-FUNC-9644CC6C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-CB8E9DEE** → `REQ-FUNC-CB8E9DEE`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -287,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-B06C4FF8, REQ-FUNC-FAF088C1, REQ-FUNC-02F36C35
+- **Requirements:** REQ-FUNC-CF58E4A7, REQ-FUNC-4E10E707, REQ-FUNC-9644CC6C, REQ-FUNC-CB8E9DEE
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -297,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-B06C4FF8, REQ-FUNC-FAF088C1, REQ-FUNC-02F36C35
+- **Requirements:** REQ-FUNC-CF58E4A7, REQ-FUNC-4E10E707, REQ-FUNC-9644CC6C, REQ-FUNC-CB8E9DEE
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -319,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-B06C4FF8, REQ-FUNC-FAF088C1, REQ-FUNC-02F36C35; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-CF58E4A7, REQ-FUNC-4E10E707, REQ-FUNC-9644CC6C, REQ-FUNC-CB8E9DEE; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -349,7 +364,17 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://photos.google.com/) | Not recorded | Google Photos is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-google-photos-identity` | Google Photos — The canonical product URL is Google Photos; official Help and developer documentation describe backup, media libraries, albums and photo/video APIs. | [link](https://photos.google.com/) | 2026-11-03T00:00:00Z | Google Photos is Google's hosted photo and video library and backup product. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-photos-backup` | Back up photos and videos — The official Help page documents backup, account access, supported media and shared Google Account storage. | [link](https://support.google.com/photos/answer/6193313) | 2026-11-03T00:00:00Z | Google Photos can automatically save photos and videos to a signed-in Google Account and expose them across devices. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-photos-api` | About the Google Photos APIs — The official overview distinguishes secure user selection through Picker from upload and management of app-created media through Library API. | [link](https://developers.google.com/photos/overview/about) | 2026-11-03T00:00:00Z | Google Photos provides Picker and Library APIs for user-selected and app-created media workflows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-photos-updates` | Updates to the Google Photos APIs — Google documents the post-2025 restrictions on broad library access and the remaining app-created-data and Picker flows. | [link](https://developers.google.com/photos/support/updates) | 2026-11-03T00:00:00Z | Current Photos API access is constrained by the Picker/app-created-data model and documented scope changes. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://photos.google.com/) | 2026-11-03T00:00:00Z | Google Photos is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/photos) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/photos/answer/6193313) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/photos/answer/6128850) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/photos/overview/about) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/photos/library/reference/rest/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/photos/support/updates) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_e99987afe4542ce3c85c72514aba4d4966cb66762ff1512a636e6fa1c245ef93` | Google Photos Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.google.com/photos/about/) | 2026-11-03T01:38:52.191Z | A dated unauthenticated snapshot exposed controls button: Show back of card, button: Show front of card, button: Play, button: Pause, button: Go to slide 1, button: Go to slide 2, button: Go to slide 3, button: Go to slide 4, button: Go to slide 5, button: Go to Previous Slide, button: Go to Next Slide, button: Previous, button: Next, button: How much storage do I get for my photos and videos?, button: Can I use Google Photos on an iOS device?, button: How do I back up my photos and videos?, button: How do I edit my photos?, button: How can I share my photos?, button: How do I search for my photos?, button: What are my Google Photos cloud storage options?, link: Skip to main content, link: Visit the Google Photos overview page, link: Visit the photo editing page, link: Visit Google Photos, link: Download the Google Photos app, link: Show footnote 1, link: Create now, link: Show footnote 2, link: Explore Google One storage plans (opens in new window), link: Explore Google One plans (opens in new window), link: Show footnote 3, link: Download on the App Store, link: Show footnote 7, link: See how you can edit your photos just by asking in Google Photos, link: Explore the Magic Eraser feature in Google Photos, link: Explore the Photo Unblur feature in Google Photos, link: Explore all Google Photos editing features, link: Learn more about Google Photos security (opens in new window), link: Visit the Google Photos Printing page, link: Celebrate Halloween with these tricks in Google Photos. (opens in new window), link: 5 Google Photos updates to make the most of summer memories. (opens in new window), link: Create shareable video clips in seconds with Video Remix in Google Photos. (opens in new window), link: A new way to create a digital wardrobe from your Google Photos (opens in new window), link: Enjoy new ways to create, search and stream on Google TV (opens in new window), link: Visit the blog (opens in new window), button: Can I use cloud storage for 4K video and full-resolution RAW photos?, button: How do I find and delete photos to clean up storage space?, button: How secure is my online photo storage?, button: What is the best way to share photos privately with friends and family?, button: Can I allow others to add photos to a shared album?, button: How does automatic partner photo sharing work?, link: Learn more (opens in new window), link: Show footnote 8, link: Sign up (opens in new window), link: Get it on Google Play, button: Toggle app download panel, link: Instagram, link: X / Twitter, link: YouTube, link: Overview, link: Photo editing, link: Download Google Photos, link: Printing, link: Works with Google Photos, link: About Google, link: Google products, link: Privacy, link: Terms, link: Help, combobox: Select language and landmarks banner, navigation, main, navigation: Jump to section, region: Search made simple, region: Photos enhanced with Google AI, region: Frequently asked questions, complementary: Download the Google Photos app, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -377,115 +402,85 @@ Resume token: `google-photos`. Read dossier, REA report and raw Evidence before 
 
 # 1. Executive summary
 
-Google Photos is Google's photo and video backup, organization and sharing service.
-
----
+Google Photos is Google's hosted photo and video backup, library, editing and sharing application. It stores media in a Google Account, supports device backup and albums, and exposes limited integration through the Photos Picker API and Library API.
 
 # 2. Product identity and ownership
 
 - **Official name:** Google Photos
-- **Company and business unit:** google
-- **Current lifecycle status:** active
-- **Official website:** https://photos.google.com/
-
----
+- **Company:** Google LLC, part of Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://photos.google.com/
+- **Identity evidence:** Google Photos Help documents backup and editing workflows, while Google's developer documentation identifies the Photos APIs and their media-library resources.
 
 # 3. Product capabilities
 
-- Automatic backup from devices
-- Search and organization
-- Sharing and albums
-
----
+- Back up photos and videos from supported devices to a Google Account.
+- Organize media into libraries and albums, with search and sharing workflows.
+- Edit photos with crop, filters, adjustments and device/account-dependent tools.
+- Use the Photos Picker API to let users securely select media for an application.
+- Use the Library API to upload and manage app-created media and albums.
 
 # 4. Technical architecture
 
-Not yet researched.
-
----
+The public integration model exposes libraries, albums, media items and Picker sessions. Google operates the hosted storage, indexing, editing and account services; internal storage, ranking, machine-learning models and synchronization implementation are proprietary. The current APIs distinguish user selection through Picker from management of content created by an application through Library API.
 
 # 5. User workflows
 
-Not yet researched.
-
----
+A user enables backup, selects an account and reviews media across devices. They search or organize items, create or share albums, and edit or revert photos where the applicable client supports the feature. An external application can create a Picker session for user-selected media or upload and manage media it created through the Library API.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+Backup uses Google Account storage shared with other Google products; current capacity, quality options and paid storage depend on account and plan. API access requires Google sign-in and OAuth; Google documents that Photos APIs do not support service accounts. This pass does not assert a particular user's quota or entitlement.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+The Photos APIs include the Picker API for secure user selection and the Library API for app-created media and albums. The Library API exposes REST resources and methods for media items and albums. Google documents policy, UX, quota and scope constraints; broad historical read/share scopes were restricted after the 2025 API changes, so integrations must follow the current app-created-data and Picker model.
 
 # 8. Existing open-source alternatives
 
-Open-source candidates exist: Immich (AGPL-3.0) — Self-hosted photo and video backup with mobile apps.. Coverage is unverified until the dossier is researched.
-
----
+- **Immich (AGPL-3.0):** self-hosted photo and video backup, organization and mobile clients.
+- **Photoprism (AGPL-3.0):** self-hosted photo management, indexing and browsing.
+- **LibrePhotos (MIT):** self-hosted photo management and visual organization.
 
 # 9. Alternative comparison
 
-Immich covers backup, albums and search well; ML-powered search quality and unlimited-scale economics remain Google's edge.
-
----
+These projects cover self-hosted backup, albums, browsing and portions of search or recognition. They do not reproduce Google's account storage, cross-device hosted scale, client ecosystem, proprietary editing/ML features or Photos Picker/Library API compatibility. Coverage is partial.
 
 # 10. Missing capabilities and opportunity analysis
 
-Immich covers backup, albums and search well; ML-powered search quality and unlimited-scale economics remain Google's edge.
+A replacement would need reliable mobile backup, resumable uploads, metadata and album semantics, search/indexing, sharing, privacy controls, editing, deduplication, storage lifecycle and device synchronization. Hosted ML quality and Google Account integration are not established by the open-source alternatives alone.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Partial. A strong self-hosted alternative exists (Immich); search quality and mobile polish approach but do not match Google Photos.
-
----
+Start with an authenticated, self-hosted backup and album workflow. Reuse a mature media library, add mobile upload and explicit storage policies, then evaluate indexing and editing separately. Treat Google Photos API compatibility as a constrained integration target because current APIs limit access to app-created data and Picker-selected items.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+Photo libraries can contain biometric, location, family and sensitive personal data. Verify encryption, account isolation, sharing defaults, EXIF/location handling, deletion and retention, mobile credentials, backups and model-processing boundaries before deploying an alternative.
 
 # 13. Sources and evidence
 
-- https://immich.app/
-- https://en.wikipedia.org/wiki/Google_Photos
-
----
+- [Back up photos and videos](https://support.google.com/photos/answer/6193313) — official backup and storage behavior.
+- [Edit your photos](https://support.google.com/photos/answer/6128850) — official editing workflows and client limitations.
+- [About the Google Photos APIs](https://developers.google.com/photos/overview/about) — official Picker and Library API model.
+- [Photos Library API reference](https://developers.google.com/photos/library/reference/rest/) — official media and album resources.
+- [Updates to the Google Photos APIs](https://developers.google.com/photos/support/updates) — official scope and app-created-data restrictions.
 
 # 14. Open questions
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
+- Which account, storage tier and backup-quality assumptions should a comparison target?
+- Is the desired alternative consumer backup, a family library or an application integration?
+- Which search, editing, sharing and retention behaviors require compatibility tests?
 
 # 15. Research history
 
-- v1: dossier created; research pending.
+Record updated 2026-11-03 from official Google Photos Help and Google Developers sources. Status: `researched`; account-specific storage, plan features and proprietary indexing/editing internals remain outside this pass.
 
----
-
-# 16. Alternative comparison (continued)
-
-Immich covers backup, albums and search well; ML-powered search quality and unlimited-scale economics remain Google's edge.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Partial. A strong self-hosted alternative exists (Immich); search quality and mobile polish approach but do not match Google Photos.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-photos` and inspect canonical identity with `npx rae-faang products show google-photos --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-photos` and inspect canonical identity with `npx rea-faang products show google-photos --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -498,7 +493,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-photos --out ./google-photos.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-photos --out ./google-photos-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-photos --out ./google-photos.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-photos --out ./google-photos-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -540,5 +535,15 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://photos.google.com/) — Google Photos is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [Google Photos](https://photos.google.com/) — Google Photos is Google's hosted photo and video library and backup product. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Back up photos and videos](https://support.google.com/photos/answer/6193313) — Google Photos can automatically save photos and videos to a signed-in Google Account and expose them across devices. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [About the Google Photos APIs](https://developers.google.com/photos/overview/about) — Google Photos provides Picker and Library APIs for user-selected and app-created media workflows. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Updates to the Google Photos APIs](https://developers.google.com/photos/support/updates) — Current Photos API access is constrained by the Picker/app-created-data model and documented scope changes. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://photos.google.com/) — Google Photos is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.google.com/photos) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://support.google.com/photos/answer/6193313) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/photos/answer/6128850) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/photos/overview/about) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/photos/library/reference/rest/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/photos/support/updates) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Photos Public web-surface observation (REA)](https://www.google.com/photos/about/) — A dated unauthenticated snapshot exposed controls button: Show back of card, button: Show front of card, button: Play, button: Pause, button: Go to slide 1, button: Go to slide 2, button: Go to slide 3, button: Go to slide 4, button: Go to slide 5, button: Go to Previous Slide, button: Go to Next Slide, button: Previous, button: Next, button: How much storage do I get for my photos and videos?, button: Can I use Google Photos on an iOS device?, button: How do I back up my photos and videos?, button: How do I edit my photos?, button: How can I share my photos?, button: How do I search for my photos?, button: What are my Google Photos cloud storage options?, link: Skip to main content, link: Visit the Google Photos overview page, link: Visit the photo editing page, link: Visit Google Photos, link: Download the Google Photos app, link: Show footnote 1, link: Create now, link: Show footnote 2, link: Explore Google One storage plans (opens in new window), link: Explore Google One plans (opens in new window), link: Show footnote 3, link: Download on the App Store, link: Show footnote 7, link: See how you can edit your photos just by asking in Google Photos, link: Explore the Magic Eraser feature in Google Photos, link: Explore the Photo Unblur feature in Google Photos, link: Explore all Google Photos editing features, link: Learn more about Google Photos security (opens in new window), link: Visit the Google Photos Printing page, link: Celebrate Halloween with these tricks in Google Photos. (opens in new window), link: 5 Google Photos updates to make the most of summer memories. (opens in new window), link: Create shareable video clips in seconds with Video Remix in Google Photos. (opens in new window), link: A new way to create a digital wardrobe from your Google Photos (opens in new window), link: Enjoy new ways to create, search and stream on Google TV (opens in new window), link: Visit the blog (opens in new window), button: Can I use cloud storage for 4K video and full-resolution RAW photos?, button: How do I find and delete photos to clean up storage space?, button: How secure is my online photo storage?, button: What is the best way to share photos privately with friends and family?, button: Can I allow others to add photos to a shared album?, button: How does automatic partner photo sharing work?, link: Learn more (opens in new window), link: Show footnote 8, link: Sign up (opens in new window), link: Get it on Google Play, button: Toggle app download panel, link: Instagram, link: X / Twitter, link: YouTube, link: Overview, link: Photo editing, link: Download Google Photos, link: Printing, link: Works with Google Photos, link: About Google, link: Google products, link: Privacy, link: Terms, link: Help, combobox: Select language and landmarks banner, navigation, main, navigation: Jump to section, region: Search made simple, region: Photos enhanced with Google AI, region: Frequently asked questions, complementary: Download the Google Photos app, contentinfo. (VERIFIED; accessed 2026-11-03T01:38:52.191Z).

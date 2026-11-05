@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Pages (apple-pages); investigate, a
 
 This is the coding-agent skill for **Pages** (`apple-pages`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/apple/apple-pages.md` from the catalog page, or run `npx rae-faang apple-pages --out ./apple-pages.md`, `npx rae-faang skills generate apple-pages` or `npx rae-faang build agent-kit apple-pages --out ./apple-pages-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/apple/apple-pages.md` from the catalog page, or run `npx rea-faang apple-pages --out ./apple-pages.md`, `npx rea-faang skills generate apple-pages` or `npx rea-faang build agent-kit apple-pages --out ./apple-pages-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Pages / `apple-pages` | `catalog/products.jsonl` |
 | Official product URL | [https://www.apple.com/pages/](https://www.apple.com/pages/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier apple-pages` | `research/companies/apple/products/apple-pages.md` |
+| Research dossier | `npx rea-faang research dossier apple-pages` | `research/companies/apple/products/apple-pages.md` |
 | REA report | `catalog/rea/apple/apple-pages.md` (captured 2026-11-03T01:32:57.912Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/apple-pages.json` (`ev_01b2030362861d227d8fb6b353d445b15dfa16a90dc985970d24c8d3ed73f624`) | Catalog evidence |
 | Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show apple-pages --format json` and `npx rae-faang research dossier apple-pages` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show apple-pages --format json` and `npx rea-faang research dossier apple-pages` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -443,7 +443,7 @@ Google Docs provides the closest web-based collaboration alternative. LibreOffic
 
 Template system, iCloud synchronization, and real-time collaboration workflow represent gaps. Google Docs and LibreOffice cover basic word processing but not Pages-specific features.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Focus on document creation and editing use cases. Google Docs or LibreOffice for compatibility. iCloud synchronization and template system are out of scope.
 
@@ -475,7 +475,7 @@ Google Docs and LibreOffice cover basic word processing. Pages' template system 
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Focus on document editing use cases. Google Docs or LibreOffice for compatibility. iCloud sync and templates are out of scope.
 
@@ -483,7 +483,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier apple-pages` and inspect canonical identity with `npx rae-faang products show apple-pages --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier apple-pages` and inspect canonical identity with `npx rea-faang products show apple-pages --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -496,7 +496,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang apple-pages --out ./apple-pages.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit apple-pages --out ./apple-pages-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang apple-pages --out ./apple-pages.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit apple-pages --out ./apple-pages-agent`.
 
 ### Multi-agent task plan and outputs
 

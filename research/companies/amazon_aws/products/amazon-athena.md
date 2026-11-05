@@ -72,9 +72,9 @@ Pending evidence-backed comparison; no equivalence is claimed.
 
 Pending REA investigation. Do not infer parity from the public product description.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the RAE skill against the official product page, documentation and permitted public interfaces. Design an independent query service only after documenting evidence, constraints and the open-source foundation decision.
+Use the REA skill against the official product page, documentation and permitted public interfaces. Design an independent query service only after documenting evidence, constraints and the open-source foundation decision.
 
 # 12. Security, privacy, and compliance
 

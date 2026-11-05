@@ -88,7 +88,7 @@ Open-source media stacks can provide RTSP/RTMP/WebRTC ingestion and playback, bu
 
 REA should map producer SDKs, codecs, fragment/container behavior, timestamp/index semantics, retention, HLS playback, GetMedia/archived APIs, WebRTC signaling and cloud forwarding, edge recording, tags, IAM/KMS, quotas and failure recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official Kinesis Video Streams product page, developer guide, WebRTC guide, API reference and CLI reference as research surfaces. A clean-room implementation should compose independently licensed media components, document codec and latency differences, and avoid copying AWS device SDK or control-plane internals.
 

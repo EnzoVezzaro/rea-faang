@@ -14,16 +14,22 @@ official_source_urls:
   - "https://aws.amazon.com/documentation-overview/timestream/"
   - "https://aws.amazon.com/timestream/faqs/"
   - "https://docs.aws.amazon.com/timestream/latest/APIReference/"
+  - "https://docs.aws.amazon.com/timestream/latest/developerguide/concepts.html"
+  - "https://docs.aws.amazon.com/timestream/latest/developerguide/architecture.html"
+  - "https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html"
+  - "https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html"
+  - "https://docs.aws.amazon.com/timestream/latest/developerguide/queries.html"
+  - "https://docs.aws.amazon.com/timestream/latest/developerguide/scheduledqueries-schedule.html"
   - "https://docs.aws.amazon.com/cli/latest/reference/timestream-query/"
-research_status: "pending"
-research_confidence: "unverified"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: "2027-02-03T00:00:00Z"
+research_version: 2
 ---
 
 # 1. Executive summary
@@ -73,22 +79,21 @@ Compare write throughput, dimensions and measures, timestamp precision, retentio
 
 Research must map Write and Query operations, schemas, consistency, duplicate and late-data behavior, scheduled queries, tier movement, retention, InfluxDB surfaces, errors, throttling, quotas, backup and region semantics. Any implementation must use original code and synthetic telemetry fixtures.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product, developer, API, CLI and FAQ documentation as primary sources. The generated RAE skill should instruct an agent to build an independent time-series implementation beginning with VictoriaMetrics-compatible ingestion or storage where useful, then add retention, tiering, SQL/query, scheduled rollups and integrations only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS service parity.
+Use the official product, developer, API, CLI and FAQ documentation as primary sources. The generated REA skill should instruct an agent to build an independent time-series implementation beginning with VictoriaMetrics-compatible ingestion or storage where useful, then add retention, tiering, SQL/query, scheduled rollups and integrations only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS service parity.
 
 # 12. Security, privacy, and compliance
 
 Verify IAM scope, encryption, KMS usage, VPC endpoints, retention and deletion, backups, logging, data residency and access to telemetry. Use synthetic metrics only. Never store credentials, private telemetry or personal data in the catalog, skill or report.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/timestream/ — official product scope.
-- https://aws.amazon.com/documentation-overview/timestream/ — architecture and storage-tier overview.
-- https://aws.amazon.com/timestream/faqs/ — current LiveAnalytics and InfluxDB product boundaries.
-- https://docs.aws.amazon.com/timestream/latest/APIReference/ — Write and Query API surface.
-- https://docs.aws.amazon.com/cli/latest/reference/timestream-query/ — AWS CLI command surface.
-- https://github.com/VictoriaMetrics/VictoriaMetrics — open-source time-series alternative.
+- **Product model:** [Timestream concepts](https://docs.aws.amazon.com/timestream/latest/developerguide/concepts.html) and [architecture](https://docs.aws.amazon.com/timestream/latest/developerguide/architecture.html) support the LiveAnalytics time-series, partitioning and decoupled service claims.
+- **Storage and writes:** [storage](https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html) and [writes](https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html) document memory/magnetic tiers, retention, late data, upserts and write behavior.
+- **Queries and schedules:** [queries](https://docs.aws.amazon.com/timestream/latest/developerguide/queries.html) and [scheduled-query expressions](https://docs.aws.amazon.com/timestream/latest/developerguide/scheduledqueries-schedule.html) support SQL across tiers and schedule claims.
+- **API:** [Timestream API Reference](https://docs.aws.amazon.com/timestream/latest/APIReference/) supports Query/Write and management surface claims.
+- **Alternative:** [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) is the recorded Apache-2.0 time-series foundation; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -100,4 +105,4 @@ Verify IAM scope, encryption, KMS usage, VPC endpoints, retention and deletion, 
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources, command surface and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, LiveAnalytics architecture, storage tiers, retention, writes, SQL queries, scheduled queries and API surface are documented. Exact consistency, quotas, pricing, regional behavior and InfluxDB product boundaries remain unknown and are not asserted.

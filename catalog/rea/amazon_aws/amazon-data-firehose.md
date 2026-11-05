@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Data Firehose, recorded with
 | Target | https://aws.amazon.com/firehose/ |
 | Resolved URL | https://aws.amazon.com/firehose/ |
 | Page title | Amazon Data Firehose |
-| Captured | 2026-11-03T02:55:05.499Z |
+| Captured | 2026-11-04T02:41:12.280Z |
 | Status | captured |
-| REA Evidence ID | `ev_af81e1fc2ae029d401993f00fd0feb8f9e10668ec41906324d65f63da0d70d2d` |
+| REA Evidence ID | `ev_462e46e2efec8a6c3075bfb256ac5d62937c2f846378f86fed95fe3fed9f5a9c` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -167,6 +167,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-data-firehose.json`
-- Evidence ID: `ev_af81e1fc2ae029d401993f00fd0feb8f9e10668ec41906324d65f63da0d70d2d`
+- Evidence ID: `ev_462e46e2efec8a6c3075bfb256ac5d62937c2f846378f86fed95fe3fed9f5a9c`
 - Accessibility outline: 10693 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

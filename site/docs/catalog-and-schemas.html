@@ -6,24 +6,24 @@
     <!-- Runs before the stylesheet so reveal styles only apply where the
          motion layer can actually drive them. -->
     <script>document.documentElement.classList.replace("no-js", "js");</script>
-    <title>Catalog and schemas — RAE FAANG docs</title>
+    <title>Catalog and schemas — REA FAANG docs</title>
     <meta name="description" content="Understand product records, research dossiers, alternatives, and validation." />
     <meta name="robots" content="index,follow" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#0B0C0A" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="RAE FAANG" />
-    <meta property="og:title" content="Catalog and schemas — RAE FAANG docs" />
+    <meta property="og:site_name" content="REA FAANG" />
+    <meta property="og:title" content="Catalog and schemas — REA FAANG docs" />
     <meta property="og:description" content="Understand product records, research dossiers, alternatives, and validation." />
     <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/docs/catalog-and-schemas.html" />
-    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
-    <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rea-banner.png" />
+    <meta property="og:image:alt" content="REA FAANG — choose products to build with your coding agent" />
     <meta property="og:image:width" content="1774" />
     <meta property="og:image:height" content="887" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Catalog and schemas — RAE FAANG docs" />
+    <meta name="twitter:title" content="Catalog and schemas — REA FAANG docs" />
     <meta name="twitter:description" content="Understand product records, research dossiers, alternatives, and validation." />
-    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rea-banner.png" />
     <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/docs/catalog-and-schemas.html" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
@@ -40,8 +40,8 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
-          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        <a class="wordmark" href="../index.html" aria-label="REA FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="REA FAANG" width="224" height="43" />
         </a>
         <nav class="nav" aria-label="Primary">
           <a href="../catalog/">Catalog</a>
@@ -89,9 +89,9 @@
             </ul>
           </details>
           <article class="doc">
-<p><img src="assets/brand-logo-icon.png" alt="RAE FAANG" /></p>
+<p><img src="assets/brand-logo-icon.png" alt="REA FAANG" /></p>
 <h1>Catalog and schemas</h1>
-<p>The catalog records the products in scope, their companies and the research status for each one. Use <code>npx rae-faang research validate</code> to check bundled record structure and consistency from npm; source contributors can run <code>npm run cli -- research validate</code>. This does not assess whether research is complete or claims are correct.</p>
+<p>The catalog records the products in scope, their companies and the research status for each one. Use <code>npx rea-faang research validate</code> to check bundled record structure and consistency from npm; source contributors can run <code>npm run cli -- research validate</code>. This does not assess whether research is complete or claims are correct.</p>
 <h2 id="layout">Layout</h2>
 <pre><code>catalog/
 ├── companies.json               # registered company entries
@@ -197,7 +197,7 @@ research_status: &quot;pending&quot;
 <h2 id="manifests">Manifests</h2>
 <ul>
 <li><strong><code>manifests/faang.json</code></strong>: the target inventory. <code>companies.&lt;id&gt;.in_scope</code> is the number of products expected for that company; <code>gaps products</code> compares it to the catalog. <code>total_in_scope</code> is the overall target.</li>
-<li><strong><code>manifests/research-coverage.json</code></strong>: a tracked snapshot of coverage. Refresh it from <code>npx rae-faang research coverage --format json</code>.</li>
+<li><strong><code>manifests/research-coverage.json</code></strong>: a tracked snapshot of coverage. Refresh it from <code>npx rea-faang research coverage --format json</code>.</li>
 </ul>
 <h2 id="add-a-product-to-the-catalog">Add a product to the catalog</h2>
 <ol>
@@ -206,7 +206,7 @@ research_status: &quot;pending&quot;
 <li>If it is <code>build_missing</code>, create <code>opportunities/&lt;id&gt;.md</code> (see <a href="https://github.com/EnzoVezzaro/rea-faang/blob/main/opportunities/README.md" rel="noopener noreferrer" target="_blank"><code>opportunities/README.md</code></a>).</li>
 <li>Add its summary, capabilities, alternative status, candidate projects and sources to <code>tools/skills/catalog-data.mjs</code>. Run <code>npm run skills:catalog</code> and <code>npm run site:build</code> to regenerate the product page and site. The check fails if a product has no catalog entry or generated page.</li>
 <li><p>Run the catalog checks and tests:</p>
-<pre><code class="language-bash">npx rae-faang research validate
+<pre><code class="language-bash">npx rea-faang research validate
 npm test</code></pre>
 <p>Both commands must pass.</p>
 </li>
@@ -226,10 +226,10 @@ npm test</code></pre>
     </main>
     <footer class="site-footer">
       <div class="wrap footer-inner">
-        <div>            <p class="footer-mark">RAE FAANG</p>
+        <div>            <p class="footer-mark">REA FAANG</p>
           <p class="footer-mission">
             We don't need FAANG anymore. Choose a product from Meta, Amazon, Apple, Netflix or Google
-            and use your agent to build it in your project. RAE FAANG brings together the catalog,
+            and use your agent to build it in your project. REA FAANG brings together the catalog,
             product research and candidate open-source projects. MIT licensed.
           </p>
         </div>

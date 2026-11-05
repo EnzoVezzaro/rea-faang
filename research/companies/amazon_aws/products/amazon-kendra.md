@@ -89,7 +89,7 @@ Open-source search engines can provide indexing, lexical/vector retrieval and ra
 
 REA should map index and connector lifecycle, document ingestion, query/retrieve semantics, ranking, FAQ/table extraction, enrichment, synonyms, access filtering, Experience Builder, GenAI index behavior, quotas, deletion and new-customer restrictions.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official Kendra product page, developer guide, API reference, CLI reference and availability notice as research surfaces. A clean-room implementation should compose independently licensed search and retrieval systems, document differences, and not copy AWS ranking models, connectors or proprietary implementation details.
 

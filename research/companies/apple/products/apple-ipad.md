@@ -87,7 +87,7 @@ Open tablet software exists (Android/AOSP on supported devices); open tablet har
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Partial. The OS layer is replaceable (AOSP); the hardware is not.
 
@@ -124,6 +124,6 @@ Open tablet software exists (Android/AOSP on supported devices); open tablet har
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Partial. The OS layer is replaceable (AOSP); the hardware is not.

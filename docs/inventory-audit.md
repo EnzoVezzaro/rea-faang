@@ -24,8 +24,8 @@ Run the same checks:
 
 ```bash
 node tools/expand-faang-inventory.mjs        # rebuild the candidate manifest
-npx rae-faang research coverage --format json
-npx rae-faang gaps products
+npx rea-faang research coverage --format json
+npx rea-faang gaps products
 npm test && npm run validate
 ```
 

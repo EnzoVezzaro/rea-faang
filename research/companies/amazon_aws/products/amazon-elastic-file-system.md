@@ -83,7 +83,7 @@ Open-source shared file systems can expose NFS or POSIX-like access, but none is
 
 REA should map mount and network behavior, NFS semantics, consistency, locking, throughput modes, storage classes, lifecycle transitions, access points, encryption, backup, quotas, failure recovery and the boundaries between EFS, EBS and S3.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use AWS product, FAQ, user-guide and API documentation as the research surface. A clean-room equivalent should choose an independently licensed file-storage foundation and reproduce only independently observable behavior, documenting differences in elasticity, durability, networking and cloud integration.
 

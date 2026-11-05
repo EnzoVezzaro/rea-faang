@@ -3,127 +3,97 @@ schema_version: "1.0"
 id: "google-play"
 company_id: "google"
 name: "Google Play"
-aliases: []
+aliases: ["Play Store"]
 product_type: "consumer_application"
-categories:
-  - "app-store"
+categories: ["app-store", "digital-distribution", "payments"]
 lifecycle_status: "active"
 official_url: "https://play.google.com/"
-official_docs_url: null
-official_source_urls: []
-research_status: "pending"
-research_confidence: "unverified"
-alternative_status: "none_verified"
+official_docs_url: "https://developer.android.com/distribute"
+official_source_urls: ["https://support.google.com/googleplay/answer/113409", "https://developer.android.com/distribute", "https://support.google.com/googleplay/answer/2812853", "https://support.google.com/googleplay/android-developer/answer/13857328"]
+research_status: "researched"
+research_confidence: "verified"
+alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: null
-next_review_at: null
-research_version: 1
+last_researched_at: 2026-11-03T00:00:00Z
+last_verified_at: 2026-11-03T00:00:00Z
+next_review_at: 2027-02-03T00:00:00Z
+research_version: 2
+inventory_status: "verified"
+command_status: "documented"
+command_source: "https://developer.android.com/distribute"
 ---
-
 # 1. Executive summary
 
-Google Play is Google's app store and digital distribution service for Android.
-
----
+Google Play is Google's consumer digital-distribution and app-store platform for Android apps, games and other digital content. It combines discovery, installation, updates, account-linked purchases, subscriptions, developer publishing and Play Protect safety controls.
 
 # 2. Product identity and ownership
 
 - **Official name:** Google Play
-- **Company and business unit:** google
-- **Current lifecycle status:** active
-- **Official website:** https://play.google.com/
-
----
+- **Company:** Google LLC, part of Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://play.google.com/
+- **Identity evidence:** Google Help documents installing apps and digital content, while Android Developers documents Play distribution and developer APIs.
 
 # 3. Product capabilities
 
-- App discovery and distribution
-- Automatic updates
-- Billing
-
----
+- Discover and install Android apps, games and digital content.
+- Link purchases and content to a Google Account across supported devices.
+- Distribute apps through Play Console, including package registration, signing and release workflows.
+- Provide billing, subscriptions and developer-facing distribution APIs.
+- Scan apps and devices with Play Protect and provide integrity/protection services.
 
 # 4. Technical architecture
 
-Not yet researched.
-
----
+The public surface includes the Play Store, Play Console, developer distribution services, package/signing and integrity systems, billing services and Play Protect. Google operates the catalogue, account, payment and anti-abuse infrastructure; internal ranking, review, fraud and enforcement systems are proprietary.
 
 # 5. User workflows
 
-Not yet researched.
-
----
+A user browses or searches for an app or digital item, reviews its listing and installs or purchases it. Content is associated with the signed-in account and may be available on multiple supported devices. Developers upload and manage applications through Play Console and configure release, signing, policy, billing and protection settings.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+Some content is free and some requires purchase, subscription or in-app payment. Availability, payment methods, country, age, device compatibility, developer policy and account state affect access. This pass does not assert current fees, revenue share, catalogue eligibility or a user's entitlement.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+Android Developers documents Play Developer APIs, Play Integrity, app signing and distribution tooling. Play Console is the principal developer control surface. Billing and integrity integrations require their own configuration, credentials, policies and device/app checks; do not infer operational access from public documentation.
 
 # 8. Existing open-source alternatives
 
-Open-source candidates exist: F-Droid (GPL-3.0) — Catalogue of free and open-source Android apps.. Coverage is unverified until the dossier is researched.
-
----
+- **F-Droid (GPL-3.0):** catalogue and distribution platform for free and open-source Android apps.
+- **Aurora Store (GPL-3.0):** alternative client for accessing Google Play catalogue content.
+- **Obtainium (GPL-3.0):** Android app updater that obtains releases from project sources.
 
 # 9. Alternative comparison
 
-F-Droid covers open-source app distribution; the commercial catalogue, billing and DRM are structurally not replicated.
-
----
+F-Droid and related tools cover portions of open-source app discovery, installation and updating. They do not reproduce Google's commercial catalogue, account-linked purchases, billing, proprietary app signing, Play Protect, Play Integrity or publisher ecosystem. Coverage is partial.
 
 # 10. Missing capabilities and opportunity analysis
 
-F-Droid covers open-source app distribution; the commercial catalogue, billing and DRM are structurally not replicated.
+A broader replacement would require a signed package repository, metadata and review workflows, update channels, payments, subscriptions, developer identity, signing, abuse prevention, device compatibility, privacy disclosures and safe-installation controls.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Partial. Open-source distribution exists (F-Droid) but covers only FOSS apps, with no paid catalogue.
-
----
+Target a FOSS-only catalogue first using reproducible builds, signed repositories and transparent metadata. Keep payments and proprietary distribution out of scope until legal, security, signing and operational requirements are explicit. Do not claim Play compatibility without testing package installation, updates, signatures and account/device behavior.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+App stores handle packages, identifiers, payments and sensitive device signals. Verify signing-key custody, review and takedown policy, malware scanning, permissions/data-safety disclosures, billing compliance, identity verification and update integrity before operating an alternative.
 
 # 13. Sources and evidence
 
-- https://f-droid.org/
-- https://en.wikipedia.org/wiki/Google_Play
-
----
+- [Get Android apps and digital content](https://support.google.com/googleplay/answer/113409) — official user installation and account behavior.
+- [Distribute apps and games on Google Play](https://developer.android.com/distribute) — official developer distribution surface and APIs.
+- [Use Google Play Protect](https://support.google.com/googleplay/answer/2812853) — official app and device safety behavior.
+- [Protected with Play](https://support.google.com/googleplay/android-developer/answer/13857328) — official integrity, signing and protection controls.
 
 # 14. Open questions
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
+- Is the target a FOSS-only store, a managed enterprise store or a commercial marketplace?
+- What package-signing, review, update and device-compatibility guarantees are required?
+- Which payment, identity, legal and abuse-prevention obligations apply?
 
 # 15. Research history
 
-- v1: dossier created; research pending.
-
----
-
-# 16. Alternative comparison (continued)
-
-F-Droid covers open-source app distribution; the commercial catalogue, billing and DRM are structurally not replicated.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Partial. Open-source distribution exists (F-Droid) but covers only FOSS apps, with no paid catalogue.
+Record updated 2026-11-03 from official Google Play Help and Android Developers sources. Status: `researched`; current fees, regional availability, review decisions and proprietary enforcement remain outside this pass.

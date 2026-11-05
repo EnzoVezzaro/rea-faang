@@ -86,7 +86,7 @@ Open-source monitoring and time-series systems can reproduce portions of metric 
 
 Historical REA should map metric-set schemas, source connectors, detector training, activation, anomaly and root-cause result schemas, alerts, backtesting, APIs, quotas, Regions and retirement behavior.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use archived official documentation and the full-shutdown notice as research surfaces. Any replacement should use independently licensed monitoring and anomaly-detection components, document differences and not imply compatibility with a service AWS no longer operates.
 

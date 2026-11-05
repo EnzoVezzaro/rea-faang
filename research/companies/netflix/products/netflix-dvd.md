@@ -70,7 +70,7 @@ Jellyfin replaces the streaming use case, not the mail-order logistics; the cata
 
 None: out of scope because the product is retired.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 No implementation. Keep the record so the inventory does not re-add a retired product.
 

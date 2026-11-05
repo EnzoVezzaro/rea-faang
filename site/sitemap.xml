@@ -169,6 +169,15 @@
     <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-whatsapp/</loc>
   </url>
   <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-messenger/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-ai/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-pay/</loc>
+  </url>
+  <url>
     <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-llama/</loc>
   </url>
   <url>
@@ -304,7 +313,13 @@
     <loc>https://enzovezzaro.github.io/rea-faang/catalog/microsoft-windows/</loc>
   </url>
   <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/microsoft-edge/</loc>
+  </url>
+  <url>
     <loc>https://enzovezzaro.github.io/rea-faang/catalog/microsoft-365/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/microsoft-onedrive/</loc>
   </url>
   <url>
     <loc>https://enzovezzaro.github.io/rea-faang/catalog/microsoft-teams/</loc>
@@ -560,6 +575,18 @@
   </url>
   <url>
     <loc>https://enzovezzaro.github.io/rea-faang/catalog/aws-cloud-wan/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-account/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-verified/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-one/</loc>
+  </url>
+  <url>
+    <loc>https://enzovezzaro.github.io/rea-faang/catalog/meta-muse/</loc>
   </url>
   <url>
     <loc>https://enzovezzaro.github.io/rea-faang/docs/getting-started.html</loc>

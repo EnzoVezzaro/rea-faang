@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Gemini (google-gemini); inve
 
 # Google Gemini — implementation skill (`google-gemini`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Gemini**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Gemini (google-gemini); inve
 
 This is the coding-agent skill for **Google Gemini** (`google-gemini`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-gemini.md` from the catalog page, or run `npx rae-faang google-gemini --out ./google-gemini.md`, `npx rae-faang skills generate google-gemini` or `npx rae-faang build agent-kit google-gemini --out ./google-gemini-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-gemini.md` from the catalog page, or run `npx rea-faang google-gemini --out ./google-gemini.md`, `npx rea-faang skills generate google-gemini` or `npx rea-faang build agent-kit google-gemini --out ./google-gemini-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,18 +27,18 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Google Gemini / `google-gemini` | `catalog/products.jsonl` |
 | Official product URL | [https://gemini.google.com/](https://gemini.google.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | [https://ai.google.dev/](https://ai.google.dev/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-gemini` | `research/companies/google/products/google-gemini.md` |
+| Official documentation | [https://ai.google.dev/gemini-api/docs](https://ai.google.dev/gemini-api/docs) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-gemini` | `research/companies/google/products/google-gemini.md` |
 | REA report | `catalog/rea/google/google-gemini.md` (captured 2026-11-03T01:38:17.023Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-gemini.json` (`ev_d842928e99a17443cf150a1b54e21a4e94a05102ffbb8f31eab6438544cbbcd8`) | Catalog evidence |
-| Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
+| Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
 | User scope | Requested product area, platforms, users and non-goals | The user; ask when the answer changes the deliverable |
 | Consumer project | Absolute path, stack, conventions, test commands, deployment target | The user’s repository, read before writing |
 | Authorization | Public surfaces and the user’s own project only | Clean-room boundary in section 14 |
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-gemini --format json` and `npx rae-faang research dossier google-gemini` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-gemini --format json` and `npx rea-faang research dossier google-gemini` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-GEMINI-CAP-2C252C95`, `GOOGLE-GEMINI-CAP-221CB7BC`, `GOOGLE-GEMINI-CAP-D554FBA9`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-GEMINI-CAP-20F21489`, `GOOGLE-GEMINI-CAP-29E663BE`, `GOOGLE-GEMINI-CAP-DF9EDCE3`, `GOOGLE-GEMINI-CAP-47F18601`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,7 +103,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Google Gemini** / `google-gemini` | Product catalog |
 | Company / category | Google / `ai_model` / `ai_model` | Product catalog |
-| Official website / docs | [https://gemini.google.com/](https://gemini.google.com/) / [https://ai.google.dev/](https://ai.google.dev/) | URL lead; compiler does not fetch source |
+| Official website / docs | [https://gemini.google.com/](https://gemini.google.com/) / [https://ai.google.dev/gemini-api/docs](https://ai.google.dev/gemini-api/docs) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-GEMINI-CAP-2C252C95` | Multimodal reasoning (text, image, audio, video) | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-GEMINI-CAP-221CB7BC` | Long-context generation and tool use | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-GEMINI-CAP-D554FBA9` | Hosted assistant plus a developer API | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-GEMINI-CAP-20F21489` | Multimodal model and agent interactions across documented text, image, audio, video and document surfaces. | VERIFIED | `ev-google-gemini-interactions` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-GEMINI-CAP-29E663BE` | Developer API and SDK access to selected Gemini models and capabilities. | VERIFIED | `ev-google-gemini-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-GEMINI-CAP-DF9EDCE3` | Structured function calling, tool calls and function results for supported model families. | VERIFIED | `ev-google-gemini-function-calling` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-GEMINI-CAP-47F18601` | Free and paid access tiers with account, model, quota and data-use differences that require current per-surface verification. | VERIFIED | `ev-google-gemini-pricing`, `ev-google-gemini-privacy` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Close sidebar`, `button: About Gemini`, `button: Subscriptions`, `button: For Business`, `button: Settings`, `button: Sign in`, `button: Get App`, `button: Upload & tools`, `button: Open mode picker, currently Flash-Lite`, `button: Dictate (⌘⇧D)`, `link: New chat`, `link: Images`, `link: Sign in`, `textbox: Enter a prompt for Gemini`, `link: Google Terms Opens in a new window`, `link: Google Privacy Policy Opens in a new window`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Multimodal reasoning (text, image, audio, video):** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Long-context generation and tool use:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Hosted assistant plus a developer API:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Multimodal model and agent interactions across documented text, image, audio, video and document surfaces.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Developer API and SDK access to selected Gemini models and capabilities.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Structured function calling, tool calls and function results for supported model families.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Free and paid access tiers with account, model, quota and data-use differences that require current per-surface verification.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-2C252C95 — Multimodal reasoning (text, image, audio, video)
+### REQ-FUNC-20F21489 — Multimodal model and agent interactions across documented text, image, audio, video and document surfaces.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-gemini-interactions`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-2C252C95`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-GEMINI-CAP-2C252C95` → `REQ-FUNC-2C252C95` → `TEST-FUNC-2C252C95`.
+- **Associated test ID:** `TEST-FUNC-20F21489`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-GEMINI-CAP-20F21489` → `REQ-FUNC-20F21489` → `TEST-FUNC-20F21489`.
 
-### REQ-FUNC-221CB7BC — Long-context generation and tool use
+### REQ-FUNC-29E663BE — Developer API and SDK access to selected Gemini models and capabilities.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-gemini-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-221CB7BC`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-GEMINI-CAP-221CB7BC` → `REQ-FUNC-221CB7BC` → `TEST-FUNC-221CB7BC`.
+- **Associated test ID:** `TEST-FUNC-29E663BE`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-GEMINI-CAP-29E663BE` → `REQ-FUNC-29E663BE` → `TEST-FUNC-29E663BE`.
 
-### REQ-FUNC-D554FBA9 — Hosted assistant plus a developer API
+### REQ-FUNC-DF9EDCE3 — Structured function calling, tool calls and function results for supported model families.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-gemini-function-calling`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D554FBA9`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-GEMINI-CAP-D554FBA9` → `REQ-FUNC-D554FBA9` → `TEST-FUNC-D554FBA9`.
+- **Associated test ID:** `TEST-FUNC-DF9EDCE3`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-GEMINI-CAP-DF9EDCE3` → `REQ-FUNC-DF9EDCE3` → `TEST-FUNC-DF9EDCE3`.
+
+### REQ-FUNC-47F18601 — Free and paid access tiers with account, model, quota and data-use differences that require current per-surface verification.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-gemini-pricing`, `ev-google-gemini-privacy`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-47F18601`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-GEMINI-CAP-47F18601` → `REQ-FUNC-47F18601` → `TEST-FUNC-47F18601`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -205,7 +216,8 @@ Separate interface/domain/persistence/integration boundaries. Enforce access at 
 
 | Candidate | Repository | License | Claimed coverage (unverified) | Limitations | Maintenance | Compatibility | Verdict |
 |---|---|---|---|---|---|---|---|
-| [Llama / Mistral / Qwen / Gemma](https://huggingface.co/blog/daya-shankar/open-source-llm-models-to-run-locally) | Not recorded; verify the canonical repository | mixed (mostly open weights) (unverified) | Capable open-weight model families you can run yourself. | Many are open-weight under custom licences, not OSI open source. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [Gemma](https://ai.google.dev/gemma) | Not recorded; verify the canonical repository | Google model-specific terms; verify current release (unverified) | Google-published open model family related to Gemini technology. | Related open models are not the hosted Gemini service or a parity claim. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [Mistral and Qwen model families](https://mistral.ai/technology/) | Not recorded; verify the canonical repository | model-specific; verify each release (unverified) | Alternative open or openly distributed model families for selected workloads. | Capabilities, licenses and hosting requirements vary by model. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 | [Ollama](https://ollama.com/) | [repository](https://github.com/ollama/ollama) | MIT (unverified) | Local model runner and OpenAI-compatible API. | Runs the weights; does not provide a frontier model. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 
 Repository, license, maintenance and compatibility are catalog claims until you check them. Re-verify each against the exact version you would adopt; a README, a star count or this table is not proof.
@@ -216,17 +228,18 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-GEMINI-CAP-2C252C95` — Multimodal reasoning (text, image, audio, video) | Not verified against Llama / Mistral / Qwen / Gemma | None yet; compare with `ev_d842928e99a17443cf150a1b54e21a4e94a05102ffbb8f31eab6438544cbbcd8` | Candidate code path and tests must be inspected |
-| `GOOGLE-GEMINI-CAP-221CB7BC` — Long-context generation and tool use | Not verified against Llama / Mistral / Qwen / Gemma | None yet; compare with `ev_d842928e99a17443cf150a1b54e21a4e94a05102ffbb8f31eab6438544cbbcd8` | Candidate code path and tests must be inspected |
-| `GOOGLE-GEMINI-CAP-D554FBA9` — Hosted assistant plus a developer API | Not verified against Llama / Mistral / Qwen / Gemma | None yet; compare with `ev_d842928e99a17443cf150a1b54e21a4e94a05102ffbb8f31eab6438544cbbcd8` | Candidate code path and tests must be inspected |
+| `GOOGLE-GEMINI-CAP-20F21489` — Multimodal model and agent interactions across documented text, image, audio, video and document surfaces. | Not verified against Gemma | None yet; compare with `ev_d842928e99a17443cf150a1b54e21a4e94a05102ffbb8f31eab6438544cbbcd8` | Candidate code path and tests must be inspected |
+| `GOOGLE-GEMINI-CAP-29E663BE` — Developer API and SDK access to selected Gemini models and capabilities. | Not verified against Gemma | None yet; compare with `ev_d842928e99a17443cf150a1b54e21a4e94a05102ffbb8f31eab6438544cbbcd8` | Candidate code path and tests must be inspected |
+| `GOOGLE-GEMINI-CAP-DF9EDCE3` — Structured function calling, tool calls and function results for supported model families. | Not verified against Gemma | None yet; compare with `ev_d842928e99a17443cf150a1b54e21a4e94a05102ffbb8f31eab6438544cbbcd8` | Candidate code path and tests must be inspected |
+| `GOOGLE-GEMINI-CAP-47F18601` — Free and paid access tiers with account, model, quota and data-use differences that require current per-surface verification. | Not verified against Gemma | None yet; compare with `ev_d842928e99a17443cf150a1b54e21a4e94a05102ffbb8f31eab6438544cbbcd8` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
-**Current verdict: INVESTIGATE MORE** — the first candidate to audit is **Llama / Mistral / Qwen / Gemma** (Capable open-weight model families you can run yourself.), and no candidate has been verified yet.
+**Current verdict: INVESTIGATE MORE** — the first candidate to audit is **Gemma** (Google-published open model family related to Gemini technology.), and no candidate has been verified yet.
 
 Provisional routing for this product, to be confirmed by that audit:
 
-- If **Llama / Mistral / Qwen / Gemma** implements the core capability leads with a compatible license and maintainable code → **REUSE** it as the foundation.
+- If **Gemma** implements the core capability leads with a compatible license and maintainable code → **REUSE** it as the foundation.
 - If it covers only part of the scope, or would need to run beside the user’s existing system → **INTEGRATE** it behind a defined boundary, or **EXTEND** it with original modules where its extension points allow it.
 - If no candidate survives inspection → **BUILD** an independent implementation, and record which candidates failed and why.
 - If the evidence is still insufficient → **INVESTIGATE MORE**, naming the exact question, source and check that would settle it.
@@ -265,9 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-2C252C95** → `REQ-FUNC-2C252C95`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-221CB7BC** → `REQ-FUNC-221CB7BC`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-D554FBA9** → `REQ-FUNC-D554FBA9`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-20F21489** → `REQ-FUNC-20F21489`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-29E663BE** → `REQ-FUNC-29E663BE`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-DF9EDCE3** → `REQ-FUNC-DF9EDCE3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-47F18601** → `REQ-FUNC-47F18601`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -288,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-2C252C95, REQ-FUNC-221CB7BC, REQ-FUNC-D554FBA9
+- **Requirements:** REQ-FUNC-20F21489, REQ-FUNC-29E663BE, REQ-FUNC-DF9EDCE3, REQ-FUNC-47F18601
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -298,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-2C252C95, REQ-FUNC-221CB7BC, REQ-FUNC-D554FBA9
+- **Requirements:** REQ-FUNC-20F21489, REQ-FUNC-29E663BE, REQ-FUNC-DF9EDCE3, REQ-FUNC-47F18601
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -320,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-2C252C95, REQ-FUNC-221CB7BC, REQ-FUNC-D554FBA9; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-20F21489, REQ-FUNC-29E663BE, REQ-FUNC-DF9EDCE3, REQ-FUNC-47F18601; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -350,9 +364,27 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://gemini.google.com/) | Not recorded | Google Gemini is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://ai.google.dev/) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
-| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://ai.google.dev/gemma) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `ev-google-gemini-identity` | Gemini — The official URL resolves to the Gemini application surface; the repository also records a dated REA capture of its public unauthenticated entry page. | [link](https://gemini.google.com/) | 2026-11-03T00:00:00Z | The canonical public product surface is Google Gemini at gemini.google.com. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-api` | Gemini API documentation — The official developer documentation describes the Gemini API, SDKs, model access and feature guides; exact model availability and limits remain version- and account-dependent. | [link](https://ai.google.dev/gemini-api/docs) | 2026-11-03T00:00:00Z | Google publishes a developer API for interacting with Gemini models and related capabilities. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-interactions` | Interactions API — Google documents interaction records, optional server-side state, observable execution steps, background execution and feature guides for text, image, audio, video, documents and tools. | [link](https://ai.google.dev/gemini-api/docs/interactions-overview) | 2026-11-03T00:00:00Z | The Interactions API provides a unified interface for model and agent interactions, including multimodal inputs, tools and background execution. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-function-calling` | Function calling with the Gemini API — The official guide documents function declarations, calls and results; it also documents multimodal content in function responses for Gemini 3 series models. | [link](https://ai.google.dev/gemini-api/docs/function-calling) | 2026-11-03T00:00:00Z | The Gemini API documents function calling and multimodal function results for supported model families. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-pricing` | Gemini Developer API pricing — Google documents free access for selected models and limits, paid token pricing, tool charges and account or tier conditions; these terms may change. | [link](https://ai.google.dev/gemini-api/docs/pricing) | 2026-11-03T00:00:00Z | Gemini API access has free and paid tiers with model-, modality- and usage-dependent limits and prices. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-model-cards` | Model cards — The model-card index lists Gemini model families, versions and dates, while separating them from Gemma open models; it is not a promise that every listed model is available in every API or account. | [link](https://deepmind.google/models/model-cards/) | 2026-11-03T00:00:00Z | Google publishes model cards for multiple Gemini generations and related Gemma models. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-privacy` | Gemini Apps Privacy Hub — The privacy notice describes data collected and purposes such as providing, maintaining, improving and personalizing services; it applies to Gemini Apps and is distinct from every API deployment contract. | [link](https://support.google.com/gemini/answer/13594961) | 2026-11-03T00:00:00Z | Google documents categories of prompts, files, recordings, device context and connected-app data processed by Gemini Apps. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-identity` | Gemini — The official URL resolves to the Gemini application surface; the repository also records a dated REA capture of its public unauthenticated entry page. | [link](https://gemini.google.com/) | 2026-11-03T00:00:00Z | The canonical public product surface is Google Gemini at gemini.google.com. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-api` | Gemini API documentation — The official developer documentation describes the Gemini API, SDKs, model access and feature guides; exact model availability and limits remain version- and account-dependent. | [link](https://ai.google.dev/gemini-api/docs) | 2026-11-03T00:00:00Z | Google publishes a developer API for interacting with Gemini models and related capabilities. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-interactions` | Interactions API — Google documents interaction records, optional server-side state, observable execution steps, background execution and feature guides for text, image, audio, video, documents and tools. | [link](https://ai.google.dev/gemini-api/docs/interactions-overview) | 2026-11-03T00:00:00Z | The Interactions API provides a unified interface for model and agent interactions, including multimodal inputs, tools and background execution. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-function-calling` | Function calling with the Gemini API — The official guide documents function declarations, calls and results; it also documents multimodal content in function responses for Gemini 3 series models. | [link](https://ai.google.dev/gemini-api/docs/function-calling) | 2026-11-03T00:00:00Z | The Gemini API documents function calling and multimodal function results for supported model families. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-pricing` | Gemini Developer API pricing — Google documents free access for selected models and limits, paid token pricing, tool charges and account or tier conditions; these terms may change. | [link](https://ai.google.dev/gemini-api/docs/pricing) | 2026-11-03T00:00:00Z | Gemini API access has free and paid tiers with model-, modality- and usage-dependent limits and prices. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-model-cards` | Model cards — The model-card index lists Gemini model families, versions and dates, while separating them from Gemma open models; it is not a promise that every listed model is available in every API or account. | [link](https://deepmind.google/models/model-cards/) | 2026-11-03T00:00:00Z | Google publishes model cards for multiple Gemini generations and related Gemma models. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-gemini-privacy` | Gemini Apps Privacy Hub — The privacy notice describes data collected and purposes such as providing, maintaining, improving and personalizing services; it applies to Gemini Apps and is distinct from every API deployment contract. | [link](https://support.google.com/gemini/answer/13594961) | 2026-11-03T00:00:00Z | Google documents categories of prompts, files, recordings, device context and connected-app data processed by Gemini Apps. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://gemini.google.com/) | 2026-11-03T00:00:00Z | Google Gemini is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://ai.google.dev/gemini-api/docs) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://ai.google.dev/gemini-api/docs/interactions-overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://ai.google.dev/gemini-api/docs/function-calling) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://ai.google.dev/gemini-api/docs/pricing) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://deepmind.google/models/model-cards/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/gemini/answer/13594961) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_d842928e99a17443cf150a1b54e21a4e94a05102ffbb8f31eab6438544cbbcd8` | Google Gemini Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://gemini.google.com/app) | 2026-11-03T01:38:17.023Z | A dated unauthenticated snapshot exposed controls button: Close sidebar, button: About Gemini, button: Subscriptions, button: For Business, button: Settings, button: Sign in, button: Get App, button: Upload & tools, button: Open mode picker, currently Flash-Lite, button: Dictate (⌘⇧D), link: New chat, link: Images, link: Sign in, textbox: Enter a prompt for Gemini, link: Google Terms Opens in a new window, link: Google Privacy Policy Opens in a new window and landmarks main, navigation: Side Navigation, navigation: Main actions menu, navigation: Additional actions menu. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -378,151 +410,127 @@ Resume token: `google-gemini`. Read dossier, REA report and raw Evidence before 
 
 ### Dossier notes (not independently verified)
 
----
-schema_version: "1.0"
-id: "google-gemini"
-company_id: "google"
-name: "Google Gemini"
-aliases: []
-product_type: "ai_model"
-categories:
-  - "ai_model"
-official_url: "https://gemini.google.com/"
-official_docs_url: "https://ai.google.dev/"
-official_source_urls:
-  - "https://ai.google.dev/gemma"
-lifecycle_status: "active"
-research_status: "pending"
-research_confidence: "unverified"
-alternative_status: "none_verified"
-alternative_coverage: "unknown"
-opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: null
-next_review_at: null
-research_version: 1
----
-
 # 1. Executive summary
 
-Google Gemini is a family of large multimodal models capable of understanding and generating text, code, audio, images, and video. It represents Google's flagship generative AI offering, competing with OpenAI's GPT-4, Anthropic's Claude, and other foundation models.
+Google Gemini is Google's hosted family of multimodal models and assistant surfaces. Google documents a developer API, model and agent interactions, function calling, multimodal features, pricing tiers and model cards. The public evidence does not establish a downloadable Gemini equivalent, proprietary training details, complete model parity across products, or the internal serving architecture.
+
+This dossier promotes `google-gemini` to `researched` for the documented public product and developer surfaces. It keeps unknowns explicit and treats the dated REA capture as evidence of the public entry page only, not as proof of every authenticated assistant or API workflow.
 
 # 2. Product identity and ownership
 
-- **Official name:** Google Gemini
-- **Company and business unit:** Google DeepMind & Google Brain (merged as Google AI)
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2023 (Gemini 1.0)
-- **Current lifecycle status:** active
-- **Previous names:** None
-- **Acquisitions or ownership changes:** None; evolved from Google Brain and DeepMind merger
-- **Related products:** Google AI Studio, Gemini API, Vertex AI, NotebookLM
-- **Official website:** https://gemini.google.com/
-- **Official documentation:** https://ai.google.dev/
+- **Canonical name:** Google Gemini
+- **Stable catalog ID:** `google-gemini`
+- **Company:** Google / Google DeepMind
+- **Product type:** hosted AI model family and consumer/developer application surfaces
+- **Official product URL:** https://gemini.google.com/
+- **Official developer documentation:** https://ai.google.dev/gemini-api/docs
+- **Lifecycle:** active at the time of review
+- **Identity evidence:** `ev-google-gemini-identity`, plus `catalog/rea/google/google-gemini.md`
+- **Version matrix:** Google publishes multiple model cards and API model entries; exact availability, preview status, limits and account eligibility must be checked against the current API model list before integration
+
+Gemini Apps, the Gemini API, Vertex AI integrations and individual model generations are related surfaces. They are not silently collapsed into separate product identities here. A model-specific or channel-specific contract should be created only when the catalog needs a distinct lifecycle, owner or evidence set.
 
 # 3. Product capabilities
 
-- Multimodal understanding (text, image, audio, video)
-- Natural language generation
-- Code generation
-- Long-context understanding (up to 1M tokens in Gemini 1.5)
-- Function calling
-- Tool use
-- Reasoning and problem-solving
-- Translation and multilingual support
+The following claims are supported by the official sources in the evidence ledger:
+
+1. **Multimodal interaction:** Google documents text, image, audio, video and document feature guides across the Gemini API and model families.
+2. **Developer API:** Google publishes SDK and API documentation for accessing selected Gemini models and capabilities.
+3. **Tool and function calling:** Google documents function declarations, tool calls and function results, including multimodal function results for supported Gemini 3 models.
+4. **Interaction and agent workflows:** The Interactions API documents unified model/agent interactions, optional server-side state, observable execution steps and background execution.
+5. **Model and tier diversity:** Google publishes model cards and pricing for multiple Gemini families and service tiers; availability is not uniform across products or accounts.
+6. **Free and paid access:** Google's pricing documentation distinguishes free access, paid access and enterprise offerings with different limits, tools and data-use terms.
+
+Not established by these sources: exact internal model weights, training corpus, proprietary safety implementation, complete parity between Gemini Apps and API behavior, regional availability of every feature, or a full public service-level guarantee.
 
 # 4. Technical architecture
 
-Gemini models run on Google's TPU infrastructure. Model sizes vary from Gemini Nano (on-device) to Gemini Ultra (large-scale). Serving infrastructure includes:
+**Verified public model:** client or application surface → Gemini model/API interaction → optional tools or function calls → model output and interaction record. The Interactions API documents a chronological interaction resource containing execution steps and optional server-side state.
 
-- TPU Pods for training and inference
-- JAX/XLA compilation pipeline
-- Model caching and serving infrastructure
-- Safety filtering and reinforcement learning from human feedback (RLHF)
-
-Publicly documented architecture covers model interfaces and capabilities; internal training infrastructure is proprietary.
+**Not verified:** TPU topology, training pipeline, model routing, hidden safety services, storage engines, deployment topology, caching internals, quota enforcement implementation and private personalization. These remain `UNKNOWN`; this dossier does not infer them from generic AI-system architecture.
 
 # 5. User workflows
 
-Developers and researchers interact with Gemini through:
+The public REA capture observed the unauthenticated Gemini entry surface with a new-chat control, navigation, sign-in control, upload/tools control, mode picker and dictate control. Official developer documentation supports a separate workflow for creating an API interaction, selecting an eligible model, providing text or multimodal input, optionally allowing tools/function calls, and reading the resulting interaction.
 
-- AI Studio for prompt design and testing
-- Gemini API via REST/HTTP
-- Vertex AI integration
-- On-device usage via Gemini Nano in Android
-
-Essential workflows: model selection, prompt engineering, response generation, tool use. Advanced: system instructions, function calling, safety settings.
+The following details remain unverified or surface-specific: authenticated chat history, connected-app behavior, subscription gating, exact upload limits, model picker contents, refusal and safety states, retries, cancellation, streaming semantics, latency, account deletion, regional behavior and parity between Gemini Apps, AI Studio, Gemini API and Vertex AI.
 
 # 6. Pricing and access
 
-- Free tier with limited daily requests
-- Paid tiers based on token volume and model size
-- Gemini 1.0 Pro, 1.5 Pro, 1.5 Flash pricing tiers
-- Vertex AI pricing different from AI Studio pricing
-- Account required for API access
+Google documents free and paid Gemini API tiers. The free tier can include limited access to selected models and free input/output tokens, while paid and enterprise tiers expose different limits, tools, support and data-use terms. Google AI Studio usage and API billing are not interchangeable assumptions; check the current pricing and billing documentation for the target account and model before integration.
+
+Pricing, quotas, free-tier eligibility, model names and tool charges are time-sensitive. This dossier records the official documentation consulted on 2026-11-03, not a permanent quote or authorization to incur charges.
 
 # 7. API and integration surface
 
-- REST/HTTP API with JSON payloads
-- Google AI Studio web interface
-- Vertex AI SDK integration
-- Function calling schema
-- Streamingly and batch deployment options
+- **Gemini API:** documented model and interaction endpoints with SDK support.
+- **Interactions API:** unified interaction records, optional state, tool/function execution and background execution.
+- **Function calling:** structured function declarations, calls and results; multimodal result support is model-family dependent.
+- **Gemini Apps:** public consumer assistant surface observed by REA; authentication and connected-app behavior were not exercised.
+- **Vertex AI:** related Google Cloud delivery surface; do not assume identical models, quotas, terms or APIs without checking its current contract.
+
+Authentication, quotas, regional availability, safety behavior, retries, idempotency and retention must be read from the current official contract before building an integration.
 
 # 8. Existing open-source alternatives
 
-Open-source models include Llama 3, Mixtral, Nemotron, Phi-3, and Qwen2. None match Gemini's multimodal capabilities at comparable scale.
+The curated landscape identifies partial candidates, not equivalent replacements:
+
+- **Gemma:** Google's separately documented open model family, including model cards and downloadable/open-weight variants; it is related technology but not the hosted Gemini service.
+- **Ollama:** MIT-licensed local model runner and API surface; it runs selected model weights but does not provide Gemini's hosted model family.
+- **Mistral and Qwen model families:** open-weight or openly distributed model families with different licenses, capabilities and deployment requirements; each requires a separate version and license review.
+
+These candidates cover pieces of local inference, model serving or open-weight experimentation. None is verified here as a drop-in replacement for Gemini Apps, Gemini API, or Google's proprietary multimodal model family.
 
 # 9. Alternative comparison
 
-Open-source alternatives exist but generally lack true multimodal capabilities or the scale and infrastructure support of Gemini.
+The evidence supports **partial** alternative coverage. Gemma is the closest Google-published open-model relation, while Ollama is a runtime rather than a model. Mistral and Qwen may cover selected text, code or multimodal workloads depending on model and license. Capability, latency, safety, tool use, context, hosting, support and data governance must be compared for a bounded use case before selecting one.
+
+Alternative coverage remains `unknown` in the canonical product record until each candidate is reviewed for current release, license, maintenance, security, hardware needs and the exact target workflow.
 
 # 10. Missing capabilities and opportunity analysis
 
-Domain-specific fine-tuning infrastructure, multimodal data pipelines, and large-scale serving at low latency represent build opportunities. Model distillation and compression techniques are active research areas.
+The opportunity is a bounded, independently operated multimodal or agentic system with explicit model choice, data controls, tool permissions, evaluation sets and cost limits—not a claim to reproduce Google's proprietary hosted service. A viable first slice could choose one open model family, one modality, one deployment target and one tool contract. Gemini-scale model quality, hosted reliability, private context and product integrations remain outside that bounded claim.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Focus on a specific modality or use case (e.g., text-only code generation, multimodal document understanding). Leverage existing open-source model frameworks (Transformers, GGUF) for independent deployment.
+Use the REA public-surface report only to reproduce the observed unauthenticated entry contract and to guide additional authorized observations. For an independent implementation, compare Gemma, Mistral, Qwen and a local runner such as Ollama against a declared task set, license, hardware budget, safety policy and evaluation corpus. Do not present an open model or runner as Gemini parity.
 
-# 12. Security, privacy, and compliance
+# 12. Security, privacy and compliance
 
-Model outputs should be filtered for harmful content. Data privacy requirements depend on deployment context. No specific compliance certifications for the model itself.
+Google's Gemini Apps privacy notice documents prompts, files, recordings, device context, connected apps and related processing purposes. That notice is not a substitute for the API or Vertex AI data-processing contract. An independent implementation must define data minimization, prompt and file retention, tool permissions, tenant isolation, secrets handling, abuse controls, deletion/export, model safety evaluation and audit logging before implementation. No compliance or privacy parity claim is made.
 
 # 13. Sources and evidence
 
-- https://gemini.google.com/ (product page)
-- https://ai.google.dev/ (documentation)
-- https://ai.googleblog.com/ (research announcements)
-- https://github.com/facebookresearch/llama (Llama 3 for comparison)
+| Evidence ID | Source | Scope |
+|---|---|---|
+| `ev-google-gemini-identity` | https://gemini.google.com/ | Product identity and public entry page |
+| `ev-google-gemini-api` | https://ai.google.dev/gemini-api/docs | Developer API and model surface |
+| `ev-google-gemini-interactions` | https://ai.google.dev/gemini-api/docs/interactions-overview | Interaction records, state and agent features |
+| `ev-google-gemini-function-calling` | https://ai.google.dev/gemini-api/docs/function-calling | Function calling and multimodal results |
+| `ev-google-gemini-pricing` | https://ai.google.dev/gemini-api/docs/pricing | Free/paid tiers, limits and tool pricing |
+| `ev-google-gemini-model-cards` | https://deepmind.google/models/model-cards/ | Model families and version records |
+| `ev-google-gemini-privacy` | https://support.google.com/gemini/answer/13594961 | Gemini Apps data and privacy scope |
+| REA capture | `catalog/rea/google/google-gemini.md` | Dated unauthenticated entry-page observation only |
 
-# 14. Open questions
+# 14. Open questions and exclusions
 
-- What is the smallest Gemini model viable for independent deployment?
-- What open-format model weights are compatible with existing serving infrastructure?
-- How do function calling and tool use capabilities compare across models?
+- Exact model availability and names must be checked against the current account and API model list.
+- Gemini Apps, AI Studio, Gemini API and Vertex AI do not share an assumed contract.
+- Full authenticated assistant workflows and connected-app behavior were not captured.
+- Exact training data, model weights, internal routing, safety services and infrastructure are not public evidence here.
+- Alternative repositories and model licenses require separate current reviews.
+- No billing, account, private-data, deployment or production operation was performed.
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
+- **2026-11-03:** reviewed official Google AI for Developers, Google DeepMind and Gemini Help sources; reconciled them with the existing REA public-entry capture; promoted the dossier from `pending` to `researched` with verified evidence and explicit unknowns.
+- **Next review:** 2027-02-03, or sooner if official model availability, pricing, privacy terms or API behavior changes materially.
 
----
-
-# 16. Alternative comparison (continued)
-
-No open-source alternative matches Gemini's multimodal scope at scale.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Select a target modality and fine-tune an open-source base model. Infrastructure for large-scale serving is a significant requirement.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-gemini` and inspect canonical identity with `npx rae-faang products show google-gemini --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-gemini` and inspect canonical identity with `npx rea-faang products show google-gemini --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -535,7 +543,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-gemini --out ./google-gemini.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-gemini --out ./google-gemini-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-gemini --out ./google-gemini.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-gemini --out ./google-gemini-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -577,7 +585,25 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://gemini.google.com/) — Google Gemini is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://ai.google.dev/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://ai.google.dev/gemma) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Gemini](https://gemini.google.com/) — The canonical public product surface is Google Gemini at gemini.google.com. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Gemini API documentation](https://ai.google.dev/gemini-api/docs) — Google publishes a developer API for interacting with Gemini models and related capabilities. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Interactions API](https://ai.google.dev/gemini-api/docs/interactions-overview) — The Interactions API provides a unified interface for model and agent interactions, including multimodal inputs, tools and background execution. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Function calling with the Gemini API](https://ai.google.dev/gemini-api/docs/function-calling) — The Gemini API documents function calling and multimodal function results for supported model families. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Gemini Developer API pricing](https://ai.google.dev/gemini-api/docs/pricing) — Gemini API access has free and paid tiers with model-, modality- and usage-dependent limits and prices. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Model cards](https://deepmind.google/models/model-cards/) — Google publishes model cards for multiple Gemini generations and related Gemma models. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961) — Google documents categories of prompts, files, recordings, device context and connected-app data processed by Gemini Apps. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Gemini](https://gemini.google.com/) — The canonical public product surface is Google Gemini at gemini.google.com. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Gemini API documentation](https://ai.google.dev/gemini-api/docs) — Google publishes a developer API for interacting with Gemini models and related capabilities. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Interactions API](https://ai.google.dev/gemini-api/docs/interactions-overview) — The Interactions API provides a unified interface for model and agent interactions, including multimodal inputs, tools and background execution. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Function calling with the Gemini API](https://ai.google.dev/gemini-api/docs/function-calling) — The Gemini API documents function calling and multimodal function results for supported model families. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Gemini Developer API pricing](https://ai.google.dev/gemini-api/docs/pricing) — Gemini API access has free and paid tiers with model-, modality- and usage-dependent limits and prices. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Model cards](https://deepmind.google/models/model-cards/) — Google publishes model cards for multiple Gemini generations and related Gemma models. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Gemini Apps Privacy Hub](https://support.google.com/gemini/answer/13594961) — Google documents categories of prompts, files, recordings, device context and connected-app data processed by Gemini Apps. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://gemini.google.com/) — Google Gemini is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://ai.google.dev/gemini-api/docs) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://ai.google.dev/gemini-api/docs/interactions-overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://ai.google.dev/gemini-api/docs/function-calling) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://ai.google.dev/gemini-api/docs/pricing) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://deepmind.google/models/model-cards/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/gemini/answer/13594961) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Gemini Public web-surface observation (REA)](https://gemini.google.com/app) — A dated unauthenticated snapshot exposed controls button: Close sidebar, button: About Gemini, button: Subscriptions, button: For Business, button: Settings, button: Sign in, button: Get App, button: Upload & tools, button: Open mode picker, currently Flash-Lite, button: Dictate (⌘⇧D), link: New chat, link: Images, link: Sign in, textbox: Enter a prompt for Gemini, link: Google Terms Opens in a new window, link: Google Privacy Policy Opens in a new window and landmarks main, navigation: Side Navigation, navigation: Main actions menu, navigation: Additional actions menu. (VERIFIED; accessed 2026-11-03T01:38:17.023Z).

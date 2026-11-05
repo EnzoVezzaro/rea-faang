@@ -14,16 +14,19 @@ official_source_urls:
   - "https://aws.amazon.com/documentation-overview/polly/"
   - "https://docs.aws.amazon.com/polly/"
   - "https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html"
+  - "https://docs.aws.amazon.com/polly/latest/APIReference/API_SynthesizeSpeech.html"
+  - "https://docs.aws.amazon.com/polly/latest/dg/using-speechmarks.html"
+  - "https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html"
   - "https://docs.aws.amazon.com/ai/responsible-ai/amazon-polly/overview.html"
-research_status: "pending"
-research_confidence: "unverified"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: 2026-11-03T00:00:00Z
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: 2027-02-03T00:00:00Z
+research_version: 2
 ---
 
 # 1. Executive summary
@@ -73,7 +76,7 @@ Compare text normalization, SSML support, pronunciation and lexicon behavior, vo
 
 The remaining research must map engine and voice matrices, SSML and lexicon semantics, speech-mark schemas, output formats, streaming behavior, quotas, pricing, regional endpoints, error handling, model licensing and sensitive-text handling.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, API references and authorized test inputs. Capture representative synthesis, SSML, lexicon, speech-mark, streaming and failure cases. Use Piper only after documenting the partial-foundation verdict, and build any independent implementation with original code, compatible licensing and no AWS branding or protected assets.
 
@@ -81,13 +84,16 @@ Use official AWS documentation, API references and authorized test inputs. Captu
 
 Verify IAM scope, TLS, regional processing, sensitive-text retention, request and audio logging, KMS or storage boundaries, model and voice licensing, and access to generated audio. Do not infer a compliance guarantee from the product page alone.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
 - https://aws.amazon.com/polly/ — official product capabilities and engines.
 - https://aws.amazon.com/documentation-overview/polly/ — documentation entry point and integration scope.
 - https://docs.aws.amazon.com/polly/ — official developer documentation.
-- https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html — text, SSML, voices and output workflow.
-- https://github.com/OHF-Voice/piper1-gpl — open-source local alternative and license.
+- [How Amazon Polly works](https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html) — official text/SSML, voice-engine and audio-output workflow.
+- [SynthesizeSpeech API](https://docs.aws.amazon.com/polly/latest/APIReference/API_SynthesizeSpeech.html) — official request schema, engines, voices and output parameters.
+- [Speech mark types](https://docs.aws.amazon.com/polly/latest/dg/using-speechmarks.html) — official word, sentence, viseme and SSML metadata behavior.
+- [Managing lexicons](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html) — official pronunciation lexicon behavior and regional scope.
+- [Piper](https://github.com/OHF-Voice/piper1-gpl) — open-source local alternative and GPL-3.0 license.
 
 # 14. Unknowns
 
@@ -98,4 +104,4 @@ Verify IAM scope, TLS, regional processing, sensitive-text retention, request an
 
 # 15. Research status
 
-Pending deeper REA validation. The product identity, official sources and partial open-source alternative are documented; no full equivalence claim is made.
+`researched`: identity, synthesis inputs, engines, voices, output formats, speech marks, lexicons and API shape were verified from official AWS documentation. Piper remains a partial local alternative; current quotas, pricing, regional matrices and full voice/model licensing remain outside this pass.

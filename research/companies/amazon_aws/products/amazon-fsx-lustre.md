@@ -82,7 +82,7 @@ Upstream Lustre provides the core file-system technology, but it does not by its
 
 REA should map deployment and storage classes, Lustre versioning, S3 imports and exports, repository tasks, metadata and data semantics, mount behavior, client compatibility, throughput, quotas, failover, backups, security and AWS integrations.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use AWS product, user-guide, API and FAQ documentation plus public Lustre behavior as research surfaces. A clean-room equivalent should use independently licensed Lustre or another parallel file system and document differences in management, repository integration, durability, performance and cloud operations.
 

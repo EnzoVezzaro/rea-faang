@@ -14,16 +14,19 @@ official_source_urls:
   - "https://aws.amazon.com/q/developer/getting-started/"
   - "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/"
   - "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/explain-update-code.html"
+  - "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/code-reviews.html"
+  - "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE-setup.html"
+  - "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/getting-started-q-dev.html"
   - "https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/regions.html"
-research_status: "pending"
-research_confidence: "unverified"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: 2026-11-03T00:00:00Z
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: 2027-02-03T00:00:00Z
+research_version: 2
 ---
 
 # 1. Executive summary
@@ -73,7 +76,7 @@ Compare repository context, code editing, terminal and browser tools, agent loop
 
 The remaining research must map CLI and IDE commands, agent configuration, context windows, model and region selection, tool permissions, approval flows, patch semantics, security-scan contracts, modernization workflows, AWS resource access, rate limits, errors, audit logs and data-retention behavior.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation and authorized test repositories. Capture conversational, coding, CLI, security and AWS-operations cases with explicit permission boundaries. Use OpenHands only after recording the partial-foundation verdict, and create an independent implementation with original code, compatible licensing and no AWS branding or protected content.
 
@@ -81,13 +84,14 @@ Use official AWS documentation and authorized test repositories. Capture convers
 
 Verify IAM scope, least privilege, repository and prompt data handling, code retention, model-training controls, logging, encryption, regional processing, secret redaction, security-scan data flow and human approval for resource-changing actions. No compliance guarantee is inferred from the product description.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/q/developer/ — official product scope and integrations.
-- https://aws.amazon.com/q/developer/getting-started/ — supported entry points and onboarding.
-- https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/ — official capabilities and AWS grounding.
-- https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/explain-update-code.html — documented code assistance.
-- https://github.com/OpenHands/OpenHands — open-source alternative foundation and MIT license.
+- [What is Amazon Q Developer?](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/) — official identity, AWS grounding, Bedrock foundation and supported surfaces.
+- [IDE setup](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/q-in-IDE-setup.html) — official authentication and IDE entry points.
+- [Explaining and updating code](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/explain-update-code.html) — official code assistance operations.
+- [Reviewing code](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/code-reviews.html) — official security, secrets, IaC, quality and deployment-risk review capabilities.
+- [Amazon Q Developer tiers](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/getting-started-q-dev.html) — official Free and Pro access paths.
+- [OpenHands](https://github.com/OpenHands/OpenHands) — open-source alternative foundation and MIT license.
 
 # 14. Unknowns
 
@@ -98,4 +102,4 @@ Verify IAM scope, least privilege, repository and prompt data handling, code ret
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources and a partial open-source foundation are documented; no full equivalence claim is made.
+`researched`: identity, AWS grounding, IDE and access paths, code assistance and code-review capabilities were verified from official AWS documentation. AWS currently documents an April 30, 2027 end-of-support date for Amazon Q Developer IDE plugins; service surfaces, pricing and full parity with OpenHands remain outside this pass.

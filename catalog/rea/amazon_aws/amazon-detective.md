@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Detective, recorded with REA
 | Target | https://aws.amazon.com/detective/ |
 | Resolved URL | https://aws.amazon.com/detective/ |
 | Page title | Amazon Detective |
-| Captured | 2026-11-03T02:55:41.875Z |
+| Captured | 2026-11-04T02:41:19.821Z |
 | Status | captured |
-| REA Evidence ID | `ev_ba0b8644f10e29aa203b36b6e2065a27d8e145f8cdad4db0819823ab73dd2d40` |
+| REA Evidence ID | `ev_ffd223bd515410084b1f9d543495d51923e3960db92ca1dc20afce75f3cf1dfa` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -162,6 +162,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-detective.json`
-- Evidence ID: `ev_ba0b8644f10e29aa203b36b6e2065a27d8e145f8cdad4db0819823ab73dd2d40`
+- Evidence ID: `ev_ffd223bd515410084b1f9d543495d51923e3960db92ca1dc20afce75f3cf1dfa`
 - Accessibility outline: 9727 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

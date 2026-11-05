@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for AWS CloudFormation (aws-cloudformat
 
 This is the coding-agent skill for **AWS CloudFormation** (`aws-cloudformation`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/aws-cloudformation.md` from the catalog page, or run `npx rae-faang aws-cloudformation --out ./aws-cloudformation.md`, `npx rae-faang skills generate aws-cloudformation` or `npx rae-faang build agent-kit aws-cloudformation --out ./aws-cloudformation-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/aws-cloudformation.md` from the catalog page, or run `npx rea-faang aws-cloudformation --out ./aws-cloudformation.md`, `npx rea-faang skills generate aws-cloudformation` or `npx rea-faang build agent-kit aws-cloudformation --out ./aws-cloudformation-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | AWS CloudFormation / `aws-cloudformation` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/cloudformation/](https://aws.amazon.com/cloudformation/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/cloudformation/](https://docs.aws.amazon.com/cloudformation/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier aws-cloudformation` | `research/companies/amazon_aws/products/aws-cloudformation.md` |
+| Research dossier | `npx rea-faang research dossier aws-cloudformation` | `research/companies/amazon_aws/products/aws-cloudformation.md` |
 | REA report | `catalog/rea/amazon_aws/aws-cloudformation.md` (captured 2026-11-03T04:16:46.491Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/aws-cloudformation.json` (`ev_a721a2e11a389f5b731889f7b2f859344ca90ef9bb8845b45d0fb46b8c3fbb63`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show aws-cloudformation --format json` and `npx rae-faang research dossier aws-cloudformation` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show aws-cloudformation --format json` and `npx rea-faang research dossier aws-cloudformation` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -453,7 +453,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier aws-cloudformation` and inspect canonical identity with `npx rae-faang products show aws-cloudformation --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier aws-cloudformation` and inspect canonical identity with `npx rea-faang products show aws-cloudformation --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -466,7 +466,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang aws-cloudformation --out ./aws-cloudformation.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit aws-cloudformation --out ./aws-cloudformation-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang aws-cloudformation --out ./aws-cloudformation.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit aws-cloudformation --out ./aws-cloudformation-agent`.
 
 ### Multi-agent task plan and outputs
 

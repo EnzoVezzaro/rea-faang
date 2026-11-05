@@ -84,7 +84,7 @@ The open-source foundation is visible, but the relationship between EKS Distro, 
 
 REA should map the build graph, release metadata, dependency locks, image and artifact provenance, patch policy, version support, Kubernetes conformance, upgrade behavior, air-gapped use, infrastructure-provider boundaries and the distinction between EKS Distro and EKS Anywhere.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official AWS page, distribution site, public GitHub repository and versioned release artifacts as the research surface. A clean-room equivalent should use independently licensed upstream components and document differences; it must not copy proprietary AWS implementation, branding or restricted material.
 

@@ -12,17 +12,22 @@ official_docs_url: "https://docs.aws.amazon.com/transcribe/"
 official_source_urls:
   - "https://aws.amazon.com/transcribe/"
   - "https://docs.aws.amazon.com/transcribe/latest/dg/"
+  - "https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html"
+  - "https://docs.aws.amazon.com/transcribe/latest/dg/streaming-partial-results.html"
+  - "https://docs.aws.amazon.com/transcribe/latest/dg/feature-matrix.html"
+  - "https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html"
+  - "https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html"
   - "https://docs.aws.amazon.com/transcribe/latest/APIReference/"
   - "https://docs.aws.amazon.com/cli/latest/reference/transcribe/"
-research_status: "pending"
-research_confidence: "unverified"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: "2027-02-03T00:00:00Z"
+research_version: 2
 ---
 
 # 1. Executive summary
@@ -73,21 +78,21 @@ Compare recognition quality, language coverage, timestamps, punctuation, diariza
 
 Research must map operations, streaming message types, audio constraints, partial/final result semantics, job states, output schema, custom vocabulary behavior, speaker/channel labels, medical and call-analytics boundaries, errors, throttling, quotas and regional semantics. Any implementation must use original code and authorized or synthetic audio fixtures.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product, developer, API and CLI documentation as primary sources. The generated RAE skill should instruct an agent to build an independent implementation beginning with local Whisper-based batch transcription, then add streaming, job orchestration, timestamps, speaker/channel handling and customization only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS managed-service parity.
+Use the official product, developer, API and CLI documentation as primary sources. The generated REA skill should instruct an agent to build an independent implementation beginning with local Whisper-based batch transcription, then add streaming, job orchestration, timestamps, speaker/channel handling and customization only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS managed-service parity.
 
 # 12. Security, privacy, and compliance
 
 Verify IAM scope, encryption, S3 permissions, stream transport security, retention, redaction, data residency and handling of medical or call recordings. Use synthetic or public audio fixtures only. Never store credentials, private recordings or personal data in the catalog, skill or report.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/transcribe/ — official product scope.
-- https://docs.aws.amazon.com/transcribe/latest/dg/ — developer guide and workflows.
-- https://docs.aws.amazon.com/transcribe/latest/APIReference/ — batch and streaming API surface.
-- https://docs.aws.amazon.com/cli/latest/reference/transcribe/ — AWS CLI command surface.
-- https://github.com/openai/whisper — open-source speech-recognition alternative.
+- **Product and scope:** [Transcribe documentation](https://docs.aws.amazon.com/transcribe/) covers audio files, streams, batch, streaming and domain-specific variants.
+- **Streaming:** [Streaming audio](https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html) and [partial results](https://docs.aws.amazon.com/transcribe/latest/dg/streaming-partial-results.html) support real-time, partial/final-result and stabilization claims.
+- **Features:** [feature matrix](https://docs.aws.amazon.com/transcribe/latest/dg/feature-matrix.html), [custom vocabularies](https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html) and [speaker diarization](https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html) support customization and speaker/channel claims.
+- **API:** [API Reference](https://docs.aws.amazon.com/transcribe/latest/APIReference/) distinguishes batch and streaming API sections and documents operations and errors.
+- **Alternative:** [Whisper](https://github.com/openai/whisper) is the recorded MIT-licensed open-source speech-recognition foundation; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -99,4 +104,4 @@ Verify IAM scope, encryption, S3 permissions, stream transport security, retenti
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources, command surface and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, batch/streaming modes, partial results, diarization, custom vocabulary and API surface are documented. Exact recognition quality, language-specific coverage, quotas, pricing, regional behavior and medical/HealthScribe boundaries remain unknown and are not asserted.

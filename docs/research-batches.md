@@ -1,6 +1,6 @@
 # Research batch plan
 
-Snapshot: **2026-11-02**. This plan turns the pending research into ordered,
+Snapshot: **2026-11-03**. This plan turns the pending research into ordered,
 reviewable batches. It does not mark any dossier as researched; promotion happens
 only when a dossier's evidence is filled and the validators pass.
 
@@ -8,20 +8,20 @@ only when a dossier's evidence is filled and the validators pass.
 
 | Fact | Value | Source |
 |---|---|---|
-| Catalogued products | 77 | `catalog/products.jsonl` |
-| In-scope inventory | 77 (no missing) | `catalog/manifests/faang.json`, `npx rae-faang gaps products` |
-| Research status | 0 researched, 77 pending | `npx rae-faang research coverage` |
-| Alternative landscape | 40 available, 29 partial, 8 pending | `tools/skills/catalog-data.mjs` |
-| REA web-surface reports | 77 | `catalog/rea/` |
+| Catalogued products | 193 | `catalog/products.jsonl` |
+| In-scope inventory | 193 (no missing) | `catalog/manifests/faang.json`, `npx rea-faang gaps products` |
+| Research status | 66 researched, 111 pending, 16 retired | `npx rea-faang research coverage` |
+| Alternative landscape | 193 records with unknown coverage; curated candidates remain separate | `tools/skills/catalog-data.mjs`, `npx rea-faang alternatives coverage` |
+| REA web-surface reports | 193 reports captured | `catalog/rea/` |
 | Product workspaces | 16, all with placeholder specs | `products/<company>/<product>/specs/` |
 
 Reproduce these numbers with:
 
 ```bash
-npx rae-faang gaps products
-npx rae-faang research coverage --format json
-npx rae-faang alternatives coverage --format json
-npx rae-faang skills coverage --format json
+npx rea-faang gaps products
+npx rea-faang research coverage --format json
+npx rea-faang alternatives coverage --format json
+npx rea-faang skills coverage --format json
 ```
 
 **There is no catalog inventory gap.** The remaining work is depth: every dossier
@@ -40,7 +40,7 @@ not verified product parity.
 - An alternative is described by what it verifiably covers; no parity claims.
 - Definition of done for a dossier: sections 1–15 filled, `research_status:
   researched`, `last_researched_at` set, `research_confidence` justified,
-  `evidence[]` populated, and `npx rae-faang research validate` clean.
+  `evidence[]` populated, and `npx rea-faang research validate` clean.
 
 ## Batch 1 — No verified alternative + the build-critical product (9)
 
@@ -145,4 +145,4 @@ marginal value of a new dossier is lower.
 
 Start Batch 1 with `google-search`, because its specification set is already
 written and its evidence directly unblocks acceptance criteria. Promote it only
-after `npx rae-faang research validate` and a reviewer check pass.
+after `npx rea-faang research validate` and a reviewer check pass.

@@ -1,6 +1,6 @@
 # 10 — Migration guide
 
-Status: proposed. This guide covers moving to RAE Search from nothing, from a
+Status: proposed. This guide covers moving to REA Search from nothing, from a
 meta-search front end, and from a bare index engine. It also covers rollback.
 
 ## From nothing (first deployment)

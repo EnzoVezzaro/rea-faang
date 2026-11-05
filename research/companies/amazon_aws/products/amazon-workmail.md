@@ -74,9 +74,9 @@ Compare mailbox and domain administration, SMTP/IMAP/EAS, calendars, contacts, w
 
 Research must map administration, mailbox, group, resource, mobile, client, message-flow, EWS, export and identity operations, plus the announced support termination and migration requirements. Any implementation must use original code and synthetic accounts only.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product, user guide, administrator guide, API reference and end-of-support notice as primary sources. The generated RAE skill should instruct an agent to build an independent mail and calendar service using open components such as Mailcow only as a foundation, and to treat AWS-specific behavior as historical or migration research rather than a new dependency. Preserve the partial-equivalence verdict and sunset status.
+Use the official product, user guide, administrator guide, API reference and end-of-support notice as primary sources. The generated REA skill should instruct an agent to build an independent mail and calendar service using open components such as Mailcow only as a foundation, and to treat AWS-specific behavior as historical or migration research rather than a new dependency. Preserve the partial-equivalence verdict and sunset status.
 
 # 12. Security, privacy, and compliance
 

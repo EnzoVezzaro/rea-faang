@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Aurora, recorded with REA.
 | Target | https://aws.amazon.com/rds/aurora/ |
 | Resolved URL | https://aws.amazon.com/rds/aurora/ |
 | Page title | Amazon Aurora |
-| Captured | 2026-11-03T02:44:07.176Z |
+| Captured | 2026-11-04T02:39:36.586Z |
 | Status | captured |
-| REA Evidence ID | `ev_30018d69cbb06094e952c9b9ac565325a729b7bafa1555fd7a6f1d8af9e5eaa0` |
+| REA Evidence ID | `ev_4b00af1f6b662c52a8d8286a7b6fc444f39628463fa9b1e16f46d3d80d10f381` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-aurora.json`
-- Evidence ID: `ev_30018d69cbb06094e952c9b9ac565325a729b7bafa1555fd7a6f1d8af9e5eaa0`
-- Accessibility outline: 14528 bytes
+- Evidence ID: `ev_4b00af1f6b662c52a8d8286a7b6fc444f39628463fa9b1e16f46d3d80d10f381`
+- Accessibility outline: 14551 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

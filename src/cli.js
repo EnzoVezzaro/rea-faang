@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * RAE — FAANG Product Intelligence CLI
+ * REA — FAANG Product Intelligence CLI
  *
  * Deterministic commands for catalog validation, research coverage,
  * gap detection, and opportunity reporting. AI discovers and proposes;
@@ -1066,7 +1066,7 @@ async function cmdBuildAgentKit(args) {
   const mcpConfig = {
     product: { id: product.id, name: product.name, company_id: product.company_id, official_url: product.official_url },
     mcpServers: {
-      'rae-cli': { command: 'rae', args: [], description: 'Installed RAE product intelligence CLI' },
+      'rea-cli': { command: 'rea', args: [], description: 'Installed REA product intelligence CLI' },
       filesystem: { command: 'npx', args: ['-y', '@modelcontextprotocol/server-filesystem', resolve(outDir)] },
       git: { command: 'npx', args: ['-y', '@modelcontextprotocol/server-git', resolve(outDir)] },
     },
@@ -1120,11 +1120,11 @@ function cmdSkillsGenerate(args) {
   for (const id of ids) {
     try {
       const productOutput = !sourceCheckout && !args.out
-        ? resolve(ids.length === 1 ? `${id}.md` : join('rae-skills', catalog.find((item) => item.id === id)?.company_id || 'unknown', `${id}.md`))
+        ? resolve(ids.length === 1 ? `${id}.md` : join('rea-skills', catalog.find((item) => item.id === id)?.company_id || 'unknown', `${id}.md`))
         : args.out || null;
       const result = writeProductSkill(id, productOutput, {
         repositoryRoot: PACKAGE_ROOT,
-        defaultOutputPath: sourceCheckout ? join(PACKAGE_ROOT, 'catalog', 'skills', '{company_id}', '{product_id}.md') : join(process.cwd(), 'rae-skills', '{company_id}', '{product_id}.md'),
+        defaultOutputPath: sourceCheckout ? join(PACKAGE_ROOT, 'catalog', 'skills', '{company_id}', '{product_id}.md') : join(process.cwd(), 'rea-skills', '{company_id}', '{product_id}.md'),
       });
       products.push(result.report);
     } catch (error) {
@@ -1237,14 +1237,14 @@ function cmdBuildProduct(args) {
   mkdirSync(join(workspace, 'specs'), { recursive: true });
   writeFileSync(join(workspace, 'ace.mjs'), aceShim(), 'utf8');
 
-  const pkgName = `rae-${product.company_id}-${product.id}`.replace(/_/g, '-');
+  const pkgName = `rea-${product.company_id}-${product.id}`.replace(/_/g, '-');
   const pkg = {
     name: pkgName,
     version: '0.1.0',
     license: 'MIT',
     type: 'module',
     engines: { node: '>=20' },
-    description: `RAE FAANG: Open-source alternative to ${product.name}`,
+    description: `REA FAANG: Open-source alternative to ${product.name}`,
     scripts: {
       dev: 'ace run',
       test: 'node --test tests/',
@@ -1338,7 +1338,7 @@ async function cmdAlternativesClone(args) {
     // endpoint. Say so plainly instead of failing somewhere inside git.
     console.error(`The catalog records ${alt.name}'s project page (${alt.url}), not its source repository.`);
     console.error(`Clone the repository you verified yourself:`);
-    console.error(`  rae alternatives clone ${productId} --alt "${alt.name}" --repo <git-url>`);
+    console.error(`  rea alternatives clone ${productId} --alt "${alt.name}" --repo <git-url>`);
     process.exit(1);
   }
   console.log(`Cloning ${repo} into ${target}`);
@@ -1362,11 +1362,11 @@ function tryStat(path) {
 
 function printHelp() {
   console.log(`
-RAE — FAANG Product Intelligence CLI
+REA — FAANG Product Intelligence CLI
 =====================================
 
-Usage: rae <command> [options]        (install with npm or run via npx)
-       rae <product-id> --out <file>  Generate a portable product skill
+Usage: rea <command> [options]        (install with npm or run via npx)
+       rea <product-id> --out <file>  Generate a portable product skill
 
 Commands:
   products list     List products from catalog [--company ID] [--status RESEARCH-STATUS] [--alt-status ALT-STATUS] [--format json]
@@ -1412,7 +1412,7 @@ Exit codes:
 }
 
 function printVersion() {
-  console.log(`RAE CLI v${PKG.version}`);
+  console.log(`REA CLI v${PKG.version}`);
 }
 
 // --- Main ---
@@ -1489,7 +1489,7 @@ async function dispatch(argv) {
   const action = group?.[subcmd];
 
   if (!group) {
-    // Shorthand: `rae <product-id> --out ./<product-id>.md` writes a
+    // Shorthand: `rea <product-id> --out ./<product-id>.md` writes a
     // portable Markdown skill; `--alt NAME` clones the alternative instead.
     if (loadCatalog().some((p) => p.id === command)) {
       argv._[2] = command;

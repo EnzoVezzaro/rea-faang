@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Workspace (google-workspace)
 
 # Google Workspace — implementation skill (`google-workspace`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Workspace**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Workspace (google-workspace)
 
 This is the coding-agent skill for **Google Workspace** (`google-workspace`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-workspace.md` from the catalog page, or run `npx rae-faang google-workspace --out ./google-workspace.md`, `npx rae-faang skills generate google-workspace` or `npx rae-faang build agent-kit google-workspace --out ./google-workspace-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-workspace.md` from the catalog page, or run `npx rea-faang google-workspace --out ./google-workspace.md`, `npx rea-faang skills generate google-workspace` or `npx rea-faang build agent-kit google-workspace --out ./google-workspace-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Google Workspace / `google-workspace` | `catalog/products.jsonl` |
 | Official product URL | [https://workspace.google.com/](https://workspace.google.com/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://developers.google.com/workspace](https://developers.google.com/workspace) | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-workspace` | `research/companies/google/products/google-workspace.md` |
+| Research dossier | `npx rea-faang research dossier google-workspace` | `research/companies/google/products/google-workspace.md` |
 | REA report | `catalog/rea/google/google-workspace.md` (captured 2026-11-03T01:39:52.833Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-workspace.json` (`ev_e843dee14725d33ba8ad4d2c7a1a6742e0ba0eb6deb286e6d62ab7c58b7b54ea`) | Catalog evidence |
 | Alternative candidates | 5 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-workspace --format json` and `npx rae-faang research dossier google-workspace` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-workspace --format json` and `npx rea-faang research dossier google-workspace` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-WORKSPACE-CAP-034DB9CF`, `GOOGLE-WORKSPACE-CAP-75D62326`, `GOOGLE-WORKSPACE-CAP-8FBEAED1`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-WORKSPACE-CAP-423FE3AA`, `GOOGLE-WORKSPACE-CAP-A90CEA13`, `GOOGLE-WORKSPACE-CAP-4ECBBBAA`, `GOOGLE-WORKSPACE-CAP-18769CDE`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,7 +102,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Google Workspace** / `google-workspace` | Product catalog |
-| Company / category | Google / `productivity_application` / `productivity` | Product catalog |
+| Company / category | Google / `productivity_application` / `productivity`, `collaboration`, `subscription` | Product catalog |
 | Official website / docs | [https://workspace.google.com/](https://workspace.google.com/) / [https://developers.google.com/workspace](https://developers.google.com/workspace) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-WORKSPACE-CAP-034DB9CF` | File sync and share (Drive) | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-WORKSPACE-CAP-75D62326` | Real-time collaborative docs, sheets, slides | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-WORKSPACE-CAP-8FBEAED1` | Email, calendar, video meetings, chat | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-WORKSPACE-CAP-423FE3AA` | The suite identity and major productivity and collaboration components are verified. | VERIFIED | `ev-google-workspace-identity`, `ev-google-workspace-products` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-WORKSPACE-CAP-A90CEA13` | Service-specific APIs, Apps Script, add-ons, Chat apps and Marketplace surfaces are documented. | VERIFIED | `ev-google-workspace-products` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-WORKSPACE-CAP-4ECBBBAA` | Integration and administration interfaces are documented; authentication and domain permissions are required. | VERIFIED | `ev-google-workspace-setup`, `ev-google-workspace-admin` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-WORKSPACE-CAP-18769CDE` | The suite boundary is verified, but edition-specific pricing, quotas, retention, regional behavior and domain settings were not exhaustively verified. | VERIFIED | `ev-google-workspace-identity`, `ev-google-workspace-setup` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Open search`, `button: Close search`, `button: Next slide`, `button: Expand all`, `button: 1`, `button: 2`, `button: Open the Continue page`, `button: English Change Language`, `button: Close`, `button: Open Welcome.`, `link: Open the Google Workspace page`, `combobox: Search`, `link: Contact the sales team at Google Workspace`, `link: Get started with Google Workspace`, `link: Open the AI page`, `link: Open the Pricing page`, `link: Visit the admin console`, `link: Learn more about Workspace Intelligence`, `link: Open the context of your work page`, `link: Open the Gmail page`, `link: Open the Drive page`, `link: Open the Meet page`, `link: Open the Calendar page`, `link: Open the Chat page`, `link: Open the Gemini page`, `link: Open the Docs page`, `link: Open the Sheets page`, `link: Open the Slides page`, `link: Open the Vids page`, `link: Open the Keep page`, `link: Open the Sites page`, `link: Open the Forms page`, `link: Open the Tasks page`, `link: Open the Gemini Notebook page`, `link: Open the AppSheet page in a new tab`, `link: Visit the Business`, `link: Visit the Appointment Scheduling page`, `link: Visit the eSignature resource page`, `link: Visit the Google Drive product page`, `link: Visit the Video Conferencing resource page`, `link: Visit the Gemini for Google Workspace page`, `link: Visit the Google Workspace Security page`, `link: Get started Business Starter`, `link: Data is not used to train models`, `link: Get started Business Standard`, `link: Get started Business Plus`, `link: Visit the Google Workspace FAQ page`, `link: Visit resources to learn about AI for work`, `link: Get support on the Google Workspace support page`, `link: Learn more about Gemini for Workspace`, `link: Read the Workspace Intelligence pocketbook`, `link: Read the Google Workspace blog`, `link: Download the Google Workspace versus Microsoft 365 PDF report`, `textbox: First name`, `textbox: Last name`, `textbox: Business email`, `combobox: Selected country`, `textbox: 201-555-0123`, `link: Open the Blog page`, `link: Open the footer social links X page in a new tab`, `link: Open the footer social links YouTube page in a new tab`, `link: Open the footer social links LinkedIn page in a new tab`, `link: Open the footer social links Instagram page in a new tab`, `link: Open the footer social links Facebook page in a new tab`, `link: Open the footer social links TikTok page in a new tab`, `textbox: Search this site`, `link: Open the Included applications page`, `link: Open the Gmail AI page`, `link: Open the Pics page`, `link: Open the Studio page`, `link: Open the Apps Script page`, `link: Open the Security and management page`, `link: Open the Admin page`, `link: Open the Endpoint page`, `link: Open the Vault page`, `link: Open the Work Insights page`, `link: Open the New Business page`, `link: Open the Small Business page`, `link: Open the Enterprise page`, `link: Open the Retail page`, `link: Open the Manufacturing page`, `link: Open the Professional Services page`, `link: Open the Technology page`, `link: Open the Healthcare page`, `link: Open the Financial Services page`, `link: Open the Government page`, `link: Open the Education page in a new tab`, `link: Open the Nonprofits page in a new tab`, `link: Open the Artificial Intelligence page`, `link: Open the Compare pricing plans page`, `link: Open the Meet hardware page`, `link: Open the Google Voice page`, `link: Open the Migration Overview page`, `link: Open the Business Migration page`, `link: Open the Enterprise Migration page`, `link: Open the Gmail Migration page`, `link: Open the Drive Migration page`, `link: Open the Google Chat Migration page`, `link: Open the AI learnings for work page`, `link: Open the Security page`, `link: Open the Customer Stories page`, `link: Open the FAQs page`, `link: Open the Partners page in a new tab`, `link: Open the Marketplace page`, `link: Open the Integrations page`, `link: Open the Training & Certification page`, `link: Open the Refer Google Workspace page`, `link: Open the AI Project Management page`, `link: Open the AI for Meetings page`, `link: Open the Learning and support page`, `link: Open the Admin Help page in a new tab`, `link: Open the Setup and Deployment Center page in a new tab`, `link: Open the Learning Center for Users page in a new tab`, `link: Open the Forums for Admins page in a new tab`, `link: Open the Google Workspace Dashboard page in a new tab`, `link: Open the What's New in Google Workspace page`, `link: Open the Find a Google Workspace Partner page in a new tab`, `link: Open the Join the community of IT Admins page in a new tab`, `link: Open the Press page in a new tab`, `link: Open the Google Cloud page in a new tab`, `link: Open the Google Domains page in a new tab`, `link: Open the Chrome Enterprise page in a new tab`, `link: Open the Google Business Solutions page in a new tab`, `link: Open the Google Ads page in a new tab`, `link: Open the Business Messages page in a new tab`, `link: Open the Privacy page in a new tab`, `link: Open the Terms page in a new tab`, `link: Open the About Google page in a new tab`, `link: Open the Google Products page in a new tab`, `link: Open the Help page in a new tab`, `link: Open the Bahasa Indonesia locale page`, `link: Open the Čeština locale page`, `link: Open the Dansk locale page`, `link: Open the Deutsch locale page`, `link: Open the Deutsch – Schweiz locale page`, `link: Open the English – Australia locale page`, `link: Open the English – Canada locale page`, `link: Open the English – India locale page`, `link: Open the English – Indonesia locale page`, `link: Open the English – Ireland locale page`, `link: Open the English – Malaysia locale page`, `link: Open the English – New Zealand locale page`, `link: Open the English – Philippines locale page`, `link: Open the English – Singapore locale page`, `link: Open the English – South Africa locale page`, `link: Open the English – United Kingdom locale page`, `link: Open the Español locale page`, `link: Open the Español (Latinoamérica) locale page`, `link: Open the Español (Latinoamérica) – Argentina locale page`, `link: Open the Español (Latinoamérica) – Estados Unidos locale page`, `link: Open the Español (Latinoamérica) – México locale page`, `link: Open the Français locale page`, `link: Open the Français – Canada locale page`, `link: Open the Français – Suisse locale page`, `link: Open the Italiano locale page`, `link: Open the Magyar locale page`, `link: Open the Nederlands locale page`, `link: Open the Norsk locale page`, `link: Open the Polski locale page`, `link: Open the Português (Brasil) locale page`, `link: Open the Português (Portugal) locale page`, `link: Open the Suomi locale page`, `link: Open the Svenska locale page`, `link: Open the Tiếng Việt locale page`, `link: Open the Türkçe locale page`, `link: Open the Русский locale page`, `link: Open the Українська locale page`, `link: Open the עברית locale page`, `link: Open the العربية locale page`, `link: Open the العربية – مصر locale page`, `link: Open the ไทย locale page`, `link: Open the 한국어 locale page`, `link: Open the 中文 (香港) locale page`, `link: Open the 中文（简体中文） locale page`, `link: Open the 中文（繁體中文） locale page`, `link: Open the 日本語 locale page`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **File sync and share (Drive):** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Real-time collaborative docs, sheets, slides:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Email, calendar, video meetings, chat:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The suite identity and major productivity and collaboration components are verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Service-specific APIs, Apps Script, add-ons, Chat apps and Marketplace surfaces are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Integration and administration interfaces are documented; authentication and domain permissions are required.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The suite boundary is verified, but edition-specific pricing, quotas, retention, regional behavior and domain settings were not exhaustively verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-034DB9CF — File sync and share (Drive)
+### REQ-FUNC-423FE3AA — The suite identity and major productivity and collaboration components are verified.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-workspace-identity`, `ev-google-workspace-products`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-034DB9CF`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-WORKSPACE-CAP-034DB9CF` → `REQ-FUNC-034DB9CF` → `TEST-FUNC-034DB9CF`.
+- **Associated test ID:** `TEST-FUNC-423FE3AA`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-WORKSPACE-CAP-423FE3AA` → `REQ-FUNC-423FE3AA` → `TEST-FUNC-423FE3AA`.
 
-### REQ-FUNC-75D62326 — Real-time collaborative docs, sheets, slides
+### REQ-FUNC-A90CEA13 — Service-specific APIs, Apps Script, add-ons, Chat apps and Marketplace surfaces are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-workspace-products`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-75D62326`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-WORKSPACE-CAP-75D62326` → `REQ-FUNC-75D62326` → `TEST-FUNC-75D62326`.
+- **Associated test ID:** `TEST-FUNC-A90CEA13`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-WORKSPACE-CAP-A90CEA13` → `REQ-FUNC-A90CEA13` → `TEST-FUNC-A90CEA13`.
 
-### REQ-FUNC-8FBEAED1 — Email, calendar, video meetings, chat
+### REQ-FUNC-4ECBBBAA — Integration and administration interfaces are documented; authentication and domain permissions are required.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-workspace-setup`, `ev-google-workspace-admin`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-8FBEAED1`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-WORKSPACE-CAP-8FBEAED1` → `REQ-FUNC-8FBEAED1` → `TEST-FUNC-8FBEAED1`.
+- **Associated test ID:** `TEST-FUNC-4ECBBBAA`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-WORKSPACE-CAP-4ECBBBAA` → `REQ-FUNC-4ECBBBAA` → `TEST-FUNC-4ECBBBAA`.
+
+### REQ-FUNC-18769CDE — The suite boundary is verified, but edition-specific pricing, quotas, retention, regional behavior and domain settings were not exhaustively verified.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-workspace-identity`, `ev-google-workspace-setup`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-18769CDE`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-WORKSPACE-CAP-18769CDE` → `REQ-FUNC-18769CDE` → `TEST-FUNC-18769CDE`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -219,9 +230,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-WORKSPACE-CAP-034DB9CF` — File sync and share (Drive) | Not verified against Nextcloud | None yet; compare with `ev_e843dee14725d33ba8ad4d2c7a1a6742e0ba0eb6deb286e6d62ab7c58b7b54ea` | Candidate code path and tests must be inspected |
-| `GOOGLE-WORKSPACE-CAP-75D62326` — Real-time collaborative docs, sheets, slides | Not verified against Nextcloud | None yet; compare with `ev_e843dee14725d33ba8ad4d2c7a1a6742e0ba0eb6deb286e6d62ab7c58b7b54ea` | Candidate code path and tests must be inspected |
-| `GOOGLE-WORKSPACE-CAP-8FBEAED1` — Email, calendar, video meetings, chat | Not verified against Nextcloud | None yet; compare with `ev_e843dee14725d33ba8ad4d2c7a1a6742e0ba0eb6deb286e6d62ab7c58b7b54ea` | Candidate code path and tests must be inspected |
+| `GOOGLE-WORKSPACE-CAP-423FE3AA` — The suite identity and major productivity and collaboration components are verified. | Not verified against Nextcloud | None yet; compare with `ev_e843dee14725d33ba8ad4d2c7a1a6742e0ba0eb6deb286e6d62ab7c58b7b54ea` | Candidate code path and tests must be inspected |
+| `GOOGLE-WORKSPACE-CAP-A90CEA13` — Service-specific APIs, Apps Script, add-ons, Chat apps and Marketplace surfaces are documented. | Not verified against Nextcloud | None yet; compare with `ev_e843dee14725d33ba8ad4d2c7a1a6742e0ba0eb6deb286e6d62ab7c58b7b54ea` | Candidate code path and tests must be inspected |
+| `GOOGLE-WORKSPACE-CAP-4ECBBBAA` — Integration and administration interfaces are documented; authentication and domain permissions are required. | Not verified against Nextcloud | None yet; compare with `ev_e843dee14725d33ba8ad4d2c7a1a6742e0ba0eb6deb286e6d62ab7c58b7b54ea` | Candidate code path and tests must be inspected |
+| `GOOGLE-WORKSPACE-CAP-18769CDE` — The suite boundary is verified, but edition-specific pricing, quotas, retention, regional behavior and domain settings were not exhaustively verified. | Not verified against Nextcloud | None yet; compare with `ev_e843dee14725d33ba8ad4d2c7a1a6742e0ba0eb6deb286e6d62ab7c58b7b54ea` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -268,9 +280,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-034DB9CF** → `REQ-FUNC-034DB9CF`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-75D62326** → `REQ-FUNC-75D62326`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-8FBEAED1** → `REQ-FUNC-8FBEAED1`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-423FE3AA** → `REQ-FUNC-423FE3AA`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-A90CEA13** → `REQ-FUNC-A90CEA13`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-4ECBBBAA** → `REQ-FUNC-4ECBBBAA`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-18769CDE** → `REQ-FUNC-18769CDE`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -291,7 +304,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-034DB9CF, REQ-FUNC-75D62326, REQ-FUNC-8FBEAED1
+- **Requirements:** REQ-FUNC-423FE3AA, REQ-FUNC-A90CEA13, REQ-FUNC-4ECBBBAA, REQ-FUNC-18769CDE
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -301,7 +314,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-034DB9CF, REQ-FUNC-75D62326, REQ-FUNC-8FBEAED1
+- **Requirements:** REQ-FUNC-423FE3AA, REQ-FUNC-A90CEA13, REQ-FUNC-4ECBBBAA, REQ-FUNC-18769CDE
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -323,7 +336,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-034DB9CF, REQ-FUNC-75D62326, REQ-FUNC-8FBEAED1; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-423FE3AA, REQ-FUNC-A90CEA13, REQ-FUNC-4ECBBBAA, REQ-FUNC-18769CDE; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -353,9 +366,21 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://workspace.google.com/) | Not recorded | Google Workspace is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/workspace) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-google-workspace-identity` | Google Workspace — The official suite surface presents Gmail, Calendar, Meet, Chat, Drive and document collaboration for organisations and individuals. | [link](https://workspace.google.com/) | 2026-11-03T00:00:00Z | Google Workspace is an active hosted productivity and collaboration suite. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-workspace-products` | Developer products — Google documents REST APIs, Apps Script, add-ons, Chat apps, Marketplace and applications including Gmail, Drive, Docs, Sheets, Meet and Calendar. | [link](https://developers.google.com/workspace/products) | 2026-11-03T00:00:00Z | Workspace includes service-specific applications, APIs, add-ons, Apps Script and administration surfaces. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-workspace-setup` | Develop on Google Workspace — The official setup guide lists the required integration and authorization steps. | [link](https://developers.google.com/workspace/guides/get-started) | 2026-11-03T00:00:00Z | Workspace integrations require a Google Cloud project, enabled APIs, authentication, OAuth consent and credentials. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-workspace-admin` | Admin SDK API overview — The Admin SDK documentation describes REST interfaces for managing organisations at scale. | [link](https://developers.google.com/workspace/admin/overview) | 2026-11-03T00:00:00Z | Workspace administrators can manage users, settings, devices and audit activity through documented Admin SDK interfaces. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://workspace.google.com/) | 2026-11-03T00:00:00Z | Google Workspace is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/workspace) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://workspace.google.com/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/products) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/guides/get-started) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/admin/overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_e843dee14725d33ba8ad4d2c7a1a6742e0ba0eb6deb286e6d62ab7c58b7b54ea` | Google Workspace Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://workspace.google.com/) | 2026-11-03T01:39:52.833Z | A dated unauthenticated snapshot exposed controls button: Open search, button: Close search, button: Next slide, button: Expand all, button: 1, button: 2, button: Open the Continue page, button: English Change Language, button: Close, button: Open Welcome., link: Open the Google Workspace page, combobox: Search, link: Contact the sales team at Google Workspace, link: Get started with Google Workspace, link: Open the AI page, link: Open the Pricing page, link: Visit the admin console, link: Learn more about Workspace Intelligence, link: Open the context of your work page, link: Open the Gmail page, link: Open the Drive page, link: Open the Meet page, link: Open the Calendar page, link: Open the Chat page, link: Open the Gemini page, link: Open the Docs page, link: Open the Sheets page, link: Open the Slides page, link: Open the Vids page, link: Open the Keep page, link: Open the Sites page, link: Open the Forms page, link: Open the Tasks page, link: Open the Gemini Notebook page, link: Open the AppSheet page in a new tab, link: Visit the Business, link: Visit the Appointment Scheduling page, link: Visit the eSignature resource page, link: Visit the Google Drive product page, link: Visit the Video Conferencing resource page, link: Visit the Gemini for Google Workspace page, link: Visit the Google Workspace Security page, link: Get started Business Starter, link: Data is not used to train models, link: Get started Business Standard, link: Get started Business Plus, link: Visit the Google Workspace FAQ page, link: Visit resources to learn about AI for work, link: Get support on the Google Workspace support page, link: Learn more about Gemini for Workspace, link: Read the Workspace Intelligence pocketbook, link: Read the Google Workspace blog, link: Download the Google Workspace versus Microsoft 365 PDF report, textbox: First name, textbox: Last name, textbox: Business email, combobox: Selected country, textbox: 201-555-0123, link: Open the Blog page, link: Open the footer social links X page in a new tab, link: Open the footer social links YouTube page in a new tab, link: Open the footer social links LinkedIn page in a new tab, link: Open the footer social links Instagram page in a new tab, link: Open the footer social links Facebook page in a new tab, link: Open the footer social links TikTok page in a new tab, textbox: Search this site, link: Open the Included applications page, link: Open the Gmail AI page, link: Open the Pics page, link: Open the Studio page, link: Open the Apps Script page, link: Open the Security and management page, link: Open the Admin page, link: Open the Endpoint page, link: Open the Vault page, link: Open the Work Insights page, link: Open the New Business page, link: Open the Small Business page, link: Open the Enterprise page, link: Open the Retail page, link: Open the Manufacturing page, link: Open the Professional Services page, link: Open the Technology page, link: Open the Healthcare page, link: Open the Financial Services page, link: Open the Government page, link: Open the Education page in a new tab, link: Open the Nonprofits page in a new tab, link: Open the Artificial Intelligence page, link: Open the Compare pricing plans page, link: Open the Meet hardware page, link: Open the Google Voice page, link: Open the Migration Overview page, link: Open the Business Migration page, link: Open the Enterprise Migration page, link: Open the Gmail Migration page, link: Open the Drive Migration page, link: Open the Google Chat Migration page, link: Open the AI learnings for work page, link: Open the Security page, link: Open the Customer Stories page, link: Open the FAQs page, link: Open the Partners page in a new tab, link: Open the Marketplace page, link: Open the Integrations page, link: Open the Training & Certification page, link: Open the Refer Google Workspace page, link: Open the AI Project Management page, link: Open the AI for Meetings page, link: Open the Learning and support page, link: Open the Admin Help page in a new tab, link: Open the Setup and Deployment Center page in a new tab, link: Open the Learning Center for Users page in a new tab, link: Open the Forums for Admins page in a new tab, link: Open the Google Workspace Dashboard page in a new tab, link: Open the What's New in Google Workspace page, link: Open the Find a Google Workspace Partner page in a new tab, link: Open the Join the community of IT Admins page in a new tab, link: Open the Press page in a new tab, link: Open the Google Cloud page in a new tab, link: Open the Google Domains page in a new tab, link: Open the Chrome Enterprise page in a new tab, link: Open the Google Business Solutions page in a new tab, link: Open the Google Ads page in a new tab, link: Open the Business Messages page in a new tab, link: Open the Privacy page in a new tab, link: Open the Terms page in a new tab, link: Open the About Google page in a new tab, link: Open the Google Products page in a new tab, link: Open the Help page in a new tab, link: Open the Bahasa Indonesia locale page, link: Open the Čeština locale page, link: Open the Dansk locale page, link: Open the Deutsch locale page, link: Open the Deutsch – Schweiz locale page, link: Open the English – Australia locale page, link: Open the English – Canada locale page, link: Open the English – India locale page, link: Open the English – Indonesia locale page, link: Open the English – Ireland locale page, link: Open the English – Malaysia locale page, link: Open the English – New Zealand locale page, link: Open the English – Philippines locale page, link: Open the English – Singapore locale page, link: Open the English – South Africa locale page, link: Open the English – United Kingdom locale page, link: Open the Español locale page, link: Open the Español (Latinoamérica) locale page, link: Open the Español (Latinoamérica) – Argentina locale page, link: Open the Español (Latinoamérica) – Estados Unidos locale page, link: Open the Español (Latinoamérica) – México locale page, link: Open the Français locale page, link: Open the Français – Canada locale page, link: Open the Français – Suisse locale page, link: Open the Italiano locale page, link: Open the Magyar locale page, link: Open the Nederlands locale page, link: Open the Norsk locale page, link: Open the Polski locale page, link: Open the Português (Brasil) locale page, link: Open the Português (Portugal) locale page, link: Open the Suomi locale page, link: Open the Svenska locale page, link: Open the Tiếng Việt locale page, link: Open the Türkçe locale page, link: Open the Русский locale page, link: Open the Українська locale page, link: Open the עברית locale page, link: Open the العربية locale page, link: Open the العربية – مصر locale page, link: Open the ไทย locale page, link: Open the 한국어 locale page, link: Open the 中文 (香港) locale page, link: Open the 中文（简体中文） locale page, link: Open the 中文（繁體中文） locale page, link: Open the 日本語 locale page and landmarks banner, search, main, contentinfo, region: Language List. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
+| `SRC-CANDIDATE-1` | Nextcloud candidate — Curated entry; repository only when recorded. | [link](https://nextcloud.com/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-2` | ONLYOFFICE candidate — Curated entry; repository only when recorded. | [link](https://www.onlyoffice.com/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-3` | Collabora Online candidate — Curated entry; repository only when recorded. | [link](https://www.collaboraonline.com/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-4` | CryptPad candidate — Curated entry; repository only when recorded. | [link](https://cryptpad.fr/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
 
 ### Confidence classifications
 
@@ -382,118 +407,89 @@ Resume token: `google-workspace`. Read dossier, REA report and raw Evidence befo
 
 # 1. Executive summary
 
-Google Workspace (formerly G Suite) is a suite of cloud-based productivity and collaboration tools, including Gmail, Calendar, Meet, Chat, Docs, Sheets, Slides, and Drive. It serves as Google's integrated productivity platform for businesses and individuals.
+Google Workspace is Google's hosted productivity and collaboration suite. It combines services such as Gmail, Calendar, Meet, Chat, Drive, Docs, Sheets and Slides with identity, administration and developer APIs. The component products retain separate catalog entries because they have their own identities and API surfaces.
 
 # 2. Product identity and ownership
 
-- **Official name:** Google Workspace
-- **Company and business unit:** Google Workspace
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2006 (as Google Apps), rebranded 2020
-- **Current lifecycle status:** active
-- **Previous names:** Google Apps, Google Apps for Business, Google Workspace, G Suite
-- **Acquisitions or ownership changes:** None; brand evolution from Google Apps to G Suite to Workspace
-- **Related products:** Gmail, Calendar, Meet, Chat, Docs, Sheets, Slides, Drive
-- **Official website:** https://workspace.google.com/
-- **Official documentation:** https://developers.google.com/workspace
+**Official name:** Google Workspace  
+**Company:** Google LLC, part of Alphabet Inc.  
+**Former names:** Google Apps and G Suite  
+**Lifecycle status:** active  
+**Official website:** https://workspace.google.com/
+
+Google's administrator documentation treats Workspace as a managed collection of core and additional services, with editions and controls that vary by organisation and plan.
 
 # 3. Product capabilities
 
-- Gmail email with conversation threading and advanced search
-- Calendar scheduling and event management
-- Google Meet video conferencing with live captions
-- Google Chat messaging and threaded conversations
-- Docs collaborative word processing with real-time co-editing
-- Sheets collaborative spreadsheets with formulas and pivot tables
-- Slides collaborative presentations with themes and transitions
-- Drive cloud file storage and synchronization
-- Admin console for user and device management
-- Vault for eDiscovery and retention
-- Integration with third-party via APIs and marketplace
+- Gmail email, Calendar scheduling and Meet video meetings.
+- Drive storage and sharing, with Docs, Sheets, Slides and related editors.
+- Chat, Tasks, Forms, Sites, Keep, Vault and other plan- or configuration-dependent services.
+- Admin Console, identity, device and user management, policy controls and audit features.
+- Apps Script, REST APIs, add-ons, Chat apps and Marketplace integrations.
+
+Drive, Docs, Meet and Calendar are separate catalog entries where present. Their inclusion in Workspace describes suite composition; it does not duplicate their individual product records.
 
 # 4. Technical architecture
 
-Google Workspace is a multi-tenant cloud platform with:
-
-- User identity and authentication (Google Identity Services)
-- Real-time collaboration infrastructure (operational transformation)
-- Storage layer (Colossus and variants per service)
-- Collaboration engines per application (Docs, Sheets, Slides)
-- Video pipeline (Meet)
-- Messaging infrastructure (Chat)
-- Admin and audit logging
-
-Full architecture is proprietary; service APIs and SDKs are publicly documented.
+Workspace is a multi-tenant hosted suite with service-specific applications, identity, storage, administration and API surfaces. Public documentation describes APIs, authentication, add-ons and administrative controls; proprietary service implementation is not asserted.
 
 # 5. User workflows
 
-Primary workflows: document creation and editing, email communication, calendar scheduling, video meetings, file storage and sharing. Essential: real-time co-editing, email, calendar, video calls. Advanced: admin controls, eDiscovery, marketplace integrations, automation via Apps Script.
+An organisation selects an edition, configures users and services in the Admin Console, and uses the enabled applications for mail, calendars, documents, files, chat and meetings. Developers create a Google Cloud project, enable required APIs, configure OAuth and credentials, then extend or integrate Workspace.
 
 # 6. Pricing and access
 
-Tiered pricing: Business Starter, Business Standard, Business Plus, Enterprise, and Education/Nonprofit discounts. Free trial available. Base tier includes 30GB storage; higher tiers offer more. Individual Gmail users get 15GB free shared across Google services.
+Workspace has multiple editions and plan-dependent capabilities. This research verifies the suite structure and access model, not current prices, regional availability, storage quotas or entitlement for a specific domain.
 
 # 7. API and integration surface
 
-- REST/JSON APIs per service (Gmail API, Calendar API, Meet API, Chat API, Drive API)
-- Google Apps Script for automation
-- Client libraries (Python, Node.js, Java, Go, PHP, .NET, Ruby)
-- OAuth 2.0 for authorization
-- Domain-wide delegation for admin access
+Google documents REST APIs, Apps Script, add-ons, Chat apps, Marketplace APIs and the Admin SDK. The official setup flow requires a Google Cloud project, enabled APIs, authentication, OAuth consent and access credentials; no authenticated Workspace domain is assumed here.
 
 # 8. Existing open-source alternatives
 
-Only partial alternatives exist: Nextcloud (file storage + office), OnlyOffice, Matomo (analytics), Rocket.Chat (messaging). No complete Workspace replica; Google's real-time collaboration and integrated ecosystem are difficult to replicate.
+- Nextcloud (AGPL-3.0): self-hosted files, calendar, collaboration and integrations.
+- ONLYOFFICE (AGPL-3.0): office editors and collaborative document components.
+- Collabora Online (MPL-2.0): LibreOffice-based collaborative editing.
+- CryptPad (AGPL-3.0): privacy-focused encrypted collaborative documents.
 
 # 9. Alternative comparison
 
-Nextcloud + OnlyOffice provides the closest feature overlap for self-hosted productivity. However, real-time collaboration parity, email integration, and admin console depth are not achieved. Google Workspace's strength is the integrated suite, not individual components.
+These projects cover portions of Workspace. A composed Nextcloud plus office stack can approximate selected workflows, but no alternative is verified here as a drop-in replacement for the combined email, calendar, files, editors, meetings, identity, administration, retention and API ecosystem.
 
 # 10. Missing capabilities and opportunity analysis
 
-Real-time collaborative editing infrastructure, integrated email+calendar+meeting workflow, and admin console with audit/logging represent gaps. Self-hosted stacks can approximate individual tools but not the integrated experience.
+The central gap is the integrated operated suite: real-time editing, mail, calendar, meetings, identity, administration, audit and retention must work together under one coherent policy model.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Focus on specific Workspace components (e.g., self-hosted Nextcloud + OnlyOffice for document collaboration, or Rocket.Chat for messaging). Full suite replacement is extremely high effort.
+Choose one workflow rather than rebuilding Workspace wholesale. Start with identity, files and document collaboration, define mail/calendar and meeting boundaries, then test administration, retention and audit evidence before expanding.
 
 # 12. Security, privacy, and compliance
 
-IAM per service, Data Loss Prevention (DLP), audit logging, GDPR and HIPAA data region options. Enterprise Vault for retention and eDiscovery.
+Mail, files, chats, documents and audit data are sensitive. Do not infer retention, DLP, encryption, residency or compliance from the public product page; verify edition, domain settings, enabled services and administrative policies.
 
 # 13. Sources and evidence
 
-- https://workspace.google.com/ (product page)
-- https://developers.google.com/workspace/ (documentation)
-- https://github.com/nextcloud/nextcloud (self-hosted alternative reference)
+- [Google Workspace](https://workspace.google.com/) — official suite surface.
+- [Google Workspace developer products](https://developers.google.com/workspace/products) — official APIs, apps and Admin Console surfaces.
+- [Develop on Google Workspace](https://developers.google.com/workspace/guides/get-started) — official integration and authentication setup.
+- [Admin SDK API overview](https://developers.google.com/workspace/admin/overview) — official administration APIs.
 
 # 14. Open questions
 
-- What is the realistic scope for replicating Workspace collaboration features independently?
-- How does real-time edit convergence compare across platforms?
-- What is the minimum feature set for "parity" in a self-hosted productivity suite?
+- Which Workspace edition and region should a future comparison cover?
+- Which component workflow should be evaluated first: documents, mail, calendar or meetings?
+- What retention and audit requirements would an alternative stack need to satisfy?
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
+Record updated 2026-11-03 from official Google Workspace and Google Developers sources. Status: `researched`; plan-specific pricing, quotas, domain settings and authenticated behavior remain outside this pass.
 
----
-
-# 16. Alternative comparison (continued)
-
-Nextcloud + OnlyOffice provides closest self-hosted overlap but lacks integrated email, calendar, and admin console depth.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Focus on individual Workspace components rather than full suite replacement. Nextcloud + OnlyOffice for document collaboration is the most feasible starting point.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-workspace` and inspect canonical identity with `npx rae-faang products show google-workspace --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-workspace` and inspect canonical identity with `npx rea-faang products show google-workspace --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -506,7 +502,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-workspace --out ./google-workspace.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-workspace --out ./google-workspace-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-workspace --out ./google-workspace.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-workspace --out ./google-workspace-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -548,6 +544,18 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://workspace.google.com/) — Google Workspace is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://developers.google.com/workspace) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [Google Workspace](https://workspace.google.com/) — Google Workspace is an active hosted productivity and collaboration suite. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Developer products](https://developers.google.com/workspace/products) — Workspace includes service-specific applications, APIs, add-ons, Apps Script and administration surfaces. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Develop on Google Workspace](https://developers.google.com/workspace/guides/get-started) — Workspace integrations require a Google Cloud project, enabled APIs, authentication, OAuth consent and credentials. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Admin SDK API overview](https://developers.google.com/workspace/admin/overview) — Workspace administrators can manage users, settings, devices and audit activity through documented Admin SDK interfaces. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://workspace.google.com/) — Google Workspace is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.google.com/workspace) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://workspace.google.com/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/products) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/guides/get-started) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/admin/overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Workspace Public web-surface observation (REA)](https://workspace.google.com/) — A dated unauthenticated snapshot exposed controls button: Open search, button: Close search, button: Next slide, button: Expand all, button: 1, button: 2, button: Open the Continue page, button: English Change Language, button: Close, button: Open Welcome., link: Open the Google Workspace page, combobox: Search, link: Contact the sales team at Google Workspace, link: Get started with Google Workspace, link: Open the AI page, link: Open the Pricing page, link: Visit the admin console, link: Learn more about Workspace Intelligence, link: Open the context of your work page, link: Open the Gmail page, link: Open the Drive page, link: Open the Meet page, link: Open the Calendar page, link: Open the Chat page, link: Open the Gemini page, link: Open the Docs page, link: Open the Sheets page, link: Open the Slides page, link: Open the Vids page, link: Open the Keep page, link: Open the Sites page, link: Open the Forms page, link: Open the Tasks page, link: Open the Gemini Notebook page, link: Open the AppSheet page in a new tab, link: Visit the Business, link: Visit the Appointment Scheduling page, link: Visit the eSignature resource page, link: Visit the Google Drive product page, link: Visit the Video Conferencing resource page, link: Visit the Gemini for Google Workspace page, link: Visit the Google Workspace Security page, link: Get started Business Starter, link: Data is not used to train models, link: Get started Business Standard, link: Get started Business Plus, link: Visit the Google Workspace FAQ page, link: Visit resources to learn about AI for work, link: Get support on the Google Workspace support page, link: Learn more about Gemini for Workspace, link: Read the Workspace Intelligence pocketbook, link: Read the Google Workspace blog, link: Download the Google Workspace versus Microsoft 365 PDF report, textbox: First name, textbox: Last name, textbox: Business email, combobox: Selected country, textbox: 201-555-0123, link: Open the Blog page, link: Open the footer social links X page in a new tab, link: Open the footer social links YouTube page in a new tab, link: Open the footer social links LinkedIn page in a new tab, link: Open the footer social links Instagram page in a new tab, link: Open the footer social links Facebook page in a new tab, link: Open the footer social links TikTok page in a new tab, textbox: Search this site, link: Open the Included applications page, link: Open the Gmail AI page, link: Open the Pics page, link: Open the Studio page, link: Open the Apps Script page, link: Open the Security and management page, link: Open the Admin page, link: Open the Endpoint page, link: Open the Vault page, link: Open the Work Insights page, link: Open the New Business page, link: Open the Small Business page, link: Open the Enterprise page, link: Open the Retail page, link: Open the Manufacturing page, link: Open the Professional Services page, link: Open the Technology page, link: Open the Healthcare page, link: Open the Financial Services page, link: Open the Government page, link: Open the Education page in a new tab, link: Open the Nonprofits page in a new tab, link: Open the Artificial Intelligence page, link: Open the Compare pricing plans page, link: Open the Meet hardware page, link: Open the Google Voice page, link: Open the Migration Overview page, link: Open the Business Migration page, link: Open the Enterprise Migration page, link: Open the Gmail Migration page, link: Open the Drive Migration page, link: Open the Google Chat Migration page, link: Open the AI learnings for work page, link: Open the Security page, link: Open the Customer Stories page, link: Open the FAQs page, link: Open the Partners page in a new tab, link: Open the Marketplace page, link: Open the Integrations page, link: Open the Training & Certification page, link: Open the Refer Google Workspace page, link: Open the AI Project Management page, link: Open the AI for Meetings page, link: Open the Learning and support page, link: Open the Admin Help page in a new tab, link: Open the Setup and Deployment Center page in a new tab, link: Open the Learning Center for Users page in a new tab, link: Open the Forums for Admins page in a new tab, link: Open the Google Workspace Dashboard page in a new tab, link: Open the What's New in Google Workspace page, link: Open the Find a Google Workspace Partner page in a new tab, link: Open the Join the community of IT Admins page in a new tab, link: Open the Press page in a new tab, link: Open the Google Cloud page in a new tab, link: Open the Google Domains page in a new tab, link: Open the Chrome Enterprise page in a new tab, link: Open the Google Business Solutions page in a new tab, link: Open the Google Ads page in a new tab, link: Open the Business Messages page in a new tab, link: Open the Privacy page in a new tab, link: Open the Terms page in a new tab, link: Open the About Google page in a new tab, link: Open the Google Products page in a new tab, link: Open the Help page in a new tab, link: Open the Bahasa Indonesia locale page, link: Open the Čeština locale page, link: Open the Dansk locale page, link: Open the Deutsch locale page, link: Open the Deutsch – Schweiz locale page, link: Open the English – Australia locale page, link: Open the English – Canada locale page, link: Open the English – India locale page, link: Open the English – Indonesia locale page, link: Open the English – Ireland locale page, link: Open the English – Malaysia locale page, link: Open the English – New Zealand locale page, link: Open the English – Philippines locale page, link: Open the English – Singapore locale page, link: Open the English – South Africa locale page, link: Open the English – United Kingdom locale page, link: Open the Español locale page, link: Open the Español (Latinoamérica) locale page, link: Open the Español (Latinoamérica) – Argentina locale page, link: Open the Español (Latinoamérica) – Estados Unidos locale page, link: Open the Español (Latinoamérica) – México locale page, link: Open the Français locale page, link: Open the Français – Canada locale page, link: Open the Français – Suisse locale page, link: Open the Italiano locale page, link: Open the Magyar locale page, link: Open the Nederlands locale page, link: Open the Norsk locale page, link: Open the Polski locale page, link: Open the Português (Brasil) locale page, link: Open the Português (Portugal) locale page, link: Open the Suomi locale page, link: Open the Svenska locale page, link: Open the Tiếng Việt locale page, link: Open the Türkçe locale page, link: Open the Русский locale page, link: Open the Українська locale page, link: Open the עברית locale page, link: Open the العربية locale page, link: Open the العربية – مصر locale page, link: Open the ไทย locale page, link: Open the 한국어 locale page, link: Open the 中文 (香港) locale page, link: Open the 中文（简体中文） locale page, link: Open the 中文（繁體中文） locale page, link: Open the 日本語 locale page and landmarks banner, search, main, contentinfo, region: Language List. (VERIFIED; accessed 2026-11-03T01:39:52.833Z).
+- [Nextcloud candidate](https://nextcloud.com/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [ONLYOFFICE candidate](https://www.onlyoffice.com/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [Collabora Online candidate](https://www.collaboraonline.com/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [CryptPad candidate](https://cryptpad.fr/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).

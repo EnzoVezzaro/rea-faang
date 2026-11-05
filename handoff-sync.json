@@ -4,7 +4,7 @@
   "from": "primary-backend",
   "status": "complete",
   "committed": false,
-  "summary": "Single-sourced the site canonical origin: tools/site/templates.mjs now derives BASE_URL from RAE_SITE_URL with the GitHub Pages origin that package.json homepage and .github/workflows/pages.yml actually deploy, tests assert against that one source plus the package homepage instead of a duplicated Vercel literal, and the regenerated site fixed canonical/OG/sitemap/robots. Verified the npm package surface (369 files) and CLI version (0.3.2) match the same sources.",
+  "summary": "Single-sourced the site canonical origin: tools/site/templates.mjs now derives BASE_URL from REA_SITE_URL with the GitHub Pages origin that package.json homepage and .github/workflows/pages.yml actually deploy, tests assert against that one source plus the package homepage instead of a duplicated Vercel literal, and the regenerated site fixed canonical/OG/sitemap/robots. Verified the npm package surface (369 files) and CLI version (0.3.2) match the same sources.",
   "changed_files": [
     "tools/site/templates.mjs",
     "tests/site-build.test.js",
@@ -43,7 +43,7 @@
     "No browser rendering check of the rebuilt pages."
   ],
   "decisions": [
-    "The canonical origin is GitHub Pages because that is what the deploy workflow and package.json homepage already publish; Vercel stays available only through RAE_SITE_URL at build time.",
+    "The canonical origin is GitHub Pages because that is what the deploy workflow and package.json homepage already publish; Vercel stays available only through REA_SITE_URL at build time.",
     "Tests import BASE_URL instead of restating a domain, so changing the host is one edit and cannot silently desync canonical/OG/sitemap/robots.",
     null
   ],

@@ -1,25 +1,25 @@
-<div align="center">    <img src="docs/assets/brand-logo-icon.png" width="420" alt="RAE FAANG — robot-box icon and wordmark with Meta, Amazon, Apple, Netflix, Google and Microsoft marks" />
+<div align="center">    <img src="docs/assets/brand-logo-icon.png" width="420" alt="REA FAANG — robot-box icon and wordmark with Meta, Amazon, Apple, Netflix, Google and Microsoft marks" />
 
-# RAE FAANG
+# REA FAANG
 
 ### We don't need FAANG anymore.
 
 **Use your agent to build any of their products.**
 
-RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft. Choose a product and
+REA FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft. Choose a product and
 use your coding agent to build it in your project. Each entry links product context, research,
 candidate open-source projects and product-specific build instructions to help you get started.
-These are starting points, not limits on what you can build. RAE FAANG is MIT-licensed; your
+These are starting points, not limits on what you can build. REA FAANG is MIT-licensed; your
 implementation and its dependencies have their own licenses.
 
-[![npm version](https://img.shields.io/npm/v/rae-faang?style=flat-square&labelColor=101114&color=E8FF6B)](https://www.npmjs.com/package/rae-faang)
+[![npm version](https://img.shields.io/npm/v/rea-faang?style=flat-square&labelColor=101114&color=E8FF6B)](https://www.npmjs.com/package/rea-faang)
 [![CI](https://github.com/EnzoVezzaro/rea-faang/actions/workflows/ci.yml/badge.svg)](https://github.com/EnzoVezzaro/rea-faang/actions/workflows/ci.yml)
 [![Node.js 20+](https://img.shields.io/badge/Node.js-20%2B-E8FF6B?style=flat-square&labelColor=101114&logo=nodedotjs&logoColor=white)](docs/getting-started.md)
-[![products: 184](https://img.shields.io/badge/products-184-E8FF6B?style=flat-square&labelColor=101114)](#catalog-at-a-glance)
+[![products: 193](https://img.shields.io/badge/products-193-E8FF6B?style=flat-square&labelColor=101114)](#catalog-at-a-glance)
 [![license: MIT](https://img.shields.io/badge/license-MIT-E8FF6B?style=flat-square&labelColor=101114)](LICENSE)
 [![PRs welcome](https://img.shields.io/badge/PRs-welcome-101114?style=flat-square&labelColor=101114)](CONTRIBUTING.md)
 
-<code>npx rae-faang products list</code>
+<code>npx rea-faang products list</code>
 
 **[Live site](https://enzovezzaro.github.io/rea-faang/) ·
 [Choose a product to build](#build-a-product-with-your-agent) ·
@@ -28,13 +28,13 @@ implementation and its dependencies have their own licenses.
 
 <br />
 
-<img src="docs/assets/site-catalog.png" alt="The live RAE FAANG catalog: 184 products from Meta, Amazon, Apple, Netflix, Google and Microsoft with coverage stats and open-source alternatives" width="1100" />
+<img src="docs/assets/site-catalog.png" alt="The live REA FAANG catalog: 193 products from Meta, Amazon, Apple, Netflix, Google and Microsoft with coverage stats and open-source alternatives" width="1100" />
 
 <br />
 </div>
 
 > [!IMPORTANT]
-> RAE FAANG is a **product catalog for agent-led building**, not a source-code scraper. It
+> REA FAANG is a **product catalog for agent-led building**, not a source-code scraper. It
 > brings together public product information, research and candidate open-source projects so your
 > coding agent has useful starting points for building in your project. The research does not limit
 > what you can build. See
@@ -50,7 +50,7 @@ implementation and its dependencies have their own licenses.
 
 ```text
 Build a search product for my project. Start from the google-search skill
-in the RAE FAANG catalog. Assess open-source candidates such as SearXNG
+in the REA FAANG catalog. Assess open-source candidates such as SearXNG
 first, then scope, build, and verify what fits my users.
 ```
 
@@ -62,37 +62,37 @@ research dossiers, and open-source landscape.
 **Use a skill without installing anything**
 
 ```bash
-npx rae-faang products list       # every catalogued product
-npx rae-faang research coverage   # how researched is the catalog?
-npx rae-faang gaps all            # what is missing?
+npx rea-faang products list       # every catalogued product
+npx rea-faang research coverage   # how researched is the catalog?
+npx rea-faang gaps all            # what is missing?
 ```
 
-The npm package exposes both `rae` and `rae-faang` executable names. For a
-one-off command, invoke the published package as `npx rae-faang ...`;
-after `npm install -g rae-faang`, use `rae ...`.
+The npm package exposes both `rea` and `rea-faang` executable names. For a
+one-off command, invoke the published package as `npx rea-faang ...`;
+after `npm install -g rea-faang`, use `rea ...`.
 
 **Generate a product skill from npm**
 
 ```bash
-npx rae-faang google-search --out ./google-search.md
+npx rea-faang google-search --out ./google-search.md
 ```
 
 This product-ID shorthand writes one portable Markdown skill to the path you
 choose (or `./<product-id>.md` by default). Give that file to your coding agent
 in the project where you want to build. For repeated use, install globally with
-`npm install -g rae-faang`, then run `rae google-search --out ./google-search.md`.
+`npm install -g rea-faang`, then run `rea google-search --out ./google-search.md`.
 
 The longer `skills generate <product-id>` form is also available for batch
 runs and JSON reports. `skills validate` checks the bundled canonical skills;
 run `npm run validate` from a source checkout to check repository output drift.
 If you specifically want a directory containing both `skill.md` and `mcp.json`,
-use `npx rae-faang build agent-kit gmail --out ./gmail-agent`.
+use `npx rea-faang build agent-kit gmail --out ./gmail-agent`.
 
 **Work on the catalog itself (contributors)**
 
 ```bash
-git clone https://github.com/EnzoVezzaro/rea-faang.git rae-faang
-cd rae-faang
+git clone https://github.com/EnzoVezzaro/rea-faang.git rea-faang
+cd rea-faang
 npm install
 npm test                  # CLI + schema test suite
 npm run validate          # research + alternatives + skills + site build check
@@ -134,7 +134,7 @@ implementation is feasible.
 | **Google** | Search, maps, email, video, office productivity, cloud infrastructure, developer tools, AI services |
 | **Microsoft** | Operating systems, productivity suites, collaboration, cloud infrastructure, developer platforms |
 
-**184 products** · **40** with a mature candidate listed · **66** with partial coverage · **78** with
+**193 products** · **31** with a mature candidate listed · **85** with partial coverage · **77** with
 no verified alternative. These labels summarize catalog research, not product parity. See
 `catalog/products.jsonl` and the [live catalog](https://enzovezzaro.github.io/rea-faang/) for current counts.
 
@@ -142,7 +142,7 @@ no verified alternative. These labels summarize catalog research, not product pa
 
 ## What the repository includes
 
-- **`catalog/`** — 184 product records with JSON Schemas, research manifests, and the REA
+    - **`catalog/`** — 193 product records with JSON Schemas, research manifests, and the REA
   web-surface reports captured with [REA](https://github.com/morluto/rea).
 - **`catalog/skills/`** — one Markdown build skill per product, from the skills index
   catalog down to the per-product file.
@@ -163,7 +163,7 @@ The repository is designed to be forked, extended, and shipped in increments.
 
 - Read [`CONTRIBUTING.md`](CONTRIBUTING.md) — setup, the contribution loop, and review gates.
 - Read [`AGENTS.md`](AGENTS.md) if you work with AI agents — roles, task leases, handoffs.
-- Pick a gap: `npx rae-faang gaps all` prints the largest shortfalls by coverage type.
+- Pick a gap: `npx rea-faang gaps all` prints the largest shortfalls by coverage type.
 - Improve one dossier, one alternative entry, or one test — small diffs get reviewed faster.
 
 **Project conventions that make contributions land**
@@ -203,7 +203,7 @@ is required.
 </details>
 
 <details>
-<summary><strong>Do I have to build all 184 products?</strong></summary>
+<summary><strong>Do I have to build all 193 products?</strong></summary>
 
 No. Pick one product, scope it to your needs, and build that. The catalog's research gives
 your agent where to start; your project defines how far it goes.
@@ -223,7 +223,7 @@ that building it is impossible — the skill says so explicitly.
 <summary><strong>How do I report a problem or add a product?</strong></summary>
 
 Open an <a href="https://github.com/EnzoVezzaro/rea-faang/issues">issue</a>. For missing
-alternatives, use <code>npx rae-faang gaps all</code> output to point at the exact coverage
+alternatives, use <code>npx rea-faang gaps all</code> output to point at the exact coverage
 gap. For new products, see the catalog section of <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>.
 
 </details>
@@ -270,7 +270,7 @@ provenance, dependencies, limitations, and licensing.
 
 ## License
 
-RAE FAANG ships under the **MIT License** (see [`LICENSE`](LICENSE)). The repository also carries
+REA FAANG ships under the **MIT License** (see [`LICENSE`](LICENSE)). The repository also carries
 an explicit AI-training notice ([`NOTICE`](NOTICE)) and a machine-readable policy
 ([`AI_TRAINING_POLICY.md`](AI_TRAINING_POLICY.md)). Third-party dependencies, assets, and
 referenced projects keep their own licenses.

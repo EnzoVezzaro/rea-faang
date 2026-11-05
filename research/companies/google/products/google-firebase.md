@@ -3,149 +3,120 @@ schema_version: "1.0"
 id: "google-firebase"
 company_id: "google"
 name: "Firebase"
-aliases: []
+aliases: ["Google Firebase"]
 product_type: "developer_tool"
 categories:
   - "developer_tool"
+  - "backend-as-a-service"
+  - "mobile-development"
+  - "web-development"
 official_url: "https://firebase.google.com/"
 official_docs_url: "https://firebase.google.com/docs"
-official_source_urls: []
+official_source_urls: ["https://firebase.google.com/", "https://firebase.google.com/docs/guides", "https://firebase.google.com/docs/projects/learn-more", "https://firebase.google.com/docs/auth", "https://firebase.google.com/docs/functions", "https://firebase.google.com/pricing"]
 lifecycle_status: "active"
-research_status: "pending"
-research_confidence: "unverified"
-alternative_status: "none_verified"
+research_status: "researched"
+research_confidence: "verified"
+alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: null
-next_review_at: null
-research_version: 1
+last_researched_at: 2026-11-03T00:00:00Z
+last_verified_at: 2026-11-03T00:00:00Z
+next_review_at: 2027-02-03T00:00:00Z
+research_version: 2
+inventory_status: "verified"
+command_status: "documented"
+command_source: "https://firebase.google.com/docs/cli"
 ---
 
 # 1. Executive summary
 
-Firebase is a Backend-as-a-Service (BaaS) platform providing tools and infrastructure for building mobile and web applications. It offers real-time database, authentication, hosting, cloud functions, analytics, and machine learning capabilities, integrating closely with Google Cloud.
+Firebase is Google's application-development platform for mobile and web apps. It combines client SDKs, app-facing services, backend infrastructure, deployment tools and operational features behind a Firebase project. Firebase projects are also Google Cloud projects with Firebase-specific configuration; this makes Firebase a distinct developer platform, not a duplicate catalog row for Google Cloud.
 
 # 2. Product identity and ownership
 
 - **Official name:** Firebase
-- **Company and business unit:** Google, a subsidiary of Alphabet Inc.
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2011 (as independent startup), acquired by Google in 2014
-- **Current lifecycle status:** active
-- **Previous names:** None
-- **Acquisitions or ownership changes:** Acquired by Google in 2014; integrated with Google Cloud Platform
-- **Related products:** Google Cloud, Cloud Functions, Cloud Firestore, Google Analytics, App Check
-- **Official website:** https://firebase.google.com/
+- **Company:** Google LLC, part of Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://firebase.google.com/
 - **Official documentation:** https://firebase.google.com/docs
+- **Identity evidence:** Google's product page and documentation identify Firebase as a mobile and web app development platform and describe its Build, Run, Learn and Reference surfaces.
+- **Project model:** a Firebase project is a Google Cloud project with Firebase-specific configuration and services enabled.
+- **Scope boundary:** Firebase is cataloged as the integrated developer platform; Firestore, Cloud Storage, Cloud Functions and other underlying services remain separately catalogable when they have their own canonical identity and contract.
 
 # 3. Product capabilities
 
-- **Realtime Database:** JSON database with real-time synchronization
-- **Cloud Firestore:** Scalable NoSQL document database
-- **Authentication:** Email/password, social providers, phone, anonymous, custom tokens
-- **Cloud Functions:** Serverless functions triggered by Firebase/Google Cloud events
-- **Hosting:** Static and dynamic web hosting with CDN
-- **Cloud Storage:** File storage for user-generated content
-- **Analytics:** App analytics and user behavior tracking
-- **Remote Config:** Feature flags and A/B testing
-- **Cloud Messaging:** Push notifications (FCM)
-- **In-App Messaging:** Targeted messages within apps
-- **Dynamic Links:** Deep links that survive app install
-- **App Check:** Abuse prevention
-- **Performance Monitoring:** App performance metrics
-- **Test Lab:** Device testing infrastructure
-- **Crashlytics:** Crash reporting
-- **ML Kit:** On-device machine learning
-- **Vertex AI integration:** Generative AI capabilities
-- **Data Connect:** PostgreSQL-backed database (preview)
-- **Genkit:** AI workflow framework
+- Authentication and identity-provider integrations through Firebase Authentication.
+- Cloud Firestore and Realtime Database for application data and synchronization.
+- Cloud Storage for Firebase for user-generated files.
+- Hosting and App Hosting for web applications, with serverless integrations.
+- Cloud Functions for Firebase for event-driven and HTTP backend code.
+- Cloud Messaging, App Check, Remote Config, Analytics, Crashlytics, Performance Monitoring, Test Lab and other Run features.
+- SDKs, Admin SDKs, API references, Emulator Suite and Firebase CLI workflows.
+- Additional platform surfaces including Data Connect, Extensions and Firebase AI Logic where the project and service prerequisites support them.
 
 # 4. Technical architecture
 
-- Multi-region infrastructure leveraging Google Cloud
-- Real-time sync via WebSocket connections
-- Serverless functions on Cloud Functions infrastructure
-- CDN-backed hosting with automatic SSL
-- Client SDKs for iOS, Android, Web, Flutter, Unity, C++, Node.js
-- Admin SDKs for server environments
-- Security rules language for database access control
-- Emulator Suite for local development
+The top-level unit is a Firebase project. Apps are registered inside that project for supported platforms, and Firebase products are enabled and configured against the project. Client SDKs call Firebase services; server-side code can use the Admin SDK and Cloud Functions. Firebase Hosting can route requests to serverless backends, while the Emulator Suite supports local development and testing. Billing and quotas are shared with the corresponding Google Cloud project where the service requires it.
 
-# 5. User workflows
+# 5. User and developer workflows
 
-Developers create a Firebase project, configure services, integrate SDKs, and deploy. Core workflows: project setup, authentication configuration, database design, function development, testing with emulators, deployment, monitoring. Advanced: CI/CD integration, multi-environment management, custom domains, enterprise security.
+1. Create or select a Firebase project and register the iOS, Android, web or other supported app variant.
+2. Add the required Firebase SDKs and configure Authentication, data, storage, hosting or messaging services.
+3. Define security rules, IAM and environment boundaries before handling real user data.
+4. Use the Emulator Suite and tests for local verification, then deploy through the Firebase CLI or documented console workflows.
+5. Monitor quality, usage, crashes, performance and billing; configure budget alerts before enabling paid services.
 
 # 6. Pricing and access
 
-- **Spark plan (free):** Limited usage across all products
-- **Blaze plan (pay-as-you-go):** Usage-based pricing, free tier included
-- Pricing per product: database reads/writes, storage, functions invocations, hosting bandwidth, authentication verifications
-- No upfront costs or commitments
+Firebase documents a no-cost Spark plan and a pay-as-you-go Blaze plan. The Spark plan has no payment method requirement and service-specific quotas. Blaze enables additional services and usage levels, with usage billed according to the applicable Firebase or Google Cloud pricing. This dossier does not assert a project's current quota or billing state.
 
 # 7. API and integration surface
 
-- Client SDKs: Web (JavaScript/TypeScript), iOS (Swift/Obj-C), Android (Kotlin/Java), Flutter (Dart), Unity (C#), C++, Node.js, Python, Go
-- Admin SDKs: Node.js, Python, Go, Java, .NET
-- REST APIs for all services
-- GraphQL support via Data Connect
-- CLI tools: firebase-tools
-- CI/CD: GitHub Actions, Bitrise, CircleCI integrations
-- Extensions: Pre-packaged solutions
+- Client SDK references for Apple platforms, Android, web, Flutter, Unity and C++.
+- Admin SDK references and REST/API surfaces for server-side administration.
+- Firebase CLI (`firebase`) for project initialization, local emulation and deployment workflows.
+- Cloud Functions, Hosting, Cloud Storage, Cloud Firestore, Google Cloud and third-party webhook integrations.
+- Extensions and documented integrations for adding packaged capabilities.
 
 # 8. Existing open-source alternatives
 
-- **Supabase:** PostgreSQL-based BaaS (auth, database, functions, storage, realtime)
-- **Appwrite:** Self-hosted BaaS (auth, database, functions, storage, realtime)
-- **Nhost:** Hasura + Postgres + Auth + Storage + Functions
-- **PocketBase:** Go-based single-binary BaaS
-- **Parse Platform:** Open-source Parse Server
-- **Directus:** Headless CMS with auth and API
-- **Kuzzle:** Real-time backend engine
-- **Backendless:** Visual development platform (partially open)
+- **Supabase:** Apache-2.0 platform combining PostgreSQL, authentication, storage, realtime and edge functions.
+- **Appwrite:** BSD-3-Clause self-hostable backend with authentication, databases, storage, functions and related services.
+- **Parse Platform:** BSD-3-Clause open-source application backend with Parse Server and SDKs.
+- **PocketBase:** MIT-licensed, compact backend distributed as a single Go binary with authentication, data and realtime features.
 
 # 9. Alternative comparison
 
-Supabase and Appwrite are the closest feature-complete open-source BaaS alternatives. Supabase uses PostgreSQL (relational) vs Firebase's NoSQL; Appwrite is fully self-hostable. PocketBase is lightweight but less feature-rich. None match Firebase's Google Cloud integration, ML Kit, or Test Lab.
+Supabase and Appwrite are the closest broad alternatives for a self-hosted or independently operated application backend. Parse Platform and PocketBase cover narrower or different operational profiles. None provides a full equivalent of Firebase's Google Cloud project integration, managed service plane, device Test Lab, Crashlytics, ML/AI integrations, service-specific SDKs and operational tooling. Alternative coverage is therefore **partial** for the complete Firebase platform, even though the core BaaS category has mature open-source building blocks.
 
 # 10. Missing capabilities and opportunity analysis
 
-Google Cloud integration, managed ML (ML Kit, Vertex AI), Test Lab device farm, and Crashlytics are hard to replicate. Open alternatives excel at self-hosting, data ownership, and SQL flexibility. The "managed service" experience with global infrastructure is a key gap.
+A replacement still needs secure identity, data and storage services, realtime delivery, serverless execution, deployment, observability, testing, quotas, tenancy, migrations and operational ownership. The largest gaps are the integrated Google Cloud control plane, managed device testing, crash and performance products, proprietary SDK behavior and provider-specific service integrations.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Contribute to or extend Supabase/Appwrite for self-hosted BaaS needs. Focus on PostgreSQL-based real-time sync, auth, and serverless functions. For ML features, integrate with local inference (llama.cpp, ONNX Runtime) or self-hosted model serving.
+For a self-hosted build, start with Supabase or Appwrite and define the required subset explicitly: authentication, database, storage, realtime, functions and deployment. Use an emulator-first workflow, write migration and security-rule tests, and keep provider-specific Firebase compatibility out of scope unless a product contract requires it. Do not claim Firebase API parity without testing each selected SDK and service behavior.
 
 # 12. Security, privacy, and compliance
 
-Firebase handles authentication tokens, user data, and analytics. Open alternatives must implement secure auth (OAuth, JWT), encryption at rest/in transit, and compliance (GDPR, HIPAA, SOC2). Self-hosting shifts compliance burden to operator.
+Firebase projects can process identity, application data, files, telemetry and crash data. Verify authentication providers, security rules, IAM, service accounts, encryption, retention, region, analytics consent and billing controls before production use. Keep credentials, user data and payload samples out of this catalog.
 
 # 13. Sources and evidence
 
-- https://firebase.google.com/ (product page)
-- https://firebase.google.com/docs (documentation)
-- https://github.com/firebase (open-source SDKs)
-- https://supabase.com/ (alternative reference)
-- https://appwrite.io/ (alternative reference)
+- [Firebase product page](https://firebase.google.com/) — official product identity and Build/Run capability families.
+- [Firebase fundamentals](https://firebase.google.com/docs/guides) — official project setup, supported platforms and development workflow.
+- [Understand Firebase projects](https://firebase.google.com/docs/projects/learn-more) — official Firebase/Google Cloud project relationship and hierarchy.
+- [Firebase Authentication](https://firebase.google.com/docs/auth) — official identity and SDK capabilities.
+- [Cloud Functions for Firebase](https://firebase.google.com/docs/functions) — official serverless and Google Cloud integration workflow.
+- [Firebase pricing](https://firebase.google.com/pricing) — official Spark and Blaze plan information.
 
 # 14. Open questions
 
-- Can PostgreSQL-based realtime match Firebase's WebSocket scalability?
-- What is the operational complexity of self-hosted BaaS at scale?
-- How to replicate Firebase's integrated Google Cloud services (ML, Test Lab)?
+- Which Firebase services are actually required by the target product, rather than the full platform?
+- Is self-hosting, data residency or Firebase SDK compatibility the primary migration constraint?
+- Which quotas, regions, compliance controls and Google Cloud integrations are mandatory?
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
-
----
-
-# 16. Alternative comparison (continued)
-
-Supabase leads on PostgreSQL ecosystem and managed offering. Appwrite leads on self-hosting simplicity. Both lack Firebase's Google-specific integrations (ML Kit, Vertex AI, Test Lab).
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Prioritize: Auth, Database (PostgreSQL + realtime), Functions, Storage. Build on Supabase or Appwrite core. Add Firebase-compatible SDK interfaces for migration path.
+- v1: catalog candidate with preliminary BaaS alternatives, research pending.
+- v2: updated 2026-11-03 from official Firebase product, fundamentals, project, Authentication, Cloud Functions and pricing documentation. Status: `researched`; complete equivalence to Firebase's managed Google Cloud platform remains unverified.

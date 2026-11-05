@@ -79,7 +79,7 @@ Open-source document databases may cover core JSON storage and query behavior, b
 
 REA should map MongoDB API compatibility by version, query/operators, indexes, transactions, change streams, aggregation, drivers, elastic clusters, storage, failover, backup and migration behavior separately.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public AWS documentation, public compatibility statements and permitted test workloads only. A clean-room equivalent should choose an independently licensed document engine and explicitly document unsupported MongoDB behavior; it must not copy AWS storage or implementation details.
 

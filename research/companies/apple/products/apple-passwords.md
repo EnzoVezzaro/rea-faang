@@ -87,7 +87,7 @@ Password management is fully covered; cross-platform reach and self-hosted contr
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Available. Bitwarden (and self-hosted Vaultwarden) is a mature, cross-platform equivalent.
 
@@ -124,6 +124,6 @@ Password management is fully covered; cross-platform reach and self-hosted contr
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Available. Bitwarden (and self-hosted Vaultwarden) is a mature, cross-platform equivalent.

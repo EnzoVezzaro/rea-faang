@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon EC2, recorded with REA.
 | Target | https://aws.amazon.com/ec2/ |
 | Resolved URL | https://aws.amazon.com/ec2/ |
 | Page title | Amazon EC2 |
-| Captured | 2026-11-03T01:29:54.426Z |
+| Captured | 2026-11-04T02:41:41.694Z |
 | Status | captured |
-| REA Evidence ID | `ev_bbdad7a4c7cbdd321bf6cff5da371b2bb65dc3811288e981305b416d6fe81533` |
+| REA Evidence ID | `ev_e5cdbc55bb748bf7aa1fc27bbff2fa01c2bc0f7c4f45805302b77b8bc1507807` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -170,6 +170,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-ec2.json`
-- Evidence ID: `ev_bbdad7a4c7cbdd321bf6cff5da371b2bb65dc3811288e981305b416d6fe81533`
-- Accessibility outline: 11234 bytes
+- Evidence ID: `ev_e5cdbc55bb748bf7aa1fc27bbff2fa01c2bc0f7c4f45805302b77b8bc1507807`
+- Accessibility outline: 11257 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

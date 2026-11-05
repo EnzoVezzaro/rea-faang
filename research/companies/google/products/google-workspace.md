@@ -3,130 +3,102 @@ schema_version: "1.0"
 id: "google-workspace"
 company_id: "google"
 name: "Google Workspace"
-aliases: []
+aliases: ["G Suite", "Google Apps"]
 product_type: "productivity_application"
-categories:
-  - "productivity"
+categories: ["productivity", "collaboration", "subscription"]
+lifecycle_status: "active"
 official_url: "https://workspace.google.com/"
 official_docs_url: "https://developers.google.com/workspace"
-official_source_urls: []
-lifecycle_status: "active"
-research_status: "pending"
-research_confidence: "unverified"
-alternative_status: "none_verified"
+official_source_urls: ["https://workspace.google.com/", "https://developers.google.com/workspace/products", "https://developers.google.com/workspace/guides/get-started", "https://developers.google.com/workspace/admin/overview"]
+research_status: "researched"
+research_confidence: "verified"
+alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "integrate_existing"
-last_researched_at: null
-last_verified_at: null
-next_review_at: null
-research_version: 1
+last_researched_at: 2026-11-03T00:00:00Z
+last_verified_at: 2026-11-03T00:00:00Z
+next_review_at: 2027-02-03T00:00:00Z
+research_version: 2
+inventory_status: "verified"
+command_status: "documented"
+command_source: "https://developers.google.com/workspace/guides/get-started"
 ---
-
 # 1. Executive summary
 
-Google Workspace (formerly G Suite) is a suite of cloud-based productivity and collaboration tools, including Gmail, Calendar, Meet, Chat, Docs, Sheets, Slides, and Drive. It serves as Google's integrated productivity platform for businesses and individuals.
+Google Workspace is Google's hosted productivity and collaboration suite. It combines services such as Gmail, Calendar, Meet, Chat, Drive, Docs, Sheets and Slides with identity, administration and developer APIs. The component products retain separate catalog entries because they have their own identities and API surfaces.
 
 # 2. Product identity and ownership
 
-- **Official name:** Google Workspace
-- **Company and business unit:** Google Workspace
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2006 (as Google Apps), rebranded 2020
-- **Current lifecycle status:** active
-- **Previous names:** Google Apps, Google Apps for Business, Google Workspace, G Suite
-- **Acquisitions or ownership changes:** None; brand evolution from Google Apps to G Suite to Workspace
-- **Related products:** Gmail, Calendar, Meet, Chat, Docs, Sheets, Slides, Drive
-- **Official website:** https://workspace.google.com/
-- **Official documentation:** https://developers.google.com/workspace
+**Official name:** Google Workspace  
+**Company:** Google LLC, part of Alphabet Inc.  
+**Former names:** Google Apps and G Suite  
+**Lifecycle status:** active  
+**Official website:** https://workspace.google.com/
+
+Google's administrator documentation treats Workspace as a managed collection of core and additional services, with editions and controls that vary by organisation and plan.
 
 # 3. Product capabilities
 
-- Gmail email with conversation threading and advanced search
-- Calendar scheduling and event management
-- Google Meet video conferencing with live captions
-- Google Chat messaging and threaded conversations
-- Docs collaborative word processing with real-time co-editing
-- Sheets collaborative spreadsheets with formulas and pivot tables
-- Slides collaborative presentations with themes and transitions
-- Drive cloud file storage and synchronization
-- Admin console for user and device management
-- Vault for eDiscovery and retention
-- Integration with third-party via APIs and marketplace
+- Gmail email, Calendar scheduling and Meet video meetings.
+- Drive storage and sharing, with Docs, Sheets, Slides and related editors.
+- Chat, Tasks, Forms, Sites, Keep, Vault and other plan- or configuration-dependent services.
+- Admin Console, identity, device and user management, policy controls and audit features.
+- Apps Script, REST APIs, add-ons, Chat apps and Marketplace integrations.
+
+Drive, Docs, Meet and Calendar are separate catalog entries where present. Their inclusion in Workspace describes suite composition; it does not duplicate their individual product records.
 
 # 4. Technical architecture
 
-Google Workspace is a multi-tenant cloud platform with:
-
-- User identity and authentication (Google Identity Services)
-- Real-time collaboration infrastructure (operational transformation)
-- Storage layer (Colossus and variants per service)
-- Collaboration engines per application (Docs, Sheets, Slides)
-- Video pipeline (Meet)
-- Messaging infrastructure (Chat)
-- Admin and audit logging
-
-Full architecture is proprietary; service APIs and SDKs are publicly documented.
+Workspace is a multi-tenant hosted suite with service-specific applications, identity, storage, administration and API surfaces. Public documentation describes APIs, authentication, add-ons and administrative controls; proprietary service implementation is not asserted.
 
 # 5. User workflows
 
-Primary workflows: document creation and editing, email communication, calendar scheduling, video meetings, file storage and sharing. Essential: real-time co-editing, email, calendar, video calls. Advanced: admin controls, eDiscovery, marketplace integrations, automation via Apps Script.
+An organisation selects an edition, configures users and services in the Admin Console, and uses the enabled applications for mail, calendars, documents, files, chat and meetings. Developers create a Google Cloud project, enable required APIs, configure OAuth and credentials, then extend or integrate Workspace.
 
 # 6. Pricing and access
 
-Tiered pricing: Business Starter, Business Standard, Business Plus, Enterprise, and Education/Nonprofit discounts. Free trial available. Base tier includes 30GB storage; higher tiers offer more. Individual Gmail users get 15GB free shared across Google services.
+Workspace has multiple editions and plan-dependent capabilities. This research verifies the suite structure and access model, not current prices, regional availability, storage quotas or entitlement for a specific domain.
 
 # 7. API and integration surface
 
-- REST/JSON APIs per service (Gmail API, Calendar API, Meet API, Chat API, Drive API)
-- Google Apps Script for automation
-- Client libraries (Python, Node.js, Java, Go, PHP, .NET, Ruby)
-- OAuth 2.0 for authorization
-- Domain-wide delegation for admin access
+Google documents REST APIs, Apps Script, add-ons, Chat apps, Marketplace APIs and the Admin SDK. The official setup flow requires a Google Cloud project, enabled APIs, authentication, OAuth consent and access credentials; no authenticated Workspace domain is assumed here.
 
 # 8. Existing open-source alternatives
 
-Only partial alternatives exist: Nextcloud (file storage + office), OnlyOffice, Matomo (analytics), Rocket.Chat (messaging). No complete Workspace replica; Google's real-time collaboration and integrated ecosystem are difficult to replicate.
+- Nextcloud (AGPL-3.0): self-hosted files, calendar, collaboration and integrations.
+- ONLYOFFICE (AGPL-3.0): office editors and collaborative document components.
+- Collabora Online (MPL-2.0): LibreOffice-based collaborative editing.
+- CryptPad (AGPL-3.0): privacy-focused encrypted collaborative documents.
 
 # 9. Alternative comparison
 
-Nextcloud + OnlyOffice provides the closest feature overlap for self-hosted productivity. However, real-time collaboration parity, email integration, and admin console depth are not achieved. Google Workspace's strength is the integrated suite, not individual components.
+These projects cover portions of Workspace. A composed Nextcloud plus office stack can approximate selected workflows, but no alternative is verified here as a drop-in replacement for the combined email, calendar, files, editors, meetings, identity, administration, retention and API ecosystem.
 
 # 10. Missing capabilities and opportunity analysis
 
-Real-time collaborative editing infrastructure, integrated email+calendar+meeting workflow, and admin console with audit/logging represent gaps. Self-hosted stacks can approximate individual tools but not the integrated experience.
+The central gap is the integrated operated suite: real-time editing, mail, calendar, meetings, identity, administration, audit and retention must work together under one coherent policy model.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Focus on specific Workspace components (e.g., self-hosted Nextcloud + OnlyOffice for document collaboration, or Rocket.Chat for messaging). Full suite replacement is extremely high effort.
+Choose one workflow rather than rebuilding Workspace wholesale. Start with identity, files and document collaboration, define mail/calendar and meeting boundaries, then test administration, retention and audit evidence before expanding.
 
 # 12. Security, privacy, and compliance
 
-IAM per service, Data Loss Prevention (DLP), audit logging, GDPR and HIPAA data region options. Enterprise Vault for retention and eDiscovery.
+Mail, files, chats, documents and audit data are sensitive. Do not infer retention, DLP, encryption, residency or compliance from the public product page; verify edition, domain settings, enabled services and administrative policies.
 
 # 13. Sources and evidence
 
-- https://workspace.google.com/ (product page)
-- https://developers.google.com/workspace/ (documentation)
-- https://github.com/nextcloud/nextcloud (self-hosted alternative reference)
+- [Google Workspace](https://workspace.google.com/) — official suite surface.
+- [Google Workspace developer products](https://developers.google.com/workspace/products) — official APIs, apps and Admin Console surfaces.
+- [Develop on Google Workspace](https://developers.google.com/workspace/guides/get-started) — official integration and authentication setup.
+- [Admin SDK API overview](https://developers.google.com/workspace/admin/overview) — official administration APIs.
 
 # 14. Open questions
 
-- What is the realistic scope for replicating Workspace collaboration features independently?
-- How does real-time edit convergence compare across platforms?
-- What is the minimum feature set for "parity" in a self-hosted productivity suite?
+- Which Workspace edition and region should a future comparison cover?
+- Which component workflow should be evaluated first: documents, mail, calendar or meetings?
+- What retention and audit requirements would an alternative stack need to satisfy?
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
-
----
-
-# 16. Alternative comparison (continued)
-
-Nextcloud + OnlyOffice provides closest self-hosted overlap but lacks integrated email, calendar, and admin console depth.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Focus on individual Workspace components rather than full suite replacement. Nextcloud + OnlyOffice for document collaboration is the most feasible starting point.
+Record updated 2026-11-03 from official Google Workspace and Google Developers sources. Status: `researched`; plan-specific pricing, quotas, domain settings and authenticated behavior remain outside this pass.

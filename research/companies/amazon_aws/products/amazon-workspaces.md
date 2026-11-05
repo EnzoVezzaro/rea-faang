@@ -73,9 +73,9 @@ Compare desktop provisioning, image and bundle management, persistent and pooled
 
 Research must map every directory, image, bundle, workspace, pool, application, client, protocol, network, running-mode, state, error, quota and billing behavior. Any implementation must use original code and isolated synthetic desktop fixtures.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product, administrator guide, user guide, API and CLI references as primary sources. The generated RAE skill should instruct an agent to build an independent remote-desktop platform beginning with Guacamole where useful, then add provisioning, images, bundles, directories, pools, identity, encryption, lifecycle and billing controls only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS service parity.
+Use the official product, administrator guide, user guide, API and CLI references as primary sources. The generated REA skill should instruct an agent to build an independent remote-desktop platform beginning with Guacamole where useful, then add provisioning, images, bundles, directories, pools, identity, encryption, lifecycle and billing controls only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS service parity.
 
 # 12. Security, privacy, and compliance
 

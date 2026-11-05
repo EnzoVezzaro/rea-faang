@@ -14,16 +14,21 @@ official_source_urls:
   - "https://docs.aws.amazon.com/security-lake/"
   - "https://docs.aws.amazon.com/security-lake/latest/userguide/getting-started.html"
   - "https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html"
+  - "https://docs.aws.amazon.com/security-lake/latest/userguide/open-cybersecurity-schema-framework.html"
+  - "https://docs.aws.amazon.com/security-lake/latest/userguide/get-started-programmatic.html"
+  - "https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-query-examples.html"
+  - "https://docs.aws.amazon.com/security-lake/latest/userguide/create-subscriber-data-access.html"
+  - "https://docs.aws.amazon.com/security-lake/latest/userguide/create-query-subscriber-procedures.html"
   - "https://aws.github.io/aws-security-services-best-practices/guides/security-lake/"
-research_status: "pending"
-research_confidence: "unverified"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: "2027-02-03T00:00:00Z"
+research_version: 2
 ---
 
 # 1. Executive summary
@@ -73,7 +78,7 @@ Compare source connectors, event normalization, OCSF schema behavior, storage la
 
 Research must map source and subscriber state, OCSF versions, event schemas, partitions, storage and retention, permissions, notifications, query access, cross-account behavior, integrations, quotas, failures and migration paths.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, CLI references and authorized non-production security data. Capture enabling, source ingestion, normalization, subscription, query, notification and failure cases. Use Matano only after recording the partial-foundation verdict, and implement independent data-plane and control-plane components with original code and compatible licensing.
 
@@ -81,13 +86,13 @@ Use official AWS documentation, CLI references and authorized non-production sec
 
 Verify IAM roles, Lake Formation grants, KMS keys, S3 access, cross-account boundaries, log sensitivity, retention, deletion, notification destinations, audit logs and regional processing. Do not infer a compliance posture from a normalized schema alone.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/security-lake/ — official product scope.
-- https://docs.aws.amazon.com/security-lake/ — official documentation and CLI entry points.
-- https://docs.aws.amazon.com/security-lake/latest/userguide/getting-started.html — setup and source collection workflow.
-- https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html — subscriber and access workflows.
-- https://github.com/matanolabs/matano — open-source alternative and Apache-2.0 license.
+- **Product and scope:** [Security Lake documentation](https://docs.aws.amazon.com/security-lake/) identifies the managed security data lake and its API/CLI surfaces.
+- **Normalization and storage:** [OCSF in Security Lake](https://docs.aws.amazon.com/security-lake/latest/userguide/open-cybersecurity-schema-framework.html) documents native-source conversion, OCSF event classes and regional S3 storage.
+- **Programmatic setup:** [Enabling Security Lake programmatically](https://docs.aws.amazon.com/security-lake/latest/userguide/get-started-programmatic.html) documents IAM setup, API, CLI and SDK access.
+- **Subscribers:** [Subscriber management](https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html), [data access](https://docs.aws.amazon.com/security-lake/latest/userguide/create-subscriber-data-access.html) and [query access](https://docs.aws.amazon.com/security-lake/latest/userguide/create-query-subscriber-procedures.html) support the access and notification claims.
+- **Alternative:** [Matano](https://github.com/matanolabs/matano) is the recorded Apache-2.0 open-source security data-lake foundation; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -98,4 +103,4 @@ Verify IAM roles, Lake Formation grants, KMS keys, S3 access, cross-account boun
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, OCSF normalization, S3 storage, source/subscriber access, query and programmatic surfaces are documented. Exact partitions, schema evolution, retention, quotas, regional behavior and compliance conclusions remain unknown and are not asserted.

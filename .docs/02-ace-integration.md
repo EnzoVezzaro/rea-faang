@@ -7,13 +7,13 @@
 
 ---
 
-# ACE ProAgents Integration for RAE FAANG
+# ACE ProAgents Integration for REA FAANG
 
 > **The mission: make the products of the world's biggest technology companies free, open source, and accessible to everyone.**
 
 
 ## Overview
-RAE FAANG uses **ACE (Agentic Compute Environment)** as its agent orchestration framework. ACE provides a git-native package ecosystem for reproducible orchestrator-driven agent environments (spec `ace/v1`).
+REA FAANG uses **ACE (Agentic Compute Environment)** as its agent orchestration framework. ACE provides a git-native package ecosystem for reproducible orchestrator-driven agent environments (spec `ace/v1`).
 
 ## Why ACE?
 - **Zero runtime dependencies** - Node ESM only (`ace.mjs`)
@@ -27,21 +27,21 @@ RAE FAANG uses **ACE (Agentic Compute Environment)** as its agent orchestration 
 
 ### Monorepo Approach
 ```
- /rae-faang (root ACE workspace)
+ /rea-faang (root ACE workspace)
 ├ package.json          # Root manifest with ace key
 ├ ace-lock.json         # Resolved dependencies
 ├ ace.mjs               # ACE CLI entry point
 ├ lib/                  # ACE modules
 ├ .docs/                # This documentation
 ├ products/             # Individual product workspaces
-│   ├── rae-social/     # Meta: Instagram alternative
-│   ├── rae-connect/    # Meta: WhatsApp alternative
-│   ├── rae-market/     # Amazon: Marketplace
-│   ├── rae-cloud/      # Amazon: Cloud platform
-│   ├── rae-desktop/    # Apple: Desktop environment
-│   ├── rae-video/      # Netflix: Streaming platform
-│   ├── rae-search/     # Google: Search engine
-│   └── rae-maps/       # Google: Maps
+│   ├── rea-social/     # Meta: Instagram alternative
+│   ├── rea-connect/    # Meta: WhatsApp alternative
+│   ├── rea-market/     # Amazon: Marketplace
+│   ├── rea-cloud/      # Amazon: Cloud platform
+│   ├── rea-desktop/    # Apple: Desktop environment
+│   ├── rea-video/      # Netflix: Streaming platform
+│   ├── rea-search/     # Google: Search engine
+│   └── rea-maps/       # Google: Maps
 ├ shared/               # Shared infrastructure
 │   ├── auth/           # Authentication module
 │   ├── storage/        # Storage abstraction
@@ -53,7 +53,7 @@ RAE FAANG uses **ACE (Agentic Compute Environment)** as its agent orchestration 
 ### Per-Product ACE Workspace
 Each product in `products/` is a self-contained ACE workspace:
 ```
- /products/rae-social/
+ /products/rea-social/
 ├ package.json          # Product manifest + ace spec
 ├ ace-lock.json
 ├ ace.mjs               # Copied from root
@@ -65,12 +65,12 @@ Each product in `products/` is a self-contained ACE workspace:
 └ README.md
 ```
 
-## ACE Configuration for RAE FAANG
+## ACE Configuration for REA FAANG
 
 ### Root package.json (ace key)
 ```json
 {
-  "name": "rae-faang",
+  "name": "rea-faang",
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
@@ -78,13 +78,13 @@ Each product in `products/` is a self-contained ACE workspace:
   "dependencies": {},
   "ace": {
     "spec": "ace/v1",
-    "name": "rae-faang",
+    "name": "rea-faang",
     "orchestrator": { "runtime": "opencode", "role": "orchestrator" },
     "goal": {
       "statement": "Build open-source alternatives to FAANG products through agent-assisted reverse engineering and implementation",
       "milestones": [
         "Establish project organization and standards",
-        "Complete first working alternative (RAE Social MVP)",
+        "Complete first working alternative (REA Social MVP)",
         "Implement shared infrastructure modules",
         "Scale to 5+ products with agentic automation",
         "Achieve open ecosystem with community contributions"
@@ -188,7 +188,7 @@ Each product in `products/` is a self-contained ACE workspace:
 ## Governance Flow
 
 ```
- Governor (rae-faang root)
+ Governor (rea-faang root)
  ├── Monitors all project supervisors
  ├── Validates progress against milestones
  ├── Replaces failed routes/providers
@@ -213,11 +213,11 @@ Each product in `products/` is a self-contained ACE workspace:
 ### Workspace Management
 ```bash
 # Initialize root workspace
-ace init --name rae-faang
+ace init --name rea-faang
 
 # Initialize product workspace
-cd products/rae-social
-ace init --name rae-social
+cd products/rea-social
+ace init --name rea-social
 
 # Install dependencies (from lockfile or git)
 ace install
@@ -237,11 +237,11 @@ ace govern --dry-run
 ace govern
 
 # Supervise specific project
-ace supervise --project rae-social
+ace supervise --project rea-social
 
 # Task management
-ace task add --title "Implement feed algorithm" --project rae-social
-ace task list --project rae-social
+ace task add --title "Implement feed algorithm" --project rea-social
+ace task list --project rea-social
 ace task claim <id> --agent frontend-1
 ace task start <id>
 ace task review <id>
@@ -267,7 +267,7 @@ ace snapshot
 ace restore <id>
 
 # Autopilot for continuous operation
-ace autopilot on --interval 300 --mission "Complete RAE Social MVP"
+ace autopilot on --interval 300 --mission "Complete REA Social MVP"
 ace autopilot run --max-cycles 10
 ace autopilot off
 

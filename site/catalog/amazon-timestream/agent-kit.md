@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Timestream (amazon-timestrea
 
 # Amazon Timestream — implementation skill (`amazon-timestream`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Timestream**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Timestream (amazon-timestrea
 
 This is the coding-agent skill for **Amazon Timestream** (`amazon-timestream`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-timestream.md` from the catalog page, or run `npx rae-faang amazon-timestream --out ./amazon-timestream.md`, `npx rae-faang skills generate amazon-timestream` or `npx rae-faang build agent-kit amazon-timestream --out ./amazon-timestream-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-timestream.md` from the catalog page, or run `npx rea-faang amazon-timestream --out ./amazon-timestream.md`, `npx rea-faang skills generate amazon-timestream` or `npx rea-faang build agent-kit amazon-timestream --out ./amazon-timestream-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Timestream / `amazon-timestream` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/timestream/](https://aws.amazon.com/timestream/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/timestream/](https://docs.aws.amazon.com/timestream/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-timestream` | `research/companies/amazon_aws/products/amazon-timestream.md` |
+| Research dossier | `npx rea-faang research dossier amazon-timestream` | `research/companies/amazon_aws/products/amazon-timestream.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-timestream.md` (captured 2026-11-03T03:53:37.945Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-timestream.json` (`ev_9f1c5be9e71bd494e579a20defb66a71cb32f185a80a83e5642351e80ca6aa6a`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-timestream --format json` and `npx rae-faang research dossier amazon-timestream` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-timestream --format json` and `npx rea-faang research dossier amazon-timestream` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-TIMESTREAM-CAP-2042A9E0`, `AMAZON-TIMESTREAM-CAP-AD8DCC0A`, `AMAZON-TIMESTREAM-CAP-4C24E4F6`, `AMAZON-TIMESTREAM-CAP-84E6ED3E`, `AMAZON-TIMESTREAM-CAP-70B126F4`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-TIMESTREAM-CAP-EAA4D188`, `AMAZON-TIMESTREAM-CAP-5D9C1AB2`, `AMAZON-TIMESTREAM-CAP-2EED16B5`, `AMAZON-TIMESTREAM-CAP-4E52FE06`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-TIMESTREAM-CAP-2042A9E0` | Managed time-series ingestion and querying | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-TIMESTREAM-CAP-AD8DCC0A` | Memory and magnetic storage tiers with retention policies | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-TIMESTREAM-CAP-4C24E4F6` | SQL analytics across recent and historical data | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-TIMESTREAM-CAP-84E6ED3E` | Serverless LiveAnalytics and managed InfluxDB options | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-TIMESTREAM-CAP-70B126F4` | Integrations with IoT, Kinesis, Telegraf, Grafana and AWS analytics | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-TIMESTREAM-CAP-EAA4D188` | Managed time-series storage and decoupled ingestion/query architecture are documented. | VERIFIED | `ev-amazon-timestream-identity`, `ev-amazon-timestream-architecture` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-TIMESTREAM-CAP-5D9C1AB2` | Memory/magnetic tiers, retention, late data and upsert behavior are documented. | VERIFIED | `ev-amazon-timestream-storage`, `ev-amazon-timestream-writes` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-TIMESTREAM-CAP-2EED16B5` | SQL query, scheduled query and API surfaces are documented; account-specific behavior was not tested. | VERIFIED | `ev-amazon-timestream-queries`, `ev-amazon-timestream-schedules`, `ev-amazon-timestream-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-TIMESTREAM-CAP-4E52FE06` | VictoriaMetrics covers a self-hosted time-series foundation but not Timestream's IAM, serverless scaling, tier model, product split or managed AWS integrations. | VERIFIED | `ev-amazon-timestream-victoriametrics`, `ev-amazon-timestream-architecture` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Get started with Timestream`, `button: Connect with an AWS specialist`, `button: Play:`, `button: Real-time monitoring and alerting`, `button: IoT telemetry at scale`, `button: Real-time analytics`, `button: Predictive maintenance`, `button: Long-term telemetry retention and compliance`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Features`, `link: Pricing`, `link: Resources`, `link: FAQs`, `link: Customers`, `link: Products`, `link: Databases`, `link: here`, `link: Scale with ease Scale seamlessly to ingest millions of time-series data per second and process millions of queries per day with single-digit millisecond response times. Learn more`, `link: Fully managed Accelerate application development with this fully managed service that removes time-consuming database administrative tasks across all your time-series workloads. Learn more`, `link: Trusted security Secure your data with encryption at rest and in transit, private VPC endpoints, IAM authentication, custom keys with AWS KMS, and increased resiliency with AWS Backup. Learn more`, `link: Familiarity of open source Build time-series applications quickly using popular open source technologies, InfluxDB and Telegraf, at a fraction of the cost of existing relational solutions. Learn more`, `link: High availability Keep applications running through node failures and maintenance with InfluxDB 3 Enterprise, which distributes ingestion, querying, and compaction across a multi-node cluster. Read the documentation`, `link: Missing alt text value Autodesk improves product performance and reduces waste in manufacturing Read the testimonial`, `link: Missing alt text value PubNub processes trillions of messages per month Read the testimonial`, `link: Missing alt text value Trimble uses Timestream to support its IoT monitoring solution Read the testimonial`, `link: Training Learn with hands-on training Get started with Timestream`, `link: Documentation Dive deep on Timestream for InfluxDB Read the documentation`, `link: Console Start building in the console Sign in`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Managed time-series ingestion and querying:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Memory and magnetic storage tiers with retention policies:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **SQL analytics across recent and historical data:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Serverless LiveAnalytics and managed InfluxDB options:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Integrations with IoT, Kinesis, Telegraf, Grafana and AWS analytics:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Managed time-series storage and decoupled ingestion/query architecture are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Memory/magnetic tiers, retention, late data and upsert behavior are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **SQL query, scheduled query and API surfaces are documented; account-specific behavior was not tested.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **VictoriaMetrics covers a self-hosted time-series foundation but not Timestream's IAM, serverless scaling, tier model, product split or managed AWS integrations.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-2042A9E0 — Managed time-series ingestion and querying
+### REQ-FUNC-EAA4D188 — Managed time-series storage and decoupled ingestion/query architecture are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-timestream-identity`, `ev-amazon-timestream-architecture`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-2042A9E0`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TIMESTREAM-CAP-2042A9E0` → `REQ-FUNC-2042A9E0` → `TEST-FUNC-2042A9E0`.
+- **Associated test ID:** `TEST-FUNC-EAA4D188`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-TIMESTREAM-CAP-EAA4D188` → `REQ-FUNC-EAA4D188` → `TEST-FUNC-EAA4D188`.
 
-### REQ-FUNC-AD8DCC0A — Memory and magnetic storage tiers with retention policies
+### REQ-FUNC-5D9C1AB2 — Memory/magnetic tiers, retention, late data and upsert behavior are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-timestream-storage`, `ev-amazon-timestream-writes`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-AD8DCC0A`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TIMESTREAM-CAP-AD8DCC0A` → `REQ-FUNC-AD8DCC0A` → `TEST-FUNC-AD8DCC0A`.
+- **Associated test ID:** `TEST-FUNC-5D9C1AB2`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-TIMESTREAM-CAP-5D9C1AB2` → `REQ-FUNC-5D9C1AB2` → `TEST-FUNC-5D9C1AB2`.
 
-### REQ-FUNC-4C24E4F6 — SQL analytics across recent and historical data
+### REQ-FUNC-2EED16B5 — SQL query, scheduled query and API surfaces are documented; account-specific behavior was not tested.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-timestream-queries`, `ev-amazon-timestream-schedules`, `ev-amazon-timestream-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-4C24E4F6`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TIMESTREAM-CAP-4C24E4F6` → `REQ-FUNC-4C24E4F6` → `TEST-FUNC-4C24E4F6`.
+- **Associated test ID:** `TEST-FUNC-2EED16B5`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-TIMESTREAM-CAP-2EED16B5` → `REQ-FUNC-2EED16B5` → `TEST-FUNC-2EED16B5`.
 
-### REQ-FUNC-84E6ED3E — Serverless LiveAnalytics and managed InfluxDB options
+### REQ-FUNC-4E52FE06 — VictoriaMetrics covers a self-hosted time-series foundation but not Timestream's IAM, serverless scaling, tier model, product split or managed AWS integrations.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-timestream-victoriametrics`, `ev-amazon-timestream-architecture`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-84E6ED3E`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TIMESTREAM-CAP-84E6ED3E` → `REQ-FUNC-84E6ED3E` → `TEST-FUNC-84E6ED3E`.
-
-### REQ-FUNC-70B126F4 — Integrations with IoT, Kinesis, Telegraf, Grafana and AWS analytics
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-70B126F4`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TIMESTREAM-CAP-70B126F4` → `REQ-FUNC-70B126F4` → `TEST-FUNC-70B126F4`.
+- **Associated test ID:** `TEST-FUNC-4E52FE06`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-TIMESTREAM-CAP-4E52FE06` → `REQ-FUNC-4E52FE06` → `TEST-FUNC-4E52FE06`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -237,11 +226,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `AMAZON-TIMESTREAM-CAP-2042A9E0` — Managed time-series ingestion and querying | Not verified against VictoriaMetrics | None yet; compare with `ev_9f1c5be9e71bd494e579a20defb66a71cb32f185a80a83e5642351e80ca6aa6a` | Candidate code path and tests must be inspected |
-| `AMAZON-TIMESTREAM-CAP-AD8DCC0A` — Memory and magnetic storage tiers with retention policies | Not verified against VictoriaMetrics | None yet; compare with `ev_9f1c5be9e71bd494e579a20defb66a71cb32f185a80a83e5642351e80ca6aa6a` | Candidate code path and tests must be inspected |
-| `AMAZON-TIMESTREAM-CAP-4C24E4F6` — SQL analytics across recent and historical data | Not verified against VictoriaMetrics | None yet; compare with `ev_9f1c5be9e71bd494e579a20defb66a71cb32f185a80a83e5642351e80ca6aa6a` | Candidate code path and tests must be inspected |
-| `AMAZON-TIMESTREAM-CAP-84E6ED3E` — Serverless LiveAnalytics and managed InfluxDB options | Not verified against VictoriaMetrics | None yet; compare with `ev_9f1c5be9e71bd494e579a20defb66a71cb32f185a80a83e5642351e80ca6aa6a` | Candidate code path and tests must be inspected |
-| `AMAZON-TIMESTREAM-CAP-70B126F4` — Integrations with IoT, Kinesis, Telegraf, Grafana and AWS analytics | Not verified against VictoriaMetrics | None yet; compare with `ev_9f1c5be9e71bd494e579a20defb66a71cb32f185a80a83e5642351e80ca6aa6a` | Candidate code path and tests must be inspected |
+| `AMAZON-TIMESTREAM-CAP-EAA4D188` — Managed time-series storage and decoupled ingestion/query architecture are documented. | Not verified against VictoriaMetrics | None yet; compare with `ev_9f1c5be9e71bd494e579a20defb66a71cb32f185a80a83e5642351e80ca6aa6a` | Candidate code path and tests must be inspected |
+| `AMAZON-TIMESTREAM-CAP-5D9C1AB2` — Memory/magnetic tiers, retention, late data and upsert behavior are documented. | Not verified against VictoriaMetrics | None yet; compare with `ev_9f1c5be9e71bd494e579a20defb66a71cb32f185a80a83e5642351e80ca6aa6a` | Candidate code path and tests must be inspected |
+| `AMAZON-TIMESTREAM-CAP-2EED16B5` — SQL query, scheduled query and API surfaces are documented; account-specific behavior was not tested. | Not verified against VictoriaMetrics | None yet; compare with `ev_9f1c5be9e71bd494e579a20defb66a71cb32f185a80a83e5642351e80ca6aa6a` | Candidate code path and tests must be inspected |
+| `AMAZON-TIMESTREAM-CAP-4E52FE06` — VictoriaMetrics covers a self-hosted time-series foundation but not Timestream's IAM, serverless scaling, tier model, product split or managed AWS integrations. | Not verified against VictoriaMetrics | None yet; compare with `ev_9f1c5be9e71bd494e579a20defb66a71cb32f185a80a83e5642351e80ca6aa6a` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -288,11 +276,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-2042A9E0** → `REQ-FUNC-2042A9E0`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-AD8DCC0A** → `REQ-FUNC-AD8DCC0A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-4C24E4F6** → `REQ-FUNC-4C24E4F6`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-84E6ED3E** → `REQ-FUNC-84E6ED3E`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-70B126F4** → `REQ-FUNC-70B126F4`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-EAA4D188** → `REQ-FUNC-EAA4D188`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-5D9C1AB2** → `REQ-FUNC-5D9C1AB2`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-2EED16B5** → `REQ-FUNC-2EED16B5`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-4E52FE06** → `REQ-FUNC-4E52FE06`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -313,7 +300,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-2042A9E0, REQ-FUNC-AD8DCC0A, REQ-FUNC-4C24E4F6, REQ-FUNC-84E6ED3E, REQ-FUNC-70B126F4
+- **Requirements:** REQ-FUNC-EAA4D188, REQ-FUNC-5D9C1AB2, REQ-FUNC-2EED16B5, REQ-FUNC-4E52FE06
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -323,7 +310,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-2042A9E0, REQ-FUNC-AD8DCC0A, REQ-FUNC-4C24E4F6, REQ-FUNC-84E6ED3E, REQ-FUNC-70B126F4
+- **Requirements:** REQ-FUNC-EAA4D188, REQ-FUNC-5D9C1AB2, REQ-FUNC-2EED16B5, REQ-FUNC-4E52FE06
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -345,7 +332,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-2042A9E0, REQ-FUNC-AD8DCC0A, REQ-FUNC-4C24E4F6, REQ-FUNC-84E6ED3E, REQ-FUNC-70B126F4; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-EAA4D188, REQ-FUNC-5D9C1AB2, REQ-FUNC-2EED16B5, REQ-FUNC-4E52FE06; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -375,13 +362,27 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/timestream/) | Not recorded | Amazon Timestream is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/timestream/) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-timestream-identity` | Amazon Timestream for LiveAnalytics concepts — AWS documents time-series records, dimensions and measures and describes the service's use for metrics, IoT and telemetry. | [link](https://docs.aws.amazon.com/timestream/latest/developerguide/concepts.html) | 2026-11-03T00:00:00Z | Amazon Timestream provides managed time-series storage and analytics for high-volume telemetry and operational data. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-timestream-architecture` | Amazon Timestream architecture — AWS describes serverless architecture, memory-store writes, partitioning, replication and an adaptive query engine across stores. | [link](https://docs.aws.amazon.com/timestream/latest/developerguide/architecture.html) | 2026-11-03T00:00:00Z | Timestream for LiveAnalytics decouples ingestion, storage and query processing and automatically indexes and partitions data. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-timestream-storage` | Storage — AWS documents memory and magnetic stores, tier-specific optimization, retention policies and deletion after magnetic retention expires. | [link](https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html) | 2026-11-03T00:00:00Z | Timestream uses memory and magnetic storage tiers with configurable retention and automatic movement between tiers. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-timestream-writes` | Writes — AWS documents WriteRecords, magnetic-store writes, late timestamps, upsert behavior and write-to-read differences. | [link](https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html) | 2026-11-03T00:00:00Z | Timestream supports writes to memory or magnetic stores, late-arriving data and idempotent upserts. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-timestream-queries` | Queries — AWS documents a single SQL query path that accesses and combines memory and magnetic data without requiring the caller to select the tier. | [link](https://docs.aws.amazon.com/timestream/latest/developerguide/queries.html) | 2026-11-03T00:00:00Z | Timestream queries time-series data across storage tiers using SQL and time-series functions. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-timestream-schedules` | Schedule expressions for scheduled queries — AWS documents schedule expression forms, UTC execution and minimum schedule precision. | [link](https://docs.aws.amazon.com/timestream/latest/developerguide/scheduledqueries-schedule.html) | 2026-11-03T00:00:00Z | Timestream scheduled queries support cron and rate expressions with one-minute minimum precision in UTC. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-timestream-api` | Amazon Timestream API Reference — The official API reference covers Query, Write and service resource operations and data types. | [link](https://docs.aws.amazon.com/timestream/latest/APIReference/) | 2026-11-03T00:00:00Z | Timestream exposes documented Write and Query APIs and management operations for time-series resources. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-timestream-victoriametrics` | VictoriaMetrics — The official repository documents VictoriaMetrics' time-series storage, query and cluster capabilities and Apache-2.0 license. | [link](https://github.com/VictoriaMetrics/VictoriaMetrics) | 2026-11-03T00:00:00Z | VictoriaMetrics is an Apache-2.0 open-source time-series database and monitoring backend. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/timestream/) | 2026-11-03T00:00:00Z | Amazon Timestream is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/timestream/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/timestream/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/documentation-overview/timestream/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/timestream/faqs/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/timestream/latest/APIReference/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/cli/latest/reference/timestream-query/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/timestream/latest/developerguide/concepts.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/timestream/latest/developerguide/architecture.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-9` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/timestream/latest/developerguide/queries.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-10` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/timestream/latest/developerguide/scheduledqueries-schedule.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-11` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/cli/latest/reference/timestream-query/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_9f1c5be9e71bd494e579a20defb66a71cb32f185a80a83e5642351e80ca6aa6a` | Amazon Timestream Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/timestream/) | 2026-11-03T03:53:37.945Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Timestream, button: Connect with an AWS specialist, button: Play:, button: Real-time monitoring and alerting, button: IoT telemetry at scale, button: Real-time analytics, button: Predictive maintenance, button: Long-term telemetry retention and compliance, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Resources, link: FAQs, link: Customers, link: Products, link: Databases, link: here, link: Scale with ease Scale seamlessly to ingest millions of time-series data per second and process millions of queries per day with single-digit millisecond response times. Learn more, link: Fully managed Accelerate application development with this fully managed service that removes time-consuming database administrative tasks across all your time-series workloads. Learn more, link: Trusted security Secure your data with encryption at rest and in transit, private VPC endpoints, IAM authentication, custom keys with AWS KMS, and increased resiliency with AWS Backup. Learn more, link: Familiarity of open source Build time-series applications quickly using popular open source technologies, InfluxDB and Telegraf, at a fraction of the cost of existing relational solutions. Learn more, link: High availability Keep applications running through node failures and maintenance with InfluxDB 3 Enterprise, which distributes ingestion, querying, and compaction across a multi-node cluster. Read the documentation, link: Missing alt text value Autodesk improves product performance and reduces waste in manufacturing Read the testimonial, link: Missing alt text value PubNub processes trillions of messages per month Read the testimonial, link: Missing alt text value Trimble uses Timestream to support its IoT monitoring solution Read the testimonial, link: Training Learn with hands-on training Get started with Timestream, link: Documentation Dive deep on Timestream for InfluxDB Read the documentation, link: Console Start building in the console Sign in, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -454,22 +455,21 @@ Compare write throughput, dimensions and measures, timestamp precision, retentio
 
 Research must map Write and Query operations, schemas, consistency, duplicate and late-data behavior, scheduled queries, tier movement, retention, InfluxDB surfaces, errors, throttling, quotas, backup and region semantics. Any implementation must use original code and synthetic telemetry fixtures.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product, developer, API, CLI and FAQ documentation as primary sources. The generated RAE skill should instruct an agent to build an independent time-series implementation beginning with VictoriaMetrics-compatible ingestion or storage where useful, then add retention, tiering, SQL/query, scheduled rollups and integrations only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS service parity.
+Use the official product, developer, API, CLI and FAQ documentation as primary sources. The generated REA skill should instruct an agent to build an independent time-series implementation beginning with VictoriaMetrics-compatible ingestion or storage where useful, then add retention, tiering, SQL/query, scheduled rollups and integrations only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS service parity.
 
 # 12. Security, privacy, and compliance
 
 Verify IAM scope, encryption, KMS usage, VPC endpoints, retention and deletion, backups, logging, data residency and access to telemetry. Use synthetic metrics only. Never store credentials, private telemetry or personal data in the catalog, skill or report.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/timestream/ — official product scope.
-- https://aws.amazon.com/documentation-overview/timestream/ — architecture and storage-tier overview.
-- https://aws.amazon.com/timestream/faqs/ — current LiveAnalytics and InfluxDB product boundaries.
-- https://docs.aws.amazon.com/timestream/latest/APIReference/ — Write and Query API surface.
-- https://docs.aws.amazon.com/cli/latest/reference/timestream-query/ — AWS CLI command surface.
-- https://github.com/VictoriaMetrics/VictoriaMetrics — open-source time-series alternative.
+- **Product model:** [Timestream concepts](https://docs.aws.amazon.com/timestream/latest/developerguide/concepts.html) and [architecture](https://docs.aws.amazon.com/timestream/latest/developerguide/architecture.html) support the LiveAnalytics time-series, partitioning and decoupled service claims.
+- **Storage and writes:** [storage](https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html) and [writes](https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html) document memory/magnetic tiers, retention, late data, upserts and write behavior.
+- **Queries and schedules:** [queries](https://docs.aws.amazon.com/timestream/latest/developerguide/queries.html) and [scheduled-query expressions](https://docs.aws.amazon.com/timestream/latest/developerguide/scheduledqueries-schedule.html) support SQL across tiers and schedule claims.
+- **API:** [Timestream API Reference](https://docs.aws.amazon.com/timestream/latest/APIReference/) supports Query/Write and management surface claims.
+- **Alternative:** [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) is the recorded Apache-2.0 time-series foundation; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -481,13 +481,13 @@ Verify IAM scope, encryption, KMS usage, VPC endpoints, retention and deletion, 
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources, command surface and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, LiveAnalytics architecture, storage tiers, retention, writes, SQL queries, scheduled queries and API surface are documented. Exact consistency, quotas, pricing, regional behavior and InfluxDB product boundaries remain unknown and are not asserted.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-timestream` and inspect canonical identity with `npx rae-faang products show amazon-timestream --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-timestream` and inspect canonical identity with `npx rea-faang products show amazon-timestream --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -500,7 +500,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-timestream --out ./amazon-timestream.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-timestream --out ./amazon-timestream-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-timestream --out ./amazon-timestream.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-timestream --out ./amazon-timestream-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -542,11 +542,25 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/timestream/) — Amazon Timestream is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://docs.aws.amazon.com/timestream/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [Amazon Timestream for LiveAnalytics concepts](https://docs.aws.amazon.com/timestream/latest/developerguide/concepts.html) — Amazon Timestream provides managed time-series storage and analytics for high-volume telemetry and operational data. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Amazon Timestream architecture](https://docs.aws.amazon.com/timestream/latest/developerguide/architecture.html) — Timestream for LiveAnalytics decouples ingestion, storage and query processing and automatically indexes and partitions data. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Storage](https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html) — Timestream uses memory and magnetic storage tiers with configurable retention and automatic movement between tiers. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Writes](https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html) — Timestream supports writes to memory or magnetic stores, late-arriving data and idempotent upserts. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Queries](https://docs.aws.amazon.com/timestream/latest/developerguide/queries.html) — Timestream queries time-series data across storage tiers using SQL and time-series functions. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Schedule expressions for scheduled queries](https://docs.aws.amazon.com/timestream/latest/developerguide/scheduledqueries-schedule.html) — Timestream scheduled queries support cron and rate expressions with one-minute minimum precision in UTC. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Amazon Timestream API Reference](https://docs.aws.amazon.com/timestream/latest/APIReference/) — Timestream exposes documented Write and Query APIs and management operations for time-series resources. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [VictoriaMetrics](https://github.com/VictoriaMetrics/VictoriaMetrics) — VictoriaMetrics is an Apache-2.0 open-source time-series database and monitoring backend. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://aws.amazon.com/timestream/) — Amazon Timestream is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/timestream/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/timestream/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://aws.amazon.com/documentation-overview/timestream/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://aws.amazon.com/timestream/faqs/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/timestream/latest/APIReference/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/timestream/latest/developerguide/concepts.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/timestream/latest/developerguide/architecture.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/timestream/latest/developerguide/queries.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/timestream/latest/developerguide/scheduledqueries-schedule.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/cli/latest/reference/timestream-query/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Timestream Public web-surface observation (REA)](https://aws.amazon.com/timestream/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Timestream, button: Connect with an AWS specialist, button: Play:, button: Real-time monitoring and alerting, button: IoT telemetry at scale, button: Real-time analytics, button: Predictive maintenance, button: Long-term telemetry retention and compliance, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Resources, link: FAQs, link: Customers, link: Products, link: Databases, link: here, link: Scale with ease Scale seamlessly to ingest millions of time-series data per second and process millions of queries per day with single-digit millisecond response times. Learn more, link: Fully managed Accelerate application development with this fully managed service that removes time-consuming database administrative tasks across all your time-series workloads. Learn more, link: Trusted security Secure your data with encryption at rest and in transit, private VPC endpoints, IAM authentication, custom keys with AWS KMS, and increased resiliency with AWS Backup. Learn more, link: Familiarity of open source Build time-series applications quickly using popular open source technologies, InfluxDB and Telegraf, at a fraction of the cost of existing relational solutions. Learn more, link: High availability Keep applications running through node failures and maintenance with InfluxDB 3 Enterprise, which distributes ingestion, querying, and compaction across a multi-node cluster. Read the documentation, link: Missing alt text value Autodesk improves product performance and reduces waste in manufacturing Read the testimonial, link: Missing alt text value PubNub processes trillions of messages per month Read the testimonial, link: Missing alt text value Trimble uses Timestream to support its IoT monitoring solution Read the testimonial, link: Training Learn with hands-on training Get started with Timestream, link: Documentation Dive deep on Timestream for InfluxDB Read the documentation, link: Console Start building in the console Sign in, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:53:37.945Z).

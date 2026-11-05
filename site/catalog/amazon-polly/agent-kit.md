@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Polly (amazon-polly); invest
 
 # Amazon Polly — implementation skill (`amazon-polly`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Polly**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Polly (amazon-polly); invest
 
 This is the coding-agent skill for **Amazon Polly** (`amazon-polly`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-polly.md` from the catalog page, or run `npx rae-faang amazon-polly --out ./amazon-polly.md`, `npx rae-faang skills generate amazon-polly` or `npx rae-faang build agent-kit amazon-polly --out ./amazon-polly-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-polly.md` from the catalog page, or run `npx rea-faang amazon-polly --out ./amazon-polly.md`, `npx rea-faang skills generate amazon-polly` or `npx rea-faang build agent-kit amazon-polly --out ./amazon-polly-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Polly / `amazon-polly` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/polly/](https://aws.amazon.com/polly/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/polly/](https://docs.aws.amazon.com/polly/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-polly` | `research/companies/amazon_aws/products/amazon-polly.md` |
+| Research dossier | `npx rea-faang research dossier amazon-polly` | `research/companies/amazon_aws/products/amazon-polly.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-polly.md` (captured 2026-11-03T03:41:01.957Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-polly.json` (`ev_66cc563a8489bfa246371ec8f36bfb0859be845d197240f9dabe48105bc8f33f`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-polly --format json` and `npx rae-faang research dossier amazon-polly` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-polly --format json` and `npx rea-faang research dossier amazon-polly` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-POLLY-CAP-E3A9DD32`, `AMAZON-POLLY-CAP-58EABAE5`, `AMAZON-POLLY-CAP-8FEB4D99`, `AMAZON-POLLY-CAP-7F5E76C3`, `AMAZON-POLLY-CAP-CCEE9477`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-POLLY-CAP-CB394A64`, `AMAZON-POLLY-CAP-2288A448`, `AMAZON-POLLY-CAP-96C944C0`, `AMAZON-POLLY-CAP-DBAB304C`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-POLLY-CAP-E3A9DD32` | cloud text-to-speech synthesis | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-POLLY-CAP-58EABAE5` | standard, neural, long-form and generative voice engines | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-POLLY-CAP-8FEB4D99` | dozens of languages and voice options | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-POLLY-CAP-7F5E76C3` | SSML, lexicons, pronunciation, pitch, rate and volume controls | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-POLLY-CAP-CCEE9477` | streaming and MP3, Ogg, PCM and telephony audio outputs | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-POLLY-CAP-CB394A64` | Managed synthesis and documented voice-engine families are verified. | VERIFIED | `ev-amazon-polly-identity`, `ev-amazon-polly-engines` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-POLLY-CAP-2288A448` | Plaintext/SSML synthesis, voice selection and audio output parameters are documented. | VERIFIED | `ev-amazon-polly-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-POLLY-CAP-96C944C0` | Speech marks and pronunciation lexicons are documented. | VERIFIED | `ev-amazon-polly-speechmarks`, `ev-amazon-polly-lexicons` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-POLLY-CAP-DBAB304C` | Piper covers local synthesis, but Polly's hosted API, voice portfolio, language coverage and managed AWS service plane remain distinct. | VERIFIED | `ev-amazon-polly-piper`, `ev-amazon-polly-engines` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: AI/ML Services submenu`, `button: Create an AWS account`, `button: Get started with Amazon Polly`, `button: Generate speech in dozens of languages.`, `button: Engage customers with a natural-sounding voice`, `button: Create audio for media at a fraction of the cost`, `button: Is Amazon Polly text-to-speech free?`, `button: How many voices does Amazon Polly have?`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Features`, `link: Pricing`, `link: Getting Started`, `link: Resources`, `link: Customers`, `link: FAQs`, `link: Products`, `link: Artificial Intelligence`, `button: What is the sample rate of Amazon Polly?`, `button: Does Alexa use Amazon Polly?`, `button: Is Amazon Polly open source?`, `link: Missing alt text value The Washington Post offers readers audio across platforms Learn more`, `link: Missing alt text value Trinity Audio embeds TTS players on its website Learn more`, `link: Missing alt text value USA Today Network efficiently delivers breaking news in audio content Learn more`, `link: Service Get started with a free account Sign up`, `link: Pricing Visit the pricing page Visit pricing`, `link: Blog Learn how to customize Amazon Polly Read the blog`, `link: Contact us Speak with an expert Contact us`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **cloud text-to-speech synthesis:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **standard, neural, long-form and generative voice engines:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **dozens of languages and voice options:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **SSML, lexicons, pronunciation, pitch, rate and volume controls:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **streaming and MP3, Ogg, PCM and telephony audio outputs:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Managed synthesis and documented voice-engine families are verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Plaintext/SSML synthesis, voice selection and audio output parameters are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Speech marks and pronunciation lexicons are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Piper covers local synthesis, but Polly's hosted API, voice portfolio, language coverage and managed AWS service plane remain distinct.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-E3A9DD32 — cloud text-to-speech synthesis
+### REQ-FUNC-CB394A64 — Managed synthesis and documented voice-engine families are verified.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-polly-identity`, `ev-amazon-polly-engines`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-E3A9DD32`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-POLLY-CAP-E3A9DD32` → `REQ-FUNC-E3A9DD32` → `TEST-FUNC-E3A9DD32`.
+- **Associated test ID:** `TEST-FUNC-CB394A64`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-POLLY-CAP-CB394A64` → `REQ-FUNC-CB394A64` → `TEST-FUNC-CB394A64`.
 
-### REQ-FUNC-58EABAE5 — standard, neural, long-form and generative voice engines
+### REQ-FUNC-2288A448 — Plaintext/SSML synthesis, voice selection and audio output parameters are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-polly-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-58EABAE5`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-POLLY-CAP-58EABAE5` → `REQ-FUNC-58EABAE5` → `TEST-FUNC-58EABAE5`.
+- **Associated test ID:** `TEST-FUNC-2288A448`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-POLLY-CAP-2288A448` → `REQ-FUNC-2288A448` → `TEST-FUNC-2288A448`.
 
-### REQ-FUNC-8FEB4D99 — dozens of languages and voice options
+### REQ-FUNC-96C944C0 — Speech marks and pronunciation lexicons are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-polly-speechmarks`, `ev-amazon-polly-lexicons`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-8FEB4D99`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-POLLY-CAP-8FEB4D99` → `REQ-FUNC-8FEB4D99` → `TEST-FUNC-8FEB4D99`.
+- **Associated test ID:** `TEST-FUNC-96C944C0`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-POLLY-CAP-96C944C0` → `REQ-FUNC-96C944C0` → `TEST-FUNC-96C944C0`.
 
-### REQ-FUNC-7F5E76C3 — SSML, lexicons, pronunciation, pitch, rate and volume controls
+### REQ-FUNC-DBAB304C — Piper covers local synthesis, but Polly's hosted API, voice portfolio, language coverage and managed AWS service plane remain distinct.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-polly-piper`, `ev-amazon-polly-engines`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-7F5E76C3`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-POLLY-CAP-7F5E76C3` → `REQ-FUNC-7F5E76C3` → `TEST-FUNC-7F5E76C3`.
-
-### REQ-FUNC-CCEE9477 — streaming and MP3, Ogg, PCM and telephony audio outputs
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-CCEE9477`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-POLLY-CAP-CCEE9477` → `REQ-FUNC-CCEE9477` → `TEST-FUNC-CCEE9477`.
+- **Associated test ID:** `TEST-FUNC-DBAB304C`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-POLLY-CAP-DBAB304C` → `REQ-FUNC-DBAB304C` → `TEST-FUNC-DBAB304C`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -237,11 +226,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `AMAZON-POLLY-CAP-E3A9DD32` — cloud text-to-speech synthesis | Not verified against Piper | None yet; compare with `ev_66cc563a8489bfa246371ec8f36bfb0859be845d197240f9dabe48105bc8f33f` | Candidate code path and tests must be inspected |
-| `AMAZON-POLLY-CAP-58EABAE5` — standard, neural, long-form and generative voice engines | Not verified against Piper | None yet; compare with `ev_66cc563a8489bfa246371ec8f36bfb0859be845d197240f9dabe48105bc8f33f` | Candidate code path and tests must be inspected |
-| `AMAZON-POLLY-CAP-8FEB4D99` — dozens of languages and voice options | Not verified against Piper | None yet; compare with `ev_66cc563a8489bfa246371ec8f36bfb0859be845d197240f9dabe48105bc8f33f` | Candidate code path and tests must be inspected |
-| `AMAZON-POLLY-CAP-7F5E76C3` — SSML, lexicons, pronunciation, pitch, rate and volume controls | Not verified against Piper | None yet; compare with `ev_66cc563a8489bfa246371ec8f36bfb0859be845d197240f9dabe48105bc8f33f` | Candidate code path and tests must be inspected |
-| `AMAZON-POLLY-CAP-CCEE9477` — streaming and MP3, Ogg, PCM and telephony audio outputs | Not verified against Piper | None yet; compare with `ev_66cc563a8489bfa246371ec8f36bfb0859be845d197240f9dabe48105bc8f33f` | Candidate code path and tests must be inspected |
+| `AMAZON-POLLY-CAP-CB394A64` — Managed synthesis and documented voice-engine families are verified. | Not verified against Piper | None yet; compare with `ev_66cc563a8489bfa246371ec8f36bfb0859be845d197240f9dabe48105bc8f33f` | Candidate code path and tests must be inspected |
+| `AMAZON-POLLY-CAP-2288A448` — Plaintext/SSML synthesis, voice selection and audio output parameters are documented. | Not verified against Piper | None yet; compare with `ev_66cc563a8489bfa246371ec8f36bfb0859be845d197240f9dabe48105bc8f33f` | Candidate code path and tests must be inspected |
+| `AMAZON-POLLY-CAP-96C944C0` — Speech marks and pronunciation lexicons are documented. | Not verified against Piper | None yet; compare with `ev_66cc563a8489bfa246371ec8f36bfb0859be845d197240f9dabe48105bc8f33f` | Candidate code path and tests must be inspected |
+| `AMAZON-POLLY-CAP-DBAB304C` — Piper covers local synthesis, but Polly's hosted API, voice portfolio, language coverage and managed AWS service plane remain distinct. | Not verified against Piper | None yet; compare with `ev_66cc563a8489bfa246371ec8f36bfb0859be845d197240f9dabe48105bc8f33f` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -288,11 +276,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-E3A9DD32** → `REQ-FUNC-E3A9DD32`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-58EABAE5** → `REQ-FUNC-58EABAE5`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-8FEB4D99** → `REQ-FUNC-8FEB4D99`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-7F5E76C3** → `REQ-FUNC-7F5E76C3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-CCEE9477** → `REQ-FUNC-CCEE9477`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-CB394A64** → `REQ-FUNC-CB394A64`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-2288A448** → `REQ-FUNC-2288A448`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-96C944C0** → `REQ-FUNC-96C944C0`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-DBAB304C** → `REQ-FUNC-DBAB304C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -313,7 +300,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-E3A9DD32, REQ-FUNC-58EABAE5, REQ-FUNC-8FEB4D99, REQ-FUNC-7F5E76C3, REQ-FUNC-CCEE9477
+- **Requirements:** REQ-FUNC-CB394A64, REQ-FUNC-2288A448, REQ-FUNC-96C944C0, REQ-FUNC-DBAB304C
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -323,7 +310,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-E3A9DD32, REQ-FUNC-58EABAE5, REQ-FUNC-8FEB4D99, REQ-FUNC-7F5E76C3, REQ-FUNC-CCEE9477
+- **Requirements:** REQ-FUNC-CB394A64, REQ-FUNC-2288A448, REQ-FUNC-96C944C0, REQ-FUNC-DBAB304C
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -345,7 +332,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-E3A9DD32, REQ-FUNC-58EABAE5, REQ-FUNC-8FEB4D99, REQ-FUNC-7F5E76C3, REQ-FUNC-CCEE9477; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-CB394A64, REQ-FUNC-2288A448, REQ-FUNC-96C944C0, REQ-FUNC-DBAB304C; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -375,13 +362,20 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/polly/) | Not recorded | Amazon Polly is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/polly/) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-polly-identity` | How Amazon Polly works — The official guide describes input text, voice-engine selection, synthesis and audio-output formats. | [link](https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html) | Not recorded | Amazon Polly converts plaintext or SSML input into synthesized speech audio streams. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-polly-engines` | Amazon Polly voice engines — The official guide lists four voice-engine families and explains that voice support varies by engine. | [link](https://docs.aws.amazon.com/polly/latest/dg/voice-engines-polly.html) | Not recorded | Amazon Polly documents standard, neural, long-form and generative voice engines. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-polly-api` | SynthesizeSpeech API — The official API reference documents the request syntax, SSML/plaintext input and supported engine values. | [link](https://docs.aws.amazon.com/polly/latest/APIReference/API_SynthesizeSpeech.html) | Not recorded | The SynthesizeSpeech API accepts engine, language, lexicon, output format, speech marks, text type and voice parameters. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-polly-speechmarks` | Speech mark types — The official documentation describes speech-mark requests and metadata types used to synchronize audio with visual experiences. | [link](https://docs.aws.amazon.com/polly/latest/dg/using-speechmarks.html) | Not recorded | Polly can return sentence, word, viseme and SSML speech-mark metadata. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-polly-lexicons` | Managing lexicons — The official guide documents storing lexicons in an AWS Region and applying them to SynthesizeSpeech requests. | [link](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html) | Not recorded | Polly supports regional pronunciation lexicons that can be applied during synthesis. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-polly-piper` | Piper — The official repository identifies Piper as a local TTS engine and publishes its current license and project scope. | [link](https://github.com/OHF-Voice/piper1-gpl) | Not recorded | Piper is a fast local neural text-to-speech engine under GPL-3.0. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/polly/) | 2026-11-03T00:00:00Z | Amazon Polly is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/polly/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/polly/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/documentation-overview/polly/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/polly/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/ai/responsible-ai/amazon-polly/overview.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/polly/latest/APIReference/API_SynthesizeSpeech.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/polly/latest/dg/using-speechmarks.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://github.com/OHF-Voice/piper1-gpl) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_66cc563a8489bfa246371ec8f36bfb0859be845d197240f9dabe48105bc8f33f` | Amazon Polly Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/polly/) | 2026-11-03T03:41:01.957Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: AI/ML Services submenu, button: Create an AWS account, button: Get started with Amazon Polly, button: Generate speech in dozens of languages., button: Engage customers with a natural-sounding voice, button: Create audio for media at a fraction of the cost, button: Is Amazon Polly text-to-speech free?, button: How many voices does Amazon Polly have?, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Getting Started, link: Resources, link: Customers, link: FAQs, link: Products, link: Artificial Intelligence, button: What is the sample rate of Amazon Polly?, button: Does Alexa use Amazon Polly?, button: Is Amazon Polly open source?, link: Missing alt text value The Washington Post offers readers audio across platforms Learn more, link: Missing alt text value Trinity Audio embeds TTS players on its website Learn more, link: Missing alt text value USA Today Network efficiently delivers breaking news in audio content Learn more, link: Service Get started with a free account Sign up, link: Pricing Visit the pricing page Visit pricing, link: Blog Learn how to customize Amazon Polly Read the blog, link: Contact us Speak with an expert Contact us, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -454,7 +448,7 @@ Compare text normalization, SSML support, pronunciation and lexicon behavior, vo
 
 The remaining research must map engine and voice matrices, SSML and lexicon semantics, speech-mark schemas, output formats, streaming behavior, quotas, pricing, regional endpoints, error handling, model licensing and sensitive-text handling.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, API references and authorized test inputs. Capture representative synthesis, SSML, lexicon, speech-mark, streaming and failure cases. Use Piper only after documenting the partial-foundation verdict, and build any independent implementation with original code, compatible licensing and no AWS branding or protected assets.
 
@@ -462,13 +456,16 @@ Use official AWS documentation, API references and authorized test inputs. Captu
 
 Verify IAM scope, TLS, regional processing, sensitive-text retention, request and audio logging, KMS or storage boundaries, model and voice licensing, and access to generated audio. Do not infer a compliance guarantee from the product page alone.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
 - https://aws.amazon.com/polly/ — official product capabilities and engines.
 - https://aws.amazon.com/documentation-overview/polly/ — documentation entry point and integration scope.
 - https://docs.aws.amazon.com/polly/ — official developer documentation.
-- https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html — text, SSML, voices and output workflow.
-- https://github.com/OHF-Voice/piper1-gpl — open-source local alternative and license.
+- [How Amazon Polly works](https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html) — official text/SSML, voice-engine and audio-output workflow.
+- [SynthesizeSpeech API](https://docs.aws.amazon.com/polly/latest/APIReference/API_SynthesizeSpeech.html) — official request schema, engines, voices and output parameters.
+- [Speech mark types](https://docs.aws.amazon.com/polly/latest/dg/using-speechmarks.html) — official word, sentence, viseme and SSML metadata behavior.
+- [Managing lexicons](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html) — official pronunciation lexicon behavior and regional scope.
+- [Piper](https://github.com/OHF-Voice/piper1-gpl) — open-source local alternative and GPL-3.0 license.
 
 # 14. Unknowns
 
@@ -479,13 +476,13 @@ Verify IAM scope, TLS, regional processing, sensitive-text retention, request an
 
 # 15. Research status
 
-Pending deeper REA validation. The product identity, official sources and partial open-source alternative are documented; no full equivalence claim is made.
+`researched`: identity, synthesis inputs, engines, voices, output formats, speech marks, lexicons and API shape were verified from official AWS documentation. Piper remains a partial local alternative; current quotas, pricing, regional matrices and full voice/model licensing remain outside this pass.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-polly` and inspect canonical identity with `npx rae-faang products show amazon-polly --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-polly` and inspect canonical identity with `npx rea-faang products show amazon-polly --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -498,7 +495,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-polly --out ./amazon-polly.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-polly --out ./amazon-polly-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-polly --out ./amazon-polly.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-polly --out ./amazon-polly-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -540,11 +537,18 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/polly/) — Amazon Polly is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://docs.aws.amazon.com/polly/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [How Amazon Polly works](https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html) — Amazon Polly converts plaintext or SSML input into synthesized speech audio streams. (VERIFIED; accessed Not recorded).
+- [Amazon Polly voice engines](https://docs.aws.amazon.com/polly/latest/dg/voice-engines-polly.html) — Amazon Polly documents standard, neural, long-form and generative voice engines. (VERIFIED; accessed Not recorded).
+- [SynthesizeSpeech API](https://docs.aws.amazon.com/polly/latest/APIReference/API_SynthesizeSpeech.html) — The SynthesizeSpeech API accepts engine, language, lexicon, output format, speech marks, text type and voice parameters. (VERIFIED; accessed Not recorded).
+- [Speech mark types](https://docs.aws.amazon.com/polly/latest/dg/using-speechmarks.html) — Polly can return sentence, word, viseme and SSML speech-mark metadata. (VERIFIED; accessed Not recorded).
+- [Managing lexicons](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html) — Polly supports regional pronunciation lexicons that can be applied during synthesis. (VERIFIED; accessed Not recorded).
+- [Piper](https://github.com/OHF-Voice/piper1-gpl) — Piper is a fast local neural text-to-speech engine under GPL-3.0. (VERIFIED; accessed Not recorded).
+- [Official product page](https://aws.amazon.com/polly/) — Amazon Polly is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/polly/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/polly/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://aws.amazon.com/documentation-overview/polly/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/polly/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/ai/responsible-ai/amazon-polly/overview.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/polly/latest/APIReference/API_SynthesizeSpeech.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/polly/latest/dg/using-speechmarks.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://github.com/OHF-Voice/piper1-gpl) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Polly Public web-surface observation (REA)](https://aws.amazon.com/polly/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: AI/ML Services submenu, button: Create an AWS account, button: Get started with Amazon Polly, button: Generate speech in dozens of languages., button: Engage customers with a natural-sounding voice, button: Create audio for media at a fraction of the cost, button: Is Amazon Polly text-to-speech free?, button: How many voices does Amazon Polly have?, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Getting Started, link: Resources, link: Customers, link: FAQs, link: Products, link: Artificial Intelligence, button: What is the sample rate of Amazon Polly?, button: Does Alexa use Amazon Polly?, button: Is Amazon Polly open source?, link: Missing alt text value The Washington Post offers readers audio across platforms Learn more, link: Missing alt text value Trinity Audio embeds TTS players on its website Learn more, link: Missing alt text value USA Today Network efficiently delivers breaking news in audio content Learn more, link: Service Get started with a free account Sign up, link: Pricing Visit the pricing page Visit pricing, link: Blog Learn how to customize Amazon Polly Read the blog, link: Contact us Speak with an expert Contact us, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:41:01.957Z).

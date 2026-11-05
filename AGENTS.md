@@ -43,12 +43,12 @@ A task is owned by exactly one agent at a time. ACE enforces the lease.
 
 ### Project Header Section
 
-RAE FAANG is operated inside its project Header Section, whose canonical
-logical code is `rae-faang`. The Section is the project execution boundary and
+REA FAANG is operated inside its project Header Section, whose canonical
+logical code is `rea-faang`. The Section is the project execution boundary and
 is distinct from the repository, workspace, or a department Section.
 
 ```text
-Header Section: rae-faang
+Header Section: rea-faang
 └── Supervisor (required)
     └── Workers created or reused by that supervisor
 ```
@@ -83,14 +83,14 @@ ace doctor --json     # environment diagnostics
 
 **Deterministic catalogue work (the source of truth)**
 ```bash
-npx rae-faang products list [--company ID] [--status STATUS] [--format json]
-npx rae-faang research coverage [--company ID] [--format json]
-npx rae-faang research validate [--format json]     # structural integrity
-npx rae-faang gaps all                              # inventory shortfalls
-npx rae-faang opportunities validate                # build_missing w/ specs
-npx rae-faang skills generate <product-id>          # portable skill in current directory
-npx rae-faang skills validate --all                 # bundled skill checks
-npx rae-faang skills coverage --format json         # skill research gaps
+npx rea-faang products list [--company ID] [--status STATUS] [--format json]
+npx rea-faang research coverage [--company ID] [--format json]
+npx rea-faang research validate [--format json]     # structural integrity
+npx rea-faang gaps all                              # inventory shortfalls
+npx rea-faang opportunities validate                # build_missing w/ specs
+npx rea-faang skills generate <product-id>          # portable skill in current directory
+npx rea-faang skills validate --all                 # bundled skill checks
+npx rea-faang skills coverage --format json         # skill research gaps
 npm run validate   # research + alternatives validation
 npm test           # node:test suite over the CLI + schemas
 ```
@@ -167,7 +167,7 @@ handoff artifact is verified.
 1. Add one line to `catalog/products.jsonl` (valid `product_type` — check
    `catalog/schema/product.schema.json`).
 2. Create `research/companies/<company>/products/<id>.md` with valid frontmatter.
-3. Run `npx rae-faang research validate` until clean, then `npm test`.
+3. Run `npx rea-faang research validate` until clean, then `npm test`.
 
 **Add or change the open-source landscape or the website**
 1. Edit `tools/skills/catalog-data.mjs` (alternatives, links, licences, verdicts)
@@ -180,7 +180,7 @@ handoff artifact is verified.
 **Research a product**
 Fill sections 1–15 of its dossier from public, authorized sources; cite each
 material claim in `evidence[]`; set `research_status`, `last_researched_at`, and
-`research_confidence`. Then `npx rae-faang research coverage --company <id>`.
+`research_confidence`. Then `npx rea-faang research coverage --company <id>`.
 
 **Specify a product**
 Work inside `products/<company>/<product>/specs/` — follow the standard set

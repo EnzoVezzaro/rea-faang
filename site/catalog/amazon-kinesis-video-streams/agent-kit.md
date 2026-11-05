@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Kinesis Video Streams (amazo
 
 This is the coding-agent skill for **Amazon Kinesis Video Streams** (`amazon-kinesis-video-streams`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-kinesis-video-streams.md` from the catalog page, or run `npx rae-faang amazon-kinesis-video-streams --out ./amazon-kinesis-video-streams.md`, `npx rae-faang skills generate amazon-kinesis-video-streams` or `npx rae-faang build agent-kit amazon-kinesis-video-streams --out ./amazon-kinesis-video-streams-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-kinesis-video-streams.md` from the catalog page, or run `npx rea-faang amazon-kinesis-video-streams --out ./amazon-kinesis-video-streams.md`, `npx rea-faang skills generate amazon-kinesis-video-streams` or `npx rea-faang build agent-kit amazon-kinesis-video-streams --out ./amazon-kinesis-video-streams-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Kinesis Video Streams / `amazon-kinesis-video-streams` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/kinesis/video-streams/](https://aws.amazon.com/kinesis/video-streams/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-kinesis-video-streams` | `research/companies/amazon_aws/products/amazon-kinesis-video-streams.md` |
+| Research dossier | `npx rea-faang research dossier amazon-kinesis-video-streams` | `research/companies/amazon_aws/products/amazon-kinesis-video-streams.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-kinesis-video-streams.md` (captured 2026-11-03T03:17:56.697Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-kinesis-video-streams.json` (`ev_3b7b49cc95f90cb78d6de2589d0a0d5030374fc4e986b43ce2574bdd7c9515ba`) | Catalog evidence |
 | Alternative candidates | None recorded — this is a research gap | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-kinesis-video-streams --format json` and `npx rae-faang research dossier amazon-kinesis-video-streams` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-kinesis-video-streams --format json` and `npx rea-faang research dossier amazon-kinesis-video-streams` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -447,7 +447,7 @@ Open-source media stacks can provide RTSP/RTMP/WebRTC ingestion and playback, bu
 
 REA should map producer SDKs, codecs, fragment/container behavior, timestamp/index semantics, retention, HLS playback, GetMedia/archived APIs, WebRTC signaling and cloud forwarding, edge recording, tags, IAM/KMS, quotas and failure recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official Kinesis Video Streams product page, developer guide, WebRTC guide, API reference and CLI reference as research surfaces. A clean-room implementation should compose independently licensed media components, document codec and latency differences, and avoid copying AWS device SDK or control-plane internals.
 
@@ -478,7 +478,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-kinesis-video-streams` and inspect canonical identity with `npx rae-faang products show amazon-kinesis-video-streams --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-kinesis-video-streams` and inspect canonical identity with `npx rea-faang products show amazon-kinesis-video-streams --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -491,7 +491,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-kinesis-video-streams --out ./amazon-kinesis-video-streams.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-kinesis-video-streams --out ./amazon-kinesis-video-streams-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-kinesis-video-streams --out ./amazon-kinesis-video-streams.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-kinesis-video-streams --out ./amazon-kinesis-video-streams-agent`.
 
 ### Multi-agent task plan and outputs
 

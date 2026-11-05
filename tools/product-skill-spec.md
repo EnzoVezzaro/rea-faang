@@ -2,7 +2,7 @@
 
 ## Purpose and sources of truth
 
-Compile one stable, standalone build skill per product from existing canonical RAE FAANG records. The deterministic compiler is `tools/product-skill-generator.mjs`; its inputs are:
+Compile one stable, standalone build skill per product from existing canonical REA FAANG records. The deterministic compiler is `tools/product-skill-generator.mjs`; its inputs are:
 
 1. Identity and lifecycle: `catalog/products.jsonl` and `catalog/companies.json`.
 2. Research notes and claim-level evidence: `research/companies/<company_id>/products/<id>.md` and product `evidence[]` where present.
@@ -52,4 +52,4 @@ Question-driven investigations use: `QUESTION → SELECT TOOL → INVESTIGATE �
 
 ## CLI and maintenance
 
-Use the existing CLI grouping. The product-ID shorthand `rae <product-id> --out ./<product-id>.md` writes one portable Markdown skill (default: `./<product-id>.md`); `build agent-kit <product-id>` separately generates a `skill.md` + `mcp.json` kit. Explicit skill commands remain `rae skills generate <product-id>` or `rae skills generate --all`, `rae skills validate [<product-id>|--all]`, and `rae skills coverage [--format json]`. `--out` is supported for one-product generation. A product-ID operation must not require a full catalog rebuild. Keep the catalog/index generated, and run existing skill/site checks after generation.
+Use the existing CLI grouping. The product-ID shorthand `rea <product-id> --out ./<product-id>.md` writes one portable Markdown skill (default: `./<product-id>.md`); `build agent-kit <product-id>` separately generates a `skill.md` + `mcp.json` kit. Explicit skill commands remain `rea skills generate <product-id>` or `rea skills generate --all`, `rea skills validate [<product-id>|--all]`, and `rea skills coverage [--format json]`. `--out` is supported for one-product generation. A product-ID operation must not require a full catalog rebuild. Keep the catalog/index generated, and run existing skill/site checks after generation.

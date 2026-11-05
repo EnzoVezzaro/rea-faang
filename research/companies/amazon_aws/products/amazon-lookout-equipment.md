@@ -86,7 +86,7 @@ Open-source time-series and anomaly-detection systems can reproduce portions of 
 
 Historical REA should map data format, dataset/component limits, model training, labeling, evaluation, inference, scheduling, result schemas, APIs, quotas, Regions, failure modes and migration/retirement behavior.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the archived official guides and service-history notice as research surfaces. Any replacement should use independently licensed time-series and anomaly-detection components, document differences and not imply compatibility with a service that AWS no longer operates.
 

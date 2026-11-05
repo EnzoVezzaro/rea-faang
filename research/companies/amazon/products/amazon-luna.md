@@ -87,7 +87,7 @@ Self-hosted game streaming works (Sunshine + Moonlight) but streams your own mac
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Partial. The streaming technology is open and self-hostable; the cloud game catalogue is not replicable.
 
@@ -124,6 +124,6 @@ Self-hosted game streaming works (Sunshine + Moonlight) but streams your own mac
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Partial. The streaming technology is open and self-hostable; the cloud game catalogue is not replicable.

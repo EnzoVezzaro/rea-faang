@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Rekognition (amazon-rekognit
 
 # Amazon Rekognition — implementation skill (`amazon-rekognition`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Rekognition**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Rekognition (amazon-rekognit
 
 This is the coding-agent skill for **Amazon Rekognition** (`amazon-rekognition`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-rekognition.md` from the catalog page, or run `npx rae-faang amazon-rekognition --out ./amazon-rekognition.md`, `npx rae-faang skills generate amazon-rekognition` or `npx rae-faang build agent-kit amazon-rekognition --out ./amazon-rekognition-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-rekognition.md` from the catalog page, or run `npx rea-faang amazon-rekognition --out ./amazon-rekognition.md`, `npx rea-faang skills generate amazon-rekognition` or `npx rea-faang build agent-kit amazon-rekognition --out ./amazon-rekognition-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Rekognition / `amazon-rekognition` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/rekognition/](https://aws.amazon.com/rekognition/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/rekognition/latest/dg/](https://docs.aws.amazon.com/rekognition/latest/dg/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-rekognition` | `research/companies/amazon_aws/products/amazon-rekognition.md` |
+| Research dossier | `npx rea-faang research dossier amazon-rekognition` | `research/companies/amazon_aws/products/amazon-rekognition.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-rekognition.md` (captured 2026-11-03T03:45:19.608Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-rekognition.json` (`ev_7d5a666e78a5f5b33449f0ec9a2ac500d1851d6d39a5edd29edd019c16051426`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-rekognition --format json` and `npx rae-faang research dossier amazon-rekognition` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-rekognition --format json` and `npx rea-faang research dossier amazon-rekognition` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-REKOGNITION-CAP-23E91D1D`, `AMAZON-REKOGNITION-CAP-DB5DBA95`, `AMAZON-REKOGNITION-CAP-4363E1FC`, `AMAZON-REKOGNITION-CAP-F025BABE`, `AMAZON-REKOGNITION-CAP-C53E6019`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-REKOGNITION-CAP-C078B3CF`, `AMAZON-REKOGNITION-CAP-13D257D6`, `AMAZON-REKOGNITION-CAP-82837BE4`, `AMAZON-REKOGNITION-CAP-C276B8ED`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-REKOGNITION-CAP-23E91D1D` | image object, scene, label and text detection | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-REKOGNITION-CAP-DB5DBA95` | face detection, comparison, collections and search | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-REKOGNITION-CAP-4363E1FC` | video analysis and tracking | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-REKOGNITION-CAP-F025BABE` | content moderation and PPE detection | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-REKOGNITION-CAP-C53E6019` | custom labels, face liveness and streaming video analysis | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-REKOGNITION-CAP-C078B3CF` | Image and video analysis scope is documented; model internals and exact quality characteristics remain unknown. | VERIFIED | `ev-amazon-rekognition-identity`, `ev-amazon-rekognition-image-video` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-REKOGNITION-CAP-13D257D6` | Synchronous image and asynchronous stored-video operation patterns are documented. | VERIFIED | `ev-amazon-rekognition-operations`, `ev-amazon-rekognition-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-REKOGNITION-CAP-82837BE4` | Liveness, moderation and Custom Labels are documented as distinct capability families. | VERIFIED | `ev-amazon-rekognition-liveness`, `ev-amazon-rekognition-moderation`, `ev-amazon-rekognition-custom-labels` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-REKOGNITION-CAP-C276B8ED` | CompreFace covers a face-analysis subset but not Rekognition's general image/video analysis, moderation, liveness, Custom Labels or AWS managed plane. | VERIFIED | `ev-amazon-rekognition-compreface`, `ev-amazon-rekognition-image-video` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Get started with Amazon Rekognition`, `button: Quickly add APIs`, `button: Analyze within seconds`, `button: Easily scale`, `button: Play:`, `button: Detect inappropriate content`, `button: Verify identity online`, `button: Streamline media analysis`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Pricing`, `link: Products`, `link: Artificial Intelligence`, `link: Learn more`, `button: Send connected home smart alerts`, `link: The Pinterest logo, featuring a red circle with a white stylized 'P' and the word 'Pinterest' in red text. Pinterest uses text detection to moderate user-uploaded images Watch the video`, `link: Missing alt text value PBS uses object detection to streamline media content operations Watch the video`, `link: Missing alt text value SDG&E uses Amazon Rekognition Custom Labels to detect transformer damage from drone footage Watch the video`, `link: Contact us Learn more about how you can integrate deep learning–based image and video analysis in your applications Connect with an expert`, `link: Pricing Explore Amazon Rekognition pricing Learn more`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **image object, scene, label and text detection:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **face detection, comparison, collections and search:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **video analysis and tracking:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **content moderation and PPE detection:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **custom labels, face liveness and streaming video analysis:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Image and video analysis scope is documented; model internals and exact quality characteristics remain unknown.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Synchronous image and asynchronous stored-video operation patterns are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Liveness, moderation and Custom Labels are documented as distinct capability families.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **CompreFace covers a face-analysis subset but not Rekognition's general image/video analysis, moderation, liveness, Custom Labels or AWS managed plane.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-23E91D1D — image object, scene, label and text detection
+### REQ-FUNC-C078B3CF — Image and video analysis scope is documented; model internals and exact quality characteristics remain unknown.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-rekognition-identity`, `ev-amazon-rekognition-image-video`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-23E91D1D`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-REKOGNITION-CAP-23E91D1D` → `REQ-FUNC-23E91D1D` → `TEST-FUNC-23E91D1D`.
+- **Associated test ID:** `TEST-FUNC-C078B3CF`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-REKOGNITION-CAP-C078B3CF` → `REQ-FUNC-C078B3CF` → `TEST-FUNC-C078B3CF`.
 
-### REQ-FUNC-DB5DBA95 — face detection, comparison, collections and search
+### REQ-FUNC-13D257D6 — Synchronous image and asynchronous stored-video operation patterns are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-rekognition-operations`, `ev-amazon-rekognition-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-DB5DBA95`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-REKOGNITION-CAP-DB5DBA95` → `REQ-FUNC-DB5DBA95` → `TEST-FUNC-DB5DBA95`.
+- **Associated test ID:** `TEST-FUNC-13D257D6`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-REKOGNITION-CAP-13D257D6` → `REQ-FUNC-13D257D6` → `TEST-FUNC-13D257D6`.
 
-### REQ-FUNC-4363E1FC — video analysis and tracking
+### REQ-FUNC-82837BE4 — Liveness, moderation and Custom Labels are documented as distinct capability families.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-rekognition-liveness`, `ev-amazon-rekognition-moderation`, `ev-amazon-rekognition-custom-labels`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-4363E1FC`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-REKOGNITION-CAP-4363E1FC` → `REQ-FUNC-4363E1FC` → `TEST-FUNC-4363E1FC`.
+- **Associated test ID:** `TEST-FUNC-82837BE4`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-REKOGNITION-CAP-82837BE4` → `REQ-FUNC-82837BE4` → `TEST-FUNC-82837BE4`.
 
-### REQ-FUNC-F025BABE — content moderation and PPE detection
+### REQ-FUNC-C276B8ED — CompreFace covers a face-analysis subset but not Rekognition's general image/video analysis, moderation, liveness, Custom Labels or AWS managed plane.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-rekognition-compreface`, `ev-amazon-rekognition-image-video`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-F025BABE`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-REKOGNITION-CAP-F025BABE` → `REQ-FUNC-F025BABE` → `TEST-FUNC-F025BABE`.
-
-### REQ-FUNC-C53E6019 — custom labels, face liveness and streaming video analysis
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-C53E6019`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-REKOGNITION-CAP-C53E6019` → `REQ-FUNC-C53E6019` → `TEST-FUNC-C53E6019`.
+- **Associated test ID:** `TEST-FUNC-C276B8ED`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-REKOGNITION-CAP-C276B8ED` → `REQ-FUNC-C276B8ED` → `TEST-FUNC-C276B8ED`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -237,11 +226,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `AMAZON-REKOGNITION-CAP-23E91D1D` — image object, scene, label and text detection | Not verified against CompreFace | None yet; compare with `ev_7d5a666e78a5f5b33449f0ec9a2ac500d1851d6d39a5edd29edd019c16051426` | Candidate code path and tests must be inspected |
-| `AMAZON-REKOGNITION-CAP-DB5DBA95` — face detection, comparison, collections and search | Not verified against CompreFace | None yet; compare with `ev_7d5a666e78a5f5b33449f0ec9a2ac500d1851d6d39a5edd29edd019c16051426` | Candidate code path and tests must be inspected |
-| `AMAZON-REKOGNITION-CAP-4363E1FC` — video analysis and tracking | Not verified against CompreFace | None yet; compare with `ev_7d5a666e78a5f5b33449f0ec9a2ac500d1851d6d39a5edd29edd019c16051426` | Candidate code path and tests must be inspected |
-| `AMAZON-REKOGNITION-CAP-F025BABE` — content moderation and PPE detection | Not verified against CompreFace | None yet; compare with `ev_7d5a666e78a5f5b33449f0ec9a2ac500d1851d6d39a5edd29edd019c16051426` | Candidate code path and tests must be inspected |
-| `AMAZON-REKOGNITION-CAP-C53E6019` — custom labels, face liveness and streaming video analysis | Not verified against CompreFace | None yet; compare with `ev_7d5a666e78a5f5b33449f0ec9a2ac500d1851d6d39a5edd29edd019c16051426` | Candidate code path and tests must be inspected |
+| `AMAZON-REKOGNITION-CAP-C078B3CF` — Image and video analysis scope is documented; model internals and exact quality characteristics remain unknown. | Not verified against CompreFace | None yet; compare with `ev_7d5a666e78a5f5b33449f0ec9a2ac500d1851d6d39a5edd29edd019c16051426` | Candidate code path and tests must be inspected |
+| `AMAZON-REKOGNITION-CAP-13D257D6` — Synchronous image and asynchronous stored-video operation patterns are documented. | Not verified against CompreFace | None yet; compare with `ev_7d5a666e78a5f5b33449f0ec9a2ac500d1851d6d39a5edd29edd019c16051426` | Candidate code path and tests must be inspected |
+| `AMAZON-REKOGNITION-CAP-82837BE4` — Liveness, moderation and Custom Labels are documented as distinct capability families. | Not verified against CompreFace | None yet; compare with `ev_7d5a666e78a5f5b33449f0ec9a2ac500d1851d6d39a5edd29edd019c16051426` | Candidate code path and tests must be inspected |
+| `AMAZON-REKOGNITION-CAP-C276B8ED` — CompreFace covers a face-analysis subset but not Rekognition's general image/video analysis, moderation, liveness, Custom Labels or AWS managed plane. | Not verified against CompreFace | None yet; compare with `ev_7d5a666e78a5f5b33449f0ec9a2ac500d1851d6d39a5edd29edd019c16051426` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -288,11 +276,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-23E91D1D** → `REQ-FUNC-23E91D1D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-DB5DBA95** → `REQ-FUNC-DB5DBA95`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-4363E1FC** → `REQ-FUNC-4363E1FC`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-F025BABE** → `REQ-FUNC-F025BABE`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-C53E6019** → `REQ-FUNC-C53E6019`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-C078B3CF** → `REQ-FUNC-C078B3CF`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-13D257D6** → `REQ-FUNC-13D257D6`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-82837BE4** → `REQ-FUNC-82837BE4`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-C276B8ED** → `REQ-FUNC-C276B8ED`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -313,7 +300,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-23E91D1D, REQ-FUNC-DB5DBA95, REQ-FUNC-4363E1FC, REQ-FUNC-F025BABE, REQ-FUNC-C53E6019
+- **Requirements:** REQ-FUNC-C078B3CF, REQ-FUNC-13D257D6, REQ-FUNC-82837BE4, REQ-FUNC-C276B8ED
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -323,7 +310,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-23E91D1D, REQ-FUNC-DB5DBA95, REQ-FUNC-4363E1FC, REQ-FUNC-F025BABE, REQ-FUNC-C53E6019
+- **Requirements:** REQ-FUNC-C078B3CF, REQ-FUNC-13D257D6, REQ-FUNC-82837BE4, REQ-FUNC-C276B8ED
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -345,7 +332,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-23E91D1D, REQ-FUNC-DB5DBA95, REQ-FUNC-4363E1FC, REQ-FUNC-F025BABE, REQ-FUNC-C53E6019; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-C078B3CF, REQ-FUNC-13D257D6, REQ-FUNC-82837BE4, REQ-FUNC-C276B8ED; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -375,13 +362,25 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/rekognition/) | Not recorded | Amazon Rekognition is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/rekognition/latest/dg/) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-rekognition-identity` | What is Amazon Rekognition? — AWS identifies Rekognition as a service for adding image and video analysis capabilities through APIs. | [link](https://docs.aws.amazon.com/rekognition/latest/dg/) | 2026-11-03T00:00:00Z | Amazon Rekognition is AWS's cloud-based image and video analysis service. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-rekognition-image-video` | How Amazon Rekognition works — The official guide lists image analysis and stored or streaming video analysis capabilities and use cases. | [link](https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works.html) | 2026-11-03T00:00:00Z | Rekognition provides separate image and video analysis capabilities for objects, scenes, text, faces, moderation, PPE and tracking. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-rekognition-operations` | Understanding image and video operations — AWS documents synchronous image requests and asynchronous stored-video jobs with completion notifications and result retrieval. | [link](https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works-operations-intro.html) | 2026-11-03T00:00:00Z | Image operations are synchronous while stored-video analysis uses asynchronous Start and Get operations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-rekognition-liveness` | Detecting face liveness — AWS documents the liveness session APIs, confidence score, reference image, audit images and integration components. | [link](https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness.html) | 2026-11-03T00:00:00Z | Face Liveness returns a confidence score, reference image and audit images for a liveness workflow. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-rekognition-moderation` | Moderating content — The official guide documents moderation labels, image/video workflows and optional custom moderation adapters. | [link](https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html) | 2026-11-03T00:00:00Z | Rekognition provides image and video content moderation APIs and supports custom moderation adapters. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-rekognition-custom-labels` | What is Amazon Rekognition Custom Labels? — AWS documents project, dataset, training and detection workflows for labels specific to a business use case. | [link](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/) | 2026-11-03T00:00:00Z | Custom Labels supports training image classifiers or object detectors for business-specific labels. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-rekognition-api` | Amazon Rekognition API Reference — The API reference lists operation families and actions for the documented Rekognition components. | [link](https://docs.aws.amazon.com/rekognition/latest/APIReference/) | 2026-11-03T00:00:00Z | The Rekognition API covers image, bulk image, Custom Labels, stored video, Face Liveness and streaming video operations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-rekognition-compreface` | CompreFace — The official repository documents the REST service, Docker deployment and Apache-2.0 license. | [link](https://github.com/exadel-inc/CompreFace) | 2026-11-03T00:00:00Z | CompreFace is an Apache-2.0 self-hosted face detection, recognition and verification service. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/rekognition/) | 2026-11-03T00:00:00Z | Amazon Rekognition is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/rekognition/latest/dg/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/rekognition/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/rekognition/latest/dg/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/rekognition/latest/APIReference/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/general/latest/gr/rekognition.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works-operations-intro.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/rekognition/latest/APIReference/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-9` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/general/latest/gr/rekognition.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_7d5a666e78a5f5b33449f0ec9a2ac500d1851d6d39a5edd29edd019c16051426` | Amazon Rekognition Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/rekognition/) | 2026-11-03T03:45:19.608Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon Rekognition, button: Quickly add APIs, button: Analyze within seconds, button: Easily scale, button: Play:, button: Detect inappropriate content, button: Verify identity online, button: Streamline media analysis, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Pricing, link: Products, link: Artificial Intelligence, link: Learn more, button: Send connected home smart alerts, link: The Pinterest logo, featuring a red circle with a white stylized 'P' and the word 'Pinterest' in red text. Pinterest uses text detection to moderate user-uploaded images Watch the video, link: Missing alt text value PBS uses object detection to streamline media content operations Watch the video, link: Missing alt text value SDG&E uses Amazon Rekognition Custom Labels to detect transformer damage from drone footage Watch the video, link: Contact us Learn more about how you can integrate deep learning–based image and video analysis in your applications Connect with an expert, link: Pricing Explore Amazon Rekognition pricing Learn more, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -454,7 +453,7 @@ Compare image and video inputs, label taxonomy, OCR, face embeddings, collection
 
 Research must map operation schemas, confidence and geometry outputs, video job states, streaming transport, face collection semantics, Custom Labels training, moderation policy, liveness signals, limits, retries, data retention, regional behavior and model versioning.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, API references and authorized non-sensitive media. Capture representative image, video, face, moderation, Custom Labels and failure cases. Use CompreFace only after recording the partial-foundation verdict, and build an independent implementation with original code, compatible model licenses and no AWS branding or protected data.
 
@@ -462,13 +461,13 @@ Use official AWS documentation, API references and authorized non-sensitive medi
 
 Verify IAM scope, encryption, S3 access, biometric and face-data handling, consent, retention, deletion, region selection, logging, model training data, abuse prevention and human review for high-impact decisions. Do not infer legal compliance from API availability.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/rekognition/ — official product scope.
-- https://docs.aws.amazon.com/rekognition/latest/dg/ — official developer guide.
-- https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works.html — image and video capabilities.
-- https://docs.aws.amazon.com/rekognition/latest/APIReference/ — API operations and errors.
-- https://github.com/exadel-inc/CompreFace — open-source face-analysis alternative and Apache-2.0 license.
+- **Product and scope:** [Amazon Rekognition developer guide](https://docs.aws.amazon.com/rekognition/latest/dg/) and [how it works](https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works.html) document image and video analysis, labels, text, faces, moderation, PPE and tracking.
+- **Specialized capabilities:** [Face Liveness](https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness.html), [content moderation](https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html) and [Custom Labels](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/) document liveness, moderation and custom model workflows.
+- **Operation model:** [image and video operations](https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works-operations-intro.html) documents synchronous image calls and asynchronous stored-video jobs.
+- **Programmatic surface:** [API Reference](https://docs.aws.amazon.com/rekognition/latest/APIReference/) lists image, video, Custom Labels, Face Liveness and streaming operations.
+- **Alternative:** [CompreFace](https://github.com/exadel-inc/CompreFace) is the recorded Apache-2.0 self-hosted face-analysis alternative; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -479,13 +478,13 @@ Verify IAM scope, encryption, S3 access, biometric and face-data handling, conse
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, image/video operation model, face/liveness, moderation, Custom Labels and API surface are documented. Exact model behavior, thresholds, quotas, regional availability, pricing and legal/compliance conclusions remain unknown and are not asserted.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-rekognition` and inspect canonical identity with `npx rae-faang products show amazon-rekognition --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-rekognition` and inspect canonical identity with `npx rea-faang products show amazon-rekognition --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -498,7 +497,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-rekognition --out ./amazon-rekognition.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-rekognition --out ./amazon-rekognition-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-rekognition --out ./amazon-rekognition.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-rekognition --out ./amazon-rekognition-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -540,11 +539,23 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/rekognition/) — Amazon Rekognition is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://docs.aws.amazon.com/rekognition/latest/dg/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [What is Amazon Rekognition?](https://docs.aws.amazon.com/rekognition/latest/dg/) — Amazon Rekognition is AWS's cloud-based image and video analysis service. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [How Amazon Rekognition works](https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works.html) — Rekognition provides separate image and video analysis capabilities for objects, scenes, text, faces, moderation, PPE and tracking. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Understanding image and video operations](https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works-operations-intro.html) — Image operations are synchronous while stored-video analysis uses asynchronous Start and Get operations. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Detecting face liveness](https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness.html) — Face Liveness returns a confidence score, reference image and audit images for a liveness workflow. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Moderating content](https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html) — Rekognition provides image and video content moderation APIs and supports custom moderation adapters. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [What is Amazon Rekognition Custom Labels?](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/) — Custom Labels supports training image classifiers or object detectors for business-specific labels. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Amazon Rekognition API Reference](https://docs.aws.amazon.com/rekognition/latest/APIReference/) — The Rekognition API covers image, bulk image, Custom Labels, stored video, Face Liveness and streaming video operations. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [CompreFace](https://github.com/exadel-inc/CompreFace) — CompreFace is an Apache-2.0 self-hosted face detection, recognition and verification service. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://aws.amazon.com/rekognition/) — Amazon Rekognition is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/rekognition/latest/dg/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/rekognition/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/rekognition/latest/dg/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works-operations-intro.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/rekognition/latest/APIReference/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/general/latest/gr/rekognition.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Rekognition Public web-surface observation (REA)](https://aws.amazon.com/rekognition/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon Rekognition, button: Quickly add APIs, button: Analyze within seconds, button: Easily scale, button: Play:, button: Detect inappropriate content, button: Verify identity online, button: Streamline media analysis, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Pricing, link: Products, link: Artificial Intelligence, link: Learn more, button: Send connected home smart alerts, link: The Pinterest logo, featuring a red circle with a white stylized 'P' and the word 'Pinterest' in red text. Pinterest uses text detection to moderate user-uploaded images Watch the video, link: Missing alt text value PBS uses object detection to streamline media content operations Watch the video, link: Missing alt text value SDG&E uses Amazon Rekognition Custom Labels to detect transformer damage from drone footage Watch the video, link: Contact us Learn more about how you can integrate deep learning–based image and video analysis in your applications Connect with an expert, link: Pricing Explore Amazon Rekognition pricing Learn more, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:45:19.608Z).

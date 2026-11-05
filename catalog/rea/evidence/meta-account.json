@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_6cedd7669026f8fe004b668a10b67b308381ab358773712b3e4143c375090dd3",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.meta.com/account/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "2017d60ccc55b5c4c638ff25639fc640249f2a96f5067386fc21c336b89b6992"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://www.meta.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 6595,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3814,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.meta.com/account/",
+          "origin": "https://www.meta.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2534,
+        "before_url": {
+          "url": "https://www.meta.com/account/",
+          "origin": "https://www.meta.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.meta.com/account/",
+          "origin": "https://www.meta.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "1d52516d160d8c49473d41a78e9200495ae25f19eaf9a9bc0fdf64016c0f2649",
+              "bytes": 11494,
+              "text": "- document:\n  - link \"Skip to main content\":\n    - /url: \"#mdc-main-content\"\n  - navigation \"Main\":\n    - link \"Meta home\":\n      - /url: /\n      - img \"Meta\"\n    - list:\n      - listitem:\n        - link \"AI glasses\":\n          - /url: /ai-glasses/\n      - listitem:\n        - link \"Meta Quest\":\n          - /url: /quest/\n      - listitem:\n        - link \"Meta VR Glasses\":\n          - /url: /vr-glasses/\n      - listitem:\n        - link \"Muse Charm\":\n          - /url: /muse-charm/\n    - list:\n      - listitem:\n        - link \"Explore Meta\":\n          - /url: /about/\n      - listitem:\n        - link \"Support\":\n          - /url: /help/\n    - button \"Search Meta Store\"\n    - link \"View bag items\":\n      - /url: /bag/\n      - img \"Empty bag\"\n    - button \"Log In\"\n  - main:\n    - heading \"Meet your Meta Account\" [level=2]\n    - paragraph: The simple and easy way to log in and manage your favorite apps.\n    - text: No need to juggle multiple logins – with a Meta Account, you can securely sign in and manage whichever profiles you choose.\n    - group \"Video player\"\n    - button \"Play video\"\n    - heading \"More secure and convenient\" [level=2]\n    - text: One key, stronger lock With your Meta Account, you can use a single passkey across your Meta apps and devices. A passkey is easier and more secure than traditional passwords. Just log in using your fingerprint, face recognition or device password, all of which are stored on your device and never shared with Meta. WhatsApp passkeys are managed separately.\n    - link \"Learn more about passkeys and single sign-on\":\n      - /url: https://www.meta.com/help/meta-account/553000504008092/?ref=gtm\n      - text: Learn more\n    - group \"Video player\":\n      - button \"Play video\"\n    - list:\n      - listitem:\n        - heading \"Always-on threat protection\" [level=3]\n        - region: As always, your Meta Account includes proactive, 24/7 safeguards that block threats like hacking and phishing in real time to protect your account and prevent unauthorized access before it happens.\n    - list:\n      - listitem:\n        - heading \"Up-to-date security\" [level=3]\n        - region: Your Meta Account helps keep your account protections strong and up-to-date. When you use Security Checkup, it recommends actions you can take to strengthen your account, including setting up two-factor authentication, login alerts and more.\n    - heading \"More convenient controls\" [level=2]\n    - text: Manage multiple profiles With your Meta Account, you get more flexibility and control. You can manage more key settings in one place and tailor your social experience for each app you choose to include.\n    - link \"Learn more about managing multiple profiles\":\n      - /url: https://www.meta.com/help/meta-account/1575911950009923/?ref=gtm\n      - text: Learn more\n    - group \"Video player\":\n      - button \"Play video\"\n    - list:\n      - listitem:\n        - heading \"Teen support, in one place\" [level=3]\n        - region:\n          - text: With\n          - link \"Learn more about Meta Family Center\":\n            - /url: https://familycenter.meta.com/supervision\n            - text: Family Center\n          - text: \", your teen’s safety settings are in one simple dashboard, allowing parents to supervise their teens across Facebook, Messenger, Instagram and Meta Horizon without having to switch between them.\"\n    - heading \"Get ready for your Meta Account\" [level=2]\n    - paragraph: Your Meta Account is the simple and easy way to log in and manage your favorite Meta apps and devices.\n    - paragraph: You'll soon be updated to a Meta Account, and you'll be notified when that happens.\n    - link \"Learn more about getting ready for your Meta Account\":\n      - /url: https://www.meta.com/help/meta-account/876751767182450?ref=gtm\n      - text: Learn more\n    - list:\n      - listitem:\n        - heading \"What is a Meta Account?\" [level=3]:\n          - button \"What is a Meta Account?\"\n      - listitem:\n        - heading \"What apps and devices are included in this?\" [level=3]:\n          - button \"What apps and devices are included in this?\"\n    - list:\n      - listitem:\n        - heading \"Will all my apps and devices automatically get added to the same Meta Account?\" [level=3]:\n          - button \"Will all my apps and devices automatically get added to the same Meta Account?\"\n      - listitem:\n        - heading \"Do I need a Meta Account?\" [level=3]:\n          - button \"Do I need a Meta Account?\"\n    - button \"See more\"\n  - contentinfo:\n    - img \"Meta\"\n    - list:\n      - listitem:\n        - link \"Facebook Meta.com social media\":\n          - /url: https://www.facebook.com/Meta\n          - img \"Facebook Meta.com social media\"\n      - listitem:\n        - link \"Threads Meta.com social media\":\n          - /url: https://www.threads.net/@meta\n          - img \"Threads Meta.com social media\"\n      - listitem:\n        - link \"Instagram Meta.com social media\":\n          - /url: https://www.instagram.com/meta/\n          - img \"Instagram Meta.com social media\"\n      - listitem:\n        - link \"X Meta.com social media\":\n          - /url: https://twitter.com/Meta\n          - img \"X Meta.com social media\"\n      - listitem:\n        - link \"YouTube Meta.com media channel\":\n          - /url: https://www.youtube.com/meta\n          - img \"YouTube Meta.com media channel\"\n    - heading \"Meta Store\" [level=2]\n    - list:\n      - listitem:\n        - link \"Meta Glasses\":\n          - /url: /ai-glasses/meta-glasses/\n      - listitem:\n        - link \"Ray-Ban Meta glasses\":\n          - /url: /ai-glasses/ray-ban-meta/\n      - listitem:\n        - link \"Oakley Meta glasses\":\n          - /url: /ai-glasses/oakley-meta/\n      - listitem:\n        - link \"Meta Ray-Ban Display\":\n          - /url: /ai-glasses/meta-ray-ban-display/\n      - listitem:\n        - link \"Compare glasses\":\n          - /url: /ai-glasses/compare/\n      - listitem:\n        - link \"AI glasses accessories\":\n          - /url: /ai-glasses/accessories/\n      - listitem:\n        - link \"AI glasses guides\":\n          - /url: /ai-glasses/learn/\n      - listitem:\n        - link \"Meta Lab\":\n          - /url: /meta-lab/\n      - listitem:\n        - link \"Meta Quest\":\n          - /url: /quest/\n      - listitem:\n        - link \"Meta Quest accessories\":\n          - /url: /quest/accessories/\n      - listitem:\n        - link \"Apps and games\":\n          - /url: /experiences/\n      - listitem:\n        - link \"Meta Gift Card\":\n          - /url: /gift-cards/\n      - listitem:\n        - link \"Refurbished Meta Quest 3\":\n          - /url: /refurbished/quest-3/\n      - listitem:\n        - link \"Refurbished Meta Quest 3S\":\n          - /url: /refurbished/quest-3s/\n      - listitem:\n        - link \"Refurbished Ray-Ban Meta glasses\":\n          - /url: /refurbished/ai-glasses/\n      - listitem:\n        - link \"More from Ray-Ban\":\n          - /url: https://rayban.com/\n      - listitem:\n        - 'link \"Meta Quest: Play now. Pay later.\"':\n          - /url: /quest/play-now-pay-later/\n      - listitem:\n        - link \"Meta Warranty Plus\":\n          - /url: /warranty-plus/\n      - listitem:\n        - link \"Meta Quest referrals\":\n          - /url: /quest/referrals/\n      - listitem:\n        - link \"Education discount\":\n          - /url: \"/purchase-program/education/ \"\n      - listitem:\n        - link \"AI glasses bulk order inquiry\":\n          - /url: /ai-glasses/bulk-order/\n      - listitem:\n        - link \"Blog\":\n          - /url: /blog/\n    - heading \"Store support and legal\" [level=2]\n    - list:\n      - listitem:\n        - link \"Meta Help Center\":\n          - /url: /help/\n      - listitem:\n        - link \"Order status\":\n          - /url: /order/find/\n      - listitem:\n        - link \"Returns\":\n          - /url: /returns/\n      - listitem:\n        - link \"Find a product demo\":\n          - /url: /demo/\n      - listitem:\n        - link \"Find a store\":\n          - /url: /retailers/\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/\n      - listitem:\n        - link \"Terms of sale\":\n          - /url: /legal/terms-of-sale/\n      - listitem:\n        - link \"Meta Quest safety center\":\n          - /url: /quest/safety-center/\n    - heading \"Community\" [level=2]\n    - list:\n      - listitem:\n        - link \"Creators\":\n          - /url: https://creators.atmeta.com/\n      - listitem:\n        - link \"Developers\":\n          - /url: https://developers.meta.com/\n      - listitem:\n        - link \"Businesses\":\n          - /url: https://www.facebook.com/business\n      - listitem:\n        - link \"Non-profits\":\n          - /url: https://www.facebook.com/government-nonprofits/best-practices/nonprofits/\n      - listitem:\n        - link \"Download SDKs\":\n          - /url: https://developers.meta.com/horizon/downloads/unity/\n      - listitem:\n        - link \"Made for Meta partner program\":\n          - /url: /made-for-meta/\n      - listitem:\n        - link \"VR for Good\":\n          - /url: /community/vr-for-good/\n    - heading \"Our actions\" [level=2]\n    - list:\n      - listitem:\n        - link \"Data and privacy\":\n          - /url: /actions/protecting-privacy-and-security/\n      - listitem:\n        - link \"Responsible business practices\":\n          - /url: /actions/responsible-business-practices/\n      - listitem:\n        - link \"Accessibility\":\n          - /url: /accessibility/\n      - listitem:\n        - link \"Elections\":\n          - /url: /actions/preparing-for-elections-with-meta/\n    - heading \"About us\" [level=2]\n    - list:\n      - listitem:\n        - link \"About Meta\":\n          - /url: /about/\n      - listitem:\n        - link \"Company Info\":\n          - /url: /about/company-info/\n      - listitem:\n        - link \"Careers\":\n          - /url: https://metacareers.com/\n      - listitem:\n        - link \"Media gallery\":\n          - /url: /media-gallery/\n      - listitem:\n        - link \"Brand resources\":\n          - /url: /brand/resources/\n      - listitem:\n        - link \"For investors\":\n          - /url: https://investor.atmeta.com/home/default.aspx\n      - listitem:\n        - link \"Newsroom\":\n          - /url: https://about.fb.com/news/\n    - heading \"Site terms and policies\" [level=2]\n    - list:\n      - listitem:\n        - link \"Community standards\":\n          - /url: https://transparency.meta.com/policies/community-standards/\n      - listitem:\n        - link \"Privacy policy\":\n          - /url: /legal/privacy-policy/\n      - listitem:\n        - link \"Terms\":\n          - /url: https://www.facebook.com/terms.php/\n      - listitem:\n        - link \"Cookie policy\":\n          - /url: https://www.facebook.com/privacy/policies/cookies/\n    - heading \"App support\" [level=2]\n    - list:\n      - listitem:\n        - link \"Facebook Help Center\":\n          - /url: https://www.facebook.com/help?ref=about.facebook.com\n      - listitem:\n        - link \"Messenger Help Center\":\n          - /url: https://www.facebook.com/help/messenger-app/?ref=about.facebook.com\n      - listitem:\n        - link \"Instagram Help Center\":\n          - /url: https://help.instagram.com/\n      - listitem:\n        - link \"WhatsApp Help Center\":\n          - /url: https://faq.whatsapp.com/\n      - listitem:\n        - link \"Workplace Help Center\":\n          - /url: https://www.facebook.com/help/work?ref=about.facebook.com\n      - listitem:\n        - link \"Meta Verified\":\n          - /url: /meta-verified/\n      - listitem:\n        - link \"Meta Account (Single Login)\":\n          - /url: /account/\n    - button \"Change language\": English (US)"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.meta.com/account/",
+              "origin": "https://www.meta.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Comprehend, recorded with RE
 | Target | https://aws.amazon.com/comprehend/ |
 | Resolved URL | https://aws.amazon.com/comprehend/ |
 | Page title | Amazon Comprehend |
-| Captured | 2026-11-03T02:51:45.194Z |
+| Captured | 2026-11-04T02:40:36.846Z |
 | Status | captured |
-| REA Evidence ID | `ev_b957dd4b885bccb3ba694e41867590fa3108caa8175cbacbacb662560ae516d0` |
+| REA Evidence ID | `ev_82618b6cc88286ec2d8230ebf4316ceb9bc4858f1aa16de3e17423e593e7d4c5` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -165,6 +165,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-comprehend.json`
-- Evidence ID: `ev_b957dd4b885bccb3ba694e41867590fa3108caa8175cbacbacb662560ae516d0`
+- Evidence ID: `ev_82618b6cc88286ec2d8230ebf4316ceb9bc4858f1aa16de3e17423e593e7d4c5`
 - Accessibility outline: 10039 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

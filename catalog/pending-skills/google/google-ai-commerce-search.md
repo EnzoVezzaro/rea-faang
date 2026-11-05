@@ -6,7 +6,7 @@ inventory_status: candidate
 research_status: pending
 ---
 
-# AI Commerce Search — pending RAE skill
+# AI Commerce Search — pending REA skill
 
 This is a generated pending skill draft. It is not a completed research dossier
 and does not claim that the target's behavior, API, implementation or open-source
@@ -29,7 +29,7 @@ coverage has been verified.
 4. Separate observation, inference and proposed independent design.
 5. Investigate open-source alternatives and record repository, license, coverage and limitations.
 6. Produce an independent implementation plan; do not copy proprietary source, protected assets or private data.
-7. Build and test the equivalent implementation in the user's project, not in the RAE FAANG catalog repository.
+7. Build and test the equivalent implementation in the user's project, not in the REA FAANG catalog repository.
 8. Update the canonical catalog, dossier, REA report and generated skill only after evidence and review.
 
 ## Official source candidates

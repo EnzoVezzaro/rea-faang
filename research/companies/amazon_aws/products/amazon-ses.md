@@ -15,15 +15,20 @@ official_source_urls:
   - "https://docs.aws.amazon.com/ses/"
   - "https://docs.aws.amazon.com/ses/latest/APIReference/"
   - "https://docs.aws.amazon.com/ses/latest/APIReference-V2/"
-research_status: "pending"
-research_confidence: "unverified"
+  - "https://docs.aws.amazon.com/ses/latest/dg/verify-addresses-and-domains.html"
+  - "https://docs.aws.amazon.com/ses/latest/dg/configure-identities.html"
+  - "https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html"
+  - "https://docs.aws.amazon.com/ses/latest/dg/send-email-concepts-deliverability.html"
+  - "https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_EventDestination.html"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: "2027-02-03T00:00:00Z"
+research_version: 2
 ---
 
 # 1. Executive summary
@@ -73,7 +78,7 @@ Compare SMTP and HTTP APIs, identity verification, DKIM/SPF, templates, queues, 
 
 Research must map identity states, production-access gates, SMTP and API request contracts, MIME limits, quota behavior, queue and retry semantics, events, suppression, inbound receipt, templates, tracking, reputation, abuse handling and regional differences.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, API references and authorized test identities only. Capture verification, sending, event, bounce, complaint, suppression and inbound cases without using personal or customer data. Use Postal only after recording the partial-foundation verdict, and implement independent delivery infrastructure with original code, compliant domains and explicit abuse controls.
 
@@ -81,13 +86,12 @@ Use official AWS documentation, API references and authorized test identities on
 
 Verify IAM scope, identity ownership, DKIM/SPF/DMARC, TLS, message and recipient privacy, logging, retention, unsubscribe and suppression behavior, inbound attachment handling, abuse prevention and data residency. Never place credentials or real recipient data in the dossier or tests.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/ses/ — official product scope.
-- https://aws.amazon.com/ses/getting-started/ — onboarding and sending workflows.
-- https://docs.aws.amazon.com/ses/ — developer, API and CLI documentation.
-- https://docs.aws.amazon.com/ses/latest/APIReference-V2/ — SES v2 API surface.
-- https://github.com/postalserver/postal — open-source alternative and MIT license.
+- **Product and API scope:** [SES documentation](https://docs.aws.amazon.com/ses/) and [API v2 reference](https://docs.aws.amazon.com/ses/latest/APIReference-V2/) document sending, API and CLI surfaces.
+- **Identity and authentication:** [verified identities](https://docs.aws.amazon.com/ses/latest/dg/verify-addresses-and-domains.html) and [identity configuration](https://docs.aws.amazon.com/ses/latest/dg/configure-identities.html) support domain/email verification and SPF/DKIM claims.
+- **Delivery events:** [event notifications](https://docs.aws.amazon.com/ses/latest/dg/monitor-sending-activity-using-notifications.html), [deliverability](https://docs.aws.amazon.com/ses/latest/dg/send-email-concepts-deliverability.html) and [EventDestination](https://docs.aws.amazon.com/ses/latest/APIReference-V2/API_EventDestination.html) support bounce, complaint, delivery, suppression and event-destination claims.
+- **Alternative:** [Postal](https://github.com/postalserver/postal) is the recorded MIT-licensed self-hosted mail platform; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -98,4 +102,4 @@ Verify IAM scope, identity ownership, DKIM/SPF/DMARC, TLS, message and recipient
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, SMTP/API sending, identity verification, authentication, event destinations, bounces, complaints and suppression are documented. Exact reputation, queueing, regional limits, pricing and deliverability behavior remain unknown and are not asserted.

@@ -1,4 +1,4 @@
-![RAE FAANG](assets/brand-logo-icon.png)
+![REA FAANG](assets/brand-logo-icon.png)
 
 # CLI reference
 
@@ -9,20 +9,20 @@ Use the published npm CLI to browse products, read research, compare candidate o
 One-off use from npm:
 
 ```bash
-npx rae-faang products list
-npx rae-faang research dossier google-search
-npx rae-faang google-search --out ./google-search.md
+npx rea-faang products list
+npx rea-faang research dossier google-search
+npx rea-faang google-search --out ./google-search.md
 ```
 
-Or install globally for the `rae` and `rae-faang` commands:
+Or install globally for the `rea` and `rea-faang` commands:
 
 ```bash
-npm install -g rae-faang
-rae products list
-rae google-search --out ./google-search.md
+npm install -g rea-faang
+rea products list
+rea google-search --out ./google-search.md
 ```
 
-The published package includes the catalog, research dossiers, candidate projects, schemas and skill generator. From npm, `npx rae-faang <id> --out ./<id>.md` writes one portable product skill; omitting `--out` writes `./<id>.md`. This shorthand does not create a kit directory. The explicit `skills generate <id>` form is also available; batch generation writes under `./rae-skills/`. To create a kit directory with `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit <id> --out ./<id>-agent`. No source checkout is needed for bundled catalog, research and skill commands. In a source checkout use `npm run cli -- <group> <command> [options]`. `npx` may prompt to confirm a one-off package install; `--yes` is optional and omitted here so users see that prompt.
+The published package includes the catalog, research dossiers, candidate projects, schemas and skill generator. From npm, `npx rea-faang <id> --out ./<id>.md` writes one portable product skill; omitting `--out` writes `./<id>.md`. This shorthand does not create a kit directory. The explicit `skills generate <id>` form is also available; batch generation writes under `./rea-skills/`. To create a kit directory with `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit <id> --out ./<id>-agent`. No source checkout is needed for bundled catalog, research and skill commands. In a source checkout use `npm run cli -- <group> <command> [options]`. `npx` may prompt to confirm a one-off package install; `--yes` is optional and omitted here so users see that prompt.
 
 ## Options available on every command
 
@@ -57,8 +57,8 @@ Validation commands return exit code `1` when they find errors, so CI can stop a
 the research label the catalog page and product skills use.
 
 ```bash
-npx rae-faang products list --company amazon_aws
-npx rae-faang products show google-search --format json
+npx rea-faang products list --company amazon_aws
+npx rea-faang products show google-search --format json
 ```
 
 ---
@@ -73,8 +73,8 @@ npx rae-faang products show google-search --format json
 **Options:** `--format json`.
 
 ```bash
-npx rae-faang companies list
-npx rae-faang companies show netflix --format json
+npx rea-faang companies list
+npx rea-faang companies show netflix --format json
 ```
 
 ---
@@ -92,11 +92,11 @@ npx rae-faang companies show netflix --format json
 **Options:** `--company <id>` (coverage), `--format json`.
 
 ```bash
-npx rae-faang research coverage --format json
-npx rae-faang research dossier google-search
-npx rae-faang research dossier google-search --format json
-npx rae-faang research validate
-npx rae-faang research pending
+npx rea-faang research coverage --format json
+npx rea-faang research dossier google-search
+npx rea-faang research dossier google-search --format json
+npx rea-faang research validate
+npx rea-faang research pending
 ```
 
 `research validate` exits `1` when any error is found (missing files are
@@ -119,9 +119,9 @@ bundled with the package, so an agent can read evidence without a clone.
 `--format json`.
 
 ```bash
-npx rae-faang gaps products
-npx rae-faang gaps alternatives --status none_verified
-npx rae-faang gaps all --format json
+npx rea-faang gaps products
+npx rea-faang gaps alternatives --status none_verified
+npx rea-faang gaps all --format json
 ```
 
 ---
@@ -137,8 +137,8 @@ npx rae-faang gaps all --format json
 **Options:** `--product <id>` (list), `--format json`.
 
 ```bash
-npx rae-faang alternatives coverage
-npx rae-faang alternatives validate
+npx rea-faang alternatives coverage
+npx rea-faang alternatives validate
 ```
 
 ---
@@ -155,10 +155,10 @@ npx rae-faang alternatives validate
 **Options:** `--format json`.
 
 ```bash
-npx rae-faang opportunities validate
-npx rae-faang opportunities export > opportunities.json
+npx rea-faang opportunities validate
+npx rea-faang opportunities export > opportunities.json
 # or write directly:
-npx rae-faang opportunities export --out opportunities.json
+npx rea-faang opportunities export --out opportunities.json
 ```
 
 ---
@@ -167,7 +167,7 @@ npx rae-faang opportunities export --out opportunities.json
 
 | Command | Description |
 |---|---|
-| `skills generate <product-id>` | Compile and write one skill. From an npm-installed package, default output is `./<product-id>.md`; `--out FILE` selects an explicit file. Batch generation from the installed package writes under `./rae-skills/<company>/<product-id>.md`. In a source checkout, generation without `--out` updates the canonical `catalog/skills/<company>/<product-id>.md`; `--out` is allowed only for one product. |
+| `skills generate <product-id>` | Compile and write one skill. From an npm-installed package, default output is `./<product-id>.md`; `--out FILE` selects an explicit file. Batch generation from the installed package writes under `./rea-skills/<company>/<product-id>.md`. In a source checkout, generation without `--out` updates the canonical `catalog/skills/<company>/<product-id>.md`; `--out` is allowed only for one product. |
 | `skills validate [<product-id>]` | Check required sections, IDs and traceability against the bundled canonical skill; supports `--company ID` and `--all`. |
 | `skills coverage` | Report per-product missing research and catalog-wide skill-generation coverage; does not write files. |
 | `build agent-kit <product-id>` | Generate a copy of the product-specific Markdown build skill (`skill.md`) and optional MCP configuration in a separate directory (default: `./<product-id>-agent`; override with `--out DIR`). Give the skill to your coding agent in the project where you want the product built. |
@@ -177,16 +177,16 @@ npx rae-faang opportunities export --out opportunities.json
 | `<product-id>` | Shorthand: generate one portable Markdown skill. Use `--out FILE` to choose the output path (default: `./<product-id>.md`). Give the file to your coding agent; the agent builds in your project. With `--alt NAME`, clone a listed alternative instead. |
 
 ```bash
-npx rae-faang google-search --out ./google-search.md
-npx rae-faang skills generate --all --format json
-npx rae-faang skills validate --all
-npx rae-faang skills coverage --format json
-npx rae-faang build agent-kit gmail --out ./gmail-agent
-npx rae-faang gmail --out ./gmail.md
-npx rae-faang build product gmail --out ./gmail-workspace
-npx rae-faang research dossier gmail
-npx rae-faang alternatives clone aws-s3 --into ./alternatives
-npx rae-faang aws-s3 --alt "Ceph (RADOS Gateway)"
+npx rea-faang google-search --out ./google-search.md
+npx rea-faang skills generate --all --format json
+npx rea-faang skills validate --all
+npx rea-faang skills coverage --format json
+npx rea-faang build agent-kit gmail --out ./gmail-agent
+npx rea-faang gmail --out ./gmail.md
+npx rea-faang build product gmail --out ./gmail-workspace
+npx rea-faang research dossier gmail
+npx rea-faang alternatives clone aws-s3 --into ./alternatives
+npx rea-faang aws-s3 --alt "Ceph (RADOS Gateway)"
 ```
 
 ## Use the CLI from another tool
@@ -194,6 +194,6 @@ npx rae-faang aws-s3 --alt "Ceph (RADOS Gateway)"
 Pass `--format json` when another script or program needs to read command output. For example:
 
 ```bash
-npx rae-faang research coverage --format json \
+npx rea-faang research coverage --format json \
   | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const j=JSON.parse(s);console.log(j.total.cataloged)})"
 ```

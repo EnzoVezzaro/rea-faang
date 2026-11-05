@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Managed Grafana (amazon-mana
 
 # Amazon Managed Grafana — implementation skill (`amazon-managed-grafana`)
 
-> **Research status:** pending. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Managed Grafana**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Managed Grafana (amazon-mana
 
 This is the coding-agent skill for **Amazon Managed Grafana** (`amazon-managed-grafana`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-managed-grafana.md` from the catalog page, or run `npx rae-faang amazon-managed-grafana --out ./amazon-managed-grafana.md`, `npx rae-faang skills generate amazon-managed-grafana` or `npx rae-faang build agent-kit amazon-managed-grafana --out ./amazon-managed-grafana-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-managed-grafana.md` from the catalog page, or run `npx rea-faang amazon-managed-grafana --out ./amazon-managed-grafana.md`, `npx rea-faang skills generate amazon-managed-grafana` or `npx rea-faang build agent-kit amazon-managed-grafana --out ./amazon-managed-grafana-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Managed Grafana / `amazon-managed-grafana` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/grafana/](https://aws.amazon.com/grafana/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/grafana/](https://docs.aws.amazon.com/grafana/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-managed-grafana` | `research/companies/amazon_aws/products/amazon-managed-grafana.md` |
+| Research dossier | `npx rea-faang research dossier amazon-managed-grafana` | `research/companies/amazon_aws/products/amazon-managed-grafana.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-managed-grafana.md` (captured 2026-11-03T03:27:16.853Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-managed-grafana.json` (`ev_5533477b444771d391f581bd098a91f63fe579892100b2e938f0cbc811816ce4`) | Catalog evidence |
 | Alternative candidates | None recorded — this is a research gap | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-managed-grafana --format json` and `npx rae-faang research dossier amazon-managed-grafana` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-managed-grafana --format json` and `npx rea-faang research dossier amazon-managed-grafana` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-MANAGED-GRAFANA-CAP-E1CA5BB2`, `AMAZON-MANAGED-GRAFANA-CAP-62723F4B`, `AMAZON-MANAGED-GRAFANA-CAP-89603FAE`, `AMAZON-MANAGED-GRAFANA-CAP-B6C7BD88`, `AMAZON-MANAGED-GRAFANA-CAP-CF0FD36B`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-MANAGED-GRAFANA-CAP-0F318C65`, `AMAZON-MANAGED-GRAFANA-CAP-EBFE976D`, `AMAZON-MANAGED-GRAFANA-CAP-EA9CE151`, `AMAZON-MANAGED-GRAFANA-CAP-4A9CC627`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-MANAGED-GRAFANA-CAP-E1CA5BB2` | managed Grafana workspaces | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MANAGED-GRAFANA-CAP-62723F4B` | metrics, logs and traces visualization | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MANAGED-GRAFANA-CAP-89603FAE` | AWS and third-party data-source integrations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MANAGED-GRAFANA-CAP-B6C7BD88` | SSO, IAM, access control and audit reporting | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MANAGED-GRAFANA-CAP-CF0FD36B` | managed provisioning, scaling and maintenance | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MANAGED-GRAFANA-CAP-0F318C65` | Managed workspace creation, Grafana versions and SAML/IAM Identity Center authentication are documented. | VERIFIED | `ev-amazon-amg-identity`, `ev-amazon-amg-auth` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MANAGED-GRAFANA-CAP-EBFE976D` | Workspace roles, teams and data-source permissions are documented. | VERIFIED | `ev-amazon-amg-permissions`, `ev-amazon-amg-access` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MANAGED-GRAFANA-CAP-EA9CE151` | AWS lifecycle APIs and supported Grafana HTTP APIs are documented. | VERIFIED | `ev-amazon-amg-api`, `ev-amazon-amg-grafana-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MANAGED-GRAFANA-CAP-4A9CC627` | Grafana OSS covers visualization and data-source foundations but not AMG managed provisioning, AWS identity, permissions or integrations. | VERIFIED | `ev-amazon-amg-grafana`, `ev-amazon-amg-datasources` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Get started with Amazon Managed Grafana`, `button: Hands-on Workshop`, `button: Build workspaces`, `button: Operational data`, `button: Integrate with AWS security`, `button: Migrate Grafana`, `button: Play:`, `button: Unify your observability`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Features`, `link: Pricing`, `link: Resources`, `link: FAQs`, `link: Customers`, `link: Partners`, `link: Products`, `link: Management and Governance`, `button: Monitor containers`, `button: Troubleshoot operational issues collaboratively`, `button: Monitor IoT devices`, `link: Missing alt text value COTINO builds efficient open-source observability experiences Learn more`, `link: Missing alt text value NTT DATA Services focuses on improving application health Learn more`, `link: Missing alt text value Airwalk Reply helps clients visualize data Learn more`, `link: Missing alt text value Area 52 visualizes process data from industrial IoT devices Learn more`, `link: Guide Get started with Amazon Managed Grafana Read the guide`, `link: Getting started Explore observability options Read more`, `link: Getting started Start using Amazon Managed Grafana Sign in`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **managed Grafana workspaces:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **metrics, logs and traces visualization:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **AWS and third-party data-source integrations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **SSO, IAM, access control and audit reporting:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **managed provisioning, scaling and maintenance:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Managed workspace creation, Grafana versions and SAML/IAM Identity Center authentication are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Workspace roles, teams and data-source permissions are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **AWS lifecycle APIs and supported Grafana HTTP APIs are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Grafana OSS covers visualization and data-source foundations but not AMG managed provisioning, AWS identity, permissions or integrations.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-E1CA5BB2 — managed Grafana workspaces
+### REQ-FUNC-0F318C65 — Managed workspace creation, Grafana versions and SAML/IAM Identity Center authentication are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-amg-identity`, `ev-amazon-amg-auth`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-E1CA5BB2`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MANAGED-GRAFANA-CAP-E1CA5BB2` → `REQ-FUNC-E1CA5BB2` → `TEST-FUNC-E1CA5BB2`.
+- **Associated test ID:** `TEST-FUNC-0F318C65`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MANAGED-GRAFANA-CAP-0F318C65` → `REQ-FUNC-0F318C65` → `TEST-FUNC-0F318C65`.
 
-### REQ-FUNC-62723F4B — metrics, logs and traces visualization
+### REQ-FUNC-EBFE976D — Workspace roles, teams and data-source permissions are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-amg-permissions`, `ev-amazon-amg-access`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-62723F4B`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MANAGED-GRAFANA-CAP-62723F4B` → `REQ-FUNC-62723F4B` → `TEST-FUNC-62723F4B`.
+- **Associated test ID:** `TEST-FUNC-EBFE976D`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MANAGED-GRAFANA-CAP-EBFE976D` → `REQ-FUNC-EBFE976D` → `TEST-FUNC-EBFE976D`.
 
-### REQ-FUNC-89603FAE — AWS and third-party data-source integrations
+### REQ-FUNC-EA9CE151 — AWS lifecycle APIs and supported Grafana HTTP APIs are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-amg-api`, `ev-amazon-amg-grafana-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-89603FAE`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MANAGED-GRAFANA-CAP-89603FAE` → `REQ-FUNC-89603FAE` → `TEST-FUNC-89603FAE`.
+- **Associated test ID:** `TEST-FUNC-EA9CE151`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MANAGED-GRAFANA-CAP-EA9CE151` → `REQ-FUNC-EA9CE151` → `TEST-FUNC-EA9CE151`.
 
-### REQ-FUNC-B6C7BD88 — SSO, IAM, access control and audit reporting
+### REQ-FUNC-4A9CC627 — Grafana OSS covers visualization and data-source foundations but not AMG managed provisioning, AWS identity, permissions or integrations.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-amg-grafana`, `ev-amazon-amg-datasources`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-B6C7BD88`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MANAGED-GRAFANA-CAP-B6C7BD88` → `REQ-FUNC-B6C7BD88` → `TEST-FUNC-B6C7BD88`.
-
-### REQ-FUNC-CF0FD36B — managed provisioning, scaling and maintenance
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-CF0FD36B`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MANAGED-GRAFANA-CAP-CF0FD36B` → `REQ-FUNC-CF0FD36B` → `TEST-FUNC-CF0FD36B`.
+- **Associated test ID:** `TEST-FUNC-4A9CC627`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MANAGED-GRAFANA-CAP-4A9CC627` → `REQ-FUNC-4A9CC627` → `TEST-FUNC-4A9CC627`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -273,11 +262,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-E1CA5BB2** → `REQ-FUNC-E1CA5BB2`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-62723F4B** → `REQ-FUNC-62723F4B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-89603FAE** → `REQ-FUNC-89603FAE`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-B6C7BD88** → `REQ-FUNC-B6C7BD88`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-CF0FD36B** → `REQ-FUNC-CF0FD36B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-0F318C65** → `REQ-FUNC-0F318C65`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-EBFE976D** → `REQ-FUNC-EBFE976D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-EA9CE151** → `REQ-FUNC-EA9CE151`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-4A9CC627** → `REQ-FUNC-4A9CC627`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -298,7 +286,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-E1CA5BB2, REQ-FUNC-62723F4B, REQ-FUNC-89603FAE, REQ-FUNC-B6C7BD88, REQ-FUNC-CF0FD36B
+- **Requirements:** REQ-FUNC-0F318C65, REQ-FUNC-EBFE976D, REQ-FUNC-EA9CE151, REQ-FUNC-4A9CC627
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -308,7 +296,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-E1CA5BB2, REQ-FUNC-62723F4B, REQ-FUNC-89603FAE, REQ-FUNC-B6C7BD88, REQ-FUNC-CF0FD36B
+- **Requirements:** REQ-FUNC-0F318C65, REQ-FUNC-EBFE976D, REQ-FUNC-EA9CE151, REQ-FUNC-4A9CC627
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -330,7 +318,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-E1CA5BB2, REQ-FUNC-62723F4B, REQ-FUNC-89603FAE, REQ-FUNC-B6C7BD88, REQ-FUNC-CF0FD36B; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-0F318C65, REQ-FUNC-EBFE976D, REQ-FUNC-EA9CE151, REQ-FUNC-4A9CC627; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -360,12 +348,26 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/grafana/) | 2026-11-02T00:00:00Z | Amazon Managed Grafana is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/grafana/) | 2026-11-02T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-amg-identity` | Create an Amazon Managed Grafana workspace — AWS documents a workspace as a logical Grafana server and describes version, authentication, permissions and VPC choices. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/AMG-create-workspace.html) | 2026-11-04T00:00:00Z | Amazon Managed Grafana provides managed Grafana workspaces with selectable Grafana versions, AWS permissions and network options. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amg-auth` | Authenticate users in Amazon Managed Grafana workspaces — AWS documents SAML and IAM Identity Center authentication and workspace User/Editor/Admin access. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html) | 2026-11-04T00:00:00Z | AMG supports SAML 2.0 and AWS IAM Identity Center authentication for workspace users. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amg-permissions` | Data source permissions — AWS documents data-source permission enablement and query access assignment. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/data-source-permissions.html) | 2026-11-04T00:00:00Z | AMG can restrict data-source query access to users, teams, service accounts or roles. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amg-api` | Amazon Managed Grafana API operations — The official API reference lists create/update/delete, authentication, permissions and service-account operations. | [link](https://docs.aws.amazon.com/grafana/latest/APIReference/API_Operations.html) | 2026-11-04T00:00:00Z | AMG exposes workspace lifecycle, permission, service-account, token and configuration APIs. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amg-grafana-api` | Grafana version 13 API reference — AWS documents the supported Grafana HTTP API families and their version-specific scope. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/api-reference-v13.html) | 2026-11-04T00:00:00Z | AMG workspaces expose supported Grafana HTTP APIs for dashboards, folders, data sources, alerting and permissions. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amg-access` | Users, teams, and permissions — AWS documents User, Editor and Admin roles and more specific Grafana permissions. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-administration-authorization.html) | 2026-11-04T00:00:00Z | AMG combines workspace roles with Grafana-level users, teams and specific dashboard/folder/data-source permissions. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amg-grafana` | About Grafana — The upstream documentation describes dashboards, alerting and plugin/data-source extensibility. | [link](https://grafana.com/docs/grafana/latest/introduction/) | 2026-11-04T00:00:00Z | Grafana OSS is an open-source platform for querying, visualizing and alerting on metrics, logs and traces. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-amg-datasources` | Grafana data sources — The upstream documentation describes data-source configuration, query editors and provisioning. | [link](https://grafana.com/docs/grafana/latest/datasources/) | 2026-11-04T00:00:00Z | Grafana queries external data sources and uses them for Explore, panels and alert rules. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/grafana/) | 2026-11-04T00:00:00Z | Amazon Managed Grafana is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/grafana/) | 2026-11-04T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/grafana/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-workspaces-users.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/AMG-create-workspace.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/data-source-permissions.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-administration-authorization.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/grafana/latest/APIReference/API_Operations.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/grafana/latest/userguide/api-reference-v13.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-9` | Additional official source lead — Claim/section not recorded. | [link](https://grafana.com/docs/grafana/latest/introduction/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-10` | Additional official source lead — Claim/section not recorded. | [link](https://grafana.com/docs/grafana/latest/datasources/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_5533477b444771d391f581bd098a91f63fe579892100b2e938f0cbc811816ce4` | Amazon Managed Grafana Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/grafana/) | 2026-11-03T03:27:16.853Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon Managed Grafana, button: Hands-on Workshop, button: Build workspaces, button: Operational data, button: Integrate with AWS security, button: Migrate Grafana, button: Play:, button: Unify your observability, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Resources, link: FAQs, link: Customers, link: Partners, link: Products, link: Management and Governance, button: Monitor containers, button: Troubleshoot operational issues collaboratively, button: Monitor IoT devices, link: Missing alt text value COTINO builds efficient open-source observability experiences Learn more, link: Missing alt text value NTT DATA Services focuses on improving application health Learn more, link: Missing alt text value Airwalk Reply helps clients visualize data Learn more, link: Missing alt text value Area 52 visualizes process data from industrial IoT devices Learn more, link: Guide Get started with Amazon Managed Grafana Read the guide, link: Getting started Explore observability options Read more, link: Getting started Start using Amazon Managed Grafana Sign in, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -393,7 +395,7 @@ Resume token: `amazon-managed-grafana`. Read dossier, REA report and raw Evidenc
 
 # 1. Executive summary
 
-Amazon Managed Grafana is AWS's managed Grafana workspace service for querying and visualizing metrics, logs and traces from AWS and other data sources. AWS manages workspace provisioning, scaling, maintenance and security integrations.
+Amazon Managed Grafana is AWS's managed Grafana workspace service for querying, visualizing and alerting on metrics, logs and traces from AWS and other data sources. AWS manages workspace provisioning and service operations while the workspace retains Grafana dashboards, permissions and data-source configuration.
 
 # 2. Product identity and ownership
 
@@ -407,71 +409,72 @@ Amazon Managed Grafana is AWS's managed Grafana workspace service for querying a
 - Create isolated Grafana workspaces.
 - Build dashboards and visualizations for metrics, logs and traces.
 - Connect CloudWatch, OpenSearch, X-Ray, IoT SiteWise, Timestream, Prometheus and other sources.
-- Manage users, groups, data-source permissions and notification channels.
+- Manage users, groups, teams, data-source permissions, service accounts and notification channels.
 - Integrate SAML 2.0, IAM Identity Center, IAM and audit reporting.
 
 # 4. Technical architecture
 
-The public surface includes managed workspaces, Grafana versions, AWS API/CLI operations, data-source permission provisioning, authentication, network access and optional enterprise plugins. Exact plugin, version, quota and regional behavior remains pending.
+The public surface includes managed workspaces, selectable Grafana versions, AWS API/CLI operations, data-source permission provisioning, SAML/IAM Identity Center authentication, VPC/network access and Grafana HTTP APIs. Workspace creation supports service-managed or customer-managed AWS permissions; exact plugin, version, quota and regional behavior remains version-sensitive.
 
 # 5. User workflows
 
-Expected workflows include creating a workspace, selecting authentication, granting data-source permissions, creating dashboards, configuring alerts and managing users or groups. Upgrade, migration, network isolation and failure recovery require verification.
+Expected workflows include creating a workspace, selecting authentication, granting workspace and data-source permissions, connecting sources, creating dashboards, configuring alerts, managing users/groups/service accounts and calling supported Grafana APIs. Upgrade, migration, network isolation and failure recovery require verification.
 
 # 6. Pricing and access
 
-AWS prices Amazon Managed Grafana per active user in a workspace, with possible additional costs for data sources and plugins. Current pricing, quotas and regional availability must be verified before implementation or cost claims.
+AWS prices Amazon Managed Grafana per active user in a workspace, with possible additional costs for data sources and plugins. Current pricing, versions, quotas and regional availability must be verified before implementation or cost claims.
 
 # 7. API and integration surface
 
 - Amazon Managed Grafana API, AWS CLI and SDKs.
-- Grafana HTTP APIs and service accounts where enabled.
+- Grafana HTTP APIs, service accounts and tokens where supported by the workspace version.
 - CloudWatch, OpenSearch, X-Ray, IoT SiteWise, Timestream and Managed Prometheus.
 - SAML 2.0 and IAM Identity Center authentication.
 
 # 8. Existing open-source alternatives
 
-Grafana itself is the principal open-source foundation. Other observability dashboards may cover subsets, but managed provisioning, AWS identity, permissions, workspace isolation and integrations are not assumed equivalent.
+Grafana OSS is the principal open-source foundation. Grafana Enterprise/Cloud and other observability dashboards may cover subsets, but AWS-managed provisioning, AWS identity, data-source permissions, workspace isolation and integrations are not assumed equivalent.
 
 # 9. Alternative comparison
 
-Self-hosted Grafana offers broad visualization and plugin support but transfers provisioning, upgrades, security, identity and scaling responsibilities to the operator. A full equivalence decision remains pending.
+Self-hosted Grafana OSS offers broad visualization, alerting and plugin support but transfers provisioning, upgrades, security, identity, permissions, scaling and data-source operations to the operator. It is a partial foundation, not full AMG equivalence.
 
 # 10. Missing capabilities and opportunity analysis
 
-Research must map workspace states, Grafana versions, plugins, data-source permissions, alerting, dashboards, service accounts, network access, encryption, limits and migration behavior.
+Research must map workspace states, Grafana versions, plugins, data-source permissions, alerting, dashboards, service accounts/tokens, authentication, network access, encryption, limits and migration behavior.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use official AWS and Grafana documentation and authorized public API observation. Record evidence for workspace, authentication, permissions and dashboard workflows before selecting a foundation or implementing an independent equivalent.
+Use official AWS and Grafana documentation and authorized public API observation. Record evidence for workspace, authentication, permissions, data sources, dashboards and API workflows before selecting Grafana OSS as a partial foundation or implementing an independent equivalent. Do not claim AWS-managed parity.
 
 # 12. Security, privacy, and compliance
 
 Verify SSO, IAM, workspace isolation, data-source least privilege, network access, encryption, audit logs, plugin permissions and secret handling. Do not infer compliance from the managed-service label.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/grafana/ — official overview.
-- https://docs.aws.amazon.com/grafana/latest/userguide/ — user guide and integrations.
-- https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-workspaces-users.html — workspace and user management.
-- https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html — IAM permissions.
+- **Identity and workspaces:** [create an AMG workspace](https://docs.aws.amazon.com/grafana/latest/userguide/AMG-create-workspace.html) documents workspace limits, Grafana versions, authentication and service/customer-managed permissions.
+- **Authentication and access:** [workspace authentication](https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html), [user/group access](https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-users-and-groups-AMG.html) and [authorization](https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-administration-authorization.html) document SAML, IAM Identity Center and role/team permissions.
+- **Data-source permissions:** [data source permissions](https://docs.aws.amazon.com/grafana/latest/userguide/data-source-permissions.html) documents query access controls for users, teams, service accounts and roles.
+- **APIs:** [AWS API operations](https://docs.aws.amazon.com/grafana/latest/APIReference/API_Operations.html) and [Grafana v13 APIs](https://docs.aws.amazon.com/grafana/latest/userguide/api-reference-v13.html) document workspace lifecycle and supported workspace HTTP APIs.
+- **Foundation:** [Grafana overview](https://grafana.com/docs/grafana/latest/introduction/) and [data sources](https://grafana.com/docs/grafana/latest/datasources/) document the upstream open-source visualization, alerting and plugin model.
 
 # 14. Unknowns
 
-- Complete API/CLI/SDK command matrix.
-- Exact workspace, version, plugin and region limits.
-- Data-source permission and alerting semantics.
+- Complete API/CLI/SDK and supported Grafana HTTP API matrix.
+- Exact workspace, version, plugin, user and region limits.
+- Data-source permission, service-account and alerting semantics.
 - Migration behavior and verified independent foundation coverage.
 
 # 15. Research status
 
-`pending`: identity and public capability surface are documented from official AWS sources, but full REA capture, detailed behavior, limits and alternative coverage remain unverified.
+Researched with verified public AWS and Grafana sources. AMG identity, workspace creation, authentication, access control, data-source permissions, APIs and Grafana foundation are documented. Exact pricing, quotas, version/plugin behavior, migration semantics and full managed-service parity remain unknown and are not asserted.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-managed-grafana` and inspect canonical identity with `npx rae-faang products show amazon-managed-grafana --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-managed-grafana` and inspect canonical identity with `npx rea-faang products show amazon-managed-grafana --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -484,7 +487,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-managed-grafana --out ./amazon-managed-grafana.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-managed-grafana --out ./amazon-managed-grafana-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-managed-grafana --out ./amazon-managed-grafana.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-managed-grafana --out ./amazon-managed-grafana-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -526,10 +529,24 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/grafana/) — Amazon Managed Grafana is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
-- [Official documentation entry](https://docs.aws.amazon.com/grafana/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
+- [Create an Amazon Managed Grafana workspace](https://docs.aws.amazon.com/grafana/latest/userguide/AMG-create-workspace.html) — Amazon Managed Grafana provides managed Grafana workspaces with selectable Grafana versions, AWS permissions and network options. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Authenticate users in Amazon Managed Grafana workspaces](https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html) — AMG supports SAML 2.0 and AWS IAM Identity Center authentication for workspace users. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Data source permissions](https://docs.aws.amazon.com/grafana/latest/userguide/data-source-permissions.html) — AMG can restrict data-source query access to users, teams, service accounts or roles. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Amazon Managed Grafana API operations](https://docs.aws.amazon.com/grafana/latest/APIReference/API_Operations.html) — AMG exposes workspace lifecycle, permission, service-account, token and configuration APIs. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Grafana version 13 API reference](https://docs.aws.amazon.com/grafana/latest/userguide/api-reference-v13.html) — AMG workspaces expose supported Grafana HTTP APIs for dashboards, folders, data sources, alerting and permissions. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Users, teams, and permissions](https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-administration-authorization.html) — AMG combines workspace roles with Grafana-level users, teams and specific dashboard/folder/data-source permissions. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [About Grafana](https://grafana.com/docs/grafana/latest/introduction/) — Grafana OSS is an open-source platform for querying, visualizing and alerting on metrics, logs and traces. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Grafana data sources](https://grafana.com/docs/grafana/latest/datasources/) — Grafana queries external data sources and uses them for Explore, panels and alert rules. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Official product page](https://aws.amazon.com/grafana/) — Amazon Managed Grafana is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-04T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/grafana/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-04T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/grafana/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/grafana/latest/userguide/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-workspaces-users.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/grafana/latest/userguide/AMG-and-IAM.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/grafana/latest/userguide/AMG-create-workspace.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/grafana/latest/userguide/data-source-permissions.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/grafana/latest/userguide/Grafana-administration-authorization.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/grafana/latest/APIReference/API_Operations.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/grafana/latest/userguide/api-reference-v13.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://grafana.com/docs/grafana/latest/introduction/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://grafana.com/docs/grafana/latest/datasources/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Managed Grafana Public web-surface observation (REA)](https://aws.amazon.com/grafana/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon Managed Grafana, button: Hands-on Workshop, button: Build workspaces, button: Operational data, button: Integrate with AWS security, button: Migrate Grafana, button: Play:, button: Unify your observability, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Resources, link: FAQs, link: Customers, link: Partners, link: Products, link: Management and Governance, button: Monitor containers, button: Troubleshoot operational issues collaboratively, button: Monitor IoT devices, link: Missing alt text value COTINO builds efficient open-source observability experiences Learn more, link: Missing alt text value NTT DATA Services focuses on improving application health Learn more, link: Missing alt text value Airwalk Reply helps clients visualize data Learn more, link: Missing alt text value Area 52 visualizes process data from industrial IoT devices Learn more, link: Guide Get started with Amazon Managed Grafana Read the guide, link: Getting started Explore observability options Read more, link: Getting started Start using Amazon Managed Grafana Sign in, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:27:16.853Z).

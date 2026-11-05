@@ -87,7 +87,7 @@ Serving open models is solved (vLLM, Ollama); the proprietary model catalogue an
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Partial. Open-model serving is mature; the proprietary catalogue is not replicable.
 
@@ -124,6 +124,6 @@ Serving open models is solved (vLLM, Ollama); the proprietary model catalogue an
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Partial. Open-model serving is mature; the proprietary catalogue is not replicable.

@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Xcode (apple-xcode); investigate, a
 
 This is the coding-agent skill for **Xcode** (`apple-xcode`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/apple/apple-xcode.md` from the catalog page, or run `npx rae-faang apple-xcode --out ./apple-xcode.md`, `npx rae-faang skills generate apple-xcode` or `npx rae-faang build agent-kit apple-xcode --out ./apple-xcode-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/apple/apple-xcode.md` from the catalog page, or run `npx rea-faang apple-xcode --out ./apple-xcode.md`, `npx rea-faang skills generate apple-xcode` or `npx rea-faang build agent-kit apple-xcode --out ./apple-xcode-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Xcode / `apple-xcode` | `catalog/products.jsonl` |
 | Official product URL | [https://developer.apple.com/xcode/](https://developer.apple.com/xcode/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://developer.apple.com/documentation/xcode](https://developer.apple.com/documentation/xcode) | Catalog record |
-| Research dossier | `npx rae-faang research dossier apple-xcode` | `research/companies/apple/products/apple-xcode.md` |
+| Research dossier | `npx rea-faang research dossier apple-xcode` | `research/companies/apple/products/apple-xcode.md` |
 | REA report | `catalog/rea/apple/apple-xcode.md` (captured 2026-11-03T01:33:52.638Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/apple-xcode.json` (`ev_4bc7b7ff3211498ed4f79656d8e4e9257172af709b865a4534a9a4d1ec6032cd`) | Catalog evidence |
 | Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show apple-xcode --format json` and `npx rae-faang research dossier apple-xcode` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show apple-xcode --format json` and `npx rea-faang research dossier apple-xcode` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -451,7 +451,7 @@ VS Code with the official Apple extensions provides the closest open-source alte
 
 Tight iOS/macOS SDK integration, Interface Builder visual design, and App Store submission workflow represent gaps. A VS Code-based workflow with open-source extensions can cover many development tasks.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Focus on VS Code-based development workflow with open-source extensions. Target cross-platform development rather than iOS/macOS-exclusive workflows.
 
@@ -483,7 +483,7 @@ VS Code Apple extensions cover code editing and debugging but lack Interface Bui
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Adopt VS Code with Swift extensions for cross-platform development. iOS-specific features require Xcode.
 
@@ -491,7 +491,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier apple-xcode` and inspect canonical identity with `npx rae-faang products show apple-xcode --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier apple-xcode` and inspect canonical identity with `npx rea-faang products show apple-xcode --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -504,7 +504,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang apple-xcode --out ./apple-xcode.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit apple-xcode --out ./apple-xcode-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang apple-xcode --out ./apple-xcode.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit apple-xcode --out ./apple-xcode-agent`.
 
 ### Multi-agent task plan and outputs
 

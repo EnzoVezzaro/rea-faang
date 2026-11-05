@@ -54,7 +54,7 @@
   ],
   "risks": [
     "catalog/products.jsonl still records alternative_status none_verified for all 77 products while the skills landscape records 40 available / 29 partial / 8 pending; gaps alternatives therefore lists all 77.",
-    "The site generator still emits canonical/OG URLs for rae-faang-landing.vercel.app while the Pages workflow and README use enzovezzaro.github.io/rea-faang; changing the canonical domain is an SEO decision left to the maintainer.",
+    "The site generator still emits canonical/OG URLs for rea-faang-landing.vercel.app while the Pages workflow and README use enzovezzaro.github.io/rea-faang; changing the canonical domain is an SEO decision left to the maintainer.",
     "Changes are worktree-only until committed."
   ],
   "recommendedNextAction": "Review the count-consistency test, then align catalog/products.jsonl alternative_status with catalog-data.mjs in a separate evidenced change.",

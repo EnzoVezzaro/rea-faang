@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_bc54e93bbc69ee228432d0b79fbf68509545e40070a6f1abe559637a9e88f844",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.meta.com/meta-verified/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "fc89edfcd0d7acf5dd9cfbd8cd79d33c747a4299dfe779ecf6946f35fd4ffcb3"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://www.meta.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 8082,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 5291,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.meta.com/meta-verified/",
+          "origin": "https://www.meta.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2578,
+        "before_url": {
+          "url": "https://www.meta.com/meta-verified/",
+          "origin": "https://www.meta.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.meta.com/meta-verified/",
+          "origin": "https://www.meta.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "9b1e17e12af5b2c8425d290e83e4ce1793fba4d50064222f03f4b031b2ddfa0a",
+              "bytes": 23608,
+              "text": "- document:\n  - link \"Skip to main content\":\n    - /url: \"#mdc-main-content\"\n  - navigation \"Main\":\n    - link \"Meta home\":\n      - /url: /\n      - img \"Meta\"\n    - list:\n      - listitem:\n        - link \"AI glasses\":\n          - /url: /ai-glasses/\n      - listitem:\n        - link \"Meta Quest\":\n          - /url: /quest/\n      - listitem:\n        - link \"Meta VR Glasses\":\n          - /url: /vr-glasses/\n      - listitem:\n        - link \"Muse Charm\":\n          - /url: /muse-charm/\n    - list:\n      - listitem:\n        - link \"Explore Meta\":\n          - /url: /about/\n      - listitem:\n        - link \"Support\":\n          - /url: /help/\n    - button \"Search Meta Store\"\n    - link \"View bag items\":\n      - /url: /bag/\n      - img \"Empty bag\"\n    - button \"Log In\"\n  - main:\n    - text: Meta Verified features are now available in Meta One Meta One is a new subscription service that builds on Meta Verified, delivering enhanced features and more AI built into the apps you love.\n    - link \"Learn more\":\n      - /url: https://www.meta.com/meta-one-plans/\n    - img \"gradient backdrop\"\n    - img \"The Meta Verified Badge icon\"\n    - heading \"Protect your brand with Meta Verified\" [level=1]\n    - text: Meta Verified is a subscription for creators and businesses that helps you build more confidence with new audiences, protect your brand from impersonation and more efficiently engage with your audience.\n    - link \"Subscribe on Facebook\":\n      - /url: https://accountscenter.facebook.com/meta_verified/?entrypoint=meta_site\n    - link \"Subscribe on Instagram\":\n      - /url: https://www.instagram.com/accounts/login/?next=%2Facredirect%2F%3Fdeeplink_destination%3Dupgrade_account%26entrypoint%3Dmeta_site\n    - text: Are you a business? Get more information on\n    - link \"Meta Verified for businesses\":\n      - /url: https://www.facebook.com/business/tools/meta-verified-for-business?entry_point=meta_site\n    - text: . Features, availability and pricing may vary by region and app.\n    - img \"Meta Verified blue badge over Instagram and Facebook posts of creators Marie Abbott and Ravi K\"\n    - heading \"A creator toolkit to take your brand further\" [level=2]\n    - text: Explore key Meta Verified benefits available for Facebook and Instagram. See creator plans and pricing for additional benefits.\n    - heading \"Meta Verified benefits\" [level=3]\n    - button \"Verified badge\"\n    - text: The badge means your profile was verified by Meta based on your activity across Meta technologies, or information or documents you provided.\n    - button \"Impersonation protection\"\n    - button \"Enhanced support\"\n    - button \"Upgraded profile features\"\n    - img \"Instagram post by silvaqueen15 with blue verification badge, featuring a person holding a brush, green background, mobile feed mockup.\"\n    - heading \"Creator plans and pricing\" [level=2]\n    - text: Get these benefits on Facebook and Instagram. Sign up for Meta Verified Standard on web for a discounted price. Plans, benefits, and availability may vary by region, by app, and by account. To see the specific features available to your account, please start the subscription process.\n    - table:\n      - row \"Standard Plus Premium Max\":\n        - columnheader \"Standard\"\n        - columnheader \"Plus\"\n        - columnheader \"Premium\"\n        - columnheader \"Max\"\n      - row \"Standard Plus Premium Max\":\n        - cell \"Standard\":\n          - heading \"Standard\" [level=3]\n        - cell \"Plus\":\n          - heading \"Plus\" [level=3]\n        - cell \"Premium\":\n          - heading \"Premium\" [level=3]\n        - cell \"Max\":\n          - heading \"Max\" [level=3]\n      - row \"$14.99/month per profile $49.99/month per profile $149.99/month per profile $499.99/month per profile\":\n        - cell \"$14.99/month per profile\"\n        - cell \"$49.99/month per profile\"\n        - cell \"$149.99/month per profile\"\n        - cell \"$499.99/month per profile\"\n      - row \"Sign up on web or mobile app Sign up on mobile app only Sign up on mobile app only Sign up on mobile app only\":\n        - cell \"Sign up on web or mobile app\":\n          - link \"Sign up on web or mobile app\":\n            - /url: \"#sign-up-bottom\"\n        - cell \"Sign up on mobile app only\":\n          - link \"Sign up on mobile app only\":\n            - /url: https://help.instagram.com/732454618598400\n        - cell \"Sign up on mobile app only\":\n          - link \"Sign up on mobile app only\":\n            - /url: https://help.instagram.com/732454618598400\n        - cell \"Sign up on mobile app only\":\n          - link \"Sign up on mobile app only\":\n            - /url: https://help.instagram.com/732454618598400\n      - row \"Inspire confidence Inspire confidence Inspire confidence Inspire confidence\":\n        - cell \"Inspire confidence\"\n        - cell \"Inspire confidence\"\n        - cell \"Inspire confidence\"\n        - cell \"Inspire confidence\"\n      - row \"Verified badge Verified badge Verified badge Verified badge\":\n        - cell \"Verified badge\":\n          - button \"Verified badge\"\n        - cell \"Verified badge\":\n          - button \"Verified badge\"\n        - cell \"Verified badge\":\n          - button \"Verified badge\"\n        - cell \"Verified badge\":\n          - button \"Verified badge\"\n      - row \"Protect your brand Protect your brand Protect your brand Protect your brand\":\n        - cell \"Protect your brand\"\n        - cell \"Protect your brand\"\n        - cell \"Protect your brand\"\n        - cell \"Protect your brand\"\n      - row \"Impersonation protection Impersonation protection Impersonation protection Impersonation protection\":\n        - cell \"Impersonation protection\":\n          - button \"Impersonation protection\"\n        - cell \"Impersonation protection\":\n          - button \"Impersonation protection\"\n        - cell \"Impersonation protection\":\n          - button \"Impersonation protection\"\n        - cell \"Impersonation protection\":\n          - button \"Impersonation protection\"\n      - row \"Enhanced support Chat or email with agents 24/7 Enhanced support Chat or email with agents 24/7 Get issues resolved more quickly Enhanced support Chat or email with agents 24/7 Get issues resolved more quickly Request a call from an agent Enhanced support Chat or email with agents 24/7 Get issues resolved more quickly Request a call from an agent Receive active case monitoring\":\n        - cell \"Enhanced support Chat or email with agents 24/7\":\n          - button \"Enhanced support\"\n          - text: Chat or email with agents 24/7\n        - cell \"Enhanced support Chat or email with agents 24/7 Get issues resolved more quickly\":\n          - button \"Enhanced support\"\n          - text: Chat or email with agents 24/7 Get issues resolved more quickly\n        - cell \"Enhanced support Chat or email with agents 24/7 Get issues resolved more quickly Request a call from an agent\":\n          - button \"Enhanced support\"\n          - text: Chat or email with agents 24/7 Get issues resolved more quickly Request a call from an agent\n        - cell \"Enhanced support Chat or email with agents 24/7 Get issues resolved more quickly Request a call from an agent Receive active case monitoring\":\n          - button \"Enhanced support\"\n          - text: Chat or email with agents 24/7 Get issues resolved more quickly Request a call from an agent Receive active case monitoring\n      - row \"Maximize discovery Maximize discovery Maximize discovery Maximize discovery\":\n        - cell \"Maximize discovery\"\n        - cell \"Maximize discovery\"\n        - cell \"Maximize discovery\"\n        - cell \"Maximize discovery\"\n      - row \"Search optimization Search optimization Search optimization Search optimization\":\n        - cell \"Search optimization\":\n          - button \"Search optimization\"\n        - cell \"Search optimization\":\n          - button \"Search optimization\"\n        - cell \"Search optimization\":\n          - button \"Search optimization\"\n        - cell \"Search optimization\":\n          - button \"Search optimization\"\n      - row \"Featured profile Featured profile Featured profile Featured profile\":\n        - cell \"Featured profile\":\n          - button \"Featured profile\"\n        - cell \"Featured profile\":\n          - button \"Featured profile\"\n        - cell \"Featured profile\":\n          - button \"Featured profile\"\n        - cell \"Featured profile\":\n          - button \"Featured profile\"\n      - row \"Links in Reels Links in Reels 2 per month Links in Reels 4 per month Links in Reels 6 per month\":\n        - cell \"Links in Reels\":\n          - button \"Links in Reels\"\n        - cell \"Links in Reels 2 per month\":\n          - button \"Links in Reels\"\n          - text: 2 per month\n        - cell \"Links in Reels 4 per month\":\n          - button \"Links in Reels\"\n          - text: 4 per month\n        - cell \"Links in Reels 6 per month\":\n          - button \"Links in Reels\"\n          - text: 6 per month\n      - row \"Drive engagement Drive engagement Drive engagement Drive engagement\":\n        - cell \"Drive engagement\"\n        - cell \"Drive engagement\"\n        - cell \"Drive engagement\"\n        - cell \"Drive engagement\"\n      - row \"Add images to your links Add images to your links Add images to your links Add images to your links\":\n        - cell \"Add images to your links\":\n          - button \"Add images to your links\"\n        - cell \"Add images to your links\":\n          - button \"Add images to your links\"\n        - cell \"Add images to your links\":\n          - button \"Add images to your links\"\n        - cell \"Add images to your links\":\n          - button \"Add images to your links\"\n      - row \"Exclusive stickers Exclusive stickers Exclusive stickers Exclusive stickers\":\n        - cell \"Exclusive stickers\":\n          - button \"Exclusive stickers\"\n        - cell \"Exclusive stickers\":\n          - button \"Exclusive stickers\"\n        - cell \"Exclusive stickers\":\n          - button \"Exclusive stickers\"\n        - cell \"Exclusive stickers\":\n          - button \"Exclusive stickers\"\n      - row \"Custom chat themes Custom chat themes Custom chat themes Custom chat themes\":\n        - cell \"Custom chat themes\":\n          - button \"Custom chat themes\"\n        - cell \"Custom chat themes\":\n          - button \"Custom chat themes\"\n        - cell \"Custom chat themes\":\n          - button \"Custom chat themes\"\n        - cell \"Custom chat themes\":\n          - button \"Custom chat themes\"\n      - row \"Personalized content strategy advice Personalized content strategy advice Personalized content strategy advice Personalized content strategy advice\":\n        - cell \"Personalized content strategy advice\":\n          - button \"Personalized content strategy advice\"\n        - cell \"Personalized content strategy advice\":\n          - button \"Personalized content strategy advice\"\n        - cell \"Personalized content strategy advice\":\n          - button \"Personalized content strategy advice\"\n        - cell \"Personalized content strategy advice\":\n          - button \"Personalized content strategy advice\"\n    - link \"Subscribe on Facebook\":\n      - /url: https://accountscenter.facebook.com/meta_verified/?entrypoint=meta_site\n    - link \"Subscribe on Instagram\":\n      - /url: https://www.instagram.com/accounts/login/?next=%2Facredirect%2F%3Fdeeplink_destination%3Dupgrade_account%26entrypoint%3Dmeta_site\n    - text: Sign up available via web and mobile app for Standard; mobile app only for Plus, Premium, and Max. In order to subscribe to Meta Verified, you must be logged into your personal or\n    - link \"professional creator account\":\n      - /url: https://www.facebook.com/help/instagram/138925576505882\n    - text: (Instagram) or personal or professional (Facebook). Not available in all regions. Creators must meet certain eligibility requirements in order to qualify (requirements for\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/help/596285382333151\n    - text: and\n    - link \"Instagram\":\n      - /url: https://help.instagram.com/2419286908233223\n    - text: ). *Offer availability subject to eligibility and only available for new subscribers. This subscription is priced at $14.99/month (Standard), $49.99/month (Plus), $149.99/month (Premium), $499.99/month (Max), and renews automatically. Meta Verified subscribers must agree to the\n    - link \"Terms of Service\":\n      - /url: https://www.facebook.com/legal/mvb_terms\n    - text: and follow our\n    - link \"Facebook Terms of Use\":\n      - /url: https://www.facebook.com/legal/terms?paipv=0&eav=AfZvYlKgIQAjlxpYVSHVvCw3CDNKhbt_ANPixrhWnZggprx0mVoioWLHLGnddjmxNdY&_rdr\n    - text: \",\"\n    - link \"Instagram Terms of Service\":\n      - /url: https://help.instagram.com/581066165581870\n    - text: \",\"\n    - link \"Community Standards\":\n      - /url: https://transparency.meta.com/policies/community-standards/\n    - text: /\n    - link \"Manage your Meta Verified subscription\":\n      - /url: https://www.facebook.com/business/help/23875260945405570?id=579726174359330\n    - text: .\n    - region \"Meta Verified testimonials\":\n      - group \"1 of 4\":\n        - heading \"“Meta Verified helped my account stand out from impersonators, which helped me secure more paying clients.”\" [level=3]\n        - link \"inversionista_gal's profile photo @inversionista_gal The Meta Verified Badge icon 4k+ followers\":\n          - /url: https://www.instagram.com/inversionista_gal\n          - img \"inversionista_gal's profile photo\"\n          - text: \"@inversionista_gal\"\n          - img \"The Meta Verified Badge icon\"\n          - text: 4k+ followers\n      - button \"Previous slide\"\n      - button \"Next slide\"\n    - heading \"FAQs\" [level=2]\n    - text: We’ve included some frequently asked questions below. For more, visit our Help Center on\n    - link \"Facebook\":\n      - /url: https://www.facebook.com/help/565322618581808\n    - text: or\n    - link \"Instagram\":\n      - /url: https://help.instagram.com/1318901965540571\n    - text: .\n    - list:\n      - listitem:\n        - heading \"How do I know if I'm eligible?\" [level=3]:\n          - button \"How do I know if I'm eligible?\" [expanded]\n        - region \"How do I know if I'm eligible?\":\n          - text: Meta Verified is available in select regions for creators who meet certain eligibility requirements (requirements for\n          - link \"Facebook\":\n            - /url: https://www.facebook.com/help/596285382333151\n          - text: and\n          - link \"Instagram\":\n            - /url: https://help.instagram.com/2419286908233223\n          - text: ).\n      - listitem:\n        - heading \"I already have a verified badge. What happens to it?\" [level=3]:\n          - button \"I already have a verified badge. What happens to it?\"\n      - listitem:\n        - heading \"What is the verification process?\" [level=3]:\n          - button \"What is the verification process?\"\n      - listitem:\n        - heading \"As a creator, can I use one Meta Verified subscription on both Facebook and Instagram?\" [level=3]:\n          - button \"As a creator, can I use one Meta Verified subscription on both Facebook and Instagram?\"\n      - listitem:\n        - heading \"What is the price to subscribe to Meta Verified for creators?\" [level=3]:\n          - button \"What is the price to subscribe to Meta Verified for creators?\"\n      - listitem:\n        - heading \"What if I'm interested in Meta Verified for businesses?\" [level=3]:\n          - button \"What if I'm interested in Meta Verified for businesses?\"\n      - listitem:\n        - heading \"Do my Meta Verified benefits extend to my other profiles and accounts?\" [level=3]:\n          - button \"Do my Meta Verified benefits extend to my other profiles and accounts?\"\n      - listitem:\n        - heading \"After I sign up for Meta Verified, can I change my plan selection?\" [level=3]:\n          - button \"After I sign up for Meta Verified, can I change my plan selection?\"\n      - listitem:\n        - heading \"How do I change my plan selection?\" [level=3]:\n          - button \"How do I change my plan selection?\"\n      - listitem:\n        - heading \"I have multiple accounts subscribed to Meta Verified. Can I upgrade/ downgrade only for 1 of them?\" [level=3]:\n          - button \"I have multiple accounts subscribed to Meta Verified. Can I upgrade/ downgrade only for 1 of them?\"\n    - heading \"Meta Newsroom\" [level=2]\n    - text: Learn more about how Meta Verified is improving to better serve creators and businesses.\n    - link \"Visit our Newsroom\":\n      - /url: https://www.facebook.com/business/news/Introducing-Enhanced-Gen-AI-Features-and-Other-Tools-to-Help-Build-Your-Business\n    - img \"A film set with a blonde girl smiling at the camera and a microphone capturing the audio of the scene\"\n  - contentinfo:\n    - img \"Meta\"\n    - list:\n      - listitem:\n        - link \"Facebook Meta.com social media\":\n          - /url: https://www.facebook.com/Meta\n          - img \"Facebook Meta.com social media\"\n      - listitem:\n        - link \"Threads Meta.com social media\":\n          - /url: https://www.threads.net/@meta\n          - img \"Threads Meta.com social media\"\n      - listitem:\n        - link \"Instagram Meta.com social media\":\n          - /url: https://www.instagram.com/meta/\n          - img \"Instagram Meta.com social media\"\n      - listitem:\n        - link \"X Meta.com social media\":\n          - /url: https://twitter.com/Meta\n          - img \"X Meta.com social media\"\n      - listitem:\n        - link \"YouTube Meta.com media channel\":\n          - /url: https://www.youtube.com/meta\n          - img \"YouTube Meta.com media channel\"\n    - heading \"Meta Store\" [level=2]\n    - list:\n      - listitem:\n        - link \"Meta Glasses\":\n          - /url: /ai-glasses/meta-glasses/\n      - listitem:\n        - link \"Ray-Ban Meta glasses\":\n          - /url: /ai-glasses/ray-ban-meta/\n      - listitem:\n        - link \"Oakley Meta glasses\":\n          - /url: /ai-glasses/oakley-meta/\n      - listitem:\n        - link \"Meta Ray-Ban Display\":\n          - /url: /ai-glasses/meta-ray-ban-display/\n      - listitem:\n        - link \"Compare glasses\":\n          - /url: /ai-glasses/compare/\n      - listitem:\n        - link \"AI glasses accessories\":\n          - /url: /ai-glasses/accessories/\n      - listitem:\n        - link \"AI glasses guides\":\n          - /url: /ai-glasses/learn/\n      - listitem:\n        - link \"Meta Lab\":\n          - /url: /meta-lab/\n      - listitem:\n        - link \"Meta Quest\":\n          - /url: /quest/\n      - listitem:\n        - link \"Meta Quest accessories\":\n          - /url: /quest/accessories/\n      - listitem:\n        - link \"Apps and games\":\n          - /url: /experiences/\n      - listitem:\n        - link \"Meta Gift Card\":\n          - /url: /gift-cards/\n      - listitem:\n        - link \"Refurbished Meta Quest 3\":\n          - /url: /refurbished/quest-3/\n      - listitem:\n        - link \"Refurbished Meta Quest 3S\":\n          - /url: /refurbished/quest-3s/\n      - listitem:\n        - link \"Refurbished Ray-Ban Meta glasses\":\n          - /url: /refurbished/ai-glasses/\n      - listitem:\n        - link \"More from Ray-Ban\":\n          - /url: https://rayban.com/\n      - listitem:\n        - 'link \"Meta Quest: Play now. Pay later.\"':\n          - /url: /quest/play-now-pay-later/\n      - listitem:\n        - link \"Meta Warranty Plus\":\n          - /url: /warranty-plus/\n      - listitem:\n        - link \"Meta Quest referrals\":\n          - /url: /quest/referrals/\n      - listitem:\n        - link \"Education discount\":\n          - /url: \"/purchase-program/education/ \"\n      - listitem:\n        - link \"AI glasses bulk order inquiry\":\n          - /url: /ai-glasses/bulk-order/\n      - listitem:\n        - link \"Blog\":\n          - /url: /blog/\n    - heading \"Store support and legal\" [level=2]\n    - list:\n      - listitem:\n        - link \"Meta Help Center\":\n          - /url: /help/\n      - listitem:\n        - link \"Order status\":\n          - /url: /order/find/\n      - listitem:\n        - link \"Returns\":\n          - /url: /returns/\n      - listitem:\n        - link \"Find a product demo\":\n          - /url: /demo/\n      - listitem:\n        - link \"Find a store\":\n          - /url: /retailers/\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/\n      - listitem:\n        - link \"Terms of sale\":\n          - /url: /legal/terms-of-sale/\n      - listitem:\n        - link \"Meta Quest safety center\":\n          - /url: /quest/safety-center/\n    - heading \"Community\" [level=2]\n    - list:\n      - listitem:\n        - link \"Creators\":\n          - /url: https://creators.atmeta.com/\n      - listitem:\n        - link \"Developers\":\n          - /url: https://developers.meta.com/\n      - listitem:\n        - link \"Businesses\":\n          - /url: https://www.facebook.com/business\n      - listitem:\n        - link \"Non-profits\":\n          - /url: https://www.facebook.com/government-nonprofits/best-practices/nonprofits/\n      - listitem:\n        - link \"Download SDKs\":\n          - /url: https://developers.meta.com/horizon/downloads/unity/\n      - listitem:\n        - link \"Made for Meta partner program\":\n          - /url: /made-for-meta/\n      - listitem:\n        - link \"VR for Good\":\n          - /url: /community/vr-for-good/\n    - heading \"Our actions\" [level=2]\n    - list:\n      - listitem:\n        - link \"Data and privacy\":\n          - /url: /actions/protecting-privacy-and-security/\n      - listitem:\n        - link \"Responsible business practices\":\n          - /url: /actions/responsible-business-practices/\n      - listitem:\n        - link \"Accessibility\":\n          - /url: /accessibility/\n      - listitem:\n        - link \"Elections\":\n          - /url: /actions/preparing-for-elections-with-meta/\n    - heading \"About us\" [level=2]\n    - list:\n      - listitem:\n        - link \"About Meta\":\n          - /url: /about/\n      - listitem:\n        - link \"Company Info\":\n          - /url: /about/company-info/\n      - listitem:\n        - link \"Careers\":\n          - /url: https://metacareers.com/\n      - listitem:\n        - link \"Media gallery\":\n          - /url: /media-gallery/\n      - listitem:\n        - link \"Brand resources\":\n          - /url: /brand/resources/\n      - listitem:\n        - link \"For investors\":\n          - /url: https://investor.atmeta.com/home/default.aspx\n      - listitem:\n        - link \"Newsroom\":\n          - /url: https://about.fb.com/news/\n    - heading \"Site terms and policies\" [level=2]\n    - list:\n      - listitem:\n        - link \"Community standards\":\n          - /url: https://transparency.meta.com/policies/community-standards/\n      - listitem:\n        - link \"Privacy policy\":\n          - /url: /legal/privacy-policy/\n      - listitem:\n        - link \"Terms\":\n          - /url: https://www.facebook.com/terms.php/\n      - listitem:\n        - link \"Cookie policy\":\n          - /url: https://www.facebook.com/privacy/policies/cookies/\n    - heading \"App support\" [level=2]\n    - list:\n      - listitem:\n        - link \"Facebook Help Center\":\n          - /url: https://www.facebook.com/help?ref=about.facebook.com\n      - listitem:\n        - link \"Messenger Help Center\":\n          - /url: https://www.facebook.com/help/messenger-app/?ref=about.facebook.com\n      - listitem:\n        - link \"Instagram Help Center\":\n          - /url: https://help.instagram.com/\n      - listitem:\n        - link \"WhatsApp Help Center\":\n          - /url: https://faq.whatsapp.com/\n      - listitem:\n        - link \"Workplace Help Center\":\n          - /url: https://www.facebook.com/help/work?ref=about.facebook.com\n      - listitem:\n        - link \"Meta Verified\":\n          - /url: /meta-verified/\n      - listitem:\n        - link \"Meta Account (Single Login)\":\n          - /url: /account/\n    - button \"Change language\": English (US)"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.meta.com/meta-verified/",
+              "origin": "https://www.meta.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

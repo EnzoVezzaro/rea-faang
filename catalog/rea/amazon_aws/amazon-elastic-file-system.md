@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Elastic File System, recorde
 | Target | https://aws.amazon.com/efs/ |
 | Resolved URL | https://aws.amazon.com/efs/ |
 | Page title | Amazon Elastic File System |
-| Captured | 2026-11-03T03:02:48.717Z |
+| Captured | 2026-11-04T02:42:38.791Z |
 | Status | captured |
-| REA Evidence ID | `ev_c17cebeabe44cf645d0f6698dfede4edc72767a064e1da81bbc943096e65435a` |
+| REA Evidence ID | `ev_6b3289b8f26bb43b14a5eb33f7c7a18e28b934185fc2e557ad2c2b35f341c2ff` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-elastic-file-system.json`
-- Evidence ID: `ev_c17cebeabe44cf645d0f6698dfede4edc72767a064e1da81bbc943096e65435a`
+- Evidence ID: `ev_6b3289b8f26bb43b14a5eb33f7c7a18e28b934185fc2e557ad2c2b35f341c2ff`
 - Accessibility outline: 11394 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

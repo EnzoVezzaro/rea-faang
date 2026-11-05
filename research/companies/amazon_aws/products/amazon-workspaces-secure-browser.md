@@ -75,9 +75,9 @@ Compare browser isolation, pixel streaming, URL filtering, browser policies, cli
 
 Research must map portal, browser, user, network, IP, data-protection, identity, trust-store, session and logging operations, policy precedence, browser lifecycle, quotas and the announced availability transition. Any implementation must use original code and synthetic browsing fixtures.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product page, FAQ, administration guide, API reference, CLI reference and availability-change notice as primary sources. The generated RAE skill should instruct an agent to build an independent browser-isolation service beginning with open remote-access components only where useful, then add disposable browsers, pixel streaming, policy enforcement, identity, data protection and logs only where evidence supports them. Preserve the partial-equivalence and sunset verdicts.
+Use the official product page, FAQ, administration guide, API reference, CLI reference and availability-change notice as primary sources. The generated REA skill should instruct an agent to build an independent browser-isolation service beginning with open remote-access components only where useful, then add disposable browsers, pixel streaming, policy enforcement, identity, data protection and logs only where evidence supports them. Preserve the partial-equivalence and sunset verdicts.
 
 # 12. Security, privacy, and compliance
 

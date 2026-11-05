@@ -79,7 +79,7 @@ Open-source health IT and speech/NLP components may cover isolated functions, bu
 
 REA should separate patient verification, scheduling, patient insights, ambient documentation, coding, EHR/FHIR integration, domain administration, streaming events and review/audit workflows.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public AWS documentation, public healthcare interoperability specifications and permitted test data only. A clean-room equivalent must use synthetic or authorized data, human review gates and independently validated clinical components; it must not copy AWS models, prompts, clinical datasets or proprietary assets.
 

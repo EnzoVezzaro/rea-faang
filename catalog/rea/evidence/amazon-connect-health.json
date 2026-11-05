@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_2ef4c47f6a8e387efe35cccf956d3252b9eae3cefb88e8a5dcb9ea1b90f1c159",
+  "evidence_id": "ev_2fb0ef2fe05fe58333fee96e5457af1596e053a3996cb1c1af377821eeed236a",
   "subject": null,
   "provider": {
     "id": "rea-playwright-browser-scenario",
@@ -99,13 +99,13 @@
         "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "duration_ms": 6036,
+    "duration_ms": 5698,
     "steps": [
       {
         "step_index": 0,
         "step_id": "scenario_start",
         "action": "goto_start",
-        "elapsed_ms": 3101,
+        "elapsed_ms": 2939,
         "before_url": {
           "url": "about:blank",
           "origin": null,
@@ -153,7 +153,7 @@
         "step_index": 1,
         "step_id": "settle",
         "action": "wait_for_timeout",
-        "elapsed_ms": 2568,
+        "elapsed_ms": 2535,
         "before_url": {
           "url": "https://aws.amazon.com/products/connect/health/",
           "origin": "https://aws.amazon.com",

@@ -14,7 +14,7 @@
 
 
 ## Overview
-RAE FAANG uses a structured, agent-assisted development workflow based on the ACE framework. This document describes the end-to-end process from feature identification to production release.
+REA FAANG uses a structured, agent-assisted development workflow based on the ACE framework. This document describes the end-to-end process from feature identification to production release.
 
 ## Workflow Stages
 
@@ -36,7 +36,7 @@ RAE FAANG uses a structured, agent-assisted development workflow based on the AC
 
 **ACE Commands**:
 ```bash
-ace task add --title "Investigate Instagram feed algorithm" --project rae-social --role researcher
+ace task add --title "Investigate Instagram feed algorithm" --project rea-social --role researcher
 ace task claim <id> --agent researcher-1
 ace task start <id>
 # ... research work ...
@@ -60,7 +60,7 @@ ace handoff verify <task>
 
 **ACE Commands**:
 ```bash
-ace task add --title "Design RAE Social data models" --project rae-social --role architect
+ace task add --title "Design REA Social data models" --project rea-social --role architect
 ace task claim <id> --agent architect-1
 # ... design work ...
 ace handoff submit <task> --file design-spec.json
@@ -95,8 +95,8 @@ Feature: Photo Upload (F-001)
 **ACE Commands**:
 ```bash
 # Create multiple tasks
-ace task add --title "Backend: Upload API" --project rae-social --role backend --depends-on <design-task-id>
-ace task add --title "Frontend: Upload Component" --project rae-social --role frontend --depends-on <design-task-id>
+ace task add --title "Backend: Upload API" --project rea-social --role backend --depends-on <design-task-id>
+ace task add --title "Frontend: Upload Component" --project rea-social --role frontend --depends-on <design-task-id>
 
 # Claim and execute
 ace task claim <backend-task-id> --agent backend-1
@@ -127,7 +127,7 @@ ace task start <frontend-task-id>
 ace verify
 
 # Or specific checks
-ace task add --title "E2E: Photo upload flow" --project rae-social --role tester
+ace task add --title "E2E: Photo upload flow" --project rea-social --role tester
 ace verify lint
 ace verify typecheck
 ace verify test
@@ -244,15 +244,15 @@ npx lint-staged
 ```
 feature/<product>-<short-description>
 # Examples:
-feature/rae-social-photo-upload
-feature/rae-search-indexing-pipeline
+feature/rea-social-photo-upload
+feature/rea-search-indexing-pipeline
 feature/shared-auth-oauth2-provider
 ```
 
 ### Release Branches
 ```
 release/<product>-v<major>.<minor>
-# Example: release/rae-social-v1.0
+# Example: release/rea-social-v1.0
 ```
 
 ## Release Process

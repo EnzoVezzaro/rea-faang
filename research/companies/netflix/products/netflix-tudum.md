@@ -7,122 +7,56 @@ aliases: []
 product_type: "media"
 categories:
   - "editorial"
-lifecycle_status: "active"
 official_url: "https://www.netflix.com/tudum"
-official_docs_url: null
-official_source_urls: []
-research_status: "pending"
-research_confidence: "unverified"
+official_docs_url: "https://help.netflix.com/en/node/123481"
+official_source_urls:
+  - "https://help.netflix.com/en/node/123481"
+  - "https://about.netflix.com/news/meet-tudum-your-backstage-pass-to-the-netflix-stories-you-love"
+lifecycle_status: "active"
+research_status: "retired"
+research_confidence: "verified"
 alternative_status: "none_verified"
 alternative_coverage: "unknown"
-opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: null
+opportunity_status: "not_recommended"
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
 next_review_at: null
-research_version: 1
+research_version: 2
 ---
 
-# 1. Executive summary
+# Tudum
 
-Tudum is Netflix's editorial publication covering shows, films and fandom.
+## Classification verdict
 
----
+Tudum is an active Netflix editorial companion site, not a separate streaming
+service or software product. Netflix describes it as an official companion site
+with interviews, behind-the-scenes material, bonus videos, news and fan-oriented
+content. It can personalize the experience after a Netflix sign-in, but it is a
+content and editorial surface associated with Netflix Streaming.
 
-# 2. Product identity and ownership
+To avoid counting an editorial surface as an independent buildable service, this
+entry remains in the catalog only as a **retired inventory record** for traceability.
+It is not an active product-research or build target.
 
-- **Official name:** Tudum
-- **Company and business unit:** netflix
-- **Current lifecycle status:** active
-- **Official website:** https://www.netflix.com/tudum
+## Evidence
 
----
+- [Netflix Help: What is Tudum?](https://help.netflix.com/en/node/123481) identifies
+  Tudum as Netflix's official companion site and describes its editorial content,
+  personalization, language availability, and relationship to Netflix accounts.
+- [About Netflix: Meet Tudum](https://about.netflix.com/news/meet-tudum-your-backstage-pass-to-the-netflix-stories-you-love)
+  describes Tudum's purpose as going deeper into Netflix stories with news,
+  interviews, and behind-the-scenes material.
+- The REA capture at `catalog/rea/netflix/netflix-tudum.md` confirms that the
+  public URL resolves to a Tudum editorial surface with sections such as Latest
+  News, Shows, and Explore More.
 
-# 3. Product capabilities
+## Scope boundary
 
-- Editorial articles and interviews
-- Companion content
-- Newsroom-style updates
+Tudum does not get a separate software-replication plan. A build agent should not
+interpret this record as a request to reproduce Netflix editorial content, private
+account integrations, or copyrighted media. If a future project needs a fan
+publication, evaluate a general CMS or publishing stack separately; that would be
+a new, independently scoped product rather than a Tudum clone.
 
----
-
-# 4. Technical architecture
-
-Not yet researched.
-
----
-
-# 5. User workflows
-
-Not yet researched.
-
----
-
-# 6. Pricing and access
-
-Not yet researched.
-
----
-
-# 7. API and integration surface
-
-Not yet researched.
-
----
-
-# 8. Existing open-source alternatives
-
-No open-source alternative has been verified yet.
-
----
-
-# 9. Alternative comparison
-
-Editorial content is journalism, not software; open CMSs can serve a publication, but the content itself is Netflix's.
-
----
-
-# 10. Missing capabilities and opportunity analysis
-
-Editorial content is journalism, not software; open CMSs can serve a publication, but the content itself is Netflix's.
-
----
-
-# 11. RAE implementation strategy
-
-Pending. Not a software-replication problem; open CMSs cover publishing, not content.
-
----
-
-# 12. Security, privacy, and compliance
-
-Not yet researched.
-
----
-
-# 13. Sources and evidence
-
-- https://en.wikipedia.org/wiki/Netflix
-
----
-
-# 14. Open questions
-
-- Full feature inventory and technical architecture are not yet researched.
-
----
-
-# 15. Research history
-
-- v1: dossier created; research pending.
-
----
-
-# 16. Alternative comparison (continued)
-
-Editorial content is journalism, not software; open CMSs can serve a publication, but the content itself is Netflix's.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Pending. Not a software-replication problem; open CMSs cover publishing, not content.
+**Classification date:** 2026-11-03.  
+**Status:** Active external site; retired from the REA build-product inventory.

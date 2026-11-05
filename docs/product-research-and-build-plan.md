@@ -1,24 +1,24 @@
-![RAE FAANG](assets/brand-logo-icon.png)
+![REA FAANG](assets/brand-logo-icon.png)
 
 # Product research and coding-agent skills
 
 ## Purpose
 
-Every catalogued product has a Markdown skill intended for a coding agent. The skill gives your agent product context, research references, candidate open-source projects, and directions for deciding what to reuse, what to build and how to verify the result in your project. RAE FAANG provides the product instructions; your coding agent builds the software.
+Every catalogued product has a Markdown skill intended for a coding agent. The skill gives your agent product context, research references, candidate open-source projects, and directions for deciding what to reuse, what to build and how to verify the result in your project. REA FAANG provides the product instructions; your coding agent builds the software.
 
 The goal is useful, independently implemented software, not a promise to reproduce proprietary internals or achieve feature parity with a global service. Agents should use public, authorized evidence and respect open-source licenses, user privacy and third-party rights.
 
 ## Product skills, research and evidence
 
-The manifest tracks 77 products across Google (25), Apple (20), Amazon Web Services (17), Amazon (5), Netflix (5) and Meta (5). Every product has a Markdown build skill: give that file to your coding agent in your project, and the agent uses it to research, scope, implement and verify an independent version of the product. Alternative coverage describes research into reuse options; it is not a build-readiness status. Dossiers, citations and REA reports help the agent distinguish verified behavior from unknowns. REA reports observe public web surfaces only and do not reveal authenticated workflows or internal architecture.
+The manifest tracks 193 products across Google (26), Apple (20), Amazon (5), Amazon Web Services (117), Netflix (6), Meta (12) and Microsoft (7). Every product has a Markdown build skill: give that file to your coding agent in your project, and the agent uses it to research, scope, implement and verify an independent version of the product. Alternative coverage describes research into reuse options; it is not a build-readiness status. Dossiers, citations and REA reports help the agent distinguish verified behavior from unknowns. REA reports observe public web surfaces only and do not reveal authenticated workflows or internal architecture.
 
 Check the current catalog data with:
 
 ```bash
-npx rae-faang products list
-npx rae-faang research coverage
-npx rae-faang research validate
-npx rae-faang gaps all
+npx rea-faang products list
+npx rea-faang research coverage
+npx rea-faang research validate
+npx rea-faang gaps all
 ```
 
 A generated page or passing schema check does not verify product behavior. Keep research evidence and alternative coverage accurate; neither determines whether a user can give the skill to an agent and build in their own project.
@@ -31,13 +31,13 @@ For each product `<id>`, keep related work connected by its stable catalog ID:
 |---|---|---|
 | Product record | `catalog/products.jsonl` | Identity, lifecycle, type, links and machine-readable status. |
 | Research dossier | `research/companies/<company_id>/products/<id>.md` | Evidence-backed account of the product and its observable behavior. |
-| Product build skill | `catalog/skills/<company_id>/<id>.md`, deterministically compiled by the bundled generator from canonical product, dossier, REA observation and curated alternative records | The coding-agent skill: evidence-backed behavior or explicit unknowns, candidate projects to evaluate, requirements/tests, implementation directions and verification. From npm, generate one portable file with `npx rae-faang <id> --out ./<id>.md`; `tools/skills/catalog-data.mjs` remains the source-repository alternative-landscape input. |
+| Product build skill | `catalog/skills/<company_id>/<id>.md`, deterministically compiled by the bundled generator from canonical product, dossier, REA observation and curated alternative records | The coding-agent skill: evidence-backed behavior or explicit unknowns, candidate projects to evaluate, requirements/tests, implementation directions and verification. From npm, generate one portable file with `npx rea-faang <id> --out ./<id>.md`; `tools/skills/catalog-data.mjs` remains the source-repository alternative-landscape input. |
 | Optional product specifications | `products/<company_id>/<id>/specs/01-*.md` through `10-*.md` | Deeper implementation guidance and testable requirements for an agent build. |
 | Opportunity decision | `opportunities/<id>.md` when the classification requires a build proposal | Why build, reuse or extension is justified, with a bounded MVP and verification criteria. |
 | Public-surface observation | `catalog/rea/<company_id>/<id>.md` and `catalog/rea/evidence/` | Dated observations of the publicly accessible page and the method's limitations. |
 | Generated product page and skill | `site/catalog/<id>/` | Human-readable product page and downloadable Markdown skill for your coding agent. |
 
-The dossier is the research record; the single product Markdown file is the coding-agent skill for building that product in the user's project; optional specifications add implementation detail; generated site pages are views, never independent sources of truth. From npm, generate one portable skill with `npx rae-faang <id> --out ./<id>.md`, or generate all bundled skills with `npx rae-faang skills generate --all` (writes under `./rae-skills/`). In a source checkout, the same batch command regenerates the canonical `catalog/skills/<company>/<product-id>.md` files; use `--out` only for one product. Validate bundled skills with `npx rae-faang skills validate --all`, and inspect research gaps with `npx rae-faang skills coverage --format json`. Source contributors may instead use the `rae` binary locally, review generator/catalog inputs, and run the repository checks. Avoid copying manually maintained facts into several stores.
+The dossier is the research record; the single product Markdown file is the coding-agent skill for building that product in the user's project; optional specifications add implementation detail; generated site pages are views, never independent sources of truth. From npm, generate one portable skill with `npx rea-faang <id> --out ./<id>.md`, or generate all bundled skills with `npx rea-faang skills generate --all` (writes under `./rea-skills/`). In a source checkout, the same batch command regenerates the canonical `catalog/skills/<company>/<product-id>.md` files; use `--out` only for one product. Validate bundled skills with `npx rea-faang skills validate --all`, and inspect research gaps with `npx rea-faang skills coverage --format json`. Source contributors may instead use the `rea` binary locally, review generator/catalog inputs, and run the repository checks. Avoid copying manually maintained facts into several stores.
 
 ## Product-description standard
 
@@ -169,14 +169,14 @@ A **build-ready packet** is ready only when, in addition:
 
 An **implementation** is verified only when required MVP journeys work, acceptance checks pass, setup and limitations are documented, security-sensitive behavior is reviewed, and a reviewer accepts the handoff. Passing tests do not establish parity. Report implemented coverage and remaining gaps explicitly.
 
-## Phased execution across all 77 products
+## Phased execution across all 193 catalog entries
 
 ### Phase 0 — Establish a trustworthy baseline
 
 - Reconcile the manifest, catalog IDs, company ownership, official URLs, dossiers, skill entries, REA reports and product workspaces.
 - Identify duplicate/overlapping product concepts and decide whether to merge, distinguish or group them with a written reason.
 - Add a per-product progress view that separates inventory, research quality, alternative review, spec readiness, build decision, implementation and verification. A generated artifact's existence must not count as completion.
-- Baseline bundled npm behavior with `npx rae-faang products list`, `npx rae-faang research coverage`, `npx rae-faang research validate`, and `npx rae-faang gaps all`; source contributors additionally run `npm run validate` and `npm test`.
+- Baseline bundled npm behavior with `npx rea-faang products list`, `npx rea-faang research coverage`, `npx rea-faang research validate`, and `npx rea-faang gaps all`; source contributors additionally run `npm run validate` and `npm test`.
 
 ### Phase 1 — Improve the data model and quality checks
 
@@ -187,7 +187,7 @@ An **implementation** is verified only when required MVP journeys work, acceptan
 
 ### Phase 2 — Research and document all products
 
-- Work in reviewable company batches: Google (25), Apple (20), AWS (17), Amazon (5), Netflix (5), Meta (5). Assign one researcher and a separate reviewer per packet; agents may parallelize distinct products, not conflicting edits to the same dossier.
+- Work in reviewable company batches: Google (25), Apple (20), AWS (17), Amazon (5), Netflix (5), Meta (12). Assign one researcher and a separate reviewer per packet; agents may parallelize distinct products, not conflicting edits to the same dossier.
 - Prioritize a representative product from each materially different domain, then continue by evidence readiness, user value, risk and dependency. Do not label whole-company batches complete while product-level gates fail.
 - For each product, complete the identity/description, evidence, workflows/capabilities, alternatives, build decision and review date before generating its coding-agent skill.
 - Recheck volatile facts (licenses, project activity, pricing, lifecycle, API behavior) at review time. Keep citations and dates with the claims they support.

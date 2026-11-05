@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Fraud Detector, recorded wit
 | Target | https://aws.amazon.com/fraud-detector/ |
 | Resolved URL | https://aws.amazon.com/fraud-detector/ |
 | Page title | Amazon Fraud Detector |
-| Captured | 2026-11-03T03:08:50.256Z |
+| Captured | 2026-11-04T02:43:34.773Z |
 | Status | captured |
-| REA Evidence ID | `ev_6bc15c8abcc3fa54630c17765cfd15afe079727238861c87f30907eeb9813dde` |
+| REA Evidence ID | `ev_e32e27e777e43378feb9eff37a4eab6e034a9f254a3f7b25e515f9c6ba1170c6` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -167,6 +167,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-fraud-detector.json`
-- Evidence ID: `ev_6bc15c8abcc3fa54630c17765cfd15afe079727238861c87f30907eeb9813dde`
+- Evidence ID: `ev_e32e27e777e43378feb9eff37a4eab6e034a9f254a3f7b25e515f9c6ba1170c6`
 - Accessibility outline: 11979 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

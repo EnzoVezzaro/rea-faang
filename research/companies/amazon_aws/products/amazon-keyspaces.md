@@ -88,7 +88,7 @@ Self-managed Cassandra and compatible databases provide more infrastructure cont
 
 REA should map CQL/API compatibility, data types, partitioning, consistency, capacity modes, autoscaling, TTL, streams, backups/PITR, driver behavior, IAM, TLS, PrivateLink, CloudFormation/Terraform, quotas, failure recovery and migration constraints.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official Keyspaces product page, developer guide, CQL reference, API references, CLI reference and compatibility documentation as research surfaces. A clean-room implementation should use independently licensed Cassandra-compatible software, document semantic differences, and avoid copying AWS's modified implementation or managed control plane.
 

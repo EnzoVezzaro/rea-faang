@@ -1,6 +1,6 @@
-![RAE FAANG](assets/brand-logo-icon.png)
+![REA FAANG](assets/brand-logo-icon.png)
 
-# Contributing to RAE FAANG
+# Contributing to REA FAANG
 
 Thanks for helping build open-source alternatives to the products of the world's
 biggest technology companies. This guide is the human-facing companion to
@@ -26,8 +26,8 @@ biggest technology companies. This guide is the human-facing companion to
 Requires **Node.js 20+**.
 
 ```bash
-git clone <your-repo-url> rae-faang
-cd rae-faang
+git clone <your-repo-url> rea-faang
+cd rea-faang
 npm install
 npm test            # runs the deterministic CLI test suite
 npm run validate    # catalog + research structural validation

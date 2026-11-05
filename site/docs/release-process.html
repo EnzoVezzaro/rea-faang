@@ -6,24 +6,24 @@
     <!-- Runs before the stylesheet so reveal styles only apply where the
          motion layer can actually drive them. -->
     <script>document.documentElement.classList.replace("no-js", "js");</script>
-    <title>Release process — RAE FAANG docs</title>
+    <title>Release process — REA FAANG docs</title>
     <meta name="description" content="SemVer policy, the verification checklist, and the approval gate before publishing or deploying." />
     <meta name="robots" content="index,follow" />
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#0B0C0A" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="RAE FAANG" />
-    <meta property="og:title" content="Release process — RAE FAANG docs" />
+    <meta property="og:site_name" content="REA FAANG" />
+    <meta property="og:title" content="Release process — REA FAANG docs" />
     <meta property="og:description" content="SemVer policy, the verification checklist, and the approval gate before publishing or deploying." />
     <meta property="og:url" content="https://enzovezzaro.github.io/rea-faang/docs/release-process.html" />
-    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
-    <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
+    <meta property="og:image" content="https://enzovezzaro.github.io/rea-faang/assets/rea-banner.png" />
+    <meta property="og:image:alt" content="REA FAANG — choose products to build with your coding agent" />
     <meta property="og:image:width" content="1774" />
     <meta property="og:image:height" content="887" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Release process — RAE FAANG docs" />
+    <meta name="twitter:title" content="Release process — REA FAANG docs" />
     <meta name="twitter:description" content="SemVer policy, the verification checklist, and the approval gate before publishing or deploying." />
-    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rae-banner.png" />
+    <meta name="twitter:image" content="https://enzovezzaro.github.io/rea-faang/assets/rea-banner.png" />
     <link rel="canonical" href="https://enzovezzaro.github.io/rea-faang/docs/release-process.html" />
     <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" type="application/xml" href="https://enzovezzaro.github.io/rea-faang/sitemap.xml" />
@@ -40,8 +40,8 @@
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="wordmark" href="../index.html" aria-label="RAE FAANG home">
-          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        <a class="wordmark" href="../index.html" aria-label="REA FAANG home">
+          <img class="wordmark-image" src="../docs/assets/brand-logo-icon.png" alt="REA FAANG" width="224" height="43" />
         </a>
         <nav class="nav" aria-label="Primary">
           <a href="../catalog/">Catalog</a>
@@ -85,7 +85,7 @@
           </details>
           <article class="doc">
 <h1>Release process</h1>
-<p>How a version of RAE FAANG is prepared, verified and published. Publishing and deploying are maintainer decisions: an agent may prepare a release and prove it locally, but must not push a tag, <code>npm publish</code>, or deploy the site without explicit approval.</p>
+<p>How a version of REA FAANG is prepared, verified and published. Publishing and deploying are maintainer decisions: an agent may prepare a release and prove it locally, but must not push a tag, <code>npm publish</code>, or deploy the site without explicit approval.</p>
 <h2 id="version-sources">Version sources</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -93,7 +93,7 @@
 </thead>
 <tbody>
 <tr><td>Package version</td><td><code>version</code> in <code>package.json</code> (mirrored in <code>package-lock.json</code>)</td></tr>
-<tr><td>CLI version</td><td><code>RAE CLI v&lt;version&gt;</code> reads <code>package.json</code> at runtime (<code>src/cli.js</code>)</td></tr>
+<tr><td>CLI version</td><td><code>REA CLI v&lt;version&gt;</code> reads <code>package.json</code> at runtime (<code>src/cli.js</code>)</td></tr>
 <tr><td>Release history</td><td><code>CHANGELOG.md</code>, one section per released version</td></tr>
 <tr><td>Tag</td><td><code>v&lt;version&gt;</code>, matching the changelog link reference</td></tr>
 </tbody>
@@ -133,7 +133,7 @@ node src/cli.js --version # must print the new version</code></pre>
 <h2 id="publishing-maintainer-only">Publishing (maintainer only)</h2>
 <pre><code class="language-bash">git tag -a v&lt;version&gt; -m &quot;v&lt;version&gt;&quot; &amp;&amp; git push origin v&lt;version&gt;
 npm publish</code></pre>
-<p>The site is deployed by <code>.github/workflows/pages.yml</code> after a successful CI run on <code>main</code>; the Vercel project is optional and only canonical when the build is run with <code>RAE_SITE_URL=https://rae-faang-landing.vercel.app</code>.</p>
+<p>The site is deployed by <code>.github/workflows/pages.yml</code> after a successful CI run on <code>main</code>; the Vercel project is optional and only canonical when the build is run with <code>REA_SITE_URL=https://rea-faang-landing.vercel.app</code>.</p>
 <h2 id="what-a-handoff-must-record">What a handoff must record</h2>
 <ul>
 <li>The version prepared and the changelog section that describes it.</li>
@@ -154,10 +154,10 @@ npm publish</code></pre>
     </main>
     <footer class="site-footer">
       <div class="wrap footer-inner">
-        <div>            <p class="footer-mark">RAE FAANG</p>
+        <div>            <p class="footer-mark">REA FAANG</p>
           <p class="footer-mission">
             We don't need FAANG anymore. Choose a product from Meta, Amazon, Apple, Netflix or Google
-            and use your agent to build it in your project. RAE FAANG brings together the catalog,
+            and use your agent to build it in your project. REA FAANG brings together the catalog,
             product research and candidate open-source projects. MIT licensed.
           </p>
         </div>

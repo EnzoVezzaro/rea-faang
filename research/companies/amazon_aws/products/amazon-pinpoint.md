@@ -73,7 +73,7 @@ Any historical replacement analysis must separate engagement orchestration from 
 
 Research should map project and endpoint state, segment evaluation, campaign/journey transitions, channel configuration, event schemas, delivery status, analytics aggregation, throttling, opt-outs, suppression, exports and migration to AWS End User Messaging or other systems.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use AWS's end-of-support and migration documentation as the lifecycle boundary. Preserve the entry for historical reverse engineering only. Do not build or publish a new product under the Pinpoint name; any independent implementation must use original code, current providers and an explicitly scoped engagement workflow.
 

@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Augmented AI, recorded with 
 | Target | https://docs.aws.amazon.com/augmented-ai/ |
 | Resolved URL | https://docs.aws.amazon.com/augmented-ai/ |
 | Page title | Amazon Augmented AI |
-| Captured | 2026-11-03T01:56:43.352Z |
+| Captured | 2026-11-04T02:39:30.379Z |
 | Status | captured |
-| REA Evidence ID | `ev_0c331d3fc6b7110c2143695bbb64cece5a4208375c055ac74057b5f24cb4f882` |
+| REA Evidence ID | `ev_5119651876d088fcda55bd4b69036a4b4b1ec7c148ec804d772a2df413112dc1` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -147,6 +147,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-augmented-ai.json`
-- Evidence ID: `ev_0c331d3fc6b7110c2143695bbb64cece5a4208375c055ac74057b5f24cb4f882`
+- Evidence ID: `ev_5119651876d088fcda55bd4b69036a4b4b1ec7c148ec804d772a2df413112dc1`
 - Accessibility outline: 11763 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

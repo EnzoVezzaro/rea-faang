@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Elastic Kubernetes Service, 
 | Target | https://aws.amazon.com/eks/ |
 | Resolved URL | https://aws.amazon.com/eks/ |
 | Page title | Amazon Elastic Kubernetes Service |
-| Captured | 2026-11-03T03:03:30.481Z |
+| Captured | 2026-11-04T02:42:45.214Z |
 | Status | captured |
-| REA Evidence ID | `ev_a5d8dcff720f4d97ea520b9247d9e345fa661d8b58b01b2803f704588e52be61` |
+| REA Evidence ID | `ev_85a7eb4c3585f9869eb2ae0da18f6a813101d6baa84d8146294b3208d8e50923` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-elastic-kubernetes-service.json`
-- Evidence ID: `ev_a5d8dcff720f4d97ea520b9247d9e345fa661d8b58b01b2803f704588e52be61`
+- Evidence ID: `ev_85a7eb4c3585f9869eb2ae0da18f6a813101d6baa84d8146294b3208d8e50923`
 - Accessibility outline: 12866 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

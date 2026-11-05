@@ -70,7 +70,7 @@ Sunshine + Moonlight stream your own hardware rather than renting a catalogue; t
 
 None: out of scope because the product is retired and an open technical equivalent exists.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 No implementation. Keep the record so the inventory does not re-add a retired product.
 

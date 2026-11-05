@@ -86,7 +86,7 @@ Open-source geospatial stacks can provide maps, tiles, routing, search and track
 
 REA should map map styles/providers, place indexes, geocoding, route options and restrictions, tracker updates, geofence geometry/events, SDK behavior, authentication, quotas, Regions, data attribution, privacy and failure recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official Amazon Location product page, developer guide, API reference, CLI reference and provider/attribution documentation as research surfaces. A clean-room implementation should use independently licensed geospatial data and software, document provider and routing differences, and avoid copying AWS control-plane or proprietary provider data.
 

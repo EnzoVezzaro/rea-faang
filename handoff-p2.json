@@ -53,7 +53,7 @@
   "checksNotRun": [
     "npm publish, git tag and push: blocked on maintainer approval, as AGENTS.md and the new release-process.md require.",
     "GitHub Pages deploy: not triggered; it runs from CI on main after a push.",
-    "Vercel deploy: not attempted; the canonical origin is now GitHub Pages and Vercel is opt-in via RAE_SITE_URL."
+    "Vercel deploy: not attempted; the canonical origin is now GitHub Pages and Vercel is opt-in via REA_SITE_URL."
   ],
   "decisions": [
     "Proposed 0.3.3 as a patch: no CLI command, flag, schema or catalog record changed; the substantive fixes are test scripts, the canonical origin and documentation. The bump itself is deliberately left to the release step so it can land with the changelog section.",

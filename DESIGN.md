@@ -3,7 +3,7 @@ version: alpha
 mission: "The mission: make the products of the world's biggest technology companies free, open source, and accessible to everyone."
 
 
-name: RAE
+name: REA
 description: A nostalgic, independent-web-inspired design system for modern agentic software development.
 colors:
   primary: "#E8FF6B"
@@ -122,13 +122,13 @@ components:
     padding: "12px 14px"
 ---
 
-# RAE — Design System
+# REA — Design System
 
 ## 1. Overview
 
 ### Product intent
 
-RAE should feel like a message from the internet we once imagined: an open, creative, independent network where curious people could build things that mattered.
+REA should feel like a message from the internet we once imagined: an open, creative, independent network where curious people could build things that mattered.
 
 Reinterpret that spirit for a world in which AI agents can write code, operate tools, collaborate on software, and work toward shared goals.
 
@@ -139,7 +139,7 @@ The experience must balance two seemingly different qualities:
 
 The result must feel intentional, emotionally resonant, and technically credible.
 
-RAE is not a retro-themed website. It is a contemporary product with a memory of what the internet could be.
+REA is not a retro-themed website. It is a contemporary product with a memory of what the internet could be.
 
 ### Brand personality
 

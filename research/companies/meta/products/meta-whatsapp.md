@@ -8,128 +8,126 @@ product_type: "messaging"
 categories:
   - "messaging"
 official_url: "https://www.whatsapp.com/"
-official_docs_url: null
-official_source_urls: []
+official_docs_url: "https://faq.whatsapp.com/"
+official_source_urls:
+  - "https://faq.whatsapp.com/236979282604093"
+  - "https://faq.whatsapp.com/378279804439436"
+  - "https://faq.whatsapp.com/1623293708131281"
 lifecycle_status: "active"
-research_status: "pending"
-research_confidence: "unverified"
-alternative_status: "none_verified"
+research_status: "researched"
+research_confidence: "verified"
+alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "integrate_existing"
-last_researched_at: null
-last_verified_at: null
-next_review_at: null
-research_version: 1
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: "2027-02-03T00:00:00Z"
+research_version: 2
 ---
 
-# 1. Executive summary
+# WhatsApp
 
-WhatsApp is a globally popular messaging platform offering end-to-end encrypted text, voice, and video communications. It is one of the world's most widely used messaging applications, owned by Meta Platforms Inc.
+## Research verdict
 
-# 2. Product identity and ownership
+WhatsApp is an active messaging and calling service operated by Meta. Its public
+surface supports private messages, voice and video calls, groups, status updates,
+media/file sharing, and linked devices. WhatsApp's official documentation states
+that personal messages and calls are end-to-end encrypted; metadata and account
+information are governed separately by its privacy documentation.
 
-- **Official name:** WhatsApp
-- **Company and business unit:** Meta
-- **Parent organization:** Meta Platforms Inc.
-- **Original launch date:** 2009
-- **Current lifecycle status:** active
-- **Previous names:** None
-- **Acquisitions or ownership changes:** Acquired by Facebook (now Meta) in 2014
-- **Related products:** Instagram, Facebook, Messenger, Threads, Meta AI
-- **Official website:** https://www.whatsapp.com/
-- **Official documentation:** https://faq.whatsapp.com/
+The open-source alternative coverage is **partial**. Signal and Matrix/Element
+cover important secure-messaging jobs, but they do not reproduce WhatsApp's
+contact graph, account ecosystem, business surface, or product-specific network
+effects.
 
-# 3. Product capabilities
+## Product identity and boundary
 
-- End-to-end encrypted text messaging
-- Voice and video calling
-- Group chats with admin controls
-- Status updates (ephemeral posts)
-- End-to-end encrypted file sharing
-- Whats Business API for customer communication
-- WhatsApp Payments (in select regions)
-- Disappearing messages
-- Message reactions and quoting
-- Multi-device support (linked devices)
-- Encrypted backups (optional)
-- Meta AI integration (in select regions)
+- **Owner:** Meta Platforms, Inc.
+- **Canonical product ID:** `meta-whatsapp`
+- **Lifecycle:** Active
+- **Public entry point:** https://www.whatsapp.com/
+- **Documentation:** https://faq.whatsapp.com/
+- **Product boundary:** Consumer messaging, calling, group, status, and linked
+  device experiences under the WhatsApp brand.
+- **Related catalog entries:** Messenger, Instagram, Facebook, Threads and Meta AI
+  are separate Meta products; WhatsApp Business capabilities are related to this
+  surface but should not be treated as a separate catalog product without a
+  distinct official product boundary.
 
-# 4. Technical architecture
+## Verified user capabilities
 
-WhatsApp architecture:
+Official WhatsApp sources verify that users can:
 
-- End-to-end encryption via Signal Protocol
-- Mobile client (iOS, Android) with companion web/desktop (linked device)
-- Server infrastructure for message routing and delivery
-- Key management via Double Ratchet algorithm
-- Backend services for presence, status, and group management
+1. Send personal messages and make voice or video calls with end-to-end encrypted
+   content.
+2. Post status updates and share location when enabled in a chat; the privacy
+   documentation distinguishes message content from account, contact, settings,
+   group and technical metadata.
+3. Use linked devices including web, Windows, Mac, tablets, companion phones,
+   wearables, and selected Meta devices. WhatsApp documents up to four linked
+   devices per primary phone.
+4. Use WhatsApp on a linked computer even when the primary phone is offline,
+   subject to documented reauthentication and inactivity rules.
+5. Use group and business-related features. The exact availability of business
+   features varies by account, region and product surface and must be checked in
+   current official documentation.
 
-End-to-end encryption details are proprietary; Signal Protocol is independently audited open source. Server infrastructure and key management at scale are not publicly documented.
+## Technical boundary
 
-# 5. User workflows
+The official sources verify user-visible encryption and linked-device behavior.
+They do not establish WhatsApp's complete server architecture, key-management
+implementation at scale, ranking, abuse systems, contact graph, or commercial
+business API internals. Those details remain unknown here and must not be stated
+as verified implementation facts.
 
-Primary workflows: sending messages, making calls, creating groups, and sharing media. Essential: text messaging, end-to-end encryption. Advanced: group administration, payment integration, multi-device linking.
+## Alternative assessment
 
-# 6. Pricing and access
+### Signal — partial secure-messaging alternative
 
-Free to use (phone number verification required). No subscription fee. WhatsApp Business API has tiered pricing. WhatsApp Payments has transaction fees in regions where available.
+Signal's official documentation verifies end-to-end encrypted messaging and calls,
+and its support page states that client and server source code are available. It
+is a strong alternative for private messaging, but it does not reproduce
+WhatsApp's network or business ecosystem.
 
-# 7. API and integration surface
+### Matrix/Element — partial federated alternative
 
-- WhatsApp Business API (REST, webhooks)
-- Message templates and structured content
-- Contact management and broadcasting
-- Cloud API for message status and delivery receipts
-- No public consumer API for end-to-end encrypted messaging
+Matrix is an open protocol for decentralized secure communication, and Element is
+one client/provider in that ecosystem. It is a strong option when federation,
+interoperability, or self-hosting matters, but its model differs from WhatsApp's
+centralized consumer service.
 
-# 8. Existing open-source alternatives
+### Other candidates
 
-- Signal (open-source, E2EE-focused messenger)
-- Element / Matrix (federated messaging)
-- Telegram (cloud-based, optional encryption)
-- Threema (paid, E2EE)
-- No open-source alternative replicates WhatsApp's network effect, platform integration, or business API ecosystem.
+SimpleX, XMPP/Conversations, and Briar may fit narrower privacy, federation, or
+peer-to-peer jobs. They remain candidates rather than verified drop-in
+replacements for WhatsApp.
 
-# 9. Alternative comparison
+## REA/build implications
 
-Signal provides the closest E2EE-focused alternative. Matrix/Element offers federated architecture. Telegram offers wider feature set but different security model. None replicate WhatsApp's network effect or business API ecosystem.
+Do not attempt to reproduce WhatsApp's private service or copy its user data. For
+an independent implementation, reuse Signal or Matrix where their documented
+security and federation models fit. Scope any new work to a lawful messaging
+workflow, with explicit threat modeling, abuse controls, identity recovery, and
+data-retention decisions.
 
-# 10. Missing capabilities and opportunity analysis
+## Evidence record
 
-End-to-end encryption key management at scale, business API ecosystem, and platform integration represent gaps. Signal covers E2EE but not business features. Matrix offers federation but different user experience.
+| Claim | Source | What it supports |
+|---|---|---|
+| Personal messages and calls are end-to-end encrypted | [WhatsApp Privacy at a Glance](https://faq.whatsapp.com/236979282604093) | Encryption boundary and metadata distinction |
+| Linked devices and supported surfaces | [About linked devices](https://faq.whatsapp.com/378279804439436) | Web, desktop, tablet, companion-device behavior and limits |
+| Business features are a related WhatsApp surface | [About Business Features](https://faq.whatsapp.com/1623293708131281) | Business discovery and messaging context; not a complete API contract |
+| Signal messaging and calls are end-to-end encrypted | [Signal: Is it private?](https://support.signal.org/hc/en-us/articles/360007320391-Is-it-private-Can-I-trust-it) | Verified alternative capability |
+| Matrix is an open protocol for decentralized secure communication | [Matrix Foundation: About Matrix](https://matrix.org/foundation/about/) | Verified federated alternative capability |
 
-# 11. RAE implementation strategy
+## Known gaps
 
-Not recommended to build a consumer messaging platform from scratch. Consider contributing to Signal or building on Matrix for federated messaging. Focus on specific workflows (E2EE communication, business API) rather than full platform replication.
+- WhatsApp's full consumer and business API contracts require separate, current
+  developer documentation and account access; no private API assumptions are made.
+- Pricing, regional feature availability, account recovery, backups, and policy
+  behavior can change and need a dated, region-specific check.
+- The complete server architecture and metadata lifecycle are not established by
+  the public sources used here.
 
-# 12. Security, privacy, and compliance
-
-End-to-end encryption (Signal Protocol), meta-data privacy, group management. WhatsApp metadata subject to Facebook's privacy policy. End-to-end encryption ensures content privacy but not metadata privacy.
-
-# 13. Sources and evidence
-
-- https://www.whatsapp.com/ (product page)
-- https://faq.whatsapp.com/ (documentation)
-- https://github.com/signalapp/Signal-Server (Signal reference)
-
-# 14. Open questions
-
-- What is the key management scale comparison between WhatsApp and Signal?
-- How do business API patterns compare across WhatsApp, Signal, and Matrix?
-- What metadata is retained and how does it affect privacy?
-
-# 15. Research history
-
-Initial research record created 2026-01-13. No prior research events.
-
----
-
-# 16. Alternative comparison (continued)
-
-Signal provides the closest E2EE alternative. Matrix/Element offers federation. Telegram has different security model. None replicate WhatsApp's network effect.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Focus on E2EE communication patterns (Signal) or federated messaging (Matrix). Full platform replication is out of scope.
+**Research date:** 2026-11-03.  
+**Confidence:** Verified for public user-facing capabilities; partial for alternatives.

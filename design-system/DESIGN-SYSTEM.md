@@ -1,11 +1,11 @@
-# RAE FAANG — Agent-Ready Design System
+# REA FAANG — Agent-Ready Design System
 
 **Version:** 1.0  
-**Purpose:** A practical design contract for coding agents building or improving the RAE FAANG website and related interfaces.
+**Purpose:** A practical design contract for coding agents building or improving the REA FAANG website and related interfaces.
 
 > **Core premise:** We don't need FAANG anymore. Use your agent to build any of their products.
 
-RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. A visitor chooses a product to build with their own coding agent in their own project. Product pages supply product context, research and candidate open-source foundations; build skills are useful handoffs, not the product itself. The UI should make the build invitation primary, then help visitors find research and reuse options.
+REA FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. A visitor chooses a product to build with their own coding agent in their own project. Product pages supply product context, research and candidate open-source foundations; build skills are useful handoffs, not the product itself. The UI should make the build invitation primary, then help visitors find research and reuse options.
 
 The reference-board image is an art-direction aid, not a source of literal copy or implementation code. Treat this document and the live catalog data as authoritative.
 
@@ -51,12 +51,12 @@ Move between these modes deliberately. Do not make every section a dashboard pan
 
 ### Primary message hierarchy
 
-**Brand:** RAE FAANG  
+**Brand:** REA FAANG  
 **Hero headline:** We don't need FAANG anymore.
 **Hero subheadline:** Use your agent to build any of their products.
-**Supporting statement:** RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Choose a product, use research and candidate projects as starting points, and build it with your coding agent in your project.
+**Supporting statement:** REA FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Choose a product, use research and candidate projects as starting points, and build it with your coding agent in your project.
 
-This is the product premise, not a claim that RAE itself has implemented every alternative. The interface must keep the ambition visible while honestly distinguishing mature candidates, partial coverage and gaps in the research.
+This is the product premise, not a claim that REA itself has implemented every alternative. The interface must keep the ambition visible while honestly distinguishing mature candidates, partial coverage and gaps in the research.
 
 ### Voice rules
 
@@ -283,7 +283,7 @@ These are page recipes, not rigid templates. Use them to keep the experience coh
 1. Compact navbar.
 2. Hero headline: `We don't need FAANG anymore.`
 3. Hero subheadline: `Use your agent to build any of their products.`
-4. Supporting statement: `RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google.` Explain that research and candidate open-source projects help an agent get started in the user's project; skills are optional handoffs.
+4. Supporting statement: `REA FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google.` Explain that research and candidate open-source projects help an agent get started in the user's project; skills are optional handoffs.
 5. Primary CTA `Explore products`; secondary CTA `How it works`.
 6. On the right, show real catalog products and a functional product build pass that updates its product details and skill download.
 7. A company/product strip confirms the catalog scope.
@@ -349,7 +349,7 @@ For a static kit, call it a kit or build brief, not a live agent execution dashb
 
 - Make the claim explicit.
 - Show source title, publisher/domain, source date if actually available, and link.
-- Distinguish source material from RAE FAANG's interpretation.
+- Distinguish source material from REA FAANG's interpretation.
 - For checks, show command, result, timestamp/commit if available, and pass/fail state.
 - Include raw report links when committed and accessible.
 - Use a compact terminal panel as a supporting element, not a fake console with invented output.

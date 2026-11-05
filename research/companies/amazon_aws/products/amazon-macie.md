@@ -82,7 +82,7 @@ Alternatives may cover pattern matching, PII detection, object scanning or polic
 
 Research must map managed/custom identifiers, supported file types, sampling, job lifecycle, findings schema, false-positive handling, quotas, pricing, cross-account administration and downstream integrations.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS product, user-guide, API and quota documentation. Capture public workflows and schemas through authorized REA routes. Do not infer detector behavior from marketing text and do not copy AWS implementation or proprietary assets.
 

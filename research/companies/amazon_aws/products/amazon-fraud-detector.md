@@ -81,7 +81,7 @@ AutoGluon and general ML libraries can replace model-training components, while 
 
 REA should map event schemas, model training, detector/rule versions, lists, batch and real-time prediction, latency, quotas, IAM, data retention, model export and migration paths for existing customers.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation and AWS's stated migration alternatives as the research surface. A clean-room replacement should combine independently licensed ML and rule components, document differences, and avoid copying proprietary models, training data or AWS implementation.
 

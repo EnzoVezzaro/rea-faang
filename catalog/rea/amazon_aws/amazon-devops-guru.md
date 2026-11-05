@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon DevOps Guru, recorded with R
 | Target | https://aws.amazon.com/devops-guru/ |
 | Resolved URL | https://aws.amazon.com/devops-guru/ |
 | Page title | Amazon DevOps Guru |
-| Captured | 2026-11-03T02:56:19.741Z |
+| Captured | 2026-11-04T02:41:27.473Z |
 | Status | captured |
-| REA Evidence ID | `ev_319545c5b3919e796b59a2424fe1029c78427ef1f3bfd15f5ba7fa05849dba2f` |
+| REA Evidence ID | `ev_6384ac0644bd205a58533ec4d85cbf3fc99fcf15f51d4d3258e9b432fffe85ef` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -167,6 +167,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-devops-guru.json`
-- Evidence ID: `ev_319545c5b3919e796b59a2424fe1029c78427ef1f3bfd15f5ba7fa05849dba2f`
-- Accessibility outline: 11354 bytes
+- Evidence ID: `ev_6384ac0644bd205a58533ec4d85cbf3fc99fcf15f51d4d3258e9b432fffe85ef`
+- Accessibility outline: 11331 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

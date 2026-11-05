@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon CodeGuru, recorded with REA.
 | Target | https://aws.amazon.com/codeguru/ |
 | Resolved URL | https://aws.amazon.com/codeguru/profiler/ |
 | Page title | Amazon CodeGuru Profiler |
-| Captured | 2026-11-03T02:50:17.405Z |
+| Captured | 2026-11-04T02:40:23.374Z |
 | Status | captured |
-| REA Evidence ID | `ev_65946f53555dc357023d19b2b50bb2473d53bf8ec5601974b064dcd91e242310` |
+| REA Evidence ID | `ev_1056e7b1d78ebe155b4082ca595a8233df6bf3faa1d2865f82dc87dd444663e7` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -161,6 +161,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-codeguru.json`
-- Evidence ID: `ev_65946f53555dc357023d19b2b50bb2473d53bf8ec5601974b064dcd91e242310`
+- Evidence ID: `ev_1056e7b1d78ebe155b4082ca595a8233df6bf3faa1d2865f82dc87dd444663e7`
 - Accessibility outline: 12264 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

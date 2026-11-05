@@ -72,9 +72,9 @@ Pending evidence-backed comparison.
 
 Pending REA investigation. Do not infer feature parity from the public marketing page.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the RAE skill to inspect the official product page, user guide, API/CLI references and permitted public workflows. Produce an independent design and implementation plan; do not copy AWS source, private assets or credentials.
+Use the REA skill to inspect the official product page, user guide, API/CLI references and permitted public workflows. Produce an independent design and implementation plan; do not copy AWS source, private assets or credentials.
 
 # 12. Security, privacy, and compliance
 

@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Connect Health, recorded wit
 | Target | https://aws.amazon.com/products/connect/health/ |
 | Resolved URL | https://aws.amazon.com/products/connect/health/ |
 | Page title | Agentic AI for healthcare, built for the people who deliver it |
-| Captured | 2026-11-03T02:53:49.456Z |
+| Captured | 2026-11-04T02:40:58.353Z |
 | Status | captured |
-| REA Evidence ID | `ev_2ef4c47f6a8e387efe35cccf956d3252b9eae3cefb88e8a5dcb9ea1b90f1c159` |
+| REA Evidence ID | `ev_2fb0ef2fe05fe58333fee96e5457af1596e053a3996cb1c1af377821eeed236a` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -162,6 +162,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-connect-health.json`
-- Evidence ID: `ev_2ef4c47f6a8e387efe35cccf956d3252b9eae3cefb88e8a5dcb9ea1b90f1c159`
+- Evidence ID: `ev_2fb0ef2fe05fe58333fee96e5457af1596e053a3996cb1c1af377821eeed236a`
 - Accessibility outline: 13729 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

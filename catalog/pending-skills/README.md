@@ -1,67 +1,15 @@
-# Pending RAE FAANG skill drafts
+# Pending REA FAANG skill drafts
 
-Generated from `catalog/manifests/faang-expanded-candidates.json`. These 1338 entries are candidates, not researched canonical products.
+Generated from `catalog/manifests/faang-expanded-candidates.json`. These 1279 entries are candidates, not researched canonical products.
 
 | Product | ID | Company | Research | Official URL |
 |---|---|---|---|---|
-| [Amazon Macie](amazon_aws/amazon-aws-amazon-macie.md) | `amazon-aws-amazon-macie` | amazon_aws | pending | — |
-| [Amazon Managed Blockchain](amazon_aws/amazon-aws-amazon-managed-blockchain.md) | `amazon-aws-amazon-managed-blockchain` | amazon_aws | pending | — |
-| [Amazon Managed Service for Apache Flink](amazon_aws/amazon-aws-amazon-managed-service-for-apache-flink.md) | `amazon-aws-amazon-managed-service-for-apache-flink` | amazon_aws | pending | — |
-| [Amazon Managed Service for Grafana](amazon_aws/amazon-aws-amazon-managed-service-for-grafana.md) | `amazon-aws-amazon-managed-service-for-grafana` | amazon_aws | pending | — |
-| [Amazon Managed Service for Prometheus](amazon_aws/amazon-aws-amazon-managed-service-for-prometheus.md) | `amazon-aws-amazon-managed-service-for-prometheus` | amazon_aws | pending | — |
-| [Amazon Managed Streaming for Apache Kafka](amazon_aws/amazon-aws-amazon-managed-streaming-for-apache-kafka.md) | `amazon-aws-amazon-managed-streaming-for-apache-kafka` | amazon_aws | pending | — |
-| [Amazon Managed Workflows for Apache Airflow](amazon_aws/amazon-aws-amazon-managed-workflows-for-apache-airflow.md) | `amazon-aws-amazon-managed-workflows-for-apache-airflow` | amazon_aws | pending | — |
-| [Amazon Monitron](amazon_aws/amazon-aws-amazon-monitron.md) | `amazon-aws-amazon-monitron` | amazon_aws | pending | — |
-| [Amazon MQ](amazon_aws/amazon-aws-amazon-mq.md) | `amazon-aws-amazon-mq` | amazon_aws | pending | — |
-| [Amazon Neptune](amazon_aws/amazon-aws-amazon-neptune.md) | `amazon-aws-amazon-neptune` | amazon_aws | pending | — |
-| [Amazon Nimble Studio](amazon_aws/amazon-aws-amazon-nimble-studio.md) | `amazon-aws-amazon-nimble-studio` | amazon_aws | pending | — |
-| [Amazon Nova Act](amazon_aws/amazon-aws-amazon-nova-act.md) | `amazon-aws-amazon-nova-act` | amazon_aws | pending | — |
-| [Amazon OpenSearch Services](amazon_aws/amazon-aws-amazon-opensearch-services.md) | `amazon-aws-amazon-opensearch-services` | amazon_aws | pending | — |
-| [Amazon Personalize](amazon_aws/amazon-aws-amazon-personalize.md) | `amazon-aws-amazon-personalize` | amazon_aws | pending | — |
-| [Amazon Pinpoint](amazon_aws/amazon-aws-amazon-pinpoint.md) | `amazon-aws-amazon-pinpoint` | amazon_aws | pending | — |
-| [Amazon Polly](amazon_aws/amazon-aws-amazon-polly.md) | `amazon-aws-amazon-polly` | amazon_aws | pending | — |
-| [Amazon Q Developer](amazon_aws/amazon-aws-amazon-q-developer.md) | `amazon-aws-amazon-q-developer` | amazon_aws | pending | — |
-| [Amazon QuickSight](amazon_aws/amazon-aws-amazon-quicksight.md) | `amazon-aws-amazon-quicksight` | amazon_aws | pending | — |
-| [Amazon Rekognition](amazon_aws/amazon-aws-amazon-rekognition.md) | `amazon-aws-amazon-rekognition` | amazon_aws | pending | — |
-| [Amazon Route 53](amazon_aws/amazon-aws-amazon-route-53.md) | `amazon-aws-amazon-route-53` | amazon_aws | pending | — |
-| [Amazon Security Lake](amazon_aws/amazon-aws-amazon-security-lake.md) | `amazon-aws-amazon-security-lake` | amazon_aws | pending | — |
-| [Amazon Simple Email Service (SES)](amazon_aws/amazon-aws-amazon-simple-email-service-ses.md) | `amazon-aws-amazon-simple-email-service-ses` | amazon_aws | pending | — |
-| [Amazon Simple Queue Service (SQS)](amazon_aws/amazon-aws-amazon-simple-queue-service-sqs.md) | `amazon-aws-amazon-simple-queue-service-sqs` | amazon_aws | pending | — |
-| [Amazon Textract](amazon_aws/amazon-aws-amazon-textract.md) | `amazon-aws-amazon-textract` | amazon_aws | pending | — |
-| [Amazon Timestream](amazon_aws/amazon-aws-amazon-timestream.md) | `amazon-aws-amazon-timestream` | amazon_aws | pending | — |
-| [Amazon Transcribe](amazon_aws/amazon-aws-amazon-transcribe.md) | `amazon-aws-amazon-transcribe` | amazon_aws | pending | — |
-| [Amazon Translate](amazon_aws/amazon-aws-amazon-translate.md) | `amazon-aws-amazon-translate` | amazon_aws | pending | — |
-| [Amazon Verified Permissions](amazon_aws/amazon-aws-amazon-verified-permissions.md) | `amazon-aws-amazon-verified-permissions` | amazon_aws | pending | — |
-| [Amazon VPC](amazon_aws/amazon-aws-amazon-vpc.md) | `amazon-aws-amazon-vpc` | amazon_aws | pending | — |
-| [Amazon WorkMail](amazon_aws/amazon-aws-amazon-workmail.md) | `amazon-aws-amazon-workmail` | amazon_aws | pending | — |
-| [Amazon WorkSpaces](amazon_aws/amazon-aws-amazon-workspaces.md) | `amazon-aws-amazon-workspaces` | amazon_aws | pending | — |
-| [Amazon WorkSpaces Applications](amazon_aws/amazon-aws-amazon-workspaces-applications.md) | `amazon-aws-amazon-workspaces-applications` | amazon_aws | pending | — |
-| [Amazon WorkSpaces Secure Browser](amazon_aws/amazon-aws-amazon-workspaces-secure-browser.md) | `amazon-aws-amazon-workspaces-secure-browser` | amazon_aws | pending | — |
-| [Architecture Center](amazon_aws/amazon-aws-architecture-center.md) | `amazon-aws-architecture-center` | amazon_aws | pending | https://aws.amazon.com/architecture/?nc1=f_cc |
-| [Aurora Serverless relational database service for PostgreSQL, MySQL, and DSQL](amazon_aws/amazon-aws-aurora-serverless-relational-database-service-for-postgresql-mysql-and-dsql.md) | `amazon-aws-aurora-serverless-relational-database-service-for-postgresql-mysql-and-dsql` | amazon_aws | pending | https://aws.amazon.com/rds/aurora/?nc2=h_prod_fs_aa |
-| [AWS](amazon_aws/amazon-aws-aws.md) | `amazon-aws-aws` | amazon_aws | pending | — |
-| [AWS Accessibility](amazon_aws/amazon-aws-aws-accessibility.md) | `amazon-aws-aws-accessibility` | amazon_aws | pending | https://aws.amazon.com/accessibility/?nc1=f_cc |
-| [AWS Amplify](amazon_aws/amazon-aws-aws-amplify.md) | `amazon-aws-aws-amplify` | amazon_aws | pending | — |
-| [AWS App Mesh](amazon_aws/amazon-aws-aws-app-mesh.md) | `amazon-aws-aws-app-mesh` | amazon_aws | pending | — |
-| [AWS App Runner](amazon_aws/amazon-aws-aws-app-runner.md) | `amazon-aws-aws-app-runner` | amazon_aws | pending | — |
-| [AWS App2Container](amazon_aws/amazon-aws-aws-app2container.md) | `amazon-aws-aws-app2container` | amazon_aws | pending | — |
-| [AWS AppSync](amazon_aws/amazon-aws-aws-appsync.md) | `amazon-aws-aws-appsync` | amazon_aws | pending | — |
-| [AWS Artifact](amazon_aws/amazon-aws-aws-artifact.md) | `amazon-aws-aws-artifact` | amazon_aws | pending | — |
-| [AWS Audit Manager](amazon_aws/amazon-aws-aws-audit-manager.md) | `amazon-aws-aws-audit-manager` | amazon_aws | pending | — |
-| [AWS Auto Scaling](amazon_aws/amazon-aws-aws-auto-scaling.md) | `amazon-aws-aws-auto-scaling` | amazon_aws | pending | — |
-| [AWS Backup](amazon_aws/amazon-aws-aws-backup.md) | `amazon-aws-aws-backup` | amazon_aws | pending | — |
-| [AWS Batch](amazon_aws/amazon-aws-aws-batch.md) | `amazon-aws-aws-batch` | amazon_aws | pending | — |
-| [AWS Billing Conductor](amazon_aws/amazon-aws-aws-billing-conductor.md) | `amazon-aws-aws-billing-conductor` | amazon_aws | pending | — |
-| [AWS blog](amazon_aws/amazon-aws-aws-blog.md) | `amazon-aws-aws-blog` | amazon_aws | pending | https://aws.amazon.com/blogs/?nc2=h_dsc_blg |
 | [AWS Budgets](amazon_aws/amazon-aws-aws-budgets.md) | `amazon-aws-aws-budgets` | amazon_aws | pending | — |
 | [AWS Certificate Manager](amazon_aws/amazon-aws-aws-certificate-manager.md) | `amazon-aws-aws-certificate-manager` | amazon_aws | pending | — |
 | [AWS Clean Rooms](amazon_aws/amazon-aws-aws-clean-rooms.md) | `amazon-aws-aws-clean-rooms` | amazon_aws | pending | — |
 | [AWS Cloud Development Kit](amazon_aws/amazon-aws-aws-cloud-development-kit.md) | `amazon-aws-aws-cloud-development-kit` | amazon_aws | pending | — |
-| [AWS Cloud Map](amazon_aws/amazon-aws-aws-cloud-map.md) | `amazon-aws-aws-cloud-map` | amazon_aws | pending | — |
 | [AWS Cloud Security](amazon_aws/amazon-aws-aws-cloud-security.md) | `amazon-aws-aws-cloud-security` | amazon_aws | pending | https://aws.amazon.com/security/?nc1=f_cc |
-| [AWS Cloud WAN](amazon_aws/amazon-aws-aws-cloud-wan.md) | `amazon-aws-aws-cloud-wan` | amazon_aws | pending | — |
 | [AWS Cloud9](amazon_aws/amazon-aws-aws-cloud9.md) | `amazon-aws-aws-cloud9` | amazon_aws | pending | — |
-| [AWS CloudFormation](amazon_aws/amazon-aws-aws-cloudformation.md) | `amazon-aws-aws-cloudformation` | amazon_aws | pending | — |
 | [AWS CloudHSM](amazon_aws/amazon-aws-aws-cloudhsm.md) | `amazon-aws-aws-cloudhsm` | amazon_aws | pending | — |
 | [AWS CloudShell](amazon_aws/amazon-aws-aws-cloudshell.md) | `amazon-aws-aws-cloudshell` | amazon_aws | pending | — |
 | [AWS CloudTrail](amazon_aws/amazon-aws-aws-cloudtrail.md) | `amazon-aws-aws-cloudtrail` | amazon_aws | pending | — |
@@ -494,7 +442,6 @@ Generated from `catalog/manifests/faang-expanded-candidates.json`. These 1338 en
 | [ChromeOS](google/google-chromeos.md) | `google-chromeos` | google | pending | https://chromeos.google/?utm_source=about.google&amp;utm_medium=referral&amp;utm_campaign=productslist |
 | [Cloud APIs](google/google-cloud-apis.md) | `google-cloud-apis` | google | pending | https://cloud.google.com/apis |
 | [Cloud APIs Programmatic interfaces for Google Cloud services.](google/google-cloud-apis-programmatic-interfaces-for-google-cloud-services.md) | `google-cloud-apis-programmatic-interfaces-for-google-cloud-services` | google | pending | https://cloud.google.com/apis |
-| [Cloud Architecture Center](google/google-cloud-architecture-center.md) | `google-cloud-architecture-center` | google | pending | https://cloud.google.com/architecture |
 | [Cloud Architecture Center Get reference architectures and best practices.](google/google-cloud-architecture-center-get-reference-architectures-and-best-practices.md) | `google-cloud-architecture-center-get-reference-architectures-and-best-practices` | google | pending | https://cloud.google.com/architecture |
 | [Cloud Armor](google/google-cloud-armor.md) | `google-cloud-armor` | google | pending | https://cloud.google.com/security/products/armor |
 | [Cloud Build](google/google-cloud-build.md) | `google-cloud-build` | google | pending | https://cloud.google.com/build |
@@ -1087,14 +1034,12 @@ Generated from `catalog/manifests/faang-expanded-candidates.json`. These 1338 en
 | [Diversity and inclusion](microsoft/microsoft-diversity-and-inclusion.md) | `microsoft-diversity-and-inclusion` | microsoft | pending | https://www.microsoft.com/en-us/diversity/default?icid=DSM_Footer_Company_Diversity |
 | [Dynamics 365](microsoft/microsoft-dynamics-365.md) | `microsoft-dynamics-365` | microsoft | pending | https://www.microsoft.com/en-us/dynamics-365 |
 | [E-commerce](microsoft/microsoft-e-commerce.md) | `microsoft-e-commerce` | microsoft | pending | https://azure.microsoft.com/en-us/solutions/ecommerce |
-| [Edge](microsoft/microsoft-edge.md) | `microsoft-edge` | microsoft | pending | https://go.microsoft.com/fwlink/p/?LinkID=2115812&clcid=0x409&culture=en-us&country=us |
 | [Editor (Microsoft Editor)](microsoft/microsoft-editor-microsoft-editor.md) | `microsoft-editor-microsoft-editor` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-365/microsoft-editor |
 | [Education](microsoft/microsoft-education.md) | `microsoft-education` | microsoft | pending | https://go.microsoft.com/fwlink/?linkid=2274023&clcid=0x409&culture=en-us&country=us |
 | [Educator Center](microsoft/microsoft-educator-center.md) | `microsoft-educator-center` | microsoft | pending | https://go.microsoft.com/fwlink/?linkid=2267533 |
 | [Educator training and development](microsoft/microsoft-educator-training-and-development.md) | `microsoft-educator-training-and-development` | microsoft | pending | https://education.microsoft.com/ |
 | [Endpoint Manager (Microsoft Endpoint Manager)](microsoft/microsoft-endpoint-manager-microsoft-endpoint-manager.md) | `microsoft-endpoint-manager-microsoft-endpoint-manager` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-365/microsoft-endpoint-manager |
 | [English (United States)](microsoft/microsoft-english-united-states.md) | `microsoft-english-united-states` | microsoft | pending | https://azure.microsoft.com/en-us/locale |
-| [Enterprise](microsoft/microsoft-enterprise.md) | `microsoft-enterprise` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-365/enterprise/microsoft365-plans-and-pricing |
 | [Enterprise Mobility + Security](microsoft/microsoft-enterprise-mobility-security.md) | `microsoft-enterprise-mobility-security` | microsoft | pending | https://www.microsoft.com/en-us/security/business |
 | [Events and Webinars](microsoft/microsoft-events-and-webinars.md) | `microsoft-events-and-webinars` | microsoft | pending | https://azure.microsoft.com/en-us/resources/events/ |
 | [Excel](microsoft/microsoft-excel.md) | `microsoft-excel` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-365/excel |
@@ -1118,7 +1063,6 @@ Generated from `catalog/manifests/faang-expanded-candidates.json`. These 1338 en
 | [For frontline workers](microsoft/microsoft-for-frontline-workers.md) | `microsoft-for-frontline-workers` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-365/enterprise/frontline |
 | [For government](microsoft/microsoft-for-government.md) | `microsoft-for-government` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-365/government |
 | [For individuals](microsoft/microsoft-for-individuals.md) | `microsoft-for-individuals` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-365/buy/compare-all-microsoft-365-products |
-| [For nonprofits](microsoft/microsoft-for-nonprofits.md) | `microsoft-for-nonprofits` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-365/enterprise/nonprofit-plans-and-pricing |
 | [For schools](microsoft/microsoft-for-schools.md) | `microsoft-for-schools` | microsoft | pending | https://www.microsoft.com/en-us/education/products/microsoft-365 |
 | [For small business](microsoft/microsoft-for-small-business.md) | `microsoft-for-small-business` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-365/business |
 | [Forms](microsoft/microsoft-forms.md) | `microsoft-forms` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-365/online-surveys-polls-quizzes |
@@ -1143,7 +1087,6 @@ Generated from `catalog/manifests/faang-expanded-candidates.json`. These 1338 en
 | [IaaS](microsoft/microsoft-iaas.md) | `microsoft-iaas` | microsoft | pending | https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-iaas |
 | [Identity and access management](microsoft/microsoft-identity-and-access-management.md) | `microsoft-identity-and-access-management` | microsoft | pending | https://azure.microsoft.com/en-us/products/category/identity |
 | [Infrastructure as a service (IaaS)](microsoft/microsoft-infrastructure-as-a-service-iaas.md) | `microsoft-infrastructure-as-a-service-iaas` | microsoft | pending | https://azure.microsoft.com/en-us/solutions/azure-iaas |
-| [Integration](microsoft/microsoft-integration.md) | `microsoft-integration` | microsoft | pending | https://azure.microsoft.com/en-us/products/category/integration |
 | [Integration Services](microsoft/microsoft-integration-services.md) | `microsoft-integration-services` | microsoft | pending | https://azure.microsoft.com/en-us/solutions/integration-services/ |
 | [Integration services on Azure](microsoft/microsoft-integration-services-on-azure.md) | `microsoft-integration-services-on-azure` | microsoft | pending | https://azure.microsoft.com/en-us/solutions/integration-services |
 | [Intune](microsoft/microsoft-intune.md) | `microsoft-intune` | microsoft | pending | https://www.microsoft.com/en-us/security/business/microsoft-intune |
@@ -1192,7 +1135,6 @@ Generated from `catalog/manifests/faang-expanded-candidates.json`. These 1338 en
 | [Microsoft Defender Family](microsoft/microsoft-microsoft-defender-family.md) | `microsoft-microsoft-defender-family` | microsoft | pending | https://www.microsoft.com/en-us/security/business/microsoft-defender |
 | [Microsoft Defender for Cloud](microsoft/microsoft-microsoft-defender-for-cloud.md) | `microsoft-microsoft-defender-for-cloud` | microsoft | pending | https://azure.microsoft.com/en-us/products/defender-for-cloud/ |
 | [Microsoft Developer](microsoft/microsoft-microsoft-developer.md) | `microsoft-microsoft-developer` | microsoft | pending | https://developer.microsoft.com/en-us/ |
-| [Microsoft Edge](microsoft/microsoft-microsoft-edge.md) | `microsoft-microsoft-edge` | microsoft | pending | https://www.microsoft.com/en-us/edge |
 | [Microsoft Fabric](microsoft/microsoft-microsoft-fabric.md) | `microsoft-microsoft-fabric` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-fabric |
 | [Microsoft Foundry](microsoft/microsoft-microsoft-foundry.md) | `microsoft-microsoft-foundry` | microsoft | pending | https://azure.microsoft.com/en-us/products/ai-foundry/ |
 | [Microsoft in education](microsoft/microsoft-microsoft-in-education.md) | `microsoft-microsoft-in-education` | microsoft | pending | https://www.microsoft.com/en-us/education |
@@ -1292,7 +1234,6 @@ Generated from `catalog/manifests/faang-expanded-candidates.json`. These 1338 en
 | [SharePoint 2010](microsoft/microsoft-sharepoint-2010.md) | `microsoft-sharepoint-2010` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-365/previous-versions/microsoft-sharepoint-2010 |
 | [SharePoint 2013](microsoft/microsoft-sharepoint-2013.md) | `microsoft-sharepoint-2013` | microsoft | pending | https://www.microsoft.com/en-us/microsoft-365/previous-versions/microsoft-sharepoint-2013 |
 | [Sitemap](microsoft/microsoft-sitemap.md) | `microsoft-sitemap` | microsoft | pending | https://www.microsoft.com/en-us/sitemap1.aspx |
-| [Small Business](microsoft/microsoft-small-business.md) | `microsoft-small-business` | microsoft | pending | https://www.microsoft.com/en-us/store/b/business?icid=CNavBusinessStore |
 | [Software companies](microsoft/microsoft-software-companies.md) | `microsoft-software-companies` | microsoft | pending | https://www.microsoft.com/software-development-companies?icid=DSM_Footer_SoftwareCompanies&amp;ocid=cmm3atxvn98 |
 | [Software Development Companies](microsoft/microsoft-software-development-companies.md) | `microsoft-software-development-companies` | microsoft | pending | https://www.microsoft.com/en-us/software-development-companies/ |
 | [SQL Server migration](microsoft/microsoft-sql-server-migration.md) | `microsoft-sql-server-migration` | microsoft | pending | https://azure.microsoft.com/en-us/solutions/migration/sql-server |

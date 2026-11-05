@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_54a94eb05497a2ba47b137075ed220e2702af00575e6e013265b340d110f65fa",
+  "evidence_id": "ev_4808cefbf25859e30da8fb4f922661089999b11db9a34f794de6249f18922b74",
   "subject": null,
   "provider": {
     "id": "rea-playwright-browser-scenario",
@@ -99,13 +99,13 @@
         "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "duration_ms": 7613,
+    "duration_ms": 4692,
     "steps": [
       {
         "step_index": 0,
         "step_id": "scenario_start",
         "action": "goto_start",
-        "elapsed_ms": 4693,
+        "elapsed_ms": 1921,
         "before_url": {
           "url": "about:blank",
           "origin": null,
@@ -153,7 +153,7 @@
         "step_index": 1,
         "step_id": "settle",
         "action": "wait_for_timeout",
-        "elapsed_ms": 2565,
+        "elapsed_ms": 2558,
         "before_url": {
           "url": "https://aws.amazon.com/chime/chime-sdk/",
           "origin": "https://aws.amazon.com",

@@ -87,7 +87,7 @@ The software stack (AOSP, LineageOS, GrapheneOS) is open and mature; open hardwa
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Partial. Open phone operating systems exist; open smartphone hardware remains a research gap.
 
@@ -124,6 +124,6 @@ The software stack (AOSP, LineageOS, GrapheneOS) is open and mature; open hardwa
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Partial. Open phone operating systems exist; open smartphone hardware remains a research gap.

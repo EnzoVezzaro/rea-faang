@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for YouTube (youtube); investigate, ass
 
 # YouTube — implementation skill (`youtube`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **YouTube**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for YouTube (youtube); investigate, ass
 
 This is the coding-agent skill for **YouTube** (`youtube`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/youtube.md` from the catalog page, or run `npx rae-faang youtube --out ./youtube.md`, `npx rae-faang skills generate youtube` or `npx rae-faang build agent-kit youtube --out ./youtube-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/youtube.md` from the catalog page, or run `npx rea-faang youtube --out ./youtube.md`, `npx rea-faang skills generate youtube` or `npx rea-faang build agent-kit youtube --out ./youtube-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | YouTube / `youtube` | `catalog/products.jsonl` |
 | Official product URL | [https://www.youtube.com/](https://www.youtube.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier youtube` | `research/companies/google/products/youtube.md` |
+| Official documentation | [https://developers.google.com/youtube/apis](https://developers.google.com/youtube/apis) | Catalog record |
+| Research dossier | `npx rea-faang research dossier youtube` | `research/companies/google/products/youtube.md` |
 | REA report | `catalog/rea/google/youtube.md` (captured 2026-11-03T01:42:47.226Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/youtube.json` (`ev_9d4052f32e9e023e730a480ac48bb1c7338cfa1cd10f94d4efbe5e9040aadc94`) | Catalog evidence |
 | Alternative candidates | 4 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show youtube --format json` and `npx rae-faang research dossier youtube` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show youtube --format json` and `npx rea-faang research dossier youtube` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `YOUTUBE-CAP-5D8A0E1F`, `YOUTUBE-CAP-94C12B85`, `YOUTUBE-CAP-23655820`, `YOUTUBE-CAP-069B5DF3`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `YOUTUBE-CAP-25A54EAC`, `YOUTUBE-CAP-0E661219`, `YOUTUBE-CAP-329E007F`, `YOUTUBE-CAP-FB28BDE7`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **YouTube** / `youtube` | Product catalog |
-| Company / category | Google / `media` / `media` | Product catalog |
-| Official website / docs | [https://www.youtube.com/](https://www.youtube.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Company / category | Google / `media` / `video-platform`, `creator-platform`, `live-streaming`, `advertising` | Product catalog |
+| Official website / docs | [https://www.youtube.com/](https://www.youtube.com/) / [https://developers.google.com/youtube/apis](https://developers.google.com/youtube/apis) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,19 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `YOUTUBE-CAP-5D8A0E1F` | Video hosting, transcoding and adaptive streaming | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `YOUTUBE-CAP-94C12B85` | Channels, subscriptions, playlists, comments | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `YOUTUBE-CAP-23655820` | Recommendations and search | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `YOUTUBE-CAP-069B5DF3` | Monetisation and advertising | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `YOUTUBE-CAP-25A54EAC` | Video, channel, playlist and creator workflows are documented through the product and Data API surfaces. | VERIFIED | `ev-youtube-identity`, `ev-youtube-data-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `YOUTUBE-CAP-0E661219` | Live-event and stream management are documented. | VERIFIED | `ev-youtube-live` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `YOUTUBE-CAP-329E007F` | Authorized analytics and bulk reporting surfaces are documented. | VERIFIED | `ev-youtube-analytics` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `YOUTUBE-CAP-FB28BDE7` | API access is constrained by privacy, playback integrity, quota, content and independent-value policies; internal platform behavior remains proprietary. | VERIFIED | `ev-youtube-policy` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Guide`, `button: Skip navigation`, `button: Search`, `button: Search with your voice`, `button: Settings`, `link: YouTube Home`, `combobox: Search`, `link: Sign in`, `link: Home`, `link: Shorts`, `link: Subscriptions`, `link: You`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Video hosting, transcoding and adaptive streaming:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Channels, subscriptions, playlists, comments:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Recommendations and search:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Monetisation and advertising:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Video, channel, playlist and creator workflows are documented through the product and Data API surfaces.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Live-event and stream management are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Authorized analytics and bulk reporting surfaces are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **API access is constrained by privacy, playback integrity, quota, content and independent-value policies; internal platform behavior remains proprietary.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -147,41 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-5D8A0E1F — Video hosting, transcoding and adaptive streaming
+### REQ-FUNC-25A54EAC — Video, channel, playlist and creator workflows are documented through the product and Data API surfaces.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-youtube-identity`, `ev-youtube-data-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-5D8A0E1F`; fixture and expected output must be specified from evidence.
-- **Trace:** `YOUTUBE-CAP-5D8A0E1F` → `REQ-FUNC-5D8A0E1F` → `TEST-FUNC-5D8A0E1F`.
+- **Associated test ID:** `TEST-FUNC-25A54EAC`; fixture and expected output must be specified from evidence.
+- **Trace:** `YOUTUBE-CAP-25A54EAC` → `REQ-FUNC-25A54EAC` → `TEST-FUNC-25A54EAC`.
 
-### REQ-FUNC-94C12B85 — Channels, subscriptions, playlists, comments
+### REQ-FUNC-0E661219 — Live-event and stream management are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-youtube-live`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-94C12B85`; fixture and expected output must be specified from evidence.
-- **Trace:** `YOUTUBE-CAP-94C12B85` → `REQ-FUNC-94C12B85` → `TEST-FUNC-94C12B85`.
+- **Associated test ID:** `TEST-FUNC-0E661219`; fixture and expected output must be specified from evidence.
+- **Trace:** `YOUTUBE-CAP-0E661219` → `REQ-FUNC-0E661219` → `TEST-FUNC-0E661219`.
 
-### REQ-FUNC-23655820 — Recommendations and search
+### REQ-FUNC-329E007F — Authorized analytics and bulk reporting surfaces are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-youtube-analytics`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-23655820`; fixture and expected output must be specified from evidence.
-- **Trace:** `YOUTUBE-CAP-23655820` → `REQ-FUNC-23655820` → `TEST-FUNC-23655820`.
+- **Associated test ID:** `TEST-FUNC-329E007F`; fixture and expected output must be specified from evidence.
+- **Trace:** `YOUTUBE-CAP-329E007F` → `REQ-FUNC-329E007F` → `TEST-FUNC-329E007F`.
 
-### REQ-FUNC-069B5DF3 — Monetisation and advertising
+### REQ-FUNC-FB28BDE7 — API access is constrained by privacy, playback integrity, quota, content and independent-value policies; internal platform behavior remains proprietary.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-youtube-policy`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-069B5DF3`; fixture and expected output must be specified from evidence.
-- **Trace:** `YOUTUBE-CAP-069B5DF3` → `REQ-FUNC-069B5DF3` → `TEST-FUNC-069B5DF3`.
+- **Associated test ID:** `TEST-FUNC-FB28BDE7`; fixture and expected output must be specified from evidence.
+- **Trace:** `YOUTUBE-CAP-FB28BDE7` → `REQ-FUNC-FB28BDE7` → `TEST-FUNC-FB28BDE7`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -229,10 +229,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `YOUTUBE-CAP-5D8A0E1F` — Video hosting, transcoding and adaptive streaming | Not verified against PeerTube | None yet; compare with `ev_9d4052f32e9e023e730a480ac48bb1c7338cfa1cd10f94d4efbe5e9040aadc94` | Candidate code path and tests must be inspected |
-| `YOUTUBE-CAP-94C12B85` — Channels, subscriptions, playlists, comments | Not verified against PeerTube | None yet; compare with `ev_9d4052f32e9e023e730a480ac48bb1c7338cfa1cd10f94d4efbe5e9040aadc94` | Candidate code path and tests must be inspected |
-| `YOUTUBE-CAP-23655820` — Recommendations and search | Not verified against PeerTube | None yet; compare with `ev_9d4052f32e9e023e730a480ac48bb1c7338cfa1cd10f94d4efbe5e9040aadc94` | Candidate code path and tests must be inspected |
-| `YOUTUBE-CAP-069B5DF3` — Monetisation and advertising | Not verified against PeerTube | None yet; compare with `ev_9d4052f32e9e023e730a480ac48bb1c7338cfa1cd10f94d4efbe5e9040aadc94` | Candidate code path and tests must be inspected |
+| `YOUTUBE-CAP-25A54EAC` — Video, channel, playlist and creator workflows are documented through the product and Data API surfaces. | Not verified against PeerTube | None yet; compare with `ev_9d4052f32e9e023e730a480ac48bb1c7338cfa1cd10f94d4efbe5e9040aadc94` | Candidate code path and tests must be inspected |
+| `YOUTUBE-CAP-0E661219` — Live-event and stream management are documented. | Not verified against PeerTube | None yet; compare with `ev_9d4052f32e9e023e730a480ac48bb1c7338cfa1cd10f94d4efbe5e9040aadc94` | Candidate code path and tests must be inspected |
+| `YOUTUBE-CAP-329E007F` — Authorized analytics and bulk reporting surfaces are documented. | Not verified against PeerTube | None yet; compare with `ev_9d4052f32e9e023e730a480ac48bb1c7338cfa1cd10f94d4efbe5e9040aadc94` | Candidate code path and tests must be inspected |
+| `YOUTUBE-CAP-FB28BDE7` — API access is constrained by privacy, playback integrity, quota, content and independent-value policies; internal platform behavior remains proprietary. | Not verified against PeerTube | None yet; compare with `ev_9d4052f32e9e023e730a480ac48bb1c7338cfa1cd10f94d4efbe5e9040aadc94` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -279,10 +279,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-5D8A0E1F** → `REQ-FUNC-5D8A0E1F`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-94C12B85** → `REQ-FUNC-94C12B85`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-23655820** → `REQ-FUNC-23655820`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-069B5DF3** → `REQ-FUNC-069B5DF3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-25A54EAC** → `REQ-FUNC-25A54EAC`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-0E661219** → `REQ-FUNC-0E661219`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-329E007F** → `REQ-FUNC-329E007F`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-FB28BDE7** → `REQ-FUNC-FB28BDE7`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -303,7 +303,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-5D8A0E1F, REQ-FUNC-94C12B85, REQ-FUNC-23655820, REQ-FUNC-069B5DF3
+- **Requirements:** REQ-FUNC-25A54EAC, REQ-FUNC-0E661219, REQ-FUNC-329E007F, REQ-FUNC-FB28BDE7
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -313,7 +313,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-5D8A0E1F, REQ-FUNC-94C12B85, REQ-FUNC-23655820, REQ-FUNC-069B5DF3
+- **Requirements:** REQ-FUNC-25A54EAC, REQ-FUNC-0E661219, REQ-FUNC-329E007F, REQ-FUNC-FB28BDE7
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -335,7 +335,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-5D8A0E1F, REQ-FUNC-94C12B85, REQ-FUNC-23655820, REQ-FUNC-069B5DF3; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-25A54EAC, REQ-FUNC-0E661219, REQ-FUNC-329E007F, REQ-FUNC-FB28BDE7; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -365,7 +365,18 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.youtube.com/) | Not recorded | YouTube is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-youtube-identity` | YouTube APIs and services — Official documentation identifies YouTube app features and its API/service families for developers, creators, labels, content owners and device manufacturers. | [link](https://developers.google.com/youtube/apis) | 2026-11-03T00:00:00Z | YouTube is a video platform with documented app, Data, Live Streaming, Analytics, Reporting and Content ID surfaces. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-youtube-data-api` | YouTube Data and app APIs — The official API inventory documents YouTube Data API app features such as uploading videos, managing playlists and editing video metadata. | [link](https://developers.google.com/youtube/apis) | 2026-11-03T00:00:00Z | The YouTube Data API supports documented video, channel, playlist and metadata workflows, including upload and management operations with authorization. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-youtube-live` | YouTube Live Streaming API overview — Official documentation describes live broadcasts, video streams and the API workflow for scheduling and managing live events. | [link](https://developers.google.com/youtube/data/live/getting-started) | 2026-11-03T00:00:00Z | The Live Streaming API can create, update and manage live events and associated streams on YouTube. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-youtube-analytics` | YouTube Analytics and Reporting APIs — Official documentation distinguishes targeted Analytics queries from bulk Reporting API datasets and describes authorization and available metrics. | [link](https://developers.google.com/youtube/analytics) | 2026-11-03T00:00:00Z | YouTube documents Analytics and Reporting APIs for authorized creator and data-analysis reporting workflows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-youtube-policy` | Complying with YouTube's Developer Policies — The official policy guide documents privacy, playback integrity, metrics, independent-value, quota and content-policy requirements. | [link](https://developers.google.com/youtube/terms/developer-policies-guide) | 2026-11-03T00:00:00Z | YouTube API clients must protect user privacy, preserve standard playback, avoid unauthorized downloads or data collection and add independent value. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.youtube.com/) | 2026-11-03T00:00:00Z | YouTube is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/youtube/apis) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/youtube/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/youtube/apis) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/youtube/terms/developer-policies-guide) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/youtube/data/live/getting-started) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/youtube/analytics) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_9d4052f32e9e023e730a480ac48bb1c7338cfa1cd10f94d4efbe5e9040aadc94` | YouTube Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.youtube.com/) | 2026-11-03T01:42:47.226Z | A dated unauthenticated snapshot exposed controls button: Guide, button: Skip navigation, button: Search, button: Search with your voice, button: Settings, link: YouTube Home, combobox: Search, link: Sign in, link: Home, link: Shorts, link: Subscriptions, link: You and landmarks banner, search, navigation, main. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -393,121 +404,87 @@ Resume token: `youtube`. Read dossier, REA report and raw Evidence before repeat
 
 # 1. Executive summary
 
-YouTube is the world's largest video-sharing platform, allowing users to upload, view, and share video content. It is a cornerstone of internet media consumption and a major platform for creators, educators, and entertainers.
+YouTube is Google's video hosting, playback, creator and live-streaming platform. It provides public channels and videos, search and discovery, playlists, subscriptions, comments, live events and creator analytics, with monetization and rights-management surfaces for eligible users and partners. YouTube Music, YouTube TV and YouTube Kids are related but separate catalog products.
 
 # 2. Product identity and ownership
 
 - **Official name:** YouTube
-- **Company and business unit:** Google
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2005
-- **Current lifecycle status:** active
-- **Previous names:** None
-- **Acquisitions or ownership changes:** Acquired by Google in 2006
-- **Related products:** YouTube Music, YouTube TV, YouTube Kids, YouTube Premium
-- **Official website:** https://www.youtube.com/
-- **Official documentation:** https://support.google.com/youtube
+- **Company:** YouTube LLC, part of Google/Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://www.youtube.com/
+- **Identity evidence:** Official Google developer documentation identifies YouTube app features, Data, Live Streaming, Analytics, Reporting and Content ID APIs as distinct YouTube integration surfaces.
 
 # 3. Product capabilities
 
-- Video uploading and transcoding
-- Video playback with adaptive bitrate
-- Comments and discussion
-- Likes and dislikes
-- Subscription feeds
-- Playlists and collections
-- Live streaming
-- Premieres
-- Community posts
-- Shorts (vertical video)
-- Monetization for creators
-- Analytics for creators
-- Age-restriction and flagging
-- 4K and HDR support
-- Offline download (premium)
+- Upload, manage, publish and play user and partner video content.
+- Channels, subscriptions, playlists, search, comments and sharing.
+- Live event scheduling and stream management.
+- Creator analytics and reporting, subject to authorization and API scope.
+- Content ownership and rights workflows through restricted Content ID surfaces.
+- Embedded playback through the IFrame Player API and related widgets.
 
 # 4. Technical architecture
 
-YouTube's backend infrastructure is highly scaled:
+The public surface exposes a web and app experience, embedded playback, creator channels, live streaming, APIs and reporting. The public documentation does not disclose YouTube's internal transcoding, CDN, recommendation, moderation, ranking, advertising or rights-enforcement implementation. Those capabilities must be treated as proprietary beyond the documented behavior and API contracts.
 
-- Video transcoding pipeline with hundreds of codecs and resolutions
-- Content delivery network (globally distributed)
-- Video identification (Content ID for copyright)
-- Recommendation algorithm (personalized viewing)
-- Live streaming infrastructure (low-latency)
-- Community guidelines enforcement (ML-based)
+# 5. User and developer workflows
 
-Full architecture is proprietary; only observable behavior and public API specifications are available.
-
-# 5. User workflows
-
-Primary workflows: video discovery, playback, interaction (like, comment, share), channel subscription, upload, and creator analytics. Essential: watching, searching, interacting. Advanced: creator tools, live streaming, community management.
+Viewers discover and play videos, subscribe to channels, create playlists and interact with content. Creators use channels and Studio workflows to upload, manage, publish and analyze content. Authorized applications can use the Data API for documented video/channel/playlist operations, the Live Streaming API for live events, and Analytics/Reporting APIs for permitted reporting. API clients must preserve the standard player experience and comply with YouTube policies.
 
 # 6. Pricing and access
 
-Free with ads. YouTube Premium is a paid tier removing ads and adding features (background play, offline, YouTube Music). YouTube TV is a separate live TV streaming service with its own pricing. Channel memberships and Super Chat are additional monetization.
+YouTube has an ad-supported public experience and paid or creator-specific programs such as YouTube Premium, channel memberships and other monetization features. Availability, monetization eligibility, regional access and API quotas vary by account, country, content and program. This pass does not assert current pricing or a channel's eligibility.
 
 # 7. API and integration surface
 
-- YouTube Data API (v3) for video management, search, analytics
-- YouTube Live Streaming API
-- YouTube IFrame Player API
-- Player API for player controls
-- Data API for captions and subtitles
+Google documents the YouTube Data API, Live Streaming API, IFrame Player API, Analytics API, Reporting API, Content ID API and player/widgets. Content ID is restricted to eligible YouTube Partners. API access requires the documented authentication, quota, privacy and policy controls; a public API is not permission to download, mirror, modify or replace YouTube playback.
 
 # 8. Existing open-source alternatives
 
-PeerTube (Fediverse video platform), Odeseva, and other decentralized video platforms exist but have smaller user bases and different content ecosystems. No direct feature parity with YouTube's scale or recommendation algorithm.
+- **PeerTube (AGPL-3.0):** federated, self-hostable video publishing and streaming platform.
+- **Invidious (AGPL-3.0):** alternative front end that depends on YouTube; not an independent video platform.
+- **FreeTube (AGPL-3.0):** desktop client focused on privacy; not a hosting or creator platform.
 
 # 9. Alternative comparison
 
-PeerTube and similar federated platforms implement ActivityPub and video federation but lack YouTube's scale, recommendation quality, and creator tooling. They are not feature-comparable for general video sharing.
+PeerTube is the closest open platform for self-hosted and federated video publishing, while Invidious and FreeTube are clients/front ends that depend on YouTube. None reproduces YouTube's content catalog, creator network, global delivery, recommendation system, advertising, rights management or partner ecosystem. Coverage is partial.
 
 # 10. Missing capabilities and opportunity analysis
 
-Federated video distribution, decentralized recommendation, and creator monetization without central platform represent build opportunities. Scaling video transcoding and CDN infrastructure is a significant requirement.
+A replacement would need video ingestion and transcoding, storage and CDN delivery, playback, search, recommendations, identity, channels, moderation, copyright and rights workflows, live streaming, analytics, monetization, safety, privacy and regional compliance. A bounded niche or federated platform is feasible; a general YouTube clone is not supported by this research.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Focus on a specific niche (e.g., decentralized video sharing via PeerTube, vertical video platform). Full YouTube clone not recommended due to infrastructure requirements.
+Use PeerTube for a self-hosted/federated video platform or FreeTube for a privacy-oriented client. Define content ownership, moderation, storage, delivery, federation, creator identity and monetization before building. If integrating YouTube, use only documented APIs and the embedded player, preserve standard playback and obtain the required permissions. Do not scrape or mirror YouTube content.
 
 # 12. Security, privacy, and compliance
 
-Content ID copyright enforcement, age restriction, community guidelines. GDPR and COPPA compliance for child-directed content. Demonetization and creator payout policies.
+YouTube workflows process account identity, viewing history, uploads, comments, analytics, rights data and potentially child-directed content. API clients must obtain consent, provide privacy and deletion controls, protect credentials, respect content and community policies, preserve playback integrity and avoid unauthorized data collection or downloads.
 
 # 13. Sources and evidence
 
-- https://www.youtube.com/ (product page)
-- https://support.google.com/youtube/ (documentation)
-- https://github.com/Chocole/PeerTube (PeerTube reference)
+- [YouTube APIs and services](https://developers.google.com/youtube/apis) — official API inventory and access modes.
+- [Developer policies guide](https://developers.google.com/youtube/terms/developer-policies-guide) — official privacy, playback, metrics and independent-value requirements.
+- [Live Streaming API overview](https://developers.google.com/youtube/data/live/getting-started) — official live-event and stream-management surface.
+- [YouTube Analytics and Reporting](https://developers.google.com/youtube/analytics) — official creator analytics and reporting surface.
+- [YouTube API terms](https://developers.google.com/youtube/terms/api-services-terms-of-service) — official API contractual requirements.
 
 # 14. Open questions
 
-- What is the minimum viable video platform feature set for a decentralized alternative?
-- How does content moderation scale in a federated system?
-- What bandwidth and storage requirements limit independent video platforms?
+- Is the target a creator tool, embedded player, analytics product, federated platform or full video service?
+- Which content ownership, moderation, monetization and regional requirements are mandatory?
+- Which YouTube API scopes, quotas, audits and privacy obligations apply to the integration?
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
+- v1: dossier contained broad editorial claims and preliminary alternatives; research pending.
+- v2: rewritten 2026-11-03 from official YouTube Help and Google developer documentation. Status: `researched`; proprietary infrastructure, content licensing, ranking and partner operations remain outside the verified public surface.
 
----
-
-# 16. Alternative comparison (continued)
-
-PeerTube and federation-based platforms are the closest open-source alternatives but differ significantly in scale and capability.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Focus on decentralized video sharing or vertical video niche. Full platform clone requires CDN and transcoding infrastructure.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier youtube` and inspect canonical identity with `npx rae-faang products show youtube --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier youtube` and inspect canonical identity with `npx rea-faang products show youtube --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -520,7 +497,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang youtube --out ./youtube.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit youtube --out ./youtube-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang youtube --out ./youtube.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit youtube --out ./youtube-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -562,5 +539,16 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://www.youtube.com/) — YouTube is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [YouTube APIs and services](https://developers.google.com/youtube/apis) — YouTube is a video platform with documented app, Data, Live Streaming, Analytics, Reporting and Content ID surfaces. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [YouTube Data and app APIs](https://developers.google.com/youtube/apis) — The YouTube Data API supports documented video, channel, playlist and metadata workflows, including upload and management operations with authorization. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [YouTube Live Streaming API overview](https://developers.google.com/youtube/data/live/getting-started) — The Live Streaming API can create, update and manage live events and associated streams on YouTube. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [YouTube Analytics and Reporting APIs](https://developers.google.com/youtube/analytics) — YouTube documents Analytics and Reporting APIs for authorized creator and data-analysis reporting workflows. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Complying with YouTube's Developer Policies](https://developers.google.com/youtube/terms/developer-policies-guide) — YouTube API clients must protect user privacy, preserve standard playback, avoid unauthorized downloads or data collection and add independent value. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://www.youtube.com/) — YouTube is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.google.com/youtube/apis) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://support.google.com/youtube/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/youtube/apis) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/youtube/terms/developer-policies-guide) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/youtube/data/live/getting-started) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/youtube/analytics) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [YouTube Public web-surface observation (REA)](https://www.youtube.com/) — A dated unauthenticated snapshot exposed controls button: Guide, button: Skip navigation, button: Search, button: Search with your voice, button: Settings, link: YouTube Home, combobox: Search, link: Sign in, link: Home, link: Shorts, link: Subscriptions, link: You and landmarks banner, search, navigation, main. (VERIFIED; accessed 2026-11-03T01:42:47.226Z).

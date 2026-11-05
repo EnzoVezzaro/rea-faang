@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_e9e738b3e930e4ba3984658a00179b0ebb6a2df296b9370dc3d04098f46b88f8",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.meta.ai/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "260b90ad4ea4d93755a14ac6ede323d84f00322633689ac0149cafb223f9e417"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://www.meta.ai",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 5837,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 3038,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.meta.ai/",
+          "origin": "https://www.meta.ai",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2546,
+        "before_url": {
+          "url": "https://www.meta.ai/",
+          "origin": "https://www.meta.ai",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.meta.ai/",
+          "origin": "https://www.meta.ai",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "c797ea709cf067dd7333584e5055d0218ac265bdedd0ddd649a65876acbdcedc",
+              "bytes": 5376,
+              "text": "- document:\n  - navigation \"Sidebar\":\n    - button \"Open sidebar\":\n      - img\n    - list:\n      - listitem:\n        - link:\n          - /url: /\n          - img\n      - listitem:\n        - button:\n          - img\n  - main:\n    - img \"Meta\"\n    - button \"Download app\"\n    - button \"Log in\"\n    - heading \"Meta AI, the personal assistant that helps you shop, finds places nearby, researches any topic, helps grow your business, and creates and edits images\" [level=1]: Meta AI, the personal assistant that\n    - textbox \"Ask Meta AI\":\n      - /placeholder: Ask Meta AI anything...\n    - button \"Add attachment\":\n      - img\n    - button \"Send\":\n      - img\n    - button \"Learn more\":\n      - text: Learn more\n      - img\n    - heading \"Describe the image you want\" [level=2]\n    - text: Generate images just by having a conversation with Meta AI - a logo, a tattoo you are thinking about, a thumbnail, a birthday card.\n    - button \"Create images\"\n    - text: A capsule wardrobe of neutral autumn clothing laid out flat, photographed from above on a warm linen backdrop, soft studio light\n    - img \"Neutral autumn capsule wardrobe arranged on linen, generated with Meta AI\"\n    - heading \"Edit photos with ease\" [level=2]\n    - text: Touch up photos, remove unwanted backgrounds, restyle, and more by asking Meta AI or sketching directly on the photo.\n    - button \"Edit a photo\"\n    - img \"Bowl of ramen before its background is edited with Meta AI\"\n    - text: Change the background to a neutral blue\n    - img \"Bowl of ramen with its background changed to blue using Meta AI\"\n    - heading \"Discover and shop products that match your style\" [level=2]\n    - text: Tell Meta AI what you need, your budget, and the details that matter. It can narrow the choices, compare products, and help you decide what fits.\n    - button \"Shop with Meta AI\"\n    - heading \"Find the best spots around you\" [level=2]\n    - text: Get recommendations shaped around where you are, what you like, and who you are with. Ask for dinner, a day out, or a last-minute plan and refine the options together.\n    - button \"Get local recommendations\"\n    - text: Find highly rated coffee shops near me with a relaxed atmosphere A vibrant hub for local coffee, featuring a high density of specialty shops within just a few blocks. Whether you want a minimalist space or a cozy corner, you will find several top-rated options here. Most spots are highly walkable, making it easy to find your favorite roast and a great atmosphere!\n    - img \"Map of nearby coffee shops recommended by Meta AI\"\n    - heading \"Go deeper with research\" [level=2]\n    - text: Ask a complex question and Meta AI can search across sources, organize the findings, and turn them into a cited report. Compare options, understand a new topic, or plan a project without juggling tabs.\n    - button \"Start deep research\"\n    - text: \"I'm looking for preschool programs for my 2-year-old. Create a research report to help me understand my options. Include timelines and pros and cons. Show thinking For a 2-year-old, the choice comes down to fit more than ranking. I looked at current research and national quality standards to build a simple way to evaluate local programs. The report breaks down pros and cons with evidence, what to actually look for on tours, and a 5-step decision framework plus a shortlist strategy for applications. Early Childhood Education: Choosing a Program for a 2-Year-Old Overview For a 2-year-old, the choice comes down to fit more than ranking. This guide compares five common program styles you will see on tours, looks at what research says about how toddlers learn, and gives a simple way to evaluate any local option.\"\n    - heading \"Stay connected to your business\" [level=2]\n    - text: Use Meta AI to work through customer questions, content ideas, and everyday planning. Keep the conversation grounded in your goals so the next step is easier to see.\n    - button \"Get help with your business\"\n    - text: What types of content have worked best for me over the last month for my Instagram account? Show thinking TLDR — Human-led endurance storytelling and giveaway-driven flavor teases carried interaction this month, while tight pack-shot teasers without people carried less. Account and posts from Jul 20 to Aug 17 Accounts reached 11,796,166 +13.7% last week Profile visits 121,321 +6.1% last week Follower growth 7,803 +4.9% last week Total followers 109,282 +2.4% last week\n    - heading \"Write the caption, plan the post\" [level=2]\n    - text: Draft captions for posts, Reels and Stories, a bio that sounds like you, and a content plan so you are not starting from a blank box every morning.\n    - button \"Ask Meta AI\"\n    - img \"Instagram Reel of a new puppy used by Meta AI to generate social captions\"\n    - text: Reel Three captions for this Reel of the new puppy, warm but not corny Day one, and he has already picked his spot. Eight weeks old and running the house. The rug was ours until Tuesday.\n    - heading \"Ready to try Meta AI?\" [level=2]\n    - button \"Log in\"\n    - button \"Download app\"\n    - text: Meta © 2026\n    - navigation \"Meta AI products\":\n      - link \"Muse\":\n        - /url: https://muse.ai/\n      - button \"Vibes\"\n      - link \"AI Learning Hub\":\n        - /url: https://meta.ai/learn/\n    - text: from\n    - img \"Meta\"\n  - region \"Notifications alt+T\"\n  - alert"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.meta.ai/",
+              "origin": "https://www.meta.ai",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

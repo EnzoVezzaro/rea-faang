@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Search (google-search); inve
 
 # Google Search — implementation skill (`google-search`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Search**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Search (google-search); inve
 
 This is the coding-agent skill for **Google Search** (`google-search`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-search.md` from the catalog page, or run `npx rae-faang google-search --out ./google-search.md`, `npx rae-faang skills generate google-search` or `npx rae-faang build agent-kit google-search --out ./google-search-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-search.md` from the catalog page, or run `npx rea-faang google-search --out ./google-search.md`, `npx rea-faang skills generate google-search` or `npx rea-faang build agent-kit google-search --out ./google-search-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Google Search / `google-search` | `catalog/products.jsonl` |
 | Official product URL | [https://www.google.com/](https://www.google.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-search` | `research/companies/google/products/google-search.md` |
+| Official documentation | [https://developers.google.com/search/docs/fundamentals/how-search-works](https://developers.google.com/search/docs/fundamentals/how-search-works) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-search` | `research/companies/google/products/google-search.md` |
 | REA report | `catalog/rea/google/google-search.md` (captured 2026-11-03T01:39:19.283Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-search.json` (`ev_6c841f20f586944d02e01777db0b7e904c4b2538326a4ed85a9fcf33f40c219e`) | Catalog evidence |
 | Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-search --format json` and `npx rae-faang research dossier google-search` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-search --format json` and `npx rea-faang research dossier google-search` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-SEARCH-CAP-952D4A0B`, `GOOGLE-SEARCH-CAP-D00C4D8B`, `GOOGLE-SEARCH-CAP-B6A1D550`, `GOOGLE-SEARCH-CAP-886184E2`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-SEARCH-CAP-DED8AFE4`, `GOOGLE-SEARCH-CAP-83D48094`, `GOOGLE-SEARCH-CAP-ECA94188`, `GOOGLE-SEARCH-CAP-578BFA38`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,7 +103,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Google Search** / `google-search` | Product catalog |
 | Company / category | Google / `consumer_application` / `search`, `discovery` | Product catalog |
-| Official website / docs | [https://www.google.com/](https://www.google.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Official website / docs | [https://www.google.com/](https://www.google.com/) / [https://developers.google.com/search/docs/fundamentals/how-search-works](https://developers.google.com/search/docs/fundamentals/how-search-works) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,19 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-SEARCH-CAP-952D4A0B` | Web crawl and indexing at web scale | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-SEARCH-CAP-D00C4D8B` | Ranking and relevance (link graph + behavioural signals) | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-SEARCH-CAP-B6A1D550` | Spell correction, query suggestions, knowledge graph, featured snippets | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-SEARCH-CAP-886184E2` | Universal search (images, video, news) and personalisation | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-SEARCH-CAP-DED8AFE4` | Public documentation verifies automated crawling and URL discovery; crawler implementation, scale and internal controls remain unknown. | VERIFIED | `ev-google-search-how-works` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-SEARCH-CAP-83D48094` | Public documentation verifies automated ranking systems and signals; exact algorithms and weights are proprietary and unknown. | VERIFIED | `ev-google-search-ranking` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-SEARCH-CAP-ECA94188` | Official help documents spelling correction, direct answers and query relationships; availability and behavior vary by query, region and account context. | VERIFIED | `ev-google-search-help` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-SEARCH-CAP-578BFA38` | Official help documents content-type and context relationships; the full universal-search and personalization implementation is not publicly specified. | VERIFIED | `ev-google-search-help` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Google apps`, `button: Search by voice`, `button: Search by image`, `button: Google Search`, `button: I'm Feeling Lucky`, `button: Settings`, `link: About`, `link: Store`, `link: Gmail`, `link: Search for Images`, `link: Sign in`, `combobox: Search`, `link: Election Day is tomorrow. Find where to vote`, `link: Advertising`, `link: Business`, `link: How Search works`, `link: Build, create, and do more with AI tools from Google`, `link: Privacy`, `link: Terms`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Web crawl and indexing at web scale:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Ranking and relevance (link graph + behavioural signals):** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Spell correction, query suggestions, knowledge graph, featured snippets:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Universal search (images, video, news) and personalisation:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Public documentation verifies automated crawling and URL discovery; crawler implementation, scale and internal controls remain unknown.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Public documentation verifies automated ranking systems and signals; exact algorithms and weights are proprietary and unknown.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Official help documents spelling correction, direct answers and query relationships; availability and behavior vary by query, region and account context.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Official help documents content-type and context relationships; the full universal-search and personalization implementation is not publicly specified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -147,41 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-952D4A0B — Web crawl and indexing at web scale
+### REQ-FUNC-DED8AFE4 — Public documentation verifies automated crawling and URL discovery; crawler implementation, scale and internal controls remain unknown.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-search-how-works`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-952D4A0B`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-SEARCH-CAP-952D4A0B` → `REQ-FUNC-952D4A0B` → `TEST-FUNC-952D4A0B`.
+- **Associated test ID:** `TEST-FUNC-DED8AFE4`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-SEARCH-CAP-DED8AFE4` → `REQ-FUNC-DED8AFE4` → `TEST-FUNC-DED8AFE4`.
 
-### REQ-FUNC-D00C4D8B — Ranking and relevance (link graph + behavioural signals)
+### REQ-FUNC-83D48094 — Public documentation verifies automated ranking systems and signals; exact algorithms and weights are proprietary and unknown.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-search-ranking`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D00C4D8B`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-SEARCH-CAP-D00C4D8B` → `REQ-FUNC-D00C4D8B` → `TEST-FUNC-D00C4D8B`.
+- **Associated test ID:** `TEST-FUNC-83D48094`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-SEARCH-CAP-83D48094` → `REQ-FUNC-83D48094` → `TEST-FUNC-83D48094`.
 
-### REQ-FUNC-B6A1D550 — Spell correction, query suggestions, knowledge graph, featured snippets
+### REQ-FUNC-ECA94188 — Official help documents spelling correction, direct answers and query relationships; availability and behavior vary by query, region and account context.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-search-help`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-B6A1D550`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-SEARCH-CAP-B6A1D550` → `REQ-FUNC-B6A1D550` → `TEST-FUNC-B6A1D550`.
+- **Associated test ID:** `TEST-FUNC-ECA94188`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-SEARCH-CAP-ECA94188` → `REQ-FUNC-ECA94188` → `TEST-FUNC-ECA94188`.
 
-### REQ-FUNC-886184E2 — Universal search (images, video, news) and personalisation
+### REQ-FUNC-578BFA38 — Official help documents content-type and context relationships; the full universal-search and personalization implementation is not publicly specified.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-search-help`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-886184E2`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-SEARCH-CAP-886184E2` → `REQ-FUNC-886184E2` → `TEST-FUNC-886184E2`.
+- **Associated test ID:** `TEST-FUNC-578BFA38`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-SEARCH-CAP-578BFA38` → `REQ-FUNC-578BFA38` → `TEST-FUNC-578BFA38`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -228,10 +228,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-SEARCH-CAP-952D4A0B` — Web crawl and indexing at web scale | Not verified against SearXNG | None yet; compare with `ev_6c841f20f586944d02e01777db0b7e904c4b2538326a4ed85a9fcf33f40c219e` | Candidate code path and tests must be inspected |
-| `GOOGLE-SEARCH-CAP-D00C4D8B` — Ranking and relevance (link graph + behavioural signals) | Not verified against SearXNG | None yet; compare with `ev_6c841f20f586944d02e01777db0b7e904c4b2538326a4ed85a9fcf33f40c219e` | Candidate code path and tests must be inspected |
-| `GOOGLE-SEARCH-CAP-B6A1D550` — Spell correction, query suggestions, knowledge graph, featured snippets | Not verified against SearXNG | None yet; compare with `ev_6c841f20f586944d02e01777db0b7e904c4b2538326a4ed85a9fcf33f40c219e` | Candidate code path and tests must be inspected |
-| `GOOGLE-SEARCH-CAP-886184E2` — Universal search (images, video, news) and personalisation | Not verified against SearXNG | None yet; compare with `ev_6c841f20f586944d02e01777db0b7e904c4b2538326a4ed85a9fcf33f40c219e` | Candidate code path and tests must be inspected |
+| `GOOGLE-SEARCH-CAP-DED8AFE4` — Public documentation verifies automated crawling and URL discovery; crawler implementation, scale and internal controls remain unknown. | Not verified against SearXNG | None yet; compare with `ev_6c841f20f586944d02e01777db0b7e904c4b2538326a4ed85a9fcf33f40c219e` | Candidate code path and tests must be inspected |
+| `GOOGLE-SEARCH-CAP-83D48094` — Public documentation verifies automated ranking systems and signals; exact algorithms and weights are proprietary and unknown. | Not verified against SearXNG | None yet; compare with `ev_6c841f20f586944d02e01777db0b7e904c4b2538326a4ed85a9fcf33f40c219e` | Candidate code path and tests must be inspected |
+| `GOOGLE-SEARCH-CAP-ECA94188` — Official help documents spelling correction, direct answers and query relationships; availability and behavior vary by query, region and account context. | Not verified against SearXNG | None yet; compare with `ev_6c841f20f586944d02e01777db0b7e904c4b2538326a4ed85a9fcf33f40c219e` | Candidate code path and tests must be inspected |
+| `GOOGLE-SEARCH-CAP-578BFA38` — Official help documents content-type and context relationships; the full universal-search and personalization implementation is not publicly specified. | Not verified against SearXNG | None yet; compare with `ev_6c841f20f586944d02e01777db0b7e904c4b2538326a4ed85a9fcf33f40c219e` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -278,10 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-952D4A0B** → `REQ-FUNC-952D4A0B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-D00C4D8B** → `REQ-FUNC-D00C4D8B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-B6A1D550** → `REQ-FUNC-B6A1D550`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-886184E2** → `REQ-FUNC-886184E2`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-DED8AFE4** → `REQ-FUNC-DED8AFE4`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-83D48094** → `REQ-FUNC-83D48094`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-ECA94188** → `REQ-FUNC-ECA94188`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-578BFA38** → `REQ-FUNC-578BFA38`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -302,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-952D4A0B, REQ-FUNC-D00C4D8B, REQ-FUNC-B6A1D550, REQ-FUNC-886184E2
+- **Requirements:** REQ-FUNC-DED8AFE4, REQ-FUNC-83D48094, REQ-FUNC-ECA94188, REQ-FUNC-578BFA38
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -312,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-952D4A0B, REQ-FUNC-D00C4D8B, REQ-FUNC-B6A1D550, REQ-FUNC-886184E2
+- **Requirements:** REQ-FUNC-DED8AFE4, REQ-FUNC-83D48094, REQ-FUNC-ECA94188, REQ-FUNC-578BFA38
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -334,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-952D4A0B, REQ-FUNC-D00C4D8B, REQ-FUNC-B6A1D550, REQ-FUNC-886184E2; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-DED8AFE4, REQ-FUNC-83D48094, REQ-FUNC-ECA94188, REQ-FUNC-578BFA38; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -364,7 +364,24 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.google.com/) | Not recorded | Google Search is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-google-search-identity` | Google Search — The official product URL resolves to the Google Search homepage; the repository also records a dated REA capture of that public surface. | [link](https://www.google.com/) | 2026-11-03T00:00:00Z | The canonical public product surface is Google Search at google.com. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-search-how-works` | In-depth guide to how Google Search works — The official guide describes URL discovery and crawling, indexing page content into the Google index, and serving relevant results for a query. | [link](https://developers.google.com/search/docs/fundamentals/how-search-works) | 2026-11-03T00:00:00Z | Google Search publicly documents crawling, indexing and serving search results as three stages. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-search-ranking` | A guide to Google Search ranking systems — The guide describes page-level ranking systems, signals and named systems such as passage ranking and RankBrain; it does not disclose proprietary implementation details. | [link](https://developers.google.com/search/docs/appearance/ranking-systems-guide) | 2026-11-03T00:00:00Z | Google documents automated ranking systems that use many factors and signals to select relevant results. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-search-technical` | Google Search technical requirements — The official page lists Googlebot access, HTTP 200 responses and indexable content as minimum technical requirements for eligibility; eligibility does not guarantee indexing or serving. | [link](https://developers.google.com/search/docs/essentials/technical) | 2026-11-03T00:00:00Z | Google publishes public eligibility requirements involving crawler access, successful responses and indexable content. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-search-help` | Learn search tips & how results relate to your search on Google — The help page describes basic text and voice search, spelling correction, direct answers, link relationships, location/language context, content filters and SafeSearch. | [link](https://support.google.com/websearch/answer/134479?hl=en) | 2026-11-03T00:00:00Z | Google Search publicly documents query terms, spelling, links, location, language, content types and SafeSearch as relationships or controls users may encounter. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-search-custom-api` | Custom Search JSON API — The official documentation states that the API returns JSON, requires a configured search engine and API key, is closed to new customers, and gives existing customers a transition date of 2027-01-01. | [link](https://developers.google.com/custom-search/v1/overview) | 2026-11-03T00:00:00Z | Google documents a JSON API for retrieving web and image results from a configured Programmable Search Engine, with an API key and current availability limits. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-search-identity` | Google Search — The official product URL resolves to the Google Search homepage; the repository also records a dated REA capture of that public surface. | [link](https://www.google.com/) | 2026-11-03T00:00:00Z | The canonical public product surface is Google Search at google.com. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-search-how-works` | In-depth guide to how Google Search works — The official guide describes URL discovery and crawling, indexing page content into the Google index, and serving relevant results for a query. | [link](https://developers.google.com/search/docs/fundamentals/how-search-works) | 2026-11-03T00:00:00Z | Google Search publicly documents crawling, indexing and serving search results as three stages. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-search-ranking` | A guide to Google Search ranking systems — The guide describes page-level ranking systems, signals and named systems such as passage ranking and RankBrain; it does not disclose proprietary implementation details. | [link](https://developers.google.com/search/docs/appearance/ranking-systems-guide) | 2026-11-03T00:00:00Z | Google documents automated ranking systems that use many factors and signals to select relevant results. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-search-technical` | Google Search technical requirements — The official page lists Googlebot access, HTTP 200 responses and indexable content as minimum technical requirements for eligibility; eligibility does not guarantee indexing or serving. | [link](https://developers.google.com/search/docs/essentials/technical) | 2026-11-03T00:00:00Z | Google publishes public eligibility requirements involving crawler access, successful responses and indexable content. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-search-help` | Learn search tips & how results relate to your search on Google — The help page describes basic text and voice search, spelling correction, direct answers, link relationships, location/language context, content filters and SafeSearch. | [link](https://support.google.com/websearch/answer/134479?hl=en) | 2026-11-03T00:00:00Z | Google Search publicly documents query terms, spelling, links, location, language, content types and SafeSearch as relationships or controls users may encounter. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-search-custom-api` | Custom Search JSON API — The official documentation states that the API returns JSON, requires a configured search engine and API key, is closed to new customers, and gives existing customers a transition date of 2027-01-01. | [link](https://developers.google.com/custom-search/v1/overview) | 2026-11-03T00:00:00Z | Google documents a JSON API for retrieving web and image results from a configured Programmable Search Engine, with an API key and current availability limits. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.google.com/) | 2026-11-03T00:00:00Z | Google Search is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/search/docs/fundamentals/how-search-works) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/search/docs/appearance/ranking-systems-guide) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/search/docs/essentials/technical) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/websearch/answer/134479?hl=en) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/custom-search/v1/overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_6c841f20f586944d02e01777db0b7e904c4b2538326a4ed85a9fcf33f40c219e` | Google Search Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.google.com/?zx=1793669956500) | 2026-11-03T01:39:19.283Z | A dated unauthenticated snapshot exposed controls button: Google apps, button: Search by voice, button: Search by image, button: Google Search, button: I'm Feeling Lucky, button: Settings, link: About, link: Store, link: Gmail, link: Search for Images, link: Sign in, combobox: Search, link: Election Day is tomorrow. Find where to vote, link: Advertising, link: Business, link: How Search works, link: Build, create, and do more with AI tools from Google, link: Privacy, link: Terms and landmarks navigation, search, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -392,115 +409,118 @@ Resume token: `google-search`. Read dossier, REA report and raw Evidence before 
 
 # 1. Executive summary
 
-Google Search is the dominant web search engine, processing billions of queries daily. It provides users with relevant information retrieval through a complex ranking system, serving as the primary gateway to internet content for most users worldwide.
+Google Search is Google's public web-search product. Google documents a three-stage model—crawling, indexing and serving results—and separately documents automated ranking systems and public search controls. The public documentation does not establish the proprietary implementation, internal data model, exact ranking weights or operational scale of an independent replica.
+
+This dossier promotes the product to `researched` for documented public behavior and records remaining unknowns explicitly. The dated REA capture covers only the unauthenticated Google homepage; it is not evidence of the complete search-results workflow.
 
 # 2. Product identity and ownership
 
-- **Official name:** Google Search
-- **Company and business unit:** Google, a subsidiary of Alphabet Inc.
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 1998
-- **Current lifecycle status:** active
-- **Previous names:** None
-- **Acquisitions or ownership changes:** Became a subsidiary of Alphabet Inc. upon Alphabet's 2015 restructuring
-- **Related products:** Google News, Google Trends, Google Shopping, Google Flights
-- **Official website:** https://www.google.com/
-- **Official documentation:** https://developers.google.com/custom-search
+- **Canonical name:** Google Search
+- **Stable catalog ID:** `google-search`
+- **Company:** Google
+- **Product type:** consumer application; search and discovery
+- **Official product URL:** https://www.google.com/
+- **Official documentation:** https://developers.google.com/search/docs/fundamentals/how-search-works
+- **Lifecycle:** active at the time of review
+- **Identity evidence:** `ev-google-search-identity`, plus `catalog/rea/google/google-search.md`
+- **Supported versions/platform matrix:** not published as a single public matrix; treat as unknown and verify per implementation scope
+
+No duplicate product row was found for `google-search` in the canonical catalog. Programmable Search Engine and the Custom Search JSON API are related interfaces, not separate identities for this row.
 
 # 3. Product capabilities
 
-- Web search
-- Indexing
-- Ranking
-- Spell correction
-- Query suggestions
-- Knowledge graph
-- Featured snippets
-- Universal search (images, videos, news)
-- Personalization
-- SafeSearch
+The following claims are supported by the official sources in the evidence ledger:
+
+1. **Crawling and URL discovery:** Google describes automated crawlers discovering and fetching public pages, subject to access and crawl constraints.
+2. **Indexing:** Google describes analyzing page content and storing information in its index; indexing is not guaranteed.
+3. **Serving results:** Google describes returning information it considers relevant to a query from the index.
+4. **Automated ranking:** Google documents ranking systems and many signals, while withholding proprietary implementation details.
+5. **Query assistance and result context:** Google Help documents spelling correction, related terms, direct answers, links, location, language, content types and SafeSearch as behaviors or controls users may encounter.
+6. **Programmable interfaces:** Google documents Programmable Search Engine and a JSON API for configured search engines. The Custom Search JSON API is closed to new customers and existing customers are given a 2027-01-01 transition date.
+
+Not established by these sources: Google-scale performance, private personalization data, exact algorithms, internal services, ranking weights, full result composition, or regional feature parity.
 
 # 4. Technical architecture
 
-Google Search employs a distributed architecture involving:
+**Verified public model:** crawler/URL-discovery stage → indexing stage → result-serving stage. The public guide describes Googlebot, rendering, indexing, canonicalization and a large Google index at a conceptual level.
 
-- Crawler fleet for web discovery
-- Inverted index for document retrieval
-- Ranking models using hundreds of signals
-- Knowledge graph for entity relationships
-- Real-time query processing
-- Personalization layer
-
-Publicly documented architecture is limited; much of the implementation is proprietary. Observable behavior includes query processing latency, ranking results, and feature availability.
+**Not verified:** service boundaries, storage engines, ranking implementation, model training, replication, queues, caches, deployment topology, data retention and private personalization systems. These remain `UNKNOWN`; this dossier does not infer them from common search-engine architecture.
 
 # 5. User workflows
 
-Users enter a query, receive a ranked results page, and can interact with results through clicks, searches refinement, and related query suggestions. Essential behaviors: query input, result ranking, pagination, and search refinement. Advanced: search operators, filters, and personalization.
+The official help documentation supports a basic user path: enter a query, optionally use voice or search refinements, and inspect results and result-context explanations. The REA capture observed the unauthenticated start page with a search control, voice and image controls, settings, navigation and footer links, but did not activate a query.
+
+The following workflow details remain unverified and must not be presented as complete product behavior: result rendering and pagination, loading and empty states, SafeSearch enforcement in each surface, personalization persistence, account-dependent behavior, cancellation, retry, ranking explanations, accessibility behavior after submission, and error recovery.
 
 # 6. Pricing and access
 
-Free to use with no account required for basic search. Advanced features like Custom Search JSON API have tiered pricing. Google Workspace integration available.
+The core public Search homepage has no product-pricing contract established in this review. The Custom Search JSON API is a separate developer interface: its official documentation says it requires a configured Programmable Search Engine and API key, is closed to new customers, and has a transition deadline for existing customers. Do not use API pricing or quotas as evidence about the consumer Search product.
 
 # 7. API and integration surface
 
-- Custom Search JSON API
-- Programmable Search Engine API
-- RESTful interface with API keys
-- Supports JSON responses
+- **Custom Search JSON API:** JSON retrieval of web or image results from a configured Programmable Search Engine; API key required; current availability limitations are documented at the official API page.
+- **Programmable Search Engine:** configurable site or collection search, image search and presentation controls; the official overview documents client-side embedding and the JSON API.
+- **Public web UI:** observed homepage controls are recorded in the REA report; no claim is made about undocumented endpoints or private browser traffic.
+
+Authentication, quotas, errors, retries, idempotency and regional availability must be read from the current official API documentation before an independent integration is designed.
 
 # 8. Existing open-source alternatives
 
-None verified. Some search engines exist (DuckDuckGo, SearX) but do not index at Google's scale.
+The curated landscape identifies three partial candidates, each covering a different scope:
+
+- **SearXNG:** AGPL-3.0 metasearch engine that aggregates other search services; it does not provide an owned Google-scale index.
+- **YaCy:** free/distributed search software with crawler and local/distributed index capabilities; its scope and network model differ materially from Google Search.
+- **Whoogle:** self-hosted privacy-oriented front end for Google Search; it depends on Google's service and is not an independent search engine.
+
+These are candidates for evaluation, not verified replacements or approved foundations. Alternative coverage remains `unknown` in the canonical product record until a separate license, version, maintenance, security and capability review is completed.
 
 # 9. Alternative comparison
 
-No qualifying open-source alternatives found at Google's scale and capability level.
+The evidence supports a **partial** landscape, not parity. SearXNG is relevant when the goal is privacy-preserving aggregation; YaCy is relevant when the goal is an owned or distributed crawl/index; Whoogle is relevant when the goal is a self-hosted presentation layer over Google results. None covers the full public Search product and none should be represented as a drop-in equivalent.
 
 # 10. Missing capabilities and opportunity analysis
 
-Core search infrastructure (crawling, indexing, ranking at Google scale) represents a significant build opportunity. Interoperability with open indexing formats (W3C Web Search API) is limited.
+The opportunity is a bounded, independently implemented search product with an explicit corpus and measurable scope—not a claim to reproduce Google's proprietary general-web service. A viable first slice could define a permitted corpus, crawl policy, indexing format, query interface, ranking baseline, privacy policy and observability. General-web scale, private ranking, personalized results and proprietary data sources remain out of scope until separately evidenced and authorized.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Build a research-scale search engine using open-source indexing components. Focus on a niche or specialized search domain rather than general-web competition.
+Use the REA public-surface report only to reproduce the observed starting-page contract and to guide further authorized observation. For any independent implementation, choose a foundation only after evaluating the three candidates against the declared corpus, license, maintenance and security requirements. If none satisfies the bounded scope, record `BUILD` or `INVESTIGATE MORE`; do not claim parity.
 
-# 12. Security, privacy, and compliance
+# 12. Security, privacy and compliance
 
-Search logs contain sensitive query data. Privacy-friendly alternatives should not retain personally identifiable information. No compliance certifications applicable to the core search engine.
+The official help material indicates that location, language, region, search activity and SafeSearch can affect the user experience. It does not provide a complete retention or internal privacy model for this dossier. An independent implementation must define data minimization, query-log retention, account isolation, location controls, SafeSearch policy, abuse/rate limits, deletion/export behavior and secrets handling before implementation. No compliance certification or privacy parity claim is made.
 
 # 13. Sources and evidence
 
-- https://about.google (Google corporate information)
-- https://developers.google.com/search (Search documentation)
-- https://ai.googleblog.com (AI and search research)
+| Evidence ID | Source | Scope |
+|---|---|---|
+| `ev-google-search-identity` | https://www.google.com/ | Product identity and public homepage |
+| `ev-google-search-how-works` | https://developers.google.com/search/docs/fundamentals/how-search-works | Crawling, indexing and serving model |
+| `ev-google-search-ranking` | https://developers.google.com/search/docs/appearance/ranking-systems-guide | Public description of ranking systems and limits |
+| `ev-google-search-technical` | https://developers.google.com/search/docs/essentials/technical | Public crawl/index eligibility requirements |
+| `ev-google-search-help` | https://support.google.com/websearch/answer/134479?hl=en | Query behavior, context and user controls |
+| `ev-google-search-custom-api` | https://developers.google.com/custom-search/v1/overview | JSON API contract and current availability notes |
+| REA capture | `catalog/rea/google/google-search.md` | Dated unauthenticated homepage observation only |
 
-# 14. Open questions
+# 14. Open questions and exclusions
 
-- What is the minimum viable indexing scale for a credible alternative?
-- What open standards exist for search interoperability?
-- How can query privacy be preserved in a self-hosted search engine?
+- Full result-page workflow and error/recovery states are not captured.
+- Exact ranking signals, weights, models and infrastructure are proprietary or undocumented.
+- Supported platform/version matrix and regional feature availability are not consolidated here.
+- API quotas, authorization details and transition behavior must be checked again before integration.
+- Alternative repositories still require a separate version, license, maintenance and security audit.
+- No private surfaces, authentication bypass, binary analysis or internal architecture inference is included.
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
+- **2026-11-03:** reviewed official Google Search Central, Google Search Help and Google Developers sources; reconciled them with the existing REA homepage capture; promoted the dossier from `pending` to `researched` with verified evidence and explicit unknowns.
+- **Next review:** 2027-02-03, or sooner if the official API availability or public Search documentation changes materially.
 
----
-
-# 16. Alternative comparison (continued)
-
-No qualifying alternatives found within research scope.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Focus on domain-specific search rather than general-web competition. Consider W3C Web Search API compliance.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-search` and inspect canonical identity with `npx rae-faang products show google-search --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-search` and inspect canonical identity with `npx rea-faang products show google-search --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -513,7 +533,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-search --out ./google-search.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-search --out ./google-search-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-search --out ./google-search.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-search --out ./google-search-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -555,5 +575,22 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://www.google.com/) — Google Search is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [Google Search](https://www.google.com/) — The canonical public product surface is Google Search at google.com. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [In-depth guide to how Google Search works](https://developers.google.com/search/docs/fundamentals/how-search-works) — Google Search publicly documents crawling, indexing and serving search results as three stages. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [A guide to Google Search ranking systems](https://developers.google.com/search/docs/appearance/ranking-systems-guide) — Google documents automated ranking systems that use many factors and signals to select relevant results. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Search technical requirements](https://developers.google.com/search/docs/essentials/technical) — Google publishes public eligibility requirements involving crawler access, successful responses and indexable content. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Learn search tips & how results relate to your search on Google](https://support.google.com/websearch/answer/134479?hl=en) — Google Search publicly documents query terms, spelling, links, location, language, content types and SafeSearch as relationships or controls users may encounter. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) — Google documents a JSON API for retrieving web and image results from a configured Programmable Search Engine, with an API key and current availability limits. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Search](https://www.google.com/) — The canonical public product surface is Google Search at google.com. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [In-depth guide to how Google Search works](https://developers.google.com/search/docs/fundamentals/how-search-works) — Google Search publicly documents crawling, indexing and serving search results as three stages. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [A guide to Google Search ranking systems](https://developers.google.com/search/docs/appearance/ranking-systems-guide) — Google documents automated ranking systems that use many factors and signals to select relevant results. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Search technical requirements](https://developers.google.com/search/docs/essentials/technical) — Google publishes public eligibility requirements involving crawler access, successful responses and indexable content. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Learn search tips & how results relate to your search on Google](https://support.google.com/websearch/answer/134479?hl=en) — Google Search publicly documents query terms, spelling, links, location, language, content types and SafeSearch as relationships or controls users may encounter. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Custom Search JSON API](https://developers.google.com/custom-search/v1/overview) — Google documents a JSON API for retrieving web and image results from a configured Programmable Search Engine, with an API key and current availability limits. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://www.google.com/) — Google Search is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.google.com/search/docs/fundamentals/how-search-works) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://developers.google.com/search/docs/appearance/ranking-systems-guide) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/search/docs/essentials/technical) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/websearch/answer/134479?hl=en) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/custom-search/v1/overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Search Public web-surface observation (REA)](https://www.google.com/?zx=1793669956500) — A dated unauthenticated snapshot exposed controls button: Google apps, button: Search by voice, button: Search by image, button: Google Search, button: I'm Feeling Lucky, button: Settings, link: About, link: Store, link: Gmail, link: Search for Images, link: Sign in, combobox: Search, link: Election Day is tomorrow. Find where to vote, link: Advertising, link: Business, link: How Search works, link: Build, create, and do more with AI tools from Google, link: Privacy, link: Terms and landmarks navigation, search, contentinfo. (VERIFIED; accessed 2026-11-03T01:39:19.283Z).

@@ -109,7 +109,7 @@ Kong and Ambassador provide the closest open-source API gateway features. They d
 
 Usage plans, authorizer patterns (Cognito, Lambda), SDK generation, and WAF integration represent gaps. Kong and Ambassador cover request routing, basic auth, and transformation but not the full managed service experience.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Not recommended to build a managed API gateway from scratch. Consider contributing to or extending Kong for self-hostable API gateway functionality. Focus on API lifecycle patterns rather than service replication.
 
@@ -141,6 +141,6 @@ Kong and Ambassador provide the closest open-source API gateway features, but la
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Focus on self-hostable API gateway (Kong) for function routing and transformation. Managed service replication is out of scope.

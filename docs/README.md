@@ -1,6 +1,6 @@
-![RAE FAANG](assets/brand-logo-icon.png)
+![REA FAANG](assets/brand-logo-icon.png)
 
-# RAE FAANG documentation
+# REA FAANG documentation
 
 Use this guide to browse the catalog, generate a product skill and work on the repository. Each product entry links to research and candidate open-source projects for a coding agent to assess. The docs below describe the current CLI and workflow; `.docs/` contains older design notes.
 
@@ -20,7 +20,7 @@ Install the published npm CLI for catalog use; clone the source repository only 
   [`CONTRIBUTING.md`](../CONTRIBUTING.md), and record user-visible changes in
   [`CHANGELOG.md`](../CHANGELOG.md).
 - **Research a product?** Fill the dossier sections and cite evidence, then check coverage
-  with `npx rae-faang research coverage --company <id>`.
+  with `npx rea-faang research coverage --company <id>`.
 
 ## Contents
 

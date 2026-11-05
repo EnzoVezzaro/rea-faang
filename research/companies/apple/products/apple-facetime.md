@@ -87,7 +87,7 @@ Video calling is fully covered by open-source (Jitsi, Matrix); the gap is Apple'
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Partial. The function is covered (Jitsi Meet); Apple's network effects are not.
 
@@ -124,6 +124,6 @@ Video calling is fully covered by open-source (Jitsi, Matrix); the gap is Apple'
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Partial. The function is covered (Jitsi Meet); Apple's network effects are not.

@@ -5,9 +5,9 @@ Markdown file to your agent in your project; it provides product context,
 research, reuse/build guidance and verification steps. The coverage counts below
 describe alternative research only, not whether a product can be built.
 
-- **40 mature alternatives listed** — a suitable open-source project is a candidate to evaluate.
-- **66 partial alternative coverage** — projects cover some needs; review the documented gaps.
-- **78 with no verified alternative** — ask your agent to assess current projects and build in your project.
+- **31 mature alternatives listed** — a suitable open-source project is a candidate to evaluate.
+- **85 partial alternative coverage** — projects cover some needs; review the documented gaps.
+- **77 with no verified alternative** — ask your agent to assess current projects and build in your project.
 
 Regenerate with `npm run skills:catalog` (or `node tools/skills-catalog.mjs`),
 and verify without writing with `node tools/skills-catalog.mjs --check`.
@@ -104,7 +104,7 @@ landscape, not legal advice.
 | [Amazon MQ](amazon_aws/amazon-mq.md) | `amazon-mq` | no verified alternative | — |
 | [Amazon Neptune](amazon_aws/amazon-neptune.md) | `amazon-neptune` | no verified alternative | — |
 | [Amazon Nimble Studio](amazon_aws/amazon-nimble-studio.md) | `amazon-nimble-studio` | no verified alternative | — |
-| [Amazon Nova Act](amazon_aws/amazon-nova-act.md) | `amazon-nova-act` | no verified alternative | — |
+| [Amazon Nova Act](amazon_aws/amazon-nova-act.md) | `amazon-nova-act` | no verified alternative | Browser Use |
 | [Amazon OpenSearch Service](amazon_aws/amazon-opensearch-service.md) | `amazon-opensearch-service` | partial alternative coverage | OpenSearch |
 | [Amazon Personalize](amazon_aws/amazon-personalize.md) | `amazon-personalize` | partial alternative coverage | RecBole |
 | [Amazon Pinpoint](amazon_aws/amazon-pinpoint.md) | `amazon-pinpoint` | no verified alternative | — |
@@ -171,7 +171,7 @@ landscape, not legal advice.
 | [Keynote](apple/apple-keynote.md) | `apple-keynote` | mature alternative listed | LibreOffice Impress |
 | [Logic Pro](apple/apple-logic-pro.md) | `apple-logic-pro` | mature alternative listed | Ardour |
 | [macOS](apple/apple-macos.md) | `apple-macos` | no verified alternative | Linux distributions (Ubuntu, Fedora, elementary) |
-| [Messages (iMessage)](apple/apple-messages.md) | `apple-messages` | no verified alternative | Matrix (Synapse) |
+| [Messages (iMessage)](apple/apple-messages.md) | `apple-messages` | partial alternative coverage | Matrix (Synapse) |
 | [Numbers](apple/apple-numbers.md) | `apple-numbers` | mature alternative listed | LibreOffice Calc |
 | [Pages](apple/apple-pages.md) | `apple-pages` | mature alternative listed | LibreOffice Writer |
 | [Passwords](apple/apple-passwords.md) | `apple-passwords` | mature alternative listed | Bitwarden |
@@ -184,20 +184,20 @@ landscape, not legal advice.
 
 | Product | ID | Alternative coverage | Lead alternative |
 |---|---|---|---|
-| [Android](google/android.md) | `android` | mature alternative listed | AOSP |
-| [Firebase](google/google-firebase.md) | `google-firebase` | mature alternative listed | Supabase |
-| [Gmail](google/gmail.md) | `gmail` | mature alternative listed | Mailcow |
-| [Google Ads](google/google-ads.md) | `google-ads` | no verified alternative | — |
+| [Android](google/android.md) | `android` | partial alternative coverage | AOSP |
+| [Firebase](google/google-firebase.md) | `google-firebase` | partial alternative coverage | Supabase |
+| [Gmail](google/gmail.md) | `gmail` | partial alternative coverage | Mailcow |
+| [Google Ads](google/google-ads.md) | `google-ads` | partial alternative coverage | Revive Adserver |
 | [Google Analytics](google/google-analytics.md) | `google-analytics` | mature alternative listed | Matomo |
 | [Google Calendar](google/google-calendar.md) | `google-calendar` | mature alternative listed | Nextcloud Calendar |
-| [Google Chrome](google/google-chrome.md) | `google-chrome` | mature alternative listed | Chromium |
+| [Google Chrome](google/google-chrome.md) | `google-chrome` | partial alternative coverage | Chromium |
 | [Google Classroom](google/google-classroom.md) | `google-classroom` | mature alternative listed | Moodle |
-| [Google Cloud](google/google-cloud.md) | `google-cloud` | mature alternative listed | OpenStack |
+| [Google Cloud](google/google-cloud.md) | `google-cloud` | partial alternative coverage | OpenStack |
 | [Google Cloud Storage](google/google-cloud-storage.md) | `google-cloud-storage` | mature alternative listed | MinIO |
 | [Google Docs](google/google-docs.md) | `google-docs` | partial alternative coverage | ONLYOFFICE Docs |
 | [Google Drive](google/google-drive.md) | `google-drive` | partial alternative coverage | Nextcloud |
-| [Google Gemini](google/google-gemini.md) | `google-gemini` | partial alternative coverage | Llama / Mistral / Qwen / Gemma |
-| [Google Maps](google/google-maps.md) | `google-maps` | mature alternative listed | OpenStreetMap |
+| [Google Gemini](google/google-gemini.md) | `google-gemini` | partial alternative coverage | Gemma |
+| [Google Maps](google/google-maps.md) | `google-maps` | partial alternative coverage | OpenStreetMap |
 | [Google Meet](google/google-meet.md) | `google-meet` | mature alternative listed | Jitsi Meet |
 | [Google News](google/google-news.md) | `google-news` | mature alternative listed | FreshRSS |
 | [Google Photos](google/google-photos.md) | `google-photos` | partial alternative coverage | Immich |
@@ -205,10 +205,10 @@ landscape, not legal advice.
 | [Google Search](google/google-search.md) | `google-search` | partial alternative coverage | SearXNG |
 | [Google Sheets](google/google-sheets.md) | `google-sheets` | partial alternative coverage | Grist |
 | [Google Stadia](google/google-stadia.md) | `google-stadia` | partial alternative coverage | Sunshine |
-| [Google Workspace](google/google-workspace.md) | `google-workspace` | mature alternative listed | Nextcloud |
+| [Google Workspace](google/google-workspace.md) | `google-workspace` | partial alternative coverage | Nextcloud |
 | [Pub/Sub](google/google-pubsub.md) | `google-pubsub` | mature alternative listed | NATS |
 | [TensorFlow](google/google-tensorflow.md) | `google-tensorflow` | mature alternative listed | TensorFlow itself |
-| [YouTube](google/youtube.md) | `youtube` | mature alternative listed | PeerTube |
+| [YouTube](google/youtube.md) | `youtube` | partial alternative coverage | PeerTube |
 | [YouTube Music](google/youtube-music.md) | `youtube-music` | partial alternative coverage | Navidrome |
 
 ### Meta (`meta`)
@@ -218,8 +218,15 @@ landscape, not legal advice.
 | [Facebook](meta/meta-facebook.md) | `meta-facebook` | partial alternative coverage | Mastodon |
 | [Instagram](meta/meta-instagram.md) | `meta-instagram` | partial alternative coverage | Pixelfed |
 | [Llama](meta/meta-llama.md) | `meta-llama` | partial alternative coverage | Mistral (Apache-2.0 models) |
+| [Messenger](meta/meta-messenger.md) | `meta-messenger` | partial alternative coverage | Signal |
+| [Meta Account](meta/meta-account.md) | `meta-account` | partial alternative coverage | Keycloak |
+| [Meta AI](meta/meta-ai.md) | `meta-ai` | partial alternative coverage | Open WebUI |
+| [Meta One](meta/meta-one.md) | `meta-one` | partial alternative coverage | WordPress |
+| [Meta Pay](meta/meta-pay.md) | `meta-pay` | partial alternative coverage | Medusa |
+| [Meta Verified](meta/meta-verified.md) | `meta-verified` | partial alternative coverage | Keycloak |
+| [Muse](meta/meta-muse.md) | `meta-muse` | partial alternative coverage | Open Interpreter |
 | [Threads](meta/meta-threads.md) | `meta-threads` | mature alternative listed | Mastodon |
-| [WhatsApp](meta/meta-whatsapp.md) | `meta-whatsapp` | mature alternative listed | Matrix / Element |
+| [WhatsApp](meta/meta-whatsapp.md) | `meta-whatsapp` | partial alternative coverage | Matrix / Element |
 
 ### Microsoft (`microsoft`)
 
@@ -227,6 +234,8 @@ landscape, not legal advice.
 |---|---|---|---|
 | [Microsoft 365](microsoft/microsoft-365.md) | `microsoft-365` | partial alternative coverage | LibreOffice |
 | [Microsoft Azure](microsoft/microsoft-azure.md) | `microsoft-azure` | partial alternative coverage | OpenStack |
+| [Microsoft Edge](microsoft/microsoft-edge.md) | `microsoft-edge` | partial alternative coverage | Chromium |
+| [Microsoft OneDrive](microsoft/microsoft-onedrive.md) | `microsoft-onedrive` | partial alternative coverage | Nextcloud |
 | [Microsoft Teams](microsoft/microsoft-teams.md) | `microsoft-teams` | partial alternative coverage | Element |
 | [Microsoft Windows](microsoft/microsoft-windows.md) | `microsoft-windows` | partial alternative coverage | ReactOS |
 | [Skype](microsoft/microsoft-skype.md) | `microsoft-skype` | partial alternative coverage | Jitsi |
@@ -237,7 +246,7 @@ landscape, not legal advice.
 |---|---|---|---|
 | [Netflix DVD](netflix/netflix-dvd.md) | `netflix-dvd` | partial alternative coverage | Jellyfin |
 | [Netflix Games](netflix/netflix-games.md) | `netflix-games` | no verified alternative | — |
-| [Netflix Kids](netflix/netflix-kids.md) | `netflix-kids` | partial alternative coverage | Jellyfin |
+| [Netflix Kids](netflix/netflix-kids.md) | `netflix-kids` | no verified alternative | — |
 | [Netflix Profiles](netflix/netflix-profiles.md) | `netflix-profiles` | partial alternative coverage | Jellyfin |
 | [Netflix Streaming](netflix/netflix-streaming.md) | `netflix-streaming` | partial alternative coverage | Jellyfin |
 | [Tudum](netflix/netflix-tudum.md) | `netflix-tudum` | no verified alternative | — |

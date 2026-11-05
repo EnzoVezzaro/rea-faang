@@ -71,7 +71,7 @@ No equivalence is claimed. Current communications alternatives must be researche
 
 No new implementation is recommended from this retired entry alone.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Do not run a current-product build workflow from this entry. Use it only for historical surface analysis or migration research, and keep Amazon Chime SDK separate.
 

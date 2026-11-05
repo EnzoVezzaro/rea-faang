@@ -1,18 +1,18 @@
 ---
 name: reverse-engineer-anything
-description: Apply the Reverse Engineer Anything framework to an authorized FAANG product or shipped artifact, capture evidence and unknowns, and turn the result into a RAE FAANG catalog entry. Use for runtime, package, browser-surface, or artifact analysis; skip it for ordinary source-repository analysis.
+description: Apply the Reverse Engineer Anything framework to an authorized FAANG product or shipped artifact, capture evidence and unknowns, and turn the result into a REA FAANG catalog entry. Use for runtime, package, browser-surface, or artifact analysis; skip it for ordinary source-repository analysis.
 metadata:
   source: https://github.com/morluto/rea
   version: "59"
   complementary_engine: https://github.com/storytold/craft-anything
 ---
 
-# Reverse Engineer Anything for RAE FAANG
+# Reverse Engineer Anything for REA FAANG
 
-Use this product-specific skill when a RAE FAANG catalog entry depends on
+Use this product-specific skill when a REA FAANG catalog entry depends on
 publicly observable behavior, a shipped package or binary, a browser surface,
 runtime evidence, or a comparison that the available source does not establish.
-This skill lives in RAE FAANG; Agentix only records the dependency and the
+This skill lives in REA FAANG; Agentix only records the dependency and the
 approved backlog item.
 
 ## Rules
@@ -76,16 +76,16 @@ as a complementary study/build engine. It provides a Study → Build → Check �
 Refine workflow, CLI commands, and MCP tools. Use it only when the required
 runtime/tooling is available and the target is public or explicitly authorized.
 
-The RAE catalog skill must tell the consuming agent:
+The REA catalog skill must tell the consuming agent:
 
 1. which official target URLs or authorized artifacts to pass to Craft Anything;
 2. which study evidence and limitations to retain;
 3. what independent build scope and clean-room boundaries apply;
 4. how to run the resulting checks and refine the implementation; and
-5. whether the same skill can be copied as Markdown or generated with the RAE
+5. whether the same skill can be copied as Markdown or generated with the REA
    CLI/agent-kit.
 
-Do not treat Craft Anything as a replacement for the catalog, the RAE evidence
+Do not treat Craft Anything as a replacement for the catalog, the REA evidence
 record, or the acceptance review. Its repository describes an early-alpha
 engine with support and limitations that must be checked before relying on a
 specific backend, agent, or target type.
@@ -99,7 +99,7 @@ Every completed analysis must leave:
 - explicit capabilities, limits, unknowns, and inferences;
 - a clean-room/provenance note;
 - validation output or an explicit blocker;
-- a handoff with the responsible RAE FAANG agent and next action.
+- a handoff with the responsible REA FAANG agent and next action.
 
 The upstream framework contains the detailed target routing and recovery
 guidance. Consult its current documentation when the requested target is not

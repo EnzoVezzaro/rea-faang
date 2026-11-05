@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_d87edf791c91432028d6456b501ee952abc357c6be1451b4c1702d7d203ab57c",
+  "evidence_id": "ev_7052e7a89537580863880ca4ba21e93af9ac2eaace37c7cc885158e089308710",
   "subject": null,
   "provider": {
     "id": "rea-playwright-browser-scenario",
@@ -99,13 +99,13 @@
         "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "duration_ms": 5223,
+    "duration_ms": 5455,
     "steps": [
       {
         "step_index": 0,
         "step_id": "scenario_start",
         "action": "goto_start",
-        "elapsed_ms": 2289,
+        "elapsed_ms": 2687,
         "before_url": {
           "url": "about:blank",
           "origin": null,
@@ -153,7 +153,7 @@
         "step_index": 1,
         "step_id": "settle",
         "action": "wait_for_timeout",
-        "elapsed_ms": 2560,
+        "elapsed_ms": 2556,
         "before_url": {
           "url": "https://aws.amazon.com/ecs/anywhere/",
           "origin": "https://aws.amazon.com",

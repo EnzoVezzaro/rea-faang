@@ -1,14 +1,14 @@
-# RAE FAANG: Landing page copy
+# REA FAANG: Landing page copy
 
 ## Product premise
 
 **We don't need FAANG anymore. Use your agent to build any of their products.**
 
-**RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google.** This is the offer and hero message. Product research, candidate projects and product skills support that promise; they must not replace it or make the catalog sound like the whole product.
+**REA FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google.** This is the offer and hero message. Product research, candidate projects and product skills support that promise; they must not replace it or make the catalog sound like the whole product.
 
 Built with the [`copywriting`](https://github.com/coreyhaines31/marketingskills/blob/main/skills/copywriting/SKILL.md) skill for conversion structure and [`humanizer`](https://github.com/blader/humanizer) to keep the prose direct and natural.
 
-The landing page is generated. Edit the copy here and mirror changes in `homePage()` in [`tools/site/templates.mjs`](../tools/site/templates.mjs), then run `npm run site:build`. Public npm examples should use `npx rae-faang <product-id> --out ./<product-id>.md` for one Markdown skill; reserve `build agent-kit` for the optional `skill.md` + `mcp.json` directory. Counts come from catalog data at build time.
+The landing page is generated. Edit the copy here and mirror changes in `homePage()` in [`tools/site/templates.mjs`](../tools/site/templates.mjs), then run `npm run site:build`. Public npm examples should use `npx rea-faang <product-id> --out ./<product-id>.md` for one Markdown skill; reserve `build agent-kit` for the optional `skill.md` + `mcp.json` directory. Counts come from catalog data at build time.
 
 ## Inputs
 
@@ -32,7 +32,7 @@ Counts are generated from repository data. The commands in the Proof section sho
 
 - **Headline:** We don't need FAANG anymore.
 - **Subheadline:** Use your agent to build any of their products.
-- **Supporting copy:** RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Choose any product to build with your coding agent. Product research and candidate open-source projects give your agent a useful starting point in your project; build skills are optional handoffs.
+- **Supporting copy:** REA FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Choose any product to build with your coding agent. Product research and candidate open-source projects give your agent a useful starting point in your project; build skills are optional handoffs.
 - **Primary CTA:** Explore products
 - **Secondary CTA:** How it works
 - **Hero visual:** Show real catalog products and company names beside the premise. Product choices update the interactive Product Build Pass, its research and its downloadable skill. The companies covered row confirms Meta, Amazon, Apple, Netflix and Google. On mobile, show the premise and actions before the product chooser and pass.
@@ -46,7 +46,7 @@ External links open in a new tab with `rel="noopener noreferrer"`. Internal link
 ## SECTION: How it works
 
 - **Heading:** Choose what you want your agent to build.
-- **Copy:** RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google so you can choose what to build with your coding agent. Product pages bring together behavior, research and candidate open-source projects. Give your agent the product build skill as a starting point; it can assess what to reuse, plan the scope and build an independent implementation in your project.
+- **Copy:** REA FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google so you can choose what to build with your coding agent. Product pages bring together behavior, research and candidate open-source projects. Give your agent the product build skill as a starting point; it can assess what to reuse, plan the scope and build an independent implementation in your project.
 - **Presentation:** Four ordered steps: Choose, Review, Build, Test.
 
 ---
@@ -67,7 +67,7 @@ Product pages link to research, candidate projects and a Markdown skill for a co
 
 - **Headline:** Choose a product. Build it with your agent.
 
-1. **The catalog:** 77 products, each with a company, type, official URL and lifecycle status. Browse or filter with `npx rae-faang products list`.
+1. **The catalog:** 184 products, each with a company, type, official URL and lifecycle status. Browse or filter with `npx rea-faang products list`.
 2. **Candidate projects:** Product pages list projects that may cover similar user needs. 40 products have a mature candidate listed, including SearXNG, Jellyfin, Ceph and Mailcow. Review each project's coverage before choosing it.
 3. **The product skill:** Every product has a downloadable Markdown skill with product context, research, candidates and build-and-test directions. Give the skill to your coding agent in your project.
 4. **The research:** Product dossiers cite sources. REA reports record observations from public web pages; they do not show private workflows or internal implementation.
@@ -94,10 +94,10 @@ Product pages link to research, candidate projects and a Markdown skill for a co
 
 ### Data points
 
-- **77** products across **6** company entries: `npx rae-faang products list`
-- **77** research dossiers with frontmatter checks: `npm run validate`
-- **77** REA reports of public web pages with captured evidence: `npm run rea:catalog`
-- **77** product skills: **40 mature candidate / 29 partial coverage / 8 no verified alternative**: `npm run skills:catalog`
+- **184** products across **7** company entries: `npx rea-faang products list`
+- **184** research dossiers with frontmatter checks: `npm run validate`
+- **184** REA reports of public web pages, with failed captures explicitly recorded: `npm run rea:catalog`
+- **184** product skills generated from the catalog: `npm run skills:catalog`
 - Run `npm test` to see the current test results.
 - Regenerate the site with `npm run site:build`.
 
@@ -130,7 +130,7 @@ Open its research dossier and follow the citations. Where available, the product
 - **Headline:** We don't need FAANG anymore.
 - **Subheadline:** Use your agent to build any of their products.
 - **Button:** Choose a product to build
-- **Supporting copy:** RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Research and candidate open-source projects help your agent get started in your project. RAE FAANG is MIT-licensed; candidate projects and your implementation have their own licenses.
+- **Supporting copy:** REA FAANG catalogs products from Meta, Amazon, Apple, Netflix and Google. Research and candidate open-source projects help your agent get started in your project. REA FAANG is MIT-licensed; candidate projects and your implementation have their own licenses.
 
 ---
 
@@ -154,11 +154,11 @@ Use a two-column body on desktop and stack it on mobile. Include:
 1. **At a glance** — what the product does and its core capabilities.
 2. **Candidate projects** — include project links, license and the CLI command; explain that a candidate may cover all, part or none of the target's user needs.
 3. **Coverage and gaps** — summarize the research and the remaining gap.
-4. **Product skill** — identify `agent-kit.md` as the product-specific Markdown skill; show `npx rae-faang <id> --out ./<id>.md` and the download. Explain that the user gives the skill to their coding agent in the project where the implementation will live. Keep optional MCP configuration and workspace scaffolding secondary.
+4. **Product skill** — identify `agent-kit.md` as the product-specific Markdown skill; show `npx rea-faang <id> --out ./<id>.md` and the download. Explain that the user gives the skill to their coding agent in the project where the implementation will live. Keep optional MCP configuration and workspace scaffolding secondary.
 5. **Evidence** — link the catalog record, research dossier, REA report when available and skill file.
 6. **Next step** — review the skill and candidate projects, then plan work in the user's project.
 
-Use the CLI shorthand `npx rae-faang <id> --alt <name>` for a candidate. Quote names only when the shell requires it, such as `--alt "Ceph (RADOS Gateway)"`. The `rae ...` spelling can be a note for contributors already in the repository.
+Use the CLI shorthand `npx rea-faang <id> --alt <name>` for a candidate. Quote names only when the shell requires it, such as `--alt "Ceph (RADOS Gateway)"`. The `rea ...` spelling can be a note for contributors already in the repository.
 
 ---
 

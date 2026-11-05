@@ -39,9 +39,9 @@ test('the home landing presents the complete catalog glyph field and interactive
   assert.match(home, /class="hero-copy"[\s\S]*?<aside class="hero-inventory"/, 'hero reading order should put the premise before the product chooser and pass');
   assert.match(home, /id="build-pass-product"[\s\S]*?data-pass-skill/, 'the selected catalog product should retain its selector and skill download');
   assert.match(home, /class="catalog-glyph-field"/, 'homepage should display the full catalog as linked typography');
-  assert.match(home, /npx rae-faang &lt;product-id&gt; --out \.\/&lt;product-id&gt;\.md/, 'homepage links to the published npm CLI product-skill command');
+  assert.match(home, /npx rea-faang &lt;product-id&gt; --out \.\/&lt;product-id&gt;\.md/, 'homepage links to the published npm CLI product-skill command');
   assert.doesNotMatch(home, /npx --yes/);
-  assert.doesNotMatch(home, /npx rae-faang skills generate &lt;product-id&gt;/);
+  assert.doesNotMatch(home, /npx rea-faang skills generate &lt;product-id&gt;/);
   assert.equal([...home.matchAll(/class="catalog-glyph" data-coverage=/g)].length, products.length, 'each catalog product should appear exactly once in the full glyph field');
   for (const product of products) {
     const catalogProduct = catalogData.products.find((entry) => entry.id === product.id);
@@ -61,9 +61,9 @@ test('the home landing presents the complete catalog glyph field and interactive
   assert.match(home, /href="catalog\/youtube\/"[^>]*>View dossier/, 'pass should link the selected dossier');
   assert.match(home, /We don't need<br\s*\/>FAANG anymore\./, 'hero should lead with the product premise');
   assert.match(home, /Use your agent to build any of their products\./, 'hero should say what the product enables');
-  assert.match(home, /RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft\./, 'hero should describe the actual catalog');
+  assert.match(home, /REA FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft\./, 'hero should describe the actual catalog');
   assert.match(home, /Explore products/, 'primary action should take the visitor to product discovery');
-  assert.match(home, /npx rae-faang &lt;product-id&gt; --out \.\/&lt;product-id&gt;\.md/, 'landing should show the bundled npm CLI product-skill form');
+  assert.match(home, /npx rea-faang &lt;product-id&gt; --out \.\/&lt;product-id&gt;\.md/, 'landing should show the bundled npm CLI product-skill form');
   assert.match(home, /A product build skill is there when you\s+want a direct handoff/i, 'supporting copy should keep skills secondary to the product premise');
   assert.match(home, /build in your project/i, 'hero should identify the user project as the place the agent builds');
   assert.match(home, /Choose what you want your agent to build\./, 'main narrative should support the build-any-product premise');
@@ -80,12 +80,12 @@ test('the home landing presents the complete catalog glyph field and interactive
   assert.doesNotMatch(home, /Product implementations have not started|Build work remains a separate goal|Research is not implementation|pending to open-source/i, 'landing should not confuse alternative coverage with a product build status');
   assert.match(css, /--rf-signal/, 'landing stylesheet should use the supplied design-system tokens');
   assert.match(home, /Choose a product\. Build it with your agent\./, 'landing should make the agent workflow explicit');
-  assert.doesNotMatch(home, /What is ready—and what isn't\?|A clear-eyed inventory|research and specifications are not a finished product/i, 'landing should not center on RAE implementation status');
+  assert.doesNotMatch(home, /What is ready—and what isn't\?|A clear-eyed inventory|research and specifications are not a finished product/i, 'landing should not center on REA implementation status');
   assert.match(css, /--rf-font-sans:\s*Inter,/, 'stylesheet should use the approved body typography stack');
   assert.match(css, /--rf-signal:\s*#C8FF55/i, 'stylesheet should use the design-system signal-lime token');
-  assert.match(css, /--rf-mint:\s*#80F5D2/i, 'stylesheet should retain mint as a distinct RAE status accent');
+  assert.match(css, /--rf-mint:\s*#80F5D2/i, 'stylesheet should retain mint as a distinct REA status accent');
   assert.match(css, /--rf-bg:\s*#0B0C0A/i, 'stylesheet should use the design-system near-black canvas');
-  assert.match(css, /--rf-font-display:\s*"Space Grotesk"/i, 'stylesheet should use the RAE display face');
+  assert.match(css, /--rf-font-display:\s*"Space Grotesk"/i, 'stylesheet should use the REA display face');
   assert.match(css, /\.hero-inner\s*\{[^}]*grid-template-columns/s, 'hero should use an intentional editorial split');
   assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*?\.hero-inner > \.hero-copy[\s\S]*?\.hero-inner > \.hero-inventory/s, 'hero should switch to an ordered single-column layout below tablet width');
   assert.match(css, /\.catalog-glyph-field\s*\{/, 'the complete product index should have dedicated glyph-field styling');
@@ -107,16 +107,16 @@ test('the home landing presents the complete catalog glyph field and interactive
   assert.match(home, /in the repository; run <span class="mono">npm test<\/span> for the current test results/, 'test statistic should describe inventory rather than claim a pass result');
   assert.doesNotMatch(home, /data-count=/, 'data metrics should not animate into a false sense of progress');
   assert.match(home, /class="mobile-nav"/, 'main site navigation should remain available on small screens');
-  assert.match(home, /RAE \/ FIELD NOTE/, 'hero artifact should carry the research-pass treatment');
+  assert.match(home, /REA \/ FIELD NOTE/, 'hero artifact should carry the research-pass treatment');
   assert.match(home, /Product skill included\./, 'hero artifact should point visitors to the product skill');
   assert.match(motionScript, /function initBuildPass/, 'script should update product facts when the pass selection changes');
   assert.match(motionScript, /agent-kit\.md/, 'pass interaction should keep the selected product skill download current');
   assert.match(home, /data-pass-announcement[^>]*aria-live="polite"/, 'pass updates should have an accessible live announcement region');
   assert.match(motionScript, /data-pass-announcement/, 'pass selection should update its live announcement region');
-  assert.match(home, /src="docs\/assets\/brand-logo-icon\.png"/, 'home shell should use the supplied full RAE FAANG lockup');
+  assert.match(home, /src="docs\/assets\/brand-logo-icon\.png"/, 'home shell should use the supplied full REA FAANG lockup');
   assert.ok(existsSync(join(SITE, 'docs', 'assets', 'brand-logo-icon.png')), 'generated site should include the header lockup');
-  assert.ok(existsSync(join(SITE, 'docs', 'assets', 'brand-symbol.png')), 'generated site should include the RAE mark for product passes');
-  assert.doesNotMatch(css, /\.hero::before[^}]*rae-banner\.png/, 'hero should not paint the whole banner as an oversized background watermark');
+  assert.ok(existsSync(join(SITE, 'docs', 'assets', 'brand-symbol.png')), 'generated site should include the REA mark for product passes');
+  assert.doesNotMatch(css, /\.hero::before[^}]*rea-banner\.png/, 'hero should not paint the whole banner as an oversized background watermark');
   assert.match(motionScript, /prefers-reduced-motion/, 'script should respect reduced-motion preference');
   assert.match(css, /prefers-reduced-motion:\s*reduce/, 'CSS should provide reduced-motion fallbacks');
   assert.match(css, /\.hero-graph/, 'stylesheet should style the interactive pass');
@@ -149,7 +149,7 @@ test('every downloadable product skill gives expanded, status-aware multi-agent 
     assert.match(kit, /### End-to-end implementation milestones/, `${product.id}: implementation lifecycle`);
     assert.ok(kit.includes(`Research status:** ${product.research_status || 'pending'}`) || kit.includes(`Research status is **${product.research_status || 'pending'}**`), `${product.id}: honest research status`);
     assert.doesNotMatch(kit, /Agent roles — covered above|inlineCode\(/, `${product.id}: no leaked template artifacts`);
-    assert.match(kit, new RegExp(`npx rae-faang research dossier ${product.id}`), `${product.id}: npm CLI exposes dossier text`);
+    assert.match(kit, new RegExp(`npx rea-faang research dossier ${product.id}`), `${product.id}: npm CLI exposes dossier text`);
     assert.doesNotMatch(kit, /node src\/cli\.js|From a repository clone/, `${product.id}: skill works without a source checkout`);
     assert.match(kit, /coding-agent build skill for/i, `${product.id}: identify the markdown as this product's build skill`);
     assert.match(kit, /Give this file to your coding agent in the project where you want the product built/i, `${product.id}: clear skill handoff to the user's project`);
@@ -187,10 +187,10 @@ test('every product page exists and carries its alternatives with links', () => 
       html.includes(`catalog/${product.id}/`),
       `${product.id}: page should carry its canonical URL`,
     );
-    assert.match(html, new RegExp(`npx rae-faang ${product.id} --out \.\/${product.id}\\.md`), `${product.id}: npm Markdown skill generator command`);
-    assert.match(html, new RegExp(`npx rae-faang build agent-kit ${product.id} --out \.\/${product.id}-agent`), `${product.id}: separate agent-kit command`);
+    assert.match(html, new RegExp(`npx rea-faang ${product.id} --out \.\/${product.id}\\.md`), `${product.id}: npm Markdown skill generator command`);
+    assert.match(html, new RegExp(`npx rea-faang build agent-kit ${product.id} --out \.\/${product.id}-agent`), `${product.id}: separate agent-kit command`);
     assert.doesNotMatch(html, /npx --yes/);
-    assert.doesNotMatch(html, new RegExp(`npx rae-faang ${product.id} --out \.\/${product.id}-agent`));
+    assert.doesNotMatch(html, new RegExp(`npx rea-faang ${product.id} --out \.\/${product.id}-agent`));
     assert.match(html, new RegExp(`catalog/skills/${product.company_id}/${product.id}\\.md`), `${product.id}: link to the source skill file`);
     assert.match(html, /Build this product with your agent/, `${product.id}: explain that the Markdown file is an agent build skill`);
     assert.match(html, /build in your own project|build in your project/, `${product.id}: make the user's project the place for implementation`);
@@ -221,15 +221,15 @@ test('the home and product pages consistently describe agent skills and user-led
   const home = readFileSync(join(SITE, 'index.html'), 'utf8');
   const readme = readFileSync(join(ROOT, 'README.md'), 'utf8');
   assert.match(readme, /### We don't need FAANG anymore\.[\s\S]*?Use your agent to build any of their products\./, 'README should lead with the exact build-any-product premise');
-  assert.match(readme, /RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft/);
+  assert.match(readme, /REA FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft/);
   assert.match(readme, /Use your agent to build any of their products/);
   assert.match(home, /We don't need<br\s*\/>FAANG anymore\./);
   assert.match(home, /Use your agent to build any of their products\./);
-  assert.match(home, /<title>Build products with your agent \| RAE FAANG<\/title>/);
+  assert.match(home, /<title>Build products with your agent \| REA FAANG<\/title>/);
   assert.match(home, /<meta name="description" content="Choose a product from Meta, Amazon, Apple, Netflix or Google\. Explore product research and open-source foundations, then build with your coding agent\."/);
-  assert.ok(home.includes(`<meta property="og:image" content="${BASE_URL}/assets/rae-banner.png"`), 'og:image should use the canonical site origin');
+  assert.ok(home.includes(`<meta property="og:image" content="${BASE_URL}/assets/rea-banner.png"`), 'og:image should use the canonical site origin');
   assert.match(home, /<meta name="twitter:card" content="summary_large_image"/);
-  assert.match(home, /<meta property="og:site_name" content="RAE FAANG"/);
+  assert.match(home, /<meta property="og:site_name" content="REA FAANG"/);
   assert.ok(home.includes(`<link rel="canonical" href="${BASE_URL}/"`), 'canonical link should use the canonical site origin');
   assert.match(home, /<link rel="icon" href="favicon\.svg" type="image\/svg\+xml"/);
   assert.match(readFileSync(join(SITE, 'favicon.svg'), 'utf8'), /viewBox="0 0 64 64"[\s\S]*?#C8FF55/);
@@ -241,9 +241,9 @@ test('the home and product pages consistently describe agent skills and user-led
   assert.ok(existsSync(join(SITE, 'docs/assets/icon-192.png')), 'site should publish a PNG touch icon');
   assert.ok(existsSync(join(SITE, 'docs/assets/icon-512.png')), 'site should publish a 512px PNG icon');
 
-  assert.match(home, /RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft\./);
+  assert.match(home, /REA FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft\./);
   assert.match(readme, /Each entry links product context, research,\s+candidate open-source projects and product-specific build instructions/);
-  assert.match(readme, /npx rae-faang google-search --out \.\/google-search\.md/);
+  assert.match(readme, /npx rea-faang google-search --out \.\/google-search\.md/);
   assert.match(readme, /(?:test (?:the result|it) in your project|review its choices and the test results)/i);
   assert.match(home, /A stronger starting point for the build\./);
   assert.doesNotMatch(home, /Don't take our word for it|Why should I trust the catalog/);

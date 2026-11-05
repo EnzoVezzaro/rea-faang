@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Elastic Block Store, recorde
 | Target | https://aws.amazon.com/ebs/ |
 | Resolved URL | https://aws.amazon.com/ebs/ |
 | Page title | Amazon Elastic Block Store |
-| Captured | 2026-11-03T03:01:28.798Z |
+| Captured | 2026-11-04T02:42:25.296Z |
 | Status | captured |
-| REA Evidence ID | `ev_26ccbb3bec17d85a2bc6a2202ede1e99b054e2c3b166dff84b2e50f576bd5dcf` |
+| REA Evidence ID | `ev_fed4c77ea93dd88605d559deb27078e4a7a4d28db45ed892ae2fa5730f85e705` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-elastic-block-store.json`
-- Evidence ID: `ev_26ccbb3bec17d85a2bc6a2202ede1e99b054e2c3b166dff84b2e50f576bd5dcf`
+- Evidence ID: `ev_fed4c77ea93dd88605d559deb27078e4a7a4d28db45ed892ae2fa5730f85e705`
 - Accessibility outline: 12221 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

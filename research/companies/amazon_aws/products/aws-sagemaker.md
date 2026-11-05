@@ -87,7 +87,7 @@ Open ML platforms exist (Kubeflow, MLflow); the turnkey managed experience is th
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Partial. Kubeflow and MLflow cover the workflow; integration polish differs.
 
@@ -124,6 +124,6 @@ Open ML platforms exist (Kubeflow, MLflow); the turnkey managed experience is th
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Partial. Kubeflow and MLflow cover the workflow; integration polish differs.

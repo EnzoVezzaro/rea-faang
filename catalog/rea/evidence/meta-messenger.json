@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_ccb32cbabd45060573b9a71451b564e06fecab5acd0a1b767ab9e96aae0c8214",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.messenger.com/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "d961b4471ae367d4b1fc1333f4126acd07720f3756bc6bf887770df87d728605"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://www.messenger.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 9055,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 6209,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.messenger.com/",
+          "origin": "https://www.messenger.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2566,
+        "before_url": {
+          "url": "https://www.messenger.com/",
+          "origin": "https://www.messenger.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.messenger.com/",
+          "origin": "https://www.messenger.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "6d93d34bf41d0ee6c6ed882a4faf64b88bdbd4669e38e8ecdb84e7df45c4e3d5",
+              "bytes": 1950,
+              "text": "- document:\n  - main \"Main content\":\n    - banner \"Header\":\n      - link \"Messenger\":\n        - /url: /\n        - img \"Messenger\"\n      - list:\n        - listitem:\n          - button \"Features\":\n            - paragraph: Features\n            - img\n        - listitem:\n          - link \"Privacy and Safety\":\n            - /url: https://www.messenger.com/privacy\n        - listitem:\n          - link \"For Developers\":\n            - /url: https://developers.facebook.com/products/messenger/\n        - listitem:\n          - link \"Help Center\":\n            - /url: https://www.messenger.com/help\n    - heading \"A place for meaningful conversations\" [level=1]\n    - paragraph: Messenger helps you connect with your Facebook friends and family, build your community, and deepen your interests.\n    - textbox \"Email or phone number\"\n    - textbox \"Password\"\n    - button \"Log in\"\n    - button \"Forgot password?\"\n    - checkbox \"Keep me signed in\"\n    - text: Keep me signed in\n    - link:\n      - /url: https://l.messenger.com/l.php?u=http%3A%2F%2Fitunes.apple.com%2Fapp%2Fid454638411&h=AUBDUA2dGzkZyDjPkzIc03ya9FXSut_awdSykaYiqBajAtR6Sx-xjOWEJwGDHDu2mnbXwdEHzGbNtrKjHAhuzrO5BlVJR4LX0KlY-zIUjWpiFfY6HZjVg3YVq8UDg8GPMEyX04mxyXnWSqZj-ToFeJh1AWg\n    - link:\n      - /url: https://l.messenger.com/l.php?u=https%3A%2F%2Fmarket.android.com%2Fdetails%3Fid%3Dcom.facebook.orca&h=AUAg-r7TQqcFd60T_gTYwj24SPUaFjusmf1s0MgtgdLQQLweMkAnQmazyIrTDiMTEcX0HAN8x4GtZQU1CQtvjtfH4ikXxN6T8_66CCdTdoBeZB_EUO9OUhELPXHa1yKZpReGSqaLgSgURNt2k0hZ4cqj4Wo\n  - main \"Main content\":\n    - contentinfo \"Footer\":\n      - text: © Meta 2026\n      - link \"Privacy Policy\":\n        - /url: https://www.facebook.com/privacy/policy\n      - link \"Cookie Policy\":\n        - /url: https://messenger.com/policy/cookies\n      - link \"Terms\":\n        - /url: https://www.facebook.com/policies/?ref=pf\n      - button \"English (US)\":\n        - text: English (US)\n        - img\n      - img \"From Meta Logo\""
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.messenger.com/",
+              "origin": "https://www.messenger.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

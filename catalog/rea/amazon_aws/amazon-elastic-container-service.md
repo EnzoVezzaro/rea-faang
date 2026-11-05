@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Elastic Container Service, r
 | Target | https://aws.amazon.com/ecs/ |
 | Resolved URL | https://aws.amazon.com/ecs/ |
 | Page title | Amazon Elastic Container Service |
-| Captured | 2026-11-03T03:02:05.935Z |
+| Captured | 2026-11-04T02:42:32.558Z |
 | Status | captured |
-| REA Evidence ID | `ev_75ba6e7e02d272d5ae0294e388e390cb9c320aec1ad467b5288d4c90e65163bf` |
+| REA Evidence ID | `ev_02ed4626204443185e343fa8469e1a1b3fc3ce25f33d7e372d25050846087920` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-elastic-container-service.json`
-- Evidence ID: `ev_75ba6e7e02d272d5ae0294e388e390cb9c320aec1ad467b5288d4c90e65163bf`
+- Evidence ID: `ev_02ed4626204443185e343fa8469e1a1b3fc3ce25f33d7e372d25050846087920`
 - Accessibility outline: 12687 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

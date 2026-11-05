@@ -8,126 +8,128 @@ product_type: "ai_model"
 categories:
   - "ai_model"
 official_url: "https://ai.meta.com/llama/"
-official_docs_url: "https://github.com/facebookresearch/llama"
-official_source_urls: []
+official_docs_url: "https://ai.meta.com/resources/models-and-libraries/llama-downloads/"
+official_source_urls:
+  - "https://ai.meta.com/resources/models-and-libraries/llama-downloads/"
+  - "https://github.com/meta-llama/llama"
+  - "https://github.com/meta-llama/llama-models"
 lifecycle_status: "active"
-research_status: "pending"
-research_confidence: "unverified"
-alternative_status: "none_verified"
+research_status: "researched"
+research_confidence: "verified"
+alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "reuse_existing"
-last_researched_at: null
-last_verified_at: null
-next_review_at: null
-research_version: 1
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: "2027-02-03T00:00:00Z"
+research_version: 2
 ---
 
-# 1. Executive summary
+# Llama
 
-Llama (Large Language Model Meta AI) is a family of open-source large language models released by Meta. It represents Meta's entry into the open large language model landscape, competing with GPT-4, Claude, Gemini, and other proprietary models.
+## Research verdict
 
-# 2. Product identity and ownership
+Llama is Meta's family of downloadable large language and multimodal models,
+distributed with model weights, model cards, inference utilities, and model-
+specific community license terms. Meta's current download page lists Llama 4
+Scout and Maverick as well as Llama 3.x variants. The release is open-weight, but
+the model licenses are custom community licenses; “open source” must not be
+treated as an OSI-license assertion.
 
-- **Official name:** Llama
-- **Company and business unit:** Meta AI
-- **Parent organization:** Meta Platforms Inc.
-- **Original launch date:** 2023 (Llama 1, Llama 2 in 2023, Llama 3 in 2024)
-- **Current lifecycle status:** active
-- **Previous names:** None (Llama naming convention)
-- **Acquisitions or ownership changes:** None; released by Meta AI research
-- **Related products:** Llama 2, Llama 3, Meta AI chat, Ray-Ban Meta smart glasses AI, AI Studio
-- **Official website:** https://ai.meta.com/llama/
-- **Official documentation:** https://github.com/facebookresearch/llama
+The alternative coverage is **partial**. Mistral, Qwen, OLMo, and other model
+families provide useful open-weight or more permissively licensed alternatives,
+but their capabilities, licenses, weights, and deployment requirements differ.
 
-# 3. Product capabilities
+## Product identity and boundary
 
-- Large language model text generation
-- Code generation and completion
-- Chat and conversational AI
-- Instruction following
-- Reasoning and problem-solving
-- Multilingual support (many languages)
-- Context window varies by model version (Llama 3: 8K–128K tokens)
-- Open release (weight-based, research use license)
-- Fine-tuning and alignment support
+- **Owner:** Meta Platforms, Inc.
+- **Canonical product ID:** `meta-llama`
+- **Lifecycle:** Active
+- **Official product surface:** https://ai.meta.com/llama/
+- **Model access:** https://ai.meta.com/resources/models-and-libraries/llama-downloads/
+- **Product boundary:** Meta's model family and its public model-release tooling;
+  hosted chat experiences such as Meta AI are separate catalog products.
 
-# 4. Technical architecture
+## Verified capabilities and access
 
-Llama models:
+Meta's official materials verify that:
 
-- Transformer-based architecture
-- Variants: Llama 1, Llama 2, Llama 3 (different sizes and configurations)
-- Training on publicly available internet text
-- Release as model weights only (no training code, dataset details highly restricted)
-- PyTorch as primary framework
-- Quantization-aware training and post-training quantization available
+1. The family includes text and multimodal model variants across multiple Llama
+   generations.
+2. Current download listings include Llama 4 Scout and Maverick, plus Llama 3.1,
+   3.2 and 3.3 variants with different text, vision, size and context profiles.
+3. Access to model weights requires accepting the applicable license terms and
+   completing Meta's download request flow.
+4. The official `meta-llama/llama` repository provides inference code and points
+   users to Meta's model-download and license process.
+5. The `llama-models` repository provides utilities and model-specific release
+   materials; it is not proof that every model has identical runtime behavior or
+   license terms.
 
-Model weights are released under a custom "Llama 2 Acceptable Use License" and Llama 3 similar restrictions. Full training code and dataset are not open source.
+## Technical boundary
 
-# 5. User workflows
+The public sources verify released weights, model cards, inference utilities and
+license notices. They do not verify Meta's complete training data, training
+infrastructure, serving stack, safety pipeline, evaluation process, or hosted
+inference API. Those areas remain unknown and must not be presented as facts by a
+build agent.
 
-Primary workflows: model loading, prompt engineering, text generation, fine-tuning. Essential: model loading, text generation. Advanced: fine-tuning, long-context usage, tool integration.
+## License and operational constraints
 
-# 6. Pricing and access
+Each Llama generation and model family must be checked against its own current
+license and acceptable-use terms before download, fine-tuning, redistribution or
+commercial deployment. The repository is not a substitute for legal review. A
+model being downloadable or called “open” by a product page does not make its
+license equivalent to Apache-2.0, MIT, or an OSI-approved license.
 
-- Model weights released under custom license (free download but restricted use)
-- Commercial use restrictions apply (Llama 2 Acceptable Use License, Llama 3 license)
-- API access via Meta AI API (separate pricing)
-- No direct hosted inference in the free release; requires own infrastructure
-- Meta AI chat (separate product with its own pricing)
+## Alternative assessment
 
-# 7. API and integration surface
+### Mistral — partial model-family alternative
 
-- Meta AI API for hosted inference
-- Custom tool use and function calling
-- Integration with partner platforms
+Some Mistral models use permissive licenses and can cover general text-generation
+workloads, but model quality, modalities, context limits, weights and license
+terms vary by release.
 
-# 8. Existing open-source alternatives
+### Qwen — partial model-family alternative
 
-- Open-source: Llama 2, Llama 3 (same release), Pythia, Falcon, MPT, Nemotron, Qwen2
-- Hosted alternatives: OpenAI GPT-4, Anthropic Claude, Google Gemini
-- Weights-only release means downstream tooling and fine-tuning infrastructure must be built independently
+Qwen provides open-weight model families and tooling. It is a viable candidate for
+some self-hosted workloads, not a drop-in substitute for every Llama variant.
 
-# 9. Alternative comparison
+### OLMo — partial/open research alternative
 
-Llama 2 and Llama 3 are the same project (open weights). Falcon, MPT, Pythia, Qwen2 are alternative open-weight models. Hosted models (GPT-4, Claude, Gemini) offer different capability trade-offs. Weights-only release requires infrastructure build for practical use.
+OLMo is useful when a more transparent research stack is required. Its scope and
+capability profile differ from Llama's released family.
 
-# 10. Missing capabilities and opportunity analysis
+### Ollama — runtime, not a model alternative
 
-Model hosting and inference serving, fine-tuning infrastructure, and training code represent gaps. Weights-only release requires significant independent build for practical deployment.
+Ollama can simplify local model execution, but it is a runtime/distribution tool,
+not a replacement model family. It should never be counted as equivalent to Llama.
 
-# 11. RAE implementation strategy
+## REA/build implications
 
-Focus on model hosting, fine-tuning infrastructure, or application development using Llama weights. Not recommended to train a new model from scratch; leverage existing open-weight releases.
+An independent implementation should select a specific model, license, runtime,
+hardware target, quantization strategy, evaluation set, and safety policy. Reuse
+official inference utilities or a compatible runtime where permitted. Do not train
+a replacement model or redistribute weights without checking the applicable
+license and access terms.
 
-# 12. Security, privacy, and compliance
+## Evidence record
 
-Llama 2 Acceptable Use License and Llama 3 license restrict certain commercial uses. Model output filtering recommended. No specific compliance certifications for the model itself.
+| Claim | Source | What it supports |
+|---|---|---|
+| Current Llama model families and license terms | [Meta Llama downloads](https://ai.meta.com/resources/models-and-libraries/llama-downloads/) | Model identity, variants, access flow and community-license notice |
+| Official inference code and model-download process | [meta-llama/llama](https://github.com/meta-llama/llama) | Repository ownership, inference tooling and weight-access workflow |
+| Model-specific utilities and release materials | [meta-llama/llama-models](https://github.com/meta-llama/llama-models) | Official model-family tooling and per-model materials |
+| Model card and custom commercial license reference | [Llama model card](https://github.com/meta-llama/llama/blob/main/MODEL_CARD.md) | License boundary and documented model-card scope |
 
-# 13. Sources and evidence
+## Known gaps
 
-- https://ai.meta.com/llama/ (product page)
-- https://github.com/facebookresearch/llama (source repository)
-- https://arxiv.org/abs/2305.18617 (Llama 2 paper)
+- Training data composition and complete training infrastructure are not public
+  implementation specifications.
+- Hosted Meta AI behavior and API availability are separate from downloadable
+  Llama weights and are not inferred here.
+- License, model availability, quotas, hardware requirements and safety guidance
+  require a dated check for the exact model selected.
 
-# 14. Open questions
-
-- What is the practical deployment overhead for Llama 3 8B/70B models?
-- How do fine-tuning frameworks compare for Llama models?
-- What are the commercial use restriction differences between Llama 2 and Llama 3 licenses?
-
-# 15. Research history
-
-Initial research record created 2026-01-13. No prior research events.
-
----
-
-# 16. Alternative comparison (continued)
-
-Falcon, MPT, Qwen2 are alternative open-weight models. Hosted models offer different capability trade-offs. Llama's weights-only release requires infrastructure build.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Focus on model hosting, fine-tuning, or application development using Llama weights. Training from scratch is high effort.
+**Research date:** 2026-11-03.  
+**Confidence:** Verified for public release/access surfaces; partial for alternatives.

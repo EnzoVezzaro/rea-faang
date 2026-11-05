@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon EC2 Auto Scaling, recorded w
 | Target | https://aws.amazon.com/ec2/autoscaling/ |
 | Resolved URL | https://aws.amazon.com/ec2/autoscaling/ |
 | Page title | Amazon EC2 Auto Scaling |
-| Captured | 2026-11-03T02:57:41.163Z |
+| Captured | 2026-11-04T02:41:48.566Z |
 | Status | captured |
-| REA Evidence ID | `ev_bea0a512d59ba45400410f09613603a217bd1325f9dc6b960adb63643c6cbed8` |
+| REA Evidence ID | `ev_6fb50f784dc8263126335a891708000835ff53a8e2e2a9b50a6e83868f6673c0` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -161,6 +161,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-ec2-auto-scaling.json`
-- Evidence ID: `ev_bea0a512d59ba45400410f09613603a217bd1325f9dc6b960adb63643c6cbed8`
+- Evidence ID: `ev_6fb50f784dc8263126335a891708000835ff53a8e2e2a9b50a6e83868f6673c0`
 - Accessibility outline: 9303 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

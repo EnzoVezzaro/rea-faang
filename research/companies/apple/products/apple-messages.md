@@ -87,7 +87,7 @@ No open network interoperates with iMessage; open alternatives replace the need,
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Pending. Open messaging networks exist (Matrix, XMPP) but none interoperate with iMessage.
 
@@ -124,6 +124,6 @@ No open network interoperates with iMessage; open alternatives replace the need,
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Pending. Open messaging networks exist (Matrix, XMPP) but none interoperate with iMessage.

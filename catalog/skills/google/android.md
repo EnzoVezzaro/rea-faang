@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Android (android); investigate, ass
 
 # Android — implementation skill (`android`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Android**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Android (android); investigate, ass
 
 This is the coding-agent skill for **Android** (`android`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/android.md` from the catalog page, or run `npx rae-faang android --out ./android.md`, `npx rae-faang skills generate android` or `npx rae-faang build agent-kit android --out ./android-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/android.md` from the catalog page, or run `npx rea-faang android --out ./android.md`, `npx rea-faang skills generate android` or `npx rea-faang build agent-kit android --out ./android-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Android / `android` | `catalog/products.jsonl` |
 | Official product URL | [https://www.android.com/](https://www.android.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier android` | `research/companies/google/products/android.md` |
+| Official documentation | [https://source.android.com/docs](https://source.android.com/docs) | Catalog record |
+| Research dossier | `npx rea-faang research dossier android` | `research/companies/google/products/android.md` |
 | REA report | `catalog/rea/google/android.md` (captured 2026-11-03T01:31:07.162Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/android.json` (`ev_81e8cc9ad5cf16ecf87c87cbfee56aa1e034a6fc38d62a2a7dd1598879443a01`) | Catalog evidence |
 | Alternative candidates | 4 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show android --format json` and `npx rae-faang research dossier android` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show android --format json` and `npx rea-faang research dossier android` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `ANDROID-CAP-6CC92D09`, `ANDROID-CAP-6BDC34FB`, `ANDROID-CAP-69B0C2BC`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `ANDROID-CAP-59DA28AC`, `ANDROID-CAP-CCB95548`, `ANDROID-CAP-9C835A0C`, `ANDROID-CAP-07302CD0`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Android** / `android` | Product catalog |
-| Company / category | Google / `operating_system` / `operating_system` | Product catalog |
-| Official website / docs | [https://www.android.com/](https://www.android.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Company / category | Google / `operating_system` / `operating-system`, `mobile`, `open-source` | Product catalog |
+| Official website / docs | [https://www.android.com/](https://www.android.com/) / [https://source.android.com/docs](https://source.android.com/docs) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `ANDROID-CAP-6CC92D09` | Mobile OS runtime, app framework, system UI | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `ANDROID-CAP-6BDC34FB` | App sandbox and permission model | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `ANDROID-CAP-69B0C2BC` | App distribution via Play (proprietary layer) | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `ANDROID-CAP-59DA28AC` | The public Android platform stack and multi-form-factor operating-system identity are documented. | VERIFIED | `ev-android-identity`, `ev-android-architecture` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `ANDROID-CAP-CCB95548` | App components, packaging, sandboxing and permission model are documented. | VERIFIED | `ev-android-security` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `ANDROID-CAP-9C835A0C` | AOSP source availability, licensing context, build and compatibility workflows are documented. | VERIFIED | `ev-android-open-source`, `ev-android-distribution` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `ANDROID-CAP-07302CD0` | AOSP does not establish equivalence to Google Mobile Services, Play, certification, vendor integrations or proprietary device layers. | VERIFIED | `ev-android-distribution` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: About`, `button: Features`, `button: Devices`, `button: Learn`, `button: Show search`, `button: Hide the banner`, `button: Video Play/pause`, `button: Go to the next page`, `button: Selected tab 1 of 2`, `button: Selected tab 2 of 2`, `button: Google Pixel 11 Pro Fold`, `button: Google Pixel 11`, `button: Samsung Galaxy Z Fold8 Ultra`, `button: Samsung Galaxy Z Fold8`, `button: Samsung Galaxy Z Flip8`, `link: Jump to content`, `link: Android`, `link: Gemini Intelligence`, `link: Shop phones`, `link: Buy now`, `link: Try Gemini`, `link: Find your perfect phone`, `link: See the latest features`, `link: Explore Rambler`, `link: Explore glasses`, `link: See how it works`, `link: Explore`, `link: Google Pixel 11 Pro / Pro XL`, `link: Explore Gemini Intelligence`, `link: Experience Android XR`, `link: Start chatting`, `link: Go to Find Hub`, `link: Transfer to new Android`, `link: Explore the power of AI`, `link: Explore Gemini`, `link: Search smarter`, `link: Discover more AI`, `link: Follow us on X`, `link: Follow us on Instagram`, `link: Follow us on YouTube`, `link: Follow us on Facebook`, `link: Follow us on LinkedIn`, `link: Security link opens in same tab or window`, `link: Privacy link opens in same tab or window`, `link: Physical Safety link opens in same tab or window`, `link: Vision features link opens in same tab or window`, `link: Audio features link opens in same tab or window`, `link: Mobility features link opens in same tab or window`, `link: Overview link opens in same tab or window`, `link: Quick Share link opens in same tab or window`, `link: Google Cast link opens in same tab or window`, `link: Fast Pair link opens in same tab or window`, `link: Android TV link opens in same tab or window`, `link: Digital car key link opens in same tab or window`, `link: Google Mobile Services (GMS) link opens in same tab or window`, `link: Googlebook link opens in new tab or window`, `link: Enterprise Devices link opens in same tab or window`, `link: Enterprise Support link opens in same tab or window`, `link: Enterprise Blog link opens in new tab or window`, `link: Android Blog link opens in new tab or window`, `link: Press Corner link opens in new tab or window`, `link: Contact Press Team link opens in new tab or window`, `link: Developer Resources link opens in new tab or window`, `link: Android Studio and SDK link opens in new tab or window`, `link: Android Open Source Project link opens in new tab or window`, `link: How Google Play Works link opens in new tab or window`, `link: Help Center link opens in new tab or window`, `link: Find My Device link opens in new tab or window`, `link: Join user studies link opens in new tab or window`, `link: Privacy Policy link opens in new tab or window`, `combobox: Change language or region`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Mobile OS runtime, app framework, system UI:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **App sandbox and permission model:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **App distribution via Play (proprietary layer):** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The public Android platform stack and multi-form-factor operating-system identity are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **App components, packaging, sandboxing and permission model are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **AOSP source availability, licensing context, build and compatibility workflows are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **AOSP does not establish equivalence to Google Mobile Services, Play, certification, vendor integrations or proprietary device layers.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-6CC92D09 — Mobile OS runtime, app framework, system UI
+### REQ-FUNC-59DA28AC — The public Android platform stack and multi-form-factor operating-system identity are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-android-identity`, `ev-android-architecture`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-6CC92D09`; fixture and expected output must be specified from evidence.
-- **Trace:** `ANDROID-CAP-6CC92D09` → `REQ-FUNC-6CC92D09` → `TEST-FUNC-6CC92D09`.
+- **Associated test ID:** `TEST-FUNC-59DA28AC`; fixture and expected output must be specified from evidence.
+- **Trace:** `ANDROID-CAP-59DA28AC` → `REQ-FUNC-59DA28AC` → `TEST-FUNC-59DA28AC`.
 
-### REQ-FUNC-6BDC34FB — App sandbox and permission model
+### REQ-FUNC-CCB95548 — App components, packaging, sandboxing and permission model are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-android-security`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-6BDC34FB`; fixture and expected output must be specified from evidence.
-- **Trace:** `ANDROID-CAP-6BDC34FB` → `REQ-FUNC-6BDC34FB` → `TEST-FUNC-6BDC34FB`.
+- **Associated test ID:** `TEST-FUNC-CCB95548`; fixture and expected output must be specified from evidence.
+- **Trace:** `ANDROID-CAP-CCB95548` → `REQ-FUNC-CCB95548` → `TEST-FUNC-CCB95548`.
 
-### REQ-FUNC-69B0C2BC — App distribution via Play (proprietary layer)
+### REQ-FUNC-9C835A0C — AOSP source availability, licensing context, build and compatibility workflows are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-android-open-source`, `ev-android-distribution`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-69B0C2BC`; fixture and expected output must be specified from evidence.
-- **Trace:** `ANDROID-CAP-69B0C2BC` → `REQ-FUNC-69B0C2BC` → `TEST-FUNC-69B0C2BC`.
+- **Associated test ID:** `TEST-FUNC-9C835A0C`; fixture and expected output must be specified from evidence.
+- **Trace:** `ANDROID-CAP-9C835A0C` → `REQ-FUNC-9C835A0C` → `TEST-FUNC-9C835A0C`.
+
+### REQ-FUNC-07302CD0 — AOSP does not establish equivalence to Google Mobile Services, Play, certification, vendor integrations or proprietary device layers.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-android-distribution`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-07302CD0`; fixture and expected output must be specified from evidence.
+- **Trace:** `ANDROID-CAP-07302CD0` → `REQ-FUNC-07302CD0` → `TEST-FUNC-07302CD0`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -218,9 +229,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `ANDROID-CAP-6CC92D09` — Mobile OS runtime, app framework, system UI | Not verified against AOSP | None yet; compare with `ev_81e8cc9ad5cf16ecf87c87cbfee56aa1e034a6fc38d62a2a7dd1598879443a01` | Candidate code path and tests must be inspected |
-| `ANDROID-CAP-6BDC34FB` — App sandbox and permission model | Not verified against AOSP | None yet; compare with `ev_81e8cc9ad5cf16ecf87c87cbfee56aa1e034a6fc38d62a2a7dd1598879443a01` | Candidate code path and tests must be inspected |
-| `ANDROID-CAP-69B0C2BC` — App distribution via Play (proprietary layer) | Not verified against AOSP | None yet; compare with `ev_81e8cc9ad5cf16ecf87c87cbfee56aa1e034a6fc38d62a2a7dd1598879443a01` | Candidate code path and tests must be inspected |
+| `ANDROID-CAP-59DA28AC` — The public Android platform stack and multi-form-factor operating-system identity are documented. | Not verified against AOSP | None yet; compare with `ev_81e8cc9ad5cf16ecf87c87cbfee56aa1e034a6fc38d62a2a7dd1598879443a01` | Candidate code path and tests must be inspected |
+| `ANDROID-CAP-CCB95548` — App components, packaging, sandboxing and permission model are documented. | Not verified against AOSP | None yet; compare with `ev_81e8cc9ad5cf16ecf87c87cbfee56aa1e034a6fc38d62a2a7dd1598879443a01` | Candidate code path and tests must be inspected |
+| `ANDROID-CAP-9C835A0C` — AOSP source availability, licensing context, build and compatibility workflows are documented. | Not verified against AOSP | None yet; compare with `ev_81e8cc9ad5cf16ecf87c87cbfee56aa1e034a6fc38d62a2a7dd1598879443a01` | Candidate code path and tests must be inspected |
+| `ANDROID-CAP-07302CD0` — AOSP does not establish equivalence to Google Mobile Services, Play, certification, vendor integrations or proprietary device layers. | Not verified against AOSP | None yet; compare with `ev_81e8cc9ad5cf16ecf87c87cbfee56aa1e034a6fc38d62a2a7dd1598879443a01` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -267,9 +279,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-6CC92D09** → `REQ-FUNC-6CC92D09`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-6BDC34FB** → `REQ-FUNC-6BDC34FB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-69B0C2BC** → `REQ-FUNC-69B0C2BC`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-59DA28AC** → `REQ-FUNC-59DA28AC`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-CCB95548** → `REQ-FUNC-CCB95548`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-9C835A0C** → `REQ-FUNC-9C835A0C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-07302CD0** → `REQ-FUNC-07302CD0`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -290,7 +303,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-6CC92D09, REQ-FUNC-6BDC34FB, REQ-FUNC-69B0C2BC
+- **Requirements:** REQ-FUNC-59DA28AC, REQ-FUNC-CCB95548, REQ-FUNC-9C835A0C, REQ-FUNC-07302CD0
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -300,7 +313,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-6CC92D09, REQ-FUNC-6BDC34FB, REQ-FUNC-69B0C2BC
+- **Requirements:** REQ-FUNC-59DA28AC, REQ-FUNC-CCB95548, REQ-FUNC-9C835A0C, REQ-FUNC-07302CD0
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -322,7 +335,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-6CC92D09, REQ-FUNC-6BDC34FB, REQ-FUNC-69B0C2BC; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-59DA28AC, REQ-FUNC-CCB95548, REQ-FUNC-9C835A0C, REQ-FUNC-07302CD0; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -352,7 +365,17 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.android.com/) | Not recorded | Android is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-android-identity` | AOSP overview — Official AOSP documentation identifies Android as an operating system for many form factors and documents AOSP source, customization and compatibility work. | [link](https://source.android.com/docs/setup/about) | 2026-11-03T00:00:00Z | Android is an operating-system platform and AOSP is the public source project for building and customizing Android devices. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-android-architecture` | Platform architecture — Official Android Developers documentation describes the platform stack and its major runtime and framework layers. | [link](https://developer.android.com/guide/platform) | 2026-11-03T00:00:00Z | Android's public platform architecture includes the Linux kernel, HAL, Android Runtime, Java API framework and system apps. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-android-security` | Application fundamentals — Official documentation describes APK/App Bundle packaging, isolated processes, per-app Linux identities, permissions and application components. | [link](https://developer.android.com/guide/components/fundamentals) | 2026-11-03T00:00:00Z | Android applications run with component lifecycles, package formats, sandboxing and permission controls. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-android-open-source` | AOSP FAQ — The official FAQ describes Android as an open-source project and states that most source code uses Apache License 2.0 rather than a copyleft license. | [link](https://source.android.com/docs/setup/about/faqs) | 2026-11-03T00:00:00Z | Most AOSP source is permissively licensed under Apache License 2.0. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-android-distribution` | Android Open Source Project — The official AOSP site provides build, customization, testing, security and compatibility documentation for device builders. | [link](https://source.android.com/) | 2026-11-03T00:00:00Z | AOSP documents source acquisition, building, customization, testing and compatibility for Android devices. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.android.com/) | 2026-11-03T00:00:00Z | Android is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://source.android.com/docs) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://source.android.com/docs/setup/about) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://source.android.com/docs/setup/about/faqs) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://developer.android.com/guide/platform) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://developer.android.com/guide/components/fundamentals) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_81e8cc9ad5cf16ecf87c87cbfee56aa1e034a6fc38d62a2a7dd1598879443a01` | Android Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.android.com/) | 2026-11-03T01:31:07.162Z | A dated unauthenticated snapshot exposed controls button: About, button: Features, button: Devices, button: Learn, button: Show search, button: Hide the banner, button: Video Play/pause, button: Go to the next page, button: Selected tab 1 of 2, button: Selected tab 2 of 2, button: Google Pixel 11 Pro Fold, button: Google Pixel 11, button: Samsung Galaxy Z Fold8 Ultra, button: Samsung Galaxy Z Fold8, button: Samsung Galaxy Z Flip8, link: Jump to content, link: Android, link: Gemini Intelligence, link: Shop phones, link: Buy now, link: Try Gemini, link: Find your perfect phone, link: See the latest features, link: Explore Rambler, link: Explore glasses, link: See how it works, link: Explore, link: Google Pixel 11 Pro / Pro XL, link: Explore Gemini Intelligence, link: Experience Android XR, link: Start chatting, link: Go to Find Hub, link: Transfer to new Android, link: Explore the power of AI, link: Explore Gemini, link: Search smarter, link: Discover more AI, link: Follow us on X, link: Follow us on Instagram, link: Follow us on YouTube, link: Follow us on Facebook, link: Follow us on LinkedIn, link: Security link opens in same tab or window, link: Privacy link opens in same tab or window, link: Physical Safety link opens in same tab or window, link: Vision features link opens in same tab or window, link: Audio features link opens in same tab or window, link: Mobility features link opens in same tab or window, link: Overview link opens in same tab or window, link: Quick Share link opens in same tab or window, link: Google Cast link opens in same tab or window, link: Fast Pair link opens in same tab or window, link: Android TV link opens in same tab or window, link: Digital car key link opens in same tab or window, link: Google Mobile Services (GMS) link opens in same tab or window, link: Googlebook link opens in new tab or window, link: Enterprise Devices link opens in same tab or window, link: Enterprise Support link opens in same tab or window, link: Enterprise Blog link opens in new tab or window, link: Android Blog link opens in new tab or window, link: Press Corner link opens in new tab or window, link: Contact Press Team link opens in new tab or window, link: Developer Resources link opens in new tab or window, link: Android Studio and SDK link opens in new tab or window, link: Android Open Source Project link opens in new tab or window, link: How Google Play Works link opens in new tab or window, link: Help Center link opens in new tab or window, link: Find My Device link opens in new tab or window, link: Join user studies link opens in new tab or window, link: Privacy Policy link opens in new tab or window, combobox: Change language or region and landmarks banner: site header, navigation, search, banner: Expirable banner, main, contentinfo, navigation. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -380,118 +403,87 @@ Resume token: `android`. Read dossier, REA report and raw Evidence before repeat
 
 # 1. Executive summary
 
-Android is a Linux-based mobile operating system developed by Google. It is the world's most widely deployed mobile OS, powering billions of devices globally. It includes the Android Open Source Project (AOSP) as the core component.
+Android is Google's mobile operating-system platform and software stack for phones, tablets, foldables, watches, TVs, cars and other device form factors. The Android Open Source Project (AOSP) supplies the open core and reference platform; Google Mobile Services, Play and device-specific proprietary components are separate layers and must not be treated as identical to AOSP.
 
 # 2. Product identity and ownership
 
 - **Official name:** Android
-- **Company and business unit:** Google
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2007
-- **Current lifecycle status:** active
-- **Previous names:** None
-- **Acquisitions or ownership changes:** None; acquired by Google in 2005 (originally by Android Inc.)
-- **Related products:** ChromeOS, Wear OS, Android Auto, Google Play
-- **Official website:** https://www.android.com/
-- **Official documentation:** https://developer.android.com/
+- **Company:** Google LLC, part of Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://www.android.com/
+- **Identity evidence:** Official Android and AOSP documentation identifies Android as an open-source, Linux-based software stack and AOSP as the source project for building and customizing Android devices.
 
 # 3. Product capabilities
 
-- Linux kernel base
-- Application framework with Java/Kotlin/Android APIs
-- Dalvik/ART runtime
-- Application sandboxing
-- Notifications framework
-- Connectivity ( cellular, Wi-Fi, Bluetooth, NFC)
-- Hardware abstraction layer (HAL)
-- File system with ext4/F2FS
-- Security model with Verified Boot and SELinux
+- Linux-based operating-system stack with kernel, hardware-abstraction layer, Android Runtime and framework APIs.
+- Application components, lifecycle management, sandboxing, permissions and inter-process communication.
+- Support for multiple device form factors and adaptive application interfaces.
+- App packaging and distribution through APK/App Bundle tooling; Google Play is a separate distribution and service layer.
+- Device customization, compatibility testing and platform development through AOSP.
 
 # 4. Technical architecture
 
-Android's architecture has multiple layers:
+The official platform architecture describes the Linux kernel, HAL, Android Runtime, Java API framework and system applications. Applications run in isolated processes with a sandbox and permission model; components include activities, services, broadcast receivers and content providers. AOSP provides source, build and compatibility documentation, while Google Mobile Services and many vendor/device integrations are outside the open AOSP core.
 
-- Linux kernel (core OS abstractions)
-- Hardware abstraction layer (HAL) for device components
-- Android runtime (ART) with Dalvik bytecode execution
-- Application framework (APIs for activities, services, content providers, broadcast receivers)
-- System apps and libraries
-- AOSP source code releases
+# 5. User and developer workflows
 
-AOSP provides the source code under the Apache 2.0 license. Device manufacturers implement AOSP with proprietary extensions (gapps, drivers).
-
-# 5. User workflows
-
-Primary workflows: app installation, configuration, notification handling, multimedia consumption, telephony. Essential: app management, notifications, camera access. Advanced: background services, custom ROM installation, system-level debugging.
+A device builder obtains and customizes AOSP, implements device-specific hardware support, and uses Android compatibility requirements when targeting the broader ecosystem. An app developer builds an APK or App Bundle with the Android SDK, declares components and permissions, tests across form factors, and distributes through a chosen channel such as Google Play or another authorized channel. Users install and run applications within Android's sandbox and permission model.
 
 # 6. Pricing and access
 
-AOSP is free and open source under Apache 2.0. Google Mobile Services (GMS) and Play Store are proprietary and require licensing. Device manufacturers pay for GMS certification.
+AOSP source and documentation are publicly available; device manufacture, certification, Google Mobile Services licensing, Play distribution and vendor components have separate terms and eligibility. This pass does not assert a device maker's access to proprietary Google services or current commercial licensing terms.
 
 # 7. API and integration surface
 
-- Android SDK / NDK APIs
-- Java/Kotlin/Multiplatform programming interfaces
-- Permission system (runtime permissions)
-- Content provider interface
-- Intent system for inter-app communication
+Android exposes framework APIs, SDK tools, application components, permissions, system services and device integration surfaces. AOSP documents platform source, build, customization, compatibility and testing. Android Developers documents app components, packaging and framework use. Access to Google APIs, Play services, device-specific APIs and certification is distinct from the public AOSP surface.
 
 # 8. Existing open-source alternatives
 
-- AOSP itself is the primary open-source Android source
-- LineageOS as a aftermarket firmware
-- /e/OS, /e.foundation de-Googled distributions
-- Replicant (de-Googled Android focus)
+- **AOSP (Apache-2.0 for most source):** the open Android core and upstream platform project.
+- **LineageOS (mixed open-source licenses):** community Android distribution based on the Android platform.
+- **GrapheneOS (MIT and other component licenses):** security-focused Android distribution with a privacy and hardening emphasis.
+- **/e/OS (varies by component):** privacy-focused Android-derived operating system and app suite.
 
 # 9. Alternative comparison
 
-AOSP provides the full open-source operating system. LineageOS and /e/OS are derivative distributions that remove proprietary Google components. Full GMS replacement requires effort.
+AOSP is the closest open foundation because it is the upstream Android core. LineageOS, GrapheneOS and /e/OS provide device-oriented distributions or forks with different device coverage, privacy choices, hardening and app-service layers. None reproduces every Google Mobile Services, Play, certification, vendor integration or commercial ecosystem feature. Coverage is partial for the full Google Android product surface.
 
 # 10. Missing capabilities and opportunity analysis
 
-De-Googled Android distributions exist but require device-specific maintenance. Building a fully independent mobile OS from scratch is extremely demanding. Focus on AOSP customization or distribution is more feasible.
+A full replacement would require hardware enablement, device-specific drivers and HALs, secure boot and update infrastructure, compatibility testing, app distribution, identity, push services, location, payments, proprietary media/DRM and a device ecosystem. AOSP-derived work is viable for bounded device platforms; reproducing Google's complete service layer is not established by this research.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Contribute to AOSP, build a de-Googled distribution, or extend LineageOS. Full OS development is out of scope.
+Choose the target device and scope first. For an open platform or custom device, start from AOSP and validate build, HAL, boot, security updates, compatibility and app packaging. For a privacy-focused consumer distribution, evaluate LineageOS, GrapheneOS or /e/OS according to device support and service requirements. Do not claim Google Mobile Services or Play compatibility without separate licensing, certification and device testing.
 
 # 12. Security, privacy, and compliance
 
-Verified Boot, SELinux, permission model, privacy controls. de-Googled distributions address data privacy concerns. Compliance depends on distribution and device.
+Android security depends on sandboxing, permissions, signing, secure update paths, device configuration, vendor support and the selected Google or non-Google service layer. Verify boot-chain control, patch cadence, app permissions, telemetry, encryption, enterprise controls, regional requirements and data-access boundaries for the target device.
 
 # 13. Sources and evidence
 
-- https://developer.android.com/ (documentation)
-- https://source.android.com/ (AOSP)
-- https://lineageos.org/ (aftermarket distribution)
+- [AOSP overview](https://source.android.com/docs/setup/about) — official Android/AOSP identity, customization and compatibility model.
+- [AOSP FAQ](https://source.android.com/docs/setup/about/faqs) — official open-source and Apache 2.0 licensing context.
+- [Android platform architecture](https://developer.android.com/guide/platform) — official Linux kernel, HAL, ART, framework and system-app architecture.
+- [Application fundamentals](https://developer.android.com/guide/components/fundamentals) — official app components, packaging, sandbox and permissions.
+- [Android Open Source Project](https://source.android.com/) — official source, build, customization and testing entry point.
 
 # 14. Open questions
 
-- What is the feasibility of a completely proprietary-free Android distribution?
-- How do GMS-dependent apps function without Google Services?
-- What is the maintenance burden of keeping AOSP customizations current?
+- Is the target AOSP itself, a device distribution, or the full Google Android ecosystem?
+- Which device models, form factors, hardware vendors and update commitments are in scope?
+- Are Google Mobile Services, Play certification, push notifications, DRM or enterprise management required?
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
+- v1: catalog candidate with open-source alternatives, research pending.
+- v2: updated 2026-11-03 from official Android Developers and AOSP documentation. Status: `researched`; proprietary Google services, vendor integrations and commercial licensing remain outside the verified open-core surface.
 
----
-
-# 16. Alternative comparison (continued)
-
-AOSP, LineageOS, /e/OS, and Replicant are the primary open-source Android options. Varying degrees of GMS compatibility.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Contribute to AOSP de-Googling efforts or build on LineageOS. Full OS development not recommended for initial RAE projects.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier android` and inspect canonical identity with `npx rae-faang products show android --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier android` and inspect canonical identity with `npx rea-faang products show android --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -504,7 +496,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang android --out ./android.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit android --out ./android-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang android --out ./android.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit android --out ./android-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -546,5 +538,15 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://www.android.com/) — Android is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [AOSP overview](https://source.android.com/docs/setup/about) — Android is an operating-system platform and AOSP is the public source project for building and customizing Android devices. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Platform architecture](https://developer.android.com/guide/platform) — Android's public platform architecture includes the Linux kernel, HAL, Android Runtime, Java API framework and system apps. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Application fundamentals](https://developer.android.com/guide/components/fundamentals) — Android applications run with component lifecycles, package formats, sandboxing and permission controls. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [AOSP FAQ](https://source.android.com/docs/setup/about/faqs) — Most AOSP source is permissively licensed under Apache License 2.0. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Android Open Source Project](https://source.android.com/) — AOSP documents source acquisition, building, customization, testing and compatibility for Android devices. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://www.android.com/) — Android is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://source.android.com/docs) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://source.android.com/docs/setup/about) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://source.android.com/docs/setup/about/faqs) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developer.android.com/guide/platform) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developer.android.com/guide/components/fundamentals) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Android Public web-surface observation (REA)](https://www.android.com/) — A dated unauthenticated snapshot exposed controls button: About, button: Features, button: Devices, button: Learn, button: Show search, button: Hide the banner, button: Video Play/pause, button: Go to the next page, button: Selected tab 1 of 2, button: Selected tab 2 of 2, button: Google Pixel 11 Pro Fold, button: Google Pixel 11, button: Samsung Galaxy Z Fold8 Ultra, button: Samsung Galaxy Z Fold8, button: Samsung Galaxy Z Flip8, link: Jump to content, link: Android, link: Gemini Intelligence, link: Shop phones, link: Buy now, link: Try Gemini, link: Find your perfect phone, link: See the latest features, link: Explore Rambler, link: Explore glasses, link: See how it works, link: Explore, link: Google Pixel 11 Pro / Pro XL, link: Explore Gemini Intelligence, link: Experience Android XR, link: Start chatting, link: Go to Find Hub, link: Transfer to new Android, link: Explore the power of AI, link: Explore Gemini, link: Search smarter, link: Discover more AI, link: Follow us on X, link: Follow us on Instagram, link: Follow us on YouTube, link: Follow us on Facebook, link: Follow us on LinkedIn, link: Security link opens in same tab or window, link: Privacy link opens in same tab or window, link: Physical Safety link opens in same tab or window, link: Vision features link opens in same tab or window, link: Audio features link opens in same tab or window, link: Mobility features link opens in same tab or window, link: Overview link opens in same tab or window, link: Quick Share link opens in same tab or window, link: Google Cast link opens in same tab or window, link: Fast Pair link opens in same tab or window, link: Android TV link opens in same tab or window, link: Digital car key link opens in same tab or window, link: Google Mobile Services (GMS) link opens in same tab or window, link: Googlebook link opens in new tab or window, link: Enterprise Devices link opens in same tab or window, link: Enterprise Support link opens in same tab or window, link: Enterprise Blog link opens in new tab or window, link: Android Blog link opens in new tab or window, link: Press Corner link opens in new tab or window, link: Contact Press Team link opens in new tab or window, link: Developer Resources link opens in new tab or window, link: Android Studio and SDK link opens in new tab or window, link: Android Open Source Project link opens in new tab or window, link: How Google Play Works link opens in new tab or window, link: Help Center link opens in new tab or window, link: Find My Device link opens in new tab or window, link: Join user studies link opens in new tab or window, link: Privacy Policy link opens in new tab or window, combobox: Change language or region and landmarks banner: site header, navigation, search, banner: Expirable banner, main, contentinfo, navigation. (VERIFIED; accessed 2026-11-03T01:31:07.162Z).

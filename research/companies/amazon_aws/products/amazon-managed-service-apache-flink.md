@@ -82,7 +82,7 @@ Self-hosted Apache Flink offers the core engine but shifts cluster operations, u
 
 Research must map application states, deployment artifacts, version compatibility, checkpoint/savepoint lifecycle, connector guarantees, parallelism, autoscaling, limits, billing and failure recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS and Apache Flink documentation, API references and release notes. Capture public workflows and contracts with authorized REA. Build only an independent implementation in a consumer project after a foundation verdict.
 

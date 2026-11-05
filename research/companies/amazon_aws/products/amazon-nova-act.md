@@ -5,97 +5,115 @@ company_id: "amazon_aws"
 name: "Amazon Nova Act"
 aliases: ["Nova Act"]
 product_type: "ai_agent_platform"
-categories: ["browser-automation", "agentic-ai", "workflow-automation", "computer-use", "developer-tool"]
-lifecycle_status: "active"
+categories:
+  - "browser-automation"
+  - "agentic-ai"
+  - "workflow-automation"
+  - "computer-use"
+  - "developer-tool"
 official_url: "https://aws.amazon.com/nova/"
 official_docs_url: "https://docs.aws.amazon.com/nova-act/"
-official_source_urls:
-  - "https://aws.amazon.com/nova/"
-  - "https://aws.amazon.com/documentation-overview/nova-act/"
-  - "https://docs.aws.amazon.com/nova-act/"
-  - "https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html"
-  - "https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html"
-research_status: "pending"
-research_confidence: "unverified"
-alternative_status: "none_verified"
+official_source_urls: ["https://aws.amazon.com/nova/", "https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html", "https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html", "https://docs.aws.amazon.com/ai/responsible-ai/nova-act/overview.html", "https://docs.aws.amazon.com/service-authorization/latest/reference/list_nova-act.html"]
+lifecycle_status: "active"
+research_status: "researched"
+research_confidence: "verified"
+alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: 2026-11-03T00:00:00Z
+last_verified_at: 2026-11-03T00:00:00Z
+next_review_at: 2027-02-03T00:00:00Z
+research_version: 2
+inventory_status: "verified"
+command_status: "documented"
+command_source: "https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html"
 ---
 
 # 1. Executive summary
 
-Amazon Nova Act is an AWS service and developer toolchain for building, deploying and managing AI agents that automate browser-based user-interface workflows. AWS documentation describes natural-language instructions combined with Python code, local development interfaces, deployment to AWS, monitoring, API/tool integrations and human escalation. This entry remains `pending` until the complete public workflow and safety boundaries are independently validated.
+Amazon Nova Act is an AWS service and developer toolchain for building, deploying and managing AI agents that automate production browser workflows. A workflow combines natural-language `act()` instructions with Python code; sessions contain sequential acts, and workflow runs execute the workflow. AWS documents a web playground, SDK, IDE extension, CLI, AWS deployment and console monitoring.
 
 # 2. Product identity and ownership
 
 - **Official name:** Amazon Nova Act
 - **Company:** Amazon Web Services
-- **Lifecycle:** Active
-- **Primary scope:** Production UI workflow automation and related developer tooling
+- **Lifecycle:** active
+- **Canonical website:** https://aws.amazon.com/nova/
+- **Official documentation:** https://docs.aws.amazon.com/nova-act/
+- **Primary scope:** production UI workflow automation and related agent-development tooling.
+- **Availability:** AWS documentation currently lists US East (N. Virginia) support; region availability must be checked before use.
 
 # 3. Product capabilities
 
-- Define browser actions using natural-language instructions and Python.
-- Explore workflows in a hosted playground and develop locally with an SDK.
-- Use an IDE extension and CLI as part of the development-to-deployment path.
-- Deploy and monitor workflows in AWS.
-- Integrate APIs, tools, remote MCP and human escalation where supported.
+- Browser workflow automation for data entry, extraction, checkout/booking and web QA use cases.
+- Natural-language `act()` calls combined with Python orchestration.
+- Sessions representing browser or API-client context, with sequential acts.
+- Workflow definitions and repeatable workflow runs.
+- External tool integrations through API calls, remote MCP and supported agentic frameworks.
+- Human escalation for unresolved or explicitly delegated cases.
+- Playground, SDK, IDE extension, CLI, AWS deployment and console monitoring.
+- API operations for workflow definitions, runs, sessions, acts and model listing.
 
 # 4. Technical architecture
 
-Public documentation distinguishes a playground, SDK, IDE extension, CLI, AWS service and console. The execution model, browser isolation, model/version selection, session state, tool permissions, trajectory storage, retries and fleet scheduling require direct validation.
+AWS describes a custom model, orchestrator, browser actuator and service tooling as an integrated system. An `act()` call executes an agentic loop within a session; each act has sequential steps in which the model observes the page and takes an action. A workflow run invokes a workflow definition and can contain multiple sessions. The service can process UI screenshots and prompts through its documented service APIs. Exact model internals, browser isolation and fleet implementation remain proprietary.
 
-# 5. User workflows
+# 5. User and developer workflows
 
-Documented workflow stages include exploring a browser task, exporting or authoring Python, developing and debugging locally, packaging/deploying with the CLI, monitoring executions in the AWS console, and escalating to a human when appropriate. Exact inputs, outputs, failure states, cancellation, retries and persistence remain pending.
+1. Explore a browser task in the Nova Act web playground.
+2. Author or export a Python workflow and use `act()` calls for bounded UI tasks.
+3. Develop and debug with the SDK and IDE extension, using explicit tools, permissions and test data.
+4. Create a workflow definition and run it through the documented SDK, CLI or API surfaces.
+5. Monitor runs, sessions, acts and trajectory data in the AWS control plane; add human escalation and failure handling before production use.
 
 # 6. Pricing and access
 
-Access may involve the Nova Act playground, API-key or AWS IAM authentication and AWS deployment terms. Current pricing, quotas, supported regions, model entitlements and account requirements must be verified before any implementation or cost claim.
+AWS directs users to the current Nova Act pricing page and account requirements. Access, region, quotas, model availability, IAM and deployment costs must be checked for the target AWS account. This dossier does not assert a current price or quota.
 
 # 7. API and integration surface
 
-AWS documents a REST API for workflow definitions, workflow runs, sessions and acts, plus SDK, CLI, IDE extension, console, tool/API integrations and remote MCP. The complete command, schema, authentication and error matrix remains pending.
+- REST API actions include creating, reading, updating and deleting workflow definitions and runs.
+- Session and act operations include create, list, update and invoke-step behavior.
+- Model listing and AWS service-authorization/IAM references are documented.
+- SDK, CLI, IDE extension, playground and AWS Management Console are part of the developer surface.
+- API calls, remote MCP and supported agentic frameworks extend work beyond the browser.
 
 # 8. Existing open-source alternatives
 
-No full open-source alternative is verified in this entry. Browser automation libraries, agent frameworks and workflow engines may cover subsets, but model reliability, production deployment, fleet management, safety controls and human escalation are not assumed equivalent.
+- **Browser Use:** open-source browser-agent framework for browser control, extraction, testing and agent workflows.
+- **Stagehand:** open-source browser automation toolkit combining natural-language AI primitives with deterministic Playwright-style control.
+- **Playwright:** Apache-2.0 browser automation library for deterministic cross-browser testing and automation.
 
 # 9. Alternative comparison
 
-Candidate foundations must be compared across browser control, locator robustness, natural-language planning, deterministic code integration, sessions, retries, observability, credentials, tool calls, human handoff and deployment. A browser driver alone is not a replacement for the full service.
+Browser Use and Stagehand cover agentic or hybrid browser automation, while Playwright provides the deterministic browser-control foundation. None reproduces Nova Act's integrated model, AWS deployment plane, workflow/session/run APIs, managed fleet operations, service authorization, trajectory tooling or documented human-escalation path. Coverage is therefore **partial** for the complete AWS service.
 
 # 10. Missing capabilities and opportunity analysis
 
-Research must map `act()` semantics, workflow/session/run state transitions, supported browsers, selectors, action timeouts, assertions, retries, recovery, model versions, tool permissions, authentication, trajectory export, monitoring and production isolation.
+An independent implementation still needs browser isolation, reliable action planning, session and run state, retries, credentials, tool permissions, observability, trajectory handling, human handoff, deployment and multi-tenant operations. The open-source projects are foundations, not proof of service parity.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official AWS product and documentation URLs with authorized public or user-owned test surfaces. Record browser observations, SDK/CLI commands, API schemas and error behavior. Any independent implementation must use original code, avoid AWS proprietary assets and clearly separate observed behavior from proposed design.
+Use Playwright for deterministic browser actions and add Stagehand or Browser Use only where agentic interaction is required. Define an explicit workflow state machine, approval gates for purchases or submissions, credential isolation, replayable traces and human escalation. Do not claim Nova Act compatibility without testing each selected API, SDK and failure mode.
 
 # 12. Security, privacy, and compliance
 
-Verify credential handling, browser isolation, prompt and page-data boundaries, tool permissions, IAM policies, remote MCP access, logging, trajectory retention, human approval and sensitive-data handling before implementation.
+Browser agents can access authenticated sites, page data and external tools. Restrict file access, browser origins, IAM actions, remote MCP servers, payment actions and data retention. Review screenshots, prompts, trajectory exports, logs and human handoff for sensitive data before production use.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/nova/ — official Amazon Nova portfolio and Nova Act product context.
-- https://aws.amazon.com/documentation-overview/nova-act/ — official capability and workflow overview.
-- https://docs.aws.amazon.com/nova-act/ — official documentation entry point.
-- https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html — service concepts and `act()` terminology.
-- https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html — REST API reference.
+- [What is Amazon Nova Act?](https://docs.aws.amazon.com/nova-act/latest/userguide/what-is-nova-act.html) — official identity, terminology, workflows, availability and use cases.
+- [Amazon Nova Act API Reference](https://docs.aws.amazon.com/nova-act/latest/APIReference/Welcome.html) — official API surface for workflows, runs, sessions, acts and models.
+- [Amazon Nova Act Service Authorization](https://docs.aws.amazon.com/service-authorization/latest/reference/list_nova-act.html) — official IAM actions and resource permissions.
+- [Amazon Nova Act Responsible AI Service Card](https://docs.aws.amazon.com/ai/responsible-ai/nova-act/overview.html) — official architecture, context handling, limitations and human-escalation guidance.
 
-# 14. Unknowns
+# 14. Open questions
 
-- Complete SDK, CLI and REST API command/schema matrix.
-- Browser/runtime isolation, model behavior and deterministic replay semantics.
-- Exact quotas, pricing, regions, supported browsers and model versions.
-- Verified open-source foundation and coverage for production deployment and safety.
+- Which AWS region, model, browser targets and quotas apply to the intended account?
+- Which workflows require human approval before irreversible actions such as checkout or submission?
+- What trace, replay, retry and credential-isolation guarantees are required?
 
-# 15. Research status
+# 15. Research history
 
-`pending`: identity and public capability surface are documented from AWS sources, but full REA capture, authenticated workflow behavior, limits, safety controls and alternatives remain unverified.
+- v1: catalog candidate with public AWS capability notes, research pending.
+- v2: updated 2026-11-03 from official AWS user guide, API reference, IAM reference and Responsible AI service card. Status: `researched`; managed service behavior, pricing and full parity with open-source browser agents remain unverified.

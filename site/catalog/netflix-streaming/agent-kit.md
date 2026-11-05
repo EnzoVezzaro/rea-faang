@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Netflix Streaming (netflix-streamin
 
 # Netflix Streaming — implementation skill (`netflix-streaming`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Netflix Streaming**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Netflix Streaming (netflix-streamin
 
 This is the coding-agent skill for **Netflix Streaming** (`netflix-streaming`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/netflix/netflix-streaming.md` from the catalog page, or run `npx rae-faang netflix-streaming --out ./netflix-streaming.md`, `npx rae-faang skills generate netflix-streaming` or `npx rae-faang build agent-kit netflix-streaming --out ./netflix-streaming-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/netflix/netflix-streaming.md` from the catalog page, or run `npx rea-faang netflix-streaming --out ./netflix-streaming.md`, `npx rea-faang skills generate netflix-streaming` or `npx rea-faang build agent-kit netflix-streaming --out ./netflix-streaming-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Netflix Streaming / `netflix-streaming` | `catalog/products.jsonl` |
 | Official product URL | [https://www.netflix.com/](https://www.netflix.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier netflix-streaming` | `research/companies/netflix/products/netflix-streaming.md` |
+| Official documentation | [https://help.netflix.com/en/node/412](https://help.netflix.com/en/node/412) | Catalog record |
+| Research dossier | `npx rea-faang research dossier netflix-streaming` | `research/companies/netflix/products/netflix-streaming.md` |
 | REA report | `catalog/rea/netflix/netflix-streaming.md` (captured 2026-11-03T01:42:29.769Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/netflix-streaming.json` (`ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b`) | Catalog evidence |
 | Alternative candidates | 4 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show netflix-streaming --format json` and `npx rae-faang research dossier netflix-streaming` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show netflix-streaming --format json` and `npx rea-faang research dossier netflix-streaming` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `NETFLIX-STREAMING-CAP-63BF8DDF`, `NETFLIX-STREAMING-CAP-7C2B7041`, `NETFLIX-STREAMING-CAP-9582CBDD`, `NETFLIX-STREAMING-CAP-87E2AC4C`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `NETFLIX-STREAMING-CAP-219CB559`, `NETFLIX-STREAMING-CAP-E052B775`, `NETFLIX-STREAMING-CAP-7ED7D2E9`, `NETFLIX-STREAMING-CAP-B9838368`, `NETFLIX-STREAMING-CAP-0989716A`, `NETFLIX-STREAMING-CAP-70BA07C1`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,7 +103,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Netflix Streaming** / `netflix-streaming` | Product catalog |
 | Company / category | Netflix / `media_streaming` / `media_streaming` | Product catalog |
-| Official website / docs | [https://www.netflix.com/](https://www.netflix.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Official website / docs | [https://www.netflix.com/](https://www.netflix.com/) / [https://help.netflix.com/en/node/412](https://help.netflix.com/en/node/412) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,19 +118,23 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `NETFLIX-STREAMING-CAP-63BF8DDF` | Adaptive-bitrate streaming at scale | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `NETFLIX-STREAMING-CAP-7C2B7041` | Personalised recommendations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `NETFLIX-STREAMING-CAP-9582CBDD` | Profiles, parental controls, offline downloads | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `NETFLIX-STREAMING-CAP-87E2AC4C` | DRM (Widevine/FairPlay/PlayReady) | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-STREAMING-CAP-219CB559` | Subscription video streaming | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-STREAMING-CAP-E052B775` | Supported-device playback | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-STREAMING-CAP-7ED7D2E9` | Profile-based discovery and controls | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-STREAMING-CAP-B9838368` | Eligible offline downloads | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-STREAMING-CAP-0989716A` | Plan-limited simultaneous viewing | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-STREAMING-CAP-70BA07C1` | Smart Downloads on supported plans and devices | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Get Started`, `button: Learn More`, `button: Nobody Wants This 2`, `button: KPop Demon Hunters PLAYlist 3`, `button: From 4`, `button: Love Is Blind 5`, `button: Doing Life 6`, `button: Below 7`, `button: Animals 8`, `button: The Diplomat 9`, `button: Beauty in Black 10`, `button: What is Netflix?`, `button: How much does Netflix cost?`, `button: Where can I watch?`, `button: How do I cancel?`, `button: What can I watch on Netflix?`, `button: Is Netflix good for kids?`, `combobox: Select Language`, `link: Sign In`, `textbox: Email address`, `link: 1-844-569-7700`, `link: FAQ`, `link: Help Center`, `link: Account`, `link: Netflix House`, `link: Media Center`, `link: Investor Relations`, `link: Jobs`, `link: Netflix Shop`, `link: Redeem Gift Cards`, `link: Buy Gift Cards`, `link: Ways to Watch`, `link: Terms of Use`, `link: Privacy`, `link: Cookie Preferences`, `link: Corporate Information`, `link: Contact Us`, `link: Speed Test`, `link: Legal Notices`, `link: Only on Netflix`, `link: Do Not Sell or Share My Personal Information`, `link: Ad Choices`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Adaptive-bitrate streaming at scale:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Personalised recommendations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Profiles, parental controls, offline downloads:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **DRM (Widevine/FairPlay/PlayReady):** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Subscription video streaming:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Supported-device playback:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Profile-based discovery and controls:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Eligible offline downloads:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Plan-limited simultaneous viewing:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Smart Downloads on supported plans and devices:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -147,41 +151,59 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-63BF8DDF — Adaptive-bitrate streaming at scale
+### REQ-FUNC-219CB559 — Subscription video streaming
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-63BF8DDF`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-STREAMING-CAP-63BF8DDF` → `REQ-FUNC-63BF8DDF` → `TEST-FUNC-63BF8DDF`.
+- **Associated test ID:** `TEST-FUNC-219CB559`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-STREAMING-CAP-219CB559` → `REQ-FUNC-219CB559` → `TEST-FUNC-219CB559`.
 
-### REQ-FUNC-7C2B7041 — Personalised recommendations
+### REQ-FUNC-E052B775 — Supported-device playback
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-7C2B7041`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-STREAMING-CAP-7C2B7041` → `REQ-FUNC-7C2B7041` → `TEST-FUNC-7C2B7041`.
+- **Associated test ID:** `TEST-FUNC-E052B775`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-STREAMING-CAP-E052B775` → `REQ-FUNC-E052B775` → `TEST-FUNC-E052B775`.
 
-### REQ-FUNC-9582CBDD — Profiles, parental controls, offline downloads
+### REQ-FUNC-7ED7D2E9 — Profile-based discovery and controls
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-9582CBDD`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-STREAMING-CAP-9582CBDD` → `REQ-FUNC-9582CBDD` → `TEST-FUNC-9582CBDD`.
+- **Associated test ID:** `TEST-FUNC-7ED7D2E9`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-STREAMING-CAP-7ED7D2E9` → `REQ-FUNC-7ED7D2E9` → `TEST-FUNC-7ED7D2E9`.
 
-### REQ-FUNC-87E2AC4C — DRM (Widevine/FairPlay/PlayReady)
+### REQ-FUNC-B9838368 — Eligible offline downloads
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-87E2AC4C`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-STREAMING-CAP-87E2AC4C` → `REQ-FUNC-87E2AC4C` → `TEST-FUNC-87E2AC4C`.
+- **Associated test ID:** `TEST-FUNC-B9838368`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-STREAMING-CAP-B9838368` → `REQ-FUNC-B9838368` → `TEST-FUNC-B9838368`.
+
+### REQ-FUNC-0989716A — Plan-limited simultaneous viewing
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-0989716A`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-STREAMING-CAP-0989716A` → `REQ-FUNC-0989716A` → `TEST-FUNC-0989716A`.
+
+### REQ-FUNC-70BA07C1 — Smart Downloads on supported plans and devices
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-70BA07C1`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-STREAMING-CAP-70BA07C1` → `REQ-FUNC-70BA07C1` → `TEST-FUNC-70BA07C1`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -229,10 +251,12 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `NETFLIX-STREAMING-CAP-63BF8DDF` — Adaptive-bitrate streaming at scale | Not verified against Jellyfin | None yet; compare with `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b` | Candidate code path and tests must be inspected |
-| `NETFLIX-STREAMING-CAP-7C2B7041` — Personalised recommendations | Not verified against Jellyfin | None yet; compare with `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b` | Candidate code path and tests must be inspected |
-| `NETFLIX-STREAMING-CAP-9582CBDD` — Profiles, parental controls, offline downloads | Not verified against Jellyfin | None yet; compare with `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b` | Candidate code path and tests must be inspected |
-| `NETFLIX-STREAMING-CAP-87E2AC4C` — DRM (Widevine/FairPlay/PlayReady) | Not verified against Jellyfin | None yet; compare with `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b` | Candidate code path and tests must be inspected |
+| `NETFLIX-STREAMING-CAP-219CB559` — Subscription video streaming | Not verified against Jellyfin | None yet; compare with `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b` | Candidate code path and tests must be inspected |
+| `NETFLIX-STREAMING-CAP-E052B775` — Supported-device playback | Not verified against Jellyfin | None yet; compare with `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b` | Candidate code path and tests must be inspected |
+| `NETFLIX-STREAMING-CAP-7ED7D2E9` — Profile-based discovery and controls | Not verified against Jellyfin | None yet; compare with `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b` | Candidate code path and tests must be inspected |
+| `NETFLIX-STREAMING-CAP-B9838368` — Eligible offline downloads | Not verified against Jellyfin | None yet; compare with `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b` | Candidate code path and tests must be inspected |
+| `NETFLIX-STREAMING-CAP-0989716A` — Plan-limited simultaneous viewing | Not verified against Jellyfin | None yet; compare with `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b` | Candidate code path and tests must be inspected |
+| `NETFLIX-STREAMING-CAP-70BA07C1` — Smart Downloads on supported plans and devices | Not verified against Jellyfin | None yet; compare with `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -280,10 +304,12 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-63BF8DDF** → `REQ-FUNC-63BF8DDF`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-7C2B7041** → `REQ-FUNC-7C2B7041`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-9582CBDD** → `REQ-FUNC-9582CBDD`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-87E2AC4C** → `REQ-FUNC-87E2AC4C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-219CB559** → `REQ-FUNC-219CB559`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-E052B775** → `REQ-FUNC-E052B775`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-7ED7D2E9** → `REQ-FUNC-7ED7D2E9`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-B9838368** → `REQ-FUNC-B9838368`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-0989716A** → `REQ-FUNC-0989716A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-70BA07C1** → `REQ-FUNC-70BA07C1`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -304,7 +330,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-63BF8DDF, REQ-FUNC-7C2B7041, REQ-FUNC-9582CBDD, REQ-FUNC-87E2AC4C
+- **Requirements:** REQ-FUNC-219CB559, REQ-FUNC-E052B775, REQ-FUNC-7ED7D2E9, REQ-FUNC-B9838368, REQ-FUNC-0989716A, REQ-FUNC-70BA07C1
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -314,7 +340,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-63BF8DDF, REQ-FUNC-7C2B7041, REQ-FUNC-9582CBDD, REQ-FUNC-87E2AC4C
+- **Requirements:** REQ-FUNC-219CB559, REQ-FUNC-E052B775, REQ-FUNC-7ED7D2E9, REQ-FUNC-B9838368, REQ-FUNC-0989716A, REQ-FUNC-70BA07C1
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -336,7 +362,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-63BF8DDF, REQ-FUNC-7C2B7041, REQ-FUNC-9582CBDD, REQ-FUNC-87E2AC4C; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-219CB559, REQ-FUNC-E052B775, REQ-FUNC-7ED7D2E9, REQ-FUNC-B9838368, REQ-FUNC-0989716A, REQ-FUNC-70BA07C1; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -366,7 +392,16 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.netflix.com/) | Not recorded | Netflix Streaming is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-netflix-streaming-identity` | What is Netflix? — Netflix's official help page describes the subscription streaming service, its content categories, offline viewing and supported-device overview. | [link](https://help.netflix.com/en/node/412) | 2026-11-03T00:00:00Z | Netflix is a subscription-based streaming service for watching TV shows and movies on supported internet-connected devices. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-streaming-devices` | Netflix Supported Devices — The official device guide lists supported device families and computer browser access. | [link](https://help.netflix.com/en/node/14361) | 2026-11-03T00:00:00Z | Netflix can be watched on supported TVs, phones, tablets, computers, streaming players, cable boxes, and game consoles. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-streaming-downloads` | How to download titles to watch offline — Netflix documents downloading eligible titles in its app and explains that availability varies by title, device and plan. | [link](https://help.netflix.com/en/node/54816) | 2026-11-03T00:00:00Z | Eligible titles can be downloaded through the Netflix app for offline viewing, subject to device, plan, and title limits. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.netflix.com/) | 2026-11-03T00:00:00Z | Netflix Streaming is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://help.netflix.com/en/node/412) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://help.netflix.com/en/node/412) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://help.netflix.com/en/node/14361) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://help.netflix.com/en/node/558253171161700) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://help.netflix.com/en/node/54816) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://help.netflix.com/en/node/122916) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_c2763ee78f5bd6c2e054036a9739d298cafa8b4c1b6caa8ea8c6c507f48ad96b` | Netflix Streaming Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.netflix.com/) | 2026-11-03T01:42:29.769Z | A dated unauthenticated snapshot exposed controls button: Get Started, button: Learn More, button: Nobody Wants This 2, button: KPop Demon Hunters PLAYlist 3, button: From 4, button: Love Is Blind 5, button: Doing Life 6, button: Below 7, button: Animals 8, button: The Diplomat 9, button: Beauty in Black 10, button: What is Netflix?, button: How much does Netflix cost?, button: Where can I watch?, button: How do I cancel?, button: What can I watch on Netflix?, button: Is Netflix good for kids?, combobox: Select Language, link: Sign In, textbox: Email address, link: 1-844-569-7700, link: FAQ, link: Help Center, link: Account, link: Netflix House, link: Media Center, link: Investor Relations, link: Jobs, link: Netflix Shop, link: Redeem Gift Cards, link: Buy Gift Cards, link: Ways to Watch, link: Terms of Use, link: Privacy, link: Cookie Preferences, link: Corporate Information, link: Contact Us, link: Speed Test, link: Legal Notices, link: Only on Netflix, link: Do Not Sell or Share My Personal Information, link: Ad Choices and landmarks banner, form: Sign up or restart your membership with Netflix., form: Sign up or restart your membership with Netflix., contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -392,133 +427,118 @@ Resume token: `netflix-streaming`. Read dossier, REA report and raw Evidence bef
 
 ### Dossier notes (not independently verified)
 
-# 1. Executive summary
+# Netflix Streaming
 
-Netflix Streaming is the core on-demand video streaming service offered by Netflix, providing a vast library of movies, TV shows, and original content to subscribers worldwide. It is a pioneer in streaming technology, adaptive bitrate, and recommendation systems.
+## Research verdict
 
-# 2. Product identity and ownership
+Netflix is an active subscription video-streaming service. Netflix's official help
+documentation identifies the service as a way for members to watch TV shows and
+movies on supported internet-connected devices. The public evidence verifies the
+consumer surface and supported workflows; it does not verify Netflix's internal
+delivery, recommendation, encoding, or DRM implementation.
 
-- **Official name:** Netflix Streaming
-- **Company and business unit:** Netflix
-- **Parent organization:** Netflix Inc. (standalone public company)
-- **Original launch date:** 2007 ( DVD rental transition to streaming)
-- **Current lifecycle status:** active
-- **Previous names:** None (streaming service launched 2007; DVD service rebranded to DVD.com)
-- **Acquisitions or ownership changes:** None; Netflix is a standalone public company
-- **Related products:** Netflix DVD, Netflix App, Netflix Games, Shuffle, Max (formerly HBO Max - separate), Amazon Prime Video
-- **Official website:** https://www.netflix.com/
-- **Official documentation:** https://help.netflix.com/
+The open-source alternative search is **partial**: Jellyfin, PeerTube, and Kodi
+cover parts of the software and self-hosting problem, but none provides Netflix's
+licensed catalogue, membership service, device ecosystem, or commercial rights.
 
-# 3. Product capabilities
+## Product identity and boundary
 
-- On-demand video streaming with adaptive bitrate streaming
-- Multiple concurrent streams per subscription tier
-- Offline download for mobile apps
-- User profiles and parental controls
-- Recommendation algorithm (personalized content suggestions)
-- Search and content discovery
-- Audio language and subtitle selection
-- 4K and HDR support (Dolby Vision, HDR10)
-- Spatial audio support
-- Smart download (auto-download next episodes)
-- Skip intro and episode auto-advance
-- Binge-watch detection and recommendations
-- Account management and device management
-- Netflix House (physical events and retail - limited)
+- **Owner:** Netflix, Inc.
+- **Canonical product ID:** `netflix-streaming`
+- **Lifecycle:** Active
+- **Public entry point:** https://www.netflix.com/
+- **Product boundary:** The subscription streaming experience for discovering and
+  watching Netflix TV shows, films, documentaries, and Netflix originals.
+- **Related catalog entries:** `netflix-profiles` covers profile and household
+  controls as a related experience; `netflix-games` is a separate product
+  surface. Netflix DVD is discontinued and Netflix Kids is a retired catalog
+  grouping, not a separate streaming backend.
 
-# 4. Technical architecture
+## Verified user capabilities
 
-Netflix's streaming infrastructure is highly scaled:
+The official sources verify that members can:
 
-- Adaptive bitrate streaming (Dynamic Optimizer)
-- Global content delivery network (Open Connect)
-- Video encoding pipeline (multiple codecs: AVC, HEVC, VP9, AV1)
-- Recommendation engine (personalization algorithms)
-- Content metadata and classification system
-- Client applications (smart TVs, mobile, web, game consoles)
-- DRM and content protection (Widevine, FairPlay, PlayReady)
-- Analytics and A/B testing framework
-- ABR ladders and renditions per title
+1. Watch TV shows and movies through supported Netflix apps or a supported web
+   browser.
+2. Use supported smart TVs, streaming players, cable boxes, game consoles,
+   phones, tablets, and computers.
+3. Download eligible titles in the Netflix app for offline viewing on supported
+   devices. Availability depends on the title, device, profile restrictions, and
+   plan; downloads are not universal.
+4. Use multiple devices, with simultaneous viewing limited by the membership
+   plan rather than by a fixed global device count.
+5. Use profile-based recommendations and controls. The separate
+   `netflix-profiles` dossier documents that related surface in more detail.
+6. Use Smart Downloads features where the plan and device support them.
 
-Full architecture is proprietary; client API and ABR behavior are partially documented.
+Content availability, device support, download eligibility, simultaneous screens,
+and plan features vary by country, plan, device, and time. Pricing and plan names
+are intentionally not copied here because they are region- and date-dependent.
 
-# 5. User workflows
+## Technical boundary
 
-Primary workflows: content discovery, playback control, profile management, and download. Essential: searching, playing, pausing, resuming. Advanced: parental controls, profile switching, audio/subtitle selection, binge-watch features.
+Netflix's official public documentation supports claims about supported devices,
+browser requirements, playback access, downloads, and user-facing account
+behavior. It does not establish the details of Netflix's internal CDN, encoding
+pipeline, recommendation models, DRM implementation, APIs, or service topology.
+Those areas remain **unknown from this dossier** and must not be presented as
+verified facts by a build agent.
 
-# 6. Pricing and access
+## Alternative assessment
 
-- Tiered pricing: Basic, Standard, Premium (varies by region)
-- Basic: 1 stream, SD
-- Standard: 2 streams, Full HD
-- Premium: 4 streams, 4K UHD + HDR
-- Free trial (varies by region, increasingly rare)
-- No ad-supported tier (ad-tier launched 2022 in select regions)
-- Ads tier: Lower price with commercials
+### Jellyfin — partial software alternative
 
-# 7. API and integration surface
+Jellyfin is an open-source, self-hosted media server and client ecosystem. It is
+the closest reuse candidate for serving a user's own media library, but it does
+not provide Netflix's licensed catalogue, membership billing, rights agreements,
+or equivalent commercial content network.
 
-- Netflix API (limited; primarily for partners)
-- RESTful API for content metadata (requires partner integration)
-- Oauth 2.0 for authentication (partner-facing)
-- No public API for consumer account management or video playback
+### PeerTube — partial platform alternative
 
-# 8. Existing open-source alternatives
+PeerTube provides federated video hosting and playback. Its publishing and
+federation model differs materially from Netflix's subscription catalogue and
+managed streaming service.
 
-- Plex (media server and streaming)
-- Jellyfin (media server and streaming)
-- Peertube (Fediverse video)
-- No open-source alternative replicates Netflix's recommendation algorithm, content library, or DRM ecosystem.
+### Kodi — partial client alternative
 
-# 9. Alternative comparison
+Kodi is an open media-center client. It can address local playback workflows but
+is not a hosted subscription catalogue or a Netflix-compatible service.
 
-Plex and Jellyfin provide media server functionality with streaming. They differ in content licensing, recommendation algorithm, and DRM. PeerTube offers federated video but different scale and discovery models.
+## REA/build implications
 
-# 10. Missing capabilities and opportunity analysis
+An independent implementation should be scoped to a lawful media-library or
+video-on-demand workflow using content the operator owns or is licensed to serve.
+Reuse Jellyfin, PeerTube, or Kodi where their documented capabilities fit; do not
+claim Netflix compatibility, access Netflix's private APIs, copy protected content,
+or reproduce proprietary recommendation and rights systems without authorization.
 
-Recommendation algorithm, content licensing framework, and DRM ecosystem represent significant gaps. Plex/Jellyfin can self-host media libraries but not Netflix's streaming service.
+## Evidence record
 
-# 11. RAE implementation strategy
+| Claim | Source | What it supports |
+|---|---|---|
+| Netflix is a subscription streaming service for TV shows and movies | [Netflix Help: What is Netflix?](https://help.netflix.com/en/node/412) | Product identity, subscription access, content categories, downloads, and supported-device overview |
+| Netflix runs on supported TVs, phones, tablets, computers, players, and consoles | [Netflix Help: Supported Devices](https://help.netflix.com/en/node/14361) | Supported access surfaces |
+| Concurrent viewing is plan-limited | [Netflix Help: Add devices](https://help.netflix.com/en/node/558253171161700) | Device and simultaneous-screen behavior |
+| Offline downloads and Smart Downloads have eligibility limits | [Netflix Help: Download titles](https://help.netflix.com/en/node/54816), [Smart Downloads](https://help.netflix.com/en/node/122916) | Download and automatic-download behavior |
+| Browser and operating-system requirements vary | [Netflix Help: Supported browsers](https://help.netflix.com/en/node/30081) | Computer access constraints |
 
-Focus on media server self-hosting (Plex, Jellyfin) for personal/local content. Full streaming service replication is out of scope due to content licensing and DRM requirements.
+## Known gaps
 
-# 12. Security, privacy, and compliance
+- Internal architecture and operational scale are not established by these public
+  sources.
+- Netflix's full recommendation, catalogue-rights, billing, and DRM systems are
+  not public implementation specifications.
+- Region-specific pricing, plan names, catalogue availability, and device limits
+  require a dated regional check before use in an implementation plan.
 
-DRM (Widevine, FairPlay, PlayReady), account security, parental controls. Netflix privacy policy governs data handling. Compliance with COPPA for children's content.
+**Research date:** 2026-11-03.  
+**Confidence:** Verified for the public product surface; partial for alternatives.
 
-# 13. Sources and evidence
-
-- https://www.netflix.com/ (product page)
-- https://help.netflix.com/ (support documentation)
-- https://github.com/jellyfin/jellyfin (open-source media server reference)
-
-# 14. Open questions
-
-- What is the recommendation algorithm comparison between Plex/Jellyfin and Netflix?
-- How do DRM ecosystems (Widevine, FairPlay, PlayReady) compare in compatibility?
-- What bandwidth and storage requirements limit independent video platforms?
-
-# 15. Research history
-
-Initial research record created 2026-01-13. No prior research events.
-
----
-
-# 16. Alternative comparison (continued)
-
-Plex and Jellyfin provide media server functionality. Netflix's recommendation algorithm, content library, and DRM are not replicable without licensing.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Focus on media server self-hosting for local content. Netflix streaming service replication is out of scope.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier netflix-streaming` and inspect canonical identity with `npx rae-faang products show netflix-streaming --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier netflix-streaming` and inspect canonical identity with `npx rea-faang products show netflix-streaming --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -531,7 +551,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang netflix-streaming --out ./netflix-streaming.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit netflix-streaming --out ./netflix-streaming-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang netflix-streaming --out ./netflix-streaming.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit netflix-streaming --out ./netflix-streaming-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -573,5 +593,14 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://www.netflix.com/) — Netflix Streaming is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [What is Netflix?](https://help.netflix.com/en/node/412) — Netflix is a subscription-based streaming service for watching TV shows and movies on supported internet-connected devices. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Netflix Supported Devices](https://help.netflix.com/en/node/14361) — Netflix can be watched on supported TVs, phones, tablets, computers, streaming players, cable boxes, and game consoles. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [How to download titles to watch offline](https://help.netflix.com/en/node/54816) — Eligible titles can be downloaded through the Netflix app for offline viewing, subject to device, plan, and title limits. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://www.netflix.com/) — Netflix Streaming is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://help.netflix.com/en/node/412) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://help.netflix.com/en/node/412) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://help.netflix.com/en/node/14361) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://help.netflix.com/en/node/558253171161700) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://help.netflix.com/en/node/54816) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://help.netflix.com/en/node/122916) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Netflix Streaming Public web-surface observation (REA)](https://www.netflix.com/) — A dated unauthenticated snapshot exposed controls button: Get Started, button: Learn More, button: Nobody Wants This 2, button: KPop Demon Hunters PLAYlist 3, button: From 4, button: Love Is Blind 5, button: Doing Life 6, button: Below 7, button: Animals 8, button: The Diplomat 9, button: Beauty in Black 10, button: What is Netflix?, button: How much does Netflix cost?, button: Where can I watch?, button: How do I cancel?, button: What can I watch on Netflix?, button: Is Netflix good for kids?, combobox: Select Language, link: Sign In, textbox: Email address, link: 1-844-569-7700, link: FAQ, link: Help Center, link: Account, link: Netflix House, link: Media Center, link: Investor Relations, link: Jobs, link: Netflix Shop, link: Redeem Gift Cards, link: Buy Gift Cards, link: Ways to Watch, link: Terms of Use, link: Privacy, link: Cookie Preferences, link: Corporate Information, link: Contact Us, link: Speed Test, link: Legal Notices, link: Only on Netflix, link: Do Not Sell or Share My Personal Information, link: Ad Choices and landmarks banner, form: Sign up or restart your membership with Netflix., form: Sign up or restart your membership with Netflix., contentinfo. (VERIFIED; accessed 2026-11-03T01:42:29.769Z).

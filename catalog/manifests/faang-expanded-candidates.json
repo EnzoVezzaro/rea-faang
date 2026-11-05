@@ -1,6 +1,6 @@
 {
   "schema_version": "1.1",
-  "generated_at": "2026-11-03T04:19:09.664Z",
+  "generated_at": "2026-11-04T02:58:33.501Z",
   "scope": "FAANG plus Microsoft",
   "status": "deduped_candidate_inventory",
   "note": "Candidates come from public first-party catalogs. Editorial/navigation rows are excluded and equivalent names are merged. Entries are not research records until identity, product level, official URL, lifecycle and duplicates are reviewed.",
@@ -56,17 +56,17 @@
       "kind": "seed-only"
     }
   ],
-  "total_candidates": 1465,
+  "total_candidates": 1471,
   "discarded_rows": 150,
   "counts": {
-    "products": 1465,
-    "duplicates": 147,
+    "products": 1471,
+    "duplicates": 148,
     "noise": 150,
     "by_inventory_status": {
-      "verified": 170,
+      "verified": 179,
       "retired": 14,
-      "candidate": 1281,
-      "duplicate": 147,
+      "candidate": 1278,
+      "duplicate": 148,
       "navigation": 150
     },
     "by_company": {
@@ -103,19 +103,19 @@
         "noise": 116
       },
       "meta": {
-        "products": 5,
+        "products": 12,
         "candidates": 0,
-        "verified": 5,
+        "verified": 12,
         "retired": 0,
         "duplicates": 0,
         "noise": 0
       },
       "microsoft": {
-        "products": 377,
-        "candidates": 372,
-        "verified": 4,
+        "products": 376,
+        "candidates": 369,
+        "verified": 6,
         "retired": 1,
-        "duplicates": 7,
+        "duplicates": 8,
         "noise": 7
       },
       "netflix": {
@@ -10016,7 +10016,7 @@
         "https://about.google/products/"
       ],
       "inventory_status": "verified",
-      "research_status": "pending"
+      "research_status": "researched"
     },
     {
       "id": "google-google-account",
@@ -10215,7 +10215,7 @@
         "https://about.google/products/"
       ],
       "inventory_status": "verified",
-      "research_status": "pending"
+      "research_status": "researched"
     },
     {
       "id": "google-classroom",
@@ -10873,7 +10873,7 @@
         "https://about.google/products/"
       ],
       "inventory_status": "verified",
-      "research_status": "pending"
+      "research_status": "researched"
     },
     {
       "id": "google-google-home",
@@ -10966,7 +10966,7 @@
         "https://cloud.google.com/products/"
       ],
       "inventory_status": "verified",
-      "research_status": "pending"
+      "research_status": "researched"
     },
     {
       "id": "google-google-marketing-platform",
@@ -11165,7 +11165,7 @@
         "https://www.google.com/"
       ],
       "inventory_status": "verified",
-      "research_status": "pending"
+      "research_status": "researched"
     },
     {
       "id": "google-google-search-console",
@@ -14322,6 +14322,97 @@
       "research_status": "pending"
     },
     {
+      "id": "meta-messenger",
+      "company_id": "meta",
+      "name": "Messenger",
+      "product_type": "messaging",
+      "official_url": "https://www.messenger.com/",
+      "source_catalog": "catalog/products.jsonl",
+      "source_catalogs": [
+        "https://www.messenger.com/"
+      ],
+      "inventory_status": "verified",
+      "research_status": "researched"
+    },
+    {
+      "id": "meta-account",
+      "company_id": "meta",
+      "name": "Meta Account",
+      "product_type": "consumer_application",
+      "official_url": "https://www.meta.com/account/",
+      "source_catalog": "catalog/products.jsonl",
+      "source_catalogs": [
+        "https://www.meta.com/account/"
+      ],
+      "inventory_status": "verified",
+      "research_status": "researched"
+    },
+    {
+      "id": "meta-ai",
+      "company_id": "meta",
+      "name": "Meta AI",
+      "product_type": "ai_application",
+      "official_url": "https://www.meta.ai/",
+      "source_catalog": "catalog/products.jsonl",
+      "source_catalogs": [
+        "https://www.meta.ai/"
+      ],
+      "inventory_status": "verified",
+      "research_status": "researched"
+    },
+    {
+      "id": "meta-one",
+      "company_id": "meta",
+      "name": "Meta One",
+      "product_type": "consumer_subscription",
+      "official_url": "https://www.meta.com/meta-one-plans/",
+      "source_catalog": "catalog/products.jsonl",
+      "source_catalogs": [
+        "https://www.meta.com/meta-one-plans/"
+      ],
+      "inventory_status": "verified",
+      "research_status": "researched"
+    },
+    {
+      "id": "meta-pay",
+      "company_id": "meta",
+      "name": "Meta Pay",
+      "product_type": "consumer_application",
+      "official_url": "https://www.meta.com/meta-pay/",
+      "source_catalog": "catalog/products.jsonl",
+      "source_catalogs": [
+        "https://www.meta.com/meta-pay/"
+      ],
+      "inventory_status": "verified",
+      "research_status": "researched"
+    },
+    {
+      "id": "meta-verified",
+      "company_id": "meta",
+      "name": "Meta Verified",
+      "product_type": "consumer_subscription",
+      "official_url": "https://www.meta.com/meta-verified/",
+      "source_catalog": "catalog/products.jsonl",
+      "source_catalogs": [
+        "https://www.meta.com/meta-verified/"
+      ],
+      "inventory_status": "verified",
+      "research_status": "researched"
+    },
+    {
+      "id": "meta-muse",
+      "company_id": "meta",
+      "name": "Muse",
+      "product_type": "ai_agent_platform",
+      "official_url": "https://muse.ai/",
+      "source_catalog": "catalog/products.jsonl",
+      "source_catalogs": [
+        "https://muse.ai/"
+      ],
+      "inventory_status": "verified",
+      "research_status": "researched"
+    },
+    {
       "id": "meta-threads",
       "company_id": "meta",
       "name": "Threads",
@@ -15926,19 +16017,6 @@
       "research_status": "pending"
     },
     {
-      "id": "microsoft-edge",
-      "company_id": "microsoft",
-      "name": "Edge",
-      "product_type": "unclassified",
-      "official_url": "https://go.microsoft.com/fwlink/p/?LinkID=2115812&clcid=0x409&culture=en-us&country=us",
-      "source_catalog": "https://www.microsoft.com/en-us/microsoft-365/products-apps-services",
-      "source_catalogs": [
-        "https://www.microsoft.com/en-us/microsoft-365/products-apps-services"
-      ],
-      "inventory_status": "candidate",
-      "research_status": "pending"
-    },
-    {
       "id": "microsoft-editor-microsoft-editor",
       "company_id": "microsoft",
       "name": "Editor (Microsoft Editor)",
@@ -17284,17 +17362,18 @@
       "research_status": "pending"
     },
     {
-      "id": "microsoft-microsoft-edge",
+      "id": "microsoft-edge",
       "company_id": "microsoft",
       "name": "Microsoft Edge",
-      "product_type": "unclassified",
+      "product_type": "browser",
       "official_url": "https://www.microsoft.com/en-us/edge",
-      "source_catalog": "https://www.microsoft.com/en-us/microsoft-365/products-apps-services",
+      "source_catalog": "catalog/products.jsonl",
       "source_catalogs": [
+        "https://www.microsoft.com/en-us/edge",
         "https://www.microsoft.com/en-us/microsoft-365/products-apps-services"
       ],
-      "inventory_status": "candidate",
-      "research_status": "pending"
+      "inventory_status": "verified",
+      "research_status": "researched"
     },
     {
       "id": "microsoft-microsoft-fabric",
@@ -17374,6 +17453,20 @@
       ],
       "inventory_status": "candidate",
       "research_status": "pending"
+    },
+    {
+      "id": "microsoft-onedrive",
+      "company_id": "microsoft",
+      "name": "Microsoft OneDrive",
+      "product_type": "storage",
+      "official_url": "https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage",
+      "source_catalog": "catalog/products.jsonl",
+      "source_catalogs": [
+        "https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage",
+        "https://www.microsoft.com/en-us/microsoft-365/products-apps-services"
+      ],
+      "inventory_status": "verified",
+      "research_status": "researched"
     },
     {
       "id": "microsoft-microsoft-power-platform",
@@ -17800,19 +17893,6 @@
       "name": "Office Professional 2010",
       "product_type": "unclassified",
       "official_url": "https://www.microsoft.com/en-us/microsoft-365/previous-versions/microsoft-office-professional-2010",
-      "source_catalog": "https://www.microsoft.com/en-us/microsoft-365/products-apps-services",
-      "source_catalogs": [
-        "https://www.microsoft.com/en-us/microsoft-365/products-apps-services"
-      ],
-      "inventory_status": "candidate",
-      "research_status": "pending"
-    },
-    {
-      "id": "microsoft-onedrive",
-      "company_id": "microsoft",
-      "name": "OneDrive",
-      "product_type": "unclassified",
-      "official_url": "https://www.microsoft.com/en-us/microsoft-365/onedrive/online-cloud-storage",
       "source_catalog": "https://www.microsoft.com/en-us/microsoft-365/products-apps-services",
       "source_catalogs": [
         "https://www.microsoft.com/en-us/microsoft-365/products-apps-services"
@@ -19294,7 +19374,7 @@
         "https://www.netflix.com/tudum/games"
       ],
       "inventory_status": "verified",
-      "research_status": "pending"
+      "research_status": "researched"
     },
     {
       "id": "netflix-kids",
@@ -21381,6 +21461,20 @@
       "inventory_status": "duplicate",
       "research_status": "pending",
       "duplicate_of": "microsoft-365"
+    },
+    {
+      "id": "microsoft-microsoft-edge",
+      "company_id": "microsoft",
+      "name": "Microsoft Edge",
+      "product_type": "unclassified",
+      "official_url": "https://www.microsoft.com/en-us/edge",
+      "source_catalog": "https://www.microsoft.com/en-us/microsoft-365/products-apps-services",
+      "source_catalogs": [
+        "https://www.microsoft.com/en-us/microsoft-365/products-apps-services"
+      ],
+      "inventory_status": "duplicate",
+      "research_status": "pending",
+      "duplicate_of": "microsoft-edge"
     },
     {
       "id": "microsoft-microsoft-teams",

@@ -73,9 +73,9 @@ Compare policy grammar, schema validation, permit/forbid semantics, entity relat
 
 Research must map all policy-store, schema, policy, entity, authorization, batch, tag and deletion operations; Cedar version behavior; eventual consistency; error taxonomy; quotas; audit; IAM; and regional semantics. Any implementation must use original code and synthetic authorization fixtures.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product, user guide, API, CLI, FAQ and Cedar references as primary sources. The generated RAE skill should instruct an agent to build an independent authorization service beginning with the Cedar engine, then add policy-store persistence, schemas, APIs, templates, audit and tenancy only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS service parity.
+Use the official product, user guide, API, CLI, FAQ and Cedar references as primary sources. The generated REA skill should instruct an agent to build an independent authorization service beginning with the Cedar engine, then add policy-store persistence, schemas, APIs, templates, audit and tenancy only where evidence supports them. Preserve the partial-equivalence verdict and do not claim AWS service parity.
 
 # 12. Security, privacy, and compliance
 

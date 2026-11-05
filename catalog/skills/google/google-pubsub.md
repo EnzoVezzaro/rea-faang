@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Pub/Sub (google-pubsub); investigat
 
 # Pub/Sub — implementation skill (`google-pubsub`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Pub/Sub**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Pub/Sub (google-pubsub); investigat
 
 This is the coding-agent skill for **Pub/Sub** (`google-pubsub`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-pubsub.md` from the catalog page, or run `npx rae-faang google-pubsub --out ./google-pubsub.md`, `npx rae-faang skills generate google-pubsub` or `npx rae-faang build agent-kit google-pubsub --out ./google-pubsub-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-pubsub.md` from the catalog page, or run `npx rea-faang google-pubsub --out ./google-pubsub.md`, `npx rea-faang skills generate google-pubsub` or `npx rea-faang build agent-kit google-pubsub --out ./google-pubsub-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Pub/Sub / `google-pubsub` | `catalog/products.jsonl` |
 | Official product URL | [https://cloud.google.com/pubsub](https://cloud.google.com/pubsub) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-pubsub` | `research/companies/google/products/google-pubsub.md` |
+| Official documentation | [https://docs.cloud.google.com/pubsub/docs/overview](https://docs.cloud.google.com/pubsub/docs/overview) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-pubsub` | `research/companies/google/products/google-pubsub.md` |
 | REA report | `catalog/rea/google/google-pubsub.md` (captured 2026-11-03T01:39:11.015Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-pubsub.json` (`ev_9707bccc120008e65801f333836bebeac457c035961426a1790b3b2a735e2da1`) | Catalog evidence |
 | Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-pubsub --format json` and `npx rae-faang research dossier google-pubsub` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-pubsub --format json` and `npx rea-faang research dossier google-pubsub` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-PUBSUB-CAP-46D1D574`, `GOOGLE-PUBSUB-CAP-D906F1CB`, `GOOGLE-PUBSUB-CAP-D9C7F8E2`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-PUBSUB-CAP-AABA0167`, `GOOGLE-PUBSUB-CAP-518DC8EB`, `GOOGLE-PUBSUB-CAP-3E329370`, `GOOGLE-PUBSUB-CAP-E1020280`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Pub/Sub** / `google-pubsub` | Product catalog |
-| Company / category | Google / `messaging` / `messaging`, `event-streaming` | Product catalog |
-| Official website / docs | [https://cloud.google.com/pubsub](https://cloud.google.com/pubsub) / Not recorded | URL lead; compiler does not fetch source |
+| Company / category | Google / `messaging` / `messaging`, `event-streaming`, `event-bus`, `queues` | Product catalog |
+| Official website / docs | [https://cloud.google.com/pubsub](https://cloud.google.com/pubsub) / [https://docs.cloud.google.com/pubsub/docs/overview](https://docs.cloud.google.com/pubsub/docs/overview) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-PUBSUB-CAP-46D1D574` | Pub/sub messaging at scale | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-PUBSUB-CAP-D906F1CB` | Delivery guarantees | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-PUBSUB-CAP-D9C7F8E2` | Schema support | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-PUBSUB-CAP-AABA0167` | Topics, messages, publishers, subscribers and asynchronous event distribution are documented. | VERIFIED | `ev-google-pubsub-identity`, `ev-google-pubsub-basics` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-PUBSUB-CAP-518DC8EB` | Subscription delivery, acknowledgements, replay and documented delivery guarantees are supported with limits. | VERIFIED | `ev-google-pubsub-subscriptions`, `ev-google-pubsub-exactly-once` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-PUBSUB-CAP-3E329370` | REST/JSON, gRPC, client-library and endpoint surfaces are documented. | VERIFIED | `ev-google-pubsub-apis` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-PUBSUB-CAP-E1020280` | Open-source systems cover messaging and streaming, but managed operations, IAM integration and exact provider semantics are not equivalent. | VERIFIED | `ev-google-pubsub-apis`, `ev-google-pubsub-exactly-once` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Previous slide`, `button: Next slide`, `button: Solution Prompt Search Button`, `button: Search`, `link: Join us Nov 4 to discover innovations in databases, analytics, BI and storage for trusted agents. Register now.`, `link: Benefits`, `link: Key features`, `link: Customers`, `link: What's new`, `link: Documentation`, `link: Use cases`, `link: Stream analytics`, `link: Asynchronous microservices integration`, `link: Generate a solution`, `link: All features`, `link: Pricing`, `link: Take the next step`, `link: Try Pub/Sub free`, `link: Contact sales`, `link: data warehouse solution`, `link: BigQuery`, `link: Dataflow`, `link: controls`, `link: Pub/Sub logo connecting to different devices VIDEO Learn Pub/Sub in a minute, including how it works and common use cases 1:45`, `link: Cloud Storage`, `link: View all features`, `link: CME group logo Case study CME Group uses Pub/Sub to offer real-time market data, helping firms mitigate risk and drive revenue. 5-min read`, `link: Sky Case study Sky scales event publishing with Pub/Sub to build its next generation Sky Q box. 5-min read`, `link: See all customers`, `link: Sign up`, `link: real time AI at Next Video Use real-time data for AI/ML workloads in BigQuery Watch video`, `link: Pub/Sub Blog post Pub/Sub highlights from the last year Read the blog`, `link: Learn more`, `link: View all product documentation`, `link: Get a quick intro to using this product.`, `link: Learn to complete specific tasks with this product.`, `link: Browse guides and tutorials for this product.`, `link: View APIs, references, and other resources for this product.`, `link: Release notes Read about the latest releases for Pub/Sub`, `link: stream analytics`, `link: Cloud Functions`, `link: App Engine`, `link: Cloud Run,`, `link: Google Kubernetes Engine`, `link: Compute Engine`, `link: View all technical guides`, `textbox: Solution Prompt Search Text`, `link: Gemini`, `link: pricing guide`, `link: Cloud Platform SKUs`, `link: Find a partner`, `link: See all products`, `link: Google Cloud`, `link: Overview`, `link: Solutions`, `link: Products`, `link: Resources`, `combobox: Search`, `link: Docs`, `link: Support`, `link: Sign in`, `link: Cloud Pub/Sub`, `link: Start free`, `link: Contact us`, `link: Choosing Google Cloud`, `link: Trust and security`, `link: Modern Infrastructure Cloud`, `link: Multicloud`, `link: Global infrastructure`, `link: Locations`, `link: Customers and case studies`, `link: Analyst reports`, `link: Whitepapers`, `link: Blog`, `link: Google Cloud pricing`, `link: Google Workspace pricing`, `link: Infrastructure modernization`, `link: Databases`, `link: Application modernization`, `link: Smart analytics`, `link: Artificial Intelligence`, `link: Security`, `link: Productivity & work transformation`, `link: Industry solutions`, `link: DevOps solutions`, `link: Small business solutions`, `link: See all solutions`, `link: Google Cloud Affiliate Program`, `link: Google Cloud documentation`, `link: Google Cloud quickstarts`, `link: Google Cloud Marketplace`, `link: Learn about cloud computing`, `link: Code samples`, `link: Cloud Architecture Center`, `link: Training`, `link: Builders Hub`, `link: Certifications`, `link: Google for Developers`, `link: Google Cloud for Startups`, `link: System status`, `link: Release Notes`, `link: Find a Partner`, `link: Become a Partner`, `link: Events`, `link: Podcasts`, `link: Developer Center`, `link: Press Corner`, `link: Google Cloud on YouTube`, `link: Google Cloud Tech on YouTube`, `link: Follow on X`, `link: Join User Research`, `link: We're hiring. Join Google Cloud!`, `link: Community forums`, `link: About Google`, `link: Privacy`, `link: Site terms`, `link: Google Cloud terms`, `link: Subscribe`, `combobox: Language Selector`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Pub/sub messaging at scale:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Delivery guarantees:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Schema support:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Topics, messages, publishers, subscribers and asynchronous event distribution are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Subscription delivery, acknowledgements, replay and documented delivery guarantees are supported with limits.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **REST/JSON, gRPC, client-library and endpoint surfaces are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Open-source systems cover messaging and streaming, but managed operations, IAM integration and exact provider semantics are not equivalent.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-46D1D574 — Pub/sub messaging at scale
+### REQ-FUNC-AABA0167 — Topics, messages, publishers, subscribers and asynchronous event distribution are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-pubsub-identity`, `ev-google-pubsub-basics`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-46D1D574`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-PUBSUB-CAP-46D1D574` → `REQ-FUNC-46D1D574` → `TEST-FUNC-46D1D574`.
+- **Associated test ID:** `TEST-FUNC-AABA0167`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-PUBSUB-CAP-AABA0167` → `REQ-FUNC-AABA0167` → `TEST-FUNC-AABA0167`.
 
-### REQ-FUNC-D906F1CB — Delivery guarantees
+### REQ-FUNC-518DC8EB — Subscription delivery, acknowledgements, replay and documented delivery guarantees are supported with limits.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-pubsub-subscriptions`, `ev-google-pubsub-exactly-once`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D906F1CB`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-PUBSUB-CAP-D906F1CB` → `REQ-FUNC-D906F1CB` → `TEST-FUNC-D906F1CB`.
+- **Associated test ID:** `TEST-FUNC-518DC8EB`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-PUBSUB-CAP-518DC8EB` → `REQ-FUNC-518DC8EB` → `TEST-FUNC-518DC8EB`.
 
-### REQ-FUNC-D9C7F8E2 — Schema support
+### REQ-FUNC-3E329370 — REST/JSON, gRPC, client-library and endpoint surfaces are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-pubsub-apis`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D9C7F8E2`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-PUBSUB-CAP-D9C7F8E2` → `REQ-FUNC-D9C7F8E2` → `TEST-FUNC-D9C7F8E2`.
+- **Associated test ID:** `TEST-FUNC-3E329370`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-PUBSUB-CAP-3E329370` → `REQ-FUNC-3E329370` → `TEST-FUNC-3E329370`.
+
+### REQ-FUNC-E1020280 — Open-source systems cover messaging and streaming, but managed operations, IAM integration and exact provider semantics are not equivalent.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-pubsub-apis`, `ev-google-pubsub-exactly-once`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-E1020280`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-PUBSUB-CAP-E1020280` → `REQ-FUNC-E1020280` → `TEST-FUNC-E1020280`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -216,9 +227,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-PUBSUB-CAP-46D1D574` — Pub/sub messaging at scale | Not verified against NATS | None yet; compare with `ev_9707bccc120008e65801f333836bebeac457c035961426a1790b3b2a735e2da1` | Candidate code path and tests must be inspected |
-| `GOOGLE-PUBSUB-CAP-D906F1CB` — Delivery guarantees | Not verified against NATS | None yet; compare with `ev_9707bccc120008e65801f333836bebeac457c035961426a1790b3b2a735e2da1` | Candidate code path and tests must be inspected |
-| `GOOGLE-PUBSUB-CAP-D9C7F8E2` — Schema support | Not verified against NATS | None yet; compare with `ev_9707bccc120008e65801f333836bebeac457c035961426a1790b3b2a735e2da1` | Candidate code path and tests must be inspected |
+| `GOOGLE-PUBSUB-CAP-AABA0167` — Topics, messages, publishers, subscribers and asynchronous event distribution are documented. | Not verified against NATS | None yet; compare with `ev_9707bccc120008e65801f333836bebeac457c035961426a1790b3b2a735e2da1` | Candidate code path and tests must be inspected |
+| `GOOGLE-PUBSUB-CAP-518DC8EB` — Subscription delivery, acknowledgements, replay and documented delivery guarantees are supported with limits. | Not verified against NATS | None yet; compare with `ev_9707bccc120008e65801f333836bebeac457c035961426a1790b3b2a735e2da1` | Candidate code path and tests must be inspected |
+| `GOOGLE-PUBSUB-CAP-3E329370` — REST/JSON, gRPC, client-library and endpoint surfaces are documented. | Not verified against NATS | None yet; compare with `ev_9707bccc120008e65801f333836bebeac457c035961426a1790b3b2a735e2da1` | Candidate code path and tests must be inspected |
+| `GOOGLE-PUBSUB-CAP-E1020280` — Open-source systems cover messaging and streaming, but managed operations, IAM integration and exact provider semantics are not equivalent. | Not verified against NATS | None yet; compare with `ev_9707bccc120008e65801f333836bebeac457c035961426a1790b3b2a735e2da1` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -266,9 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-46D1D574** → `REQ-FUNC-46D1D574`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-D906F1CB** → `REQ-FUNC-D906F1CB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-D9C7F8E2** → `REQ-FUNC-D9C7F8E2`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-AABA0167** → `REQ-FUNC-AABA0167`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-518DC8EB** → `REQ-FUNC-518DC8EB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-3E329370** → `REQ-FUNC-3E329370`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-E1020280** → `REQ-FUNC-E1020280`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -289,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-46D1D574, REQ-FUNC-D906F1CB, REQ-FUNC-D9C7F8E2
+- **Requirements:** REQ-FUNC-AABA0167, REQ-FUNC-518DC8EB, REQ-FUNC-3E329370, REQ-FUNC-E1020280
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -299,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-46D1D574, REQ-FUNC-D906F1CB, REQ-FUNC-D9C7F8E2
+- **Requirements:** REQ-FUNC-AABA0167, REQ-FUNC-518DC8EB, REQ-FUNC-3E329370, REQ-FUNC-E1020280
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -321,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-46D1D574, REQ-FUNC-D906F1CB, REQ-FUNC-D9C7F8E2; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-AABA0167, REQ-FUNC-518DC8EB, REQ-FUNC-3E329370, REQ-FUNC-E1020280; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -351,7 +364,18 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://cloud.google.com/pubsub) | Not recorded | Pub/Sub is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-google-pubsub-identity` | What is Pub/Sub? — Official documentation describes topics, publishers and subscribers and identifies messaging, event distribution, analytics and integration use cases. | [link](https://docs.cloud.google.com/pubsub/docs/overview) | 2026-11-03T00:00:00Z | Pub/Sub is Google Cloud's asynchronous and scalable messaging service that decouples producers from consumers. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-pubsub-basics` | Overview of the Pub/Sub service — Official documentation explains the message flow from publishers through topics and subscriptions to subscribers, including acknowledgement behavior. | [link](https://docs.cloud.google.com/pubsub/docs/pubsub-basics) | 2026-11-03T00:00:00Z | Pub/Sub models topics, messages, schemas, subscriptions and subscriber clients as its core resources. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-pubsub-subscriptions` | Subscription overview — Official documentation describes subscription ownership, message availability after creation, acknowledgements and retention/replay behavior. | [link](https://docs.cloud.google.com/pubsub/docs/subscription-overview) | 2026-11-03T00:00:00Z | Pub/Sub subscriptions deliver topic messages to subscribers and support acknowledgement, replay and export-related workflows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-pubsub-apis` | Pub/Sub APIs overview — Official documentation describes the gRPC service definition, REST API, discovery resources and global/regional/locational endpoints. | [link](https://docs.cloud.google.com/pubsub/docs/reference/service_apis_overview) | 2026-11-03T00:00:00Z | Pub/Sub exposes REST/JSON and gRPC interfaces with client libraries and documented endpoints. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-pubsub-exactly-once` | Exactly-once delivery — Official documentation describes acknowledgement semantics, supported pull/streaming pull conditions and regional limitations. | [link](https://docs.cloud.google.com/pubsub/docs/exactly-once-delivery) | 2026-11-03T00:00:00Z | Pub/Sub documents exactly-once delivery for supported pull subscriptions with regional and latency constraints. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://cloud.google.com/pubsub) | 2026-11-03T00:00:00Z | Pub/Sub is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.cloud.google.com/pubsub/docs/overview) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://docs.cloud.google.com/pubsub/docs/overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.cloud.google.com/pubsub/docs/pubsub-basics) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.cloud.google.com/pubsub/docs/subscription-overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.cloud.google.com/pubsub/docs/reference/service_apis_overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.cloud.google.com/pubsub/docs/exactly-once-delivery) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_9707bccc120008e65801f333836bebeac457c035961426a1790b3b2a735e2da1` | Pub/Sub Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://cloud.google.com/pubsub) | 2026-11-03T01:39:11.015Z | A dated unauthenticated snapshot exposed controls button: Previous slide, button: Next slide, button: Solution Prompt Search Button, button: Search, link: Join us Nov 4 to discover innovations in databases, analytics, BI and storage for trusted agents. Register now., link: Benefits, link: Key features, link: Customers, link: What's new, link: Documentation, link: Use cases, link: Stream analytics, link: Asynchronous microservices integration, link: Generate a solution, link: All features, link: Pricing, link: Take the next step, link: Try Pub/Sub free, link: Contact sales, link: data warehouse solution, link: BigQuery, link: Dataflow, link: controls, link: Pub/Sub logo connecting to different devices VIDEO Learn Pub/Sub in a minute, including how it works and common use cases 1:45, link: Cloud Storage, link: View all features, link: CME group logo Case study CME Group uses Pub/Sub to offer real-time market data, helping firms mitigate risk and drive revenue. 5-min read, link: Sky Case study Sky scales event publishing with Pub/Sub to build its next generation Sky Q box. 5-min read, link: See all customers, link: Sign up, link: real time AI at Next Video Use real-time data for AI/ML workloads in BigQuery Watch video, link: Pub/Sub Blog post Pub/Sub highlights from the last year Read the blog, link: Learn more, link: View all product documentation, link: Get a quick intro to using this product., link: Learn to complete specific tasks with this product., link: Browse guides and tutorials for this product., link: View APIs, references, and other resources for this product., link: Release notes Read about the latest releases for Pub/Sub, link: stream analytics, link: Cloud Functions, link: App Engine, link: Cloud Run,, link: Google Kubernetes Engine, link: Compute Engine, link: View all technical guides, textbox: Solution Prompt Search Text, link: Gemini, link: pricing guide, link: Cloud Platform SKUs, link: Find a partner, link: See all products, link: Google Cloud, link: Overview, link: Solutions, link: Products, link: Resources, combobox: Search, link: Docs, link: Support, link: Sign in, link: Cloud Pub/Sub, link: Start free, link: Contact us, link: Choosing Google Cloud, link: Trust and security, link: Modern Infrastructure Cloud, link: Multicloud, link: Global infrastructure, link: Locations, link: Customers and case studies, link: Analyst reports, link: Whitepapers, link: Blog, link: Google Cloud pricing, link: Google Workspace pricing, link: Infrastructure modernization, link: Databases, link: Application modernization, link: Smart analytics, link: Artificial Intelligence, link: Security, link: Productivity & work transformation, link: Industry solutions, link: DevOps solutions, link: Small business solutions, link: See all solutions, link: Google Cloud Affiliate Program, link: Google Cloud documentation, link: Google Cloud quickstarts, link: Google Cloud Marketplace, link: Learn about cloud computing, link: Code samples, link: Cloud Architecture Center, link: Training, link: Builders Hub, link: Certifications, link: Google for Developers, link: Google Cloud for Startups, link: System status, link: Release Notes, link: Find a Partner, link: Become a Partner, link: Events, link: Podcasts, link: Developer Center, link: Press Corner, link: Google Cloud on YouTube, link: Google Cloud Tech on YouTube, link: Follow on X, link: Join User Research, link: We're hiring. Join Google Cloud!, link: Community forums, link: About Google, link: Privacy, link: Site terms, link: Google Cloud terms, link: Subscribe, combobox: Language Selector and landmarks complementary: Explore more docs 1, banner, navigation, contentinfo, navigation: Footer Links, navigation: Utility links. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -379,115 +403,85 @@ Resume token: `google-pubsub`. Read dossier, REA report and raw Evidence before 
 
 # 1. Executive summary
 
-Pub/Sub is Google Cloud's managed messaging and event-streaming service.
-
----
+Pub/Sub is Google Cloud's fully managed asynchronous messaging and event-distribution service. Publishers write messages to topics; subscriptions deliver them to subscriber applications through pull, streaming pull, push or export workflows. It is a distinct messaging product within Google Cloud and should not be merged into Cloud Storage, Dataflow or the general Google Cloud row.
 
 # 2. Product identity and ownership
 
 - **Official name:** Pub/Sub
-- **Company and business unit:** google
-- **Current lifecycle status:** active
-- **Official website:** https://cloud.google.com/pubsub
-
----
+- **Company:** Google LLC, part of Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://cloud.google.com/pubsub
+- **Identity evidence:** Official documentation describes Pub/Sub as an asynchronous, scalable messaging service that decouples producers from consumers and supports streaming analytics, integrations and task parallelization.
 
 # 3. Product capabilities
 
-- Pub/sub messaging at scale
-- Delivery guarantees
-- Schema support
-
----
+- Topics, messages, schemas, subscriptions, publishers and subscribers.
+- Pull, streaming pull, push and export subscription delivery patterns.
+- Message acknowledgement, retry policies, dead-letter handling, retention, replay and ordering.
+- Exactly-once delivery for supported pull subscriptions and regional conditions.
+- Integrations with Google Cloud data, serverless, analytics and workflow services.
 
 # 4. Technical architecture
 
-Not yet researched.
+Publishers send messages to named topics. A topic can have multiple subscriptions, and each subscription receives messages published after it is created. Subscriber clients receive messages, process them and acknowledge them; outstanding or failed messages can be redelivered according to subscription policy. The service exposes global, regional and locational endpoints and uses Google APIs, client libraries and gRPC/REST interfaces.
 
----
+# 5. User and developer workflows
 
-# 5. User workflows
-
-Not yet researched.
-
----
+An operator creates or selects a Google Cloud project, enables the Pub/Sub API, grants IAM roles, creates a topic and attaches a subscription. A publisher sends messages to the topic; one or more subscriber applications consume them through the selected subscription type. Teams configure schemas, batching, flow control, retry/dead-letter behavior, retention, ordering and monitoring according to delivery requirements.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+Pub/Sub access requires a Google Cloud project, enabled service and appropriate IAM permissions. Cost and quotas depend on message volume, throughput, retention, delivery and related operations. Exactly-once delivery has regional and subscription-type limits and can increase latency. This pass does not assert current pricing or a project's quota.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+Google documents REST/JSON and gRPC service APIs, client libraries, the gcloud CLI and console workflows. The public API exposes project, topic, subscription, schema, snapshot, message and acknowledgement operations. Pub/Sub integrates with Dataflow, Cloud Storage, BigQuery, Cloud Functions, Workflows and other systems, but each integration has its own permissions and delivery semantics.
 
 # 8. Existing open-source alternatives
 
-Open-source candidates exist: NATS (Apache-2.0) — High-performance messaging with JetStream persistence.; Apache Kafka (Apache-2.0) — Distributed event streaming platform.. Coverage is unverified until the dossier is researched.
-
----
+- **NATS (Apache-2.0):** lightweight messaging with JetStream persistence and streaming features.
+- **Apache Kafka (Apache-2.0):** distributed event-streaming platform with durable topics and consumer groups.
 
 # 9. Alternative comparison
 
-Messaging is a mature open-source category; the gap is Google's managed operations, not the technology.
-
----
+NATS and Apache Kafka cover publish/subscribe, durable streams, consumer groups and event distribution. They do not reproduce Google's managed service plane, IAM/project integration, regional endpoint behavior, proprietary integrations, quotas or exact Pub/Sub semantics. Coverage is partial for the complete Google service, while the core messaging category is mature.
 
 # 10. Missing capabilities and opportunity analysis
 
-Messaging is a mature open-source category; the gap is Google's managed operations, not the technology.
+A replacement still needs cluster or service operations, durability and replication, schema governance, retention, replay, ordering, retry/dead-letter policies, observability, IAM, tenancy, upgrades, disaster recovery and compatibility with existing producers and consumers. Open-source implementations are strong foundations; managed operations and migration compatibility are the main gaps.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Available. NATS and Kafka cover pub/sub and event streaming fully.
-
----
+Choose NATS for a lightweight service and JetStream workflow, or Kafka for durable high-throughput event streaming and ecosystem integration. Define ordering, at-least-once versus exactly-once expectations, replay, retention, schemas, failure handling and operational ownership before migration. Do not claim Pub/Sub API compatibility without testing resource naming, acknowledgement behavior, ordering, retries and integrations.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+Messages may contain customer data, credentials, events or regulated information. Verify IAM roles, service accounts, encryption, regional message-storage policy, endpoint choice, retention, audit logs, dead-letter access, subscription authorization and data minimization. Keep secrets and payload samples out of the catalog and reports.
 
 # 13. Sources and evidence
 
-- https://nats.io/
-- https://kafka.apache.org/
-
----
+- [What is Pub/Sub?](https://docs.cloud.google.com/pubsub/docs/overview) — official identity, use cases and producer/consumer model.
+- [Overview of the Pub/Sub service](https://docs.cloud.google.com/pubsub/docs/pubsub-basics) — official topics, messages, schemas and subscriptions.
+- [Subscription overview](https://docs.cloud.google.com/pubsub/docs/subscription-overview) — official subscription delivery and acknowledgement behavior.
+- [Pub/Sub APIs overview](https://docs.cloud.google.com/pubsub/docs/reference/service_apis_overview) — official REST/JSON, gRPC and endpoint surfaces.
+- [Exactly-once delivery](https://docs.cloud.google.com/pubsub/docs/exactly-once-delivery) — official delivery guarantees and limits.
 
 # 14. Open questions
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
+- Is the target a queue, event bus, durable event stream or analytics ingestion pipeline?
+- Which ordering, replay, retention and delivery guarantees are mandatory?
+- Which regions, integrations, throughput, IAM and compliance requirements are in scope?
 
 # 15. Research history
 
-- v1: dossier created; research pending.
+- v1: catalog candidate with preliminary NATS and Kafka alternatives, research pending.
+- v2: updated 2026-11-03 from official Google Cloud Pub/Sub documentation. Status: `researched`; managed operations, pricing, quotas and provider-specific integrations remain outside open-source equivalence.
 
----
-
-# 16. Alternative comparison (continued)
-
-Messaging is a mature open-source category; the gap is Google's managed operations, not the technology.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Available. NATS and Kafka cover pub/sub and event streaming fully.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-pubsub` and inspect canonical identity with `npx rae-faang products show google-pubsub --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-pubsub` and inspect canonical identity with `npx rea-faang products show google-pubsub --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -500,7 +494,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-pubsub --out ./google-pubsub.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-pubsub --out ./google-pubsub-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-pubsub --out ./google-pubsub.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-pubsub --out ./google-pubsub-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -542,5 +536,16 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://cloud.google.com/pubsub) — Pub/Sub is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [What is Pub/Sub?](https://docs.cloud.google.com/pubsub/docs/overview) — Pub/Sub is Google Cloud's asynchronous and scalable messaging service that decouples producers from consumers. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Overview of the Pub/Sub service](https://docs.cloud.google.com/pubsub/docs/pubsub-basics) — Pub/Sub models topics, messages, schemas, subscriptions and subscriber clients as its core resources. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Subscription overview](https://docs.cloud.google.com/pubsub/docs/subscription-overview) — Pub/Sub subscriptions deliver topic messages to subscribers and support acknowledgement, replay and export-related workflows. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Pub/Sub APIs overview](https://docs.cloud.google.com/pubsub/docs/reference/service_apis_overview) — Pub/Sub exposes REST/JSON and gRPC interfaces with client libraries and documented endpoints. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Exactly-once delivery](https://docs.cloud.google.com/pubsub/docs/exactly-once-delivery) — Pub/Sub documents exactly-once delivery for supported pull subscriptions with regional and latency constraints. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://cloud.google.com/pubsub) — Pub/Sub is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.cloud.google.com/pubsub/docs/overview) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://docs.cloud.google.com/pubsub/docs/overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.cloud.google.com/pubsub/docs/pubsub-basics) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.cloud.google.com/pubsub/docs/subscription-overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.cloud.google.com/pubsub/docs/reference/service_apis_overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.cloud.google.com/pubsub/docs/exactly-once-delivery) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Pub/Sub Public web-surface observation (REA)](https://cloud.google.com/pubsub) — A dated unauthenticated snapshot exposed controls button: Previous slide, button: Next slide, button: Solution Prompt Search Button, button: Search, link: Join us Nov 4 to discover innovations in databases, analytics, BI and storage for trusted agents. Register now., link: Benefits, link: Key features, link: Customers, link: What's new, link: Documentation, link: Use cases, link: Stream analytics, link: Asynchronous microservices integration, link: Generate a solution, link: All features, link: Pricing, link: Take the next step, link: Try Pub/Sub free, link: Contact sales, link: data warehouse solution, link: BigQuery, link: Dataflow, link: controls, link: Pub/Sub logo connecting to different devices VIDEO Learn Pub/Sub in a minute, including how it works and common use cases 1:45, link: Cloud Storage, link: View all features, link: CME group logo Case study CME Group uses Pub/Sub to offer real-time market data, helping firms mitigate risk and drive revenue. 5-min read, link: Sky Case study Sky scales event publishing with Pub/Sub to build its next generation Sky Q box. 5-min read, link: See all customers, link: Sign up, link: real time AI at Next Video Use real-time data for AI/ML workloads in BigQuery Watch video, link: Pub/Sub Blog post Pub/Sub highlights from the last year Read the blog, link: Learn more, link: View all product documentation, link: Get a quick intro to using this product., link: Learn to complete specific tasks with this product., link: Browse guides and tutorials for this product., link: View APIs, references, and other resources for this product., link: Release notes Read about the latest releases for Pub/Sub, link: stream analytics, link: Cloud Functions, link: App Engine, link: Cloud Run,, link: Google Kubernetes Engine, link: Compute Engine, link: View all technical guides, textbox: Solution Prompt Search Text, link: Gemini, link: pricing guide, link: Cloud Platform SKUs, link: Find a partner, link: See all products, link: Google Cloud, link: Overview, link: Solutions, link: Products, link: Resources, combobox: Search, link: Docs, link: Support, link: Sign in, link: Cloud Pub/Sub, link: Start free, link: Contact us, link: Choosing Google Cloud, link: Trust and security, link: Modern Infrastructure Cloud, link: Multicloud, link: Global infrastructure, link: Locations, link: Customers and case studies, link: Analyst reports, link: Whitepapers, link: Blog, link: Google Cloud pricing, link: Google Workspace pricing, link: Infrastructure modernization, link: Databases, link: Application modernization, link: Smart analytics, link: Artificial Intelligence, link: Security, link: Productivity & work transformation, link: Industry solutions, link: DevOps solutions, link: Small business solutions, link: See all solutions, link: Google Cloud Affiliate Program, link: Google Cloud documentation, link: Google Cloud quickstarts, link: Google Cloud Marketplace, link: Learn about cloud computing, link: Code samples, link: Cloud Architecture Center, link: Training, link: Builders Hub, link: Certifications, link: Google for Developers, link: Google Cloud for Startups, link: System status, link: Release Notes, link: Find a Partner, link: Become a Partner, link: Events, link: Podcasts, link: Developer Center, link: Press Corner, link: Google Cloud on YouTube, link: Google Cloud Tech on YouTube, link: Follow on X, link: Join User Research, link: We're hiring. Join Google Cloud!, link: Community forums, link: About Google, link: Privacy, link: Site terms, link: Google Cloud terms, link: Subscribe, combobox: Language Selector and landmarks complementary: Explore more docs 1, banner, navigation, contentinfo, navigation: Footer Links, navigation: Utility links. (VERIFIED; accessed 2026-11-03T01:39:11.015Z).

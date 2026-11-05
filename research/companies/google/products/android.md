@@ -3,130 +3,103 @@ schema_version: "1.0"
 id: "android"
 company_id: "google"
 name: "Android"
-aliases: []
+aliases: ["Android OS"]
 product_type: "operating_system"
 categories:
-  - "operating_system"
-official_url: "https://www.android.com/"
-official_docs_url: null
-official_source_urls: []
+  - "operating-system"
+  - "mobile"
+  - "open-source"
 lifecycle_status: "active"
-research_status: "pending"
-research_confidence: "unverified"
-alternative_status: "none_verified"
+official_url: "https://www.android.com/"
+official_docs_url: "https://source.android.com/docs"
+official_source_urls: ["https://source.android.com/docs/setup/about", "https://source.android.com/docs/setup/about/faqs", "https://developer.android.com/guide/platform", "https://developer.android.com/guide/components/fundamentals"]
+research_status: "researched"
+research_confidence: "verified"
+alternative_status: "partial"
 alternative_coverage: "unknown"
-opportunity_status: "integrate_existing"
-last_researched_at: null
-last_verified_at: null
-next_review_at: null
-research_version: 1
+opportunity_status: "research_further"
+last_researched_at: 2026-11-03T00:00:00Z
+last_verified_at: 2026-11-03T00:00:00Z
+next_review_at: 2027-02-03T00:00:00Z
+research_version: 2
+inventory_status: "verified"
+command_status: "documented"
+command_source: "https://source.android.com/docs/setup/about"
 ---
-
 # 1. Executive summary
 
-Android is a Linux-based mobile operating system developed by Google. It is the world's most widely deployed mobile OS, powering billions of devices globally. It includes the Android Open Source Project (AOSP) as the core component.
+Android is Google's mobile operating-system platform and software stack for phones, tablets, foldables, watches, TVs, cars and other device form factors. The Android Open Source Project (AOSP) supplies the open core and reference platform; Google Mobile Services, Play and device-specific proprietary components are separate layers and must not be treated as identical to AOSP.
 
 # 2. Product identity and ownership
 
 - **Official name:** Android
-- **Company and business unit:** Google
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2007
-- **Current lifecycle status:** active
-- **Previous names:** None
-- **Acquisitions or ownership changes:** None; acquired by Google in 2005 (originally by Android Inc.)
-- **Related products:** ChromeOS, Wear OS, Android Auto, Google Play
-- **Official website:** https://www.android.com/
-- **Official documentation:** https://developer.android.com/
+- **Company:** Google LLC, part of Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://www.android.com/
+- **Identity evidence:** Official Android and AOSP documentation identifies Android as an open-source, Linux-based software stack and AOSP as the source project for building and customizing Android devices.
 
 # 3. Product capabilities
 
-- Linux kernel base
-- Application framework with Java/Kotlin/Android APIs
-- Dalvik/ART runtime
-- Application sandboxing
-- Notifications framework
-- Connectivity ( cellular, Wi-Fi, Bluetooth, NFC)
-- Hardware abstraction layer (HAL)
-- File system with ext4/F2FS
-- Security model with Verified Boot and SELinux
+- Linux-based operating-system stack with kernel, hardware-abstraction layer, Android Runtime and framework APIs.
+- Application components, lifecycle management, sandboxing, permissions and inter-process communication.
+- Support for multiple device form factors and adaptive application interfaces.
+- App packaging and distribution through APK/App Bundle tooling; Google Play is a separate distribution and service layer.
+- Device customization, compatibility testing and platform development through AOSP.
 
 # 4. Technical architecture
 
-Android's architecture has multiple layers:
+The official platform architecture describes the Linux kernel, HAL, Android Runtime, Java API framework and system applications. Applications run in isolated processes with a sandbox and permission model; components include activities, services, broadcast receivers and content providers. AOSP provides source, build and compatibility documentation, while Google Mobile Services and many vendor/device integrations are outside the open AOSP core.
 
-- Linux kernel (core OS abstractions)
-- Hardware abstraction layer (HAL) for device components
-- Android runtime (ART) with Dalvik bytecode execution
-- Application framework (APIs for activities, services, content providers, broadcast receivers)
-- System apps and libraries
-- AOSP source code releases
+# 5. User and developer workflows
 
-AOSP provides the source code under the Apache 2.0 license. Device manufacturers implement AOSP with proprietary extensions (gapps, drivers).
-
-# 5. User workflows
-
-Primary workflows: app installation, configuration, notification handling, multimedia consumption, telephony. Essential: app management, notifications, camera access. Advanced: background services, custom ROM installation, system-level debugging.
+A device builder obtains and customizes AOSP, implements device-specific hardware support, and uses Android compatibility requirements when targeting the broader ecosystem. An app developer builds an APK or App Bundle with the Android SDK, declares components and permissions, tests across form factors, and distributes through a chosen channel such as Google Play or another authorized channel. Users install and run applications within Android's sandbox and permission model.
 
 # 6. Pricing and access
 
-AOSP is free and open source under Apache 2.0. Google Mobile Services (GMS) and Play Store are proprietary and require licensing. Device manufacturers pay for GMS certification.
+AOSP source and documentation are publicly available; device manufacture, certification, Google Mobile Services licensing, Play distribution and vendor components have separate terms and eligibility. This pass does not assert a device maker's access to proprietary Google services or current commercial licensing terms.
 
 # 7. API and integration surface
 
-- Android SDK / NDK APIs
-- Java/Kotlin/Multiplatform programming interfaces
-- Permission system (runtime permissions)
-- Content provider interface
-- Intent system for inter-app communication
+Android exposes framework APIs, SDK tools, application components, permissions, system services and device integration surfaces. AOSP documents platform source, build, customization, compatibility and testing. Android Developers documents app components, packaging and framework use. Access to Google APIs, Play services, device-specific APIs and certification is distinct from the public AOSP surface.
 
 # 8. Existing open-source alternatives
 
-- AOSP itself is the primary open-source Android source
-- LineageOS as a aftermarket firmware
-- /e/OS, /e.foundation de-Googled distributions
-- Replicant (de-Googled Android focus)
+- **AOSP (Apache-2.0 for most source):** the open Android core and upstream platform project.
+- **LineageOS (mixed open-source licenses):** community Android distribution based on the Android platform.
+- **GrapheneOS (MIT and other component licenses):** security-focused Android distribution with a privacy and hardening emphasis.
+- **/e/OS (varies by component):** privacy-focused Android-derived operating system and app suite.
 
 # 9. Alternative comparison
 
-AOSP provides the full open-source operating system. LineageOS and /e/OS are derivative distributions that remove proprietary Google components. Full GMS replacement requires effort.
+AOSP is the closest open foundation because it is the upstream Android core. LineageOS, GrapheneOS and /e/OS provide device-oriented distributions or forks with different device coverage, privacy choices, hardening and app-service layers. None reproduces every Google Mobile Services, Play, certification, vendor integration or commercial ecosystem feature. Coverage is partial for the full Google Android product surface.
 
 # 10. Missing capabilities and opportunity analysis
 
-De-Googled Android distributions exist but require device-specific maintenance. Building a fully independent mobile OS from scratch is extremely demanding. Focus on AOSP customization or distribution is more feasible.
+A full replacement would require hardware enablement, device-specific drivers and HALs, secure boot and update infrastructure, compatibility testing, app distribution, identity, push services, location, payments, proprietary media/DRM and a device ecosystem. AOSP-derived work is viable for bounded device platforms; reproducing Google's complete service layer is not established by this research.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Contribute to AOSP, build a de-Googled distribution, or extend LineageOS. Full OS development is out of scope.
+Choose the target device and scope first. For an open platform or custom device, start from AOSP and validate build, HAL, boot, security updates, compatibility and app packaging. For a privacy-focused consumer distribution, evaluate LineageOS, GrapheneOS or /e/OS according to device support and service requirements. Do not claim Google Mobile Services or Play compatibility without separate licensing, certification and device testing.
 
 # 12. Security, privacy, and compliance
 
-Verified Boot, SELinux, permission model, privacy controls. de-Googled distributions address data privacy concerns. Compliance depends on distribution and device.
+Android security depends on sandboxing, permissions, signing, secure update paths, device configuration, vendor support and the selected Google or non-Google service layer. Verify boot-chain control, patch cadence, app permissions, telemetry, encryption, enterprise controls, regional requirements and data-access boundaries for the target device.
 
 # 13. Sources and evidence
 
-- https://developer.android.com/ (documentation)
-- https://source.android.com/ (AOSP)
-- https://lineageos.org/ (aftermarket distribution)
+- [AOSP overview](https://source.android.com/docs/setup/about) — official Android/AOSP identity, customization and compatibility model.
+- [AOSP FAQ](https://source.android.com/docs/setup/about/faqs) — official open-source and Apache 2.0 licensing context.
+- [Android platform architecture](https://developer.android.com/guide/platform) — official Linux kernel, HAL, ART, framework and system-app architecture.
+- [Application fundamentals](https://developer.android.com/guide/components/fundamentals) — official app components, packaging, sandbox and permissions.
+- [Android Open Source Project](https://source.android.com/) — official source, build, customization and testing entry point.
 
 # 14. Open questions
 
-- What is the feasibility of a completely proprietary-free Android distribution?
-- How do GMS-dependent apps function without Google Services?
-- What is the maintenance burden of keeping AOSP customizations current?
+- Is the target AOSP itself, a device distribution, or the full Google Android ecosystem?
+- Which device models, form factors, hardware vendors and update commitments are in scope?
+- Are Google Mobile Services, Play certification, push notifications, DRM or enterprise management required?
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
-
----
-
-# 16. Alternative comparison (continued)
-
-AOSP, LineageOS, /e/OS, and Replicant are the primary open-source Android options. Varying degrees of GMS compatibility.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Contribute to AOSP de-Googling efforts or build on LineageOS. Full OS development not recommended for initial RAE projects.
+- v1: catalog candidate with open-source alternatives, research pending.
+- v2: updated 2026-11-03 from official Android Developers and AOSP documentation. Status: `researched`; proprietary Google services, vendor integrations and commercial licensing remain outside the verified open-core surface.

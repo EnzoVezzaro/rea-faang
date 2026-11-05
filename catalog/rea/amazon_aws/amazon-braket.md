@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Braket, recorded with REA.
 | Target | https://aws.amazon.com/braket/ |
 | Resolved URL | https://aws.amazon.com/braket/ |
 | Page title | Amazon Braket |
-| Captured | 2026-11-03T02:45:28.596Z |
+| Captured | 2026-11-04T02:39:49.650Z |
 | Status | captured |
-| REA Evidence ID | `ev_d964937e825c65fcd52e07391515d89abe2e5177cc49491758173b89be364b83` |
+| REA Evidence ID | `ev_fc08a150955ffc4cc63a393856857759459a23c5e2d84208f88dd126786b371a` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-braket.json`
-- Evidence ID: `ev_d964937e825c65fcd52e07391515d89abe2e5177cc49491758173b89be364b83`
+- Evidence ID: `ev_fc08a150955ffc4cc63a393856857759459a23c5e2d84208f88dd126786b371a`
 - Accessibility outline: 12592 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

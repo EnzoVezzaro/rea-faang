@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon EMR, recorded with REA.
 | Target | https://aws.amazon.com/emr/ |
 | Resolved URL | https://aws.amazon.com/emr/ |
 | Page title | Amazon EMR |
-| Captured | 2026-11-03T03:05:57.007Z |
+| Captured | 2026-11-04T02:43:09.260Z |
 | Status | captured |
-| REA Evidence ID | `ev_9da5ce3c7cbdb5d0e72c3fc3b6e199c33a9911033d65d0cbc1b2e59736a398e8` |
+| REA Evidence ID | `ev_644992be585596c70459c1f41158778684b7fbd19744383cec621f31bbdad1a1` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-emr.json`
-- Evidence ID: `ev_9da5ce3c7cbdb5d0e72c3fc3b6e199c33a9911033d65d0cbc1b2e59736a398e8`
-- Accessibility outline: 12263 bytes
+- Evidence ID: `ev_644992be585596c70459c1f41158778684b7fbd19744383cec621f31bbdad1a1`
+- Accessibility outline: 12240 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

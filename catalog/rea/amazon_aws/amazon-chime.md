@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Chime, recorded with REA.
 | Target | https://aws.amazon.com/chime/ |
 | Resolved URL | https://aws.amazon.com/chime/getting-started/ |
 | Page title | Getting started with Amazon Chime |
-| Captured | 2026-11-03T02:46:10.188Z |
+| Captured | 2026-11-04T02:39:56.352Z |
 | Status | captured |
-| REA Evidence ID | `ev_8c12a0c7cb2b1e1c54c4642b348cb6ed43268a0f135ace1c66a3bca31a94944f` |
+| REA Evidence ID | `ev_5b5d84f8d5ff94944ac94a948105b1c5a8befd5d4608a7c5d03be2151312efeb` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -154,6 +154,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-chime.json`
-- Evidence ID: `ev_8c12a0c7cb2b1e1c54c4642b348cb6ed43268a0f135ace1c66a3bca31a94944f`
-- Accessibility outline: 14245 bytes
+- Evidence ID: `ev_5b5d84f8d5ff94944ac94a948105b1c5a8befd5d4608a7c5d03be2151312efeb`
+- Accessibility outline: 14268 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

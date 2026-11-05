@@ -82,7 +82,7 @@ Open-source identity servers can cover user directories, OIDC, SAML and MFA, but
 
 REA should separate user-pool authentication, identity-pool federation, managed login, passkeys/MFA, AWS role exchange, triggers, synchronization and administrative APIs. Cognito Sync must remain a distinct lifecycle entry if analyzed.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public protocols, documentation and permitted test applications only. A clean-room equivalent should use standard OIDC/SAML/WebAuthn components and explicit least-privilege credential exchange; it must not copy AWS implementation, tokens or proprietary assets.
 

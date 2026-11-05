@@ -8,138 +8,128 @@ product_type: "media_streaming"
 categories:
   - "media_streaming"
 official_url: "https://www.netflix.com/"
-official_docs_url: null
-official_source_urls: []
+official_docs_url: "https://help.netflix.com/en/node/412"
+official_source_urls:
+  - "https://help.netflix.com/en/node/412"
+  - "https://help.netflix.com/en/node/14361"
+  - "https://help.netflix.com/en/node/558253171161700"
+  - "https://help.netflix.com/en/node/54816"
+  - "https://help.netflix.com/en/node/122916"
 lifecycle_status: "active"
-research_status: "pending"
-research_confidence: "unverified"
-alternative_status: "none_verified"
+research_status: "researched"
+research_confidence: "verified"
+alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "integrate_existing"
-last_researched_at: null
-last_verified_at: null
-next_review_at: null
-research_version: 1
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: "2027-02-03T00:00:00Z"
+research_version: 2
 ---
 
-# 1. Executive summary
+# Netflix Streaming
 
-Netflix Streaming is the core on-demand video streaming service offered by Netflix, providing a vast library of movies, TV shows, and original content to subscribers worldwide. It is a pioneer in streaming technology, adaptive bitrate, and recommendation systems.
+## Research verdict
 
-# 2. Product identity and ownership
+Netflix is an active subscription video-streaming service. Netflix's official help
+documentation identifies the service as a way for members to watch TV shows and
+movies on supported internet-connected devices. The public evidence verifies the
+consumer surface and supported workflows; it does not verify Netflix's internal
+delivery, recommendation, encoding, or DRM implementation.
 
-- **Official name:** Netflix Streaming
-- **Company and business unit:** Netflix
-- **Parent organization:** Netflix Inc. (standalone public company)
-- **Original launch date:** 2007 ( DVD rental transition to streaming)
-- **Current lifecycle status:** active
-- **Previous names:** None (streaming service launched 2007; DVD service rebranded to DVD.com)
-- **Acquisitions or ownership changes:** None; Netflix is a standalone public company
-- **Related products:** Netflix DVD, Netflix App, Netflix Games, Shuffle, Max (formerly HBO Max - separate), Amazon Prime Video
-- **Official website:** https://www.netflix.com/
-- **Official documentation:** https://help.netflix.com/
+The open-source alternative search is **partial**: Jellyfin, PeerTube, and Kodi
+cover parts of the software and self-hosting problem, but none provides Netflix's
+licensed catalogue, membership service, device ecosystem, or commercial rights.
 
-# 3. Product capabilities
+## Product identity and boundary
 
-- On-demand video streaming with adaptive bitrate streaming
-- Multiple concurrent streams per subscription tier
-- Offline download for mobile apps
-- User profiles and parental controls
-- Recommendation algorithm (personalized content suggestions)
-- Search and content discovery
-- Audio language and subtitle selection
-- 4K and HDR support (Dolby Vision, HDR10)
-- Spatial audio support
-- Smart download (auto-download next episodes)
-- Skip intro and episode auto-advance
-- Binge-watch detection and recommendations
-- Account management and device management
-- Netflix House (physical events and retail - limited)
+- **Owner:** Netflix, Inc.
+- **Canonical product ID:** `netflix-streaming`
+- **Lifecycle:** Active
+- **Public entry point:** https://www.netflix.com/
+- **Product boundary:** The subscription streaming experience for discovering and
+  watching Netflix TV shows, films, documentaries, and Netflix originals.
+- **Related catalog entries:** `netflix-profiles` covers profile and household
+  controls as a related experience; `netflix-games` is a separate product
+  surface. Netflix DVD is discontinued and Netflix Kids is a retired catalog
+  grouping, not a separate streaming backend.
 
-# 4. Technical architecture
+## Verified user capabilities
 
-Netflix's streaming infrastructure is highly scaled:
+The official sources verify that members can:
 
-- Adaptive bitrate streaming (Dynamic Optimizer)
-- Global content delivery network (Open Connect)
-- Video encoding pipeline (multiple codecs: AVC, HEVC, VP9, AV1)
-- Recommendation engine (personalization algorithms)
-- Content metadata and classification system
-- Client applications (smart TVs, mobile, web, game consoles)
-- DRM and content protection (Widevine, FairPlay, PlayReady)
-- Analytics and A/B testing framework
-- ABR ladders and renditions per title
+1. Watch TV shows and movies through supported Netflix apps or a supported web
+   browser.
+2. Use supported smart TVs, streaming players, cable boxes, game consoles,
+   phones, tablets, and computers.
+3. Download eligible titles in the Netflix app for offline viewing on supported
+   devices. Availability depends on the title, device, profile restrictions, and
+   plan; downloads are not universal.
+4. Use multiple devices, with simultaneous viewing limited by the membership
+   plan rather than by a fixed global device count.
+5. Use profile-based recommendations and controls. The separate
+   `netflix-profiles` dossier documents that related surface in more detail.
+6. Use Smart Downloads features where the plan and device support them.
 
-Full architecture is proprietary; client API and ABR behavior are partially documented.
+Content availability, device support, download eligibility, simultaneous screens,
+and plan features vary by country, plan, device, and time. Pricing and plan names
+are intentionally not copied here because they are region- and date-dependent.
 
-# 5. User workflows
+## Technical boundary
 
-Primary workflows: content discovery, playback control, profile management, and download. Essential: searching, playing, pausing, resuming. Advanced: parental controls, profile switching, audio/subtitle selection, binge-watch features.
+Netflix's official public documentation supports claims about supported devices,
+browser requirements, playback access, downloads, and user-facing account
+behavior. It does not establish the details of Netflix's internal CDN, encoding
+pipeline, recommendation models, DRM implementation, APIs, or service topology.
+Those areas remain **unknown from this dossier** and must not be presented as
+verified facts by a build agent.
 
-# 6. Pricing and access
+## Alternative assessment
 
-- Tiered pricing: Basic, Standard, Premium (varies by region)
-- Basic: 1 stream, SD
-- Standard: 2 streams, Full HD
-- Premium: 4 streams, 4K UHD + HDR
-- Free trial (varies by region, increasingly rare)
-- No ad-supported tier (ad-tier launched 2022 in select regions)
-- Ads tier: Lower price with commercials
+### Jellyfin — partial software alternative
 
-# 7. API and integration surface
+Jellyfin is an open-source, self-hosted media server and client ecosystem. It is
+the closest reuse candidate for serving a user's own media library, but it does
+not provide Netflix's licensed catalogue, membership billing, rights agreements,
+or equivalent commercial content network.
 
-- Netflix API (limited; primarily for partners)
-- RESTful API for content metadata (requires partner integration)
-- Oauth 2.0 for authentication (partner-facing)
-- No public API for consumer account management or video playback
+### PeerTube — partial platform alternative
 
-# 8. Existing open-source alternatives
+PeerTube provides federated video hosting and playback. Its publishing and
+federation model differs materially from Netflix's subscription catalogue and
+managed streaming service.
 
-- Plex (media server and streaming)
-- Jellyfin (media server and streaming)
-- Peertube (Fediverse video)
-- No open-source alternative replicates Netflix's recommendation algorithm, content library, or DRM ecosystem.
+### Kodi — partial client alternative
 
-# 9. Alternative comparison
+Kodi is an open media-center client. It can address local playback workflows but
+is not a hosted subscription catalogue or a Netflix-compatible service.
 
-Plex and Jellyfin provide media server functionality with streaming. They differ in content licensing, recommendation algorithm, and DRM. PeerTube offers federated video but different scale and discovery models.
+## REA/build implications
 
-# 10. Missing capabilities and opportunity analysis
+An independent implementation should be scoped to a lawful media-library or
+video-on-demand workflow using content the operator owns or is licensed to serve.
+Reuse Jellyfin, PeerTube, or Kodi where their documented capabilities fit; do not
+claim Netflix compatibility, access Netflix's private APIs, copy protected content,
+or reproduce proprietary recommendation and rights systems without authorization.
 
-Recommendation algorithm, content licensing framework, and DRM ecosystem represent significant gaps. Plex/Jellyfin can self-host media libraries but not Netflix's streaming service.
+## Evidence record
 
-# 11. RAE implementation strategy
+| Claim | Source | What it supports |
+|---|---|---|
+| Netflix is a subscription streaming service for TV shows and movies | [Netflix Help: What is Netflix?](https://help.netflix.com/en/node/412) | Product identity, subscription access, content categories, downloads, and supported-device overview |
+| Netflix runs on supported TVs, phones, tablets, computers, players, and consoles | [Netflix Help: Supported Devices](https://help.netflix.com/en/node/14361) | Supported access surfaces |
+| Concurrent viewing is plan-limited | [Netflix Help: Add devices](https://help.netflix.com/en/node/558253171161700) | Device and simultaneous-screen behavior |
+| Offline downloads and Smart Downloads have eligibility limits | [Netflix Help: Download titles](https://help.netflix.com/en/node/54816), [Smart Downloads](https://help.netflix.com/en/node/122916) | Download and automatic-download behavior |
+| Browser and operating-system requirements vary | [Netflix Help: Supported browsers](https://help.netflix.com/en/node/30081) | Computer access constraints |
 
-Focus on media server self-hosting (Plex, Jellyfin) for personal/local content. Full streaming service replication is out of scope due to content licensing and DRM requirements.
+## Known gaps
 
-# 12. Security, privacy, and compliance
+- Internal architecture and operational scale are not established by these public
+  sources.
+- Netflix's full recommendation, catalogue-rights, billing, and DRM systems are
+  not public implementation specifications.
+- Region-specific pricing, plan names, catalogue availability, and device limits
+  require a dated regional check before use in an implementation plan.
 
-DRM (Widevine, FairPlay, PlayReady), account security, parental controls. Netflix privacy policy governs data handling. Compliance with COPPA for children's content.
-
-# 13. Sources and evidence
-
-- https://www.netflix.com/ (product page)
-- https://help.netflix.com/ (support documentation)
-- https://github.com/jellyfin/jellyfin (open-source media server reference)
-
-# 14. Open questions
-
-- What is the recommendation algorithm comparison between Plex/Jellyfin and Netflix?
-- How do DRM ecosystems (Widevine, FairPlay, PlayReady) compare in compatibility?
-- What bandwidth and storage requirements limit independent video platforms?
-
-# 15. Research history
-
-Initial research record created 2026-01-13. No prior research events.
-
----
-
-# 16. Alternative comparison (continued)
-
-Plex and Jellyfin provide media server functionality. Netflix's recommendation algorithm, content library, and DRM are not replicable without licensing.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Focus on media server self-hosting for local content. Netflix streaming service replication is out of scope.
+**Research date:** 2026-11-03.  
+**Confidence:** Verified for the public product surface; partial for alternatives.

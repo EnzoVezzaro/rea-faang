@@ -76,9 +76,9 @@ The alternative landscape is partial. Open search engines can reproduce bounded-
 
 No new product opportunity is recommended from this retired entry. Any historical compatibility project would need to define its target API subset and preserve only independently implementable behavior.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the RAE skill only for clean-room study of public documentation and permitted interfaces. Keep this entry as a retired reference and do not instruct an agent to reproduce proprietary implementation details or bypass account restrictions.
+Use the REA skill only for clean-room study of public documentation and permitted interfaces. Keep this entry as a retired reference and do not instruct an agent to reproduce proprietary implementation details or bypass account restrictions.
 
 # 12. Security, privacy, and compliance
 

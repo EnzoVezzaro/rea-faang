@@ -14,16 +14,17 @@ official_source_urls:
   - "https://docs.aws.amazon.com/opensearch-service/"
   - "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html"
   - "https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Operations_Amazon_OpenSearch_Service.html"
-  - "https://opensearch.org/"
-research_status: "pending"
-research_confidence: "unverified"
+  - "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless.html"
+  - "https://opensearch.org/About/"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: 2026-11-03T00:00:00Z
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: 2027-02-03T00:00:00Z
+research_version: 2
 ---
 
 # 1. Executive summary
@@ -73,7 +74,7 @@ An independent equivalent should separate the OpenSearch engine from the managed
 
 Research must map domain/collection lifecycle states, APIs, authentication, policy evaluation, network modes, node/storage options, autoscaling, Serverless capacity, ingestion transforms, query semantics, snapshots, upgrades, replication, alerts and quotas.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS pages and documentation for service behavior, and the official OpenSearch repository for the open-source engine. Capture public workflows and authorized test accounts only. Build an independent implementation in the consumer project with original configuration and code, clearly separating engine reuse from AWS-specific service behavior.
 
@@ -81,14 +82,16 @@ Use official AWS pages and documentation for service behavior, and the official 
 
 Verify IAM and fine-grained access policies, VPC/public access, TLS, encryption at rest, KMS, snapshots, audit logs, tenant isolation, plugin permissions, data retention and cross-account access.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
 - https://aws.amazon.com/opensearch-service/ — official product context.
 - https://docs.aws.amazon.com/opensearch-service/ — official capabilities, workflows and references.
 - https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html — domain and engine model.
-- https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Operations_Amazon_OpenSearch_Service.html — service API reference.
-- https://opensearch.org/ — open-source project context.
-- https://github.com/opensearch-project/OpenSearch — source repository and license lead.
+- [What is Amazon OpenSearch Service?](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html) — official managed-domain identity, integrations and operational features.
+- [Amazon OpenSearch Serverless](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless.html) — official serverless collections, scaling and encryption model.
+- [Amazon OpenSearch Service API operations](https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_Operations_Amazon_OpenSearch_Service.html) — official configuration and lifecycle API surface.
+- [OpenSearch](https://opensearch.org/About/) — official open-source engine, dashboards and Apache-2.0 project context.
+- [OpenSearch downloads and license](https://opensearch.org/downloads/) — official Apache-2.0 licensing and self-managed distribution.
 
 # 14. Unknowns
 
@@ -99,4 +102,4 @@ Verify IAM and fine-grained access policies, VPC/public access, TLS, encryption 
 
 # 15. Research status
 
-`pending`: identity, public capabilities and the primary open-source foundation are documented, but full REA capture, behavior, limits, security and implementation equivalence remain unverified.
+`researched`: identity, managed-domain and Serverless capabilities, API surface and OpenSearch foundation were verified from official AWS and OpenSearch documentation. Pricing, quotas, account-specific behavior and full service-plane equivalence remain outside this pass.

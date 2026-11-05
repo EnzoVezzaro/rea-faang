@@ -73,9 +73,9 @@ Pending evidence-backed comparison. AWS-managed media services, integrations and
 
 Pending REA investigation. Any independent implementation must scope signaling, media routing, TURN/STUN, recording, messaging, identity and observability separately.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the RAE skill on public documentation and permitted SDK surfaces. Prefer an existing open protocol or media foundation only after verifying license, security, scale and feature fit.
+Use the REA skill on public documentation and permitted SDK surfaces. Prefer an existing open protocol or media foundation only after verifying license, security, scale and feature fit.
 
 # 12. Security, privacy, and compliance
 

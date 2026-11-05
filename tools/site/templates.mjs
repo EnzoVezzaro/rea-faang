@@ -11,8 +11,8 @@ import { agentInstructions, productDescription } from '../agent-kit-content.mjs'
 
 // Canonical origin for the published site. The repository deploys to GitHub
 // Pages (see .github/workflows/pages.yml) and declares the same URL in
-// package.json "homepage"; set RAE_SITE_URL to build for a preview host.
-export const BASE_URL = (process.env.RAE_SITE_URL || 'https://enzovezzaro.github.io/rea-faang').replace(/\/+$/, '');
+// package.json "homepage"; set REA_SITE_URL to build for a preview host.
+export const BASE_URL = (process.env.REA_SITE_URL || 'https://enzovezzaro.github.io/rea-faang').replace(/\/+$/, '');
 export const REPO_URL = 'https://github.com/EnzoVezzaro/rea-faang';
 
 export const STATUS_META = {
@@ -81,18 +81,18 @@ export function layout({
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#0B0C0A" />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="RAE FAANG" />
+    <meta property="og:site_name" content="REA FAANG" />
     <meta property="og:title" content="${attr(title)}" />
     <meta property="og:description" content="${attr(description)}" />
     <meta property="og:url" content="${attr(ogUrl)}" />
-    <meta property="og:image" content="${BASE_URL}/assets/rae-banner.png" />
-    <meta property="og:image:alt" content="RAE FAANG — choose products to build with your coding agent" />
+    <meta property="og:image" content="${BASE_URL}/assets/rea-banner.png" />
+    <meta property="og:image:alt" content="REA FAANG — choose products to build with your coding agent" />
     <meta property="og:image:width" content="1774" />
     <meta property="og:image:height" content="887" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="${attr(title)}" />
     <meta name="twitter:description" content="${attr(description)}" />
-    <meta name="twitter:image" content="${BASE_URL}/assets/rae-banner.png" />
+    <meta name="twitter:image" content="${BASE_URL}/assets/rea-banner.png" />
     <link rel="canonical" href="${attr(ogUrl)}" />
     <link rel="icon" href="${p}favicon.svg" type="image/svg+xml" />
     <link rel="sitemap" type="application/xml" href="${BASE_URL}/sitemap.xml" />
@@ -109,8 +109,8 @@ export function layout({
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <div class="wrap header-inner">
-        <a class="wordmark" href="${p}index.html" aria-label="RAE FAANG home">
-          <img class="wordmark-image" src="${p}docs/assets/brand-logo-icon.png" alt="RAE FAANG" width="224" height="43" />
+        <a class="wordmark" href="${p}index.html" aria-label="REA FAANG home">
+          <img class="wordmark-image" src="${p}docs/assets/brand-logo-icon.png" alt="REA FAANG" width="224" height="43" />
         </a>
         <nav class="nav" aria-label="Primary">
           ${navLink(`${p}catalog/`, 'Catalog', 'catalog')}
@@ -133,10 +133,10 @@ ${content}
     </main>
     <footer class="site-footer">
       <div class="wrap footer-inner">
-        <div>            <p class="footer-mark">RAE FAANG</p>
+        <div>            <p class="footer-mark">REA FAANG</p>
           <p class="footer-mission">
             We don't need FAANG anymore. Choose a product from Meta, Amazon, Apple, Netflix or Google
-            and use your agent to build it in your project. RAE FAANG brings together the catalog,
+            and use your agent to build it in your project. REA FAANG brings together the catalog,
             product research and candidate open-source projects. MIT licensed.
           </p>
         </div>
@@ -200,7 +200,7 @@ function buildPassMarkup({ featured, products, interactive = false }) {
     : `<div class="pass-static-identity"><span>Product skill</span><a href="${skillHref}" download>Download ${esc(featured.name)} skill ↓</a></div>`;
   return `<div class="pass-stage" data-build-pass>
     <article class="build-pass" data-pass-status="${attr(featured.status)}" aria-label="Product Build Pass for ${attr(featured.name)}">
-      <div class="build-pass-brand"><span class="pass-mark" aria-hidden="true"><img src="${interactive ? 'docs/assets/brand-symbol.png' : '../../docs/assets/brand-symbol.png'}" alt="" width="22" height="22" /></span><span>RAE FAANG</span><span>PRODUCT BUILD PASS</span></div>
+      <div class="build-pass-brand"><span class="pass-mark" aria-hidden="true"><img src="${interactive ? 'docs/assets/brand-symbol.png' : '../../docs/assets/brand-symbol.png'}" alt="" width="22" height="22" /></span><span>REA FAANG</span><span>PRODUCT BUILD PASS</span></div>
       <div class="build-pass-core">
         <p class="pass-kicker">CHOOSE A PRODUCT · BUILD WITH YOUR AGENT</p>
         <h2 class="pass-title" data-pass-name>${esc(featured.name)}</h2>
@@ -210,7 +210,7 @@ function buildPassMarkup({ featured, products, interactive = false }) {
       </div>
       <div class="pass-selector-group">${select}</div>
       <div class="pass-actions"><a class="pass-skill-link" data-pass-skill href="${skillHref}" download>Get this product skill <span aria-hidden="true">↓</span></a>${interactive ? `<a class="pass-dossier-link" data-pass-dossier href="${detailHref}">View dossier</a>` : ''}</div>
-      <div class="pass-serial"><span>RAE / FIELD NOTE · Product skill included.</span><span data-pass-id>${attr(featured.id)}</span></div>
+      <div class="pass-serial"><span>REA / FIELD NOTE · Product skill included.</span><span data-pass-id>${attr(featured.id)}</span></div>
     </article>
     ${interactive ? '<p class="sr-only" data-pass-announcement aria-live="polite"></p>' : ''}
     ${interactive ? '<p class="pass-instruction">Choose a product. Its real catalog details and downloadable skill update together.</p>' : ''}
@@ -260,7 +260,7 @@ ${rows}
   }).filter(Boolean).join('\n');
   const featured = diagram[0] || null;
   const featuredProduct = featured && (products.find((product) => product.id === featured.product_id) || {
-    id: featured.product_id, name: featured.product, status: featured.status, companyName: 'RAE FAANG', alternatives: [],
+    id: featured.product_id, name: featured.product, status: featured.status, companyName: 'REA FAANG', alternatives: [],
   });
   const heroProducts = preview.map((product) => `              <li class="glyph-spotlight" data-coverage="${attr(product.status)}"><button class="hero-product-pick" type="button" data-pass-pick="${attr(product.id)}" aria-pressed="${product.id === featuredProduct?.id}"><span class="glyph-spotlight-name">${esc(product.name)}</span><span class="glyph-spotlight-meta">${esc(product.companyName)} <span>${coverageLabels[product.status]}</span></span></button></li>`).join('\n');
   const content = `      <!-- Landing thesis and catalog-derived product index -->
@@ -270,7 +270,7 @@ ${rows}
             <h1>We don't need<br />FAANG anymore.</h1>
             <p class="hero-proposition">Use your agent to build any of their products.</p>
             <p class="lede">
-              RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft. Choose what
+              REA FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft. Choose what
               you want to build; product research and candidate open-source projects give your coding
               agent a concrete place to start in your project. A product build skill is there when you
               want a direct handoff.
@@ -307,7 +307,7 @@ ${heroProducts}
             <p class="eyebrow">From catalog to your project</p>
             <h2 id="story-h">Choose what you want your agent to build.</h2>
             <p>
-              RAE FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft so you can
+              REA FAANG catalogs products from Meta, Amazon, Apple, Netflix, Google and Microsoft so you can
               choose what to build with your coding agent. Each product page brings together behavior,
               research and candidate open-source projects worth evaluating.
             </p>
@@ -330,7 +330,7 @@ ${heroProducts}
         <div class="wrap">
           <div class="section-head reveal-target" data-reveal>
             <h2 id="map-h">${total} products your agent can build.</h2>
-            <p class="section-lede">Explore products from Meta, Amazon, Apple, Netflix and Google. Each record links to research, candidate projects and build instructions. Use the published npm CLI with <span class="mono">npx rae-faang &lt;product-id&gt; --out ./&lt;product-id&gt;.md</span>, or download a ready-to-use skill below.</p>
+            <p class="section-lede">Explore products from Meta, Amazon, Apple, Netflix and Google. Each record links to research, candidate projects and build instructions. Use the published npm CLI with <span class="mono">npx rea-faang &lt;product-id&gt; --out ./&lt;product-id&gt;.md</span>, or download a ready-to-use skill below.</p>
           </div>
           <div class="catalog-glyph-field">
 ${catalogGroups}
@@ -386,7 +386,7 @@ ${catalogGroups}
             <h2 id="problem-h">Your agent builds in your project.</h2>
             <p>
               Pick any catalogued product and use your coding agent to build an independent version
-              for your needs. RAE gives your agent a head start with product behavior, sources,
+              for your needs. REA gives your agent a head start with product behavior, sources,
               specifications and open-source foundations to assess.
             </p>
             <p>
@@ -491,10 +491,10 @@ ${catalogGroups}
             <ul class="principles">
               <li>
                 <strong>${total}</strong> products catalogued across 6 company
-                entries: <span class="mono">npx rae-faang products list</span>
+                entries: <span class="mono">npx rea-faang products list</span>
               </li>
               <li>
-                <strong>${total}</strong> research dossiers; check bundled catalog integrity with <span class="mono">npx rae-faang research validate</span>
+                <strong>${total}</strong> research dossiers; check bundled catalog integrity with <span class="mono">npx rea-faang research validate</span>
               </li>
               <li>
                 <strong>${reaCount}</strong> REA reports of public web pages, with captured evidence committed;
@@ -502,7 +502,7 @@ ${catalogGroups}
               </li>
               <li>
                 <strong>${counts.available} / ${counts.partial} / ${counts.pending}</strong> mature alternative / partial coverage / no verified alternative
-                research states: <span class="mono">npx rae-faang alternatives coverage</span>
+                research states: <span class="mono">npx rea-faang alternatives coverage</span>
               </li>
               <li>
                 <strong>${testsCount}</strong> tooling test cases in the repository.
@@ -510,7 +510,7 @@ ${catalogGroups}
               </li>
               <li>
                 <strong>This page</strong> is generated from catalog data; get portable product instructions with:
-                <span class="mono">npx rae-faang &lt;product-id&gt; --out ./&lt;product-id&gt;.md</span>
+                <span class="mono">npx rea-faang &lt;product-id&gt; --out ./&lt;product-id&gt;.md</span>
               </li>
             </ul>
           </div>
@@ -535,12 +535,12 @@ ${catalogGroups}
               </p>
             </details>
             <details>
-              <summary>How does RAE help me get started?</summary>
+              <summary>How does REA help me get started?</summary>
               <p>
                 The catalog brings together product behavior, research and open-source projects that
                 may be useful foundations. Review what fits your needs, then ask your coding agent to
                 build and test an independent version in your project. Download a skill here, or get
-                one with <span class="mono">npx rae-faang &lt;product-id&gt; --out ./&lt;product-id&gt;.md</span>.
+                one with <span class="mono">npx rea-faang &lt;product-id&gt; --out ./&lt;product-id&gt;.md</span>.
               </p>
             </details>
             <details>
@@ -586,7 +586,7 @@ ${catalogGroups}
             <h3 id="start-h">What do you want to build?</h3>
             <p>
               Choose a product from Meta, Amazon, Apple, Netflix or Google. Explore the research, then
-              use your coding agent to build an independent version in your project. RAE FAANG is
+              use your coding agent to build an independent version in your project. REA FAANG is
               MIT-licensed; candidate projects and your implementation have their own licenses.
             </p>
             <a class="btn btn-primary" href="catalog/">Choose a product</a>
@@ -606,7 +606,7 @@ ${catalogGroups}
       </section>`;
 
   return layout({
-    title: 'Build products with your agent | RAE FAANG',
+    title: 'Build products with your agent | REA FAANG',
     description: 'Choose a product from Meta, Amazon, Apple, Netflix or Google. Explore product research and open-source foundations, then build with your coding agent.',
     path: '',
     depth: 0,
@@ -743,7 +743,7 @@ ${rows}
       <script src="../assets/catalog.js"></script>`;
 
   return layout({
-    title: `Catalog — RAE FAANG`,
+    title: `Catalog — REA FAANG`,
     description: `Browse ${total} FAANG products, each with a Markdown build skill for your coding agent, product research and candidate open-source projects.`,
     path: 'catalog/',
     depth: 1,
@@ -761,7 +761,7 @@ ${rows}
  * Product-specific Markdown skill for a coding agent. Users can download the
  * skill or generate a copy with the installed CLI, then give it to their agent
  * to build in their own project. Kept in sync with
- * `rae <product-id>` by design.
+ * `rea <product-id>` by design.
  */
 export function agentKitMd(p) {
   const alternatives = p.alternatives || [];
@@ -798,7 +798,7 @@ ${description}
 
 ## Research references
 
-- Dossier: ${code(`npx rae-faang research dossier ${p.id}`)} or [view the repository dossier](${REPO_URL}/blob/main/${researchPath})
+- Dossier: ${code(`npx rea-faang research dossier ${p.id}`)} or [view the repository dossier](${REPO_URL}/blob/main/${researchPath})
 - ${hasRea ? `Public web-surface observation: [${reaPath}](${REPO_URL}/blob/main/${reaPath})` : `No REA capture recorded yet; this does not block research from public official sources.`}
 
 ## Open-source landscape
@@ -815,11 +815,11 @@ ${instructions}
 
 ## CLI commands
 
-- Inspect product metadata: ${code(`npx rae-faang products show ${p.id} --format json`)}.
-- Read the dossier: ${code(`npx rae-faang research dossier ${p.id}`)}.
-- Check research readiness: ${code('npx rae-faang research coverage')} and ${code('npx rae-faang research validate')}.
-- Generate a copy of this skill and optional MCP config: ${code(`npx rae-faang ${p.id} --out ./${p.id}.md`)}. Give ${code('skill.md')} to your coding agent in the project where you want to build.
-- Optionally scaffold a starter workspace: ${code(`npx rae-faang build product ${p.id} --out ./${p.id}`)}.
+- Inspect product metadata: ${code(`npx rea-faang products show ${p.id} --format json`)}.
+- Read the dossier: ${code(`npx rea-faang research dossier ${p.id}`)}.
+- Check research readiness: ${code('npx rea-faang research coverage')} and ${code('npx rea-faang research validate')}.
+- Generate a copy of this skill and optional MCP config: ${code(`npx rea-faang ${p.id} --out ./${p.id}.md`)}. Give ${code('skill.md')} to your coding agent in the project where you want to build.
+- Optionally scaffold a starter workspace: ${code(`npx rea-faang build product ${p.id} --out ./${p.id}`)}.
 
 ## Sources
 
@@ -827,7 +827,7 @@ ${(p.sources || []).map((source) => `- ${source}`).join('\n') || '- No source re
 
 ---
 
-Generated from the RAE FAANG catalog — ${REPO_URL}
+Generated from the REA FAANG catalog — ${REPO_URL}
 `;
 }
 
@@ -842,7 +842,7 @@ export function productPage({ p, prev, next }) {
             </div>
             <p class="alt-covers">${esc(a.covers)}</p>
             <p class="alt-note">${esc(a.note)}</p>
-            <input class="rail-input alt-cmd" type="text" value="${attr(`npx rae-faang alternatives clone ${p.id} --alt "${a.name}"`)}" title="Click to copy" aria-label="Command to clone ${attr(a.name)}" readonly>
+            <input class="rail-input alt-cmd" type="text" value="${attr(`npx rea-faang alternatives clone ${p.id} --alt "${a.name}"`)}" title="Click to copy" aria-label="Command to clone ${attr(a.name)}" readonly>
           </article>`;
   });
 
@@ -885,9 +885,9 @@ export function productPage({ p, prev, next }) {
 
   const artifactRows = [
     `<li class="artifact"><a class="artifact-name" href="agent-kit.md" download>agent-kit.md</a><span class="artifact-note">Downloadable Markdown skill with product-specific instructions for your coding agent.</span>${statusPill('available', 'available')}</li>`,
-    `<li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — use <span class="mono">npx rae-faang build agent-kit ${attr(p.id)} --out ./${attr(p.id)}-agent</span>.</span>${statusPill('neutral', 'in kit')}</li>`,
-    `<li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — use <span class="mono">npx rae-faang build agent-kit ${attr(p.id)} --out ./${attr(p.id)}-agent</span>.</span>${statusPill('neutral', 'in kit')}</li>`,
-    `<li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">npx rae-faang build product ${attr(p.id)} --out ./${attr(p.id)}</span>.</span></li>`,
+    `<li class="artifact"><span class="artifact-name">skill.md</span><span class="artifact-note">Generated copy of the same product skill — use <span class="mono">npx rea-faang build agent-kit ${attr(p.id)} --out ./${attr(p.id)}-agent</span>.</span>${statusPill('neutral', 'in kit')}</li>`,
+    `<li class="artifact"><span class="artifact-name">mcp.json</span><span class="artifact-note">Optional MCP server config — use <span class="mono">npx rea-faang build agent-kit ${attr(p.id)} --out ./${attr(p.id)}-agent</span>.</span>${statusPill('neutral', 'in kit')}</li>`,
+    `<li class="artifact"><span class="artifact-name">Product workspace</span><span class="artifact-note">Optional starting workspace for your agent — <span class="mono">npx rea-faang build product ${attr(p.id)} --out ./${attr(p.id)}</span>.</span></li>`,
   ].join('\n              ');
 
   const nextStep = openAlt
@@ -931,7 +931,7 @@ export function productPage({ p, prev, next }) {
             </div>
             <div class="rail-block">
               <p class="rail-key">Product skill</p>
-              <input class="rail-input" type="text" value="npx rae-faang ${attr(p.id)} --out ./${attr(p.id)}.md" title="Click to copy" aria-label="Command to generate the ${esc(p.name)} skill" readonly>
+              <input class="rail-input" type="text" value="npx rea-faang ${attr(p.id)} --out ./${attr(p.id)}.md" title="Click to copy" aria-label="Command to generate the ${esc(p.name)} skill" readonly>
               <a class="rail-dl" href="agent-kit.md" download>Download Markdown skill</a>
             </div>
             ${openAlt
@@ -978,8 +978,8 @@ ${alts.join('\n')}
               <p>This Markdown file is the coding-agent skill for ${esc(p.name)}. Give it to your agent in your project; it guides research, reuse decisions, implementation and verification.</p>
               <div class="cmd-banner">
                 <p class="cmd-banner-label">Get the ${esc(p.name)} build skill</p>
-                <pre class="cmd-block"><code>npx rae-faang ${attr(p.id)} --out ./${attr(p.id)}.md</code></pre>
-                <p class="cmd-banner-note">Download or copy this exact Markdown, or generate the same file with the RAE CLI: <span class="mono">npx rae-faang ${attr(p.id)} --out ./${attr(p.id)}.md</span>, <span class="mono">npx rae-faang skills generate ${attr(p.id)}</span>, or <span class="mono">npx rae-faang build agent-kit ${attr(p.id)} --out ./${attr(p.id)}-agent</span>. The <a href="${skillUrl}">canonical skill</a> is the same file in the catalog.</p>
+                <pre class="cmd-block"><code>npx rea-faang ${attr(p.id)} --out ./${attr(p.id)}.md</code></pre>
+                <p class="cmd-banner-note">Download or copy this exact Markdown, or generate the same file with the REA CLI: <span class="mono">npx rea-faang ${attr(p.id)} --out ./${attr(p.id)}.md</span>, <span class="mono">npx rea-faang skills generate ${attr(p.id)}</span>, or <span class="mono">npx rea-faang build agent-kit ${attr(p.id)} --out ./${attr(p.id)}-agent</span>. The <a href="${skillUrl}">canonical skill</a> is the same file in the catalog.</p>
                 <p class="cmd-banner-actions"><a class="rail-dl" href="agent-kit.md" download>Download Markdown skill</a> <button class="rail-dl" type="button" data-copy-skill>Copy Markdown skill</button></p>
               </div>
               <ul class="artifact-list">
@@ -1011,7 +1011,7 @@ ${stepper}
               <h2 id="next-h">Next step</h2>
               <div class="callout callout-plain">
                 <p>${nextStep}</p>
-                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">npx rae-faang build product ${attr(p.id)} --out ./${attr(p.id)}</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
+                <p class="mono-note">Give the product skill to your coding agent in the project where you want to build. Optional starter workspace: <span class="mono">npx rea-faang build product ${attr(p.id)} --out ./${attr(p.id)}</span>. <a href="../../docs/cli-reference.html">CLI reference</a>.</p>
               </div>
             </section>
           </div>
@@ -1057,7 +1057,7 @@ ${stepper}
       </script>`;
 
   return layout({
-    title: `Build ${p.name} with your agent — RAE FAANG`,
+    title: `Build ${p.name} with your agent — REA FAANG`,
     description: `Build ${p.name} with your coding agent. Product research, reusable projects and instructions to build and verify in your project.`,
     path: `catalog/${p.id}/`,
     depth: 2,
@@ -1122,9 +1122,9 @@ ${rootDocs}
       </section>`;
 
   return layout({
-    title: 'Documentation | RAE FAANG',
+    title: 'Documentation | REA FAANG',
     description:
-      'Guides to the RAE FAANG catalog, CLI, product research and agent workflow.',
+      'Guides to the REA FAANG catalog, CLI, product research and agent workflow.',
     path: 'docs/',
     depth: 1,
     active: 'docs',
@@ -1154,7 +1154,7 @@ ${doc.html}
       </section>`;
 
   return layout({
-    title: `${doc.title} — RAE FAANG docs`,
+    title: `${doc.title} — REA FAANG docs`,
     description: doc.description,
     path: `docs/${doc.slug}.html`,
     depth: 1,
@@ -1203,7 +1203,7 @@ export function notFoundPage() {
         </div>
       </section>`;
   return layout({
-    title: 'Not found — RAE FAANG',
+    title: 'Not found — REA FAANG',
     description: 'Page not found.',
     path: '404.html',
     depth: 0,

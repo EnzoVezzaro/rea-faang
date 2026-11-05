@@ -82,7 +82,7 @@ Open-source orchestrators can run containers, but none is treated as a drop-in e
 
 REA should map task-definition semantics, scheduler decisions, service deployments, capacity providers, placement constraints, networking, IAM, secrets, service discovery, autoscaling, observability, rollback, events, quotas and the boundaries between ECS, Fargate and ECS Anywhere.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use AWS product and developer documentation, API references, CLI references and publicly observable container workflows. A clean-room equivalent should choose an independently licensed orchestrator and reproduce only independently observable behavior, documenting differences in scheduling, security, control plane and cloud integration.
 

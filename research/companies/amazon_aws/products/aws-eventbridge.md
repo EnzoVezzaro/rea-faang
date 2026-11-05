@@ -87,7 +87,7 @@ Event routing is covered; the SaaS-partner event sources are AWS-specific.
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Available. NATS JetStream and Kafka cover event routing.
 
@@ -124,6 +124,6 @@ Event routing is covered; the SaaS-partner event sources are AWS-specific.
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Available. NATS JetStream and Kafka cover event routing.

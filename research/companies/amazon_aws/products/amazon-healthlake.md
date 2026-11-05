@@ -85,7 +85,7 @@ Open-source FHIR servers can cover portions of resource storage and APIs, but a 
 
 REA should map data-store lifecycle, FHIR version and resource support, search semantics, import/export jobs, deduplication, NLP transformation, terminology mapping, SQL behavior, access control, audit logs, encryption, quotas, interoperability and failure recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official HealthLake product page, developer guide, API reference and getting-started workflow as research surfaces. A clean-room implementation should use independently licensed FHIR components, document standards and implementation differences, and avoid copying AWS code, clinical models or proprietary NLP behavior.
 

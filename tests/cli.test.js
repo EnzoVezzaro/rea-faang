@@ -26,7 +26,7 @@ function runJson(...args) {
 test('--help prints usage and exits 0', () => {
   const result = run('--help');
   assert.equal(result.status, 0);
-  assert.match(result.stdout, /RAE — FAANG Product Intelligence CLI/);
+  assert.match(result.stdout, /REA — FAANG Product Intelligence CLI/);
   assert.match(result.stdout, /research validate/);
   assert.match(result.stdout, /research dossier/);
 });
@@ -35,7 +35,7 @@ test('--version prints the version from package.json and exits 0', () => {
   const { version } = JSON.parse(readFileSync(join(ROOT, 'package.json'), 'utf8'));
   const result = run('--version');
   assert.equal(result.status, 0);
-  assert.match(result.stdout, new RegExp(`RAE CLI v${version.replace(/\./g, '\\.')}`));
+  assert.match(result.stdout, new RegExp(`REA CLI v${version.replace(/\./g, '\\.')}`));
 });
 
 test('unknown command exits non-zero with an error', () => {
@@ -143,7 +143,7 @@ test('products show returns a known product and fails for an unknown one', () =>
 });
 
 test('build product --out scaffolds a workspace and refuses to overwrite', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'rae-build-'));
+  const dir = mkdtempSync(join(tmpdir(), 'rea-build-'));
   const out = join(dir, 'gmail');
   try {
     const first = run('build', 'product', 'gmail', '--out', out);
@@ -164,7 +164,7 @@ test('build product --out scaffolds a workspace and refuses to overwrite', () =>
 });
 
 test('build agent-kit --out writes skill.md and mcp.json', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'rae-kit-'));
+  const dir = mkdtempSync(join(tmpdir(), 'rea-kit-'));
   try {
     const result = run('build', 'agent-kit', 'gmail', '--out', dir);
     assert.equal(result.status, 0);
@@ -178,12 +178,12 @@ test('build agent-kit --out writes skill.md and mcp.json', () => {
     assert.match(skill, /### Product quality and verification plan/);
     assert.match(skill, /### End-to-end implementation milestones/);
     assert.match(skill, /Research lens: \*\*consumer_application\*\*/);
-    assert.match(skill, /npx rae-faang research dossier gmail/);
+    assert.match(skill, /npx rea-faang research dossier gmail/);
     assert.doesNotMatch(skill, /npx --yes/);
     assert.doesNotMatch(skill, /node src\/cli\.js|From a repository clone/);
     const mcp = JSON.parse(readFileSync(join(dir, 'mcp.json'), 'utf8'));
-    assert.deepEqual(mcp.mcpServers['rae-cli'], {
-      command: 'rae', args: [], description: 'Installed RAE product intelligence CLI',
+    assert.deepEqual(mcp.mcpServers['rea-cli'], {
+      command: 'rea', args: [], description: 'Installed REA product intelligence CLI',
     });
   } finally {
     rmSync(dir, { recursive: true, force: true });
@@ -197,7 +197,7 @@ test('alternatives clone errors clearly for an unknown product', () => {
 });
 
 test('product-id shorthand writes one Markdown skill to --out', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'rae-skill-'));
+  const dir = mkdtempSync(join(tmpdir(), 'rea-skill-'));
   const out = join(dir, 'gmail.md');
   try {
     const result = spawnSync(process.execPath, [CLI, 'gmail', '--out', out], { cwd: dir, encoding: 'utf8' });
@@ -213,7 +213,7 @@ test('product-id shorthand writes one Markdown skill to --out', () => {
 });
 
 test('product-id shorthand without --out defaults to ./<product-id>.md', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'rae-skill-'));
+  const dir = mkdtempSync(join(tmpdir(), 'rea-skill-'));
   try {
     const result = spawnSync(process.execPath, [CLI, 'gmail'], { cwd: dir, encoding: 'utf8' });
     assert.equal(result.status, 0, result.stderr);
@@ -229,7 +229,7 @@ test('product-id shorthand with --alt still clones the alternative', () => {
 });
 
 test('explicit build agent-kit still writes skill.md and mcp.json', () => {
-  const dir = mkdtempSync(join(tmpdir(), 'rae-kit-'));
+  const dir = mkdtempSync(join(tmpdir(), 'rea-kit-'));
   try {
     const result = run('build', 'agent-kit', 'gmail', '--out', dir);
     assert.equal(result.status, 0, result.stderr);

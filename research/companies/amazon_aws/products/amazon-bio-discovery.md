@@ -72,9 +72,9 @@ Pending evidence-backed comparison. Proprietary model access, agent workflows an
 
 Pending REA investigation. Any independent implementation must define scientific validation, provenance, safety, model licensing and wet-lab boundaries before building.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the RAE skill only on public, authorized surfaces. Produce an independent research and implementation plan; do not reproduce proprietary models, protected data or laboratory workflows without authorization.
+Use the REA skill only on public, authorized surfaces. Produce an independent research and implementation plan; do not reproduce proprietary models, protected data or laboratory workflows without authorization.
 
 # 12. Security, privacy, and compliance
 

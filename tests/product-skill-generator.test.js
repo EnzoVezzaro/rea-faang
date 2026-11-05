@@ -37,7 +37,7 @@ test('single-product compiler emits the complete section set and transparent evi
   assert.match(result.markdown, /Public web-surface observation/);
   assert.match(result.markdown, /ev_[a-f0-9]{64}/);
   assert.match(result.markdown, /SearXNG/);
-  assert.match(result.markdown, /Research status:\*\* pending/);
+  assert.match(result.markdown, /Research status:\*\* researched/);
   assert.match(result.markdown, /REQ-FUNC-[A-F0-9]{8}/);
   assert.match(result.markdown, /TEST-FUNC-[A-F0-9]{8}/);
 });
@@ -74,13 +74,16 @@ test('duplicate capability IDs and duplicate generated feature IDs are rejected'
   const result = compileProductSkill({ product, company: companies.google.name, dossierText: dossier('google-search'), reaReport: target.report, reaEvidence: target.evidence, landscape: landscapes.find((p) => p.id === product.id) });
   assert.equal(result.report.status, 'failed');
   assert.ok(result.report.errors.some((error) => error.includes('duplicate capability ID DUP')));
-  const duplicatedMarkdown = compileFromRepository('google-search').markdown.replace('## 3. Complete user workflows', '\n| `GOOGLE-SEARCH-CAP-952D4A0B` | Web crawl and indexing at web scale | UNKNOWN | None linked | Unknown |\n\n## 3. Complete user workflows');
+  const generated = compileFromRepository('google-search').markdown;
+  const firstCapabilityRow = generated.match(/^\| `[^`]+` \| [^\n]+$/m)?.[0];
+  assert.ok(firstCapabilityRow, 'expected a generated capability row');
+  const duplicatedMarkdown = generated.replace('## 3. Complete user workflows', `\n${firstCapabilityRow}\n\n## 3. Complete user workflows`);
   assert.ok(validateSkillText(duplicatedMarkdown, { product: products.find((p) => p.id === 'google-search') }).errors.some((error) => error.includes('duplicate feature ID')), validateSkillText(duplicatedMarkdown, { product: products.find((p) => p.id === 'google-search') }).errors.join('; '));
 });
 
 test('batch CLI writes all generated skills to the caller directory outside a source checkout', () => {
-  const temp = mkdtempSync(join(tmpdir(), 'rae-batch-package-'));
-  const packageRoot = join(temp, 'node_modules', 'rae-faang');
+  const temp = mkdtempSync(join(tmpdir(), 'rea-batch-package-'));
+  const packageRoot = join(temp, 'node_modules', 'rea-faang');
   const canonicalSkill = join(ROOT, 'catalog/skills/google/google-search.md');
   const canonicalBefore = readFileSync(canonicalSkill, 'utf8');
   try {
@@ -101,7 +104,7 @@ test('batch CLI writes all generated skills to the caller directory outside a so
     assert.equal(output.summary.selected, products.length);
     assert.equal(output.summary.failed, 0);
     assert.ok(output.products.every((item) => item.status === 'generated_with_gaps'));
-    assert.ok(existsSync(join(temp, 'rae-skills', 'google', 'google-search.md')), 'batch output is kept in the caller directory');
+    assert.ok(existsSync(join(temp, 'rea-skills', 'google', 'google-search.md')), 'batch output is kept in the caller directory');
     assert.equal(readFileSync(canonicalSkill, 'utf8'), canonicalBefore, 'npm batch generation must not rewrite the source checkout');
   } finally { rmSync(temp, { recursive: true, force: true }); }
 });
@@ -114,7 +117,7 @@ test('canonical skill index and site download use the shared compiler output', (
 });
 
 test('unknown product errors do not modify an existing skill or prevent other product generation', () => {
-  const temp = mkdtempSync(join(tmpdir(), 'rae-skill-'));
+  const temp = mkdtempSync(join(tmpdir(), 'rea-skill-'));
   const before = readFileSync(join(ROOT, 'catalog/skills/google/google-search.md'), 'utf8');
   try {
     const bad = writeProductSkill('not-a-product', join(temp, 'bad.md'));
@@ -134,8 +137,8 @@ test('repository output validates and drift is reported', () => {
 });
 
 test('packed npm CLI can generate product kits and portable skills without a source checkout', () => {
-  const temp = mkdtempSync(join(tmpdir(), 'rae-package-root-'));
-  const packageRoot = join(temp, 'node_modules', 'rae-faang');
+  const temp = mkdtempSync(join(tmpdir(), 'rea-package-root-'));
+  const packageRoot = join(temp, 'node_modules', 'rea-faang');
   try {
     for (const path of ['catalog', 'research', 'tools']) {
       const source = join(ROOT, path);
@@ -175,7 +178,7 @@ test('packed npm CLI can generate product kits and portable skills without a sou
     assert.equal(existsSync(join(temp, 'google-search-agent')), false, 'product-ID shorthand does not create an agent-kit directory');
     const batch = spawnSync(process.execPath, [cliFile, 'skills', 'generate', '--company', 'google'], { cwd: temp, encoding: 'utf8' });
     assert.equal(batch.status, 0, batch.stderr);
-    assert.ok(existsSync(join(temp, 'rae-skills', 'google', 'gmail.md')), 'npm batches are written beneath the caller directory');
+    assert.ok(existsSync(join(temp, 'rea-skills', 'google', 'gmail.md')), 'npm batches are written beneath the caller directory');
   } finally { rmSync(temp, { recursive: true, force: true }); }
 });
 

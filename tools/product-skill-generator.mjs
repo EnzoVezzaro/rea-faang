@@ -200,7 +200,7 @@ function operatingProcedure({ product, capture, landscape, caps }) {
     `| Product identity | ${md(product.name)} / ${code(product.id)} | \`catalog/products.jsonl\` |`,
     `| Official product URL | [${product.official_url}](${product.official_url}) | Catalog record; re-check it resolves and is first-party |`,
     `| Official documentation | ${docs} | Catalog record |`,
-    `| Research dossier | \`npx rae-faang research dossier ${product.id}\` | \`research/companies/${product.company_id}/products/${product.id}.md\` |`,
+    `| Research dossier | \`npx rea-faang research dossier ${product.id}\` | \`research/companies/${product.company_id}/products/${product.id}.md\` |`,
     `| REA report | \`catalog/rea/${product.company_id}/${product.id}.md\`${capture ? ` (captured ${md(capture.captured)}, status ${md(capture.status)})` : ' (none recorded)'} | Catalog evidence |`,
     `| REA raw evidence | \`catalog/rea/evidence/${product.id}.json\`${capture?.id ? ` (${code(capture.id)})` : ''} | Catalog evidence |`,
     `| Alternative candidates | ${altCount ? `${altCount} candidate(s) recorded in section 9` : 'None recorded — this is a research gap'} | Curated landscape |`,
@@ -221,11 +221,11 @@ function operatingProcedure({ product, capture, landscape, caps }) {
   ].join('\n');
   return [
     '## Operating procedure — from authorized observation to a working implementation', '',
-    'This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.', '',
+    'This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.', '',
     `Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.`, '',
     '### Inputs you must confirm before acting', '', inputs, '',
     '### Step 1 — confirm identity and authorization', '',
-    `Run \`npx rae-faang products show ${product.id} --format json\` and \`npx rae-faang research dossier ${product.id}\` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.`, '',
+    `Run \`npx rea-faang products show ${product.id} --format json\` and \`npx rea-faang research dossier ${product.id}\` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.`, '',
     '### Step 2 — run the Reverse Engineer Anything framework', '',
     'REA lives at <https://github.com/morluto/rea>. Use the framework’s own routing: browser surface → browser-scenario capture; supplied JavaScript/Electron/ASAR package → package analysis; native/mobile/firmware artifact → inventory then focused inspection; complete source repository with no shipped artifact question → ordinary repository analysis instead of REA.', '',
     '**Tools that actually exist** (do not assume any of them are installed, and do not invent command names):', '',
@@ -344,7 +344,7 @@ function renderSkill({ product, company, research, capture, landscape, caps, sou
     `> This is the coding-agent build skill for **${md(product.name)}**. Give this file to your coding agent in the project where you want the product built.`, '',
     '## Product description', '',
     `This is the coding-agent skill for **${md(product.name)}** (${code(product.id)}). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.`, '',
-    `**Same file, three ways to get it:** download or copy \`catalog/skills/${product.company_id}/${product.id}.md\` from the catalog page, or run \`npx rae-faang ${product.id} --out ./${product.id}.md\`, \`npx rae-faang skills generate ${product.id}\` or \`npx rae-faang build agent-kit ${product.id} --out ./${product.id}-agent\`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.`, '',
+    `**Same file, three ways to get it:** download or copy \`catalog/skills/${product.company_id}/${product.id}.md\` from the catalog page, or run \`npx rea-faang ${product.id} --out ./${product.id}.md\`, \`npx rea-faang skills generate ${product.id}\` or \`npx rea-faang build agent-kit ${product.id} --out ./${product.id}-agent\`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.`, '',
     operatingProcedure({ product, capture, landscape, caps }), '',
     '## 1. Product identity and scope', '', identity(product, company), '',
     `Research lens: **${product.product_type}** — verify real users/jobs, complete lifecycles, platform/version support, permissions, persistence, failure and recovery behavior. Product type is a question prompt, not evidence of features.`, '',
@@ -390,7 +390,7 @@ function renderSkill({ product, company, research, capture, landscape, caps, sou
     '### Dossier notes (not independently verified)', '', rawNotes, '',
     `Research status is **${researchStatus}**. Dossier prose above is preserved for context but is not claim-level evidence by itself.`, '',
     '## 15. Downstream execution instructions', '',
-    '1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier ' + product.id + '` and inspect canonical identity with `npx rae-faang products show ' + product.id + ' --format json`.',
+    '1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier ' + product.id + '` and inspect canonical identity with `npx rea-faang products show ' + product.id + ' --format json`.',
     '2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.',
     '3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.',
     '4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.',
@@ -403,7 +403,7 @@ function renderSkill({ product, company, research, capture, landscape, caps, sou
     '11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.',
     '12. Document deviations, unimplemented requirements, limitations and checks not run.',
     '13. Report requirement → code → test evidence and actual command results.',
-    `Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with \`npx rae-faang ${product.id} --out ./${product.id}.md\` when useful. For a directory containing \`skill.md\` and \`mcp.json\`, use \`npx rae-faang build agent-kit ${product.id} --out ./${product.id}-agent\`.`, '',
+    `Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with \`npx rea-faang ${product.id} --out ./${product.id}.md\` when useful. For a directory containing \`skill.md\` and \`mcp.json\`, use \`npx rea-faang build agent-kit ${product.id} --out ./${product.id}-agent\`.`, '',
     '### Multi-agent task plan and outputs', '',
     'Researcher: own the evidence ledger and unknowns. Architect: approve scope, boundaries and contracts before parallel work. Implementers: deliver non-overlapping, integrated vertical slices. Tester: map acceptance checks to requirement IDs. Reviewer: inspect privacy, security, accessibility and license risk. Documenter: preserve setup and limitations. Handoffs record changed files, requirement IDs, commands/exit codes, checks not run and one specific next action.', '',
     '### Acceptance criteria and definition of done', '',
@@ -461,7 +461,7 @@ export function validateSkillText(markdown, { product = null, knownEvidenceIds =
   if (!markdown?.includes('## Operating procedure')) errors.push('missing operating procedure section');
   if (!markdown?.includes('rea-agents@latest analyze-javascript-application')) errors.push('missing real REA CLI invocation');
   for (const verdict of ['REUSE', 'INTEGRATE', 'EXTEND', 'BUILD', 'INVESTIGATE MORE']) if (!markdown?.includes(`**${verdict}**`)) errors.push(`missing foundation verdict ${verdict}`);
-  if (product && !markdown?.includes(`npx rae-faang ${product.id} --out ./${product.id}.md`)) errors.push(`missing CLI generation command for ${product.id}`);
+  if (product && !markdown?.includes(`npx rea-faang ${product.id} --out ./${product.id}.md`)) errors.push(`missing CLI generation command for ${product.id}`);
   if (knownEvidenceIds) for (const [, id] of markdown.matchAll(/\[\[evidence:([^\]]+)\]\]/g)) if (!knownEvidenceIds.has(id)) errors.push(`invalid evidence reference ${id}`);
   if (product && !markdown?.includes(code(product.id))) errors.push(`stable product ID ${product.id} is missing`);
   if (!markdown?.includes('Resumable investigation checkpoint')) errors.push('missing investigation checkpoint');

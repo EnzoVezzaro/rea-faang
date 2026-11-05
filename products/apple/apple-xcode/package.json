@@ -1,5 +1,5 @@
 {
-  "name": "rae-apple-xcode",
+  "name": "rea-apple-xcode",
   "version": "0.1.0",
   "license": "MIT",
   "type": "module",
@@ -7,7 +7,7 @@
     "node": ">=20",
     "ace": ">=1.0.0"
   },
-  "description": "RAE FAANG: Open-source alternative to Xcode",
+  "description": "REA FAANG: Open-source alternative to Xcode",
   "scripts": {
     "dev": "ace run",
     "test": "node --test tests/*.test.mjs",
@@ -23,7 +23,7 @@
   },
   "ace": {
     "spec": "ace/v1",
-    "name": "rae-apple-xcode",
+    "name": "rea-apple-xcode",
     "goal": {
       "statement": "Build open-source alternative to Xcode",
       "milestones": [

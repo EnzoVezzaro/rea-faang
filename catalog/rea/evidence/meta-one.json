@@ -1,0 +1,258 @@
+{
+  "evidence_id": "ev_b79eb8e2ba3e4935393e1587145d7bdb76b50dfa366344893ebcf52b0c303530",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.meta.com/meta-one-plans/",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "08036b7c88a899a4c7e0fc8d1d7e49d3db927572c0e5ef3b32f7b16fce41a41b"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://www.meta.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 9669,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 6878,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.meta.com/meta-one-plans/",
+          "origin": "https://www.meta.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2579,
+        "before_url": {
+          "url": "https://www.meta.com/meta-one-plans/",
+          "origin": "https://www.meta.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://www.meta.com/meta-one-plans/",
+          "origin": "https://www.meta.com",
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "7a6f0ec11293f4588d4ddf8deb8e0c073c01c4f7edd8c066edd8bdae52b9375c",
+              "bytes": 18122,
+              "text": "- document:\n  - link \"Skip to main content\":\n    - /url: \"#mdc-main-content\"\n  - navigation \"Main\":\n    - link \"Meta home\":\n      - /url: /\n      - img \"Meta\"\n    - list:\n      - listitem:\n        - link \"AI glasses\":\n          - /url: /ai-glasses/\n      - listitem:\n        - link \"Meta Quest\":\n          - /url: /quest/\n      - listitem:\n        - link \"Meta VR Glasses\":\n          - /url: /vr-glasses/\n      - listitem:\n        - link \"Muse Charm\":\n          - /url: /muse-charm/\n    - list:\n      - listitem:\n        - link \"Explore Meta\":\n          - /url: /about/\n      - listitem:\n        - link \"Support\":\n          - /url: /help/\n    - button \"Search Meta Store\"\n    - link \"View bag items\":\n      - /url: /bag/\n      - img \"Empty bag\"\n    - button \"Log In\"\n  - main:\n    - group \"Video player\"\n    - heading \"More with Meta One\" [level=1]\n    - text: Get more features and AI built into the apps you love, so you can create, connect and stand out — all with Meta One.\n    - button \"Pause video\"\n    - text: Explore plans\n    - button \"Personal\"\n    - button \"Creator\"\n    - button \"Business\"\n    - heading \"Explore personal, creator and business plans\" [level=2]\n    - paragraph: Designed to help you engage, express yourself or grow your business — where your friends, community and customers already are.\n    - tablist:\n      - tab \"Personal\" [selected]\n      - tab \"Creator\"\n      - tab \"Business\"\n    - tabpanel \"Personal\":\n      - heading \"Get more from the apps you love\" [level=3]\n      - paragraph: For more expression and creation, Meta One delivers exclusive features and more AI usage built into the apps you love.\n      - img \"Four friends in Instagram Stories with reaction hearts and 14 replays\"\n      - heading \"Instagram Plus\" [level=3]\n      - button \"Learn more about Instagram Plus\": Learn more\n      - img \"WhatsApp chat with custom app icons, music notes and an animated sticker\"\n      - heading \"WhatsApp Plus\" [level=3]\n      - button \"Learn more about WhatsApp Plus\": Learn more\n      - img \"Two friends in a Facebook Story with a 48-hour timer and crystal reactions\"\n      - heading \"Facebook Plus\" [level=3]\n      - button \"Learn more about Facebook Plus\": Learn more\n      - img \"AI-styled portraits of a woman and a husky in a neon green outfit\"\n      - heading \"Meta AI\" [level=3]\n      - button \"Learn more about Meta AI\": Learn more\n      - heading \"Personal bundle plans and pricing\" [level=3]\n      - paragraph: Meta One gives you exclusive features to connect and more AI usage to edit your content across Instagram, Facebook and WhatsApp — plus image and video generation with Meta AI. All in one subscription.\n      - text: Features, plans, availability and pricing may vary by region, app and account. Subscribe using your mobile app.\n      - link \"How to subscribe to a Meta One personal bundle plan\":\n        - /url: https://www.meta.com/help/subscriptions/1275481294766689/\n        - text: How to subscribe\n      - text: Meta One Core\n      - paragraph: Express yourself in new ways. More AI usage.\n      - text: $7.99/month\n      - list:\n        - listitem:\n          - heading \"Instagram Plus\" [level=3]:\n            - button \"Instagram Plus\"\n        - listitem:\n          - heading \"WhatsApp Plus\" [level=3]:\n            - button \"WhatsApp Plus\"\n        - listitem:\n          - heading \"Facebook Plus\" [level=3]:\n            - button \"Facebook Plus\"\n        - listitem:\n          - heading \"More AI usage\" [level=3]:\n            - button \"More AI usage\" [expanded]\n          - region \"More AI usage\":\n            - button \"Open Generate and edit images details\": Generate and edit images\n            - button \"Open Create and transform videos details\": Create and transform videos\n            - button \"Open Apply voice and sound effects details\": Apply voice and sound effects\n            - button \"Open Use your benefits across profiles details\": Use your benefits across profiles\n      - text: Meta One Premium\n      - paragraph: Expanded AI usage. Even more video creation.\n      - text: $19.99/month\n      - list:\n        - listitem:\n          - heading \"Instagram Plus\" [level=3]:\n            - button \"Instagram Plus\"\n        - listitem:\n          - heading \"WhatsApp Plus\" [level=3]:\n            - button \"WhatsApp Plus\"\n        - listitem:\n          - heading \"Facebook Plus\" [level=3]:\n            - button \"Facebook Plus\"\n        - listitem:\n          - heading \"Expanded AI usage\" [level=3]:\n            - button \"Expanded AI usage\" [expanded]\n          - region \"Expanded AI usage\":\n            - button \"Open Generate and edit images details\": Generate and edit images\n            - button \"Open Create and transform videos details\": Create and transform videos\n            - button \"Open Apply voice and sound effects details\": Apply voice and sound effects\n            - button \"Open Use your benefits across profiles details\": Use your benefits across profiles\n      - heading \"Single product plans\" [level=3]\n      - paragraph: You can also purchase a plan for just your favorite app.\n      - text: Instagram Plus\n      - paragraph: Advanced controls. Exclusive features.\n      - text: $3.99/month\n      - button \"Open Choose a custom app icon details\": Choose a custom app icon\n      - button \"Open Pin more posts to your profile details\": Pin more posts to your profile\n      - button \"Open Create multiple story audiences details\": Create multiple story audiences\n      - button \"Open Send super hearts to stories details\": Send super hearts to stories\n      - button \"Open Spotlight your story details\": Spotlight your story\n      - button \"Open Post content only to your profile details\": Post content only to your profile\n      - button \"Open Unlock custom fonts for your bio details\": Unlock custom fonts for your bio\n      - list:\n        - listitem:\n          - heading \"See more features\" [level=3]:\n            - button \"See more features\"\n      - link \"How to subscribe to Instagram Plus\":\n        - /url: https://help.instagram.com/1455320872971466/\n        - text: How to subscribe\n      - text: WhatsApp Plus\n      - paragraph: More ways to make WhatsApp yours.\n      - text: $2.99/month\n      - button \"Open Choose a custom app icon details\": Choose a custom app icon\n      - button \"Open Change your app’s theme details\": Change your app’s theme\n      - button \"Open Pin extra chats details\": Pin extra chats\n      - button \"Open Send exclusive stickers details\": Send exclusive stickers\n      - button \"Open Get exclusive ringtones details\": Get exclusive ringtones\n      - button \"Open Upgrade your chat lists details\": Upgrade your chat lists\n      - link \"How to subscribe to WhatsApp Plus\":\n        - /url: https://faq.whatsapp.com/1442805697640853/\n        - text: How to subscribe\n      - text: Facebook Plus\n      - paragraph: Supercharge your Facebook experience.\n      - text: $3.99/month\n      - button \"Open Choose a custom app icon details\": Choose a custom app icon\n      - button \"Open Super react to stories details\": Super react to stories\n      - button \"Open Preview stories details\": Preview stories\n      - button \"Open Search your story viewer list details\": Search your story viewer list\n      - button \"Open Extend your story’s expiration details\": Extend your story’s expiration\n      - button \"Open Get story rewatch insights details\": Get story rewatch insights\n      - link \"How to subscribe to Facebook Plus\":\n        - /url: https://www.facebook.com/help/1233488775563527\n        - text: How to subscribe\n      - text: In order to subscribe to Meta One, you must be logged into your personal or\n      - link \"professional account\":\n        - /url: https://www.facebook.com/help/instagram/138925576505882\n      - text: (Instagram) or personal,\n      - link \"pro mode\":\n        - /url: https://www.facebook.com/business/help/2680340558863560\n      - text: or\n      - link \"business Page\":\n        - /url: https://www.facebook.com/business/help/1968057156746246?id=939256796236247\n      - text: (Facebook). Meta One is not available in all regions. You must meet certain\n      - link \"eligibility requirements\":\n        - /url: https://www.meta.com/help/subscriptions/960854640235758/\n      - text: in order to qualify. Meta One subscribers must agree to the Terms of Service (see\n      - link \"consumers\":\n        - /url: https://www.facebook.com/legal/meta_subs_terms\n      - text: \", see\"\n      - link \"creators and businesses\":\n        - /url: https://www.facebook.com/legal/mocb_terms\n      - text: ) and follow our\n      - link \"Instagram Terms of Use\":\n        - /url: https://help.instagram.com/581066165581870\n      - text: \",\"\n      - link \"Facebook Terms of Service\":\n        - /url: https://www.facebook.com/legal/terms?paipv=0&eav=AfZvYlKgIQAjlxpYVSHVvCw3CDNKhbt_ANPixrhWnZggprx0mVoioWLHLGnddjmxNdY&_rdr\n      - text: \",\"\n      - link \"Community Standards\":\n        - /url: https://transparency.fb.com/policies/community-standards/\n      - text: \",\"\n      - link \"WhatsApp Business Terms of Service\":\n        - /url: https://www.whatsapp.com/legal/business-terms\n      - text: and\n      - link \"WhatsApp Business Messaging Policy\":\n        - /url: https://business.whatsapp.com/policy\n      - text: .\n      - link \"Manage your Meta One Subscription\":\n        - /url: https://www.meta.com/help/subscriptions/4515570262058351/?ref=website\n      - text: .\n    - heading \"Frequently asked questions\" [level=3]\n    - text: Looking to learn more? Visit our\n    - link \"Help Center\":\n      - /url: https://www.meta.com/help/subscriptions/842874544827919/?ref=website\n    - text: for more information.\n    - list:\n      - listitem:\n        - heading \"What is Meta One?\" [level=3]:\n          - button \"What is Meta One?\"\n      - listitem:\n        - heading \"How do I subscribe?\" [level=3]:\n          - button \"How do I subscribe?\"\n      - listitem:\n        - heading \"How much does Meta One cost?\" [level=3]:\n          - button \"How much does Meta One cost?\"\n      - listitem:\n        - heading \"How is Meta One different from Meta Verified?\" [level=3]:\n          - button \"How is Meta One different from Meta Verified?\"\n      - listitem:\n        - heading \"Is Meta Verified going away?\" [level=3]:\n          - button \"Is Meta Verified going away?\"\n      - listitem:\n        - heading \"Can I still get a verified badge?\" [level=3]:\n          - button \"Can I still get a verified badge?\"\n      - listitem:\n        - heading \"Is Meta AI still free?\" [level=3]:\n          - button \"Is Meta AI still free?\"\n      - listitem:\n        - heading \"Does my subscription work across Instagram, Facebook and WhatsApp?\" [level=3]:\n          - button \"Does my subscription work across Instagram, Facebook and WhatsApp?\"\n      - listitem:\n        - heading \"How do I manage my subscription?\" [level=3]:\n          - button \"How do I manage my subscription?\"\n      - listitem:\n        - heading \"Can I cancel anytime?\" [level=3]:\n          - button \"Can I cancel anytime?\"\n      - listitem:\n        - heading \"What if I'm having issues?\" [level=3]:\n          - button \"What if I'm having issues?\"\n  - contentinfo:\n    - img \"Meta\"\n    - list:\n      - listitem:\n        - link \"Facebook Meta.com social media\":\n          - /url: https://www.facebook.com/Meta\n          - img \"Facebook Meta.com social media\"\n      - listitem:\n        - link \"Threads Meta.com social media\":\n          - /url: https://www.threads.net/@meta\n          - img \"Threads Meta.com social media\"\n      - listitem:\n        - link \"Instagram Meta.com social media\":\n          - /url: https://www.instagram.com/meta/\n          - img \"Instagram Meta.com social media\"\n      - listitem:\n        - link \"X Meta.com social media\":\n          - /url: https://twitter.com/Meta\n          - img \"X Meta.com social media\"\n      - listitem:\n        - link \"YouTube Meta.com media channel\":\n          - /url: https://www.youtube.com/meta\n          - img \"YouTube Meta.com media channel\"\n    - heading \"Meta Store\" [level=2]\n    - list:\n      - listitem:\n        - link \"Meta Glasses\":\n          - /url: /ai-glasses/meta-glasses/\n      - listitem:\n        - link \"Ray-Ban Meta glasses\":\n          - /url: /ai-glasses/ray-ban-meta/\n      - listitem:\n        - link \"Oakley Meta glasses\":\n          - /url: /ai-glasses/oakley-meta/\n      - listitem:\n        - link \"Meta Ray-Ban Display\":\n          - /url: /ai-glasses/meta-ray-ban-display/\n      - listitem:\n        - link \"Compare glasses\":\n          - /url: /ai-glasses/compare/\n      - listitem:\n        - link \"AI glasses accessories\":\n          - /url: /ai-glasses/accessories/\n      - listitem:\n        - link \"AI glasses guides\":\n          - /url: /ai-glasses/learn/\n      - listitem:\n        - link \"Meta Lab\":\n          - /url: /meta-lab/\n      - listitem:\n        - link \"Meta Quest\":\n          - /url: /quest/\n      - listitem:\n        - link \"Meta Quest accessories\":\n          - /url: /quest/accessories/\n      - listitem:\n        - link \"Apps and games\":\n          - /url: /experiences/\n      - listitem:\n        - link \"Meta Gift Card\":\n          - /url: /gift-cards/\n      - listitem:\n        - link \"Refurbished Meta Quest 3\":\n          - /url: /refurbished/quest-3/\n      - listitem:\n        - link \"Refurbished Meta Quest 3S\":\n          - /url: /refurbished/quest-3s/\n      - listitem:\n        - link \"Refurbished Ray-Ban Meta glasses\":\n          - /url: /refurbished/ai-glasses/\n      - listitem:\n        - link \"More from Ray-Ban\":\n          - /url: https://rayban.com/\n      - listitem:\n        - 'link \"Meta Quest: Play now. Pay later.\"':\n          - /url: /quest/play-now-pay-later/\n      - listitem:\n        - link \"Meta Warranty Plus\":\n          - /url: /warranty-plus/\n      - listitem:\n        - link \"Meta Quest referrals\":\n          - /url: /quest/referrals/\n      - listitem:\n        - link \"Education discount\":\n          - /url: \"/purchase-program/education/ \"\n      - listitem:\n        - link \"AI glasses bulk order inquiry\":\n          - /url: /ai-glasses/bulk-order/\n      - listitem:\n        - link \"Blog\":\n          - /url: /blog/\n    - heading \"Store support and legal\" [level=2]\n    - list:\n      - listitem:\n        - link \"Meta Help Center\":\n          - /url: /help/\n      - listitem:\n        - link \"Order status\":\n          - /url: /order/find/\n      - listitem:\n        - link \"Returns\":\n          - /url: /returns/\n      - listitem:\n        - link \"Find a product demo\":\n          - /url: /demo/\n      - listitem:\n        - link \"Find a store\":\n          - /url: /retailers/\n      - listitem:\n        - link \"Legal\":\n          - /url: /legal/\n      - listitem:\n        - link \"Terms of sale\":\n          - /url: /legal/terms-of-sale/\n      - listitem:\n        - link \"Meta Quest safety center\":\n          - /url: /quest/safety-center/\n    - heading \"Community\" [level=2]\n    - list:\n      - listitem:\n        - link \"Creators\":\n          - /url: https://creators.atmeta.com/\n      - listitem:\n        - link \"Developers\":\n          - /url: https://developers.meta.com/\n      - listitem:\n        - link \"Businesses\":\n          - /url: https://www.facebook.com/business\n      - listitem:\n        - link \"Non-profits\":\n          - /url: https://www.facebook.com/government-nonprofits/best-practices/nonprofits/\n      - listitem:\n        - link \"Download SDKs\":\n          - /url: https://developers.meta.com/horizon/downloads/unity/\n      - listitem:\n        - link \"Made for Meta partner program\":\n          - /url: /made-for-meta/\n      - listitem:\n        - link \"VR for Good\":\n          - /url: /community/vr-for-good/\n    - heading \"Our actions\" [level=2]\n    - list:\n      - listitem:\n        - link \"Data and privacy\":\n          - /url: /actions/protecting-privacy-and-security/\n      - listitem:\n        - link \"Responsible business practices\":\n          - /url: /actions/responsible-business-practices/\n      - listitem:\n        - link \"Accessibility\":\n          - /url: /accessibility/\n      - listitem:\n        - link \"Elections\":\n          - /url: /actions/preparing-for-elections-with-meta/\n    - heading \"About us\" [level=2]\n    - list:\n      - listitem:\n        - link \"About Meta\":\n          - /url: /about/\n      - listitem:\n        - link \"Company Info\":\n          - /url: /about/company-info/\n      - listitem:\n        - link \"Careers\":\n          - /url: https://metacareers.com/\n      - listitem:\n        - link \"Media gallery\":\n          - /url: /media-gallery/\n      - listitem:\n        - link \"Brand resources\":\n          - /url: /brand/resources/\n      - listitem:\n        - link \"For investors\":\n          - /url: https://investor.atmeta.com/home/default.aspx\n      - listitem:\n        - link \"Newsroom\":\n          - /url: https://about.fb.com/news/\n    - heading \"Site terms and policies\" [level=2]\n    - list:\n      - listitem:\n        - link \"Community standards\":\n          - /url: https://transparency.meta.com/policies/community-standards/\n      - listitem:\n        - link \"Privacy policy\":\n          - /url: /legal/privacy-policy/\n      - listitem:\n        - link \"Terms\":\n          - /url: https://www.facebook.com/terms.php/\n      - listitem:\n        - link \"Cookie policy\":\n          - /url: https://www.facebook.com/privacy/policies/cookies/\n    - heading \"App support\" [level=2]\n    - list:\n      - listitem:\n        - link \"Facebook Help Center\":\n          - /url: https://www.facebook.com/help?ref=about.facebook.com\n      - listitem:\n        - link \"Messenger Help Center\":\n          - /url: https://www.facebook.com/help/messenger-app/?ref=about.facebook.com\n      - listitem:\n        - link \"Instagram Help Center\":\n          - /url: https://help.instagram.com/\n      - listitem:\n        - link \"WhatsApp Help Center\":\n          - /url: https://faq.whatsapp.com/\n      - listitem:\n        - link \"Workplace Help Center\":\n          - /url: https://www.facebook.com/help/work?ref=about.facebook.com\n      - listitem:\n        - link \"Meta Verified\":\n          - /url: /meta-verified/\n      - listitem:\n        - link \"Meta Account (Single Login)\":\n          - /url: /account/\n    - button \"Change language\": English (US)"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://www.meta.com/meta-one-plans/",
+              "origin": "https://www.meta.com",
+              "query_parameter_names": [],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

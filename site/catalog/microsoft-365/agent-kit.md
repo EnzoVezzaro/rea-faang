@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Microsoft 365 (microsoft-365); inve
 
 # Microsoft 365 — implementation skill (`microsoft-365`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Microsoft 365**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Microsoft 365 (microsoft-365); inve
 
 This is the coding-agent skill for **Microsoft 365** (`microsoft-365`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/microsoft/microsoft-365.md` from the catalog page, or run `npx rae-faang microsoft-365 --out ./microsoft-365.md`, `npx rae-faang skills generate microsoft-365` or `npx rae-faang build agent-kit microsoft-365 --out ./microsoft-365-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/microsoft/microsoft-365.md` from the catalog page, or run `npx rea-faang microsoft-365 --out ./microsoft-365.md`, `npx rea-faang skills generate microsoft-365` or `npx rea-faang build agent-kit microsoft-365 --out ./microsoft-365-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Microsoft 365 / `microsoft-365` | `catalog/products.jsonl` |
 | Official product URL | [https://www.microsoft.com/en-us/microsoft-365](https://www.microsoft.com/en-us/microsoft-365) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://learn.microsoft.com/en-us/microsoft-365/](https://learn.microsoft.com/en-us/microsoft-365/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier microsoft-365` | `research/companies/microsoft/products/microsoft-365.md` |
+| Research dossier | `npx rea-faang research dossier microsoft-365` | `research/companies/microsoft/products/microsoft-365.md` |
 | REA report | `catalog/rea/microsoft/microsoft-365.md` (captured 2026-11-03T01:41:00.503Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/microsoft-365.json` (`ev_c99ad19e5625c4adb0787ebed9609c6c4927e32e1265ced64a95b81fe851fc1a`) | Catalog evidence |
 | Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show microsoft-365 --format json` and `npx rae-faang research dossier microsoft-365` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show microsoft-365 --format json` and `npx rea-faang research dossier microsoft-365` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `MICROSOFT-365-CAP-F9D4246F`, `MICROSOFT-365-CAP-7251FDF1`, `MICROSOFT-365-CAP-EA973C23`, `MICROSOFT-365-CAP-14054D0E`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `MICROSOFT-365-CAP-36984C91`, `MICROSOFT-365-CAP-5EBAFA84`, `MICROSOFT-365-CAP-C48CA935`, `MICROSOFT-365-CAP-35D76829`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,19 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `MICROSOFT-365-CAP-F9D4246F` | Word, Excel, PowerPoint and Outlook across desktop, web and mobile | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `MICROSOFT-365-CAP-7251FDF1` | OneDrive file storage and sharing | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `MICROSOFT-365-CAP-EA973C23` | Teams meetings and chat inside the subscription | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `MICROSOFT-365-CAP-14054D0E` | Admin center for users, licences and policy | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-365-CAP-36984C91` | Microsoft 365 is verified as an active family of productivity and collaboration applications and services. | VERIFIED | `ev-microsoft-365-identity`, `ev-microsoft-365-products` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-365-CAP-5EBAFA84` | Licensed Office applications and plan-specific business services are documented; exact entitlements vary by plan and region. | VERIFIED | `ev-microsoft-365-business` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-365-CAP-C48CA935` | Microsoft Graph documents an integration surface across Microsoft 365 core services; authentication and tenant permissions remain required. | VERIFIED | `ev-microsoft-365-graph` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-365-CAP-35D76829` | The suite boundary is verified, but plan-specific pricing, quotas, regional availability and tenant behavior were not exhaustively verified. | VERIFIED | `ev-microsoft-365-products`, `ev-microsoft-365-business` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Products `, `button: Resources `, `button: Support `, `button: Search Microsoft 365`, `button: ME`, `button: Close Announcement Banner`, `button:  Brainstorm and research with ease`, `button: Play`, `button:  Organize and plan with precision`, `button:  Create and polish with confidence`, `button:  Protect what’s important`, `button: Previous Slide`, `button: Next Slide`, `button: More information`, `button: Outlook`, `button: OneDrive`, `button: Microsoft Copilot`, `button: Word (web and mobile only)`, `button: Excel (web and mobile only)`, `button: PowerPoint (web and mobile only)`, `link: Skip to main content`, `link: Microsoft`, `link: Microsoft 365`, `link: Plans and pricing`, `link: Try for free`, `link: Watch our Copilot webinar on demand.`, `link: Footnote 2`, `link: Footnote 1`, `link: See Copilot in action`, `link: For individuals`, `link: For business`, `link: For enterprise`, `link: For education`, `link: How it works`, `link: features`, `link: news`, `link: What’s included`, `link: Plans`, `link: Get started`, `link: FAQ`, `link: See plans and pricing for Microsoft 365`, `link: Learn more about Microsoft 365 for individuals`, `link: footnote1`, `link: Back to Features section`, `link: Get offer - Explore Microsoft 365 discounted plans for college students and enhance productivity.`, `link: Explore all apps, products and services of microsoft 365`, `link: Learn more about Microsoft Word`, `link: Learn more about Microsoft excel`, `link: Learn more about Microsoft powerpoint`, `link: Learn more about Your inbox, organized. Your day, planned`, `link: Learn more about OneNote`, `link: Learn more about Connect with anyone in Teams for free`, `link: Back to tabs for what's included section`, `link: Create a free Microsoft account`, `link: See terms.`, `link: Buy now`, `link: See terms`, `button: OneNote (web and mobile only)`, `button: Microsoft Defender`, `button: Microsoft Teams`, `link: see terms for yearly option of Microsoft 365 family`, `link: Buy now your Microsoft 365 family account`, `link: Try for free Microsoft 365 Family for free trial period`, `button: Word`, `button: Excel`, `button: PowerPoint`, `button: OneNote`, `link: see terms of yearly Microsoft 365 premium subscription`, `link: Buy now yearly microsoft 365 premium subscription`, `link: Try for free Microsoft 365 premium free trial`, `link: Back to carousel navigation controls`, `link: Back to tabs for plans section`, `link: Learn more about how to Try what’s next in AI`, `button: Expand all`, `button: Collapse all`, `button: 01/ What is Microsoft 365 and what features are included with a subscription? `, `button: 02/ Was Microsoft Office 365 renamed to Microsoft 365? `, `button: 03/ When do I need a Microsoft 365 subscription? `, `button: 04/ What is the difference between Microsoft 365 Basic, Personal, Family, Premium, and Pro? `, `button: 05/ How is Copilot integrated across Microsoft 365 apps? `, `button: 06/ How does Microsoft use my data and protect my privacy? `, `button: 07/ What devices can I use Microsoft 365 on? `, `button: 08/ Why should I choose Microsoft 365 over tools like Google Workspace? `, `link: Back to footnote 1`, `link: Back to footnote 2`, `link: Back to footnote 3`, `link: Back to footnote 4`, `link: Click to see details about Microsoft 365 Personal, Family, or Premium subscription`, `link: Follow Microsoft 365 on Linkedin`, `link: Follow Microsoft 365 on Twitter`, `link: Follow Microsoft 365 on Instagram`, `link: Follow Microsoft 365 on Threads`, `link: Follow Microsoft 365 on Facebook`, `link: Follow Microsoft 365 on TikTok`, `link: Follow Microsoft 365 on YouTube`, `link: Surface Laptop Ultra`, `link: Surface Pro`, `link: Surface Laptop`, `link: Surface RTX Spark Dev Box`, `link: Explore Copilot`, `link: Explore Microsoft products`, `link: Windows 11 apps`, `link: Account profile`, `link: Download Center`, `link: Microsoft Store support`, `link: Returns`, `link: Order tracking`, `link: Certified Refurbished`, `link: Why buy from Microsoft Store`, `link: Flexible Payments`, `link: Microsoft in education`, `link: Devices for education`, `link: Microsoft Teams for Education`, `link: Microsoft 365 Education`, `link: How to buy for your school`, `link: Educator training and development`, `link: Deals for students and parents`, `link: AI for education`, `link: Microsoft AI`, `link: Microsoft Security`, `link: Dynamics 365`, `link: Microsoft Power Platform`, `link: Microsoft Teams`, `link: Microsoft Copilot`, `link: Small Business`, `link: Azure`, `link: Microsoft Developer`, `link: Microsoft Learn`, `link: Support for AI marketplace apps`, `link: Microsoft Tech Community`, `link: Microsoft Marketplace`, `link: Software companies`, `link: Visual Studio`, `link: Careers`, `link: About Microsoft`, `link: Company news`, `link: Privacy at Microsoft`, `link: Investors`, `link: Diversity and inclusion`, `link: Accessibility`, `link: Sustainability`, `link: Content Language Selector. Currently set to English (United States)`, `link: Your Privacy Choices Opt-Out Icon Your Privacy Choices`, `link: Consumer Health Privacy`, `link: Sitemap`, `link: Contact Microsoft`, `link: Privacy`, `link: Terms of use`, `link: Trademarks`, `link: Safety & eco`, `link: Recycling`, `link: About our ads`, `button: Feedback`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Word, Excel, PowerPoint and Outlook across desktop, web and mobile:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **OneDrive file storage and sharing:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Teams meetings and chat inside the subscription:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Admin center for users, licences and policy:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Microsoft 365 is verified as an active family of productivity and collaboration applications and services.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Licensed Office applications and plan-specific business services are documented; exact entitlements vary by plan and region.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Microsoft Graph documents an integration surface across Microsoft 365 core services; authentication and tenant permissions remain required.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The suite boundary is verified, but plan-specific pricing, quotas, regional availability and tenant behavior were not exhaustively verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -147,41 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-F9D4246F — Word, Excel, PowerPoint and Outlook across desktop, web and mobile
+### REQ-FUNC-36984C91 — Microsoft 365 is verified as an active family of productivity and collaboration applications and services.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-microsoft-365-identity`, `ev-microsoft-365-products`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-F9D4246F`; fixture and expected output must be specified from evidence.
-- **Trace:** `MICROSOFT-365-CAP-F9D4246F` → `REQ-FUNC-F9D4246F` → `TEST-FUNC-F9D4246F`.
+- **Associated test ID:** `TEST-FUNC-36984C91`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-365-CAP-36984C91` → `REQ-FUNC-36984C91` → `TEST-FUNC-36984C91`.
 
-### REQ-FUNC-7251FDF1 — OneDrive file storage and sharing
+### REQ-FUNC-5EBAFA84 — Licensed Office applications and plan-specific business services are documented; exact entitlements vary by plan and region.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-microsoft-365-business`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-7251FDF1`; fixture and expected output must be specified from evidence.
-- **Trace:** `MICROSOFT-365-CAP-7251FDF1` → `REQ-FUNC-7251FDF1` → `TEST-FUNC-7251FDF1`.
+- **Associated test ID:** `TEST-FUNC-5EBAFA84`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-365-CAP-5EBAFA84` → `REQ-FUNC-5EBAFA84` → `TEST-FUNC-5EBAFA84`.
 
-### REQ-FUNC-EA973C23 — Teams meetings and chat inside the subscription
+### REQ-FUNC-C48CA935 — Microsoft Graph documents an integration surface across Microsoft 365 core services; authentication and tenant permissions remain required.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-microsoft-365-graph`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-EA973C23`; fixture and expected output must be specified from evidence.
-- **Trace:** `MICROSOFT-365-CAP-EA973C23` → `REQ-FUNC-EA973C23` → `TEST-FUNC-EA973C23`.
+- **Associated test ID:** `TEST-FUNC-C48CA935`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-365-CAP-C48CA935` → `REQ-FUNC-C48CA935` → `TEST-FUNC-C48CA935`.
 
-### REQ-FUNC-14054D0E — Admin center for users, licences and policy
+### REQ-FUNC-35D76829 — The suite boundary is verified, but plan-specific pricing, quotas, regional availability and tenant behavior were not exhaustively verified.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-microsoft-365-products`, `ev-microsoft-365-business`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-14054D0E`; fixture and expected output must be specified from evidence.
-- **Trace:** `MICROSOFT-365-CAP-14054D0E` → `REQ-FUNC-14054D0E` → `TEST-FUNC-14054D0E`.
+- **Associated test ID:** `TEST-FUNC-35D76829`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-365-CAP-35D76829` → `REQ-FUNC-35D76829` → `TEST-FUNC-35D76829`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -228,10 +228,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `MICROSOFT-365-CAP-F9D4246F` — Word, Excel, PowerPoint and Outlook across desktop, web and mobile | Not verified against LibreOffice | None yet; compare with `ev_c99ad19e5625c4adb0787ebed9609c6c4927e32e1265ced64a95b81fe851fc1a` | Candidate code path and tests must be inspected |
-| `MICROSOFT-365-CAP-7251FDF1` — OneDrive file storage and sharing | Not verified against LibreOffice | None yet; compare with `ev_c99ad19e5625c4adb0787ebed9609c6c4927e32e1265ced64a95b81fe851fc1a` | Candidate code path and tests must be inspected |
-| `MICROSOFT-365-CAP-EA973C23` — Teams meetings and chat inside the subscription | Not verified against LibreOffice | None yet; compare with `ev_c99ad19e5625c4adb0787ebed9609c6c4927e32e1265ced64a95b81fe851fc1a` | Candidate code path and tests must be inspected |
-| `MICROSOFT-365-CAP-14054D0E` — Admin center for users, licences and policy | Not verified against LibreOffice | None yet; compare with `ev_c99ad19e5625c4adb0787ebed9609c6c4927e32e1265ced64a95b81fe851fc1a` | Candidate code path and tests must be inspected |
+| `MICROSOFT-365-CAP-36984C91` — Microsoft 365 is verified as an active family of productivity and collaboration applications and services. | Not verified against LibreOffice | None yet; compare with `ev_c99ad19e5625c4adb0787ebed9609c6c4927e32e1265ced64a95b81fe851fc1a` | Candidate code path and tests must be inspected |
+| `MICROSOFT-365-CAP-5EBAFA84` — Licensed Office applications and plan-specific business services are documented; exact entitlements vary by plan and region. | Not verified against LibreOffice | None yet; compare with `ev_c99ad19e5625c4adb0787ebed9609c6c4927e32e1265ced64a95b81fe851fc1a` | Candidate code path and tests must be inspected |
+| `MICROSOFT-365-CAP-C48CA935` — Microsoft Graph documents an integration surface across Microsoft 365 core services; authentication and tenant permissions remain required. | Not verified against LibreOffice | None yet; compare with `ev_c99ad19e5625c4adb0787ebed9609c6c4927e32e1265ced64a95b81fe851fc1a` | Candidate code path and tests must be inspected |
+| `MICROSOFT-365-CAP-35D76829` — The suite boundary is verified, but plan-specific pricing, quotas, regional availability and tenant behavior were not exhaustively verified. | Not verified against LibreOffice | None yet; compare with `ev_c99ad19e5625c4adb0787ebed9609c6c4927e32e1265ced64a95b81fe851fc1a` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -278,10 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-F9D4246F** → `REQ-FUNC-F9D4246F`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-7251FDF1** → `REQ-FUNC-7251FDF1`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-EA973C23** → `REQ-FUNC-EA973C23`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-14054D0E** → `REQ-FUNC-14054D0E`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-36984C91** → `REQ-FUNC-36984C91`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-5EBAFA84** → `REQ-FUNC-5EBAFA84`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-C48CA935** → `REQ-FUNC-C48CA935`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-35D76829** → `REQ-FUNC-35D76829`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -302,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-F9D4246F, REQ-FUNC-7251FDF1, REQ-FUNC-EA973C23, REQ-FUNC-14054D0E
+- **Requirements:** REQ-FUNC-36984C91, REQ-FUNC-5EBAFA84, REQ-FUNC-C48CA935, REQ-FUNC-35D76829
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -312,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-F9D4246F, REQ-FUNC-7251FDF1, REQ-FUNC-EA973C23, REQ-FUNC-14054D0E
+- **Requirements:** REQ-FUNC-36984C91, REQ-FUNC-5EBAFA84, REQ-FUNC-C48CA935, REQ-FUNC-35D76829
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -334,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-F9D4246F, REQ-FUNC-7251FDF1, REQ-FUNC-EA973C23, REQ-FUNC-14054D0E; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-36984C91, REQ-FUNC-5EBAFA84, REQ-FUNC-C48CA935, REQ-FUNC-35D76829; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -364,11 +364,20 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
+| `ev-microsoft-365-identity` | Microsoft 365 — The official product surface presents Microsoft 365 plans and applications for individuals and organisations. | [link](https://www.microsoft.com/en-us/microsoft-365) | 2026-11-03T00:00:00Z | Microsoft 365 is an active Microsoft subscription platform for productivity and collaboration. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-microsoft-365-products` | Microsoft 365 products, apps and services — Microsoft's official directory lists the applications and services available across Microsoft 365. | [link](https://www.microsoft.com/en-us/microsoft-365/products-apps-services) | 2026-11-03T00:00:00Z | Microsoft 365 is a family of applications and services rather than one standalone application. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-microsoft-365-business` | What is Microsoft 365 for business? — Microsoft documents Outlook, Word, Excel, PowerPoint and OneNote availability together with business-plan administration and services. | [link](https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/what-is-microsoft-365-for-business) | 2026-11-03T00:00:00Z | Business plans include licensed desktop applications and plan-specific Microsoft 365 services. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-microsoft-365-graph` | Microsoft Graph overview — The official overview lists Microsoft 365 core services including OneDrive, Outlook/Exchange, Calendar, Excel, SharePoint, Teams and Planner. | [link](https://learn.microsoft.com/en-us/graph/overview) | 2026-11-03T00:00:00Z | Microsoft Graph is the documented integration gateway for Microsoft 365 data and core services. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
 | `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.microsoft.com/en-us/microsoft-365) | 2026-11-03T00:00:00Z | Microsoft 365 is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
 | `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://learn.microsoft.com/en-us/microsoft-365/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://www.microsoft.com/en-us/microsoft-365) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://learn.microsoft.com/en-us/microsoft-365/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://www.microsoft.com/en-us/microsoft-365/products-apps-services) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/what-is-microsoft-365-for-business) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://learn.microsoft.com/en-us/graph/overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_c99ad19e5625c4adb0787ebed9609c6c4927e32e1265ced64a95b81fe851fc1a` | Microsoft 365 Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.microsoft.com/en-us/microsoft-365) | 2026-11-03T01:41:00.503Z | A dated unauthenticated snapshot exposed controls button: Products , button: Resources , button: Support , button: Search Microsoft 365, button: ME, button: Close Announcement Banner, button:  Brainstorm and research with ease, button: Play, button:  Organize and plan with precision, button:  Create and polish with confidence, button:  Protect what’s important, button: Previous Slide, button: Next Slide, button: More information, button: Outlook, button: OneDrive, button: Microsoft Copilot, button: Word (web and mobile only), button: Excel (web and mobile only), button: PowerPoint (web and mobile only), link: Skip to main content, link: Microsoft, link: Microsoft 365, link: Plans and pricing, link: Try for free, link: Watch our Copilot webinar on demand., link: Footnote 2, link: Footnote 1, link: See Copilot in action, link: For individuals, link: For business, link: For enterprise, link: For education, link: How it works, link: features, link: news, link: What’s included, link: Plans, link: Get started, link: FAQ, link: See plans and pricing for Microsoft 365, link: Learn more about Microsoft 365 for individuals, link: footnote1, link: Back to Features section, link: Get offer - Explore Microsoft 365 discounted plans for college students and enhance productivity., link: Explore all apps, products and services of microsoft 365, link: Learn more about Microsoft Word, link: Learn more about Microsoft excel, link: Learn more about Microsoft powerpoint, link: Learn more about Your inbox, organized. Your day, planned, link: Learn more about OneNote, link: Learn more about Connect with anyone in Teams for free, link: Back to tabs for what's included section, link: Create a free Microsoft account, link: See terms., link: Buy now, link: See terms, button: OneNote (web and mobile only), button: Microsoft Defender, button: Microsoft Teams, link: see terms for yearly option of Microsoft 365 family, link: Buy now your Microsoft 365 family account, link: Try for free Microsoft 365 Family for free trial period, button: Word, button: Excel, button: PowerPoint, button: OneNote, link: see terms of yearly Microsoft 365 premium subscription, link: Buy now yearly microsoft 365 premium subscription, link: Try for free Microsoft 365 premium free trial, link: Back to carousel navigation controls, link: Back to tabs for plans section, link: Learn more about how to Try what’s next in AI, button: Expand all, button: Collapse all, button: 01/ What is Microsoft 365 and what features are included with a subscription? , button: 02/ Was Microsoft Office 365 renamed to Microsoft 365? , button: 03/ When do I need a Microsoft 365 subscription? , button: 04/ What is the difference between Microsoft 365 Basic, Personal, Family, Premium, and Pro? , button: 05/ How is Copilot integrated across Microsoft 365 apps? , button: 06/ How does Microsoft use my data and protect my privacy? , button: 07/ What devices can I use Microsoft 365 on? , button: 08/ Why should I choose Microsoft 365 over tools like Google Workspace? , link: Back to footnote 1, link: Back to footnote 2, link: Back to footnote 3, link: Back to footnote 4, link: Click to see details about Microsoft 365 Personal, Family, or Premium subscription, link: Follow Microsoft 365 on Linkedin, link: Follow Microsoft 365 on Twitter, link: Follow Microsoft 365 on Instagram, link: Follow Microsoft 365 on Threads, link: Follow Microsoft 365 on Facebook, link: Follow Microsoft 365 on TikTok, link: Follow Microsoft 365 on YouTube, link: Surface Laptop Ultra, link: Surface Pro, link: Surface Laptop, link: Surface RTX Spark Dev Box, link: Explore Copilot, link: Explore Microsoft products, link: Windows 11 apps, link: Account profile, link: Download Center, link: Microsoft Store support, link: Returns, link: Order tracking, link: Certified Refurbished, link: Why buy from Microsoft Store, link: Flexible Payments, link: Microsoft in education, link: Devices for education, link: Microsoft Teams for Education, link: Microsoft 365 Education, link: How to buy for your school, link: Educator training and development, link: Deals for students and parents, link: AI for education, link: Microsoft AI, link: Microsoft Security, link: Dynamics 365, link: Microsoft Power Platform, link: Microsoft Teams, link: Microsoft Copilot, link: Small Business, link: Azure, link: Microsoft Developer, link: Microsoft Learn, link: Support for AI marketplace apps, link: Microsoft Tech Community, link: Microsoft Marketplace, link: Software companies, link: Visual Studio, link: Careers, link: About Microsoft, link: Company news, link: Privacy at Microsoft, link: Investors, link: Diversity and inclusion, link: Accessibility, link: Sustainability, link: Content Language Selector. Currently set to English (United States), link: Your Privacy Choices Opt-Out Icon Your Privacy Choices, link: Consumer Health Privacy, link: Sitemap, link: Contact Microsoft, link: Privacy, link: Terms of use, link: Trademarks, link: Safety & eco, link: Recycling, link: About our ads, button: Feedback and landmarks banner, navigation: Contextual menu, main, navigation: In Page quick links, region: Features section, region: Plans section, region: Footnotes, region: Follow Microsoft Copilot links, contentinfo, navigation: Footer Resource links, navigation: Microsoft corporate links. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
+| `SRC-CANDIDATE-1` | LibreOffice candidate — Curated entry; repository only when recorded. | [link](https://www.libreoffice.org/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-2` | ONLYOFFICE candidate — Curated entry; repository only when recorded. | [link](https://www.onlyoffice.com/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-3` | Nextcloud candidate — Curated entry; repository only when recorded. | [link](https://nextcloud.com/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
 
 ### Confidence classifications
 
@@ -395,79 +404,87 @@ Resume token: `microsoft-365`. Read dossier, REA report and raw Evidence before 
 
 # 1. Executive summary
 
-Microsoft 365 bundles the Office applications with cloud storage, email and collaboration under a per-user subscription; the client applications are proprietary and the service is observed through documented APIs.
-
+Microsoft 365 is Microsoft's subscription platform for productivity and collaboration. It packages licensed applications and hosted services; it is not a single application and does not replace the separate catalog entries for OneDrive or Teams.
 
 # 2. Product identity and ownership
 
-**Official name:** Microsoft 365
-**Company:** Microsoft Corporation
-**Former name:** Office 365 (business plans)
-**Lifecycle status:** active
+**Official name:** Microsoft 365  
+**Company:** Microsoft Corporation  
+**Former name:** Office 365 for several plan families  
+**Lifecycle status:** active  
 **Official website:** https://www.microsoft.com/en-us/microsoft-365
+
+Microsoft's product directory and business documentation identify Microsoft 365 as a family of applications and services with consumer, business and enterprise plan variants.
 
 # 3. Product capabilities
 
-- Word, Excel, PowerPoint and Outlook for desktop, web and mobile
-- OneDrive storage with sharing and version history
-- Teams chat and meetings included in the subscription
-- Microsoft 365 admin center for users, licences and policy
+- Licensed Word, Excel, PowerPoint, Outlook and OneNote applications, with plan-specific availability.
+- Microsoft 365 cloud services including OneDrive, Outlook/Exchange, SharePoint, Teams, Planner, Calendar and related services.
+- Web, desktop and mobile access, subject to plan and account type.
+- Administrative surfaces for users, licenses, policies, security and compliance in business and enterprise plans.
+
+OneDrive and Teams are cataloged separately because they have their own product identity, documentation and API surfaces. Their inclusion in a Microsoft 365 plan does not make them duplicate entries.
 
 # 4. Technical architecture
 
-The suite is a set of proprietary client applications plus hosted services. Public documentation covers the service APIs and admin surfaces, not the implementations.
+Microsoft 365 is a managed, proprietary SaaS platform composed of client applications, hosted services, identity and administrative controls. Microsoft Graph provides a documented API gateway to Microsoft 365 data and services; it is an integration surface, not the implementation of the suite.
 
 # 5. User workflows
 
-A user signs in with a work or personal account, edits documents in a browser or desktop client, stores files in OneDrive and collaborates in Teams. Administrators assign licences and policies in the admin center.
+A person or organisation selects a plan, authenticates with a Microsoft account or organisational identity, assigns licenses where applicable, and uses the licensed applications and hosted services. The exact applications, quotas, administration and compliance features depend on plan and tenant configuration.
 
 # 6. Pricing and access
 
-Sold as per-user subscriptions across consumer, business and enterprise plans; the catalog records the plans' existence, not current prices.
+Microsoft publishes separate consumer, business and enterprise plans. This dossier verifies the existence and structure of those plan families, not current prices, regional availability or entitlement for a particular tenant.
 
 # 7. API and integration surface
 
-Official surface: Microsoft Graph, documented at https://learn.microsoft.com/en-us/graph/overview, exposes mail, files, calendar and user objects. Command status: documented, source is the official Graph documentation.
+Microsoft Graph is the documented integration surface for Microsoft 365 data and services. Its documented core services include OneDrive, Outlook/Exchange, Calendar, Excel, SharePoint, Teams, Planner, To Do and related identity, security and compliance resources. Authentication and tenant permissions are required; no authenticated tenant access was assumed here.
 
 # 8. Existing open-source alternatives
 
-LibreOffice (MPL-2.0) covers offline documents; ONLYOFFICE (AGPL-3.0) adds a self-hosted collaboration server; Nextcloud (AGPL-3.0) covers files, calendar and office integration.
+- LibreOffice (MPL-2.0): desktop office applications.
+- ONLYOFFICE (AGPL-3.0): office editors and self-hosted collaboration components.
+- Nextcloud (AGPL-3.0): self-hosted files, calendar and integrations.
 
 # 9. Alternative comparison
 
-Each alternative covers a slice and none reproduces the tenant, licence and identity model that defines the subscription. Comparisons here are capability-based, not parity claims.
+These alternatives cover portions of Microsoft 365. None is verified here as a drop-in replacement for Microsoft's combined application catalog, hosted services, identity, licensing, administration and compliance model.
 
 # 10. Missing capabilities and opportunity analysis
 
-Integration is the gap: files, mail, chat, documents and identity under one administered tenant. That is a build opportunity for a composed stack.
+The main gap is integration: a single self-hosted control plane would need to combine office editing, files, mail/calendar, collaboration, identity, licensing and administration while preserving clear security boundaries.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Compose existing projects (Nextcloud + ONLYOFFICE + an open mail/chat server) behind a single identity provider, and document the integration and its limits.
+Compose existing open-source components only after selecting a narrow use case. Start with identity, document editing and file storage; add collaboration or mail only when the integration boundary, ownership and security model are defined.
 
 # 12. Security, privacy, and compliance
 
-Document and mail data are sensitive; a self-hosted alternative should default to no third-party telemetry, encryption at rest and explicit retention.
+Microsoft 365 data and administrative controls are tenant- and plan-dependent. Do not infer compliance, retention, permissions or data residency from the public product page. Any alternative stack must define authentication, authorization, encryption, backups, retention and audit evidence explicitly.
 
 # 13. Sources and evidence
 
-- https://www.microsoft.com/en-us/microsoft-365
-- https://learn.microsoft.com/en-us/microsoft-365/
+- [Microsoft 365](https://www.microsoft.com/en-us/microsoft-365) — official product and plan surface.
+- [Microsoft 365 products, apps and services](https://www.microsoft.com/en-us/microsoft-365/products-apps-services) — official product directory.
+- [Microsoft 365 for business overview](https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/what-is-microsoft-365-for-business) — official plan and application documentation.
+- [Microsoft Graph overview](https://learn.microsoft.com/en-us/graph/overview) — official API and core-service documentation.
 
 # 14. Open questions
 
-- Which integration gaps matter most for a small organisation: identity, mail or documents?
-- Can Nextcloud and ONLYOFFICE be administered through one control plane?
+- Which plan family and region should a future comparison cover?
+- Which Microsoft 365 service boundary should be evaluated next: identity, documents, mail/calendar or collaboration?
+- Which alternative capability is important enough to validate with a separate technical test?
 
 # 15. Research history
 
-Record created 2026-11-03 from public official sources during the FAANG+Microsoft inventory expansion. Status: `pending`; nothing beyond official documentation and public announcements is asserted.
+Record updated 2026-11-03 from official Microsoft product and documentation sources. Status: `researched`; the suite boundary is verified, while plan-specific pricing, entitlements and authenticated tenant behavior remain outside this pass.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier microsoft-365` and inspect canonical identity with `npx rae-faang products show microsoft-365 --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier microsoft-365` and inspect canonical identity with `npx rea-faang products show microsoft-365 --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -480,7 +497,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang microsoft-365 --out ./microsoft-365.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit microsoft-365 --out ./microsoft-365-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang microsoft-365 --out ./microsoft-365.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit microsoft-365 --out ./microsoft-365-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -522,8 +539,17 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
+- [Microsoft 365](https://www.microsoft.com/en-us/microsoft-365) — Microsoft 365 is an active Microsoft subscription platform for productivity and collaboration. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Microsoft 365 products, apps and services](https://www.microsoft.com/en-us/microsoft-365/products-apps-services) — Microsoft 365 is a family of applications and services rather than one standalone application. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [What is Microsoft 365 for business?](https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/what-is-microsoft-365-for-business) — Business plans include licensed desktop applications and plan-specific Microsoft 365 services. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Microsoft Graph overview](https://learn.microsoft.com/en-us/graph/overview) — Microsoft Graph is the documented integration gateway for Microsoft 365 data and core services. (VERIFIED; accessed 2026-11-03T00:00:00Z).
 - [Official product page](https://www.microsoft.com/en-us/microsoft-365) — Microsoft 365 is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Official documentation entry](https://learn.microsoft.com/en-us/microsoft-365/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://www.microsoft.com/en-us/microsoft-365) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://learn.microsoft.com/en-us/microsoft-365/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://www.microsoft.com/en-us/microsoft-365/products-apps-services) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://learn.microsoft.com/en-us/microsoft-365/admin/admin-overview/what-is-microsoft-365-for-business) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://learn.microsoft.com/en-us/graph/overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Microsoft 365 Public web-surface observation (REA)](https://www.microsoft.com/en-us/microsoft-365) — A dated unauthenticated snapshot exposed controls button: Products , button: Resources , button: Support , button: Search Microsoft 365, button: ME, button: Close Announcement Banner, button:  Brainstorm and research with ease, button: Play, button:  Organize and plan with precision, button:  Create and polish with confidence, button:  Protect what’s important, button: Previous Slide, button: Next Slide, button: More information, button: Outlook, button: OneDrive, button: Microsoft Copilot, button: Word (web and mobile only), button: Excel (web and mobile only), button: PowerPoint (web and mobile only), link: Skip to main content, link: Microsoft, link: Microsoft 365, link: Plans and pricing, link: Try for free, link: Watch our Copilot webinar on demand., link: Footnote 2, link: Footnote 1, link: See Copilot in action, link: For individuals, link: For business, link: For enterprise, link: For education, link: How it works, link: features, link: news, link: What’s included, link: Plans, link: Get started, link: FAQ, link: See plans and pricing for Microsoft 365, link: Learn more about Microsoft 365 for individuals, link: footnote1, link: Back to Features section, link: Get offer - Explore Microsoft 365 discounted plans for college students and enhance productivity., link: Explore all apps, products and services of microsoft 365, link: Learn more about Microsoft Word, link: Learn more about Microsoft excel, link: Learn more about Microsoft powerpoint, link: Learn more about Your inbox, organized. Your day, planned, link: Learn more about OneNote, link: Learn more about Connect with anyone in Teams for free, link: Back to tabs for what's included section, link: Create a free Microsoft account, link: See terms., link: Buy now, link: See terms, button: OneNote (web and mobile only), button: Microsoft Defender, button: Microsoft Teams, link: see terms for yearly option of Microsoft 365 family, link: Buy now your Microsoft 365 family account, link: Try for free Microsoft 365 Family for free trial period, button: Word, button: Excel, button: PowerPoint, button: OneNote, link: see terms of yearly Microsoft 365 premium subscription, link: Buy now yearly microsoft 365 premium subscription, link: Try for free Microsoft 365 premium free trial, link: Back to carousel navigation controls, link: Back to tabs for plans section, link: Learn more about how to Try what’s next in AI, button: Expand all, button: Collapse all, button: 01/ What is Microsoft 365 and what features are included with a subscription? , button: 02/ Was Microsoft Office 365 renamed to Microsoft 365? , button: 03/ When do I need a Microsoft 365 subscription? , button: 04/ What is the difference between Microsoft 365 Basic, Personal, Family, Premium, and Pro? , button: 05/ How is Copilot integrated across Microsoft 365 apps? , button: 06/ How does Microsoft use my data and protect my privacy? , button: 07/ What devices can I use Microsoft 365 on? , button: 08/ Why should I choose Microsoft 365 over tools like Google Workspace? , link: Back to footnote 1, link: Back to footnote 2, link: Back to footnote 3, link: Back to footnote 4, link: Click to see details about Microsoft 365 Personal, Family, or Premium subscription, link: Follow Microsoft 365 on Linkedin, link: Follow Microsoft 365 on Twitter, link: Follow Microsoft 365 on Instagram, link: Follow Microsoft 365 on Threads, link: Follow Microsoft 365 on Facebook, link: Follow Microsoft 365 on TikTok, link: Follow Microsoft 365 on YouTube, link: Surface Laptop Ultra, link: Surface Pro, link: Surface Laptop, link: Surface RTX Spark Dev Box, link: Explore Copilot, link: Explore Microsoft products, link: Windows 11 apps, link: Account profile, link: Download Center, link: Microsoft Store support, link: Returns, link: Order tracking, link: Certified Refurbished, link: Why buy from Microsoft Store, link: Flexible Payments, link: Microsoft in education, link: Devices for education, link: Microsoft Teams for Education, link: Microsoft 365 Education, link: How to buy for your school, link: Educator training and development, link: Deals for students and parents, link: AI for education, link: Microsoft AI, link: Microsoft Security, link: Dynamics 365, link: Microsoft Power Platform, link: Microsoft Teams, link: Microsoft Copilot, link: Small Business, link: Azure, link: Microsoft Developer, link: Microsoft Learn, link: Support for AI marketplace apps, link: Microsoft Tech Community, link: Microsoft Marketplace, link: Software companies, link: Visual Studio, link: Careers, link: About Microsoft, link: Company news, link: Privacy at Microsoft, link: Investors, link: Diversity and inclusion, link: Accessibility, link: Sustainability, link: Content Language Selector. Currently set to English (United States), link: Your Privacy Choices Opt-Out Icon Your Privacy Choices, link: Consumer Health Privacy, link: Sitemap, link: Contact Microsoft, link: Privacy, link: Terms of use, link: Trademarks, link: Safety & eco, link: Recycling, link: About our ads, button: Feedback and landmarks banner, navigation: Contextual menu, main, navigation: In Page quick links, region: Features section, region: Plans section, region: Footnotes, region: Follow Microsoft Copilot links, contentinfo, navigation: Footer Resource links, navigation: Microsoft corporate links. (VERIFIED; accessed 2026-11-03T01:41:00.503Z).
+- [LibreOffice candidate](https://www.libreoffice.org/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [ONLYOFFICE candidate](https://www.onlyoffice.com/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [Nextcloud candidate](https://nextcloud.com/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).

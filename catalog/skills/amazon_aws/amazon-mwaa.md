@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Managed Workflows for Apache
 
 # Amazon Managed Workflows for Apache Airflow — implementation skill (`amazon-mwaa`)
 
-> **Research status:** pending. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Managed Workflows for Apache Airflow**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Managed Workflows for Apache
 
 This is the coding-agent skill for **Amazon Managed Workflows for Apache Airflow** (`amazon-mwaa`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-mwaa.md` from the catalog page, or run `npx rae-faang amazon-mwaa --out ./amazon-mwaa.md`, `npx rae-faang skills generate amazon-mwaa` or `npx rae-faang build agent-kit amazon-mwaa --out ./amazon-mwaa-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-mwaa.md` from the catalog page, or run `npx rea-faang amazon-mwaa --out ./amazon-mwaa.md`, `npx rea-faang skills generate amazon-mwaa` or `npx rea-faang build agent-kit amazon-mwaa --out ./amazon-mwaa-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Managed Workflows for Apache Airflow / `amazon-mwaa` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/managed-workflows-for-apache-airflow/](https://aws.amazon.com/managed-workflows-for-apache-airflow/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/mwaa/](https://docs.aws.amazon.com/mwaa/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-mwaa` | `research/companies/amazon_aws/products/amazon-mwaa.md` |
+| Research dossier | `npx rea-faang research dossier amazon-mwaa` | `research/companies/amazon_aws/products/amazon-mwaa.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-mwaa.md` (captured 2026-11-03T03:29:31.049Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-mwaa.json` (`ev_b54001711aaad2f78ce79421a657a1222e26e511451d973f37370895c91c6611`) | Catalog evidence |
 | Alternative candidates | None recorded — this is a research gap | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-mwaa --format json` and `npx rae-faang research dossier amazon-mwaa` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-mwaa --format json` and `npx rea-faang research dossier amazon-mwaa` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-MWAA-CAP-364BA75C`, `AMAZON-MWAA-CAP-A28AE772`, `AMAZON-MWAA-CAP-900AB877`, `AMAZON-MWAA-CAP-5D0FCE48`, `AMAZON-MWAA-CAP-AFB218C0`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-MWAA-CAP-66654A71`, `AMAZON-MWAA-CAP-299668A8`, `AMAZON-MWAA-CAP-79A08245`, `AMAZON-MWAA-CAP-3D46C982`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-MWAA-CAP-364BA75C` | managed Apache Airflow environments | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MWAA-CAP-A28AE772` | DAG scheduling and workflow monitoring | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MWAA-CAP-900AB877` | automatic worker scaling | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MWAA-CAP-5D0FCE48` | IAM, VPC, KMS and CloudWatch integration | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-MWAA-CAP-AFB218C0` | AWS and community Airflow operators | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MWAA-CAP-66654A71` | Managed Apache Airflow environment identity and creation prerequisites are documented. | VERIFIED | `ev-amazon-mwaa-identity`, `ev-amazon-mwaa-create` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MWAA-CAP-299668A8` | Versioned Airflow images, component scaling and startup initialization are documented. | VERIFIED | `ev-amazon-mwaa-versions`, `ev-amazon-mwaa-startup` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MWAA-CAP-79A08245` | Service API and S3-backed dependency/provider installation are documented. | VERIFIED | `ev-amazon-mwaa-api`, `ev-amazon-mwaa-dependencies` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-MWAA-CAP-3D46C982` | Apache Airflow covers the workflow foundation, but not MWAA-managed infrastructure, AWS integrations, security or operations. | VERIFIED | `ev-amazon-mwaa-airflow`, `ev-amazon-mwaa-identity` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Get started with Amazon MWAA`, `button: Play:`, `button: Flexible workflow orchestration at scale`, `button: Workflow security and isolation`, `button: Build, execute, and monitor workflows in Amazon SageMaker`, `button: Data Engineering & ETL Pipelines`, `button: Machine Learning Operations (MLOps)`, `button: Business Intelligence & Analytics`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Features`, `link: Pricing`, `link: Getting Started`, `link: Resources`, `link: FAQs`, `link: Products`, `link: Application Integration`, `link: Amazon SageMaker`, `link: Learn more`, `button: Enterprise Operations`, `link: Features page Learn about straightforward Apache Airflow deployment, automatic scaling, security, and more. Learn more`, `link: Free tier Get instant access to the AWS Free Tier. Sign up`, `link: Announcing Apache Airflow 3.0 support in Amazon Managed Workflows for Apache Airflow Amazon Managed Workflows for Apache Airflow (MWAA) now supports Apache Airflow version 3.0, the latest major release of the workflow orchestration platform. This release enhances your ability to author, schedule, and monitor complex workflows with greater efficiency and control. Read the announcement`, `link: Amazon MWAA now provides option to update environments without interrupting task execution Amazon Managed Workflows for Apache Airflow (MWAA) now provides the option to update environments without interrupting running tasks on supported Apache Airflow versions (v2.4.3 or later). Read the announcement`, `link: Amazon MWAA adds smaller environment size Amazon Managed Workflows for Apache Airflow (MWAA) now offers a micro environment size, giving customers of the managed service the ability to create multiple, independent environments for development and data isolation at a lower cost. Read the announcement`, `link: Amazon MWAA now simplifies interaction with the Airflow REST API Amazon Managed Workflows for Apache Airflow (MWAA) now supports a simplified mechanism for interacting with the Apache Airflow REST API using AWS credentials. Read the announcement`, `link: Amazon MWAA now supports downgrading to minor Apache Airflow versions You can now downgrade to minor Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA). Read the announcement`, `link: A personalized recommendation system on AWS Learn how AWS product recommendation engine processes customer signals, runs machine learning models, and deliver results to millions of web visitors. Read the blog`, `link: Introducing MWAA Serverless Learn about Amazon Managed Workflows for Apache Airflow (MWAA) Serverless, a new deployment option that eliminates operational overhead while optimizing costs for Apache Airflow environments. Read the blog`, `link: Build efficient data pipelines with dbt in Amazon Redshift Explore a streamlined, configuration-driven approach to orchestrating dbt Core jobs using Amazon Managed Workflows for Apache Airflow (Amazon MWAA) and Cosmos. Read the blog`, `link: How LaunchDarkly achieved efficiency and scale with Amazon MWAA Explore how LaunchDarkly scaled its analytics platform to 14,000 tasks per day, with minimal increase in cost. Read the blog`, `link: Flutter UKI's journey to operating Airflow workloads at scale Walk through how Flutter UKI built a scalable and optimized architecture using Amazon Managed Workflows for Apache Airflow (Amazon MWAA). Read the blog`, `link: Optimize cost and performance for Amazon MWAA Amazon Managed Workflows for Apache Airflow (Amazon MWAA) is a managed service for Apache Airflow that allows you to orchestrate data pipelines and workflows at scale. Read the blog`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **managed Apache Airflow environments:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **DAG scheduling and workflow monitoring:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **automatic worker scaling:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **IAM, VPC, KMS and CloudWatch integration:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **AWS and community Airflow operators:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Managed Apache Airflow environment identity and creation prerequisites are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Versioned Airflow images, component scaling and startup initialization are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Service API and S3-backed dependency/provider installation are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Apache Airflow covers the workflow foundation, but not MWAA-managed infrastructure, AWS integrations, security or operations.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-364BA75C — managed Apache Airflow environments
+### REQ-FUNC-66654A71 — Managed Apache Airflow environment identity and creation prerequisites are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-mwaa-identity`, `ev-amazon-mwaa-create`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-364BA75C`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MWAA-CAP-364BA75C` → `REQ-FUNC-364BA75C` → `TEST-FUNC-364BA75C`.
+- **Associated test ID:** `TEST-FUNC-66654A71`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MWAA-CAP-66654A71` → `REQ-FUNC-66654A71` → `TEST-FUNC-66654A71`.
 
-### REQ-FUNC-A28AE772 — DAG scheduling and workflow monitoring
+### REQ-FUNC-299668A8 — Versioned Airflow images, component scaling and startup initialization are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-mwaa-versions`, `ev-amazon-mwaa-startup`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-A28AE772`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MWAA-CAP-A28AE772` → `REQ-FUNC-A28AE772` → `TEST-FUNC-A28AE772`.
+- **Associated test ID:** `TEST-FUNC-299668A8`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MWAA-CAP-299668A8` → `REQ-FUNC-299668A8` → `TEST-FUNC-299668A8`.
 
-### REQ-FUNC-900AB877 — automatic worker scaling
+### REQ-FUNC-79A08245 — Service API and S3-backed dependency/provider installation are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-mwaa-api`, `ev-amazon-mwaa-dependencies`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-900AB877`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MWAA-CAP-900AB877` → `REQ-FUNC-900AB877` → `TEST-FUNC-900AB877`.
+- **Associated test ID:** `TEST-FUNC-79A08245`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MWAA-CAP-79A08245` → `REQ-FUNC-79A08245` → `TEST-FUNC-79A08245`.
 
-### REQ-FUNC-5D0FCE48 — IAM, VPC, KMS and CloudWatch integration
+### REQ-FUNC-3D46C982 — Apache Airflow covers the workflow foundation, but not MWAA-managed infrastructure, AWS integrations, security or operations.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-mwaa-airflow`, `ev-amazon-mwaa-identity`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-5D0FCE48`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MWAA-CAP-5D0FCE48` → `REQ-FUNC-5D0FCE48` → `TEST-FUNC-5D0FCE48`.
-
-### REQ-FUNC-AFB218C0 — AWS and community Airflow operators
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-AFB218C0`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-MWAA-CAP-AFB218C0` → `REQ-FUNC-AFB218C0` → `TEST-FUNC-AFB218C0`.
+- **Associated test ID:** `TEST-FUNC-3D46C982`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-MWAA-CAP-3D46C982` → `REQ-FUNC-3D46C982` → `TEST-FUNC-3D46C982`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -273,11 +262,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-364BA75C** → `REQ-FUNC-364BA75C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-A28AE772** → `REQ-FUNC-A28AE772`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-900AB877** → `REQ-FUNC-900AB877`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-5D0FCE48** → `REQ-FUNC-5D0FCE48`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-AFB218C0** → `REQ-FUNC-AFB218C0`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-66654A71** → `REQ-FUNC-66654A71`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-299668A8** → `REQ-FUNC-299668A8`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-79A08245** → `REQ-FUNC-79A08245`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-3D46C982** → `REQ-FUNC-3D46C982`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -298,7 +286,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-364BA75C, REQ-FUNC-A28AE772, REQ-FUNC-900AB877, REQ-FUNC-5D0FCE48, REQ-FUNC-AFB218C0
+- **Requirements:** REQ-FUNC-66654A71, REQ-FUNC-299668A8, REQ-FUNC-79A08245, REQ-FUNC-3D46C982
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -308,7 +296,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-364BA75C, REQ-FUNC-A28AE772, REQ-FUNC-900AB877, REQ-FUNC-5D0FCE48, REQ-FUNC-AFB218C0
+- **Requirements:** REQ-FUNC-66654A71, REQ-FUNC-299668A8, REQ-FUNC-79A08245, REQ-FUNC-3D46C982
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -330,7 +318,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-364BA75C, REQ-FUNC-A28AE772, REQ-FUNC-900AB877, REQ-FUNC-5D0FCE48, REQ-FUNC-AFB218C0; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-66654A71, REQ-FUNC-299668A8, REQ-FUNC-79A08245, REQ-FUNC-3D46C982; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -360,12 +348,23 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/managed-workflows-for-apache-airflow/) | 2026-11-02T00:00:00Z | Amazon Managed Workflows for Apache Airflow is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/mwaa/) | 2026-11-02T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-mwaa-identity` | What Is Amazon MWAA? — AWS documents compatibility with Apache Airflow, managed environment components and AWS integrations. | [link](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html) | 2026-11-04T00:00:00Z | Amazon MWAA is a managed Apache Airflow service for creating and operating workflow environments. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mwaa-create` | Create an Amazon MWAA environment — AWS documents environment creation, IAM roles, VPC/network requirements, S3 files and supported versions. | [link](https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html) | 2026-11-04T00:00:00Z | MWAA creates an Apache Airflow environment using a selected supported image version and AWS account, IAM and network prerequisites. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mwaa-versions` | Apache Airflow versions on MWAA — AWS publishes version support, constraints, component ranges and upgrade limitations. | [link](https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html) | 2026-11-04T00:00:00Z | MWAA documents supported Airflow image versions, Python constraints, scheduler/worker counts and minor-version upgrade rules. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mwaa-startup` | Using a startup script with MWAA — AWS documents startup scripts for runtimes, environment variables and component-specific initialization. | [link](https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html) | 2026-11-04T00:00:00Z | MWAA runs an S3-hosted startup script on workers, schedulers and webservers before installing requirements and initializing Airflow. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mwaa-api` | MWAA API Reference — The official API reference defines the Amazon MWAA service API surface. | [link](https://docs.aws.amazon.com/mwaa/latest/API/Welcome.html) | 2026-11-04T00:00:00Z | MWAA exposes a documented service API for environment lifecycle and configuration operations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mwaa-airflow` | Apache Airflow documentation — The upstream documentation describes workflows-as-code, DAG scheduling, UI monitoring and provider extensibility. | [link](https://airflow.apache.org/docs/apache-airflow/) | 2026-11-04T00:00:00Z | Apache Airflow is an open-source workflow platform using Python-defined DAGs for scheduling and monitoring workflows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-mwaa-dependencies` | Managing Python dependencies in requirements.txt — AWS documents requirements constraints, package installation and compatibility behavior. | [link](https://docs.aws.amazon.com/mwaa/latest/userguide/best-practices-dependencies.html) | 2026-11-04T00:00:00Z | MWAA installs version-constrained Python requirements, providers and plugins from S3 as part of environment initialization. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/managed-workflows-for-apache-airflow/) | 2026-11-04T00:00:00Z | Amazon Managed Workflows for Apache Airflow is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/mwaa/) | 2026-11-04T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/managed-workflows-for-apache-airflow/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/mwaa/latest/userguide/best-practices-dependencies.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/mwaa/latest/API/Welcome.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://airflow.apache.org/docs/apache-airflow/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_b54001711aaad2f78ce79421a657a1222e26e511451d973f37370895c91c6611` | Amazon Managed Workflows for Apache Airflow Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/managed-workflows-for-apache-airflow/) | 2026-11-03T03:29:31.049Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon MWAA, button: Play:, button: Flexible workflow orchestration at scale, button: Workflow security and isolation, button: Build, execute, and monitor workflows in Amazon SageMaker, button: Data Engineering & ETL Pipelines, button: Machine Learning Operations (MLOps), button: Business Intelligence & Analytics, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Getting Started, link: Resources, link: FAQs, link: Products, link: Application Integration, link: Amazon SageMaker, link: Learn more, button: Enterprise Operations, link: Features page Learn about straightforward Apache Airflow deployment, automatic scaling, security, and more. Learn more, link: Free tier Get instant access to the AWS Free Tier. Sign up, link: Announcing Apache Airflow 3.0 support in Amazon Managed Workflows for Apache Airflow Amazon Managed Workflows for Apache Airflow (MWAA) now supports Apache Airflow version 3.0, the latest major release of the workflow orchestration platform. This release enhances your ability to author, schedule, and monitor complex workflows with greater efficiency and control. Read the announcement, link: Amazon MWAA now provides option to update environments without interrupting task execution Amazon Managed Workflows for Apache Airflow (MWAA) now provides the option to update environments without interrupting running tasks on supported Apache Airflow versions (v2.4.3 or later). Read the announcement, link: Amazon MWAA adds smaller environment size Amazon Managed Workflows for Apache Airflow (MWAA) now offers a micro environment size, giving customers of the managed service the ability to create multiple, independent environments for development and data isolation at a lower cost. Read the announcement, link: Amazon MWAA now simplifies interaction with the Airflow REST API Amazon Managed Workflows for Apache Airflow (MWAA) now supports a simplified mechanism for interacting with the Apache Airflow REST API using AWS credentials. Read the announcement, link: Amazon MWAA now supports downgrading to minor Apache Airflow versions You can now downgrade to minor Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA). Read the announcement, link: A personalized recommendation system on AWS Learn how AWS product recommendation engine processes customer signals, runs machine learning models, and deliver results to millions of web visitors. Read the blog, link: Introducing MWAA Serverless Learn about Amazon Managed Workflows for Apache Airflow (MWAA) Serverless, a new deployment option that eliminates operational overhead while optimizing costs for Apache Airflow environments. Read the blog, link: Build efficient data pipelines with dbt in Amazon Redshift Explore a streamlined, configuration-driven approach to orchestrating dbt Core jobs using Amazon Managed Workflows for Apache Airflow (Amazon MWAA) and Cosmos. Read the blog, link: How LaunchDarkly achieved efficiency and scale with Amazon MWAA Explore how LaunchDarkly scaled its analytics platform to 14,000 tasks per day, with minimal increase in cost. Read the blog, link: Flutter UKI's journey to operating Airflow workloads at scale Walk through how Flutter UKI built a scalable and optimized architecture using Amazon Managed Workflows for Apache Airflow (Amazon MWAA). Read the blog, link: Optimize cost and performance for Amazon MWAA Amazon Managed Workflows for Apache Airflow (Amazon MWAA) is a managed service for Apache Airflow that allows you to orchestrate data pipelines and workflows at scale. Read the blog, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -392,7 +391,7 @@ Resume token: `amazon-mwaa`. Read dossier, REA report and raw Evidence before re
 ### Dossier notes (not independently verified)
 
 # 1. Executive summary
-Amazon Managed Workflows for Apache Airflow (Amazon MWAA) is AWS's managed Apache Airflow service for building, scheduling and monitoring workflows without managing the underlying Airflow infrastructure.
+Amazon Managed Workflows for Apache Airflow (Amazon MWAA) is AWS's managed Apache Airflow service for developing, scheduling and monitoring DAG workflows without operating the underlying Airflow environment. It remains an AWS-managed distribution of Apache Airflow, not a separate workflow language.
 
 # 2. Product identity and ownership
 - **Official name:** Amazon Managed Workflows for Apache Airflow
@@ -403,57 +402,58 @@ Amazon Managed Workflows for Apache Airflow (Amazon MWAA) is AWS's managed Apach
 # 3. Product capabilities
 - Create managed Airflow environments and DAG workflows.
 - Schedule, execute and monitor data pipelines.
-- Autoscale worker capacity within configured limits.
-- Integrate IAM, VPC, KMS and CloudWatch.
-- Use AWS and community Airflow operators and sensors.
+- Scale schedulers, workers and webservers within documented environment limits.
+- Store DAGs and associated files in S3 and install constrained Python dependencies, providers and plugins.
+- Integrate IAM, VPC, KMS, CloudWatch and AWS service providers.
 
 # 4. Technical architecture
-Public documentation describes an environment containing Airflow schedulers, workers, webserver, metadata storage and VPC connectivity, with DAGs and dependencies in S3. Exact versions, executor behavior, quotas and upgrade semantics remain pending.
+Public documentation describes an environment containing Airflow schedulers, workers, webservers, metadata storage and VPC connectivity, with DAGs and dependencies in S3. AWS currently documents Airflow 3.3.1, 3.2.1, 2.11.2 and additional supported versions, with version-specific Python constraints; exact quotas, executor behavior and upgrade semantics remain version-sensitive.
 
 # 5. User workflows
-Expected workflows include creating an environment, uploading DAGs and dependencies, configuring access, triggering and monitoring workflows, reading logs, upgrading Airflow and deleting an environment.
+Expected workflows include creating an environment and IAM/VPC prerequisites, uploading DAGs and dependencies to S3, configuring access, triggering and monitoring workflows, reading CloudWatch logs, applying startup scripts, upgrading Airflow and deleting an environment.
 
 # 6. Pricing and access
-MWAA pricing depends on environment duration and additional worker or scheduler capacity. Current pricing, quotas, regional availability and IAM prerequisites must be verified before implementation or cost claims.
+MWAA pricing depends on environment duration and additional worker, scheduler or webserver capacity. Current pricing, quotas, regional availability, version support and IAM prerequisites must be verified before implementation or cost claims.
 
 # 7. API and integration surface
-AWS MWAA APIs, CLI, SDKs, CloudFormation, S3 DAG storage, Airflow UI/API, CloudWatch logs/metrics and IAM/SAML access controls.
+AWS MWAA APIs, CLI, SDKs, CloudFormation, S3 DAG storage, Airflow UI/API, CloudWatch logs/metrics, IAM and supported authentication/access controls. Startup scripts run on workers, schedulers and webservers before requirements and Airflow processes initialize.
 
 # 8. Existing open-source alternatives
-Apache Airflow is the primary open-source foundation. Other orchestrators may cover subsets, but AWS-managed infrastructure, security, scaling and integrations are not assumed equivalent.
+Apache Airflow is the primary open-source foundation. Airflow itself documents workflows-as-code, DAG scheduling, monitoring and provider extensibility; self-hosting it does not reproduce MWAA's AWS-managed infrastructure, security, scaling or integration operations. Other orchestrators may cover subsets only.
 
 # 9. Alternative comparison
-Self-hosted Airflow preserves the core workflow model but transfers environment, database, worker, networking, upgrades, security and observability operations to the operator.
+Self-hosted Airflow preserves the core workflow model but transfers environment, metadata database, scheduler/worker, networking, upgrades, security, dependency and observability operations to the operator. Compare version constraints, executor, provider installation, DAG deployment and recovery separately.
 
 # 10. Missing capabilities and opportunity analysis
-Research must map environment lifecycle, supported Airflow versions, DAG deployment, plugins, Python dependencies, worker scaling, authentication, networking, logs, upgrades, quotas and recovery.
+Research must map environment lifecycle, supported Airflow versions, DAG deployment, plugins, Python dependencies and constraints, startup scripts, scheduler/worker/webserver scaling, authentication, networking, logs, upgrades, quotas and recovery.
 
-# 11. RAE implementation strategy
-Use official AWS and Apache Airflow documentation and authorized public API observation. Capture workflow and environment contracts before selecting a foundation or implementing an independent equivalent.
+# 11. REA implementation strategy
+Use official AWS and Apache Airflow documentation and authorized public API observation. Capture MWAA environment and workflow contracts separately before selecting Apache Airflow as a partial foundation or implementing an independent equivalent. Do not claim AWS-managed parity from an Airflow installation alone.
 
 # 12. Security, privacy, and compliance
 Verify IAM roles, VPC/subnets, public/private webserver access, KMS, S3 bucket controls, secrets, logs, operator permissions and cross-account boundaries.
 
-# 13. Evidence register
-- https://aws.amazon.com/managed-workflows-for-apache-airflow/ — official overview.
-- https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html — features and architecture.
-- https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html — environment prerequisites.
-- https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html — supported versions.
+# 13. Sources and evidence
+- **Identity and managed model:** [What is Amazon MWAA?](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html) and [create an environment](https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html) document managed Apache Airflow environments, prerequisites and compatibility.
+- **Versions and scaling:** [Airflow versions on MWAA](https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html) documents supported versions, Python constraints, schedulers, workers and upgrade rules.
+- **DAG dependencies and startup:** [startup scripts](https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html) and [Python dependencies](https://docs.aws.amazon.com/mwaa/latest/userguide/best-practices-dependencies.html) document S3-backed initialization, provider/plugin installation and constraints.
+- **API:** [MWAA API Reference](https://docs.aws.amazon.com/mwaa/latest/API/Welcome.html) documents the service API surface.
+- **Foundation:** [Apache Airflow documentation](https://airflow.apache.org/docs/apache-airflow/) documents the open-source DAG, workflow-as-code, scheduling and monitoring foundation; it is not a managed MWAA equivalent.
 
 # 14. Unknowns
 - Complete API/CLI/SDK and Airflow UI/API matrix.
-- Exact supported versions, quotas and worker semantics.
-- Upgrade, recovery, plugin and dependency behavior.
+- Exact supported versions, quotas and scheduler/worker/webserver semantics.
+- Upgrade, recovery, startup-script, plugin and dependency behavior by version.
 - Verified independent foundation and migration coverage.
 
 # 15. Research status
-`pending`: identity and public capability surface are documented from official AWS sources, but full REA capture, detailed behavior, limits and alternatives remain unverified.
+Researched with verified public AWS and Apache Airflow sources. MWAA identity, managed environment, DAG/S3 workflow, versions, scaling, dependencies, startup scripts, API and partial open-source foundation are documented. Exact pricing, quotas, region/version behavior and full managed-service parity remain unknown and are not asserted.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-mwaa` and inspect canonical identity with `npx rae-faang products show amazon-mwaa --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-mwaa` and inspect canonical identity with `npx rea-faang products show amazon-mwaa --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -466,7 +466,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-mwaa --out ./amazon-mwaa.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-mwaa --out ./amazon-mwaa-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-mwaa --out ./amazon-mwaa.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-mwaa --out ./amazon-mwaa-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -508,10 +508,21 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/managed-workflows-for-apache-airflow/) — Amazon Managed Workflows for Apache Airflow is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
-- [Official documentation entry](https://docs.aws.amazon.com/mwaa/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-02T00:00:00Z).
+- [What Is Amazon MWAA?](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html) — Amazon MWAA is a managed Apache Airflow service for creating and operating workflow environments. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Create an Amazon MWAA environment](https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html) — MWAA creates an Apache Airflow environment using a selected supported image version and AWS account, IAM and network prerequisites. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Apache Airflow versions on MWAA](https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html) — MWAA documents supported Airflow image versions, Python constraints, scheduler/worker counts and minor-version upgrade rules. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Using a startup script with MWAA](https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html) — MWAA runs an S3-hosted startup script on workers, schedulers and webservers before installing requirements and initializing Airflow. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [MWAA API Reference](https://docs.aws.amazon.com/mwaa/latest/API/Welcome.html) — MWAA exposes a documented service API for environment lifecycle and configuration operations. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Apache Airflow documentation](https://airflow.apache.org/docs/apache-airflow/) — Apache Airflow is an open-source workflow platform using Python-defined DAGs for scheduling and monitoring workflows. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Managing Python dependencies in requirements.txt](https://docs.aws.amazon.com/mwaa/latest/userguide/best-practices-dependencies.html) — MWAA installs version-constrained Python requirements, providers and plugins from S3 as part of environment initialization. (VERIFIED; accessed 2026-11-04T00:00:00Z).
+- [Official product page](https://aws.amazon.com/managed-workflows-for-apache-airflow/) — Amazon Managed Workflows for Apache Airflow is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-04T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/mwaa/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-04T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/managed-workflows-for-apache-airflow/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/mwaa/latest/userguide/best-practices-dependencies.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/mwaa/latest/API/Welcome.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://airflow.apache.org/docs/apache-airflow/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Managed Workflows for Apache Airflow Public web-surface observation (REA)](https://aws.amazon.com/managed-workflows-for-apache-airflow/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Get started with Amazon MWAA, button: Play:, button: Flexible workflow orchestration at scale, button: Workflow security and isolation, button: Build, execute, and monitor workflows in Amazon SageMaker, button: Data Engineering & ETL Pipelines, button: Machine Learning Operations (MLOps), button: Business Intelligence & Analytics, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Features, link: Pricing, link: Getting Started, link: Resources, link: FAQs, link: Products, link: Application Integration, link: Amazon SageMaker, link: Learn more, button: Enterprise Operations, link: Features page Learn about straightforward Apache Airflow deployment, automatic scaling, security, and more. Learn more, link: Free tier Get instant access to the AWS Free Tier. Sign up, link: Announcing Apache Airflow 3.0 support in Amazon Managed Workflows for Apache Airflow Amazon Managed Workflows for Apache Airflow (MWAA) now supports Apache Airflow version 3.0, the latest major release of the workflow orchestration platform. This release enhances your ability to author, schedule, and monitor complex workflows with greater efficiency and control. Read the announcement, link: Amazon MWAA now provides option to update environments without interrupting task execution Amazon Managed Workflows for Apache Airflow (MWAA) now provides the option to update environments without interrupting running tasks on supported Apache Airflow versions (v2.4.3 or later). Read the announcement, link: Amazon MWAA adds smaller environment size Amazon Managed Workflows for Apache Airflow (MWAA) now offers a micro environment size, giving customers of the managed service the ability to create multiple, independent environments for development and data isolation at a lower cost. Read the announcement, link: Amazon MWAA now simplifies interaction with the Airflow REST API Amazon Managed Workflows for Apache Airflow (MWAA) now supports a simplified mechanism for interacting with the Apache Airflow REST API using AWS credentials. Read the announcement, link: Amazon MWAA now supports downgrading to minor Apache Airflow versions You can now downgrade to minor Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA). Read the announcement, link: A personalized recommendation system on AWS Learn how AWS product recommendation engine processes customer signals, runs machine learning models, and deliver results to millions of web visitors. Read the blog, link: Introducing MWAA Serverless Learn about Amazon Managed Workflows for Apache Airflow (MWAA) Serverless, a new deployment option that eliminates operational overhead while optimizing costs for Apache Airflow environments. Read the blog, link: Build efficient data pipelines with dbt in Amazon Redshift Explore a streamlined, configuration-driven approach to orchestrating dbt Core jobs using Amazon Managed Workflows for Apache Airflow (Amazon MWAA) and Cosmos. Read the blog, link: How LaunchDarkly achieved efficiency and scale with Amazon MWAA Explore how LaunchDarkly scaled its analytics platform to 14,000 tasks per day, with minimal increase in cost. Read the blog, link: Flutter UKI's journey to operating Airflow workloads at scale Walk through how Flutter UKI built a scalable and optimized architecture using Amazon Managed Workflows for Apache Airflow (Amazon MWAA). Read the blog, link: Optimize cost and performance for Amazon MWAA Amazon Managed Workflows for Apache Airflow (Amazon MWAA) is a managed service for Apache Airflow that allows you to orchestrate data pipelines and workflows at scale. Read the blog, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:29:31.049Z).

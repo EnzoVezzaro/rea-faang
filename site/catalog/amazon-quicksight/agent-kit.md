@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon QuickSight (amazon-quicksigh
 
 # Amazon QuickSight — implementation skill (`amazon-quicksight`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon QuickSight**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon QuickSight (amazon-quicksigh
 
 This is the coding-agent skill for **Amazon QuickSight** (`amazon-quicksight`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-quicksight.md` from the catalog page, or run `npx rae-faang amazon-quicksight --out ./amazon-quicksight.md`, `npx rae-faang skills generate amazon-quicksight` or `npx rae-faang build agent-kit amazon-quicksight --out ./amazon-quicksight-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-quicksight.md` from the catalog page, or run `npx rea-faang amazon-quicksight --out ./amazon-quicksight.md`, `npx rea-faang skills generate amazon-quicksight` or `npx rea-faang build agent-kit amazon-quicksight --out ./amazon-quicksight-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon QuickSight / `amazon-quicksight` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/quicksight/](https://aws.amazon.com/quicksight/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/quicksight/](https://docs.aws.amazon.com/quicksight/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-quicksight` | `research/companies/amazon_aws/products/amazon-quicksight.md` |
+| Research dossier | `npx rea-faang research dossier amazon-quicksight` | `research/companies/amazon_aws/products/amazon-quicksight.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-quicksight.md` (captured 2026-11-03T03:43:46.439Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-quicksight.json` (`ev_3990c59665256c93d2fd29a188cf289c32cf447ba2ba6157450b13bf39dbf51b`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-quicksight --format json` and `npx rae-faang research dossier amazon-quicksight` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-quicksight --format json` and `npx rea-faang research dossier amazon-quicksight` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-QUICKSIGHT-CAP-B51AEDE8`, `AMAZON-QUICKSIGHT-CAP-4B7EBCB3`, `AMAZON-QUICKSIGHT-CAP-53747AB3`, `AMAZON-QUICKSIGHT-CAP-C7170A21`, `AMAZON-QUICKSIGHT-CAP-932F3CBD`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-QUICKSIGHT-CAP-54CF9D30`, `AMAZON-QUICKSIGHT-CAP-80521DDB`, `AMAZON-QUICKSIGHT-CAP-1350B42B`, `AMAZON-QUICKSIGHT-CAP-F7184815`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-QUICKSIGHT-CAP-B51AEDE8` | cloud business intelligence and interactive dashboards | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-QUICKSIGHT-CAP-4B7EBCB3` | ad hoc analysis, visualizations and stories | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-QUICKSIGHT-CAP-53747AB3` | connectors for files, databases, AWS and SaaS sources | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-QUICKSIGHT-CAP-C7170A21` | embedded analytics and APIs | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-QUICKSIGHT-CAP-932F3CBD` | SPICE in-memory analytics, permissions and governance | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-QUICKSIGHT-CAP-54CF9D30` | Cloud BI identity and dashboard/analysis workflow are documented; exact feature availability can vary by edition and region. | VERIFIED | `ev-amazon-quicksight-identity`, `ev-amazon-quicksight-workflow` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-QUICKSIGHT-CAP-80521DDB` | SPICE, DirectQuery, refresh and quota behavior are publicly documented; current limits must be checked against the relevant edition and region. | VERIFIED | `ev-amazon-quicksight-spice`, `ev-amazon-quicksight-refresh`, `ev-amazon-quicksight-quotas` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-QUICKSIGHT-CAP-1350B42B` | SDK, API and CLI surfaces are documented; authenticated execution and account-specific permissions were not tested here. | VERIFIED | `ev-amazon-quicksight-api` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-QUICKSIGHT-CAP-F7184815` | Superset covers core BI exploration and dashboards but not QuickSight's SPICE layer, AWS managed plane, exact embedding contract or governance semantics. | VERIFIED | `ev-amazon-quicksight-superset`, `ev-amazon-quicksight-spice` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Try Quick for free`, `button: Open feedback`, `button: Features submenu`, `button: Get started`, `button: Connect with a specialist`, `button: Play:`, `button: Unified intelligence`, `button: Insights for everyone`, `button: Turn decisions to impact, faster`, `button: Yes, give us positive feedback`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to Quick`, `link: Overview`, `link: Pricing`, `link: Dashboard Gallery`, `link: FAQs`, `link: Agentic AI`, `link: Amazon Quick`, `link: Read the Economic Validation report by TechTarget’s Enterprise Strategy Group`, `link: Missing alt text value QuickSight and the NFL’s Next Gen Stats`, `link: Missing alt text value Docebo increases analytics adoption five times by embedding Amazon QuickSight`, `link: Missing alt text value Insightful.Mobi decreases costs and enhances dashboard performance using QuickSight`, `link: Missing alt text value Defontana provides advanced analytics to customers 2-3X faster by embedding QuickSight`, `link: Documentation View documentation Find the user guide, technical documentation on getting started, and API references. Documentation`, `link: Resources View the dashboard gallery Explore sample industry and domain-specific analytics built by Quick Sight customers and partners. View gallery`, `link: Tutorial Explore Quick Sight webinars Level up your Quick Sight skills with workshops, how-to videos, and more. Learn more`, `button: No, give us constructive feedback`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **cloud business intelligence and interactive dashboards:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **ad hoc analysis, visualizations and stories:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **connectors for files, databases, AWS and SaaS sources:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **embedded analytics and APIs:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **SPICE in-memory analytics, permissions and governance:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Cloud BI identity and dashboard/analysis workflow are documented; exact feature availability can vary by edition and region.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **SPICE, DirectQuery, refresh and quota behavior are publicly documented; current limits must be checked against the relevant edition and region.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **SDK, API and CLI surfaces are documented; authenticated execution and account-specific permissions were not tested here.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Superset covers core BI exploration and dashboards but not QuickSight's SPICE layer, AWS managed plane, exact embedding contract or governance semantics.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-B51AEDE8 — cloud business intelligence and interactive dashboards
+### REQ-FUNC-54CF9D30 — Cloud BI identity and dashboard/analysis workflow are documented; exact feature availability can vary by edition and region.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-quicksight-identity`, `ev-amazon-quicksight-workflow`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-B51AEDE8`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-QUICKSIGHT-CAP-B51AEDE8` → `REQ-FUNC-B51AEDE8` → `TEST-FUNC-B51AEDE8`.
+- **Associated test ID:** `TEST-FUNC-54CF9D30`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-QUICKSIGHT-CAP-54CF9D30` → `REQ-FUNC-54CF9D30` → `TEST-FUNC-54CF9D30`.
 
-### REQ-FUNC-4B7EBCB3 — ad hoc analysis, visualizations and stories
+### REQ-FUNC-80521DDB — SPICE, DirectQuery, refresh and quota behavior are publicly documented; current limits must be checked against the relevant edition and region.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-quicksight-spice`, `ev-amazon-quicksight-refresh`, `ev-amazon-quicksight-quotas`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-4B7EBCB3`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-QUICKSIGHT-CAP-4B7EBCB3` → `REQ-FUNC-4B7EBCB3` → `TEST-FUNC-4B7EBCB3`.
+- **Associated test ID:** `TEST-FUNC-80521DDB`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-QUICKSIGHT-CAP-80521DDB` → `REQ-FUNC-80521DDB` → `TEST-FUNC-80521DDB`.
 
-### REQ-FUNC-53747AB3 — connectors for files, databases, AWS and SaaS sources
+### REQ-FUNC-1350B42B — SDK, API and CLI surfaces are documented; authenticated execution and account-specific permissions were not tested here.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-quicksight-api`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-53747AB3`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-QUICKSIGHT-CAP-53747AB3` → `REQ-FUNC-53747AB3` → `TEST-FUNC-53747AB3`.
+- **Associated test ID:** `TEST-FUNC-1350B42B`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-QUICKSIGHT-CAP-1350B42B` → `REQ-FUNC-1350B42B` → `TEST-FUNC-1350B42B`.
 
-### REQ-FUNC-C7170A21 — embedded analytics and APIs
+### REQ-FUNC-F7184815 — Superset covers core BI exploration and dashboards but not QuickSight's SPICE layer, AWS managed plane, exact embedding contract or governance semantics.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-quicksight-superset`, `ev-amazon-quicksight-spice`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-C7170A21`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-QUICKSIGHT-CAP-C7170A21` → `REQ-FUNC-C7170A21` → `TEST-FUNC-C7170A21`.
-
-### REQ-FUNC-932F3CBD — SPICE in-memory analytics, permissions and governance
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-932F3CBD`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-QUICKSIGHT-CAP-932F3CBD` → `REQ-FUNC-932F3CBD` → `TEST-FUNC-932F3CBD`.
+- **Associated test ID:** `TEST-FUNC-F7184815`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-QUICKSIGHT-CAP-F7184815` → `REQ-FUNC-F7184815` → `TEST-FUNC-F7184815`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -237,11 +226,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `AMAZON-QUICKSIGHT-CAP-B51AEDE8` — cloud business intelligence and interactive dashboards | Not verified against Apache Superset | None yet; compare with `ev_3990c59665256c93d2fd29a188cf289c32cf447ba2ba6157450b13bf39dbf51b` | Candidate code path and tests must be inspected |
-| `AMAZON-QUICKSIGHT-CAP-4B7EBCB3` — ad hoc analysis, visualizations and stories | Not verified against Apache Superset | None yet; compare with `ev_3990c59665256c93d2fd29a188cf289c32cf447ba2ba6157450b13bf39dbf51b` | Candidate code path and tests must be inspected |
-| `AMAZON-QUICKSIGHT-CAP-53747AB3` — connectors for files, databases, AWS and SaaS sources | Not verified against Apache Superset | None yet; compare with `ev_3990c59665256c93d2fd29a188cf289c32cf447ba2ba6157450b13bf39dbf51b` | Candidate code path and tests must be inspected |
-| `AMAZON-QUICKSIGHT-CAP-C7170A21` — embedded analytics and APIs | Not verified against Apache Superset | None yet; compare with `ev_3990c59665256c93d2fd29a188cf289c32cf447ba2ba6157450b13bf39dbf51b` | Candidate code path and tests must be inspected |
-| `AMAZON-QUICKSIGHT-CAP-932F3CBD` — SPICE in-memory analytics, permissions and governance | Not verified against Apache Superset | None yet; compare with `ev_3990c59665256c93d2fd29a188cf289c32cf447ba2ba6157450b13bf39dbf51b` | Candidate code path and tests must be inspected |
+| `AMAZON-QUICKSIGHT-CAP-54CF9D30` — Cloud BI identity and dashboard/analysis workflow are documented; exact feature availability can vary by edition and region. | Not verified against Apache Superset | None yet; compare with `ev_3990c59665256c93d2fd29a188cf289c32cf447ba2ba6157450b13bf39dbf51b` | Candidate code path and tests must be inspected |
+| `AMAZON-QUICKSIGHT-CAP-80521DDB` — SPICE, DirectQuery, refresh and quota behavior are publicly documented; current limits must be checked against the relevant edition and region. | Not verified against Apache Superset | None yet; compare with `ev_3990c59665256c93d2fd29a188cf289c32cf447ba2ba6157450b13bf39dbf51b` | Candidate code path and tests must be inspected |
+| `AMAZON-QUICKSIGHT-CAP-1350B42B` — SDK, API and CLI surfaces are documented; authenticated execution and account-specific permissions were not tested here. | Not verified against Apache Superset | None yet; compare with `ev_3990c59665256c93d2fd29a188cf289c32cf447ba2ba6157450b13bf39dbf51b` | Candidate code path and tests must be inspected |
+| `AMAZON-QUICKSIGHT-CAP-F7184815` — Superset covers core BI exploration and dashboards but not QuickSight's SPICE layer, AWS managed plane, exact embedding contract or governance semantics. | Not verified against Apache Superset | None yet; compare with `ev_3990c59665256c93d2fd29a188cf289c32cf447ba2ba6157450b13bf39dbf51b` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -288,11 +276,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-B51AEDE8** → `REQ-FUNC-B51AEDE8`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-4B7EBCB3** → `REQ-FUNC-4B7EBCB3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-53747AB3** → `REQ-FUNC-53747AB3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-C7170A21** → `REQ-FUNC-C7170A21`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-932F3CBD** → `REQ-FUNC-932F3CBD`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-54CF9D30** → `REQ-FUNC-54CF9D30`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-80521DDB** → `REQ-FUNC-80521DDB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-1350B42B** → `REQ-FUNC-1350B42B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-F7184815** → `REQ-FUNC-F7184815`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -313,7 +300,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-B51AEDE8, REQ-FUNC-4B7EBCB3, REQ-FUNC-53747AB3, REQ-FUNC-C7170A21, REQ-FUNC-932F3CBD
+- **Requirements:** REQ-FUNC-54CF9D30, REQ-FUNC-80521DDB, REQ-FUNC-1350B42B, REQ-FUNC-F7184815
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -323,7 +310,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-B51AEDE8, REQ-FUNC-4B7EBCB3, REQ-FUNC-53747AB3, REQ-FUNC-C7170A21, REQ-FUNC-932F3CBD
+- **Requirements:** REQ-FUNC-54CF9D30, REQ-FUNC-80521DDB, REQ-FUNC-1350B42B, REQ-FUNC-F7184815
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -345,7 +332,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-B51AEDE8, REQ-FUNC-4B7EBCB3, REQ-FUNC-53747AB3, REQ-FUNC-C7170A21, REQ-FUNC-932F3CBD; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-54CF9D30, REQ-FUNC-80521DDB, REQ-FUNC-1350B42B, REQ-FUNC-F7184815; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -375,12 +362,23 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/quicksight/) | Not recorded | Amazon QuickSight is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/quicksight/) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-quicksight-identity` | Amazon QuickSight — AWS's official product page identifies QuickSight as its business-intelligence and analytics service. | [link](https://aws.amazon.com/quicksight/) | 2026-11-03T00:00:00Z | Amazon QuickSight is AWS's cloud business-intelligence and data-visualization service. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-quicksight-workflow` | Getting started with Amazon Quick Sight — The official getting-started guide documents uploading datasets, creating analyses and visualizations, and sharing results through dashboards. | [link](https://docs.aws.amazon.com/quick/latest/userguide/quick-sight-getting-started.html) | 2026-11-03T00:00:00Z | QuickSight supports creating analyses, visualizations and dashboards from data sources. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-quicksight-spice` | SPICE-only features — AWS documents SPICE-only transformations and distinguishes them from features available in both SPICE and DirectQuery. | [link](https://docs.aws.amazon.com/quick/latest/userguide/spice-only-features.html) | 2026-11-03T00:00:00Z | QuickSight uses SPICE for in-memory data preparation and supports both SPICE and DirectQuery workflows where applicable. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-quicksight-refresh` | Refreshing data in Amazon Quick Sight — The official guide documents refresh behavior for DirectQuery and SPICE datasets, scheduled refreshes and CreateIngestion. | [link](https://docs.aws.amazon.com/quick/latest/userguide/refreshing-data.html) | 2026-11-03T00:00:00Z | QuickSight supports refreshing SPICE datasets manually, through schedules and through the CreateIngestion API operation. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-quicksight-api` | Developing applications with the Amazon Quick Sight API — AWS documents SDK access, QuickSight IAM permissions and AWS CLI commands for API operations. | [link](https://docs.aws.amazon.com/quick/latest/userguide/quicksight-sdks.html) | 2026-11-03T00:00:00Z | QuickSight exposes SDK and API operations for managing service resources through AWS permissions and the CLI. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-quicksight-quotas` | Data source quotas — AWS documents row, size, column, file and query-time limits for SPICE and DirectQuery workflows. | [link](https://docs.aws.amazon.com/quick/latest/userguide/data-source-limits.html) | 2026-11-03T00:00:00Z | QuickSight documents explicit SPICE and DirectQuery data-source quotas. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-quicksight-superset` | Apache Superset — The official repository documents Superset's open-source dashboard, SQL exploration and visualization platform and its Apache-2.0 license. | [link](https://github.com/apache/superset) | 2026-11-03T00:00:00Z | Apache Superset is an Apache-2.0 open-source data exploration and visualization platform. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/quicksight/) | 2026-11-03T00:00:00Z | Amazon QuickSight is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/quicksight/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/quicksight/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/quicksight/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/quicksight/latest/user/welcome.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/cli/latest/reference/quicksight/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/quick/latest/userguide/quick-sight-getting-started.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/quick/latest/userguide/spice-only-features.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/quick/latest/userguide/refreshing-data.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/quick/latest/userguide/quicksight-sdks.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/quick/latest/userguide/data-source-limits.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/cli/latest/reference/quicksight/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_3990c59665256c93d2fd29a188cf289c32cf447ba2ba6157450b13bf39dbf51b` | Amazon QuickSight Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/quick/quicksight/) | 2026-11-03T03:43:46.439Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Try Quick for free, button: Open feedback, button: Features submenu, button: Get started, button: Connect with a specialist, button: Play:, button: Unified intelligence, button: Insights for everyone, button: Turn decisions to impact, faster, button: Yes, give us positive feedback, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to Quick, link: Overview, link: Pricing, link: Dashboard Gallery, link: FAQs, link: Agentic AI, link: Amazon Quick, link: Read the Economic Validation report by TechTarget’s Enterprise Strategy Group, link: Missing alt text value QuickSight and the NFL’s Next Gen Stats, link: Missing alt text value Docebo increases analytics adoption five times by embedding Amazon QuickSight, link: Missing alt text value Insightful.Mobi decreases costs and enhances dashboard performance using QuickSight, link: Missing alt text value Defontana provides advanced analytics to customers 2-3X faster by embedding QuickSight, link: Documentation View documentation Find the user guide, technical documentation on getting started, and API references. Documentation, link: Resources View the dashboard gallery Explore sample industry and domain-specific analytics built by Quick Sight customers and partners. View gallery, link: Tutorial Explore Quick Sight webinars Level up your Quick Sight skills with workshops, how-to videos, and more. Learn more, button: No, give us constructive feedback, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -453,7 +451,7 @@ Compare connectors, semantic models, calculated fields, chart and dashboard beha
 
 Research must map source and dataset schemas, SPICE ingestion, direct-query behavior, refresh state, analysis-to-dashboard publication, visual semantics, filters, calculations, permissions, embedding, export, alerts, quotas, caching and failure recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, CLI references and authorized sample data. Capture source setup, dataset creation, dashboard publication, embedding, permission changes and failure cases. Use Superset only after recording the partial-foundation verdict, and implement an independent product with original code, compatible licensing and no AWS branding or protected assets.
 
@@ -461,13 +459,13 @@ Use official AWS documentation, CLI references and authorized sample data. Captu
 
 Verify IAM scope, row-level security, data-source credentials, encryption, regional processing, SPICE retention, export and embedding token handling, audit logs and tenant isolation. Do not infer compliance from a dashboard demonstration.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/quicksight/ — official product scope.
-- https://docs.aws.amazon.com/quicksight/ — official documentation.
-- https://docs.aws.amazon.com/quicksight/latest/user/welcome.html — user workflows and capabilities.
-- https://docs.aws.amazon.com/cli/latest/reference/quicksight/ — CLI and API surface.
-- https://github.com/apache/superset — open-source alternative and Apache-2.0 license.
+- **Product and identity:** [AWS product page](https://aws.amazon.com/quicksight/) and [QuickSight documentation](https://docs.aws.amazon.com/quicksight/) establish the product scope.
+- **Workflow:** [Getting started with Quick Sight](https://docs.aws.amazon.com/quick/latest/userguide/quick-sight-getting-started.html) documents creating analyses, visualizations and dashboards from sample data.
+- **SPICE and query modes:** [SPICE-only features](https://docs.aws.amazon.com/quick/latest/userguide/spice-only-features.html), [refreshing data](https://docs.aws.amazon.com/quick/latest/userguide/refreshing-data.html) and [data-source quotas](https://docs.aws.amazon.com/quick/latest/userguide/data-source-limits.html) support the SPICE, DirectQuery, refresh and quota claims.
+- **Programmatic surface:** [QuickSight SDK/API guidance](https://docs.aws.amazon.com/quick/latest/userguide/quicksight-sdks.html) and the [AWS CLI reference](https://docs.aws.amazon.com/cli/latest/reference/quicksight/) support the SDK, API and CLI claims.
+- **Alternative:** [Apache Superset](https://github.com/apache/superset) is the recorded Apache-2.0 open-source alternative; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -478,13 +476,13 @@ Verify IAM scope, row-level security, data-source credentials, encryption, regio
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, core workflows, SPICE/direct-query behavior, refreshes, API/CLI surface and a partial open-source foundation are documented. Internal query planning, tenant isolation, complete regional behavior and current commercial terms remain unknown and are not asserted.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-quicksight` and inspect canonical identity with `npx rae-faang products show amazon-quicksight --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-quicksight` and inspect canonical identity with `npx rea-faang products show amazon-quicksight --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -497,7 +495,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-quicksight --out ./amazon-quicksight.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-quicksight --out ./amazon-quicksight-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-quicksight --out ./amazon-quicksight.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-quicksight --out ./amazon-quicksight-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -539,10 +537,21 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/quicksight/) — Amazon QuickSight is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://docs.aws.amazon.com/quicksight/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [Amazon QuickSight](https://aws.amazon.com/quicksight/) — Amazon QuickSight is AWS's cloud business-intelligence and data-visualization service. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Getting started with Amazon Quick Sight](https://docs.aws.amazon.com/quick/latest/userguide/quick-sight-getting-started.html) — QuickSight supports creating analyses, visualizations and dashboards from data sources. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [SPICE-only features](https://docs.aws.amazon.com/quick/latest/userguide/spice-only-features.html) — QuickSight uses SPICE for in-memory data preparation and supports both SPICE and DirectQuery workflows where applicable. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Refreshing data in Amazon Quick Sight](https://docs.aws.amazon.com/quick/latest/userguide/refreshing-data.html) — QuickSight supports refreshing SPICE datasets manually, through schedules and through the CreateIngestion API operation. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Developing applications with the Amazon Quick Sight API](https://docs.aws.amazon.com/quick/latest/userguide/quicksight-sdks.html) — QuickSight exposes SDK and API operations for managing service resources through AWS permissions and the CLI. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Data source quotas](https://docs.aws.amazon.com/quick/latest/userguide/data-source-limits.html) — QuickSight documents explicit SPICE and DirectQuery data-source quotas. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Apache Superset](https://github.com/apache/superset) — Apache Superset is an Apache-2.0 open-source data exploration and visualization platform. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://aws.amazon.com/quicksight/) — Amazon QuickSight is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/quicksight/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/quicksight/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/quicksight/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://docs.aws.amazon.com/quicksight/latest/user/welcome.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/quick/latest/userguide/quick-sight-getting-started.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/quick/latest/userguide/spice-only-features.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/quick/latest/userguide/refreshing-data.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/quick/latest/userguide/quicksight-sdks.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/quick/latest/userguide/data-source-limits.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/cli/latest/reference/quicksight/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon QuickSight Public web-surface observation (REA)](https://aws.amazon.com/quick/quicksight/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Try Quick for free, button: Open feedback, button: Features submenu, button: Get started, button: Connect with a specialist, button: Play:, button: Unified intelligence, button: Insights for everyone, button: Turn decisions to impact, faster, button: Yes, give us positive feedback, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to Quick, link: Overview, link: Pricing, link: Dashboard Gallery, link: FAQs, link: Agentic AI, link: Amazon Quick, link: Read the Economic Validation report by TechTarget’s Enterprise Strategy Group, link: Missing alt text value QuickSight and the NFL’s Next Gen Stats, link: Missing alt text value Docebo increases analytics adoption five times by embedding Amazon QuickSight, link: Missing alt text value Insightful.Mobi decreases costs and enhances dashboard performance using QuickSight, link: Missing alt text value Defontana provides advanced analytics to customers 2-3X faster by embedding QuickSight, link: Documentation View documentation Find the user guide, technical documentation on getting started, and API references. Documentation, link: Resources View the dashboard gallery Explore sample industry and domain-specific analytics built by Quick Sight customers and partners. View gallery, link: Tutorial Explore Quick Sight webinars Level up your Quick Sight skills with workshops, how-to videos, and more. Learn more, button: No, give us constructive feedback, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:43:46.439Z).

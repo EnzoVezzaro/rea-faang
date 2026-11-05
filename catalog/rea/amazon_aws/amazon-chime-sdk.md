@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon Chime SDK, recorded with REA
 | Target | https://aws.amazon.com/chime/chime-sdk/ |
 | Resolved URL | https://aws.amazon.com/chime/chime-sdk/ |
 | Page title | Amazon Chime SDK |
-| Captured | 2026-11-03T02:47:06.529Z |
+| Captured | 2026-11-04T02:40:02.633Z |
 | Status | captured |
-| REA Evidence ID | `ev_54a94eb05497a2ba47b137075ed220e2702af00575e6e013265b340d110f65fa` |
+| REA Evidence ID | `ev_4808cefbf25859e30da8fb4f922661089999b11db9a34f794de6249f18922b74` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -165,6 +165,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-chime-sdk.json`
-- Evidence ID: `ev_54a94eb05497a2ba47b137075ed220e2702af00575e6e013265b340d110f65fa`
+- Evidence ID: `ev_4808cefbf25859e30da8fb4f922661089999b11db9a34f794de6249f18922b74`
 - Accessibility outline: 10797 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

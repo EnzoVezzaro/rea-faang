@@ -49,7 +49,7 @@ what the MVP does and does not support.
   semantic result list; no JavaScript required for the core flow.
 - **Not supported:** client-side routing, offline mode, personalisation.
 
-## 6. RAE FAANG catalogue
+## 6. REA FAANG catalogue
 
 - **Contract:** the product record `google-search` in `catalog/products.jsonl` and
   the dossier `research/companies/google/products/google-search.md`.

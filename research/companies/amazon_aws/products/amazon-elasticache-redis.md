@@ -82,7 +82,7 @@ Redis OSS and Valkey provide the core open-source engine behavior, but they do n
 
 REA should map engine and command compatibility, topology, shards, replicas, failover, persistence, backups, ACLs, TLS, serverless boundaries, scaling, upgrades, maintenance, metrics, quotas and the differences between Redis OSS, Valkey and Memcached in ElastiCache.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS ElastiCache documentation and public Redis OSS behavior as research surfaces. A clean-room equivalent should use independently licensed Redis-compatible software and document differences in commands, persistence, clustering, security and managed operations.
 

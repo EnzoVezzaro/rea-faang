@@ -86,7 +86,7 @@ Kafka-compatible systems provide durable partitions and consumer groups, while K
 
 REA should map stream/shard lifecycle, partitioning, ordering, producer retries, consumer checkpoints, retention/replay, resharding, enhanced fan-out, capacity modes, throughput limits, encryption, IAM, KCL/KPL behavior, integrations and failure recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official Kinesis Data Streams product page, developer guide, API reference, CLI reference and getting-started documentation as research surfaces. A clean-room implementation should use independently licensed streaming components, document semantic differences and avoid copying AWS control-plane or client-library internals.
 

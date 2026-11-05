@@ -81,7 +81,7 @@ Open-source forecasting libraries can replace parts of the modeling workflow, bu
 
 REA should map dataset and predictor resources, algorithm selection, feature engineering, missing-value handling, training, evaluation, forecast querying/export, quotas, IAM, endpoints, availability and migration paths.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official archived documentation and public forecasting behavior as research surfaces. A clean-room replacement should use independently licensed forecasting libraries and document differences in algorithms, data contracts, evaluation, APIs, deployment, pricing and operational responsibility.
 

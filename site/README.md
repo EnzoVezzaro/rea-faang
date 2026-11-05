@@ -1,6 +1,6 @@
 # Website
 
-The public website for RAE FAANG: the landing page, the browsable product
+The public website for REA FAANG: the landing page, the browsable product
 catalog (one page per catalogued FAANG product, with its open-source
 alternatives linked), and the documentation set rendered from `docs/`.
 
@@ -71,16 +71,16 @@ Two live mirrors, both serving the same generated `site/` directory:
    - **Live:** https://enzovezzaro.github.io/rea-faang/
    - Pages source: GitHub Actions (Settings → Pages).
 2. **Vercel** — the `site/` directory is linked to the Vercel project
-   `rae-faang-landing` (scope `enzovezzaros-projects`). Deploy with
+   `rea-faang-landing` (scope `enzovezzaros-projects`). Deploy with
    `vercel deploy --prod` from `site/` after rebuilding, or connect the repo
    (`vercel git connect`) for push-based deploys.
-   - **Live:** https://rae-faang-landing.vercel.app
+   - **Live:** https://rea-faang-landing.vercel.app
 
 All internal links are relative, so both the root domain (Vercel) and the
 subpath (GitHub Pages) work. Canonical and Open Graph URLs and `sitemap.xml`
 use the GitHub Pages origin declared in `tools/site/templates.mjs` (also the
 `homepage` in `package.json`); rebuild with
-`RAE_SITE_URL=https://rae-faang-landing.vercel.app npm run site:build` to make
+`REA_SITE_URL=https://rea-faang-landing.vercel.app npm run site:build` to make
 the Vercel deployment canonical instead.
 
 Note: GitHub Pages is not available for **private** repositories on the free

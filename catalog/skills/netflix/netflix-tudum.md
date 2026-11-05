@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Tudum (netflix-tudum); investigate,
 
 # Tudum — implementation skill (`netflix-tudum`)
 
-> **Research status:** pending. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** retired. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Tudum**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Tudum (netflix-tudum); investigate,
 
 This is the coding-agent skill for **Tudum** (`netflix-tudum`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/netflix/netflix-tudum.md` from the catalog page, or run `npx rae-faang netflix-tudum --out ./netflix-tudum.md`, `npx rae-faang skills generate netflix-tudum` or `npx rae-faang build agent-kit netflix-tudum --out ./netflix-tudum-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/netflix/netflix-tudum.md` from the catalog page, or run `npx rea-faang netflix-tudum --out ./netflix-tudum.md`, `npx rea-faang skills generate netflix-tudum` or `npx rea-faang build agent-kit netflix-tudum --out ./netflix-tudum-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Tudum / `netflix-tudum` | `catalog/products.jsonl` |
 | Official product URL | [https://www.netflix.com/tudum](https://www.netflix.com/tudum) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier netflix-tudum` | `research/companies/netflix/products/netflix-tudum.md` |
+| Official documentation | [https://help.netflix.com/en/node/123481](https://help.netflix.com/en/node/123481) | Catalog record |
+| Research dossier | `npx rea-faang research dossier netflix-tudum` | `research/companies/netflix/products/netflix-tudum.md` |
 | REA report | `catalog/rea/netflix/netflix-tudum.md` (captured 2026-11-03T01:42:38.525Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/netflix-tudum.json` (`ev_9de9f82f3c479d1bbf5b4c18c471bf6a2496191fcb8b11470b885e2caf02c18c`) | Catalog evidence |
 | Alternative candidates | None recorded — this is a research gap | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show netflix-tudum --format json` and `npx rae-faang research dossier netflix-tudum` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show netflix-tudum --format json` and `npx rea-faang research dossier netflix-tudum` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `NETFLIX-TUDUM-CAP-14D7BF09`, `NETFLIX-TUDUM-CAP-03843B02`, `NETFLIX-TUDUM-CAP-37B8A6E5`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `NETFLIX-TUDUM-CAP-47D31C80`, `NETFLIX-TUDUM-CAP-02016947`, `NETFLIX-TUDUM-CAP-85BF8B22`, `NETFLIX-TUDUM-CAP-85DC912C`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,7 +103,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Tudum** / `netflix-tudum` | Product catalog |
 | Company / category | Netflix / `media` / `editorial` | Product catalog |
-| Official website / docs | [https://www.netflix.com/tudum](https://www.netflix.com/tudum) / Not recorded | URL lead; compiler does not fetch source |
+| Official website / docs | [https://www.netflix.com/tudum](https://www.netflix.com/tudum) / [https://help.netflix.com/en/node/123481](https://help.netflix.com/en/node/123481) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `NETFLIX-TUDUM-CAP-14D7BF09` | Editorial articles and interviews | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `NETFLIX-TUDUM-CAP-03843B02` | Companion content | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `NETFLIX-TUDUM-CAP-37B8A6E5` | Newsroom-style updates | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-TUDUM-CAP-47D31C80` | Editorial companion content | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-TUDUM-CAP-02016947` | Interviews and behind-the-scenes coverage | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-TUDUM-CAP-85BF8B22` | Fan discovery and recommendations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-TUDUM-CAP-85DC912C` | Personalized experience for signed-in Netflix members | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Next items`, `button: My List`, `button: Remind Me`, `button: Back To Top`, `link: Skip to main content`, `link: Sign In`, `link: Tudum by Netflix - Home`, `combobox: Select option`, `link: Home`, `link: Top 10`, `link: Trending`, `link: What to Watch`, `link: Shows`, `link: Movies`, `link: Puzzled`, `link: Podcasts`, `link: Shop opens in a new tab`, `link: Animals`, `link: Love Is Blind`, `link: Below`, `link: The Diplomat`, `link: East of Eden`, `link: Nobody Wants This`, `link: Lupin`, `link: The Perfect Lie`, `link: KPop Demon Hunters`, `link: The Gentlemen`, `link: New on Netflix in November 2026`, `link: La Bola Negra Opens in Theaters Nationwide`, `link: Learn Every Move with Official KPop Demon Hunters Choreography Videos`, `link: Love Is Blind’s Rob and Michaella Unpack Their Split and That Mixer ‘Meltdown’`, `link: See More`, `link: Our Sticky Love`, `link: Crew Girl`, `link: Beauty in Black`, `link: Wednesday`, `link: Druski Announces Netflix Partnership, New Comedy Series Collect & Praise`, `link: ‘Skip Intro’ with Krista Smith`, `link: The Diplomat Will Return for Season 5`, `link: TYSON FURY Documentary Goes Beyond the Ring Ahead of Joshua Fight`, `link: Watch`, `link: Explore`, `link: RSVP NOW`, `link: Watch the ‘Your Idol’ Official Choreography \| KPop Demon Hunters`, `link: Watch the ‘Soda Pop’ Official Choreography \| KPop Demon Hunters`, `link: 9 Spicy Romance Movies and Series That Crank Up the Heat`, `link: Travel Back in Time with These 16 Historical Fiction Adaptations`, `link: 31 Days of Horror`, `link: Feast on These 7 ‘Eat the Rich’ Class Satire Movies and Shows`, `link: What Happens in The Diplomat Season 4 Finale? That Shocking G7 Ending Explained`, `link: The 20 Scariest Things to Watch Right Now`, `link: The 12 Biggest Revelations from The One About Matthew Perry`, `link: Inside the Ending of East of Eden`, `link: 18 Family-Friendly Movies and Shows That Put the ‘Happy’ in ‘Happy Halloween!’`, `link: Which Couples Are Still Together from Every Season of Love Is Blind?`, `link: Here Are the 10 Most-Watched Movies of 2026 — So Far`, `link: Discover Why the Sci-Fi Horror Series From Might Just Become Your Next Obsession`, `link: New Instadoc Goes Inside the Jane Doe v. Cornell Case`, `link: 41 Comedies to Watch Whenever You Need a Laugh`, `link: Robert Carlyle, Elijah Wood, Orlando Bloom, and More Join The Gentlemen Season 3`, `link: Where is The Diplomat Filmed? Your Guide to the Drama’s Locations`, `link: Filming for Wednesday Season 3 Is Wrapped and Buried`, `link: Tudum By Netflix - Home`, `link: About Tudum`, `link: Netflix House`, `link: Netflix Shop`, `link: Sign Up`, `link: Privacy`, `link: Terms of Use`, `link: Cookie Preferences`, `link: Do Not Sell or Share My Personal Information`, `link: Ad Choices`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Editorial articles and interviews:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Companion content:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Newsroom-style updates:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Editorial companion content:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Interviews and behind-the-scenes coverage:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Fan discovery and recommendations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Personalized experience for signed-in Netflix members:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-14D7BF09 — Editorial articles and interviews
+### REQ-FUNC-47D31C80 — Editorial companion content
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-14D7BF09`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-TUDUM-CAP-14D7BF09` → `REQ-FUNC-14D7BF09` → `TEST-FUNC-14D7BF09`.
+- **Associated test ID:** `TEST-FUNC-47D31C80`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-TUDUM-CAP-47D31C80` → `REQ-FUNC-47D31C80` → `TEST-FUNC-47D31C80`.
 
-### REQ-FUNC-03843B02 — Companion content
+### REQ-FUNC-02016947 — Interviews and behind-the-scenes coverage
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-03843B02`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-TUDUM-CAP-03843B02` → `REQ-FUNC-03843B02` → `TEST-FUNC-03843B02`.
+- **Associated test ID:** `TEST-FUNC-02016947`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-TUDUM-CAP-02016947` → `REQ-FUNC-02016947` → `TEST-FUNC-02016947`.
 
-### REQ-FUNC-37B8A6E5 — Newsroom-style updates
+### REQ-FUNC-85BF8B22 — Fan discovery and recommendations
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-37B8A6E5`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-TUDUM-CAP-37B8A6E5` → `REQ-FUNC-37B8A6E5` → `TEST-FUNC-37B8A6E5`.
+- **Associated test ID:** `TEST-FUNC-85BF8B22`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-TUDUM-CAP-85BF8B22` → `REQ-FUNC-85BF8B22` → `TEST-FUNC-85BF8B22`.
+
+### REQ-FUNC-85DC912C — Personalized experience for signed-in Netflix members
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-85DC912C`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-TUDUM-CAP-85DC912C` → `REQ-FUNC-85DC912C` → `TEST-FUNC-85DC912C`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -251,9 +262,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-14D7BF09** → `REQ-FUNC-14D7BF09`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-03843B02** → `REQ-FUNC-03843B02`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-37B8A6E5** → `REQ-FUNC-37B8A6E5`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-47D31C80** → `REQ-FUNC-47D31C80`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-02016947** → `REQ-FUNC-02016947`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-85BF8B22** → `REQ-FUNC-85BF8B22`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-85DC912C** → `REQ-FUNC-85DC912C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -274,7 +286,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-14D7BF09, REQ-FUNC-03843B02, REQ-FUNC-37B8A6E5
+- **Requirements:** REQ-FUNC-47D31C80, REQ-FUNC-02016947, REQ-FUNC-85BF8B22, REQ-FUNC-85DC912C
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -284,7 +296,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-14D7BF09, REQ-FUNC-03843B02, REQ-FUNC-37B8A6E5
+- **Requirements:** REQ-FUNC-47D31C80, REQ-FUNC-02016947, REQ-FUNC-85BF8B22, REQ-FUNC-85DC912C
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -306,7 +318,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-14D7BF09, REQ-FUNC-03843B02, REQ-FUNC-37B8A6E5; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-47D31C80, REQ-FUNC-02016947, REQ-FUNC-85BF8B22, REQ-FUNC-85DC912C; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -336,7 +348,12 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.netflix.com/tudum) | Not recorded | Tudum is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-netflix-tudum-identity` | What is Tudum? — Netflix describes Tudum as a companion site associated with Netflix content and accounts, not as a separate streaming service. | [link](https://help.netflix.com/en/node/123481) | 2026-11-03T00:00:00Z | Tudum is Netflix's official companion site with interviews, behind-the-scenes content, bonus videos and personalized fan content. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-tudum-purpose` | Meet Tudum — Your Backstage Pass to the Netflix Stories You Love — Netflix's announcement describes the site as a fan and editorial companion to Netflix stories. | [link](https://about.netflix.com/news/meet-tudum-your-backstage-pass-to-the-netflix-stories-you-love) | 2026-11-03T00:00:00Z | Tudum is an editorial companion site for going deeper into Netflix stories through news, interviews and behind-the-scenes content. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.netflix.com/tudum) | 2026-11-03T00:00:00Z | Tudum is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://help.netflix.com/en/node/123481) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://help.netflix.com/en/node/123481) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://about.netflix.com/news/meet-tudum-your-backstage-pass-to-the-netflix-stories-you-love) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_9de9f82f3c479d1bbf5b4c18c471bf6a2496191fcb8b11470b885e2caf02c18c` | Tudum Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.netflix.com/tudum) | 2026-11-03T01:42:38.525Z | A dated unauthenticated snapshot exposed controls button: Next items, button: My List, button: Remind Me, button: Back To Top, link: Skip to main content, link: Sign In, link: Tudum by Netflix - Home, combobox: Select option, link: Home, link: Top 10, link: Trending, link: What to Watch, link: Shows, link: Movies, link: Puzzled, link: Podcasts, link: Shop opens in a new tab, link: Animals, link: Love Is Blind, link: Below, link: The Diplomat, link: East of Eden, link: Nobody Wants This, link: Lupin, link: The Perfect Lie, link: KPop Demon Hunters, link: The Gentlemen, link: New on Netflix in November 2026, link: La Bola Negra Opens in Theaters Nationwide, link: Learn Every Move with Official KPop Demon Hunters Choreography Videos, link: Love Is Blind’s Rob and Michaella Unpack Their Split and That Mixer ‘Meltdown’, link: See More, link: Our Sticky Love, link: Crew Girl, link: Beauty in Black, link: Wednesday, link: Druski Announces Netflix Partnership, New Comedy Series Collect & Praise, link: ‘Skip Intro’ with Krista Smith, link: The Diplomat Will Return for Season 5, link: TYSON FURY Documentary Goes Beyond the Ring Ahead of Joshua Fight, link: Watch, link: Explore, link: RSVP NOW, link: Watch the ‘Your Idol’ Official Choreography \| KPop Demon Hunters, link: Watch the ‘Soda Pop’ Official Choreography \| KPop Demon Hunters, link: 9 Spicy Romance Movies and Series That Crank Up the Heat, link: Travel Back in Time with These 16 Historical Fiction Adaptations, link: 31 Days of Horror, link: Feast on These 7 ‘Eat the Rich’ Class Satire Movies and Shows, link: What Happens in The Diplomat Season 4 Finale? That Shocking G7 Ending Explained, link: The 20 Scariest Things to Watch Right Now, link: The 12 Biggest Revelations from The One About Matthew Perry, link: Inside the Ending of East of Eden, link: 18 Family-Friendly Movies and Shows That Put the ‘Happy’ in ‘Happy Halloween!’, link: Which Couples Are Still Together from Every Season of Love Is Blind?, link: Here Are the 10 Most-Watched Movies of 2026 — So Far, link: Discover Why the Sci-Fi Horror Series From Might Just Become Your Next Obsession, link: New Instadoc Goes Inside the Jane Doe v. Cornell Case, link: 41 Comedies to Watch Whenever You Need a Laugh, link: Robert Carlyle, Elijah Wood, Orlando Bloom, and More Join The Gentlemen Season 3, link: Where is The Diplomat Filmed? Your Guide to the Drama’s Locations, link: Filming for Wednesday Season 3 Is Wrapped and Buried, link: Tudum By Netflix - Home, link: About Tudum, link: Netflix House, link: Netflix Shop, link: Sign Up, link: Privacy, link: Terms of Use, link: Cookie Preferences, link: Do Not Sell or Share My Personal Information, link: Ad Choices and landmarks banner, navigation: Main Menu, main, navigation: Featured Links, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -362,116 +379,48 @@ Resume token: `netflix-tudum`. Read dossier, REA report and raw Evidence before 
 
 ### Dossier notes (not independently verified)
 
-# 1. Executive summary
+# Tudum
 
-Tudum is Netflix's editorial publication covering shows, films and fandom.
+## Classification verdict
 
----
+Tudum is an active Netflix editorial companion site, not a separate streaming
+service or software product. Netflix describes it as an official companion site
+with interviews, behind-the-scenes material, bonus videos, news and fan-oriented
+content. It can personalize the experience after a Netflix sign-in, but it is a
+content and editorial surface associated with Netflix Streaming.
 
-# 2. Product identity and ownership
+To avoid counting an editorial surface as an independent buildable service, this
+entry remains in the catalog only as a **retired inventory record** for traceability.
+It is not an active product-research or build target.
 
-- **Official name:** Tudum
-- **Company and business unit:** netflix
-- **Current lifecycle status:** active
-- **Official website:** https://www.netflix.com/tudum
+## Evidence
 
----
+- [Netflix Help: What is Tudum?](https://help.netflix.com/en/node/123481) identifies
+  Tudum as Netflix's official companion site and describes its editorial content,
+  personalization, language availability, and relationship to Netflix accounts.
+- [About Netflix: Meet Tudum](https://about.netflix.com/news/meet-tudum-your-backstage-pass-to-the-netflix-stories-you-love)
+  describes Tudum's purpose as going deeper into Netflix stories with news,
+  interviews, and behind-the-scenes material.
+- The REA capture at `catalog/rea/netflix/netflix-tudum.md` confirms that the
+  public URL resolves to a Tudum editorial surface with sections such as Latest
+  News, Shows, and Explore More.
 
-# 3. Product capabilities
+## Scope boundary
 
-- Editorial articles and interviews
-- Companion content
-- Newsroom-style updates
+Tudum does not get a separate software-replication plan. A build agent should not
+interpret this record as a request to reproduce Netflix editorial content, private
+account integrations, or copyrighted media. If a future project needs a fan
+publication, evaluate a general CMS or publishing stack separately; that would be
+a new, independently scoped product rather than a Tudum clone.
 
----
+**Classification date:** 2026-11-03.  
+**Status:** Active external site; retired from the REA build-product inventory.
 
-# 4. Technical architecture
-
-Not yet researched.
-
----
-
-# 5. User workflows
-
-Not yet researched.
-
----
-
-# 6. Pricing and access
-
-Not yet researched.
-
----
-
-# 7. API and integration surface
-
-Not yet researched.
-
----
-
-# 8. Existing open-source alternatives
-
-No open-source alternative has been verified yet.
-
----
-
-# 9. Alternative comparison
-
-Editorial content is journalism, not software; open CMSs can serve a publication, but the content itself is Netflix's.
-
----
-
-# 10. Missing capabilities and opportunity analysis
-
-Editorial content is journalism, not software; open CMSs can serve a publication, but the content itself is Netflix's.
-
----
-
-# 11. RAE implementation strategy
-
-Pending. Not a software-replication problem; open CMSs cover publishing, not content.
-
----
-
-# 12. Security, privacy, and compliance
-
-Not yet researched.
-
----
-
-# 13. Sources and evidence
-
-- https://en.wikipedia.org/wiki/Netflix
-
----
-
-# 14. Open questions
-
-- Full feature inventory and technical architecture are not yet researched.
-
----
-
-# 15. Research history
-
-- v1: dossier created; research pending.
-
----
-
-# 16. Alternative comparison (continued)
-
-Editorial content is journalism, not software; open CMSs can serve a publication, but the content itself is Netflix's.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Pending. Not a software-replication problem; open CMSs cover publishing, not content.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **retired**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier netflix-tudum` and inspect canonical identity with `npx rae-faang products show netflix-tudum --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier netflix-tudum` and inspect canonical identity with `npx rea-faang products show netflix-tudum --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -484,7 +433,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang netflix-tudum --out ./netflix-tudum.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit netflix-tudum --out ./netflix-tudum-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang netflix-tudum --out ./netflix-tudum.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit netflix-tudum --out ./netflix-tudum-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -526,5 +475,10 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://www.netflix.com/tudum) — Tudum is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [What is Tudum?](https://help.netflix.com/en/node/123481) — Tudum is Netflix's official companion site with interviews, behind-the-scenes content, bonus videos and personalized fan content. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Meet Tudum — Your Backstage Pass to the Netflix Stories You Love](https://about.netflix.com/news/meet-tudum-your-backstage-pass-to-the-netflix-stories-you-love) — Tudum is an editorial companion site for going deeper into Netflix stories through news, interviews and behind-the-scenes content. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://www.netflix.com/tudum) — Tudum is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://help.netflix.com/en/node/123481) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://help.netflix.com/en/node/123481) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://about.netflix.com/news/meet-tudum-your-backstage-pass-to-the-netflix-stories-you-love) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Tudum Public web-surface observation (REA)](https://www.netflix.com/tudum) — A dated unauthenticated snapshot exposed controls button: Next items, button: My List, button: Remind Me, button: Back To Top, link: Skip to main content, link: Sign In, link: Tudum by Netflix - Home, combobox: Select option, link: Home, link: Top 10, link: Trending, link: What to Watch, link: Shows, link: Movies, link: Puzzled, link: Podcasts, link: Shop opens in a new tab, link: Animals, link: Love Is Blind, link: Below, link: The Diplomat, link: East of Eden, link: Nobody Wants This, link: Lupin, link: The Perfect Lie, link: KPop Demon Hunters, link: The Gentlemen, link: New on Netflix in November 2026, link: La Bola Negra Opens in Theaters Nationwide, link: Learn Every Move with Official KPop Demon Hunters Choreography Videos, link: Love Is Blind’s Rob and Michaella Unpack Their Split and That Mixer ‘Meltdown’, link: See More, link: Our Sticky Love, link: Crew Girl, link: Beauty in Black, link: Wednesday, link: Druski Announces Netflix Partnership, New Comedy Series Collect & Praise, link: ‘Skip Intro’ with Krista Smith, link: The Diplomat Will Return for Season 5, link: TYSON FURY Documentary Goes Beyond the Ring Ahead of Joshua Fight, link: Watch, link: Explore, link: RSVP NOW, link: Watch the ‘Your Idol’ Official Choreography \| KPop Demon Hunters, link: Watch the ‘Soda Pop’ Official Choreography \| KPop Demon Hunters, link: 9 Spicy Romance Movies and Series That Crank Up the Heat, link: Travel Back in Time with These 16 Historical Fiction Adaptations, link: 31 Days of Horror, link: Feast on These 7 ‘Eat the Rich’ Class Satire Movies and Shows, link: What Happens in The Diplomat Season 4 Finale? That Shocking G7 Ending Explained, link: The 20 Scariest Things to Watch Right Now, link: The 12 Biggest Revelations from The One About Matthew Perry, link: Inside the Ending of East of Eden, link: 18 Family-Friendly Movies and Shows That Put the ‘Happy’ in ‘Happy Halloween!’, link: Which Couples Are Still Together from Every Season of Love Is Blind?, link: Here Are the 10 Most-Watched Movies of 2026 — So Far, link: Discover Why the Sci-Fi Horror Series From Might Just Become Your Next Obsession, link: New Instadoc Goes Inside the Jane Doe v. Cornell Case, link: 41 Comedies to Watch Whenever You Need a Laugh, link: Robert Carlyle, Elijah Wood, Orlando Bloom, and More Join The Gentlemen Season 3, link: Where is The Diplomat Filmed? Your Guide to the Drama’s Locations, link: Filming for Wednesday Season 3 Is Wrapped and Buried, link: Tudum By Netflix - Home, link: About Tudum, link: Netflix House, link: Netflix Shop, link: Sign Up, link: Privacy, link: Terms of Use, link: Cookie Preferences, link: Do Not Sell or Share My Personal Information, link: Ad Choices and landmarks banner, navigation: Main Menu, main, navigation: Featured Links, contentinfo. (VERIFIED; accessed 2026-11-03T01:42:38.525Z).

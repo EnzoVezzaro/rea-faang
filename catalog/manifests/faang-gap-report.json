@@ -9,17 +9,17 @@
     "This is a reconciliation of the documented scope, not a claim of permanent completeness: vendor catalogs change continuously."
   ],
   "counts": {
-    "canonical": 184,
-    "products": 1465,
-    "candidate": 1281,
-    "verified": 170,
+    "canonical": 193,
+    "products": 1471,
+    "candidate": 1278,
+    "verified": 179,
     "retired": 14,
-    "duplicates": 147,
+    "duplicates": 148,
     "navigation": 150,
-    "rows_with_required_fields": 1762,
+    "rows_with_required_fields": 1769,
     "rows_with_field_problems": 0,
     "candidates_without_url": 125,
-    "candidates_unclassified": 1281
+    "candidates_unclassified": 1278
   },
   "lanes": [
     {
@@ -55,7 +55,7 @@
       "companies": [
         "microsoft"
       ],
-      "queued": 372,
+      "queued": 369,
       "first": [
         "microsoft-net-apps-migration",
         "microsoft-about-microsoft",
@@ -129,9 +129,9 @@
     },
     {
       "company_id": "meta",
-      "canonical": 5,
-      "products": 5,
-      "verified": 5,
+      "canonical": 12,
+      "products": 12,
+      "verified": 12,
       "candidates": 0,
       "retired": 0,
       "duplicates": 0,
@@ -153,19 +153,19 @@
     },
     {
       "company_id": "microsoft",
-      "canonical": 5,
-      "products": 377,
-      "verified": 4,
-      "candidates": 372,
+      "canonical": 7,
+      "products": 376,
+      "verified": 6,
+      "candidates": 369,
       "retired": 1,
-      "duplicates": 7,
+      "duplicates": 8,
       "navigation": 7,
       "candidates_without_url": 1,
-      "unclassified": 372
+      "unclassified": 369
     }
   ],
   "reconciliation": {
-    "canonical_found_in_manifest": 184,
+    "canonical_found_in_manifest": 193,
     "canonical_missing_from_manifest": [],
     "verified_rows_not_canonical": [],
     "id_collisions": [],

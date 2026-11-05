@@ -24,12 +24,12 @@
       "grouped_under_parent": []
     },
     "meta": {
-      "in_scope": 5,
+      "in_scope": 12,
       "excluded": [],
       "grouped_under_parent": []
     },
     "microsoft": {
-      "in_scope": 5,
+      "in_scope": 7,
       "excluded": [],
       "grouped_under_parent": []
     },
@@ -39,7 +39,7 @@
       "grouped_under_parent": []
     }
   },
-  "total_in_scope": 184,
+  "total_in_scope": 193,
   "notes": "FAANG plus Microsoft inventory. amazon_aws and amazon stay distinct; google subsidiaries (deepmind, waymo) are tracked under google. Microsoft products were added on 2026-11-03; retired products stay in the catalog with research_status \"retired\" instead of being deleted.",
   "scope": "FAANG plus Microsoft"
 }

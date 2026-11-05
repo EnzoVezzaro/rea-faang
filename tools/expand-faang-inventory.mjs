@@ -126,7 +126,7 @@ for (const product of existing) {
 
 for (const source of SOURCES) {
   if (source.kind === 'seed-only') continue;
-  const response = await fetch(source.url, { headers: { 'user-agent': 'rae-faang-inventory/1.0' } });
+  const response = await fetch(source.url, { headers: { 'user-agent': 'rea-faang-inventory/1.0' } });
   if (!response.ok) throw new Error(`${source.url}: HTTP ${response.status}`);
   const html = await response.text();
   for (const entry of entriesFromHtml(html, source.url)) {

@@ -86,7 +86,7 @@ Open-source tools can provide host, network, file or rule-based detection, but a
 
 REA should map detector lifecycle, foundational data sources, each protection plan, finding schemas and severity, malware scan flows, organization administration, suppression/archiving, EventBridge/Security Hub integration, APIs, quotas, regional behavior and failure modes.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official GuardDuty user guide, API reference, CLI reference and findings documentation as research surfaces. A clean-room implementation should compose independently licensed sensors and analyzers, document coverage differences, and avoid copying AWS detection logic, threat feeds or proprietary implementation details.
 

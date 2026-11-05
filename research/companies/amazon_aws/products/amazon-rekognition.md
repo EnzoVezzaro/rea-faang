@@ -13,17 +13,21 @@ official_source_urls:
   - "https://aws.amazon.com/rekognition/"
   - "https://docs.aws.amazon.com/rekognition/latest/dg/"
   - "https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works.html"
+  - "https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness.html"
+  - "https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html"
+  - "https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/"
+  - "https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works-operations-intro.html"
   - "https://docs.aws.amazon.com/rekognition/latest/APIReference/"
   - "https://docs.aws.amazon.com/general/latest/gr/rekognition.html"
-research_status: "pending"
-research_confidence: "unverified"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: "2027-02-03T00:00:00Z"
+research_version: 2
 ---
 
 # 1. Executive summary
@@ -73,7 +77,7 @@ Compare image and video inputs, label taxonomy, OCR, face embeddings, collection
 
 Research must map operation schemas, confidence and geometry outputs, video job states, streaming transport, face collection semantics, Custom Labels training, moderation policy, liveness signals, limits, retries, data retention, regional behavior and model versioning.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, API references and authorized non-sensitive media. Capture representative image, video, face, moderation, Custom Labels and failure cases. Use CompreFace only after recording the partial-foundation verdict, and build an independent implementation with original code, compatible model licenses and no AWS branding or protected data.
 
@@ -81,13 +85,13 @@ Use official AWS documentation, API references and authorized non-sensitive medi
 
 Verify IAM scope, encryption, S3 access, biometric and face-data handling, consent, retention, deletion, region selection, logging, model training data, abuse prevention and human review for high-impact decisions. Do not infer legal compliance from API availability.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/rekognition/ — official product scope.
-- https://docs.aws.amazon.com/rekognition/latest/dg/ — official developer guide.
-- https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works.html — image and video capabilities.
-- https://docs.aws.amazon.com/rekognition/latest/APIReference/ — API operations and errors.
-- https://github.com/exadel-inc/CompreFace — open-source face-analysis alternative and Apache-2.0 license.
+- **Product and scope:** [Amazon Rekognition developer guide](https://docs.aws.amazon.com/rekognition/latest/dg/) and [how it works](https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works.html) document image and video analysis, labels, text, faces, moderation, PPE and tracking.
+- **Specialized capabilities:** [Face Liveness](https://docs.aws.amazon.com/rekognition/latest/dg/face-liveness.html), [content moderation](https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html) and [Custom Labels](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/) document liveness, moderation and custom model workflows.
+- **Operation model:** [image and video operations](https://docs.aws.amazon.com/rekognition/latest/dg/how-it-works-operations-intro.html) documents synchronous image calls and asynchronous stored-video jobs.
+- **Programmatic surface:** [API Reference](https://docs.aws.amazon.com/rekognition/latest/APIReference/) lists image, video, Custom Labels, Face Liveness and streaming operations.
+- **Alternative:** [CompreFace](https://github.com/exadel-inc/CompreFace) is the recorded Apache-2.0 self-hosted face-analysis alternative; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -98,4 +102,4 @@ Verify IAM scope, encryption, S3 access, biometric and face-data handling, conse
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, image/video operation model, face/liveness, moderation, Custom Labels and API surface are documented. Exact model behavior, thresholds, quotas, regional availability, pricing and legal/compliance conclusions remain unknown and are not asserted.

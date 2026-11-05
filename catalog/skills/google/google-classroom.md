@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Classroom (google-classroom)
 
 # Google Classroom — implementation skill (`google-classroom`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Classroom**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Classroom (google-classroom)
 
 This is the coding-agent skill for **Google Classroom** (`google-classroom`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-classroom.md` from the catalog page, or run `npx rae-faang google-classroom --out ./google-classroom.md`, `npx rae-faang skills generate google-classroom` or `npx rae-faang build agent-kit google-classroom --out ./google-classroom-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-classroom.md` from the catalog page, or run `npx rea-faang google-classroom --out ./google-classroom.md`, `npx rea-faang skills generate google-classroom` or `npx rea-faang build agent-kit google-classroom --out ./google-classroom-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,18 +27,18 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Google Classroom / `google-classroom` | `catalog/products.jsonl` |
 | Official product URL | [https://classroom.google.com/](https://classroom.google.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-classroom` | `research/companies/google/products/google-classroom.md` |
+| Official documentation | [https://developers.google.com/workspace/classroom](https://developers.google.com/workspace/classroom) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-classroom` | `research/companies/google/products/google-classroom.md` |
 | REA report | `catalog/rea/google/google-classroom.md` (captured 2026-11-03T01:37:21.258Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-classroom.json` (`ev_70b07e7eddbb6dbee2c318869672f3ec9090b1a258f8ad52f887d09714c70346`) | Catalog evidence |
-| Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
+| Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
 | User scope | Requested product area, platforms, users and non-goals | The user; ask when the answer changes the deliverable |
 | Consumer project | Absolute path, stack, conventions, test commands, deployment target | The user’s repository, read before writing |
 | Authorization | Public surfaces and the user’s own project only | Clean-room boundary in section 14 |
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-classroom --format json` and `npx rae-faang research dossier google-classroom` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-classroom --format json` and `npx rea-faang research dossier google-classroom` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-CLASSROOM-CAP-62A6F5DD`, `GOOGLE-CLASSROOM-CAP-254E0F5A`, `GOOGLE-CLASSROOM-CAP-0BE78693`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-CLASSROOM-CAP-F921A2A7`, `GOOGLE-CLASSROOM-CAP-0336E0F0`, `GOOGLE-CLASSROOM-CAP-668E7578`, `GOOGLE-CLASSROOM-CAP-B080435A`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Google Classroom** / `google-classroom` | Product catalog |
-| Company / category | Google / `business_software` / `education`, `learning-management` | Product catalog |
-| Official website / docs | [https://classroom.google.com/](https://classroom.google.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Company / category | Google / `business_software` / `education`, `learning-management`, `assignments` | Product catalog |
+| Official website / docs | [https://classroom.google.com/](https://classroom.google.com/) / [https://developers.google.com/workspace/classroom](https://developers.google.com/workspace/classroom) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-CLASSROOM-CAP-62A6F5DD` | Assignment distribution and grading | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-CLASSROOM-CAP-254E0F5A` | Class streams and announcements | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-CLASSROOM-CAP-0BE78693` | Workspace integration | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CLASSROOM-CAP-F921A2A7` | Official Help verifies class, assignment, grading, feedback and communication workflows. | VERIFIED | `ev-google-classroom-workflows` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CLASSROOM-CAP-0336E0F0` | The API resource model and REST methods are documented. | VERIFIED | `ev-google-classroom-api`, `ev-google-classroom-reference` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CLASSROOM-CAP-668E7578` | Drive, Docs, YouTube and Workspace integrations are documented as part of Classroom workflows. | VERIFIED | `ev-google-classroom-workflows` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CLASSROOM-CAP-B080435A` | API access depends on role, OAuth scopes, institution policy and developer-project ownership constraints. | VERIFIED | `ev-google-classroom-reference` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Next`, `textbox: Email or phone`, `link: Forgot email?`, `link: Learn more about using Guest mode (external, opens in a new window)`, `link: Create account`, `link: Open Google Account Help Center (external, opens in a new window)`, `link: Privacy Policy (external, opens in a new window)`, `link: Google Terms of Service (external, opens in a new window)`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Assignment distribution and grading:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Class streams and announcements:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Workspace integration:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Official Help verifies class, assignment, grading, feedback and communication workflows.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The API resource model and REST methods are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Drive, Docs, YouTube and Workspace integrations are documented as part of Classroom workflows.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **API access depends on role, OAuth scopes, institution policy and developer-project ownership constraints.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-62A6F5DD — Assignment distribution and grading
+### REQ-FUNC-F921A2A7 — Official Help verifies class, assignment, grading, feedback and communication workflows.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-classroom-workflows`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-62A6F5DD`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CLASSROOM-CAP-62A6F5DD` → `REQ-FUNC-62A6F5DD` → `TEST-FUNC-62A6F5DD`.
+- **Associated test ID:** `TEST-FUNC-F921A2A7`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CLASSROOM-CAP-F921A2A7` → `REQ-FUNC-F921A2A7` → `TEST-FUNC-F921A2A7`.
 
-### REQ-FUNC-254E0F5A — Class streams and announcements
+### REQ-FUNC-0336E0F0 — The API resource model and REST methods are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-classroom-api`, `ev-google-classroom-reference`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-254E0F5A`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CLASSROOM-CAP-254E0F5A` → `REQ-FUNC-254E0F5A` → `TEST-FUNC-254E0F5A`.
+- **Associated test ID:** `TEST-FUNC-0336E0F0`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CLASSROOM-CAP-0336E0F0` → `REQ-FUNC-0336E0F0` → `TEST-FUNC-0336E0F0`.
 
-### REQ-FUNC-0BE78693 — Workspace integration
+### REQ-FUNC-668E7578 — Drive, Docs, YouTube and Workspace integrations are documented as part of Classroom workflows.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-classroom-workflows`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-0BE78693`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CLASSROOM-CAP-0BE78693` → `REQ-FUNC-0BE78693` → `TEST-FUNC-0BE78693`.
+- **Associated test ID:** `TEST-FUNC-668E7578`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CLASSROOM-CAP-668E7578` → `REQ-FUNC-668E7578` → `TEST-FUNC-668E7578`.
+
+### REQ-FUNC-B080435A — API access depends on role, OAuth scopes, institution policy and developer-project ownership constraints.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-classroom-reference`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-B080435A`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CLASSROOM-CAP-B080435A` → `REQ-FUNC-B080435A` → `TEST-FUNC-B080435A`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -206,7 +217,8 @@ Separate interface/domain/persistence/integration boundaries. Enforce access at 
 | Candidate | Repository | License | Claimed coverage (unverified) | Limitations | Maintenance | Compatibility | Verdict |
 |---|---|---|---|---|---|---|---|
 | [Moodle](https://moodle.org/) | Not recorded; verify the canonical repository | GPL-3.0 (unverified) | Mature open-source learning management system. | Self-hosted; large community. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
-| [Canvas LMS](https://www.instructure.com/canvas) | Not recorded; verify the canonical repository | AGPL-3.0 (unverified) | Open-source LMS used by institutions. | No limitation recorded | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [Canvas LMS](https://www.instructure.com/canvas) | Not recorded; verify the canonical repository | AGPL-3.0 (unverified) | Open-source LMS used by institutions. | Partial; broader LMS surface and different Workspace integration. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [Open edX](https://openedx.org/) | Not recorded; verify the canonical repository | AGPL-3.0 (unverified) | Open-source course and learning platform. | Partial; course delivery differs from Classroom's roster and Workspace workflow. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 
 Repository, license, maintenance and compatibility are catalog claims until you check them. Re-verify each against the exact version you would adopt; a README, a star count or this table is not proof.
 
@@ -216,9 +228,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-CLASSROOM-CAP-62A6F5DD` — Assignment distribution and grading | Not verified against Moodle | None yet; compare with `ev_70b07e7eddbb6dbee2c318869672f3ec9090b1a258f8ad52f887d09714c70346` | Candidate code path and tests must be inspected |
-| `GOOGLE-CLASSROOM-CAP-254E0F5A` — Class streams and announcements | Not verified against Moodle | None yet; compare with `ev_70b07e7eddbb6dbee2c318869672f3ec9090b1a258f8ad52f887d09714c70346` | Candidate code path and tests must be inspected |
-| `GOOGLE-CLASSROOM-CAP-0BE78693` — Workspace integration | Not verified against Moodle | None yet; compare with `ev_70b07e7eddbb6dbee2c318869672f3ec9090b1a258f8ad52f887d09714c70346` | Candidate code path and tests must be inspected |
+| `GOOGLE-CLASSROOM-CAP-F921A2A7` — Official Help verifies class, assignment, grading, feedback and communication workflows. | Not verified against Moodle | None yet; compare with `ev_70b07e7eddbb6dbee2c318869672f3ec9090b1a258f8ad52f887d09714c70346` | Candidate code path and tests must be inspected |
+| `GOOGLE-CLASSROOM-CAP-0336E0F0` — The API resource model and REST methods are documented. | Not verified against Moodle | None yet; compare with `ev_70b07e7eddbb6dbee2c318869672f3ec9090b1a258f8ad52f887d09714c70346` | Candidate code path and tests must be inspected |
+| `GOOGLE-CLASSROOM-CAP-668E7578` — Drive, Docs, YouTube and Workspace integrations are documented as part of Classroom workflows. | Not verified against Moodle | None yet; compare with `ev_70b07e7eddbb6dbee2c318869672f3ec9090b1a258f8ad52f887d09714c70346` | Candidate code path and tests must be inspected |
+| `GOOGLE-CLASSROOM-CAP-B080435A` — API access depends on role, OAuth scopes, institution policy and developer-project ownership constraints. | Not verified against Moodle | None yet; compare with `ev_70b07e7eddbb6dbee2c318869672f3ec9090b1a258f8ad52f887d09714c70346` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -265,9 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-62A6F5DD** → `REQ-FUNC-62A6F5DD`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-254E0F5A** → `REQ-FUNC-254E0F5A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-0BE78693** → `REQ-FUNC-0BE78693`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-F921A2A7** → `REQ-FUNC-F921A2A7`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-0336E0F0** → `REQ-FUNC-0336E0F0`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-668E7578** → `REQ-FUNC-668E7578`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-B080435A** → `REQ-FUNC-B080435A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -288,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-62A6F5DD, REQ-FUNC-254E0F5A, REQ-FUNC-0BE78693
+- **Requirements:** REQ-FUNC-F921A2A7, REQ-FUNC-0336E0F0, REQ-FUNC-668E7578, REQ-FUNC-B080435A
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -298,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-62A6F5DD, REQ-FUNC-254E0F5A, REQ-FUNC-0BE78693
+- **Requirements:** REQ-FUNC-F921A2A7, REQ-FUNC-0336E0F0, REQ-FUNC-668E7578, REQ-FUNC-B080435A
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -320,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-62A6F5DD, REQ-FUNC-254E0F5A, REQ-FUNC-0BE78693; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-F921A2A7, REQ-FUNC-0336E0F0, REQ-FUNC-668E7578, REQ-FUNC-B080435A; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -350,7 +364,16 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://classroom.google.com/) | Not recorded | Google Classroom is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-google-classroom-identity` | Google Classroom — Official Help and developer documentation identify courses, coursework, submissions, teachers and students as the product's core model. | [link](https://classroom.google.com/) | 2026-11-03T00:00:00Z | Google Classroom is Google's education platform for classes, coursework and communication. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-classroom-workflows` | About Classroom — The official Help page documents teacher, student, guardian, administrator and education-leader workflows. | [link](https://support.google.com/edu/classroom/answer/6020279) | 2026-11-03T00:00:00Z | Classroom supports classes, assignments, grades, materials, announcements, feedback and Workspace integrations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-classroom-api` | Classroom API resources — The official API guide lists primary Classroom entities and their relationships. | [link](https://developers.google.com/workspace/classroom/guides/key-concepts/api-structure) | 2026-11-03T00:00:00Z | The Classroom API models courses, rosters, coursework, materials, announcements, topics and submissions. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-classroom-reference` | Google Classroom API reference — The official reference documents course, coursework and student-submission endpoints and methods. | [link](https://developers.google.com/workspace/classroom/reference/rest) | 2026-11-03T00:00:00Z | The public REST API provides methods for coursework, materials and student submissions subject to permissions. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://classroom.google.com/) | 2026-11-03T00:00:00Z | Google Classroom is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/workspace/classroom) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/edu/classroom/answer/6020279) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/classroom/guides/get-started) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/classroom/guides/key-concepts/api-structure) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/classroom/reference/rest) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_70b07e7eddbb6dbee2c318869672f3ec9090b1a258f8ad52f887d09714c70346` | Google Classroom Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://accounts.google.com/v3/signin/identifier?continue=https://classroom.google.com/&emr=1&followup=https://classroom.google.com/&passive=1209600&service=classroom&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S1327791954:1793669838151050) | 2026-11-03T01:37:21.258Z | A dated unauthenticated snapshot exposed controls button: Next, textbox: Email or phone, link: Forgot email?, link: Learn more about using Guest mode (external, opens in a new window), link: Create account, link: Open Google Account Help Center (external, opens in a new window), link: Privacy Policy (external, opens in a new window), link: Google Terms of Service (external, opens in a new window) and landmarks contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -378,115 +401,84 @@ Resume token: `google-classroom`. Read dossier, REA report and raw Evidence befo
 
 # 1. Executive summary
 
-Google Classroom is Google's education and assignment-management platform for schools.
-
----
+Google Classroom is Google's education platform for managing classes, rosters, assignments, materials, announcements, submissions, grades and teacher-student communication. It is part of Google Workspace for Education and integrates with Drive, Docs, YouTube, Gmail and Calendar, but remains a distinct classroom workflow product.
 
 # 2. Product identity and ownership
 
 - **Official name:** Google Classroom
-- **Company and business unit:** google
-- **Current lifecycle status:** active
-- **Official website:** https://classroom.google.com/
-
----
+- **Company:** Google LLC, part of Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://classroom.google.com/
+- **Identity evidence:** Google Classroom Help and the Classroom API documentation identify courses, coursework, student submissions, teachers and students as its core resources.
 
 # 3. Product capabilities
 
-- Assignment distribution and grading
-- Class streams and announcements
-- Workspace integration
-
----
+- Create and manage classes, rosters, invitations and teacher/student roles.
+- Publish announcements, materials, assignments and questions.
+- Accept submissions, grade work, return feedback and track status.
+- Attach Drive files, YouTube videos, links and add-on content.
+- Integrate with Workspace for Education and support developer-created coursework.
 
 # 4. Technical architecture
 
-Not yet researched.
-
----
+The public API model includes courses, aliases, invitations, user profiles, students, teachers, coursework, course materials, announcements, topics, submissions, add-on attachments and registrations. Google operates the hosted identity, storage, notification and education services; internal implementation and institution policy enforcement are proprietary.
 
 # 5. User workflows
 
-Not yet researched.
-
----
+An administrator or teacher creates a class and roster. A teacher posts an announcement, material or assignment with optional attachments and due date. Students view and submit work; teachers review, comment, grade and return it. API integrations can create and manage coursework and read or update permitted submissions.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+Availability and feature eligibility depend on a Google Workspace for Education domain, institution settings, user role, license type and API scopes. Some features are restricted to particular Education editions. This pass does not assert current pricing or a specific institution's eligibility.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+The Classroom API is a REST API for courses, rosters, coursework, materials, announcements, topics and student submissions. OAuth scopes distinguish course, roster, coursework, materials, announcements and student-submission access. CourseWork integrations can create or grade assignments, but modification rights are constrained by the developer project and course permissions.
 
 # 8. Existing open-source alternatives
 
-Open-source candidates exist: Moodle (GPL-3.0) — Mature open-source learning management system.; Canvas LMS (AGPL-3.0) — Open-source LMS used by institutions.. Coverage is unverified until the dossier is researched.
-
----
+- **Moodle (GPL-3.0):** mature self-hosted learning-management system.
+- **Open edX (AGPL-3.0):** open-source course and learning platform.
+- **Canvas LMS (AGPL-3.0):** open-source learning-management platform and course workflows.
 
 # 9. Alternative comparison
 
-Mature LMS platforms go far beyond Classroom; the gap is Google's Workspace integration, not features.
-
----
+These systems cover classes, assignments, grades and learning workflows, often with broader LMS capabilities. They do not reproduce Google's Workspace identity, Drive/Docs integration, Classroom API semantics or institution-specific Education administration. Coverage is partial.
 
 # 10. Missing capabilities and opportunity analysis
 
-Mature LMS platforms go far beyond Classroom; the gap is Google's Workspace integration, not features.
+A replacement would need course and roster management, assignment and submission semantics, grading, feedback, notifications, identity and guardian workflows, file permissions, integrations, audit, accessibility and education privacy controls.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Available. Moodle and Canvas are established open-source LMS platforms with large deployments.
-
----
+Choose a narrow class-and-assignment workflow and reuse a mature LMS. Define roster ownership, submission states, grading, attachments and privacy before adding integrations. Do not claim Classroom API compatibility without testing OAuth scopes, teacher/student permissions and developer-project ownership rules.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+Classroom data includes student identity, coursework, grades, communications and potentially sensitive educational records. Verify institution ownership, role boundaries, guardian access, retention, audit, file sharing, regional requirements and least-privilege OAuth scopes before deployment.
 
 # 13. Sources and evidence
 
-- https://moodle.org/
-- https://en.wikipedia.org/wiki/Google_Classroom
-
----
+- [About Classroom](https://support.google.com/edu/classroom/answer/6020279) — official roles, workflows and integrations.
+- [Classroom API overview](https://developers.google.com/workspace/classroom/guides/get-started) — official API use cases.
+- [API resources](https://developers.google.com/workspace/classroom/guides/key-concepts/api-structure) — official resource model and relationships.
+- [Classroom API reference](https://developers.google.com/workspace/classroom/reference/rest) — official REST resources and methods.
 
 # 14. Open questions
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
+- Which Education edition, domain policies and roles should a comparison target?
+- Is the target a classroom workflow, a full LMS or an integration with an existing LMS?
+- What student-data, guardian, grading and retention requirements are mandatory?
 
 # 15. Research history
 
-- v1: dossier created; research pending.
+Record updated 2026-11-03 from official Google Classroom Help and Google Developers sources. Status: `researched`; license-specific features, institutional policy and proprietary infrastructure remain outside this pass.
 
----
-
-# 16. Alternative comparison (continued)
-
-Mature LMS platforms go far beyond Classroom; the gap is Google's Workspace integration, not features.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Available. Moodle and Canvas are established open-source LMS platforms with large deployments.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-classroom` and inspect canonical identity with `npx rae-faang products show google-classroom --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-classroom` and inspect canonical identity with `npx rea-faang products show google-classroom --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -499,7 +491,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-classroom --out ./google-classroom.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-classroom --out ./google-classroom-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-classroom --out ./google-classroom.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-classroom --out ./google-classroom-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -541,5 +533,14 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://classroom.google.com/) — Google Classroom is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [Google Classroom](https://classroom.google.com/) — Google Classroom is Google's education platform for classes, coursework and communication. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [About Classroom](https://support.google.com/edu/classroom/answer/6020279) — Classroom supports classes, assignments, grades, materials, announcements, feedback and Workspace integrations. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Classroom API resources](https://developers.google.com/workspace/classroom/guides/key-concepts/api-structure) — The Classroom API models courses, rosters, coursework, materials, announcements, topics and submissions. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Classroom API reference](https://developers.google.com/workspace/classroom/reference/rest) — The public REST API provides methods for coursework, materials and student submissions subject to permissions. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://classroom.google.com/) — Google Classroom is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.google.com/workspace/classroom) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://support.google.com/edu/classroom/answer/6020279) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/classroom/guides/get-started) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/classroom/guides/key-concepts/api-structure) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/classroom/reference/rest) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Classroom Public web-surface observation (REA)](https://accounts.google.com/v3/signin/identifier?continue=https://classroom.google.com/&emr=1&followup=https://classroom.google.com/&passive=1209600&service=classroom&flowName=WebLiteSignIn&flowEntry=ServiceLogin&dsh=S1327791954:1793669838151050) — A dated unauthenticated snapshot exposed controls button: Next, textbox: Email or phone, link: Forgot email?, link: Learn more about using Guest mode (external, opens in a new window), link: Create account, link: Open Google Account Help Center (external, opens in a new window), link: Privacy Policy (external, opens in a new window), link: Google Terms of Service (external, opens in a new window) and landmarks contentinfo. (VERIFIED; accessed 2026-11-03T01:37:21.258Z).

@@ -87,7 +87,7 @@ Fully covered by Valkey (Redis fork) and Memcached; the gap is operations, not s
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Available. Valkey is the open successor to Redis OSS; Memcached is the other classic.
 
@@ -124,6 +124,6 @@ Fully covered by Valkey (Redis fork) and Memcached; the gap is operations, not s
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Available. Valkey is the open successor to Redis OSS; Memcached is the other classic.

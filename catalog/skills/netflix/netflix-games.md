@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Netflix Games (netflix-games); inve
 
 # Netflix Games — implementation skill (`netflix-games`)
 
-> **Research status:** pending. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Netflix Games**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Netflix Games (netflix-games); inve
 
 This is the coding-agent skill for **Netflix Games** (`netflix-games`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/netflix/netflix-games.md` from the catalog page, or run `npx rae-faang netflix-games --out ./netflix-games.md`, `npx rae-faang skills generate netflix-games` or `npx rae-faang build agent-kit netflix-games --out ./netflix-games-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/netflix/netflix-games.md` from the catalog page, or run `npx rea-faang netflix-games --out ./netflix-games.md`, `npx rea-faang skills generate netflix-games` or `npx rea-faang build agent-kit netflix-games --out ./netflix-games-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Netflix Games / `netflix-games` | `catalog/products.jsonl` |
 | Official product URL | [https://www.netflix.com/tudum/games](https://www.netflix.com/tudum/games) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier netflix-games` | `research/companies/netflix/products/netflix-games.md` |
+| Official documentation | [https://help.netflix.com/en/node/121442](https://help.netflix.com/en/node/121442) | Catalog record |
+| Research dossier | `npx rea-faang research dossier netflix-games` | `research/companies/netflix/products/netflix-games.md` |
 | REA report | `catalog/rea/netflix/netflix-games.md` (captured 2026-11-03T01:42:04.687Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/netflix-games.json` (`ev_83f397cd5df618cd8373920b48173cbf4fa268c16c7334abff52b1a0eb6038ea`) | Catalog evidence |
 | Alternative candidates | None recorded — this is a research gap | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show netflix-games --format json` and `npx rae-faang research dossier netflix-games` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show netflix-games --format json` and `npx rea-faang research dossier netflix-games` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `NETFLIX-GAMES-CAP-57E4AE48`, `NETFLIX-GAMES-CAP-10C489C5`, `NETFLIX-GAMES-CAP-A62BAA00`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `NETFLIX-GAMES-CAP-CEF9DA60`, `NETFLIX-GAMES-CAP-E6A8CF03`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,7 +103,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Netflix Games** / `netflix-games` | Product catalog |
 | Company / category | Netflix / `games` / `game-subscription` | Product catalog |
-| Official website / docs | [https://www.netflix.com/tudum/games](https://www.netflix.com/tudum/games) / Not recorded | URL lead; compiler does not fetch source |
+| Official website / docs | [https://www.netflix.com/tudum/games](https://www.netflix.com/tudum/games) / [https://help.netflix.com/en/node/121442](https://help.netflix.com/en/node/121442) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,15 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `NETFLIX-GAMES-CAP-57E4AE48` | Mobile games included with membership | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `NETFLIX-GAMES-CAP-10C489C5` | Cloud streaming of titles | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `NETFLIX-GAMES-CAP-A62BAA00` | No ads or in-app purchases | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-GAMES-CAP-CEF9DA60` | Netflix documents a distinct games catalog and mobile access flow. | VERIFIED | `ev-netflix-games-identity`, `ev-netflix-games-access` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `NETFLIX-GAMES-CAP-E6A8CF03` | Netflix documents included membership access and beta TV/computer availability with limits. | VERIFIED | `ev-netflix-games-tv`, `ev-netflix-games-entitlement` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Link copied to clipboard Share`, `button: play Puzzled Thumbnail`, `button: Previous items`, `button: Next items`, `button: Go to page 1`, `button: Go to page 2`, `button: Go to page 3`, `button: Action`, `button: Adventure`, `button: Arcade`, `button: Educational`, `button: Idler`, `button: Party`, `button: Puzzle`, `button: Racing`, `button: Role Playing`, `button: Simulation`, `button: Sports`, `button: Strategy`, `button: Table Top`, `link: Skip to main content`, `link: Sign In`, `link: Tudum by Netflix - Home`, `combobox: Select option`, `link: Home`, `link: Top 10`, `link: Trending`, `link: What to Watch`, `link: Shows`, `link: Movies`, `link: Puzzled`, `link: Podcasts`, `link: Shop opens in a new tab`, `link: Featured`, `link: Available Games`, `link: About`, `link: Starstruck Work out where the stars shine. Play`, `link: Sudoku Solve the classic numbers game. Play`, `link: Jigsaw Piece together the big picture. Play`, `link: Shapes Turn shapes into something bigger. Play`, `link: Crossover Swap letters and emojis into words. Play`, `link: Waywords Find the path hidden in words. Play`, `link: Keysmash Just add vowels. Play`, `link: Bonza Put the words back together. Play`, `link: Explore More Puzzles`, `link: cloud saves`, `link: maturity rating`, `link: Action`, `link: Adventure`, `link: Fantasy`, `link: Horror`, `link: Kids and Family`, `link: Reality`, `link: Sci-Fi`, `link: Article`, `link: Tudum Magazine Privacy Statement and Terms of Use`, `link: 7 Indian Thrillers That’ll Have Your Heart Racing`, `link: 9 Inspiring Movies and Shows to Celebrate Native American Heritage Month`, `link: New on Netflix in November 2026`, `link: Meet the Cast of The Mosquito Bowl and the Real-Life Marines They Play`, `link: La Bola Negra Opens in Theaters Nationwide`, `link: See More`, `link: 9 Spicy Romance Movies and Series That Crank Up the Heat`, `link: 24 Thrillers Too Suspenseful to Pause for Even a Second`, `link: Travel Back in Time with These 16 Historical Fiction Adaptations`, `link: The Diplomat Will Return for Season 5`, `link: Animals`, `link: Love Is Blind`, `link: Below`, `link: The Diplomat`, `link: East of Eden`, `link: Nobody Wants This`, `link: Lupin`, `link: The Perfect Lie`, `link: KPop Demon Hunters`, `link: The Gentlemen`, `link: Our Sticky Love`, `link: Crew Girl`, `link: Beauty in Black`, `link: Wednesday`, `button: Back To Top`, `link: Tudum By Netflix - Home`, `link: About Tudum`, `link: Netflix House`, `link: Netflix Shop`, `link: Sign Up`, `link: Privacy`, `link: Terms of Use`, `link: Cookie Preferences`, `link: Do Not Sell or Share My Personal Information`, `link: Ad Choices`, `link: The 12 Biggest Revelations from The One About Matthew Perry`, `button: Close`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Mobile games included with membership:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Cloud streaming of titles:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **No ads or in-app purchases:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Netflix documents a distinct games catalog and mobile access flow.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Netflix documents included membership access and beta TV/computer availability with limits.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +143,23 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-57E4AE48 — Mobile games included with membership
+### REQ-FUNC-CEF9DA60 — Netflix documents a distinct games catalog and mobile access flow.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-netflix-games-identity`, `ev-netflix-games-access`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-57E4AE48`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-GAMES-CAP-57E4AE48` → `REQ-FUNC-57E4AE48` → `TEST-FUNC-57E4AE48`.
+- **Associated test ID:** `TEST-FUNC-CEF9DA60`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-GAMES-CAP-CEF9DA60` → `REQ-FUNC-CEF9DA60` → `TEST-FUNC-CEF9DA60`.
 
-### REQ-FUNC-10C489C5 — Cloud streaming of titles
+### REQ-FUNC-E6A8CF03 — Netflix documents included membership access and beta TV/computer availability with limits.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-netflix-games-tv`, `ev-netflix-games-entitlement`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-10C489C5`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-GAMES-CAP-10C489C5` → `REQ-FUNC-10C489C5` → `TEST-FUNC-10C489C5`.
-
-### REQ-FUNC-A62BAA00 — No ads or in-app purchases
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-A62BAA00`; fixture and expected output must be specified from evidence.
-- **Trace:** `NETFLIX-GAMES-CAP-A62BAA00` → `REQ-FUNC-A62BAA00` → `TEST-FUNC-A62BAA00`.
+- **Associated test ID:** `TEST-FUNC-E6A8CF03`; fixture and expected output must be specified from evidence.
+- **Trace:** `NETFLIX-GAMES-CAP-E6A8CF03` → `REQ-FUNC-E6A8CF03` → `TEST-FUNC-E6A8CF03`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -251,9 +240,8 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-57E4AE48** → `REQ-FUNC-57E4AE48`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-10C489C5** → `REQ-FUNC-10C489C5`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-A62BAA00** → `REQ-FUNC-A62BAA00`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-CEF9DA60** → `REQ-FUNC-CEF9DA60`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-E6A8CF03** → `REQ-FUNC-E6A8CF03`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -274,7 +262,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-57E4AE48, REQ-FUNC-10C489C5, REQ-FUNC-A62BAA00
+- **Requirements:** REQ-FUNC-CEF9DA60, REQ-FUNC-E6A8CF03
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -284,7 +272,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-57E4AE48, REQ-FUNC-10C489C5, REQ-FUNC-A62BAA00
+- **Requirements:** REQ-FUNC-CEF9DA60, REQ-FUNC-E6A8CF03
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -306,7 +294,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-57E4AE48, REQ-FUNC-10C489C5, REQ-FUNC-A62BAA00; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-CEF9DA60, REQ-FUNC-E6A8CF03; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -336,7 +324,20 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.netflix.com/tudum/games) | Not recorded | Netflix Games is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-netflix-games-identity` | All of The Games on Netflix Right Now — Netflix's official Tudum page presents the current games catalog and describes access for Netflix members. | [link](https://www.netflix.com/tudum/games) | 2026-11-03T00:00:00Z | Netflix presents Netflix Games as a distinct catalog of games available to members. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-games-access` | Play games on mobile devices — Netflix Help explains that games appear in the Mobile Games row or Games shortcut and are associated with the Netflix profile. | [link](https://help.netflix.com/en/node/121442) | 2026-11-03T00:00:00Z | Netflix Games are accessed through the Netflix app and a member profile on supported mobile devices. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-games-tv` | Play games on TVs and computers — Netflix Help describes games on many recent TVs, streaming devices and Netflix.com, with availability varying by country and device. | [link](https://help.netflix.com/en/node/132197) | 2026-11-03T00:00:00Z | Netflix Games also have a beta TV and computer surface with country and device limits. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-games-entitlement` | Ready to play games on TV and on Netflix.com? — Netflix Help states that games are included with membership and do not require extra fees, ads or in-game purchases. | [link](https://help.netflix.com/en/node/702684345185380) | 2026-11-03T00:00:00Z | An active Netflix membership provides access to Netflix Games without separate game accounts, ads or in-game purchases. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-games-identity` | All of The Games on Netflix Right Now — Netflix's official Tudum page presents the current games catalog and describes access for Netflix members. | [link](https://www.netflix.com/tudum/games) | 2026-11-03T00:00:00Z | Netflix presents Netflix Games as a distinct catalog of games available to members. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-games-access` | Play games on mobile devices — Netflix Help explains that games appear in the Mobile Games row or Games shortcut and are associated with the Netflix profile. | [link](https://help.netflix.com/en/node/121442) | 2026-11-03T00:00:00Z | Netflix Games are accessed through the Netflix app and a member profile on supported mobile devices. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-games-tv` | Play games on TVs and computers — Netflix Help describes games on many recent TVs, streaming devices and Netflix.com, with availability varying by country and device. | [link](https://help.netflix.com/en/node/132197) | 2026-11-03T00:00:00Z | Netflix Games also have a beta TV and computer surface with country and device limits. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-netflix-games-entitlement` | Ready to play games on TV and on Netflix.com? — Netflix Help states that games are included with membership and do not require extra fees, ads or in-game purchases. | [link](https://help.netflix.com/en/node/702684345185380) | 2026-11-03T00:00:00Z | An active Netflix membership provides access to Netflix Games without separate game accounts, ads or in-game purchases. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.netflix.com/tudum/games) | 2026-11-03T00:00:00Z | Netflix Games is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://help.netflix.com/en/node/121442) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://www.netflix.com/tudum/games) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://help.netflix.com/en/node/121442) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://help.netflix.com/en/node/132197) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://about.netflix.com/en/news/whats-next-for-netflix-games) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_83f397cd5df618cd8373920b48173cbf4fa268c16c7334abff52b1a0eb6038ea` | Netflix Games Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.netflix.com/tudum/games) | 2026-11-03T01:42:04.687Z | A dated unauthenticated snapshot exposed controls button: Link copied to clipboard Share, button: play Puzzled Thumbnail, button: Previous items, button: Next items, button: Go to page 1, button: Go to page 2, button: Go to page 3, button: Action, button: Adventure, button: Arcade, button: Educational, button: Idler, button: Party, button: Puzzle, button: Racing, button: Role Playing, button: Simulation, button: Sports, button: Strategy, button: Table Top, link: Skip to main content, link: Sign In, link: Tudum by Netflix - Home, combobox: Select option, link: Home, link: Top 10, link: Trending, link: What to Watch, link: Shows, link: Movies, link: Puzzled, link: Podcasts, link: Shop opens in a new tab, link: Featured, link: Available Games, link: About, link: Starstruck Work out where the stars shine. Play, link: Sudoku Solve the classic numbers game. Play, link: Jigsaw Piece together the big picture. Play, link: Shapes Turn shapes into something bigger. Play, link: Crossover Swap letters and emojis into words. Play, link: Waywords Find the path hidden in words. Play, link: Keysmash Just add vowels. Play, link: Bonza Put the words back together. Play, link: Explore More Puzzles, link: cloud saves, link: maturity rating, link: Action, link: Adventure, link: Fantasy, link: Horror, link: Kids and Family, link: Reality, link: Sci-Fi, link: Article, link: Tudum Magazine Privacy Statement and Terms of Use, link: 7 Indian Thrillers That’ll Have Your Heart Racing, link: 9 Inspiring Movies and Shows to Celebrate Native American Heritage Month, link: New on Netflix in November 2026, link: Meet the Cast of The Mosquito Bowl and the Real-Life Marines They Play, link: La Bola Negra Opens in Theaters Nationwide, link: See More, link: 9 Spicy Romance Movies and Series That Crank Up the Heat, link: 24 Thrillers Too Suspenseful to Pause for Even a Second, link: Travel Back in Time with These 16 Historical Fiction Adaptations, link: The Diplomat Will Return for Season 5, link: Animals, link: Love Is Blind, link: Below, link: The Diplomat, link: East of Eden, link: Nobody Wants This, link: Lupin, link: The Perfect Lie, link: KPop Demon Hunters, link: The Gentlemen, link: Our Sticky Love, link: Crew Girl, link: Beauty in Black, link: Wednesday, button: Back To Top, link: Tudum By Netflix - Home, link: About Tudum, link: Netflix House, link: Netflix Shop, link: Sign Up, link: Privacy, link: Terms of Use, link: Cookie Preferences, link: Do Not Sell or Share My Personal Information, link: Ad Choices, link: The 12 Biggest Revelations from The One About Matthew Perry, button: Close and landmarks banner, navigation: Main Menu, main, navigation: Page level navigation, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -364,115 +365,89 @@ Resume token: `netflix-games`. Read dossier, REA report and raw Evidence before 
 
 # 1. Executive summary
 
-Netflix Games is Netflix's mobile-game offering bundled with the subscription.
-
----
+Netflix Games is a member-entitled game catalog distributed through Netflix. The public product surface covers mobile downloads and a beta TV/computer experience; the games are presented as included with membership rather than as a separate paid game account.
 
 # 2. Product identity and ownership
 
 - **Official name:** Netflix Games
-- **Company and business unit:** netflix
-- **Current lifecycle status:** active
-- **Official website:** https://www.netflix.com/tudum/games
-
----
+- **Company:** Netflix
+- **Lifecycle:** active
+- **Canonical product ID:** `netflix-games`
+- **Official catalog:** https://www.netflix.com/tudum/games
 
 # 3. Product capabilities
 
-- Mobile games included with membership
-- Cloud streaming of titles
-- No ads or in-app purchases
-
----
+- Mobile games available through the Netflix app and member profile.
+- TV and computer play through Netflix surfaces where supported; Netflix documents this as a beta experience with country and device limits.
+- Games included with an active membership, without ads, extra game fees or in-app purchases according to Netflix Help.
+- Profile-associated progress and saves; Netflix notes that progress from versions released elsewhere cannot be transferred to the Netflix version.
 
 # 4. Technical architecture
 
-Not yet researched.
-
----
+Netflix does not publish the internal service architecture in the reviewed sources. The observed public model is a subscription-entitled catalog with client surfaces on mobile, TV and web, plus profile-linked game access and saves. Backend services, game packaging, delivery, telemetry and account APIs remain unknown.
 
 # 5. User workflows
 
-Not yet researched.
+1. A member opens the Netflix app or a supported Netflix surface.
+2. The member selects a game from the Mobile Games row, Games shortcut or supported TV/web catalog.
+3. On mobile, the member downloads the game from the relevant app store and launches it with the Netflix profile entitlement.
+4. Progress is associated with the profile subject to the documented device and availability limits.
 
----
+Authentication, entitlement failure, device-limit recovery and game-specific save conflict behavior were not tested.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+The reviewed Netflix Help pages state that Netflix Games are included with an active Netflix membership, with no ads, extra fees or in-app purchases. Availability varies by country, device and profile type; Netflix says games are not available for Kids profiles on the reviewed catalog page.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+No public Netflix Games API or third-party integration contract was identified in the reviewed official sources. Treat catalog pages and Help Center instructions as user-facing documentation, not an API specification.
 
 # 8. Existing open-source alternatives
 
-No open-source alternative has been verified yet.
-
----
+No open-source project was verified as an equivalent to the Netflix Games subscription/catalog product. Open-source game engines and individual games can cover implementation components, but not Netflix's licensed catalog, entitlement system, distribution surfaces or member ecosystem.
 
 # 9. Alternative comparison
 
-Thousands of open-source games exist, but no project replicates a curated game subscription; the gap is curation, not technology.
-
----
+The relevant comparison is a product-platform gap, not a single missing game engine. Godot and other open engines can support independent games; they do not provide Netflix's member entitlement, curated catalog, licensed content, multi-surface distribution or profile-linked access.
 
 # 10. Missing capabilities and opportunity analysis
 
-Thousands of open-source games exist, but no project replicates a curated game subscription; the gap is curation, not technology.
+An independent implementation would need to choose a bounded game catalog, entitlement model, client targets, save system, content rights and safety/compliance posture. Netflix-specific catalog, licensing, account, device and distribution behavior must not be assumed reproducible.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Pending. No open-source equivalent of a game subscription exists; individual open games are abundant.
-
----
+REA captured the public Tudum catalog surface. It did not authenticate, download a game, test gameplay, inspect account state or validate TV/computer entitlement flows. The REA report is therefore evidence of the public catalog surface only.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+The reviewed sources do not provide an implementation-level security or privacy specification. A future independent implementation must define account security, child-safety/profile controls, content rights, telemetry minimization, payment boundaries and regional availability explicitly.
 
 # 13. Sources and evidence
 
-- https://libregamewiki.org/
-- https://en.wikipedia.org/wiki/Netflix
-
----
+- `ev-netflix-games-identity` — https://www.netflix.com/tudum/games
+- `ev-netflix-games-access` — https://help.netflix.com/en/node/121442
+- `ev-netflix-games-tv` — https://help.netflix.com/en/node/132197
+- `ev-netflix-games-entitlement` — https://help.netflix.com/en/node/702684345185380
+- Netflix Games REA capture — `catalog/rea/netflix/netflix-games.md`
 
 # 14. Open questions
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
+- Which countries, devices and titles are currently supported for each surface?
+- What exact save synchronization and recovery behavior is guaranteed?
+- Are any public developer, catalog, entitlement or accessibility APIs available?
+- What technical and legal constraints apply to independent game distribution?
 
 # 15. Research history
 
-- v1: dossier created; research pending.
+- v1: dossier created with unverified placeholder research.
+- v2: official Netflix Tudum and Help Center sources reviewed; identity, access surfaces, membership entitlement and documented limits promoted to verified research.
 
----
-
-# 16. Alternative comparison (continued)
-
-Thousands of open-source games exist, but no project replicates a curated game subscription; the gap is curation, not technology.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Pending. No open-source equivalent of a game subscription exists; individual open games are abundant.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier netflix-games` and inspect canonical identity with `npx rae-faang products show netflix-games --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier netflix-games` and inspect canonical identity with `npx rea-faang products show netflix-games --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -485,7 +460,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang netflix-games --out ./netflix-games.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit netflix-games --out ./netflix-games-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang netflix-games --out ./netflix-games.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit netflix-games --out ./netflix-games-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -527,5 +502,18 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://www.netflix.com/tudum/games) — Netflix Games is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [All of The Games on Netflix Right Now](https://www.netflix.com/tudum/games) — Netflix presents Netflix Games as a distinct catalog of games available to members. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Play games on mobile devices](https://help.netflix.com/en/node/121442) — Netflix Games are accessed through the Netflix app and a member profile on supported mobile devices. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Play games on TVs and computers](https://help.netflix.com/en/node/132197) — Netflix Games also have a beta TV and computer surface with country and device limits. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Ready to play games on TV and on Netflix.com?](https://help.netflix.com/en/node/702684345185380) — An active Netflix membership provides access to Netflix Games without separate game accounts, ads or in-game purchases. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [All of The Games on Netflix Right Now](https://www.netflix.com/tudum/games) — Netflix presents Netflix Games as a distinct catalog of games available to members. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Play games on mobile devices](https://help.netflix.com/en/node/121442) — Netflix Games are accessed through the Netflix app and a member profile on supported mobile devices. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Play games on TVs and computers](https://help.netflix.com/en/node/132197) — Netflix Games also have a beta TV and computer surface with country and device limits. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Ready to play games on TV and on Netflix.com?](https://help.netflix.com/en/node/702684345185380) — An active Netflix membership provides access to Netflix Games without separate game accounts, ads or in-game purchases. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://www.netflix.com/tudum/games) — Netflix Games is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://help.netflix.com/en/node/121442) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://www.netflix.com/tudum/games) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://help.netflix.com/en/node/121442) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://help.netflix.com/en/node/132197) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://about.netflix.com/en/news/whats-next-for-netflix-games) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Netflix Games Public web-surface observation (REA)](https://www.netflix.com/tudum/games) — A dated unauthenticated snapshot exposed controls button: Link copied to clipboard Share, button: play Puzzled Thumbnail, button: Previous items, button: Next items, button: Go to page 1, button: Go to page 2, button: Go to page 3, button: Action, button: Adventure, button: Arcade, button: Educational, button: Idler, button: Party, button: Puzzle, button: Racing, button: Role Playing, button: Simulation, button: Sports, button: Strategy, button: Table Top, link: Skip to main content, link: Sign In, link: Tudum by Netflix - Home, combobox: Select option, link: Home, link: Top 10, link: Trending, link: What to Watch, link: Shows, link: Movies, link: Puzzled, link: Podcasts, link: Shop opens in a new tab, link: Featured, link: Available Games, link: About, link: Starstruck Work out where the stars shine. Play, link: Sudoku Solve the classic numbers game. Play, link: Jigsaw Piece together the big picture. Play, link: Shapes Turn shapes into something bigger. Play, link: Crossover Swap letters and emojis into words. Play, link: Waywords Find the path hidden in words. Play, link: Keysmash Just add vowels. Play, link: Bonza Put the words back together. Play, link: Explore More Puzzles, link: cloud saves, link: maturity rating, link: Action, link: Adventure, link: Fantasy, link: Horror, link: Kids and Family, link: Reality, link: Sci-Fi, link: Article, link: Tudum Magazine Privacy Statement and Terms of Use, link: 7 Indian Thrillers That’ll Have Your Heart Racing, link: 9 Inspiring Movies and Shows to Celebrate Native American Heritage Month, link: New on Netflix in November 2026, link: Meet the Cast of The Mosquito Bowl and the Real-Life Marines They Play, link: La Bola Negra Opens in Theaters Nationwide, link: See More, link: 9 Spicy Romance Movies and Series That Crank Up the Heat, link: 24 Thrillers Too Suspenseful to Pause for Even a Second, link: Travel Back in Time with These 16 Historical Fiction Adaptations, link: The Diplomat Will Return for Season 5, link: Animals, link: Love Is Blind, link: Below, link: The Diplomat, link: East of Eden, link: Nobody Wants This, link: Lupin, link: The Perfect Lie, link: KPop Demon Hunters, link: The Gentlemen, link: Our Sticky Love, link: Crew Girl, link: Beauty in Black, link: Wednesday, button: Back To Top, link: Tudum By Netflix - Home, link: About Tudum, link: Netflix House, link: Netflix Shop, link: Sign Up, link: Privacy, link: Terms of Use, link: Cookie Preferences, link: Do Not Sell or Share My Personal Information, link: Ad Choices, link: The 12 Biggest Revelations from The One About Matthew Perry, button: Close and landmarks banner, navigation: Main Menu, main, navigation: Page level navigation, contentinfo. (VERIFIED; accessed 2026-11-03T01:42:04.687Z).

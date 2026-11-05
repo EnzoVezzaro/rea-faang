@@ -81,7 +81,7 @@ Open-source static-analysis and profiling tools can cover portions of CodeGuru's
 
 REA should treat Reviewer, security/secrets detection and Profiler as separate surfaces, documenting language support, repository providers, detector behavior, profiling agents, query/export surfaces and CI/CD integration independently.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use public documentation, public API/CLI references and permitted test repositories only. A clean-room implementation should compose independently licensed analyzers and profilers rather than copy AWS detectors, models, recommendations or proprietary assets.
 

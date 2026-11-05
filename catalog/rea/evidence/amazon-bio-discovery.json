@@ -1,5 +1,5 @@
 {
-  "evidence_id": "ev_6a0714f17372b8adf4255efa6de8154c34c338d742536ece38539ab89383f471",
+  "evidence_id": "ev_7dbc5ea5a0ae21f773d588cdced2f81f5745dbf3d982ec9350deb27f08ca0696",
   "subject": null,
   "provider": {
     "id": "rea-playwright-browser-scenario",
@@ -99,13 +99,13 @@
         "max_network_metadata_allocation_bytes": 1048576
       }
     },
-    "duration_ms": 7413,
+    "duration_ms": 4520,
     "steps": [
       {
         "step_index": 0,
         "step_id": "scenario_start",
         "action": "goto_start",
-        "elapsed_ms": 4545,
+        "elapsed_ms": 1758,
         "before_url": {
           "url": "about:blank",
           "origin": null,
@@ -153,7 +153,7 @@
         "step_index": 1,
         "step_id": "settle",
         "action": "wait_for_timeout",
-        "elapsed_ms": 2566,
+        "elapsed_ms": 2549,
         "before_url": {
           "url": "https://aws.amazon.com/biodiscovery/",
           "origin": "https://aws.amazon.com",

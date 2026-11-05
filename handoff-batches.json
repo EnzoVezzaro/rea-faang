@@ -36,7 +36,7 @@
     "GitHub Pages deploy and npm publish (require maintainer approval)."
   ],
   "decisions": [
-    "The inventory is a document, not a new CLI command, because the deterministic coverage numbers already come from rae-faang research/alternatives/skills coverage; duplicating them in code would create a second source of truth.",
+    "The inventory is a document, not a new CLI command, because the deterministic coverage numbers already come from rea-faang research/alternatives/skills coverage; duplicating them in code would create a second source of truth.",
     "Batch order is driven by products with no verified alternative first (highest build value), then landscape partials, then cross-company surfaces.",
     "The site generator keeps an explicit documentation page list, so adding a doc requires registering it in tools/site-build.mjs; the docs index and the page list were updated together to avoid a broken link."
   ],
@@ -45,6 +45,6 @@
     "catalog/products.jsonl still records alternative_status none_verified for all 77 products while the landscape records 40 available, so gaps alternatives still lists all 77 products.",
     "Changes are worktree-only until committed."
   ],
-  "recommendedNextAction": "Run batch 1 of docs/research-batches.md starting with google-search: fill sections 1-15 from official sources, add evidence[], set research_status researched, then npx rae-faang research validate.",
+  "recommendedNextAction": "Run batch 1 of docs/research-batches.md starting with google-search: fill sections 1-15 from official sources, add evidence[], set research_status researched, then npx rea-faang research validate.",
   "completedAt": "2026-11-02T18:48:11Z"
 }

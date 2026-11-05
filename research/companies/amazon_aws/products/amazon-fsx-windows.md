@@ -82,7 +82,7 @@ Samba and Windows Server can provide SMB shares, but they do not by themselves r
 
 REA should map file-system and share lifecycle, SMB behavior, AD join, permissions, shadow copies, backups, throughput, SSD IOPS, failover, quotas, client compatibility, PowerShell management and AWS integrations.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use AWS product and Windows File Server guide documentation as research surfaces. A clean-room equivalent should use independently licensed Windows or Samba-compatible components and document differences in SMB, identity, backup, performance and cloud operations without copying proprietary Microsoft or AWS implementation.
 

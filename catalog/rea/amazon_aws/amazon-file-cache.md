@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon File Cache, recorded with RE
 | Target | https://aws.amazon.com/filecache/ |
 | Resolved URL | https://aws.amazon.com/filecache/ |
 | Page title | Amazon File Cache |
-| Captured | 2026-11-03T03:06:34.655Z |
+| Captured | 2026-11-04T02:43:17.037Z |
 | Status | captured |
-| REA Evidence ID | `ev_d26062290309e7d01bd4d846f9fa1bb597cb6ba9c45f61ad4c72bdddabeea18c` |
+| REA Evidence ID | `ev_34833aaadabb2db6a8fa1ff3ec76519200169c6507a859f87ab69ec051891335` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -162,6 +162,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-file-cache.json`
-- Evidence ID: `ev_d26062290309e7d01bd4d846f9fa1bb597cb6ba9c45f61ad4c72bdddabeea18c`
-- Accessibility outline: 9799 bytes
+- Evidence ID: `ev_34833aaadabb2db6a8fa1ff3ec76519200169c6507a859f87ab69ec051891335`
+- Accessibility outline: 9822 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

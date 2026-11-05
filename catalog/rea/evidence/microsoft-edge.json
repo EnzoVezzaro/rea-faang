@@ -1,0 +1,270 @@
+{
+  "evidence_id": "ev_edac67db5c422b986dd04e8f8760afa66ddfb314312f1310d1262ed8572d2ada",
+  "subject": null,
+  "provider": {
+    "id": "rea-playwright-browser-scenario",
+    "name": "REA Playwright browser scenario capture provider",
+    "version": "1"
+  },
+  "analysis_profile": null,
+  "predicate_type": "rea.browser-scenario-capture",
+  "operation": "capture_browser_scenario",
+  "parameters": {
+    "browser": {
+      "mode": "launch",
+      "executable_path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "headless": true
+    },
+    "start_url": {
+      "url": "https://www.microsoft.com/en-us/edge",
+      "query": []
+    },
+    "environment": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device_scale_factor": 1
+      },
+      "locale": "en-US",
+      "timezone": "UTC",
+      "color_scheme": "light",
+      "reduced_motion": "reduce",
+      "service_workers": "block"
+    },
+    "actions": [
+      {
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "duration_ms": 2500
+      }
+    ],
+    "storage": {
+      "cookies": [],
+      "local_storage": [],
+      "session_storage": []
+    },
+    "secrets": [],
+    "capture": {
+      "after_each_step": [],
+      "at_end": [
+        "url",
+        "accessibility"
+      ],
+      "events": [],
+      "network": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "scenario_sha256": "9d0d9277f2ee33199eb7c2251d75c266d3e68c783a62605dd0dce00981335a7b"
+  },
+  "raw_result": null,
+  "normalized_result": {
+    "browser": {
+      "mode": "launch",
+      "process_ownership": "provider-owned",
+      "cleanup": "terminated-owned-process",
+      "product": "Chromium",
+      "version": "156.0.8078.80"
+    },
+    "scenario": {
+      "start_origin": "https://www.microsoft.com",
+      "action_count": 1,
+      "secret_references": [],
+      "network_content": {
+        "request_body": false,
+        "response_body": false,
+        "header_values": false
+      },
+      "event_families": [],
+      "limits": {
+        "max_events": 10000,
+        "max_event_allocation_bytes": 4194304,
+        "max_total_event_allocation_bytes": 16777216,
+        "max_network_transactions": 1024,
+        "max_network_body_bytes": 65536,
+        "max_network_body_allocation_bytes": 1048576,
+        "max_network_header_allocation_bytes": 1048576,
+        "max_network_metadata_allocation_bytes": 1048576
+      }
+    },
+    "duration_ms": 9462,
+    "steps": [
+      {
+        "step_index": 0,
+        "step_id": "scenario_start",
+        "action": "goto_start",
+        "elapsed_ms": 6685,
+        "before_url": {
+          "url": "about:blank",
+          "origin": null,
+          "query_parameter_names": [],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://explore.microsoft.com/en-us/edge/?form=MA13FJ&cs=1757061135",
+          "origin": "https://explore.microsoft.com",
+          "query_parameter_names": [
+            "form",
+            "cs"
+          ],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "not_requested"
+          },
+          "url": {
+            "state": "not_requested"
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      },
+      {
+        "step_index": 1,
+        "step_id": "settle",
+        "action": "wait_for_timeout",
+        "elapsed_ms": 2557,
+        "before_url": {
+          "url": "https://explore.microsoft.com/en-us/edge/?form=MA13FJ&cs=1757061135",
+          "origin": "https://explore.microsoft.com",
+          "query_parameter_names": [
+            "form",
+            "cs"
+          ],
+          "redacted": false
+        },
+        "after_url": {
+          "url": "https://explore.microsoft.com/en-us/edge/?form=MA13FJ&cs=1757061135",
+          "origin": "https://explore.microsoft.com",
+          "query_parameter_names": [
+            "form",
+            "cs"
+          ],
+          "redacted": false
+        },
+        "event_sequence_start": 1,
+        "event_sequence_end": 0,
+        "artifacts": {
+          "screenshot": {
+            "state": "not_requested"
+          },
+          "dom": {
+            "state": "not_requested"
+          },
+          "accessibility": {
+            "state": "captured",
+            "value": {
+              "sha256": "4063131add1586f3b26fb1fe72602abaef1a92729b2c20a52f3ca9c06279fe97",
+              "bytes": 17837,
+              "text": "- document:\n  - link \"Skip to main content\":\n    - /url: \"#main\"\n  - img \"Microsoft\"\n  - navigation:\n    - list:\n      - listitem:\n        - link \"Microsoft Edge\":\n          - /url: /en-us/edge?form=MA13FJ\n          - img \"Microsoft Edge\"\n      - listitem:\n        - link \"Features\":\n          - /url: /en-us/edge/features?form=MA13GQ\n        - button \"Features\":\n          - img\n      - listitem:\n        - link \"Mobile\":\n          - /url: /en-us/edge/mobile?form=MT00OS\n      - listitem:\n        - link \"Copilot\":\n          - /url: /en-us/edge/copilot?form=MA13RK\n      - listitem:\n        - link \"Search\":\n          - /url: /en-us/bing?form=MA13R1\n      - listitem:\n        - button \"For Business\":\n          - text: For Business\n          - img\n      - listitem:\n        - button \"Resources\":\n          - text: Resources\n          - img\n      - listitem:\n        - link \"Download\":\n          - /url: /en-us/edge/download?form=MA13FJ\n  - region \"header actions\":\n    - button \"Search Search\":\n      - text: Search\n      - img \"Search\"\n    - button \"Download Edge\"\n  - main:\n    - status: Get to Know Microsoft Edge\n    - heading \"What starts here, gets done here\" [level=2]:\n      - paragraph:\n        - text: What starts here, gets\n        - strong: done\n        - text: here\n    - button \"Download Edge for macOS\":\n      - text: Download Edge for macOS\n      - img\n    - text: By downloading Edge, you agree to the\n    - link \"Microsoft Edge Software License Terms.\":\n      - /url: /edge/terms\n    - paragraph: Copilot works across your tabs to compare options, explain what matters, and help complete tasks by using your browsing history to give you smarter, more personal help over time.\n    - link \"Try Copilot\":\n      - /url: /edge/copilot?form=MA13RK\n    - heading \"Explore even more AI innovations in Microsoft Edge\" [level=2]:\n      - paragraph: Explore even more\n      - paragraph:\n        - strong: AI innovations in Microsoft Edge\n    - heading \"Scareware blocker\" [level=2]\n    - heading \"Edge is here to protect you from scareware attacks.\" [level=2]:\n      - paragraph: Edge is here to protect you from scareware attacks.\n    - text: Learn more\n    - button \"Learn more about Scareware blocker in Microsoft Edge\"\n    - heading \"Image generation\" [level=2]:\n      - paragraph: Image generation\n    - heading \"Turn words into visuals instantly—no design skills required.\" [level=2]:\n      - paragraph: Turn words into visuals instantly—no design skills required.\n    - text: Learn more\n    - button \"Learn more about Image Generation\"\n    - heading \"Organize tabs\" [level=2]\n    - heading \"One-click tab cleanup, powered by AI.\" [level=2]:\n      - paragraph: One-click tab cleanup, powered by AI.\n    - text: Learn more\n    - button \"Learn more about Organized Tabs\"\n    - heading \"AI Theme Generator\" [level=2]\n    - heading \"Transform your words into browser themes.\" [level=2]:\n      - paragraph: Transform your words into browser themes.\n    - text: Learn more\n    - button \"Learn more about AI Theme Generator\"\n    - heading \"Built on the browser that puts you first\" [level=2]:\n      - paragraph:\n        - text: Built on the browser that\n        - strong: puts you first\n    - heading \"Achieve more performance\" [level=2]:\n      - paragraph:\n        - text: Achieve more\n        - strong: performance\n    - paragraph: Stay focused with Microsoft Edge, built with Copilot, browser actions, tab organization, and advanced performance features to help you do more with every minute you spend online.\n    - link \"Learn more about energy saver\":\n      - /url: /edge/features/energy-saver?form=MA13FJ\n      - text: Energy saver\n      - img\n    - link \"Learn more about startup boost\":\n      - /url: /edge/features/startup-boost?form=MA13FJ\n      - text: Startup boost\n      - img\n    - link \"Learn more about Sleeping tabs\":\n      - /url: /edge/features/sleeping-tabs?form=MA13FJ\n      - text: Sleeping tabs\n      - img\n    - paragraph:\n      - text: Get an average of 25 more minutes of battery life with energy saver. Only on Microsoft Edge.\n      - link \"1\":\n        - /url: \"#footnote-1\"\n        - superscript: \"1\"\n    - link \"Learn more about performance features\":\n      - /url: /edge/features/performance?form=MA13FJ\n      - text: Learn more\n    - heading \"Stay safer online\" [level=2]:\n      - paragraph:\n        - text: Stay\n        - strong: safer online\n    - paragraph: When it comes to online safety, Microsoft Edge has your back. With built-in advanced security controls that block phishing and malware attacks, Edge helps you stay protected while you browse.\n    - link \"Learn more about Microsoft Edge Secure Network\":\n      - /url: /edge/features/edge-secure-network-vpn?form=MA13FJ\n      - text: Edge Secure Network\n      - img\n    - link \"Learn more about password management\":\n      - /url: /edge/features/password-management?form=MA13FJ\n      - text: Password management\n      - img\n    - link \"Learn more about Microsoft Defender Smartscreen\":\n      - /url: /edge/features/microsoft-defender-smartscreen?form=MA13FJ\n      - text: Microsoft Defender SmartScreen\n      - img\n    - link \"Learn more about online safety features\":\n      - /url: /edge/features/security?form=MA13FJ\n      - text: Learn more\n    - heading \"Get more done across devices\" [level=2]:\n      - paragraph:\n        - text: Get more done\n        - strong: across devices\n    - paragraph: Easily sync your passwords, favorites, and settings across all your devices so you can pick up where you left off.\n    - link \"Get the Edge app\":\n      - /url: /edge/mobile?form=MA13FJ\n      - text: Get the Edge mobile app\n    - heading \"Use the in-game browser built for gaming\" [level=2]:\n      - paragraph:\n        - text: Use the in-game browser\n        - strong: built for gaming\n    - paragraph: Access guides, gaming tips, your favorite sites and more without leaving your game with Microsoft Edge for Game Bar, the first in-game browser built specifically for PC gaming.\n    - link \"Learn more about gaming features\":\n      - /url: /edge/features/edge-for-game-bar?form=MA13FJ\n      - text: Learn more\n    - heading \"Do more with Edge\" [level=2]:\n      - paragraph:\n        - text: Do more\n        - strong: with Edge\n    - heading \"What's new in Edge\" [level=2]:\n      - paragraph: What's new in Edge\n    - heading \"Edge introduces new features every month. Check out the latest features here.\" [level=2]:\n      - paragraph: Edge introduces new features every month. Check out the latest features here.\n    - link \"Learn more about the latest Edge features\":\n      - /url: /edge/features?form=MA13FJ\n      - text: See new features\n    - heading \"Pin your favorite sites\" [level=2]\n    - heading \"Get quick access to the sites you love and use the most without even opening the browser.\" [level=2]:\n      - paragraph: Get quick access to the sites you love and use the most without even opening the browser.\n    - link \"Pin sites\":\n      - /url: /edge/pin-sites?form=MA13FJ\n    - heading \"Unlock more in your browsing experience\" [level=2]:\n      - paragraph:\n        - text: Unlock more in your\n        - strong: browsing experience\n    - button \"Back\" [disabled]:\n      - img\n    - button \"Select item 1\"\n    - button \"Select item 2\"\n    - button \"Select item 3\"\n    - button \"Next\":\n      - img\n    - heading \"Bing\" [level=2]:\n      - paragraph: Bing\n    - heading \"Edge is designed to enhance your Bing search experience, providing faster, smarter, and more tailored results.\" [level=2]:\n      - paragraph: Edge is designed to enhance your Bing search experience, providing faster, smarter, and more tailored results.\n    - link \"Learn more about Bing\":\n      - /url: https://www.microsoft.com/bing?form=MA13R6\n      - text: Learn more\n    - heading \"Rewards\" [level=2]:\n      - paragraph: Rewards\n    - heading \"Earn Microsoft Rewards points fast when you search with Bing in Edge. Then, redeem your points for gift cards, donations, and more.\" [level=2]:\n      - paragraph: Earn Microsoft Rewards points fast when you search with Bing in Edge. Then, redeem your points for gift cards, donations, and more.\n    - link \"Start earning rewards\":\n      - /url: https://rewards.bing.com/welcome?form=ML2XDK&OCID=ML2XDK\n      - text: Start earning\n    - heading \"Microsoft 365\" [level=2]\n    - heading \"Enjoy access to free Microsoft 365 web apps—side-by-side with your Edge content—in just a click. 2\" [level=2]:\n      - paragraph:\n        - text: Enjoy access to free Microsoft 365 web apps—side-by-side with your Edge content—in just a click.\n        - link \"2\":\n          - /url: \"#footnote-2\"\n          - superscript: \"2\"\n    - link \"Learn more about Microsoft 365\":\n      - /url: /edge/microsoft-365?form=MA13FJ\n      - text: Learn more\n    - heading \"Browse with Edge across all your devices\" [level=2]\n    - link \"Download for your device\":\n      - /url: /edge/download?form=MA13FJ\n      - text: Download for your device\n      - img\n    - region \"Footnotes and disclaimers\":\n      - list:\n        - listitem:\n          - superscript: \"1\"\n          - text: Battery life varies based on settings, usage, and other factors.\n        - listitem:\n          - superscript: \"2\"\n          - text: Internet access required, fees may apply.\n        - listitem: \"* Feature availability and functionality may vary by device type, market, and browser version.\"\n        - listitem: \"* The content on this page may have been translated using AI.\"\n  - contentinfo:\n    - navigation \"Footer Resource links\":\n      - heading \"What's new\" [level=2]\n      - list:\n        - listitem:\n          - link \"Surface Laptop Ultra\":\n            - /url: https://www.microsoft.com/en-us/surface/devices/surface-laptop-ultra?icid=DSM_Footer_WhatsNew_SurfaceLaptopUltra\n        - listitem:\n          - link \"Surface Pro\":\n            - /url: https://www.microsoft.com/surface/devices/surface-pro\n        - listitem:\n          - link \"Surface Laptop\":\n            - /url: https://www.microsoft.com/surface/devices/surface-laptop\n        - listitem:\n          - link \"Surface RTX Spark Dev Box\":\n            - /url: https://www.microsoft.com/en-us/surface/devices/surface-rtx-spark-dev-box?icid=DSM_Footer_WhatsNew_SurfaceRTXSparkDevBox\n        - listitem:\n          - link \"Explore Copilot\":\n            - /url: https://www.microsoft.com/en-us/copilot?icid=DSM_Footer_WhatsNew_Copilot\n        - listitem:\n          - link \"Explore Microsoft products\":\n            - /url: https://www.microsoft.com/en-us/microsoft-products-and-apps\n        - listitem:\n          - link \"Windows 11 apps\":\n            - /url: https://www.microsoft.com/en-us/windows/apps-for-windows?icid=DSM_Footer_WhatsNew_Windows11apps\n      - heading \"Microsoft Store\" [level=2]\n      - list:\n        - listitem:\n          - link \"Account profile\":\n            - /url: https://account.microsoft.com/\n        - listitem:\n          - link \"Download Center\":\n            - /url: https://www.microsoft.com/en-us/download\n        - listitem:\n          - link \"Microsoft Store support\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2139749\n        - listitem:\n          - link \"Returns\":\n            - /url: https://www.microsoft.com/en-us/store/b/returns\n        - listitem:\n          - link \"Order tracking\":\n            - /url: https://www.microsoft.com/en-us/store/b/order-tracking\n        - listitem:\n          - link \"Certified Refurbished\":\n            - /url: https://www.microsoft.com/en-us/store/b/certified-refurbished-products\n        - listitem:\n          - link \"Why buy from Microsoft Store\":\n            - /url: https://www.microsoft.com/en-us/store/b/why-microsoft-store?icid=footer_why-msft-store?icid=DSM_Footer_MicrosoftStore_WhyBuy\n        - listitem:\n          - link \"Flexible Payments\":\n            - /url: https://www.microsoft.com/en-us/store/b/payment-financing-options?icid=footer_financing_vcc\n      - heading \"Education\" [level=2]\n      - list:\n        - listitem:\n          - link \"Microsoft in education\":\n            - /url: https://www.microsoft.com/en-us/education\n        - listitem:\n          - link \"Devices for education\":\n            - /url: https://www.microsoft.com/en-us/education/devices/overview\n        - listitem:\n          - link \"Microsoft Teams for Education\":\n            - /url: https://www.microsoft.com/en-us/education/products/teams\n        - listitem:\n          - link \"Microsoft 365 Education\":\n            - /url: https://www.microsoft.com/en-us/education/products/microsoft-365\n        - listitem:\n          - link \"How to buy for your school\":\n            - /url: https://www.microsoft.com/education/how-to-buy\n        - listitem:\n          - link \"Educator training and development\":\n            - /url: https://education.microsoft.com/\n        - listitem:\n          - link \"Deals for students and parents\":\n            - /url: https://www.microsoft.com/en-us/store/b/education\n        - listitem:\n          - link \"AI for education\":\n            - /url: https://www.microsoft.com/en-us/education/ai-in-education\n      - heading \"Business\" [level=2]\n      - list:\n        - listitem:\n          - link \"Microsoft AI\":\n            - /url: https://www.microsoft.com/en-us/ai?icid=DSM_Footer_AI\n        - listitem:\n          - link \"Microsoft Security\":\n            - /url: https://www.microsoft.com/en-us/security\n        - listitem:\n          - link \"Dynamics 365\":\n            - /url: https://www.microsoft.com/en-us/dynamics-365\n        - listitem:\n          - link \"Microsoft 365\":\n            - /url: https://www.microsoft.com/en-us/microsoft-365/business\n        - listitem:\n          - link \"Microsoft Power Platform\":\n            - /url: https://www.microsoft.com/en-us/power-platform\n        - listitem:\n          - link \"Microsoft Teams\":\n            - /url: https://www.microsoft.com/en-us/microsoft-teams/group-chat-software\n        - listitem:\n          - link \"Microsoft Copilot\":\n            - /url: https://www.microsoft.com/en-us/copilot?icid=DSM_Footer_Business_Copilot\n        - listitem:\n          - link \"Small Business\":\n            - /url: https://www.microsoft.com/en-us/store/b/business?icid=CNavBusinessStore\n      - heading \"Developer & IT\" [level=2]\n      - list:\n        - listitem:\n          - link \"Azure\":\n            - /url: https://azure.microsoft.com/en-us/\n        - listitem:\n          - link \"Microsoft Developer\":\n            - /url: https://developer.microsoft.com/en-us/\n        - listitem:\n          - link \"Microsoft Learn\":\n            - /url: https://learn.microsoft.com/\n        - listitem:\n          - link \"Support for AI marketplace apps\":\n            - /url: https://www.microsoft.com/software-development-companies/offers-benefits/isv-success?icid=DSM_Footer_SupportAIMarketplace&ocid=cmm3atxvn98\n        - listitem:\n          - link \"Microsoft Tech Community\":\n            - /url: https://techcommunity.microsoft.com/\n        - listitem:\n          - link \"Microsoft Marketplace\":\n            - /url: https://marketplace.microsoft.com?icid=DSM_Footer_Marketplace&ocid=cmm3atxvn98\n        - listitem:\n          - link \"Software companies\":\n            - /url: https://www.microsoft.com/software-development-companies?icid=DSM_Footer_SoftwareCompanies&ocid=cmm3atxvn98\n        - listitem:\n          - link \"Visual Studio\":\n            - /url: https://visualstudio.microsoft.com/\n      - heading \"Company\" [level=2]\n      - list:\n        - listitem:\n          - link \"Careers\":\n            - /url: https://careers.microsoft.com/\n        - listitem:\n          - link \"About Microsoft\":\n            - /url: https://www.microsoft.com/about\n        - listitem:\n          - link \"Company news\":\n            - /url: https://news.microsoft.com/source/?icid=DSM_Footer_Company_CompanyNews\n        - listitem:\n          - link \"Privacy at Microsoft\":\n            - /url: https://www.microsoft.com/en-us/privacy?icid=DSM_Footer_Company_Privacy\n        - listitem:\n          - link \"Investors\":\n            - /url: https://www.microsoft.com/investor/default.aspx\n        - listitem:\n          - link \"Diversity and inclusion\":\n            - /url: https://www.microsoft.com/en-us/diversity/default?icid=DSM_Footer_Company_Diversity\n        - listitem:\n          - link \"Accessibility\":\n            - /url: https://www.microsoft.com/en-us/accessibility\n        - listitem:\n          - link \"Sustainability\":\n            - /url: https://www.microsoft.com/en-us/corporate-responsibility/sustainability?icid=DSM_Footer_Sustainability\n    - link \"Your Privacy Choices Opt-Out Icon Your Privacy Choices\":\n      - /url: https://aka.ms/yourcaliforniaprivacychoices\n      - img \"Your Privacy Choices Opt-Out Icon\"\n      - text: Your Privacy Choices\n    - link \"Consumer Health Privacy\":\n      - /url: https://go.microsoft.com/fwlink/?linkid=2259814\n    - navigation \"Microsoft corporate links\":\n      - list:\n        - listitem:\n          - link \"Sitemap\":\n            - /url: https://www.microsoft.com/en-us/sitemap1.aspx\n        - listitem:\n          - link \"Contact Microsoft\":\n            - /url: https://support.microsoft.com/contactus\n        - listitem:\n          - link \"Privacy\":\n            - /url: https://go.microsoft.com/fwlink/?LinkId=521839\n        - listitem:\n          - link \"Terms of use\":\n            - /url: https://go.microsoft.com/fwlink/?LinkID=206977\n        - listitem:\n          - link \"Trademarks\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2196228\n        - listitem:\n          - link \"Safety & eco\":\n            - /url: https://go.microsoft.com/fwlink/?linkid=2196227\n        - listitem:\n          - link \"Recycling\":\n            - /url: https://www.microsoft.com/en-us/legal/compliance/recycling\n        - listitem:\n          - link \"About our ads\":\n            - /url: https://choice.microsoft.com\n        - listitem: © Microsoft 2026"
+            }
+          },
+          "url": {
+            "state": "captured",
+            "value": {
+              "url": "https://explore.microsoft.com/en-us/edge/?form=MA13FJ&cs=1757061135",
+              "origin": "https://explore.microsoft.com",
+              "query_parameter_names": [
+                "form",
+                "cs"
+              ],
+              "redacted": false
+            }
+          },
+          "history": {
+            "state": "not_requested"
+          },
+          "storage": {
+            "state": "not_requested"
+          }
+        },
+        "completeness": {
+          "status": "complete",
+          "equality_eligible": true,
+          "missing_sections": [],
+          "truncated_sections": []
+        },
+        "status": "completed",
+        "error": null
+      }
+    ],
+    "events": {
+      "retained": 0,
+      "dropped": 0,
+      "items": [],
+      "omissions": {
+        "by_kind": [],
+        "network_transactions": [],
+        "network_transaction_range": null
+      }
+    },
+    "completeness": {
+      "status": "complete",
+      "equality_eligible": true,
+      "missing_sections": [],
+      "truncated_sections": []
+    },
+    "limitations": [
+      "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+      "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+      "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+      "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+      "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+      "Storage values are hashed only after declared-secret redaction."
+    ]
+  },
+  "confidence": "observed",
+  "authority": "controlled-replay",
+  "environment": {
+    "id": "Chromium@156.0.8078.80",
+    "platform": "unknown",
+    "architecture": "unknown",
+    "isolation": "process"
+  },
+  "limitations": [
+    "Artifact identity is unavailable for this observation.",
+    "Event sequence records provider receipt order; simultaneous browser causality is not inferred.",
+    "Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes.",
+    "Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage.",
+    "Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses.",
+    "Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality.",
+    "Storage values are hashed only after declared-secret redaction.",
+    "Browser host platform and architecture were not observed."
+  ],
+  "relationship_coverage": null,
+  "locations": [],
+  "evidence_links": []
+}

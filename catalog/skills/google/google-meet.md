@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Meet (google-meet); investig
 
 # Google Meet — implementation skill (`google-meet`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Meet**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Meet (google-meet); investig
 
 This is the coding-agent skill for **Google Meet** (`google-meet`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-meet.md` from the catalog page, or run `npx rae-faang google-meet --out ./google-meet.md`, `npx rae-faang skills generate google-meet` or `npx rae-faang build agent-kit google-meet --out ./google-meet-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-meet.md` from the catalog page, or run `npx rea-faang google-meet --out ./google-meet.md`, `npx rea-faang skills generate google-meet` or `npx rea-faang build agent-kit google-meet --out ./google-meet-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,18 +27,18 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Google Meet / `google-meet` | `catalog/products.jsonl` |
 | Official product URL | [https://meet.google.com/](https://meet.google.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-meet` | `research/companies/google/products/google-meet.md` |
+| Official documentation | [https://developers.google.com/workspace/meet](https://developers.google.com/workspace/meet) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-meet` | `research/companies/google/products/google-meet.md` |
 | REA report | `catalog/rea/google/google-meet.md` (captured 2026-11-03T01:38:35.007Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-meet.json` (`ev_d60630c8c77544245f5de0ab70780c190339f8e6267cc3a0ffc96cdfdb20995e`) | Catalog evidence |
-| Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
+| Alternative candidates | 3 candidate(s) recorded in section 9 | Curated landscape |
 | User scope | Requested product area, platforms, users and non-goals | The user; ask when the answer changes the deliverable |
 | Consumer project | Absolute path, stack, conventions, test commands, deployment target | The user’s repository, read before writing |
 | Authorization | Public surfaces and the user’s own project only | Clean-room boundary in section 14 |
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-meet --format json` and `npx rae-faang research dossier google-meet` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-meet --format json` and `npx rea-faang research dossier google-meet` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-MEET-CAP-38257F51`, `GOOGLE-MEET-CAP-BE1D8763`, `GOOGLE-MEET-CAP-D4DDDEAE`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-MEET-CAP-D48C8FE3`, `GOOGLE-MEET-CAP-D3C1985B`, `GOOGLE-MEET-CAP-BFB954FD`, `GOOGLE-MEET-CAP-B66C1298`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Google Meet** / `google-meet` | Product catalog |
-| Company / category | Google / `consumer_application` / `video-conferencing` | Product catalog |
-| Official website / docs | [https://meet.google.com/](https://meet.google.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Company / category | Google / `consumer_application` / `video-conferencing`, `collaboration` | Product catalog |
+| Official website / docs | [https://meet.google.com/](https://meet.google.com/) / [https://developers.google.com/workspace/meet](https://developers.google.com/workspace/meet) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-MEET-CAP-38257F51` | Browser-based video meetings | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-MEET-CAP-BE1D8763` | Screen sharing and recording (paid tiers) | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-MEET-CAP-D4DDDEAE` | Calendar integration | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-MEET-CAP-D48C8FE3` | Meeting spaces, conferences and participant workflows are verified at the service and API level. | VERIFIED | `ev-google-meet-identity`, `ev-google-meet-rest` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-MEET-CAP-D3C1985B` | Participant, session and meeting artifact retrieval are documented; access requires authentication and permissions. | VERIFIED | `ev-google-meet-rest` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-MEET-CAP-BFB954FD` | Recording behavior and plan-dependent access are documented; regional and plan variation remains. | VERIFIED | `ev-google-meet-recording` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-MEET-CAP-B66C1298` | Product identity is verified, but feature entitlements, quotas, retention and media internals were not exhaustively verified. | VERIFIED | `ev-google-meet-identity`, `ev-google-meet-recording` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Open search`, `button: Close search`, `button: Enter code`, `button: Previous slide`, `button: Next slide`, `button: Expand all`, `button: 1`, `button: 2`, `button: Open the Continue page`, `button: English Change Language`, `button: Close`, `button: Open Welcome.`, `link: Open the Google Workspace page`, `link: Skip to main content`, `link: Open the AI page`, `link: Open the Pricing page`, `combobox: Search`, `link: Try Meet for Work with Google Workspace`, `link: Sign into Google Meet`, `link: Open the Gemini in Google Meet page`, `link: Open the App Store page in a new tab`, `link: Open the Play Store page in a new tab`, `link: Open the Google Docs page`, `link: Open the Sheets page`, `link: Open the Slides page`, `link: Open the encrypted page in a new tab`, `link: Open the safety measures page`, `link: Open the controls page in a new tab`, `link: Open the Google Meet hardware page in a new tab`, `link: Open the Google One Premium page in a new tab`, `link: Learn more about MEDITECH customer story`, `link: Learn more about the Robinhood customer story`, `link: Learn more about Virium Helsinki customer story`, `link: Watch a video about how Pepperdine University uses Google Meet`, `link: Learn more about the Vimeo customer story`, `link: Learn more about the Equifax customer story`, `link: Visit the Google Workspace help center`, `textbox: First name`, `textbox: Last name`, `textbox: Business email`, `combobox: Selected country`, `textbox: 201-555-0123`, `link: Open the Blog page`, `link: Open the footer social links X page in a new tab`, `link: Open the footer social links YouTube page in a new tab`, `link: Open the footer social links LinkedIn page in a new tab`, `link: Open the footer social links Instagram page in a new tab`, `link: Open the footer social links Facebook page in a new tab`, `link: Open the footer social links TikTok page in a new tab`, `textbox: Search this site`, `link: Open the Included applications page`, `link: Open the Gmail page`, `link: Open the Gmail AI page`, `link: Open the Meet page`, `link: Open the Chat page`, `link: Open the Calendar page`, `link: Open the Drive page`, `link: Open the Docs page`, `link: Open the Vids page`, `link: Open the Pics page`, `link: Open the Forms page`, `link: Open the Sites page`, `link: Open the Keep page`, `link: Open the Tasks page`, `link: Open the Studio page`, `link: Open the Gemini page`, `link: Open the Gemini Notebook page`, `link: Open the Apps Script page`, `link: Open the Security and management page`, `link: Open the Admin page`, `link: Open the Endpoint page`, `link: Open the Vault page`, `link: Open the Work Insights page`, `link: Open the New Business page`, `link: Open the Small Business page`, `link: Open the Enterprise page`, `link: Open the Retail page`, `link: Open the Manufacturing page`, `link: Open the Professional Services page`, `link: Open the Technology page`, `link: Open the Healthcare page`, `link: Open the Financial Services page`, `link: Open the Government page`, `link: Open the Education page in a new tab`, `link: Open the Nonprofits page in a new tab`, `link: Open the Artificial Intelligence page`, `link: Open the Compare pricing plans page`, `link: Open the Meet hardware page`, `link: Open the Google Voice page`, `link: Open the AppSheet page in a new tab`, `link: Open the Migration Overview page`, `link: Open the Business Migration page`, `link: Open the Enterprise Migration page`, `link: Open the Gmail Migration page`, `link: Open the Drive Migration page`, `link: Open the Google Chat Migration page`, `link: Open the AI learnings for work page`, `link: Open the Security page`, `link: Open the Customer Stories page`, `link: Open the FAQs page`, `link: Open the Partners page in a new tab`, `link: Open the Marketplace page`, `link: Open the Integrations page`, `link: Open the Training & Certification page`, `link: Open the Refer Google Workspace page`, `link: Open the AI Project Management page`, `link: Open the AI for Meetings page`, `link: Open the Learning and support page`, `link: Open the Admin Help page in a new tab`, `link: Open the Setup and Deployment Center page in a new tab`, `link: Open the Learning Center for Users page in a new tab`, `link: Open the Forums for Admins page in a new tab`, `link: Open the Google Workspace Dashboard page in a new tab`, `link: Open the What's New in Google Workspace page`, `link: Open the Find a Google Workspace Partner page in a new tab`, `link: Open the Join the community of IT Admins page in a new tab`, `link: Open the Press page in a new tab`, `link: Open the Google Cloud page in a new tab`, `link: Open the Google Domains page in a new tab`, `link: Open the Chrome Enterprise page in a new tab`, `link: Open the Google Business Solutions page in a new tab`, `link: Open the Google Ads page in a new tab`, `link: Open the Business Messages page in a new tab`, `link: Open the Privacy page in a new tab`, `link: Open the Terms page in a new tab`, `link: Open the About Google page in a new tab`, `link: Open the Google Products page in a new tab`, `link: Open the Help page in a new tab`, `link: Open the Bahasa Indonesia locale page`, `link: Open the Čeština locale page`, `link: Open the Dansk locale page`, `link: Open the Deutsch locale page`, `link: Open the Deutsch – Schweiz locale page`, `link: Open the English – Australia locale page`, `link: Open the English – Canada locale page`, `link: Open the English – India locale page`, `link: Open the English – Indonesia locale page`, `link: Open the English – Ireland locale page`, `link: Open the English – Malaysia locale page`, `link: Open the English – New Zealand locale page`, `link: Open the English – Philippines locale page`, `link: Open the English – Singapore locale page`, `link: Open the English – South Africa locale page`, `link: Open the English – United Kingdom locale page`, `link: Open the Español locale page`, `link: Open the Español (Latinoamérica) locale page`, `link: Open the Español (Latinoamérica) – Argentina locale page`, `link: Open the Español (Latinoamérica) – Estados Unidos locale page`, `link: Open the Español (Latinoamérica) – México locale page`, `link: Open the Français locale page`, `link: Open the Français – Canada locale page`, `link: Open the Français – Suisse locale page`, `link: Open the Italiano locale page`, `link: Open the Magyar locale page`, `link: Open the Nederlands locale page`, `link: Open the Norsk locale page`, `link: Open the Polski locale page`, `link: Open the Português (Brasil) locale page`, `link: Open the Português (Portugal) locale page`, `link: Open the Suomi locale page`, `link: Open the Svenska locale page`, `link: Open the Tiếng Việt locale page`, `link: Open the Türkçe locale page`, `link: Open the Русский locale page`, `link: Open the Українська locale page`, `link: Open the עברית locale page`, `link: Open the العربية locale page`, `link: Open the العربية – مصر locale page`, `link: Open the ไทย locale page`, `link: Open the 한국어 locale page`, `link: Open the 中文 (香港) locale page`, `link: Open the 中文（简体中文） locale page`, `link: Open the 中文（繁體中文） locale page`, `link: Open the 日本語 locale page`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Browser-based video meetings:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Screen sharing and recording (paid tiers):** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Calendar integration:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Meeting spaces, conferences and participant workflows are verified at the service and API level.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Participant, session and meeting artifact retrieval are documented; access requires authentication and permissions.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Recording behavior and plan-dependent access are documented; regional and plan variation remains.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Product identity is verified, but feature entitlements, quotas, retention and media internals were not exhaustively verified.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-38257F51 — Browser-based video meetings
+### REQ-FUNC-D48C8FE3 — Meeting spaces, conferences and participant workflows are verified at the service and API level.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-meet-identity`, `ev-google-meet-rest`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-38257F51`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-MEET-CAP-38257F51` → `REQ-FUNC-38257F51` → `TEST-FUNC-38257F51`.
+- **Associated test ID:** `TEST-FUNC-D48C8FE3`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-MEET-CAP-D48C8FE3` → `REQ-FUNC-D48C8FE3` → `TEST-FUNC-D48C8FE3`.
 
-### REQ-FUNC-BE1D8763 — Screen sharing and recording (paid tiers)
+### REQ-FUNC-D3C1985B — Participant, session and meeting artifact retrieval are documented; access requires authentication and permissions.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-meet-rest`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-BE1D8763`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-MEET-CAP-BE1D8763` → `REQ-FUNC-BE1D8763` → `TEST-FUNC-BE1D8763`.
+- **Associated test ID:** `TEST-FUNC-D3C1985B`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-MEET-CAP-D3C1985B` → `REQ-FUNC-D3C1985B` → `TEST-FUNC-D3C1985B`.
 
-### REQ-FUNC-D4DDDEAE — Calendar integration
+### REQ-FUNC-BFB954FD — Recording behavior and plan-dependent access are documented; regional and plan variation remains.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-meet-recording`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D4DDDEAE`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-MEET-CAP-D4DDDEAE` → `REQ-FUNC-D4DDDEAE` → `TEST-FUNC-D4DDDEAE`.
+- **Associated test ID:** `TEST-FUNC-BFB954FD`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-MEET-CAP-BFB954FD` → `REQ-FUNC-BFB954FD` → `TEST-FUNC-BFB954FD`.
+
+### REQ-FUNC-B66C1298 — Product identity is verified, but feature entitlements, quotas, retention and media internals were not exhaustively verified.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-meet-identity`, `ev-google-meet-recording`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-B66C1298`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-MEET-CAP-B66C1298` → `REQ-FUNC-B66C1298` → `TEST-FUNC-B66C1298`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -206,6 +217,8 @@ Separate interface/domain/persistence/integration boundaries. Enforce access at 
 | Candidate | Repository | License | Claimed coverage (unverified) | Limitations | Maintenance | Compatibility | Verdict |
 |---|---|---|---|---|---|---|---|
 | [Jitsi Meet](https://jitsi.org/) | Not recorded; verify the canonical repository | Apache-2.0 (unverified) | Self-hosted video conferencing with no account required. | Mature; deployed at scale. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [BigBlueButton](https://bigbluebutton.org/) | Not recorded; verify the canonical repository | LGPL-3.0 (unverified) | Open-source web conferencing focused on teaching and structured online sessions. | Partial; education-oriented rather than a general Workspace replacement. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
+| [Element Call](https://element.io/call) | Not recorded; verify the canonical repository | AGPL-3.0 (unverified) | Open video calls and conferencing built on Matrix infrastructure. | Partial; requires Matrix deployment and does not reproduce Google's hosted Workspace integration. | Not recorded — verify last release, commit activity and open issues | Not recorded — verify language, runtime, deployment and integration surface | **INVESTIGATE MORE** |
 
 Repository, license, maintenance and compatibility are catalog claims until you check them. Re-verify each against the exact version you would adopt; a README, a star count or this table is not proof.
 
@@ -215,9 +228,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-MEET-CAP-38257F51` — Browser-based video meetings | Not verified against Jitsi Meet | None yet; compare with `ev_d60630c8c77544245f5de0ab70780c190339f8e6267cc3a0ffc96cdfdb20995e` | Candidate code path and tests must be inspected |
-| `GOOGLE-MEET-CAP-BE1D8763` — Screen sharing and recording (paid tiers) | Not verified against Jitsi Meet | None yet; compare with `ev_d60630c8c77544245f5de0ab70780c190339f8e6267cc3a0ffc96cdfdb20995e` | Candidate code path and tests must be inspected |
-| `GOOGLE-MEET-CAP-D4DDDEAE` — Calendar integration | Not verified against Jitsi Meet | None yet; compare with `ev_d60630c8c77544245f5de0ab70780c190339f8e6267cc3a0ffc96cdfdb20995e` | Candidate code path and tests must be inspected |
+| `GOOGLE-MEET-CAP-D48C8FE3` — Meeting spaces, conferences and participant workflows are verified at the service and API level. | Not verified against Jitsi Meet | None yet; compare with `ev_d60630c8c77544245f5de0ab70780c190339f8e6267cc3a0ffc96cdfdb20995e` | Candidate code path and tests must be inspected |
+| `GOOGLE-MEET-CAP-D3C1985B` — Participant, session and meeting artifact retrieval are documented; access requires authentication and permissions. | Not verified against Jitsi Meet | None yet; compare with `ev_d60630c8c77544245f5de0ab70780c190339f8e6267cc3a0ffc96cdfdb20995e` | Candidate code path and tests must be inspected |
+| `GOOGLE-MEET-CAP-BFB954FD` — Recording behavior and plan-dependent access are documented; regional and plan variation remains. | Not verified against Jitsi Meet | None yet; compare with `ev_d60630c8c77544245f5de0ab70780c190339f8e6267cc3a0ffc96cdfdb20995e` | Candidate code path and tests must be inspected |
+| `GOOGLE-MEET-CAP-B66C1298` — Product identity is verified, but feature entitlements, quotas, retention and media internals were not exhaustively verified. | Not verified against Jitsi Meet | None yet; compare with `ev_d60630c8c77544245f5de0ab70780c190339f8e6267cc3a0ffc96cdfdb20995e` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -264,9 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-38257F51** → `REQ-FUNC-38257F51`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-BE1D8763** → `REQ-FUNC-BE1D8763`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-D4DDDEAE** → `REQ-FUNC-D4DDDEAE`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-D48C8FE3** → `REQ-FUNC-D48C8FE3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-D3C1985B** → `REQ-FUNC-D3C1985B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-BFB954FD** → `REQ-FUNC-BFB954FD`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-B66C1298** → `REQ-FUNC-B66C1298`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -287,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-38257F51, REQ-FUNC-BE1D8763, REQ-FUNC-D4DDDEAE
+- **Requirements:** REQ-FUNC-D48C8FE3, REQ-FUNC-D3C1985B, REQ-FUNC-BFB954FD, REQ-FUNC-B66C1298
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -297,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-38257F51, REQ-FUNC-BE1D8763, REQ-FUNC-D4DDDEAE
+- **Requirements:** REQ-FUNC-D48C8FE3, REQ-FUNC-D3C1985B, REQ-FUNC-BFB954FD, REQ-FUNC-B66C1298
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -319,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-38257F51, REQ-FUNC-BE1D8763, REQ-FUNC-D4DDDEAE; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-D48C8FE3, REQ-FUNC-D3C1985B, REQ-FUNC-BFB954FD, REQ-FUNC-B66C1298; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -349,8 +364,18 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://meet.google.com/) | Not recorded | Google Meet is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-google-meet-identity` | Google Meet SDK and API overview — Google documents Meet add-ons and APIs for integrating products into meetings and interacting with Meet. | [link](https://developers.google.com/workspace/meet/overview) | 2026-11-03T00:00:00Z | Google Meet is an active hosted meeting service with SDK and API integration surfaces. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-meet-rest` | Google Meet REST API overview — The official API overview documents meeting spaces, conferences, participants, recordings and transcripts. | [link](https://developers.google.com/workspace/meet/api/guides/overview) | 2026-11-03T00:00:00Z | The Meet REST API can create and manage meeting spaces and retrieve participants, sessions and artifacts. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-meet-recording` | Record a video meeting — Google documents plan requirements, host permissions, consent and storage of recordings in the organizer's Drive. | [link](https://support.google.com/meet/answer/9308681) | 2026-11-03T00:00:00Z | Recording requires eligible editions, permissions and administrator controls. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://meet.google.com/) | 2026-11-03T00:00:00Z | Google Meet is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.google.com/workspace/meet) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/meet/overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://developers.google.com/workspace/meet/api/guides/overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/meet/answer/9308681) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_d60630c8c77544245f5de0ab70780c190339f8e6267cc3a0ffc96cdfdb20995e` | Google Meet Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://workspace.google.com/products/meet/) | 2026-11-03T01:38:35.007Z | A dated unauthenticated snapshot exposed controls button: Open search, button: Close search, button: Enter code, button: Previous slide, button: Next slide, button: Expand all, button: 1, button: 2, button: Open the Continue page, button: English Change Language, button: Close, button: Open Welcome., link: Open the Google Workspace page, link: Skip to main content, link: Open the AI page, link: Open the Pricing page, combobox: Search, link: Try Meet for Work with Google Workspace, link: Sign into Google Meet, link: Open the Gemini in Google Meet page, link: Open the App Store page in a new tab, link: Open the Play Store page in a new tab, link: Open the Google Docs page, link: Open the Sheets page, link: Open the Slides page, link: Open the encrypted page in a new tab, link: Open the safety measures page, link: Open the controls page in a new tab, link: Open the Google Meet hardware page in a new tab, link: Open the Google One Premium page in a new tab, link: Learn more about MEDITECH customer story, link: Learn more about the Robinhood customer story, link: Learn more about Virium Helsinki customer story, link: Watch a video about how Pepperdine University uses Google Meet, link: Learn more about the Vimeo customer story, link: Learn more about the Equifax customer story, link: Visit the Google Workspace help center, textbox: First name, textbox: Last name, textbox: Business email, combobox: Selected country, textbox: 201-555-0123, link: Open the Blog page, link: Open the footer social links X page in a new tab, link: Open the footer social links YouTube page in a new tab, link: Open the footer social links LinkedIn page in a new tab, link: Open the footer social links Instagram page in a new tab, link: Open the footer social links Facebook page in a new tab, link: Open the footer social links TikTok page in a new tab, textbox: Search this site, link: Open the Included applications page, link: Open the Gmail page, link: Open the Gmail AI page, link: Open the Meet page, link: Open the Chat page, link: Open the Calendar page, link: Open the Drive page, link: Open the Docs page, link: Open the Vids page, link: Open the Pics page, link: Open the Forms page, link: Open the Sites page, link: Open the Keep page, link: Open the Tasks page, link: Open the Studio page, link: Open the Gemini page, link: Open the Gemini Notebook page, link: Open the Apps Script page, link: Open the Security and management page, link: Open the Admin page, link: Open the Endpoint page, link: Open the Vault page, link: Open the Work Insights page, link: Open the New Business page, link: Open the Small Business page, link: Open the Enterprise page, link: Open the Retail page, link: Open the Manufacturing page, link: Open the Professional Services page, link: Open the Technology page, link: Open the Healthcare page, link: Open the Financial Services page, link: Open the Government page, link: Open the Education page in a new tab, link: Open the Nonprofits page in a new tab, link: Open the Artificial Intelligence page, link: Open the Compare pricing plans page, link: Open the Meet hardware page, link: Open the Google Voice page, link: Open the AppSheet page in a new tab, link: Open the Migration Overview page, link: Open the Business Migration page, link: Open the Enterprise Migration page, link: Open the Gmail Migration page, link: Open the Drive Migration page, link: Open the Google Chat Migration page, link: Open the AI learnings for work page, link: Open the Security page, link: Open the Customer Stories page, link: Open the FAQs page, link: Open the Partners page in a new tab, link: Open the Marketplace page, link: Open the Integrations page, link: Open the Training & Certification page, link: Open the Refer Google Workspace page, link: Open the AI Project Management page, link: Open the AI for Meetings page, link: Open the Learning and support page, link: Open the Admin Help page in a new tab, link: Open the Setup and Deployment Center page in a new tab, link: Open the Learning Center for Users page in a new tab, link: Open the Forums for Admins page in a new tab, link: Open the Google Workspace Dashboard page in a new tab, link: Open the What's New in Google Workspace page, link: Open the Find a Google Workspace Partner page in a new tab, link: Open the Join the community of IT Admins page in a new tab, link: Open the Press page in a new tab, link: Open the Google Cloud page in a new tab, link: Open the Google Domains page in a new tab, link: Open the Chrome Enterprise page in a new tab, link: Open the Google Business Solutions page in a new tab, link: Open the Google Ads page in a new tab, link: Open the Business Messages page in a new tab, link: Open the Privacy page in a new tab, link: Open the Terms page in a new tab, link: Open the About Google page in a new tab, link: Open the Google Products page in a new tab, link: Open the Help page in a new tab, link: Open the Bahasa Indonesia locale page, link: Open the Čeština locale page, link: Open the Dansk locale page, link: Open the Deutsch locale page, link: Open the Deutsch – Schweiz locale page, link: Open the English – Australia locale page, link: Open the English – Canada locale page, link: Open the English – India locale page, link: Open the English – Indonesia locale page, link: Open the English – Ireland locale page, link: Open the English – Malaysia locale page, link: Open the English – New Zealand locale page, link: Open the English – Philippines locale page, link: Open the English – Singapore locale page, link: Open the English – South Africa locale page, link: Open the English – United Kingdom locale page, link: Open the Español locale page, link: Open the Español (Latinoamérica) locale page, link: Open the Español (Latinoamérica) – Argentina locale page, link: Open the Español (Latinoamérica) – Estados Unidos locale page, link: Open the Español (Latinoamérica) – México locale page, link: Open the Français locale page, link: Open the Français – Canada locale page, link: Open the Français – Suisse locale page, link: Open the Italiano locale page, link: Open the Magyar locale page, link: Open the Nederlands locale page, link: Open the Norsk locale page, link: Open the Polski locale page, link: Open the Português (Brasil) locale page, link: Open the Português (Portugal) locale page, link: Open the Suomi locale page, link: Open the Svenska locale page, link: Open the Tiếng Việt locale page, link: Open the Türkçe locale page, link: Open the Русский locale page, link: Open the Українська locale page, link: Open the עברית locale page, link: Open the العربية locale page, link: Open the العربية – مصر locale page, link: Open the ไทย locale page, link: Open the 한국어 locale page, link: Open the 中文 (香港) locale page, link: Open the 中文（简体中文） locale page, link: Open the 中文（繁體中文） locale page, link: Open the 日本語 locale page and landmarks banner, navigation, search, main, complementary, complementary, complementary, complementary, complementary, contentinfo, region: Language List. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
+| `SRC-CANDIDATE-1` | Jitsi candidate — Curated entry; repository only when recorded. | [link](https://jitsi.org/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-2` | BigBlueButton candidate — Curated entry; repository only when recorded. | [link](https://bigbluebutton.org/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-3` | Element Call candidate — Curated entry; repository only when recorded. | [link](https://element.io/element-call) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
 
 ### Confidence classifications
 
@@ -377,115 +402,86 @@ Resume token: `google-meet`. Read dossier, REA report and raw Evidence before re
 
 # 1. Executive summary
 
-Google Meet is Google's browser-based video conferencing service.
-
----
+Google Meet is Google's hosted video-conferencing service for creating and joining online meetings. It integrates with Google Workspace and Calendar, but has its own meeting spaces, participant model and Meet APIs.
 
 # 2. Product identity and ownership
 
-- **Official name:** Google Meet
-- **Company and business unit:** google
-- **Current lifecycle status:** active
-- **Official website:** https://meet.google.com/
+**Official name:** Google Meet  
+**Company:** Google LLC, part of Alphabet Inc.  
+**Lifecycle status:** active  
+**Official website:** https://meet.google.com/
 
----
+Google's developer documentation identifies Meet as a service with add-ons, a REST API and meeting-space resources.
 
 # 3. Product capabilities
 
-- Browser-based video meetings
-- Screen sharing and recording (paid tiers)
-- Calendar integration
+- Create and join browser-based video meetings.
+- Participant sessions, meeting spaces, calls and collaboration workflows.
+- Calendar and Workspace integration.
+- Plan- and policy-dependent recording, transcripts, captions, screen sharing and meeting controls.
+- Meet add-ons and REST API integrations for meeting spaces, participants and artifacts.
 
----
+Meet is separate from Workspace because Workspace is the suite and Meet is the conferencing service. It is also separate from Calendar, which schedules events but does not provide the meeting service itself.
 
 # 4. Technical architecture
 
-Not yet researched.
-
----
+Meet is a managed cloud conferencing service with meeting spaces, conferences, participant sessions and artifacts. Public documentation exposes REST resources and add-on integration; the media and conferencing implementation is proprietary.
 
 # 5. User workflows
 
-Not yet researched.
-
----
+A user creates or joins a meeting from Meet, Calendar or another Workspace surface, collaborates with participants, and may use plan-dependent recording or transcription. Applications can create meeting spaces, retrieve conference information, list participants and fetch artifacts through the API.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+Feature availability depends on account type, Workspace edition, organisation policy and meeting configuration. Recording and other advanced features require eligible plans or permissions. This research verifies the product and documented controls, not current prices or a specific account's entitlements.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+The Meet REST API can create and manage meeting spaces, retrieve conferences and participants, and retrieve artifacts such as recordings and transcripts. The Meet add-ons SDK embeds applications into meetings. Authentication, scopes and meeting permissions are required for real operations.
 
 # 8. Existing open-source alternatives
 
-Open-source candidates exist: Jitsi Meet (Apache-2.0) — Self-hosted video conferencing with no account required.. Coverage is unverified until the dossier is researched.
-
----
+- Jitsi (Apache-2.0): self-hosted audio/video conferencing and screen sharing.
+- BigBlueButton (LGPL-3.0): open-source virtual classroom and conferencing platform.
+- Element Call / Matrix (AGPL-3.0): federated communication and calling components.
 
 # 9. Alternative comparison
 
-Core video conferencing is fully covered by Jitsi Meet; the remaining gaps are polish, scale guarantees and Workspace integration.
-
----
+These projects cover core video meetings to different degrees. None is verified here as a drop-in replacement for Meet's Google identity, Calendar and Workspace integration, meeting artifacts, administration and API surface.
 
 # 10. Missing capabilities and opportunity analysis
 
-Core video conferencing is fully covered by Jitsi Meet; the remaining gaps are polish, scale guarantees and Workspace integration.
+The integration gap combines conferencing, identity, scheduling, participant management, recordings, transcripts, compliance controls and developer APIs under one managed service.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Available. Jitsi Meet covers the core function, is mature and self-hostable.
-
----
+Reuse an existing conferencing platform and integrate it with a defined identity and calendar workflow. Test participant roles, recording ownership, retention, accessibility and API evidence before claiming parity.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+Meet calls, recordings, transcripts and participant data are sensitive. Verify consent, recording permissions, retention, access to Drive artifacts, domain policies and API scopes; do not infer feature availability from a meeting URL alone.
 
 # 13. Sources and evidence
 
-- https://jitsi.org/
-- https://en.wikipedia.org/wiki/Google_Meet
-
----
+- [Meet SDK and API overview](https://developers.google.com/workspace/meet/overview) — official integration surface.
+- [Meet REST API overview](https://developers.google.com/workspace/meet/api/guides/overview) — official meeting spaces, participants and artifacts.
+- [Record a video meeting](https://support.google.com/meet/answer/9308681) — official recording requirements and behavior.
 
 # 14. Open questions
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
+- Which account type and plan should a future meeting comparison cover?
+- Which workflow matters most: meetings, classrooms, recordings or API automation?
+- What consent, retention and audit requirements must an alternative satisfy?
 
 # 15. Research history
 
-- v1: dossier created; research pending.
+Record updated 2026-11-03 from official Google Meet Help and Google Developers sources. Status: `researched`; plan-specific access, quotas, media internals and authenticated behavior remain outside this pass.
 
----
-
-# 16. Alternative comparison (continued)
-
-Core video conferencing is fully covered by Jitsi Meet; the remaining gaps are polish, scale guarantees and Workspace integration.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Available. Jitsi Meet covers the core function, is mature and self-hostable.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-meet` and inspect canonical identity with `npx rae-faang products show google-meet --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-meet` and inspect canonical identity with `npx rea-faang products show google-meet --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -498,7 +494,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-meet --out ./google-meet.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-meet --out ./google-meet-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-meet --out ./google-meet.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-meet --out ./google-meet-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -540,5 +536,15 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://meet.google.com/) — Google Meet is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [Google Meet SDK and API overview](https://developers.google.com/workspace/meet/overview) — Google Meet is an active hosted meeting service with SDK and API integration surfaces. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Meet REST API overview](https://developers.google.com/workspace/meet/api/guides/overview) — The Meet REST API can create and manage meeting spaces and retrieve participants, sessions and artifacts. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Record a video meeting](https://support.google.com/meet/answer/9308681) — Recording requires eligible editions, permissions and administrator controls. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://meet.google.com/) — Google Meet is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.google.com/workspace/meet) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://developers.google.com/workspace/meet/overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.google.com/workspace/meet/api/guides/overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/meet/answer/9308681) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Meet Public web-surface observation (REA)](https://workspace.google.com/products/meet/) — A dated unauthenticated snapshot exposed controls button: Open search, button: Close search, button: Enter code, button: Previous slide, button: Next slide, button: Expand all, button: 1, button: 2, button: Open the Continue page, button: English Change Language, button: Close, button: Open Welcome., link: Open the Google Workspace page, link: Skip to main content, link: Open the AI page, link: Open the Pricing page, combobox: Search, link: Try Meet for Work with Google Workspace, link: Sign into Google Meet, link: Open the Gemini in Google Meet page, link: Open the App Store page in a new tab, link: Open the Play Store page in a new tab, link: Open the Google Docs page, link: Open the Sheets page, link: Open the Slides page, link: Open the encrypted page in a new tab, link: Open the safety measures page, link: Open the controls page in a new tab, link: Open the Google Meet hardware page in a new tab, link: Open the Google One Premium page in a new tab, link: Learn more about MEDITECH customer story, link: Learn more about the Robinhood customer story, link: Learn more about Virium Helsinki customer story, link: Watch a video about how Pepperdine University uses Google Meet, link: Learn more about the Vimeo customer story, link: Learn more about the Equifax customer story, link: Visit the Google Workspace help center, textbox: First name, textbox: Last name, textbox: Business email, combobox: Selected country, textbox: 201-555-0123, link: Open the Blog page, link: Open the footer social links X page in a new tab, link: Open the footer social links YouTube page in a new tab, link: Open the footer social links LinkedIn page in a new tab, link: Open the footer social links Instagram page in a new tab, link: Open the footer social links Facebook page in a new tab, link: Open the footer social links TikTok page in a new tab, textbox: Search this site, link: Open the Included applications page, link: Open the Gmail page, link: Open the Gmail AI page, link: Open the Meet page, link: Open the Chat page, link: Open the Calendar page, link: Open the Drive page, link: Open the Docs page, link: Open the Vids page, link: Open the Pics page, link: Open the Forms page, link: Open the Sites page, link: Open the Keep page, link: Open the Tasks page, link: Open the Studio page, link: Open the Gemini page, link: Open the Gemini Notebook page, link: Open the Apps Script page, link: Open the Security and management page, link: Open the Admin page, link: Open the Endpoint page, link: Open the Vault page, link: Open the Work Insights page, link: Open the New Business page, link: Open the Small Business page, link: Open the Enterprise page, link: Open the Retail page, link: Open the Manufacturing page, link: Open the Professional Services page, link: Open the Technology page, link: Open the Healthcare page, link: Open the Financial Services page, link: Open the Government page, link: Open the Education page in a new tab, link: Open the Nonprofits page in a new tab, link: Open the Artificial Intelligence page, link: Open the Compare pricing plans page, link: Open the Meet hardware page, link: Open the Google Voice page, link: Open the AppSheet page in a new tab, link: Open the Migration Overview page, link: Open the Business Migration page, link: Open the Enterprise Migration page, link: Open the Gmail Migration page, link: Open the Drive Migration page, link: Open the Google Chat Migration page, link: Open the AI learnings for work page, link: Open the Security page, link: Open the Customer Stories page, link: Open the FAQs page, link: Open the Partners page in a new tab, link: Open the Marketplace page, link: Open the Integrations page, link: Open the Training & Certification page, link: Open the Refer Google Workspace page, link: Open the AI Project Management page, link: Open the AI for Meetings page, link: Open the Learning and support page, link: Open the Admin Help page in a new tab, link: Open the Setup and Deployment Center page in a new tab, link: Open the Learning Center for Users page in a new tab, link: Open the Forums for Admins page in a new tab, link: Open the Google Workspace Dashboard page in a new tab, link: Open the What's New in Google Workspace page, link: Open the Find a Google Workspace Partner page in a new tab, link: Open the Join the community of IT Admins page in a new tab, link: Open the Press page in a new tab, link: Open the Google Cloud page in a new tab, link: Open the Google Domains page in a new tab, link: Open the Chrome Enterprise page in a new tab, link: Open the Google Business Solutions page in a new tab, link: Open the Google Ads page in a new tab, link: Open the Business Messages page in a new tab, link: Open the Privacy page in a new tab, link: Open the Terms page in a new tab, link: Open the About Google page in a new tab, link: Open the Google Products page in a new tab, link: Open the Help page in a new tab, link: Open the Bahasa Indonesia locale page, link: Open the Čeština locale page, link: Open the Dansk locale page, link: Open the Deutsch locale page, link: Open the Deutsch – Schweiz locale page, link: Open the English – Australia locale page, link: Open the English – Canada locale page, link: Open the English – India locale page, link: Open the English – Indonesia locale page, link: Open the English – Ireland locale page, link: Open the English – Malaysia locale page, link: Open the English – New Zealand locale page, link: Open the English – Philippines locale page, link: Open the English – Singapore locale page, link: Open the English – South Africa locale page, link: Open the English – United Kingdom locale page, link: Open the Español locale page, link: Open the Español (Latinoamérica) locale page, link: Open the Español (Latinoamérica) – Argentina locale page, link: Open the Español (Latinoamérica) – Estados Unidos locale page, link: Open the Español (Latinoamérica) – México locale page, link: Open the Français locale page, link: Open the Français – Canada locale page, link: Open the Français – Suisse locale page, link: Open the Italiano locale page, link: Open the Magyar locale page, link: Open the Nederlands locale page, link: Open the Norsk locale page, link: Open the Polski locale page, link: Open the Português (Brasil) locale page, link: Open the Português (Portugal) locale page, link: Open the Suomi locale page, link: Open the Svenska locale page, link: Open the Tiếng Việt locale page, link: Open the Türkçe locale page, link: Open the Русский locale page, link: Open the Українська locale page, link: Open the עברית locale page, link: Open the العربية locale page, link: Open the العربية – مصر locale page, link: Open the ไทย locale page, link: Open the 한국어 locale page, link: Open the 中文 (香港) locale page, link: Open the 中文（简体中文） locale page, link: Open the 中文（繁體中文） locale page, link: Open the 日本語 locale page and landmarks banner, navigation, search, main, complementary, complementary, complementary, complementary, complementary, contentinfo, region: Language List. (VERIFIED; accessed 2026-11-03T01:38:35.007Z).
+- [Jitsi candidate](https://jitsi.org/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [BigBlueButton candidate](https://bigbluebutton.org/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [Element Call candidate](https://element.io/element-call) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).

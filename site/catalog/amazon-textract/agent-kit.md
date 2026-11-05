@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Amazon Textract (amazon-textract); 
 
 # Amazon Textract — implementation skill (`amazon-textract`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Amazon Textract**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Textract (amazon-textract); 
 
 This is the coding-agent skill for **Amazon Textract** (`amazon-textract`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-textract.md` from the catalog page, or run `npx rae-faang amazon-textract --out ./amazon-textract.md`, `npx rae-faang skills generate amazon-textract` or `npx rae-faang build agent-kit amazon-textract --out ./amazon-textract-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon_aws/amazon-textract.md` from the catalog page, or run `npx rea-faang amazon-textract --out ./amazon-textract.md`, `npx rea-faang skills generate amazon-textract` or `npx rea-faang build agent-kit amazon-textract --out ./amazon-textract-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Textract / `amazon-textract` | `catalog/products.jsonl` |
 | Official product URL | [https://aws.amazon.com/textract/](https://aws.amazon.com/textract/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://docs.aws.amazon.com/textract/](https://docs.aws.amazon.com/textract/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-textract` | `research/companies/amazon_aws/products/amazon-textract.md` |
+| Research dossier | `npx rea-faang research dossier amazon-textract` | `research/companies/amazon_aws/products/amazon-textract.md` |
 | REA report | `catalog/rea/amazon_aws/amazon-textract.md` (captured 2026-11-03T03:51:09.781Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-textract.json` (`ev_a49c7a920690bac4042aa87eeee2bcdf1d9dad649a32c1012d7a2a1a97cc7cbe`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-textract --format json` and `npx rae-faang research dossier amazon-textract` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-textract --format json` and `npx rea-faang research dossier amazon-textract` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-TEXTRACT-CAP-EE7D9697`, `AMAZON-TEXTRACT-CAP-6B5B58F7`, `AMAZON-TEXTRACT-CAP-75296032`, `AMAZON-TEXTRACT-CAP-8881B040`, `AMAZON-TEXTRACT-CAP-95F7E46A`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `AMAZON-TEXTRACT-CAP-0797425F`, `AMAZON-TEXTRACT-CAP-F915EA0A`, `AMAZON-TEXTRACT-CAP-36C42206`, `AMAZON-TEXTRACT-CAP-F68B0EA2`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,21 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `AMAZON-TEXTRACT-CAP-EE7D9697` | OCR for printed and handwritten text | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-TEXTRACT-CAP-6B5B58F7` | Document analysis for forms and key-value pairs | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-TEXTRACT-CAP-75296032` | Table and cell extraction | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-TEXTRACT-CAP-8881B040` | Queries, layout and signature detection | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `AMAZON-TEXTRACT-CAP-95F7E46A` | Synchronous and asynchronous APIs with AWS CLI, SDK and service integrations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-TEXTRACT-CAP-0797425F` | Document text and structured analysis categories are documented. | VERIFIED | `ev-amazon-textract-identity`, `ev-amazon-textract-analysis` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-TEXTRACT-CAP-F915EA0A` | Forms, tables, queries and signatures are documented; exact accuracy and model behavior remain unknown. | VERIFIED | `ev-amazon-textract-tables`, `ev-amazon-textract-analysis` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-TEXTRACT-CAP-36C42206` | Synchronous/asynchronous APIs, job notifications and quota categories are documented. | VERIFIED | `ev-amazon-textract-async`, `ev-amazon-textract-api`, `ev-amazon-textract-quotas` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `AMAZON-TEXTRACT-CAP-F68B0EA2` | Tesseract covers local OCR but not Textract's structured extraction, queries, signatures, asynchronous service plane or AWS operations. | VERIFIED | `ev-amazon-textract-tesseract`, `ev-amazon-textract-analysis` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: English`, `button: Support`, `button: My account`, `button: AWS Profile`, `button: Discover AWS`, `button: Products`, `button: Solutions`, `button: Pricing`, `button: Resources`, `button: Toggle search`, `button: Create account`, `button: Open feedback`, `button: Features submenu`, `button: Get started with Amazon Textract`, `button: Contact sales`, `button: Play:`, `button: Drive efficiency and decision-making`, `button: Key insights`, `button: Easily scale`, `button: Automate data processing`, `link: Skip to main content link`, `link: Contact us`, `link: AWS Marketplace`, `link: Click here to return to Amazon Web Services homepage`, `link: re:Invent`, `link: Sign in to console`, `link: Overview`, `link: Pricing`, `link: Resources`, `link: FAQs`, `link: Customers`, `link: Partners`, `link: Products`, `link: Machine Learning`, `button: Financial services`, `button: Healthcare and life sciences`, `button: Public sector`, `link: US Foods logo Learn how US Foods turns handwritten menus into usable data Learn more`, `link: The Anthem company logo in blue text on a transparent background. Discover how Anthem cut claims processing time by 80% using intelligent document extraction Learn more`, `link: Missing alt text value Learn how Black Knight drives efficiency and delivers cost savings Learn more`, `link: Free tier Try the AWS Free Tier Sign up for a free account`, `link: Console Explore Amazon Textract Start building`, `button: Create an AWS account`, `link: What Is AWS?`, `link: What Is Cloud Computing?`, `link: What Is Agentic AI?`, `link: Cloud Computing Concepts Hub`, `link: AWS Cloud Security`, `link: What's New`, `link: Blogs`, `link: Press Releases`, `link: Careers`, `link: Getting Started`, `link: Training`, `link: AWS Trust Center`, `link: AWS Solutions Library`, `link: Architecture Center`, `link: Product and Technical FAQs`, `link: Analyst Reports`, `link: AWS Partners`, `link: Builder Center`, `link: SDKs & Tools`, `link: .NET on AWS`, `link: Python on AWS`, `link: Java on AWS`, `link: PHP on AWS`, `link: JavaScript on AWS`, `link: Contact Us`, `link: File a Support Ticket`, `link: AWS re:Post`, `link: Knowledge Center`, `link: AWS Support Overview`, `link: AWS Accessibility`, `link: Legal`, `link: Event Code of Conduct`, `link: Event Terms & Conditions`, `button: Back to top`, `link: X`, `link: Facebook`, `link: Linkedin`, `link: Instagram`, `link: Twitch`, `link: Youtube`, `link: Podcasts`, `link: Email`, `link: Privacy`, `link: Site terms`, `link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon`, `link: Cookie Preferences`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **OCR for printed and handwritten text:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Document analysis for forms and key-value pairs:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Table and cell extraction:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Queries, layout and signature detection:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Synchronous and asynchronous APIs with AWS CLI, SDK and service integrations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Document text and structured analysis categories are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Forms, tables, queries and signatures are documented; exact accuracy and model behavior remain unknown.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Synchronous/asynchronous APIs, job notifications and quota categories are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Tesseract covers local OCR but not Textract's structured extraction, queries, signatures, asynchronous service plane or AWS operations.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -149,50 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-EE7D9697 — OCR for printed and handwritten text
+### REQ-FUNC-0797425F — Document text and structured analysis categories are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-textract-identity`, `ev-amazon-textract-analysis`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-EE7D9697`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TEXTRACT-CAP-EE7D9697` → `REQ-FUNC-EE7D9697` → `TEST-FUNC-EE7D9697`.
+- **Associated test ID:** `TEST-FUNC-0797425F`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-TEXTRACT-CAP-0797425F` → `REQ-FUNC-0797425F` → `TEST-FUNC-0797425F`.
 
-### REQ-FUNC-6B5B58F7 — Document analysis for forms and key-value pairs
+### REQ-FUNC-F915EA0A — Forms, tables, queries and signatures are documented; exact accuracy and model behavior remain unknown.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-textract-tables`, `ev-amazon-textract-analysis`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-6B5B58F7`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TEXTRACT-CAP-6B5B58F7` → `REQ-FUNC-6B5B58F7` → `TEST-FUNC-6B5B58F7`.
+- **Associated test ID:** `TEST-FUNC-F915EA0A`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-TEXTRACT-CAP-F915EA0A` → `REQ-FUNC-F915EA0A` → `TEST-FUNC-F915EA0A`.
 
-### REQ-FUNC-75296032 — Table and cell extraction
+### REQ-FUNC-36C42206 — Synchronous/asynchronous APIs, job notifications and quota categories are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-textract-async`, `ev-amazon-textract-api`, `ev-amazon-textract-quotas`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-75296032`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TEXTRACT-CAP-75296032` → `REQ-FUNC-75296032` → `TEST-FUNC-75296032`.
+- **Associated test ID:** `TEST-FUNC-36C42206`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-TEXTRACT-CAP-36C42206` → `REQ-FUNC-36C42206` → `TEST-FUNC-36C42206`.
 
-### REQ-FUNC-8881B040 — Queries, layout and signature detection
+### REQ-FUNC-F68B0EA2 — Tesseract covers local OCR but not Textract's structured extraction, queries, signatures, asynchronous service plane or AWS operations.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-amazon-textract-tesseract`, `ev-amazon-textract-analysis`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-8881B040`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TEXTRACT-CAP-8881B040` → `REQ-FUNC-8881B040` → `TEST-FUNC-8881B040`.
-
-### REQ-FUNC-95F7E46A — Synchronous and asynchronous APIs with AWS CLI, SDK and service integrations
-- **Required behavior:** Unknown; capability is a research lead until observed/documented.
-- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
-- **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
-- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-95F7E46A`; fixture and expected output must be specified from evidence.
-- **Trace:** `AMAZON-TEXTRACT-CAP-95F7E46A` → `REQ-FUNC-95F7E46A` → `TEST-FUNC-95F7E46A`.
+- **Associated test ID:** `TEST-FUNC-F68B0EA2`; fixture and expected output must be specified from evidence.
+- **Trace:** `AMAZON-TEXTRACT-CAP-F68B0EA2` → `REQ-FUNC-F68B0EA2` → `TEST-FUNC-F68B0EA2`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -237,11 +226,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `AMAZON-TEXTRACT-CAP-EE7D9697` — OCR for printed and handwritten text | Not verified against Tesseract OCR | None yet; compare with `ev_a49c7a920690bac4042aa87eeee2bcdf1d9dad649a32c1012d7a2a1a97cc7cbe` | Candidate code path and tests must be inspected |
-| `AMAZON-TEXTRACT-CAP-6B5B58F7` — Document analysis for forms and key-value pairs | Not verified against Tesseract OCR | None yet; compare with `ev_a49c7a920690bac4042aa87eeee2bcdf1d9dad649a32c1012d7a2a1a97cc7cbe` | Candidate code path and tests must be inspected |
-| `AMAZON-TEXTRACT-CAP-75296032` — Table and cell extraction | Not verified against Tesseract OCR | None yet; compare with `ev_a49c7a920690bac4042aa87eeee2bcdf1d9dad649a32c1012d7a2a1a97cc7cbe` | Candidate code path and tests must be inspected |
-| `AMAZON-TEXTRACT-CAP-8881B040` — Queries, layout and signature detection | Not verified against Tesseract OCR | None yet; compare with `ev_a49c7a920690bac4042aa87eeee2bcdf1d9dad649a32c1012d7a2a1a97cc7cbe` | Candidate code path and tests must be inspected |
-| `AMAZON-TEXTRACT-CAP-95F7E46A` — Synchronous and asynchronous APIs with AWS CLI, SDK and service integrations | Not verified against Tesseract OCR | None yet; compare with `ev_a49c7a920690bac4042aa87eeee2bcdf1d9dad649a32c1012d7a2a1a97cc7cbe` | Candidate code path and tests must be inspected |
+| `AMAZON-TEXTRACT-CAP-0797425F` — Document text and structured analysis categories are documented. | Not verified against Tesseract OCR | None yet; compare with `ev_a49c7a920690bac4042aa87eeee2bcdf1d9dad649a32c1012d7a2a1a97cc7cbe` | Candidate code path and tests must be inspected |
+| `AMAZON-TEXTRACT-CAP-F915EA0A` — Forms, tables, queries and signatures are documented; exact accuracy and model behavior remain unknown. | Not verified against Tesseract OCR | None yet; compare with `ev_a49c7a920690bac4042aa87eeee2bcdf1d9dad649a32c1012d7a2a1a97cc7cbe` | Candidate code path and tests must be inspected |
+| `AMAZON-TEXTRACT-CAP-36C42206` — Synchronous/asynchronous APIs, job notifications and quota categories are documented. | Not verified against Tesseract OCR | None yet; compare with `ev_a49c7a920690bac4042aa87eeee2bcdf1d9dad649a32c1012d7a2a1a97cc7cbe` | Candidate code path and tests must be inspected |
+| `AMAZON-TEXTRACT-CAP-F68B0EA2` — Tesseract covers local OCR but not Textract's structured extraction, queries, signatures, asynchronous service plane or AWS operations. | Not verified against Tesseract OCR | None yet; compare with `ev_a49c7a920690bac4042aa87eeee2bcdf1d9dad649a32c1012d7a2a1a97cc7cbe` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -288,11 +276,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-EE7D9697** → `REQ-FUNC-EE7D9697`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-6B5B58F7** → `REQ-FUNC-6B5B58F7`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-75296032** → `REQ-FUNC-75296032`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-8881B040** → `REQ-FUNC-8881B040`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-95F7E46A** → `REQ-FUNC-95F7E46A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-0797425F** → `REQ-FUNC-0797425F`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-F915EA0A** → `REQ-FUNC-F915EA0A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-36C42206** → `REQ-FUNC-36C42206`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-F68B0EA2** → `REQ-FUNC-F68B0EA2`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -313,7 +300,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-EE7D9697, REQ-FUNC-6B5B58F7, REQ-FUNC-75296032, REQ-FUNC-8881B040, REQ-FUNC-95F7E46A
+- **Requirements:** REQ-FUNC-0797425F, REQ-FUNC-F915EA0A, REQ-FUNC-36C42206, REQ-FUNC-F68B0EA2
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -323,7 +310,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-EE7D9697, REQ-FUNC-6B5B58F7, REQ-FUNC-75296032, REQ-FUNC-8881B040, REQ-FUNC-95F7E46A
+- **Requirements:** REQ-FUNC-0797425F, REQ-FUNC-F915EA0A, REQ-FUNC-36C42206, REQ-FUNC-F68B0EA2
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -345,7 +332,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-EE7D9697, REQ-FUNC-6B5B58F7, REQ-FUNC-75296032, REQ-FUNC-8881B040, REQ-FUNC-95F7E46A; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-0797425F, REQ-FUNC-F915EA0A, REQ-FUNC-36C42206, REQ-FUNC-F68B0EA2; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -375,13 +362,24 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/textract/) | Not recorded | Amazon Textract is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/textract/) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-amazon-textract-identity` | What is Amazon Textract? — AWS documents text detection, document analysis and machine-readable results through Textract APIs. | [link](https://docs.aws.amazon.com/textract/latest/dg/) | 2026-11-03T00:00:00Z | Amazon Textract is AWS's document text detection and analysis service. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-textract-analysis` | Analyzing Documents — AWS describes the five analysis categories and form key-value relationships. | [link](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html) | 2026-11-03T00:00:00Z | Textract document analysis returns text, forms, tables, query responses and signatures as structured extraction categories. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-textract-tables` | Tables — The official guide documents table blocks, cell relationships and structured or semi-structured tables. | [link](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html) | 2026-11-03T00:00:00Z | Textract can extract table cells, merged cells, headers and related table structure. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-textract-async` | Calling Amazon Textract Asynchronous Operations — AWS documents Start and Get operations, job identifiers, SNS status notifications, SQS/Lambda handling and result retrieval. | [link](https://docs.aws.amazon.com/textract/latest/dg/api-async.html) | 2026-11-03T00:00:00Z | Textract supports asynchronous Start/Get processing for multipage documents with SNS completion notifications and S3 inputs. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-textract-api` | Amazon Textract API Reference — The official API reference lists operation data types including queries, relationships, signatures, S3 objects and output configuration. | [link](https://docs.aws.amazon.com/textract/latest/APIReference/) | 2026-11-03T00:00:00Z | Textract exposes documented API operations, request parameters, response elements and errors for document analysis. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-textract-quotas` | Modifying Default Quotas in Amazon Textract — AWS documents TPS limits for synchronous operations and Start/Get asynchronous operations. | [link](https://docs.aws.amazon.com/textract/latest/dg/limits-quotas-explained.html) | 2026-11-03T00:00:00Z | Textract documents distinct synchronous and asynchronous transaction quotas. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-amazon-textract-tesseract` | Tesseract OCR — The official repository documents Tesseract's OCR engine and Apache-2.0 license. | [link](https://github.com/tesseract-ocr/tesseract) | 2026-11-03T00:00:00Z | Tesseract is an Apache-2.0 open-source OCR engine. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://aws.amazon.com/textract/) | 2026-11-03T00:00:00Z | Amazon Textract is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.aws.amazon.com/textract/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/textract/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://aws.amazon.com/textract/faqs/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/textract/latest/dg/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/textract/latest/APIReference/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/cli/latest/reference/textract/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/textract/latest/dg/api-async.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-7` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/textract/latest/dg/limits-quotas-explained.html) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-8` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/textract/latest/APIReference/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-9` | Additional official source lead — Claim/section not recorded. | [link](https://docs.aws.amazon.com/cli/latest/reference/textract/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_a49c7a920690bac4042aa87eeee2bcdf1d9dad649a32c1012d7a2a1a97cc7cbe` | Amazon Textract Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://aws.amazon.com/textract/) | 2026-11-03T03:51:09.781Z | A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Features submenu, button: Get started with Amazon Textract, button: Contact sales, button: Play:, button: Drive efficiency and decision-making, button: Key insights, button: Easily scale, button: Automate data processing, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Pricing, link: Resources, link: FAQs, link: Customers, link: Partners, link: Products, link: Machine Learning, button: Financial services, button: Healthcare and life sciences, button: Public sector, link: US Foods logo Learn how US Foods turns handwritten menus into usable data Learn more, link: The Anthem company logo in blue text on a transparent background. Discover how Anthem cut claims processing time by 80% using intelligent document extraction Learn more, link: Missing alt text value Learn how Black Knight drives efficiency and delivers cost savings Learn more, link: Free tier Try the AWS Free Tier Sign up for a free account, link: Console Explore Amazon Textract Start building, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -455,22 +453,21 @@ Compare OCR accuracy, language and handwriting support, forms and key-value extr
 
 Research must map every public operation, supported feature type, block and relationship schema, document/page limits, language behavior, adapter flow, asynchronous job state, notification path, error taxonomy, throttling, quota and regional semantics. Any implementation must use original code and authorized test documents.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product and developer documentation, API reference and CLI reference as the primary sources. The generated RAE skill should instruct an agent to reproduce observable behavior with an independent implementation, beginning with local OCR and adding document-layout, forms, tables, queries and job orchestration only when evidence supports them. Tesseract may be used as a component, but the dossier must preserve the partial-equivalence verdict.
+Use the official product and developer documentation, API reference and CLI reference as the primary sources. The generated REA skill should instruct an agent to reproduce observable behavior with an independent implementation, beginning with local OCR and adding document-layout, forms, tables, queries and job orchestration only when evidence supports them. Tesseract may be used as a component, but the dossier must preserve the partial-equivalence verdict.
 
 # 12. Security, privacy, and compliance
 
 Verify IAM scope, encryption, document retention, S3 permissions, cross-account access, logging, redaction, data residency and handling of identity or financial documents. Use synthetic or public fixtures only. Never place credentials, private documents or personal data in the catalog, skill or report.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/textract/ — official product scope.
-- https://aws.amazon.com/textract/faqs/ — documented OCR, forms, tables, queries and supported workflows.
-- https://docs.aws.amazon.com/textract/latest/dg/ — developer guide and behavior references.
-- https://docs.aws.amazon.com/textract/latest/APIReference/ — public API operations and data types.
-- https://docs.aws.amazon.com/cli/latest/reference/textract/ — AWS CLI command surface.
-- https://github.com/tesseract-ocr/tesseract — open-source OCR alternative.
+- **Product and extraction scope:** [Textract developer guide](https://docs.aws.amazon.com/textract/latest/dg/) and [document analysis](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html) support text, forms, tables, queries and signatures.
+- **Structured tables:** [Table analysis](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html) documents cells, merged cells, headers and table blocks.
+- **Asynchronous processing:** [Asynchronous operations](https://docs.aws.amazon.com/textract/latest/dg/api-async.html) documents Start/Get jobs, SNS completion notifications, S3 inputs and result retention.
+- **API and limits:** [API Reference](https://docs.aws.amazon.com/textract/latest/APIReference/) and [quotas](https://docs.aws.amazon.com/textract/latest/dg/limits-quotas-explained.html) support the API, pagination and quota claims.
+- **Alternative:** [Tesseract](https://github.com/tesseract-ocr/tesseract) is the recorded Apache-2.0 OCR foundation; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -482,13 +479,13 @@ Verify IAM scope, encryption, document retention, S3 permissions, cross-account 
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources, command surface and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, structured extraction categories, tables, queries, synchronous/asynchronous operations and API surface are documented. Exact model behavior, language coverage, quotas, regional behavior and accuracy remain unknown and are not asserted.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-textract` and inspect canonical identity with `npx rae-faang products show amazon-textract --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-textract` and inspect canonical identity with `npx rea-faang products show amazon-textract --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -501,7 +498,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-textract --out ./amazon-textract.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-textract --out ./amazon-textract-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-textract --out ./amazon-textract.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-textract --out ./amazon-textract-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -543,11 +540,22 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://aws.amazon.com/textract/) — Amazon Textract is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://docs.aws.amazon.com/textract/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [What is Amazon Textract?](https://docs.aws.amazon.com/textract/latest/dg/) — Amazon Textract is AWS's document text detection and analysis service. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Analyzing Documents](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html) — Textract document analysis returns text, forms, tables, query responses and signatures as structured extraction categories. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Tables](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html) — Textract can extract table cells, merged cells, headers and related table structure. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Calling Amazon Textract Asynchronous Operations](https://docs.aws.amazon.com/textract/latest/dg/api-async.html) — Textract supports asynchronous Start/Get processing for multipage documents with SNS completion notifications and S3 inputs. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Amazon Textract API Reference](https://docs.aws.amazon.com/textract/latest/APIReference/) — Textract exposes documented API operations, request parameters, response elements and errors for document analysis. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Modifying Default Quotas in Amazon Textract](https://docs.aws.amazon.com/textract/latest/dg/limits-quotas-explained.html) — Textract documents distinct synchronous and asynchronous transaction quotas. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) — Tesseract is an Apache-2.0 open-source OCR engine. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://aws.amazon.com/textract/) — Amazon Textract is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.aws.amazon.com/textract/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://aws.amazon.com/textract/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://aws.amazon.com/textract/faqs/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/textract/latest/dg/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/textract/latest/dg/api-async.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.aws.amazon.com/textract/latest/dg/limits-quotas-explained.html) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/textract/latest/APIReference/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Additional official source lead](https://docs.aws.amazon.com/cli/latest/reference/textract/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Amazon Textract Public web-surface observation (REA)](https://aws.amazon.com/textract/) — A dated unauthenticated snapshot exposed controls button: English, button: Support, button: My account, button: AWS Profile, button: Discover AWS, button: Products, button: Solutions, button: Pricing, button: Resources, button: Toggle search, button: Create account, button: Open feedback, button: Features submenu, button: Get started with Amazon Textract, button: Contact sales, button: Play:, button: Drive efficiency and decision-making, button: Key insights, button: Easily scale, button: Automate data processing, link: Skip to main content link, link: Contact us, link: AWS Marketplace, link: Click here to return to Amazon Web Services homepage, link: re:Invent, link: Sign in to console, link: Overview, link: Pricing, link: Resources, link: FAQs, link: Customers, link: Partners, link: Products, link: Machine Learning, button: Financial services, button: Healthcare and life sciences, button: Public sector, link: US Foods logo Learn how US Foods turns handwritten menus into usable data Learn more, link: The Anthem company logo in blue text on a transparent background. Discover how Anthem cut claims processing time by 80% using intelligent document extraction Learn more, link: Missing alt text value Learn how Black Knight drives efficiency and delivers cost savings Learn more, link: Free tier Try the AWS Free Tier Sign up for a free account, link: Console Explore Amazon Textract Start building, button: Create an AWS account, link: What Is AWS?, link: What Is Cloud Computing?, link: What Is Agentic AI?, link: Cloud Computing Concepts Hub, link: AWS Cloud Security, link: What's New, link: Blogs, link: Press Releases, link: Careers, link: Getting Started, link: Training, link: AWS Trust Center, link: AWS Solutions Library, link: Architecture Center, link: Product and Technical FAQs, link: Analyst Reports, link: AWS Partners, link: Builder Center, link: SDKs & Tools, link: .NET on AWS, link: Python on AWS, link: Java on AWS, link: PHP on AWS, link: JavaScript on AWS, link: Contact Us, link: File a Support Ticket, link: AWS re:Post, link: Knowledge Center, link: AWS Support Overview, link: AWS Accessibility, link: Legal, link: Event Code of Conduct, link: Event Terms & Conditions, button: Back to top, link: X, link: Facebook, link: Linkedin, link: Instagram, link: Twitch, link: Youtube, link: Podcasts, link: Email, link: Privacy, link: Site terms, link: Your Privacy ChoicesCalifornia Consumer Privacy Act (CCPA) Opt-Out Icon, link: Cookie Preferences and landmarks navigation: Global navigation, main, navigation: Breadcrumb, contentinfo. (VERIFIED; accessed 2026-11-03T03:51:09.781Z).

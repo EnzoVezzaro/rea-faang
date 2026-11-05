@@ -13,17 +13,21 @@ official_source_urls:
   - "https://aws.amazon.com/textract/"
   - "https://aws.amazon.com/textract/faqs/"
   - "https://docs.aws.amazon.com/textract/latest/dg/"
+  - "https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html"
+  - "https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html"
+  - "https://docs.aws.amazon.com/textract/latest/dg/api-async.html"
+  - "https://docs.aws.amazon.com/textract/latest/dg/limits-quotas-explained.html"
   - "https://docs.aws.amazon.com/textract/latest/APIReference/"
   - "https://docs.aws.amazon.com/cli/latest/reference/textract/"
-research_status: "pending"
-research_confidence: "unverified"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: "2027-02-03T00:00:00Z"
+research_version: 2
 ---
 
 # 1. Executive summary
@@ -74,22 +78,21 @@ Compare OCR accuracy, language and handwriting support, forms and key-value extr
 
 Research must map every public operation, supported feature type, block and relationship schema, document/page limits, language behavior, adapter flow, asynchronous job state, notification path, error taxonomy, throttling, quota and regional semantics. Any implementation must use original code and authorized test documents.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Use the official product and developer documentation, API reference and CLI reference as the primary sources. The generated RAE skill should instruct an agent to reproduce observable behavior with an independent implementation, beginning with local OCR and adding document-layout, forms, tables, queries and job orchestration only when evidence supports them. Tesseract may be used as a component, but the dossier must preserve the partial-equivalence verdict.
+Use the official product and developer documentation, API reference and CLI reference as the primary sources. The generated REA skill should instruct an agent to reproduce observable behavior with an independent implementation, beginning with local OCR and adding document-layout, forms, tables, queries and job orchestration only when evidence supports them. Tesseract may be used as a component, but the dossier must preserve the partial-equivalence verdict.
 
 # 12. Security, privacy, and compliance
 
 Verify IAM scope, encryption, document retention, S3 permissions, cross-account access, logging, redaction, data residency and handling of identity or financial documents. Use synthetic or public fixtures only. Never place credentials, private documents or personal data in the catalog, skill or report.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/textract/ — official product scope.
-- https://aws.amazon.com/textract/faqs/ — documented OCR, forms, tables, queries and supported workflows.
-- https://docs.aws.amazon.com/textract/latest/dg/ — developer guide and behavior references.
-- https://docs.aws.amazon.com/textract/latest/APIReference/ — public API operations and data types.
-- https://docs.aws.amazon.com/cli/latest/reference/textract/ — AWS CLI command surface.
-- https://github.com/tesseract-ocr/tesseract — open-source OCR alternative.
+- **Product and extraction scope:** [Textract developer guide](https://docs.aws.amazon.com/textract/latest/dg/) and [document analysis](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-analyzing.html) support text, forms, tables, queries and signatures.
+- **Structured tables:** [Table analysis](https://docs.aws.amazon.com/textract/latest/dg/how-it-works-tables.html) documents cells, merged cells, headers and table blocks.
+- **Asynchronous processing:** [Asynchronous operations](https://docs.aws.amazon.com/textract/latest/dg/api-async.html) documents Start/Get jobs, SNS completion notifications, S3 inputs and result retention.
+- **API and limits:** [API Reference](https://docs.aws.amazon.com/textract/latest/APIReference/) and [quotas](https://docs.aws.amazon.com/textract/latest/dg/limits-quotas-explained.html) support the API, pagination and quota claims.
+- **Alternative:** [Tesseract](https://github.com/tesseract-ocr/tesseract) is the recorded Apache-2.0 OCR foundation; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -101,4 +104,4 @@ Verify IAM scope, encryption, document retention, S3 permissions, cross-account 
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources, command surface and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, structured extraction categories, tables, queries, synchronous/asynchronous operations and API surface are documented. Exact model behavior, language coverage, quotas, regional behavior and accuracy remain unknown and are not asserted.

@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon CloudWatch, recorded with RE
 | Target | https://aws.amazon.com/cloudwatch/ |
 | Resolved URL | https://aws.amazon.com/cloudwatch/ |
 | Page title | Amazon CloudWatch |
-| Captured | 2026-11-03T02:49:30.564Z |
+| Captured | 2026-11-04T02:40:17.174Z |
 | Status | captured |
-| REA Evidence ID | `ev_b58562556d1e152cf5900c05805fe12e2ea9030c59f87a130040bd0264c4b96f` |
+| REA Evidence ID | `ev_8e6289372df478fa741a6138360e07f540474dd360ff0a3bde4b78f097876102` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -165,6 +165,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-cloudwatch.json`
-- Evidence ID: `ev_b58562556d1e152cf5900c05805fe12e2ea9030c59f87a130040bd0264c4b96f`
+- Evidence ID: `ev_8e6289372df478fa741a6138360e07f540474dd360ff0a3bde4b78f097876102`
 - Accessibility outline: 17938 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

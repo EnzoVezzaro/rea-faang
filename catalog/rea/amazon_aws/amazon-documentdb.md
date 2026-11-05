@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon DocumentDB, recorded with RE
 | Target | https://aws.amazon.com/documentdb/ |
 | Resolved URL | https://aws.amazon.com/documentdb/ |
 | Page title | Amazon DocumentDB (with MongoDB compatibility) |
-| Captured | 2026-11-03T02:56:56.992Z |
+| Captured | 2026-11-04T02:41:35.166Z |
 | Status | captured |
-| REA Evidence ID | `ev_44348b44d90d07c3a400a979a604b1d706a249c2a299c903982f60046d471148` |
+| REA Evidence ID | `ev_7590b45b6eeef71dcbb4ddfa557509308d96534b802e7438993d27695bb7885c` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-documentdb.json`
-- Evidence ID: `ev_44348b44d90d07c3a400a979a604b1d706a249c2a299c903982f60046d471148`
+- Evidence ID: `ev_7590b45b6eeef71dcbb4ddfa557509308d96534b802e7438993d27695bb7885c`
 - Accessibility outline: 14468 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

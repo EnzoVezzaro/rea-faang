@@ -83,7 +83,7 @@ Open-source block-storage systems can provide persistent volumes, but none is tr
 
 REA should map volume lifecycle, attachment and detach behavior, resizing, IOPS and throughput controls, snapshots, Recycle Bin, encryption, Multi-Attach, quotas, failure recovery, cross-region/cross-account flows and the EBS direct APIs.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use AWS product, user-guide, API and CLI documentation as the primary research surface. A clean-room equivalent should select an independently licensed storage foundation and reproduce only independently observable behavior, documenting differences in durability, performance, control plane, encryption and cloud integration.
 

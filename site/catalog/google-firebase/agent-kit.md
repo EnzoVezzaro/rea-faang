@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Firebase (google-firebase); investi
 
 # Firebase — implementation skill (`google-firebase`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Firebase**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Firebase (google-firebase); investi
 
 This is the coding-agent skill for **Firebase** (`google-firebase`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-firebase.md` from the catalog page, or run `npx rae-faang google-firebase --out ./google-firebase.md`, `npx rae-faang skills generate google-firebase` or `npx rae-faang build agent-kit google-firebase --out ./google-firebase-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-firebase.md` from the catalog page, or run `npx rea-faang google-firebase --out ./google-firebase.md`, `npx rea-faang skills generate google-firebase` or `npx rea-faang build agent-kit google-firebase --out ./google-firebase-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Firebase / `google-firebase` | `catalog/products.jsonl` |
 | Official product URL | [https://firebase.google.com/](https://firebase.google.com/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://firebase.google.com/docs](https://firebase.google.com/docs) | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-firebase` | `research/companies/google/products/google-firebase.md` |
+| Research dossier | `npx rea-faang research dossier google-firebase` | `research/companies/google/products/google-firebase.md` |
 | REA report | `catalog/rea/google/google-firebase.md` (captured 2026-11-03T01:38:08.105Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-firebase.json` (`ev_01dc5c781a0ae7d002af9d74201e9852a5ed3f49b3d0ba426b36aecab6eac65d`) | Catalog evidence |
 | Alternative candidates | 4 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-firebase --format json` and `npx rae-faang research dossier google-firebase` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-firebase --format json` and `npx rea-faang research dossier google-firebase` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-FIREBASE-CAP-DC2A776B`, `GOOGLE-FIREBASE-CAP-1FE23F5D`, `GOOGLE-FIREBASE-CAP-9E766B65`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-FIREBASE-CAP-74BE1465`, `GOOGLE-FIREBASE-CAP-65CA2CEE`, `GOOGLE-FIREBASE-CAP-9FE9616C`, `GOOGLE-FIREBASE-CAP-9162CC9A`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,7 +102,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Firebase** / `google-firebase` | Product catalog |
-| Company / category | Google / `developer_tool` / `developer_tool` | Product catalog |
+| Company / category | Google / `developer_tool` / `developer_tool`, `backend-as-a-service`, `mobile-development`, `web-development` | Product catalog |
 | Official website / docs | [https://firebase.google.com/](https://firebase.google.com/) / [https://firebase.google.com/docs](https://firebase.google.com/docs) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-FIREBASE-CAP-DC2A776B` | Realtime/firestore database and offline sync | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-FIREBASE-CAP-1FE23F5D` | Authentication, file storage, hosting | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-FIREBASE-CAP-9E766B65` | Cloud functions, push messaging, analytics | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-FIREBASE-CAP-74BE1465` | Firebase identity, project setup, app registration and supported SDK workflows are documented. | VERIFIED | `ev-google-firebase-identity`, `ev-google-firebase-fundamentals` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-FIREBASE-CAP-65CA2CEE` | Authentication and Firebase project/service configuration are documented. | VERIFIED | `ev-google-firebase-auth`, `ev-google-firebase-projects` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-FIREBASE-CAP-9FE9616C` | Cloud Functions, deployment and local development workflows are documented. | VERIFIED | `ev-google-firebase-functions`, `ev-google-firebase-fundamentals` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-FIREBASE-CAP-9162CC9A` | Open-source BaaS alternatives cover core backend capabilities but not the complete managed Firebase and Google Cloud service plane. | VERIFIED | `ev-google-firebase-projects`, `ev-google-firebase-pricing` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Dropdown menu for Build`, `button: Dropdown menu for Run`, `button: Dropdown menu for Extended Navigation`, `button: Language`, `button: Chat`, `link: Skip to main content`, `link: Firebase`, `link: Build`, `link: Run`, `link: Solutions`, `combobox: Search`, `link: Blog`, `link: Go to console`, `link: Sign in`, `link: Learn more.`, `link: Get Started`, `link: Get started in console`, `link: App Hosting`, `link: SQL Connect`, `link: Firebase AI Logic`, `link: View all Build products`, `link: App Distribution`, `link: Crashlytics`, `link: Remote Config`, `link: View all Run products`, `link: Agent Skills icon Agent Skills`, `link: Firebase AI Logic icon Firebase AI Logic`, `link: View generative AI options`, `link: Flutterlogo Flutter`, `link: Google Adslogo Google Ads`, `link: AdMoblogo AdMob`, `link: Google Marketing Platformlogo Google Marketing Platform`, `link: Google Playlogo Google Play`, `link: Data Studiologo Data Studio`, `link: BigQuerylogo BigQuery`, `link: Slacklogo Slack`, `link: Jiralogo Jira`, `link: Android Studiologo Android Studio`, `link: Learn more`, `link: View developer docs`, `link: View all news`, `link: - Building an iOS app in 6 hours with Firebase and Antigravity`, `link: Read more - Building an iOS app in 6 hours with Firebase and Antigravity`, `link: - Google Analytics for Firebase iOS SDK outage on September 28, 2026`, `link: Read more - Google Analytics for Firebase iOS SDK outage on September 28, 2026`, `link: YouTube - Can an agent port our Android app to iOS?`, `link: View video - Can an agent port our Android app to iOS?`, `link: View solutions`, `link: Get started`, `link: App Check`, `link: Authentication`, `link: Cloud Functions`, `link: Cloud Storage`, `link: Extensions`, `link: Firestore`, `link: Hosting`, `link: Phone Number Verification`, `link: Realtime Database`, `link: Generative AI`, `link: A/B Testing`, `link: Cloud Messaging`, `link: Google Analytics`, `link: In-App Messaging`, `link: Performance Monitoring`, `link: Test Lab`, `link: Developer guides`, `link: SDK & API reference`, `link: Samples`, `link: Libraries`, `link: GitHub`, `link: Check out the blog`, `link: Find us on Reddit`, `link: Follow on X`, `link: Subscribe on YouTube`, `link: Attend an event`, `link: Contact support`, `link: Stack Overflow`, `link: Google group`, `link: Release notes`, `link: Brand guidelines`, `link: FAQs`, `link: Google Developers`, `link: Android`, `link: Chrome`, `link: Google Cloud Platform`, `link: All products`, `link: Terms`, `link: Privacy`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Realtime/firestore database and offline sync:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Authentication, file storage, hosting:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Cloud functions, push messaging, analytics:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Firebase identity, project setup, app registration and supported SDK workflows are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Authentication and Firebase project/service configuration are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Cloud Functions, deployment and local development workflows are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Open-source BaaS alternatives cover core backend capabilities but not the complete managed Firebase and Google Cloud service plane.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-DC2A776B — Realtime/firestore database and offline sync
+### REQ-FUNC-74BE1465 — Firebase identity, project setup, app registration and supported SDK workflows are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-firebase-identity`, `ev-google-firebase-fundamentals`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-DC2A776B`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-FIREBASE-CAP-DC2A776B` → `REQ-FUNC-DC2A776B` → `TEST-FUNC-DC2A776B`.
+- **Associated test ID:** `TEST-FUNC-74BE1465`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-FIREBASE-CAP-74BE1465` → `REQ-FUNC-74BE1465` → `TEST-FUNC-74BE1465`.
 
-### REQ-FUNC-1FE23F5D — Authentication, file storage, hosting
+### REQ-FUNC-65CA2CEE — Authentication and Firebase project/service configuration are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-firebase-auth`, `ev-google-firebase-projects`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-1FE23F5D`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-FIREBASE-CAP-1FE23F5D` → `REQ-FUNC-1FE23F5D` → `TEST-FUNC-1FE23F5D`.
+- **Associated test ID:** `TEST-FUNC-65CA2CEE`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-FIREBASE-CAP-65CA2CEE` → `REQ-FUNC-65CA2CEE` → `TEST-FUNC-65CA2CEE`.
 
-### REQ-FUNC-9E766B65 — Cloud functions, push messaging, analytics
+### REQ-FUNC-9FE9616C — Cloud Functions, deployment and local development workflows are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-firebase-functions`, `ev-google-firebase-fundamentals`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-9E766B65`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-FIREBASE-CAP-9E766B65` → `REQ-FUNC-9E766B65` → `TEST-FUNC-9E766B65`.
+- **Associated test ID:** `TEST-FUNC-9FE9616C`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-FIREBASE-CAP-9FE9616C` → `REQ-FUNC-9FE9616C` → `TEST-FUNC-9FE9616C`.
+
+### REQ-FUNC-9162CC9A — Open-source BaaS alternatives cover core backend capabilities but not the complete managed Firebase and Google Cloud service plane.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-firebase-projects`, `ev-google-firebase-pricing`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-9162CC9A`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-FIREBASE-CAP-9162CC9A` → `REQ-FUNC-9162CC9A` → `TEST-FUNC-9162CC9A`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -218,9 +229,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-FIREBASE-CAP-DC2A776B` — Realtime/firestore database and offline sync | Not verified against Supabase | None yet; compare with `ev_01dc5c781a0ae7d002af9d74201e9852a5ed3f49b3d0ba426b36aecab6eac65d` | Candidate code path and tests must be inspected |
-| `GOOGLE-FIREBASE-CAP-1FE23F5D` — Authentication, file storage, hosting | Not verified against Supabase | None yet; compare with `ev_01dc5c781a0ae7d002af9d74201e9852a5ed3f49b3d0ba426b36aecab6eac65d` | Candidate code path and tests must be inspected |
-| `GOOGLE-FIREBASE-CAP-9E766B65` — Cloud functions, push messaging, analytics | Not verified against Supabase | None yet; compare with `ev_01dc5c781a0ae7d002af9d74201e9852a5ed3f49b3d0ba426b36aecab6eac65d` | Candidate code path and tests must be inspected |
+| `GOOGLE-FIREBASE-CAP-74BE1465` — Firebase identity, project setup, app registration and supported SDK workflows are documented. | Not verified against Supabase | None yet; compare with `ev_01dc5c781a0ae7d002af9d74201e9852a5ed3f49b3d0ba426b36aecab6eac65d` | Candidate code path and tests must be inspected |
+| `GOOGLE-FIREBASE-CAP-65CA2CEE` — Authentication and Firebase project/service configuration are documented. | Not verified against Supabase | None yet; compare with `ev_01dc5c781a0ae7d002af9d74201e9852a5ed3f49b3d0ba426b36aecab6eac65d` | Candidate code path and tests must be inspected |
+| `GOOGLE-FIREBASE-CAP-9FE9616C` — Cloud Functions, deployment and local development workflows are documented. | Not verified against Supabase | None yet; compare with `ev_01dc5c781a0ae7d002af9d74201e9852a5ed3f49b3d0ba426b36aecab6eac65d` | Candidate code path and tests must be inspected |
+| `GOOGLE-FIREBASE-CAP-9162CC9A` — Open-source BaaS alternatives cover core backend capabilities but not the complete managed Firebase and Google Cloud service plane. | Not verified against Supabase | None yet; compare with `ev_01dc5c781a0ae7d002af9d74201e9852a5ed3f49b3d0ba426b36aecab6eac65d` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -267,9 +279,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-DC2A776B** → `REQ-FUNC-DC2A776B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-1FE23F5D** → `REQ-FUNC-1FE23F5D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-9E766B65** → `REQ-FUNC-9E766B65`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-74BE1465** → `REQ-FUNC-74BE1465`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-65CA2CEE** → `REQ-FUNC-65CA2CEE`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-9FE9616C** → `REQ-FUNC-9FE9616C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-9162CC9A** → `REQ-FUNC-9162CC9A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -290,7 +303,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-DC2A776B, REQ-FUNC-1FE23F5D, REQ-FUNC-9E766B65
+- **Requirements:** REQ-FUNC-74BE1465, REQ-FUNC-65CA2CEE, REQ-FUNC-9FE9616C, REQ-FUNC-9162CC9A
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -300,7 +313,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-DC2A776B, REQ-FUNC-1FE23F5D, REQ-FUNC-9E766B65
+- **Requirements:** REQ-FUNC-74BE1465, REQ-FUNC-65CA2CEE, REQ-FUNC-9FE9616C, REQ-FUNC-9162CC9A
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -322,7 +335,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-DC2A776B, REQ-FUNC-1FE23F5D, REQ-FUNC-9E766B65; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-74BE1465, REQ-FUNC-65CA2CEE, REQ-FUNC-9FE9616C, REQ-FUNC-9162CC9A; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -352,8 +365,20 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://firebase.google.com/) | Not recorded | Firebase is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://firebase.google.com/docs) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-google-firebase-identity` | Firebase — The official product page presents Firebase as a platform for building and running mobile and web applications with Build and Run product families. | [link](https://firebase.google.com/) | Not recorded | Firebase is Google's mobile and web application development platform. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-firebase-fundamentals` | Firebase fundamentals — The official fundamentals guide covers adding Firebase to iOS, Android, web, Unity and C++ apps and managing projects and launch workflows. | [link](https://firebase.google.com/docs/guides) | Not recorded | Firebase projects support app registration, SDK integration and platform-specific development workflows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-firebase-projects` | Understand Firebase projects — The official project guide explains the hierarchy of projects, registered apps and provisioned Firebase resources and describes Firebase/Google Cloud interoperability. | [link](https://firebase.google.com/docs/projects/learn-more) | Not recorded | A Firebase project is a Google Cloud project with Firebase-specific configuration and services enabled. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-firebase-auth` | Firebase Authentication — The official Authentication documentation describes password, phone and federated providers plus SDK and backend integration behavior. | [link](https://firebase.google.com/docs/auth) | Not recorded | Firebase Authentication provides backend identity services, SDKs and provider integrations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-firebase-functions` | Cloud Functions for Firebase — The official Functions documentation describes event triggers, managed execution, scaling, local emulation and deployment requirements. | [link](https://firebase.google.com/docs/functions) | Not recorded | Cloud Functions for Firebase runs JavaScript, TypeScript or Python backend code in response to HTTPS and Firebase or Google Cloud events. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-firebase-pricing` | Firebase pricing — The official pricing page lists the no-cost Spark plan and pay-as-you-go Blaze plan and explains product-specific usage and Google Cloud billing relationships. | [link](https://firebase.google.com/pricing) | Not recorded | Firebase offers Spark no-cost and Blaze pay-as-you-go plans with service-specific quotas and billing behavior. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://firebase.google.com/) | 2026-11-03T00:00:00Z | Firebase is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://firebase.google.com/docs) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://firebase.google.com/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://firebase.google.com/docs/guides) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://firebase.google.com/docs/projects/learn-more) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://firebase.google.com/docs/auth) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://firebase.google.com/docs/functions) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://firebase.google.com/pricing) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_01dc5c781a0ae7d002af9d74201e9852a5ed3f49b3d0ba426b36aecab6eac65d` | Firebase Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://firebase.google.com/) | 2026-11-03T01:38:08.105Z | A dated unauthenticated snapshot exposed controls button: Dropdown menu for Build, button: Dropdown menu for Run, button: Dropdown menu for Extended Navigation, button: Language, button: Chat, link: Skip to main content, link: Firebase, link: Build, link: Run, link: Solutions, combobox: Search, link: Blog, link: Go to console, link: Sign in, link: Learn more., link: Get Started, link: Get started in console, link: App Hosting, link: SQL Connect, link: Firebase AI Logic, link: View all Build products, link: App Distribution, link: Crashlytics, link: Remote Config, link: View all Run products, link: Agent Skills icon Agent Skills, link: Firebase AI Logic icon Firebase AI Logic, link: View generative AI options, link: Flutterlogo Flutter, link: Google Adslogo Google Ads, link: AdMoblogo AdMob, link: Google Marketing Platformlogo Google Marketing Platform, link: Google Playlogo Google Play, link: Data Studiologo Data Studio, link: BigQuerylogo BigQuery, link: Slacklogo Slack, link: Jiralogo Jira, link: Android Studiologo Android Studio, link: Learn more, link: View developer docs, link: View all news, link: - Building an iOS app in 6 hours with Firebase and Antigravity, link: Read more - Building an iOS app in 6 hours with Firebase and Antigravity, link: - Google Analytics for Firebase iOS SDK outage on September 28, 2026, link: Read more - Google Analytics for Firebase iOS SDK outage on September 28, 2026, link: YouTube - Can an agent port our Android app to iOS?, link: View video - Can an agent port our Android app to iOS?, link: View solutions, link: Get started, link: App Check, link: Authentication, link: Cloud Functions, link: Cloud Storage, link: Extensions, link: Firestore, link: Hosting, link: Phone Number Verification, link: Realtime Database, link: Generative AI, link: A/B Testing, link: Cloud Messaging, link: Google Analytics, link: In-App Messaging, link: Performance Monitoring, link: Test Lab, link: Developer guides, link: SDK & API reference, link: Samples, link: Libraries, link: GitHub, link: Check out the blog, link: Find us on Reddit, link: Follow on X, link: Subscribe on YouTube, link: Attend an event, link: Contact support, link: Stack Overflow, link: Google group, link: Release notes, link: Brand guidelines, link: FAQs, link: Google Developers, link: Android, link: Chrome, link: Google Cloud Platform, link: All products, link: Terms, link: Privacy and landmarks banner, navigation: Upper tabs, main, navigation: On this page, navigation, main, navigation: Footer links, navigation: Other Google Developers websites, navigation: Utility links. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -381,137 +406,102 @@ Resume token: `google-firebase`. Read dossier, REA report and raw Evidence befor
 
 # 1. Executive summary
 
-Firebase is a Backend-as-a-Service (BaaS) platform providing tools and infrastructure for building mobile and web applications. It offers real-time database, authentication, hosting, cloud functions, analytics, and machine learning capabilities, integrating closely with Google Cloud.
+Firebase is Google's application-development platform for mobile and web apps. It combines client SDKs, app-facing services, backend infrastructure, deployment tools and operational features behind a Firebase project. Firebase projects are also Google Cloud projects with Firebase-specific configuration; this makes Firebase a distinct developer platform, not a duplicate catalog row for Google Cloud.
 
 # 2. Product identity and ownership
 
 - **Official name:** Firebase
-- **Company and business unit:** Google, a subsidiary of Alphabet Inc.
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2011 (as independent startup), acquired by Google in 2014
-- **Current lifecycle status:** active
-- **Previous names:** None
-- **Acquisitions or ownership changes:** Acquired by Google in 2014; integrated with Google Cloud Platform
-- **Related products:** Google Cloud, Cloud Functions, Cloud Firestore, Google Analytics, App Check
-- **Official website:** https://firebase.google.com/
+- **Company:** Google LLC, part of Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://firebase.google.com/
 - **Official documentation:** https://firebase.google.com/docs
+- **Identity evidence:** Google's product page and documentation identify Firebase as a mobile and web app development platform and describe its Build, Run, Learn and Reference surfaces.
+- **Project model:** a Firebase project is a Google Cloud project with Firebase-specific configuration and services enabled.
+- **Scope boundary:** Firebase is cataloged as the integrated developer platform; Firestore, Cloud Storage, Cloud Functions and other underlying services remain separately catalogable when they have their own canonical identity and contract.
 
 # 3. Product capabilities
 
-- **Realtime Database:** JSON database with real-time synchronization
-- **Cloud Firestore:** Scalable NoSQL document database
-- **Authentication:** Email/password, social providers, phone, anonymous, custom tokens
-- **Cloud Functions:** Serverless functions triggered by Firebase/Google Cloud events
-- **Hosting:** Static and dynamic web hosting with CDN
-- **Cloud Storage:** File storage for user-generated content
-- **Analytics:** App analytics and user behavior tracking
-- **Remote Config:** Feature flags and A/B testing
-- **Cloud Messaging:** Push notifications (FCM)
-- **In-App Messaging:** Targeted messages within apps
-- **Dynamic Links:** Deep links that survive app install
-- **App Check:** Abuse prevention
-- **Performance Monitoring:** App performance metrics
-- **Test Lab:** Device testing infrastructure
-- **Crashlytics:** Crash reporting
-- **ML Kit:** On-device machine learning
-- **Vertex AI integration:** Generative AI capabilities
-- **Data Connect:** PostgreSQL-backed database (preview)
-- **Genkit:** AI workflow framework
+- Authentication and identity-provider integrations through Firebase Authentication.
+- Cloud Firestore and Realtime Database for application data and synchronization.
+- Cloud Storage for Firebase for user-generated files.
+- Hosting and App Hosting for web applications, with serverless integrations.
+- Cloud Functions for Firebase for event-driven and HTTP backend code.
+- Cloud Messaging, App Check, Remote Config, Analytics, Crashlytics, Performance Monitoring, Test Lab and other Run features.
+- SDKs, Admin SDKs, API references, Emulator Suite and Firebase CLI workflows.
+- Additional platform surfaces including Data Connect, Extensions and Firebase AI Logic where the project and service prerequisites support them.
 
 # 4. Technical architecture
 
-- Multi-region infrastructure leveraging Google Cloud
-- Real-time sync via WebSocket connections
-- Serverless functions on Cloud Functions infrastructure
-- CDN-backed hosting with automatic SSL
-- Client SDKs for iOS, Android, Web, Flutter, Unity, C++, Node.js
-- Admin SDKs for server environments
-- Security rules language for database access control
-- Emulator Suite for local development
+The top-level unit is a Firebase project. Apps are registered inside that project for supported platforms, and Firebase products are enabled and configured against the project. Client SDKs call Firebase services; server-side code can use the Admin SDK and Cloud Functions. Firebase Hosting can route requests to serverless backends, while the Emulator Suite supports local development and testing. Billing and quotas are shared with the corresponding Google Cloud project where the service requires it.
 
-# 5. User workflows
+# 5. User and developer workflows
 
-Developers create a Firebase project, configure services, integrate SDKs, and deploy. Core workflows: project setup, authentication configuration, database design, function development, testing with emulators, deployment, monitoring. Advanced: CI/CD integration, multi-environment management, custom domains, enterprise security.
+1. Create or select a Firebase project and register the iOS, Android, web or other supported app variant.
+2. Add the required Firebase SDKs and configure Authentication, data, storage, hosting or messaging services.
+3. Define security rules, IAM and environment boundaries before handling real user data.
+4. Use the Emulator Suite and tests for local verification, then deploy through the Firebase CLI or documented console workflows.
+5. Monitor quality, usage, crashes, performance and billing; configure budget alerts before enabling paid services.
 
 # 6. Pricing and access
 
-- **Spark plan (free):** Limited usage across all products
-- **Blaze plan (pay-as-you-go):** Usage-based pricing, free tier included
-- Pricing per product: database reads/writes, storage, functions invocations, hosting bandwidth, authentication verifications
-- No upfront costs or commitments
+Firebase documents a no-cost Spark plan and a pay-as-you-go Blaze plan. The Spark plan has no payment method requirement and service-specific quotas. Blaze enables additional services and usage levels, with usage billed according to the applicable Firebase or Google Cloud pricing. This dossier does not assert a project's current quota or billing state.
 
 # 7. API and integration surface
 
-- Client SDKs: Web (JavaScript/TypeScript), iOS (Swift/Obj-C), Android (Kotlin/Java), Flutter (Dart), Unity (C#), C++, Node.js, Python, Go
-- Admin SDKs: Node.js, Python, Go, Java, .NET
-- REST APIs for all services
-- GraphQL support via Data Connect
-- CLI tools: firebase-tools
-- CI/CD: GitHub Actions, Bitrise, CircleCI integrations
-- Extensions: Pre-packaged solutions
+- Client SDK references for Apple platforms, Android, web, Flutter, Unity and C++.
+- Admin SDK references and REST/API surfaces for server-side administration.
+- Firebase CLI (`firebase`) for project initialization, local emulation and deployment workflows.
+- Cloud Functions, Hosting, Cloud Storage, Cloud Firestore, Google Cloud and third-party webhook integrations.
+- Extensions and documented integrations for adding packaged capabilities.
 
 # 8. Existing open-source alternatives
 
-- **Supabase:** PostgreSQL-based BaaS (auth, database, functions, storage, realtime)
-- **Appwrite:** Self-hosted BaaS (auth, database, functions, storage, realtime)
-- **Nhost:** Hasura + Postgres + Auth + Storage + Functions
-- **PocketBase:** Go-based single-binary BaaS
-- **Parse Platform:** Open-source Parse Server
-- **Directus:** Headless CMS with auth and API
-- **Kuzzle:** Real-time backend engine
-- **Backendless:** Visual development platform (partially open)
+- **Supabase:** Apache-2.0 platform combining PostgreSQL, authentication, storage, realtime and edge functions.
+- **Appwrite:** BSD-3-Clause self-hostable backend with authentication, databases, storage, functions and related services.
+- **Parse Platform:** BSD-3-Clause open-source application backend with Parse Server and SDKs.
+- **PocketBase:** MIT-licensed, compact backend distributed as a single Go binary with authentication, data and realtime features.
 
 # 9. Alternative comparison
 
-Supabase and Appwrite are the closest feature-complete open-source BaaS alternatives. Supabase uses PostgreSQL (relational) vs Firebase's NoSQL; Appwrite is fully self-hostable. PocketBase is lightweight but less feature-rich. None match Firebase's Google Cloud integration, ML Kit, or Test Lab.
+Supabase and Appwrite are the closest broad alternatives for a self-hosted or independently operated application backend. Parse Platform and PocketBase cover narrower or different operational profiles. None provides a full equivalent of Firebase's Google Cloud project integration, managed service plane, device Test Lab, Crashlytics, ML/AI integrations, service-specific SDKs and operational tooling. Alternative coverage is therefore **partial** for the complete Firebase platform, even though the core BaaS category has mature open-source building blocks.
 
 # 10. Missing capabilities and opportunity analysis
 
-Google Cloud integration, managed ML (ML Kit, Vertex AI), Test Lab device farm, and Crashlytics are hard to replicate. Open alternatives excel at self-hosting, data ownership, and SQL flexibility. The "managed service" experience with global infrastructure is a key gap.
+A replacement still needs secure identity, data and storage services, realtime delivery, serverless execution, deployment, observability, testing, quotas, tenancy, migrations and operational ownership. The largest gaps are the integrated Google Cloud control plane, managed device testing, crash and performance products, proprietary SDK behavior and provider-specific service integrations.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Contribute to or extend Supabase/Appwrite for self-hosted BaaS needs. Focus on PostgreSQL-based real-time sync, auth, and serverless functions. For ML features, integrate with local inference (llama.cpp, ONNX Runtime) or self-hosted model serving.
+For a self-hosted build, start with Supabase or Appwrite and define the required subset explicitly: authentication, database, storage, realtime, functions and deployment. Use an emulator-first workflow, write migration and security-rule tests, and keep provider-specific Firebase compatibility out of scope unless a product contract requires it. Do not claim Firebase API parity without testing each selected SDK and service behavior.
 
 # 12. Security, privacy, and compliance
 
-Firebase handles authentication tokens, user data, and analytics. Open alternatives must implement secure auth (OAuth, JWT), encryption at rest/in transit, and compliance (GDPR, HIPAA, SOC2). Self-hosting shifts compliance burden to operator.
+Firebase projects can process identity, application data, files, telemetry and crash data. Verify authentication providers, security rules, IAM, service accounts, encryption, retention, region, analytics consent and billing controls before production use. Keep credentials, user data and payload samples out of this catalog.
 
 # 13. Sources and evidence
 
-- https://firebase.google.com/ (product page)
-- https://firebase.google.com/docs (documentation)
-- https://github.com/firebase (open-source SDKs)
-- https://supabase.com/ (alternative reference)
-- https://appwrite.io/ (alternative reference)
+- [Firebase product page](https://firebase.google.com/) — official product identity and Build/Run capability families.
+- [Firebase fundamentals](https://firebase.google.com/docs/guides) — official project setup, supported platforms and development workflow.
+- [Understand Firebase projects](https://firebase.google.com/docs/projects/learn-more) — official Firebase/Google Cloud project relationship and hierarchy.
+- [Firebase Authentication](https://firebase.google.com/docs/auth) — official identity and SDK capabilities.
+- [Cloud Functions for Firebase](https://firebase.google.com/docs/functions) — official serverless and Google Cloud integration workflow.
+- [Firebase pricing](https://firebase.google.com/pricing) — official Spark and Blaze plan information.
 
 # 14. Open questions
 
-- Can PostgreSQL-based realtime match Firebase's WebSocket scalability?
-- What is the operational complexity of self-hosted BaaS at scale?
-- How to replicate Firebase's integrated Google Cloud services (ML, Test Lab)?
+- Which Firebase services are actually required by the target product, rather than the full platform?
+- Is self-hosting, data residency or Firebase SDK compatibility the primary migration constraint?
+- Which quotas, regions, compliance controls and Google Cloud integrations are mandatory?
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
+- v1: catalog candidate with preliminary BaaS alternatives, research pending.
+- v2: updated 2026-11-03 from official Firebase product, fundamentals, project, Authentication, Cloud Functions and pricing documentation. Status: `researched`; complete equivalence to Firebase's managed Google Cloud platform remains unverified.
 
----
-
-# 16. Alternative comparison (continued)
-
-Supabase leads on PostgreSQL ecosystem and managed offering. Appwrite leads on self-hosting simplicity. Both lack Firebase's Google-specific integrations (ML Kit, Vertex AI, Test Lab).
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Prioritize: Auth, Database (PostgreSQL + realtime), Functions, Storage. Build on Supabase or Appwrite core. Add Firebase-compatible SDK interfaces for migration path.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-firebase` and inspect canonical identity with `npx rae-faang products show google-firebase --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-firebase` and inspect canonical identity with `npx rea-faang products show google-firebase --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -524,7 +514,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-firebase --out ./google-firebase.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-firebase --out ./google-firebase-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-firebase --out ./google-firebase.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-firebase --out ./google-firebase-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -566,6 +556,18 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://firebase.google.com/) — Firebase is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://firebase.google.com/docs) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [Firebase](https://firebase.google.com/) — Firebase is Google's mobile and web application development platform. (VERIFIED; accessed Not recorded).
+- [Firebase fundamentals](https://firebase.google.com/docs/guides) — Firebase projects support app registration, SDK integration and platform-specific development workflows. (VERIFIED; accessed Not recorded).
+- [Understand Firebase projects](https://firebase.google.com/docs/projects/learn-more) — A Firebase project is a Google Cloud project with Firebase-specific configuration and services enabled. (VERIFIED; accessed Not recorded).
+- [Firebase Authentication](https://firebase.google.com/docs/auth) — Firebase Authentication provides backend identity services, SDKs and provider integrations. (VERIFIED; accessed Not recorded).
+- [Cloud Functions for Firebase](https://firebase.google.com/docs/functions) — Cloud Functions for Firebase runs JavaScript, TypeScript or Python backend code in response to HTTPS and Firebase or Google Cloud events. (VERIFIED; accessed Not recorded).
+- [Firebase pricing](https://firebase.google.com/pricing) — Firebase offers Spark no-cost and Blaze pay-as-you-go plans with service-specific quotas and billing behavior. (VERIFIED; accessed Not recorded).
+- [Official product page](https://firebase.google.com/) — Firebase is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://firebase.google.com/docs) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://firebase.google.com/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://firebase.google.com/docs/guides) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://firebase.google.com/docs/projects/learn-more) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://firebase.google.com/docs/auth) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://firebase.google.com/docs/functions) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://firebase.google.com/pricing) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Firebase Public web-surface observation (REA)](https://firebase.google.com/) — A dated unauthenticated snapshot exposed controls button: Dropdown menu for Build, button: Dropdown menu for Run, button: Dropdown menu for Extended Navigation, button: Language, button: Chat, link: Skip to main content, link: Firebase, link: Build, link: Run, link: Solutions, combobox: Search, link: Blog, link: Go to console, link: Sign in, link: Learn more., link: Get Started, link: Get started in console, link: App Hosting, link: SQL Connect, link: Firebase AI Logic, link: View all Build products, link: App Distribution, link: Crashlytics, link: Remote Config, link: View all Run products, link: Agent Skills icon Agent Skills, link: Firebase AI Logic icon Firebase AI Logic, link: View generative AI options, link: Flutterlogo Flutter, link: Google Adslogo Google Ads, link: AdMoblogo AdMob, link: Google Marketing Platformlogo Google Marketing Platform, link: Google Playlogo Google Play, link: Data Studiologo Data Studio, link: BigQuerylogo BigQuery, link: Slacklogo Slack, link: Jiralogo Jira, link: Android Studiologo Android Studio, link: Learn more, link: View developer docs, link: View all news, link: - Building an iOS app in 6 hours with Firebase and Antigravity, link: Read more - Building an iOS app in 6 hours with Firebase and Antigravity, link: - Google Analytics for Firebase iOS SDK outage on September 28, 2026, link: Read more - Google Analytics for Firebase iOS SDK outage on September 28, 2026, link: YouTube - Can an agent port our Android app to iOS?, link: View video - Can an agent port our Android app to iOS?, link: View solutions, link: Get started, link: App Check, link: Authentication, link: Cloud Functions, link: Cloud Storage, link: Extensions, link: Firestore, link: Hosting, link: Phone Number Verification, link: Realtime Database, link: Generative AI, link: A/B Testing, link: Cloud Messaging, link: Google Analytics, link: In-App Messaging, link: Performance Monitoring, link: Test Lab, link: Developer guides, link: SDK & API reference, link: Samples, link: Libraries, link: GitHub, link: Check out the blog, link: Find us on Reddit, link: Follow on X, link: Subscribe on YouTube, link: Attend an event, link: Contact support, link: Stack Overflow, link: Google group, link: Release notes, link: Brand guidelines, link: FAQs, link: Google Developers, link: Android, link: Chrome, link: Google Cloud Platform, link: All products, link: Terms, link: Privacy and landmarks banner, navigation: Upper tabs, main, navigation: On this page, navigation, main, navigation: Footer links, navigation: Other Google Developers websites, navigation: Utility links. (VERIFIED; accessed 2026-11-03T01:38:08.105Z).

@@ -87,7 +87,7 @@ Registries are fully covered by open source (Harbor, Distribution); the gap is o
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Available. Harbor is a production-grade registry; Distribution is the reference server.
 
@@ -124,6 +124,6 @@ Registries are fully covered by open source (Harbor, Distribution); the gap is o
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Available. Harbor is a production-grade registry; Distribution is the reference server.

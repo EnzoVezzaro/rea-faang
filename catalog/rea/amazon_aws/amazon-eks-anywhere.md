@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon EKS Anywhere, recorded with 
 | Target | https://aws.amazon.com/eks/eks-anywhere/ |
 | Resolved URL | https://aws.amazon.com/eks/eks-anywhere/ |
 | Page title | Amazon EKS Anywhere |
-| Captured | 2026-11-03T02:59:05.968Z |
+| Captured | 2026-11-04T02:42:10.788Z |
 | Status | captured |
-| REA Evidence ID | `ev_2ed716d535f76381e4b46d625dde98dc2b612fe5218346804c1f8e4e4771c396` |
+| REA Evidence ID | `ev_b382ab73abef8559da56f792b505afb1b7ea89a5c3664c7bebad5781077ef338` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -159,6 +159,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-eks-anywhere.json`
-- Evidence ID: `ev_2ed716d535f76381e4b46d625dde98dc2b612fe5218346804c1f8e4e4771c396`
+- Evidence ID: `ev_b382ab73abef8559da56f792b505afb1b7ea89a5c3664c7bebad5781077ef338`
 - Accessibility outline: 10299 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

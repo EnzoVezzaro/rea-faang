@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Threads (meta-threads); investigate
 
 # Threads — implementation skill (`meta-threads`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Threads**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Threads (meta-threads); investigate
 
 This is the coding-agent skill for **Threads** (`meta-threads`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/meta/meta-threads.md` from the catalog page, or run `npx rae-faang meta-threads --out ./meta-threads.md`, `npx rae-faang skills generate meta-threads` or `npx rae-faang build agent-kit meta-threads --out ./meta-threads-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/meta/meta-threads.md` from the catalog page, or run `npx rea-faang meta-threads --out ./meta-threads.md`, `npx rea-faang skills generate meta-threads` or `npx rea-faang build agent-kit meta-threads --out ./meta-threads-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Threads / `meta-threads` | `catalog/products.jsonl` |
 | Official product URL | [https://www.threads.net/](https://www.threads.net/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier meta-threads` | `research/companies/meta/products/meta-threads.md` |
+| Official documentation | [https://developers.meta.com/resources/](https://developers.meta.com/resources/) | Catalog record |
+| Research dossier | `npx rea-faang research dossier meta-threads` | `research/companies/meta/products/meta-threads.md` |
 | REA report | `catalog/rea/meta/meta-threads.md` (captured 2026-11-03T01:40:29.096Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/meta-threads.json` (`ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show meta-threads --format json` and `npx rae-faang research dossier meta-threads` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show meta-threads --format json` and `npx rea-faang research dossier meta-threads` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `META-THREADS-CAP-296D10B3`, `META-THREADS-CAP-7DF03B01`, `META-THREADS-CAP-F71EA927`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `META-THREADS-CAP-C7D11B39`, `META-THREADS-CAP-C6689D92`, `META-THREADS-CAP-AE003EF6`, `META-THREADS-CAP-C2E7B875`, `META-THREADS-CAP-D56D62C6`, `META-THREADS-CAP-BEF3F835`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,7 +103,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Threads** / `meta-threads` | Product catalog |
 | Company / category | Meta / `social_network` / `microblogging` | Product catalog |
-| Official website / docs | [https://www.threads.net/](https://www.threads.net/) / Not recorded | URL lead; compiler does not fetch source |
+| Official website / docs | [https://www.threads.net/](https://www.threads.net/) / [https://developers.meta.com/resources/](https://developers.meta.com/resources/) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,23 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `META-THREADS-CAP-296D10B3` | Short-text posts and replies | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `META-THREADS-CAP-7DF03B01` | Fediverse interconnection | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `META-THREADS-CAP-F71EA927` | Following feeds | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-THREADS-CAP-C7D11B39` | Text posts and replies | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-THREADS-CAP-C6689D92` | Links, photos and video | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-THREADS-CAP-AE003EF6` | Web and mobile feeds | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-THREADS-CAP-C2E7B875` | Creator and business insights | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-THREADS-CAP-D56D62C6` | Threads API for permitted integrations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `META-THREADS-CAP-BEF3F835` | Optional ActivityPub/fediverse sharing | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Create`, `button: Messages`, `button: Notifications`, `button: Profile`, `button: Insights`, `button: More`, `button: Instagram Continue with Instagram Log in`, `link: Threads`, `link: Home`, `link: Search`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Short-text posts and replies:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Fediverse interconnection:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Following feeds:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Text posts and replies:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Links, photos and video:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Web and mobile feeds:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Creator and business insights:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Threads API for permitted integrations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Optional ActivityPub/fediverse sharing:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +151,59 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-296D10B3 — Short-text posts and replies
+### REQ-FUNC-C7D11B39 — Text posts and replies
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-296D10B3`; fixture and expected output must be specified from evidence.
-- **Trace:** `META-THREADS-CAP-296D10B3` → `REQ-FUNC-296D10B3` → `TEST-FUNC-296D10B3`.
+- **Associated test ID:** `TEST-FUNC-C7D11B39`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-THREADS-CAP-C7D11B39` → `REQ-FUNC-C7D11B39` → `TEST-FUNC-C7D11B39`.
 
-### REQ-FUNC-7DF03B01 — Fediverse interconnection
+### REQ-FUNC-C6689D92 — Links, photos and video
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-7DF03B01`; fixture and expected output must be specified from evidence.
-- **Trace:** `META-THREADS-CAP-7DF03B01` → `REQ-FUNC-7DF03B01` → `TEST-FUNC-7DF03B01`.
+- **Associated test ID:** `TEST-FUNC-C6689D92`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-THREADS-CAP-C6689D92` → `REQ-FUNC-C6689D92` → `TEST-FUNC-C6689D92`.
 
-### REQ-FUNC-F71EA927 — Following feeds
+### REQ-FUNC-AE003EF6 — Web and mobile feeds
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
 - **Evidence / verification:** UNKNOWN; None linked; research required.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-F71EA927`; fixture and expected output must be specified from evidence.
-- **Trace:** `META-THREADS-CAP-F71EA927` → `REQ-FUNC-F71EA927` → `TEST-FUNC-F71EA927`.
+- **Associated test ID:** `TEST-FUNC-AE003EF6`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-THREADS-CAP-AE003EF6` → `REQ-FUNC-AE003EF6` → `TEST-FUNC-AE003EF6`.
+
+### REQ-FUNC-C2E7B875 — Creator and business insights
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-C2E7B875`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-THREADS-CAP-C2E7B875` → `REQ-FUNC-C2E7B875` → `TEST-FUNC-C2E7B875`.
+
+### REQ-FUNC-D56D62C6 — Threads API for permitted integrations
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-D56D62C6`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-THREADS-CAP-D56D62C6` → `REQ-FUNC-D56D62C6` → `TEST-FUNC-D56D62C6`.
+
+### REQ-FUNC-BEF3F835 — Optional ActivityPub/fediverse sharing
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-BEF3F835`; fixture and expected output must be specified from evidence.
+- **Trace:** `META-THREADS-CAP-BEF3F835` → `REQ-FUNC-BEF3F835` → `TEST-FUNC-BEF3F835`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -215,9 +248,12 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `META-THREADS-CAP-296D10B3` — Short-text posts and replies | Not verified against Mastodon | None yet; compare with `ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f` | Candidate code path and tests must be inspected |
-| `META-THREADS-CAP-7DF03B01` — Fediverse interconnection | Not verified against Mastodon | None yet; compare with `ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f` | Candidate code path and tests must be inspected |
-| `META-THREADS-CAP-F71EA927` — Following feeds | Not verified against Mastodon | None yet; compare with `ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f` | Candidate code path and tests must be inspected |
+| `META-THREADS-CAP-C7D11B39` — Text posts and replies | Not verified against Mastodon | None yet; compare with `ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f` | Candidate code path and tests must be inspected |
+| `META-THREADS-CAP-C6689D92` — Links, photos and video | Not verified against Mastodon | None yet; compare with `ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f` | Candidate code path and tests must be inspected |
+| `META-THREADS-CAP-AE003EF6` — Web and mobile feeds | Not verified against Mastodon | None yet; compare with `ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f` | Candidate code path and tests must be inspected |
+| `META-THREADS-CAP-C2E7B875` — Creator and business insights | Not verified against Mastodon | None yet; compare with `ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f` | Candidate code path and tests must be inspected |
+| `META-THREADS-CAP-D56D62C6` — Threads API for permitted integrations | Not verified against Mastodon | None yet; compare with `ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f` | Candidate code path and tests must be inspected |
+| `META-THREADS-CAP-BEF3F835` — Optional ActivityPub/fediverse sharing | Not verified against Mastodon | None yet; compare with `ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -264,9 +300,12 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-296D10B3** → `REQ-FUNC-296D10B3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-7DF03B01** → `REQ-FUNC-7DF03B01`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-F71EA927** → `REQ-FUNC-F71EA927`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-C7D11B39** → `REQ-FUNC-C7D11B39`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-C6689D92** → `REQ-FUNC-C6689D92`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-AE003EF6** → `REQ-FUNC-AE003EF6`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-C2E7B875** → `REQ-FUNC-C2E7B875`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-D56D62C6** → `REQ-FUNC-D56D62C6`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-BEF3F835** → `REQ-FUNC-BEF3F835`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -287,7 +326,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-296D10B3, REQ-FUNC-7DF03B01, REQ-FUNC-F71EA927
+- **Requirements:** REQ-FUNC-C7D11B39, REQ-FUNC-C6689D92, REQ-FUNC-AE003EF6, REQ-FUNC-C2E7B875, REQ-FUNC-D56D62C6, REQ-FUNC-BEF3F835
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -297,7 +336,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-296D10B3, REQ-FUNC-7DF03B01, REQ-FUNC-F71EA927
+- **Requirements:** REQ-FUNC-C7D11B39, REQ-FUNC-C6689D92, REQ-FUNC-AE003EF6, REQ-FUNC-C2E7B875, REQ-FUNC-D56D62C6, REQ-FUNC-BEF3F835
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -319,7 +358,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-296D10B3, REQ-FUNC-7DF03B01, REQ-FUNC-F71EA927; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-C7D11B39, REQ-FUNC-C6689D92, REQ-FUNC-AE003EF6, REQ-FUNC-C2E7B875, REQ-FUNC-D56D62C6, REQ-FUNC-BEF3F835; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -349,7 +388,15 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.threads.net/) | Not recorded | Threads is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-meta-threads-identity` | Introducing Threads: A New Way to Share With Text — Meta's launch announcement identifies Threads as a text-sharing app and documents core posting, reply and web workflows. | [link](https://about.fb.com/news/2023/07/introducing-threads-new-app-text-sharing/) | 2026-11-03T00:00:00Z | Threads is Meta's text-first app for public conversations with posts, replies, links, photos and video. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-meta-threads-fediverse` | What is the Fediverse? — Meta documents Threads as an ActivityPub-compatible participant with eligibility and rollout limits. | [link](https://about.fb.com/news/2024/06/what-is-the-fediverse/) | 2026-11-03T00:00:00Z | Eligible public Threads profiles can opt into sharing and interacting with ActivityPub-compatible fediverse servers. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-meta-threads-api` | New Threads Features for Creators and Businesses — Meta documents metrics such as views, replies, reposts and quotes and announces the Threads API. | [link](https://about.fb.com/news/2024/08/new-threads-features-for-creators-and-businesses/) | 2026-11-03T00:00:00Z | Threads provides creator and business insights and a Threads API for permitted integrations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.threads.net/) | 2026-11-03T00:00:00Z | Threads is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developers.meta.com/resources/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://about.fb.com/news/2023/07/introducing-threads-new-app-text-sharing/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://about.fb.com/news/2024/06/what-is-the-fediverse/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://about.fb.com/news/2024/08/new-threads-features-for-creators-and-businesses/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://developers.meta.com/resources/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_865189a5342610483de95789da32d5721377aef1ffb6faa0a01a3408b5c7763f` | Threads Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.threads.com/) | 2026-11-03T01:40:29.096Z | A dated unauthenticated snapshot exposed controls button: Create, button: Messages, button: Notifications, button: Profile, button: Insights, button: More, button: Instagram Continue with Instagram Log in, link: Threads, link: Home, link: Search and landmarks navigation. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -375,117 +422,98 @@ Resume token: `meta-threads`. Read dossier, REA report and raw Evidence before r
 
 ### Dossier notes (not independently verified)
 
-# 1. Executive summary
+# Threads
 
-Threads is Meta's text microblogging network.
+## Research verdict
 
----
+Threads is Meta's text-first social network for public conversations. Meta's
+official materials verify text posts and replies, web access, feeds, creator and
+business insights, a Threads API for permitted integrations, and optional
+ActivityPub/fediverse interoperability. Threads is a separate product from
+Instagram even though Instagram identity and sharing are involved in parts of the
+experience.
 
-# 2. Product identity and ownership
+Mastodon is a partial alternative: it covers federated microblogging, but it does
+not reproduce Threads' account graph, product integrations, moderation model,
+commercial tooling or exact feed experience.
 
-- **Official name:** Threads
-- **Company and business unit:** meta
-- **Current lifecycle status:** active
-- **Official website:** https://www.threads.net/
+## Product identity and boundary
 
----
+- **Owner:** Meta Platforms, Inc.
+- **Canonical product ID:** `meta-threads`
+- **Lifecycle:** Active
+- **Public entry point:** https://www.threads.net/
+- **Product boundary:** Text-centric public posting, replies, feeds, discovery,
+  creator/business tooling and optional fediverse interoperability.
+- **Related catalog entries:** Instagram supplies a related identity and sharing
+  context; Facebook, Messenger and WhatsApp remain separate products.
 
-# 3. Product capabilities
+## Verified user capabilities
 
-- Short-text posts and replies
-- Fediverse interconnection
-- Following feeds
+Official Meta materials verify that Threads users can:
 
----
+1. Publish text updates with links, photos and video and interact through replies.
+2. Use web and mobile experiences with feeds, search, topics, edit and sharing
+   workflows that Meta documents as the product evolves.
+3. Share posts to Instagram Stories and other surfaces.
+4. Use creator and business insights, including views, replies, reposts and quotes.
+5. Use the Threads API for permitted creator and business integrations.
+6. Opt into fediverse sharing where eligible. Meta documents that public profiles
+   in supported countries can share posts with other ActivityPub-compatible
+   servers; availability and interaction limits vary.
 
-# 4. Technical architecture
+## Technical boundary
 
-Not yet researched.
+The public sources verify user workflows, the API existence, and the optional
+ActivityPub relationship. They do not establish Threads' ranking, moderation,
+recommendation, identity, storage, ads, or internal API architecture. Do not infer
+full protocol parity from the existence of fediverse sharing.
 
----
+## Alternative assessment
 
-# 5. User workflows
+### Mastodon — partial alternative
 
-Not yet researched.
+Mastodon is a mature, self-hostable federated microblogging platform. It covers
+public text posts, follows, replies and federation, but not Threads' centralized
+product experience, Meta identity integrations, business tooling or network graph.
 
----
+ActivityPub interoperability makes Mastodon relevant to the same user job, but it
+does not make the products equivalent.
 
-# 6. Pricing and access
+## REA/build implications
 
-Not yet researched.
+For an independent implementation, choose either a self-hosted federated
+microblogging workflow or a bounded creator-publishing workflow. Reuse Mastodon
+where its ActivityPub model fits. Treat Threads API access, account permissions,
+rate limits and fediverse eligibility as explicit external dependencies; do not
+imitate private APIs or scrape Threads content.
 
----
+## Evidence record
 
-# 7. API and integration surface
+| Claim | Source | What it supports |
+|---|---|---|
+| Threads is a text-sharing app with posts, replies, links, photos and video | [Meta: Introducing Threads](https://about.fb.com/news/2023/07/introducing-threads-new-app-text-sharing/) | Product identity and core workflows |
+| Threads can interoperate with ActivityPub/fediverse servers when enabled | [Meta: What is the Fediverse?](https://about.fb.com/news/2024/06/what-is-the-fediverse/) | Optional interoperability scope and limits |
+| Threads provides creator/business insights and a Threads API | [Meta: Features for Creators and Businesses](https://about.fb.com/news/2024/08/new-threads-features-for-creators-and-businesses/) | Public integration surface and metrics |
+| Meta lists Threads API developer resources | [Meta Developer Resources](https://developers.meta.com/resources/) | Official developer entry point |
+| Mastodon provides federated microblogging | [Mastodon](https://joinmastodon.org/) | Alternative capability and scope |
 
-Not yet researched.
+## Known gaps
 
----
+- API permissions, rate limits, supported account types and current endpoints need
+  a dated developer check before implementation.
+- Fediverse features vary by age, profile visibility, country and rollout state.
+- Ranking, moderation, ads, recommendation and account-graph internals are not
+  established by the public sources used here.
 
-# 8. Existing open-source alternatives
+**Research date:** 2026-11-03.  
+**Confidence:** Verified for documented public capabilities; partial for alternatives.
 
-Open-source candidates exist: Mastodon (AGPL-3.0) — Mature ActivityPub microblogging platform.. Coverage is unverified until the dossier is researched.
-
----
-
-# 9. Alternative comparison
-
-Microblogging is fully covered by ActivityPub (Mastodon and others), which Threads itself can federate with.
-
----
-
-# 10. Missing capabilities and opportunity analysis
-
-Microblogging is fully covered by ActivityPub (Mastodon and others), which Threads itself can federate with.
-
----
-
-# 11. RAE implementation strategy
-
-Available. Mastodon is a mature, self-hostable microblogging platform covering the core function.
-
----
-
-# 12. Security, privacy, and compliance
-
-Not yet researched.
-
----
-
-# 13. Sources and evidence
-
-- https://joinmastodon.org/
-- https://en.wikipedia.org/wiki/Threads_(app)
-
----
-
-# 14. Open questions
-
-- Full feature inventory and technical architecture are not yet researched.
-
----
-
-# 15. Research history
-
-- v1: dossier created; research pending.
-
----
-
-# 16. Alternative comparison (continued)
-
-Microblogging is fully covered by ActivityPub (Mastodon and others), which Threads itself can federate with.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Available. Mastodon is a mature, self-hostable microblogging platform covering the core function.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier meta-threads` and inspect canonical identity with `npx rae-faang products show meta-threads --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier meta-threads` and inspect canonical identity with `npx rea-faang products show meta-threads --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -498,7 +526,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang meta-threads --out ./meta-threads.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit meta-threads --out ./meta-threads-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang meta-threads --out ./meta-threads.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit meta-threads --out ./meta-threads-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -540,5 +568,13 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://www.threads.net/) — Threads is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [Introducing Threads: A New Way to Share With Text](https://about.fb.com/news/2023/07/introducing-threads-new-app-text-sharing/) — Threads is Meta's text-first app for public conversations with posts, replies, links, photos and video. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [What is the Fediverse?](https://about.fb.com/news/2024/06/what-is-the-fediverse/) — Eligible public Threads profiles can opt into sharing and interacting with ActivityPub-compatible fediverse servers. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [New Threads Features for Creators and Businesses](https://about.fb.com/news/2024/08/new-threads-features-for-creators-and-businesses/) — Threads provides creator and business insights and a Threads API for permitted integrations. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://www.threads.net/) — Threads is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developers.meta.com/resources/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://about.fb.com/news/2023/07/introducing-threads-new-app-text-sharing/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://about.fb.com/news/2024/06/what-is-the-fediverse/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://about.fb.com/news/2024/08/new-threads-features-for-creators-and-businesses/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developers.meta.com/resources/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Threads Public web-surface observation (REA)](https://www.threads.com/) — A dated unauthenticated snapshot exposed controls button: Create, button: Messages, button: Notifications, button: Profile, button: Insights, button: More, button: Instagram Continue with Instagram Log in, link: Threads, link: Home, link: Search and landmarks navigation. (VERIFIED; accessed 2026-11-03T01:40:29.096Z).

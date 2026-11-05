@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Chrome (google-chrome); inve
 
 # Google Chrome — implementation skill (`google-chrome`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Chrome**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Chrome (google-chrome); inve
 
 This is the coding-agent skill for **Google Chrome** (`google-chrome`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-chrome.md` from the catalog page, or run `npx rae-faang google-chrome --out ./google-chrome.md`, `npx rae-faang skills generate google-chrome` or `npx rae-faang build agent-kit google-chrome --out ./google-chrome-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-chrome.md` from the catalog page, or run `npx rea-faang google-chrome --out ./google-chrome.md`, `npx rea-faang skills generate google-chrome` or `npx rea-faang build agent-kit google-chrome --out ./google-chrome-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Google Chrome / `google-chrome` | `catalog/products.jsonl` |
 | Official product URL | [https://www.google.com/chrome/](https://www.google.com/chrome/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | [https://developer.chrome.com/docs/devtools/](https://developer.chrome.com/docs/devtools/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-chrome` | `research/companies/google/products/google-chrome.md` |
+| Official documentation | [https://developer.chrome.com/](https://developer.chrome.com/) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-chrome` | `research/companies/google/products/google-chrome.md` |
 | REA report | `catalog/rea/google/google-chrome.md` (captured 2026-11-03T01:37:13.805Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-chrome.json` (`ev_26f0d87e339d228408d5a041aca9f7e709ba18c4f7627125d990c0cd5c120fdb`) | Catalog evidence |
 | Alternative candidates | 4 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-chrome --format json` and `npx rae-faang research dossier google-chrome` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-chrome --format json` and `npx rea-faang research dossier google-chrome` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-CHROME-CAP-101C58C3`, `GOOGLE-CHROME-CAP-11C4BA98`, `GOOGLE-CHROME-CAP-A1CDD04D`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-CHROME-CAP-89CC0A73`, `GOOGLE-CHROME-CAP-BEA0609D`, `GOOGLE-CHROME-CAP-716DF3B3`, `GOOGLE-CHROME-CAP-88D5B2F6`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -103,7 +103,7 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 |---|---|---|
 | Name / stable ID | **Google Chrome** / `google-chrome` | Product catalog |
 | Company / category | Google / `browser` / `browser` | Product catalog |
-| Official website / docs | [https://www.google.com/chrome/](https://www.google.com/chrome/) / [https://developer.chrome.com/docs/devtools/](https://developer.chrome.com/docs/devtools/) | URL lead; compiler does not fetch source |
+| Official website / docs | [https://www.google.com/chrome/](https://www.google.com/chrome/) / [https://developer.chrome.com/](https://developer.chrome.com/) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-CHROME-CAP-101C58C3` | Web rendering (Blink) and high-performance JS (V8) | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-CHROME-CAP-11C4BA98` | Multi-process sandboxing, devtools | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-CHROME-CAP-A1CDD04D` | Account sync and extension ecosystem | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CHROME-CAP-89CC0A73` | Chromium-based browser with documented browser and renderer process separation. | VERIFIED | `ev-google-chrome-chromium`, `ev-google-chrome-multiprocess` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CHROME-CAP-BEA0609D` | Extension platform with browser, DevTools, permissions and site-access controls. | VERIFIED | `ev-google-chrome-extensions`, `ev-google-chrome-extension-help` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CHROME-CAP-716DF3B3` | Safe Browsing, Safety Check, automatic updates, password management and privacy controls. | VERIFIED | `ev-google-chrome-safety` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CHROME-CAP-88D5B2F6` | Profiles and Chrome Sync process cross-device browser data subject to account and management configuration. | VERIFIED | `ev-google-chrome-sync` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Download Chrome`, `button: Flip card`, `button: One window, two views`, `button: Customize your Chrome`, `button: Browse across devices`, `button: Save time with autofill`, `button: How do I make Chrome my default web browser?`, `button: How can I customize Chrome?`, `button: What are Chrome’s safety settings?`, `button: What is Chrome’s password manager?`, `button: How do I add a browser extension to Chrome?`, `button: How do I update Chrome?`, `button: Get Chrome for your phone Get Chrome for your phone mobile-icon chevron-right-color`, `button: chevron-right-color`, `link: Jump to content`, `link: Google Chrome Homepage`, `link: ai innovations`, `link: safety`, `link: By Google`, `link: Mobile`, `link: extensions`, `link: Try now`, `link: I want to update Chrome`, `link: Google Terms of Service`, `link: Chrome and ChromeOS Additional Terms of Service`, `link: Open in the same tab`, `link: Sign up now`, `link: Get help with managing tabs`, `link: Explore themes`, `link: Sign in to get started`, `link: Explore extensions`, `link: Learn more about Memory and Energy Saver`, `link: Learn about automatic updates`, `link: Learn what’s new on Chrome`, `link: Chrome's Youtube channel, opens in a new tab`, `link: Chrome's X page, opens in a new tab`, `link: Chrome's Facebook page, opens in a new tab`, `link: Chrome's LinkedIn page, opens in a new tab`, `link: Chrome's TikTok page, opens in a new tab`, `link: Other Platforms`, `link: Chromebooks, opens in a new tab`, `link: Chromecast, opens in a new tab`, `link: Chrome Web Store, opens in a new tab`, `link: Download Chrome Browser, opens in a new tab`, `link: Chrome Browser for Enterprise, opens in a new tab`, `link: Chrome Devices, opens in a new tab`, `link: ChromeOS, opens in a new tab`, `link: Google Cloud, opens in a new tab`, `link: Google Workspace, opens in a new tab`, `link: Google for Education, opens in a new tab`, `link: Devices for schools, opens in a new tab`, `link: Chromium, opens in a new tab`, `link: Chrome Experiments, opens in a new tab`, `link: Chrome Beta`, `link: Chrome Dev`, `link: Chrome Canary`, `link: Chrome Help`, `link: What’s New`, `link: Update Chrome`, `link: Chrome Tips`, `link: Google Chrome Blog`, `link: Google, opens in a new tab`, `link: Privacy and Terms, opens in a new tab`, `link: About Google, opens in a new tab`, `link: Google Products, opens in a new tab`, `link: Help Center, opens in a new tab`, `combobox: Change language or region`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Web rendering (Blink) and high-performance JS (V8):** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Multi-process sandboxing, devtools:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Account sync and extension ecosystem:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Chromium-based browser with documented browser and renderer process separation.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Extension platform with browser, DevTools, permissions and site-access controls.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Safe Browsing, Safety Check, automatic updates, password management and privacy controls.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Profiles and Chrome Sync process cross-device browser data subject to account and management configuration.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-101C58C3 — Web rendering (Blink) and high-performance JS (V8)
+### REQ-FUNC-89CC0A73 — Chromium-based browser with documented browser and renderer process separation.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-chrome-chromium`, `ev-google-chrome-multiprocess`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-101C58C3`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CHROME-CAP-101C58C3` → `REQ-FUNC-101C58C3` → `TEST-FUNC-101C58C3`.
+- **Associated test ID:** `TEST-FUNC-89CC0A73`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CHROME-CAP-89CC0A73` → `REQ-FUNC-89CC0A73` → `TEST-FUNC-89CC0A73`.
 
-### REQ-FUNC-11C4BA98 — Multi-process sandboxing, devtools
+### REQ-FUNC-BEA0609D — Extension platform with browser, DevTools, permissions and site-access controls.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-chrome-extensions`, `ev-google-chrome-extension-help`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-11C4BA98`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CHROME-CAP-11C4BA98` → `REQ-FUNC-11C4BA98` → `TEST-FUNC-11C4BA98`.
+- **Associated test ID:** `TEST-FUNC-BEA0609D`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CHROME-CAP-BEA0609D` → `REQ-FUNC-BEA0609D` → `TEST-FUNC-BEA0609D`.
 
-### REQ-FUNC-A1CDD04D — Account sync and extension ecosystem
+### REQ-FUNC-716DF3B3 — Safe Browsing, Safety Check, automatic updates, password management and privacy controls.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-chrome-safety`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-A1CDD04D`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CHROME-CAP-A1CDD04D` → `REQ-FUNC-A1CDD04D` → `TEST-FUNC-A1CDD04D`.
+- **Associated test ID:** `TEST-FUNC-716DF3B3`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CHROME-CAP-716DF3B3` → `REQ-FUNC-716DF3B3` → `TEST-FUNC-716DF3B3`.
+
+### REQ-FUNC-88D5B2F6 — Profiles and Chrome Sync process cross-device browser data subject to account and management configuration.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-chrome-sync`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-88D5B2F6`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CHROME-CAP-88D5B2F6` → `REQ-FUNC-88D5B2F6` → `TEST-FUNC-88D5B2F6`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -218,9 +229,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-CHROME-CAP-101C58C3` — Web rendering (Blink) and high-performance JS (V8) | Not verified against Chromium | None yet; compare with `ev_26f0d87e339d228408d5a041aca9f7e709ba18c4f7627125d990c0cd5c120fdb` | Candidate code path and tests must be inspected |
-| `GOOGLE-CHROME-CAP-11C4BA98` — Multi-process sandboxing, devtools | Not verified against Chromium | None yet; compare with `ev_26f0d87e339d228408d5a041aca9f7e709ba18c4f7627125d990c0cd5c120fdb` | Candidate code path and tests must be inspected |
-| `GOOGLE-CHROME-CAP-A1CDD04D` — Account sync and extension ecosystem | Not verified against Chromium | None yet; compare with `ev_26f0d87e339d228408d5a041aca9f7e709ba18c4f7627125d990c0cd5c120fdb` | Candidate code path and tests must be inspected |
+| `GOOGLE-CHROME-CAP-89CC0A73` — Chromium-based browser with documented browser and renderer process separation. | Not verified against Chromium | None yet; compare with `ev_26f0d87e339d228408d5a041aca9f7e709ba18c4f7627125d990c0cd5c120fdb` | Candidate code path and tests must be inspected |
+| `GOOGLE-CHROME-CAP-BEA0609D` — Extension platform with browser, DevTools, permissions and site-access controls. | Not verified against Chromium | None yet; compare with `ev_26f0d87e339d228408d5a041aca9f7e709ba18c4f7627125d990c0cd5c120fdb` | Candidate code path and tests must be inspected |
+| `GOOGLE-CHROME-CAP-716DF3B3` — Safe Browsing, Safety Check, automatic updates, password management and privacy controls. | Not verified against Chromium | None yet; compare with `ev_26f0d87e339d228408d5a041aca9f7e709ba18c4f7627125d990c0cd5c120fdb` | Candidate code path and tests must be inspected |
+| `GOOGLE-CHROME-CAP-88D5B2F6` — Profiles and Chrome Sync process cross-device browser data subject to account and management configuration. | Not verified against Chromium | None yet; compare with `ev_26f0d87e339d228408d5a041aca9f7e709ba18c4f7627125d990c0cd5c120fdb` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -267,9 +279,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-101C58C3** → `REQ-FUNC-101C58C3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-11C4BA98** → `REQ-FUNC-11C4BA98`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-A1CDD04D** → `REQ-FUNC-A1CDD04D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-89CC0A73** → `REQ-FUNC-89CC0A73`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-BEA0609D** → `REQ-FUNC-BEA0609D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-716DF3B3** → `REQ-FUNC-716DF3B3`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-88D5B2F6** → `REQ-FUNC-88D5B2F6`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -290,7 +303,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-101C58C3, REQ-FUNC-11C4BA98, REQ-FUNC-A1CDD04D
+- **Requirements:** REQ-FUNC-89CC0A73, REQ-FUNC-BEA0609D, REQ-FUNC-716DF3B3, REQ-FUNC-88D5B2F6
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -300,7 +313,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-101C58C3, REQ-FUNC-11C4BA98, REQ-FUNC-A1CDD04D
+- **Requirements:** REQ-FUNC-89CC0A73, REQ-FUNC-BEA0609D, REQ-FUNC-716DF3B3, REQ-FUNC-88D5B2F6
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -322,7 +335,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-101C58C3, REQ-FUNC-11C4BA98, REQ-FUNC-A1CDD04D; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-89CC0A73, REQ-FUNC-BEA0609D, REQ-FUNC-716DF3B3, REQ-FUNC-88D5B2F6; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -352,8 +365,28 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.google.com/chrome/) | Not recorded | Google Chrome is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
-| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developer.chrome.com/docs/devtools/) | Not recorded | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `ev-google-chrome-identity` | Google Chrome — The official product page identifies Chrome as Google's browser; the repository records a dated REA capture of the public product page. | [link](https://www.google.com/chrome/) | 2026-11-03T00:00:00Z | The canonical public product surface is Google Chrome at google.com/chrome. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-chromium` | Chromium Projects — The official Chromium site states that Chromium is the open-source project behind the Google Chrome browser, while the open project and the distributed Chrome product remain distinct. | [link](https://www.chromium.org/) | 2026-11-03T00:00:00Z | Chromium is the open-source browser project behind Google Chrome and ChromiumOS. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-multiprocess` | Multi-process architecture — The architecture document describes browser and renderer process roles, restricted access between processes and Blink rendering in renderer processes. | [link](https://www.chromium.org/developers/design-documents/multi-process-architecture/) | 2026-11-03T00:00:00Z | Chromium documents a browser process and separated renderer processes communicating through IPC/Mojo, with renderer isolation goals. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-extensions` | Chrome Extensions development — Google documents extension UI surfaces, tabs/windows, DevTools, identity, history, notifications, privacy and management APIs, with permission boundaries. | [link](https://developer.chrome.com/docs/extensions/develop) | 2026-11-03T00:00:00Z | Chrome extensions can provide UI, control browser tabs/windows, access extension APIs, extend DevTools and use declared permissions. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-safety` | Safe, Secure, Protected Browsing — The official Chrome safety page describes warnings for dangerous sites/downloads, updates, password checks, privacy controls, profiles and Incognito behavior. | [link](https://www.google.com/chrome/safety/) | 2026-11-03T00:00:00Z | Google documents Chrome safety controls including Safe Browsing, Safety Check, automatic updates, password management and privacy controls. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-sync` | Chrome Sync and your data — Google documents the categories and processing purposes for managed Chrome Sync and distinguishes synchronized profile data from local-only configurations. | [link](https://support.google.com/chrome/a/answer/13616205) | 2026-11-03T00:00:00Z | Chrome Sync can process bookmarks, history, tabs, passwords, payment information, settings, device information and extension information to provide cross-device profiles. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-extension-help` | Install and manage extensions — Google Help documents extension installation, permissions, incognito access, allowed sites, removal and handling unsupported extensions. | [link](https://support.google.com/chrome/answer/2664769) | 2026-11-03T00:00:00Z | Chrome provides controls for installing, managing, disabling and restricting extension site access. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-identity` | Google Chrome — The official product page identifies Chrome as Google's browser; the repository records a dated REA capture of the public product page. | [link](https://www.google.com/chrome/) | 2026-11-03T00:00:00Z | The canonical public product surface is Google Chrome at google.com/chrome. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-chromium` | Chromium Projects — The official Chromium site states that Chromium is the open-source project behind the Google Chrome browser, while the open project and the distributed Chrome product remain distinct. | [link](https://www.chromium.org/) | 2026-11-03T00:00:00Z | Chromium is the open-source browser project behind Google Chrome and ChromiumOS. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-multiprocess` | Multi-process architecture — The architecture document describes browser and renderer process roles, restricted access between processes and Blink rendering in renderer processes. | [link](https://www.chromium.org/developers/design-documents/multi-process-architecture/) | 2026-11-03T00:00:00Z | Chromium documents a browser process and separated renderer processes communicating through IPC/Mojo, with renderer isolation goals. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-extensions` | Chrome Extensions development — Google documents extension UI surfaces, tabs/windows, DevTools, identity, history, notifications, privacy and management APIs, with permission boundaries. | [link](https://developer.chrome.com/docs/extensions/develop) | 2026-11-03T00:00:00Z | Chrome extensions can provide UI, control browser tabs/windows, access extension APIs, extend DevTools and use declared permissions. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-safety` | Safe, Secure, Protected Browsing — The official Chrome safety page describes warnings for dangerous sites/downloads, updates, password checks, privacy controls, profiles and Incognito behavior. | [link](https://www.google.com/chrome/safety/) | 2026-11-03T00:00:00Z | Google documents Chrome safety controls including Safe Browsing, Safety Check, automatic updates, password management and privacy controls. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-sync` | Chrome Sync and your data — Google documents the categories and processing purposes for managed Chrome Sync and distinguishes synchronized profile data from local-only configurations. | [link](https://support.google.com/chrome/a/answer/13616205) | 2026-11-03T00:00:00Z | Chrome Sync can process bookmarks, history, tabs, passwords, payment information, settings, device information and extension information to provide cross-device profiles. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-chrome-extension-help` | Install and manage extensions — Google Help documents extension installation, permissions, incognito access, allowed sites, removal and handling unsupported extensions. | [link](https://support.google.com/chrome/answer/2664769) | 2026-11-03T00:00:00Z | Chrome provides controls for installing, managing, disabling and restricting extension site access. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.google.com/chrome/) | 2026-11-03T00:00:00Z | Google Chrome is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://developer.chrome.com/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://www.chromium.org/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://www.chromium.org/developers/design-documents/multi-process-architecture/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://developer.chrome.com/docs/extensions/develop) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://www.google.com/chrome/safety/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/chrome/a/answer/13616205) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-6` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/chrome/answer/2664769) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_26f0d87e339d228408d5a041aca9f7e709ba18c4f7627125d990c0cd5c120fdb` | Google Chrome Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.google.com/chrome/) | 2026-11-03T01:37:13.805Z | A dated unauthenticated snapshot exposed controls button: Download Chrome, button: Flip card, button: One window, two views, button: Customize your Chrome, button: Browse across devices, button: Save time with autofill, button: How do I make Chrome my default web browser?, button: How can I customize Chrome?, button: What are Chrome’s safety settings?, button: What is Chrome’s password manager?, button: How do I add a browser extension to Chrome?, button: How do I update Chrome?, button: Get Chrome for your phone Get Chrome for your phone mobile-icon chevron-right-color, button: chevron-right-color, link: Jump to content, link: Google Chrome Homepage, link: ai innovations, link: safety, link: By Google, link: Mobile, link: extensions, link: Try now, link: I want to update Chrome, link: Google Terms of Service, link: Chrome and ChromeOS Additional Terms of Service, link: Open in the same tab, link: Sign up now, link: Get help with managing tabs, link: Explore themes, link: Sign in to get started, link: Explore extensions, link: Learn more about Memory and Energy Saver, link: Learn about automatic updates, link: Learn what’s new on Chrome, link: Chrome's Youtube channel, opens in a new tab, link: Chrome's X page, opens in a new tab, link: Chrome's Facebook page, opens in a new tab, link: Chrome's LinkedIn page, opens in a new tab, link: Chrome's TikTok page, opens in a new tab, link: Other Platforms, link: Chromebooks, opens in a new tab, link: Chromecast, opens in a new tab, link: Chrome Web Store, opens in a new tab, link: Download Chrome Browser, opens in a new tab, link: Chrome Browser for Enterprise, opens in a new tab, link: Chrome Devices, opens in a new tab, link: ChromeOS, opens in a new tab, link: Google Cloud, opens in a new tab, link: Google Workspace, opens in a new tab, link: Google for Education, opens in a new tab, link: Devices for schools, opens in a new tab, link: Chromium, opens in a new tab, link: Chrome Experiments, opens in a new tab, link: Chrome Beta, link: Chrome Dev, link: Chrome Canary, link: Chrome Help, link: What’s New, link: Update Chrome, link: Chrome Tips, link: Google Chrome Blog, link: Google, opens in a new tab, link: Privacy and Terms, opens in a new tab, link: About Google, opens in a new tab, link: Google Products, opens in a new tab, link: Help Center, opens in a new tab, combobox: Change language or region and landmarks banner, navigation: navigation menu, main, region, contentinfo, navigation, navigation. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -381,113 +414,123 @@ Resume token: `google-chrome`. Read dossier, REA report and raw Evidence before 
 
 # 1. Executive summary
 
-Google Chrome is a widely used graphical web browser developed by Google. It is known for its speed, sandboxing security model, and extensive ecosystem of extensions and developer tools.
+Google Chrome is Google's distributed web browser built on the open Chromium project. Official evidence verifies the Chromium relationship, multi-process architecture documentation, Chrome extension APIs, Safe Browsing and update messaging, profiles and Sync data categories, and extension permission controls. The public evidence does not establish every Chrome-only service, proprietary component, regional policy, enterprise feature or exact release behavior.
+
+This dossier promotes `google-chrome` to `researched` for the documented public product and developer surfaces. Chromium is treated as the open foundation, not as an identity collapse or proof of full Chrome parity.
 
 # 2. Product identity and ownership
 
-- **Official name:** Google Chrome
-- **Company and business unit:** Google
-- **Parent organization:** Alphabet Inc.
-- **Original launch date:** 2008
-- **Current lifecycle status:** active
-- **Previous names:** None
-- **Acquisitions or ownership changes:** None
-- **Related products:** Chromium, ChromeOS, Google Drive
-- **Official website:** https://www.google.com/chrome/
-- **Official documentation:** https://developer.chrome.com/docs/
+- **Canonical name:** Google Chrome
+- **Stable catalog ID:** `google-chrome`
+- **Company:** Google
+- **Product type:** web browser and web-platform client
+- **Official product URL:** https://www.google.com/chrome/
+- **Official developer documentation:** https://developer.chrome.com/
+- **Lifecycle:** active at the time of review
+- **Identity evidence:** `ev-google-chrome-identity`, plus `catalog/rea/google/google-chrome.md`
+- **Open foundation:** Chromium; Chrome branding, distribution, Google services and product policies are separate from the open project
+
+Chrome, Chromium, ChromeOS, Chrome Enterprise and the Chrome Web Store are related surfaces. They are not silently combined into one product contract here.
 
 # 3. Product capabilities
 
-- Tabbed browsing
-- Incognito mode
-- Sandbox security model
-- Automatic updates
-- Extension ecosystem (Chrome Web Store)
-- Sync across devices
-- WebGPU
-- V8 JavaScript engine
-- Performance timing and profiling
+The following claims are supported by the official sources in the evidence ledger:
+
+1. **Web browsing:** Chrome is a browser product distributed by Google; the REA capture records its public product surface.
+2. **Multi-process isolation model:** Chromium documents browser and renderer process separation and restricted process communication.
+3. **Extension platform:** Chrome documents extension UI, browser control, DevTools, identity, history, notifications, privacy and management APIs.
+4. **Safety and maintenance:** Google documents Safe Browsing, Safety Check, automatic updates, password management and privacy controls.
+5. **Profiles and synchronization:** Chrome documentation describes separate profiles and Sync processing for cross-device settings and user data categories.
+6. **Extension permissions:** Chrome Help documents installation, site access, incognito access, removal and unsupported-extension handling.
+
+Not established by these sources: all Chrome proprietary services, exact sandbox implementation, V8/Blink release internals, DRM/module availability, enterprise policy coverage in every edition, regional behavior, performance benchmarks or a complete Chrome/Chromium feature diff.
 
 # 4. Technical architecture
 
-Chrome uses a multi-process architecture with renderer processes sandboxed behind the browser process. Key components:
+**Verified public model:** Chrome product distribution on top of Chromium → browser process plus renderer processes → Blink/V8/web platform and extension APIs. The Chromium architecture document provides a high-level process model; it is not a complete Chrome implementation specification.
 
-- Blink rendering engine (fork of WebKit)
-- V8 JavaScript engine
-- Aura graphics platform
-- ChromeOS shell (on ChromeOS)
-- Extension system (Manifest V3)
-
-Partial documentation available; rendering engine and some internals are open source via the Chromium project.
+**Not verified:** proprietary Google services, update channels, Safe Browsing backend, account sync storage, DRM, telemetry, sandbox hardening details, browser UI implementation and deployment pipeline. These remain `UNKNOWN`.
 
 # 5. User workflows
 
-Primary workflows: navigation, tab management, bookmarking, extension usage, developer tool inspection. Essential: browsing, extension installation, DevTools access. Advanced: performance profiling, web debugging, extension development.
+The REA capture observed the public Chrome product page and its sections for browsing, AI features, customization, profiles, autofill, extensions and safety. Official Help supports workflows for profiles, extension installation and permissions, and Google's safety material documents Safe Browsing, Safety Check, password management, privacy settings and Incognito.
+
+The following remain unverified or environment-dependent: signed-in Sync, password and payment storage, extension store review, DevTools sessions, enterprise policy enforcement, downloads, printing, media/DRM, accessibility, updates, crash recovery, offline behavior and recovery from a corrupted profile.
 
 # 6. Pricing and access
 
-Free to download and use. Chrome Enterprise and Education editions available with management features. ChromeOS devices ship with Chrome pre-installed.
+Chrome is distributed as a free browser. Enterprise and Education management adds administrative policies and controls with separate organizational requirements. Chrome Sync, extension availability and policy behavior depend on account, device and management configuration.
+
+No Google account, enterprise policy, paid service, extension installation or browser profile data was accessed during this research.
 
 # 7. API and integration surface
 
-- Extensions API (Manifest V3)
-- Debugger protocol
-- DevTools Protocol (CDP)
-- Navigation and session storage APIs
+- **Chrome Extensions APIs:** tabs, windows, storage, history, identity, notifications, management, privacy and related APIs subject to manifest and permissions.
+- **DevTools extensions:** documented DevTools pages and APIs for inspected windows, panels, network and performance workflows.
+- **Chrome DevTools Protocol:** related debugging/instrumentation surface; verify version compatibility before integration.
+- **Web platform:** browser APIs and standards implemented by Chromium/Chrome; exact support is version-dependent.
+- **Enterprise policies:** administrator controls for browser sign-in, Sync, extensions and managed configuration.
+
+Before integration, verify Chrome version, Manifest requirements, permissions, host access, enterprise policies, browser profile boundaries, CDP compatibility and privacy implications.
 
 # 8. Existing open-source alternatives
 
-Chromium is the open-source project behind Chrome. Other browsers based on Chromium include Microsoft Edge, Opera, and Brave. Trident/Gecko-based browsers (Firefox) use different rendering engines.
+The curated landscape identifies partial alternatives:
+
+- **Chromium:** the open-source foundation behind Chrome; it does not automatically provide Google's branding, distribution, Sync, proprietary services or every Chrome-only component.
+- **Firefox:** an independent browser and rendering stack with a different engine and extension model.
+- **Brave:** a Chromium-based browser with additional privacy and blocking features; its bundled services have their own terms.
+- **LibreWolf:** a hardened Firefox-based browser with a privacy-oriented configuration.
+
+These are browsers or foundations, but none is verified here as a drop-in replacement for all Chrome services, policies, extension behavior, distribution and Google account integration.
 
 # 9. Alternative comparison
 
-Chromium provides the open-source foundation of Chrome. Browsers built on Chromium share most capabilities. Firefox offers a completely different rendering engine (Gecko) with different extension API compatibility.
+The evidence supports **partial** alternative coverage. Chromium is the closest open foundation; Firefox provides an independent engine; Brave and LibreWolf provide opinionated browser distributions. The remaining gaps include Google Sync and services, proprietary media modules, distribution policies, account integration and exact extension/API compatibility. Alternative coverage remains `unknown` until each candidate receives a current version, license, maintenance, security and feature review.
 
 # 10. Missing capabilities and opportunity analysis
 
-A truly independent browser engine (not Chromium-based) would require significant investment in rendering engine, JavaScript engine, and ecosystem development. Building a Chromium fork is feasible but requires ongoing maintenance.
+The realistic opportunity is a bounded browser distribution, Chromium contribution or extension—not a new browser engine from scratch. A viable implementation can choose Chromium or Firefox, define privacy defaults, manage extensions, add a focused workflow and test the declared browser/version matrix. Google service parity and independent engine development remain out of scope.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Not recommended to build a browser engine from scratch. Consider contributing to or extending existing open-source browser projects instead.
+Use the REA public capture only for the observed Chrome product-page claims. For an independent implementation, compare Chromium, Firefox, Brave and LibreWolf against the target OS, engine, extension compatibility, policy, privacy and update requirements. Do not copy Chrome branding, proprietary services or protected assets.
 
-# 12. Security, privacy, and compliance
+# 12. Security, privacy and compliance
 
-Sandboxing, site isolation, safe browsing, privacy controls. Chrome Enterprise offers additional management and security features.
+Browser profiles, history, passwords, payment information, extensions, browsing data and site permissions are sensitive. An independent browser or extension must define process isolation, permission review, update signing, extension supply-chain controls, password/data protection, telemetry defaults, enterprise policy boundaries, deletion/export and incident response. No security certification or privacy parity claim is made.
 
 # 13. Sources and evidence
 
-- https://www.google.com/chrome/ (product page)
-- https://developer.chrome.com/docs/ (documentation)
-- https://chromium.org/ (Chromium project)
+| Evidence ID | Source | Scope |
+|---|---|---|
+| `ev-google-chrome-identity` | https://www.google.com/chrome/ | Product identity and public product surface |
+| `ev-google-chrome-chromium` | https://www.chromium.org/ | Chromium relationship and open foundation |
+| `ev-google-chrome-multiprocess` | https://www.chromium.org/developers/design-documents/multi-process-architecture/ | Browser/renderer process model |
+| `ev-google-chrome-extensions` | https://developer.chrome.com/docs/extensions/develop | Extension and DevTools APIs |
+| `ev-google-chrome-safety` | https://www.google.com/chrome/safety/ | Safe Browsing, updates, profiles and privacy controls |
+| `ev-google-chrome-sync` | https://support.google.com/chrome/a/answer/13616205 | Sync data categories and processing |
+| `ev-google-chrome-extension-help` | https://support.google.com/chrome/answer/2664769 | Extension permissions and management |
+| REA capture | `catalog/rea/google/google-chrome.md` | Dated public product-page observation only |
 
-# 14. Open questions
+# 14. Open questions and exclusions
 
-- What is the minimum viable rendering engine feature set for a functional browser?
-- How significant are the ecosystem and extension barriers?
-- What security model can be independently implemented at credible quality?
+- Chrome and Chromium feature parity must be checked for the target release and platform.
+- Exact proprietary services, DRM, Safe Browsing internals, Sync implementation and enterprise policy coverage are not public evidence here.
+- Full signed-in, extension-store, DevTools, media, accessibility and enterprise workflows were not captured.
+- Alternative browsers require separate current license, version, maintenance and security reviews.
+- No account, profile data, extension, enterprise policy or production browser session was accessed.
 
 # 15. Research history
 
-Initial research record created 2026-01-13. No prior research events.
+- **2026-11-03:** reviewed official Chrome, Chromium, Chrome for Developers and Chrome Help sources; reconciled them with the existing REA product-page capture; promoted the dossier from `pending` to `researched` with verified evidence and explicit unknowns.
+- **Next review:** 2027-02-03, or sooner if Chrome/Chromium release, extension, Sync, privacy or enterprise documentation changes materially.
 
----
-
-# 16. Alternative comparison (continued)
-
-Chromium is the primary open-source foundation. Non-Chromium browsers (Firefox) exist but have different API compatibility.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Not recommended to build a browser engine from scratch. Consider contributing to Chromium or extending existing projects.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-chrome` and inspect canonical identity with `npx rae-faang products show google-chrome --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-chrome` and inspect canonical identity with `npx rea-faang products show google-chrome --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -500,7 +543,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-chrome --out ./google-chrome.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-chrome --out ./google-chrome-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-chrome --out ./google-chrome.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-chrome --out ./google-chrome-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -542,6 +585,26 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://www.google.com/chrome/) — Google Chrome is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
-- [Official documentation entry](https://developer.chrome.com/docs/devtools/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed Not recorded).
+- [Google Chrome](https://www.google.com/chrome/) — The canonical public product surface is Google Chrome at google.com/chrome. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Chromium Projects](https://www.chromium.org/) — Chromium is the open-source browser project behind Google Chrome and ChromiumOS. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Multi-process architecture](https://www.chromium.org/developers/design-documents/multi-process-architecture/) — Chromium documents a browser process and separated renderer processes communicating through IPC/Mojo, with renderer isolation goals. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Chrome Extensions development](https://developer.chrome.com/docs/extensions/develop) — Chrome extensions can provide UI, control browser tabs/windows, access extension APIs, extend DevTools and use declared permissions. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Safe, Secure, Protected Browsing](https://www.google.com/chrome/safety/) — Google documents Chrome safety controls including Safe Browsing, Safety Check, automatic updates, password management and privacy controls. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Chrome Sync and your data](https://support.google.com/chrome/a/answer/13616205) — Chrome Sync can process bookmarks, history, tabs, passwords, payment information, settings, device information and extension information to provide cross-device profiles. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Install and manage extensions](https://support.google.com/chrome/answer/2664769) — Chrome provides controls for installing, managing, disabling and restricting extension site access. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Google Chrome](https://www.google.com/chrome/) — The canonical public product surface is Google Chrome at google.com/chrome. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Chromium Projects](https://www.chromium.org/) — Chromium is the open-source browser project behind Google Chrome and ChromiumOS. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Multi-process architecture](https://www.chromium.org/developers/design-documents/multi-process-architecture/) — Chromium documents a browser process and separated renderer processes communicating through IPC/Mojo, with renderer isolation goals. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Chrome Extensions development](https://developer.chrome.com/docs/extensions/develop) — Chrome extensions can provide UI, control browser tabs/windows, access extension APIs, extend DevTools and use declared permissions. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Safe, Secure, Protected Browsing](https://www.google.com/chrome/safety/) — Google documents Chrome safety controls including Safe Browsing, Safety Check, automatic updates, password management and privacy controls. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Chrome Sync and your data](https://support.google.com/chrome/a/answer/13616205) — Chrome Sync can process bookmarks, history, tabs, passwords, payment information, settings, device information and extension information to provide cross-device profiles. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Install and manage extensions](https://support.google.com/chrome/answer/2664769) — Chrome provides controls for installing, managing, disabling and restricting extension site access. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://www.google.com/chrome/) — Google Chrome is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://developer.chrome.com/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://www.chromium.org/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://www.chromium.org/developers/design-documents/multi-process-architecture/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://developer.chrome.com/docs/extensions/develop) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://www.google.com/chrome/safety/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/chrome/a/answer/13616205) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/chrome/answer/2664769) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Chrome Public web-surface observation (REA)](https://www.google.com/chrome/) — A dated unauthenticated snapshot exposed controls button: Download Chrome, button: Flip card, button: One window, two views, button: Customize your Chrome, button: Browse across devices, button: Save time with autofill, button: How do I make Chrome my default web browser?, button: How can I customize Chrome?, button: What are Chrome’s safety settings?, button: What is Chrome’s password manager?, button: How do I add a browser extension to Chrome?, button: How do I update Chrome?, button: Get Chrome for your phone Get Chrome for your phone mobile-icon chevron-right-color, button: chevron-right-color, link: Jump to content, link: Google Chrome Homepage, link: ai innovations, link: safety, link: By Google, link: Mobile, link: extensions, link: Try now, link: I want to update Chrome, link: Google Terms of Service, link: Chrome and ChromeOS Additional Terms of Service, link: Open in the same tab, link: Sign up now, link: Get help with managing tabs, link: Explore themes, link: Sign in to get started, link: Explore extensions, link: Learn more about Memory and Energy Saver, link: Learn about automatic updates, link: Learn what’s new on Chrome, link: Chrome's Youtube channel, opens in a new tab, link: Chrome's X page, opens in a new tab, link: Chrome's Facebook page, opens in a new tab, link: Chrome's LinkedIn page, opens in a new tab, link: Chrome's TikTok page, opens in a new tab, link: Other Platforms, link: Chromebooks, opens in a new tab, link: Chromecast, opens in a new tab, link: Chrome Web Store, opens in a new tab, link: Download Chrome Browser, opens in a new tab, link: Chrome Browser for Enterprise, opens in a new tab, link: Chrome Devices, opens in a new tab, link: ChromeOS, opens in a new tab, link: Google Cloud, opens in a new tab, link: Google Workspace, opens in a new tab, link: Google for Education, opens in a new tab, link: Devices for schools, opens in a new tab, link: Chromium, opens in a new tab, link: Chrome Experiments, opens in a new tab, link: Chrome Beta, link: Chrome Dev, link: Chrome Canary, link: Chrome Help, link: What’s New, link: Update Chrome, link: Chrome Tips, link: Google Chrome Blog, link: Google, opens in a new tab, link: Privacy and Terms, opens in a new tab, link: About Google, opens in a new tab, link: Google Products, opens in a new tab, link: Help Center, opens in a new tab, combobox: Change language or region and landmarks banner, navigation: navigation menu, main, region, contentinfo, navigation, navigation. (VERIFIED; accessed 2026-11-03T01:37:13.805Z).

@@ -87,7 +87,7 @@ Open-source frameworks can provide intents, slots and dialogue management, but a
 
 REA should map bot/locale lifecycle, intent classification, slot resolution, prompts, contexts, interruptions, streaming, Lambda hooks, runtime APIs, versions/aliases, channels, test workbench, analytics, knowledge integrations, quotas and failure behavior.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official Lex product page, V2 developer guide, API reference, CLI references and getting-started material as research surfaces. A clean-room implementation should use independently licensed NLU, ASR and dialogue components, document behavioral differences, and avoid copying AWS/Alexa models or proprietary implementation details.
 

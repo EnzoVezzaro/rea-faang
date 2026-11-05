@@ -72,7 +72,7 @@ Candidate alternatives must be evaluated as a stack: remote desktop/workstation 
 
 Research should map historical studio provisioning, launch profiles, streaming images, user roles, storage mounts, application packaging, render-farm handoff, audit behavior, network isolation, failure recovery and migration paths. Current operational validation is blocked by shutdown.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official AWS announcement, historical documentation and AWS full-shutdown reference as the identity and lifecycle boundary. Any independent implementation must be original, use currently available foundations, avoid AWS branding and assets, and be scoped to an explicitly selected creative-studio workflow rather than claim parity with a discontinued service.
 

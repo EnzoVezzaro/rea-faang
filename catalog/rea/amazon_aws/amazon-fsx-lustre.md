@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon FSx for Lustre, recorded wit
 | Target | https://aws.amazon.com/fsx/lustre/ |
 | Resolved URL | https://aws.amazon.com/fsx/lustre/ |
 | Page title | Amazon FSx for Lustre |
-| Captured | 2026-11-03T03:07:12.377Z |
+| Captured | 2026-11-04T02:43:42.587Z |
 | Status | captured |
-| REA Evidence ID | `ev_ae2934968c87849d75c107258a88f9e0077f7171873c526424f7c6115492d55d` |
+| REA Evidence ID | `ev_6c76778ca9b8ccc661ea7c1d9e4692cc3f0d285d4d7d6eb30613d92aff06a8ff` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -168,6 +168,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-fsx-lustre.json`
-- Evidence ID: `ev_ae2934968c87849d75c107258a88f9e0077f7171873c526424f7c6115492d55d`
+- Evidence ID: `ev_6c76778ca9b8ccc661ea7c1d9e4692cc3f0d285d4d7d6eb30613d92aff06a8ff`
 - Accessibility outline: 11623 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

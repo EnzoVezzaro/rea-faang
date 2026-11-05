@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Google Cloud Storage (google-cloud-
 
 # Google Cloud Storage — implementation skill (`google-cloud-storage`)
 
-> **Research status:** pending. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **mature alternative listed**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Google Cloud Storage**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Google Cloud Storage (google-cloud-
 
 This is the coding-agent skill for **Google Cloud Storage** (`google-cloud-storage`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/google-cloud-storage.md` from the catalog page, or run `npx rae-faang google-cloud-storage --out ./google-cloud-storage.md`, `npx rae-faang skills generate google-cloud-storage` or `npx rae-faang build agent-kit google-cloud-storage --out ./google-cloud-storage-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/google-cloud-storage.md` from the catalog page, or run `npx rea-faang google-cloud-storage --out ./google-cloud-storage.md`, `npx rea-faang skills generate google-cloud-storage` or `npx rea-faang build agent-kit google-cloud-storage --out ./google-cloud-storage-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | Google Cloud Storage / `google-cloud-storage` | `catalog/products.jsonl` |
 | Official product URL | [https://cloud.google.com/storage](https://cloud.google.com/storage) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier google-cloud-storage` | `research/companies/google/products/google-cloud-storage.md` |
+| Official documentation | [https://docs.cloud.google.com/storage/docs/introduction](https://docs.cloud.google.com/storage/docs/introduction) | Catalog record |
+| Research dossier | `npx rea-faang research dossier google-cloud-storage` | `research/companies/google/products/google-cloud-storage.md` |
 | REA report | `catalog/rea/google/google-cloud-storage.md` (captured 2026-11-03T01:37:43.906Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/google-cloud-storage.json` (`ev_1ec3cda5d85a06aa90cf782fb834b1a0a8e7105c17d6bb2055f2fbd87260c940`) | Catalog evidence |
 | Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show google-cloud-storage --format json` and `npx rae-faang research dossier google-cloud-storage` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show google-cloud-storage --format json` and `npx rea-faang research dossier google-cloud-storage` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-CLOUD-STORAGE-CAP-1BAD704A`, `GOOGLE-CLOUD-STORAGE-CAP-D61FFF4B`, `GOOGLE-CLOUD-STORAGE-CAP-71C7A39C`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `GOOGLE-CLOUD-STORAGE-CAP-F82C4684`, `GOOGLE-CLOUD-STORAGE-CAP-5746B558`, `GOOGLE-CLOUD-STORAGE-CAP-F0876CCC`, `GOOGLE-CLOUD-STORAGE-CAP-B93C6B74`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **Google Cloud Storage** / `google-cloud-storage` | Product catalog |
-| Company / category | Google / `storage` / `object-storage` | Product catalog |
-| Official website / docs | [https://cloud.google.com/storage](https://cloud.google.com/storage) / Not recorded | URL lead; compiler does not fetch source |
+| Company / category | Google / `storage` / `object-storage`, `cloud-storage`, `backup`, `data-lake` | Product catalog |
+| Official website / docs | [https://cloud.google.com/storage](https://cloud.google.com/storage) / [https://docs.cloud.google.com/storage/docs/introduction](https://docs.cloud.google.com/storage/docs/introduction) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `GOOGLE-CLOUD-STORAGE-CAP-1BAD704A` | Managed object storage | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-CLOUD-STORAGE-CAP-D61FFF4B` | S3-compatible API | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `GOOGLE-CLOUD-STORAGE-CAP-71C7A39C` | Lifecycle and retention | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CLOUD-STORAGE-CAP-F82C4684` | Managed bucket/object storage and resource hierarchy are documented. | VERIFIED | `ev-google-cloud-storage-identity`, `ev-google-cloud-storage-buckets` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CLOUD-STORAGE-CAP-5746B558` | Locations, storage classes and bucket configuration are documented. | VERIFIED | `ev-google-cloud-storage-classes`, `ev-google-cloud-storage-buckets` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CLOUD-STORAGE-CAP-F0876CCC` | JSON/XML APIs, gcloud, libraries, gRPC and Terraform surfaces are documented. | VERIFIED | `ev-google-cloud-storage-api`, `ev-google-cloud-storage-apis` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `GOOGLE-CLOUD-STORAGE-CAP-B93C6B74` | Open-source systems cover object-storage protocols, but Google-managed operations, IAM ecosystem and provider controls are not equivalent. | VERIFIED | `ev-google-cloud-storage-apis` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: View all features`, `button: Solution Prompt Search Button`, `button: Toggle all`, `button: Does Cloud Storage work for personal photos, videos, and files? `, `button: How does Cloud Storage differ from other types of storage? `, `button: Search`, `link: Cloud Storage`, `link: Features`, `link: Options`, `link: How It Works`, `link: Common Uses`, `link: Backups and archives`, `link: Media content storage and delivery`, `link: Data lakes and big data analytics`, `link: Machine learning and AI`, `link: Host a website`, `link: Generate a solution`, `link: Pricing`, `link: Business Case`, `link: FAQ`, `link: Release notes`, `link: Documentation`, `link: Resources and guides`, `link: Training`, `link: 85% of enterprise data is unstructured. Don't let it become dark data. Watch the fireside chat to learn how smart storage instantly becomes your AI foundation.`, `link: Try Cloud Storage free`, `link: View documentation`, `link: personal, team, and block storage options`, `link: Automatically transition to lower-cost storage classes`, `link: Standard, nearline, coldline, and archive storage options`, `link: Fast, low-cost, highly durable archive and backup storage`, `link: Cloud Storage Cloud Storage in a minute 1 min video`, `link: Storage Intelligence`, `link: Insights Datasets`, `link: Batch Operations`, `link: Bucket Relocation`, `link: ESG logo Discover how Google Cloud's smart storage is getting customers ready for the AI era. Read ESG’s Showcase report.`, `link: Rapid Cache`, `link: Cloud Identity and Access Management (IAM)`, `link: data warehouse`, `link: open source analytics`, `link: machine learning (ML) models`, `link: Data Agent Kit`, `link: Model Context Protocol`, `link: BigQuery magnifying glass Start querying Cloud Storage data with BigQuery`, `link: Object Lifecycle Management (OLM)`, `link: Autoclass`, `link: IDC logo IDC projects that Cloud Storage customers can realize average annual benefits worth $86,500 per petabyte. Read report.`, `link: Standard storage`, `link: Nearline storage`, `link: Coldline storage`, `link: Archive storage`, `link: storage classes`, `link: What is Cloud Storage? (2:05)`, `link: Learn more about nearline storage`, `link: Diagram`, `link: Learn more about geo-redundant storage`, `link: Learn how to set up a Media CDN, for planet-scale media delivery`, `link: Learn more about data lakes using Cloud Storage`, `link: Run Apache Hadoop or Apache Spark on data with data connector`, `link: Deploy in console`, `link: AI summarization solution`, `link: Watch how to store data for machine learning`, `link: Start using Gemini platform with your stored data`, `link: Nuro powers its autonomous vehicles' rapid decision-making with Cloud Storage`, `link: Dynamic website deployed in console`, `textbox: Solution Prompt Search Text`, `link: Gemini`, `link: pricing details`, `link: network product`, `link: View all pricing details`, `link: Estimate your costs`, `link: Request a quote`, `link: Get started for free`, `link: Contact sales`, `link: Read guide`, `link: Watch video`, `link: Read customer story`, `link: mixpanel logo Mixpanel maintains excellent performance and reliability while keeping its engineers focused on innovation`, `link: spotify logo Robust building blocks that exist on top of core data storage, computing, and network services help take away much of the backend hassle on the way to new product creation`, `link: redsalud logo RedSalud meets telemedicine challenges by implementing SAP for Google Cloud`, `link: Target`, `link: Carrefour`, `link: KeyBank`, `link: PayPal`, `link: Commerzbank`, `link: Cruise`, `link: Nuro`, `link: visit Google One`, `link: block storage, data transfer, and file storage`, `link: Billing and troubleshooting`, `link: Ask the community`, `link: Google Cloud`, `link: Overview`, `link: Solutions`, `link: Products`, `link: Resources`, `combobox: Search`, `link: Docs`, `link: Support`, `link: Sign in`, `link: Choosing Google Cloud`, `link: Trust and security`, `link: Modern Infrastructure Cloud`, `link: Multicloud`, `link: Global infrastructure`, `link: Locations`, `link: Customers and case studies`, `link: Analyst reports`, `link: Whitepapers`, `link: Blog`, `link: Google Cloud pricing`, `link: Google Workspace pricing`, `link: See all products`, `link: Infrastructure modernization`, `link: Databases`, `link: Application modernization`, `link: Smart analytics`, `link: Artificial Intelligence`, `link: Security`, `link: Productivity & work transformation`, `link: Industry solutions`, `link: DevOps solutions`, `link: Small business solutions`, `link: See all solutions`, `link: Google Cloud Affiliate Program`, `link: Google Cloud documentation`, `link: Google Cloud quickstarts`, `link: Google Cloud Marketplace`, `link: Learn about cloud computing`, `link: Code samples`, `link: Cloud Architecture Center`, `link: Builders Hub`, `link: Certifications`, `link: Google for Developers`, `link: Google Cloud for Startups`, `link: System status`, `link: Release Notes`, `link: Find a Partner`, `link: Become a Partner`, `link: Events`, `link: Podcasts`, `link: Developer Center`, `link: Press Corner`, `link: Google Cloud on YouTube`, `link: Google Cloud Tech on YouTube`, `link: Follow on X`, `link: Join User Research`, `link: We're hiring. Join Google Cloud!`, `link: Community forums`, `link: About Google`, `link: Privacy`, `link: Site terms`, `link: Google Cloud terms`, `link: Subscribe`, `combobox: Language Selector`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Managed object storage:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **S3-compatible API:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Lifecycle and retention:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Managed bucket/object storage and resource hierarchy are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Locations, storage classes and bucket configuration are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **JSON/XML APIs, gcloud, libraries, gRPC and Terraform surfaces are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Open-source systems cover object-storage protocols, but Google-managed operations, IAM ecosystem and provider controls are not equivalent.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-1BAD704A — Managed object storage
+### REQ-FUNC-F82C4684 — Managed bucket/object storage and resource hierarchy are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-cloud-storage-identity`, `ev-google-cloud-storage-buckets`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-1BAD704A`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CLOUD-STORAGE-CAP-1BAD704A` → `REQ-FUNC-1BAD704A` → `TEST-FUNC-1BAD704A`.
+- **Associated test ID:** `TEST-FUNC-F82C4684`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CLOUD-STORAGE-CAP-F82C4684` → `REQ-FUNC-F82C4684` → `TEST-FUNC-F82C4684`.
 
-### REQ-FUNC-D61FFF4B — S3-compatible API
+### REQ-FUNC-5746B558 — Locations, storage classes and bucket configuration are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-cloud-storage-classes`, `ev-google-cloud-storage-buckets`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D61FFF4B`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CLOUD-STORAGE-CAP-D61FFF4B` → `REQ-FUNC-D61FFF4B` → `TEST-FUNC-D61FFF4B`.
+- **Associated test ID:** `TEST-FUNC-5746B558`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CLOUD-STORAGE-CAP-5746B558` → `REQ-FUNC-5746B558` → `TEST-FUNC-5746B558`.
 
-### REQ-FUNC-71C7A39C — Lifecycle and retention
+### REQ-FUNC-F0876CCC — JSON/XML APIs, gcloud, libraries, gRPC and Terraform surfaces are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-google-cloud-storage-api`, `ev-google-cloud-storage-apis`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-71C7A39C`; fixture and expected output must be specified from evidence.
-- **Trace:** `GOOGLE-CLOUD-STORAGE-CAP-71C7A39C` → `REQ-FUNC-71C7A39C` → `TEST-FUNC-71C7A39C`.
+- **Associated test ID:** `TEST-FUNC-F0876CCC`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CLOUD-STORAGE-CAP-F0876CCC` → `REQ-FUNC-F0876CCC` → `TEST-FUNC-F0876CCC`.
+
+### REQ-FUNC-B93C6B74 — Open-source systems cover object-storage protocols, but Google-managed operations, IAM ecosystem and provider controls are not equivalent.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-google-cloud-storage-apis`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-B93C6B74`; fixture and expected output must be specified from evidence.
+- **Trace:** `GOOGLE-CLOUD-STORAGE-CAP-B93C6B74` → `REQ-FUNC-B93C6B74` → `TEST-FUNC-B93C6B74`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -216,9 +227,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `GOOGLE-CLOUD-STORAGE-CAP-1BAD704A` — Managed object storage | Not verified against MinIO | None yet; compare with `ev_1ec3cda5d85a06aa90cf782fb834b1a0a8e7105c17d6bb2055f2fbd87260c940` | Candidate code path and tests must be inspected |
-| `GOOGLE-CLOUD-STORAGE-CAP-D61FFF4B` — S3-compatible API | Not verified against MinIO | None yet; compare with `ev_1ec3cda5d85a06aa90cf782fb834b1a0a8e7105c17d6bb2055f2fbd87260c940` | Candidate code path and tests must be inspected |
-| `GOOGLE-CLOUD-STORAGE-CAP-71C7A39C` — Lifecycle and retention | Not verified against MinIO | None yet; compare with `ev_1ec3cda5d85a06aa90cf782fb834b1a0a8e7105c17d6bb2055f2fbd87260c940` | Candidate code path and tests must be inspected |
+| `GOOGLE-CLOUD-STORAGE-CAP-F82C4684` — Managed bucket/object storage and resource hierarchy are documented. | Not verified against MinIO | None yet; compare with `ev_1ec3cda5d85a06aa90cf782fb834b1a0a8e7105c17d6bb2055f2fbd87260c940` | Candidate code path and tests must be inspected |
+| `GOOGLE-CLOUD-STORAGE-CAP-5746B558` — Locations, storage classes and bucket configuration are documented. | Not verified against MinIO | None yet; compare with `ev_1ec3cda5d85a06aa90cf782fb834b1a0a8e7105c17d6bb2055f2fbd87260c940` | Candidate code path and tests must be inspected |
+| `GOOGLE-CLOUD-STORAGE-CAP-F0876CCC` — JSON/XML APIs, gcloud, libraries, gRPC and Terraform surfaces are documented. | Not verified against MinIO | None yet; compare with `ev_1ec3cda5d85a06aa90cf782fb834b1a0a8e7105c17d6bb2055f2fbd87260c940` | Candidate code path and tests must be inspected |
+| `GOOGLE-CLOUD-STORAGE-CAP-B93C6B74` — Open-source systems cover object-storage protocols, but Google-managed operations, IAM ecosystem and provider controls are not equivalent. | Not verified against MinIO | None yet; compare with `ev_1ec3cda5d85a06aa90cf782fb834b1a0a8e7105c17d6bb2055f2fbd87260c940` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -266,9 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-1BAD704A** → `REQ-FUNC-1BAD704A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-D61FFF4B** → `REQ-FUNC-D61FFF4B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-71C7A39C** → `REQ-FUNC-71C7A39C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-F82C4684** → `REQ-FUNC-F82C4684`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-5746B558** → `REQ-FUNC-5746B558`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-F0876CCC** → `REQ-FUNC-F0876CCC`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-B93C6B74** → `REQ-FUNC-B93C6B74`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -289,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-1BAD704A, REQ-FUNC-D61FFF4B, REQ-FUNC-71C7A39C
+- **Requirements:** REQ-FUNC-F82C4684, REQ-FUNC-5746B558, REQ-FUNC-F0876CCC, REQ-FUNC-B93C6B74
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -299,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-1BAD704A, REQ-FUNC-D61FFF4B, REQ-FUNC-71C7A39C
+- **Requirements:** REQ-FUNC-F82C4684, REQ-FUNC-5746B558, REQ-FUNC-F0876CCC, REQ-FUNC-B93C6B74
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -321,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-1BAD704A, REQ-FUNC-D61FFF4B, REQ-FUNC-71C7A39C; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-F82C4684, REQ-FUNC-5746B558, REQ-FUNC-F0876CCC, REQ-FUNC-B93C6B74; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -351,7 +364,18 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://cloud.google.com/storage) | Not recorded | Google Cloud Storage is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-google-cloud-storage-identity` | Cloud Storage overview — Official documentation describes Cloud Storage as managed storage for unstructured data and explains projects, buckets, objects and folders. | [link](https://docs.cloud.google.com/storage/docs/introduction) | 2026-11-03T00:00:00Z | Cloud Storage is Google Cloud's scalable managed object-storage service using buckets and objects. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-cloud-storage-classes` | Storage classes — Official documentation describes Standard, Nearline, Coldline, Archive and additional storage classes, including lifecycle and pricing implications. | [link](https://docs.cloud.google.com/storage/docs/storage-classes) | 2026-11-03T00:00:00Z | Cloud Storage provides storage classes with different availability, duration and retrieval characteristics. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-cloud-storage-api` | Cloud Storage JSON API overview — Official documentation identifies the JSON API v1, resource operations, client-library compatibility and object/bucket request semantics. | [link](https://docs.cloud.google.com/storage/docs/json_api) | 2026-11-03T00:00:00Z | Cloud Storage exposes a JSON API for programmatic access to projects, buckets and objects. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-cloud-storage-buckets` | About Cloud Storage buckets — Official documentation describes buckets as object containers with configurable geographic location and access controls. | [link](https://docs.cloud.google.com/storage/docs/buckets) | 2026-11-03T00:00:00Z | Every Cloud Storage object resides in a bucket where location and access settings are configured. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-google-cloud-storage-apis` | Cloud Storage APIs and reference — Official API documentation indexes IAM permissions, command-line interfaces, client libraries, service APIs and infrastructure tooling. | [link](https://docs.cloud.google.com/storage/docs/apis) | 2026-11-03T00:00:00Z | Cloud Storage provides console, gcloud, client library, REST/JSON, XML, gRPC and Terraform integration surfaces. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://cloud.google.com/storage) | 2026-11-03T00:00:00Z | Google Cloud Storage is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://docs.cloud.google.com/storage/docs/introduction) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://docs.cloud.google.com/storage/docs/introduction) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://docs.cloud.google.com/storage/docs/storage-classes) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://docs.cloud.google.com/storage/docs/json_api) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://docs.cloud.google.com/storage/docs/buckets) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://docs.cloud.google.com/storage/docs/apis) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_1ec3cda5d85a06aa90cf782fb834b1a0a8e7105c17d6bb2055f2fbd87260c940` | Google Cloud Storage Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://cloud.google.com/storage) | 2026-11-03T01:37:43.906Z | A dated unauthenticated snapshot exposed controls button: View all features, button: Solution Prompt Search Button, button: Toggle all, button: Does Cloud Storage work for personal photos, videos, and files? , button: How does Cloud Storage differ from other types of storage? , button: Search, link: Cloud Storage, link: Features, link: Options, link: How It Works, link: Common Uses, link: Backups and archives, link: Media content storage and delivery, link: Data lakes and big data analytics, link: Machine learning and AI, link: Host a website, link: Generate a solution, link: Pricing, link: Business Case, link: FAQ, link: Release notes, link: Documentation, link: Resources and guides, link: Training, link: 85% of enterprise data is unstructured. Don't let it become dark data. Watch the fireside chat to learn how smart storage instantly becomes your AI foundation., link: Try Cloud Storage free, link: View documentation, link: personal, team, and block storage options, link: Automatically transition to lower-cost storage classes, link: Standard, nearline, coldline, and archive storage options, link: Fast, low-cost, highly durable archive and backup storage, link: Cloud Storage Cloud Storage in a minute 1 min video, link: Storage Intelligence, link: Insights Datasets, link: Batch Operations, link: Bucket Relocation, link: ESG logo Discover how Google Cloud's smart storage is getting customers ready for the AI era. Read ESG’s Showcase report., link: Rapid Cache, link: Cloud Identity and Access Management (IAM), link: data warehouse, link: open source analytics, link: machine learning (ML) models, link: Data Agent Kit, link: Model Context Protocol, link: BigQuery magnifying glass Start querying Cloud Storage data with BigQuery, link: Object Lifecycle Management (OLM), link: Autoclass, link: IDC logo IDC projects that Cloud Storage customers can realize average annual benefits worth $86,500 per petabyte. Read report., link: Standard storage, link: Nearline storage, link: Coldline storage, link: Archive storage, link: storage classes, link: What is Cloud Storage? (2:05), link: Learn more about nearline storage, link: Diagram, link: Learn more about geo-redundant storage, link: Learn how to set up a Media CDN, for planet-scale media delivery, link: Learn more about data lakes using Cloud Storage, link: Run Apache Hadoop or Apache Spark on data with data connector, link: Deploy in console, link: AI summarization solution, link: Watch how to store data for machine learning, link: Start using Gemini platform with your stored data, link: Nuro powers its autonomous vehicles' rapid decision-making with Cloud Storage, link: Dynamic website deployed in console, textbox: Solution Prompt Search Text, link: Gemini, link: pricing details, link: network product, link: View all pricing details, link: Estimate your costs, link: Request a quote, link: Get started for free, link: Contact sales, link: Read guide, link: Watch video, link: Read customer story, link: mixpanel logo Mixpanel maintains excellent performance and reliability while keeping its engineers focused on innovation, link: spotify logo Robust building blocks that exist on top of core data storage, computing, and network services help take away much of the backend hassle on the way to new product creation, link: redsalud logo RedSalud meets telemedicine challenges by implementing SAP for Google Cloud, link: Target, link: Carrefour, link: KeyBank, link: PayPal, link: Commerzbank, link: Cruise, link: Nuro, link: visit Google One, link: block storage, data transfer, and file storage, link: Billing and troubleshooting, link: Ask the community, link: Google Cloud, link: Overview, link: Solutions, link: Products, link: Resources, combobox: Search, link: Docs, link: Support, link: Sign in, link: Choosing Google Cloud, link: Trust and security, link: Modern Infrastructure Cloud, link: Multicloud, link: Global infrastructure, link: Locations, link: Customers and case studies, link: Analyst reports, link: Whitepapers, link: Blog, link: Google Cloud pricing, link: Google Workspace pricing, link: See all products, link: Infrastructure modernization, link: Databases, link: Application modernization, link: Smart analytics, link: Artificial Intelligence, link: Security, link: Productivity & work transformation, link: Industry solutions, link: DevOps solutions, link: Small business solutions, link: See all solutions, link: Google Cloud Affiliate Program, link: Google Cloud documentation, link: Google Cloud quickstarts, link: Google Cloud Marketplace, link: Learn about cloud computing, link: Code samples, link: Cloud Architecture Center, link: Builders Hub, link: Certifications, link: Google for Developers, link: Google Cloud for Startups, link: System status, link: Release Notes, link: Find a Partner, link: Become a Partner, link: Events, link: Podcasts, link: Developer Center, link: Press Corner, link: Google Cloud on YouTube, link: Google Cloud Tech on YouTube, link: Follow on X, link: Join User Research, link: We're hiring. Join Google Cloud!, link: Community forums, link: About Google, link: Privacy, link: Site terms, link: Google Cloud terms, link: Subscribe, combobox: Language Selector and landmarks navigation: Page Contents, complementary: Product highlights 1, complementary: Related content 1, banner, navigation, contentinfo, navigation: Footer Links, navigation: Utility links. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -379,115 +403,85 @@ Resume token: `google-cloud-storage`. Read dossier, REA report and raw Evidence 
 
 # 1. Executive summary
 
-Google Cloud Storage is Google Cloud's object storage service.
-
----
+Google Cloud Storage is Google Cloud's managed object-storage service. It stores immutable objects in buckets associated with projects, with configurable locations, storage classes, access controls, lifecycle rules and APIs. It is a distinct service from the broader Google Cloud platform and from Google Drive: Cloud Storage is an infrastructure storage primitive for applications, data processing, backup and archival.
 
 # 2. Product identity and ownership
 
-- **Official name:** Google Cloud Storage
-- **Company and business unit:** google
-- **Current lifecycle status:** active
-- **Official website:** https://cloud.google.com/storage
-
----
+- **Official name:** Cloud Storage, commonly called Google Cloud Storage or GCS.
+- **Company:** Google LLC, part of Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://cloud.google.com/storage
+- **Identity evidence:** Official Google Cloud documentation describes Cloud Storage as a scalable, managed service for storing data as objects in buckets.
 
 # 3. Product capabilities
 
-- Managed object storage
-- S3-compatible API
-- Lifecycle and retention
-
----
+- Create buckets and store, retrieve and manage objects of arbitrary supported formats.
+- Configure regional, dual-region or multi-region locations and storage classes such as Standard, Nearline, Coldline and Archive.
+- Apply IAM, bucket/object access controls, managed folders, retention and lifecycle management.
+- Serve application, analytics, backup, archive and content-distribution workloads with high durability and global access options.
+- Integrate through the Google Cloud console, `gcloud storage`, client libraries, REST/JSON API, XML API, gRPC and Terraform.
 
 # 4. Technical architecture
 
-Not yet researched.
+The resource hierarchy is organization → project → bucket → object, with folders and managed folders available for organization and access-control overlays. Buckets determine location and default storage class; objects carry data and metadata and are identified within a bucket by name and generation. The service exposes control and data operations through documented APIs and IAM permissions.
 
----
+# 5. User and developer workflows
 
-# 5. User workflows
-
-Not yet researched.
-
----
+A project owner creates a bucket, chooses location and storage class, configures IAM and retention, and uploads objects. Application code uses a client library or JSON/XML API to list, read, write, copy and delete objects. Lifecycle rules can transition or delete data; data teams can use buckets as storage for analytics, machine learning, backups or content delivery.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+Pricing depends on storage class, location, stored data, operations, network egress, retrieval and retention conditions. Access requires a Google Cloud project and appropriate IAM permissions; public access is an explicit configuration and should not be assumed. This pass does not assert current price values or a particular project's quota, billing or policy state.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+Google documents the Cloud Storage JSON API v1, XML API, client libraries, gcloud CLI, gRPC, Terraform and console workflows. The JSON API exposes buckets, objects, access controls, folders, managed folders, notifications, operations and related resources. IAM roles and permissions are service-specific and must be scoped to the least privilege required.
 
 # 8. Existing open-source alternatives
 
-Open-source candidates exist: MinIO (AGPL-3.0) — S3-compatible object storage, self-hostable.; Ceph RADOS Gateway (LGPL-2.1) — Distributed object store with an S3 API.. Coverage is unverified until the dossier is researched.
-
----
+- **MinIO (AGPL-3.0):** self-hosted, S3-compatible object storage.
+- **Ceph RADOS Gateway (LGPL-2.1):** distributed object storage with S3 and compatible interfaces.
 
 # 9. Alternative comparison
 
-S3-compatible object storage is fully covered by self-hosted options; the gap is operations, not software.
-
----
+MinIO and Ceph cover the core object-storage technology, S3-compatible APIs, self-hosting and distributed deployment. They do not reproduce Google's managed operations, Google Cloud project/IAM ecosystem, global service controls, billing, integrated location options or provider-specific tooling. For the storage primitive, coverage is mature; the managed-provider equivalence gap remains.
 
 # 10. Missing capabilities and opportunity analysis
 
-S3-compatible object storage is fully covered by self-hosted options; the gap is operations, not software.
+A replacement still needs durable deployment, replication, erasure coding, lifecycle and retention controls, IAM integration, monitoring, backup/recovery, upgrades, encryption, tenancy, S3 compatibility testing and operational ownership. The open-source opportunity is in managed packaging, migration tooling, policy automation and workload-specific storage operations rather than reimplementing basic object storage.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Available. MinIO and Ceph provide production-grade S3-compatible object storage.
-
----
+Use MinIO for a focused S3-compatible deployment or Ceph when distributed storage and broader infrastructure integration are required. Define bucket ownership, encryption, replication, retention, lifecycle, backup and egress policies before migration. Validate API compatibility and failure recovery with representative objects; do not claim Google Cloud Storage parity without testing IAM, locations, lifecycle and operational procedures.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+Cloud Storage may contain credentials, customer data, backups, datasets or regulated records. Verify IAM, public-access prevention, encryption and key ownership, retention, object versioning, audit logs, lifecycle deletion, regional residency, network controls and incident recovery. Avoid embedding credentials in scripts or reports.
 
 # 13. Sources and evidence
 
-- https://min.io/
-- https://ceph.io/
-
----
+- [Cloud Storage overview](https://docs.cloud.google.com/storage/docs/introduction) — official buckets, objects, hierarchy, tools and use cases.
+- [Storage classes](https://docs.cloud.google.com/storage/docs/storage-classes) — official storage classes, availability and lifecycle context.
+- [JSON API overview](https://docs.cloud.google.com/storage/docs/json_api) — official programmatic API surface and v1 behavior.
+- [Buckets](https://docs.cloud.google.com/storage/docs/buckets) — official bucket resource and access configuration.
+- [APIs and reference](https://docs.cloud.google.com/storage/docs/apis) — official IAM, CLI, client-library and service API index.
 
 # 14. Open questions
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
+- Which storage class, region and retention requirements are in scope?
+- Is the target a self-hosted S3-compatible store, a migration tool or a managed service?
+- Which IAM, encryption, audit, backup and disaster-recovery guarantees are mandatory?
 
 # 15. Research history
 
-- v1: dossier created; research pending.
+- v1: catalog candidate with preliminary MinIO and Ceph alternatives, research pending.
+- v2: updated 2026-11-03 from official Google Cloud Storage documentation. Status: `researched`; provider-managed operations, pricing and Google Cloud-specific controls remain distinct from open-source alternatives.
 
----
-
-# 16. Alternative comparison (continued)
-
-S3-compatible object storage is fully covered by self-hosted options; the gap is operations, not software.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Available. MinIO and Ceph provide production-grade S3-compatible object storage.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier google-cloud-storage` and inspect canonical identity with `npx rae-faang products show google-cloud-storage --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier google-cloud-storage` and inspect canonical identity with `npx rea-faang products show google-cloud-storage --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -500,7 +494,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang google-cloud-storage --out ./google-cloud-storage.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit google-cloud-storage --out ./google-cloud-storage-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang google-cloud-storage --out ./google-cloud-storage.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit google-cloud-storage --out ./google-cloud-storage-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -542,5 +536,16 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://cloud.google.com/storage) — Google Cloud Storage is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [Cloud Storage overview](https://docs.cloud.google.com/storage/docs/introduction) — Cloud Storage is Google Cloud's scalable managed object-storage service using buckets and objects. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Storage classes](https://docs.cloud.google.com/storage/docs/storage-classes) — Cloud Storage provides storage classes with different availability, duration and retrieval characteristics. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Cloud Storage JSON API overview](https://docs.cloud.google.com/storage/docs/json_api) — Cloud Storage exposes a JSON API for programmatic access to projects, buckets and objects. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [About Cloud Storage buckets](https://docs.cloud.google.com/storage/docs/buckets) — Every Cloud Storage object resides in a bucket where location and access settings are configured. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Cloud Storage APIs and reference](https://docs.cloud.google.com/storage/docs/apis) — Cloud Storage provides console, gcloud, client library, REST/JSON, XML, gRPC and Terraform integration surfaces. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://cloud.google.com/storage) — Google Cloud Storage is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://docs.cloud.google.com/storage/docs/introduction) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://docs.cloud.google.com/storage/docs/introduction) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.cloud.google.com/storage/docs/storage-classes) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.cloud.google.com/storage/docs/json_api) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.cloud.google.com/storage/docs/buckets) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://docs.cloud.google.com/storage/docs/apis) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Google Cloud Storage Public web-surface observation (REA)](https://cloud.google.com/storage) — A dated unauthenticated snapshot exposed controls button: View all features, button: Solution Prompt Search Button, button: Toggle all, button: Does Cloud Storage work for personal photos, videos, and files? , button: How does Cloud Storage differ from other types of storage? , button: Search, link: Cloud Storage, link: Features, link: Options, link: How It Works, link: Common Uses, link: Backups and archives, link: Media content storage and delivery, link: Data lakes and big data analytics, link: Machine learning and AI, link: Host a website, link: Generate a solution, link: Pricing, link: Business Case, link: FAQ, link: Release notes, link: Documentation, link: Resources and guides, link: Training, link: 85% of enterprise data is unstructured. Don't let it become dark data. Watch the fireside chat to learn how smart storage instantly becomes your AI foundation., link: Try Cloud Storage free, link: View documentation, link: personal, team, and block storage options, link: Automatically transition to lower-cost storage classes, link: Standard, nearline, coldline, and archive storage options, link: Fast, low-cost, highly durable archive and backup storage, link: Cloud Storage Cloud Storage in a minute 1 min video, link: Storage Intelligence, link: Insights Datasets, link: Batch Operations, link: Bucket Relocation, link: ESG logo Discover how Google Cloud's smart storage is getting customers ready for the AI era. Read ESG’s Showcase report., link: Rapid Cache, link: Cloud Identity and Access Management (IAM), link: data warehouse, link: open source analytics, link: machine learning (ML) models, link: Data Agent Kit, link: Model Context Protocol, link: BigQuery magnifying glass Start querying Cloud Storage data with BigQuery, link: Object Lifecycle Management (OLM), link: Autoclass, link: IDC logo IDC projects that Cloud Storage customers can realize average annual benefits worth $86,500 per petabyte. Read report., link: Standard storage, link: Nearline storage, link: Coldline storage, link: Archive storage, link: storage classes, link: What is Cloud Storage? (2:05), link: Learn more about nearline storage, link: Diagram, link: Learn more about geo-redundant storage, link: Learn how to set up a Media CDN, for planet-scale media delivery, link: Learn more about data lakes using Cloud Storage, link: Run Apache Hadoop or Apache Spark on data with data connector, link: Deploy in console, link: AI summarization solution, link: Watch how to store data for machine learning, link: Start using Gemini platform with your stored data, link: Nuro powers its autonomous vehicles' rapid decision-making with Cloud Storage, link: Dynamic website deployed in console, textbox: Solution Prompt Search Text, link: Gemini, link: pricing details, link: network product, link: View all pricing details, link: Estimate your costs, link: Request a quote, link: Get started for free, link: Contact sales, link: Read guide, link: Watch video, link: Read customer story, link: mixpanel logo Mixpanel maintains excellent performance and reliability while keeping its engineers focused on innovation, link: spotify logo Robust building blocks that exist on top of core data storage, computing, and network services help take away much of the backend hassle on the way to new product creation, link: redsalud logo RedSalud meets telemedicine challenges by implementing SAP for Google Cloud, link: Target, link: Carrefour, link: KeyBank, link: PayPal, link: Commerzbank, link: Cruise, link: Nuro, link: visit Google One, link: block storage, data transfer, and file storage, link: Billing and troubleshooting, link: Ask the community, link: Google Cloud, link: Overview, link: Solutions, link: Products, link: Resources, combobox: Search, link: Docs, link: Support, link: Sign in, link: Choosing Google Cloud, link: Trust and security, link: Modern Infrastructure Cloud, link: Multicloud, link: Global infrastructure, link: Locations, link: Customers and case studies, link: Analyst reports, link: Whitepapers, link: Blog, link: Google Cloud pricing, link: Google Workspace pricing, link: See all products, link: Infrastructure modernization, link: Databases, link: Application modernization, link: Smart analytics, link: Artificial Intelligence, link: Security, link: Productivity & work transformation, link: Industry solutions, link: DevOps solutions, link: Small business solutions, link: See all solutions, link: Google Cloud Affiliate Program, link: Google Cloud documentation, link: Google Cloud quickstarts, link: Google Cloud Marketplace, link: Learn about cloud computing, link: Code samples, link: Cloud Architecture Center, link: Builders Hub, link: Certifications, link: Google for Developers, link: Google Cloud for Startups, link: System status, link: Release Notes, link: Find a Partner, link: Become a Partner, link: Events, link: Podcasts, link: Developer Center, link: Press Corner, link: Google Cloud on YouTube, link: Google Cloud Tech on YouTube, link: Follow on X, link: Join User Research, link: We're hiring. Join Google Cloud!, link: Community forums, link: About Google, link: Privacy, link: Site terms, link: Google Cloud terms, link: Subscribe, combobox: Language Selector and landmarks navigation: Page Contents, complementary: Product highlights 1, complementary: Related content 1, banner, navigation, contentinfo, navigation: Footer Links, navigation: Utility links. (VERIFIED; accessed 2026-11-03T01:37:43.906Z).

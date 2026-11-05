@@ -88,7 +88,7 @@ Agones can manage dedicated game servers on Kubernetes and Open Match can provid
 
 REA should map fleet/build lifecycle, server process contracts, game-session placement, player-session state, matchmaking rules and backfill, queues, multi-Region behavior, autoscaling, Spot interruption handling, logs/metrics, IAM, networking, SDKs, quotas and failure recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use the official product page, developer guide, CLI reference and API documentation as research surfaces. A clean-room implementation should use independently licensed components such as Agones/Open Match where suitable, document behavioral differences, and avoid copying AWS code, private protocols or proprietary assets.
 

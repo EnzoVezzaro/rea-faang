@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon ECS Anywhere, recorded with 
 | Target | https://aws.amazon.com/ecs/anywhere/ |
 | Resolved URL | https://aws.amazon.com/ecs/anywhere/ |
 | Page title | Amazon ECS Anywhere |
-| Captured | 2026-11-03T02:58:22.701Z |
+| Captured | 2026-11-04T02:41:55.598Z |
 | Status | captured |
-| REA Evidence ID | `ev_d87edf791c91432028d6456b501ee952abc357c6be1451b4c1702d7d203ab57c` |
+| REA Evidence ID | `ev_7052e7a89537580863880ca4ba21e93af9ac2eaace37c7cc885158e089308710` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -156,6 +156,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-ecs-anywhere.json`
-- Evidence ID: `ev_d87edf791c91432028d6456b501ee952abc357c6be1451b4c1702d7d203ab57c`
+- Evidence ID: `ev_7052e7a89537580863880ca4ba21e93af9ac2eaace37c7cc885158e089308710`
 - Accessibility outline: 10839 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

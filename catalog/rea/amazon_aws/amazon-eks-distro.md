@@ -9,9 +9,9 @@ Browser capture of the public web surface of Amazon EKS Distro, recorded with RE
 | Target | https://aws.amazon.com/eks/eks-distro/ |
 | Resolved URL | https://aws.amazon.com/eks/eks-distro/ |
 | Page title | Amazon EKS Distro |
-| Captured | 2026-11-03T03:00:46.809Z |
+| Captured | 2026-11-04T02:42:17.766Z |
 | Status | captured |
-| REA Evidence ID | `ev_a1540b601d6898b1807167d15d2e2894cea29b936f6ed53d6e66e7b53aa9bbe8` |
+| REA Evidence ID | `ev_e4479cdc38514e4b067e13f860f6e7182d0308ae3c52b30ba1ab8e2ce0e46275` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -160,6 +160,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-eks-distro.json`
-- Evidence ID: `ev_a1540b601d6898b1807167d15d2e2894cea29b936f6ed53d6e66e7b53aa9bbe8`
+- Evidence ID: `ev_e4479cdc38514e4b067e13f860f6e7182d0308ae3c52b30ba1ab8e2ce0e46275`
 - Accessibility outline: 9242 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

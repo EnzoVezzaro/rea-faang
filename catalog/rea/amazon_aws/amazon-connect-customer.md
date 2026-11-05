@@ -8,10 +8,10 @@ Browser capture of the public web surface of Amazon Connect Customer, recorded w
 | Company | Amazon Web Services |
 | Target | https://aws.amazon.com/connect/ |
 | Resolved URL | https://aws.amazon.com/products/connect/customer/ |
-| Page title | Amazon Connect Customer |
-| Captured | 2026-11-03T02:52:30.702Z |
+| Page title | AI-powered customer experience with Amazon Connect Customer |
+| Captured | 2026-11-04T02:40:43.098Z |
 | Status | captured |
-| REA Evidence ID | `ev_71491b7c0238b454d082f4e361d9cd8215e99821f2a713c235ca2c5614f6c2fe` |
+| REA Evidence ID | `ev_b20e060f51363df971c7d52943fa7f8cd91626a0c1275a71149c285be923066b` |
 | REA provider | rea-playwright-browser-scenario v1 |
 | Browser | Chromium 156.0.8078.80 |
 | Confidence | observed |
@@ -55,31 +55,31 @@ access control is bypassed.
 
 ### Headings
 
-- Amazon Connect Customer
-- Built for every customer moment. Not just the ones that end up in a support queue
-- Real impact at scale
-- 0M+
-- 0+
-- 0B
-- Every interaction. Reimagined.
-- Every customer is unique. Every interaction should reflect that
-- Every interaction. Powered by AI agents
-- Agentic Conversational AI
+- AI-powered customer experience with Amazon Connect Customer
+- What is Amazon Connect Customer?
+- How much does Amazon Connect Customer cost?
+- What problems does Amazon Connect Customer solve?
+- Customers can’t get their issue resolved
+- Routine and repetitive work keeps your team from the interactions that need them
+- Managers struggle to get answers from their data
+- How do I migrate from my current platform?
+- 1. Design
+- 2. Pre-Go-Live
+- 3. Go-Live
+- 4. Post-Go-Live
+- Is Amazon Connect Customer secure and compliant?
+- What makes Amazon Connect Customer different?
+- Know your customer
+- Design the experience
+- Evolve with every conversation
 - See how companies are innovating their CX
 - TUI Cuts Customer Experience Fragmentation with Amazon Connect
-- Awards and analyst recognition
-- Go deep on all things Amazon Connect Customer
-- Dive into resources
-- See pricing options
-- View documentation
-- Explore partners
-- Browse features
-- Explore financial services use cases
-- Explore healthcare and life sciences use cases
-- Explore retail use cases
-- FAQs
-- What is Amazon Connect Customer?
-- What is agentic AI for customer service?
+- How are customers using Amazon Connect Customer?
+- Modernizing a legacy contact center
+- Scaling customer service without adding headcount
+- Building regulated-industry CX solutions
+- What support and reliability do I get?
+- Support Plans
 
 ### Landmarks
 
@@ -105,23 +105,21 @@ access control is bypassed.
 - [Partners](/products/connect/customer/partners/)
 - [Products](/products/)
 - [Connect](/products/connect/)
+- [Worldwide Agentic Contact Center as a Service Platforms](/resources/analyst-reports/idc/global-ar-report-ardm-26-worldwide-agentic-contact-center-as-a-service-platforms/?trk=2a573d2c-bba9-4079-8047-ce6d453e1890&sc_channel=el)
+- [Refer to the pricing page for more details](/products/connect/customer/pricing/appendix/?refid=5a5e1287-c028-4184-8719-3a5a862834a2)
+- [Learn about omnichannel](/products/connect/customer/omnichannel/)
+- [Explore AI agents](/products/connect/customer/ai-agents/)
+- [View full pricing](/products/connect/customer/pricing/appendix/)
+- [Start now](https://signin.aws.amazon.com/signup?request_type=register&p=pdp&c=connect&s=1)
 - [Explore curated agenda](https://catalog.awsevents.com/widget/awsevents/reinvent2026/1792787064555001EMPD/?sc_icampaign=event_connect-customer-reinvent_2026&sc_ichannel=ha&sc_iplace=banner&trk=fb2893e1-94d2-44de-9b25-3aa9fae3da07)
-- [Live Sync](/products/connect/customer/conversational-ai/#voice-and-visual-one-conversation)
 - [Read all customer testimonials](/products/connect/customer/customers/)
 - [Missing alt text value TUI Cuts Customer Experience Fragmentation with Amazon Connect Learn more](https://www.youtube.com/watch?v=XAIBSj6cuHc)
-- [Read the IDC report](https://pages.awscloud.com/rs/112-TZM-766/images/26-GLOBAL-en-US-idc-other-ardm-worldwide-agentic-contact-center-as-a-service-platforms-reprint.pdf?version=1&trk=f206542a-3187-4724-a461-e30d4ecff0bd&sc_channel=el)
-- [Read the CrayonIQ report](/resources/analyst-reports/apac-ar-report-ardm-25-contact-centre-cx-platforms/)
-- [Resources Dive into resources View demos, blogs, articles, webinars, and more to build a better understanding of Amazon Connect. Explore resources](/products/connect/customer/resources/)
-- [Pricing See pricing options Learn more about our pay-as-you-go pricing options. View pricing](/products/connect/customer/pricing/)
-- [Documentation View documentation Check out Amazon Connect SDKs, discussion forums, administrative guides, and API reference guides. See documentation](https://docs.aws.amazon.com/connect/)
-- [Partners Explore partners Innovate your contact center experience with Amazon Connect partner, service, and software offerings. See partners](/products/connect/customer/partners/)
-- [All features Browse features Get a picture of what’s possible with Amazon Connect by diving into the full set of features. See features](/products/connect/customer/features/)
-- [Solutions Explore financial services use cases Overcome financial services CX challenges with Amazon Connect Customer. Learn more](/products/connect/customer/fsi/)
-- [Solutions Explore healthcare and life sciences use cases Modernize healthcare and life sciences CX solutions with Amazon Connect Customer. Learn more](/products/connect/customer/healthcare/)
-- [Solutions Explore retail use cases Optimize your retail CX solutions with Amazon Connect Customer. Learn more](/products/connect/customer/retail/)
-- [Ready to try Amazon Connect Customer yourself? Login or create an AWS account](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fportal.aws.amazon.com%2Fbilling%2Fsignup%2Fresume&client_id=signup&code_challenge_method=SHA-256&code_challenge=BHsEAzGFnFtOKuPhxAq3CDeI8AlDvCA4chCRzKCnjOI)
-- [Prefer to speak with an AWS expert? Request a consultation](https://pages.awscloud.com/GLOBAL-field-GC-CXE-Amazon-Connect-Contact-Us.html)
-- [Explore Connect Customer partners Learn more](/products/connect/customer/partners/)
+- [Support Plans Choose the AWS Support tier that fits, from Developer to Business and Enterprise, with 24/7 access, technical account management, and guided onboarding at higher tiers. Learn more](/professional-services/)
+- [Backed by an SLA Amazon Connect Customer provides a published service-level agreement, running on the same highly available, multi-Availability Zone AWS infrastructure that powers mission-critical workloads. Learn more](https://docs.aws.amazon.com/connect/latest/adminguide/regions.html)
+- [Docs, community & partners Full developer and administrator documentation, AWS re:Post community, and a global partner network for implementation and managed services. Learn more](/products/connect/customer/partners/)
+- [Ready to try Amazon Connect Customer yourself? Login or create an AWS account to get started. Get started](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fportal.aws.amazon.com%2Fbilling%2Fsignup%2Fresume&client_id=signup&code_challenge_method=SHA-256&code_challenge=BHsEAzGFnFtOKuPhxAq3CDeI8AlDvCA4chCRzKCnjOI)
+- [Prefer to speak with an AWS expert? Connect with an AWS expert to discover how Customer can transform your customer experience. Request a consultation](https://pages.awscloud.com/GLOBAL-field-GC-CXE-Amazon-Connect-Contact-Us.html)
+- [Explore Connect Customer partners Explore Amazon Connect Customer partner offerings that meet your business needs. Learn more](/products/connect/customer/partners/)
 - [What Is AWS?](/what-is-aws/?nc1=f_cc)
 - [What Is Cloud Computing?](/what-is-cloud-computing/?nc1=f_cc)
 - [What Is Agentic AI?](/what-is/agentic-ai/?nc1=f_cc)
@@ -132,6 +130,8 @@ access control is bypassed.
 - [Press Releases](https://press.aboutamazon.com/aws)
 - [Careers](https://www.amazon.jobs/content/en/teams/amazon-web-services/?nc1=f_cc)
 - [Getting Started](/getting-started/?nc1=f_cc)
+- [Training](/training/?nc1=f_cc)
+- [AWS Trust Center](/trust-center/?nc1=f_cc)
 
 ### Controls
 
@@ -154,7 +154,7 @@ access control is bypassed.
 - button: Speak with an expert
 - button: Play:
 - button: Close
-- button: Read our blog post
+- button: Previous slide
 
 ## Limitations (from REA)
 
@@ -170,6 +170,6 @@ access control is bypassed.
 ## Provenance
 
 - Raw REA Evidence: `catalog/rea/evidence/amazon-connect-customer.json`
-- Evidence ID: `ev_71491b7c0238b454d082f4e361d9cd8215e99821f2a713c235ca2c5614f6c2fe`
-- Accessibility outline: 22446 bytes
+- Evidence ID: `ev_b20e060f51363df971c7d52943fa7f8cd91626a0c1275a71149c285be923066b`
+- Accessibility outline: 22440 bytes
 - Tool: REA (`rea-agents`) — https://github.com/morluto/rea

@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Amazon Prime (amazon-prime); invest
 
 This is the coding-agent skill for **Amazon Prime** (`amazon-prime`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/amazon/amazon-prime.md` from the catalog page, or run `npx rae-faang amazon-prime --out ./amazon-prime.md`, `npx rae-faang skills generate amazon-prime` or `npx rae-faang build agent-kit amazon-prime --out ./amazon-prime-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/amazon/amazon-prime.md` from the catalog page, or run `npx rea-faang amazon-prime --out ./amazon-prime.md`, `npx rea-faang skills generate amazon-prime` or `npx rea-faang build agent-kit amazon-prime --out ./amazon-prime-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Amazon Prime / `amazon-prime` | `catalog/products.jsonl` |
 | Official product URL | [https://www.amazon.com/prime](https://www.amazon.com/prime) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier amazon-prime` | `research/companies/amazon/products/amazon-prime.md` |
+| Research dossier | `npx rea-faang research dossier amazon-prime` | `research/companies/amazon/products/amazon-prime.md` |
 | REA report | `catalog/rea/amazon/amazon-prime.md` (captured 2026-11-03T01:30:56.108Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/amazon-prime.json` (`ev_39d84a935b009b9b2983a42bc4f6f6630b570a6590f339ac5db9d71d52d72025`) | Catalog evidence |
 | Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show amazon-prime --format json` and `npx rae-faang research dossier amazon-prime` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show amazon-prime --format json` and `npx rea-faang research dossier amazon-prime` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -453,7 +453,7 @@ Prime's uniqueness is the cross-category bundle (shipping + video + music + read
 
 Integrated logistics network enabling free fast shipping at scale, content licensing for video/music, and the data flywheel connecting shopping behavior to content recommendations are the primary gaps. An open alternative could create a federated loyalty protocol where merchants pool benefits.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Not feasible to replicate the bundle. Strategy: Build open loyalty framework (Open Loyalty) for merchants to create their own programs. Integrate with Jellyfin/Funkwhale for self-hosted media. Use Kill Bill for subscription billing. Explore federated commerce loyalty (merchant consortium sharing benefits). Focus on merchant-owned, not platform-owned.
 
@@ -486,7 +486,7 @@ Prime is a platform-level bundle; open alternatives are component-level. The int
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Phase 1: Open Loyalty + Kill Bill for subscription/loyalty core. Phase 2: Jellyfin/Funkwhale integration for media benefits. Phase 3: Shipping API integrations (Shippo, EasyPost) for free shipping promises. Phase 4: Federated loyalty protocol design (merchants share benefits). Phase 5: Prime Day equivalent (coordinated sale events).
 
@@ -494,7 +494,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier amazon-prime` and inspect canonical identity with `npx rae-faang products show amazon-prime --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier amazon-prime` and inspect canonical identity with `npx rea-faang products show amazon-prime --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -507,7 +507,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang amazon-prime --out ./amazon-prime.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit amazon-prime --out ./amazon-prime-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang amazon-prime --out ./amazon-prime.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit amazon-prime --out ./amazon-prime-agent`.
 
 ### Multi-agent task plan and outputs
 

@@ -82,7 +82,7 @@ Open-source file and storage systems can cover subsets of NFS, SMB, snapshots or
 
 REA should map file systems, storage virtual machines, volumes, protocols, identity, snapshots, clones, replication, FlexCache, tiering, quotas, backups, failure recovery, APIs and the limits of AWS-managed ONTAP features.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use AWS and NetApp public documentation as research surfaces. A clean-room equivalent should use independently licensed storage components and document differences in protocols, snapshots, replication, tiering, management and cloud integration without copying proprietary ONTAP implementation.
 

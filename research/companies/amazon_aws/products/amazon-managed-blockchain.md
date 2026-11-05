@@ -82,7 +82,7 @@ Self-managed alternatives can cover portions of node operation, private networks
 
 Research must map public-chain coverage, Fabric lifecycle, Query schemas, IAM, quotas, regions, billing, data freshness, failure modes and the announced migration paths.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS product and API documentation plus the end-of-support notice. Produce an independent implementation plan only after documenting observed contracts and a foundation verdict; do not claim parity with AWS or imply continued availability after the sunset date.
 

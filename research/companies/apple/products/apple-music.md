@@ -87,7 +87,7 @@ Streaming your own library is self-hostable; the licensed catalogue is not repli
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Partial. Self-hosted library streaming is mature (Navidrome, Funkwhale); the catalogue is not.
 
@@ -124,6 +124,6 @@ Streaming your own library is self-hostable; the licensed catalogue is not repli
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Partial. Self-hosted library streaming is mature (Navidrome, Funkwhale); the catalogue is not.

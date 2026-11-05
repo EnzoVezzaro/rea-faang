@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Microsoft Teams (microsoft-teams); 
 
 # Microsoft Teams — implementation skill (`microsoft-teams`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Microsoft Teams**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Microsoft Teams (microsoft-teams); 
 
 This is the coding-agent skill for **Microsoft Teams** (`microsoft-teams`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/microsoft/microsoft-teams.md` from the catalog page, or run `npx rae-faang microsoft-teams --out ./microsoft-teams.md`, `npx rae-faang skills generate microsoft-teams` or `npx rae-faang build agent-kit microsoft-teams --out ./microsoft-teams-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/microsoft/microsoft-teams.md` from the catalog page, or run `npx rea-faang microsoft-teams --out ./microsoft-teams.md`, `npx rea-faang skills generate microsoft-teams` or `npx rea-faang build agent-kit microsoft-teams --out ./microsoft-teams-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Microsoft Teams / `microsoft-teams` | `catalog/products.jsonl` |
 | Official product URL | [https://www.microsoft.com/en-us/microsoft-teams/group-chat-software](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | [https://learn.microsoft.com/en-us/microsoftteams/](https://learn.microsoft.com/en-us/microsoftteams/) | Catalog record |
-| Research dossier | `npx rae-faang research dossier microsoft-teams` | `research/companies/microsoft/products/microsoft-teams.md` |
+| Research dossier | `npx rea-faang research dossier microsoft-teams` | `research/companies/microsoft/products/microsoft-teams.md` |
 | REA report | `catalog/rea/microsoft/microsoft-teams.md` (captured 2026-11-03T01:41:38.358Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/microsoft-teams.json` (`ev_576c79eff944e04fd76f75ec38ea63f6fdf967d9d0624a28b529b70b7ae6fab4`) | Catalog evidence |
 | Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show microsoft-teams --format json` and `npx rae-faang research dossier microsoft-teams` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show microsoft-teams --format json` and `npx rea-faang research dossier microsoft-teams` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `MICROSOFT-TEAMS-CAP-ED415C70`, `MICROSOFT-TEAMS-CAP-4F8B4E4D`, `MICROSOFT-TEAMS-CAP-30FFC25A`, `MICROSOFT-TEAMS-CAP-D060C3AC`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `MICROSOFT-TEAMS-CAP-FA135FC5`, `MICROSOFT-TEAMS-CAP-F66CCB9B`, `MICROSOFT-TEAMS-CAP-1FBFBE5D`, `MICROSOFT-TEAMS-CAP-1A5E9FB8`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -118,19 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `MICROSOFT-TEAMS-CAP-ED415C70` | Channel and direct chat with file attachments | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `MICROSOFT-TEAMS-CAP-4F8B4E4D` | Scheduled and ad-hoc meetings with screen sharing and recording | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `MICROSOFT-TEAMS-CAP-30FFC25A` | Teams admin center and PowerShell administration | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `MICROSOFT-TEAMS-CAP-D060C3AC` | Guest access and external federation | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-TEAMS-CAP-FA135FC5` | Chat, channels and collaboration identity are verified at the product level. | VERIFIED | `ev-microsoft-teams-identity`, `ev-microsoft-teams-admin` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-TEAMS-CAP-F66CCB9B` | Teams meetings, shared work and administration are documented; exact feature availability depends on plan and tenant policy. | VERIFIED | `ev-microsoft-teams-admin` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-TEAMS-CAP-1FBFBE5D` | Teams resources and workflows have a documented Microsoft Graph API surface; authenticated permissions are required. | VERIFIED | `ev-microsoft-teams-graph` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `MICROSOFT-TEAMS-CAP-1A5E9FB8` | The integrated tenant, licensing, compliance and service behavior is not exhaustively verified for every plan or region. | VERIFIED | `ev-microsoft-teams-admin`, `ev-microsoft-teams-graph` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `button: Products `, `button: Features `, `button: Solutions `, `button: Resources `, `button: More `, `button: Dismiss`, `button: Submit`, `button: What are the key benefits of Teams?`, `button: Get a custom quote`, `button:  Streamline teamwork`, `button: Play`, `button:  Customize views`, `button:  Collaborate securely`, `button:  Increase effectiveness`, `button: Slide 1 Make-A-Wish Foundation cuts costs 40% using Clerk Chat and Microsoft Teams current slide`, `button: Slide 2 Global health nonprofit PATH elevates its security and protects private data with Microsoft Defender XDR`, `button: Slide 3 Moody’s guards against risk with decision-grade intelligence live in Copilot`, `button: Slide 4 Levi Strauss & Co. simplifies work and accelerates decision-making with Microsoft Foundry`, `button: Slide 5 Kimley-Horn brings Microsoft 365 Copilot to AEC work`, `button: Slide 6 Premera Blue Cross makes AI mainstream with Copilot and Copilot Studio`, `link: Skip to main content`, `link: Microsoft`, `link: Teams`, `link: Plans and pricing`, `link: Try for free`, `link: Download Teams`, `link: Sign in`, `link: Download now - Download Microsoft Teams for desktop and mobile to collaborate and connect across devices.`, `link: Featured news`, `link: Solutions`, `link: Products and services`, `link: Customer stories`, `link: Get started`, `link: See plans and pricing to find the right Microsoft Teams for your needs`, `link: Learn more about Microsoft Teams features that boost everyone’s productivity`, `link: footnote 1`, `link: Learn more about Copilot in Teams`, `link: Back to tabs`, `link: Learn more about how Microsoft Teams can keep your business connected.`, `link: Learn more about Microsoft Teams Essentials, an affordable and professional meeting solution for small businesses.`, `link: Learn more about how Microsoft 365 Business Standard can help you manage your business and connect employees across devices.`, `link: Learn more about Microsoft 365 Business Premium with comprehensive security and cloud services`, `link: Learn more about Microsoft Teams Phone Teams Phone more than a cloud phone system. Experience smart communication`, `link: Learn more about turning any meeting room into an inclusive and collaborative space with Microsoft Teams Rooms`, `link: Learn more about Microsoft Teams Premium the smart place to work`, `link: Back to PRODUCTS AND SERVICES section`, `link: See all customer stories`, `link: Microsoft Teams`, `link: Read the story Make-A-Wish Foundation cuts costs 40% using Clerk Chat and Microsoft Teams`, `link: Back to SUCCESS STORIES section`, `link: See plans and pricing for Microsoft Teams tailored to your organization's needs.`, `link: Try Teams for free and easily manage your needs for home and life, all in Microsoft Teams`, `link: Learn more about how Copilot for Microsoft 365 is now available for small and medium-sized businesses.`, `link: footnote-label-1`, `link: here`, `link: footnote-label-2`, `link: footnote-label-3`, `link: footnote-label-4`, `link: footnote-label-5`, `link: footnote-label-6`, `link: footnote-label-7`, `link: Follow Microsoft Teams on Twitter`, `link: Follow Microsoft Teams on Instagram`, `link: Follow Microsoft Teams on YouTube`, `link: Follow Microsoft Teams on Blog`, `link: Surface Laptop Ultra`, `link: Surface Pro`, `link: Surface Laptop`, `link: Surface RTX Spark Dev Box`, `link: Explore Copilot`, `link: Explore Microsoft products`, `link: Windows 11 apps`, `link: Account profile`, `link: Download Center`, `link: Microsoft Store support`, `link: Returns`, `link: Order tracking`, `link: Certified Refurbished`, `link: Why buy from Microsoft Store`, `link: Flexible Payments`, `link: Microsoft in education`, `link: Devices for education`, `link: Microsoft Teams for Education`, `link: Microsoft 365 Education`, `link: How to buy for your school`, `link: Educator training and development`, `link: Deals for students and parents`, `link: AI for education`, `link: Microsoft AI`, `link: Microsoft Security`, `link: Dynamics 365`, `link: Microsoft 365`, `link: Microsoft Power Platform`, `link: Microsoft Copilot`, `link: Small Business`, `link: Azure`, `link: Microsoft Developer`, `link: Microsoft Learn`, `link: Support for AI marketplace apps`, `link: Microsoft Tech Community`, `link: Microsoft Marketplace`, `link: Software companies`, `link: Visual Studio`, `link: Careers`, `link: About Microsoft`, `link: Company news`, `link: Privacy at Microsoft`, `link: Investors`, `link: Diversity and inclusion`, `link: Accessibility`, `link: Sustainability`, `link: Content Language Selector. Currently set to English (United States)`, `link: Your Privacy Choices Opt-Out Icon Your Privacy Choices`, `link: Consumer Health Privacy`, `link: Sitemap`, `link: Contact Microsoft`, `link: Privacy`, `link: Terms of use`, `link: Trademarks`, `link: Safety & eco`, `link: Recycling`, `link: About our ads`, `button: Open Ask Microsoft web assistant`, `button: Chat dialog Collapsed. Click to expand Ask Microsoft chat dialog.`, `button: Feedback`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **Channel and direct chat with file attachments:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Scheduled and ad-hoc meetings with screen sharing and recording:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Teams admin center and PowerShell administration:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Guest access and external federation:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Chat, channels and collaboration identity are verified at the product level.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Teams meetings, shared work and administration are documented; exact feature availability depends on plan and tenant policy.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Teams resources and workflows have a documented Microsoft Graph API surface; authenticated permissions are required.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The integrated tenant, licensing, compliance and service behavior is not exhaustively verified for every plan or region.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -147,41 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-ED415C70 — Channel and direct chat with file attachments
+### REQ-FUNC-FA135FC5 — Chat, channels and collaboration identity are verified at the product level.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-microsoft-teams-identity`, `ev-microsoft-teams-admin`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-ED415C70`; fixture and expected output must be specified from evidence.
-- **Trace:** `MICROSOFT-TEAMS-CAP-ED415C70` → `REQ-FUNC-ED415C70` → `TEST-FUNC-ED415C70`.
+- **Associated test ID:** `TEST-FUNC-FA135FC5`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-TEAMS-CAP-FA135FC5` → `REQ-FUNC-FA135FC5` → `TEST-FUNC-FA135FC5`.
 
-### REQ-FUNC-4F8B4E4D — Scheduled and ad-hoc meetings with screen sharing and recording
+### REQ-FUNC-F66CCB9B — Teams meetings, shared work and administration are documented; exact feature availability depends on plan and tenant policy.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-microsoft-teams-admin`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-4F8B4E4D`; fixture and expected output must be specified from evidence.
-- **Trace:** `MICROSOFT-TEAMS-CAP-4F8B4E4D` → `REQ-FUNC-4F8B4E4D` → `TEST-FUNC-4F8B4E4D`.
+- **Associated test ID:** `TEST-FUNC-F66CCB9B`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-TEAMS-CAP-F66CCB9B` → `REQ-FUNC-F66CCB9B` → `TEST-FUNC-F66CCB9B`.
 
-### REQ-FUNC-30FFC25A — Teams admin center and PowerShell administration
+### REQ-FUNC-1FBFBE5D — Teams resources and workflows have a documented Microsoft Graph API surface; authenticated permissions are required.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-microsoft-teams-graph`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-30FFC25A`; fixture and expected output must be specified from evidence.
-- **Trace:** `MICROSOFT-TEAMS-CAP-30FFC25A` → `REQ-FUNC-30FFC25A` → `TEST-FUNC-30FFC25A`.
+- **Associated test ID:** `TEST-FUNC-1FBFBE5D`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-TEAMS-CAP-1FBFBE5D` → `REQ-FUNC-1FBFBE5D` → `TEST-FUNC-1FBFBE5D`.
 
-### REQ-FUNC-D060C3AC — Guest access and external federation
+### REQ-FUNC-1A5E9FB8 — The integrated tenant, licensing, compliance and service behavior is not exhaustively verified for every plan or region.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-microsoft-teams-admin`, `ev-microsoft-teams-graph`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-D060C3AC`; fixture and expected output must be specified from evidence.
-- **Trace:** `MICROSOFT-TEAMS-CAP-D060C3AC` → `REQ-FUNC-D060C3AC` → `TEST-FUNC-D060C3AC`.
+- **Associated test ID:** `TEST-FUNC-1A5E9FB8`; fixture and expected output must be specified from evidence.
+- **Trace:** `MICROSOFT-TEAMS-CAP-1A5E9FB8` → `REQ-FUNC-1A5E9FB8` → `TEST-FUNC-1A5E9FB8`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -227,10 +227,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `MICROSOFT-TEAMS-CAP-ED415C70` — Channel and direct chat with file attachments | Not verified against Element | None yet; compare with `ev_576c79eff944e04fd76f75ec38ea63f6fdf967d9d0624a28b529b70b7ae6fab4` | Candidate code path and tests must be inspected |
-| `MICROSOFT-TEAMS-CAP-4F8B4E4D` — Scheduled and ad-hoc meetings with screen sharing and recording | Not verified against Element | None yet; compare with `ev_576c79eff944e04fd76f75ec38ea63f6fdf967d9d0624a28b529b70b7ae6fab4` | Candidate code path and tests must be inspected |
-| `MICROSOFT-TEAMS-CAP-30FFC25A` — Teams admin center and PowerShell administration | Not verified against Element | None yet; compare with `ev_576c79eff944e04fd76f75ec38ea63f6fdf967d9d0624a28b529b70b7ae6fab4` | Candidate code path and tests must be inspected |
-| `MICROSOFT-TEAMS-CAP-D060C3AC` — Guest access and external federation | Not verified against Element | None yet; compare with `ev_576c79eff944e04fd76f75ec38ea63f6fdf967d9d0624a28b529b70b7ae6fab4` | Candidate code path and tests must be inspected |
+| `MICROSOFT-TEAMS-CAP-FA135FC5` — Chat, channels and collaboration identity are verified at the product level. | Not verified against Element | None yet; compare with `ev_576c79eff944e04fd76f75ec38ea63f6fdf967d9d0624a28b529b70b7ae6fab4` | Candidate code path and tests must be inspected |
+| `MICROSOFT-TEAMS-CAP-F66CCB9B` — Teams meetings, shared work and administration are documented; exact feature availability depends on plan and tenant policy. | Not verified against Element | None yet; compare with `ev_576c79eff944e04fd76f75ec38ea63f6fdf967d9d0624a28b529b70b7ae6fab4` | Candidate code path and tests must be inspected |
+| `MICROSOFT-TEAMS-CAP-1FBFBE5D` — Teams resources and workflows have a documented Microsoft Graph API surface; authenticated permissions are required. | Not verified against Element | None yet; compare with `ev_576c79eff944e04fd76f75ec38ea63f6fdf967d9d0624a28b529b70b7ae6fab4` | Candidate code path and tests must be inspected |
+| `MICROSOFT-TEAMS-CAP-1A5E9FB8` — The integrated tenant, licensing, compliance and service behavior is not exhaustively verified for every plan or region. | Not verified against Element | None yet; compare with `ev_576c79eff944e04fd76f75ec38ea63f6fdf967d9d0624a28b529b70b7ae6fab4` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -278,10 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-ED415C70** → `REQ-FUNC-ED415C70`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-4F8B4E4D** → `REQ-FUNC-4F8B4E4D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-30FFC25A** → `REQ-FUNC-30FFC25A`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-D060C3AC** → `REQ-FUNC-D060C3AC`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-FA135FC5** → `REQ-FUNC-FA135FC5`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-F66CCB9B** → `REQ-FUNC-F66CCB9B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-1FBFBE5D** → `REQ-FUNC-1FBFBE5D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-1A5E9FB8** → `REQ-FUNC-1A5E9FB8`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -302,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-ED415C70, REQ-FUNC-4F8B4E4D, REQ-FUNC-30FFC25A, REQ-FUNC-D060C3AC
+- **Requirements:** REQ-FUNC-FA135FC5, REQ-FUNC-F66CCB9B, REQ-FUNC-1FBFBE5D, REQ-FUNC-1A5E9FB8
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -312,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-ED415C70, REQ-FUNC-4F8B4E4D, REQ-FUNC-30FFC25A, REQ-FUNC-D060C3AC
+- **Requirements:** REQ-FUNC-FA135FC5, REQ-FUNC-F66CCB9B, REQ-FUNC-1FBFBE5D, REQ-FUNC-1A5E9FB8
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -334,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-ED415C70, REQ-FUNC-4F8B4E4D, REQ-FUNC-30FFC25A, REQ-FUNC-D060C3AC; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-FA135FC5, REQ-FUNC-F66CCB9B, REQ-FUNC-1FBFBE5D, REQ-FUNC-1A5E9FB8; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -364,11 +364,18 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
+| `ev-microsoft-teams-identity` | Microsoft Teams — The official product page presents Teams as a product for chat, meetings and collaboration. | [link](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) | 2026-11-03T00:00:00Z | Microsoft Teams is an active hosted collaboration and communications product. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-microsoft-teams-admin` | Introduction to Microsoft Teams for admins — Microsoft documents Teams architecture, shared files, teamwork, administration and related Microsoft 365 services. | [link](https://learn.microsoft.com/en-us/microsoftteams/teams-overview) | 2026-11-03T00:00:00Z | Teams is a collaboration workspace built on Microsoft 365 groups and Microsoft Graph with its own administration model. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-microsoft-teams-graph` | Use the Microsoft Graph API to work with Microsoft Teams — The official API overview covers teams, channels, members, messages, tabs, apps and meetings. | [link](https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview) | 2026-11-03T00:00:00Z | Microsoft Graph exposes documented Teams resources and operations for collaboration workflows. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
 | `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) | 2026-11-03T00:00:00Z | Microsoft Teams is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
 | `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://learn.microsoft.com/en-us/microsoftteams/) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
 | `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
-| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://learn.microsoft.com/en-us/microsoftteams/) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://learn.microsoft.com/en-us/microsoftteams/teams-overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_576c79eff944e04fd76f75ec38ea63f6fdf967d9d0624a28b529b70b7ae6fab4` | Microsoft Teams Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) | 2026-11-03T01:41:38.358Z | A dated unauthenticated snapshot exposed controls button: Products , button: Features , button: Solutions , button: Resources , button: More , button: Dismiss, button: Submit, button: What are the key benefits of Teams?, button: Get a custom quote, button:  Streamline teamwork, button: Play, button:  Customize views, button:  Collaborate securely, button:  Increase effectiveness, button: Slide 1 Make-A-Wish Foundation cuts costs 40% using Clerk Chat and Microsoft Teams current slide, button: Slide 2 Global health nonprofit PATH elevates its security and protects private data with Microsoft Defender XDR, button: Slide 3 Moody’s guards against risk with decision-grade intelligence live in Copilot, button: Slide 4 Levi Strauss & Co. simplifies work and accelerates decision-making with Microsoft Foundry, button: Slide 5 Kimley-Horn brings Microsoft 365 Copilot to AEC work, button: Slide 6 Premera Blue Cross makes AI mainstream with Copilot and Copilot Studio, link: Skip to main content, link: Microsoft, link: Teams, link: Plans and pricing, link: Try for free, link: Download Teams, link: Sign in, link: Download now - Download Microsoft Teams for desktop and mobile to collaborate and connect across devices., link: Featured news, link: Solutions, link: Products and services, link: Customer stories, link: Get started, link: See plans and pricing to find the right Microsoft Teams for your needs, link: Learn more about Microsoft Teams features that boost everyone’s productivity, link: footnote 1, link: Learn more about Copilot in Teams, link: Back to tabs, link: Learn more about how Microsoft Teams can keep your business connected., link: Learn more about Microsoft Teams Essentials, an affordable and professional meeting solution for small businesses., link: Learn more about how Microsoft 365 Business Standard can help you manage your business and connect employees across devices., link: Learn more about Microsoft 365 Business Premium with comprehensive security and cloud services, link: Learn more about Microsoft Teams Phone Teams Phone more than a cloud phone system. Experience smart communication, link: Learn more about turning any meeting room into an inclusive and collaborative space with Microsoft Teams Rooms, link: Learn more about Microsoft Teams Premium the smart place to work, link: Back to PRODUCTS AND SERVICES section, link: See all customer stories, link: Microsoft Teams, link: Read the story Make-A-Wish Foundation cuts costs 40% using Clerk Chat and Microsoft Teams, link: Back to SUCCESS STORIES section, link: See plans and pricing for Microsoft Teams tailored to your organization's needs., link: Try Teams for free and easily manage your needs for home and life, all in Microsoft Teams, link: Learn more about how Copilot for Microsoft 365 is now available for small and medium-sized businesses., link: footnote-label-1, link: here, link: footnote-label-2, link: footnote-label-3, link: footnote-label-4, link: footnote-label-5, link: footnote-label-6, link: footnote-label-7, link: Follow Microsoft Teams on Twitter, link: Follow Microsoft Teams on Instagram, link: Follow Microsoft Teams on YouTube, link: Follow Microsoft Teams on Blog, link: Surface Laptop Ultra, link: Surface Pro, link: Surface Laptop, link: Surface RTX Spark Dev Box, link: Explore Copilot, link: Explore Microsoft products, link: Windows 11 apps, link: Account profile, link: Download Center, link: Microsoft Store support, link: Returns, link: Order tracking, link: Certified Refurbished, link: Why buy from Microsoft Store, link: Flexible Payments, link: Microsoft in education, link: Devices for education, link: Microsoft Teams for Education, link: Microsoft 365 Education, link: How to buy for your school, link: Educator training and development, link: Deals for students and parents, link: AI for education, link: Microsoft AI, link: Microsoft Security, link: Dynamics 365, link: Microsoft 365, link: Microsoft Power Platform, link: Microsoft Copilot, link: Small Business, link: Azure, link: Microsoft Developer, link: Microsoft Learn, link: Support for AI marketplace apps, link: Microsoft Tech Community, link: Microsoft Marketplace, link: Software companies, link: Visual Studio, link: Careers, link: About Microsoft, link: Company news, link: Privacy at Microsoft, link: Investors, link: Diversity and inclusion, link: Accessibility, link: Sustainability, link: Content Language Selector. Currently set to English (United States), link: Your Privacy Choices Opt-Out Icon Your Privacy Choices, link: Consumer Health Privacy, link: Sitemap, link: Contact Microsoft, link: Privacy, link: Terms of use, link: Trademarks, link: Safety & eco, link: Recycling, link: About our ads, button: Open Ask Microsoft web assistant, button: Chat dialog Collapsed. Click to expand Ask Microsoft chat dialog., button: Feedback and landmarks banner, navigation: Contextual menu, main, navigation: In page quick links, search, region: SUCCESS STORIES section, region, region: Social Follow links, contentinfo, navigation: Footer Resource links, navigation: Microsoft corporate links. | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
+| `SRC-CANDIDATE-1` | Element candidate — Curated entry; repository only when recorded. | [link](https://element.io/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-2` | Jitsi candidate — Curated entry; repository only when recorded. | [link](https://jitsi.org/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
+| `SRC-CANDIDATE-3` | Mattermost candidate — Curated entry; repository only when recorded. | [link](https://mattermost.com/) | Not recorded | Candidate for evaluation, not an approved foundation. | **PROPOSED** — Version, license/dependencies, code, tests, security, maintenance and operations not audited. |
 
 ### Confidence classifications
 
@@ -395,78 +402,85 @@ Resume token: `microsoft-teams`. Read dossier, REA report and raw Evidence befor
 
 # 1. Executive summary
 
-Teams combines persistent chat, meetings and file collaboration for organisations, integrated with Microsoft 365 identity and storage.
-
+Microsoft Teams is Microsoft's hosted collaboration and communications product for chat, channels, meetings, calling and shared work. It is tightly integrated with Microsoft 365, but it remains a separate product identity and catalog entry.
 
 # 2. Product identity and ownership
 
-**Official name:** Microsoft Teams
-**Company:** Microsoft Corporation
-**Lifecycle status:** active
+**Official name:** Microsoft Teams  
+**Company:** Microsoft Corporation  
+**Lifecycle status:** active  
 **Official website:** https://www.microsoft.com/en-us/microsoft-teams/group-chat-software
+
+Microsoft's administrator documentation describes Teams as a collaboration workspace built on Microsoft 365 groups and Microsoft Graph, with its own administration, licensing and lifecycle controls.
 
 # 3. Product capabilities
 
-- Persistent channel and direct chat with file attachments
-- Scheduled and ad-hoc meetings with screen sharing and recording
-- Teams admin center and Teams PowerShell for administration
-- Guest access and external federation
+- Persistent direct and channel-based chat.
+- Scheduled and ad-hoc meetings, calls, screen sharing and plan-dependent recording or events.
+- Shared work through files, tabs, apps, calendars and connected Microsoft 365 services.
+- Team, channel, membership, policy, guest and lifecycle administration.
+
+Teams is separate from Microsoft 365 in this catalog because it has its own user-facing identity, admin surface and API resources. Its integration with OneDrive, SharePoint and Microsoft 365 does not make those entries duplicates.
 
 # 4. Technical architecture
 
-Teams is a hosted service with proprietary clients; public documentation covers administration, Graph APIs and meeting behaviour rather than implementation detail.
+Teams is a managed cloud service built on Microsoft 365 groups, Microsoft Graph and Microsoft-operated clients and services. Public documentation describes the collaboration model and APIs, not proprietary implementation details.
 
 # 5. User workflows
 
-Members join a team, chat in channels, join scheduled meetings, share files from OneDrive or SharePoint and are administered by an IT role through the admin center.
+An organisation creates or joins a team, configures channels and membership, communicates in chat or meetings, and shares work through connected files and applications. Administrators manage policies, access, lifecycle and compliance according to tenant and license configuration.
 
 # 6. Pricing and access
 
-Included in Microsoft 365 plans and available in a free tier with limits; the catalog records the tiers, not prices.
+Teams availability and feature entitlements depend on account type, plan, region and licensing. This research verifies the product and its documented capabilities, not current prices or a particular tenant's entitlement.
 
 # 7. API and integration surface
 
-Official surfaces: the Microsoft Teams PowerShell module, documented at https://learn.microsoft.com/en-us/microsoftteams/teams-powershell-overview, plus Microsoft Graph. Command status: documented, with official documentation as the source.
+Microsoft Graph documents Teams resources and operations for teams, channels, members, messages, tabs, apps and meetings. Teams administration is also documented through the Teams admin center and PowerShell. Authentication, permissions and tenant policy are required for real operations.
 
 # 8. Existing open-source alternatives
 
-Element (AGPL-3.0) provides Matrix chat and calls; Jitsi (Apache-2.0) provides self-hosted meetings. Both are credible for the chat or meeting slice alone.
+- Element (AGPL-3.0): Matrix-based chat, rooms and calls with self-hosting options.
+- Jitsi (Apache-2.0): self-hosted audio/video meetings and screen sharing.
+- Mattermost (MIT): self-hosted team messaging and collaboration.
 
 # 9. Alternative comparison
 
-Element has the stronger persistent-chat story; Jitsi the stronger meeting story. Neither pairs chat, meetings, files and tenant administration in one verified stack.
+Element and Mattermost cover persistent team messaging; Jitsi covers meetings. None is verified here as a drop-in replacement for Teams' combined chat, meetings, files, apps, identity, tenant administration and compliance model.
 
 # 10. Missing capabilities and opportunity analysis
 
-The integration of chat, meetings, recording and administration is the missing capability; a composed Matrix + Jitsi + object-storage stack is a plausible build.
+The integration boundary is the main gap: a composed open stack must join messaging, meetings, identity, file collaboration, app extensibility, administration and retention without weakening security or auditability.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
-Build on Matrix for chat and Jitsi for meetings, with one identity provider and a documented admin plane; verify each integration with tests rather than asserting parity.
+Start with one narrow collaboration workflow. Select a chat system and meeting system, connect them through a common identity provider, define file ownership and retention, and test administration and audit evidence before claiming parity.
 
 # 12. Security, privacy, and compliance
 
-Meeting recordings and chat history are sensitive; defaults should encrypt at rest, make retention explicit and avoid third-party analytics.
+Chat history, recordings, files and membership data are sensitive. Do not infer retention, encryption, compliance or guest access from public marketing pages; verify each tenant policy and document the corresponding controls.
 
 # 13. Sources and evidence
 
-- https://www.microsoft.com/en-us/microsoft-teams/group-chat-software
-- https://learn.microsoft.com/en-us/microsoftteams/
+- [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) — official product surface.
+- [Introduction to Microsoft Teams for admins](https://learn.microsoft.com/en-us/microsoftteams/teams-overview) — official architecture and administration documentation.
+- [Microsoft Teams Graph API overview](https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview) — official API surface.
 
 # 14. Open questions
 
-- Can Matrix rooms and Jitsi meetings share one identity and one recording store?
-- Which admin operations are required for a small organisation?
+- Which Teams plan and region should a future comparison cover?
+- Which collaboration workflow should be tested first: chat, meetings, files or administration?
+- What retention and audit requirements would an alternative stack need to satisfy?
 
 # 15. Research history
 
-Record created 2026-11-03 from public official sources during the FAANG+Microsoft inventory expansion. Status: `pending`; nothing beyond official documentation and public announcements is asserted.
+Record updated 2026-11-03 from official Microsoft product and documentation sources. Status: `researched`; plan-specific licensing, tenant behavior and private implementation details remain outside this pass.
 
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier microsoft-teams` and inspect canonical identity with `npx rae-faang products show microsoft-teams --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier microsoft-teams` and inspect canonical identity with `npx rea-faang products show microsoft-teams --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -479,7 +493,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang microsoft-teams --out ./microsoft-teams.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit microsoft-teams --out ./microsoft-teams-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang microsoft-teams --out ./microsoft-teams.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit microsoft-teams --out ./microsoft-teams-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -521,8 +535,15 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
+- [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) — Microsoft Teams is an active hosted collaboration and communications product. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Introduction to Microsoft Teams for admins](https://learn.microsoft.com/en-us/microsoftteams/teams-overview) — Teams is a collaboration workspace built on Microsoft 365 groups and Microsoft Graph with its own administration model. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Use the Microsoft Graph API to work with Microsoft Teams](https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview) — Microsoft Graph exposes documented Teams resources and operations for collaboration workflows. (VERIFIED; accessed 2026-11-03T00:00:00Z).
 - [Official product page](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) — Microsoft Teams is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Official documentation entry](https://learn.microsoft.com/en-us/microsoftteams/) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
 - [Additional official source lead](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
-- [Additional official source lead](https://learn.microsoft.com/en-us/microsoftteams/) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://learn.microsoft.com/en-us/microsoftteams/teams-overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://learn.microsoft.com/en-us/graph/api/resources/teams-api-overview) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [Microsoft Teams Public web-surface observation (REA)](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software) — A dated unauthenticated snapshot exposed controls button: Products , button: Features , button: Solutions , button: Resources , button: More , button: Dismiss, button: Submit, button: What are the key benefits of Teams?, button: Get a custom quote, button:  Streamline teamwork, button: Play, button:  Customize views, button:  Collaborate securely, button:  Increase effectiveness, button: Slide 1 Make-A-Wish Foundation cuts costs 40% using Clerk Chat and Microsoft Teams current slide, button: Slide 2 Global health nonprofit PATH elevates its security and protects private data with Microsoft Defender XDR, button: Slide 3 Moody’s guards against risk with decision-grade intelligence live in Copilot, button: Slide 4 Levi Strauss & Co. simplifies work and accelerates decision-making with Microsoft Foundry, button: Slide 5 Kimley-Horn brings Microsoft 365 Copilot to AEC work, button: Slide 6 Premera Blue Cross makes AI mainstream with Copilot and Copilot Studio, link: Skip to main content, link: Microsoft, link: Teams, link: Plans and pricing, link: Try for free, link: Download Teams, link: Sign in, link: Download now - Download Microsoft Teams for desktop and mobile to collaborate and connect across devices., link: Featured news, link: Solutions, link: Products and services, link: Customer stories, link: Get started, link: See plans and pricing to find the right Microsoft Teams for your needs, link: Learn more about Microsoft Teams features that boost everyone’s productivity, link: footnote 1, link: Learn more about Copilot in Teams, link: Back to tabs, link: Learn more about how Microsoft Teams can keep your business connected., link: Learn more about Microsoft Teams Essentials, an affordable and professional meeting solution for small businesses., link: Learn more about how Microsoft 365 Business Standard can help you manage your business and connect employees across devices., link: Learn more about Microsoft 365 Business Premium with comprehensive security and cloud services, link: Learn more about Microsoft Teams Phone Teams Phone more than a cloud phone system. Experience smart communication, link: Learn more about turning any meeting room into an inclusive and collaborative space with Microsoft Teams Rooms, link: Learn more about Microsoft Teams Premium the smart place to work, link: Back to PRODUCTS AND SERVICES section, link: See all customer stories, link: Microsoft Teams, link: Read the story Make-A-Wish Foundation cuts costs 40% using Clerk Chat and Microsoft Teams, link: Back to SUCCESS STORIES section, link: See plans and pricing for Microsoft Teams tailored to your organization's needs., link: Try Teams for free and easily manage your needs for home and life, all in Microsoft Teams, link: Learn more about how Copilot for Microsoft 365 is now available for small and medium-sized businesses., link: footnote-label-1, link: here, link: footnote-label-2, link: footnote-label-3, link: footnote-label-4, link: footnote-label-5, link: footnote-label-6, link: footnote-label-7, link: Follow Microsoft Teams on Twitter, link: Follow Microsoft Teams on Instagram, link: Follow Microsoft Teams on YouTube, link: Follow Microsoft Teams on Blog, link: Surface Laptop Ultra, link: Surface Pro, link: Surface Laptop, link: Surface RTX Spark Dev Box, link: Explore Copilot, link: Explore Microsoft products, link: Windows 11 apps, link: Account profile, link: Download Center, link: Microsoft Store support, link: Returns, link: Order tracking, link: Certified Refurbished, link: Why buy from Microsoft Store, link: Flexible Payments, link: Microsoft in education, link: Devices for education, link: Microsoft Teams for Education, link: Microsoft 365 Education, link: How to buy for your school, link: Educator training and development, link: Deals for students and parents, link: AI for education, link: Microsoft AI, link: Microsoft Security, link: Dynamics 365, link: Microsoft 365, link: Microsoft Power Platform, link: Microsoft Copilot, link: Small Business, link: Azure, link: Microsoft Developer, link: Microsoft Learn, link: Support for AI marketplace apps, link: Microsoft Tech Community, link: Microsoft Marketplace, link: Software companies, link: Visual Studio, link: Careers, link: About Microsoft, link: Company news, link: Privacy at Microsoft, link: Investors, link: Diversity and inclusion, link: Accessibility, link: Sustainability, link: Content Language Selector. Currently set to English (United States), link: Your Privacy Choices Opt-Out Icon Your Privacy Choices, link: Consumer Health Privacy, link: Sitemap, link: Contact Microsoft, link: Privacy, link: Terms of use, link: Trademarks, link: Safety & eco, link: Recycling, link: About our ads, button: Open Ask Microsoft web assistant, button: Chat dialog Collapsed. Click to expand Ask Microsoft chat dialog., button: Feedback and landmarks banner, navigation: Contextual menu, main, navigation: In page quick links, search, region: SUCCESS STORIES section, region, region: Social Follow links, contentinfo, navigation: Footer Resource links, navigation: Microsoft corporate links. (VERIFIED; accessed 2026-11-03T01:41:38.358Z).
+- [Element candidate](https://element.io/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [Jitsi candidate](https://jitsi.org/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).
+- [Mattermost candidate](https://mattermost.com/) — Candidate for evaluation, not an approved foundation. (PROPOSED; accessed Not recorded).

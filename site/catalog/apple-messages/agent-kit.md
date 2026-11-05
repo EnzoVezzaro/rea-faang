@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for Messages (iMessage) (apple-messages
 
 # Messages (iMessage) — implementation skill (`apple-messages`)
 
-> **Research status:** pending. Alternative coverage is **no verified alternative**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **Messages (iMessage)**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for Messages (iMessage) (apple-messages
 
 This is the coding-agent skill for **Messages (iMessage)** (`apple-messages`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/apple/apple-messages.md` from the catalog page, or run `npx rae-faang apple-messages --out ./apple-messages.md`, `npx rae-faang skills generate apple-messages` or `npx rae-faang build agent-kit apple-messages --out ./apple-messages-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/apple/apple-messages.md` from the catalog page, or run `npx rea-faang apple-messages --out ./apple-messages.md`, `npx rea-faang skills generate apple-messages` or `npx rea-faang build agent-kit apple-messages --out ./apple-messages-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -28,7 +28,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 | Product identity | Messages (iMessage) / `apple-messages` | `catalog/products.jsonl` |
 | Official product URL | [https://www.apple.com/messages/](https://www.apple.com/messages/) | Catalog record; re-check it resolves and is first-party |
 | Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier apple-messages` | `research/companies/apple/products/apple-messages.md` |
+| Research dossier | `npx rea-faang research dossier apple-messages` | `research/companies/apple/products/apple-messages.md` |
 | REA report | `catalog/rea/apple/apple-messages.md` (captured 2026-11-03T01:32:34.395Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/apple-messages.json` (`ev_8149ab97b786041f268b08b4ad1e12c493bcacca1e88aa1145134cec866f9fcd`) | Catalog evidence |
 | Alternative candidates | 1 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show apple-messages --format json` and `npx rae-faang research dossier apple-messages` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show apple-messages --format json` and `npx rea-faang research dossier apple-messages` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -441,7 +441,7 @@ No open network interoperates with iMessage; open alternatives replace the need,
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Pending. Open messaging networks exist (Matrix, XMPP) but none interoperate with iMessage.
 
@@ -478,7 +478,7 @@ No open network interoperates with iMessage; open alternatives replace the need,
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Pending. Open messaging networks exist (Matrix, XMPP) but none interoperate with iMessage.
 
@@ -486,7 +486,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier apple-messages` and inspect canonical identity with `npx rae-faang products show apple-messages --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier apple-messages` and inspect canonical identity with `npx rea-faang products show apple-messages --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -499,7 +499,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang apple-messages --out ./apple-messages.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit apple-messages --out ./apple-messages-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang apple-messages --out ./apple-messages.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit apple-messages --out ./apple-messages-agent`.
 
 ### Multi-agent task plan and outputs
 

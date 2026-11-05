@@ -87,7 +87,7 @@ Pub/sub is fully covered; AWS-specific integrations are the only gap.
 
 ---
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Available. NATS and Kafka cover pub/sub messaging.
 
@@ -124,6 +124,6 @@ Pub/sub is fully covered; AWS-specific integrations are the only gap.
 
 ---
 
-# 17. RAE implementation strategy (continued)
+# 17. REA implementation strategy (continued)
 
 Available. NATS and Kafka cover pub/sub messaging.

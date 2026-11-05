@@ -5,7 +5,7 @@ description: "Evidence-aware build skill for YouTube Music (youtube-music); inve
 
 # YouTube Music — implementation skill (`youtube-music`)
 
-> **Research status:** pending. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
+> **Research status:** researched. Alternative coverage is **partial alternative coverage**; this describes candidate research only and does not determine whether your agent can build the product. Dossier prose, capability labels and source URLs are not automatically verified. The compiler does not fetch websites or candidate source and does not infer undocumented behavior.
 
 > This is the coding-agent build skill for **YouTube Music**. Give this file to your coding agent in the project where you want the product built.
 
@@ -13,11 +13,11 @@ description: "Evidence-aware build skill for YouTube Music (youtube-music); inve
 
 This is the coding-agent skill for **YouTube Music** (`youtube-music`). Product status and capability notes below distinguish catalog leads from verified behavior; use the source index and current dossier before scoping implementation.
 
-**Same file, three ways to get it:** download or copy `catalog/skills/google/youtube-music.md` from the catalog page, or run `npx rae-faang youtube-music --out ./youtube-music.md`, `npx rae-faang skills generate youtube-music` or `npx rae-faang build agent-kit youtube-music --out ./youtube-music-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
+**Same file, three ways to get it:** download or copy `catalog/skills/google/youtube-music.md` from the catalog page, or run `npx rea-faang youtube-music --out ./youtube-music.md`, `npx rea-faang skills generate youtube-music` or `npx rea-faang build agent-kit youtube-music --out ./youtube-music-agent`. All produce this exact Markdown from the same compiler; no hand-edited variant exists.
 
 ## Operating procedure — from authorized observation to a working implementation
 
-This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the RAE FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
+This skill is an execution brief, not a description. You are the consuming agent: you run it in the user’s own project and deliver an independent implementation there. Do not add the product to the REA FAANG catalog, do not edit the catalog repository, and do not ship the product inside it.
 
 Workflow: **inputs → authorized REA → evidence → capabilities/workflows/states/limits/unknowns → foundation decision → plan → build in the consumer project → verify and report.** Every step produces an artifact; a later step may not silently fill a gap left by an earlier one.
 
@@ -27,8 +27,8 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 |---|---|---|
 | Product identity | YouTube Music / `youtube-music` | `catalog/products.jsonl` |
 | Official product URL | [https://music.youtube.com/](https://music.youtube.com/) | Catalog record; re-check it resolves and is first-party |
-| Official documentation | Not recorded in the catalog; find the official documentation and record it before relying on prose. | Catalog record |
-| Research dossier | `npx rae-faang research dossier youtube-music` | `research/companies/google/products/youtube-music.md` |
+| Official documentation | [https://support.google.com/youtubemusic](https://support.google.com/youtubemusic) | Catalog record |
+| Research dossier | `npx rea-faang research dossier youtube-music` | `research/companies/google/products/youtube-music.md` |
 | REA report | `catalog/rea/google/youtube-music.md` (captured 2026-11-03T01:42:56.579Z, status captured) | Catalog evidence |
 | REA raw evidence | `catalog/rea/evidence/youtube-music.json` (`ev_c274a080cd1566471fc4d3481371263f14af3d4f7acf4339223d5bacac938b89`) | Catalog evidence |
 | Alternative candidates | 2 candidate(s) recorded in section 9 | Curated landscape |
@@ -38,7 +38,7 @@ Workflow: **inputs → authorized REA → evidence → capabilities/workflows/st
 
 ### Step 1 — confirm identity and authorization
 
-Run `npx rae-faang products show youtube-music --format json` and `npx rae-faang research dossier youtube-music` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
+Run `npx rea-faang products show youtube-music --format json` and `npx rea-faang research dossier youtube-music` and reconcile them with the user’s request. Confirm the product identity, the exact surface under analysis, the user’s authorization for that surface and the exclusion list. If authorization or identity is unclear, stop and ask; do not substitute inference.
 
 ### Step 2 — run the Reverse Engineer Anything framework
 
@@ -59,7 +59,7 @@ One row per claim in `FINDINGS.md`, using the classifications in section 14: `VE
 
 ### Step 4 — extract capabilities, workflows, states, limits and unknowns
 
-Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `YOUTUBE-MUSIC-CAP-2BB93BDB`, `YOUTUBE-MUSIC-CAP-B9371420`, `YOUTUBE-MUSIC-CAP-2F3F8F0B`.
+Map findings onto the capability leads and feature IDs in sections 2, 3 and 5, and record, for each: actor and permissions, entry point, inputs/outputs, preconditions, intermediate and persisted state, integrations, success, cancellation, failure and recovery, platform/version limits, and the unknowns that remain. Unchanged from the catalog: `YOUTUBE-MUSIC-CAP-A15C6B9C`, `YOUTUBE-MUSIC-CAP-EC31B40D`, `YOUTUBE-MUSIC-CAP-9CDBBCCC`, `YOUTUBE-MUSIC-CAP-75EC7276`.
 
 ### Step 5 — decide the open-source foundation (mandatory gate)
 
@@ -102,8 +102,8 @@ Run the project’s real checks and capture exit codes. Exercise the primary wor
 | Field | Canonical record / result | Evidence status and limits |
 |---|---|---|
 | Name / stable ID | **YouTube Music** / `youtube-music` | Product catalog |
-| Company / category | Google / `media_streaming` / `music-streaming` | Product catalog |
-| Official website / docs | [https://music.youtube.com/](https://music.youtube.com/) / Not recorded | URL lead; compiler does not fetch source |
+| Company / category | Google / `media_streaming` / `music-streaming`, `podcasts`, `music-discovery` | Product catalog |
+| Official website / docs | [https://music.youtube.com/](https://music.youtube.com/) / [https://support.google.com/youtubemusic](https://support.google.com/youtubemusic) | URL lead; compiler does not fetch source |
 | Lifecycle / supported versions / platforms | active / Unknown / Unknown | Version/platform matrix not structured |
 | Intended users, roles, jobs, value | Unknown | No structured evidence |
 | Boundaries / original architecture | Unknown | Do not infer from category or marketing |
@@ -118,17 +118,19 @@ Capability labels are leads, not complete verified behavior.
 
 | Feature ID | Capability lead | Verification | Evidence | Behavioral details / priority |
 |---|---|---|---|---|
-| `YOUTUBE-MUSIC-CAP-2BB93BDB` | On-demand streaming of a licensed catalogue | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `YOUTUBE-MUSIC-CAP-B9371420` | Personalized recommendations | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
-| `YOUTUBE-MUSIC-CAP-2F3F8F0B` | Library uploads | UNKNOWN | None linked | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `YOUTUBE-MUSIC-CAP-A15C6B9C` | Music and podcast playback, discovery, search and library workflows are documented. | VERIFIED | `ev-youtube-music-identity`, `ev-youtube-music-discovery` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `YOUTUBE-MUSIC-CAP-EC31B40D` | Personal libraries, playlists, recommendations, Sound Search and user uploads are documented. | VERIFIED | `ev-youtube-music-discovery`, `ev-youtube-music-uploads` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `YOUTUBE-MUSIC-CAP-9CDBBCCC` | Premium playback/download benefits and device integrations are documented with eligibility limits. | VERIFIED | `ev-youtube-music-premium`, `ev-youtube-music-devices` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
+| `YOUTUBE-MUSIC-CAP-75EC7276` | The public sources document supported surfaces, but no dedicated general-purpose YouTube Music API was verified in this pass. | VERIFIED | `ev-youtube-music-devices` | User problem, entry, I/O, preconditions, permissions, state/dependencies, failures/recovery, platform and priority are unknown; investigate. |
 
 ## 3. Complete user workflows
 
 **Observed start page, not a completed workflow:** dated capture exposes `link: Get Chrome`. It did not activate controls; submissions, results, validation, persistence, cancellation, retry and recovery remain UNKNOWN.
 
-- **On-demand streaming of a licensed catalogue:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Personalized recommendations:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
-- **Library uploads:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Music and podcast playback, discovery, search and library workflows are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Personal libraries, playlists, recommendations, Sound Search and user uploads are documented.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **Premium playback/download benefits and device integrations are documented with eligibility limits.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
+- **The public sources document supported surfaces, but no dedicated general-purpose YouTube Music API was verified in this pass.:** full workflow is UNKNOWN; investigate actor/permissions, start state, actions/responses, validation, intermediate state, persistence, integrations, success, cancellation, errors, retry, recovery and edge cases. Do not invent a category-typical journey.
 
 ## 4. Interaction and interface specification
 
@@ -145,32 +147,41 @@ A REA page capture is not product-wide interface evidence. Use original interfac
 
 ## 5. Functional requirements and traceability
 
-### REQ-FUNC-2BB93BDB — On-demand streaming of a licensed catalogue
+### REQ-FUNC-A15C6B9C — Music and podcast playback, discovery, search and library workflows are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-youtube-music-identity`, `ev-youtube-music-discovery`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-2BB93BDB`; fixture and expected output must be specified from evidence.
-- **Trace:** `YOUTUBE-MUSIC-CAP-2BB93BDB` → `REQ-FUNC-2BB93BDB` → `TEST-FUNC-2BB93BDB`.
+- **Associated test ID:** `TEST-FUNC-A15C6B9C`; fixture and expected output must be specified from evidence.
+- **Trace:** `YOUTUBE-MUSIC-CAP-A15C6B9C` → `REQ-FUNC-A15C6B9C` → `TEST-FUNC-A15C6B9C`.
 
-### REQ-FUNC-B9371420 — Personalized recommendations
+### REQ-FUNC-EC31B40D — Personal libraries, playlists, recommendations, Sound Search and user uploads are documented.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-youtube-music-discovery`, `ev-youtube-music-uploads`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-B9371420`; fixture and expected output must be specified from evidence.
-- **Trace:** `YOUTUBE-MUSIC-CAP-B9371420` → `REQ-FUNC-B9371420` → `TEST-FUNC-B9371420`.
+- **Associated test ID:** `TEST-FUNC-EC31B40D`; fixture and expected output must be specified from evidence.
+- **Trace:** `YOUTUBE-MUSIC-CAP-EC31B40D` → `REQ-FUNC-EC31B40D` → `TEST-FUNC-EC31B40D`.
 
-### REQ-FUNC-2F3F8F0B — Library uploads
+### REQ-FUNC-9CDBBCCC — Premium playback/download benefits and device integrations are documented with eligibility limits.
 - **Required behavior:** Unknown; capability is a research lead until observed/documented.
 - **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
 - **Priority:** Unassigned; rank after user scope/impact are known.
-- **Evidence / verification:** UNKNOWN; None linked; research required.
+- **Evidence / verification:** VERIFIED; `ev-youtube-music-premium`, `ev-youtube-music-devices`.
 - **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
-- **Associated test ID:** `TEST-FUNC-2F3F8F0B`; fixture and expected output must be specified from evidence.
-- **Trace:** `YOUTUBE-MUSIC-CAP-2F3F8F0B` → `REQ-FUNC-2F3F8F0B` → `TEST-FUNC-2F3F8F0B`.
+- **Associated test ID:** `TEST-FUNC-9CDBBCCC`; fixture and expected output must be specified from evidence.
+- **Trace:** `YOUTUBE-MUSIC-CAP-9CDBBCCC` → `REQ-FUNC-9CDBBCCC` → `TEST-FUNC-9CDBBCCC`.
+
+### REQ-FUNC-75EC7276 — The public sources document supported surfaces, but no dedicated general-purpose YouTube Music API was verified in this pass.
+- **Required behavior:** Unknown; capability is a research lead until observed/documented.
+- **Preconditions, expected result, failures:** Unknown; derive from researched workflow including permission and recovery paths.
+- **Priority:** Unassigned; rank after user scope/impact are known.
+- **Evidence / verification:** VERIFIED; `ev-youtube-music-devices`.
+- **Acceptance criteria:** Blocked until a repeatable input, observable outcome and relevant negative/error case have an evidence-backed oracle.
+- **Associated test ID:** `TEST-FUNC-75EC7276`; fixture and expected output must be specified from evidence.
+- **Trace:** `YOUTUBE-MUSIC-CAP-75EC7276` → `REQ-FUNC-75EC7276` → `TEST-FUNC-75EC7276`.
 
 Keep original behavior VERIFIED/CORROBORATED distinct from inference and independent decisions INFERRED/PROPOSED. UNKNOWN stays unknown; contradictory evidence stays CONFLICTED. These requirements are blocked planning placeholders until evidence, user scope, measurable criteria and test oracles are recorded.
 
@@ -216,9 +227,10 @@ Map every capability lead and requirement from sections 2 and 5 to what the cand
 
 | Requirement / capability lead | Candidate coverage | Evidence for the claim | Gap that remains |
 |---|---|---|---|
-| `YOUTUBE-MUSIC-CAP-2BB93BDB` — On-demand streaming of a licensed catalogue | Not verified against Navidrome | None yet; compare with `ev_c274a080cd1566471fc4d3481371263f14af3d4f7acf4339223d5bacac938b89` | Candidate code path and tests must be inspected |
-| `YOUTUBE-MUSIC-CAP-B9371420` — Personalized recommendations | Not verified against Navidrome | None yet; compare with `ev_c274a080cd1566471fc4d3481371263f14af3d4f7acf4339223d5bacac938b89` | Candidate code path and tests must be inspected |
-| `YOUTUBE-MUSIC-CAP-2F3F8F0B` — Library uploads | Not verified against Navidrome | None yet; compare with `ev_c274a080cd1566471fc4d3481371263f14af3d4f7acf4339223d5bacac938b89` | Candidate code path and tests must be inspected |
+| `YOUTUBE-MUSIC-CAP-A15C6B9C` — Music and podcast playback, discovery, search and library workflows are documented. | Not verified against Navidrome | None yet; compare with `ev_c274a080cd1566471fc4d3481371263f14af3d4f7acf4339223d5bacac938b89` | Candidate code path and tests must be inspected |
+| `YOUTUBE-MUSIC-CAP-EC31B40D` — Personal libraries, playlists, recommendations, Sound Search and user uploads are documented. | Not verified against Navidrome | None yet; compare with `ev_c274a080cd1566471fc4d3481371263f14af3d4f7acf4339223d5bacac938b89` | Candidate code path and tests must be inspected |
+| `YOUTUBE-MUSIC-CAP-9CDBBCCC` — Premium playback/download benefits and device integrations are documented with eligibility limits. | Not verified against Navidrome | None yet; compare with `ev_c274a080cd1566471fc4d3481371263f14af3d4f7acf4339223d5bacac938b89` | Candidate code path and tests must be inspected |
+| `YOUTUBE-MUSIC-CAP-75EC7276` — The public sources document supported surfaces, but no dedicated general-purpose YouTube Music API was verified in this pass. | Not verified against Navidrome | None yet; compare with `ev_c274a080cd1566471fc4d3481371263f14af3d4f7acf4339223d5bacac938b89` | Candidate code path and tests must be inspected |
 
 ### 9.3 Decision
 
@@ -266,9 +278,10 @@ These are test prompts, not target behavior assertions. Keep only relevant cases
 
 ## 12. Testing and behavioral verification
 
-- **TEST-FUNC-2BB93BDB** → `REQ-FUNC-2BB93BDB`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-B9371420** → `REQ-FUNC-B9371420`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
-- **TEST-FUNC-2F3F8F0B** → `REQ-FUNC-2F3F8F0B`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-A15C6B9C** → `REQ-FUNC-A15C6B9C`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-EC31B40D** → `REQ-FUNC-EC31B40D`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-9CDBBCCC** → `REQ-FUNC-9CDBBCCC`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
+- **TEST-FUNC-75EC7276** → `REQ-FUNC-75EC7276`: unit/integration/E2E level after interface selection. Setup: deterministic fixture for evidenced precondition. Steps: main workflow plus relevant error/permission branch. Expected result: unknown until evidence defines oracle. Pass: repeatable assertions meet approved criteria. No network in routine tests; no claim of original parity.
 
 These are proposed deterministic implementation-test plans, not original-product observations. Compare the original only through separately authorized, repeatable public observation. A passing spec test does not establish parity.
 
@@ -289,7 +302,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Research then implement one useful vertical slice with explicit state, validation and permissions.
 - **Prerequisites:** Phase 1 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-2BB93BDB, REQ-FUNC-B9371420, REQ-FUNC-2F3F8F0B
+- **Requirements:** REQ-FUNC-A15C6B9C, REQ-FUNC-EC31B40D, REQ-FUNC-9CDBBCCC, REQ-FUNC-75EC7276
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** Integrated domain behavior with deterministic unit/integration tests.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -299,7 +312,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Tasks:** Complete the best-evidenced journey through success, cancellation and recovery.
 - **Prerequisites:** Phase 2 and evidence/scope decisions
 - **Deliverables:** Integrated working slice and updated traceability
-- **Requirements:** REQ-FUNC-2BB93BDB, REQ-FUNC-B9371420, REQ-FUNC-2F3F8F0B
+- **Requirements:** REQ-FUNC-A15C6B9C, REQ-FUNC-EC31B40D, REQ-FUNC-9CDBBCCC, REQ-FUNC-75EC7276
 - **Tests:** Focused tests for implemented requirements and failures
 - **Completion:** E2E acceptance checks via user-facing interface.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
@@ -321,7 +334,7 @@ These are proposed deterministic implementation-test plans, not original-product
 - **Deliverables:** Integrated working slice and updated traceability
 - **Requirements:** Select after evidence review
 - **Tests:** Focused tests for implemented requirements and failures
-- **Completion:** Trace: REQ-FUNC-2BB93BDB, REQ-FUNC-B9371420, REQ-FUNC-2F3F8F0B; document exclusions and unknowns.
+- **Completion:** Trace: REQ-FUNC-A15C6B9C, REQ-FUNC-EC31B40D, REQ-FUNC-9CDBBCCC, REQ-FUNC-75EC7276; document exclusions and unknowns.
 - **Unresolved risks:** Record source limitations, conflicts and unverified compatibility.
 
 ### Phase 6 — Security and reliability
@@ -351,7 +364,18 @@ These are proposed deterministic implementation-test plans, not original-product
 
 | Source ID | Title / location | URL | Access date | Claim supported | Classification and limits |
 |---|---|---|---|---|---|
-| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://music.youtube.com/) | Not recorded | YouTube Music is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `ev-youtube-music-identity` | What is YouTube Music? — Official Help describes the YouTube Music app as a place to watch music videos, connect with artists, and discover music and podcasts across devices. | [link](https://support.google.com/youtubemusic/answer/6313529?hl=en-GB) | 2026-11-03T00:00:00Z | YouTube Music is a distinct Google music and podcast app and service. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-youtube-music-premium` | Explore YouTube Music Premium benefits — Official Help documents background play, downloads for offline use and audio-only mode, with regional and account limitations. | [link](https://support.google.com/youtubemusic/answer/9266556?hl=en-GB) | 2026-11-03T00:00:00Z | YouTube Music Premium provides documented background play, offline downloads and audio-only playback benefits. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-youtube-music-discovery` | Find music and podcasts in YouTube Music — Official Help describes recommendations based on activity and listening history, browsing, library management and Sound Search. | [link](https://support.google.com/youtubemusic/answer/13401025?hl=en-GB) | 2026-11-03T00:00:00Z | YouTube Music documents search, personalized recommendations, music and podcast discovery, libraries and Sound Search. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-youtube-music-uploads` | Upload music to your YouTube Music library — Official Help documents supported formats, upload limits and the fact that uploaded content is private to the uploader's account. | [link](https://support.google.com/youtubemusic/answer/9716522?hl=en) | 2026-11-03T00:00:00Z | Users can upload supported audio files to their own YouTube Music library. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `ev-youtube-music-devices` | Use YouTube Music on other apps and devices — Official Help documents playback and downloads on Wear OS, Google Assistant, Cast-connected speakers and the installable web app. | [link](https://support.google.com/youtubemusic/answer/9231765?hl=en) | 2026-11-03T00:00:00Z | YouTube Music documents web, Wear OS, casting and selected device integrations. | **VERIFIED** — Evidence status verified; inspect source and claim scope. |
+| `SRC-PRODUCT` | Official product page — Catalog identity field; page not fetched by compiler. | [link](https://music.youtube.com/) | 2026-11-03T00:00:00Z | YouTube Music is identified at this URL in the canonical catalog. | **UNKNOWN** — Catalog URL is a lead, not independently checked behavior. |
+| `SRC-DOCS` | Official documentation entry — No claim-level section recorded. | [link](https://support.google.com/youtubemusic) | 2026-11-03T00:00:00Z | Documentation entry-point URL is recorded. | **UNKNOWN** — Source is not fetched and URL alone establishes no behavior. |
+| `SRC-OFFICIAL-1` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/youtubemusic/answer/6313529?hl=en-GB) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-2` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/youtubemusic/answer/9266556?hl=en-GB) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-3` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/youtubemusic/answer/9716522?hl=en) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-4` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/youtubemusic/answer/13401025?hl=en-GB) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
+| `SRC-OFFICIAL-5` | Additional official source lead — Claim/section not recorded. | [link](https://support.google.com/youtubemusic/answer/9231765?hl=en) | Not recorded | Official source URL is listed in product record. | **UNKNOWN** — Source content is not fetched. |
 | `ev_c274a080cd1566471fc4d3481371263f14af3d4f7acf4339223d5bacac938b89` | YouTube Music Public web-surface observation (REA) — REA report; status captured; completeness reported complete. | [link](https://music.youtube.com/) | 2026-11-03T01:42:56.579Z | A dated unauthenticated snapshot exposed controls link: Get Chrome and landmarks (none recorded). | **VERIFIED** — Snapshot only; no activation, authenticated workflow, search results or internals. Event sequence records provider receipt order; simultaneous browser causality is not inferred. Network content is retained only when selected; Playwright response-body bytes are API results and are not guaranteed to match wire bytes. Request bytes are limited to what Playwright exposes; not_exposed does not establish body absence or multipart file coverage. Network content reads settle within 5 seconds each and the observer does not request bodies from unfinished responses. Playwright scenario events do not expose request initiator stacks; receipt order does not prove causality. Storage values are hashed only after declared-secret redaction. |
 
 ### Confidence classifications
@@ -379,115 +403,85 @@ Resume token: `youtube-music`. Read dossier, REA report and raw Evidence before 
 
 # 1. Executive summary
 
-YouTube Music is Google's music streaming service, successor to Google Play Music.
-
----
+YouTube Music is Google's distinct music and podcast listening service at music.youtube.com and in dedicated mobile apps. It combines on-demand music videos, songs, albums, remixes, covers and podcasts with search, recommendations, playlists, a personal library and optional Premium benefits. It is related to YouTube and shares membership entitlements in some cases, but it is a separate product surface and should not be merged into the YouTube catalog row.
 
 # 2. Product identity and ownership
 
 - **Official name:** YouTube Music
-- **Company and business unit:** google
-- **Current lifecycle status:** active
-- **Official website:** https://music.youtube.com/
-
----
+- **Company:** Google LLC, part of Alphabet Inc.
+- **Lifecycle:** active
+- **Canonical website:** https://music.youtube.com/
+- **Identity evidence:** Google's official YouTube Music Help describes the app as a place to watch music videos, connect with artists, and discover music and podcasts across devices.
 
 # 3. Product capabilities
 
-- On-demand streaming of a licensed catalogue
-- Personalized recommendations
-- Library uploads
-
----
+- On-demand playback of songs, albums, music videos, remixes, covers and podcasts.
+- Search, artist and channel pages, personalized recommendations, mood/activity stations, Samples and Sound Search.
+- Personal library with saved songs, albums, artists, playlists, podcasts and downloads.
+- User music uploads that can be played from the uploader's own library.
+- YouTube Music Premium benefits including ad-free music, background play, audio-only playback and music downloads; availability varies by account and region.
 
 # 4. Technical architecture
 
-Not yet researched.
-
----
+The public product surface includes a web app at music.youtube.com, mobile apps, account-linked library and recommendation workflows, plus casting and selected device integrations. Google's public YouTube API catalog documents YouTube APIs, but this pass does not identify a separate general-purpose public YouTube Music API; implementation must not assume that YouTube Data API access is equivalent to YouTube Music access.
 
 # 5. User workflows
 
-Not yet researched.
-
----
+A user searches or browses music and podcasts, starts playback, saves items to a library or playlist, follows artists, and receives recommendations based on activity and listening history. Premium members can enable background and audio-only playback and download supported content for offline use. Users can also upload personal audio files to their own library; uploaded items are not shared as a public catalog.
 
 # 6. Pricing and access
 
-Not yet researched.
-
----
+YouTube Music offers an ad-supported experience and a paid YouTube Music Premium membership. Google documents regional availability, account eligibility, device limitations and different treatment for podcasts. This pass does not assert current pricing or eligibility for a specific account or country.
 
 # 7. API and integration surface
 
-Not yet researched.
-
----
+Google documents YouTube APIs for YouTube app features, analytics, reporting and content ownership. The official YouTube Music Help documents web, mobile, Wear OS, Google Cast and selected device workflows. No dedicated public YouTube Music API was verified in this pass; integrations must be scoped to documented YouTube APIs or supported product surfaces rather than inferred from the music app.
 
 # 8. Existing open-source alternatives
 
-Open-source candidates exist: Navidrome (GPL-3.0) — Self-hosted music streaming server for your own library.; Funkwhale (AGPL-3.0) — Self-hosted music sharing and streaming.. Coverage is unverified until the dossier is researched.
-
----
+- **Navidrome (GPL-3.0):** self-hosted music streaming for a library the operator owns.
+- **Funkwhale (AGPL-3.0):** self-hosted music sharing and streaming.
 
 # 9. Alternative comparison
 
-Self-hosted servers stream a library you own; the licensed catalogue and recommendation engine are not replicable in open source.
-
----
+Navidrome and Funkwhale cover self-hosted library playback, playlists and related streaming workflows. They do not reproduce YouTube Music's licensed catalog, YouTube-derived music-video ecosystem, recommendation systems, Premium membership, regional licensing or Google account/device integrations. Coverage is partial.
 
 # 10. Missing capabilities and opportunity analysis
 
-Self-hosted servers stream a library you own; the licensed catalogue and recommendation engine are not replicable in open source.
+A replacement would need catalog ingestion and licensing, search and discovery, recommendations, playback across web/mobile/devices, accounts and libraries, playlists, podcast support, offline rights, subscriptions, creator/rights workflows, privacy controls and regional content policy. A self-hosted alternative is more realistic for owned media than for the licensed catalog.
 
----
+# 11. REA implementation strategy
 
-# 11. RAE implementation strategy
-
-Partial. Streaming your own library is solved (Navidrome, Funkwhale); the licensed catalogue is not.
-
----
+Choose a narrow owned-library streaming workflow and reuse Navidrome or Funkwhale rather than attempting to reproduce Google's licensed catalog. Define media ownership, metadata, playlists, device access and offline behavior first. Do not claim YouTube Music API compatibility without a separately verified Google integration and permitted scopes.
 
 # 12. Security, privacy, and compliance
 
-Not yet researched.
-
----
+The service processes account identity, listening history, playlists, uploads, recommendations and potentially family or child profiles. Verify account roles, content rights, upload privacy, retention, regional licensing, device authorization and least-privilege access before implementing an integration.
 
 # 13. Sources and evidence
 
-- https://www.navidrome.org/
-- https://funkwhale.audio/
-
----
+- [What is YouTube Music?](https://support.google.com/youtubemusic/answer/6313529?hl=en-GB) — official product identity, free/Premium capabilities and availability.
+- [YouTube Music Premium benefits](https://support.google.com/youtubemusic/answer/9266556?hl=en-GB) — official background play, offline downloads and audio-only behavior.
+- [Find music and podcasts](https://support.google.com/youtubemusic/answer/13401025?hl=en-GB) — official discovery, recommendations, library and Sound Search workflows.
+- [Upload music to your library](https://support.google.com/youtubemusic/answer/9716522?hl=en) — official upload limits and private-library behavior.
+- [Use YouTube Music on other apps and devices](https://support.google.com/youtubemusic/answer/9231765?hl=en) — official device, Wear OS, casting and web-app integrations.
 
 # 14. Open questions
 
-- Full feature inventory and technical architecture are not yet researched.
-
----
+- Which countries, account types and membership tiers are in scope for a comparison?
+- Is the target owned-library streaming, a licensed catalog, or an integration with supported YouTube surfaces?
+- Which rights, offline, family-account and device requirements are mandatory?
 
 # 15. Research history
 
-- v1: dossier created; research pending.
+- v1: dossier created with preliminary alternatives; research pending.
+- v2: updated 2026-11-03 from official YouTube Music Help and Google developer documentation. Status: `researched`; licensing, ranking, proprietary recommendation systems and a dedicated public YouTube Music API remain outside the verified surface.
 
----
-
-# 16. Alternative comparison (continued)
-
-Self-hosted servers stream a library you own; the licensed catalogue and recommendation engine are not replicable in open source.
-
----
-
-# 17. RAE implementation strategy (continued)
-
-Partial. Streaming your own library is solved (Navidrome, Funkwhale); the licensed catalogue is not.
-
-Research status is **pending**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
+Research status is **researched**. Dossier prose above is preserved for context but is not claim-level evidence by itself.
 
 ## 15. Downstream execution instructions
 
-1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rae-faang research dossier youtube-music` and inspect canonical identity with `npx rae-faang products show youtube-music --format json`.
+1. Read this complete skill and the target project instructions. Retrieve bundled research with `npx rea-faang research dossier youtube-music` and inspect canonical identity with `npx rea-faang products show youtube-music --format json`.
 2. Inspect the existing repository, architecture, dependencies, tests, configuration and interface before editing.
 3. Confirm target scope and user priorities; list evidence blockers and never fill them with invented facts.
 4. Evaluate candidate foundations through actual code, exact version, license/dependency terms, tests, security, maintenance, operations and fit.
@@ -500,7 +494,7 @@ Research status is **pending**. Dossier prose above is preserved for context but
 11. Fix causes; do not weaken tests, hide errors or claim parity from generated code.
 12. Document deviations, unimplemented requirements, limitations and checks not run.
 13. Report requirement → code → test evidence and actual command results.
-Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rae-faang youtube-music --out ./youtube-music.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rae-faang build agent-kit youtube-music --out ./youtube-music-agent`.
+Give this product skill to your coding agent in the project where you want to build; generate a portable Markdown copy with `npx rea-faang youtube-music --out ./youtube-music.md` when useful. For a directory containing `skill.md` and `mcp.json`, use `npx rea-faang build agent-kit youtube-music --out ./youtube-music-agent`.
 
 ### Multi-agent task plan and outputs
 
@@ -542,5 +536,16 @@ Follow the seven dependency-aware phases in the roadmap above. Prefer a complete
 
 ## Sources
 
-- [Official product page](https://music.youtube.com/) — YouTube Music is identified at this URL in the canonical catalog. (UNKNOWN; accessed Not recorded).
+- [What is YouTube Music?](https://support.google.com/youtubemusic/answer/6313529?hl=en-GB) — YouTube Music is a distinct Google music and podcast app and service. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Explore YouTube Music Premium benefits](https://support.google.com/youtubemusic/answer/9266556?hl=en-GB) — YouTube Music Premium provides documented background play, offline downloads and audio-only playback benefits. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Find music and podcasts in YouTube Music](https://support.google.com/youtubemusic/answer/13401025?hl=en-GB) — YouTube Music documents search, personalized recommendations, music and podcast discovery, libraries and Sound Search. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Upload music to your YouTube Music library](https://support.google.com/youtubemusic/answer/9716522?hl=en) — Users can upload supported audio files to their own YouTube Music library. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Use YouTube Music on other apps and devices](https://support.google.com/youtubemusic/answer/9231765?hl=en) — YouTube Music documents web, Wear OS, casting and selected device integrations. (VERIFIED; accessed 2026-11-03T00:00:00Z).
+- [Official product page](https://music.youtube.com/) — YouTube Music is identified at this URL in the canonical catalog. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Official documentation entry](https://support.google.com/youtubemusic) — Documentation entry-point URL is recorded. (UNKNOWN; accessed 2026-11-03T00:00:00Z).
+- [Additional official source lead](https://support.google.com/youtubemusic/answer/6313529?hl=en-GB) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/youtubemusic/answer/9266556?hl=en-GB) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/youtubemusic/answer/9716522?hl=en) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/youtubemusic/answer/13401025?hl=en-GB) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
+- [Additional official source lead](https://support.google.com/youtubemusic/answer/9231765?hl=en) — Official source URL is listed in product record. (UNKNOWN; accessed Not recorded).
 - [YouTube Music Public web-surface observation (REA)](https://music.youtube.com/) — A dated unauthenticated snapshot exposed controls link: Get Chrome and landmarks (none recorded). (VERIFIED; accessed 2026-11-03T01:42:56.579Z).

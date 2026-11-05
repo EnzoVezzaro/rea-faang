@@ -13,16 +13,21 @@ official_source_urls:
   - "https://aws.amazon.com/quicksight/"
   - "https://docs.aws.amazon.com/quicksight/"
   - "https://docs.aws.amazon.com/quicksight/latest/user/welcome.html"
+  - "https://docs.aws.amazon.com/quick/latest/userguide/quick-sight-getting-started.html"
+  - "https://docs.aws.amazon.com/quick/latest/userguide/spice-only-features.html"
+  - "https://docs.aws.amazon.com/quick/latest/userguide/refreshing-data.html"
+  - "https://docs.aws.amazon.com/quick/latest/userguide/quicksight-sdks.html"
+  - "https://docs.aws.amazon.com/quick/latest/userguide/data-source-limits.html"
   - "https://docs.aws.amazon.com/cli/latest/reference/quicksight/"
-research_status: "pending"
-research_confidence: "unverified"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
 opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: "2026-11-02T00:00:00Z"
-next_review_at: null
-research_version: 1
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: "2027-02-03T00:00:00Z"
+research_version: 2
 ---
 
 # 1. Executive summary
@@ -72,7 +77,7 @@ Compare connectors, semantic models, calculated fields, chart and dashboard beha
 
 Research must map source and dataset schemas, SPICE ingestion, direct-query behavior, refresh state, analysis-to-dashboard publication, visual semantics, filters, calculations, permissions, embedding, export, alerts, quotas, caching and failure recovery.
 
-# 11. RAE implementation strategy
+# 11. REA implementation strategy
 
 Use official AWS documentation, CLI references and authorized sample data. Capture source setup, dataset creation, dashboard publication, embedding, permission changes and failure cases. Use Superset only after recording the partial-foundation verdict, and implement an independent product with original code, compatible licensing and no AWS branding or protected assets.
 
@@ -80,13 +85,13 @@ Use official AWS documentation, CLI references and authorized sample data. Captu
 
 Verify IAM scope, row-level security, data-source credentials, encryption, regional processing, SPICE retention, export and embedding token handling, audit logs and tenant isolation. Do not infer compliance from a dashboard demonstration.
 
-# 13. Evidence register
+# 13. Sources and evidence
 
-- https://aws.amazon.com/quicksight/ — official product scope.
-- https://docs.aws.amazon.com/quicksight/ — official documentation.
-- https://docs.aws.amazon.com/quicksight/latest/user/welcome.html — user workflows and capabilities.
-- https://docs.aws.amazon.com/cli/latest/reference/quicksight/ — CLI and API surface.
-- https://github.com/apache/superset — open-source alternative and Apache-2.0 license.
+- **Product and identity:** [AWS product page](https://aws.amazon.com/quicksight/) and [QuickSight documentation](https://docs.aws.amazon.com/quicksight/) establish the product scope.
+- **Workflow:** [Getting started with Quick Sight](https://docs.aws.amazon.com/quick/latest/userguide/quick-sight-getting-started.html) documents creating analyses, visualizations and dashboards from sample data.
+- **SPICE and query modes:** [SPICE-only features](https://docs.aws.amazon.com/quick/latest/userguide/spice-only-features.html), [refreshing data](https://docs.aws.amazon.com/quick/latest/userguide/refreshing-data.html) and [data-source quotas](https://docs.aws.amazon.com/quick/latest/userguide/data-source-limits.html) support the SPICE, DirectQuery, refresh and quota claims.
+- **Programmatic surface:** [QuickSight SDK/API guidance](https://docs.aws.amazon.com/quick/latest/userguide/quicksight-sdks.html) and the [AWS CLI reference](https://docs.aws.amazon.com/cli/latest/reference/quicksight/) support the SDK, API and CLI claims.
+- **Alternative:** [Apache Superset](https://github.com/apache/superset) is the recorded Apache-2.0 open-source alternative; its coverage remains partial.
 
 # 14. Unknowns
 
@@ -97,4 +102,4 @@ Verify IAM scope, row-level security, data-source credentials, encryption, regio
 
 # 15. Research status
 
-Pending deeper REA validation. Product identity, official sources and a partial open-source foundation are documented; no full equivalence claim is made.
+ Researched with verified public AWS sources. Product identity, core workflows, SPICE/direct-query behavior, refreshes, API/CLI surface and a partial open-source foundation are documented. Internal query planning, tenant isolation, complete regional behavior and current commercial terms remain unknown and are not asserted.

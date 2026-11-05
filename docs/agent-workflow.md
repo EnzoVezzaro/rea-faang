@@ -1,20 +1,20 @@
-![RAE FAANG](assets/brand-logo-icon.png)
+![REA FAANG](assets/brand-logo-icon.png)
 
 # Agent workflow
 
-Each product has a Markdown skill you can download from its page or generate with `rae`. Give it to your coding agent from the project where you want to work. It links to research and candidate projects, and offers directions for planning, building and testing an independent implementation. Coverage labels describe research into existing projects, not build feasibility. ACE (`ace-proagents`) is optional; use it when you want to coordinate a team of agents.
+Each product has a Markdown skill you can download from its page or generate with `rea`. Give it to your coding agent from the project where you want to work. It links to research and candidate projects, and offers directions for planning, building and testing an independent implementation. Coverage labels describe research into existing projects, not build feasibility. ACE (`ace-proagents`) is optional; use it when you want to coordinate a team of agents.
 
 Use [`AGENTS.md`](../AGENTS.md) for the command list and handoff template. This guide explains how the parts fit together.
 
 ## What ACE manages (source repository)
 
-The published RAE package includes the CLI, catalog and skill generator. Install it to get a product skill; you do not need this source checkout for a product build. Clone the repository to edit its data or code, use the source-only tools, or run the full project checks.
+The published REA package includes the CLI, catalog and skill generator. Install it to get a product skill; you do not need this source checkout for a product build. Clone the repository to edit its data or code, use the source-only tools, or run the full project checks.
 
 ## What ACE manages
 
 - **Configuration:** `package.json` and `ace-lock.json` describe the workspace and its tools.
 - **Task state:** the repository stores active missions, assignments and handoffs in runtime directories.
-- **Your product build:** give the product's Markdown skill to your coding agent in your project. From npm, optionally scaffold a starter workspace with `npx rae-faang build product <id> --out ./<id>` and use ACE there; the scaffold is optional, not where the skill has to be used.
+- **Your product build:** give the product's Markdown skill to your coding agent in your project. From npm, optionally scaffold a starter workspace with `npx rea-faang build product <id> --out ./<id>` and use ACE there; the scaffold is optional, not where the skill has to be used.
 - **Review:** governors and supervisors coordinate work; workers take one task at a time.
 - **Adapters:** providers connect ACE to the workspace, agent runtime and verification tools. Run `ace adapters list` in the source repository to see what's available.
 

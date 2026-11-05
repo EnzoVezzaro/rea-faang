@@ -3,93 +3,128 @@ schema_version: "1.0"
 id: "microsoft-windows"
 company_id: "microsoft"
 name: "Microsoft Windows"
-aliases: ["Windows", "Windows 11", "Windows 10"]
+aliases:
+  - "Windows"
+  - "Windows 11"
+  - "Windows 10"
 product_type: "operating_system"
-categories: ["platform", "desktop"]
-lifecycle_status: "active"
+categories:
+  - "platform"
+  - "desktop"
 official_url: "https://www.microsoft.com/en-us/windows/"
-official_docs_url: "https://learn.microsoft.com/en-us/windows/"
-official_source_urls: ["https://www.microsoft.com/en-us/windows/", "https://learn.microsoft.com/en-us/windows/"]
-research_status: "pending"
-research_confidence: "unverified"
+official_docs_url: "https://learn.microsoft.com/en-us/windows/resources/"
+official_source_urls:
+  - "https://learn.microsoft.com/en-us/windows/resources/"
+  - "https://learn.microsoft.com/en-us/windows/package-manager/winget/"
+  - "https://learn.microsoft.com/en-us/windows/security/"
+  - "https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information"
+lifecycle_status: "active"
+research_status: "researched"
+research_confidence: "verified"
 alternative_status: "partial"
 alternative_coverage: "unknown"
-opportunity_status: "research_further"
-last_researched_at: null
-last_verified_at: 2026-11-03T00:00:00Z
-next_review_at: null
-research_version: 1
+opportunity_status: "integrate_existing"
+last_researched_at: "2026-11-03T00:00:00Z"
+last_verified_at: "2026-11-03T00:00:00Z"
+next_review_at: "2027-02-03T00:00:00Z"
+research_version: 2
 inventory_status: "verified"
 command_status: "documented"
 command_source: "https://learn.microsoft.com/en-us/windows/package-manager/winget/"
 ---
-# 1. Executive summary
 
-Windows is Microsoft's desktop operating system family, shipped preinstalled by OEMs and licensed to consumers and organisations; the implementation is proprietary and observed only through documented APIs.
+# Microsoft Windows
 
+## Research verdict
 
-# 2. Product identity and ownership
+Windows is Microsoft's active desktop operating-system family for consumer and
+organizational devices. Microsoft documents Windows client deployment, security,
+privacy, management, servicing and application-installation workflows. The
+implementation is proprietary; this dossier records public platform behavior and
+documented interfaces, not internal source code or undocumented architecture.
 
-**Official name:** Microsoft Windows
-**Company:** Microsoft Corporation
-**Current release:** Windows 11 (as documented by Microsoft)
-**Lifecycle status:** active
-**Official website:** https://www.microsoft.com/en-us/windows/
+The open-source alternative coverage is **partial**. Wine covers application
+compatibility on a POSIX host, while ReactOS targets an independent Windows-like
+operating system. Neither provides the complete supported Windows driver,
+security, servicing and commercial ecosystem.
 
-# 3. Product capabilities
+## Product identity and boundary
 
-- Desktop OS shell, window manager and application model (Win32, Windows App SDK)
-- Servicing through Windows Update, including driver distribution
-- Hyper-V virtualization and the Windows Subsystem for Linux
-- Defender antimalware, BitLocker encryption and Secure Boot
-- Microsoft account and Entra ID sign-in
+- **Owner:** Microsoft Corporation
+- **Canonical product ID:** `microsoft-windows`
+- **Lifecycle:** Active
+- **Public entry point:** https://www.microsoft.com/en-us/windows/
+- **Documentation:** https://learn.microsoft.com/en-us/windows/resources/
+- **Product boundary:** Windows client operating-system capabilities, management,
+  security, servicing and documented application interfaces.
+- **Related catalog entries:** Microsoft 365, Teams, Edge, OneDrive and Azure are
+  separate products/services; their presence on or integration with Windows does
+  not merge their catalog identities.
 
-# 4. Technical architecture
+## Verified capabilities
 
-Windows uses the NT kernel with user-mode subsystems and a proprietary driver model. No public source tree exists; the documented APIs on Microsoft Learn and observed public behaviour are the only authorized surfaces for this catalog.
+Microsoft's official documentation verifies that Windows supports:
 
-# 5. User workflows
+1. Deployment, administration and management of Windows 10 and Windows 11 client
+   devices, including enterprise deployment and Autopilot-related workflows.
+2. Security features and guidance including BitLocker, Windows Hello for Business,
+   Secure Boot and Windows security baselines.
+3. Windows Update and regular feature/security servicing; release information
+   documents Windows 11 servicing and monthly security updates.
+4. Application discovery, installation, upgrade, removal and configuration through
+   WinGet on supported Windows versions.
+5. Documented privacy and diagnostic-data management for organizational deployments.
 
-Users install or receive the OS, run applications, apply updates, sign in with a Microsoft or work account and manage devices through Settings or Intune. Enterprise fleets add imaging, policy and update-ring management.
+Feature availability and requirements vary by edition, version, hardware,
+organization policy and lifecycle stage.
 
-# 6. Pricing and access
+## Technical boundary
 
-Distributed as OEM licences, retail licences and volume licensing for organisations. Pricing varies by edition and channel; the catalog does not record prices.
+The sources verify documented platform and administration surfaces. They do not
+verify Microsoft's complete kernel, driver, boot, update, telemetry, identity,
+virtualization or security implementation. Do not claim NT-internal behavior or
+full API compatibility from this dossier alone.
 
-# 7. API and integration surface
+## Alternative assessment
 
-Official surfaces: the Win32 API and Windows App SDK, documented on Microsoft Learn, plus the `winget` package-manager CLI documented at https://learn.microsoft.com/en-us/windows/package-manager/winget/. Command status: documented, with the official documentation as the source.
+### Wine — application-compatibility alternative
 
-# 8. Existing open-source alternatives
+Wine implements Windows API compatibility on POSIX systems. It can be reused when
+the job is running selected Windows applications, but it is not a Windows
+operating system and does not provide Microsoft's driver, update or security model.
 
-ReactOS (GPL-2.0) targets binary compatibility; Wine (LGPL-2.1) implements the Windows API on POSIX systems. Neither is an operating system replacement with Microsoft's driver, servicing and security model.
+### ReactOS — operating-system research alternative
 
-# 9. Alternative comparison
+ReactOS is an independent project targeting Windows application and driver
+compatibility. It remains a research/development project rather than a verified
+production replacement for Windows.
 
-ReactOS is incomplete for daily production use; Wine covers application compatibility but relies on a host OS. The verified gap is the complete, supported OS platform, not individual APIs.
+## REA/build implications
 
-# 10. Missing capabilities and opportunity analysis
+Choose a bounded implementation goal: application compatibility, a desktop shell,
+device management, or a secure update workflow. Reuse Wine or ReactOS where their
+documented scope fits. Do not copy proprietary Windows assets, bypass licensing,
+or claim OS-level parity without testing hardware, drivers, servicing and security
+requirements.
 
-An open replacement would need driver compatibility, secure boot trust, a servicing pipeline and long-term security response. Research should scope a compatibility layer rather than an OS clone.
+## Evidence record
 
-# 11. RAE implementation strategy
+| Claim | Source | What it supports |
+|---|---|---|
+| Windows client documentation covers deployment, security, privacy and management | [Windows client documentation](https://learn.microsoft.com/en-us/windows/resources/) | Product identity and administrative surface |
+| WinGet discovers, installs, upgrades, removes and configures applications | [Use WinGet](https://learn.microsoft.com/en-us/windows/package-manager/winget/) | Documented package-management interface and supported versions |
+| Windows documents security features and baselines | [Windows security documentation](https://learn.microsoft.com/en-us/windows/security/) | Security surface |
+| Windows 11 has documented release and servicing information | [Windows 11 release information](https://learn.microsoft.com/en-us/windows/release-health/windows11-release-information) | Lifecycle and update behavior |
+| Wine and ReactOS cover narrower compatibility jobs | [Wine](https://www.winehq.org/), [ReactOS](https://reactos.org/) | Alternative scope, not parity claims |
 
-Reuse Wine where application compatibility is the goal; treat OS-level parity as out of scope until a supported driver and servicing model is demonstrated.
+## Known gaps
 
-# 12. Security, privacy, and compliance
+- Edition-specific licensing, hardware requirements, policy controls and feature
+  availability need a dated check for the target Windows release.
+- Full internal architecture and proprietary APIs are not public implementation
+  specifications.
+- Alternative compatibility requires hardware and application testing; catalog
+  status is not a performance guarantee.
 
-Security depends on code signing, Secure Boot and a vendor-run update channel; a clean-room catalog entry records only public documentation and never redistributes protected assets.
-
-# 13. Sources and evidence
-
-- https://www.microsoft.com/en-us/windows/
-- https://learn.microsoft.com/en-us/windows/
-
-# 14. Open questions
-
-- Which documented APIs are sufficient for a credible application-compatibility target?
-- How would an independent project handle driver signing and secure boot?
-
-# 15. Research history
-
-Record created 2026-11-03 from public official sources during the FAANG+Microsoft inventory expansion. Status: `pending`; nothing beyond official documentation and public announcements is asserted.
+**Research date:** 2026-11-03.  
+**Confidence:** Verified for documented platform surfaces; partial for alternatives.
